@@ -108,10 +108,8 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 ## 6. Tooling / UI (launcher)
 
-- **Terminal launcher** (`python -m ui`): selects exercise, student persona, number of turns; runs tutor vs student; saves transcript; invokes judge.
-- **Flask web app** (`app.py`): chat UI with student-bot simulation buttons and debug reasoning display.
-
-> **Note:** Both the terminal UI and web app are **broken** after the student module rework (Phase 1). They will be updated in later rework phases.
+- **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
+- **Web UI** (`python -m web_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
 
 ---
 
@@ -358,6 +356,54 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 
 ---
 
-### Phase 5: Web app rework — TBD
+### Phase 5: Web app rework ✦ DECIDED
 
-*(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*
+**Problems:**
+- Old `app.py` sat at the project root with a companion `templates/` folder — inconsistent with the module-per-component pattern.
+- Imported from deleted student paths (`students.chaotic_student.student_01.bot`).
+- Imported private (`_`-prefixed) tutor functions.
+- Loaded `.env` at import time — inconsistent with other modules.
+- Hardcoded three student types with no version or exercise selection.
+- No tutor prompt or course/exercise configuration — always used the default system prompt with no exercise injection.
+- No student-persona version selection.
+- One student bot button per hardcoded type; no way to select a different version.
+
+**New structure:**
+
+```
+web_ui/
+  __init__.py          — package init
+  __main__.py          — python -m web_ui
+  run_app.py           — Flask app with config + chat API routes
+  README.md
+  templates/
+    index.html         — single-page chat interface with config panel
+```
+
+**Changes:**
+- **Moved** `app.py` → `web_ui/run_app.py` (rewrote; old file deleted).
+- **Moved** `templates/index.html` → `web_ui/templates/index.html` (rewrote; old folder deleted).
+- **Updated** `Procfile` from `gunicorn app:app` → `gunicorn web_ui.run_app:app`.
+- **Config panel** — UI dropdowns discover options dynamically via `GET /api/config-options`:
+  - Tutor prompt version (scans `tutor/prompts/*.txt`)
+  - Student persona type + version (scans `students/personas/{type}_*.txt`)
+  - Course (scans `curriculum/` subfolder names)
+  - Exercise (scans `curriculum/{course}/exercise_*.txt`)
+- **Start conversation** (`POST /api/start`) — builds tutor graph with selected exercise injected into the system prompt; stores graph + config in the server-side session.
+- **Chat** (`POST /api/chat`) — forwards a user-typed message to the tutor and returns the reply.
+- **Student bot turn** (`POST /api/student-turn`) — generates one student message using the selected persona and exercise, then gets the tutor's reply. Single button replaces three hardcoded buttons.
+- **Debug mode** — checkbox toggles display of `pedagogical-reasoning` from the tutor's JSON response.
+- **No `.env` loading** in the module — env vars expected to be set externally.
+- **No Pydantic warning suppression** — handled globally by `sitecustomize.py`.
+- Uses new public APIs: `students.run_student.get_next_student_message`, `tutor.run_tutor.create_tutor_graph` / `load_system_prompt` / `parse_tutor_response`.
+
+**API routes:**
+
+| Method | Path                  | Description                       |
+|--------|-----------------------|-----------------------------------|
+| GET    | `/`                   | Serve the HTML page               |
+| GET    | `/api/config-options` | Discover available config options  |
+| POST   | `/api/start`          | Start a new conversation          |
+| POST   | `/api/chat`           | Send a user message               |
+| POST   | `/api/student-turn`   | Generate student + tutor turn     |
+| GET    | `/api/reasoning`      | Fetch reasoning for all turns     |
