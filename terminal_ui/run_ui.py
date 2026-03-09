@@ -168,6 +168,23 @@ def _prompt_number(label: str, options: list[str]) -> str:
         print(f"  Please enter a number between {options[0]} and {options[-1]}")
 
 
+def _prompt_versioned_name(label: str, prefix: str, options: list[str]) -> str:
+    """
+    Prompt by numeric version when options look like '<prefix>_NN'.
+
+    Falls back to full-name choice if options do not all match the expected
+    pattern.
+    """
+    versions: list[str] = []
+    for opt in options:
+        m = re.match(rf"^{re.escape(prefix)}_(\d{{2}})$", opt)
+        if not m:
+            return _prompt_choice(label, options)
+        versions.append(m.group(1))
+    version = _prompt_number(f"{label} version", sorted(versions))
+    return f"{prefix}_{version}"
+
+
 def _prompt_turns() -> int:
     while True:
         raw = _prompt("Number of turns (student+tutor exchanges): ")
@@ -275,9 +292,9 @@ def main() -> int:
     # 7. Judge prompt version
     try:
         judge_versions = _discover_judge_versions()
-        judge_version = _prompt_choice("Judge prompt", judge_versions)
+        judge_version = _prompt_versioned_name("Judge prompt", "judge", judge_versions)
         judge_rubrics = _discover_judge_rubrics()
-        judge_rubric = _prompt_choice("Judge rubric", judge_rubrics)
+        judge_rubric = _prompt_versioned_name("Judge rubric", "rubric", judge_rubrics)
     except (KeyboardInterrupt, EOFError):
         print("\nCancelled. Exiting without saving.")
         return 130

@@ -48,6 +48,10 @@ def _require_openai_api_key() -> str:
     return key
 
 
+def _env_truthy(name: str) -> bool:
+    return (os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"})
+
+
 # ---------------------------------------------------------------------------
 # Rubric constants
 # ---------------------------------------------------------------------------
@@ -173,8 +177,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     """
     Best-effort fix-up for common LLM numeric mistakes.
 
-    Clamps scores, recomputes section base scores from criteria, recomputes
-    totals from section scores, and overwrites declared maxima to constants.
+    Recomputes criterion scores from deductions, recomputes section and global
+    totals, and overwrites declared maxima to constants.
     """
     sections_any = payload.get("sections")
     if not isinstance(sections_any, dict):
@@ -209,10 +213,23 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
             if not isinstance(c_any, dict):
                 continue
             c_any["name"] = _CRITERIA_NAME[crit_id]
-            c_any["max"] = float(_CRITERIA_MAX[crit_id])
-            score = _coerce_number(c_any.get("score"))
-            default_score = float(_CRITERIA_MAX[crit_id])
-            c_any["score"] = _clamp(score if score is not None else default_score, 0.0, float(_CRITERIA_MAX[crit_id]))
+            crit_max = float(_CRITERIA_MAX[crit_id])
+            c_any["max"] = crit_max
+
+            deductions_any = c_any.get("deductions")
+            deductions_list = deductions_any if isinstance(deductions_any, list) else []
+            c_any["deductions"] = deductions_list
+
+            deduction_total = 0.0
+            for d_any in deductions_list:
+                if not isinstance(d_any, dict):
+                    continue
+                pts = _coerce_number(d_any.get("points"))
+                if pts is None or pts <= 0:
+                    continue
+                deduction_total += float(pts)
+
+            c_any["score"] = _clamp(crit_max - deduction_total, 0.0, crit_max)
             computed_section_base += float(c_any["score"])
 
         base_any["score"] = computed_section_base
@@ -371,11 +388,13 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
             deductions = _as_list(
                 crit.get("deductions", []), path=f"sections.{section_key}.criteria.{crit_id}.deductions"
             )
+            deduction_total = 0.0
             for i, d in enumerate(deductions):
                 dd = _as_dict(d, path=f"sections.{section_key}.criteria.{crit_id}.deductions[{i}]")
                 pts = _as_number(dd.get("points"), path=f"...deductions[{i}].points")
                 if pts <= 0:
                     raise JudgeError("Deduction points must be > 0.")
+                deduction_total += pts
                 _as_str(dd.get("reason"), path=f"...deductions[{i}].reason")
                 ev = dd.get("evidence_turns")
                 if ev is not None:
@@ -388,6 +407,11 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
                         if ti < 1 or ti > num_turns:
                             raise JudgeError("Evidence turn number out of range.")
 
+            expected_crit_score = _clamp(float(crit_max) - float(deduction_total), 0.0, float(crit_max))
+            if not _close_enough(float(crit_score), expected_crit_score):
+                raise JudgeError(
+                    f"sections.{section_key}.criteria.{crit_id}.score must equal max - sum(deductions.points)."
+                )
             computed_section_base += crit_score
 
         if not _close_enough(base_score, computed_section_base):
@@ -619,7 +643,9 @@ def judge_transcript(
 
     grade_payload = dict(grade_json)
     grade_payload["model"] = {"provider": "openai", "model": model_name, "temperature": 0}
-    grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
+    # Keep grade artifacts deterministic by default; timestamp is opt-in.
+    if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
+        grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
     grade_payload = _order_grade_payload(grade_payload)
 
     transcript["grade"] = grade_payload
