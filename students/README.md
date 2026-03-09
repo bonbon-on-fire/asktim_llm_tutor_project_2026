@@ -45,6 +45,7 @@ msg = get_next_student_message(
     messages,                    # conversation so far (list of BaseMessage)
     prompt_name="chaotic_01",    # persona to use
     assignment="...",            # optional assignment text
+    turn_size=10,                # optional planned student+tutor exchanges
 )
 ```
 

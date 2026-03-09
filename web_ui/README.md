@@ -36,7 +36,9 @@ The web UI mirrors the terminal UI pipeline:
    dynamically from the file system via `GET /api/config-options`.
 2. **Start conversation** — `POST /api/start` builds the tutor graph with the
    combined assignment context (`course.txt` + chosen exercise) injected into
-   the system prompt and returns the tutor's opening message.
+   the system prompt and returns the tutor's opening message. The payload may
+   include optional `turn_size` (positive integer), which is included in both
+   tutor/student context.
 3. **Chat** — the user types messages (`POST /api/chat`) or clicks
    *Run student bot turn* (`POST /api/student-turn`) to let the selected
    student persona generate a message using that same combined assignment

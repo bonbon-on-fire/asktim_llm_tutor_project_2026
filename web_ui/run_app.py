@@ -65,20 +65,26 @@ def _discover_persona_versions(persona_type: str) -> list[str]:
     return versions
 
 
-def _load_assignment_text(course: str, exercise_num: str) -> str:
-    """Load combined assignment context: course.txt + exercise_XX.txt."""
+def _load_assignment_text(course: str, exercise_num: str, turn_size: int | None = None) -> str:
+    """Load combined assignment context: course.txt + exercise_XX.txt (+ optional turn size)."""
     course_dir = _CURRICULUM_DIR / course
     course_path = course_dir / "course.txt"
     exercise_path = course_dir / f"exercise_{exercise_num}.txt"
 
     course_text = course_path.read_text(encoding="utf-8").strip()
     exercise_text = exercise_path.read_text(encoding="utf-8").strip()
-    return (
+    assignment_text = (
         "Course context:\n"
         f"{course_text}\n\n"
         "Exercise:\n"
         f"{exercise_text}"
     )
+    if isinstance(turn_size, int) and turn_size > 0:
+        assignment_text += (
+            "\n\nRun configuration:\n"
+            f"- Planned conversation length: {turn_size} student+tutor exchanges."
+        )
+    return assignment_text
 
 
 # ---------------------------------------------------------------------------
@@ -193,13 +199,24 @@ def start():
     persona_version = data.get("persona_version", "01")
     course = data.get("course", "")
     exercise_num = data.get("exercise_num", "01")
+    turn_size_raw = data.get("turn_size")
     debug = data.get("debug", False)
 
     if not course:
         return jsonify({"error": "Course is required."}), 400
 
+    turn_size: int | None = None
+    if turn_size_raw is not None:
+        try:
+            parsed_turn_size = int(turn_size_raw)
+        except (TypeError, ValueError):
+            return jsonify({"error": "turn_size must be a positive integer."}), 400
+        if parsed_turn_size <= 0:
+            return jsonify({"error": "turn_size must be a positive integer."}), 400
+        turn_size = parsed_turn_size
+
     try:
-        assignment_text = _load_assignment_text(course, exercise_num)
+        assignment_text = _load_assignment_text(course, exercise_num, turn_size)
     except FileNotFoundError:
         return jsonify(
             {"error": f"Missing curriculum file for {course}: course.txt or exercise_{exercise_num}.txt"}
@@ -218,6 +235,7 @@ def start():
         "prompt_name": f"{persona_type}_{persona_version}",
         "course": course,
         "exercise_num": exercise_num,
+        "turn_size": turn_size,
         "assignment_text": assignment_text,
     }
 
@@ -283,6 +301,7 @@ def student_turn():
         student_msgs,
         prompt_name=cfg["prompt_name"],
         assignment=cfg["assignment_text"],
+        turn_size=cfg.get("turn_size"),
     )
     student_text = bot_msg.content if isinstance(bot_msg.content, str) else str(bot_msg.content)
     conv.append({"role": "student", "content": student_text})

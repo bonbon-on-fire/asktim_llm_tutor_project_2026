@@ -351,6 +351,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
 - Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
+- Run turn count (`turn_size`) is now injected into tutor and student context so both roles know the planned conversation length.
 - Removed Pydantic warning suppression.
 - Auto-selects when only one option exists for a step.
 
@@ -393,6 +394,7 @@ web_ui/
 - **Chat** (`POST /api/chat`) — forwards a user-typed message to the tutor and returns the reply.
 - **Student bot turn** (`POST /api/student-turn`) — generates one student message using the selected persona and exercise, then gets the tutor's reply. Single button replaces three hardcoded buttons.
 - **Student bot turn** now uses the same combined assignment context (`course.txt` + selected exercise) used by the tutor, so grounding is aligned across both roles.
+- `POST /api/start` supports optional `turn_size`; when provided, the value is included in both tutor and student context.
 - **Debug mode** — checkbox toggles display of `pedagogical-reasoning` from the tutor's JSON response.
 - **No `.env` loading** in the module — env vars expected to be set externally.
 - **No Pydantic warning suppression** — handled globally by `sitecustomize.py`.

@@ -50,7 +50,8 @@ Numbers auto-increment (next available `transcript_XX`).
   "student_persona": "chaotic_01",
   "course": "philosophy",
   "exercise_number": "01",
-  "assignment": "Combined assignment text (course context + exercise)...",
+  "turn_size": 10,
+  "exercise": "Combined assignment text (course context + exercise + run configuration)...",
   "judge_prompt": "judge_01",
   "turns": 10,
   "exchanges": [

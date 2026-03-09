@@ -81,8 +81,8 @@ def _discover_exercises(course: str) -> list[str]:
     return numbers
 
 
-def _load_assignment_text(course: str, exercise_num: str) -> str:
-    """Load combined assignment context: course.txt + exercise_XX.txt."""
+def _load_assignment_text(course: str, exercise_num: str, turn_size: int) -> str:
+    """Load combined assignment context with turn-size metadata."""
     course_dir = _CURRICULUM_DIR / course
     course_path = course_dir / "course.txt"
     exercise_path = course_dir / f"exercise_{exercise_num}.txt"
@@ -94,7 +94,9 @@ def _load_assignment_text(course: str, exercise_num: str) -> str:
         "Course context:\n"
         f"{course_text}\n\n"
         "Exercise:\n"
-        f"{exercise_text}"
+        f"{exercise_text}\n\n"
+        "Run configuration:\n"
+        f"- Planned conversation length: {turn_size} student+tutor exchanges."
     )
 
 
@@ -205,7 +207,7 @@ def main() -> int:
 
     # --- load assignment text (course context + exercise) ---
     try:
-        assignment_text = _load_assignment_text(course, exercise_num)
+        assignment_text = _load_assignment_text(course, exercise_num, turns)
     except FileNotFoundError as e:
         print(f"Missing curriculum file: {e.filename}")
         return 1
@@ -234,6 +236,7 @@ def main() -> int:
             student_msg = get_next_student_message(
                 student_messages,
                 assignment=assignment_text,
+                turn_size=turns,
                 graph=student_graph,
             )
             student_text = student_msg.content if isinstance(student_msg.content, str) else str(student_msg.content)
@@ -280,6 +283,7 @@ def main() -> int:
         "student_persona": prompt_name,
         "course": course,
         "exercise_number": exercise_num,
+        "turn_size": turns,
         "exercise": assignment_text,
         "judge_prompt": judge_version,
         "turns": len(transcript_exchanges),

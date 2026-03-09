@@ -66,6 +66,7 @@ def load_prompt(prompt_name: str) -> str:
 class StudentBotState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
     assignment: NotRequired[str]
+    turn_size: NotRequired[int]
 
 
 def _last_message_is_tutor(state: StudentBotState) -> bool:
@@ -83,12 +84,21 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
 
         system_content = persona
         assignment = (state.get("assignment") or "").strip()
+        turn_size = state.get("turn_size")
+        turn_size_text = ""
+        if isinstance(turn_size, int) and turn_size > 0:
+            turn_size_text = (
+                "\n\nPlanned conversation length with the tutor: "
+                f"{turn_size} student+tutor exchanges."
+            )
         if assignment:
             system_content += (
                 "\n\n---\n\n"
                 "Current exercise (assignment) you are working on with the tutor:\n\n"
                 + assignment
             )
+        if turn_size_text:
+            system_content += turn_size_text
         chat_messages = [SystemMessage(content=system_content)] + list(messages)
         response = model.invoke(chat_messages)
         if not isinstance(response, BaseMessage):
@@ -141,6 +151,7 @@ def get_next_student_message(
     *,
     prompt_name: str | None = None,
     assignment: str | None = None,
+    turn_size: int | None = None,
     graph=None,
     model: ChatOpenAI | None = None,
     persona: str | None = None,
@@ -157,6 +168,8 @@ def get_next_student_message(
         ``students/personas/<prompt_name>.txt``.
     assignment : str, optional
         Assignment text the student can reference.
+    turn_size : int, optional
+        Planned number of student+tutor exchanges for this run.
     graph : optional
         Pre-built graph (skips build_graph).
     model : ChatOpenAI, optional
@@ -169,6 +182,8 @@ def get_next_student_message(
     payload: dict = {"messages": list(messages)}
     if assignment is not None:
         payload["assignment"] = assignment.strip()
+    if turn_size is not None and turn_size > 0:
+        payload["turn_size"] = turn_size
     result = graph.invoke(payload)
     out_messages = result.get("messages") or []
     if not out_messages:
