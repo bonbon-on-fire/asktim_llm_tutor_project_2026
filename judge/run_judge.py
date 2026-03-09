@@ -229,6 +229,68 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     return payload
 
 
+def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """
+    Rebuild grade payload with deterministic key ordering.
+
+    Top-level order:
+      justifications, totals/maxima, sections, remaining keys.
+    Per-section order:
+      criteria (with deductions-first criterion shape), then base/bonus totals.
+    """
+    ordered: dict[str, Any] = {}
+    ordered["justifications"] = payload.get("justifications", [])
+    ordered["total_score"] = payload.get("total_score")
+    ordered["max_score"] = payload.get("max_score")
+    ordered["total_base_score"] = payload.get("total_base_score")
+    ordered["max_base_score"] = payload.get("max_base_score")
+    ordered["total_bonus"] = payload.get("total_bonus")
+    ordered["max_bonus"] = payload.get("max_bonus")
+
+    sections_any = payload.get("sections")
+    if isinstance(sections_any, dict):
+        ordered_sections: dict[str, Any] = {}
+        for section_key in _SECTION_KEYS:
+            sec_any = sections_any.get(section_key)
+            if not isinstance(sec_any, dict):
+                continue
+
+            section_out: dict[str, Any] = {}
+            crit_any = sec_any.get("criteria")
+            if isinstance(crit_any, dict):
+                criteria_out: dict[str, Any] = {}
+                for crit_id in _SECTION_CRITERIA[section_key]:
+                    c_any = crit_any.get(crit_id)
+                    if not isinstance(c_any, dict):
+                        continue
+
+                    c_out: dict[str, Any] = {}
+                    c_out["deductions"] = c_any.get("deductions", [])
+                    c_out["score"] = c_any.get("score")
+                    c_out["max"] = c_any.get("max")
+                    c_out["name"] = c_any.get("name")
+                    for k, v in c_any.items():
+                        if k not in c_out:
+                            c_out[k] = v
+                    criteria_out[crit_id] = c_out
+                section_out["criteria"] = criteria_out
+
+            section_out["base"] = sec_any.get("base")
+            section_out["bonus"] = sec_any.get("bonus")
+            for k, v in sec_any.items():
+                if k not in section_out:
+                    section_out[k] = v
+            ordered_sections[section_key] = section_out
+        ordered["sections"] = ordered_sections
+    else:
+        ordered["sections"] = sections_any
+
+    for k, v in payload.items():
+        if k not in ordered:
+            ordered[k] = v
+    return ordered
+
+
 def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[str, Any]:
     total_score = _as_number(payload.get("total_score"), path="total_score")
     max_score = _as_number(payload.get("max_score"), path="max_score")
@@ -353,19 +415,20 @@ def _build_expected_schema() -> dict[str, Any]:
         criteria: dict[str, Any] = {}
         for crit_id in _SECTION_CRITERIA[section_key]:
             criteria[crit_id] = {
-                "name": _CRITERIA_NAME[crit_id],
-                "score": 0,
-                "max": _CRITERIA_MAX[crit_id],
                 "deductions": [
                     {"points": 1, "reason": "Short reason", "evidence_turns": [1]},
                 ],
+                "score": 0,
+                "max": _CRITERIA_MAX[crit_id],
+                "name": _CRITERIA_NAME[crit_id],
             }
         sections[section_key] = {
+            "criteria": criteria,
             "base": {"score": 0, "max": float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))},
             "bonus": {"id": _SECTION_BONUS_ID[section_key], "score": 0, "max": _MAX_BONUS_PER_SECTION},
-            "criteria": criteria,
         }
     return {
+        "justifications": ["Brief overall rationale."],
         "total_score": 0,
         "max_score": _MAX_TOTAL_SCORE,
         "total_base_score": 0,
@@ -468,7 +531,8 @@ def _create_judge_graph(*, model_name: str, api_key: str):
             parsed = _parse_json_from_model_output(out)
             parsed = _sanitize_grade_payload(parsed)
             validated = _validate_grade_payload(parsed, num_turns=int(state["num_turns"]))
-            return {"grade_json": validated, "last_error": None}
+            ordered = _order_grade_payload(validated)
+            return {"grade_json": ordered, "last_error": None}
         except JudgeError as e:
             return {"last_error": str(e), "grade_json": None}
 
@@ -556,6 +620,7 @@ def judge_transcript(
     grade_payload = dict(grade_json)
     grade_payload["model"] = {"provider": "openai", "model": model_name, "temperature": 0}
     grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
+    grade_payload = _order_grade_payload(grade_payload)
 
     transcript["grade"] = grade_payload
     transcript_path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

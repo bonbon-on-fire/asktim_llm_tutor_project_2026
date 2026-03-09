@@ -10,7 +10,8 @@ judge/
   run_judge.py         — LangGraph engine, validation, scoring logic
   README.md
   prompts/
-    judge_01.txt       — judge system prompt template (references rubric + schema)
+    judge_01.txt       — baseline judge system prompt template (references rubric + schema)
+    judge_02.txt       — structured judge prompt template (role/objective/input/function/output)
   rubrics/
     rubric_01.md       — grading rubric (deduction-based, 33 base + 12 bonus = 45 max)
 ```
@@ -19,7 +20,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 
 ## How it works
 
-1. Loads the judge system prompt from `prompts/judge_01.txt`, injecting the rubric text from `rubrics/rubric_01.md` and the expected JSON schema.
+1. Loads the selected judge system prompt from `prompts/<prompt_name>.txt`, injecting the rubric text from `rubrics/<rubric_name>.md` and the expected JSON schema.
 2. Reads a transcript JSON from `transcripts/<name>.json`.
 3. Formats the conversation and sends it to the LLM with the system prompt.
 4. Parses the LLM's JSON response, sanitizes numeric values, and validates against the schema.
