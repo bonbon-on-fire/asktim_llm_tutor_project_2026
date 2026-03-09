@@ -10,24 +10,25 @@ python -m terminal_ui
 
 ### Batch automation
 
-Run automated evaluations with explicit selections:
+Run automated evaluations using the manual config in `terminal_ui/run_batch.py`:
 
 ```
-python -m terminal_ui.run_batch ^
-  --tutor-prompt tutor_01 ^
-  --student-persona chaotic_01 ^
-  --student-persona chitchat_01 ^
-  --course-exercise philosophy:01 ^
-  --course-exercise urban_studies:02 ^
-  --judge-prompt judge_01 ^
-  --judge-rubric rubric_01 ^
-  --trials 2 ^
-  --turn-size 10
+python -m terminal_ui.run_batch
 ```
 
-This runs: selected `tutor_prompt` x selected `student_persona` list x selected
-`course:exercise_number` list x selected `judge_prompt` x selected
-`judge_rubric` x `N` trials.
+Before running, edit these lists/values directly in `run_batch.py`:
+
+- `TUTOR_PROMPTS`
+- `STUDENT_PERSONAS`
+- `COURSE_EXERCISES` (as `(course, exercise_number)` tuples)
+- `JUDGE_PROMPTS`
+- `JUDGE_RUBRICS`
+- `TRIALS`
+- `TURN_SIZE`
+
+Run matrix:
+
+`tutor_prompts x student_personas x course_exercises x judge_prompts x judge_rubrics x trials`
 
 ## Pipeline
 
