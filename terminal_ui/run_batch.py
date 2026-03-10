@@ -38,7 +38,7 @@ TUTOR_PROMPTS: list[str] = ["tutor_01"]
 
 # Add student persona names from students/personas/*.txt (without extension).
 # Example: ["chaotic_01", "chitchat_03", "clueless_02"]
-STUDENT_PERSONAS: list[str] = ["chaotic_02", "chaotic_03"]
+STUDENT_PERSONAS: list[str] = ["chitchat_01", "chitchat_02", "chitchat_03", "clueless_01", "clueless_02", "clueless_03"]
 
 # Add (course, exercise_number) tuples.
 # exercise_number should be zero-padded, e.g. "01", "02".
