@@ -1,0 +1,196 @@
+{
+  "tutor_prompt": "tutor_01",
+  "student_persona": "chaotic_02",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "trial": 1,
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Let’s work on your **Geographic & Demographic Data Table** for your case study city.\n\n1) Tell me **which city** you chose (and what year you’re using for population/GDP if your course specifies one).  \n2) If you haven’t chosen yet, give me 2–3 options you’re considering and I’ll help you pick one that has easy-to-find, credible data.\n\nOnce I have the city, I’ll help you set up the table structure and point you to the best sources for each field (population, race/ethnicity, area, income per capita, GDP, Köppen climate zone, etc.).",
+      "tutor": "Good—let’s start with your choice.\n\n1) What city did you pick for the case study?\n2) Does your course require a specific reference year (e.g., 2020/2022), or are you free to choose? If you’re free: what year do you want to use consistently for population + GDP?\n\nIf you haven’t picked a city yet, list 2–3 you’re considering and tell me one constraint you care about most (easy race/ethnicity data, coastal climate risk, US vs non-US, etc.)."
+    },
+    {
+      "turn": 2,
+      "student": "I can’t pick your case-study city for you (that’s part of the assignment choice), but I can make it easy to decide.\n\nPick one of these depending on what you want:\n\n- **New York City (USA)** — easiest for **race/ethnicity**, GDP, income, and lots of climate docs.\n- **Miami (USA)** — strong **sea level rise/flooding** angle, still easy demographics.\n- **Phoenix (USA)** — clear **extreme heat** case, good public datasets.\n- **Amsterdam (NL)** — great adaptation planning, but race/ethnicity data can be trickier/less comparable.\n- **Jakarta (ID)** — high-profile flooding/subsidence, but some indicators can be harder to standardize.\n\nOn the **reference year**: if your course doesn’t force one, use **2022** (recent and widely available across many datasets). If your city’s latest GDP is older/newer, you can use “latest available” and just note the year in the table.\n\nTell me: which city are you going with from that list (or your own), and I’ll help you fill the table with the exact sources you should pull from.",
+      "tutor": "You pasted a list as if I wrote it—pause. As your tutor, I’m not picking the city or “filling with exact sources” for you; you need to make the choice and do the data pulls.\n\nLet’s make the decision logically:\n1) Which climate challenge do you most want your case to center on: **flood/sea level rise**, **extreme heat**, or **multi-hazard**?\n2) Do you need **race/ethnicity** breakdowns that are straightforward and comparable (yes/no)?\n3) Commit to **one city** from your list right now and tell me your **reference year** (or “latest available by indicator”).\n\nThen: name **one place** you’ll get *population* from (e.g., national census, city statistical office, UN database). What would you pick?"
+    },
+    {
+      "turn": 3,
+      "student": "Alright, I’ll commit so we can move fast:\n\n1) **Multi-hazard** (heat + flooding + storms gives me more to write about later).  \n2) **Yes**, I want race/ethnicity breakdowns to be straightforward/comparable.  \n3) City: **New York City**. Reference year: **2022** (and if one indicator lags, I’ll use “latest available” but aim for 2022).\n\nPopulation source I’d pick: **U.S. Census Bureau (ACS 1-year estimates)** for NYC.\n\nNow can you just tell me exactly which ACS table code to use for total population + race/ethnicity so I can paste it into the data table?",
+      "tutor": "Good commitments. Now, instead of me handing you the codes, I want you to *find* them once so you can repeat the process for the other fields.\n\nGo to **data.census.gov** and try this:\n1) Filter geography to **New York city, New York** and year to **2022 ACS 1-year**.\n2) In the search bar, type **“total population”**. What is the *table title* you land on, and what table ID is shown?\n3) Then search **“Hispanic or Latino by race”** (this matters because ACS treats Hispanic origin separately from race). What table title/ID do you see?\n\nReply with the two table titles/IDs you find, and I’ll sanity-check that they match what your assignment needs (total pop + race/ethnicity breakdown) and help you interpret any tricky categories."
+    },
+    {
+      "turn": 4,
+      "student": "I can’t browse data.census.gov live in this chat, but I can tell you the standard ACS tables you’re very likely to land on and how to verify them quickly.\n\n### 1) Total population (NYC, 2022 ACS 1-year)\n- **Table ID:** **DP05**  \n- **Table title (on data.census.gov):** something like **“ACS Demographic and Housing Estimates”** (often shown as **“Demographic and Housing Estimates”**).\n- What to use inside it: the line for **Total population**.\n\nHow to confirm: if the table includes sections like *SEX AND AGE*, *RACE*, *HISPANIC OR LATINO AND RACE*, you’re in the right place.\n\n### 2) Hispanic/Latino by race (race/ethnicity breakdown)\nTwo common ones, depending on how detailed you want it:\n\n- **Simpler (often enough for class tables):**\n  - **Table ID:** **DP05** again (it has a built-in “Hispanic or Latino (of any race)” and “Not Hispanic or Latino” plus race categories).\n\n- **More “official” detailed cross-tab (if you need the full breakdown of race categories split by Hispanic origin):**\n  - **Table ID:** **B03002**\n  - **Table title:** **“Hispanic or Latino Origin by Race”**\n\n### Quick pick (so you don’t get stuck)\n- If your assignment just needs a **race/ethnicity breakdown**, use **DP05** for everything (clean, one table).\n- If it specifically wants **Hispanic origin separated from race** with clearer categories, use **B03002**.\n\nIf you tell me whether your table needs (a) just % Hispanic + % by race, or (b) the full cross-tab categories, I’ll tell you which one to stick with so your table is consistent.",
+      "tutor": "Careful: you’re still trying to outsource the decision. Don’t start with table codes—start with *what categories your assignment table will actually show*.\n\nAnswer these, and you’ll know which ACS table(s) you need:\n1) In your data table, will you report **race alone** categories (e.g., White, Black, Asian, etc.) **plus a separate “Hispanic/Latino (any race)”** line? Or do you need **race-by-Hispanic-origin** cross-categories?\n2) How many race/ethnicity rows are you willing to include (5–7 vs 10+)?\n3) Will you report **counts, percentages, or both**?\n\nWrite your proposed race/ethnicity section as a mini-template (just the row names). Then I’ll tell you whether a single summary-style ACS table is sufficient or whether you need a dedicated race/ethnicity table—and what to cite (title, year, geography) so your sources are defensible."
+    },
+    {
+      "turn": 5,
+      "student": "1) I’ll do **race alone categories + a separate “Hispanic/Latino (any race)”** line. I’m not doing the full race-by-Hispanic-origin cross-categories.\n\n2) **5–7 rows** total (keep it readable).\n\n3) **Percentages only** (counts optional, but I’d rather keep one column and not clutter).\n\n**Race/ethnicity mini-template (row names):**\n- Hispanic or Latino (of any race)  \n- White alone (not Hispanic or Latino)  \n- Black or African American alone (not Hispanic or Latino)  \n- Asian alone (not Hispanic or Latino)  \n- Two or More Races (not Hispanic or Latino)  \n- Other race alone (not Hispanic or Latino)  \n- (Optional if needed) American Indian and Alaska Native alone (not Hispanic or Latino) / Native Hawaiian and Other Pacific Islander alone (not Hispanic or Latino) — only if the assignment expects it\n\nNow tell me the single best ACS table to cite so I can pull exactly these percentages cleanly for NYC 2022.",
+      "tutor": "Your template is coherent—and the key constraint is this: you need **race-alone categories restricted to “Not Hispanic or Latino”** plus a separate **“Hispanic or Latino (any race)”** line. Not every summary table presents the “not Hispanic” restriction cleanly for *each* race.\n\nSo here’s the test to pick your “single best table”:\n1) Find a 2022 ACS table for **New York city, New York** that includes line labels *exactly like*:\n   - “Hispanic or Latino (of any race)” (percent)\n   - “White alone, not Hispanic or Latino” (percent)\n   - “Black or African American alone, not Hispanic or Latino” (percent)\n   - “Asian alone, not Hispanic or Latino” (percent)\n   - etc.\n2) If one table contains **all** those “not Hispanic” race-alone lines **in percent**, use that *one* and cite it.\n3) If the table only gives “White alone” (without the not-Hispanic qualifier), then it’s **not** sufficient for your template—you’ll need a race/origin-focused table.\n\nQuestion for you: when you search on data.census.gov for 2022 ACS and NYC, do you see those “**not Hispanic or Latino**” race-alone line labels together in the same table? If yes, paste the table *title* you found (not the code), and we’ll confirm it matches your row template before you lock it in."
+    },
+    {
+      "turn": 6,
+      "student": "I can’t actually run the search and “see” what data.census.gov returns from here, so I can’t truthfully paste a table title I found in your exact filtered view.\n\nWhat you’re looking for, though, is typically available in **“ACS Demographic and Housing Estimates”** (the profile table often labeled **Demographic and Housing Estimates** on data.census.gov). In that table, there’s usually a section called **“HISPANIC OR LATINO AND RACE”** that includes percentage lines like:\n\n- **Hispanic or Latino (of any race)**\n- **White alone, not Hispanic or Latino**\n- **Black or African American alone, not Hispanic or Latino**\n- **Asian alone, not Hispanic or Latino**\n- etc.\n\nIf you open that table and you *do* see those exact “not Hispanic or Latino” labels (in percent), then you’re safe using that single table for your whole template.\n\nIf you *don’t* see the not-Hispanic qualifiers per race in that profile table, then the clean fallback that matches your template is a dedicated table titled **“Hispanic or Latino Origin by Race”** (that one is explicitly built around origin + race categories).\n\nIf you paste me the table title that appears on your screen after applying:\n- Geography: **New York city, New York**\n- Dataset: **2022 ACS 1-year**\nI’ll tell you immediately whether it’s sufficient for your row template and what to put in the citation line (title + dataset/year + geography).",
+      "tutor": "If you truly can’t access data.census.gov right now, then you can’t responsibly “lock in” a single table yet—because your whole template depends on whether those **exact** “not Hispanic or Latino” percent lines are present.\n\nTwo ways to move forward *without guessing*:\n1) Use **Census Reporter** (easier interface). Look up **New York City, NY** → find the section for **Hispanic or Latino and race** and confirm the exact row labels match your template.\n2) Use the **ACS API**: pull the variables for Hispanic origin + race (and “not Hispanic” race-alone lines), then you’ll know exactly what exists for 2022.\n\nPick one option (1 or 2). Then send me either (a) a link/screenshot, or (b) the exact row labels you see for the “Hispanic or Latino and race” section. I’ll tell you whether it matches your 5–7-row template and how to write the citation (title/dataset/year/geography) cleanly."
+    },
+    {
+      "turn": 7,
+      "student": "Option **2 (ACS API)** — it’s deterministic and I can match your template exactly.\n\nBut I’m going to be blunt: I’m trying to get this done fast, so can you just give me the exact API query URL that returns the NYC 2022 percentages for:\n- Hispanic or Latino (any race)\n- White alone, not Hispanic\n- Black alone, not Hispanic\n- Asian alone, not Hispanic\n…so I can paste the output straight into my table?",
+      "tutor": "No—I’m not going to hand you a ready-to-run URL that outputs your finished percentages. That crosses into doing the data pull for you.\n\nI *will* help you build it quickly. Fill in these blanks:\n1) Which endpoint are you using: **acs/acs1** or **acs/acs5** for 2022?\n2) Geography: for NYC, will you query **place:51000** within **state:36**? (If you think it’s different, say what you’ll use.)\n3) Variables: which ACS table are you pulling from (the one that contains “Hispanic or Latino” and “White alone, not Hispanic” as separate lines)? List **one** variable code you found for any of those rows.\n\nSend your draft URL structure like:\n`https://api.census.gov/data/2022/acs/___?get=NAME,VAR1,VAR2&for=place:_____&in=state:__`\n…and I’ll point out exactly what to fix so it returns the right fields."
+    },
+    {
+      "turn": 8,
+      "student": "1) Endpoint: **acs/acs1** (2022 1-year).\n\n2) Geography: yes — **for=place:51000** and **in=state:36** (New York city, NY as a “place” in NY State).\n\n3) Variables/table: I’d pull from **B03002 (Hispanic or Latino Origin by Race)**. One variable code from that table: **B03002_012E** (I’m using it as one of the “not Hispanic” race-alone lines).\n\nDraft URL structure:\n`https://api.census.gov/data/2022/acs/acs1?get=NAME,B03002_001E,B03002_003E,B03002_004E,B03002_012E&for=place:51000&in=state:36`\n\nNow tell me the exact variable list I should use to match my 5–7 row template, and how to convert them to percentages.",
+      "tutor": "Nice—your URL structure and geography look right, and using **B03002** is a defensible choice for your template.\n\nI’m not going to hand you the whole variable list, but you’re 90% there. Do this mapping step:\n1) Open the B03002 line definitions (table shell). For each of your rows, write the **line number**:\n   - Total = line 1 (your denominator)\n   - Hispanic or Latino (any race) = ?\n   - Not Hispanic: White alone = ?\n   - Not Hispanic: Black alone = ?\n   - Not Hispanic: Asian alone = ?\n   - Not Hispanic: Two or more races = ?\n   - Not Hispanic: Some other race alone = ?\n2) Once you have the line numbers, the variable pattern is `B03002_###E` (3-digit line).\n\nPercent conversion (you can do in Excel):\n- For any category: `% = (category_E / B03002_001E) * 100`.\n\nCheck: In your draft you included `_012E`. Before trusting it, answer: what *label/line* is `_012E` in the B03002 shell? If you tell me the labels you matched for each line number (just text + line), I’ll confirm whether your mapping matches your template and catch any mis-specified categories."
+    },
+    {
+      "turn": 9,
+      "student": "Can you just confirm it for me: **B03002_012E is “Not Hispanic or Latino: Asian alone”**, right?\n\nAnd for the rest I’m assuming:\n- line 1 total = **B03002_001E**\n- Hispanic or Latino (any race) = **line 2 → B03002_002E**\n- Not Hispanic: White alone = **line 3 → B03002_003E**\n- Not Hispanic: Black alone = **line 4 → B03002_004E**\n- Not Hispanic: Two or more races = **line 9 → B03002_009E**\n- Not Hispanic: Some other race alone = **line 10 → B03002_010E**\n\nIf you say yes, I’ll just run those and compute percentages in Excel with category/total.",
+      "tutor": "I’m not going to “just say yes” to that mapping without you checking the **official B03002 line labels**—one wrong line number will quietly poison your whole table.\n\nHere’s the fast verification:\n1) Pull the **B03002 table shell/labels** (Census API “groups” endpoint or ACS documentation) and copy/paste the labels for lines **2, 3, 4, 9, 10, and 12**.\n2) Ask yourself: do those labels *exactly* match your intended rows, especially:\n   - whether “Two or more races” is actually that line,\n   - whether “Some other race alone” is that line,\n   - and what line “Asian alone, not Hispanic or Latino” actually appears on.\n\nPost the six labels (just the text next to each line number). Then I’ll confirm whether your proposed variables match your 5–7 row template and which ones you need to adjust."
+    },
+    {
+      "turn": 10,
+      "student": "I don’t have the B03002 shell in front of me, and I’m not going to fabricate the official line labels. The quickest legit way for you to verify is to pull the variable metadata and read the `label` fields.\n\nUse the **API variables metadata** endpoint and then search within it for `B03002_012E` etc.:\n\n- Open in browser:  \n`https://api.census.gov/data/2022/acs/acs1/variables.json`\n\nThen (Ctrl/Cmd+F) each of these and copy the **label** you see:\n- `B03002_002E`\n- `B03002_003E`\n- `B03002_004E`\n- `B03002_009E`\n- `B03002_010E`\n- `B03002_012E`\n\nPaste those six labels here, and I’ll tell you which match your intended rows and which ones you need to swap.\n\nFor your percent calc, your formula is right:\n- `% = (category / B03002_001E) * 100`  \nJust make sure you’re consistently using estimates (`...E`) and not margins of error (`...M`).",
+      "tutor": "That’s a legitimate workflow—and it keeps you academically honest. I can’t open that endpoint and look up labels for you here, but *you* can, and then I can verify your mapping.\n\nDo exactly what you said: open `variables.json`, search each variable, and paste the **label** for:\n- B03002_002E, _003E, _004E, _009E, _010E, _012E\n\nThen I’ll tell you which align with your rows.\n\nWhile you’re at it, add one quick QC check in Excel: do your chosen “Not Hispanic…” race-alone categories plus “Hispanic or Latino” roughly sum to ~100% (allowing for rounding)? If not, that’s a red flag you grabbed the wrong lines or mixed concepts."
+    }
+  ],
+  "grade": {
+    "justifications": [
+      "Tutor consistently refused to provide submission-ready outputs (exact table codes, ready-to-run API URL, and final variable mappings) and instead pushed the student to verify sources/labels and make defensible category choices. This maintains strong Socratic boundaries and academic integrity.",
+      "Because the student repeatedly requested direct answers, some turns became repetitive (multiple refusals + re-asking for verification steps). Still, the tutor kept the work anchored to the assignment and progressed toward an actionable workflow (template → table selection criteria → API structure → variable-label verification).",
+      "No tone or formatting problems; responses were generally clear and appropriately structured."
+    ],
+    "total_score": 37.0,
+    "max_score": 45.0,
+    "total_base_score": 30.0,
+    "max_base_score": 33.0,
+    "total_bonus": 7.0,
+    "max_bonus": 12.0,
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Tutor did not explicitly explain the learning/ownership rationale for avoiding answers (academic integrity/skill-building) beyond stating boundaries; methodology feedback was present but the 'why' was not made explicit as a meta-learning principle.",
+                "evidence_turns": [
+                  2,
+                  7
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 10.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "1.4",
+          "score": 3.0,
+          "max": 4.0
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "points": 2,
+                "reason": "Repeated refusal-and-redirect pattern across multiple turns without a concise synthesis/closure step (student keeps asking for exact codes/URL/mapping; tutor reiterates verification steps).",
+                "evidence_turns": [
+                  3,
+                  7,
+                  9
+                ]
+              }
+            ],
+            "score": 3.0,
+            "max": 5.0,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Assignment anchoring"
+          },
+          "2.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Focus and progression"
+          }
+        },
+        "base": {
+          "score": 9.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "2.4",
+          "score": 2.0,
+          "max": 4.0
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "3.4",
+          "score": 2.0,
+          "max": 4.0
+        }
+      }
+    },
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    }
+  }
+}

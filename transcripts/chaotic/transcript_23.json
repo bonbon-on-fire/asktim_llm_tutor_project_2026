@@ -1,0 +1,186 @@
+{
+  "tutor_prompt": "tutor_01",
+  "student_persona": "chaotic_03",
+  "course": "urban_studies",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nA critical component in understanding how your case study city is performing in regards to climate adaptation and mitigation actions is recognizing who the key decision-making actors are in climate resilience work. Identify and analyze key decision-makers involved in climate action in your case study city.\n\nTask\nCreate a Decision-making Actors Table that maps:\n• Who's leading climate resilience work\n• Who's engaged in current efforts\n• Who's missing from climate strategies\n\nActor Types to Consider:\n• City/state government officials\n• Private sector leaders\n• Academic researchers\n• Community advocates\n• Affected residents (organized and unorganized)\n\nDeliverable\nDiscuss your findings in the course forum (no table submission required). Focus on which sectors are most active and identify gaps in participation.\n\nHow This Supports Your Work\nThis Decision-making Actors Table will support further work you undertake in mapping how actors are related to specific actions and if and how they are working together in these action efforts.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "trial": 1,
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "We can work on your **Decision-making Actors Table** for the case study city you chose.\n\nTo get started, tell me:\n1) **Which city** is your case study?  \n2) Are you focusing more on **adaptation**, **mitigation**, or both?  \n3) Do you already have **any actors** (a city department, mayor’s office, utility, NGO) in mind?\n\nOnce I have that, I’ll help you map:\n- who’s leading,\n- who’s engaged,\n- who’s missing / underrepresented,\nand turn it into a clean forum-ready summary.",
+      "tutor": "Good—let’s do it, but I need *your* case details first.\n\n1) What’s your **case study city**?\n2) In 1 sentence, what’s the city’s **top climate risk** (e.g., heat, flooding, wildfire, sea-level rise) and does that push you more toward **adaptation**, **mitigation**, or **both**?\n3) Name **3 specific actors** you already know are involved (even if you’re not sure): one **government**, one **private/utility**, and one **community/NGO**.\n\nThen we’ll sort them into: **leading vs engaged vs missing**, and I’ll ask you to justify each with a concrete clue (plan name, department mandate, budget program, etc.)."
+    },
+    {
+      "turn": 2,
+      "student": "I don’t have a “case study city” of my own for your course—yours should be the one we build the actors table around. Pick one of these options:\n\n- Tell me your chosen city, or  \n- If you haven’t chosen yet, I can suggest a short list (e.g., Miami, Rotterdam, Phoenix, Jakarta, Cape Town) and you pick.\n\nOnce you name the city, answer these (quick bullets are fine):\n\n1) **Top climate risk** for that city + whether your focus is **adaptation, mitigation, or both**  \n2) **3 actors you already know** (even tentative):  \n   - **Government** (specific office/department if possible)  \n   - **Private/utility** (company/utility name)  \n   - **Community/NGO** (organization name)\n\nIf you don’t know any actors yet, say so and I’ll help you identify candidates *without* inventing facts—by pointing you to the typical places to look (city climate plan, resilience office, utility IRP, NGO coalition lists) and drafting a table template you can fill with sources.",
+      "tutor": "I can’t pick the city *for you*—that’s a core choice in your assignment, and you need ownership of it. I *can* make it easy to decide.\n\nChoose **one** city from this shortlist (so we can move forward today): **Miami, Rotterdam, Phoenix, Jakarta, Cape Town**. Which one do you pick?\n\nAfter you pick, do this quick scavenger step (no guessing):\n1) Find the city’s **climate action / resilience plan** (or equivalent). What’s the **#1 stated risk** it highlights?\n2) From that same source, list **one named lead agency/office** (who is responsible).\n\nIf you can’t find the plan in 5 minutes, tell me which city you chose and paste the first link you found (even if it’s messy). Then I’ll help you extract: **leading / engaged / missing**—but you’ll supply the evidence snippets."
+    },
+    {
+      "turn": 3,
+      "student": "Pick **Miami**.\n\nNow do the 5‑minute scavenger and paste what you find:\n\n1) Link to Miami’s **climate action / resilience plan** (or official program page).\n2) The plan’s **#1 stated risk** (quote the exact phrase/sentence if possible).\n3) **One named lead agency/office** responsible (again, quote the line that names them).\n\nIf you can’t find the plan fast, paste the first official-looking link you hit and I’ll tell you exactly where in it to look for (2) and (3).",
+      "tutor": "No—*you* need to do the scavenger step. If I fetch links/quotes for you, I’d be doing the assignment work instead of tutoring.\n\nHere’s exactly how to find it fast (pick ONE route):\n\n**Route A (City of Miami):**\n- Google: `site:miamigov.com climate action plan` OR `site:miamigov.com resilience plan` OR `Miami Forever Carbon Neutral`\n- Open the most official result (miamigov.com). Look for headings like **“Resilience,” “Sustainability,” “Climate Action.”**\n\n**Route B (Miami-Dade / regional):**\n- Google: `site:miamidade.gov climate action plan` or `Greater Miami and the Beaches Climate Action Plan`\n\nWhen you open the plan/page, use **Ctrl+F** for:\n- **“risk” “flood” “sea level rise” “heat” “vulnerability”** (to locate the top risk language)\n- **“lead” “responsible” “Office of” “Department of” “implementation”** (to find who’s in charge)\n\nNow send me 3 things (copy/paste, even if rough):\n1) The **URL** you’re using\n2) The **exact sentence** that states the main risk (or the closest sentence you can find)\n3) The **exact line** that names the lead office/department (or the section title where responsibilities are assigned)\n\nIf you paste just the URL first, I’ll tell you what keywords to search *within that document* to extract (2) and (3)."
+    },
+    {
+      "turn": 4,
+      "student": "I can’t browse the web or open links from Google in real time, so I can’t do that scavenger step myself.\n\nWhat I *can* do right now is make this painless for you:\n\n### Option 1 (fastest): you paste *anything* you have\nPaste **one** of the following and I’ll extract (risk + lead office) and turn it into **leading / engaged / missing** prompts:\n- the URL you found, **plus** the page text around the relevant section, or\n- a screenshot of the page (image works), or\n- 5–10 lines copied from the plan’s intro/executive summary.\n\n### Option 2: if you truly can’t fetch anything\nThen we switch to a **generic Miami actors table template** (clearly labeled “to be confirmed”) and you later replace placeholders with evidence from the plan. I can’t responsibly invent the official “#1 stated risk” sentence or name a lead agency without a source snippet.\n\nTell me which option you want, and if you choose Option 1, paste the first chunk you find (even messy).",
+      "tutor": "Option 2 it is—**but you’ll fill it with placeholders you can verify later**, not with “facts.” I won’t invent Miami’s official #1 risk sentence or a lead office.\n\nTo build the template, answer these (quick bullets):\n1) For Miami, are you leaning **adaptation**, **mitigation**, or **both**? Pick one.\n2) List **two climate impacts** you *expect* are central (e.g., coastal flooding/sea-level rise, extreme heat, storms). Label them “hypothesis.”\n3) For each actor type below, name **one candidate** (even generic), or write “unknown”:\n- **City government lead** (e.g., “city resilience/sustainability office”)\n- **Infrastructure/utility** (e.g., “electric utility,” “water & sewer”)\n- **County/regional body** (e.g., “county resilience planning”)\n- **Community/NGO** (e.g., “neighborhood coalition,” “housing justice org”)\n- **Private sector** (e.g., “real estate/tourism/port business group”)\n- **Academic** (e.g., “local university climate center”)\n\nThen I’ll turn your list into a clean **Leading / Engaged / Missing** table *with columns for ‘evidence needed’* so you know exactly what to confirm once you can access sources."
+    },
+    {
+      "turn": 5,
+      "student": "1) Focus: **both** (mitigation + adaptation).\n\n2) Hypothesis impacts (to confirm):\n- **Sea-level rise / coastal flooding** (incl. tidal flooding, storm surge).\n- **Extreme heat** (plus associated public health stress).\n\n3) Candidate actors (placeholders to verify later):\n- **City government lead:** *City sustainability/resilience office (unknown exact name)*  \n- **Infrastructure/utility:** *Electric utility serving Miami (unknown specific utility)*; *water & sewer utility/department (unknown exact name)*  \n- **County/regional body:** *Miami-Dade County resilience/sustainability office or planning department (unknown exact name)*  \n- **Community/NGO:** *Neighborhood-based climate justice / housing resilience coalition (unknown specific org)*  \n- **Private sector:** *Real estate + tourism/hospitality sector association; port/物流 business group (unknown specific orgs)*  \n- **Academic:** *Local university climate/sea-level research center (e.g., UM/FIU-type; unknown exact unit)*\n\nIf you want, I’ll now format this into a **Leading / Engaged / Missing** table with an **“evidence needed”** column (e.g., “named as lead implementer in plan,” “budget line item,” “MOU/partnership,” “member of steering committee”).",
+      "tutor": "Good—this is workable. Before we “format,” you need to *decide your classification rules*.\n\n1) What’s your test for **LEADING** vs **ENGAGED**? (Pick 1–2 criteria, e.g., “named implementer + controls budget” for leading; “partner/consulted” for engaged.)\n\n2) Using your own criteria, place these *placeholders* into the three buckets (just letters is fine):\nA City sustainability/resilience office\nB Electric utility\nC Water & sewer\nD County resilience/planning\nE Community climate justice/housing coalition\nF Real estate/tourism/port business groups\nG University research center\n\n3) For the **MISSING** bucket: missing *from what*? Participation in (i) plan drafting, (ii) implementation, or (iii) funding decisions—choose one to focus on.\n\nReply with your bucket choices + criteria, and I’ll help you tighten it into a forum-ready “most active sectors + gaps” narrative without turning it into a completed submission for you."
+    },
+    {
+      "turn": 6,
+      "student": "1) Classification rules  \n- **LEADING** = explicitly accountable for implementing actions (named “lead/owner” in a plan or mandate) **and/or** controls key decision levers (budget, capital planning, permitting/regulation).  \n- **ENGAGED** = participates as a partner/stakeholder (consulted, provides data/technical support, pilot projects, advocacy) but isn’t the primary accountable implementer.\n\n2) Buckets (using those criteria; placeholders, to be verified)  \n- **LEADING:** A (city sustainability/resilience office), D (county resilience/planning), C (water & sewer)  \n- **ENGAGED:** B (electric utility), E (community climate justice/housing coalition), G (university research center), F (real estate/tourism/port groups)  \n- **MISSING:** none assigned yet (since we haven’t compared against evidence)\n\n3) “Missing” focus  \n- Focus on **(ii) implementation** participation (who has a seat at the table once projects, zoning changes, and infrastructure investments are actually executed).",
+      "tutor": "Your criteria are strong. Now you need a **“missing/underrepresented in implementation”** claim.\n\nImplementation happens through specific arenas. Pick **one arena** for Miami and answer the questions:\n- **Capital infrastructure projects** (stormwater, pumps, seawalls, cooling centers)\n- **Land-use/zoning + building codes**\n- **Public health/emergency management operations**\n\nFor your chosen arena:\n1) Which **2 groups are most affected** (think renters, low-income homeowners, outdoor workers, elderly, undocumented residents, small businesses)?\n2) Which of those groups are **least likely to have decision power** once budgets/contracts/zoning are set?\n3) What *actor form* would represent them in implementation (tenant union, neighborhood association, labor org, public health clinic network, etc.)?\n\nWrite 3–4 lines starting: “In implementation, the most active sectors are ___; a key gap is ___ because ___.” Keep it placeholder-based for now."
+    },
+    {
+      "turn": 7,
+      "student": "**Arena:** Land-use/zoning + building codes\n\n1) **Most affected (hypothesis):**  \n- **Renters** in low-lying or poorly insulated buildings (costs, displacement, heat exposure).  \n- **Low-income homeowners** (retrofit costs, insurance/financing constraints, code compliance burdens).\n\n2) **Least decision power once rules are set:**  \n- **Renters** (indirect influence; decisions mediated by landlords/developers and zoning hearings).\n\n3) **Actor form to represent them in implementation:**  \n- **Tenant union/tenants’ rights org** and **neighborhood-based housing justice coalition** (plus legal aid / community development orgs).\n\n**3–4 line gap claim (placeholder-based):**  \nIn implementation, the most active sectors are **city/county planning + resilience offices and property/infrastructure stakeholders**; a key gap is **organized renter representation** because **zoning, code enforcement, and redevelopment decisions can shift costs and displacement risk onto tenants without them having standing power in permitting and compliance pathways**. A practical missing actor form is a **tenant union/tenants’ rights coalition (possibly paired with legal aid/community development groups)** to participate in implementation decisions and accountability.",
+      "tutor": "This is solid. Two upgrades will make it much more persuasive:\n\n1) When you say “implementation decisions,” name **2 concrete decision points** in zoning/building-code work (e.g., variance approvals? upzoning/re-zoning hearings? code enforcement priorities? permitting timelines? resiliency standard adoption?). Which two do you mean?\n\n2) Tighten “property/infrastructure stakeholders” into **specific actor categories**: is it mainly **developers/landlords**, **real-estate associations**, **lenders/insurers**, or **contractors**?\n\n3) Add an **evidence-to-confirm** mini-list (3 bullets) you’ll look for later, like:\n- “lead/owner” column in plan implementation table\n- membership list of a resilience/zoning task force\n- public meeting minutes showing who testified/served\n\nReply with those, and you’ll have a clean forum-ready paragraph."
+    },
+    {
+      "turn": 8,
+      "student": "1) Two concrete “implementation decision points” (zoning/building-code arena)  \n- **Rezoning/upzoning and conditional-use approvals** (incl. planning board/city commission hearings where projects get approved/modified).  \n- **Variance and special-exception decisions** tied to elevation, setbacks, parking, floodplain requirements, or redevelopment standards (where resilience requirements can be strengthened or waived).\n\n2) More specific “property/infrastructure stakeholders” (actor categories)  \n- Primarily **developers/landlords/property owners** and their **real-estate industry associations** (often joined by **lenders/insurers** when feasibility, insurance eligibility, and financing terms shape what actually gets built).\n\n3) Evidence-to-confirm later (mini-list)  \n- An official plan/program document that names a **lead/owner** for zoning/code resilience actions (implementation table, responsible department, or ordinance sponsor).  \n- **Task force/committee membership list** (resilience, floodplain management, zoning advisory group) showing which sectors had seats.  \n- **Public hearing agendas/minutes/testimony logs** for rezoning/variance items indicating who regularly participates (developers/attorneys vs tenant/community reps).",
+      "tutor": "Now assemble it into a forum post draft (don’t overthink—aim ~150–220 words). Use this fill-in outline and paste your attempt:\n\n**Paragraph 1 (who’s leading/engaged):**\n- “In Miami, climate action in the **zoning/building-code implementation** arena appears led by **[A,D,C placeholders]** (to be confirmed), with engagement from **[B,F,G,E placeholders]**…”\n\n**Paragraph 2 (gap + why it matters):**\n- Name your two decision points: **rezoning/conditional-use** + **variances/special exceptions**.\n- State the gap: **organized renter representation**.\n- Mechanism: costs/displacement/heat risk shifted to tenants.\n\n**Bullets (evidence I will verify later):**\n- Lead/owner naming\n- Committee membership\n- Hearing minutes/testimony patterns\n\nBefore you paste: in one line, where do you put **tenant unions/legal aid** in your table—“missing” or “engaged but underpowered”? Explain why."
+    },
+    {
+      "turn": 9,
+      "student": "**Tenant unions/legal aid placement:** **Missing (for implementation)** — they may show up episodically in consultations, but they’re typically not institutionalized as decision-makers in rezoning/variance workflows or implementation governance.\n\n**Forum post draft (~180–210 words)**\n\nIn Miami, climate action in the **zoning/building-code implementation** arena appears led by **A (city sustainability/resilience office), D (county resilience/planning), and C (water & sewer)** (placeholders to be confirmed), with engagement from **B (electric utility), F (developers/landlords and real-estate business groups), G (university research center), and E (community climate justice/housing coalition)**. This suggests governance is anchored in public-sector planning/implementation functions, with technical input from utilities and universities and strong participation from property-market actors.\n\nA key participation gap in implementation is **organized renter representation**—especially at two concrete decision points: **(1) rezoning/upzoning and conditional-use approvals** and **(2) variance/special-exception decisions** that can strengthen or waive resilience-related requirements (e.g., flood/heat standards). When renters lack organized decision power in these processes, resilience measures and redevelopment can **shift costs and risks onto tenants** (higher rents after retrofits, displacement pressures, and continued exposure to heat in underinvested buildings). A missing/underrepresented actor form to correct this is a **tenant union/tenants’ rights coalition, potentially partnered with legal aid** to sustain participation through permitting and enforcement.\n\n**Evidence I will verify later**\n- Plan/ordinance language naming **lead/owner** for zoning/code resilience actions  \n- **Committee/task force membership** lists (who has seats)  \n- **Hearing minutes/testimony** patterns for rezoning/variance cases (who shows up consistently)",
+      "tutor": "This draft is very good: clear arena, specific decision points, and a well-argued “missing in implementation” gap.\n\nTwo targeted revisions to make it more defensible:\n1) Your “led by A/D/C” sentence could be read as a factual claim. How can you rewrite it to signal **hypothesis** more explicitly (e.g., “likely led by…” / “often led by planning/code offices…”), *without* weakening it?\n\n2) Add **one more ‘missing/underpowered’ group** besides renters to show you checked the landscape. In zoning/code implementation, who else is routinely affected but not seated—e.g., **small landlords**, **informal/outdoor workers**, **public health**, **code enforcement frontline staff**, **disability/elder advocates**? Pick one and add a single sentence: “Another gap is ___ because ___.”\n\nMake those two edits and paste the revised version."
+    },
+    {
+      "turn": 10,
+      "student": "In Miami, climate action in the **zoning/building-code implementation** arena is **likely** led by **A (city sustainability/resilience office), D (county resilience/planning), and C (water & sewer)** (placeholders to be confirmed), with engagement from **B (electric utility), F (developers/landlords and real-estate business groups), G (university research center), and E (community climate justice/housing coalition)**. This suggests governance is anchored in public-sector planning/implementation functions, with technical input from utilities and universities and strong participation from property-market actors.\n\nA key participation gap in implementation is **organized renter representation**—especially at two concrete decision points: **(1) rezoning/upzoning and conditional-use approvals** and **(2) variance/special-exception decisions** that can strengthen or waive resilience-related requirements (e.g., flood/heat standards). When renters lack organized decision power in these processes, resilience measures and redevelopment can **shift costs and risks onto tenants** (higher rents after retrofits, displacement pressures, and continued exposure to heat in underinvested buildings). A missing/underrepresented actor form to correct this is a **tenant union/tenants’ rights coalition, potentially partnered with legal aid** to sustain participation through permitting and enforcement. **Another gap is disability/elder advocates because code and redevelopment choices (cooling access, elevator reliability, walkability, evacuation constraints) can disproportionately impact these residents without consistent representation in zoning and variance deliberations.**\n\n**Evidence I will verify later**\n- Plan/ordinance language naming **lead/owner** for zoning/code resilience actions  \n- **Committee/task force membership** lists (who has seats)  \n- **Hearing minutes/testimony** patterns for rezoning/variance cases (who shows up consistently)",
+      "tutor": "This is forum-ready. Last check (answer in 2–3 bullets):\n\n1) If a reader asks “So **who’s leading, who’s engaged, who’s missing**?”—which exact phrases in your post point to each of those three?\n\n2) Do you want to keep the **A/B/C letters**? Many forums read better if you replace letters with plain labels (e.g., “city resilience/sustainability office”). Which way will you post it?\n\n3) What’s the **first evidence item** you’ll verify when you regain access (plan lead/owner table, committee roster, or hearing minutes)—and why that one first?\n\nReply with those, and you’re done with this exercise."
+    }
+  ],
+  "grade": {
+    "justifications": [
+      "Tutor maintained strong guided-discovery boundaries, repeatedly requiring the student to supply inputs and reasoning rather than providing ready-made factual content.",
+      "Dialogue showed clear progression from choosing a city to defining classification criteria, identifying a 'missing' claim, and producing a forum-ready draft with an evidence-to-verify plan.",
+      "Minor deduction only where the tutor’s refusal to fetch links/quotes for a student who stated they cannot browse may have been overly rigid given the rubric’s tutoring goals, though the tutor did offer a viable placeholder-based alternative."
+    ],
+    "total_score": 42.0,
+    "max_score": 45.0,
+    "total_base_score": 32.0,
+    "max_base_score": 33.0,
+    "total_bonus": 10.0,
+    "max_bonus": 12.0,
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "1.4",
+          "score": 4.0,
+          "max": 4.0
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Assignment anchoring"
+          },
+          "2.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Focus and progression"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "2.4",
+          "score": 3.0,
+          "max": 4.0
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Tutor response was somewhat rigid when the student stated they could not browse; could have acknowledged the constraint more supportively while still maintaining academic-integrity boundaries.",
+                "evidence_turns": [
+                  3,
+                  4
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 10.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "3.4",
+          "score": 3.0,
+          "max": 4.0
+        }
+      }
+    },
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    }
+  }
+}
