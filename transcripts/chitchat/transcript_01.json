@@ -1,0 +1,193 @@
+{
+  "tutor_prompt": "tutor_01",
+  "student_persona": "chitchat_01",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "trial": 1,
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Let’s work on your **Geographic & Demographic Data Table** for your case study city.\n\n1) What **city** did you choose (and country/region)?  \n2) Do you already have any sources you’re using (city stats office, census, World Bank, etc.)?\n\nOnce I have the city, I can help you set up the table structure and track down the right metrics: location, population, race/ethnicity (if available), land area, income per capita, GDP, and Köppen climate zone.",
+      "tutor": "Good—before we build the table, we need two basics.\n\n1) What city did you choose (city + country/region)?\n2) What sources do you have so far (even if it’s just one link)?\n\nThen: for your city, which *one* source do you think is most authoritative for **population** (national census vs. city statistical yearbook vs. UN/World Bank), and why?"
+    },
+    {
+      "turn": 2,
+      "student": "I’ll use **Boston, Massachusetts, USA** as my case study city.\n\n1) **City + country/region:** Boston, MA, United States (Northeastern US / New England).  \n2) **Sources so far:**  \n   - **U.S. Census Bureau / American Community Survey (ACS)** (for population and demographics)  \n   - **City of Boston / Boston Planning & Development Agency (BPDA)** data pages (city profiles, planning context)  \n   - **NOAA climate normals** (for climate context that helps with Köppen classification)\n\nMost authoritative single source for **population**: **U.S. Census Bureau (Decennial Census/ACS)**, because it’s the official national statistical agency with standardized definitions and consistent methods, and it’s the baseline most other datasets (city reports, UN compilations) reference or derive from.",
+      "tutor": "Good choices—and your reasoning on Census/ACS as the baseline is solid.\n\nNext step (this is where students often mess up): what *geographic unit* are you using for every metric—**Boston city proper** (the municipal boundary), or a **metro area** (like Greater Boston)? Pick one and stick to it.\n\n1) Which one will you use, and why is it the best fit for this course table?\n2) What **reference year** will you use across the table (e.g., 2022 ACS 1-year, 2020 Decennial, etc.)?\n\nOnce you answer, draft your table header like this (just the column names): **Metric | Value | Year | Geography definition | Source link | Notes**. Then tell me which two rows you want to fill first (population, land area, race/ethnicity, income per capita, GDP, Köppen zone)."
+    },
+    {
+      "turn": 3,
+      "student": "1) **Geographic unit:** **Boston city proper (municipal boundary).**  \n**Why:** The course table is about existing urban conditions in a specific city; using the municipal boundary keeps metrics consistent with city governance, services, and many climate action policies (e.g., city climate plans, zoning, infrastructure). Metro-area metrics can be useful later, but they mix multiple jurisdictions.\n\n2) **Reference year:** **2022 ACS 1-year** as the default reference year for socio-demographic and income variables, because it’s recent and internally consistent across many indicators. For anything not available in ACS (e.g., Köppen zone), I’ll cite the most recent/source-appropriate year and note it.\n\n**Table header (columns):**  \n**Metric | Value | Year | Geography definition | Source link | Notes**\n\n**Two rows to fill first:** **Population** and **Land area**.",
+      "tutor": "Nice—city proper + a default year will keep your table clean.\n\nLet’s lock down the *exact* definitions for your first two rows:\n\n**1) Population**\n- When you say “population,” do you mean **total resident population** of Boston city (not daytime/commuter)?\n- In ACS, which product will you use: **ACS 1-year profile (DP)**, **detailed table (B01003)**, or something else? Why that one?\n\n**2) Land area**\n- Do you want **land area only**, or **total area (land + water)**? (Many cities look “bigger” if you include water—Boston definitely does.)\n- Where will you pull area from: **Census Gazetteer/Geography** or a City/BPDA GIS source?\n\nYour task: reply with (a) the specific ACS table/field you’ll cite for population, and (b) the exact unit you’ll use for land area (sq mi vs km²) + the source type you plan to use. Then we’ll make sure your citations will be reproducible."
+    },
+    {
+      "turn": 4,
+      "student": "**1) Population**\n- Yes: **total resident population** (usual residents of Boston city proper; not daytime/commuter population).\n- **ACS product/table to cite:** **ACS 1-year Detailed Table `B01003` (Total Population)** — specifically the estimate for **`B01003_001E`**.  \n  **Why:** it’s the cleanest single-variable “total population” measure and is straightforward to reproduce and cite (vs. profile tables, which are more summarized).\n\n**2) Land area**\n- I’ll use **land area only** (to avoid Boston’s harbor/water area inflating the “size” and to keep density-style comparisons sensible).\n- **Unit:** **square miles (sq mi)** as the primary unit (I can add km² in Notes if needed).\n- **Source type:** **U.S. Census Bureau geography** (e.g., **Gazetteer** or official Census geography/area values), since it’s standardized and replicable.",
+      "tutor": "Great—those are defensible choices.\n\nNow make it reproducible and internally consistent:\n\n1) **Population (B01003_001E):** When you pull it, what **ACS vintage** will you use (2022 **1-year** vs **5-year**), and what’s your reason if 1-year isn’t available for that geography in your tool?\n\n2) **Land area:** Which **Gazetteer/geo vintage year** will you use for Boston’s land area, and will you record the **geography ID/name** exactly as shown (e.g., “Boston city, Massachusetts”)?\n\n3) **Sanity check:** After you have both numbers, compute a quick **population density** (population ÷ land sq mi). Does the result seem plausible for Boston (order-of-magnitude check)?\n\nReply with:\n- the **two source links** you used (one for B01003 and one for area),\n- the **value + year** you got for each row,\n- and your quick density check result."
+    },
+    {
+      "turn": 5,
+      "student": "I can’t pull live numbers or generate “the two source links you used” from here without web access in this chat. If you paste your two links (or the values you see), I’ll do the density check and help you format the rows perfectly.\n\nWhat you should use (reproducible choices):\n\n1) **Population (B01003_001E) vintage**\n- Use **ACS 2022 1-year** *if* your tool provides it for **Boston city, MA** (it should, because Boston’s population is well above the 65k threshold).\n- If your interface doesn’t show 1-year (some portals default to 5-year), use **ACS 2022 5-year** and note: “5-year used for availability/consistency in tool.”\n\n**Source link (population):** data.census.gov → Table **B01003** for **Boston city, Massachusetts** (pick 2022 1-year or 2022 5-year).\n\n2) **Land area vintage + geography name**\n- Use the **most recent Census Gazetteer “Places”** vintage (often aligned with the latest geography, e.g., 2023 or 2024 file release) and record the name exactly as shown: **“Boston city, Massachusetts”** plus any GEOID provided.\n- Yes, record the **GEOID/name exactly** for reproducibility.\n\n**Source link (area):** Census **Gazetteer “Places”** file/page where “Boston city, MA” lists **ALAND** (land area) and its sq mi conversion.\n\n3) **Sanity check (density)**\n- Compute: **density = population ÷ land area (sq mi)**.  \n- Plausibility check: Boston should come out on the order of **~10,000–20,000 people/sq mi** (if you’re getting ~1,000 or ~100,000, something’s likely off—wrong geography or included water area).\n\nIf you paste:\n- the **population value** you see for **B01003_001E** (and whether it’s 2022 1-year or 5-year),\n- the **land area (sq mi)** from the Gazetteer line for Boston,\n- and the two URLs,\nI’ll return the two completed rows + the computed density and a quick “looks plausible / doesn’t” verdict.",
+      "tutor": "You’re trying to hand me the driver’s seat—can’t do that. As your tutor, I won’t fetch links/values or “return completed rows.” You can absolutely do this part; my job is to help you choose, verify, and document it.\n\nDo this and paste back what you find:\n\n1) In **data.census.gov**, pull **B01003** for **“Boston city, Massachusetts”**. What **year/product** does the page show (2022 1-year or 2022 5-year), and what’s the **estimate for B01003_001E**?\n\n2) In the **Census Gazetteer (Places)** for the vintage you choose, find Boston’s **ALAND** and the **land area in sq mi** (some tables already give sq mi; if not, note the unit shown). What vintage year did you pick?\n\n3) Before I check it: you compute **density = population ÷ land sq mi**. What number do you get, and does it fall in your own plausibility band?\n\nPaste: the two numbers, the two URLs, and your computed density. Then I’ll critique your sourcing/citation format and sanity-check your density."
+    },
+    {
+      "turn": 6,
+      "student": "I can’t paste back what “I find” on data.census.gov or the Gazetteer because I don’t have browsing in this chat, and I also won’t fabricate URLs/values.\n\nWhat I *can* do right now is make sure your workflow is correct and tell you exactly what to paste so I can sanity-check it immediately:\n\n### 1) Population (data.census.gov)\n- Geography: **Boston city, Massachusetts**\n- Table: **B01003**\n- Capture and paste back:\n  - **ACS vintage/product** shown on the page (e.g., **2022 ACS 1-year** or **2022 ACS 5-year**)\n  - The **estimate** for **B01003_001E (Total population)**  \n  - The **URL** from your browser address bar\n\n### 2) Land area (Census Gazetteer – Places)\n- Pick one vintage and stick to it (most recent available is fine).\n- Find the row for **Boston city, MA** and paste back:\n  - **Vintage year** (e.g., Gazetteer Places 2023, etc.)\n  - The **land area value** as reported (often **ALAND** in m²) *and/or* the **land area in square miles** if provided\n  - The **URL** of the Gazetteer page/file you used\n\n### 3) Density (you compute)\nUse:\n- If you have **ALAND in m²** only:  \n  - land_sqmi = ALAND / 2,589,988.110336  \n  - density = population / land_sqmi\n- If you already have **land_sqmi**, then:  \n  - density = population / land_sqmi\n\nPaste back in this exact format (fill in blanks):\n\n- Population source URL: …\n- ACS year/product: …\n- B01003_001E value: …\n\n- Area source URL: …\n- Gazetteer vintage: …\n- ALAND (unit shown): …\n- Land area (sq mi, if you computed it): …\n\n- Density (people/sq mi): …\n- Your plausibility take (too low/ok/too high): …\n\nOnce you paste those, I’ll (a) verify the density math, (b) flag any geography/year mismatches, and (c) suggest a clean citation/notes line for each row.",
+      "tutor": "You’re over-focusing on “browsing in this chat.” You don’t need browsing *here*—you need to open those pages in your normal browser, then paste the outputs into the chat. That’s the workflow.\n\nTwo decision questions before you go collect:\n1) If you end up with **2022 ACS 1-year** for population but your Gazetteer is **2023/2024**, is that mismatch acceptable for *this* table? What will you write in **Notes** to justify it?\n2) For land area, will you report **(a) ALAND in m²**, **(b) converted sq mi**, or **(c) both (one in Value, one in Notes)**? Pick one.\n\nNow do a 5-minute data grab and paste exactly this (no extra text):\n- Population URL + ACS product/year + B01003_001E\n- Gazetteer URL + vintage year + ALAND (as shown) + land sq mi (as shown or computed)\n- Your computed density\n\nThen I’ll challenge-check your density and citations for consistency."
+    },
+    {
+      "turn": 7,
+      "student": "1) Yes, a **2022 ACS (population)** paired with a **2023/2024 Gazetteer (land area)** is acceptable for this table, because land area changes slowly and is essentially a boundary/measurement metadata item rather than a time-sensitive socioeconomic indicator.  \n**Notes text:** “Population from ACS 2022 (1-year). Land area from Census Gazetteer [vintage year]; area used as standardized geographic reference—minor vintage differences unlikely to affect results materially.”\n\n2) I’ll report **(c) both**: put **land area in sq mi** in the **Value** column (most interpretable), and include **ALAND (m²)** in **Notes** for reproducibility (plus the conversion factor if I compute it).\n\nI can’t do the “5-minute data grab” myself from outside this chat environment. If you paste the population and area values/URLs you obtain, I’ll immediately compute/verify density and critique citation consistency exactly as you requested.",
+      "tutor": "Your Notes logic is fine. But I’m not going to paste numbers/URLs for you—that’s you outsourcing the core data-gathering step, and I also don’t have live browsing here.\n\nSo what access do you *actually* have right now?\n- A browser on another device?\n- Any downloaded PDFs/screenshots of the Census/Gazetteer pages?\n- Can you access a library database or city PDF that already lists **population** and **land area**?\n\nPick one option and tell me which. If you can use any browser at all, your next action is simple: open **data.census.gov → B01003 → Boston city, MA**, copy the estimate + URL, then do the same for the Gazetteer. If you truly have zero web access, we’ll switch to planning the table structure and placeholders until you can collect the two values."
+    },
+    {
+      "turn": 8,
+      "student": "I don’t have access to an external browser, another device, library databases, or your local files/screenshots from within this chat. So effectively: **zero web access** here.\n\nGiven that, the productive next step is to **plan the table with placeholders** and a tight data-collection checklist you can execute when you do have access. Here’s what to set up now:\n\n**Row 1 (Population) placeholder**\n- Metric: Total resident population  \n- Value: ___  \n- Year: 2022 (ACS 1-year preferred; else 2022 5-year)  \n- Geography definition: Boston city, Massachusetts (city proper)  \n- Source link: ___ (data.census.gov, table B01003)  \n- Notes: “B01003_001E (Total population).”\n\n**Row 2 (Land area) placeholder**\n- Metric: Land area (sq mi)  \n- Value: ___  \n- Year: Gazetteer vintage ___  \n- Geography definition: Boston city, Massachusetts (city proper; GEOID ___ if shown)  \n- Source link: ___ (Census Gazetteer Places)  \n- Notes: “ALAND = ___ m²; converted to sq mi using 1 sq mi = 2,589,988.110336 m² (if needed).”\n\nWhen you *can* browse, collect exactly:\n- From data.census.gov: **ACS year/product + B01003_001E + URL**\n- From Gazetteer: **vintage year + ALAND and/or land sq mi + URL**\n- Then compute density.\n\nIf you tell me what access you’ll have later (phone/laptop) and whether your instructor prefers ACS 1-year vs 5-year, I’ll tailor the checklist to the exact clicks/fields to copy.",
+      "tutor": "This is the right pivot. Your two placeholder rows are well-structured.\n\nNow, to keep momentum, extend the same placeholder approach to the *remaining required metrics* (race/ethnicity breakdown, physical area, income per capita, GDP, Köppen zone).\n\nTwo guiding questions to decide your schema:\n1) For **race/ethnicity**, what categories will you use so they match ACS cleanly (e.g., “Hispanic or Latino (any race)” separate from race)? List the 4–6 rows you plan.\n2) For **GDP** at *city proper*, what will you do if there’s no official “Boston city GDP”? Will you (a) use **metro GDP** and clearly label it, or (b) use a **proxy** (like city budget/GRP alternative) and justify?\n\nAction: paste a draft list of all table rows (just the Metric names + intended source in parentheses). I’ll critique for completeness and consistency with your ‘city proper’ choice."
+    },
+    {
+      "turn": 9,
+      "student": "### 1) Race/ethnicity categories (ACS-clean)\nI’ll use ACS categories that map directly to standard tables and handle ethnicity separately from race:\n\n1. **Hispanic or Latino (of any race)**  \n2. **Not Hispanic or Latino: White alone**  \n3. **Not Hispanic or Latino: Black or African American alone**  \n4. **Not Hispanic or Latino: Asian alone**  \n5. **Not Hispanic or Latino: Two or more races**  \n6. **Not Hispanic or Latino: Some other race alone** *(optional; I can swap this for “American Indian and Alaska Native alone” if you want more policy-relevant detail)*\n\nThese align well with ACS’s “Hispanic or Latino by race” structure (ethnicity separated, then races within Not Hispanic).\n\n### 2) GDP for city proper\nIf there’s no official **Boston city GDP**, I’ll choose **(a) metro GDP** and label it explicitly as **Greater Boston metro area GDP (GRP)** with a clear geography definition and a note that it’s not city-proper. That’s more standard/defensible than inventing a proxy like city budget (which measures government finances, not economic output).\n\n---\n\n## Draft table rows (Metric name + intended source)\n- **Latitude/longitude (city centroid or City Hall coordinates)** *(USGS GNIS or Census Gazetteer Places)*  \n- **Total resident population** *(ACS Table B01003)*  \n- **Race/ethnicity: Hispanic or Latino (any race)** *(ACS DP05 or detailed Hispanic-by-race table)*  \n- **Race/ethnicity: NH White alone** *(ACS DP05 or detailed)*  \n- **Race/ethnicity: NH Black alone** *(ACS DP05 or detailed)*  \n- **Race/ethnicity: NH Asian alone** *(ACS DP05 or detailed)*  \n- **Race/ethnicity: NH Two or more races** *(ACS DP05 or detailed)*  \n- **Race/ethnicity: NH Some other race alone (optional)** *(ACS DP05 or detailed)*  \n- **Land area (sq mi) [ALAND]** *(Census Gazetteer Places)*  \n- **Total area (sq mi) [land + water]** *(Census Gazetteer Places; optional but helpful to note Boston harbor effect)*  \n- **Per capita income (past 12 months, inflation-adjusted dollars)** *(ACS Table B19301)*  \n- **Median household income (optional, commonly used)** *(ACS Table B19013)*  \n- **GDP / Gross Regional Product (Greater Boston metro)** *(BEA metro area GDP by MSA)*  \n- **Köppen climate classification** *(Beck et al. Köppen-Geiger dataset / reputable Köppen map source; note method and period)*  \n- **Elevation (optional, relevant to flooding/SLR)** *(USGS GNIS or city GIS/DEM summary)*\n\nIf you want me to keep it strictly to the assignment’s required fields, I’d drop the optional ones (total area, median HH income, elevation).",
+      "tutor": "This is strong—your categories and the metro-GDP choice are defensible *if labeled clearly*.\n\nTighten three things:\n\n1) **Race/ethnicity table choice:** rather than “DP05 or detailed,” which *exact* ACS table will you standardize on? (Hint: there’s a detailed table that already matches your “Hispanic + NH race alone” structure.) Which one, and why is it better for reproducibility than DP05?\n\n2) **Category swap:** You suggested swapping “NH some other race alone” for **AIAN**. For Boston policy context, which is more important to represent accurately, and what’s your criterion (population size vs equity relevance vs ACS reliability)? Pick one and justify in 1 sentence.\n\n3) **GDP geography definition:** What is the exact BEA metro unit you’ll use (the **MSA name** and ideally the **MSA code**)? How will you phrase the row label so nobody mistakes it for city-proper GDP?\n\nDo this next: rewrite your row list into two sections—**Required (must-have)** and **Optional (nice-to-have)**—and for each required row, add the *exact intended dataset/table ID* (e.g., “ACS B01003”, “ACS ____”)."
+    },
+    {
+      "turn": 10,
+      "student": "### 1) Race/ethnicity ACS table (exact)\nI’ll standardize on **ACS Detailed Table `B03002` (Hispanic or Latino Origin by Race)**.  \n**Why:** it directly provides **Hispanic/Latino (any race)** plus **Not Hispanic** race-alone categories in one table with stable line items, making it more reproducible and less ambiguous than DP05 summaries.\n\n### 2) Category swap (pick one)\nI’ll include **Not Hispanic: American Indian and Alaska Native (AIAN) alone** rather than “Some other race alone,” using **equity relevance** as the criterion (even if the count is small, it’s a distinct group often prioritized in equity frameworks).\n\n### 3) GDP geography definition (BEA metro)\nI’ll use the BEA metro unit **“Boston-Cambridge-Newton, MA-NH Metropolitan Statistical Area (MSA)”** and include the **MSA code** in the row notes once I pull it from BEA.  \n**Row label phrasing:** “**Metro GDP (GRP): Boston-Cambridge-Newton, MA-NH MSA (not city proper)**”.\n\n---\n\n## Required (must-have) rows (Metric + exact dataset/table)\n- **Location (lat/long for Boston city)** *(Census Gazetteer Places: place coordinates OR USGS GNIS; I’ll choose one and cite it consistently)*  \n- **Total resident population** *(ACS Detailed Table **B01003**)*  \n- **Race/ethnicity: Hispanic or Latino (any race)** *(ACS Detailed Table **B03002**)*  \n- **Race/ethnicity: Not Hispanic—White alone** *(ACS **B03002**)*  \n- **Race/ethnicity: Not Hispanic—Black or African American alone** *(ACS **B03002**)*  \n- **Race/ethnicity: Not Hispanic—Asian alone** *(ACS **B03002**)*  \n- **Race/ethnicity: Not Hispanic—American Indian & Alaska Native alone** *(ACS **B03002**)*  \n- **Race/ethnicity: Not Hispanic—Two or more races** *(ACS **B03002**)*  \n- **Land area (sq mi) [ALAND]** *(Census **Gazetteer Places**)*  \n- **Income per capita** *(ACS Detailed Table **B19301** — Per Capita Income in the Past 12 Months)*  \n- **GDP / Gross Regional Product (metro, not city proper)** *(BEA **GDP by Metropolitan Area (MSA)** for “Boston-Cambridge-Newton, MA-NH”)*  \n- **Köppen climate zone** *(Köppen–Geiger dataset / map source; cite dataset name + version/period used)*\n\n## Optional (nice-to-have)\n- **Total area (land + water) (sq mi)** *(Census Gazetteer Places)*  \n- **Median household income** *(ACS **B19013**)*  \n- **Elevation** *(USGS GNIS or city GIS)*  \n- **Population density (derived)** *(computed from B01003 ÷ ALAND; not a source metric)*\n\nIf you want, I can also specify the exact **line items/variable IDs** within B03002 to use for each category (e.g., the estimate fields), so your citations are unambiguous down to the cell.",
+      "tutor": "Yes—now you’re thinking like someone who can defend the table.\n\nBefore you worry about exact variable IDs, commit to two consistency checks:\n\n1) **B03002 coverage check:** When you pull the B03002 estimates, what should the sum of your listed categories equal—**total population (B01003)** or **B03002 total**? How will you handle any small mismatch (rounding / category omissions)?\n\n2) **MOE handling:** Will your table include **margin of error (MOE)** as a separate column for ACS-derived rows, or will you note “MOE available” in Notes? Pick one.\n\nThen, yes—do specify variable IDs. Your task: create a mini “codebook” section under the table with two columns:\n- **Metric label** → **Dataset table + line/variable ID** (e.g., B03002: ‘Not Hispanic: Asian alone’ → ____)\n\nWhich 3 race/ethnicity rows will you code first when you get access, and what rule will you use to name them so they stay consistent (NH = Not Hispanic, etc.)?"
+    }
+  ],
+  "grade": {
+    "justifications": [
+      "Tutor consistently used guided discovery (questions about geography unit, table choices, reproducibility) and avoided providing submission-ready filled values; when the student tried to have the tutor supply links/values, the tutor set boundaries and redirected appropriately.",
+      "Minor issue: one tutor turn used a somewhat admonishing tone (“You’re trying to hand me the driver’s seat”), but it did not escalate and the tutor remained supportive and task-focused afterward.",
+      "Conversation progressed efficiently toward an actionable table plan (schema, required vs optional rows, specific ACS tables), despite the student’s stated lack of web access; no major redundancy or drift."
+    ],
+    "total_score": 31.0,
+    "max_score": 45.0,
+    "total_base_score": 31.0,
+    "max_base_score": 33.0,
+    "total_bonus": 0.0,
+    "max_bonus": 12.0,
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Limited explicit meta-learning about the tutoring approach beyond boundary-setting; little explanation of why questions are used as a learning strategy.",
+                "evidence_turns": [
+                  5
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 10.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "1.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Assignment anchoring"
+          },
+          "2.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Focus and progression"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "2.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "One turn reads mildly admonishing/rigid (“You’re trying to hand me the driver’s seat”), which could be more supportive while keeping boundaries.",
+                "evidence_turns": [
+                  5
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 10.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "3.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      }
+    },
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    }
+  }
+}
