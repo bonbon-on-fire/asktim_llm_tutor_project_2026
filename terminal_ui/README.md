@@ -102,7 +102,7 @@ Columns:
 - `judge_prompt`
 - `judge_rubric`
 - `transcript_name`
-- `deductions` (flattened as `section/criterion: reason`, joined by ` | `)
+- `deductions` (flattened as `section/criterion: reason`, one deduction per line within the same cell)
 
 ## Environment variables
 

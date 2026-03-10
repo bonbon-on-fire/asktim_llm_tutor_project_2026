@@ -327,7 +327,7 @@ def _extract_deductions_text(transcript_payload: dict) -> str:
                 if not reason:
                     continue
                 lines.append(f"{section_id}/{criterion_id}: {reason}")
-    return " | ".join(lines)
+    return "\n".join(lines)
 
 
 def _append_results_csv(

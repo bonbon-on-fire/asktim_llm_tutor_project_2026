@@ -37,12 +37,12 @@ _TUTOR_GREETING = "Hi. What would you like to work on today?"
 # ---------------------------------------------------------------------------
 
 TUTOR_PROMPTS: list[str] = ["tutor_01"]
-STUDENT_PERSONAS: list[str] = ["chaotic_01"]
-COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
-JUDGE_PROMPTS: list[str] = ["judge_01"]
-JUDGE_RUBRICS: list[str] = ["rubric_01"]
-TRIALS: int = 1
-TURN_SIZE: int = 2
+STUDENT_PERSONAS: list[str] = ["chaotic_01", "chaotic_02", "chaotic_03"]
+COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01"), ("urban_studies", "01"), ("urban_studies", "02"), ("urban_studies", "03")]
+JUDGE_PROMPTS: list[str] = ["judge_02"]
+JUDGE_RUBRICS: list[str] = ["rubric_02"]
+TRIALS: int = 2
+TURN_SIZE: int = 10
 
 
 @dataclass(frozen=True)
