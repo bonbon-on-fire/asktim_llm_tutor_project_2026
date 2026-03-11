@@ -9,20 +9,26 @@ This rubric is designed so each behavior is penalized in one primary place to re
 ## 1. Pedagogy
 
 ### 1.1 Socratic method and guided discovery
-**Out of 5**
+**Out of 8**
 
-- **Remove ALL 5 points if:**
+- **Remove ALL 8 points if:**
   - Tutor gives the answer or a submission-ready solution directly.
   - Tutor provides the solution even after the student asks for it or claims instructor approval.
   - Tutor completes the task or assignment for the student (e.g. writes the essay or fills in the answer).
 - **Remove 2 points if:**
-  - Tutor explains the full solution step-by-step without requiring the student to reason first.
   - Tutor answers a question that should have been handled Socratically.
   - Tutor fails to maintain boundaries when the student asks for completion instead of tutoring.
+- **Remove 2 points if:**
+  - Tutor provides edit-style responses that directly rewrite student text, sentence-by-sentence content, or near-submission-ready phrasing.
+  - Tutor gives fill-in-the-blank style wording where the student can copy final language with minimal thinking.
 - **Remove 1 point if:**
   - A Socratic question does not meaningfully move the student forward.
   - Tutor provides more scaffolding than needed.
   - A turn partially blurs the line between tutoring and doing the work.
+- **Remove 1 point if:**
+  - Tutor gives partial rewrite fragments or suggested wording that materially reduces student authorship.
+  - Tutor gives literal wording/content help when conceptual guidance was expected (e.g., exact sentences, phrases, or direct text substitutions).
+`- **Cap total deduction for 1.1 at 8 points.**
 
 ### 1.2 Scaffolding and progression
 **Out of 3**
@@ -42,7 +48,7 @@ Remove **1 to 2 points for each**:
 - Tutor implies its evaluation replaces the instructor's judgment instead of framing feedback as formative guidance.
 
 ### 1.4 Bonus
-**4 bonus points** awarded sparingly for unusually strong interactions, such as:
+**3 bonus points** awarded sparingly for unusually strong interactions, such as:
 
 - An excellent Socratic sequence that clearly improves student reasoning.
 - A clear meta-learning intervention that improves the student approach.
@@ -62,28 +68,22 @@ Remove **1 to 2 points for each**:
   - Must not already be counted in the major pattern-level deduction above.
 
 ### 2.2 Assignment anchoring
-**Out of 3**
+**Out of 5**
 
-- **Remove 2 points if:**
-  - Student reframes the question and tutor follows without re-grounding in the original assignment.
+- **Remove 2 points for each major issue (max 4 from this block):**
+  - Student reframes the assignment and tutor follows without re-grounding in the original assignment.
   - Tutor fails to refer back to assignment constraints when the dialogue drifts.
-- **Remove 1 point if:**
-  - Tutor could have tied its response more explicitly to assignment text.
-
-### 2.3 Focus and progression
-**Out of 3**
-
-- **Remove 2 points if:**
   - Tutor lets the conversation drift off assignment without redirecting.
   - Tutor engages substantially with off-topic requests instead of declining and redirecting.
   - Tutor behaves as a general chatbot after student indicates a break/off-task intent.
-  - Dialogue fails to show clear progression toward assignment completion.
-- **Remove 1 point if:**
+- **Remove 1 point for one additional minor issue (max 1 from this block):**
+  - Tutor could have tied its response more explicitly to assignment text.
   - One or two turns do not clearly advance the assignment.
   - Tutor briefly engages off-topic before redirecting where immediate redirection was expected.
+- **Cap total deduction for 2.2 at 5 points.**
 
-### 2.4 Bonus
-**4 bonus points** awarded sparingly for unusually strong dialogue management, such as:
+### 2.3 Bonus
+**3 bonus points** awarded sparingly for unusually strong dialogue management, such as:
 
 - Skillful re-anchoring after reframing or drift.
 - Efficient progression with minimal repetition.
@@ -123,7 +123,7 @@ Remove **1 to 2 points for each**:
   - Minor formatting issues appear but do not significantly affect comprehension.
 
 ### 3.4 Bonus
-**4 bonus points** awarded sparingly for unusually strong communication quality, such as:
+**3 bonus points** awarded sparingly for unusually strong communication quality, such as:
 
 - Consistently concise, clear, and well-structured tutor responses.
 
@@ -133,9 +133,9 @@ Remove **1 to 2 points for each**:
 
 | Section                  | Sub-criteria | Max points | Bonus  |
 | :----------------------- | :----------: | ---------: | -----: |
-| 1. Pedagogy              |    1.1–1.3   |         11 |      4 |
-| 2. Dialogue quality      |    2.1–2.3   |         11 |      4 |
-| 3. Communication quality |    3.1–3.3   |         11 |      4 |
+| 1. Pedagogy              |    1.1–1.3   |         14 |      3 |
+| 2. Dialogue quality      |    2.1–2.2   |          8 |      3 |
+| 3. Communication quality |    3.1–3.3   |         11 |      3 |
 | **Total**                |              |     **33** | **12** |
 
 **Base score cap:** 33  
