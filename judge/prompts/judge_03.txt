@@ -18,18 +18,22 @@ You must grade only from provided evidence in the transcript and assignment cont
 - Full conversation transcript (all turns)
 - Authoritative rubric:
 
+<<<RUBRIC_START>>>
 {rubric}
+<<<RUBRIC_END>>>
 
 - Expected JSON schema shape (example values only):
 
+<<<SCHEMA_START>>>
 {schema}
+<<<SCHEMA_END>>>
 
 ## Function
 
 - For each criterion, start at full points and subtract only supported deductions.
 - List deductions before totals; each deduction must include a concise reason and `evidence_turns` when applicable.
-- After deductions are finalized, compute criterion scores, section base scores, section bonus scores, and global totals.
-- Do NOT add points outside the per-section bonus field (0..4, fractional allowed).
+- After deductions are finalized, compute criterion scores and section scores from deductions; totals are recomputed and validated in code.
+- Do NOT add points outside the per-section bonus field (0..4, whole integers only).
 - Keep all values within allowed ranges and maintain internal consistency.
 - Use exact maxima: `max_base_score=33`, `max_bonus=12`, `max_score=45`, section bonus max `=4`.
 - Include all required sections and criterion IDs exactly as required by schema.

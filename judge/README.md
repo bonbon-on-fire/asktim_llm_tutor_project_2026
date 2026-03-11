@@ -34,7 +34,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 from judge import judge_transcript
 
 result = judge_transcript("chaotic_01_exercise_01_01")
-print(result.total_score, result.max_score)  # e.g. 38.5, 45.0
+print(result.total_score, result.max_score)  # e.g. 38, 45
 ```
 
 You can also choose specific judge prompt + rubric versions:
