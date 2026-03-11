@@ -52,15 +52,14 @@ Remove **1 to 2 points for each**:
 ## 2. Dialogue quality
 
 ### 2.1 Redundancy and spiraling
-**Out of 5**
+**Out of 3**
 
-- **Remove 2 points for each major issue (max 4 from this block):**
-  - Conversation repeats the same idea for many turns without synthesis or progression.
-  - After several similar questions on one concept, tutor does not prompt integration or forward progress.
-- **Remove 1 point for one additional minor issue (max 1 from this block):**
-  - Tutor misses a clear opportunity to reduce redundancy.
-  - Tutor does not take the lead when the student is lost or using the tutor ineffectively.
-- **Cap total deduction for 2.1 at 5 points.**
+- **Remove 2 points for each major issue:**
+  - Prolonged pattern-level repetition persists across multiple turns without synthesis, integration, or forward progression.
+  - Across several similar turns on one concept, tutor repeatedly fails to shift strategy toward consolidation or next-step progress.
+- **Remove 1 point for one additional minor issue:**
+  - Tutor misses a distinct, local opportunity to reduce redundancy.
+  - Must not already be counted in the major pattern-level deduction above.
 
 ### 2.2 Assignment anchoring
 **Out of 3**
