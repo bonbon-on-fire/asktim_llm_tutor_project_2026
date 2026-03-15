@@ -80,8 +80,18 @@ Numbers auto-increment (next available `transcript_XX`).
   "judge_rubric": "rubric_03",
   "turns": 10,
   "exchanges": [
-    { "turn": 1, "student": "...", "tutor": "..." },
-    { "turn": 2, "student": "...", "tutor": "..." }
+    {
+      "turn": 1,
+      "student": "...",
+      "tutor": "...",
+      "pedagogical_reasoning": "Tutor reasoning for this turn"
+    },
+    {
+      "turn": 2,
+      "student": "...",
+      "tutor": "...",
+      "pedagogical_reasoning": "Tutor reasoning for this turn"
+    }
   ]
 }
 ```
@@ -106,6 +116,10 @@ Columns:
 - `judge_prompt`
 - `judge_rubric`
 - `transcript_name`
+- `grade` (formatted as `total_score/max_score`)
+- `total_score`
+- `max_score`
+- `overview` (judge justification text)
 - `deductions` (flattened as `section/criterion: reason`, one deduction per line within the same cell)
 
 ## Environment variables
