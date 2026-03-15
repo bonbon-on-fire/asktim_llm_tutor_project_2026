@@ -61,8 +61,8 @@ class JudgeError(RuntimeError):
 
 
 _CRITERIA_MAX: dict[str, int] = {
-    "1.1": 5, "1.2": 3, "1.3": 3,
-    "2.1": 5, "2.2": 3, "2.3": 3,
+    "1.1": 8, "1.2": 3, "1.3": 3,
+    "2.1": 3, "2.2": 5,
     "3.1": 5, "3.2": 3, "3.3": 3,
 }
 
@@ -72,7 +72,6 @@ _CRITERIA_NAME: dict[str, str] = {
     "1.3": "Meta-learning and methodology feedback",
     "2.1": "Redundancy and spiraling",
     "2.2": "Assignment anchoring",
-    "2.3": "Focus and progression",
     "3.1": "Bite-sized and clear responses",
     "3.2": "Appropriate tone and support",
     "3.3": "Formatting and medium",
@@ -86,20 +85,20 @@ _SECTION_KEYS: tuple[str, ...] = (
 
 _SECTION_CRITERIA: dict[str, tuple[str, ...]] = {
     "1_pedagogy": ("1.1", "1.2", "1.3"),
-    "2_dialogue_quality": ("2.1", "2.2", "2.3"),
+    "2_dialogue_quality": ("2.1", "2.2"),
     "3_communication_quality": ("3.1", "3.2", "3.3"),
 }
 
 _SECTION_BONUS_ID: dict[str, str] = {
     "1_pedagogy": "1.4",
-    "2_dialogue_quality": "2.4",
+    "2_dialogue_quality": "2.3",
     "3_communication_quality": "3.4",
 }
 
 _MAX_BASE_SCORE = sum(_CRITERIA_MAX.values())  # 33
-_MAX_BONUS_PER_SECTION = 4
-_MAX_BONUS_SCORE = len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION  # 12
-_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 45
+_MAX_BONUS_PER_SECTION = 3
+_MAX_BONUS_SCORE = len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION  # 9
+_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 42
 
 
 # ---------------------------------------------------------------------------
@@ -214,6 +213,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
         expected_bonus_id = _SECTION_BONUS_ID[section_key]
         bonus_any["id"] = expected_bonus_id
         bonus_any["max"] = _MAX_BONUS_PER_SECTION
+        explanation_any = bonus_any.get("explanation")
+        bonus_any["explanation"] = str(explanation_any).strip() if isinstance(explanation_any, str) else ""
         bonus_score = _coerce_number(bonus_any.get("score"))
         if bonus_score is None or not float(bonus_score).is_integer():
             bonus_any["score"] = 0
@@ -258,6 +259,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     payload["total_base_score"] = computed_total_base
     payload["total_bonus"] = computed_total_bonus
     payload["total_score"] = computed_total_base + computed_total_bonus
+    if "overview" not in payload and isinstance(payload.get("justifications"), list):
+        payload["overview"] = payload.get("justifications")
     payload["sections"] = sections_any
     return payload
 
@@ -267,18 +270,11 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     Rebuild grade payload with deterministic key ordering.
 
     Top-level order:
-      justifications, totals/maxima, sections, remaining keys.
+      sections, totals/maxima, remaining keys, overview, total_score.
     Per-section order:
       criteria (with deductions-first criterion shape), then base/bonus totals.
     """
     ordered: dict[str, Any] = {}
-    ordered["justifications"] = payload.get("justifications", [])
-    ordered["total_score"] = payload.get("total_score")
-    ordered["max_score"] = payload.get("max_score")
-    ordered["total_base_score"] = payload.get("total_base_score")
-    ordered["max_base_score"] = payload.get("max_base_score")
-    ordered["total_bonus"] = payload.get("total_bonus")
-    ordered["max_bonus"] = payload.get("max_bonus")
 
     sections_any = payload.get("sections")
     if isinstance(sections_any, dict):
@@ -298,7 +294,23 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
                         continue
 
                     c_out: dict[str, Any] = {}
-                    c_out["deductions"] = c_any.get("deductions", [])
+                    deductions_any = c_any.get("deductions", [])
+                    deductions_out: list[Any] = []
+                    if isinstance(deductions_any, list):
+                        for d_any in deductions_any:
+                            if not isinstance(d_any, dict):
+                                deductions_out.append(d_any)
+                                continue
+                            d_out: dict[str, Any] = {}
+                            d_out["reason"] = d_any.get("reason")
+                            d_out["points"] = d_any.get("points")
+                            if "evidence_turns" in d_any:
+                                d_out["evidence_turns"] = d_any.get("evidence_turns")
+                            for dk, dv in d_any.items():
+                                if dk not in d_out:
+                                    d_out[dk] = dv
+                            deductions_out.append(d_out)
+                    c_out["deductions"] = deductions_out
                     c_out["score"] = c_any.get("score")
                     c_out["max"] = c_any.get("max")
                     c_out["name"] = c_any.get("name")
@@ -318,9 +330,18 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     else:
         ordered["sections"] = sections_any
 
+    ordered["max_score"] = payload.get("max_score")
+    ordered["total_base_score"] = payload.get("total_base_score")
+    ordered["max_base_score"] = payload.get("max_base_score")
+    ordered["total_bonus"] = payload.get("total_bonus")
+    ordered["max_bonus"] = payload.get("max_bonus")
+
     for k, v in payload.items():
-        if k not in ordered:
+        if k not in ordered and k not in {"overview", "justifications", "total_score"}:
             ordered[k] = v
+    overview = payload.get("overview", payload.get("justifications", []))
+    ordered["overview"] = overview
+    ordered["total_score"] = payload.get("total_score")
     return ordered
 
 
@@ -332,6 +353,9 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
     total_bonus = _as_int(payload.get("total_bonus"), path="total_bonus")
     max_bonus = _as_int(payload.get("max_bonus"), path="max_bonus")
     sections = _as_dict(payload.get("sections"), path="sections")
+    overview = _as_list(payload.get("overview", []), path="overview")
+    for i, item in enumerate(overview):
+        _as_str(item, path=f"overview[{i}]")
 
     if max_base_score != _MAX_BASE_SCORE:
         raise JudgeError(f"max_base_score must be {_MAX_BASE_SCORE}, got {max_base_score}.")
@@ -366,6 +390,7 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
         bonus_score = _as_int(bonus.get("score"), path=f"sections.{section_key}.bonus.score")
         bonus_max = _as_int(bonus.get("max"), path=f"sections.{section_key}.bonus.max")
         bonus_id = _as_str(bonus.get("id"), path=f"sections.{section_key}.bonus.id")
+        _as_str(bonus.get("explanation"), path=f"sections.{section_key}.bonus.explanation")
         expected_bonus_id = _SECTION_BONUS_ID.get(section_key)
         if bonus_id != expected_bonus_id:
             raise JudgeError(
@@ -407,11 +432,11 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
             deduction_total = 0
             for i, d in enumerate(deductions):
                 dd = _as_dict(d, path=f"sections.{section_key}.criteria.{crit_id}.deductions[{i}]")
+                _as_str(dd.get("reason"), path=f"...deductions[{i}].reason")
                 pts = _as_int(dd.get("points"), path=f"...deductions[{i}].points")
                 if pts <= 0:
                     raise JudgeError("Deduction points must be > 0.")
                 deduction_total += pts
-                _as_str(dd.get("reason"), path=f"...deductions[{i}].reason")
                 ev = dd.get("evidence_turns")
                 if ev is not None:
                     turns = _as_list(ev, path=f"...deductions[{i}].evidence_turns")
@@ -456,7 +481,7 @@ def _build_expected_schema() -> dict[str, Any]:
         for crit_id in _SECTION_CRITERIA[section_key]:
             criteria[crit_id] = {
                 "deductions": [
-                    {"points": 1, "reason": "Short reason", "evidence_turns": [1]},
+                    {"reason": "Short reason", "points": 1, "evidence_turns": [1]},
                 ],
                 "score": 0,
                 "max": _CRITERIA_MAX[crit_id],
@@ -464,11 +489,15 @@ def _build_expected_schema() -> dict[str, Any]:
             }
         sections[section_key] = {
             "criteria": criteria,
-            "base": {"score": 0, "max": float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))},
-            "bonus": {"id": _SECTION_BONUS_ID[section_key], "score": 0, "max": _MAX_BONUS_PER_SECTION},
+            "base": {"score": 0, "max": sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])},
+            "bonus": {
+                "id": _SECTION_BONUS_ID[section_key],
+                "explanation": "Short reason for bonus score.",
+                "score": 0,
+                "max": _MAX_BONUS_PER_SECTION,
+            },
         }
     return {
-        "justifications": ["Brief overall rationale."],
         "total_score": 0,
         "max_score": _MAX_TOTAL_SCORE,
         "total_base_score": 0,
@@ -476,12 +505,13 @@ def _build_expected_schema() -> dict[str, Any]:
         "total_bonus": 0,
         "max_bonus": _MAX_BONUS_SCORE,
         "sections": sections,
+        "overview": ["Brief overall rationale."],
     }
 
 
 def load_judge_prompt(
-    prompt_name: str = "judge_01",
-    rubric_name: str = "rubric_01",
+    prompt_name: str = "judge_03",
+    rubric_name: str = "rubric_03",
 ) -> str:
     """
     Load the judge system prompt from ``judge/prompts/<prompt_name>.txt``,
@@ -516,10 +546,16 @@ def _judge_repair_prompt(error: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
+    context = transcript.get("context", "")
     exercise = transcript.get("exercise", "")
     exchanges = transcript.get("exchanges", [])
     lines: list[str] = []
-    lines.append("Exercise / assignment context:")
+    lines.append("Assignment input:")
+    if str(context).strip():
+        lines.append("Context:")
+        lines.append(str(context).strip())
+        lines.append("")
+    lines.append("Exercise:")
     lines.append(str(exercise).strip())
     lines.append("")
     lines.append("Conversation transcript (student+tutor exchanges):")
@@ -606,8 +642,8 @@ class JudgeResult:
 def judge_transcript(
     transcript_name: str,
     *,
-    prompt_name: str = "judge_01",
-    rubric_name: str = "rubric_01",
+    prompt_name: str = "judge_03",
+    rubric_name: str = "rubric_03",
 ) -> JudgeResult:
     """
     Score one transcript by relative path (without .json) under transcripts/.
