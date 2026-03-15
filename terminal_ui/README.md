@@ -74,9 +74,10 @@ Numbers auto-increment (next available `transcript_XX`).
   "course": "philosophy",
   "exercise_number": "01",
   "turn_size": 10,
+  "context": "Course-level context loaded from curriculum/<course>/course.txt",
   "exercise": "Combined assignment text (course context + exercise + run configuration)...",
-  "judge_prompt": "judge_01",
-  "judge_rubric": "rubric_01",
+  "judge_prompt": "judge_03",
+  "judge_rubric": "rubric_03",
   "turns": 10,
   "exchanges": [
     { "turn": 1, "student": "...", "tutor": "..." },

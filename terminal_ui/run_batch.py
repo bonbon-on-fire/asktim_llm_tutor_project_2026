@@ -123,9 +123,14 @@ def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
     return match.group(1), match.group(2)
 
 
+def _load_course_context(course: str) -> str:
+    course_dir = _CURRICULUM_DIR / course
+    return (course_dir / "course.txt").read_text(encoding="utf-8").strip()
+
+
 def _build_assignment_text(course: str, exercise_number: str, turn_size: int) -> str:
     course_dir = _CURRICULUM_DIR / course
-    course_text = (course_dir / "course.txt").read_text(encoding="utf-8").strip()
+    course_text = _load_course_context(course)
     exercise_text = (
         course_dir / f"exercise_{exercise_number}.txt"
     ).read_text(encoding="utf-8").strip()
@@ -236,6 +241,7 @@ def _save_transcript(
     config: RunConfig,
     judge_prompt: str,
     judge_rubric: str,
+    context_text: str,
     assignment_text: str,
     exchanges: list[dict[str, object]],
 ) -> tuple[str, Path]:
@@ -251,6 +257,7 @@ def _save_transcript(
         "course": config.course,
         "exercise_number": config.exercise_number,
         "turn_size": config.turn_size,
+        "context": context_text,
         "exercise": assignment_text,
         "judge_prompt": judge_prompt,
         "judge_rubric": judge_rubric,
@@ -375,11 +382,13 @@ def main() -> int:
                 config.exercise_number,
                 config.turn_size,
             )
+            context_text = _load_course_context(config.course)
             exchanges = _run_conversation(config, assignment_text)
             transcript_name, transcript_path = _save_transcript(
                 config,
                 judge_prompt,
                 judge_rubric,
+                context_text,
                 assignment_text,
                 exchanges,
             )
