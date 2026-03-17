@@ -95,7 +95,7 @@
         .map(
           (t) =>
             `<tr>
-          <td>${escapeHtml(t.persona)}</td>
+          <td>${escapeHtml((t.metadata && t.metadata.student_persona) || (t.persona + "_" + t.number))}</td>
           <td>${escapeHtml(t.number)}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
           <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : MAX_SCORE) : "—"}</span></td>
