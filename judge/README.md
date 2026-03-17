@@ -101,7 +101,7 @@ To re-judge existing transcripts with Claude and write outputs into:
 Run:
 
 ```python
-python -m judge.run_judge_claude --model claude-3-7-sonnet --prompt judge_03 --rubric rubric_03
+python -m judge.run_judge_claude --model claude-sonnet-4-6 --prompt judge_03 --rubric rubric_03
 ```
 
 Notes:
