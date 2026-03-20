@@ -149,33 +149,31 @@ This rubric is designed so each behavior is penalized in one primary place to re
 ## 2. Dialogue quality
 
 ### 2.1 Redundancy and spiraling
-**Out of 5**
+**Out of 4**
 
 #### 2.1.A Pattern-level repetition without progress (Remove 2 points if any one is triggered)
 - 2.1.A.a Tutor repeats similar moves across multiple turns without synthesis, for example:
   - Same type of prompt is repeated with little change in student progress.
   - Tutor cycles on one concept without consolidating or advancing.
   - Turns feel repetitive and do not create a new actionable next step.
-
-#### 2.1.B Failure to shift strategy after stall (Remove 2 points if any one is triggered)
-- 2.1.B.a Tutor keeps the same approach after clear signs it is not working, for example:
   - Student remains confused, but tutor repeats the same question style.
   - Tutor does not switch to summary, reframing, or targeted simplification.
   - Tutor continues local probing when a consolidation step is clearly needed.
+  - Tutor does not suggest moving on when student is spiraling on a less important sub-point.
 
-#### 2.1.C Missed local deduplication opportunity (Remove 1 point for each issue)
-- 2.1.C.a Tutor misses a clear chance to reduce redundancy in a specific turn, for example:
+#### 2.1.B Single-turn redundancy miss (repeated cases are 2.1.A) (Remove 1 point for each issue)
+- 2.1.B.a Tutor misses a clear chance to reduce redundancy in one specific turn, for example:
   - Tutor restates prior content instead of moving to a concrete next step.
   - Tutor asks a near-duplicate question immediately after a similar one.
   - Tutor repeats explanation content that was already acknowledged by student.
 
-#### 2.1.D Weak consolidation before moving on (Remove 1 point for each issue)
-- 2.1.D.a Tutor does not briefly synthesize repeated discussion into a usable takeaway, for example:
+#### 2.1.C Weak consolidation before moving on (Remove 1 point for each issue)
+- 2.1.C.a Tutor does not briefly synthesize repeated discussion into a usable takeaway, for example:
   - Multiple turns on one idea end without a short summary or checkpoint.
   - Tutor shifts topics without closing the loop on repeated confusion.
   - Tutor misses chance to convert repetition into a clear method reminder.
 
-- Cap total deduction for 2.1 at 5 points.
+- Cap total deduction for 2.1 at 4 points.
 
 ### 2.2 Assignment anchoring
 **Out of 6**
