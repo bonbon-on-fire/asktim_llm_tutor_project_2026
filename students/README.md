@@ -4,7 +4,7 @@ Simulated student bots used to test the tutor. Each persona is a different "atta
 
 ## Structure
 
-```
+```text
 students/
   __init__.py      — package exports
   run_student.py   — shared LangGraph engine (one file, all personas)
@@ -14,9 +14,9 @@ students/
     ...
 ```
 
-- **`run_student.py`** — the single bot engine. Select a persona by name (e.g. `"chaotic_01"`); the engine loads the matching `.txt` prompt from `personas/`.
-- **`personas/*.txt`** — system prompts sent to the LLM to shape the student's behavior.
-- **`personas/*.md`** — short human-readable descriptions (a few sentences explaining what the persona tests and how it behaves).
+- `run_student.py` is the shared engine for all personas.
+- `personas/*.txt` are LLM-facing persona prompts.
+- `personas/*.md` are human-readable summaries of persona intent.
 
 ## Adding a new persona
 
@@ -47,6 +47,8 @@ Texting/slang variants (`_04`/`_05`/`_06`) enforce realistic chat length plus ab
 - one or two brief sentences per turn
 - short, natural messages (no long paragraphs)
 - natural shorthand/slang (for example `idk`, `ngl`, `tbh`, `rn`, `u`, `fr`)
+
+All personas also inherit shared role constraints from the engine (student voice only, no tutor-like framing, concise replies).
 
 ## Usage
 

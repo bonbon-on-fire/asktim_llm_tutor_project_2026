@@ -11,9 +11,12 @@ The script reads:
 
 Required columns:
 
+- `tutor_prompt`
 - `student_persona`
 - `course`
 - `exercise_number`
+- `judge_prompt`
+- `judge_rubric`
 - `transcript_name`
 - `total_score`
 - `max_score`
@@ -22,13 +25,13 @@ Required columns:
 
 From repo root:
 
-```python
+```powershell
 python -m visualization.run_visualization
 ```
 
 If `matplotlib` is missing:
 
-```python
+```powershell
 python -m pip install matplotlib
 ```
 
@@ -46,3 +49,12 @@ Written to `visualization/outputs/`:
 
 3. `avg_grade_by_persona_per_exercise_claude.png`
    - Same view as above for Claude scores
+
+## Notes
+
+- The script aligns GPT and Claude transcript lines by:
+  - `student_persona`
+  - `course`
+  - `exercise_number`
+  - `transcript_name`
+- Missing rows in either CSV are handled by leaving gaps (`NaN`) in the line chart.

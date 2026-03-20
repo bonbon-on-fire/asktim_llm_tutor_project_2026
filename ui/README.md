@@ -1,56 +1,18 @@
 # UI Module
 
-Terminal runner tools for tutor/student simulation and judge scoring.
+Terminal runners for transcript generation and judge scoring.
 
-## How to run
+## Available entrypoints
 
-### Interactive run (sim + judge)
+From repo root in PowerShell:
 
-```powershell
-python -m ui
-```
-
-This launches the prompt-based flow:
-
-| Step | Prompt | Source |
-| ---- | ------ | ------ |
-| 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
-| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
-| 2 | Student persona version | Scans `students/personas/{type}_*.txt` |
-| 3 | Course | Scans `curriculum/` subfolder names |
-| 4 | Exercise number | Scans `curriculum/{course}/exercise_*.txt` |
-| 5 | Number of turns | Positive integer |
-| 6 | Judge prompt version | Scans `judge/prompts/*.txt` |
-| 7 | Judge rubric version | Scans `judge/rubrics/*.md` |
-| 8 | Run, save transcript, and judge | See output sections below |
-
-### Batch run (sim + judge)
-
-```powershell
-python -m ui.run_batch
-```
-
-Before running, edit these constants in `ui/run_batch.py`:
-
-- `TUTOR_PROMPTS`
-- `STUDENT_PERSONAS`
-- `COURSE_EXERCISES` (as `(course, exercise_number)` tuples)
-- `JUDGE_PROMPTS`
-- `JUDGE_RUBRICS`
-- `TRIALS`
-- `TURN_SIZE`
-
-Run matrix:
-
-`tutor_prompts x student_personas x course_exercises x judge_prompts x judge_rubrics x trials`
-
-### Batch run (raw transcripts only, no judge)
+### 1) Generate raw transcripts (no judge)
 
 ```powershell
 python -m ui.run_ui_raw
 ```
 
-Before running, edit these constants in `ui/run_ui_raw.py`:
+Edit config in `ui/run_ui_raw.py`:
 
 - `TUTOR_PROMPTS`
 - `STUDENT_PERSONAS`
@@ -62,7 +24,7 @@ Run matrix:
 
 `tutor_prompts x student_personas x course_exercises x trials`
 
-### Batch run (judge raw transcripts with GPT)
+### 2) Judge raw transcripts with GPT
 
 ```powershell
 python -m ui.run_ui_gpt
@@ -77,7 +39,7 @@ Before running, edit these constants in `ui/run_ui_gpt.py`:
 
 The script reads from `*_raw` folders, copies each selected transcript to `*_gpt`, then applies GPT judging in-place on the copied file.
 
-### Batch run (judge raw transcripts with Claude)
+### 3) Judge raw transcripts with Claude
 
 ```powershell
 python -m ui.run_ui_claude
@@ -93,18 +55,6 @@ Before running, edit these constants in `ui/run_ui_claude.py`:
 The script reads from `*_raw` folders, copies each selected transcript to `*_claude`, then applies Claude judging in-place on the copied file.
 
 ## Output paths
-
-### Judged runs (`ui` and `ui.run_batch`)
-
-Transcripts are saved under:
-
-- `transcripts/{persona_type}/transcript_XX.json`
-
-Judge output is appended into each transcript under `grade`.
-
-Compiled CSV summary is appended to:
-
-- `transcripts/transcripts_compiled.csv`
 
 ### Raw-only runs (`ui.run_ui_raw`)
 
@@ -146,7 +96,7 @@ All transcript flows include run metadata and exchanges:
 
 ```json
 {
-  "tutor_prompt": "tutor_01",
+  "tutor_prompt": "tutor_03",
   "student_persona": "chaotic_01",
   "course": "philosophy",
   "exercise_number": "01",
@@ -165,7 +115,7 @@ All transcript flows include run metadata and exchanges:
 }
 ```
 
-Judged flows additionally include:
+Judged transcripts additionally include:
 
 - `judge_prompt`
 - `judge_rubric`

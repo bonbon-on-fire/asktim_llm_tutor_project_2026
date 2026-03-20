@@ -4,20 +4,22 @@ LangGraph-based Socratic tutor for MIT OCW humanities courses. The tutor guides 
 
 ## Structure
 
-```
+```text
 tutor/
   __init__.py          — package exports
   run_tutor.py         — LangGraph engine, system-prompt loading, response parsing
   prompts/
-    tutor_01.txt       — system prompt (Socratic rules, role boundaries, output format)
+    tutor_01.txt       — baseline system prompt
+    tutor_02.txt       — revised system prompt variant
+    tutor_03.txt       — latest concise-response variant used in batch runs
 ```
 
-- **`run_tutor.py`** — builds the LangGraph, invokes the LLM, and parses the structured JSON response (pedagogical reasoning + student-facing answer).
-- **`prompts/tutor_01.txt`** — the system prompt. Contains Socratic tutoring rules, role-adherence boundaries, grading constraints, and a default `<Assignment>` block that gets replaced at runtime with the actual exercise text.
+- `run_tutor.py` builds the LangGraph, invokes the LLM, and parses structured JSON response fields (pedagogical reasoning + student-facing answer).
+- Prompt versions are selected by name (for example `tutor_01`, `tutor_02`, `tutor_03`) and loaded from `tutor/prompts/`.
 
 ## How the tutor works
 
-1. The system prompt is loaded from `prompts/tutor_01.txt`.
+1. The system prompt is loaded from `prompts/<prompt_name>.txt`.
 2. If an exercise is provided, the `<Assignment>...</Assignment>` block in the prompt is replaced with the exercise text.
 3. The LLM receives the system prompt + conversation history and returns a JSON response:
    ```json

@@ -41,20 +41,20 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 # Which tutor prompts to run (from tutor/prompts/*.txt, without extension).
-TUTOR_PROMPTS: list[str] = ["tutor_02"]
+TUTOR_PROMPTS: list[str] = ["tutor_03"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
 STUDENT_PERSONAS: list[str] = ["chaotic_01"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01"), ("urban_studies", "01"), ("urban_studies", "02"), ("urban_studies", "03")]
 
 # Turn size per conversation (student+tutor exchanges).
 TURN_SIZE: int = 10
 
 # How many trials for each matrix combination.
-TRIALS: int = 1
+TRIALS: int = 2
 
 
 @dataclass(frozen=True)
