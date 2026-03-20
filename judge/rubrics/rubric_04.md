@@ -210,16 +210,16 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 2.2 at 6 points.
 
 ### 2.3 Bonus Dedutions
-**Max 3**
+**Max 2**
 
-- Apply a catch-all deduction of 0, 1, 2, or 3 points for weak re-anchoring, weak progression flow, or avoidable dialogue repetition only when these were not already deducted in earlier criteria.
+- Apply a catch-all deduction of 0, 1, or 2 points for weak re-anchoring, weak progression flow, or avoidable dialogue repetition only when these were not already deducted in earlier criteria.
 
 ---
 
 ## 3. Communication quality
 
 ### 3.1 Bite-sized and clear responses
-**Out of 7**
+**Out of 6**
 
 #### 3.1.A Response length control (Remove 2 points if any one is triggered)
 - 3.1.A.a Tutor repeatedly uses long monologues when short interactive steps are more appropriate, for example:
@@ -233,25 +233,19 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Explanations are ambiguous, making next action unclear.
   - Student would reasonably struggle to identify what to do next.
 
-#### 3.1.C Actionable structure quality (Remove 1 point for each issue)
-- 3.1.C.a Tutor does not structure responses for easy execution, for example:
-  - No clear next-step prompt after explanation.
-  - Multiple ideas are mixed without prioritization.
-  - Response lacks quick checkpoints that support progress.
-
-#### 3.1.D Language simplicity and precision (Remove 1 point for each issue)
-- 3.1.D.a Tutor uses avoidable dense language, for example:
+#### 3.1.C Language simplicity and precision (Remove 1 point for each issue)
+- 3.1.C.a Tutor uses avoidable dense language, for example:
   - Unnecessary jargon-heavy wording increases cognitive load.
   - Word choice is more complex than needed for the student's state.
   - Simpler phrasing would preserve meaning and improve comprehension.
 
-#### 3.1.E Minor concision misses (Remove 1 point for each issue)
-- 3.1.E.a Several turns could be shorter or sharper, for example:
+#### 3.1.D Minor concision misses (Remove 1 point for each issue)
+- 3.1.D.a Several turns could be shorter or sharper, for example:
   - Tutor includes extra sentences that do not advance the immediate goal.
   - Repetition appears within a single response.
   - Concision opportunities are missed without causing major confusion.
 
-- Cap total deduction for 3.1 at 7 points.
+- Cap total deduction for 3.1 at 6 points.
 
 ### 3.2 Appropriate tone and support
 **Out of 5**
@@ -311,9 +305,9 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 3.3 at 5 points.
 
 ### 3.4 Bonus Dedutions
-**Max 3**
+**Max 2**
 
-- Apply a catch-all deduction of 0, 1, 2, or 3 points for communication quality gaps in concision, clarity, or structure only when these were not already deducted in earlier criteria.
+- Apply a catch-all deduction of 0, 1, or 2 points for communication quality gaps in concision, clarity, or structure only when these were not already deducted in earlier criteria.
 
 ---
 
@@ -323,10 +317,10 @@ This rubric is designed so each behavior is penalized in one primary place to re
 | :----------------------- | :----------: | ---------: |
 | 1. Pedagogy              |    1.1-1.3   |         21 |
 | 2. Dialogue quality      |    2.1-2.2   |         11 |
-| 3. Communication quality |    3.1-3.3   |         17 |
-| **Base total**           |              |     **49** |
+| 3. Communication quality |    3.1-3.3   |         16 |
+| **Base total**           |              |     **48** |
 
 Additional catch-all deductions (do not contribute starting points):
-- `1.4 Bonus Dedutions`: `0` to `-3`
-- `2.3 Bonus Dedutions`: `0` to `-3`
-- `3.4 Bonus Dedutions`: `0` to `-3`
+- `1.4 Bonus Dedutions`: `0` to `-2`
+- `2.3 Bonus Dedutions`: `0` to `-2`
+- `3.4 Bonus Dedutions`: `0` to `-2`
