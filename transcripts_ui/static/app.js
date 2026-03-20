@@ -1,5 +1,5 @@
 (function () {
-  const MAX_SCORE = 42;
+  const DEFAULT_MAX_SCORE = 47;
 
   function getPath() {
     return window.location.pathname;
@@ -16,29 +16,33 @@
     if (el) el.classList.remove("hidden");
   }
 
-  // Fixed x-axis labels 0..42 so both charts share the same scale
-  var SCORE_LABELS = [];
-  for (var s = 0; s <= MAX_SCORE; s++) SCORE_LABELS.push(s);
+  function scoreLabels(maxScore) {
+    const labels = [];
+    for (let s = 0; s <= maxScore; s++) labels.push(s);
+    return labels;
+  }
 
   function histogram(scores, maxScore) {
-    var counts = [];
-    for (var i = 0; i <= maxScore; i++) counts[i] = 0;
-    scores.filter(function(s) { return s != null; }).forEach(function(s) { counts[s] = (counts[s] || 0) + 1; });
+    const counts = [];
+    for (let i = 0; i <= maxScore; i++) counts[i] = 0;
+    scores.filter((s) => s != null).forEach((s) => {
+      if (s >= 0 && s <= maxScore) counts[s] = (counts[s] || 0) + 1;
+    });
     return counts;
   }
 
-  function drawChart(canvasId, scores, label, color) {
-    var counts = histogram(scores, MAX_SCORE);
-    var ctx = document.getElementById(canvasId);
+  function drawChart(canvasId, scores, label, color, maxScore) {
+    const counts = histogram(scores, maxScore);
+    const ctx = document.getElementById(canvasId);
     if (!ctx) return;
     if (window[canvasId + "Chart"]) window[canvasId + "Chart"].destroy();
     window[canvasId + "Chart"] = new Chart(ctx, {
       type: "bar",
       data: {
-        labels: SCORE_LABELS,
+        labels: scoreLabels(maxScore),
         datasets: [
           {
-            label: "Conversations",
+            label: label + " conversations",
             data: counts,
             backgroundColor: color,
             borderColor: color,
@@ -57,7 +61,7 @@
             title: { display: true, text: "Score" },
             grid: { display: false },
             min: 0,
-            max: MAX_SCORE,
+            max: maxScore,
             ticks: { stepSize: 1 },
           },
           y: {
@@ -70,11 +74,20 @@
     });
   }
 
+  function inferMaxScore(list) {
+    const maxes = list
+      .flatMap((t) => [t.gpt_max, t.claude_max])
+      .filter((v) => typeof v === "number" && Number.isFinite(v));
+    if (!maxes.length) return DEFAULT_MAX_SCORE;
+    return Math.max(...maxes);
+  }
+
   function renderDashboard(list) {
+    const maxScore = inferMaxScore(list);
     const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
     const claudeScores = list.map((t) => t.claude_score).filter((s) => s != null);
-    drawChart("chart-gpt", gptScores, "GPT", "#a65dea");
-    drawChart("chart-claude", claudeScores, "Claude", "#ff893a");
+    drawChart("chart-gpt", gptScores, "GPT", "#a65dea", maxScore);
+    drawChart("chart-claude", claudeScores, "Claude", "#ff893a", maxScore);
 
     let sortKey = "gpt_score";
     let sortDir = -1;
@@ -95,12 +108,12 @@
         .map(
           (t) =>
             `<tr>
-          <td>${escapeHtml((t.metadata && t.metadata.student_persona) || (t.persona + "_" + t.number))}</td>
-          <td>${escapeHtml(t.number)}</td>
+          <td>${escapeHtml((t.metadata && t.metadata.student_persona) || t.persona)}</td>
+          <td>${escapeHtml(t.display_number || t.number)}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
-          <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : MAX_SCORE) : "—"}</span></td>
-          <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : MAX_SCORE) : "—"}</span></td>
-          <td><a href="/transcript/${escapeHtml(t.persona)}/${escapeHtml(t.number)}">Read</a></td>
+          <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : maxScore) : "—"}</span></td>
+          <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : maxScore) : "—"}</span></td>
+          <td><a href="/transcript/${encodeURIComponent(t.persona)}/${encodeURIComponent(t.number)}">Read</a></td>
         </tr>`
         )
         .join("");
@@ -118,7 +131,7 @@
         renderTable();
       };
     });
-    var gptTh = document.querySelector('#transcripts-table thead th[data-sort="gpt_score"]');
+    const gptTh = document.querySelector('#transcripts-table thead th[data-sort="gpt_score"]');
     if (gptTh) gptTh.classList.add("sorted-desc");
     renderTable();
   }
@@ -135,7 +148,7 @@
       container.innerHTML = `<p class="text-muted">No ${evaluatorLabel} grade available.</p>`;
       return;
     }
-    const model = grade.model ? (grade.model.provider + " / " + grade.model.model) : "";
+    const model = grade.model ? grade.model.provider + " / " + grade.model.model : "";
     let html =
       "<h3>\n        " +
       escapeHtml(evaluatorLabel) +
@@ -157,20 +170,24 @@
       for (const [secId, sec] of Object.entries(grade.sections)) {
         if (!sec.criteria) continue;
         html += '<div class="section-block"><h4>' + escapeHtml(secId) + "</h4>";
-        for (const [cId, c] of Object.entries(sec.criteria)) {
+        for (const c of Object.values(sec.criteria)) {
           html += '<div class="criterion">';
-          html += '<span class="name">' + escapeHtml(c.name) + '</span>';
-          html += '<span class="score">' + c.score + '/' + c.max + '</span>';
-          html += '</div>';
+          html += '<span class="name">' + escapeHtml(c.name) + "</span>";
+          html += '<span class="score">' + c.score + "/" + c.max + "</span>";
+          html += "</div>";
           if (c.deductions && c.deductions.length) {
             c.deductions.forEach((d) => {
-              html += '<div class="deduction">−' + d.points + ': ' + escapeHtml(d.reason) + '</div>';
+              html += '<div class="deduction">−' + d.points + ": " + escapeHtml(d.reason) + "</div>";
             });
           }
         }
         if (sec.bonus && sec.bonus.score != null && sec.bonus.score > 0) {
-          html += '<div class="criterion"><span class="name">Bonus: ' + escapeHtml(sec.bonus.id || 'bonus') + '</span><span class="score">+' + sec.bonus.score + '</span></div>';
-          if (sec.bonus.explanation) html += '<div class="deduction" style="color:var(--score-high)">' + escapeHtml(sec.bonus.explanation) + '</div>';
+          html += '<div class="criterion"><span class="name">Bonus: ' + escapeHtml(sec.bonus.id || "bonus") + '</span><span class="score">+' + sec.bonus.score + "</span></div>";
+          if (sec.bonus.explanation) html += '<div class="deduction" style="color:var(--score-high)">' + escapeHtml(sec.bonus.explanation) + "</div>";
+        }
+        if (sec.malus && sec.malus.score != null && sec.malus.score > 0) {
+          html += '<div class="criterion"><span class="name">Malus: ' + escapeHtml(sec.malus.id || "malus") + '</span><span class="score">-' + sec.malus.score + "</span></div>";
+          if (sec.malus.explanation) html += '<div class="deduction">' + escapeHtml(sec.malus.explanation) + "</div>";
         }
         html += "</div>";
       }
@@ -189,6 +206,7 @@
       ["Exercise", meta.exercise_number],
       ["Turns", meta.turns],
       ["Judge", meta.judge_prompt],
+      ["Rubric", meta.judge_rubric],
     ];
     let html = '<dl class="meta-block">';
     metaFields.forEach(([label, value]) => {
@@ -220,7 +238,8 @@
     renderGradeReport(gptEl, data.grade_gpt, "GPT evaluator", "gpt");
     renderGradeReport(claudeEl, data.grade_claude, "Claude evaluator", "claude");
 
-    document.getElementById("transcript-title").textContent = `${data.persona} / transcript_${data.number}`;
+    const titleId = data.display_number || data.number;
+    document.getElementById("transcript-title").textContent = `${data.persona} / ${titleId}`;
     const content = document.getElementById("transcript-content");
     content.innerHTML = html;
     content.appendChild(gptEl);
@@ -230,13 +249,13 @@
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
-    tbody.innerHTML = '<tr><td colspan="6" class="loading">Loading…</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="loading">Loading...</td></tr>';
     try {
       const r = await fetch("/api/transcripts");
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="error">No transcripts found. Check that the server is run from the repo root (or set TRANSCRIPTS_DIR).</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="error">No judged transcripts found. Run `ui.run_ui_gpt` and `ui.run_ui_claude` first.</td></tr>';
         return;
       }
       renderDashboard(list);
@@ -249,7 +268,7 @@
   async function loadTranscript(persona, num) {
     showPage("transcript-page");
     const content = document.getElementById("transcript-content");
-    content.innerHTML = '<p class="loading">Loading transcript…</p>';
+    content.innerHTML = '<p class="loading">Loading transcript...</p>';
     try {
       const r = await fetch("/api/transcripts/" + encodeURIComponent(persona) + "/" + encodeURIComponent(num));
       const data = await r.json();
