@@ -245,6 +245,17 @@ tbody td a:hover {
   margin: 0 0 0.25rem;
 }
 
+.meta-top {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
 .exchange {
   margin-bottom: 1.5rem;
   padding: 1rem;

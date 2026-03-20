@@ -16,6 +16,7 @@ from __future__ import annotations
 import os
 import re
 import shutil
+import json
 from pathlib import Path
 
 from judge.run_judge_claude import JudgeError, judge_transcript
@@ -127,6 +128,11 @@ def _validate_config() -> None:
         raise ValueError("JUDGE_RUBRICS must contain at least one item.")
     if not STUDENT_PERSONAS:
         raise ValueError("STUDENT_PERSONAS must contain at least one item.")
+    if len(JUDGE_PROMPTS) * len(JUDGE_RUBRICS) > 1:
+        raise ValueError(
+            "Using raw-style output names (transcript_XX.json) requires exactly one "
+            "judge prompt and one judge rubric to avoid filename collisions."
+        )
 
     available_prompts = set(_discover_judge_prompts())
     available_rubrics = set(_discover_judge_rubrics())
@@ -187,15 +193,21 @@ def _copy_raw_to_claude_target(
     *,
     persona_type: str,
     source_stem: str,
-    prompt_name: str,
-    rubric_name: str,
 ) -> Path:
     source_path = _raw_dir_for(persona_type) / f"{source_stem}.json"
     target_dir = _claude_dir_for(persona_type)
     target_dir.mkdir(parents=True, exist_ok=True)
-    target_filename = f"{source_stem}__{prompt_name}__{rubric_name}.json"
+    target_filename = f"{source_stem}.json"
     target_path = target_dir / target_filename
     shutil.copyfile(source_path, target_path)
+    # Re-judge safety: raw transcripts may already include `grade`.
+    payload = json.loads(target_path.read_text(encoding="utf-8"))
+    if isinstance(payload, dict) and "grade" in payload:
+        payload.pop("grade", None)
+        target_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     return target_path
 
 
@@ -215,8 +227,6 @@ def main() -> int:
                         target_path = _copy_raw_to_claude_target(
                             persona_type=persona_type,
                             source_stem=source_stem,
-                            prompt_name=prompt_name,
-                            rubric_name=rubric_name,
                         )
                         relative_stem = str(
                             target_path.relative_to(_TRANSCRIPTS_DIR)

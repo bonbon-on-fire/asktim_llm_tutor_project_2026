@@ -84,7 +84,8 @@ Maximum total score: **47**.
 - Scores are whole integers only.
 - Top-level key order ends with `total_score`, then `judge_llm_calls`.
 - `overview` replaces `justifications` and appears near the end.
-- Deductions are ordered as `evidence_turns`, then `reason`, then `points` (`evidence_turns` optional).
+- Deductions are ordered as `evidence_turns`, `sub_criterion_id`, `reason`, then `points` (`evidence_turns` optional).
+- For `rubric_04`, each deduction must include an exact rubric sub-sub ID in `sub_criterion_id` (for example `1.1.A.a`, `2.2.D.a`, `3.2.C.b`).
 - Each section `malus` requires `explanation`.
 - `total_malus` and `max_malus` are used (deductions-only scoring).
 - Judge input supports both transcript `context` and `exercise`.

@@ -74,9 +74,9 @@ Judged transcripts are saved to:
 - `transcripts/chitchat/chitchat_gpt/`
 - `transcripts/clueless/clueless_gpt/`
 
-Each output file uses:
+Each output file uses the same stem as raw input:
 
-- `{raw_stem}__{judge_prompt}__{judge_rubric}.json`
+- `transcript_XX.json`
 
 ### Claude judged runs (`ui.run_ui_claude`)
 
@@ -86,9 +86,9 @@ Judged transcripts are saved to:
 - `transcripts/chitchat/chitchat_claude/`
 - `transcripts/clueless/clueless_claude/`
 
-Each output file uses:
+Each output file uses the same stem as raw input:
 
-- `{raw_stem}__{judge_prompt}__{judge_rubric}.json`
+- `transcript_XX.json`
 
 ## Transcript schema (core fields)
 

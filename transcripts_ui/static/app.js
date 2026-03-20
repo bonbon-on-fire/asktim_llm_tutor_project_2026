@@ -89,11 +89,55 @@
     drawChart("chart-gpt", gptScores, "GPT", "#a65dea", maxScore);
     drawChart("chart-claude", claudeScores, "Claude", "#ff893a", maxScore);
 
-    let sortKey = "gpt_score";
-    let sortDir = -1;
+    let sortKey = "persona";
+    let sortDir = 1;
+
+    function transcriptNumberSortValue(t) {
+      const raw = String(t.display_number || t.number || "");
+      const n = Number.parseInt(raw, 10);
+      return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+    }
+
+    function exerciseSortValue(t) {
+      const raw = String((t.metadata && t.metadata.exercise_number) || "");
+      const n = Number.parseInt(raw, 10);
+      return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+    }
 
     function renderTable() {
       const sorted = [...list].sort((a, b) => {
+        if (sortKey === "persona") {
+          const personaCompare = String(a.persona || "").localeCompare(String(b.persona || ""));
+          if (personaCompare !== 0) return sortDir * personaCompare;
+          const transcriptCompare = transcriptNumberSortValue(a) - transcriptNumberSortValue(b);
+          if (transcriptCompare !== 0) return sortDir * transcriptCompare;
+          const courseCompare = String((a.metadata && a.metadata.course) || "").localeCompare(
+            String((b.metadata && b.metadata.course) || "")
+          );
+          if (courseCompare !== 0) return sortDir * courseCompare;
+          return sortDir * (exerciseSortValue(a) - exerciseSortValue(b));
+        }
+        if (sortKey === "number") {
+          const aNum = transcriptNumberSortValue(a);
+          const bNum = transcriptNumberSortValue(b);
+          if (aNum !== bNum) return sortDir * (aNum - bNum);
+          return sortDir * String(a.number || "").localeCompare(String(b.number || ""));
+        }
+        if (sortKey === "course") {
+          const aCourse = String((a.metadata && a.metadata.course) || "");
+          const bCourse = String((b.metadata && b.metadata.course) || "");
+          return sortDir * aCourse.localeCompare(bCourse);
+        }
+        if (sortKey === "exercise") {
+          const aEx = String((a.metadata && a.metadata.exercise_number) || "");
+          const bEx = String((b.metadata && b.metadata.exercise_number) || "");
+          const aNum = Number.parseInt(aEx, 10);
+          const bNum = Number.parseInt(bEx, 10);
+          if (Number.isFinite(aNum) && Number.isFinite(bNum) && aNum !== bNum) {
+            return sortDir * (aNum - bNum);
+          }
+          return sortDir * aEx.localeCompare(bEx);
+        }
         const va = a[sortKey];
         const vb = b[sortKey];
         if (va == null && vb == null) return 0;
@@ -111,6 +155,7 @@
           <td>${escapeHtml((t.metadata && t.metadata.student_persona) || t.persona)}</td>
           <td>${escapeHtml(t.display_number || t.number)}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
+          <td>${escapeHtml((t.metadata && t.metadata.exercise_number) || "—")}</td>
           <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : maxScore) : "—"}</span></td>
           <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : maxScore) : "—"}</span></td>
           <td><a href="/transcript/${encodeURIComponent(t.persona)}/${encodeURIComponent(t.number)}">Read</a></td>
@@ -131,8 +176,8 @@
         renderTable();
       };
     });
-    const gptTh = document.querySelector('#transcripts-table thead th[data-sort="gpt_score"]');
-    if (gptTh) gptTh.classList.add("sorted-desc");
+    const personaTh = document.querySelector('#transcripts-table thead th[data-sort="persona"]');
+    if (personaTh) personaTh.classList.add("sorted-asc");
     renderTable();
   }
 
@@ -200,21 +245,13 @@
 
   function renderTranscript(data) {
     const meta = data.metadata || {};
-    const metaFields = [
-      ["Tutor prompt", meta.tutor_prompt],
-      ["Student persona", meta.student_persona],
-      ["Course", meta.course],
-      ["Exercise", meta.exercise_number],
-      ["Turns", meta.turns],
-      ["Judge", meta.judge_prompt],
-      ["Rubric", meta.judge_rubric],
-    ];
-    let html = '<dl class="meta-block">';
-    metaFields.forEach(([label, value]) => {
-      if (value == null) return;
-      html += "<dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(String(value)) + "</dd>";
-    });
-    html += "</dl>";
+    let html = '<div class="meta-top">';
+    html += '<span><strong>Tutor prompt:</strong> ' + escapeHtml(meta.tutor_prompt || "—") + "</span>";
+    html += '<span><strong>Student persona:</strong> ' + escapeHtml(meta.student_persona || "—") + "</span>";
+    html += '<span><strong>Course:</strong> ' + escapeHtml(meta.course || "—") + "</span>";
+    html += '<span><strong>Exercise:</strong> ' + escapeHtml(meta.exercise_number || "—") + "</span>";
+    html += '<span><strong>Turns:</strong> ' + escapeHtml(String(meta.turns != null ? meta.turns : "—")) + "</span>";
+    html += "</div>";
 
     if (meta.context) {
       html += '<details class="meta-block"><summary>Context</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(meta.context) + "</pre></details>";
@@ -250,19 +287,19 @@
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
-    tbody.innerHTML = '<tr><td colspan="6" class="loading">Loading...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" class="loading">Loading...</td></tr>';
     try {
       const r = await fetch("/api/transcripts");
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="error">No raw transcripts found. Run `ui.run_ui_raw` first.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" class="error">No raw transcripts found. Run `ui.run_ui_raw` first.</td></tr>';
         return;
       }
       renderDashboard(list);
     } catch (e) {
       console.error("Failed to load transcripts:", e);
-      tbody.innerHTML = '<tr><td colspan="6" class="error">' + escapeHtml(e.message) + "</td></tr>";
+      tbody.innerHTML = '<tr><td colspan="7" class="error">' + escapeHtml(e.message) + "</td></tr>";
     }
   }
 

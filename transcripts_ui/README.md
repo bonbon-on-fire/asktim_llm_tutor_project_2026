@@ -1,4 +1,4 @@
-# Transcripts UI
+# Transcripts Dashboard
 
 Flask app to browse raw tutor transcripts and compare GPT vs Claude grades.
 

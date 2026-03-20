@@ -327,6 +327,17 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Provider split for judge modules:
   - `judge/run_judge_gpt.py` is the GPT-oriented entrypoint.
   - `judge/run_judge_claude.py` mirrors the same single-transcript scoring flow using Anthropic.
+- Rubric detail enforcement update:
+  - For `rubric_04`, each deduction now requires `sub_criterion_id` tied to exact rubric sub-sub IDs (e.g. `1.1.A.a`, `2.2.D.a`).
+  - Judge prompts and schema now explicitly require the sub-sub ID per deduction.
+
+#### 3e. Judge JSON robustness hardening ✦ COMPLETED
+
+- Hardened judge output parsing to recover common non-strict model payloads:
+  - accepts Python-literal dict output (single quotes / tuple values) via safe `ast.literal_eval` fallback
+  - normalizes parsed values to JSON-compatible primitives before validation
+- Expanded grade payload sanitization so required schema sections/criteria are always reconstructed before strict validation.
+- Outcome: judge pipeline no longer fails early on malformed-but-recoverable model output and proceeds to rubric validation/scoring.
 
 **What breaks:**
 - `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.

@@ -45,7 +45,7 @@ class _JudgeState(TypedDict):
     grade_json: NotRequired[dict[str, Any]]
 
 
-def _create_judge_graph(*, model_name: str, api_key: str):
+def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_ids: bool):
     model = ChatAnthropic(model=model_name, temperature=0, api_key=api_key)
 
     def judge_node(state: _JudgeState) -> dict[str, Any]:
@@ -68,7 +68,11 @@ def _create_judge_graph(*, model_name: str, api_key: str):
         try:
             parsed = _parse_json_from_model_output(out)
             parsed = _sanitize_grade_payload(parsed)
-            validated = _validate_grade_payload(parsed, num_turns=int(state["num_turns"]))
+            validated = _validate_grade_payload(
+                parsed,
+                num_turns=int(state["num_turns"]),
+                enforce_sub_criterion_ids=enforce_sub_criterion_ids,
+            )
             ordered = _order_grade_payload(validated)
             return {"grade_json": ordered, "last_error": None}
         except JudgeError as e:
@@ -132,7 +136,12 @@ def judge_transcript(
     system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
     conversation_text = _format_conversation_for_judge(transcript)
 
-    graph = _create_judge_graph(model_name=model_name, api_key=api_key)
+    enforce_sub_criterion_ids = rubric_name.strip().lower() == "rubric_04"
+    graph = _create_judge_graph(
+        model_name=model_name,
+        api_key=api_key,
+        enforce_sub_criterion_ids=enforce_sub_criterion_ids,
+    )
     result = graph.invoke(
         {
             "attempts": 0,
