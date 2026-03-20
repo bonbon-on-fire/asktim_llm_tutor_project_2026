@@ -80,25 +80,65 @@
             "name": "Socratic method, guided discovery, and direct work"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 5, the student clearly resolved the culture-tag question by offering a concrete kampung/livelihoods argument. In Turn 6 the tutor re-asks the same culture-tag question without acknowledging the student's reasoning or advancing from it, effectively treating the student's answer as if it hadn't been given.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.b",
+                "reason": "Throughout the conversation the tutor coaches Jakarta-specific table construction effectively, but never generalises the method (e.g., how to build a stressors table for any city, how to handle overlapping stressors in future assignments). No transfer-to-future-tasks moment occurs.",
+                "points": 1
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never pauses to ask the student to reflect on what changed in their thinking (e.g., why merging rows improved the table, why evidence specificity matters). Process reflection is absent across the full conversation.",
+                "points": 1
+              }
+            ],
+            "score": 3,
             "max": 5,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
+          "score": 19,
           "max": 23
         },
         "malus": {
           "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond what the main criteria capture; tutor maintained student ownership and method coaching throughout.",
+          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided without giving answers, maintained student ownership, and gave method-level feedback. No further deduction warranted.",
           "score": 0,
           "max": 2
         }
@@ -106,8 +146,18 @@
       "dialogue": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.B.a",
+                "reason": "The culture-tag question was asked in Turn 4 and answered by the student in Turn 5. The tutor re-raises it in Turn 6 without acknowledging the student's answer, creating a near-duplicate prompt in consecutive turns.",
+                "points": 1
+              }
+            ],
+            "score": 3,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -119,12 +169,12 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 9,
           "max": 10
         },
         "malus": {
           "id": "2.3",
-          "explanation": "Tutor redirected off-topic content promptly and repeatedly re-anchored to assignment steps and constraints without avoidable drift.",
+          "explanation": "The single redundancy instance (culture-tag re-ask) was already penalised under 2.1.B.a. No additional dialogue flow or anchoring gaps warrant a further catch-all deduction.",
           "score": 0,
           "max": 2
         }
@@ -132,8 +182,19 @@
       "communication": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns (notably Turns 4, 8, and 9) contain multi-part numbered lists with 3–4 simultaneous sub-questions plus a forward task, making responses consistently long and reducing the student's opportunity to focus on one thing at a time. This is a recurring pattern rather than an isolated instance.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -151,33 +212,34 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 12,
           "max": 14
         },
         "malus": {
           "id": "3.4",
-          "explanation": "Communication remained clear, structured, and supportive; no extra concision/clarity penalties warranted beyond the scored criteria.",
+          "explanation": "The length/multi-question pattern was already captured under 3.1.A.a. Clarity and structure are otherwise good throughout. No additional catch-all deduction warranted.",
           "score": 0,
           "max": 2
         }
       }
     },
-    "total_base_score": 47,
+    "total_base_score": 40,
     "max_base_score": 47,
     "total_malus": 0,
     "max_malus": 6,
     "max_score": 47,
     "overview": [
-      "Tutor maintained strong guided-discovery: elicited the student’s city choice, had the student generate/merge stressors, and required student-provided ratings plus evidence hooks rather than supplying a ready-made table.",
-      "Excellent scaffolding aligned to Steps 1–5 of the prompt (stressors → merges/tags → ratings with evidence → draft rows → consistency/double-counting checks and priority rule).",
-      "Dialogue stayed on-task with quick redirection from an off-topic request and avoided repetition while increasing specificity (forcing commitments to exposure/impact metrics and climate linkages)."
+      "The tutor maintained strong Socratic discipline throughout: no direct answers were given, student ownership of stressor selection, ratings, and justifications was preserved at every turn, and the tutor consistently challenged vague reasoning with targeted follow-up questions rather than supplying conclusions.",
+      "Scaffolding was generally well-sequenced (city selection → stressor list → merges → ratings → evidence hooks → full rows), but a notable miss occurred in Turns 5–6 where the student had already addressed the culture-tag question and the tutor re-asked it without acknowledging the student's reasoning, triggering a 1.2.B.a deduction.",
+      "Meta-learning was present at the method level (e.g., explaining why merging avoids double-counting, why evidence specificity matters) but the tutor never prompted the student to reflect on what changed in their thinking, and never generalised the stressor-table method to future assignments or other cities.",
+      "Dialogue quality was strong overall. Assignment anchoring was maintained throughout, and off-topic content (dinner question) was redirected cleanly. One redundancy deduction was applied for the repeated culture-tag question in consecutive turns.",
+      "Communication was clear and well-structured, but the tutor's habit of bundling 3–4 simultaneous sub-questions plus a forward task in a single turn (Turns 4, 8, 9) was a recurring pattern that reduced student focus and constitutes a 3.1.A.a deduction. Tone was consistently supportive and appropriately informal without being unprofessional."
     ],
-    "total_score": 47,
+    "total_score": 40,
     "model": {
-      "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
     },
     "judge_llm_calls": 1
   }

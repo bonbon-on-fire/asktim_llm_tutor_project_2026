@@ -68,5 +68,142 @@
       "tutor": "That’s a defensible refinement: “means” as *appropriation/targeting*, not mere causal involvement.\n\nNow do two quick consistency checks:\n\n1) On your view, what specific feature makes **Fuel** wrong (if it is)? Is it “appropriation of the person/body/resources,” or something else? State the feature in 5–10 words.\n\n2) What would an act consequentialist say is irrelevant about your distinction (targeting/appropriation), and what would you say they’re missing morally?\n\nLast step for your draft: write your principle as a 3-part test (you choose the labels), e.g.:\n- Is the person non-liable?\n- Are you appropriating/targeting their body as a tool?\n- Are you redirecting a threat?\n\nYou don’t need perfect wording—just list the three checks you’ll use. Then include one objection you expect (e.g., “redescription problem,” “why should targeting matter?”) and how you’ll respond in argument form.",
       "pedagogical_reasoning": "Student has refined a defensible distinction (appropriation/targeting) that can handle loop. Next I’ll have them check consistency across Fuel and any transplant-style case, and ensure they can explain why act consequentialism misses this. I’ll prompt them to state their principle with necessary components and identify one anticipated objection and reply, without drafting prose. Keep bite-sized."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method, guided discovery, and direct work"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor never explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The pedagogical rationale for the Socratic approach is never made explicit across the conversation.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.D.b",
+                "reason": "The tutor does not help the student transfer the reasoning strategies (e.g., the means/side-effect distinction, the liability criterion, the 2x2 grid method) to future philosophical tasks or generalize the method beyond this specific prompt.",
+                "points": 1
+              }
+            ],
+            "score": 2,
+            "max": 5,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 23
+        },
+        "malus": {
+          "id": "1.4",
+          "explanation": "No additional catch-all deductions warranted. The tutor consistently maintained Socratic guidance, built on student progress, and gave strong process-level feedback. The deductions already captured in 1.3 cover the main gaps.",
+          "score": 0,
+          "max": 2
+        }
+      },
+      "dialogue": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
+        },
+        "malus": {
+          "id": "2.3",
+          "explanation": "No additional catch-all deductions warranted. The conversation progressed cleanly through the assignment's sub-questions without notable drift or redundancy beyond what was already assessed.",
+          "score": 0,
+          "max": 2
+        }
+      },
+      "communication": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses multi-part, multi-paragraph responses across many turns (e.g., turns 2, 3, 4, 8 each contain 3–4 distinct sub-questions or tasks). While the content is pedagogically sound, the length and density of these turns consistently reduces the student's opportunity to think and respond to one focused prompt at a time. A more interactive, bite-sized approach would have been more appropriate.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 14
+        },
+        "malus": {
+          "id": "3.4",
+          "explanation": "No additional catch-all deductions warranted beyond the 3.1.A.a deduction already applied. The responses, while long, were well-structured and clear.",
+          "score": 0,
+          "max": 2
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 47,
+    "total_malus": 0,
+    "max_malus": 6,
+    "max_score": 47,
+    "overview": [
+      "The tutor delivered an excellent Socratic session throughout the 10-turn conversation. It never gave direct answers or did the student's reasoning for them, instead consistently probing with targeted questions that built on the student's prior responses (e.g., the 2x2 grid in turn 6, the loop case in turns 8-9).",
+      "Scaffolding was strong: the tutor moved from act consequentialism basics to case-by-case application to principle formation to stress-testing, always building on what the student had already established.",
+      "The main weakness was in meta-learning: the tutor never explained why it was using guided questioning rather than direct answers, and never helped the student transfer the reasoning strategies (means/side-effect distinction, liability criterion) to future philosophical tasks.",
+      "Communication was generally clear and well-structured, but the tutor consistently posed 3-4 sub-questions per turn, which reduced the student's opportunity to focus on one idea at a time. This pattern across multiple turns triggered the 3.1.A.a deduction.",
+      "Assignment anchoring was excellent throughout: the tutor kept the conversation tightly focused on the Fuel/Blood/trolley cases and the specific prompt questions, and immediately redirected the off-topic movie request in turn 1.",
+      "Tone was consistently warm, encouraging, and appropriately calibrated to the student's level of engagement and confidence."
+    ],
+    "total_score": 42,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }
