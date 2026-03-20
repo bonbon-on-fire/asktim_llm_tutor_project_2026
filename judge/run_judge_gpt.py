@@ -1,5 +1,5 @@
 """
-LLM-based judge for humanities tutor transcripts.
+LLM-based GPT judge for humanities tutor transcripts.
 
 Scores a conversation transcript against a rubric using LangGraph + OpenAI.
 Called by the UI; not intended to run standalone.
@@ -39,6 +39,7 @@ load_dotenv(_REPO_ROOT / ".env")
 # API key
 # ---------------------------------------------------------------------------
 
+
 def _require_openai_api_key() -> str:
     key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
     if not key:
@@ -55,6 +56,7 @@ def _env_truthy(name: str) -> bool:
 # ---------------------------------------------------------------------------
 # Rubric constants
 # ---------------------------------------------------------------------------
+
 
 class JudgeError(RuntimeError):
     pass
@@ -104,6 +106,7 @@ _MAX_TOTAL_SCORE = _MAX_BASE_SCORE  # 47
 # ---------------------------------------------------------------------------
 # JSON parsing & validation helpers
 # ---------------------------------------------------------------------------
+
 
 def _parse_json_from_model_output(text: str) -> dict[str, Any]:
     raw = (text or "").strip()
@@ -181,6 +184,7 @@ def _clamp(v: float, lo: float, hi: float) -> float:
 # ---------------------------------------------------------------------------
 # Sanitization & validation
 # ---------------------------------------------------------------------------
+
 
 def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     """
@@ -302,10 +306,10 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
                                 deductions_out.append(d_any)
                                 continue
                             d_out: dict[str, Any] = {}
-                            d_out["reason"] = d_any.get("reason")
-                            d_out["points"] = d_any.get("points")
                             if "evidence_turns" in d_any:
                                 d_out["evidence_turns"] = d_any.get("evidence_turns")
+                            d_out["reason"] = d_any.get("reason")
+                            d_out["points"] = d_any.get("points")
                             for dk, dv in d_any.items():
                                 if dk not in d_out:
                                     d_out[dk] = dv
@@ -474,6 +478,7 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
 # Prompt loading
 # ---------------------------------------------------------------------------
 
+
 def _build_expected_schema() -> dict[str, Any]:
     """Build the example JSON schema shown to the judge in the prompt."""
     sections: dict[str, Any] = {}
@@ -482,7 +487,7 @@ def _build_expected_schema() -> dict[str, Any]:
         for crit_id in _SECTION_CRITERIA[section_key]:
             criteria[crit_id] = {
                 "deductions": [
-                    {"reason": "Short reason", "points": 1, "evidence_turns": [1]},
+                    {"evidence_turns": [1], "reason": "Short reason", "points": 1},
                 ],
                 "score": 0,
                 "max": _CRITERIA_MAX[crit_id],
@@ -547,6 +552,7 @@ def _judge_repair_prompt(error: str) -> str:
 # Conversation formatting
 # ---------------------------------------------------------------------------
 
+
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
     context = transcript.get("context", "")
     exercise = transcript.get("exercise", "")
@@ -574,6 +580,7 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
 # ---------------------------------------------------------------------------
 # LangGraph
 # ---------------------------------------------------------------------------
+
 
 class _JudgeState(TypedDict):
     attempts: int
@@ -634,6 +641,7 @@ def _create_judge_graph(*, model_name: str, api_key: str):
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+
 
 @dataclass(frozen=True)
 class JudgeResult:
@@ -710,3 +718,4 @@ def judge_transcript(
         total_score=int(grade_payload["total_score"]),
         max_score=int(grade_payload["max_score"]),
     )
+

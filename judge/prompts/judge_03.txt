@@ -31,7 +31,7 @@ You must grade only from provided evidence in the transcript and assignment cont
 ## Function
 
 - For each criterion, start at full points and subtract only supported deductions.
-- List deductions before totals; each deduction object must keep key order as `reason` then `points` (then `evidence_turns` when applicable).
+- List deductions before totals; each deduction object must keep key order as `evidence_turns` then `reason` then `points` (omit `evidence_turns` when not applicable).
 - For each section malus, include a concise `explanation` that justifies the assigned catch-all deduction score.
 - After deductions are finalized, compute criterion scores and section scores from deductions; totals are recomputed and validated in code.
 - Keep all values within allowed ranges and maintain internal consistency.

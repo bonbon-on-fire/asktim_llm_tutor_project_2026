@@ -1,24 +1,21 @@
-"""
-Re-judge existing transcripts with Claude and write to *_claude folders.
-
-Usage (from repo root):
-    python -m judge.run_judge_claude
-"""
+"""Claude-based judge for humanities tutor transcripts."""
 
 from __future__ import annotations
 
-import argparse
 import json
 import os
-from pathlib import Path
 from typing import Any
 
-from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_anthropic import ChatAnthropic
+from langgraph.graph import END, START, StateGraph
+from typing_extensions import NotRequired, TypedDict
 
-from judge.run_judge import (
+from judge.run_judge_gpt import (
     JudgeError,
+    JudgeResult,
+    TRANSCRIPTS_DIR,
+    _env_truthy,
     _format_conversation_for_judge,
     _judge_repair_prompt,
     _order_grade_payload,
@@ -27,16 +24,9 @@ from judge.run_judge import (
     _validate_grade_payload,
     load_judge_prompt,
 )
+from datetime import datetime, timezone
 
-
-_REPO_ROOT = Path(__file__).resolve().parent.parent
-_TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
-_SOURCE_DIRS: tuple[str, ...] = ("chaotic", "chitchat", "clueless")
-_TARGET_SUFFIX = "_claude"
-
-# Load repo-level .env once so ANTHROPIC_API_KEY is available.
-load_dotenv(_REPO_ROOT / ".env")
-
+_DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-4-6"
 
 def _require_anthropic_api_key() -> str:
     key = os.environ.get("ANTHROPIC_API_KEY")
@@ -45,131 +35,127 @@ def _require_anthropic_api_key() -> str:
     return key
 
 
-def _ensure_empty_target_dirs() -> dict[str, Path]:
-    target_dirs: dict[str, Path] = {}
-    for source_name in _SOURCE_DIRS:
-        target_name = f"{source_name}{_TARGET_SUFFIX}"
-        target_dir = _TRANSCRIPTS_DIR / target_name
-        target_dir.mkdir(parents=True, exist_ok=True)
-        for path in target_dir.glob("*.json"):
-            path.unlink()
-        target_dirs[source_name] = target_dir
-    return target_dirs
+class _JudgeState(TypedDict):
+    attempts: int
+    system_prompt: str
+    conversation_text: str
+    num_turns: int
+    last_output: NotRequired[str]
+    last_error: NotRequired[str]
+    grade_json: NotRequired[dict[str, Any]]
 
 
-def _judge_with_claude(
-    *,
-    system_prompt: str,
-    conversation_text: str,
-    num_turns: int,
-    model_name: str,
-    api_key: str,
-) -> tuple[dict[str, Any], int]:
+def _create_judge_graph(*, model_name: str, api_key: str):
     model = ChatAnthropic(model=model_name, temperature=0, api_key=api_key)
-    attempts = 0
-    last_output = ""
-    last_error: str | None = None
 
-    while attempts < 2:
-        messages = [SystemMessage(content=system_prompt)]
-        if last_error and last_output:
+    def judge_node(state: _JudgeState) -> dict[str, Any]:
+        messages = [SystemMessage(content=state["system_prompt"])]
+        if state.get("last_error") and state.get("last_output"):
             messages.append(
                 HumanMessage(
-                    content=_judge_repair_prompt(last_error)
+                    content=_judge_repair_prompt(state["last_error"])
                     + "\n\nPrevious JSON (to repair):\n"
-                    + last_output
+                    + state["last_output"]
                 )
             )
-        messages.append(HumanMessage(content=conversation_text))
-
+        messages.append(HumanMessage(content=state["conversation_text"]))
         resp = model.invoke(messages)
-        last_output = resp.content if isinstance(resp.content, str) else str(resp.content)
-        attempts += 1
+        content = resp.content if isinstance(resp.content, str) else str(resp.content)
+        return {"last_output": content, "attempts": int(state.get("attempts", 0)) + 1}
 
+    def validate_node(state: _JudgeState) -> dict[str, Any]:
+        out = state.get("last_output", "")
         try:
-            parsed = _parse_json_from_model_output(last_output)
+            parsed = _parse_json_from_model_output(out)
             parsed = _sanitize_grade_payload(parsed)
-            validated = _validate_grade_payload(parsed, num_turns=num_turns)
-            return validated, attempts
+            validated = _validate_grade_payload(parsed, num_turns=int(state["num_turns"]))
+            ordered = _order_grade_payload(validated)
+            return {"grade_json": ordered, "last_error": None}
         except JudgeError as e:
-            last_error = str(e)
+            return {"last_error": str(e), "grade_json": None}
 
-    raise JudgeError(f"Claude judge failed after {attempts} attempts. Last error: {last_error}")
+    graph = StateGraph(_JudgeState)
+    graph.add_node("judge", judge_node)
+    graph.add_node("validate", validate_node)
+    graph.add_edge(START, "judge")
+    graph.add_edge("judge", "validate")
+
+    def _route(state: _JudgeState) -> str:
+        if state.get("grade_json") is not None:
+            return END
+        if int(state.get("attempts", 0)) >= 2:
+            return END
+        return "judge"
+
+    graph.add_conditional_edges("validate", _route, {"judge": "judge", END: END})
+    return graph.compile()
 
 
-def _process_transcript_file(
+def judge_transcript(
+    transcript_name: str,
     *,
-    src_path: Path,
-    dst_path: Path,
-    system_prompt: str,
-    model_name: str,
-    api_key: str,
-) -> None:
-    transcript = json.loads(src_path.read_text(encoding="utf-8"))
+    prompt_name: str = "judge_03",
+    rubric_name: str = "rubric_04",
+) -> JudgeResult:
+    """
+    Score one transcript by relative path (without .json) under transcripts/.
+
+    Examples: ``"chaotic/transcript_01"`` or ``"transcript_01"``.
+
+    Side effect: updates the transcript JSON in-place by adding a top-level
+    ``grade`` object.
+    """
+    name = (transcript_name or "").strip()
+    if not name:
+        raise JudgeError("transcript_name is required (path without .json).")
+
+    transcript_path = TRANSCRIPTS_DIR / f"{name}.json"
+    if not transcript_path.exists():
+        raise JudgeError(f"Transcript not found: {transcript_path}")
+
+    try:
+        transcript = json.loads(transcript_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise JudgeError(f"Transcript is not valid JSON: {e}") from e
     if not isinstance(transcript, dict):
-        raise JudgeError(f"Transcript must be an object: {src_path}")
+        raise JudgeError("Transcript JSON must be an object.")
+    if "grade" in transcript:
+        raise JudgeError("Transcript already contains a top-level 'grade' key; refusing to overwrite.")
 
     exchanges = transcript.get("exchanges")
     if not isinstance(exchanges, list) or not exchanges:
-        raise JudgeError(f"Transcript must contain non-empty 'exchanges': {src_path}")
-
-    out_payload = dict(transcript)
-    out_payload.pop("grade", None)
-
-    conversation_text = _format_conversation_for_judge(out_payload)
-    grade_payload, attempts = _judge_with_claude(
-        system_prompt=system_prompt,
-        conversation_text=conversation_text,
-        num_turns=len(exchanges),
-        model_name=model_name,
-        api_key=api_key,
-    )
-    grade_payload = dict(grade_payload)
-    grade_payload["model"] = {"provider": "anthropic", "model": model_name, "temperature": 0}
-    grade_payload["judge_llm_calls"] = attempts
-    grade_payload = _order_grade_payload(grade_payload)
-    out_payload["grade"] = grade_payload
-
-    dst_path.write_text(json.dumps(out_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Re-judge transcripts with Claude.")
-    parser.add_argument("--model", default="claude-sonnet-4-6", help="Claude model name.")
-    parser.add_argument("--prompt", default="judge_03", help="Judge prompt stem.")
-    parser.add_argument("--rubric", default="rubric_04", help="Judge rubric stem.")
-    args = parser.parse_args()
+        raise JudgeError("Transcript must contain a non-empty 'exchanges' array.")
 
     api_key = _require_anthropic_api_key()
-    system_prompt = load_judge_prompt(prompt_name=args.prompt, rubric_name=args.rubric)
-    target_dirs = _ensure_empty_target_dirs()
+    model_name = os.environ.get("ANTHROPIC_MODEL", _DEFAULT_ANTHROPIC_MODEL)
 
-    total = 0
-    for source_name in _SOURCE_DIRS:
-        src_dir = _TRANSCRIPTS_DIR / source_name
-        dst_dir = target_dirs[source_name]
-        if not src_dir.exists():
-            print(f"[Skip] Missing source folder: {src_dir.relative_to(_REPO_ROOT)}")
-            continue
+    system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
+    conversation_text = _format_conversation_for_judge(transcript)
 
-        for src_path in sorted(src_dir.glob("*.json")):
-            dst_path = dst_dir / src_path.name
-            _process_transcript_file(
-                src_path=src_path,
-                dst_path=dst_path,
-                system_prompt=system_prompt,
-                model_name=args.model,
-                api_key=api_key,
-            )
-            total += 1
-            print(
-                f"[OK] {src_path.relative_to(_REPO_ROOT)} -> "
-                f"{dst_path.relative_to(_REPO_ROOT)}"
-            )
+    graph = _create_judge_graph(model_name=model_name, api_key=api_key)
+    result = graph.invoke(
+        {
+            "attempts": 0,
+            "system_prompt": system_prompt,
+            "conversation_text": conversation_text,
+            "num_turns": len(exchanges),
+        }
+    )
+    grade_json = result.get("grade_json")
+    if grade_json is None:
+        raise JudgeError(f"Judge failed to produce valid grade JSON. Last error: {result.get('last_error')}")
 
-    print(f"[Done] Claude-judged transcripts written: {total}")
-    return 0
+    grade_payload = dict(grade_json)
+    grade_payload["model"] = {"provider": "anthropic", "model": model_name, "temperature": 0}
+    grade_payload["judge_llm_calls"] = int(result.get("attempts", 0))
+    if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
+        grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
+    grade_payload = _order_grade_payload(grade_payload)
 
+    transcript["grade"] = grade_payload
+    transcript_path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+    return JudgeResult(
+        total_score=int(grade_payload["total_score"]),
+        max_score=int(grade_payload["max_score"]),
+    )

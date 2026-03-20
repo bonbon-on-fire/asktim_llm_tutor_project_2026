@@ -323,6 +323,9 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
   - `max_malus=6`
   - `max_score=47`
 - Judge schema/payload now uses `total_malus` and `max_malus` instead of `total_bonus` and `max_bonus`.
+- Provider split for judge modules:
+  - `judge/run_judge_gpt.py` is the GPT-oriented entrypoint.
+  - `judge/run_judge_claude.py` mirrors the same single-transcript scoring flow using Anthropic.
 
 **What breaks:**
 - `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.

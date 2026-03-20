@@ -11,7 +11,8 @@ Current defaults in code:
 ```
 judge/
   __init__.py          — package exports
-  run_judge.py         — LangGraph engine, validation, scoring logic
+  run_judge_gpt.py     — GPT judge implementation (OpenAI)
+  run_judge_claude.py  — Claude judge module (single-transcript scoring API)
   README.md
   prompts/
     judge_01.txt       — baseline prompt template
@@ -66,12 +67,10 @@ result = judge_transcript(
 
 ## Rubric summary
 
-| Section                  | Sub-criteria | Max points | Catch-all malus |
-| :----------------------- | :----------: | ---------: | --------------: |
-| 1. Pedagogy              |    1.1–1.3   |         23 |     - |
-| 2. Dialogue quality      |    2.1–2.2   |         10 |     - |
-| 3. Communication quality |    3.1–3.3   |         14 |     - |
-| **Base total**           |              |     **47** |     - |
+- `1. Pedagogy` (`1.1`-`1.3`): `23` max points
+- `2. Dialogue quality` (`2.1`-`2.2`): `10` max points
+- `3. Communication quality` (`3.1`-`3.3`): `14` max points
+- `Base total`: `47` max points
 
 Section malus deductions (catch-all, only if not already deducted):
 - `1.4`: `0..2`
@@ -85,7 +84,7 @@ Maximum total score: **47**.
 - Scores are whole integers only.
 - Top-level key order ends with `total_score`, then `judge_llm_calls`.
 - `overview` replaces `justifications` and appears near the end.
-- Deductions are ordered with `reason` before `points`.
+- Deductions are ordered as `evidence_turns`, then `reason`, then `points` (`evidence_turns` optional).
 - Each section `malus` requires `explanation`.
 - `total_malus` and `max_malus` replace `total_bonus` and `max_bonus`.
 - Judge input supports both transcript `context` and `exercise`.
@@ -98,19 +97,18 @@ Maximum total score: **47**.
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
 | `JUDGE_INCLUDE_TIMESTAMP` | No | If truthy (`1/true/yes/on`), include `timestamp_utc` in grade output. Default off for deterministic artifacts. |
 
-## Claude Re-judge Script
+## Claude Judge Module
 
-To re-judge existing transcripts with Claude and write outputs into:
-- `transcripts/chaotic_claude`
-- `transcripts/chitchat_claude`
-- `transcripts/clueless_claude`
+`judge/run_judge_claude.py` now mirrors the GPT judge flow, but uses Anthropic:
+- Same transcript input/output contract.
+- Same schema validation, sanitization, and retry behavior.
+- Uses `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` (default: `claude-sonnet-4-6`).
 
-Run:
+Example:
 
 ```python
-python -m judge.run_judge_claude --model claude-sonnet-4-6 --prompt judge_03 --rubric rubric_04
-```
+from judge.run_judge_claude import judge_transcript
 
-Notes:
-- The script clears existing `*_claude` transcript JSON files before writing new results.
-- Requires `ANTHROPIC_API_KEY` in environment (or `.env`).
+result = judge_transcript("chaotic/transcript_01")
+print(result.total_score, result.max_score)
+```
