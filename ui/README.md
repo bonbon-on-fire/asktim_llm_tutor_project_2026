@@ -62,6 +62,36 @@ Run matrix:
 
 `tutor_prompts x student_personas x course_exercises x trials`
 
+### Batch run (judge raw transcripts with GPT)
+
+```powershell
+python -m ui.run_ui_gpt
+```
+
+Before running, edit these constants in `ui/run_ui_gpt.py`:
+
+- `JUDGE_PROMPTS`
+- `JUDGE_RUBRICS`
+- `STUDENT_PERSONAS`
+- `RAW_TRANSCRIPTS` (optional explicit transcript stems per persona type; empty means auto-discover all)
+
+The script reads from `*_raw` folders, copies each selected transcript to `*_gpt`, then applies GPT judging in-place on the copied file.
+
+### Batch run (judge raw transcripts with Claude)
+
+```powershell
+python -m ui.run_ui_claude
+```
+
+Before running, edit these constants in `ui/run_ui_claude.py`:
+
+- `JUDGE_PROMPTS`
+- `JUDGE_RUBRICS`
+- `STUDENT_PERSONAS`
+- `RAW_TRANSCRIPTS` (optional explicit transcript stems per persona type; empty means auto-discover all)
+
+The script reads from `*_raw` folders, copies each selected transcript to `*_claude`, then applies Claude judging in-place on the copied file.
+
 ## Output paths
 
 ### Judged runs (`ui` and `ui.run_batch`)
@@ -85,6 +115,30 @@ Raw transcripts are saved to persona-specific raw folders:
 - `transcripts/clueless/clueless_raw/`
 
 Each file is auto-named as `transcript_XX.json`.
+
+### GPT judged runs (`ui.run_ui_gpt`)
+
+Judged transcripts are saved to:
+
+- `transcripts/chaotic/chaotic_gpt/`
+- `transcripts/chitchat/chitchat_gpt/`
+- `transcripts/clueless/clueless_gpt/`
+
+Each output file uses:
+
+- `{raw_stem}__{judge_prompt}__{judge_rubric}.json`
+
+### Claude judged runs (`ui.run_ui_claude`)
+
+Judged transcripts are saved to:
+
+- `transcripts/chaotic/chaotic_claude/`
+- `transcripts/chitchat/chitchat_claude/`
+- `transcripts/clueless/clueless_claude/`
+
+Each output file uses:
+
+- `{raw_stem}__{judge_prompt}__{judge_rubric}.json`
 
 ## Transcript schema (core fields)
 
@@ -123,3 +177,5 @@ Judged flows additionally include:
 | -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
+| `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required by `ui.run_ui_claude`. |
+| `ANTHROPIC_MODEL` | No | Model name for Claude judge (default: `claude-sonnet-4-6`). |
