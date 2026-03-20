@@ -439,3 +439,19 @@ web_ui/
 | POST   | `/api/chat`           | Send a user message               |
 | POST   | `/api/student-turn`   | Generate student + tutor turn     |
 | GET    | `/api/reasoning`      | Fetch reasoning for all turns     |
+
+---
+
+## 9. Work log updates
+
+### 03/20/2026 — Visualization input migration (completed)
+
+- Updated `visualization/run_visualization.py` to use judged transcript JSON inputs from the new folder structure:
+  - `transcripts/<persona_type>/<persona_type>_gpt/transcript_XX.json`
+  - `transcripts/<persona_type>/<persona_type>_claude/transcript_XX.json`
+- Kept only `grades_per_transcript_gpt_vs_claude` output generation and removed dependency on legacy compiled CSV files.
+- Added robust score parsing for numeric/string JSON values and validated the script run end-to-end.
+
+### Documentation follow-up (completed)
+
+- Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.

@@ -1,5 +1,5 @@
 """
-Build visualization views from GPT vs Claude transcript grade CSVs.
+Build transcript-level GPT vs Claude score comparison chart.
 
 Usage:
     python -m visualization.run_visualization
@@ -7,14 +7,14 @@ Usage:
 
 from __future__ import annotations
 
-import csv
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
 
 @dataclass(frozen=True)
 class GradeRow:
-    # Source metadata copied from compiled transcript CSV rows.
+    # Source metadata copied from judged transcript JSON files.
     tutor_prompt: str
     student_persona: str
     course: str
@@ -49,45 +49,49 @@ class GradeRow:
 
 def _parse_score(x: str) -> float:
     try:
-        return float((x or "").strip())
-    except ValueError:
+        return float(str(x or "").strip())
+    except (TypeError, ValueError):
         return float("nan")
 
 
-def _read_compiled_csv(path: Path) -> list[GradeRow]:
-    # Uses csv.DictReader so multiline cells (overview/deductions) are handled safely.
-    rows: list[GradeRow] = []
-    with path.open("r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f)
-        required = {
-            "tutor_prompt",
-            "student_persona",
-            "course",
-            "exercise_number",
-            "judge_prompt",
-            "judge_rubric",
-            "transcript_name",
-            "total_score",
-            "max_score",
-        }
-        missing = sorted(required - set(reader.fieldnames or []))
-        if missing:
-            raise RuntimeError(f"Missing required CSV columns in {path}: {missing}")
+def _read_judged_transcript_json(path: Path) -> GradeRow | None:
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
 
-        for row in reader:
-            rows.append(
-                GradeRow(
-                    tutor_prompt=row["tutor_prompt"].strip(),
-                    student_persona=row["student_persona"].strip(),
-                    course=row["course"].strip(),
-                    exercise_number=row["exercise_number"].strip(),
-                    judge_prompt=row["judge_prompt"].strip(),
-                    judge_rubric=row["judge_rubric"].strip(),
-                    transcript_name=row["transcript_name"].strip(),
-                    total_score=_parse_score(row["total_score"]),
-                    max_score=_parse_score(row["max_score"]),
-                )
-            )
+    grade = raw.get("grade")
+    if not isinstance(grade, dict):
+        return None
+
+    return GradeRow(
+        tutor_prompt=str(raw.get("tutor_prompt", "")).strip(),
+        student_persona=str(raw.get("student_persona", "")).strip(),
+        course=str(raw.get("course", "")).strip(),
+        exercise_number=str(raw.get("exercise_number", "")).strip(),
+        judge_prompt=str(raw.get("judge_prompt", "")).strip(),
+        judge_rubric=str(raw.get("judge_rubric", "")).strip(),
+        transcript_name=path.stem.strip(),
+        total_score=_parse_score(grade.get("total_score")),
+        max_score=_parse_score(grade.get("max_score")),
+    )
+
+
+def _read_provider_rows(
+    *,
+    transcripts_dir: Path,
+    provider_suffix: str,
+) -> list[GradeRow]:
+    # provider_suffix examples: "gpt", "claude"
+    # Path pattern: transcripts/<persona_type>/<persona_type>_<provider_suffix>/transcript_XX.json
+    rows: list[GradeRow] = []
+    pattern = f"*/*_{provider_suffix}/transcript_*.json"
+    for transcript_path in sorted(transcripts_dir.glob(pattern)):
+        row = _read_judged_transcript_json(transcript_path)
+        if row is None:
+            continue
+        rows.append(row)
+
     return rows
 
 
@@ -147,13 +151,16 @@ def _line_chart_grades_per_transcript(
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
-    gpt_csv = transcripts_dir / "transcripts_compiled.csv"
-    claude_csv = transcripts_dir / "transcripts_compiled_claude.csv"
     out_dir = repo_root / "visualization" / "outputs"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    gpt_rows = _read_compiled_csv(gpt_csv)
-    claude_rows = _read_compiled_csv(claude_csv)
+    gpt_rows = _read_provider_rows(transcripts_dir=transcripts_dir, provider_suffix="gpt")
+    claude_rows = _read_provider_rows(transcripts_dir=transcripts_dir, provider_suffix="claude")
+
+    if not gpt_rows and not claude_rows:
+        raise RuntimeError(
+            "No judged transcript JSON files found for GPT or Claude under transcripts/<persona_type>/."
+        )
 
     _line_chart_grades_per_transcript(
         gpt_rows=gpt_rows,

@@ -136,6 +136,79 @@ def _parse_json_from_model_output(text: str) -> dict[str, Any]:
     raise JudgeError("Model output JSON was invalid.")
 
 
+def _extract_text_from_model_content(content: Any) -> str:
+    """
+    Normalize OpenAI response content to a plain text string.
+
+    GPT responses may return content as a string, a list of blocks, or nested
+    dict-like structures. We collect text-bearing fields first and only fall
+    back to JSON/string conversion when necessary.
+    """
+    if isinstance(content, str):
+        return content
+
+    if isinstance(content, list):
+        parts: list[str] = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+                continue
+            if isinstance(item, dict):
+                text = item.get("text")
+                if isinstance(text, str):
+                    parts.append(text)
+                    continue
+                for key in ("output_text", "content", "value"):
+                    candidate = item.get(key)
+                    if isinstance(candidate, str):
+                        parts.append(candidate)
+                        break
+        if parts:
+            return "\n".join(parts)
+        return json.dumps(content, ensure_ascii=False)
+
+    if isinstance(content, dict):
+        text = content.get("text")
+        if isinstance(text, str):
+            return text
+        for key in ("output_text", "content", "value"):
+            candidate = content.get(key)
+            if isinstance(candidate, str):
+                return candidate
+        return json.dumps(content, ensure_ascii=False)
+
+    return str(content)
+
+
+def _write_failed_output_debug(
+    *,
+    source_path: Path,
+    prompt_name: str,
+    rubric_name: str,
+    model_name: str,
+    last_error: str,
+    last_output: str,
+) -> Path | None:
+    """Write failed model output for debugging; returns path on success."""
+    debug_dir = source_path.parent / "_judge_failures"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    debug_path = debug_dir / f"{source_path.stem}__{prompt_name}__{rubric_name}__gpt_failed_output.txt"
+    payload = (
+        f"model={model_name}\n"
+        f"prompt={prompt_name}\n"
+        f"rubric={rubric_name}\n"
+        f"source={source_path}\n"
+        f"error={last_error}\n\n"
+        "----- raw_model_output -----\n"
+        f"{last_output}\n"
+    )
+    try:
+        debug_path.write_text(payload, encoding="utf-8")
+        return debug_path
+    except OSError:
+        return None
+
+
 def _as_dict(x: Any, *, path: str) -> dict[str, Any]:
     if isinstance(x, dict):
         return x
@@ -584,7 +657,7 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
             )
         messages.append(HumanMessage(content=state["conversation_text"]))
         resp = model.invoke(messages)
-        content = resp.content if isinstance(resp.content, str) else str(resp.content)
+        content = _extract_text_from_model_content(resp.content)
         return {"last_output": content, "attempts": int(state.get("attempts", 0)) + 1}
 
     def validate_node(state: _JudgeState) -> dict[str, Any]:
@@ -657,7 +730,18 @@ def judge_transcript(
     )
     grade_json = result.get("grade_json")
     if grade_json is None:
-        raise JudgeError(f"Judge failed to produce valid grade JSON. Last error: {result.get('last_error')}")
+        last_error = str(result.get("last_error") or "unknown validation error")
+        last_output = str(result.get("last_output") or "")
+        debug_path = _write_failed_output_debug(
+            source_path=source_path,
+            prompt_name=prompt_name,
+            rubric_name=rubric_name,
+            model_name=model_name,
+            last_error=last_error,
+            last_output=last_output,
+        )
+        debug_hint = f" Debug output: {debug_path}" if debug_path is not None else ""
+        raise JudgeError(f"Judge failed to produce valid grade JSON. Last error: {last_error}.{debug_hint}")
 
     grade_payload = dict(grade_json)
     grade_payload["model"] = {

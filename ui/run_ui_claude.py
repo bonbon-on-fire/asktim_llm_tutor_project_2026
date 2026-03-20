@@ -30,12 +30,18 @@ _TARGET_SUBDIR_BY_TYPE = {
 JUDGE_PROMPTS: list[str] = ["judge_04"]
 JUDGE_RUBRICS: list[str] = ["rubric_04"]
 STUDENT_PERSONAS: list[str] = [
-    "chaotic_01",
-    "chaotic_02",
-    "chaotic_03",
-    "chaotic_04",
-    "chaotic_05",
-    "chaotic_06",
+    "chitchat_01",
+    "chitchat_02",
+    "chitchat_03",
+    "chitchat_04",
+    "chitchat_05",
+    "chitchat_06",
+    "clueless_01",
+    "clueless_02",
+    "clueless_03",
+    "clueless_04",
+    "clueless_05",
+    "clueless_06",
 ]
 
 # Optional transcript filtering per persona type.

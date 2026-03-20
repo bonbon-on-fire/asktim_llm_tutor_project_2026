@@ -6,10 +6,10 @@ Generate score visualizations comparing GPT and Claude transcript grading output
 
 The script reads:
 
-- `transcripts/transcripts_compiled.csv` (GPT-judged runs)
-- `transcripts/transcripts_compiled_claude.csv` (Claude-judged runs)
+- `transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json` (GPT-judged runs)
+- `transcripts/<persona_type>/<persona_type>_claude/transcript_*.json` (Claude-judged runs)
 
-Required columns:
+Required JSON fields:
 
 - `tutor_prompt`
 - `student_persona`
@@ -17,9 +17,10 @@ Required columns:
 - `exercise_number`
 - `judge_prompt`
 - `judge_rubric`
-- `transcript_name`
-- `total_score`
-- `max_score`
+- `grade.total_score`
+- `grade.max_score`
+
+`transcript_name` is derived from each file name (for example, `transcript_01`).
 
 ## Run
 
@@ -50,4 +51,4 @@ Written to `visualization/outputs/`:
   - `course`
   - `exercise_number`
   - `transcript_name`
-- Missing rows in either CSV are handled by leaving gaps (`NaN`) in the line chart.
+- Missing rows in either provider folder are handled by leaving gaps (`NaN`) in the line chart.
