@@ -6,13 +6,9 @@ Current defaults in code:
 - prompt: `judge_03`
 - rubric: `rubric_04`
 
-Latest available prompt profile:
-- prompt: `judge_04`
-- rubric: `rubric_04`
-
 ## Structure
 
-```
+```text
 judge/
   __init__.py          — package exports
   run_judge_gpt.py     — GPT judge implementation (OpenAI)
@@ -34,19 +30,19 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 
 ## How it works
 
-1. Loads the selected judge system prompt from `prompts/<prompt_name>.txt`, injecting the rubric text from `rubrics/<rubric_name>.md` and the expected JSON schema.
-2. Reads a transcript JSON from `transcripts/<name>.json`.
-3. Formats the conversation and sends it to the LLM with the system prompt.
-4. Parses the LLM's JSON response, sanitizes numeric values, and validates against the schema.
-5. If validation fails, sends a repair prompt and retries once (up to 2 attempts total).
-6. Writes a `grade` object back into the transcript JSON file.
+1. Load prompt from `prompts/<prompt_name>.txt`.
+2. Inject rubric text from `rubrics/<rubric_name>.md` and the expected output schema.
+3. Read transcript JSON from `transcripts/<relative_stem>.json`.
+4. Call model, parse JSON output, sanitize numeric fields, and validate schema.
+5. If validation fails, issue one repair attempt.
+6. Write `grade` back into the transcript file.
 
 ## Usage
 
 ```python
 from judge import judge_transcript
 
-result = judge_transcript("chaotic_01_exercise_01_01")
+result = judge_transcript("chaotic/chaotic_gpt/transcript_01__judge_03__rubric_04")
 print(result.total_score, result.max_score)  # e.g. 41, 47
 ```
 
@@ -54,20 +50,19 @@ You can also choose specific judge prompt + rubric versions:
 
 ```python
 result = judge_transcript(
-    "chaotic/transcript_01",
-    prompt_name="judge_04",
+    "chaotic/chaotic_gpt/transcript_01__judge_03__rubric_04",
+    prompt_name="judge_03",
     rubric_name="rubric_04",
 )
 ```
 
-Alternative profiles:
+Claude example:
 
 ```python
-result = judge_transcript(
-    "chaotic/transcript_01",
-    prompt_name="judge_02",
-    rubric_name="rubric_02",
-)
+from judge.run_judge_claude import judge_transcript
+
+result = judge_transcript("chaotic/chaotic_claude/transcript_01__judge_03__rubric_04")
+print(result.total_score, result.max_score)
 ```
 
 ## Rubric summary
@@ -89,9 +84,10 @@ Maximum total score: **47**.
 - Scores are whole integers only.
 - Top-level key order ends with `total_score`, then `judge_llm_calls`.
 - `overview` replaces `justifications` and appears near the end.
-- Deductions are ordered as `evidence_turns`, then `reason`, then `points` (`evidence_turns` optional).
+- Deductions are ordered as `evidence_turns`, `sub_criterion_id`, `reason`, then `points` (`evidence_turns` optional).
+- For `rubric_04`, each deduction must include an exact rubric sub-sub ID in `sub_criterion_id` (for example `1.1.A.a`, `2.2.D.a`, `3.2.C.b`).
 - Each section `malus` requires `explanation`.
-- `total_malus` and `max_malus` replace `total_bonus` and `max_bonus`.
+- `total_malus` and `max_malus` are used (deductions-only scoring).
 - Judge input supports both transcript `context` and `exercise`.
 
 ## Environment variables
@@ -102,6 +98,8 @@ Maximum total score: **47**.
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
 | `JUDGE_OPENAI_REASONING_EFFORT` | No | OpenAI reasoning effort for GPT judge: `low`, `medium`, `high`, or `off`. Default: `medium`. |
 | `JUDGE_INCLUDE_TIMESTAMP` | No | If truthy (`1/true/yes/on`), include `timestamp_utc` in grade output. Default off for deterministic artifacts. |
+| `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required by Claude judge flow. |
+| `ANTHROPIC_MODEL` | No | Model name for Claude judge (default: `claude-sonnet-4-6`). |
 
 ## Claude Judge Module
 
@@ -109,12 +107,3 @@ Maximum total score: **47**.
 - Same transcript input/output contract.
 - Same schema validation, sanitization, and retry behavior.
 - Uses `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` (default: `claude-sonnet-4-6`).
-
-Example:
-
-```python
-from judge.run_judge_claude import judge_transcript
-
-result = judge_transcript("chaotic/transcript_01")
-print(result.total_score, result.max_score)
-```

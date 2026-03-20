@@ -110,6 +110,7 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 - **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
 - **Web UI** (`python -m web_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
+- **Transcripts UI** (`python -m transcripts_ui.run_transcripts_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`) and attaches GPT/Claude score panels from counterpart files in `.../{persona}_gpt` and `.../{persona}_claude`, with explicit per-provider errors for missing/ambiguous/mismatched pairs.
 
 ---
 
@@ -326,6 +327,17 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Provider split for judge modules:
   - `judge/run_judge_gpt.py` is the GPT-oriented entrypoint.
   - `judge/run_judge_claude.py` mirrors the same single-transcript scoring flow using Anthropic.
+- Rubric detail enforcement update:
+  - For `rubric_04`, each deduction now requires `sub_criterion_id` tied to exact rubric sub-sub IDs (e.g. `1.1.A.a`, `2.2.D.a`).
+  - Judge prompts and schema now explicitly require the sub-sub ID per deduction.
+
+#### 3e. Judge JSON robustness hardening ✦ COMPLETED
+
+- Hardened judge output parsing to recover common non-strict model payloads:
+  - accepts Python-literal dict output (single quotes / tuple values) via safe `ast.literal_eval` fallback
+  - normalizes parsed values to JSON-compatible primitives before validation
+- Expanded grade payload sanitization so required schema sections/criteria are always reconstructed before strict validation.
+- Outcome: judge pipeline no longer fails early on malformed-but-recoverable model output and proceeds to rubric validation/scoring.
 
 **What breaks:**
 - `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.
@@ -427,3 +439,19 @@ web_ui/
 | POST   | `/api/chat`           | Send a user message               |
 | POST   | `/api/student-turn`   | Generate student + tutor turn     |
 | GET    | `/api/reasoning`      | Fetch reasoning for all turns     |
+
+---
+
+## 9. Work log updates
+
+### 03/20/2026 — Visualization input migration (completed)
+
+- Updated `visualization/run_visualization.py` to use judged transcript JSON inputs from the new folder structure:
+  - `transcripts/<persona_type>/<persona_type>_gpt/transcript_XX.json`
+  - `transcripts/<persona_type>/<persona_type>_claude/transcript_XX.json`
+- Kept only `grades_per_transcript_gpt_vs_claude` output generation and removed dependency on legacy compiled CSV files.
+- Added robust score parsing for numeric/string JSON values and validated the script run end-to-end.
+
+### Documentation follow-up (completed)
+
+- Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.
