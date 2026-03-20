@@ -68,5 +68,193 @@
       "tutor": "That’s basically the right structure. What will make it “real” (not generic) is adding 1–2 specifics you can point to.\n\nFor each row, answer:\n1) **Heat:** which *sector tags* fit your justification (health + social + infrastructure?) and what’s one concrete consequence you’ll name (ER visits, lost work hours, grid strain, etc.)?\n2) **Tidal flooding:** when you say “key corridors,” will you name **one example corridor/area** from the map? And what exactly is disrupted—commute time, emergency response access, transit reliability?\n\nAdd those specifics, and your justifications will be solid enough for this assignment without needing lots of extra stats.",
       "pedagogical_reasoning": "I will keep the student moving by confirming the structure while pushing for slightly sharper, non-generic specificity (define “key corridors,” specify what “disrupting access” means). I’ll use Socratic prompts to have them add one concrete detail per row and to ensure sector tagging aligns with their claims. I won’t polish their language; I’ll ask them to add missing elements themselves."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method, guided discovery, and direct work"
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 5, the student expresses being stuck on how to find sources and rate without research. The tutor in Turn 6 responds with a structured list of source options rather than first asking a short diagnostic question to locate exactly where the student is stuck (e.g., whether the issue is knowing where to look, or how to evaluate what they find). The tutor jumps to providing a solution framework before checking what the student already knows about finding sources.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.b",
+                "reason": "Throughout the conversation, the tutor never generalizes the rating methodology or evidence-anchoring strategy to future assignments. The student is building a stressors table as part of a scaffolded course, and the tutor misses opportunities to note that the same evidence-anchoring approach applies to other stressors they will add, or to future policy recommendation assignments.",
+                "points": 1
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking (e.g., after Turn 9 when the student successfully proposes tentative ratings, the tutor does not ask the student to articulate what made the rating feel less arbitrary). Process reflection is consistently skipped.",
+                "points": 1
+              }
+            ],
+            "score": 3,
+            "max": 5,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 23
+        },
+        "malus": {
+          "id": "1.4",
+          "explanation": "No additional catch-all deduction warranted. The tutor consistently maintained Socratic guidance and the deductions above cover the main gaps.",
+          "score": 0,
+          "max": 2
+        }
+      },
+      "dialogue": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.B.a",
+                "reason": "In Turns 3–6, the tutor repeatedly cycles through the same 'pick one evidence type' prompt structure without meaningfully advancing the student's position. Turn 4 asks the student to choose between map vs. numbers; Turn 5 the student still hasn't found a source; Turn 6 the tutor again asks the student to choose between source options. While not a full pattern-level repetition, there is a single-turn redundancy in Turn 6 that restates the source-selection framing already established in Turns 3–5.",
+                "points": 1
+              }
+            ],
+            "score": 3,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 9,
+          "max": 10
+        },
+        "malus": {
+          "id": "2.3",
+          "explanation": "No additional catch-all deduction warranted beyond what was captured in 2.1.",
+          "score": 0,
+          "max": 2
+        }
+      },
+      "communication": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns (notably Turns 1, 2, 3, 4, 5, 6, 7, 8) are multi-paragraph responses with multiple sub-questions and structured lists. While the content is relevant, the length and density of many turns consistently reduces the student's opportunity to think and respond incrementally. For example, Turn 1 introduces a full conceptual framework plus a multi-part question; Turn 4 has three numbered questions plus a meta-question about rating ranges. This pattern recurs throughout the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 14
+        },
+        "malus": {
+          "id": "3.4",
+          "explanation": "No additional catch-all deduction warranted. The length issue was already captured in 3.1.A.a.",
+          "score": 0,
+          "max": 2
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 47,
+    "total_malus": 0,
+    "max_malus": 6,
+    "max_score": 47,
+    "overview": [
+      "The tutor demonstrated strong Socratic discipline throughout all 10 turns, never providing direct answers, ratings, or ready-to-submit content. The student was consistently asked to propose their own numbers, choose their own evidence types, and articulate their own reasoning, which is the core strength of this session.",
+      "Scaffolding was generally well-executed, with the tutor building progressively from concept clarification (stressor vs. vulnerability) to evidence selection to rating logic. However, in Turns 5–6, when the student expressed being stuck on sourcing, the tutor jumped to offering a structured list of source options rather than first diagnosing exactly where the confusion lay, triggering a 1.2.B.a deduction.",
+      "Meta-learning was partially addressed: the tutor gave good process-level feedback on rating methodology and evidence anchoring. However, the tutor never prompted the student to reflect on what changed in their thinking (1.3.D.a), and never generalized the anchoring strategy to future assignments in the course sequence (1.3.D.b).",
+      "Dialogue quality was strong in terms of assignment anchoring—the tutor kept the conversation tightly focused on the stressors table throughout. A minor redundancy deduction was applied for the repeated source-selection framing across Turns 3–6 without meaningful progression.",
+      "Communication quality suffered from consistently long, multi-part responses. While each turn was substantively relevant, the density of questions and structured lists in most turns (especially Turns 1, 4, 5, 6, 8) reduced the student's cognitive space to respond incrementally. Tone was consistently warm, supportive, and appropriately non-evaluative throughout."
+    ],
+    "total_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }
