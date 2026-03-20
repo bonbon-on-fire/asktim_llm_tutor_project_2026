@@ -4,14 +4,14 @@
   --border: #2d2d35;
   --text: #e8e8ed;
   --text-muted: #8a8a96;
-  --accent: #7c6ef6;
-  --accent-dim: #5c4fd9;
-  --student: #4ade80;
-  --tutor: #60a5fa;
-  --reasoning: #a78bfa;
-  --score-high: #4ade80;
-  --score-mid: #facc15;
-  --score-low: #f87171;
+  --accent: #9ca3af;
+  --accent-dim: #6b7280;
+  --student: #2bcbb9;
+  --tutor: #fb5c66;
+  --reasoning: #e65ca7;
+  --score-high: #2bcbb9;
+  --score-mid: #ffd956;
+  --score-low: #fb5c66;
 }
 
 * {

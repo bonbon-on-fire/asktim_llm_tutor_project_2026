@@ -144,58 +144,6 @@ def _line_chart_grades_per_transcript(
     plt.close(fig)
 
 
-def _avg(values: list[float]) -> float:
-    valid = [v for v in values if v == v]  # filter NaN
-    if not valid:
-        return float("nan")
-    return sum(valid) / len(valid)
-
-
-def _line_chart_avg_by_persona_per_exercise(
-    *,
-    rows: list[GradeRow],
-    model_label: str,
-    out_path: Path,
-) -> None:
-    plt = _safe_import_matplotlib()
-
-    # Fixed color map so persona colors stay consistent between GPT/Claude charts.
-    persona_types = ("chaotic", "chitchat", "clueless")
-    exercise_labels = sorted({r.exercise_label for r in rows})
-
-    by_persona_ex: dict[tuple[str, str], list[float]] = {}
-    for r in rows:
-        key = (r.persona_type, r.exercise_label)
-        by_persona_ex.setdefault(key, []).append(r.total_score)
-
-    x = list(range(len(exercise_labels)))
-    color_map = {"chaotic": "#fb5c66", "chitchat": "#2bcbb9", "clueless": "#47aaf1"}
-
-    fig, ax = plt.subplots(figsize=(14, 6))
-    for p in persona_types:
-        ys = [_avg(by_persona_ex.get((p, ex), [])) for ex in exercise_labels]
-        ax.plot(
-            x,
-            ys,
-            label=p,
-            color=color_map[p],
-            linewidth=2.0,
-            marker="o",
-            markersize=4,
-        )
-
-    ax.set_title(f"Average Grade by Persona Type per Exercise ({model_label})")
-    ax.set_xlabel("Exercise (course:exercise)")
-    ax.set_ylabel("Average Total Score")
-    ax.set_xticks(x)
-    ax.set_xticklabels(exercise_labels, rotation=45, ha="right")
-    ax.grid(True, alpha=0.3)
-    ax.legend(title="Persona")
-    fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
-    plt.close(fig)
-
-
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
@@ -211,16 +159,6 @@ def main() -> int:
         gpt_rows=gpt_rows,
         claude_rows=claude_rows,
         out_dir=out_dir,
-    )
-    _line_chart_avg_by_persona_per_exercise(
-        rows=gpt_rows,
-        model_label="GPT",
-        out_path=out_dir / "avg_grade_by_persona_per_exercise_gpt.png",
-    )
-    _line_chart_avg_by_persona_per_exercise(
-        rows=claude_rows,
-        model_label="Claude",
-        out_path=out_dir / "avg_grade_by_persona_per_exercise_claude.png",
     )
     print(f"[Done] Wrote visualizations to: {out_dir}")
     return 0

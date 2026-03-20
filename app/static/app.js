@@ -73,8 +73,8 @@
   function renderDashboard(list) {
     const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
     const claudeScores = list.map((t) => t.claude_score).filter((s) => s != null);
-    drawChart("chart-gpt", gptScores, "GPT", "rgba(96, 165, 250, 0.7)");
-    drawChart("chart-claude", claudeScores, "Claude", "rgba(167, 139, 250, 0.7)");
+    drawChart("chart-gpt", gptScores, "GPT", "#a65dea");
+    drawChart("chart-claude", claudeScores, "Claude", "#ff893a");
 
     let sortKey = "gpt_score";
     let sortDir = -1;
