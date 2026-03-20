@@ -1,22 +1,36 @@
-# Terminal UI
+# UI Module
 
-Interactive terminal launcher that orchestrates a **tutor vs student** conversation run, then scores it with the judge.
+Terminal runner tools for tutor/student simulation and judge scoring.
 
 ## How to run
 
-```
-python -m terminal_ui
-```
+### Interactive run (sim + judge)
 
-### Batch automation
-
-Run automated evaluations using the manual config in `terminal_ui/run_batch.py`:
-
-```
-python -m terminal_ui.run_batch
+```powershell
+python -m ui
 ```
 
-Before running, edit these lists/values directly in `run_batch.py`:
+This launches the prompt-based flow:
+
+| Step | Prompt | Source |
+| ---- | ------ | ------ |
+| 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
+| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
+| 2 | Student persona version | Scans `students/personas/{type}_*.txt` |
+| 3 | Course | Scans `curriculum/` subfolder names |
+| 4 | Exercise number | Scans `curriculum/{course}/exercise_*.txt` |
+| 5 | Number of turns | Positive integer |
+| 6 | Judge prompt version | Scans `judge/prompts/*.txt` |
+| 7 | Judge rubric version | Scans `judge/rubrics/*.md` |
+| 8 | Run, save transcript, and judge | See output sections below |
+
+### Batch run (sim + judge)
+
+```powershell
+python -m ui.run_batch
+```
+
+Before running, edit these constants in `ui/run_batch.py`:
 
 - `TUTOR_PROMPTS`
 - `STUDENT_PERSONAS`
@@ -30,42 +44,51 @@ Run matrix:
 
 `tutor_prompts x student_personas x course_exercises x judge_prompts x judge_rubrics x trials`
 
-## Pipeline
+### Batch run (raw transcripts only, no judge)
 
-The UI prompts for each configuration step, then runs the conversation:
-
-| Step | Prompt | Source |
-| ---- | ------ | ------ |
-| 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
-| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
-| 2 | Student persona version | Scans `students/personas/{type}_*.txt` for version numbers |
-| 3 | Course | Scans `curriculum/` subfolder names |
-| 4 | Exercise number | Scans `curriculum/{course}/exercise_*.txt` |
-| 5 | Number of turns | Positive integer |
-| 6 | *Runs conversation* | Tutor and student alternate for N turns |
-| 7 | Judge prompt version | Scans `judge/prompts/*.txt` |
-| 8 | Judge rubric version | Scans `judge/rubrics/*.md` |
-| 9 | *Auto-saves transcript + runs judge* | See below |
-
-If there's only one option for a step (e.g. one tutor prompt), it's auto-selected.
-
-## Transcript output
-
-Transcripts are auto-named and saved under `transcripts/{persona_type}/`:
-
-```
-transcripts/
-  chaotic/
-    transcript_01.json
-    transcript_02.json
-  chitchat/
-    transcript_01.json
-  ...
+```powershell
+python -m ui.run_ui_raw
 ```
 
-Numbers auto-increment (next available `transcript_XX`).
+Before running, edit these constants in `ui/run_ui_raw.py`:
 
-### Transcript JSON schema
+- `TUTOR_PROMPTS`
+- `STUDENT_PERSONAS`
+- `COURSE_EXERCISES` (as `(course, exercise_number)` tuples)
+- `TRIALS`
+- `TURN_SIZE`
+
+Run matrix:
+
+`tutor_prompts x student_personas x course_exercises x trials`
+
+## Output paths
+
+### Judged runs (`ui` and `ui.run_batch`)
+
+Transcripts are saved under:
+
+- `transcripts/{persona_type}/transcript_XX.json`
+
+Judge output is appended into each transcript under `grade`.
+
+Compiled CSV summary is appended to:
+
+- `transcripts/transcripts_compiled.csv`
+
+### Raw-only runs (`ui.run_ui_raw`)
+
+Raw transcripts are saved to persona-specific raw folders:
+
+- `transcripts/chaotic/chaotic_raw/`
+- `transcripts/chitchat/chitchat_raw/`
+- `transcripts/clueless/clueless_raw/`
+
+Each file is auto-named as `transcript_XX.json`.
+
+## Transcript schema (core fields)
+
+All transcript flows include run metadata and exchanges:
 
 ```json
 {
@@ -76,18 +99,10 @@ Numbers auto-increment (next available `transcript_XX`).
   "turn_size": 10,
   "context": "Course-level context loaded from curriculum/<course>/course.txt",
   "exercise": "Combined assignment text (course context + exercise + run configuration)...",
-  "judge_prompt": "judge_03",
-  "judge_rubric": "rubric_03",
   "turns": 10,
   "exchanges": [
     {
       "turn": 1,
-      "student": "...",
-      "tutor": "...",
-      "pedagogical_reasoning": "Tutor reasoning for this turn"
-    },
-    {
-      "turn": 2,
       "student": "...",
       "tutor": "...",
       "pedagogical_reasoning": "Tutor reasoning for this turn"
@@ -96,31 +111,11 @@ Numbers auto-increment (next available `transcript_XX`).
 }
 ```
 
-After the judge runs, a `grade` object is appended to the transcript (see `judge/README.md`).
-The current judge output includes:
-- `overview` (replaces `justifications`)
-- `judge_llm_calls` (number of LLM attempts used by the judge)
+Judged flows additionally include:
 
-### Compiled CSV output
-
-After each judged run, terminal UI appends one row to:
-
-- `transcripts/transcripts_compiled.csv`
-
-Columns:
-
-- `tutor_prompt`
-- `student_persona`
-- `course`
-- `exercise_number`
 - `judge_prompt`
 - `judge_rubric`
-- `transcript_name`
-- `grade` (formatted as `total_score/max_score`)
-- `total_score`
-- `max_score`
-- `overview` (judge justification text)
-- `deductions` (flattened as `section/criterion: reason`, one deduction per line within the same cell)
+- `grade`
 
 ## Environment variables
 
