@@ -4,7 +4,7 @@ LLM-based grader that scores tutor–student conversation transcripts against a 
 
 Current defaults in code:
 - prompt: `judge_03`
-- rubric: `rubric_03`
+- rubric: `rubric_04`
 
 ## Structure
 
@@ -20,7 +20,8 @@ judge/
   rubrics/
     rubric_01.md       — original rubric profile
     rubric_02.md       — intermediate rubric profile
-    rubric_03.md       — current rubric profile (33 base + 9 bonus = 42 max)
+    rubric_03.md       — prior rubric profile (33 base + 9 bonus = 42 max)
+    rubric_04.md       — current rubric profile (47 base with section malus deductions)
 ```
 
 Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
@@ -40,7 +41,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 from judge import judge_transcript
 
 result = judge_transcript("chaotic_01_exercise_01_01")
-print(result.total_score, result.max_score)  # e.g. 36, 42
+print(result.total_score, result.max_score)  # e.g. 41, 47
 ```
 
 You can also choose specific judge prompt + rubric versions:
@@ -49,7 +50,7 @@ You can also choose specific judge prompt + rubric versions:
 result = judge_transcript(
     "chaotic/transcript_01",
     prompt_name="judge_03",
-    rubric_name="rubric_03",
+    rubric_name="rubric_04",
 )
 ```
 
@@ -65,14 +66,19 @@ result = judge_transcript(
 
 ## Rubric summary
 
-| Section                  | Sub-criteria | Max points | Bonus |
-| :----------------------- | :----------: | ---------: | ----: |
-| 1. Pedagogy              |    1.1–1.3   |         14 |     3 |
-| 2. Dialogue quality      |    2.1–2.2   |          8 |     3 |
-| 3. Communication quality |    3.1–3.3   |         11 |     3 |
-| **Total**                |              |     **33** | **9** |
+| Section                  | Sub-criteria | Max points | Catch-all malus |
+| :----------------------- | :----------: | ---------: | --------------: |
+| 1. Pedagogy              |    1.1–1.3   |         23 |     - |
+| 2. Dialogue quality      |    2.1–2.2   |         10 |     - |
+| 3. Communication quality |    3.1–3.3   |         14 |     - |
+| **Base total**           |              |     **47** |     - |
 
-Maximum total score (with bonus): **42**.
+Section malus deductions (catch-all, only if not already deducted):
+- `1.4`: `0..2`
+- `2.3`: `0..2`
+- `3.4`: `0..2`
+
+Maximum total score: **47**.
 
 ## Output contract (current)
 
@@ -80,7 +86,8 @@ Maximum total score (with bonus): **42**.
 - Top-level key order ends with `total_score`, then `judge_llm_calls`.
 - `overview` replaces `justifications` and appears near the end.
 - Deductions are ordered with `reason` before `points`.
-- Each section `bonus` requires `explanation`.
+- Each section `malus` requires `explanation`.
+- `total_malus` and `max_malus` replace `total_bonus` and `max_bonus`.
 - Judge input supports both transcript `context` and `exercise`.
 
 ## Environment variables
@@ -101,7 +108,7 @@ To re-judge existing transcripts with Claude and write outputs into:
 Run:
 
 ```python
-python -m judge.run_judge_claude --model claude-sonnet-4-6 --prompt judge_03 --rubric rubric_03
+python -m judge.run_judge_claude --model claude-sonnet-4-6 --prompt judge_03 --rubric rubric_04
 ```
 
 Notes:

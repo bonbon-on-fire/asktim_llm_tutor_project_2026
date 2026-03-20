@@ -314,6 +314,16 @@ transcripts/           — moved from judge/transcripts/
 
 Transcripts are test-run artifacts shared between the UI (producer) and judge (consumer).
 
+#### 3d. Rubric 04 scoring migration ✦ COMPLETED
+
+- Judge defaults now use `rubric_04` (prompt remains `judge_03`).
+- Judge score contract migrated from `33 base + 9 bonus = 42 max` to:
+  - `max_base_score=47`
+  - per-section catch-all `malus` (`0..2`) for `1.4`, `2.3`, `3.4`
+  - `max_malus=6`
+  - `max_score=47`
+- Judge schema/payload now uses `total_malus` and `max_malus` instead of `total_bonus` and `max_bonus`.
+
 **What breaks:**
 - `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.
 

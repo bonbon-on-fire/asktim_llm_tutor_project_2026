@@ -137,7 +137,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Re-judge transcripts with Claude.")
     parser.add_argument("--model", default="claude-sonnet-4-6", help="Claude model name.")
     parser.add_argument("--prompt", default="judge_03", help="Judge prompt stem.")
-    parser.add_argument("--rubric", default="rubric_03", help="Judge rubric stem.")
+    parser.add_argument("--rubric", default="rubric_04", help="Judge rubric stem.")
     args = parser.parse_args()
 
     api_key = _require_anthropic_api_key()

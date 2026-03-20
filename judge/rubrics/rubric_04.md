@@ -1,6 +1,6 @@
 # Humanities Judge Rubric
 
-Use this rubric to score a **full conversation** between the tutor and the student. Apply **deductions only**; do not add points except via bonus. Start each sub-criterion at full points and subtract by evidence.
+Use this rubric to score a **full conversation** between the tutor and the student. Apply **deductions only**. Start each sub-criterion at full points and subtract by evidence.
 
 This rubric is designed so each behavior is penalized in one primary place to reduce overlap.
 
