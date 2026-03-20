@@ -44,6 +44,12 @@ Written to `visualization/outputs/`:
    - Line chart of transcript-level total scores
    - GPT and Claude shown in different colors
    - Includes Pearson Correlation and Spearman Correlation computed on matched GPT/Claude transcript pairs
+2. `grade_distribution_per_persona_gpt_vs_claude.png`
+   - Side-by-side boxplot distributions of total scores per persona type
+   - GPT and Claude distributions are shown for each persona
+3. `grade_distribution_per_persona_version_<NN>_gpt_vs_claude.png`
+   - One side-by-side boxplot per persona version suffix (`_01`, `_02`, ...)
+   - Each chart compares GPT vs Claude distributions by persona type for that version only
 
 ## Notes
 
