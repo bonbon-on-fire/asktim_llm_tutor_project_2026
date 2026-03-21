@@ -10,8 +10,15 @@ This folder contains project meeting notes.
 
 Use the template in `meeting_notes/_template.md`.
 
+Recommended flow:
+- Agenda (what will be covered)
+- Notes (discussion and context)
+- Decisions (explicit agreements)
+- Action items (owner-ready checklist)
+
 ## Tips
 
 - Keep **decisions** and **action items** explicit.
+- Prefer grouped action items with category headers and sub-actions.
 - If you reference code, include file paths (e.g., `curriculum/urban_studies/exercise_01.txt`).
 - If you reference a transcript, cite it by its short link per the project rules.
