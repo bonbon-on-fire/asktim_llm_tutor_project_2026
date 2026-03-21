@@ -110,6 +110,7 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 - **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
 - **Web UI** (`python -m web_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
+- **Transcripts UI** (`python -m transcripts_ui.run_transcripts_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`) and attaches GPT/Claude score panels from counterpart files in `.../{persona}_gpt` and `.../{persona}_claude`, with explicit per-provider errors for missing/ambiguous/mismatched pairs.
 
 ---
 
@@ -280,14 +281,14 @@ utils/
   parsing.py           — JSON parsing helpers (extract_json_object)
 ```
 
-`tutor/run_tutor.py` and `judge/run_judge.py` both import from `utils.parsing` instead of having local copies.
+`tutor/run_tutor.py` and `judge/run_judge_gpt.py` both import from `utils.parsing` instead of having local copies.
 
 #### 3b. Judge module cleanup
 
 ```
 judge/
   __init__.py          — exports JudgeError, JudgeResult, judge_transcript, load_judge_prompt
-  run_judge.py         — LangGraph engine, validation, scoring
+  run_judge_gpt.py     — LangGraph engine, validation, scoring
   README.md
   prompts/
     judge_01.txt       — judge system prompt template (uses {rubric} and {schema} placeholders)
@@ -313,6 +314,30 @@ transcripts/           — moved from judge/transcripts/
 ```
 
 Transcripts are test-run artifacts shared between the UI (producer) and judge (consumer).
+
+#### 3d. Rubric 04 scoring migration ✦ COMPLETED
+
+- Judge defaults now use `rubric_04` (prompt remains `judge_03`).
+- Judge score contract migrated from `33 base + 9 bonus = 42 max` to:
+  - `max_base_score=47`
+  - per-section catch-all `malus` (`0..2`) for `1.4`, `2.3`, `3.4`
+  - `max_malus=6`
+  - `max_score=47`
+- Judge schema/payload now uses `total_malus` and `max_malus` instead of `total_bonus` and `max_bonus`.
+- Provider split for judge modules:
+  - `judge/run_judge_gpt.py` is the GPT-oriented entrypoint.
+  - `judge/run_judge_claude.py` mirrors the same single-transcript scoring flow using Anthropic.
+- Rubric detail enforcement update:
+  - For `rubric_04`, each deduction now requires `sub_criterion_id` tied to exact rubric sub-sub IDs (e.g. `1.1.A.a`, `2.2.D.a`).
+  - Judge prompts and schema now explicitly require the sub-sub ID per deduction.
+
+#### 3e. Judge JSON robustness hardening ✦ COMPLETED
+
+- Hardened judge output parsing to recover common non-strict model payloads:
+  - accepts Python-literal dict output (single quotes / tuple values) via safe `ast.literal_eval` fallback
+  - normalizes parsed values to JSON-compatible primitives before validation
+- Expanded grade payload sanitization so required schema sections/criteria are always reconstructed before strict validation.
+- Outcome: judge pipeline no longer fails early on malformed-but-recoverable model output and proceeds to rubric validation/scoring.
 
 **What breaks:**
 - `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.
@@ -351,6 +376,8 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Uses `judge.judge_transcript()` with selectable judge prompt and rubric versions.
 - Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
 - Added `python -m terminal_ui.run_batch` to automate persona × exercise × `N` trials with transcript generation and judge scoring.
+- Added `python -m ui.run_ui_raw` to automate persona × exercise × `N` raw transcript generation before judge evaluation, with outputs routed to `transcripts/{persona_type}/{persona_type}_raw/`.
+- Added `python -m ui.run_ui_gpt` and `python -m ui.run_ui_claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
 - Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
 - Run turn count (`turn_size`) is now injected into tutor and student context so both roles know the planned conversation length.
@@ -412,3 +439,19 @@ web_ui/
 | POST   | `/api/chat`           | Send a user message               |
 | POST   | `/api/student-turn`   | Generate student + tutor turn     |
 | GET    | `/api/reasoning`      | Fetch reasoning for all turns     |
+
+---
+
+## 9. Work log updates
+
+### 03/20/2026 — Visualization input migration (completed)
+
+- Updated `visualization/run_visualization.py` to use judged transcript JSON inputs from the new folder structure:
+  - `transcripts/<persona_type>/<persona_type>_gpt/transcript_XX.json`
+  - `transcripts/<persona_type>/<persona_type>_claude/transcript_XX.json`
+- Kept only `grades_per_transcript_gpt_vs_claude` output generation and removed dependency on legacy compiled CSV files.
+- Added robust score parsing for numeric/string JSON values and validated the script run end-to-end.
+
+### Documentation follow-up (completed)
+
+- Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.

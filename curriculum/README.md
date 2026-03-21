@@ -1,21 +1,21 @@
 # Curriculum
 
-Assignment exercises used by both the tutor and student bots. Organized by course.
+Assignment content used by tutor and student runs, organized by course.
 
 ## Structure
 
-```
+```text
 curriculum/
   <course_name>/
-    course.txt           — course description / shared context
-    exercise_01.txt      — individual exercise
+    course.txt           # shared course context
+    exercise_01.txt      # assignment prompt
     exercise_02.txt
     ...
 ```
 
-- Each **course** is a subfolder (e.g. `philosophy/`, `urban_studies/`).
-- **`course.txt`** contains a course description that provides shared context. It can be prepended to any exercise from that course when passed to the tutor or student.
-- **`exercise_XX.txt`** files contain individual assignment prompts.
+- Each course is a subfolder (for example `philosophy/`, `urban_studies/`).
+- `course.txt` stores shared course context.
+- `exercise_XX.txt` stores the assignment prompt for a specific exercise.
 
 ## Available courses
 
@@ -27,9 +27,9 @@ curriculum/
 ## Adding a new course
 
 1. Create a folder under `curriculum/` with the course name.
-2. Add a `course.txt` with the course description.
-3. Add `exercise_01.txt`, `exercise_02.txt`, etc.
+2. Add `course.txt` with shared context.
+3. Add one or more `exercise_XX.txt` files (zero-padded numbering).
 
 ## Adding an exercise to an existing course
 
-Drop a new `exercise_XX.txt` file into the course folder.
+Add a new `exercise_XX.txt` file in the course folder.
