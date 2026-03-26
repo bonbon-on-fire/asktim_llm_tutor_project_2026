@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep \"total_score\" /d/humanities_llm_tutor_project_2026/transcripts/chaotic/chaotic_raw/*.json)",
+      "Bash(sort -t: -k3 -n)",
+      "Bash(grep \"total_score\" /d/humanities_llm_tutor_project_2026/transcripts/chitchat/chitchat_raw/*.json)",
+      "Bash(grep \"total_score\" /d/humanities_llm_tutor_project_2026/transcripts/clueless/clueless_raw/*.json)",
+      "Bash(grep -l \"grade\\\\|score\\\\|deduction\" /d/humanities_llm_tutor_project_2026/transcripts/chaotic/chaotic_raw/*.json)"
+    ]
+  }
+}
