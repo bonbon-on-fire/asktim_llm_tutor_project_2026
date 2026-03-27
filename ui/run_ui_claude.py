@@ -224,6 +224,7 @@ def main() -> int:
                             relative_stem,
                             prompt_name=prompt_name,
                             rubric_name=rubric_name,
+                            output_name=source_stem,
                         )
                         print(
                             "[Claude Judge] "
