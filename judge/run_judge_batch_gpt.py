@@ -7,6 +7,10 @@ from __future__ import annotations
 # ========================================
 BATCH_TYPE = 1  # Change to 1, 2, or 3 to run all batches of that type
 RUN_ALL_BATCHES = False  # Set to True to run all batches of BATCH_TYPE
+
+# Judge and Rubric Configuration
+JUDGE_PROMPT = "judge_05"  # Judge prompt version to use
+RUBRIC_NAME = "rubric_05"  # Rubric version to use
 # ========================================
 
 import json
@@ -90,8 +94,8 @@ def _format_batch_for_judge(transcripts: list[dict[str, Any]]) -> str:
 def judge_transcript_batch(
     batch_file_name: str,
     *,
-    prompt_name: str = "judge_05",
-    rubric_name: str = "rubric_05",
+    prompt_name: str | None = None,
+    rubric_name: str | None = None,
     output_name: str | None = None,
     batch_file_path: str | None = None,
 ) -> list[JudgeResult]:
@@ -108,6 +112,12 @@ def judge_transcript_batch(
     Returns:
         List of JudgeResult objects, one per transcript in the batch
     """
+    # Use global configuration if not provided
+    if prompt_name is None:
+        prompt_name = JUDGE_PROMPT
+    if rubric_name is None:
+        rubric_name = RUBRIC_NAME
+    
     if batch_file_path is not None:
         batch_file_path = Path(batch_file_path)
     else:
@@ -233,7 +243,9 @@ def run_all_batches_of_type(batch_type: int) -> None:
             batch_results = judge_transcript_batch(
                 "unused",
                 batch_file_path=batch_file,
-                output_name=output_name
+                output_name=output_name,
+                prompt_name=JUDGE_PROMPT,
+                rubric_name=RUBRIC_NAME
             )
             results.extend(batch_results)
             print(f"✅ {len(batch_results)} transcripts graded")
