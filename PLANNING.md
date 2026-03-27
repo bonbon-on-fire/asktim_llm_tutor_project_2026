@@ -455,3 +455,20 @@ web_ui/
 ### Documentation follow-up (completed)
 
 - Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.
+
+### 03/20/2026 — Batch judging system (completed)
+
+- **Problem**: Need to judge transcript bundles together for comparative analysis experiments.
+- **Solution**: Created parallel batch judge runners that process multiple transcripts in a single LLM call.
+- **Implementation**:
+  - `judge/run_judge_batch_gpt.py` — GPT batch judge for transcript bundles
+  - `judge/run_judge_batch_claude.py` — Claude batch judge for transcript bundles  
+  - `create_batch.py` — Script to generate 198 transcript bundles across 3 experiment types
+  - Batch types with zero overlap within each type:
+    - Type 01 (72 batches): Same persona + same version + same exercise
+    - Type 02 (54 batches): Same persona + same version + different exercise
+    - Type 03 (72 batches): Different persona + same version + same exercise
+  - Batch files stored in `judge/transcript_batches/batch_##_###.txt`
+  - Individual graded outputs named: `{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
+- **Usage**: `judge_transcript_batch("unused", batch_file_path="judge/transcript_batches/batch_01_001.txt")`
+- **Benefits**: Enables holistic grading experiments where LLM judges multiple transcripts together for comparative analysis.

@@ -1,0 +1,191 @@
+"""GPT-based batch judge for humanities tutor transcript bundles."""
+
+from __future__ import annotations
+
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from judge.run_judge_gpt import (
+    JudgeError,
+    JudgeResult,
+    TRANSCRIPTS_DIR,
+    _create_judge_graph,
+    _default_output_path,
+    _env_truthy,
+    _extract_text_from_model_content,
+    _format_conversation_for_judge,
+    _order_grade_payload,
+    _require_openai_api_key,
+    _write_failed_output_debug,
+    load_judge_prompt,
+)
+
+_DEFAULT_OPENAI_MODEL = "gpt-5.2"
+
+
+def _load_transcript_batch(batch_file_path: Path) -> list[dict[str, Any]]:
+    """Load a batch of transcripts from a .txt file listing transcript paths."""
+    if not batch_file_path.exists():
+        raise JudgeError(f"Batch file not found: {batch_file_path}")
+    
+    transcript_paths = []
+    for line in batch_file_path.read_text(encoding="utf-8").strip().split("\n"):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        transcript_paths.append(line)
+    
+    if not transcript_paths:
+        raise JudgeError(f"No transcript paths found in batch file: {batch_file_path}")
+    
+    transcripts = []
+    for path_str in transcript_paths:
+        transcript_path = TRANSCRIPTS_DIR / f"{path_str.strip()}.json"
+        if not transcript_path.exists():
+            raise JudgeError(f"Transcript not found: {transcript_path}")
+        
+        try:
+            transcript = json.loads(transcript_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            raise JudgeError(f"Invalid JSON in transcript {transcript_path}: {e}") from e
+        
+        if not isinstance(transcript, dict):
+            raise JudgeError(f"Transcript must be an object: {transcript_path}")
+        
+        exchanges = transcript.get("exchanges")
+        if not isinstance(exchanges, list) or not exchanges:
+            raise JudgeError(f"Transcript must contain non-empty 'exchanges' array: {transcript_path}")
+        
+        transcript["_source_path"] = path_str.strip()
+        transcripts.append(transcript)
+    
+    return transcripts
+
+
+def _format_batch_for_judge(transcripts: list[dict[str, Any]]) -> str:
+    """Format multiple transcripts as a single judge input."""
+    lines: list[str] = [f"Batch of {len(transcripts)} transcripts to grade together:"]
+    lines.append("")
+    
+    for i, transcript in enumerate(transcripts, 1):
+        lines.append(f"=== TRANSCRIPT {i} ===")
+        lines.append(f"Source: {transcript.get('_source_path', 'unknown')}")
+        lines.append("")
+        lines.append(_format_conversation_for_judge(transcript))
+        lines.append("")
+    
+    return "\n".join(lines)
+
+
+def judge_transcript_batch(
+    batch_file_name: str,
+    *,
+    prompt_name: str = "judge_05",
+    rubric_name: str = "rubric_05",
+    output_name: str | None = None,
+    batch_file_path: str | None = None,
+) -> list[JudgeResult]:
+    """
+    Judge a batch of transcripts together using GPT.
+    
+    Args:
+        batch_file_name: Path to .txt file containing transcript paths (one per line)
+        prompt_name: Judge prompt to use
+        rubric_name: Rubric to use
+        output_name: Optional output file stem (defaults to batch_file_name stem)
+        batch_file_path: Optional custom path to batch file (overrides batch_file_name)
+    
+    Returns:
+        List of JudgeResult objects, one per transcript in the batch
+    """
+    if batch_file_path is not None:
+        batch_file_path = Path(batch_file_path)
+    else:
+        batch_file_path = Path("judge/transcript_batches") / f"{batch_file_name}.txt"
+    transcripts = _load_transcript_batch(batch_file_path)
+    
+    model_name = os.environ.get("OPENAI_MODEL", _DEFAULT_OPENAI_MODEL)
+    graph = _create_judge_graph(
+        model_name=model_name,
+        api_key=_require_openai_api_key(),
+        enforce_sub_criterion_ids=rubric_name.strip().lower() in {"rubric_04", "rubric_05"},
+        rubric_name=rubric_name.strip().lower(),
+    )
+    
+    # Format batch prompt
+    system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
+    batch_prompt = (
+        system_prompt + "\n\n"
+        "BATCH GRADING INSTRUCTIONS:\n"
+        "You are grading multiple transcripts together. For each transcript, provide a separate "
+        "complete grade JSON object. Return a JSON array where each element is a full grade "
+        "for one transcript, in the same order as presented.\n\n"
+        "Format: [{grade_for_transcript_1}, {grade_for_transcript_2}, ...]\n\n"
+    )
+    conversation_text = _format_batch_for_judge(transcripts)
+    
+    result = graph.invoke({
+        "attempts": 0,
+        "system_prompt": batch_prompt,
+        "conversation_text": conversation_text,
+        "num_turns": sum(len(t.get("exchanges", [])) for t in transcripts),
+    })
+    
+    grade_json = result.get("grade_json")
+    if grade_json is None:
+        last_error = str(result.get("last_error") or "unknown validation error")
+        last_output = str(result.get("last_output") or "")
+        debug_path = _write_failed_output_debug(
+            source_path=batch_file_path,
+            prompt_name=prompt_name,
+            rubric_name=rubric_name,
+            model_name=model_name,
+            last_error=last_error,
+            last_output=last_output,
+        )
+        debug_hint = f" Debug output: {debug_path}" if debug_path is not None else ""
+        raise JudgeError(f"Batch judge failed to produce valid grade JSON. Last error: {last_error}.{debug_hint}")
+    
+    # Parse batch results
+    if not isinstance(grade_json, list) or len(grade_json) != len(transcripts):
+        raise JudgeError(f"Expected array of {len(transcripts)} grades, got: {type(grade_json).__name__}")
+    
+    results = []
+    output_stem = output_name or batch_file_path.stem
+    
+    for i, (transcript, grade_payload_raw) in enumerate(zip(transcripts, grade_json)):
+        if not isinstance(grade_payload_raw, dict):
+            raise JudgeError(f"Grade {i+1} must be an object, got: {type(grade_payload_raw).__name__}")
+        
+        grade_payload = dict(grade_payload_raw)
+        grade_payload["model"] = {
+            "provider": "openai",
+            "model": model_name,
+            "temperature": 0,
+            "reasoning_effort": "medium",
+        }
+        grade_payload["judge_llm_calls"] = int(result.get("attempts", 0))
+        if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
+            grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
+        grade_payload = _order_grade_payload(grade_payload)
+        
+        # Write individual graded transcript
+        out_transcript = dict(transcript)
+        out_transcript.pop("_source_path", None)
+        out_transcript.pop("grade", None)
+        out_transcript["grade"] = grade_payload
+        
+        source_path = TRANSCRIPTS_DIR / f"{transcript['_source_path']}.json"
+        output_path = source_path.with_name(f"{output_stem}_batch_{i+1:02d}__{prompt_name}__{rubric_name}__gpt.json")
+        output_path.write_text(json.dumps(out_transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        
+        results.append(JudgeResult(
+            total_score=int(grade_payload["total_score"]),
+            max_score=int(grade_payload["max_score"]),
+            output_path=output_path,
+        ))
+    
+    return results

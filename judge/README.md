@@ -3,28 +3,39 @@
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
 Current defaults in code:
-- prompt: `judge_03`
-- rubric: `rubric_04`
+- prompt: `judge_05`
+- rubric: `rubric_05`
 
 ## Structure
 
 ```text
 judge/
-  __init__.py          — package exports
-  run_judge_gpt.py     — GPT judge implementation (OpenAI)
-  run_judge_claude.py  — Claude judge module (single-transcript scoring API)
+  __init__.py              — package exports
+  run_judge_gpt.py         — GPT judge implementation (OpenAI)
+  run_judge_claude.py      — Claude judge module (single-transcript scoring API)
+  run_judge_batch_gpt.py   — GPT batch judge for bundle experiments
+  run_judge_batch_claude.py — Claude batch judge for bundle experiments
   README.md
   prompts/
-    judge_01.txt       — baseline prompt template
-    judge_02.txt       — structured prompt template
-    judge_03.txt       — prior prompt template (context + exercise aware)
-    judge_04.txt       — current prompt template (context + exercise aware)
+    judge_01.txt           — baseline prompt template
+    judge_02.txt           — structured prompt template
+    judge_03.txt           — prior prompt template (context + exercise aware)
+    judge_04.txt           — current prompt template (context + exercise aware)
+    judge_05.txt           — current prompt template (rubric_05 compatible)
+    judge_06.txt           — latest prompt template
   rubrics/
-    rubric_01.md       — original rubric profile
-    rubric_02.md       — intermediate rubric profile
-    rubric_03.md       — prior rubric profile (33 base + 9 bonus = 42 max)
-    rubric_04.md       — current rubric profile (47 base with section malus deductions)
-    rubric_05.md       — newer rubric profile (46 base points)
+    rubric_01.md           — original rubric profile
+    rubric_02.md           — intermediate rubric profile
+    rubric_03.md           — prior rubric profile (33 base + 9 bonus = 42 max)
+    rubric_04.md           — prior rubric profile (47 base with section malus deductions)
+    rubric_05.md           — current rubric profile (46 base points, no malus)
+    rubric_06.md           — latest rubric profile
+  transcript_batches/
+    README.md              — batch system overview and usage
+    batch_01.md            — Type 01 batch documentation
+    batch_02.md            — Type 02 batch documentation
+    batch_03.md            — Type 03 batch documentation
+    batch_##_###.txt       — 198 batch files for experiments
 ```
 
 Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
@@ -40,20 +51,22 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 
 ## Usage
 
-```python
-from judge import judge_transcript
+### Single Transcript Judging
 
-result = judge_transcript("chaotic/chaotic_gpt/transcript_01__judge_03__rubric_04")
-print(result.total_score, result.max_score)  # e.g. 41, 47
+```python
+from judge.run_judge_gpt import judge_transcript
+
+result = judge_transcript("chaotic/chaotic_raw/transcript_01")
+print(result.total_score, result.max_score)  # e.g. 41, 46
 ```
 
 You can also choose specific judge prompt + rubric versions:
 
 ```python
 result = judge_transcript(
-    "chaotic/chaotic_gpt/transcript_01__judge_03__rubric_04",
-    prompt_name="judge_03",
-    rubric_name="rubric_04",
+    "chaotic/chaotic_raw/transcript_01",
+    prompt_name="judge_05",
+    rubric_name="rubric_05",
 )
 ```
 
@@ -62,9 +75,51 @@ Claude example:
 ```python
 from judge.run_judge_claude import judge_transcript
 
-result = judge_transcript("chaotic/chaotic_claude/transcript_01__judge_03__rubric_04")
+result = judge_transcript("chaotic/chaotic_raw/transcript_01")
 print(result.total_score, result.max_score)
 ```
+
+### Batch Judging (Bundle Experiments)
+
+Judge multiple transcripts together for comparative analysis:
+
+```python
+from judge.run_judge_batch_gpt import judge_transcript_batch
+
+# Use a batch file from judge/transcript_batches/
+results = judge_transcript_batch(
+    "unused_name",
+    batch_file_path="judge/transcript_batches/batch_01_001.txt",
+    output_name="experiment_1"
+)
+
+for i, result in enumerate(results, 1):
+    print(f"Transcript {i}: {result.total_score}/{result.max_score}")
+```
+
+Claude batch judging:
+
+```python
+from judge.run_judge_batch_claude import judge_transcript_batch
+
+results = judge_transcript_batch(
+    "unused_name", 
+    batch_file_path="judge/transcript_batches/batch_02_001.txt"
+)
+```
+
+### Bundle Generation
+
+Generate transcript bundles for experiments:
+
+```bash
+python create_batch.py
+```
+
+This creates three batch types in `judge/transcript_batches/`:
+- **Type 01**: Same persona + same version + same exercise (72 batches)
+- **Type 02**: Same persona + same version + different exercise (54 batches)  
+- **Type 03**: Different persona + same version + same exercise (72 batches)
 
 ## Rubric summary
 
@@ -73,18 +128,15 @@ print(result.total_score, result.max_score)
 - `3. Communication quality` (`3.1`-`3.3`): `14` max points
 - `Base total`: `47` max points
 
-For `rubric_05`:
+For `rubric_05` (current):
 - `1. Pedagogy` (`1.1`-`1.3`): `24` max points
 - `2. Dialogue quality` (`2.1`-`2.2`): `12` max points
 - `3. Communication quality` (`3.1`-`3.2`): `10` max points
 - `Base total`: `46` max points
 
-Section malus deductions (catch-all, only if not already deducted):
-- `1.4`: `0..2`
-- `2.3`: `0..2`
-- `3.4`: `0..2`
+**Note**: `rubric_05` removed malus deductions. Total score equals base score.
 
-Maximum total score: **47**.
+Maximum total score: **46**.
 
 ## Output contract (current)
 
@@ -92,10 +144,16 @@ Maximum total score: **47**.
 - Top-level key order ends with `total_score`, then `judge_llm_calls`.
 - `overview` replaces `justifications` and appears near the end.
 - Deductions are ordered as `evidence_turns`, `sub_criterion_id`, `reason`, then `points` (`evidence_turns` optional).
-- For `rubric_04`, each deduction must include an exact rubric sub-sub ID in `sub_criterion_id` (for example `1.1.A.a`, `2.2.D.a`, `3.2.C.b`).
-- Each section `malus` requires `explanation`.
-- `total_malus` and `max_malus` are used (deductions-only scoring).
+- For `rubric_04`/`rubric_05`, each deduction must include an exact rubric sub-sub ID in `sub_criterion_id` (for example `1.1.A.a`, `2.2.D.a`, `3.2.C.b`).
+- For `rubric_05`: No malus deductions. `total_score` equals `total_base_score`.
 - Judge input supports both transcript `context` and `exercise`.
+
+### Batch Output
+
+For batch judging, each transcript gets its own graded file with naming:
+`{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
+
+Example: `experiment_1_batch_01__judge_05__rubric_05__gpt.json`
 
 ## Environment variables
 
