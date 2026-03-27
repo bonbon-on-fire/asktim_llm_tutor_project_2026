@@ -134,7 +134,7 @@ from students.run_student import get_next_student_message
 |----------|----------|-------------|
 | `OPENAI_API_KEY` | Yes | OpenAI API key |
 | `ANTHROPIC_API_KEY` | For Claude | Anthropic API key |
-| `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`) |
+| `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`) |
 | `ANTHROPIC_MODEL` | No | Claude model (default: `claude-sonnet-4-6`) |
 | `JUDGE_OPENAI_REASONING_EFFORT` | No | GPT reasoning: `low/medium/high/off` (default: `medium`) |
 

@@ -131,7 +131,7 @@ This section tracks the ongoing restructuring of the codebase. The goal is to ma
 
 | Decision | Detail |
 | -------- | ------ |
-| **Model** | `gpt-5.2` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.2")`. |
+| **Model** | `gpt-5.4` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.4")`. |
 | **API key required** | Every component must have `OPENAI_API_KEY` set. If missing, fail immediately with a clear error. No silent fallbacks, no offline/mock modes. |
 | **No mock/offline modes** | All CLI mock-tutor modes are removed. The system always talks to the real LLM. |
 | **Curriculum will grow** | The `curriculum/` folder will have more courses and exercises added over time. The structure must make adding new content trivial. |
@@ -263,7 +263,7 @@ tutor/
 ### Phase 3: Judge module rework ✦ DECIDED
 
 **Problems:**
-- Model defaulted to `gpt-4o` instead of `gpt-5.2`.
+- Model defaulted to `gpt-4o` instead of `gpt-5.4`.
 - `.env` loaded at import time with a `try/except` fallback — inconsistent with other modules.
 - Pydantic warning suppression duplicated code already in `sitecustomize.py`.
 - `_extract_json_object` was duplicated identically in tutor and judge.
@@ -296,7 +296,7 @@ judge/
     rubric_01.md       — grading rubric (renamed from judge_rubric.md)
 ```
 
-- **Model → `gpt-5.2`** default.
+- **Model → `gpt-5.4`** default.
 - **Removed** `.env` loading and Pydantic warning suppression.
 - **Fail-fast** API key (same `_require_openai_api_key()` pattern).
 - **Judge prompt** moved to `judge/prompts/judge_01.txt` — template with `{rubric}` and `{schema}` placeholders filled at runtime.

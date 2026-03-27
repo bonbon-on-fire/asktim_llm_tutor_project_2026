@@ -67,11 +67,10 @@ _RUBRIC_SPECS: dict[str, dict[str, Any]] = {
             "3.3": "Formatting and medium",
         },
         "sections": {
-            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"], "malus_id": "1.4"},
-            "2_dialogue_quality": {"criteria": ["2.1", "2.2"], "malus_id": "2.3"},
-            "3_communication_quality": {"criteria": ["3.1", "3.2", "3.3"], "malus_id": "3.4"},
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2", "3.3"]},
         },
-        "malus_max": 2,
     },
     "rubric_05": {
         "provider": "claude",
@@ -96,11 +95,38 @@ _RUBRIC_SPECS: dict[str, dict[str, Any]] = {
             "3.2": "Appropriate tone and support",
         },
         "sections": {
-            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"], "malus_id": None},
-            "2_dialogue_quality": {"criteria": ["2.1", "2.2"], "malus_id": None},
-            "3_communication_quality": {"criteria": ["3.1", "3.2"], "malus_id": None},
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2"]},
         },
-        "malus_max": 0,
+    },
+    "rubric_06": {
+        "provider": "claude",
+        "max_base_score": 46,
+        "max_score": 46,
+        "criterion_max": {
+            "1.1": 12,
+            "1.2": 6,
+            "1.3": 6,
+            "2.1": 4,
+            "2.2": 8,
+            "3.1": 6,
+            "3.2": 4,
+        },
+        "criterion_names": {
+            "1.1": "Socratic method and guided discovery",
+            "1.2": "Scaffolding and progression",
+            "1.3": "Meta-learning and methodology feedback",
+            "2.1": "Redundancy and spiraling",
+            "2.2": "Assignment anchoring",
+            "3.1": "Bite-sized and clear responses",
+            "3.2": "Appropriate tone and support",
+        },
+        "sections": {
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2"]},
+        },
     },
 }
 
@@ -144,15 +170,6 @@ def _coerce_int(value: Any, *, default: int = 0) -> int:
         except ValueError:
             return default
     return default
-
-
-def _clamp_int(value: Any, *, minimum: int, maximum: int) -> int:
-    parsed = _coerce_int(value, default=minimum)
-    if parsed < minimum:
-        return minimum
-    if parsed > maximum:
-        return maximum
-    return parsed
 
 
 def _sanitize_text(value: Any) -> str:
@@ -201,6 +218,11 @@ def _extract_text_from_model_content(content: Any) -> str:
         for item in content:
             if isinstance(item, str):
                 chunks.append(item)
+                continue
+            # Skip reasoning blocks (e.g. OpenAI reasoning type='reasoning')
+            # that have no .text — str()-converting them poisons JSON parsing.
+            item_type = getattr(item, "type", None) or (item.get("type") if isinstance(item, dict) else None)
+            if item_type == "reasoning":
                 continue
             if isinstance(item, dict):
                 text = item.get("text")
@@ -356,19 +378,6 @@ def _validate_grade_payload(
             "base": {"score": section_score, "max": section_max},
         }
 
-        malus_id = section_spec.get("malus_id")
-        if malus_id:
-            malus_in = section_in.get("malus")
-            if not isinstance(malus_in, dict):
-                malus_in = {}
-            malus_score = _clamp_int(malus_in.get("score"), minimum=0, maximum=int(spec["malus_max"]))
-            section_payload["malus"] = {
-                "id": _sanitize_text(malus_in.get("id")).strip() or malus_id,
-                "explanation": _sanitize_text(malus_in.get("explanation")).strip(),
-                "score": malus_score,
-                "max": int(spec["malus_max"]),
-            }
-
         normalized_sections[section_id] = section_payload
 
     total_base_score = sum(
@@ -383,16 +392,7 @@ def _validate_grade_payload(
         "max_base_score": max_base_score,
     }
 
-    if int(spec["malus_max"]) > 0:
-        total_malus = sum(
-            int(section.get("malus", {}).get("score", 0)) for section in normalized_sections.values()
-        )
-        max_malus = int(spec["malus_max"]) * len(spec["sections"])
-        out["total_malus"] = total_malus
-        out["max_malus"] = max_malus
-        out["total_score"] = max(0, total_base_score - total_malus)
-    else:
-        out["total_score"] = total_base_score
+    out["total_score"] = total_base_score
 
     out["overview"] = payload.get("overview", [])
     if not isinstance(out["overview"], list):
@@ -405,9 +405,6 @@ def _validate_grade_payload(
 def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     ordered: dict[str, Any] = {"sections": payload["sections"]}
     for key in ("max_score", "total_base_score", "max_base_score"):
-        if key in payload:
-            ordered[key] = payload[key]
-    for key in ("total_malus", "max_malus"):
         if key in payload:
             ordered[key] = payload[key]
     for key in ("id", "summary", "type", "model", "timestamp_utc"):
@@ -445,13 +442,6 @@ def _grade_schema_for_prompt(rubric_name: str) -> dict[str, Any]:
                 "max": sum(spec["criterion_max"][c] for c in section_spec["criteria"]),
             },
         }
-        if section_spec.get("malus_id"):
-            section_payload["malus"] = {
-                "id": section_spec["malus_id"],
-                "explanation": "",
-                "score": 0,
-                "max": spec["malus_max"],
-            }
         sections[section_id] = section_payload
 
     payload: dict[str, Any] = {
@@ -460,9 +450,6 @@ def _grade_schema_for_prompt(rubric_name: str) -> dict[str, Any]:
         "total_base_score": spec["max_base_score"],
         "max_base_score": spec["max_base_score"],
     }
-    if spec["malus_max"] > 0:
-        payload["total_malus"] = 0
-        payload["max_malus"] = spec["malus_max"] * len(spec["sections"])
     payload["overview"] = ["Brief evidence-based overview."]
     payload["total_score"] = spec["max_score"]
     payload["judge_llm_calls"] = 1
@@ -611,7 +598,7 @@ def judge_transcript(
     graph = _create_judge_graph(
         model_name=model_name,
         api_key=_require_anthropic_api_key(),
-        enforce_sub_criterion_ids=normalized_rubric in {"rubric_04", "rubric_05"},
+        enforce_sub_criterion_ids=normalized_rubric in {"rubric_04", "rubric_05", "rubric_06"},
         rubric_name=normalized_rubric,
     )
     result = graph.invoke(
