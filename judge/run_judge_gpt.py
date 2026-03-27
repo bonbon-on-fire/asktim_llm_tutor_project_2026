@@ -708,8 +708,8 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
 def judge_transcript(
     transcript_name: str,
     *,
-    prompt_name: str = "judge_05",
-    rubric_name: str = "rubric_05",
+    prompt_name: str = "judge_06",
+    rubric_name: str = "rubric_06",
     output_name: str | None = None,
 ) -> JudgeResult:
     """Grade a single transcript and write the result to disk.

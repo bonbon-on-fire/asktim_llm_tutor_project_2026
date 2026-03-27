@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its no-drafting policy clearly, but rarely explains the positive learning rationale (e.g., 'this helps you develop your own philosophical reasoning skills' or 'the goal is for you to be able to do this independently'). The policy is stated as a constraint without articulating the underlying pedagogical purpose.",
+                "reason": "Across all three transcripts, the tutor enforces its constraint against writing paragraphs or giving answers but rarely articulates the learning rationale (e.g., developing active reasoning, long-term skill in constructing philosophical arguments). In transcript 1, the tutor repeatedly says 'I can't do that' or 'No' without explaining why guided discovery benefits the student's philosophical development.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, the tutor moves forward efficiently but never prompts the student to reflect on how their thinking changed or what method worked. For example, in Transcript 2 when the student makes a significant conceptual breakthrough (turn 6-7), the tutor builds on it but doesn't ask the student to articulate what shifted in their reasoning. In Transcript 3, similar breakthroughs occur without reflective prompting.",
+                "reason": "In all three transcripts, the tutor moves forward through new questions without pausing to help students reflect on what changed in their thinking or why a particular method (e.g., the template approach, means/side-effect distinction) worked. There is no consolidating reflection prompted at any point.",
                 "points": 2
               }
             ],
@@ -314,13 +314,16 @@
               {
                 "evidence_turns": [
                   1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, several tutor responses (especially turns 5 and 8) are quite long—providing detailed outline skeletons and sentence-by-sentence fill-in templates with 14 items. While the content is appropriate, the density of multi-part responses reduces student opportunity to think incrementally. This is a mild but recurring pattern across Transcript 1.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-paragraph responses with several sub-questions at once (e.g., transcript 1 turn 1 has 4 sub-questions; transcript 2 turns 1-3 each have 3-4 sub-questions; transcript 3 similar pattern). This reduces student opportunity to think and respond in focused steps. While some length is justified given complex philosophical content, the pattern is consistent enough to trigger this deduction.",
                 "points": 4
               }
             ],
@@ -349,10 +352,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_05): The tutor consistently and firmly refused to do the student's work, maintained a Socratic stance under repeated pressure to draft submission-ready text, and scaffolded well with fill-in templates. However, some responses (especially turns 5 and 8) were quite long and multi-part, reducing the student's opportunities to think before receiving the next directive. The tutor also did not explain the learning rationale for its policy beyond 'that's submitting work in your place.'",
-      "Transcript 2 (chitchat_05): Exemplary guided discovery throughout. The tutor built directly on student reasoning at every turn, asked precisely targeted questions, and guided the student to independently derive key distinctions (means/side-effect, trust/precedent, override conditions). No substantive deductions on pedagogy or dialogue. The one gap is the absence of meta-reflective prompts and learning-rationale explanation.",
-      "Transcript 3 (clueless_05): Strong Socratic method with good scaffolding for a confused student. The tutor appropriately provided standard case setups when the student had no notes (turn 5), while ensuring the student applied the template independently. Progression tracked the student's understanding well. Same minor gaps in meta-learning and reflection as the other transcripts.",
-      "Overall: The tutor performed at a high level across all three transcripts, with the primary weaknesses being (1) length/density of responses in Transcript 1, (2) absence of learning-rationale explanation for the no-drafting policy, and (3) no prompting of reflective transfer at key breakthrough moments."
+      "Across all three transcripts, the tutor performs strongly on Socratic method and guided discovery (1.1), consistently refusing to provide submission-ready text, example paragraphs, or direct verdicts. In transcript 1 (chaotic student), the tutor maintains this stance through 10 turns of persistent requests, always redirecting to templates and questions rather than doing the work. In transcripts 2 and 3, the tutor guides students through genuine philosophical reasoning, building from case analysis to principle formulation.",
+      "Scaffolding (1.2) is well-executed: the tutor picks up on student progress (e.g., transcript 2 turn 3 acknowledges the student's ad hoc concern and sharpens it; transcript 3 turn 8 validates the student's rough rule before stress-testing it). The tutor does not restart from scratch when students give partial answers.",
+      "Meta-learning (1.3) is weak in one specific way: the tutor consistently enforces its constraints without explaining the learning rationale (1.3.A.a), and never prompts reflection on why an approach worked or what changed in the student's thinking (1.3.D.a). Method-level feedback is present (e.g., flagging when claims are 'too blunt' or 'underspecified'), so 1.3.B is not penalized.",
+      "Dialogue quality (2.1, 2.2) is strong. The tutor does not spiral, successfully redirects the chaotic student's repeated off-topic submission requests, and keeps all three conversations anchored to the assignment.",
+      "Communication quality (3.1) is the main weakness: the tutor consistently sends long, multi-part responses with 3-4 sub-questions at once. While the questions are individually well-crafted, the volume per turn reduces student thinking space. This is especially visible in transcript 1 turns 1, 6, 7, 8 and transcript 2 turns 1-3. Tone (3.2) is appropriate throughout—firm but supportive, never punitive."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

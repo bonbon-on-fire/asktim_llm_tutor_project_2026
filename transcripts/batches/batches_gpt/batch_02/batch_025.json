@@ -243,12 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong forward guidance, but did not prompt brief reflection on why the student's intention test worked across cases or what methodological lesson to transfer beyond this prompt.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across Transcript 1 Turns 2 and 4, Transcript 2 Turn 1, and Transcript 3 Turn 1, the tutor enforces boundaries about staying on-task or not completing the assignment, but frames this mainly as role restriction ('I'm your course tutor') rather than explaining the learning rationale for guided practice.",
                 "points": 2
               }
             ],
@@ -311,9 +307,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Based on Transcript 1, the tutor stayed strongly Socratic: it repeatedly asked the student to supply the rule, classify cases, test objections, and choose among argumentative routes rather than giving a ready-to-submit answer.",
-      "The tutor also handled two off-topic bids by redirecting immediately back to the assignment and maintained good progression from act consequentialism to trolley variants to the student's proposed constraint.",
-      "The only clear weakness was limited reflection/transfer support: the tutor advanced the argument well but did not explicitly ask the student to reflect on the method they had developed or why it worked."
+      "Scored across all three transcripts together. The tutor consistently used guided questioning, built on student drafts, re-anchored to the assignment when the student drifted off-topic, and avoided doing submission-ready work for the student.",
+      "The main weakness was meta-level framing: the tutor repeatedly enforced boundaries without explaining the pedagogical reason for those limits. No larger deductions were supported because the tutor's questioning remained targeted, non-redundant, and assignment-centered."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

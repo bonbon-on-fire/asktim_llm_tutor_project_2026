@@ -238,6 +238,7 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -249,7 +250,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "Across all three transcripts, the student repeatedly signals they are stuck at a meta-level (don't know how to find sources, can't distinguish hazard/stressor/actor, overwhelmed by task structure), yet the tutor consistently responds with more questions and structured frameworks rather than first diagnosing the precise source of confusion with targeted diagnostic prompts. In the urban studies transcripts especially (Turns 5–10 of T2 and T3), the tutor keeps applying the same 'pick a letter / answer these two questions' move without checking what specifically is preventing the student from opening a document. This is a pattern of responding to the wrong confusion point.",
+                "reason": "Across all three transcripts, when the student is stuck or confused, the tutor repeatedly jumps to delivering structured content (checklists, templates, decision trees, category lists) before diagnosing where exactly the student's understanding breaks down. For instance, in Transcript 2, the student says 'I don't even know how to separate hazards vs stressors vs sectors' (Turn 5), and the tutor gives a structured mini-lecture rather than asking a targeted diagnostic question first. Similarly in Transcript 3, Turn 7, the student says they don't know what to search and the tutor immediately provides a full taxonomy of typical stormwater actor types.",
                 "points": 3
               }
             ],
@@ -273,7 +274,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "In all three transcripts, the tutor consistently refuses to give direct answers or write content for the student, but never explicitly explains *why*—e.g., that the student needs to practice reasoning for long-term skill development, or that working through the analysis themselves builds capacity. The tutor enforces this constraint without giving a pedagogical rationale.",
+                "reason": "The tutor consistently declines to do the work for the student but rarely explains the learning rationale behind its constraints. For example, in Transcript 2, Turn 4, the tutor says 'I can't give you a full worked example with sample ratings/justifications you can copy—that would cross into writing the assignment for you' but does not explain why doing the reasoning independently builds the analytical skill needed for the course.",
                 "points": 2
               },
               {
@@ -290,7 +291,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts reflection on what the student just figured out or why a given method worked. After the philosophy student successfully builds an argument framework by Turn 8–9, the tutor moves directly to the next question without asking what the student's thinking changed or reinforcing the method used. Same in urban studies: when the student makes progress (e.g., identifying actor types), the tutor moves forward without pausing for process reflection.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a particular method worked. After the student makes progress (e.g., in Transcript 1 Turn 8 when the student produces a reasonable draft principle, or in Transcript 3 Turn 9 when they grasp the 'named enough' distinction), the tutor immediately moves on to the next task without reinforcing or consolidating the method.",
                 "points": 2
               }
             ],
@@ -310,6 +311,8 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
+                  3,
                   4,
                   5,
                   6,
@@ -319,7 +322,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In both urban studies transcripts (T2 and T3), the tutor cycles through the same pattern—'pick a source, answer these 2 questions, bring me a name'—for 7+ turns without synthesis or reframing. The student remains stuck in the same loop (can't/won't open a document), yet the tutor keeps repeating essentially the same move: 'choose A or B, then tell me what you find.' No attempt at summarizing progress, switching tactics, or explicitly acknowledging the pattern of non-completion.",
+                "reason": "In Transcripts 2 and 3, the student repeatedly asks for worked examples or actor lists and the tutor repeatedly declines with a similar pattern: refuse, offer a fill-in template/structure, and end with a new question. This cycle repeats across turns 2–10 of Transcript 2 and turns 1–10 of Transcript 3 without meaningful consolidation or synthesis of the student's growing conceptual confusion. The student remains stuck at a similar level of paralysis from turn 3 to turn 10 in both assignments, and the tutor does not reframe or simplify the task at a higher level.",
                 "points": 4
               }
             ],
@@ -352,12 +355,10 @@
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor consistently delivers multi-paragraph, heavily structured responses (numbered lists, bold headers, multiple sub-questions) when a student who is confused and overwhelmed would benefit from shorter, single-focus prompts. Turn 1 of T1, T2, and T3 all open with 3–5 part structured frameworks when one focused question would have been more appropriate. This pattern persists throughout, reducing the student's opportunity to think and respond incrementally.",
+                "reason": "Throughout all three transcripts, the tutor consistently produces multi-paragraph replies with multiple numbered sub-points, bulleted lists, and extended explanations when a single focused prompt would have been more appropriate. For example, Transcript 2 Turn 1 contains a full taxonomy of all five sectors plus a 3-question framework before the student has even chosen a city. Transcript 3 Turn 7 gives a full 8-item typology of stormwater organizations followed by two questions. This pattern is pervasive and reduces the student's opportunity to reason independently.",
                 "points": 4
               }
             ],
@@ -386,13 +387,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a strong Socratic stance throughout all three transcripts, consistently refusing to do the work for the student and instead guiding via structured questions. This earns full marks on 1.1.",
-      "However, the tutor repeatedly misreads the student's confusion as content-level when it is often process/task-level (how do I open and read a document, what does evidence look like). This triggers a 1.2.B.a deduction for responding to the wrong confusion point across the urban studies sessions.",
-      "The tutor never explains its pedagogical rationale for withholding direct answers (1.3.A.a), and never prompts meta-reflection after student progress (1.3.D.a), both resulting in deductions.",
-      "The most significant deduction is in 2.1: the urban studies transcripts show the tutor cycling through the same 'pick a source, answer these questions' move for 7+ consecutive turns without synthesis, reframing, or switching tactics despite the student remaining stuck in the same loop.",
-      "Communication is consistently too long and too structured for a confused student; multi-part numbered responses appear where single focused prompts were needed (3.1.A.a).",
-      "Tone is warm and supportive throughout, and the tutor never implies formal grading, so 3.2 earns full marks.",
-      "Assignment anchoring is strong: the tutor consistently re-grounds to task requirements and does not follow student misframes (2.2 full marks)."
+      "Transcript 1 (Philosophy): The tutor does well using Socratic prompting throughout, consistently refusing to give the final answer and instead pressing the student with targeted questions to build their own analysis. The student makes genuine intellectual progress (from confused to a coherent draft principle by Turn 8). No deductions for 1.1. However, the tutor's responses are consistently long and multi-part, and it occasionally front-loads structured content rather than diagnosing confusion first.",
+      "Transcripts 2 and 3 (Urban Studies): The core Socratic constraint is maintained—the tutor consistently declines to write stressors, actor lists, or worked examples for the student. However, a serious spiraling problem emerges: the student is stuck at the same level of paralysis from Turn 2 to Turn 10 in both assignments, and the tutor repeats the same pattern (decline → template → question) without consolidating progress or switching strategies. By Turn 7–8 in Transcript 2, and Turn 6–8 in Transcript 3, a good tutor would have stepped back and reframed the task more fundamentally.",
+      "Meta-learning: The tutor rarely explains why it declines to provide answers, missing opportunities to help the student build long-term analytical habits. Reflection on progress is entirely absent across all three transcripts.",
+      "Communication: Responses are consistently too long given the student's confusion level. The tutor would have been more effective with shorter, more targeted interventions, especially in Transcripts 2 and 3 where the student is clearly overwhelmed.",
+      "Tone: The tutor maintains a warm, encouraging tone throughout all three transcripts with no deductions warranted."
     ],
     "total_score": 31,
     "judge_llm_calls": 1

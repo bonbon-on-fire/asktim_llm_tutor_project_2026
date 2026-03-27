@@ -244,6 +244,11 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
                   6,
                   7,
                   8,
@@ -251,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explicitly explains why it is using a Socratic/guided approach rather than just giving answers—e.g., it never says 'I'm asking you to work this out yourself because active reasoning builds your philosophical skills.' Constraints are enforced (redirecting off-topic, refusing to write final answers) without stating the pedagogical rationale.",
+                "reason": "Across all three transcripts the tutor rarely explains why it is using a Socratic/non-answer-giving approach. When declining to give direct answers it either gives no rationale (Transcript 1 Turn 1) or only briefly says 'I'm your philosophy tutor here' (T1 Turn 7) / 'I'm here as your course tutor' (T2 Turn 1, T3 Turn 2). The learning rationale—that guided reasoning builds long-term skills—is never made explicit to the student.",
                 "points": 2
               },
               {
@@ -259,7 +264,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of each transcript the tutor moves toward the next action step without prompting the student to reflect on what changed in their thinking or why a method worked. In Transcript 1 Turn 10, the tutor asks the student to commit to a verdict and pick a unification—useful scaffolding—but never asks 'what did you learn about how to test moral principles?' In Transcript 2/3 endings, the same pattern holds: task completion is reinforced but no meta-reflection is invited.",
+                "reason": "In Transcript 1 Turn 10 (final turn) and throughout the urban-studies transcripts, the tutor consistently moves to the next task without pausing to help the student reflect on what their reasoning process accomplished or why a particular method worked. For example, after the student's well-developed rights/consent/redirecting account in T1 Turn 10, the tutor immediately poses the next choice without prompting reflection on what changed in their thinking.",
                 "points": 2
               }
             ],
@@ -300,10 +305,14 @@
               {
                 "evidence_turns": [
                   1,
-                  2
+                  2,
+                  4,
+                  5,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Transcript 1 Turn 1 opens with a four-part, multi-paragraph prompt covering the act-consequentialist rule, a case-by-case table, a clash diagnosis, and a 'right general account' question—all at once before the student has engaged at all. Turn 2 repeats the pattern with another dense multi-part prompt (table format, Switch vs Footbridge comparison, Fuel/Blood classification, and a three-way diagnostic) before the student has shown any of their own thinking. This consistently reduces the student's opportunity to think and respond step by step.",
+                "reason": "In multiple turns across all three transcripts, the tutor delivers multi-part, multi-paragraph responses—sometimes 4–5 numbered sub-questions at once—when a single focused prompt would have been more appropriate. For example, T1 Turn 1 launches with four distinct compound tasks; T1 Turn 2 gives a table structure plus three separate diagnostic questions; T2 Turn 4 poses three tightening questions simultaneously; T3 Turn 5 stacks three distinct mini-checks. This pattern consistently reduces the student's cognitive space to engage with one idea at a time.",
                 "points": 4
               }
             ],
@@ -332,11 +341,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains strong Socratic discipline: it never gives final answers, redirects off-topic chitchat cleanly, and consistently asks the student to derive or classify before supplying any information. No near-submission-ready content, no rewriting of student text, and no revealing of conclusions before student reasoning was observed—so 1.1 retains full marks.",
-      "Scaffolding is solid: the tutor builds on correct student contributions (e.g., affirming the Switch/Footbridge outcome summaries, the 'acute vs chronic' heat/UHI distinction, the proxy-actor criterion), acknowledges partial progress explicitly, and does not restart from scratch. 1.2 retains full marks.",
-      "The main pedagogy deduction is in 1.3: the tutor never explains its Socratic constraints to the student (no statement about why it is asking questions rather than giving answers), and at the end of each conversation it moves to the next action step without prompting any reflection on what changed in the student's thinking or why a method succeeded.",
-      "Dialogue quality is strong: the tutor advances the conversation each turn without looping, stays anchored to assignment tasks, and redirects off-topic attempts (music questions) immediately and concisely. Full marks for 2.1 and 2.2.",
-      "Communication quality has one clear deduction: Transcript 1 Turns 1 and 2 present very long multi-part prompts before the student has demonstrated any engagement, which is not typical of the rest of the conversation but is notable enough at the opening to trigger 3.1.A.a. Later turns are more appropriately bite-sized. Tone is warm and consistent throughout; no grading language is used."
+      "Across all three transcripts the tutor maintains a strong Socratic stance: it never gives final answers, consistently asks the student to derive conclusions first, builds systematically on correct student progress, and appropriately redirects off-topic chitchat requests (T1 Turn 6, T2 Turn 1, T3 Turn 2).",
+      "Scaffolding is a clear strength: the tutor picks up what the student provides (e.g., the student's correct Switch/Footbridge outcome summaries in T1 Turn 3, the student's consent insight in T1 Turn 7, the provisional ratings in T2 Turn 3) and moves forward from those points rather than restarting.",
+      "The main pedagogy deduction is in 1.3: the tutor never explains the rationale for its guided-discovery approach to the student (1.3.A.a), and it does not build in reflection moments after the student makes genuine conceptual progress (1.3.D.a). Both omissions appear consistently across all three conversations.",
+      "Communication length is the most significant technical issue: the tutor routinely bundles 3–5 distinct sub-questions into a single turn. While each individual question is well-designed, the stacking effect reduces interactivity and gives the student little chance to think through one idea before the next is introduced. This triggers the 3.1.A.a deduction.",
+      "No deductions were applied for assignment anchoring or redundancy: the tutor stays on task and advances the dialogue in each turn. Tone is consistently supportive and formative. No formal grades are implied."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

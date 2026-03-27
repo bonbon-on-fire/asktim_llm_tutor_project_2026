@@ -243,12 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  7,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong process guidance, but does not prompt reflection on why the student's rating and priority-selection method worked after improvement; it mostly moves straight to the next task.",
+                "reason": "Across the provided transcripts, the tutor consistently guides task completion well, but repeatedly misses explicit reflection opportunities when the student comments on what strategy did or did not help. The tutor validates progress and moves forward rather than prompting brief reflection on why the method worked or how to transfer it.",
                 "points": 2
               }
             ],
@@ -311,9 +307,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the schema supports a single conversation; in that transcript, the tutor consistently refused copyable answers and kept the student doing the substantive rating, justification, and priority work.",
-      "The tutor was well anchored to the assignment, scaffolded sector-by-sector, and gave concrete method guidance such as relative scaling, evidence hooks, and priority criteria.",
-      "Main deduction: despite strong coaching, the tutor rarely paused for explicit reflection on why the student's method improved or how to transfer that approach to the remaining rows."
+      "Across the provided transcripts, the tutor is strongly assignment-anchored, consistently refuses to do the student's work, and uses guided questioning, templates, and targeted checks to help the student build a defensible stressors table.",
+      "The main weakness is meta-learning follow-through: the student repeatedly signals what kinds of prompts helped or failed, but the tutor rarely turns those moments into explicit reflection or transfer guidance.",
+      "Because multiple transcripts were provided in a single prompt while the schema is singular, scoring was based on the combined evidence set; where evidence was close, the smaller deduction was used."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

@@ -229,34 +229,27 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "Across the provided transcripts, the tutor sometimes supplies the main interpretive options before the student develops them, e.g. giving candidate objections and distinction-tests such as rights/constraints, means vs side-effect, targeting, and plan/strategy (notably Transcript 3 turn 4 and Transcript 2 turn 10), which narrows the student’s own idea-generation.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student’s actual sticking point is missing factual recall of Fuel/Blood, the tutor often keeps pushing the student to reconstruct from memory or fetch notes rather than shifting to a more adaptive support strategy; this appears especially in Transcript 1 turns 9-10 and Transcript 3 turns 2-3.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives useful process prompts, but rarely asks the student to reflect on why a reasoning method worked, what changed in their thinking, or how to transfer the method after improvement.",
+                "reason": "The tutor stress-tests the student's rule but does not prompt brief reflection on why the student's method improved or what reasoning move helped, instead moving straight to the next task.",
                 "points": 2
               }
             ],
@@ -266,7 +259,7 @@
           }
         },
         "base": {
-          "score": 13,
+          "score": 22,
           "max": 24
         }
       },
@@ -275,8 +268,14 @@
           "2.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  3,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The conversations repeatedly loop on the same recall/reconstruction move for Fuel/Blood without enough synthesis or a new fallback approach; this is most visible in Transcript 1 (turns 2, 5, 8-10) and Transcript 3 (turns 1-4).",
+                "reason": "The tutor repeatedly returns to asking the student to reconstruct or look up Fuel/Blood details despite the student repeatedly saying they cannot recall them, and the exchange ends without a new synthesis or alternative route that resolves the stall.",
                 "points": 4
               }
             ],
@@ -299,14 +298,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses dense multi-part prompts with several numbered questions at once (for example Transcript 1 turn 1, Transcript 2 turns 5 and 8, and Transcript 3 turn 1), which is more than this confused student can easily process in one step.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -318,25 +311,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 27,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored across the three provided transcripts as aggregate evidence because the input included multiple separate conversations under one request.",
-      "The tutor is consistently supportive, assignment-focused, and generally avoids doing the student’s final writing for them.",
-      "Main weaknesses are repeated looping on Fuel/Blood recall, overly multi-part questioning for a very confused student, and occasional front-loading of key conceptual options before the student generates them.",
-      "Where evidence was somewhat ambiguous, smaller deductions were preferred outside the fixed rubric-trigger amounts."
+      "This evaluation applies to Transcript 1. The tutor was strongly Socratic, avoided supplying submission-ready content, and generally built on the student's emerging distinctions about act consequentialism, means, consent, and side effects.",
+      "Main weakness: the conversation stalled around Fuel/Blood. After several turns of the student saying they could not remember the cases, the tutor kept returning to reconstruction-from-memory or note-checking instead of switching to a clearer summary or alternate strategy, so progress became repetitive.",
+      "Deductions were kept modest because the tutor maintained a supportive tone, gave clear bite-sized prompts, and did explain why it would not supply lecture-specific case details directly."
     ],
-    "total_score": 27,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

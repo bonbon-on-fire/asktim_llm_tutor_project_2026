@@ -74,8 +74,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor supplied a large pre-made menu of Miami-specific stressors before the student generated their own list, providing core assignment ideas rather than first eliciting them from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -89,34 +98,20 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly states it cannot do or rewrite the assignment, but does not explicitly explain the learning rationale beyond saying it would be 'doing the assignment.'",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student's improvement, the tutor gives next-step revision advice but does not prompt reflection on why the revised justification worked or how to transfer the method to the remaining rows.",
+                "reason": "After the student's revision improved, the tutor moved straight to final tweaks without prompting any reflection on why the revision was stronger or how to apply the same method to the remaining rows.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 16,
           "max": 24
         }
       },
@@ -162,19 +157,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the student's assignment, kept the interaction anchored to the actual stressors-table task, and used prompts, templates, and targeted feedback to move the student from notes to stronger justifications.",
-      "Scaffolding was effective: the tutor built on the student's Miami examples, diagnosed what was missing in each justification, and asked for manageable next steps rather than giving submission-ready text.",
-      "Main weakness was meta-learning support: the tutor enforced boundaries without much explicit explanation of the learning rationale, and it missed a chance to prompt reflection or transfer once the student's revision improved.",
-      "There was some ambiguity about whether providing a Miami stressor menu in Turn 2 counted as over-generating ideas, but the tutor still required the student to choose, rate, and justify, so no deduction was applied there."
+      "The tutor consistently refused to provide copy-paste assignment text and kept the student doing the actual writing, especially in turns 3-10.",
+      "The main deduction is for turn 2, where the tutor supplied an extensive Miami-specific stressor menu, which gave substantial assignment content before the student generated it.",
+      "Scaffolding was otherwise strong: the tutor progressively moved from brainstorm prompts to templates to targeted feedback on the student's own draft language.",
+      "I did not deduct for tone or clarity because the tutor stayed supportive and concrete despite repeated student pressure and the time crunch.",
+      "A smaller deduction was applied for missing reflection/transfer support; once the student improved a row, the tutor focused on finishing rather than helping the student generalize the method."
     ],
-    "total_score": 42,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

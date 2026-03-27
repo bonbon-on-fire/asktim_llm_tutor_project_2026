@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied multiple Miami-specific stressor rows and later suggested sectors/templates for additional rows, doing part of the assignment's core idea-generation and categorization work instead of eliciting all of it from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,25 +96,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave useful process scaffolds but did not prompt reflection on why the rating method or revision approach worked after the student improved, missing a clear transfer opportunity.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 18,
           "max": 24
         }
       },
@@ -150,18 +149,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready work, kept the student anchored to the actual assignment, and used guided prompts, templates, and calibration questions to preserve student ownership.",
-      "Scaffolding was generally strong and responsive: the tutor turned the student's Miami case choice into manageable next steps without assigning the ratings or writing paste-ready justifications.",
-      "The main weakness was limited reflection/transfer support; after the student improved and began proposing defensible ratings, the tutor did not pause to help the student articulate why the method worked or how to reuse it independently."
+      "The tutor consistently refused to provide a submission-ready table, final ratings, or reusable justifications, and instead used calibration questions, rating criteria, and fill-in templates to keep the student doing the final judgment work.",
+      "The main deduction is limited to pedagogy: at several points the tutor generated Miami-specific stressor ideas and sector assignments, which partially completed the assignment's core ideation/categorization step. This was close to scaffolding rather than full answer-giving, so the smaller non-submission-ready deduction was applied."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

@@ -231,17 +231,12 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  2,
-                  6,
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied key interpretive content and central reasoning moves for the student, including the act consequentialist decision rule and the added necessity/proportionality structure for the student's final principle, rather than eliciting those ideas first.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "Although the tutor usually refused ghostwriting, it ultimately supplied near-submission-ready content, most clearly a fully formed rule sentence in Transcript 2 Turn 10 and polished claim-level language in Transcript 3 Turn 8.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -252,23 +247,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student arrived at a coherent rule, the tutor moved straight to application checks rather than prompting brief reflection on why the method worked or what the student had learned for future argument-building.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 12,
           "max": 24
         }
       },
@@ -297,16 +283,8 @@
           "3.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  6,
-                  8,
-                  9
-                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly gave multi-part, list-heavy replies when the student was panicked and asking for very short help, which reduced interactivity and made several turns more verbose than necessary.",
+                "reason": "The tutor repeatedly used long, multi-part scaffold dumps when shorter interactive steps were more appropriate, especially in Transcript 2 Turn 2 and similar list-heavy replies across the conversations.",
                 "points": 4
               }
             ],
@@ -328,19 +306,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to ghostwrite and kept the conversation anchored to the assignment, with generally supportive tone and usable scaffolds.",
-      "Main weakness: the tutor still supplied some decisive reasoning content, especially the act-consequentialist framework and the necessity/proportionality structure for the student's concluding principle.",
-      "There was also repeated use of long, enumerated responses where shorter interactive prompts would have fit the student's time-pressured state better.",
-      "I used a smaller deduction under 1.1.C rather than 1.1.A because the tutor stopped short of fully writing paste-ready prose, though some later template guidance came close."
+      "Across the three transcripts, the tutor was generally assignment-focused, nonjudgmental, and strongly oriented toward guided reasoning rather than full ghostwriting.",
+      "The main pedagogy failure is that it eventually crossed into giving near-ready answer language, especially a polished general-principle sentence that the student explicitly wanted for submission.",
+      "Because multiple transcripts were provided, this score reflects the strongest supported pattern across them; otherwise the tutor's scaffolding and assignment anchoring were mostly solid."
     ],
-    "total_score": 34,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

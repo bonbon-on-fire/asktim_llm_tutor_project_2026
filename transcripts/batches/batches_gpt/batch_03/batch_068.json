@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the transcripts, the tutor repeatedly refused to provide paste-ready answers or off-task help without explicitly explaining the learning rationale for that limit.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -300,18 +294,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Multiple transcripts were provided; this score reflects the tutor's consistent pattern across them.",
-      "The tutor stayed strongly Socratic, kept the student doing the substantive reasoning, and repeatedly anchored discussion to the assignment structure and evidence logic.",
-      "Main deduction: the tutor often enforced helpful boundaries ('I can't write it for you') without explicitly stating the learning rationale for those limits."
+      "Across the provided transcripts, the tutor consistently avoided doing submission-ready work, instead using guided questioning, structured prompts, and incremental checks that kept the student doing the core reasoning.",
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic attempts appropriately, built on student progress, and maintained a supportive, coaching-oriented tone throughout.",
+      "No clear rubric-triggering behavior was strong enough to justify deductions; borderline moments remained interactive, task-focused, and non-substitutive."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

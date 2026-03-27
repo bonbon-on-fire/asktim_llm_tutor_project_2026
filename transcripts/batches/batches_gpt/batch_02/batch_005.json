@@ -231,8 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor sometimes supplied key reasoning moves instead of fully eliciting them from the student, such as offering the means-vs-side-effect principle structure and later a rights/status-based reply angle in Transcript 1 (Turns 5 and 9), and classifying Con Ed/MTA as engaged high-influence implementers in Transcript 3 (Turns 4 and 6).",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Across transcripts the tutor sometimes supplied key interpretive content before the student derived it, such as stating the act consequentialist decision rule and later giving the rights/status framing in the philosophy case, and classifying Con Ed/MTA as engaged rather than leading in the NYC governance task. This is substantive idea-generation, though not submission-ready writing.",
                 "points": 6
               }
             ],
@@ -249,31 +249,32 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary but usually framed it as policy or role ('I can’t write that for you') rather than explaining the learning rationale in explicit skill-building terms across all three transcripts.",
-                "points": 2
-              },
-              {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor rarely prompted reflection on why a method worked, what changed in the student's thinking, or how to transfer the approach; it mostly moved from one drafting step to the next.",
+                "reason": "The tutor gave useful prompts and method guidance, but rarely paused for explicit reflection on why a method worked or what the student learned for transfer; most turns moved directly to the next drafting task.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Especially in the two urban studies transcripts, the tutor repeatedly used the same refusal-plus-template move across many turns while the student remained stuck, with limited synthesis or strategy shift beyond more fill-in-the-blank prompts.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -285,21 +286,15 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor often responded with long, multi-part bullet lists and templates when the student needed very short interactive steps, especially in Transcript 1 (Turns 1, 2, 4, 6, 8), Transcript 2 (Turns 2, 3, 4), and Transcript 3 (Turns 2, 3, 10).",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -311,24 +306,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently avoided ghostwriting and kept the student anchored to the assignment, with generally supportive tone and useful scaffolds.",
-      "Main weaknesses were occasional over-provision of the core reasoning move, limited explicit meta-learning rationale/reflection, and response length that was often too heavy for this student's rushed state.",
-      "Because the input included three separate transcripts rather than one continuous conversation, deductions were kept conservative where evidence could overlap."
+      "The tutor consistently refused ghostwriting and kept the student anchored to the actual task, with generally clear, supportive, assignment-relevant scaffolding.",
+      "Main deductions come from occasional substantive idea-generation before student reasoning and from repetitive refusal/template cycles when the student kept pushing for paste-ready work.",
+      "I used a smaller pedagogy deduction than the maximum because the tutor never crossed into submission-ready writing and usually redirected toward student-authored content."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

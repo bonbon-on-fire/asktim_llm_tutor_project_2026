@@ -235,7 +235,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 6, the tutor provides a detailed list of candidate organizations for all six slots (e.g., Miami-Dade WASD, FPL, DTPW, Catalyst Miami, SFWMD, etc.), effectively doing the actor-identification work for the student. The student had not yet attempted to find these organizations and the tutor supplied the substantive content the assignment requires the student to generate.",
+                "reason": "In Transcript 1 Turn 6, the tutor provides a full menu of 3 candidate organizations per slot (18 named organizations total) across all 6 actor slots. While framed as 'candidates to pick from,' the tutor is doing the key reasoning step of identifying which specific organizations are active Miami climate actors and mapping them to each category, doing the core intellectual work of actor identification rather than guiding the student to discover it.",
                 "points": 6
               }
             ],
@@ -258,7 +258,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting the student to reflect on what changed in their thinking or why a method worked. In Transcript 2 Turn 10 and Transcript 3 Turn 10, conversations end with next-step tasks but no reflection on process or method choices made. No transfer or meta-reflection is invited.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on their thinking process or what changed in their understanding. In Transcript 1, the conversation ends with the tutor asking for specific revisions without any reflection prompt. In Transcripts 2 and 3, the final turns focus on next steps without any moment of 'what did you learn about how to analyze actors' or method reinforcement.",
                 "points": 2
               }
             ],
@@ -287,7 +287,7 @@
                   6
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 6, the student asks 'what's ur fave city to live in and why?' The tutor briefly dismisses it ('I'm not going to do the favorite city to live in side question—non-academic detour') and immediately continues. This is a minor engagement but the tutor does not provide a meaningful off-topic response—it is handled appropriately with swift redirection. Deduction not strongly supported.",
+                "reason": "In Transcript 2 Turn 6, the student asks a purely social off-topic question ('what's ur fave city to live in and why?'). The tutor explicitly refuses to engage, which is appropriate. No meaningful deduction applies here. Assigning 0 deductions.",
                 "points": 0
               }
             ],
@@ -307,14 +307,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
                   5,
-                  6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly delivers multi-paragraph, multi-part responses with numbered lists, bolded sub-headers, and several simultaneous questions. In Transcript 1 Turns 3 and 5, Transcript 2 Turns 7 and 9, and Transcript 3 Turns 2 and 8, the tutor's replies are long enough that they reduce the student's opportunity to think and respond to one focused prompt at a time. This is a consistent pattern across all conversations.",
+                "reason": "In Transcript 1, several tutor turns are multi-paragraph with multiple numbered sub-lists when shorter, focused prompts would suffice (e.g., Turn 5 has a full categorized list of 6 slots plus instructions for 3 gap types; Turn 7 provides 3 gap directions each with sub-questions; Turn 8 provides a template with 3 multi-clause fill-in bullet formats). This pattern of lengthy instructional dumps recurs across the conversation and reduces student cognitive engagement.",
                 "points": 4
               }
             ],
@@ -343,12 +341,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready content and maintains appropriate boundaries against producing paste-ready forum posts, which is the primary strength across all three transcripts.",
-      "The most significant deduction (1.1.C.b, 6 points) is in Transcript 1 Turn 6, where the tutor supplies a detailed list of specific Miami actor candidates across all six requested slots before the student had made any independent effort to identify organizations. While framed as 'candidates to pick from,' the tutor effectively completes the core intellectual work of actor identification that the assignment requires the student to perform.",
-      "Meta-learning (1.3.D) is penalized because no transcript ends with a reflection prompt on method choices or what changed in the student's thinking—the tutor consistently pivots to the next task without reinforcing why the process worked.",
-      "Communication length (3.1.A.a) is penalized because the tutor habitually sends dense, multi-part responses with several simultaneous numbered questions and bolded sub-categories, which constrains the student's reflective space. This is a consistent pattern across all three transcripts.",
-      "The tutor's tone is constructive and appropriate throughout; no grading language or dismissive framing was observed. Assignment anchoring and off-topic redirection are handled well. Scaffolding builds on student progress effectively in all three conversations.",
-      "Uncertainty note: The 1.1.C.b deduction applies only to Transcript 1 Turn 6, which is the clearest case of the tutor supplying content the student should have generated. Transcript 2 and 3 do not trigger similar deductions as the tutor consistently withholds names and pushes the student to find their own sources."
+      "Across three transcripts, the tutor consistently refuses to write the assignment for students and maintains a firm Socratic stance, repeatedly redirecting students who ask for paste-ready answers. This is the tutor's primary strength.",
+      "The main 1.1 deduction arises in Transcript 1 Turn 6, where the tutor provides 18 named organizations (3 per slot across 6 slots) as 'candidates.' While framed as a selection task, identifying which specific Miami climate organizations belong in each actor category is precisely the intellectual work the assignment requires. This crosses into doing the key reasoning step for the student.",
+      "The 1.3 deduction reflects that, in all three transcripts, the tutor never prompts reflection on the student's thinking process or what methodological insight they gained. Every final turn is forward-looking (next steps, revise this) without any consolidation of learning.",
+      "The 3.1 deduction is triggered by a consistent pattern across Transcript 1 (and to a lesser extent Transcripts 2 and 3) of multi-paragraph, multi-list responses where shorter, focused prompts would better preserve student thinking space. Transcripts 2 and 3 show better length calibration to student capability, but the overall pattern across 30 turns is weighted toward over-explanation.",
+      "No deductions were applied for 1.2 (scaffolding is generally strong), 2.1 (no spiraling), 2.2 (off-topic deflection was handled well), or 3.2 (tone is consistently supportive and non-grading)."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

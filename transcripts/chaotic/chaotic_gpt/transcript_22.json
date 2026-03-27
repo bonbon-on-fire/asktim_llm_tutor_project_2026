@@ -146,10 +146,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide a submit-ready table or pasteable justifications and instead required the student to choose the city, propose stressors, assign ratings, and draft justifications.",
-      "The tutor scaffolded well through small steps: city choice, stressor list, top-2 and mid-tier ratings, evidence bullets, sentence templates, sector-tag reasoning, and priority-stressor synthesis.",
-      "The tutor stayed tightly anchored to the assignment requirements throughout and repeatedly connected prompts to the table fields: sectors, ratings, evidence-based justification, and priority stressors.",
-      "Communication was clear, structured, and supportive; the tutor was firm about boundaries but remained coaching-oriented and interactive rather than giving long explanatory dumps."
+      "Tutor consistently avoided giving submit-ready assignment content, instead using questions, templates, rating logic, and targeted prompts to keep the student doing the substantive reasoning.",
+      "The conversation stayed tightly anchored to the Stressors Table task, built directly on the student's progress each turn, and used concise, supportive coaching with clear process distinctions such as chronic vs acute hazards and hazard vs health outcome."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

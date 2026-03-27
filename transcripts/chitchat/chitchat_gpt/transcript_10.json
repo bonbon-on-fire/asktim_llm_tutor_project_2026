@@ -77,11 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied a central conceptual bridge for the student by framing the cases as 'taking something from the one' or 'imposing a new threat' versus 'redirecting an already-unavoidable threat,' which does key reasoning for the main argument.",
+                "reason": "When the student was stuck on distinguishing Switch from Footbridge/Fuel/Blood, the tutor supplied the central 'imposing a new threat' versus 'redirecting an unavoidable threat' distinction and a candidate rights hierarchy, doing a key reasoning step rather than having the student generate it.",
                 "points": 6
               }
             ],
@@ -99,20 +98,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  4
+                  1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints ('keep it academic,' 'I can’t re-lecture the whole thing') without clearly explaining a learning rationale such as why reconstruction or focused questioning would help the student learn.",
+                "reason": "The tutor enforced limits on personal/off-topic discussion but did not explain the learning rationale for those constraints beyond keeping the session academic and focused.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  6,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved their principle, the tutor moved directly into refinement and application without prompting reflection on why the method worked or how to reuse it on similar philosophy prompts.",
+                "reason": "The tutor consistently pushed forward to the next content test without prompting reflection on why the student's method was improving or what general approach the student could transfer to future argument analysis.",
                 "points": 2
               }
             ],
@@ -175,10 +175,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was consistently structured, interactive, and well anchored to the assignment, with strong scaffolding across the full conversation.",
-      "Main deduction in pedagogy is for occasionally giving the student the core philosophical distinction needed to separate Switch from Footbridge/Fuel/Blood, rather than eliciting that distinction entirely from the student.",
-      "I kept that deduction moderate rather than maximal because the tutor still asked the student to apply and evaluate the distinction, and did not produce a submission-ready final answer.",
-      "Additional deductions are for limited explicit explanation of tutoring constraints as learning strategy and for missed opportunities to prompt brief reflection on method transfer."
+      "The tutor kept the discussion tightly anchored to the assignment, used short structured prompts, and generally built well on the student's developing view.",
+      "Main pedagogy deduction: late in the exchange, the tutor supplied the decisive distinction for handling Switch versus Footbridge/Fuel/Blood, which moved beyond guidance into doing a central reasoning step.",
+      "Meta-learning support was limited: constraints were not fully framed in learning terms, and the tutor rarely asked the student to reflect on why their method worked or how to transfer it."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

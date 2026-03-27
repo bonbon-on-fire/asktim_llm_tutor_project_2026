@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Late in the exchange, the tutor supplied a near-complete argumentative structure for the thesis and concrete catastrophe examples the student could mention, contributing substantive reasoning/content rather than keeping idea generation with the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -91,26 +101,20 @@
                 "evidence_turns": [
                   1,
                   2,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
+                  4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced limits on giving direct answers or polished text, but usually framed this as refusal rather than explaining the learning rationale for why the student should do the reasoning and drafting.",
+                "reason": "The tutor repeatedly enforced a no-direct-answer boundary but did not explicitly explain the learning rationale for that constraint beyond saying they would not do the assignment.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   5,
-                  7,
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor helped refine the student's position, but did not prompt reflection on what reasoning method worked, what changed in the student's thinking, or how to transfer the approach to similar philosophy prompts.",
+                "reason": "The tutor coached the student through the content but did not prompt reflection on why the student's method worked, what changed in their reasoning, or how to transfer the approach to similar philosophy prompts.",
                 "points": 2
               }
             ],
@@ -120,7 +124,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 14,
           "max": 24
         }
       },
@@ -166,19 +170,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly maintained guided discovery, resisted providing submission-ready prose, and kept the discussion anchored to the assignment's philosophical tasks.",
-      "Scaffolding was generally effective: the tutor broke the prompt into manageable steps, built on the student's emerging thesis, and asked targeted questions that moved the student toward a defensible view.",
-      "Main weakness: the tutor's repeated refusals were only lightly justified in learning terms, and the conversation ended without explicit reflection on why the student's argumentative method improved or how to reuse it on future philosophy essays.",
-      "There is some ambiguity around the tutor's sentence formulas and example categories, but they remained structured prompts rather than full submission-ready answers, so no larger pedagogy deduction was applied."
+      "The tutor was generally strong on assignment anchoring, refusal to provide a submission-ready essay, and stepwise scaffolding tied to the student's evolving position.",
+      "A modest pedagogy deduction is warranted because the tutor eventually supplied substantive argument structure and concrete example categories the student could directly use, especially late in the conversation.",
+      "Meta-learning was weaker: the tutor enforced boundaries without much explicit learning rationale and did little to prompt reflection on transferable reasoning method."
     ],
-    "total_score": 42,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

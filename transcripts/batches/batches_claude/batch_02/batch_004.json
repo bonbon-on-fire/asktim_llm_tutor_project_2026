@@ -232,12 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 2 Turn 8, the tutor provides the exact 2-3 facts per stressor (mechanism, Miami-specific condition, disruption type) that constitute the core reasoning the student needs to produce. In Turn 9, the tutor again selects the two strongest bullets per stressor. In Turn 10, the tutor repeats this guidance in essentially the same form. The tutor is doing the key evidential reasoning—selecting which evidence pairs are most important—rather than having the student derive this.",
+                "reason": "In Transcript 2 Turn 8, the tutor lists exactly which 2–3 facts to include per stressor (with full Miami-specific content), doing the key reasoning step of identifying which evidence items make each rating defensible. The student receives the decisive evidence already sorted and explained.",
                 "points": 6
               }
             ],
@@ -267,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to produce submission-ready work but rarely explains the learning rationale behind this policy. In Transcript 2 and 3, the tutor says 'I can't do that' repeatedly without framing why the student doing the writing matters for their skill development. Only occasionally does the tutor hint at rationale ('you need to produce the wording').",
+                "reason": "Across all three transcripts, the tutor enforces its 'can't write it for you' constraint but rarely explains the learning rationale—why the student's own struggle produces better philosophical reasoning or urban analysis skill. The constraint is stated repeatedly without the pedagogical reasoning behind it.",
                 "points": 2
               },
               {
@@ -284,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never invites the student to reflect on what their thinking process has achieved or what changed in their understanding. The student in Transcript 1 makes real philosophical progress but the tutor never prompts reflection on what the student learned about method (e.g., why biting the bullet on Loop was principled). In Transcripts 2 and 3, no process reflection is prompted.",
+                "reason": "Across all three transcripts the tutor moves from task to task without prompting the student to reflect on what worked, what changed in their thinking, or why a method succeeded. No turn invites process reflection or reinforces methodology choices after improvement.",
                 "points": 2
               }
             ],
@@ -304,13 +302,18 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 2, Turns 7-10 show a repetitive cycle: the student asks for the facts/sentences, the tutor declines and provides the same guidance (pick 2 facts per stressor), the student asks again, and the tutor repeats essentially the same information. By Turn 10 the tutor again lists the exact same two-fact pairs that appeared in Turn 8 and Turn 9 without meaningful synthesis or escalation of strategy to break the impasse.",
+                "reason": "In Transcript 2, the student repeatedly asks for paste-ready content and the tutor repeatedly refuses with nearly the same phrasing and redirects (turns 2–10). By turn 8–10, the tutor is essentially repeating the same two prioritized bullets exercise without meaningfully advancing the student's thinking or switching to a new strategy. Similarly in Transcript 3, the same refusal-and-template cycle repeats across turns 3–9 without synthesis or significant reframing.",
                 "points": 4
               }
             ],
@@ -336,6 +339,7 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -344,7 +348,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 3, several tutor turns (3, 4, 5, 6, 7) are multi-paragraph responses with numbered lists and multiple sub-instructions when shorter, more targeted prompts would have been more effective. Turn 5 especially provides a 10-sentence template with blanks, which could have been introduced more incrementally. In Transcript 1, Turn 2 is a long multi-part prompt though appropriate for initial scaffolding.",
+                "reason": "Across all three transcripts, many tutor turns contain multi-paragraph, heavily structured responses (bulleted candidate lists, multi-question sets, detailed templates) when simpler, shorter prompts were appropriate. Turn 1 of Transcript 1 has four separate complex sub-tasks; Turn 2 of Transcript 3 is a very long candidate list. This consistently reduces the student's opportunity to think and respond independently.",
                 "points": 4
               }
             ],
@@ -373,10 +377,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (Philosophy): The tutor does strong Socratic work, consistently refusing to write the student's argument and instead pressure-testing reasoning at each step. The student makes genuine progress from AC description through biting the bullet on Loop to a rights-based framework. Minor concern: the tutor never prompts meta-reflection on why the method worked.",
-      "Transcript 2 (Urban Studies - Stressors): The tutor initially maintains good discipline but in Turns 8-10 crosses into doing the student's key reasoning by selecting which specific facts are most important for each stressor. This is penalized under 1.1.C.b. Additionally, Turns 7-10 show a spiraling pattern where the tutor repeats the same two-fact guidance without meaningful strategy shift, penalized under 2.1.A.a.",
-      "Transcript 3 (Urban Studies - Actors): The tutor holds firm against producing submission-ready text throughout, which is admirable. However, the multi-part lengthy templates in Turns 3-7 reduce student cognitive engagement and the tutor never explains why the student must do the writing (rationale for tutoring approach). Turn 10 appropriately provides targeted, bite-sized feedback.",
-      "Cross-transcript patterns: The tutor consistently declines direct submission-ready requests (good), maintains appropriate non-grading tone, and anchors well to assignment prompts. Weaknesses include: failure to explain tutoring rationale/policy (1.3.A.a), lack of process reflection prompts (1.3.D.a), response length issues in Transcript 3, and the repetitive spiral in Transcript 2 Turns 7-10."
+      "Transcript 1 (Philosophy): The tutor does excellent Socratic work overall—consistently refusing to write for the student, pressure-testing reasoning through targeted questions, and building the student's argument incrementally. No 1.1.A or 1.1.B violations. The tutor does not explain its pedagogical rationale for constraints (1.3.A) and does not prompt reflection on method or process at any point (1.3.D).",
+      "Transcript 2 (Urban Studies, Stressors Table): The tutor mostly holds the line against writing for the student, but in Turn 8 provides exactly the decisive two-to-three Miami-specific evidence bullets per stressor, doing the key reasoning step of identifying and ranking which facts make each rating defensible. This triggers 1.1.C.b (6-point deduction). The same turn also illustrates the repetition problem (2.1.A.a): across turns 2–10 the tutor cycles through the same refusal-and-redirect pattern without materially advancing the exercise or switching strategy.",
+      "Transcript 3 (Urban Studies, Decision-making Actors): The tutor maintains appropriate limits and guides the student toward a forum post, but the same refusal-and-template cycle repeats across many turns without synthesis, contributing to the 2.1 spiral deduction. No new information-provision violations beyond what is already penalized.",
+      "Communication quality: Tutor responses across all three transcripts are frequently very long—multi-paragraph with dense bullet structures—when shorter, focused prompts would have served better. This is most pronounced in Turns 1–2 of each transcript and throughout Transcript 3 (4-point deduction under 3.1.A.a). Tone is consistently supportive and non-evaluative; no grading-stance violations observed.",
+      "No double-penalization: the 2.1 spiral and 1.1.C.b deductions are distinct behaviors (repetition without progress vs. providing decisive evidence); the 3.1 length deduction captures a separate communication pattern from the 1.1 content-provision concern."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

@@ -92,7 +92,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor enforced a non-academic boundary ('I’m your course tutor, so I can’t help with non-academic requests') without explaining a learning-focused rationale for that limitation.",
+                "reason": "When declining the student's dinner-ideas request, the tutor stated a limitation ('I'm your course tutor, so I can't help with non-academic requests') but did not explain any learning-oriented rationale for that boundary.",
                 "points": 2
               }
             ],
@@ -155,9 +155,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: it asked for document-based evidence, had the student define classification rules, and repeatedly pushed the student to test claims against quoted plan language rather than supplying Chicago-specific answers.",
-      "Scaffolding was strong and cumulative, with each turn building on the student’s developing framework for distinguishing leading, engaged, and missing actors.",
-      "The only clear deduction is that the tutor stated a boundary on the off-topic dinner request without explaining the learning rationale for that limitation."
+      "The tutor consistently used guided discovery: it asked for document-based evidence, had the student define classification rules, and repeatedly redirected the student to quote plan language rather than accept unsupported interpretations.",
+      "Scaffolding was strong and progressive, with each turn narrowing the task into concrete next steps (search terms, evidence standards, one-row test case, governance snippet) while building directly on the student's developing framework.",
+      "No major dialogue or communication problems were evident; the tutor stayed on assignment, redirected the off-topic dinner request immediately, and kept responses clear and interactive.",
+      "The only clear deduction is that when enforcing the non-academic boundary, the tutor stated the limitation but did not explain a learning rationale for it."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

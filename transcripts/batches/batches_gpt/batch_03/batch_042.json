@@ -246,20 +246,20 @@
                 "evidence_turns": [
                   1,
                   2,
-                  11
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced limits ('I can’t fill in the table for you,' 'I can’t help with dinner') without clearly framing those limits in terms of learning rationale or skill development.",
+                "reason": "Across the transcripts, the tutor repeatedly enforces limits with statements like \"I can't...\" or \"that's your work\" without clearly explaining the learning rationale for those constraints.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  16,
-                  18,
-                  20
+                  6,
+                  8,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved their approach, the tutor affirmed it and moved to the next task without prompting reflection on why the method worked or how to transfer it to other rows.",
+                "reason": "After the student improves their approach, especially in transcript 2, the tutor validates and moves on but does not prompt reflection on why the method choice worked or how to transfer it.",
                 "points": 2
               }
             ],
@@ -302,30 +302,42 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "In transcript 2, several redirects are effective but somewhat rigid in tone (for example, \"I can't help with dinner/takeout\" and \"Skip the music question\"), which can feel dismissive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored across all three provided transcripts together; evidence_turns are interpreted sequentially across them (1-10, 11-20, 21-30).",
-      "The tutor consistently avoided doing the assignment for the student, redirected off-topic attempts promptly, and used guided questioning well. Main deductions are for not explicitly explaining the learning rationale behind refusals and for missing chances to prompt brief reflection after the student adopted stronger methods."
+      "Across the three provided transcripts, the tutor consistently avoided doing the assignment for the student and kept the interaction anchored to the task.",
+      "The strongest weakness was meta-learning: the tutor often stated limits without explaining the learning rationale, and rarely prompted reflection after the student adopted a good method.",
+      "A smaller communication issue appeared in transcript 2, where some off-topic redirections were appropriately task-focused but phrased a bit rigidly."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

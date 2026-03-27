@@ -301,8 +301,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because multiple transcripts were provided while the schema supports a single conversation score.",
-      "Tutor consistently refused submission-ready writing, kept the student doing the core reasoning, and used targeted prompts to build a thesis, test case-by-case judgments, and stress-test the student's alternative account."
+      "Scored Transcript 1 only because the input bundled three separate conversations while the schema supports one conversation score with reset turn numbering.",
+      "The tutor consistently refused submission-ready writing, kept the student doing the core philosophical work, and used targeted prompts to elicit thesis, case verdicts, distinctions, and stress tests.",
+      "The conversation stayed tightly anchored to the assignment, progressed logically from act consequentialism to objections and an alternative account, and maintained a supportive, non-grading tone with manageable response sizes."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

@@ -77,21 +77,20 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6
+                  4,
+                  5
                 ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "Tutor supplied near-polished principle templates that substantially rewrote the student's idea into essay-ready wording.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied the main alternative account options (rights/constraints vs means/side-effect) before the student independently developed the interpretation, steering the core conclusion path.",
                 "points": 6
               },
               {
                 "evidence_turns": [
-                  4,
-                  8,
-                  9
+                  5,
+                  6
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provided key reasoning and critique moves directly, including the means/side-effect framework, AC's disagreement, and rights-based critique content.",
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Tutor provided sentence templates that were very close to final essay wording for the student's principle, effectively rewriting the student's idea into near-polished form.",
                 "points": 6
               }
             ],
@@ -106,24 +105,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the principle and case mapping, the tutor moved on to the next drafting step without prompting reflection on why the method worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
+          "score": 12,
           "max": 24
         }
       },
@@ -136,24 +125,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.2.A.a",
-                "reason": "When the student no longer remembered the lecture-specific Fuel and Blood cases, the tutor proceeded with assumed A/B versions instead of re-anchoring to the actual assigned cases.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -179,19 +158,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor maintained a supportive, interactive tone and generally scaffolded the student's thinking with manageable prompts.",
-      "Main deductions come from supplying near-ready principle wording and key argumentative content, which reduced student-generated reasoning.",
-      "There is also a lecture-alignment issue: once the student forgot the specific Fuel/Blood cases, the tutor shifted to assumed versions rather than fully re-grounding in the assigned cases.",
-      "A smaller deduction was applied for limited reflection support; this was somewhat borderline because the tutor did provide process prompts elsewhere."
+      "The tutor stayed supportive, interactive, and strongly anchored to the prompt, especially by asking the student to compare act consequentialism across Fuel, Blood, and trolley cases.",
+      "Major pedagogy deductions come from the tutor supplying the central alternative frameworks and then giving near-polished sentence templates for the student's core principle, which reduced student-generated reasoning and wording.",
+      "I did not apply the harsher near-submission-ready 1.1.A deduction because the tutor still withheld a full final essay; however, the wording support in turns 5-6 was close enough to trigger editing/final-writing help."
     ],
-    "total_score": 28,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

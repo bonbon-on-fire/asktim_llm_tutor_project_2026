@@ -74,8 +74,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 10, the tutor provides a nearly complete, bracket-filled APA citation template ('ACS Demographic and Housing Estimates (DP05): Miami city, Florida', '2022 ACS 1-year estimates', 'data.census.gov. Retrieved [today's date], from [URL]') where only the date and URL remain for the student to supply. All substantive author, title, dataset, and site content is pre-filled, making the citation effectively submission-ready with minimal student effort. This constitutes giving answer pieces that together become submission-ready.",
+                "points": 12
+              }
+            ],
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -101,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces a 'no direct answers' policy but never explicitly explains the pedagogical rationale (e.g., active reasoning, skill development, long-term learning) to the student. The student repeatedly asks for direct help and the tutor simply declines without connecting the refusals to learning benefits.",
+                "reason": "The tutor consistently refuses to complete tasks but never explains the pedagogical rationale — e.g., that doing the work for the student would prevent the student from developing research and citation skills. The tutor only says 'I can't do that for you' without articulating why this approach benefits the student's long-term learning.",
                 "points": 2
               },
               {
@@ -118,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their process or what they learned from finding the data themselves. There is no transfer support or reinforcement of method choices after any student progress.",
+                "reason": "The tutor never prompts the student to reflect on their process or what they are learning from the experience. The conversation remains purely procedural throughout with no attempt to reinforce method choices or ask the student to articulate what changed in their thinking.",
                 "points": 2
               }
             ],
@@ -128,7 +137,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 8,
           "max": 24
         }
       },
@@ -146,7 +155,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern across six turns regarding the ACS citation: student asks for the citation, tutor declines and asks the student to draft it, student asks again, tutor repeats essentially the same scaffolding prompt. No meaningful synthesis, reframing, or strategic pivot is made despite the student remaining stuck. By turn 10 the conversation has not advanced beyond the same impasse.",
+                "reason": "From Turn 5 onward, the tutor repeats the same pattern across six turns: refuse the request, offer a template or checklist, ask the student to draft/paste. The student keeps asking the same question with increasing frustration, and the tutor does not switch strategy — no reframing, no simplification, no suggestion to move on. The conversation spirals on the citation sub-task without meaningful progress.",
                 "points": 4
               }
             ],
@@ -172,11 +181,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2
+                  2,
+                  5,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1 and 2 contain multi-paragraph responses packed with multiple sub-questions, tips, and caveats (e.g., the GDP discussion in turn 2) when a single focused prompt would have been more appropriate given the student's stated time pressure and confusion level.",
+                "reason": "Multiple tutor turns are multi-paragraph with several simultaneous questions or instructions (e.g., Turn 2 covers ACS product choice, race/ethnicity table, GDP workarounds, and a multi-step census navigation all in one message). While some detail is appropriate, the volume of simultaneous sub-questions reduces the student's opportunity to respond meaningfully and likely contributed to the student's repeated inability to engage.",
                 "points": 4
               }
             ],
@@ -198,21 +208,24 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 22,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains strong academic integrity throughout, consistently refusing to complete the assignment for the student and using Socratic questioning to guide discovery (1.1 full marks).",
-      "Scaffolding builds appropriately: the tutor correctly scopes the city/year boundary first, directs to the exact Census tool, and walks step-by-step through extraction (1.2 full marks).",
-      "However, meta-learning suffers: the tutor never articulates why it won't give direct answers in terms of the student's learning goals, and never prompts reflection or method transfer at any point in the conversation (1.3 deductions).",
-      "The citation sub-conversation (turns 5–10) becomes a clear spiral: the same decline-and-prompt pattern repeats six times with no synthesis, reframing, or change in strategy, triggering the full 2.1 deduction.",
-      "Communication is good in later turns but turns 1–2 are overly dense, packing multiple questions and advisory digressions into single responses when a more focused prompt would have served the confused, time-pressed student better.",
-      "Tone remains supportive and non-grading throughout; no assignment-anchoring failures were observed."
+      "The tutor was consistent and principled in refusing to complete the assignment for the student across most of the conversation, appropriately redirecting toward guided discovery in Turns 1–4.",
+      "However, in Turn 10, the tutor provided a nearly fully-filled APA citation template with only the date and URL left for the student, crossing the line into submission-ready work (1.1.A.a, 12-point deduction).",
+      "The conversation spiraled badly on the citation sub-task (Turns 5–10): the tutor repeated the same refuse-and-template pattern six consecutive times without switching strategy, reframing, or suggesting to move on (2.1.A.a, 4-point deduction).",
+      "The tutor never explained the pedagogical rationale for its refusals, missing an opportunity to help the student understand the value of doing the work themselves (1.3.A.a).",
+      "No reflection or transfer prompts were offered at any point (1.3.D.a).",
+      "Several early tutor responses (especially Turn 2) were overly long with multiple simultaneous sub-questions, reducing the student's ability to engage step by step (3.1.A.a).",
+      "Tone remained consistently supportive and non-punitive throughout; no grading language was used (3.2 full marks).",
+      "Assignment anchoring was solid — the tutor kept the student focused on the City of Miami/2022 framing and raised relevant scope issues (GDP caveat in Turn 2) without letting the student drift (2.2 full marks).",
+      "Scaffolding built reasonably on student progress where it occurred (e.g., Turn 8 correctly acknowledged the student's extracted strings before continuing guidance), so 1.2 retains full marks."
     ],
-    "total_score": 34,
+    "total_score": 22,
     "judge_llm_calls": 1
   }
 }

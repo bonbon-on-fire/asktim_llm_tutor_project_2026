@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently enforces its no-direct-answer policy but rarely explains the learning rationale behind it. In T1 the tutor says 'I can't fill out a submission-ready table for you—that would be doing the assignment' and later 'I can't write paste-ready justifications,' but never links this constraint to what the student gains from doing the reasoning themselves (e.g., developing evidence-evaluation skills, preparing for later assignments, or building active reasoning capacity). The same pattern holds in T2 and T3.",
+                "reason": "Across all three transcripts, the tutor enforces constraints without explaining the learning rationale. When the tutor refuses to write justifications or summaries, it simply says 'I can't do that for you' or 'that would be doing the assignment' without explaining why the student benefits from doing the reasoning themselves (e.g., building analytical skills needed for the climate action plan). Occasional partial rationale appears ('Submitting a possibly wrong reference is worse') but the core pedagogical reason for the constraint is never explicitly stated.",
                 "points": 2
               },
               {
@@ -266,7 +266,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutors in all three transcripts move from one stressor to the next without prompting any explicit reflection on what the student's reasoning process revealed or how the student's thinking changed. In T1 after the student builds three stressor ratings across turns, the tutor never pauses to ask what the student now understands differently. In T3 after multiple turns helping the student see what 'justification' means, the tutor does not ask the student to articulate the principle they learned. No turn prompts process-level reflection or method transfer.",
+                "reason": "In Transcript 1 (Turn 5) the tutor moves from hazard ratings to drafting justifications without prompting reflection on what the student learned from the rating comparison exercise. In Transcript 3 (Turns 9-10), the tutor directs the student to NOAA without asking what the student's prior searches revealed or what was confusing, missing an opportunity to help the student learn effective search methodology. No turn across the three transcripts explicitly reinforces why a particular method worked or prompts reflection on process changes.",
                 "points": 2
               }
             ],
@@ -289,7 +289,17 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "In Transcript 2 (Turns 1-2), the student asks off-topic questions about dinner spots and TV shows. The tutor briefly refuses and redirects, which is appropriate. However, in Turn 2 the tutor's response engages the off-topic prompt only minimally before redirecting, so the deduction is not fully triggered. In Transcript 1 (Turn 9), the student's panic/deadline framing is off-task pressure, and the tutor handles it cleanly. Overall the tutor does not engage substantially with off-topic content.",
+                "points": 0
+              }
+            ],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -308,11 +318,12 @@
                 "evidence_turns": [
                   5,
                   6,
+                  7,
                   8,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In T1, Turn 5 and Turn 6 the tutor sends multi-part messages that combine several sub-tasks (write 3 sentences, identify top-2 priorities, optionally add a culture stressor, give a template with blanks) in a single response when shorter focused prompts would have been more appropriate for a panicking student. In T2, turns 7 and 8 similarly pack three numbered questions plus a formatting demand into single replies. While individual turns are acceptable, there is a consistent pattern of multi-part compound prompts that reduce the student's opportunity to think and respond one step at a time.",
+                "reason": "Several tutor turns across all three transcripts use multi-part responses that pack many sub-questions and instructions into a single reply. For example, Transcript 1 Turn 5 contains three separate task threads (write justification sentences, identify priorities, AND consider a 4th culture stressor), and Turn 6 provides a detailed fill-in-the-blank template plus a priorities template plus culture stressor options. Transcript 2 Turn 8 has three numbered questions plus a consistency-check exercise. Transcript 3 Turn 4 provides a full indicator taxonomy plus a source taxonomy plus a choice question. These multi-paragraph replies with 3-4 embedded tasks are a consistent pattern that reduces student cognitive space to think and respond.",
                 "points": 4
               }
             ],
@@ -341,11 +352,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic practice: it consistently refuses to produce submission-ready content, uses template prompts only as scaffolds for student completion, and systematically pressure-tests student reasoning (e.g., asking for 9 vs 10 cutoffs, chronic vs acute distinctions, sector-overlap avoidance). No deductions are warranted under 1.1 or 1.2.",
-      "The main weakness is in meta-learning (1.3). The tutor enforces its no-direct-answer stance across all transcripts but almost never explains to the student why this constraint serves their learning. Additionally, no turn in any transcript prompts explicit process reflection—e.g., asking students what their thinking changed, or why the evidence-first approach matters for later assignments. Two criteria (1.3.A and 1.3.D) are deducted at full sub-criterion weight.",
-      "Dialogue quality is strong throughout. The tutor keeps conversations anchored to the stressors table, redirects off-topic requests immediately without substantive engagement (T2 T1), and advances the conversation without cycling on the same concepts.",
-      "On communication, the tutor generally uses accessible language and appropriate tone with no condescension or grade-like framing. However, there is a recurring pattern—especially in T1 turns 5–6 and T2 turns 7–8—of multi-part compound prompts (3–4 sub-questions plus a template plus an optional task) sent as a single message when a more focused single-step ask would better support the student's opportunity to respond. This triggers a 3.1.A.a deduction.",
-      "Uncertainty note: the 3.1.A.a deduction (4 pts) reflects a clear pattern across multiple turns but acknowledges that individual multi-part questions are sometimes pedagogically appropriate for this assignment type; the deduction is applied because the pattern is consistent enough to reduce student thinking opportunity."
+      "Across all three transcripts the tutor maintains strong Socratic discipline: it consistently refuses to write submission-ready content, uses guided questioning to move students from vague observations to defensible evidence-backed claims, builds on each student's prior answers, and keeps students on task when they try to deflect with off-topic requests.",
+      "No deductions were applied under 1.1 (Socratic method) or 1.2 (scaffolding): the tutor never gives the final answer or submission-ready text, always builds on what the student has already said, and diagnoses confusion before providing information.",
+      "A 2-point deduction was applied under 1.3.A for failure to articulate tutoring rationale: the tutor enforces its 'no write-for-you' policy without explaining the learning benefit (e.g., that doing the reasoning builds the analytical capacity needed for later assignments). Occasional implicit reasons appear but the pedagogical rationale is not made explicit.",
+      "A 2-point deduction was applied under 1.3.D for limited reflection prompting: the tutor moves forward after each milestone (rating set, source identification) without pausing to ask what changed in the student's thinking or reinforcing why a particular analytical move worked.",
+      "No deductions were applied under 2.1 (redundancy): the tutor advances the conversation meaningfully each turn, reframes when students are stuck, and avoids cycling on the same question.",
+      "No deductions were applied under 2.2 (assignment anchoring): the tutor handles off-topic requests (dinner spots, TV shows) with immediate, clean redirections and keeps students focused on the Stressors Table task.",
+      "A 4-point deduction was applied under 3.1.A for response length: a consistent pattern of multi-part, multi-paragraph replies packs 3-5 sub-tasks into single turns (especially visible in Transcript 1 Turns 5-6, Transcript 2 Turns 7-8, Transcript 3 Turns 4-5), which reduces the student's cognitive opportunity to respond and think independently.",
+      "No deductions were applied under 3.2: tone is consistently supportive and affirming ('solid start,' 'your reasoning is coherent'), and the tutor never assigns or implies formal grades."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

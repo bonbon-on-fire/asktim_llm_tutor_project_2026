@@ -244,11 +244,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  30
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved substantially, the tutor kept moving into further revision/sanity checks rather than prompting brief reflection on the decision criteria or why the classification method worked.",
+                "reason": "After the student improved the draft, the tutor gave final checks and next steps but did not prompt reflection on why the revision strategy worked or how to transfer the method.",
                 "points": 2
               }
             ],
@@ -285,61 +285,37 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  5,
-                  6,
-                  23,
-                  24
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part instructions and templates where shorter interactive checks would have been more appropriate, especially for time-pressed or confused students.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  17,
-                  20
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "A few responses were unnecessarily rigid or blunt (for example, shutting down free-chat and calling generic labels a weak move), which could reduce tutoring trust.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently avoided doing the assignment for the student and kept the work anchored to the forum-task categories of leading, engaged, and missing actors.",
-      "The strongest pattern was structured scaffolding: the tutor repeatedly asked for the student's own actor choices, tightened role definitions, and pushed toward more specific mechanisms and evidence.",
-      "Main weaknesses were communication-related: several replies were overlong and highly procedural, and a few turns sounded rigid or blunt rather than warmly supportive.",
-      "Turn numbers are concatenated across the batch of three transcripts (1-10, 11-20, 21-30) because the input contained multiple conversations."
+      "Scored Transcript 1 only because the input contained three separate conversations while the schema supports one conversation score.",
+      "The tutor consistently refused to do the assignment, kept the work anchored to the forum-post task, and used structured prompts, templates, and targeted revision cues to keep the student producing the content.",
+      "Only clear deduction: the tutor emphasized immediate completion and revision checks but did not add reflection on why the student's improved method worked or how to reuse it on future actor-mapping tasks."
     ],
-    "total_score": 38,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

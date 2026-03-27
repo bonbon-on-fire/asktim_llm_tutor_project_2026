@@ -254,15 +254,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its coaching constraints (won't draft sentences, won't confirm facts) but rarely explains why this approach benefits the student's long-term skill development. The rationale given is typically just role-scoping ('I can't draft language for your table'), not an articulated learning benefit.",
+                "reason": "Across all three transcripts the tutor enforces constraints (no writing final sentences, no supplying plan links, no confirming actor lists) but rarely explains the learning rationale—i.e., that the student needs to develop evidence-sourcing and analytical skills for themselves. The tutoring rationale is consistently absent.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without any explicit invitation to the student to reflect on what they learned about the actor-classification method or what changed in their thinking. The tutor simply sets up the next task without prompting process reflection.",
+                "reason": "In all three transcripts the tutor moves efficiently from step to step but does not prompt the student to reflect on why their method improved, what changed in their thinking, or reinforce method choices after the student makes progress (e.g., after developing the evidence-standard in T3 turns 7-8 or after the actor mapping in T1).",
                 "points": 2
               }
             ],
@@ -309,7 +311,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor frequently sends multi-part responses with 3–4 numbered sub-questions at once across all three transcripts (e.g., Transcript 1 Turn 2 has three dense question clusters; Transcript 2 Turn 5 and Turn 7 each stack multiple numbered questions). This consistently reduces student opportunity to think and respond to one idea before being flooded with another.",
+                "reason": "Across all three transcripts the tutor repeatedly sends multi-part, multi-paragraph messages with 3–4 numbered sub-questions in a single turn. While individually not unreasonable, this pattern is consistent throughout and reduces the student's opportunity to respond to one focused prompt before being handed another batch of questions.",
                 "points": 4
               }
             ],
@@ -338,11 +340,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains strong Socratic discipline: it never gives away final answers, consistently asks the student to generate actor classifications, define their own decision rules, and cite evidence. No submission-ready work is produced by the tutor. Redirections of off-topic requests (movies, food) are handled promptly without substantial engagement.",
-      "Scaffolding and progression are solid. The tutor builds on each student contribution—acknowledging correct reasoning, moving from rough intuitions to verifiable evidence standards—and does not restart from scratch or misread confusion points. Deductions in this area are not warranted.",
-      "Meta-learning is the clearest weakness. The tutor enforces its 'I can't draft for you' policy repeatedly but almost never explains why (e.g., 'so you practice your own synthesis' or 'this is the skill the assignment builds'). End-of-conversation reflection prompts are also absent; all three conversations close with a next-task instruction rather than any invitation to consolidate what the student learned about the method.",
-      "Dialogue quality is strong. The tutor advances meaningfully each turn, avoids spiraling on single sub-points, and keeps the conversation anchored to the actor-table task.",
-      "Response length is the main communication concern. The tutor habitually bundles 3–4 numbered sub-questions into single turns across all three conversations, which limits the student's opportunity to think and respond incrementally. Tone is warm and consistently coaching-oriented, with no grading-like framing detected."
+      "All three transcripts show a strong Socratic approach: the tutor consistently avoids giving direct answers, uses probing questions, redirects off-topic chitchat without engaging it, and builds on each student step with a follow-up question rather than doing the reasoning for the student. No near-submission-ready content was produced; no final wording was drafted for the student. Criterion 1.1 and 1.2 are full marks.",
+      "The tutor does not explain its tutoring rationale or the learning purpose behind its constraints (e.g., why it won't supply plan links or confirm actor lists). This is a pattern across all three conversations and warrants a deduction under 1.3.A.a.",
+      "Reflection and transfer are also consistently absent. The tutor advances the inquiry well but never pauses to ask the student what changed in their thinking or to reinforce a method the student just developed successfully (e.g., the evidence-standard the student articulated in T3 Turn 8 was accepted and immediately moved past). Deduction under 1.3.D.a.",
+      "No meta-learning process feedback was explicitly weak (the tutor does comment on structure and method-level reasoning), so 1.3.B is not deducted.",
+      "Dialogue quality is strong: no spiraling, no assignment misanchoring, and off-topic requests (dinner/movies) are redirected concisely. Full marks for section 2.",
+      "The main communication weakness is response length: the tutor habitually stacks 3–4 numbered sub-questions per turn, producing multi-paragraph replies throughout all three transcripts. This reduces student think-and-respond cycles, warranting the 3.1.A.a deduction. Language clarity is good; no jargon overload.",
+      "Tone is warm and supportive throughout; no grading language is used. Full marks for 3.2."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

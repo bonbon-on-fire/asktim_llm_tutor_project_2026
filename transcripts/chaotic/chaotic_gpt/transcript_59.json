@@ -88,18 +88,34 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly states it cannot provide paste-ready answers because that would do the assignment for the student, but does not clearly explain the learning rationale behind the constraint beyond policy-like refusal.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  8,
+                  10
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave process guidance and source-selection help, but never prompted reflection on why the extraction/citation method worked, what the student learned, or how to transfer the approach to future course tasks.",
+                "reason": "The tutor gives usable process steps, but does not prompt reflection on why the sourcing/verification method works or how to transfer the approach to future course tasks.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -126,20 +142,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  5,
-                  6,
-                  8
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies were long, multi-bullet monologues when the student was time-pressed and asked for narrow next-step help; shorter interactive prompts would have better preserved student participation.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -151,24 +155,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently maintained assignment-safe boundaries, stayed anchored to the city-data-table task, and generally used guided discovery rather than supplying paste-ready content.",
-      "Main weaknesses were communication efficiency and transfer support: several responses were longer than necessary for a student on a deadline, and the tutor did not include reflection on how to reuse the sourcing/extraction method in later assignments.",
-      "There was some repetition in the refusal-and-redirect pattern, but the tutor also changed tactics across the conversation (phone workaround, source workflow, skeleton table, citation checking), so no redundancy deduction was applied."
+      "The tutor consistently avoided doing the assignment for the student and stayed anchored to the actual task, using guided sourcing, scope clarification, and a fill-in table skeleton rather than supplying submission-ready content.",
+      "Scaffolding was generally strong: the tutor narrowed geography definitions, separated fields by source type, and adjusted to the student's time pressure with easier-source options and a structure the student could complete quickly.",
+      "Main weakness was meta-learning: the tutor enforced boundaries without much explicit explanation of the pedagogical rationale, and it missed chances to prompt reflection on the research method or how to reuse it in later assignments."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

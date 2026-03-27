@@ -232,22 +232,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 3, the tutor provides detailed, actionable instructions for each data field (exact table IDs like DP05, DP03, BEA navigation steps) that are essentially a near-complete roadmap for filling in the table. While the tutor withholds final numbers, the level of specificity (exact Census table codes, exact BEA navigation path) approaches doing the lookup work for the student. However, this is borderline—the student still needs to retrieve and enter actual values. Considering the rubric's focus on 'near-submission-ready' content, the instructions are guidance rather than submitted content. No full deduction warranted here upon careful review.",
-                "points": 0
-              },
-              {
-                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 1 Turn 10, the tutor provides a fully fleshed-out APA template with placeholders that is one step away from a finished citation—the student only needs to swap names/titles into a completely structured line. This crosses into near-editing territory where the tutor has done the structural writing work. However, the placeholders are generic (not Chicago/Beck-specific), so this is closer to a template than rewriting student text. Borderline—applying partial judgment but not full 6-point deduction since actual content is still missing.",
-                "points": 0
+                "reason": "In Transcript 1 Turn 10, the tutor provides a fully fleshed APA template with bracketed placeholders (author names, initials, title, version, site, URL, retrieval date) that is essentially a rewrite of the student's line into polished final format. The student only needs to swap in specific values, making the citation near-submission-ready without meaningful student construction.",
+                "points": 6
               }
             ],
-            "score": 12,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -273,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces its 'no direct answers' policy but rarely explains the learning rationale (i.e., that doing the work builds long-term research/writing skills). The tutor typically says 'I can't do that for you' without articulating why this benefits the student's development. The occasional implicit mention of 'completing it for you' is not the same as explaining the pedagogical purpose.",
+                "reason": "Across all three transcripts, the tutor consistently refuses student requests without explaining the learning rationale—e.g., why doing the work independently builds research/analytical skills—instead giving only procedural instructions. The tutor says 'I can't do that for you' without explaining what active reasoning skill the student is developing.",
                 "points": 2
               },
               {
@@ -290,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what they learned or why a method worked. After the student makes progress (e.g., Transcript 3 Turn 10 where the student produces good revised sentences), the tutor moves on without reinforcing what made the revision successful or asking the student to reflect on their process improvement.",
+                "reason": "Across all three transcripts, the tutor never prompts reflection on what the student learned, what changed in their thinking, or why a method worked. The conversations end without any process reflection or transfer reinforcement.",
                 "points": 2
               }
             ],
@@ -300,7 +292,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 14,
           "max": 24
         }
       },
@@ -317,12 +309,10 @@
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcripts 1 and 2 especially, the tutor cycles through the same refusal pattern ('I can't do that for you, but here's how you can do it') repeatedly without meaningfully advancing. In Transcript 2, Turns 2–7 repeat essentially the same interaction: student asks for filled values, tutor refuses and offers a framework, student asks again in a slightly different way. The tutor does not reframe, summarize progress, or change strategy—it simply issues the same type of response with a slightly different scaffold. This pattern across 7 turns constitutes cycling without synthesis.",
+                "reason": "In Transcript 2, the tutor cycles through repeated refusals and slightly varied scaffolding templates (turns 1–8) without meaningfully advancing the student. The student keeps asking the same thing in different ways, and the tutor keeps offering a slightly different framing of the same refusal + fill-in template rather than consolidating or advancing the method.",
                 "points": 4
               }
             ],
@@ -353,10 +343,11 @@
                   4,
                   5,
                   6,
-                  7
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently produces long multi-paragraph responses when a single focused question or prompt would have been more appropriate. For example, Transcript 1 Turn 2 lists five numbered items with sub-questions before the student has answered anything; Turn 3 lists five data sources with detailed navigation instructions. Transcript 2 Turn 2 provides a 7-item shortlist plus a 4-part template before the student engages. These responses are consistently longer than needed and reduce the student's opportunity to think and respond incrementally.",
+                "reason": "Across all three transcripts, many tutor turns are long multi-paragraph responses with numbered lists, templates, option banks, and multiple sub-questions that overwhelm rather than invite focused student replies. For example, Transcript 1 Turn 2, Transcript 2 Turns 3–7, and Transcript 3 Turns 3–7 all feature dense walls of text with multiple simultaneous prompts when shorter targeted questions would better serve the student.",
                 "points": 4
               }
             ],
@@ -378,20 +369,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently maintains appropriate boundaries against doing the student's work directly, which is a clear strength across all three transcripts. The refusal to provide paste-ready answers, exact numbers, or written paragraphs is handled firmly but without being punitive.",
-      "The main weakness is repetition/spiraling (2.1): particularly in Transcripts 1 and 2, the same refusal-plus-framework pattern repeats across 6-8 turns without meaningful synthesis, reframing, or change of strategy. The tutor does not consolidate progress or shift approach when the student remains stuck.",
-      "Response length is a secondary issue: many tutor turns are multi-paragraph with several embedded questions and lists, which reduces the interactivity and increases cognitive load on the student. Shorter, more targeted prompts would have been more pedagogically effective.",
-      "Meta-learning is largely absent: the tutor never explains why it withholds answers in terms of the student's skill development, and never prompts reflection on what the student learned or why their revised approach worked better.",
-      "Method-level feedback is actually decent (1.3.B): when the student produces work (e.g., Transcript 3 Turns 9-10), the tutor gives targeted, process-level feedback about what makes a sentence persuasive vs. generic. This partially offsets the 1.3 deduction."
+      "The tutor consistently maintains strong academic integrity boundaries across all three transcripts, refusing to produce paste-ready content. The Socratic impulse is present throughout.",
+      "However, in Transcript 1 Turn 10, the tutor provides a fully structured APA template with every field spelled out and bracketed, leaving only name-swapping for the student—this crosses into rewriting the student's submission line into polished final format, triggering a 1.1.B.a deduction (6 points).",
+      "In Transcript 2, the tutor cycles through the same refusal + fill-in-the-blank pattern for 8+ turns without synthesizing or advancing the approach meaningfully, triggering a full 2.1.A.a deduction (4 points). The student is visibly spiraling on the same request, yet the tutor keeps offering slight variations of the same template response rather than reframing or consolidating.",
+      "Across all three transcripts, the tutor never explains the learning rationale for its constraints (why independent reasoning builds skills), triggering 1.3.A.a (2 points), and never prompts reflection or transfer at any point, triggering 1.3.D.a (2 points).",
+      "Many tutor turns feature dense multi-paragraph responses with simultaneous numbered lists, templates, option banks, and multiple sub-questions, reducing student thinking opportunity and triggering 3.1.A.a (4 points).",
+      "Tone is consistently supportive and non-dismissive; assignment anchoring is strong; scaffolding generally builds on student progress; no formal grading language is used."
     ],
-    "total_score": 34,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

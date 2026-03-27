@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provides specific plan names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and specific utility decision categories with enough detail that the student can directly use them in writing, doing the key research step the student should be performing.",
+                "reason": "Tutor provides a ready-made list of three named plans/programs (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and three specific FPL decision domains with detailed descriptions. While framed as examples to verify, this gives the student the core reasoning work—identifying which actors lead which programs—rather than guiding the student to find or reason through these themselves.",
                 "points": 6
               }
             ],
@@ -105,11 +105,12 @@
                   5,
                   6,
                   7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces constraints (refusing to write the post) consistently but rarely explains the learning rationale—why the student benefits from doing the reasoning themselves. Occasional implicit cues appear but no explicit statement about active reasoning or skill development.",
+                "reason": "The tutor consistently refuses to do the student's work but never explicitly explains the pedagogical rationale (e.g., that active reasoning builds long-term analytical skills or that doing the work themselves deepens understanding). It declines without articulating the learning benefit.",
                 "points": 2
               },
               {
@@ -118,7 +119,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produces a solid draft, the tutor gives editorial feedback but misses any opportunity to help the student reflect on how their thinking evolved or what methods worked well in building the actor analysis.",
+                "reason": "The conversation concludes without any prompt for the student to reflect on their process, what changed in their thinking, or what methods worked. The tutor does not reinforce methodology choices after the student produces a solid draft.",
                 "points": 2
               }
             ],
@@ -166,7 +167,7 @@
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout the conversation, the tutor repeatedly sends multi-paragraph structured replies with several sub-points, lists, and follow-up questions bundled together. Turns 2, 3, 4, and 9 in particular are long monologues when more focused, shorter prompts would have sufficed and given the student more space to think.",
+                "reason": "Several tutor turns are multi-paragraph and dense, providing extensive structured detail (full bullet lists with sub-points, multi-part criteria) where shorter focused prompts would suffice. Turns 2, 3, 4, and 9 especially contain lengthy monologues that reduce the student's cognitive space to think independently.",
                 "points": 4
               }
             ],
@@ -195,11 +196,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintains a Socratic stance by refusing to write the post for the student and consistently returning decision-making to the student. The tone is supportive and assignment anchoring is strong throughout.",
-      "The primary deduction in 1.1 comes from Turn 3, where the tutor provides specific plan names, program titles, and categorized utility decision examples that constitute key factual research the student should have located independently. This crosses into doing the reasoning step for the student (1.1.C.b), though it stops short of drafting actual post content.",
-      "Meta-learning is weak: the tutor never explicitly explains why it declines to write the post in terms of learning benefit (1.3.A.a), and after the draft is produced in Turn 9 there is no reflection prompt about what the student learned or how their approach worked (1.3.D.a).",
-      "Communication length is a recurring issue. Tutor turns 2, 3, 4, 5, 6, and 9 are consistently multi-part, heavily structured responses that reduce the student's cognitive space. Shorter, more focused prompts would have been more pedagogically appropriate given the student's expressed time pressure and the conversational context.",
-      "No issues were found with assignment anchoring, redundancy, tone, or grading stance. The tutor effectively keeps the student on track and redirects every shortcut request back to productive work."
+      "The tutor consistently refuses to write the post for the student and maintains a coaching stance throughout, appropriately redirecting multiple requests for copy-paste content.",
+      "The main pedagogy concern is in Turn 3, where the tutor provides a fully enumerated list of named plans and detailed FPL decision domains. While framed as 'examples to verify,' this does the key reasoning work of identifying what each leader leads and what utilities control—work the student should have done through guided questioning. This triggered a 1.1.C.b deduction.",
+      "The tutor never explains the pedagogical rationale for its constraints, missing a chance to help the student understand why active reasoning matters (1.3.A.a). There is also no reflection prompt at the end of the conversation to consolidate what the student learned (1.3.D.a).",
+      "Many tutor turns are structured as lengthy multi-part bullet lists when shorter, focused prompts would have been more effective at maintaining student engagement and reducing cognitive offloading to the tutor (3.1.A.a).",
+      "Scaffolding and dialogue quality are strong: the tutor builds on student progress, redirects off-task requests, keeps the conversation anchored to the assignment, and avoids redundancy.",
+      "Tone is consistently supportive and non-grading throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

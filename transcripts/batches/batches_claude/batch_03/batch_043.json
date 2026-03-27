@@ -229,8 +229,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, Turn 2, the tutor provides a full numbered menu of 10 Miami-specific stressors with descriptions, doing the key identification work that is the core of Step 1 of the assignment. The student is only asked to choose from the pre-supplied list, which means the tutor resolved the central reasoning step of identifying relevant stressors.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -246,34 +255,20 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor enforces its no-writing-for-you policy repeatedly but never explains the underlying pedagogical rationale (e.g., that doing the work builds the student's own analytical skills for the climate action plan and future assignments). The constraint is stated or implied but the learning justification is absent.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to write justifications, refusing to fill the table, refusing to show a completed row) without explaining the learning rationale—e.g., why doing the reasoning themselves builds skills needed for later assignments. The tutor says 'I can't' but rarely explains the pedagogical purpose.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  3
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In none of the three transcripts does the tutor pause to invite the student to reflect on what changed in their thinking or why a particular structuring move worked. After successful student progress (e.g., T1-Turn 10, T2-Turn 7, T3-Turn 9) the tutor moves straight to the next task without asking the student to articulate the method insight gained.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked, or how the reasoning process they used could transfer to other stressors or future assignments. The tutor moves from one step to the next without consolidating method insights.",
                 "points": 2
               }
             ],
@@ -283,7 +278,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 14,
           "max": 24
         }
       },
@@ -316,10 +311,11 @@
                   2,
                   3,
                   5,
-                  6
+                  6,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turn 2 presents a numbered menu of 11 stressors plus a multi-part instruction set; Turn 3 offers 10 pre-built sentence stems with placeholders; Turn 5 asks four simultaneous sub-questions for four stressors at once. These are multi-paragraph replies that reduce student thinking time and are consistently more verbose than one or two focused interactive prompts. The pattern recurs across transcripts (T2-Turn 6 asks three separate questions plus a format consistency question in one block; T3-Turn 5 gives a three-part framework plus three sub-prompts). While some length is justified by the scaffolding context, the pattern of large information dumps appears repeatedly where shorter check-ins would suffice.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-paragraph responses with several numbered questions and examples where shorter, more focused prompts were appropriate. In Transcript 1 Turn 2, the tutor sends a full 11-item stressor menu plus multi-step instructions. In Transcript 1 Turn 3, the tutor gives 10 sentence stems. In Transcript 2, most tutor turns contain 3+ numbered sub-questions. This pattern consistently reduces student opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -341,21 +337,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic stance: it consistently refuses to write or polish submission text, instead using sentence stems, templates, and targeted diagnostic questions to keep the student generating ideas and wording. No final answers or near-submission-ready content are provided (1.1 intact).",
-      "Scaffolding and progression are handled well in all three cases. The tutor acknowledges correct student contributions, builds on prior steps, and adjusts question granularity to match student progress (e.g., T1 moving from stressor list to evidence hooks; T2 moving from rough list to merged rows to full draft rows; T3 using relative-ranking anchoring). No deductions for 1.2.",
-      "A consistent gap is meta-learning: the tutor never explains why it withholds direct answers in terms of student skill development, and it never prompts students to reflect on what their thinking process achieved. These are recurring omissions across all three conversations (-2 for 1.3.A.a and -2 for 1.3.D.a). Method-level feedback is generally adequate (the tutor does flag weak logic, missing evidence, and sector tagging issues), so 1.3.B is not penalized.",
-      "Dialogue quality is strong throughout. The tutor re-anchors students to the assignment when they stray, redirects off-topic requests promptly (T2-Turn 2 dinner question), and avoids spiraling without progress.",
-      "Communication quality is penalized for response length. In Transcript 1 (Turns 2 and 3) and Transcript 2 (Turn 6) the tutor issues large multi-part blocks—an 11-item stressor menu, 10 sentence-stem templates, and simultaneous four-stressor diagnostic questions—where one or two focused prompts would have been more appropriate. The pattern is consistent enough across turns to trigger the 3.1.A.a deduction (-4). Language is otherwise clear and accessible; no jargon penalty.",
-      "Tone is consistently warm and encouraging; no grading-stance issues observed."
+      "Across all three transcripts, the tutor generally maintains appropriate boundaries—consistently refusing to write submission-ready content, rewrite student sentences, or produce paste-ready justifications. This is well-executed Socratic boundary-setting.",
+      "The most significant deduction is in 1.1: in Transcript 1 Turn 2, the tutor supplies a full enumerated list of 10 Miami-specific stressors with descriptive labels, doing the core Step 1 identification work for the student. While the student is asked to choose, the tutor has pre-resolved the key reasoning step of identifying what stressors are relevant. This triggers the 1.1.C.b deduction (6 points).",
+      "The tutor does not explain the pedagogical rationale for its refusals (1.3.A.a), missing opportunities to help students understand why doing the work themselves matters for skill development in later assignments. Additionally, the tutor never prompts reflection on thinking processes or method transfer (1.3.D.a).",
+      "A persistent communication issue is response length: the tutor frequently sends multi-paragraph replies with 3–4 numbered sub-questions when one or two targeted prompts would suffice. This is most pronounced in Transcript 1 Turns 2–3 and Transcript 2 throughout. The 3.1.A.a deduction (4 points) is applied.",
+      "Scaffolding (1.2), dialogue management (2.1, 2.2), tone (3.2), and assignment anchoring are all handled well across transcripts, with no clear evidence warranting deductions in those areas."
     ],
-    "total_score": 38,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

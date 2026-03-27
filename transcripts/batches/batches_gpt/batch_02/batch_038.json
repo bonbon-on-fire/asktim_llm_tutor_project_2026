@@ -229,18 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  7
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduced the main analytical options and candidate principle components before the student generated them independently, which narrowed the student's discovery path.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -251,14 +241,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor kept advancing content questions and outline-building, but did not prompt brief reflection on why the student's reasoning had shifted or what method helped resolve the confusion.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 22,
           "max": 24
         }
       },
@@ -285,8 +285,19 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The tutor repeatedly used somewhat dense philosophical language such as 'side-constraint,' 'foreseen side-effect,' and similar abstract distinctions that likely increased cognitive load for a student who repeatedly said they were lost.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -298,24 +309,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only, since the rubric and schema are conversation-specific.",
-      "The tutor maintained strong assignment focus, clear scaffolding, and supportive tone, especially by moving case-by-case and prompting the student to distinguish act consequentialism from side-constraints.",
-      "Main deduction: the tutor sometimes supplied the core analytical routes and candidate distinctions before the student had fully generated them, which reduced pure guided discovery."
+      "Scored Transcript 1 only because the rubric/schema are for a single full conversation and multiple transcripts were provided in one prompt.",
+      "The tutor stayed strongly Socratic and assignment-anchored, using the student's answers to build a workable analysis rather than supplying a submission-ready position.",
+      "Main weaknesses were limited explicit reflection on the student's reasoning method and some avoidably dense philosophical terminology for a very confused student."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

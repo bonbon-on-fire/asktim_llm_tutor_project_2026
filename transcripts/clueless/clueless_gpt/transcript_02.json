@@ -74,19 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor sometimes supplied the key interpretive path for the student, e.g. giving act consequentialism's 'two moves,' framing Blood as mainly an institutional-trust case, and seeding the candidate principle dimensions before the student had fully generated them.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -97,14 +86,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently uses a non-directive, question-led approach but never explains that limitation or frames it as a learning strategy for the student.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 22,
           "max": 24
         }
       },
@@ -150,18 +149,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was generally strong: interactive, well-scaffolded, assignment-focused, and supportive.",
-      "Main deduction is in guided discovery: at several points the tutor introduced central interpretive moves instead of letting the student fully derive them first, especially around Blood and the candidate general principle.",
-      "No stronger deduction was applied because the tutor did not provide submission-ready prose or a full final answer."
+      "The tutor stayed strongly Socratic throughout, building from the student's partial understanding and using short, well-sequenced prompts rather than supplying a submission-ready answer.",
+      "Dialogue quality was strong: the tutor remained anchored to the assignment's trolley/Blood/Fuel themes, advanced the discussion each turn, and kept responses interactive and clear.",
+      "Main deduction: although the tutor used a constrained, coaching-oriented method, it never explicitly explained that rationale or its non-directive limitation to the student."
     ],
-    "total_score": 40,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

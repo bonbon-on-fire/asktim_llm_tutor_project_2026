@@ -235,7 +235,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 7, the tutor provides a full detailed essay outline with content prompts for each section (Intro, Body 1, Body 2, Body 3), effectively laying out the full structure and reasoning pathway for the student. The outline specifies what to argue in each body paragraph (e.g., 'Use Blood or Fuel as your test case,' 'Explain what seems morally wrong,' 'Address Loop: you bite the bullet—explain why that's a feature, not a bug'), which together constitute near-submission-ready assignment work where the tutor carries the reasoning rather than the student.",
+                "reason": "In Transcript 1 Turn 7, the tutor provides a complete 4-section essay outline with specific content guidance for each paragraph (intro content, body 1–3 content, what to argue, how to handle Loop), which together constitute near-submission-ready scaffolding. While framed as prompts, the outline provides the full argument structure, section content, and ordering that the student needs only to fill in with prose—crossing into direct assignment work.",
                 "points": 12
               }
             ],
@@ -253,41 +253,23 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely if ever explains why it is refusing to give answers in terms of the student's long-term skill development or active reasoning benefits. Refusals are stated as policy ('I can't write a submission-ready answer for you') without explaining the pedagogical rationale of why this approach helps the student learn better.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all transcripts, the tutor moves from topic to topic without ever prompting the student to reflect on what changed in their thinking, why a particular method worked, or what they learned about philosophical argumentation. The conversations end without any process-level reflection being encouraged.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on why their thinking improved or what method shift helped them arrive at better formulations. The tutor moves from step to step without consolidating or reinforcing the process the student is developing.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 24
         }
       },
@@ -300,24 +282,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.2.A.a",
-                "reason": "In Transcript 3, Turns 3-4, the tutor provides the setups for Fuel and Blood cases ('I can remind you of the basic setups') when the student said they didn't remember, effectively doing part of the content generation. While the tutor labeled these as 'typical setups' to verify, this deviates from anchoring the student to their own lecture notes and risks having the student work from incorrect/generalized versions rather than the actual Lecture 13 content the prompt specifies.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -334,7 +306,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns contain multi-paragraph replies with multiple sub-questions and elaborate instructions when shorter, more focused prompts would have been more appropriate. For example, Turn 1 in Transcripts 1, 2, and 3 all contain extensive multi-part instructions. Turn 3 in Transcript 2 has four numbered questions plus a request for bullet points. This pattern consistently reduces the student's opportunity to think by overwhelming them with multiple tasks at once.",
+                "reason": "Across all three transcripts, many tutor turns are multi-paragraph with multiple sub-questions, multiple bullet structures, and lengthy explanatory content when shorter, more focused prompts would have been more appropriate for an interactive tutoring exchange. Turn 1 across all transcripts, Turn 2 in T2/T3, Turn 3 in T2, Turn 5 in T2, and Turn 7 in T1 are consistently over-long.",
                 "points": 4
               }
             ],
@@ -356,20 +328,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 22,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready answers and maintains a Socratic posture through most of the conversations, which is commendable. However, in Transcript 1 Turn 7, the tutor provides a detailed, content-rich essay outline that specifies what to argue in each section, crossing into near-submission-ready territory under criterion 1.1.A.a, triggering the full 12-point deduction for that criterion.",
-      "In Transcript 3 Turns 3-4, the tutor provides the Fuel and Blood case setups when the student claimed not to remember them. While framed as 'typical versions,' this effectively substitutes the tutor's content for the student's own recall of lecture material, creating an assignment anchoring failure (2.2.A.a).",
-      "The tutor rarely explains the pedagogical rationale for its constraints (1.3.A.a) and does not prompt process reflection at any point across the three transcripts (1.3.D.a), missing opportunities to build meta-learning skills.",
-      "A consistent pattern of overly long, multi-part responses reduces student thinking space across all three transcripts (3.1.A.a). Many turns contain 3-5 sub-questions when one focused prompt would suffice.",
-      "Positive aspects include: good tone and support throughout, clear progression of scaffolding within each conversation, no formal grading language, and generally staying on-topic with the assignment."
+      "The tutor consistently refuses to write submission-ready content, which is commendable across all three transcripts. However, in Transcript 1 Turn 7, the tutor provides a detailed 4-section essay outline with specific argumentative content mapped to each section (act consequentialist standard, case verdicts, objection framing, DDE principle plus stress test), which together constitute near-submission-ready structure and content. This triggers the full 12-point deduction under 1.1.A.a.",
+      "The Socratic method is otherwise well-applied: the tutor consistently asks the student to generate definitions, verdicts, and principles before offering feedback, and redirects appropriately when students ask for paste-ready content.",
+      "Scaffolding is strong—the tutor builds on student progress across turns, acknowledges partial correctness, and advances the conversation rather than restarting from scratch.",
+      "Meta-learning suffers only from lack of reflection prompts: the tutor never asks the student to step back and consider why their thinking changed or what method worked.",
+      "Dialogue quality is high: the tutor stays on-topic, re-anchors when students drift toward off-task requests, and advances rather than cycles.",
+      "Communication quality is penalized for consistently over-long responses. Multiple turns across all three transcripts feature multi-paragraph replies with several nested sub-questions where a single focused prompt would have been more pedagogically appropriate.",
+      "Tone is consistently supportive and non-grading throughout."
     ],
-    "total_score": 22,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

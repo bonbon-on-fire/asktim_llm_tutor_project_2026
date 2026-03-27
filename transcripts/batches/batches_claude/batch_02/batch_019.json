@@ -256,17 +256,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains to the student why it is guiding rather than answering directly (e.g., that asking questions builds independent reasoning skills). The Socratic approach is enforced but the learning rationale is never articulated.",
+                "reason": "Across all three transcripts, the tutor never explains its Socratic/non-answer-giving policy in terms of learning rationale (e.g., 'I want you to reason this out yourself so you develop the skill'). It enforces constraints (redirecting chitchat, refusing to write sentences) without articulating why this benefits the student's long-term development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In Transcript 1, after the student reaches a coherent final principle (route B, appropriation/targeting) across turns 9-10, the tutor moves directly to next tasks without prompting reflection on what changed in the student's thinking or why the 'means' refinement worked. Similarly in Transcripts 2 and 3, no reflection on method or thinking process is invited at closing stages.",
+                "reason": "None of the three transcripts ends with a reflective prompt about what changed in the student's thinking or what method worked. In Transcript 1 Turn 10, the tutor requests consistency checks but never prompts the student to reflect on how their approach evolved. Similarly, Transcripts 2 and 3 close with task-forward instructions rather than any process reflection.",
                 "points": 2
               }
             ],
@@ -307,11 +305,15 @@
               {
                 "evidence_turns": [
                   2,
+                  3,
                   4,
+                  5,
+                  6,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part responses with three or more simultaneous sub-questions (e.g., Transcript 1 Turn 2 lists three layered tasks; Turn 4 asks three questions; Transcript 2 Turn 2 lists three prompts). While each question is valuable, the pattern of consistently bundling many questions reduces student opportunity to respond and think iteratively.",
+                "reason": "In multiple turns across all three transcripts, the tutor poses 3–4 sub-questions in a single message when 1–2 focused prompts would be more appropriate. For example, Transcript 1 Turn 2 asks about act-consequentialist verdicts case-by-case, the means/side-effect distinction, AND diverging intuitions. Transcript 2 Turn 3 asks three separate bullet-set questions simultaneously. This consistently reduces the student's opportunity to think through one step before the next.",
                 "points": 4
               }
             ],
@@ -340,9 +342,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates excellent Socratic discipline: it never provides final answers or submission-ready content, consistently redirects off-topic chitchat, and builds progressively on student responses. In Transcript 1 (philosophy), the tutor skillfully guides the student from vague intuitions to a refined principle (route B: appropriation/targeting), always asking the student to do the next reasoning step. In Transcripts 2 and 3 (urban studies), the tutor provides disciplined scaffolding for the stressors table and actor mapping, anchoring each step to the assignment.",
-      "Main deductions: (1) Meta-learning: The tutor never explains why it is using Socratic questioning rather than giving answers, missing a chance to build the student's awareness of the pedagogical method (1.3.A.a, -2pts). Additionally, at key moments of intellectual resolution (e.g., when the student lands on route B in Transcript 1, or completes the stressors table in Transcript 2), the tutor does not prompt the student to reflect on what changed in their thinking or what the method achieved (1.3.D.a, -2pts). (2) Communication: The tutor routinely sends responses with three or more simultaneous sub-questions, which, while substantive, consistently reduces the student's opportunity for focused, iterative thinking. This pattern is present across all three transcripts and multiple turns, warranting a -4pt deduction on 3.1.A.a.",
-      "No deductions were applied for 1.1 (the tutor never provides near-submission-ready content), 1.2 (scaffolding builds correctly on each student response), 2.1 (no unhelpful spiraling), 2.2 (assignment anchoring is maintained throughout), or 3.2 (tone is supportive, no grading stance)."
+      "Across all three transcripts, the tutor consistently avoids doing the student's work: it asks probing questions, demands that students derive conclusions themselves, and refuses to craft final sentences even when asked directly (e.g., T2 Turn 9). No near-submission-ready content is provided, and the Socratic questioning remains genuine throughout. This is the clearest strength.",
+      "Scaffolding and assignment anchoring are also strong: the tutor builds on prior student responses each turn, never ignores valid student progress, and re-grounds immediately when chitchat arises rather than engaging with off-topic prompts.",
+      "The main weakness is response length/interactivity: the tutor habitually bundles 3–4 sub-questions per message (most visible in T1 Turn 2 and T2 Turn 3), which is more of a 'mini-lecture in questions' than a true one-step Socratic exchange. This pattern recurs enough to trigger the 4-point deduction under 3.1.A.a.",
+      "A secondary gap is in meta-learning: the tutor never explains why it withholds answers (the learning rationale), and it never prompts the student to reflect on what changed in their thinking or which method proved more stable. Two deductions are applied under 1.3 (2 + 2 points), capped at the 6-point max but only -4 total because process-level feedback within turns is generally adequate.",
+      "No double-penalization: the multi-question bundling is penalized only under 3.1 (not 1.2), and the absence of reflection/rationale explanation is penalized only under 1.3."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

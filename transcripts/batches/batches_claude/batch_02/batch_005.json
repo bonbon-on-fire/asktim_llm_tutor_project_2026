@@ -235,7 +235,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 8, the tutor provides three fully elaborated objections with complete reply strategies (collapse objection with full reasoning, moral arbitrariness objection with full defense rationale, counterexample pressure with a suggested fix). This does the key reasoning work — identifying the decisive objection and explaining how to answer it — rather than asking the student to generate and reason through objections themselves.",
+                "reason": "In Transcript 1 Turn 8, the tutor gives three fully developed objections with reply strategies (A, B, C), doing the key reasoning step of identifying and explaining the decisive intellectual moves for the student rather than guiding the student to generate them.",
                 "points": 6
               }
             ],
@@ -265,15 +265,11 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently refuses to do the student's work but rarely explains *why* this approach benefits the student's learning. The tutor mostly just says 'I can't do that' without articulating the learning rationale (e.g., 'reasoning through this yourself builds the skill you need to defend your argument').",
+                "reason": "Across all three transcripts, the tutor consistently enforces its 'no writing for you' constraint but rarely explains the pedagogical rationale (active reasoning, skill development) behind it. The student repeatedly pushes back and the tutor re-refuses without meaningfully connecting the boundary to learning goals.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -282,7 +278,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked, or what they learned from the process. Each turn moves forward to the next step without any metacognitive reflection or transfer support.",
+                "reason": "Across all three transcripts, once students produce drafts or make progress, the tutor does not prompt reflection on what changed in their thinking or why a particular method (e.g., outcome comparison, means/side-effect distinction) worked. The tutor moves straight to the next task without reinforcing process choices.",
                 "points": 2
               }
             ],
@@ -314,7 +310,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across all three transcripts (especially Transcripts 2 and 3), the tutor repeatedly cycles through the same pattern: student asks for finished work, tutor refuses and gives a scaffold/template, student asks again in a slightly different way, tutor refuses and gives another scaffold/template. The tutor does not switch strategies, consolidate gains, or acknowledge that the student is caught in a loop and suggest a genuinely different approach. This is most evident in Transcript 2 Turns 3–10 where the student never actually writes anything and the tutor keeps providing progressively more detailed templates without advancing the dialogue.",
+                "reason": "In Transcripts 2 and 3, the tutor cycles repeatedly through the same pattern: student requests paste-ready content, tutor refuses and offers a fill-in-the-blank template, student refuses to engage. This pattern repeats across turns 1–10 in T2 and T3 without meaningful synthesis, reframing, or escalation strategy to break the loop.",
                 "points": 4
               }
             ],
@@ -346,13 +342,12 @@
                   4,
                   5,
                   6,
-                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor repeatedly delivers multi-paragraph responses with multiple sub-questions, numbered lists, and fill-in-the-blank templates when shorter, more focused prompts would be more appropriate. For example, Transcript 1 Turn 1 contains 3 main questions with sub-questions; Transcript 2 Turn 3 contains a lengthy step-by-step breakdown with four gap statement stems; Transcript 3 Turn 3 has an elaborate 3-step process with multiple sub-bullets. This pattern consistently reduces student opportunity to think and respond and likely contributes to the student's disengagement.",
+                "reason": "Tutor responses across all three transcripts are consistently very long, with multi-paragraph multi-part instructions and elaborate fill-in templates even when shorter, more targeted prompts would suffice. This is especially pronounced in T1 T1, T2 T3, T3 T3, T3 T6 and T3 T10, where the length of the tutor's output likely reduces student motivation to engage.",
                 "points": 4
               }
             ],
@@ -381,12 +376,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintained consistent boundaries throughout all three transcripts, never providing submission-ready text or directly doing the assignment for the student, which is the most important guardrail.",
-      "In Transcript 1 Turn 8, the tutor crossed into doing key reasoning work by providing three fully elaborated objections with complete reply strategies, effectively resolving the student's central philosophical challenge rather than guiding them to generate and evaluate objections themselves. This triggers a 6-point deduction under 1.1.C.b.",
-      "A significant pattern-level redundancy issue (2.1.A.a, 4 points) appears across all three transcripts: the tutor repeatedly offers increasingly detailed scaffolds and templates in response to student resistance without switching strategy, reframing, or consolidating progress. The conversation spirals without genuine advancement, particularly in Transcripts 2 and 3 where the student never actually produces substantive work.",
-      "The tutor consistently provided multi-paragraph, heavily structured responses when shorter, more focused questions would have been more engaging and pedagogically effective (3.1.A.a, 4 points). The complexity of the tutor's responses may have contributed to student disengagement.",
-      "Meta-learning support was weak across all transcripts: the tutor rarely explained why the Socratic approach benefits the student (1.3.A.a, 2 points) and never prompted reflection on the student's own thinking process or what they were learning (1.3.D.a, 2 points).",
-      "Scaffolding and progression (1.2) and assignment anchoring (2.2) were handled well — the tutor built on student contributions, acknowledged valid steps, and kept the conversation anchored to assignment requirements throughout. Tone was consistently respectful and supportive despite significant student resistance."
+      "The tutor maintains a consistent and principled refusal to ghostwrite across all three transcripts, which is commendable. Assignment anchoring is strong throughout, and the tutor does a good job re-grounding the student when needed.",
+      "The primary pedagogy deduction (1.1.C.b) is for Transcript 1 Turn 8, where the tutor provides three fully elaborated objections with reply strategies rather than asking the student to identify objections first. This does the key reasoning step the student should have performed.",
+      "Meta-learning is weak across all transcripts: the tutor rarely explains its tutoring rationale beyond 'I can't do that for you,' and never prompts the student to reflect on what their reasoning process revealed or how their thinking changed.",
+      "The most significant dialogue quality issue is persistent spiraling across Transcripts 2 and 3: the student repeatedly requests paste-ready content, the tutor refuses with a new template, and the student refuses again—without the tutor reframing the strategy or trying a fundamentally different approach to break the impasse.",
+      "Response length is a consistent problem: tutor responses are frequently multi-paragraph with multiple sub-questions and elaborate templates, which may overwhelm and discourage a chaotic student rather than engage them. Shorter, more targeted nudges would have been more effective at more points in all three conversations."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

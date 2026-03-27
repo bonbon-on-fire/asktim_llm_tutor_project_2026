@@ -244,23 +244,27 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
+                  4,
                   5,
+                  6,
                   7,
-                  9
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently redirects off-topic requests and pushes students to reason independently, but rarely explains *why* it is using Socratic questioning rather than giving answers—e.g., it does not say things like 'I'm asking you to derive this yourself so you develop the skill of…'. The learning rationale behind the method is almost never made explicit.",
+                "reason": "Across all three transcripts, the tutor enforces a 'no direct answers' policy but rarely articulates the learning rationale (active reasoning, skill development) behind those constraints. The tutor says 'I can't help with that' without explaining why guided discovery benefits the student's long-term learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  4,
-                  8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, when the student makes genuine progress (e.g., Transcript 1 Turn 8 revised principle, Transcript 2 Turn 10 endpoint choices, Transcript 3 Turn 9 final forum post), the tutor moves immediately to the next step without pausing to ask the student to reflect on what changed in their thinking or why a particular strategy worked.",
+                "reason": "Across transcripts, the tutor moves from step to step without prompting reflection on what changed in the student's thinking or reinforcing method choices after improvement. In Transcript 1 Turn 10, Transcript 2 Turn 10, and Transcript 3 Turn 10, conversations end or wrap up without asking the student to reflect on what reasoning approach worked and why.",
                 "points": 2
               }
             ],
@@ -301,12 +305,15 @@
               {
                 "evidence_turns": [
                   2,
+                  3,
                   4,
+                  5,
                   6,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor frequently delivers multi-part responses with 3–4 numbered sub-questions simultaneously (e.g., Transcript 1 Turns 4, 5, 6, 7, 8; Transcript 2 Turns 1, 6; Transcript 3 Turns 2, 3, 4, 5, 6). While individual sub-questions are focused, stacking 3–4 questions in a single turn consistently reduces the student's opportunity to think and respond before being given the next prompt, and the pattern recurs across all conversations.",
+                "reason": "Across all three transcripts, the tutor frequently uses multi-part responses with 3–4 sub-questions per turn. While some complexity is warranted, turns like Transcript 1 Turn 4, Transcript 2 Turn 6, and Transcript 3 Turn 5 present 3-part prompts when a single focused question would be more interactive and bite-sized. This pattern is consistent enough across transcripts to represent a recurring issue rather than isolated cases.",
                 "points": 4
               }
             ],
@@ -335,10 +342,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic practice: it consistently refuses to give direct answers or generate ideas for the student, redirects off-topic chitchat efficiently, builds on student progress turn-by-turn, and keeps the student anchored to the assignment. No deductions were triggered under 1.1, 1.2, 2.1, or 2.2.",
-      "The main weakness is in meta-learning (1.3): the tutor almost never explains *why* it is using guided-discovery rather than direct instruction, and it rarely prompts the student to reflect on what changed in their thinking after a breakthrough. These omissions cost 4 points under 1.3.",
-      "Response-length control (3.1) is a consistent pattern-level issue: the tutor routinely stacks 3–4 numbered sub-questions in a single turn across all three conversations, reducing interactivity. This cost 4 points. Tone is supportive and non-evaluative throughout (no 3.2 deductions).",
-      "Note on ambiguity: the 1.3.B.b criterion (vague method feedback) was considered but not applied because the tutor's feedback is generally specific and actionable. The 1.3.D.a deduction is conservative (2 points) given that the tutor does acknowledge progress, but consistently skips process-reflection prompts."
+      "Across all three transcripts, the tutor demonstrates strong adherence to the Socratic method—consistently refusing to give direct answers, redirecting off-topic requests promptly, building on student progress across turns, and guiding students toward self-generated conclusions through well-sequenced questioning. No near-submission-ready content, rewriting, or pre-revealing of conclusions was observed.",
+      "The tutor's scaffolding is strong: it correctly identifies where students are, builds on their partially correct answers, and uses targeted follow-up questions rather than method dumps. Assignment anchoring is also excellent—the tutor redirects chitchat immediately and maintains focus on assignment tasks throughout.",
+      "The main weaknesses are: (1) Meta-learning—the tutor enforces its no-direct-answer policy without explaining the learning rationale to the student, and misses consistent opportunities to prompt reflection on what worked or changed in the student's thinking; (2) Response length—the tutor habitually presents 3–4 sub-questions per turn across all three transcripts, which reduces student thinking space and creates cognitive load, rather than focusing on one key question at a time.",
+      "No double-penalization applied: the response-length deduction is applied only under 3.1, and meta-learning gaps are applied only under 1.3. The 1.3.B criterion was not triggered because the tutor's process-level feedback is generally specific and actionable."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

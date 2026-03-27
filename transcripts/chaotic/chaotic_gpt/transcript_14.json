@@ -89,32 +89,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refused to provide submission-ready text, but framed this mainly as policy/compliance ('that would be doing the assignment,' 'not a ghostwriter') rather than explaining the learning rationale in terms of skill-building or active reasoning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   7,
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student made progress on ratings, sectors, and draft justifications, the tutor continued task execution support but did not prompt reflection on why the chosen method worked or how to transfer it to later assignments.",
+                "reason": "After the student produced workable draft justifications, the tutor focused on revision prompts and critique but did not ask for brief reflection on why the chronic-vs-episodic method or indicator-based method worked, missing a transfer opportunity.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -160,18 +149,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided ghostwriting and kept the student working through ratings, sectors, and justification structure rather than supplying a paste-ready table.",
-      "Scaffolding was generally strong: the tutor narrowed the task, used templates, and built on the student's city choice, stressors, and later drafts without taking over the core writing.",
-      "Main weakness was meta-learning: refusals were mostly policy-framed rather than explained as learning support, and the tutor did not prompt reflection on the method once the student had made progress."
+      "The tutor consistently refused to ghostwrite or provide paste-ready assignment content and instead used guided prompts, templates, and decision rules anchored to the actual stressors-table task.",
+      "Scaffolding was strong: the tutor built from the student's chosen city and stressors, pushed for evidence, helped distinguish chronic versus episodic risks, and gave process-level revision guidance without assembling final table entries.",
+      "The main missing element was reflection/transfer support: once the student had workable drafts, the tutor did not prompt the student to articulate why the method for rating and justifying stressors worked or how to reuse it on future rows."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

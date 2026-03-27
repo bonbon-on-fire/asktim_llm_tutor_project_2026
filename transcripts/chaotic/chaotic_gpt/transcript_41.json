@@ -146,9 +146,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused submission-ready writing and kept the student doing the core argumentative work through targeted questions, case-by-case application, and thesis revision prompts.",
-      "The conversation stayed tightly anchored to the assignment, progressed logically from act consequentialism to objections to DDE/Loop, and the tutor built on the student's own ideas rather than replacing them.",
-      "Although the tutor offered options, an outline, and a thesis template, these remained scaffolds rather than paste-ready content; no clear rubric-triggering deduction is supported by the transcript."
+      "Tutor consistently refused to provide submission-ready prose and instead used targeted prompts to make the student generate the thesis, case verdicts, and supporting distinctions.",
+      "The conversation stayed well anchored to the MIT philosophy prompt, built on the student's developing view across turns, and gave process-level coaching without drifting into grading or off-topic discussion."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

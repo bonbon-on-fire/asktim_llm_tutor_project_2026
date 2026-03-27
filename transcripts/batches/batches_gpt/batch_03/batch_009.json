@@ -232,10 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Transcript 1 turn 8 supplies a shortlist of new Jakarta stressors for the student to choose from, generating assignment ideas instead of first eliciting the student's own next stressors.",
+                "reason": "In Transcript 1, the tutor supplied multiple Jakarta-specific candidate stressors for the student to choose from, shifting initial idea generation for additional rows onto the tutor rather than eliciting those ideas first from the student.",
                 "points": 6
               }
             ],
@@ -253,7 +254,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor gives strong step-by-step coaching but does not explicitly prompt reflection on why the student's method worked, what changed in their thinking, or how to transfer the approach to future rows.",
+                "reason": "Across the conversations, the tutor emphasized completion, checking, and revision but did not explicitly prompt reflection on why the student's method worked or how to transfer the method to future rows beyond the immediate task.",
                 "points": 2
               }
             ],
@@ -290,8 +291,20 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  21,
+                  22,
+                  27,
+                  30
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Especially in Transcript 3, the tutor repeatedly used long, multi-part explanations and option lists when the student's confusion called for shorter diagnostic exchanges, reducing student space to think and respond in smaller steps.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -303,24 +316,26 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was consistently assignment-anchored, refused paste-ready writing, and used structured questioning to help students build defensible sector tags, ratings, and justifications.",
-      "The main pedagogy issue was one clear moment of content generation in Transcript 1, where the tutor proposed a shortlist of additional Jakarta stressors rather than eliciting the student's own ideas first.",
-      "Method coaching was generally strong, but there was little explicit reflection or transfer prompting at the end of conversations; this deduction is smaller because the tutor still gave substantial process guidance throughout."
+      "Across all three transcripts, the tutor consistently refused to provide submission-ready content and generally kept the student responsible for ratings, evidence, and final wording.",
+      "The clearest pedagogy issue was in Transcript 1, where the tutor brainstormed several additional Jakarta stressors for the student, which shifted some assignment idea generation from student to tutor.",
+      "Dialogue remained well anchored to the assignment and off-topic redirection was handled appropriately.",
+      "Main communication weakness: replies were often quite long and heavily structured, especially with the confused student in Transcript 3.",
+      "Uncertainty was handled conservatively: the Jakarta stressor brainstorm in Transcript 1 was not a full answer, so it was penalized only under idea generation rather than near-submission-ready work."
     ],
-    "total_score": 38,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

@@ -229,8 +229,19 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  15,
+                  16
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor occasionally supplied substantive content choices and the reasoning for them (for example, suggesting culture-impact examples and introducing saltwater intrusion as a distinct row with justification), rather than having the student generate those key ideas first.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -241,14 +252,35 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  11,
+                  21
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When declining off-task requests, the tutor stated role limits but did not explain the learning rationale for those constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10,
+                  20,
+                  30
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Even near completion, the tutor kept refining table details instead of prompting brief reflection on why the student's rating/evidence method worked and how to transfer it to later assignments.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 14,
           "max": 24
         }
       },
@@ -275,17 +307,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor exposed internal JSON-style metadata and pedagogical notes to the student, creating avoidable complexity and cognitive load when a plain response would have been clearer.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -297,23 +320,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored from Transcript 1. The tutor consistently kept the student doing the reasoning work, built step-by-step from the student's Miami case, and stayed tightly anchored to the assignment requirements.",
-      "The strongest issue was communication clarity at Turn 9, where internal reasoning/JSON formatting was surfaced to the student; otherwise the tutor's guidance was clear, supportive, and appropriately formative."
+      "Evidence-turn numbers are flattened across the three transcripts in order: transcript 1 = 1-10, transcript 2 = 11-20, transcript 3 = 21-30.",
+      "The tutor was consistently assignment-focused, redirected off-topic chatter appropriately, and generally used strong scaffolding through targeted questions about sectors, indicators, ratings, and evidence types.",
+      "Main deductions come from occasionally supplying key content paths for the student (especially around additional stressors/examples) and from limited explicit explanation of tutoring rationale or reflection/transfer support."
     ],
-    "total_score": 44,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

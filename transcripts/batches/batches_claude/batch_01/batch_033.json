@@ -248,7 +248,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next question without pausing to ask the student to reflect on what changed in their thinking or why a particular approach worked. For example, in T1 turns 9-10 and T2 turns 9-10 and T3 turns 9-10, the tutor advances to new questions without prompting process-level reflection on the student's intellectual journey.",
+                "reason": "Across all three transcripts the tutor consistently moves to the next question/step without pausing to invite the student to reflect on what changed in their thinking or why a particular method worked. At the end of T1 and T2 and T3 the tutor keeps pushing forward with new prompts rather than consolidating or asking the student to articulate what they learned from the process.",
                 "points": 2
               }
             ],
@@ -289,10 +289,14 @@
               {
                 "evidence_turns": [
                   1,
-                  2
+                  2,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In T1 Turn 1, T2 Turn 1, and T3 Turn 1, the tutor opens with multi-part numbered lists (4 sub-questions in T1, several multi-part questions in T2 and T3) that are substantially longer than needed. This pattern of lengthy opening monologues with multiple simultaneous sub-questions recurs across all three transcripts and reduces the student's opportunity to engage incrementally. While later turns are better calibrated, the opening-turn length pattern is consistent and problematic.",
+                "reason": "Across all three transcripts the tutor frequently delivers multi-part, multi-paragraph responses (e.g., T1 Turn 1 has a 4-part numbered prompt plus elaboration; T2 Turn 1 lists a long menu with sub-bullets; T3 Turn 5 and 6 each contain multiple layered questions). While some length is justified by the complexity, the tutor repeatedly stacks 3-5 sub-questions in a single reply instead of checking student understanding with one focused prompt at a time, reducing the student's opportunity to think and respond before receiving more scaffolding.",
                 "points": 4
               }
             ],
@@ -321,12 +325,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic pedagogy: it consistently refuses to give answers, redirects off-topic requests promptly, and scaffolds the student through progressively harder philosophical distinctions (means/side-effect, loop variant, threshold, consent). The student does the key reasoning at every step.",
-      "Scaffolding is well-executed: the tutor builds on each student answer, introduces harder pressure-tests only after the student has staked a position, and does not restart unnecessarily. No deductions warranted for 1.2.",
-      "Meta-learning (1.3): The tutor gives good method-level prompts ('use a counterfactual test,' 'state a testable criterion') and explains why certain moves are needed. However, it rarely pauses to ask the student to reflect on why their thinking changed or what the overall process taught them, so a 2-point deduction for 1.3.D.a is applied. No deduction for 1.3.A or 1.3.B given clear rationale explanations and process feedback throughout.",
-      "Dialogue quality (2.1, 2.2): No spiraling or redundancy; each turn advances the inquiry. Off-topic redirections (movie/music/podcast requests) are handled immediately and appropriately in all three transcripts.",
-      "Communication quality (3.1): The opening turns in all three transcripts contain long multi-part question lists (T1 Turn 1 has four numbered sub-questions; T2 Turn 1 has multiple bullet and embedded questions; T3 is shorter but still multi-part). This consistent pattern of front-loading many questions at once reduces the student's space to think incrementally and triggers the 3.1.A.a deduction. Later turns in each transcript are more concise and interactive, so the deduction is applied once for the pattern rather than maximally. Language throughout is clear and appropriately academic—no 3.1.B deduction.",
-      "Tone (3.2): Warm, encouraging, non-grading throughout. No deductions."
+      "All three transcripts show a tutor that consistently applies Socratic guided-discovery: it never gives the student the answer, never rewrites student text, and always asks the student to derive the next step before revealing anything. Deflection of off-topic chitchat is immediate and well-handled in T1, T2, and T3. Assignment anchoring is strong throughout.",
+      "The main weakness is response length: the tutor routinely stacks 3–5 numbered sub-questions in a single turn across all transcripts, where one focused question per turn would have been more conducive to genuine student thinking. This was penalised once under 3.1.A.a to avoid double-counting.",
+      "A secondary weakness is the near-complete absence of meta-learning/reflection moments. The tutor moves efficiently from one reasoning step to the next but never pauses to ask the student to articulate what changed in their thinking or to reinforce the method they used. This cost 2 points under 1.3.D.a.",
+      "No deductions were warranted for 1.1 (no direct answers given), 1.2 (student progress is consistently acknowledged and built upon), 2.1 (no unproductive spiralling), 2.2 (task framing is maintained), or 3.2 (tone is warm, supportive, and non-evaluative throughout)."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

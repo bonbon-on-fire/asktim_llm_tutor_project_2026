@@ -231,17 +231,16 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "Transcript 1 turns 5-7 and Transcript 2 turn 5 give fill-in-the-blank headers, footer-note templates, and a pasteable row-label template, which rewrites the student's assignment language into near-ready submission text.",
-                "points": 6
-              },
-              {
+                "evidence_turns": [
+                  3,
+                  8
+                ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1 turn 3 resolves key reasoning choices for the student by ranking foreign-born over nationality and laying out the GDP proxy logic, and Transcript 3 turns 6-10 effectively supplies the decision rule for handling Köppen boundary ambiguity.",
+                "reason": "The tutor resolved key assignment choices for the student by recommending foreign-born over nationality and Barcelona Province GDP as the safer proxy, rather than having the student derive those decisions first.",
                 "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -255,7 +254,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives lots of procedural guidance, but across the transcripts rarely asks the student to reflect on why the chosen sourcing/proxy method worked or how to reuse it on future city tables.",
+                "reason": "The tutor gave checks and revisions but did not prompt reflection on why the sourcing/labeling method worked or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
@@ -265,21 +264,15 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Especially in Transcript 1 turns 4-8 and Transcript 2 turns 3-4, the tutor repeats the same refusal-plus-'bring me the link/title' pattern despite the student's time pressure, instead of synthesizing or changing approach sooner.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -291,7 +284,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -300,8 +293,15 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  7
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor replies are multi-paragraph, bullet-heavy monologues when shorter interactive steps would have been more appropriate and left more room for student thinking.",
+                "reason": "Several tutor replies were long, bulleted monologues with multiple instructions when shorter interactive prompts would have been more appropriate for the student's rushed state.",
                 "points": 4
               }
             ],
@@ -323,18 +323,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 24,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently refused to fully complete the assignment and generally kept the student anchored to official sources, definitions, and defensible proxy choices.",
-      "The largest deductions come from supplying near-ready wording/templates and resolving some central reasoning choices for the student, which reduced guided discovery.",
-      "Because the prompt bundled three separate transcripts, deductions were based on the combined evidence set; transcript/turn references are described in the deduction reasons rather than numbered evidence_turns."
+      "Scored Transcript 1 only because the provided schema supports a single conversation, though multiple transcripts were included.",
+      "The tutor consistently avoided doing the assignment outright and stayed anchored to the task, but it sometimes made key proxy decisions for the student and often responded in lengthy, instruction-heavy blocks.",
+      "Some template language came close to submission wording, but I applied the smaller deduction under idea-generation rather than the harsher near-submission-ready category due to ambiguity."
     ],
-    "total_score": 24,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

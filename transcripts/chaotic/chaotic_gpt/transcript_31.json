@@ -77,14 +77,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Across turns, the tutor supplied a near-complete forum paragraph, sentence content for the blanks, and guidance on which Miami-specific choices to use, leaving only tiny edits/fill-ins and making the response effectively near submission-ready.",
+                "reason": "The tutor ultimately supplied a near-complete paragraph template and then helped choose the exact bracketed content, so across turns the student was given answer pieces that together approached a submission-ready forum post.",
                 "points": 12
               }
             ],
@@ -102,11 +100,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student settled on consistent choices, the tutor checked consistency and moved to final polishing without prompting reflection on why that selection method worked or how to reuse it on future actor-mapping tasks.",
+                "reason": "The tutor focused on finishing the post but did not prompt reflection on why the actor-mapping method worked or how to transfer the approach to future assignments.",
                 "points": 2
               }
             ],
@@ -143,8 +140,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several replies relied on long menus, templates, and a full paragraph scaffold where shorter interactive prompts would have left more room for the student to think and respond.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -156,23 +166,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Major deduction: although the tutor repeatedly refused to write the post outright, it ultimately provided a nearly complete Miami paragraph template plus specific content choices that, together across turns, came very close to submission-ready work.",
-      "Otherwise, the tutor stayed anchored to the assignment, built on the student's selections step by step, and maintained a supportive, non-grading tone."
+      "The tutor stayed anchored to the Miami decision-actors task and generally scaffolded the student's choices rather than starting over.",
+      "The main deduction is pedagogical: despite repeated refusals, the tutor eventually provided a near-complete paragraph template and then selected the strongest bracketed choices, which together came close to writing the forum post for the student.",
+      "Communication was supportive and clear overall, though several responses were longer template/menu dumps, and the conversation ended without reflection on how to reuse the method in later assignments."
     ],
-    "total_score": 32,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

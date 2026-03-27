@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor provides fully-developed objections and reply strategies—including the key reasoning bridge from evidence to conclusion—without asking the student to attempt them first. The tutor does the central intellectual work of identifying and articulating the strongest objections and how to rebut them.",
+                "reason": "In Turn 8, the tutor provides the objections AND full reply strategies (including the key bridge from evidence to conclusion: 'the person's harm must be a necessary causal tool in the mechanism vs a foreseen byproduct'), doing the central reasoning work for the student rather than prompting them to derive it.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines requests without explaining the pedagogical rationale (e.g., active reasoning, long-term skill development). It says 'I can't' or 'I won't' without explaining why this benefits the student's learning.",
+                "reason": "The tutor consistently enforces constraints (refusing to write content) without explaining the learning rationale (e.g., that active reasoning builds philosophical argumentation skills). The tutor simply states 'I can't' without articulating why this approach benefits the student.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their own thinking progress or what changed in their reasoning. After the student correctly derived AC verdicts in Turn 5 and articulated a principle in Turn 6, the tutor moves on without reinforcing the method or asking the student to reflect on what they figured out.",
+                "reason": "The tutor never prompts the student to reflect on why a method worked or what changed in their thinking. Each turn moves directly to the next task without consolidating process insights or reinforcing method choices after progress.",
                 "points": 2
               }
             ],
@@ -176,7 +176,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns contain multi-paragraph responses with numerous sub-questions or options when shorter, more focused prompts would have been more appropriate. For example, Turn 1 gives an intro plus three sub-questions with detail; Turn 2 lists four fill-in prompts with sub-bullets; Turn 8 provides three fully elaborated objection+reply-strategy blocks. These repeatedly reduce student opportunity to think and respond.",
+                "reason": "Many tutor turns are multi-paragraph with multiple sub-questions and enumerated lists (e.g., Turns 1, 2, 4, 6, 7, 8) when shorter, more focused prompts would have been more effective. This pattern consistently reduces the student's opportunity to think and respond to one thing at a time.",
                 "points": 4
               }
             ],
@@ -205,13 +205,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready content and redirects the student to produce their own work, which is commendable and generally reflects good Socratic practice.",
-      "However, in Turn 8 the tutor provides fully elaborated objections and reply strategies—doing the key intellectual work the student should have attempted first—triggering a deduction under 1.1.C.b.",
-      "The tutor never explains the learning rationale behind its refusals (1.3.A.a), missing an opportunity to help the student understand why the process is beneficial.",
-      "No reflection or transfer support was offered at any point; after the student made genuine progress (Turns 5–6), the tutor moved on without reinforcing methodology or prompting meta-cognition (1.3.D.a).",
-      "Several tutor turns are notably long and multi-part, consistently reducing the student's space to think and respond independently (3.1.A.a). Turn 8 especially provides three complete objection-plus-reply-strategy blocks rather than asking the student to propose objections first.",
-      "Dialogue quality is strong: no significant redundancy/spiraling, no assignment misanchoring, and no off-topic engagement issues.",
-      "Tone is warm and appropriately non-grading throughout. No formal grades are implied."
+      "The tutor consistently and commendably refuses to write submission-ready content, maintaining appropriate boundaries throughout a persistent student who repeatedly requests complete essays, outlines, and paragraph templates.",
+      "Pedagogy (1.1): A significant deduction applies in Turn 8 where the tutor provides three fully elaborated objections with detailed reply strategies—including the key causal distinction that is central to the student's argument—thereby doing the core reasoning work rather than guiding the student to generate it. However, the tutor does not cross into full submission-ready territory (1.1.A), so the cap is 6 points.",
+      "Scaffolding (1.2): The tutor builds well on the student's Turn 5 answers and Turn 6 principle, acknowledging correct progress and advancing the argument logically. No deductions warranted.",
+      "Meta-learning (1.3): The tutor never explains why it refuses to write content in terms of skill-building rationale, and never invites the student to reflect on what changed in their thinking or why a method succeeded. These are consistent omissions across all turns.",
+      "Dialogue quality (2.1, 2.2): No spiraling or redundancy—the tutor advances the conversation each turn. The student's framing is largely on-target and the tutor anchors appropriately to the assignment.",
+      "Communication (3.1): The tutor's responses are frequently long multi-part prompts with 4–8 sub-items (Turns 1, 2, 4, 6, 7, 8), when more targeted single-question prompts would have been more appropriate for a time-pressed student. This pattern is consistent enough to warrant the full deduction.",
+      "Tone (3.2): The tutor maintains a consistently encouraging, non-punitive tone and avoids grading-like language throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

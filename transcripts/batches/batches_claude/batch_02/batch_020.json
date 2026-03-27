@@ -244,23 +244,40 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
+                  4,
                   5,
+                  6,
                   7,
-                  9
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently declines to do work for the student but rarely explains the pedagogical rationale (e.g., 'I want you to do this so you develop your own reasoning skills'). The refusals are stated as policy ('I can't fill those in for you') without articulating why this approach benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next step without pausing to ask the student to reflect on what changed in their thinking or why a method worked. For instance, after the student successfully sharpens their framework in T1 (turns 3-5) or after the student locks in defensible actor justifications in T3 (turns 9-10), the tutor simply advances the scaffold without prompting meta-reflection on the student's reasoning process.",
+                "reason": "In all three transcripts, the tutor moves from one task to the next without prompting the student to reflect on what they learned or why a particular method worked. For example, in Transcript 1 after the student develops a consistent consequentialist framework across turns 5-7, the tutor simply moves to the next structural gap without reinforcing what the student achieved methodologically. Similarly in Transcripts 2 and 3, after students demonstrate good reasoning, the tutor proceeds without reflective consolidation.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -273,16 +290,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In T2 Turn 1, the student asks for a movie recommendation before engaging with the assignment. The tutor immediately and cleanly redirects. In T3 Turn 2, the student asks for a city recommendation AND a movie; the tutor appropriately declines the movie but still engages helpfully with the on-task part. These are handled correctly. However, in T2 Turn 3, the student asks for comfort food; the tutor declines and redirects appropriately. All off-topic attempts are handled well across transcripts—no meaningful engagement with off-topic content.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -305,7 +313,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently delivers multi-part, multi-paragraph responses when shorter, more focused prompts would suffice. For example, T1 Turn 2 contains four numbered sub-questions plus a closing directive; T1 Turn 4 again has four sub-questions; T2 Turn 3 has three sub-questions plus an extended instruction paragraph. While each individual question is targeted, the cumulative volume in many turns reduces the student's opportunity to think incrementally and respond before receiving the next batch of prompts. This is a recurring pattern across all three conversations.",
+                "reason": "The tutor frequently uses multi-part responses with 4 numbered sub-questions at once (e.g., Transcript 1 Turn 2 has 4 questions each with sub-parts; Turn 4 has 4 questions; Turn 5 has 4 questions). While the content is focused, the volume of simultaneous questions consistently reduces the student's opportunity to think through one step at a time and makes responses feel like lengthy directives rather than interactive dialogue. This pattern recurs across all three transcripts.",
                 "points": 4
               }
             ],
@@ -327,19 +335,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic practice: it consistently withholds answers, uses diagnostic questioning before advancing, builds on student progress, and refuses to do direct work for the student (e.g., declining to fill in the conditions table in T1 Turn 6, refusing to draft forum sentences in T3 Turn 10). No deduction was warranted under 1.1 or 1.2.",
-      "The main weakness is communication length (1.1.A deduction). The tutor repeatedly fires four or more numbered sub-questions per turn across all three conversations. While each question is purposeful and Socratic in isolation, the combined volume means students receive large batches of prompts at once rather than bite-sized interactive steps, consistently reducing space for incremental thinking.",
-      "A secondary weakness is the absence of reflection/transfer prompts (1.3.D). After students make genuine conceptual breakthroughs—e.g., resolving the externalities tension in T1 or locking in defensible actor phrasing in T3—the tutor immediately pivots to the next scaffold step without asking the student to articulate what changed in their understanding or why the method worked. This is a consistent missed opportunity across all three conversations.",
-      "Off-topic deflections are handled well throughout: the tutor declines movie/comfort-food requests clearly and redirects without engaging substantively. Assignment anchoring is solid. Tone is consistently supportive and non-evaluative. No issues with redundancy or spiraling were observed—the tutor adapts when students are stuck rather than repeating the same move."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to supply answers, verdicts, or finished prose, instead using targeted questions to push the student to generate reasoning. In Transcript 1 (philosophy), the tutor guides the student through consequentialist framework-building without ever stating the 'right' answer on Footbridge or Blood. In Transcripts 2 and 3 (Urban Studies), the tutor similarly withholds stressor ratings, actor classifications, and table justifications, forcing the student to produce and defend their own choices.",
+      "Scaffolding is effective: each exchange builds on prior student output, acknowledges progress (e.g., 'your framework is coherent'), and introduces the next step based on what the student already established. The tutor appropriately redirects off-topic chitchat (movie and comfort food requests) quickly and without harshness.",
+      "The main deductions are: (1) 1.3.A.a – the tutor rarely explains why it withholds answers, missing opportunities to help students understand the learning value of the Socratic approach; (2) 1.3.D.a – after students make meaningful reasoning progress, the tutor does not pause to help them reflect on what worked or why, reducing transfer value; (3) 3.1.A.a – across all three transcripts, the tutor regularly poses 3-5 simultaneous numbered sub-questions with sub-parts, which is more directive than interactive and reduces student thinking space, particularly in turns like T1-T2, T1-T4, T1-T5.",
+      "No deductions were applied for 1.1 or 1.2 as the tutor maintained genuine guided discovery throughout and responded appropriately to student confusion. No deductions for 2.1 or 2.2 as the tutor avoided redundancy, redirected off-task content, and kept the student anchored to the assignment. Tone was consistently supportive and non-punitive."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

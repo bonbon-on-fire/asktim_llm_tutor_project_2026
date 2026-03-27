@@ -350,10 +350,14 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 3, when the student is stuck on Fuel/Blood details in Turns 5-6, the tutor jumps to explaining the 10-second means/side-effect test and a full checklist of paragraph moves rather than first probing what the student already knows or understands about those cases. Similarly in Transcript 1 Turn 4, the tutor gives a long fill-in scaffold rather than diagnosing what specifically is blocking the student. However, these are borderline—the tutor does repeatedly ask diagnostic questions. Deduction is limited to one instance in T3 Turns 5-6 where a method dump precedes checking student understanding.",
+                "reason": "Across all three transcripts, when the student repeatedly signals time pressure and asks for direct answers, the tutor rarely pauses to diagnose what the student already understands before launching into structured scaffolds. Instead of brief diagnostic questions to check existing understanding first, the tutor immediately provides multi-step scaffolding frameworks (fill-in templates, numbered question sets). This pattern is most visible in Transcript 2 and 3 where the tutor gives elaborate scaffolds without first checking what the student actually knows about the cases.",
                 "points": 3
               }
             ],
@@ -377,19 +381,18 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to write answers but rarely explains the learning rationale (active reasoning, long-term skill development). It mostly just says 'I can't' or 'that would be doing the submission for you' without connecting the refusal to why the student benefits from doing the work themselves.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to provide answers but rarely explains the learning rationale—why it matters for the student's skill development that they do the reasoning themselves. The tutor says 'I can't' or 'I won't' repeatedly without framing it in terms of active reasoning skill development or long-term benefit.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  4,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, once the student makes genuine progress (e.g., T2 Turn 7 solid Loop/Footbridge analysis, T3 Turn 9 correct conditional sentence), the tutor moves straight to the next task without prompting reflection on what the student's thinking changed or why the method they applied worked. There is no reinforcement of process choices after improvement.",
+                "reason": "At no point across any of the three transcripts does the tutor prompt the student to reflect on what changed in their thinking, why a particular move worked, or what method choices led to better reasoning. The conversations end without any process reflection even when the student made genuine philosophical progress (e.g., developing the substitution/selection tests in Transcript 2).",
                 "points": 2
               }
             ],
@@ -406,8 +409,26 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across all three transcripts, the student repeatedly requests direct answers and the tutor repeatedly refuses in similar ways without meaningfully changing strategy. In Transcripts 1 and 3 especially, the same pattern of 'I can't write that for you, here is a scaffold instead' repeats through nearly every turn without meaningful synthesis or escalation. The tutor does not reframe, summarize progress, or switch strategies when the student is clearly not engaging with the scaffolds.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -419,7 +440,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -429,6 +450,7 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -438,7 +460,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-paragraph replies with numerous sub-questions and checklists when shorter, more focused single questions would better prompt student thinking. For example, T1 Turn 3 gives a five-bullet case-by-case breakdown simultaneously; T1 Turn 4 offers two thesis templates plus five case questions; T3 Turn 6 provides a five-point paragraph checklist. These consistently reduce the student's opportunity to think and respond incrementally.",
+                "reason": "Throughout all three transcripts, the tutor regularly produces multi-paragraph, multi-question responses with numbered lists and bolded sub-items when simpler, focused prompts would have been more appropriate. For a student explicitly under time pressure, responses like those in T1-Turn 3, T1-Turn 4, T2-Turn 8, and T3-Turn 6 are disproportionately long and reduce the student's opportunity to think and respond to one thing at a time.",
                 "points": 4
               }
             ],
@@ -460,20 +482,23 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 35,
+    "total_base_score": 31,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a firm, consistent refusal to write submission-ready answers, which correctly preserves student authorship and avoids the most serious 1.1.A.a violation. The Socratic scaffolding is genuinely good: the tutor asks for one piece at a time, stresses-tests student rules (Loop variant, substitution/selection tests), and builds iteratively on student contributions rather than ignoring them.",
-      "The main weakness in pedagogy is in meta-learning (1.3): the tutor almost never explains *why* it won't write the answer in terms of learning benefits, relying instead on bare 'I can't' refusals. It also rarely pauses after student breakthroughs to prompt reflection on what changed in their thinking or why the method worked, missing meaningful opportunities for process reinforcement.",
-      "Scaffolding (1.2) is largely strong but a partial deduction is warranted for instances (notably T3 Turns 5-6) where the tutor responds to student confusion by immediately delivering a method checklist rather than first diagnosing what the student already understands.",
-      "Communication quality is the other notable weakness: the tutor's responses are consistently very long—multi-paragraph with multiple nested sub-questions—when shorter, focused single prompts would be more effective. This pattern recurs throughout all three transcripts and reduces student thinking space, triggering the 3.1.A.a deduction.",
-      "Dialogue quality (redundancy, assignment anchoring) is handled well: the tutor keeps conversations on track, doesn't get pulled into off-topic tangents, and advances the thread rather than cycling in place."
+      "The tutor consistently upholds academic integrity across all three transcripts, never providing submission-ready text or paste-ready answers despite persistent student pressure. This is the strongest aspect of the tutoring.",
+      "Criterion 1.1 (Socratic method): No deduction warranted. The tutor never gives final answers, thesis sentences, or polished prose. It uses fill-in scaffolds and directed questions while keeping the student doing the reasoning work.",
+      "Criterion 1.2 (Scaffolding): A 3-point deduction is applied for 1.2.B.a. When the student is stuck or confused, the tutor tends to immediately provide elaborate structured scaffolds (numbered lists, multi-part question sets) rather than first diagnosing what the student already understands. A brief diagnostic check before launching into a new framework would have been more pedagogically sound.",
+      "Criterion 1.3 (Meta-learning): Two deductions are applied. First (1.3.A.a, 2 pts): The tutor repeatedly enforces its policy of not writing answers without adequately explaining the learning rationale—why the student doing the reasoning themselves builds skills. Second (1.3.D.a, 2 pts): The tutor never prompts reflection on what changed in the student's thinking or reinforces method choices after progress, missing opportunities to consolidate learning.",
+      "Criterion 2.1 (Redundancy): A full 4-point deduction is applied. Across all three transcripts, the tutor cycles through nearly the same refusal-then-scaffold pattern in almost every turn without meaningfully changing strategy, consolidating progress, or switching to a different approach when the student clearly isn't engaging.",
+      "Criterion 2.2 (Assignment anchoring): No deduction. The tutor consistently keeps the student focused on the actual assignment questions and doesn't follow the student into misframings.",
+      "Criterion 3.1 (Response length): A 4-point deduction for 3.1.A.a. Many tutor responses are multi-paragraph with multiple sub-questions and bolded items when the student is time-pressed. Simpler, more focused prompts would have been more effective and appropriate.",
+      "Criterion 3.2 (Tone): No deduction. The tutor maintains a constructive, supportive tone throughout without being dismissive or implying grades."
     ],
-    "total_score": 35,
+    "total_score": 31,
     "judge_llm_calls": 1
   }
 }

@@ -243,11 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  6
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor states a limitation ('I won’t pick the exact documents/numbers for you') but does not explain the learning rationale for withholding that help.",
+                "reason": "The tutor sets a boundary on doing the work for the student (for example, refusing to pick exact documents/numbers) but does not explain the learning rationale for that limit.",
                 "points": 2
               }
             ],
@@ -284,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across the conversations, the tutor frequently gives multi-part, bullet-heavy replies with several questions at once, which likely increases cognitive load for a clearly confused student and reduces room for short interactive checking.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -297,25 +300,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently used guided questioning, kept the student doing the substantive reasoning, and stayed closely anchored to each assignment’s actual task.",
-      "The tutor built usable frameworks for source evaluation, stressor classification, and actor mapping without supplying submission-ready content or polished final prose.",
-      "Only a small deduction was applied: when the tutor refused to choose exact sources/documents, it stated the limitation but did not explicitly explain the pedagogical rationale for that boundary.",
-      "Evidence turns are numbered from the first transcript onward in sequence (1-10, 11-20, 21-30)."
+      "Across the three exercises, the tutor consistently used guided questioning, scope clarification, and source-selection frameworks without giving submission-ready answers.",
+      "The strongest pattern was good assignment anchoring: the tutor repeatedly re-centered the student on boundary choice, indicator consistency, and actor/stressor classification logic.",
+      "Main weaknesses were communication load and limited meta-rationale: responses were often packed with multiple prompts at once for a very confused student, and when the tutor refused to do parts of the work, it did not explain why that constraint supports learning.",
+      "Deductions were kept conservative because the tutor's direct explanations generally functioned as scaffolding rather than completing the student's assignment."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

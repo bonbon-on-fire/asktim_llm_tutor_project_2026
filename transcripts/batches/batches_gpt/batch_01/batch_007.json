@@ -231,18 +231,17 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  2,
-                  8,
-                  9,
-                  10
-                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Across the transcripts, the tutor repeatedly supplied the core Miami stressor set and framing before the student generated it independently (for example, naming the top Miami stressors and candidate categories), which reveals the answer path rather than eliciting it first.",
+                "points": 6
+              },
+              {
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor selected the top Miami stressors and later chose the strongest supporting facts for each, doing central evidence-ranking and argument-bridging work the student was supposed to perform.",
+                "reason": "The tutor also selected the strongest supporting facts and evidence pairings for each stressor/rating, doing a key reasoning step that determines how the student's final table will be justified.",
                 "points": 6
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,14 +252,20 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave useful step-by-step coaching, but did not explicitly prompt reflection on why the student's method or rating logic worked, or how to transfer that method to future stressors.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 10,
           "max": 24
         }
       },
@@ -287,8 +292,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "One response exposed internal JSON/meta-reasoning to the student, creating unnecessary technical phrasing and cognitive load compared with a simple direct reply.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -300,24 +311,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the provided schema supports one conversation-level evaluation.",
-      "Tutor consistently refused ghostwriting, stayed anchored to the assignment, and used workable scaffolds such as templates, calibration questions, and evidence prompts.",
-      "Main deduction: the tutor still supplied much of the substantive content selection by naming the top stressors and then picking the strongest evidence elements, which reduced student-generated reasoning on the core task."
+      "The tutor was consistently anchored to the assignment, refused ghostwriting, and provided concrete scaffolds such as templates, calibration questions, and evidence-checking prompts.",
+      "The main pedagogy weakness is that the tutor repeatedly supplied core content that the student should have generated: the key Miami stressors, acceptable rating frames, and the strongest evidence elements to justify them.",
+      "A smaller communication deduction was applied for the transcript turn that exposed internal JSON/meta-reasoning; otherwise the tone was supportive and the language was mostly clear.",
+      "Because multiple transcripts were provided with repeated turn numbering, deductions are based on aggregate evidence across the set and smaller deductions were preferred where ambiguity remained."
     ],
-    "total_score": 40,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

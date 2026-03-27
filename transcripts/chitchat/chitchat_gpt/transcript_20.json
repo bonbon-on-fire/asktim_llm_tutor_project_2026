@@ -146,9 +146,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning rather than doing the assignment, helping the student choose a defensible boundary, separate required vs contextual data, and verify source terminology before filling the table.",
-      "The conversation stayed tightly anchored to the assignment, built on the student's evolving reasoning, and used concise, supportive prompts without drifting into grading or submission-ready writing.",
-      "No clear rubric-supported violations warranted deduction."
+      "Tutor consistently used guided questions to help the student choose a defensible geography, source strategy, and labeling scheme without giving submission-ready wording or doing the core reasoning for the student.",
+      "The conversation stayed tightly anchored to the assignment, built on the student's progress turn by turn, and provided concrete method-level guidance about consistency, sourcing, and documentation."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

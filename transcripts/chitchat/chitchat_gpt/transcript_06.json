@@ -89,22 +89,32 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on off-topic help and direct-answer help ('my role here,' 'I can’t choose the numbers or write the justifications') without explaining the learning rationale for those constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   4,
                   7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong iterative coaching but did not prompt brief reflection on why the student's rating method worked or how to transfer it to future rows/tasks; the conversation ended on completion rather than reflection.",
+                "reason": "The tutor kept moving the student toward completion but did not prompt reflection on the reusable method, such as why the rating/indicator/source-matching process worked or how to apply it on future rows.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -150,19 +160,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic requests immediately, and used guided questioning rather than writing the student's table for them.",
-      "Scaffolding was strong: the tutor built from the student's proposed stressors, pushed for clearer evidence, source-metric alignment, and consistent rating logic across rows.",
-      "I applied only one clear deduction: despite strong coaching, the tutor did not include a brief reflection/transfer moment about why the method worked or how the student could reuse it independently.",
-      "I did not deduct for example-giving because the tutor generally framed examples as options and kept the student responsible for choosing ratings, evidence, and final wording."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic requests immediately, and used guided questioning rather than supplying ratings or polished justifications.",
+      "Scaffolding was strong and cumulative: the tutor built from the student's proposed stressors to ratings, indicators, source matching, and priority ordering without taking over the core reasoning.",
+      "Main deductions are in meta-learning: the tutor set constraints without explaining the learning rationale, and the conversation ended without a brief reflection on the reusable method the student had developed."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

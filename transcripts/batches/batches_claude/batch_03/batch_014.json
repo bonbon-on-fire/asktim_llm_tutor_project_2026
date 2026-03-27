@@ -244,29 +244,20 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces its no-direct-answer policy but rarely explains the learning rationale behind it (e.g., why active reasoning builds skill). For instance, in Transcript 1 Turn 9 the tutor gives a reply angle without articulating why it is asking the student to work it out rather than just answering.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three transcripts end with a reflection prompt asking the student to step back and assess what their thinking process revealed or how it changed. All three conversations close with forward-looking questions rather than any process-reflection or transfer reinforcement.",
+                "reason": "Across all three transcripts, the tutor rarely prompts the student to reflect on why their reasoning method succeeded or shifted, or what changed in their thinking after a key insight. The tutor moves forward to the next challenge without consolidating gains or asking the student to name what they now understand differently.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -285,7 +276,7 @@
                   1
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 1 the student asks two clearly off-topic questions (tutor's personal opinion and favorite book). The tutor dismisses them in one sentence and pivots, which is appropriate, but the dismissal is minimal and does not explain why those questions are off-scope for a course tutor. This is borderline; however, the redirect is immediate and the engagement with off-topic content is effectively zero, so a full 4-point deduction is not warranted. No deduction applied.",
+                "reason": "In Transcript 2 Turn 1, the student asks for the tutor's personal opinion on trolley cases and recommends a favorite book—both off-topic. The tutor briefly declines but then immediately moves on without explicitly redirecting to the assignment structure, which is appropriate. However, this is a minor issue and the redirect is prompt. No deduction warranted on careful review.",
                 "points": 0
               }
             ],
@@ -307,12 +298,15 @@
                 "evidence_turns": [
                   1,
                   2,
+                  3,
+                  4,
                   5,
+                  6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor's responses are frequently multi-paragraph with 3–4 sub-questions bundled together (e.g., Transcript 1 Turn 1 lists a 4-6 sentence explanation request plus 3 sub-questions; Turn 2 lists 4 fill-in tasks; Transcript 3 Turn 3 poses 2 multi-part sub-questions). This pattern repeats throughout all three transcripts, consistently reducing the student's cognitive space to respond to one focused prompt at a time.",
+                "reason": "Across all three transcripts, the tutor frequently sends multi-part responses with 3–4 sub-questions at once, often totaling 200–350 words per turn. While responses are structured (numbered lists), the density and number of simultaneous questions consistently reduces student opportunity to think and respond in a focused way, particularly evident in Transcripts 1 and 3 where students are already confused. Simpler, more focused single-question prompts would often have been more appropriate.",
                 "points": 4
               }
             ],
@@ -334,21 +328,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic stance: it consistently refuses to write submission-ready text, declines to supply 'exact' verdicts or polished paragraphs, and instead forces students to generate their own verdicts, principles, and objections. No 1.1.A, 1.1.B, or 1.1.C violations are evident.",
-      "Scaffolding is well-handled: the tutor builds on student progress turn by turn (e.g., acknowledging the 'downstream consequences' move in Transcript 2, accepting the student's counterfactual test in Transcript 3), and it correctly diagnoses confusion by asking targeted sub-questions rather than dumping a full method explanation.",
-      "The main pedagogy weakness is in 1.3: the tutor never explains its 'won't give answers' policy in terms of long-term skill development (1.3.A.a), and none of the conversations close with a process-reflection prompt asking students to articulate what changed in their thinking (1.3.D.a). A 4-point deduction is applied here.",
-      "Dialogue quality is strong. The tutor stays tightly anchored to the assignment and redirects off-topic requests immediately. There is no evidence of sustained spiraling or repeated unproductive cycles.",
-      "The primary communication flaw is response length: nearly every tutor turn bundles 3–4 sub-questions into a multi-paragraph block. This pattern is consistent across all three transcripts and reduces student thinking space. A 4-point deduction is applied under 3.1.A.a.",
-      "Tone is consistently supportive and respectful; no grading language or dismissive framing is used."
+      "The tutor performs very well on the core pedagogical criterion (1.1): it consistently refuses to write submission-ready content, declines to give direct answers, and guides students through Socratic questioning across all three transcripts. No 1.1.A, 1.1.B, or 1.1.C violations are found.",
+      "Scaffolding (1.2) is strong: the tutor builds on valid student responses, acknowledges partial progress, and uses what students produce to advance the dialogue rather than ignoring or restarting.",
+      "Meta-learning (1.3) is mostly good but the tutor consistently misses reflection moments: after key breakthroughs (e.g., when students derive the means/side-effect distinction or identify their candidate principle), the tutor immediately moves to the next challenge without asking students to name what changed in their thinking or why their revised method worked. A 2-point deduction is applied under 1.3.D.a.",
+      "Dialogue quality (2.2) is strong: the tutor redirects off-topic requests promptly and re-anchors to the assignment effectively. No deduction warranted.",
+      "The main communication quality issue (3.1) is response length: the tutor routinely poses 3–4 sub-questions simultaneously in long, dense replies. While the questions are pedagogically sound, the sheer volume per turn consistently reduces student opportunity for focused engagement. This pattern is especially pronounced in Transcripts 1 and 3. A 4-point deduction is applied under 3.1.A.a.",
+      "Tone (3.2) is warm, supportive, and consistently coaching-oriented with no grading-like judgments. No deduction."
     ],
-    "total_score": 38,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

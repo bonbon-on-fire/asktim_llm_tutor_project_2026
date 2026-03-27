@@ -244,7 +244,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -256,18 +255,22 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently declines to write content but rarely explains the pedagogical rationale (active reasoning, skill development) behind that refusal. It mostly just says 'I can't' or 'that's essentially writing it for you' without articulating why the student benefits from doing the work themselves.",
+                "reason": "Across all three transcripts the tutor consistently refuses to write for the student but never explains the pedagogical rationale (e.g., that working through reasoning builds long-term philosophical argumentation skill). It only says 'I can't write that for you' without tying the refusal to a learning benefit.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the tutor does not prompt the student to reflect on what changed in their thinking or why a method worked. After the student makes progress (e.g., choosing A in T1-Turn 6, or articulating the means/side-effect distinction in T2-Turn 6 and T3-Turn 7), the tutor moves straight to the next question without reinforcing the method or asking the student to articulate what they learned.",
+                "reason": "Across all three conversations, the tutor never pauses to prompt the student to reflect on what changed in their thinking or why a particular line of reasoning was stronger. It moves from one question to the next without any consolidating reflection or meta-commentary on the student's reasoning journey.",
                 "points": 2
               }
             ],
@@ -317,7 +320,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends long multi-part responses (often 4–6 sub-questions, multi-paragraph breakdowns with bullet lists) when a single focused question would have been more appropriate and interactive given the student's short, impatient replies. This pattern persists throughout all conversations, consistently reducing the student's opportunity to think and respond one step at a time.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-question responses (e.g., T1/T1: four sub-tasks plus a table request; T1/T4: four numbered stress-test questions; T1/T6–T8: multiple numbered sub-questions per turn; T2/T1–T8: long structured lists) when one focused question would have been more appropriate given the student's clear resistance and time pressure. The length consistently reduces the student's opportunity to think and respond.",
                 "points": 4
               }
             ],
@@ -346,12 +349,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor does an excellent job maintaining the Socratic method under sustained pressure from a student who repeatedly asks for submission-ready content. It never writes the argument, never hands over verdicts directly, and consistently redirects to guided discovery—no deduction under 1.1.",
-      "Scaffolding (1.2) is strong: the tutor builds on student progress turn-by-turn (e.g., T1 turns 4–8 moving from principle to stress-test to skeleton), acknowledges correct steps, and does not restart from scratch. No deduction.",
-      "Meta-learning (1.3) has two clear gaps: (a) the tutor almost never explains *why* it won't write the answer (the learning rationale), merely that it won't—students are told 'I can't' without understanding the pedagogical purpose; (b) after moments of genuine student progress the tutor moves immediately to the next challenge without prompting reflection on what the student's thinking change means methodologically. These cost 4 points.",
-      "Dialogue quality is clean: the tutor does not repeat the same move without advancing, stays anchored to the assignment, and redirects off-topic requests immediately. No deductions in section 2.",
-      "Communication quality loses 4 points under 3.1.A.a: the tutor's responses are consistently very long (multiple bullet groups, 4–6 sub-questions, nested structures) even when the student has given a very short reply and clearly needs a single, focused next prompt. This pattern is pervasive across all three transcripts and reduces the student's opportunities to respond interactively. Language clarity is adequate; no deduction for 3.1.B.",
-      "Tone is supportive and non-punitive throughout; no formal grades or score-like language appears. No deduction under 3.2."
+      "All three transcripts show a tutor that strongly and consistently resists writing for the student, redirects every request for ready-made answers, and uses genuinely Socratic questioning to move the student through act-consequentialism, case analysis, and an alternative rights-based account. No submission-ready content is produced; the student is always pushed to derive verdicts and formulate principles themselves. 1.1 is therefore full marks.",
+      "Scaffolding is solid: the tutor builds on the student's own answers (e.g., Transcript 1 uses the student's table and principle grid as the base for each next question), acknowledges correct steps, and probes confusion precisely before offering new framing. 1.2 is full marks.",
+      "The main pedagogy gap is in 1.3: the tutor never explains *why* it refuses to write for the student (no learning-rationale statement), and it never prompts the student to reflect on what changed in their reasoning. Method-level feedback is present but the reflective/transfer layer is absent. -2 for 1.3.A.a and -2 for 1.3.D.a; 1.3.B is not deducted because the tutor does give process-level feedback (e.g., 'your grid is coherent but too thin', 'you need to argue for, not just state').",
+      "Dialogue quality is strong. The tutor advances the argument each turn, synthesises rather than repeats, and keeps the student anchored to the prompt throughout all three conversations. No deductions for 2.1 or 2.2.",
+      "The main communication gap is response length. Across all three transcripts, nearly every tutor turn contains 4–8 sub-questions or multi-part task lists, even when the student signals time pressure and confusion. A single focused question would have been more appropriate in many turns. -4 for 3.1.A.a. Language is clear and appropriate; no 3.1.B deduction.",
+      "Tone is supportive and non-punitive throughout ('good', 'this is coherent now', 'you've hit the pressure point'). No formal grades are assigned. 3.2 is full marks."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

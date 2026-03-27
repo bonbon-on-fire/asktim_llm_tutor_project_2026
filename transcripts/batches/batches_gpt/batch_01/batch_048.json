@@ -241,26 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong step-by-step method guidance, but mostly moves directly to the next task without prompting brief reflection on why the student's method improved or what transferable strategy they learned.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -306,17 +294,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the schema supports one conversation; the tutor stayed tightly anchored to the assignment, redirected off-topic bids promptly, and used guided questioning rather than doing the table for the student.",
-      "The main weakness was limited reflection/transfer support: the tutor improved the student's process well, but rarely paused to ask the student to articulate what method was working or how to reuse it on future case-study work."
+      "Across the provided transcripts, the tutor consistently used guided discovery: it redirected off-topic chat, required the student to choose cities and extract actors from sources, and asked targeted questions that made the student supply the reasoning.",
+      "The tutor stayed tightly anchored to the assignment deliverable, repeatedly converting broad ideas into table rows, actor roles, evidence checks, and forum-post structure without doing the submission-ready work for the student.",
+      "Method support was strong and transferable: the tutor taught evidence-based heuristics such as separating lead vs engaged vs listed actors, comparing impacted groups to groups with seats, and defining decision levers and citation plans.",
+      "No clear rubric-supported deduction was warranted from the transcript evidence."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

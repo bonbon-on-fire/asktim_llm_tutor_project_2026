@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces 'I won't give you the answer' constraints but rarely explains the learning rationale behind this—e.g., that the student builds stronger reasoning skills by deriving conclusions themselves. The tutor sometimes says 'that would be doing the assignment for you' (Transcript 2 Turn 9, Transcript 3 Turn 4) but does not articulate why active reasoning matters for long-term skill development.",
+                "reason": "Across all three transcripts, the tutor enforces its refusal to provide direct answers and examples (e.g., 'I can't give you a copy-ready set,' 'I can't pick the LA actors for you') but rarely explains the pedagogical rationale—that the goal is to develop the student's own reasoning skills for long-term transfer. The tutor states constraints without consistently grounding them in learning rationale.",
                 "points": 2
               },
               {
@@ -266,7 +266,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In Transcripts 1 and 2, when the student makes genuine progress (e.g., formulating the means/side-effect constraint in T1 Turn 8, drafting their first justification in T2 Turn 10), the tutor moves directly to the next stress-test or tightening task without pausing to ask the student to reflect on what changed in their thinking or why the method worked. No explicit transfer-of-method reflection is prompted.",
+                "reason": "Across all three transcripts, the tutor does not prompt the student to reflect on why a method worked or what changed in their thinking. When the student makes progress (e.g., produces a first justification attempt in T2-T10, reaches a refined constraint in T1-T8), the tutor pivots directly to the next task without asking the student to reflect on the process or consolidate what they learned.",
                 "points": 2
               }
             ],
@@ -309,10 +309,13 @@
                   1,
                   2,
                   4,
-                  6
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor frequently produces multi-paragraph responses with several nested sub-questions, numbered lists of 3–4 items, and format templates all in one turn (e.g., T1 Turn 1 lists three jobs plus a format request; T2 Turn 1 gives a 4-step methodology plus a forum-post structure; T3 Turn 4 provides a full template with 5 sections). For a student who is already confused and overwhelmed ('clueless_01'), these long instructional monologues consistently reduce the student's opportunity to think and respond to one focused prompt at a time.",
+                "reason": "Across all three transcripts, the tutor frequently gives multi-paragraph responses with multiple sub-questions, bullet lists, and frameworks in a single turn when a more focused one- or two-question prompt would be more appropriate for a clearly struggling student. For example, T1/T2/T3 in all transcripts pack numerous questions and frameworks together, reducing the student's opportunity to respond incrementally.",
                 "points": 4
               }
             ],
@@ -341,10 +344,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to supply direct answers or do the student's reasoning work, uses counterfactual probes and fill-in templates, builds progressively on each student response, and keeps the student anchored to the assignment task. No deductions apply under 1.1, 1.2, 2.1, or 2.2.",
-      "The main weaknesses are in meta-learning (1.3) and response length (3.1). The tutor rarely explains why it withholds answers in terms of student skill development, and does not prompt the student to reflect on what changed in their thinking after breakthroughs. These omissions cost 4 points under 1.3.",
-      "Response length is a consistent problem: the tutor routinely packs 3–5 sub-questions, format instructions, and explanatory frameworks into single turns, particularly in the early turns of each conversation. For an explicitly confused student persona, this volume reduces thinking space and is the primary deduction (4 points under 3.1).",
-      "Tone is warm, patient, and appropriately non-evaluative throughout; no grading language or dismissiveness is observed. No deductions apply under 3.2."
+      "Across all three transcripts, the tutor demonstrates strong Socratic practice: it consistently refuses to provide direct answers, assignment-ready content, or copy-paste examples; instead it uses targeted counterfactual questions, outcome tables, templates with blanks, and evidence-based prompts to guide the student toward their own reasoning. No 1.1.A, 1.1.B, or 1.1.C violations are triggered.",
+      "Scaffolding (1.2) is solid. The tutor builds methodically on each student contribution, uses the student's own draft language, and redirects when the student goes off-track (e.g., wanting pre-built actor lists or a submission-ready justification). The tutor does not misread the student's confusion and consistently diagnoses before providing guidance.",
+      "Meta-learning (1.3) has two clear gaps: the tutor enforces its constraints without regularly explaining the learning rationale to the student (1.3.A.a), and it consistently moves to the next task without prompting the student to reflect on what changed in their thinking or why a method worked (1.3.D.a). Method-level feedback is present but would benefit from more consistent process reflection prompts.",
+      "Dialogue quality (2.1, 2.2) is strong. The tutor does not spiral or repeat without synthesis, and it correctly re-anchors the student when they try to go off-assignment (e.g., requests for ready-made answers, use of general knowledge without sources).",
+      "Communication quality shows one recurring issue: across all three transcripts, tutor turns are often quite long, packing multiple frameworks, questions, and bullet lists into a single reply. For a 'clueless' student who is already overwhelmed, this consistent pattern of multi-part responses reduces the student's cognitive space to process and respond, triggering a 3.1.A.a deduction. Language is generally clear and appropriate, and tone is supportive and non-punitive throughout."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

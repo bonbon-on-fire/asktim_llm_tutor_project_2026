@@ -233,11 +233,10 @@
               {
                 "evidence_turns": [
                   4,
-                  6,
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, the tutor supplied core principle clauses and near-complete sentence structures for the student's alternative account, taking over part of the central bridge from case features to conclusion instead of having the student generate it independently.",
+                "reason": "In Transcript 1, the tutor supplies the core rights/means principle components and near-final sentence structure, doing a key reasoning bridge the student had asked to derive.",
                 "points": 6
               }
             ],
@@ -286,8 +285,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  11,
+                  13,
+                  21,
+                  27,
+                  30
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across Transcripts 2 and 3, the tutor repeatedly gives long multi-part prompts with several subquestions at once, which is more than needed for the student's immediate next step and can raise cognitive load.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -299,24 +311,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evidence turns are counted cumulatively across the three transcripts (1-10, 11-20, 21-30).",
-      "Overall, the tutor was strong on scaffolding, assignment focus, and interactive questioning: it consistently redirected off-topic content, built from student answers, and used useful tests such as counterfactuals, means vs side-effect, and case-by-case stress tests.",
-      "The main deduction is in pedagogy: in Transcript 1 the tutor moved beyond prompting and supplied the core structure of the student's alternative principle, which partially performed the key reasoning step. This was not fully submission-ready, so the smaller deduction was applied rather than a total loss for 1.1."
+      "Overall, the tutor stayed assignment-focused, refused paste-ready writing, and consistently pushed the student to generate the core argument and apply it across cases.",
+      "Main pedagogy weakness: in Transcript 1 the tutor partially supplied the decisive rights/means principle instead of keeping that key formulation fully student-generated.",
+      "Evidence turns are numbered globally across the three provided transcripts (1-30). The main communication weakness was repeated use of long, multi-question prompts rather than smaller interactive steps."
     ],
-    "total_score": 40,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

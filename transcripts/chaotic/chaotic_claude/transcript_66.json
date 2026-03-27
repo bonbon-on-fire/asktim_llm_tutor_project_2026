@@ -80,7 +80,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 4, the tutor directly lists four labelled objection ideas (Rights/side-constraint, Means vs side-effect, Consent, Integrity) with explanations, and two fully named and described replacement principle families. This supplies the core intellectual content—identifying the objections and alternative principles—that the student should derive, rather than guiding them to generate these themselves.",
+                "reason": "In Turn 4, after the student correctly derives that AC says 'do it' in both Fuel and Blood, the tutor lists four candidate objection ideas (rights/side-constraint, means vs side-effect, consent, integrity) and two 'replacement principle families' with detailed descriptions. This does significant reasoning work for the student—presenting the menu of objection types and principle families rather than asking the student to derive or identify them first.",
                 "points": 6
               }
             ],
@@ -98,6 +98,8 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
                   4,
                   5,
@@ -108,11 +110,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly declines to provide content but rarely explains the pedagogical rationale connecting those limits to active reasoning or long-term skill development. It mostly says 'I can't write that for you' without articulating why doing so benefits the student's learning.",
+                "reason": "The tutor repeatedly declines to write content for the student ('I can't give you a submission-ready outline,' 'I can't write 1–2 closing sentences for you') but rarely explains the pedagogical rationale—why this approach benefits the student's long-term reasoning skill development. The refusals are stated as policy without connecting them to active learning goals.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
@@ -121,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student successfully refines their principle across turns 5–10, the tutor never prompts the student to reflect on how their thinking changed or what reasoning method choices led to stronger arguments. It moves directly to the next stress-test without reinforcing process insights.",
+                "reason": "The tutor never prompts the student to reflect on how their thinking evolved (e.g., what changed from their initial rough instinct to the refined principle, or why the causal-role test is a stronger approach than simply counting lives). No meta-reflection moments are created across the full conversation.",
                 "points": 2
               }
             ],
@@ -164,12 +170,11 @@
                   1,
                   2,
                   4,
-                  5,
                   6,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-paragraph replies with several numbered sub-questions and bulleted lists where shorter, focused prompts were needed. Turn 1 asks four multi-part questions; Turn 4 gives four labelled objection options plus two principle families; Turn 5 asks three numbered fork questions; Turn 6 delivers a four-case stress-test plus a meta-question. This pattern consistently limits the student's thinking space.",
+                "reason": "Across multiple turns, the tutor sends multi-paragraph responses with numbered sub-questions, bullet lists, and extended explanations when shorter, more focused prompts would suffice. For example, Turn 1 presents four numbered prompts simultaneously; Turn 4 gives four labeled objection ideas plus two principle families in one response; Turn 6 stress-tests all four cases at once while also declining to write a conclusion. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -198,14 +203,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor does well at refusing to write submission-ready content and consistently redirects the student to do their own reasoning, especially in turns 1–3 and 6–10.",
-      "The primary pedagogy deduction (1.1.C.b) is for Turn 4, where the tutor directly supplies four labelled objection ideas and two fully described alternative principle families—the core intellectual content of the assignment—rather than asking questions that would guide the student to generate these themselves.",
-      "Response length is a consistent issue across turns 1, 2, 4, 5, 6, and 9: the tutor regularly gives multi-paragraph replies with several numbered sub-questions and bulleted lists when shorter, more focused prompts would better preserve student thinking space (3.1.A.a, -4 points).",
-      "Meta-learning is weak: the tutor rarely explains why it won't write content for the student (1.3.A.a), and never prompts the student to reflect on how their reasoning process improved across the conversation (1.3.D.a).",
-      "Dialogue quality is strong: the tutor maintains assignment focus throughout, never spirals redundantly, and successfully moves the student's thinking forward across all ten turns.",
-      "Tone is supportive and consistently non-grading throughout."
+      "The tutor consistently refuses to write submission-ready content for the student and maintains a Socratic stance throughout, which is commendable. The student is kept active and does genuine reasoning work across most turns.",
+      "The primary deduction in 1.1 is for Turn 4, where the tutor pre-generates a categorized menu of objection types and replacement principle families rather than asking the student to identify or derive these first. This crosses into doing key reasoning work for the student (1.1.C.b). The deduction is 6 points, not 12, because the student still had to select, articulate, and apply the principles themselves—so the work did not rise to the level of near-submission-ready content (1.1.A.a).",
+      "Meta-learning (1.3) suffers because the tutor never explains the pedagogical rationale for its refusals (1.3.A.a) and never prompts the student to reflect on how their thinking evolved or why a new approach is stronger (1.3.D.a). Method-level feedback is generally adequate (no deduction for 1.3.B).",
+      "Communication quality (3.1) is penalized because the tutor repeatedly sends long, multi-part responses across many turns—presenting 4 numbered prompts at once, full case stress-tests, and extended rationales—when more focused, incremental prompts would better support student thinking.",
+      "Dialogue quality (sections 2.1 and 2.2) is strong: the tutor stays on-topic, redirects the student's off-task request firmly in Turn 1, advances the dialogue each turn without spiraling, and correctly interprets the assignment throughout."
     ],
     "total_score": 32,
-    "judge_llm_calls": 2
+    "judge_llm_calls": 1
   }
 }

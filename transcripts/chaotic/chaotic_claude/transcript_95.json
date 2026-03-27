@@ -80,7 +80,15 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 3, the tutor lists an extensive set of actor categories for Miami ('City resilience/sustainability office', 'Miami-Dade County resilience/emergency management', 'Regional sea-level rise coalition', 'Major utilities & infrastructure operators', 'Real estate/developers/finance/insurers', 'Community-based orgs', 'Universities/research centers') framed as 'categories to look for.' This effectively pre-structures the assignment scaffolding and reduces the student's reasoning burden significantly.",
+                "reason": "In Turn 3, the tutor provides a detailed list of Miami actor categories (city resilience office, Miami-Dade County resilience, regional sea-level rise coalition, utilities, real estate/developers/finance/insurers, community-based orgs, universities) that does significant reasoning scaffolding work for the student — essentially sorting the actor landscape before the student has attempted it. However, these are framed as 'categories to look for' rather than concrete named actors, so this is borderline. The more clear issue is in Turn 6.",
+                "points": 0
+              },
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 6, the tutor provides a comprehensive list of 3 candidate organizations for each of the 6 actor slots (18 named organizations total), effectively doing the key reasoning step of identifying Miami climate actors for the student. The student just has to 'pick one per slot,' making the intellectual work of actor identification almost entirely the tutor's. This crosses into doing the key reasoning step.",
                 "points": 6
               }
             ],
@@ -110,7 +118,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces constraints (refusing to write content) without clearly explaining the learning rationale—e.g., that active reasoning builds transferable skills. The tutor says 'I can't do this for you' but rarely articulates *why* the student benefits from doing it themselves.",
+                "reason": "The tutor consistently refuses to do the work but rarely explains the learning rationale explicitly (e.g., 'this builds your skill at identifying actors,' 'the reasoning process is what develops your analytical ability'). It mostly states 'that would be doing the assignment for you' without explaining the broader pedagogical purpose of why the student should do the reasoning themselves.",
                 "points": 2
               },
               {
@@ -127,7 +135,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their process or thinking development. There is no moment where the tutor asks what the student has learned about actors mapping, why certain gaps matter methodologically, or what the student would do differently next time.",
+                "reason": "The tutor never pauses to ask the student to reflect on their thinking process, what they've learned about identifying actors, or why any method worked. There's no reflection prompt or transfer support across the entire conversation.",
                 "points": 2
               }
             ],
@@ -169,12 +177,10 @@
                 "evidence_turns": [
                   3,
                   5,
-                  6,
-                  7,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns contain multi-paragraph responses with extended lists and sub-bullets (e.g., Turn 3 provides 7 category bullets plus a 4-part process plan; Turn 6 provides 18+ candidate organizations across 6 slots). These consistently exceed what the student needed to take the next step, reducing their opportunity to think independently before receiving detailed guidance.",
+                "reason": "Turns 3, 5, and 6 are multi-paragraph replies with extensive lists (7 actor categories in Turn 3, 6 scaffolding slots in Turn 5, 18 candidate organizations across 6 categories in Turn 6). While broken into sections, many of these responses are far longer than needed and give the student less cognitive space. Turn 6 in particular — providing 3 candidates per slot — exceeds what's needed for interactive scaffolding.",
                 "points": 4
               }
             ],
@@ -203,13 +209,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write the student's forum post across all 10 turns, correctly applying boundaries against direct assignment completion. This prevents the most serious 1.1.A.a deduction.",
-      "However, in Turn 3, the tutor provides a near-exhaustive list of actor categories for Miami that substantially pre-structures the student's reasoning work, triggering a 1.1.C.b deduction (6 pts). In Turn 6, providing 18+ specific candidate organizations—while framed as 'pick one'—also approaches doing key reasoning for the student, though since it was explicitly constrained to a pick-and-verify format and the student had already named 4 actors, this is captured under the Turn 3 deduction to avoid double-penalizing.",
-      "Scaffolding (1.2) is well-handled: the tutor consistently builds on the student's prior attempts, acknowledges correct steps ('Good—those 4 are a solid backbone'), and progressively requests more specific contributions.",
-      "Meta-learning (1.3) is weak throughout: the tutor never explains the learning rationale for its refusals, never invites process reflection, and provides only correctness-level feedback rather than method-level coaching.",
-      "Communication length (3.1) is a consistent issue: many responses are multi-paragraph with extensive bullet lists when a single focused prompt would have been more effective and more student-activating.",
-      "Tone (3.2) is appropriately supportive and non-grading throughout the conversation.",
-      "Assignment anchoring (2.2) and redundancy (2.1) are handled well; the tutor steadily advances the student toward the assignment goals without spiraling."
+      "The tutor demonstrates strong commitment to not completing the assignment for the student, consistently refusing paste-ready outputs across all 10 turns. Assignment anchoring and dialogue progression are well-managed.",
+      "However, in Turn 6, the tutor crosses into doing the key reasoning work by providing 18 named candidate organizations (3 per slot) for the student to simply choose from, effectively completing the actor identification task. This triggers a 1.1.C.b deduction of 6 points.",
+      "Turn 3 provides a detailed actor category list as 'guidance,' which is borderline but framed as categories rather than specific named actors, so it was not separately penalized to avoid double-counting with Turn 6.",
+      "On meta-learning, the tutor never explains the learning rationale for its constraints (1.3.A.a) and never prompts reflection on the student's thinking process (1.3.D.a), resulting in a 4-point deduction in 1.3.",
+      "Response length is a recurring issue: Turns 3, 5, and 6 are substantially long with multiple nested lists, reducing the student's cognitive engagement. A 4-point deduction applies under 3.1.A.a.",
+      "Tone is consistently supportive and non-punitive. No false grading language is used. Scaffolding builds appropriately on student progress (e.g., building on the 4 actors the student provides in Turn 5)."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

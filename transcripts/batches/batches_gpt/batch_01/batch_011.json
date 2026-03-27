@@ -231,11 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provided six stressor-specific fill-in justifications with the main mechanism, impact pathway, and example types already built in, covering much of the key reasoning step for the student.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor often seeded substantive stressor ideas and answer paths before the student generated them, such as proposing likely Miami stressors/categories and giving content-heavy fill-in frameworks that shaped the student's final selection and reasoning.",
                 "points": 6
               }
             ],
@@ -250,14 +247,20 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced refusal boundaries by saying it would be 'doing the assignment,' but did not clearly explain the learning rationale for requiring the student to do the writing and reasoning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -303,18 +306,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the schema supports one conversation, and the input contained three labeled transcripts.",
-      "Tutor consistently refused to provide paste-ready assignment text, stayed tightly anchored to the Miami stressors-table task, and built effectively on the student's drafts with targeted checks and rating logic.",
-      "Main deduction: in Turn 7 the tutor supplied extensive stressor-specific sentence frames that already encoded much of the reasoning connecting evidence to rating, reducing student-generated discovery."
+      "Across the transcripts, the tutor consistently refused to produce submission-ready work, kept the conversation anchored to the actual stressors-table task, and scaffolded the student toward drafting their own ratings and justifications.",
+      "The main pedagogical weakness was that the tutor frequently supplied substantive candidate stressors, evidence hooks, and content-heavy sentence frameworks before the student independently generated them, which reduced student-led idea formation.",
+      "Method feedback was generally strong and specific, but the tutor's refusal rationale stayed mostly at the policy level ('that would be doing the assignment') rather than explicitly explaining the learning benefit of active student authorship.",
+      "Because the prompt included three transcripts with overlapping turn numbers, deductions were based on repeated patterns across the provided evidence rather than transcript-specific turn citations."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -229,8 +229,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Transcript 1 turns 4-5 give fill-in row templates and near-final table phrasing (including source wording and field structure) that the student could almost drop into the assignment with values inserted.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -241,25 +251,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10,
-                  20,
-                  30
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversation endings, the tutor keeps the student moving to the next task but does not prompt brief reflection on why the sourcing/labeling method worked or how to transfer it to the rest of the table.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 18,
           "max": 24
         }
       },
@@ -286,8 +285,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across all three transcripts, the tutor repeatedly uses multi-part, list-heavy replies where shorter interactive steps would have been enough, especially in Transcript 1 turn 2, Transcript 2 turns 1-3, and Transcript 3 turns 1-2.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -299,24 +304,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Turn numbering is treated sequentially across the three transcripts (1-10, 11-20, 21-30).",
-      "The tutor consistently avoided doing submission-ready work, redirected off-topic or shortcut requests, and used guided questions anchored to the assignment and source quality.",
-      "The main missing element was reflection/transfer support: despite strong process coaching, the tutor rarely paused to help the student articulate what method to reuse next time."
+      "Across the three conversations, the tutor consistently refused to provide submission-ready answers, kept the student anchored to source quality, geography, year, and labeling choices, and redirected off-topic moves well.",
+      "Main deduction in pedagogy is limited to Transcript 1, where the tutor supplied near-final fill-in row wording that went beyond pure coaching.",
+      "A second deduction was applied for response length: many tutor turns were helpful but overly long and multi-part. Possible overlap with source-selection help was resolved conservatively in the tutor's favor."
     ],
-    "total_score": 44,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

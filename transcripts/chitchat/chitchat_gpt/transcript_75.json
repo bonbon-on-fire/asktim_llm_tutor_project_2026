@@ -91,21 +91,22 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor states role-based limits and redirects off-topic questions, but does not explain a learning rationale for those constraints beyond 'my role/job here.'",
+                "reason": "The tutor enforced boundaries and refusal behavior by citing role constraints, but did not explain the learning rationale for why the student needed to do the data-finding work themselves.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   6,
+                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor reinforces good choices but does not prompt reflection on why the student's method worked or how to transfer it to later fields.",
+                "reason": "After several improved student decisions, the tutor affirmed and advanced the task but did not prompt reflection on why those choices were effective or how to reuse the method on later fields.",
                 "points": 2
               }
             ],
@@ -148,32 +149,42 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The repeated redirections were efficient but sometimes came off as rigid or dismissive, especially 'Skip the music question,' which could reduce rapport.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic turns immediately, and used guided questioning rather than supplying submission-ready content or key data values.",
-      "Scaffolding was strong: the tutor built from the student's choices, pushed for source selection, documentation structure, category definitions, and labeling decisions in manageable steps.",
-      "Main weakness was meta-learning support: the tutor did not clearly explain the pedagogical reason for refusing off-task requests, and it missed chances to prompt reflection or transfer of the student's method to future table fields.",
-      "Any deduction under 1.3.A is somewhat borderline because the tutor did give brief role-based explanations, but those explanations did not explicitly frame the constraint as a learning strategy."
+      "The tutor stayed tightly anchored to the assignment, used guided questioning well, and avoided doing the student's data-table work for them.",
+      "Main deductions come from limited meta-learning support: the tutor enforced boundaries without explaining the learning rationale, and did not prompt reflection on transferable research methods after the student's good decisions.",
+      "Tone was generally functional and supportive once on-task, but the early off-topic redirections were somewhat rigid; this was scored conservatively."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

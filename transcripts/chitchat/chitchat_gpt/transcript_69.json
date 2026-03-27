@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied likely Miami-specific stressor ideas ('heat,' 'housing/insurance displacement,' 'climate gentrification,' 'heritage sites') before the student generated them, and the student then adopted those ideas in the next turn.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,14 +96,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor enforced boundaries on unrelated chat ('I can't do unrelated chat,' 'I can't do personal neighborhood preferences') without explaining the learning rationale in those moments.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 16,
           "max": 24
         }
       },
@@ -139,18 +159,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently used guided questions rather than giving submission-ready content, and repeatedly had the student supply ratings, evidence, distinctions among stressors, source choices, and priority logic.",
-      "The conversation stayed tightly anchored to the Miami stressors-table assignment, with immediate redirection from off-topic prompts and steady progression from hazard identification to evidence, sector coverage, source selection, and prioritization.",
-      "Communication was clear and supportive throughout; even when declining off-topic requests, the tutor explained the boundary and redirected back into actionable next steps for the assignment."
+      "The tutor was generally strong at keeping the student anchored to the assignment, using short prompts, and building a usable process for rating stressors.",
+      "Main pedagogy issue: the tutor seeded several substantive Miami-specific stressor ideas that the student then used, which reduced student-generated discovery.",
+      "A smaller deduction was applied for boundary-setting without explicit learning rationale in some off-topic refusals; otherwise the conversation remained supportive and well-scaffolded."
     ],
-    "total_score": 46,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

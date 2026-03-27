@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor provides a ready-made list of specific plan names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and a detailed breakdown of utility decisions FPL controls—doing the key research/reasoning step that the student should have done. While the tutor frames it as 'pick from these and double-check,' the specifics handed over effectively substitute for the student's own research work.",
+                "reason": "In Transcript 1 Turn 3, the tutor directly provides specific names of Miami climate plans (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and three specific categories of FPL decisions with explanatory detail. This is the tutor doing the key reasoning and evidence-finding step rather than prompting the student to discover it.",
                 "points": 6
               }
             ],
@@ -257,7 +257,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting the student to reflect on what they learned about the process of actor mapping or why certain categorization choices worked. In T1 the conversation ends with a fact-finding question rather than process reflection. In T2 Turn 10 the tutor asks a good sharpening question but misses reinforcing the method the student used. In T3 the tutor ends by asking for word swaps without any reflection on analytical method improvement.",
+                "reason": "Across all three transcripts, the tutor consistently moves the student forward without prompting reflection on what worked in their thinking process or why a method was effective. At the end of conversations (e.g., T1 Turn 9-10, T2 Turn 9-10, T3 Turn 9-10), the tutor provides next-step feedback but misses chances to ask the student to reflect on their reasoning development.",
                 "points": 2
               }
             ],
@@ -302,7 +302,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly issues very long multi-part responses (e.g., T1 Turn 2 with a 4-part structure breakdown, T2 Turns 2–3 with six-category actor lists, T3 Turn 4 with a detailed fill-in-the-blank framework) where shorter, more focused single-question prompts would have been more appropriate for a student clearly in a hurry. The length consistently reduces the student's opportunity to think step by step.",
+                "reason": "In T1 Turns 2 and 3 and T3 Turn 4, the tutor repeatedly uses multi-paragraph, heavily structured responses with nested bullet lists and multiple sub-questions where shorter, more focused single prompts would better preserve student thinking space. Turn 2 of T1 contains a 4-part scaffolding framework with multiple nested sub-bullets that is quite long. T3 Turn 4 provides a lengthy fill-in template with four labeled sections and multiple slots. These consistently reduce the student's opportunity to respond to a focused prompt.",
                 "points": 4
               }
             ],
@@ -331,11 +331,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refuses to write the student's forum post or produce paste-ready content, maintaining a clear and principled stance under persistent pressure from a chaotic, deadline-driven student. This is the tutor's main strength.",
-      "The primary deduction in 1.1 comes from Transcript 1 Turn 3, where the tutor provides a ready-made, specific list of Miami climate plan names and FPL decision categories that does the core research work the student should have done. While framed as examples to verify, the specificity effectively substitutes for student discovery, triggering the 1.1.C.b criterion.",
-      "The tutor does not consistently prompt process reflection (1.3.D.a). Conversations end with next-step sharpening questions rather than asking the student to reflect on what they learned about actor mapping as a method or what changed in their analytical approach.",
-      "The 3.1.A.a deduction reflects a persistent pattern across all three transcripts of long, multi-part responses with numerous sub-bullets when the student's rushed state and the interaction context called for shorter, more focused single-question prompts. This reduces student cognitive engagement despite good intent.",
-      "Scaffolding (1.2) is handled well: the tutor consistently builds on student-generated content, challenges specific items rather than restarting, and adjusts difficulty as the student progresses. Assignment anchoring (2.2) is also strong—the tutor never follows the student's misframing and consistently regrounds to the actual task structure. Tone (3.2) is consistently warm and non-punitive despite firmness."
+      "Across all three transcripts, the tutor consistently declines to write the forum post for the student and maintains a Socratic coaching stance, repeatedly redirecting a highly resistant student toward their own reasoning. This is a clear strength.",
+      "The main deduction in 1.1 applies to Transcript 1 Turn 3, where the tutor directly supplies specific Miami plan names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and a categorized list of FPL decision areas with explanatory details. This crosses from scaffolding into doing the key evidence-finding and reasoning step for the student, triggering the 1.1.C.b deduction. The same pattern appears partially in T3 Turn 7 (providing decision-arena options and absence venues), though that instance is more bounded and closer to offering options than doing the reasoning itself.",
+      "On meta-learning (1.3), the tutor provides strong process-level feedback throughout but consistently misses opportunities to prompt the student to reflect on why their thinking improved or what method was most useful, resulting in a 2-point deduction for 1.3.D.a.",
+      "On communication quality (3.1), the tutor's responses are frequently very long and heavily structured with multi-level bullet frameworks, particularly in T1 Turn 2, T3 Turn 4, and multiple other turns. While these are intellectually well-organized, they regularly reduce the student's cognitive engagement opportunity by overwhelming them with scaffolding at once rather than one focused prompt.",
+      "No deductions were applied for 1.3.A.a (tutor explains rationale multiple times), 1.3.B.a or 1.3.B.b (process-level feedback is consistently substantive), 2.1 (the conversation progresses without circular spiraling), 2.2 (assignment focus is well-maintained), or 3.2 (tone is supportive and non-evaluative throughout).",
+      "The 1.1.C.b deduction of 6 points reflects the single clearest instance of the tutor doing the key reasoning step. The similar but less severe behaviors in T3 Turn 7 and T2 Turn 4 were not double-penalized under this criterion since the primary deduction already captures the pattern."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

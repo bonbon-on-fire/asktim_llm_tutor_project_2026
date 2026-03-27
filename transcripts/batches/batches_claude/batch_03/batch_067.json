@@ -234,8 +234,8 @@
                 "evidence_turns": [
                   3
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor provides a template for sea level rise and hurricanes justifications that is so fully formed (complete sentence structure with blanks only for specifics already provided by the student) that it does nearly all the reasoning work. The template essentially bridges from the student's raw ingredients to submission-ready text, leaving only minor fill-in. However, this is borderline since the student still fills in details; applying partial 6-point deduction under 1.1.C.b is appropriate.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "In Transcript 1 Turn 3, the tutor provides a template with nearly all content filled in ('Already causing [what happens/where] during [king tides/high tides]...'), which reveals the conclusion structure and key reasoning path before the student derives it. Similarly, Turn 3 Transcript 1 confirms 'SLR/tidal flooding + hurricanes/surge + saltwater intrusion is a defensible set' before fully requiring the student to reason through it independently.",
                 "points": 6
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces a no-direct-answer policy but never explains the pedagogical rationale (e.g., that students build analytical skills by doing the reasoning themselves, or that this prepares them for later assignments). The tutor simply refuses requests without explaining why this approach benefits learning.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (e.g., 'I can't fill it out for you,' 'I'm not going to write submission-ready sentences') but rarely explains the learning rationale (why the student benefits from doing the reasoning themselves for skill development). The tutoring policy is stated but not explained.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, what method worked, or why. The conversations end with next-step tasks rather than any reflection or transfer moment.",
+                "reason": "In all three transcripts, the conversations end with next steps or task prompts but without prompting the student to reflect on how their thinking changed during the session, what worked about the method, or reinforcing the reasoning process they used.",
                 "points": 2
               }
             ],
@@ -296,16 +296,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 4, the student goes off-topic asking how to deal with burnout. The tutor appropriately refuses and redirects immediately—no deduction warranted here. However, in Transcript 1 the student repeatedly attempts to get the tutor to do the work and the tutor manages well. No clear 2.2.B violation across transcripts; deduction removed.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -324,12 +315,14 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
+                  5,
                   7,
                   8,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-paragraph responses with 3–5 sub-questions at once, several numbered lists within a single turn, and extensive templates. For example, Transcript 1 Turn 2 has a definition request plus 3-prompt per stressor instruction plus a 3-criteria priority exercise simultaneously. Transcript 2 Turn 8 asks for three differentiated 8-justifications plus heat evidence plus 1–2 sentence drafts plus priority identification all in one response. This pattern consistently reduces student thinking space and makes responses monologue-like rather than interactive.",
+                "reason": "Across all three transcripts, the tutor consistently sends multi-part, multi-paragraph responses (often 4–6 distinct questions or prompts per turn) when shorter, more focused exchanges would better support student thinking. This pattern is especially pronounced in Transcript 1 Turns 2, 3, 4, 5, and Transcript 2 Turns 2, 7, 8, 9, 10, where the tutor packs in numbered question lists, templates, and next steps simultaneously, reducing student opportunity to respond meaningfully before more content arrives.",
                 "points": 4
               }
             ],
@@ -358,13 +351,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refuses to complete assignments for students and keeps them anchored to the task—handling off-topic deflections (burnout question, requests to copy answers) appropriately and promptly.",
-      "Scaffolding and progression are strong: the tutor builds on student-provided material, acknowledges correct steps, and uses a sector-by-sector approach that advances student thinking progressively.",
-      "The main pedagogy deduction (1.1.C.b) comes from Transcript 1 Turn 3, where the tutor provides fully structured sentence templates for the two 10-stressor justifications. These templates supply most of the rhetorical and structural reasoning work, leaving the student only to insert specific details already discussed—this crosses into doing a key reasoning step for the student rather than guiding the student to derive the structure independently.",
-      "Meta-learning gaps (1.3): the tutor never explains why it withholds direct answers in terms of skill-building rationale, and across all conversations no reflection prompts appear at close—students are sent to next tasks without consolidating what methods worked.",
-      "Communication quality is penalized for consistently long, multi-part responses: turns regularly stack 3–5 sub-questions plus templates plus instructions simultaneously, which reduces the interactive quality of the tutoring and leaves students with heavy cognitive load rather than focused next steps.",
-      "Tone is consistently supportive and non-judgmental; no grading language is used; assignment anchoring is well maintained throughout. No deductions in 2.1, 2.2, or 3.2.",
-      "The 1.1.C.b deduction is the most consequential and there is some judgment involved—the templates in T1 Turn 3 are very close to submission-ready sentence structures, but the student does supply meaningful specific content in subsequent turns, so the full 12-point 1.1.A.a deduction was not applied."
+      "Across all three transcripts, the tutor demonstrates strong assignment anchoring, appropriate tone, and consistent refusal to complete the assignment for students. It effectively redirects off-topic requests (Transcript 2 Turn 4, Transcript 3 Turn 8) and never gives complete submission-ready answers.",
+      "The most significant deduction in 1.1 comes from the template-giving behavior in Transcript 1 Turn 3, where the tutor provides nearly complete sentence structures for the two '10' stressors, plus confirms the student's top 3 picks as 'defensible' before the student fully reasons through them. This crosses into providing the key structure and conclusion before student derivation, triggering 1.1.C.a. The deduction is capped at 6 (not 12) because the tutor does not provide fully submission-ready content and consistently requires the student to fill in specifics.",
+      "The tutor does not explain the rationale behind its tutoring constraints (why doing the work yourself matters for learning), triggering 1.3.A.a across all transcripts. No transcript ends with process reflection or reinforcement of method choices, triggering 1.3.D.a.",
+      "The most consistent structural weakness is response length: the tutor frequently sends 4–7 numbered prompts in a single turn rather than isolating one or two, which limits the student's cognitive space to engage with each question. This triggers 3.1.A.a across all three transcripts.",
+      "Scaffolding (1.2) is well-executed: the tutor builds from student answers, acknowledges correct reasoning, and adjusts questions based on student progress. No deductions applied.",
+      "Dialogue quality (2.1, 2.2) is strong throughout: no significant spiraling, and all off-topic or misframed requests are redirected promptly."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

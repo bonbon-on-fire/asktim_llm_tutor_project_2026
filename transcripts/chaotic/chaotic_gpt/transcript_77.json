@@ -81,7 +81,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor selected the easiest culture stressor and suggested the key evidence path/source types for Miami, doing part of the idea-generation and evidence-choice work for the student.",
+                "reason": "Although the tutor generally avoided doing the assignment, it selected the student's culture stressor and later supplied a concrete culture-stressor framing with source directions, doing part of the key idea-generation for the student.",
                 "points": 6
               }
             ],
@@ -98,13 +98,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  3,
-                  5,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor advanced the task effectively but did not prompt brief reflection on why the student's rating method or prioritization logic worked, limiting transfer support.",
+                "reason": "The tutor gave useful process coaching, but it never prompted brief reflection on why the student's comparison/rating method worked or how to transfer that method to future assignments.",
                 "points": 2
               }
             ],
@@ -167,10 +162,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused to provide paste-ready assignment text and kept the conversation anchored to the stressors-table task.",
-      "The tutoring was generally scaffolded and interactive, with targeted prompts that built from the student's Miami hazard choices into ratings, sector impacts, and evidence.",
-      "Main deduction: the tutor partly took over idea/evidence selection on the culture-stressor portion by recommending climate gentrification and likely source paths for Miami.",
-      "A smaller deduction was applied for limited reflection/transfer support; the tutor moved the student forward but did not explicitly ask the student to reflect on why the chosen rating/prioritization method worked."
+      "The tutor was mostly strong on guided discovery: it refused submission-ready requests, kept the work anchored to Miami stressors, and used targeted prompts, comparison questions, and sentence templates to help the student build ratings and justifications.",
+      "Main deduction: in the culture-stressor portion, the tutor moved from coaching into idea-generation by choosing climate gentrification as the easiest option and later supplying a concrete culture-stressor framing and source path. A smaller deduction applies because the conversation lacked explicit reflection on why the method used here would transfer to future assignments."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

@@ -244,6 +244,21 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently enforces constraints (e.g., 'I can't fill the table for you,' 'I can't give sentence stems') but rarely explains the pedagogical rationale—active reasoning, skill development, or why doing it themselves will help them succeed—beyond brief implicit signals. The learning rationale is not made explicit.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   1,
                   2,
                   3,
@@ -255,17 +270,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently declined to produce content without explaining the pedagogical rationale (active reasoning, long-term skill development). In T1 the tutor says 'if I do it end-to-end you won't have the reasoning you need for the writeup'—this is one rare exception. In T2/T3 refusals are given ('I can't … that would be doing the assignment') but the learning rationale (why doing it yourself builds the skill) is almost never articulated beyond the refusal itself.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of T1 (turns 9-10) and the end of T2 (turns 9-10) and T3, the tutor moves forward without ever prompting the student to reflect on how their thinking changed or what method worked. No consolidation or transfer moment is offered.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a method worked/failed. The tutor advances the task but misses opportunities to consolidate metacognitive learning (e.g., after the student correctly identifies stressor vs. vulnerability in T2, or after the student converges on the Loop/Switch distinction in T1).",
                 "points": 2
               }
             ],
@@ -314,7 +320,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor frequently sends multi-paragraph responses with multiple sub-questions (e.g., T1 Turn 1 has three nested tasks; T2 Turn 2 and Turn 3 have long structured lists; T3 Turn 3 is a large demo plus three separate numbered prompts). These extended monologues consistently appear where one short focused prompt would have been more appropriate given the student's confusion level.",
+                "reason": "In all three transcripts, many tutor turns consist of multi-paragraph responses with multiple nested numbered sub-questions at once (often 3 sub-questions plus a framing plus a word bank plus a rule-of-thumb). This pattern is consistent and leaves limited space for the student to respond incrementally; shorter, one-question prompts would have been more appropriate given the student's repeatedly expressed confusion.",
                 "points": 4
               }
             ],
@@ -343,11 +349,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong adherence to guided discovery: it consistently refuses to do the student's work for them, redirects effectively when the student asks for copyable content, and scaffolds reasoning through targeted diagnostic questions. No 1.1.A.a, 1.1.B.a, or 1.1.C.a violations are found.",
-      "Scaffolding (1.2) is solid: the tutor builds on each student response, acknowledges partial progress, and adjusts questions based on where the student is stuck. No deductions warranted.",
-      "Meta-learning (1.3) has two clear gaps: (a) refusals are rarely paired with an explicit learning rationale explaining *why* the student should derive the answer themselves, and (b) there is no moment at the close of any transcript where the tutor prompts the student to reflect on what changed in their thinking or how the method generalised—missing 1.3.A.a and 1.3.D.a.",
-      "Dialogue quality (2.1 and 2.2) is strong: no significant spiraling or off-topic drift occurs, and the tutor re-anchors the student to the assignment when needed.",
-      "Communication quality is penalised under 3.1.A.a because many tutor turns across all three transcripts are dense multi-part responses (often 4–6 distinct sub-tasks) sent to a self-described 'clueless' student. While each part is individually clear, the volume routinely exceeds what a student at that comprehension level can productively engage with in one step, reducing opportunity for the student to think and respond."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to do the assignment for the student, withholds sample wording, pushes students to generate their own examples, and structures guidance as diagnostic questions rather than direct answers. No near-submission-ready material is provided, no assignment work is done for the student, and the tutor does not reveal key conclusions before the student explores them.",
+      "Scaffolding is solid: the tutor builds on correct student progress (e.g., in T1, each turn advances the student's emerging distinction between Switch and Footbridge; in T2/T3, the actor-granularity discussion progresses turn by turn), and responses are generally targeted at the actual confusion point rather than misdiagnosing it.",
+      "The main deductions are in meta-learning (1.3): the tutor does not explicitly articulate why it refuses to provide model text or tables in terms of learning rationale, and it never prompts the student to reflect on what changed in their understanding or why a particular method worked. These are recurring omissions across all conversations.",
+      "A secondary deduction is in communication quality (3.1): the tutor's turns are frequently long and present three or more simultaneous sub-questions, which can overwhelm a 'clueless' student and reduce their opportunity to think and respond one step at a time. This is a consistent pattern, not an isolated incident.",
+      "No deductions are applied for dialogue quality: the tutor maintains assignment anchoring well, redirects off-topic requests (e.g., T2 Turn 2 'plug-and-play' request), and avoids redundant spiraling. Tone is supportive throughout and the tutor never implies formal grades."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

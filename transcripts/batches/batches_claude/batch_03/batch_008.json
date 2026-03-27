@@ -235,7 +235,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 7: Tutor provides the complete sector tagging for all 10 stressors (e.g., 'Sea level rise/king tides: Environmental, Infrastructure, Social') rather than letting the student derive sector assignments. This is a key reasoning step—categorizing stressors into sectors is explicitly part of Step 2 of the assignment—done by the tutor instead of the student.",
+                "reason": "Transcript 1, Turn 7: Tutor provides sector tags for all 10 stressors outright, doing the categorization work (Step 2 of the assignment) for the student rather than guiding the student to derive them. While sector tagging is arguably less central than ratings/justifications, this is a core step of the assignment that the student should reason through. However, the tutor does ask a follow-up question and explicitly frames it as 'proposed tags—adjust if you disagree,' which partially mitigates the concern. Deduction applied under 1.1.C.b (tutor picks decisive evidence/reasoning step) for giving all 10 sector assignments directly.",
                 "points": 6
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves from one task to the next without prompting the student to reflect on what changed in their thinking or why a particular approach worked. For example, after students make meaningful progress (e.g., Transcript 2 Turn 4 producing solid drafts, Transcript 3 Turns 5-7 clarifying the hazard/stressor distinction), the tutor immediately pivots to the next question without reinforcing the method or asking the student to articulate what they learned.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked, or what they learned about the process of rating/justifying stressors. The tutor consistently moves to the next step without reinforcing method choices or asking process-level reflection questions.",
                 "points": 2
               }
             ],
@@ -291,11 +291,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2
+                  1
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "Transcript 2, Turn 1: Student asks for a movie recommendation. The tutor briefly declines but spends only one line redirecting. This is handled well. However, Transcript 1 is the concern: across multiple turns the student repeatedly pushes for submission-ready output; the tutor holds well. No clear off-topic engagement occurs that constitutes a meaningful response. On balance, evidence does not firmly support a deduction here.",
+                "reason": "Transcript 2, Turn 1: Student asks for a movie recommendation off-topic. The tutor correctly declines and redirects. No deduction warranted here—handled appropriately.",
                 "points": 0
               }
             ],
@@ -316,14 +315,12 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
                   6,
                   7,
-                  8,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently produces multi-paragraph, multi-part responses when shorter, more focused prompts would better support student thinking. For example, Transcript 1 Turn 6 provides 10 fill-in shells for all stressors in one block; Transcript 3 Turn 1 opens with a dense multi-paragraph explanation covering all sectors and justification criteria before the student has even picked a city; Transcript 3 Turn 6 gives a four-slot structured template plus a rule plus follow-up question. These long monologues reduce student opportunity to respond and think incrementally.",
+                "reason": "Transcript 1, Turn 6: Tutor provides 10 fill-in-the-blank sentence shells in a single response—a very long reply when simpler, more targeted prompts would suffice. Transcript 1, Turn 7 and Transcript 3, Turn 1, Turn 7, Turn 8: Multiple turns feature multi-paragraph responses with extensive lists where shorter, more focused prompts would be more appropriate and leave more room for student thinking. This pattern repeats across all three transcripts consistently.",
                 "points": 4
               }
             ],
@@ -352,12 +349,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refuses to do the assignment for the student and applies appropriate Socratic resistance to direct-answer requests, which is the strongest aspect of the tutoring.",
-      "The primary pedagogy deduction (1.1.C.b, -6 points) is triggered in Transcript 1 Turn 7, where the tutor provides the complete sector classification for all 10 stressors—a core assignment task (Step 2)—without requiring the student to reason through it. This is clearly a key reasoning step the student should have completed.",
-      "Meta-learning (1.3.D, -2 points): across all transcripts the tutor misses opportunities to prompt reflection on why methods worked after breakthroughs, consistently pivoting immediately to the next task.",
-      "Communication length (3.1.A, -4 points): the tutor repeatedly uses multi-part, multi-paragraph responses where shorter, more interactive prompts were warranted. This is consistent across all three transcripts and reduces the student's thinking space.",
-      "No deductions applied for scaffolding (1.2), dialogue redundancy (2.1), assignment anchoring (2.2), language complexity (3.1.B), or tone/grading framing (3.2). The tutor builds well on student progress, redirects off-topic prompts promptly, and maintains a supportive, coaching-oriented tone throughout.",
-      "Note on 1.1.C.b evidence ambiguity: the sector tagging in Transcript 1 Turn 7 is the clearest violation; in Transcripts 2 and 3 the tutor provides structural frames and templates but generally leaves content insertion to the student. The deduction is applied once (not doubled) per the rubric's cap and no-double-penalization rule."
+      "Across all three transcripts, the tutor maintains a firm and consistent policy against doing the assignment for the student, successfully refusing to supply ratings, write justifications, or produce a submission-ready table despite persistent pressure in Transcript 1 and anxiety in Transcript 3.",
+      "The most significant deduction is in 1.1 (Socratic method): in Transcript 1, Turn 7, the tutor provides sector tags for all 10 stressors without asking the student to first attempt categorization—this does a key assignment step (Step 2) for the student. This triggered a 6-point deduction under 1.1.C.b. No 1.1.A.a deduction was applied because the tutor never provides final ratings, justifications, or submission-ready content.",
+      "Meta-learning (1.3.D.a): None of the three transcripts include any moments of process reflection or transfer prompting—the tutor always moves forward to the next task without asking the student to articulate what changed in their understanding or why an approach worked. This earns a 2-point deduction.",
+      "Communication length (3.1.A.a): The tutor repeatedly uses long, multi-part responses—most notably the 10 fill-in-the-blank shells in Transcript 1, Turn 6, and dense multi-paragraph guidance in Transcript 3. While the content is pedagogically sound, the format reduces student opportunity to think and respond incrementally. This earns a 4-point deduction.",
+      "Scaffolding (1.2), dialogue quality (2.1, 2.2), tone (3.2), and language simplicity (3.1.B) are all strong with no deductions warranted. The tutor builds well on student progress, handles off-topic deflections immediately, maintains warm and supportive tone, and avoids unnecessary jargon.",
+      "Note on 1.1 deduction ambiguity: the sector-tagging in Transcript 1, Turn 7 is borderline—the tutor frames the tags as 'proposed' and invites disagreement. A smaller deduction could be argued. However, providing all 10 sector assignments at once without first asking the student to attempt any of them crosses into doing the reasoning step, so 6 points was applied as the rubric prescribes for 1.1.C.b."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

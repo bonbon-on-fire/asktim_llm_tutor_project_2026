@@ -126,31 +126,40 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  9
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor redirects effectively, but phrases like 'not go on random detours' and 'I'm not going to tell you' are more rigid than necessary and can read as dismissive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questions and incremental checkpoints rather than supplying submission-ready content, keeping the student responsible for selecting the city, stressors, metrics, and ratings.",
-      "The tutor stayed tightly anchored to the assignment, redirected the initial off-topic prompt immediately, and scaffolded from city choice to sector coverage, evidence selection, rating logic, and source-grounded definitions.",
-      "Communication was clear, structured, and interactive throughout; while the opening redirection was firm, it remained task-focused and did not clearly cross into harmful tone under the rubric."
+      "The tutor consistently kept the work anchored to the stressors-table assignment, used guided questions rather than giving submission-ready content, and built productively on the student's city choice, evidence plan, rating rubric, and scope limitations.",
+      "The only clear deduction is tone: some redirections were unnecessarily rigid. No additional deductions were applied because the tutor otherwise provided strong process-level coaching, clear scaffolding, and steady conversational progress."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

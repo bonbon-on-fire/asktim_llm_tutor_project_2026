@@ -231,8 +231,14 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  3,
+                  7,
+                  10,
+                  26
+                ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the transcripts, especially Transcript 1, the tutor sometimes supplies central reasoning moves and example content for the student (e.g., confirming the straight act-consequentialist verdict, listing concrete 'system effects,' and naming candidate rights/means constraints) instead of keeping the student responsible for generating those key ideas.",
+                "reason": "The tutor sometimes supplied substantive argument content and key reasoning moves for the student, including confirming the act-consequentialist verdict under stipulated assumptions, giving concrete 'system effects' for Blood, offering ready-made alternative constraint options, and modeling one case's A/B/C structure.",
                 "points": 6
               }
             ],
@@ -283,12 +289,18 @@
           "3.1": {
             "deductions": [
               {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor is usually clear, but several replies use avoidable dense terminology for confused students (for example: 'non-aggregative,' 'lexical priority,' 'epistemic' and similar abstract labels) when simpler phrasing would have reduced cognitive load.",
-                "points": 2
+                "evidence_turns": [
+                  2,
+                  11,
+                  21,
+                  24
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across conversations, the tutor repeatedly used multi-part, densely packed prompts when the students were stuck and would likely have benefited from a smaller single-step check first.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -300,24 +312,25 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor is strongly assignment-focused, consistently refuses copy-paste writing, and uses structured questioning, stress tests, and case comparisons to keep the student reasoning.",
-      "Main weakness: the tutor occasionally supplies too much of the core philosophical content/options itself, especially in Transcript 1, and sometimes uses jargon-heavy phrasing that is denser than necessary for the student's confusion level.",
-      "Because three transcripts were provided in one input and turn numbers restart in each, deductions are based on transcript-level patterns rather than unique turn indices."
+      "The tutor was consistently assignment-focused, refused copy-pasteable writing, and usually pushed the student to generate distinctions and test principles themselves.",
+      "Main deduction is for occasionally supplying core argumentative content or examples the student could directly reuse, especially around act-consequentialist verdicts, Blood system effects, and alternative constraint formulations.",
+      "A second deduction is for repeated multi-question prompts that were sometimes too large for confused students, even though the structure was generally organized and supportive.",
+      "Because the input contained three separate transcripts, evidence turn numbers are counted sequentially across them: 1-10, 11-20, and 21-30."
     ],
-    "total_score": 38,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

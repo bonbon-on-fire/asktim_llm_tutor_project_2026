@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 2, the tutor states the key objection first ('the theory seems to permit using an innocent person as a tool whenever it improves totals, ignoring rights/constraints') before the student has reasoned toward it, giving away the conclusion.",
+                "reason": "In Turn 2, the tutor states the objection to act consequentialism directly ('the theory seems to permit using an innocent person as a tool whenever it improves totals, ignoring rights/constraints') before the student has had any chance to reason toward it themselves. This gives the student the key critical idea outright.",
                 "points": 6
               }
             ],
@@ -110,17 +110,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to give direct answers but rarely explains why—i.e., it doesn't explicitly articulate that the goal is to develop the student's own reasoning skills or long-term philosophical thinking ability. The learning rationale is largely implicit.",
+                "reason": "The tutor consistently enforces its policy of not giving answers but never explicitly explains the learning rationale (e.g., that working through the reasoning independently builds philosophical argumentation skills) beyond implicitly doing it 'fast.' No turn articulates why this approach helps long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
-                  7
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "When the student makes genuine progress (Turns 5-7), the tutor moves immediately to the next task without prompting reflection on what worked in their reasoning process or why their earlier approach was weaker.",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking, why a particular method (e.g., comparing consequences explicitly) was effective, or how the reasoning process could transfer to other ethical cases.",
                 "points": 2
               }
             ],
@@ -169,7 +176,7 @@
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple tutor turns (especially 1, 2, 4, 8, 9) are multi-paragraph with several embedded sub-questions and instructions at once, reducing student opportunity to respond to one focused prompt at a time. Turn 2 in particular layers the rule statement, four fill-in-the-blank cases, and an objection prompt simultaneously.",
+                "reason": "The tutor consistently uses multi-paragraph responses across the conversation when shorter, more targeted prompts would have been more appropriate. For example, Turns 1, 2, and 8 contain extensive scaffolding lists and lengthy framing that leave little room for the student to simply think and respond. This pattern reduces the student's opportunity to engage incrementally.",
                 "points": 4
               }
             ],
@@ -198,12 +205,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintains an appropriate refusal to write submission-ready content and uses guided questioning effectively across the conversation, building on student progress turn by turn.",
-      "A notable deduction under 1.1 is warranted because in Turn 2 the tutor pre-states the key objection to act consequentialism ('the theory seems to permit using an innocent person as a tool whenever it improves totals, ignoring rights/constraints') before the student has had the opportunity to reason toward it, giving away the critical conclusion per 1.1.C.a.",
-      "Under 1.3, the tutor rarely explains why it declines to give direct answers in terms of learning rationale, and misses opportunities to prompt reflection on the student's reasoning process after visible progress in Turns 5–7.",
-      "Response length is a consistent issue: several turns pile on multiple sub-questions and instruction layers at once, which reduces student thinking space and warrants the 3.1.A.a deduction.",
-      "Dialogue quality is strong overall—the tutor keeps the conversation anchored to the assignment, redirects off-task requests effectively, and avoids spiraling repetition.",
-      "No deductions were applied for 1.1.A.a (submission-ready content) or 1.1.B.a (rewriting student text), as the tutor consistently refuses these requests. No grading-stance or tone issues were observed."
+      "The tutor did well at refusing to write submission-ready content and maintained consistent assignment anchoring throughout all ten turns. It successfully guided the student through a logical progression from verdicts to a proposed general account.",
+      "The primary pedagogy deduction (1.1.C.a, 6 points) is for Turn 2, where the tutor gave the student the core objection to act consequentialism directly ('the theory seems to permit using an innocent person as a tool whenever it improves totals, ignoring rights/constraints') before the student had reasoned toward it. This is a clear instance of the tutor stating the key critical idea first rather than eliciting it via questioning.",
+      "On meta-learning (1.3), the tutor never explained why it would not simply provide answers (no learning rationale articulated), and never prompted the student to reflect on how their thinking evolved or how the method of systematic consequence-comparison could transfer to future problems.",
+      "On communication (3.1), the tutor's responses were frequently long and multi-part, with bullet lists and sub-questions across multiple paragraphs. While structurally clear, this pattern consistently reduced space for the student to think and respond in smaller steps.",
+      "No deductions were applied to scaffolding (1.2), dialogue redundancy (2.1), assignment anchoring (2.2), or tone (3.2), as the tutor built appropriately on student progress, stayed on topic, and maintained a supportive and non-evaluative stance throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

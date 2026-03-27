@@ -229,19 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  10
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor supplied key analytical content the student was supposed to generate, including specific decision levers, example citations to use, and barrier phrases, rather than having the student derive those choices.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -255,11 +244,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
-                  10
+                  10,
+                  20,
+                  30
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After helping the student narrow choices, the tutor did not prompt reflection on why those choices were stronger or how to reuse that method on future actor analyses.",
+                "reason": "After progress, the tutor keeps moving to the next drafting step or sanity-check without prompting reflection on why the method worked or how to reuse it.",
                 "points": 2
               }
             ],
@@ -269,7 +259,7 @@
           }
         },
         "base": {
-          "score": 16,
+          "score": 22,
           "max": 24
         }
       },
@@ -296,20 +286,43 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  14,
+                  25
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long bullet-heavy templates and multi-step instructions where shorter prompts could have preserved more student thinking space.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  15,
+                  17
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Some refusals sound rigid or blame-oriented (for example, saying incorrect posting is 'on you, not me' and 'I’m your tutor, not your ghostwriter'), which can undermine supportiveness.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 4,
           "max": 10
         }
       }
@@ -322,9 +335,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the input included multiple transcripts but the schema supports one conversation evaluation.",
-      "The tutor consistently refused ghostwriting and kept the work anchored to the assignment, using clear templates and stepwise prompts.",
-      "Main deductions are for doing some central reasoning for the student by supplying actor levers, example choices, and missing-group barrier phrases, plus missing a brief reflection/transfer moment near the end."
+      "Turn numbers are counted sequentially across the three transcripts (1-10, 11-20, 21-30).",
+      "The tutor stayed strongly anchored to the assignment and generally preserved student ownership rather than providing a paste-ready submission.",
+      "Main weaknesses were communication-related: several responses were longer than necessary, and a few refusals used harsher wording than a supportive coaching stance."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

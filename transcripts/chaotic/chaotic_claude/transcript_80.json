@@ -79,12 +79,12 @@
                 "evidence_turns": [
                   4
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "Turn 4 provides a near-complete fill-in-the-blank template with specific placeholder wording for all four required sentences. The template effectively pre-writes the structure and much of the substance (e.g., 'In NYC, climate resilience is led by ___ ... because they ___ (set strategy/enforce rules/manage emergencies)'), such that plugging in the student's already-listed actors produces a submission-ready paragraph with minimal student reasoning required.",
-                "points": 12
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 4, the tutor provides a near-complete fill-in-the-blank template with pre-written sentence frames including specific placeholder language that, once filled, becomes the submission. While not fully written, this scaffolding is very close to rewriting—it pre-structures the final language and reduces the student's authorship to inserting a few names. However, the rubric deduction for 1.1.B is 6 points and 1.1.A.a (12 points) is also a candidate. Assessing across all turns: the tutor consistently refuses to write the post, but Turn 4's template goes quite far. Still, the student still had to fill it in and Turn 5 shows the student did produce original (if rough) text. The tutor in Turn 5 then explicitly refuses to polish and gives only structural feedback. On balance, this does not rise to 1.1.A.a (direct final answer) but does approach 1.1.B territory with the detailed sentence template in Turn 4.",
+                "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -110,16 +110,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces constraints (refusing to write/polish) but never explains the learning rationale—e.g., that working through the reasoning builds transferable skills in stakeholder analysis for future assignments in the course. The student is repeatedly told 'I can't do that' without being told why the active reasoning process benefits their learning.",
+                "reason": "The tutor consistently refuses to write for the student but never clearly explains the learning rationale—i.e., that the student needs to do the reasoning to develop analytical skills, understand the material, or build capacity for future assignments. The refusals are stated as policy ('I can't') without connecting them to learning goals or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
                   8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation when the student is close to submitting, the tutor misses the opportunity to prompt reflection on what the student learned about actor categorization or how their thinking evolved. Turn 8 and 10 close out the session with verification checks only, with no prompting of process reflection or reinforcement of method choices.",
+                "reason": "The tutor never prompts reflection on process or method—e.g., asking the student what they learned about how to categorize actors, why distinguishing leaders from implementers matters, or what the experience of building the table taught them. The conversation ends without any process reflection or transfer support.",
                 "points": 2
               }
             ],
@@ -129,7 +137,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 14,
           "max": 24
         }
       },
@@ -164,7 +172,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 3 are multi-paragraph responses with multiple bulleted sub-questions and structured lists. Turn 1 alone contains two multi-part prompting frameworks. These lengthy replies reduce the student's space to think and respond, and short targeted questions would have been more effective given the student's stated urgency.",
+                "reason": "Turns 1, 2, and 3 feature long multi-paragraph responses with multiple nested bullet lists and sub-questions, where shorter, more focused prompts would have been more appropriate given the student's stated time pressure and confusion. The tutor consistently front-loads large amounts of scaffolding before checking what the student can already do.",
                 "points": 4
               }
             ],
@@ -186,20 +194,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The most significant deduction is under 1.1: in Turn 4, the tutor provides a fill-in-the-blank sentence template with pre-structured phrasing, specific parenthetical options for content (e.g., 'set strategy/enforce rules/manage emergencies'), and all four required components. Given that the student had already supplied all the actors in Turn 3, this template required only trivial insertion to produce a submission-ready post, effectively doing the key reasoning work for the student. This triggers the 1.1.A.a full deduction of 12 points.",
-      "Under 1.3, the tutor consistently refused to do student work but never articulated the pedagogical rationale for doing so, missing the opportunity to help the student understand why active reasoning builds skills (1.3.A.a, -2 pts). The tutor also closed the session with verification advice only, without prompting any reflection on the student's learning process or growth in stakeholder analysis thinking (1.3.D.a, -2 pts). The 1.3.B criteria were not clearly violated as the tutor did give method-level feedback in turns 3 and 5.",
-      "Under 3.1, early responses (Turns 1–3) are notably long with multiple sub-questions and layered frameworks, which reduced the student's space for thinking and likely contributed to the student's frustration and escalating requests for the tutor to just write it. Turns 4–10 are more concise and interactive.",
-      "No deductions were applied to 1.2 (the tutor acknowledged and built on the student's Turn 3 actor list in Turn 3's response), 2.1 (the tutor made clear progress each turn rather than cycling), 2.2 (the tutor kept close to the assignment throughout), or 3.2 (tone was firm but supportive, not punitive).",
-      "Note: 1.1.A.a and 1.1.B.a could both be considered for Turn 4, but per rubric instructions, the behavior is penalized in one primary place. The 1.1.A.a full deduction is applied as the template collectively enables submission-ready output."
+      "The tutor consistently and commendably refuses to do the assignment for the student, maintaining boundaries across all 10 turns despite repeated pressure.",
+      "However, in Turn 4 the tutor provides a highly detailed fill-in-the-blank sentence template that constitutes near-complete rewriting of the student's deliverable, triggering the 1.1.B deduction. The student's own contribution was reduced to filling in names into pre-structured final sentences.",
+      "The tutor never explains the pedagogical rationale for withholding direct answers—refusals are stated as flat policy ('I can't') without any reference to learning goals, skill development, or why the student benefits from doing this work themselves.",
+      "No process reflection or transfer support is offered at any point in the conversation; the tutor moves directly from task completion toward submission without prompting the student to reflect on what they learned or how the actor-mapping method works.",
+      "Early responses (Turns 1–3) are notably long and dense, front-loading multiple nested questions and sub-tasks rather than starting with a single focused prompt and building from student response. Later turns (6–10) are more appropriately sized.",
+      "Scaffolding and progression are generally solid: the tutor builds on student lists, offers targeted feedback, and correctly distinguishes category confusions (leaders vs. implementers, NYCHA as agency vs. tenant voices). Assignment anchoring is maintained throughout."
     ],
-    "total_score": 26,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

@@ -92,7 +92,7 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor immediately steers the student into proposing stressors first but does not explain the learning rationale for that guided approach.",
+                "reason": "The tutor structured the interaction around the student generating ratings and justifications first, but did not explain the learning rationale or limitation behind that approach.",
                 "points": 2
               }
             ],
@@ -155,9 +155,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor sustained a strong Socratic pattern throughout: the student generated the stressors, ratings, sector tags, decision rule, and justifications while the tutor mainly probed, tightened, and checked distinctions.",
-      "Scaffolding was effective and assignment-anchored; each turn built on the student's prior answer and moved toward a defensible stressors table without drifting off-task or becoming repetitive.",
-      "The only clear deduction is a modest meta-learning gap: the tutor did not explicitly explain why it was having the student do the reasoning first, even though the tutoring approach consistently relied on guided discovery."
+      "The tutor consistently used guided questioning, had the student generate ratings and evidence, and avoided doing submission-ready work for the student.",
+      "The conversation stayed tightly anchored to the stressors-table assignment and built progressively from stressor identification to ratings, justifications, and priority logic.",
+      "A minor deduction was applied because the tutor did not explain the rationale for its student-led tutoring approach or any limitation on providing more direct answers."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

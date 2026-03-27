@@ -232,11 +232,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3
+                  5,
+                  6,
+                  7,
+                  8
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 2 Turn 2, the tutor provides a curated menu of 11 Miami-specific stressors with sector categories already assigned, doing the key identification and categorization work that is central to the assignment. In Turn 3, the tutor provides fill-in-the-blank sentence stems with the logical structure of each justification already supplied, effectively doing the reasoning architecture for the student.",
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Transcript 2 Turn 5, the tutor provides a near-complete template with full sentences and only bracket placeholders, and in Turn 8 provides an even more complete paragraph that students could submit with trivial edits. The template in T2-Turn 5 and T2-Turn 8 crosses into producing submission-ready text structure with pre-written connecting prose, not just scaffolding prompts. Similarly in Transcript 3 Turn 8, the tutor provides a nearly complete paragraph for the forum post. While these do require bracket-filling, the surrounding prose is essentially submission-ready, effectively rewriting student text into near-final language.",
                 "points": 6
               }
             ],
@@ -254,29 +256,69 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces its constraints consistently (refusing to write for the student) but rarely explains the pedagogical rationale—why doing the work themselves matters for learning and skill development. The tutor says 'I can't' or 'I won't' without articulating the learning rationale (active reasoning, long-term skill development).",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves from one task to the next without prompting the student to reflect on what changed in their thinking or why a method (e.g., using bullet notes before drafting sentences) worked. At the end of each conversation the tutor simply gives the next task without reinforcing the process the student used to get there.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on their thinking process, what changed in their understanding, or why a method worked. There are no transfer-support moments or meta-cognitive prompts asking the student to reflect on why certain approaches are stronger.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcripts 2 and 3, the tutor cycles through the same pattern across many turns: student asks for paste-ready content, tutor refuses and gives a template/menu, student asks for more completed version, tutor refuses and provides an even more complete template. This spiral repeats without meaningful synthesis or reframing of the pedagogical approach. By Turn 8 of Transcript 2 and Turn 8 of Transcript 3, the tutor is providing near-complete paragraphs, revealing that the earlier scaffolding strategy was not working and the tutor failed to switch methods earlier.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -288,7 +330,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -301,10 +343,13 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor repeatedly produces very long multi-paragraph replies (e.g., T2 Turn 2 lists 11 stressors with sector tags; T2 Turn 3 provides 10 sentence stems; T3 Turn 2 gives a full three-bucket actor menu; T3 Turn 5 provides a near-complete templated post) when shorter, targeted prompts would have been more appropriate and would have preserved more student cognitive engagement.",
+                "reason": "Repeatedly across all three transcripts, the tutor gives multi-paragraph replies with long menus, detailed templates, and numbered lists when shorter, more focused prompts would be more appropriate. For example, T1-Turn 1 has three layered questions, T2-Turn 2 has an 11-item stressor menu, T2-Turn 3 has 10 sentence stems, T3-Turn 2 has two large categorized lists. These lengthy responses reduce student opportunity to think and respond, and the pattern repeats consistently.",
                 "points": 4
               }
             ],
@@ -326,22 +371,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor is consistently firm about not producing submission-ready text and repeatedly refuses copy-paste requests across all three transcripts, which is commendable and prevents the most serious 1.1.A violations.",
-      "However, in Transcript 2 the tutor supplies an extensive pre-categorized stressor menu (Turn 2) and a full set of sentence-stem justifications with logical structure already in place (Turn 3), effectively doing the core reasoning work of identification and categorization that the assignment requires from the student. This triggers the 1.1.C.b deduction (6 points).",
-      "A similar pattern appears in Transcript 3 where the tutor builds and presents a near-complete forum-post template (Turn 5 and Turn 8) with almost all argument slots pre-filled, leaving only bracket words for the student. While the tutor stops short of fully writing the post, the volume of pre-constructed material in some turns crosses into doing the key reasoning steps.",
-      "Across all three conversations the tutor never prompts the student to reflect on their process or on what worked—there is no meta-learning transfer moment—triggering the 1.3.D deduction.",
-      "Response length is a recurring issue: several turns are very long multi-part menus or templates that reduce the student's opportunity to generate ideas, triggering the 3.1.A deduction.",
-      "Scaffolding and progression (1.2) are generally handled well: the tutor acknowledges student contributions (e.g., the bullet notes in T2 Turn 5), builds on them in subsequent turns, and uses targeted follow-up questions rather than restarting from scratch. No deductions are warranted here.",
-      "Dialogue quality (2.2 anchoring, 2.1 spiraling) is strong: the tutor consistently re-anchors to the assignment requirements when the student tries to elicit ready-made content, and the conversation advances meaningfully each turn without circular repetition."
+      "Across all three transcripts, the tutor consistently refuses to write submission-ready content for the student, maintaining appropriate academic integrity boundaries. The Socratic intent is clear and the tutor generally acknowledges student progress and builds on it (1.2 intact).",
+      "However, in Transcripts 2 and 3, the tutor gradually provides increasingly complete templates—in T2-Turn 8 and T3-Turn 8, near-complete paragraphs with only bracket-filling required—which constitutes rewriting student text into near-submission-ready language (1.1.B.a deduction of 6 points applied once across all transcripts).",
+      "The tutor cycles through the same refusal-then-template pattern without switching strategies when it clearly isn't working, particularly in Transcripts 2 and 3 where 7-8 turns are spent in the same loop (2.1.A.a deduction).",
+      "Tutor responses are frequently lengthy and menu-heavy when shorter, more targeted questions would reduce cognitive load and give the student more room to engage (3.1.A.a deduction).",
+      "The tutor never explains why independent student work matters pedagogically, and never prompts reflection on the student's thinking process or method choices (1.3.A.a and 1.3.D.a deductions).",
+      "Assignment anchoring (2.2) is strong—the tutor consistently keeps the student on task and corrects misunderstandings. Tone (3.2) is supportive and non-punitive throughout."
     ],
-    "total_score": 34,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

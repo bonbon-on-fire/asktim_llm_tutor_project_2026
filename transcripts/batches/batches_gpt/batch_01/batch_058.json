@@ -249,17 +249,17 @@
                   23
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refused to fill in or phrase answers for the student without explaining a learning rationale for that limitation.",
+                "reason": "The tutor states it cannot provide filled-in answers or paste-ready wording, but does not clearly explain the learning rationale for that limit beyond refusal.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  7,
-                  17,
+                  10,
+                  20,
                   29
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After student improvement, the tutor usually moved straight to the next task rather than prompting reflection on why the method worked or how to transfer it.",
+                "reason": "The tutor frequently moves to the next search/check step without prompting reflection on what method worked, why a source choice was defensible, or what the student should transfer to future rows.",
                 "points": 2
               }
             ],
@@ -279,12 +279,15 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  13,
                   14,
                   15,
-                  16
+                  16,
+                  18,
+                  19
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In the proxy-selection sequence, the tutor repeated similar ask-the-student-to-rank/reason moves across multiple turns while the student stayed stuck, with little synthesis until later.",
+                "reason": "After the student repeatedly says the current approach 'didn't work,' the tutor keeps returning to similar question-heavy self-ranking/decision prompts instead of switching to a more synthesized or simplified strategy.",
                 "points": 4
               }
             ],
@@ -311,26 +314,18 @@
               {
                 "evidence_turns": [
                   1,
+                  3,
                   8,
                   21,
-                  30
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Many responses were long, multi-part monologues with several bullets/questions at once when shorter interactive steps would have been easier for this confused student to process.",
-                "points": 4
-              },
-              {
-                "evidence_turns": [
-                  10,
-                  16,
+                  22,
                   28
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor often used avoidably dense wording and jargon such as provenance, defensible, area-weighted, normatively/politically loaded, and ADHB/ADHK without sufficient simplification.",
-                "points": 2
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor often responds with long multi-part prompts and checklists where shorter, more targeted interaction would better fit the student's confusion and preserve space for student thinking.",
+                "points": 4
               }
             ],
-            "score": 0,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -342,24 +337,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor stayed strongly anchored to the assignment and generally used guided questioning instead of doing the table for the student.",
-      "Main weaknesses were process framing and communication: the tutor often refused direct help without explaining the learning rationale, rarely prompted reflection after progress, and frequently used long, jargon-heavy replies.",
-      "Turn numbers are referenced sequentially across the three 10-turn transcripts (1-30). The clearest deduction area was the repeated proxy-selection spiral in transcript 2; other possible pedagogy deductions were less certain, so they were not taken."
+      "Across the three transcripts, the tutor stays strongly anchored to the assignment, avoids doing the table for the student, and generally uses guided questioning rather than giving submission-ready content.",
+      "The biggest weakness is repeated question-heavy prompting even after the student explicitly says a line of questioning is not working; this creates spiraling without enough synthesis or simplification.",
+      "Some deductions are modest because the tutor does give concrete method guidance, but it rarely explains the learning rationale for its refusals or asks the student to reflect on what method they should reuse."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

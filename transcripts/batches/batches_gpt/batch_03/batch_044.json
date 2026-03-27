@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied a full 7-item Miami stressor list with sector pairings, doing the core idea-generation and categorization step instead of having the student derive the rows.",
+                "reason": "The tutor supplied seven specific Miami stressors with sector framing before the student generated them, doing a core content-generation step of the table for the student.",
                 "points": 6
               }
             ],
@@ -253,11 +253,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
-                  7
+                  20,
+                  30
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the ranking and drafted justifications, the tutor critiqued and redirected but did not prompt reflection on why the method worked or how to transfer it to the remaining rows.",
+                "reason": "After student progress, the tutor consistently moved straight to the next task instead of prompting reflection on why the student's reasoning method worked or how to reuse it.",
                 "points": 2
               }
             ],
@@ -294,8 +294,20 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  8,
+                  24,
+                  29
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used multi-part, list-heavy replies where shorter interactive prompts would have better matched students who were overwhelmed or asking for one small next step.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -307,24 +319,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly maintained academic-integrity boundaries, kept the student anchored to the assignment, and generally scaffolded the work through ranked steps, source types, and justification templates.",
-      "Main deduction: the tutor crossed into doing core assignment reasoning by generating a Miami-specific 7-row stressor list with sector labels, which substantially reduced guided discovery.",
-      "A smaller deduction was applied because the tutor rarely prompted reflection on why the student's rating and justification method worked, limiting transfer to future rows."
+      "Evidence turns are numbered cumulatively across the three transcripts (1-30) because the provided turn labels restart in each transcript.",
+      "Across the conversations, the tutor usually kept the work student-owned, redirected off-topic requests promptly, and scaffolded the assignment in a task-aligned way.",
+      "The main pedagogy issue was supplying a full Miami stressor list in Transcript 1, which gave the student core assignment ideas instead of eliciting them first.",
+      "Communication was generally clear and supportive, but many replies were longer and more list-heavy than necessary, and there was little explicit reflection on transferable method."
     ],
-    "total_score": 38,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

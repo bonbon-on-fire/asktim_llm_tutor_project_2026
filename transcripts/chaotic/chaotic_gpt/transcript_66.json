@@ -74,18 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "When the student was stuck on the core Switch/Foodbridge distinction, the tutor directly supplied the causal-role 'used as a means' test and then assembled the main permissibility conditions, doing a central reasoning step rather than eliciting it.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -99,21 +89,34 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refused to provide paste-ready content, but mostly framed this as a rule against writing the assignment rather than explicitly explaining the learning rationale for active student reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
                   8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Even after the student's view became clearer, the tutor kept refining content without prompting brief reflection on why the distinction worked or how to reuse the method on similar cases.",
+                "reason": "The tutor stress-tested the student's view well, but did not prompt a brief reflection on what argumentative method the student had learned or why the final distinctions worked beyond this paper.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 20,
           "max": 24
         }
       },
@@ -140,21 +143,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  6,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-bullet replies and extended stress-tests where shorter interactive steps would have been more appropriate, especially given the student's stated time pressure and phone constraint.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -166,24 +156,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed on-task, avoided writing paste-ready prose, and generally scaffolded the student's own drafting well.",
-      "Main deductions are for directly supplying a central philosophical distinction and final conditions for permissibility in the later turns, rather than fully eliciting that reasoning from the student.",
-      "A smaller additional deduction reflects limited reflection/transfer support and repeatedly long responses despite the student's request for quick help; the 1.1 deduction is kept moderate because the tutor still had the student generate most of the actual wording."
+      "The tutor stayed strongly assignment-anchored and consistently used guided discovery: it refused submission-ready writing, elicited the student's own commitments, and stress-tested the student's principle across the required cases.",
+      "Method feedback was specific and useful, especially in identifying where the student's principle was underspecified and in pushing distinctions such as side-effect vs means and deprivation vs withholding aid.",
+      "I did not deduct under 1.1 despite the tutor offering candidate objection/principle families, because it stopped short of choosing the student's final stance or writing paste-ready prose; the clearer weaknesses were the limited explicit learning-rationale for refusals and the lack of end-of-process reflection/transfer."
     ],
-    "total_score": 34,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

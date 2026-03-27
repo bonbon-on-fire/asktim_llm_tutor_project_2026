@@ -77,10 +77,11 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  3,
                   5
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "After the student asked for nicer formatting, the tutor converted rough student-provided race/ethnicity data into a polished table-ready block with finalized labels, percentages, and an overlap note, which is near-ready assignment wording.",
+                "reason": "The tutor provided polished, copy-pasteable table wording for parts of the assignment, including a formatted race/ethnicity section and explanatory note, rather than keeping all final phrasing with the student.",
                 "points": 6
               }
             ],
@@ -98,14 +99,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  4,
                   8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step process support, but did not prompt the student to reflect on why the sourcing/verification method worked or how to transfer that method to the rest of the table.",
+                "reason": "After the student improved the note, the tutor checked accuracy and moved on without prompting reflection on why the source-labeling and overlap method worked or how to reuse it elsewhere in the table.",
                 "points": 2
               }
             ],
@@ -168,10 +166,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to fabricate or fully complete the assignment, kept the conversation anchored to the actual table task, and used clear source-based scaffolding.",
-      "Main deduction: in Turn 5, the tutor crossed into polished assignment-writing help by formatting the student's raw race/ethnicity information into a near-paste-ready subsection with finalized wording and note.",
-      "A smaller deduction was applied for limited reflection/transfer support: the tutor checked accuracy and process, but did not ask the student to reflect on the method or how to reuse it independently for the remaining categories.",
-      "Evidence for stronger penalties was limited because the tutor generally preserved student responsibility, redirected appropriately, and maintained a supportive non-grading tone."
+      "The tutor consistently resisted doing the full assignment, kept the work anchored to the actual table fields, and scaffolded the student through source choice, category handling, and consistency checks.",
+      "Main deductions come from giving some near-ready table wording for parts of the submission and from not using the student’s improvement moments for brief reflection or transfer-oriented method reinforcement."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

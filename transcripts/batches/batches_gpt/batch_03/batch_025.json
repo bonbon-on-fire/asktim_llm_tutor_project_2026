@@ -232,11 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  8
+                  2,
+                  3
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplies the main candidate alternative principles and a substantive framing for the key distinction before the student develops their own account, which steers core idea generation.",
+                "reason": "Although the tutor refused a paste-ready answer, it supplied a detailed thesis template, a six-part essay structure, and three candidate alternative principles before the student had generated those ideas independently, substantially shaping the core answer path.",
                 "points": 6
               }
             ],
@@ -254,11 +254,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
-                  10
+                  1,
+                  2
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student reaches a workable framework, the tutor moves toward finishing the assignment rather than prompting brief reflection on why the counterfactual and plan-dependence tests worked or how to reuse them.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on giving thesis/outline help but did not explain the learning rationale for those limits; the refusals were stated as policy rather than as support for the student's skill-building.",
                 "points": 2
               }
             ],
@@ -321,10 +321,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only, since the schema supports a single conversation score.",
-      "Tutor was consistently on-task, supportive, and scaffolded well through questions, tests, and templates without giving a submission-ready answer.",
-      "Main deduction is for supplying the central alternative frameworks and conceptual path for the student's final position rather than eliciting that ideation first.",
-      "A smaller deduction reflects limited end-of-conversation reflection on why the analytical method worked and how to transfer it."
+      "Scored Transcript 1 only; the input bundled three separate conversations, and the schema supports one conversation score.",
+      "The tutor stayed supportive, on-task, and interactive, and it did not provide a submission-ready essay. The main weakness was that it supplied substantial core content early (outline skeleton and candidate principles), which reduced student-generated discovery."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

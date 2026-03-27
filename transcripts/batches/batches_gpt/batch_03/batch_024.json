@@ -231,16 +231,12 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  4,
-                  7
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In transcript 1, the tutor provided a sentence-by-sentence paragraph blueprint and later selected the 'strongest/most defensible' decision-arena and Port Authority framing for the student, doing a key reasoning and organization step instead of leaving that choice to the student.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1, the tutor provided a sentence-by-sentence two-paragraph blueprint with specific actor content and later selected a key content choice for the student, so the answer pieces across turns became close to submission-ready.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -251,14 +247,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When refusing requests, the tutor usually stated the constraint ('I can’t' or 'we need to stay on the assignment') without clearly explaining the learning rationale for that limitation.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor rarely prompted reflection on why the evidence-sorting or actor-mapping method worked; conversation endings focused more on final checks than on transfer or process reflection.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 8,
           "max": 24
         }
       },
@@ -304,18 +311,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently stayed assignment-focused, refused to ghostwrite, and used strong scaffolding through targeted questions, evidence checks, and structure prompts.",
-      "The main deduction comes from transcript 1, where the tutor went beyond guidance by supplying a detailed paragraph blueprint and choosing the student's example framing for them; this reduced student ownership of the key reasoning step.",
-      "Because the tutor still did not provide polished submission-ready prose and generally kept the student doing the drafting, the smaller 1.1 deduction was more appropriate than the full near-submission-ready penalty."
+      "Across the provided transcripts, the tutor was generally well-anchored to the assignment, interactive, and strong at building workable research and categorization processes.",
+      "The main score drop comes from Transcript 1, where the tutor moved beyond coaching into a highly specified paragraph blueprint and selected a substantive content path for the student, making the help too close to direct assignment work.",
+      "Multiple transcripts were supplied in one prompt, so deductions are tied to transcript-level evidence rather than numeric turn references."
     ],
-    "total_score": 40,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

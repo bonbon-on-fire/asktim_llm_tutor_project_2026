@@ -247,7 +247,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts the tutor consistently moves the student forward without prompting reflection on what changed in their thinking or why a method worked. For example, at the end of Transcript 1 (Turn 10) and throughout Transcripts 2–3, the tutor advances to next steps without asking the student to articulate what they learned from the refinement process.",
+                "reason": "Across all three transcripts the tutor consistently moves to the next task without prompting the student to reflect on what changed in their thinking or why a method worked. At end of Transcript 1 Turn 10, Transcript 2 Turn 10, and Transcript 3 Turn 10, the tutor advances without any reflection prompt on process or method transfer.",
                 "points": 2
               }
             ],
@@ -288,10 +288,11 @@
               {
                 "evidence_turns": [
                   1,
-                  5
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 1 of Transcript 1 presents five multi-part questions in a single block before checking what the student already knows, and similar dense multi-question responses appear in Turn 3 (Transcript 2) and Turn 4 (Transcript 2). These long monologue-style prompts consistently reduce the student's opportunity to think and respond to one question at a time.",
+                "reason": "In Transcript 1 Turn 1, the tutor posts five numbered sub-questions in a single multi-paragraph response before the student has answered anything, reducing student thinking space. Similarly in Transcripts 2 and 3, several turns pack multiple numbered questions and instructions into long blocks when shorter, more focused prompts would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -320,10 +321,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic approach, consistently refusing to supply final answers or do the student's reasoning for them. The philosophy conversation (Transcript 1) is especially well-executed: the tutor elicits the student's core principle, applies pressure through counterexamples, and guides the student to progressively sharpen a defensible general account without ever stating the conclusion first.",
-      "The urban-studies conversations (Transcripts 2–3) are similarly guided: the tutor refuses to pick the city, guess at missing actors, or hand over a completed stressors table, instead prompting the student to supply evidence and refine ratings step by step.",
-      "Off-topic chitchat (music, 'how's your day') is handled cleanly with brief acknowledgment and immediate redirection in all three transcripts, so no assignment-anchoring deductions apply.",
-      "The main weaknesses are: (1) Response length — the opening turn of Transcript 1 in particular delivers five interleaved sub-questions in one block before gauging what the student already knows; similar multi-part monologue responses recur across both urban-studies sessions. This repeatedly limits the student's space to think and respond, triggering 3.1.A.a (-4). (2) Reflection/transfer — the tutor never pauses to ask the student to articulate what changed in their thinking or why a refinement worked, missing the meta-learning opportunity flagged by 1.3.D.a (-2). No other deductions are warranted: scaffolding is consistently adaptive, tone is supportive and non-grading throughout, and there is no pattern-level repetition or redundancy."
+      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it never gives away answers, consistently redirects off-topic chat attempts, and guides the student to derive claims through targeted questioning. No near-submission-ready content is provided and no student text is rewritten.",
+      "Scaffolding is effective throughout: the tutor builds on each student response, acknowledges correct progress (e.g., 'That contrast is strong and usable,' 'This is coherent'), and pressure-tests student claims incrementally rather than restarting from scratch.",
+      "A deduction of 2 points is applied under 1.3.D.a (reflection/transfer) because the tutor consistently advances to the next task at conversation's end without ever prompting the student to reflect on what changed in their thinking or why a particular method worked.",
+      "A deduction of 4 points is applied under 3.1.A.a (response length) because several tutor turns—most notably Transcript 1 Turn 1 (five numbered sub-questions before any student input) and several turns in Transcripts 2 and 3—use multi-paragraph, multi-question blocks where one or two focused prompts would better preserve student thinking space. This pattern recurs enough to justify the full deduction.",
+      "No deductions are applied for assignment anchoring or redundancy: the tutor consistently re-grounds off-topic attempts immediately and advances the conversation without cycling unproductively on the same points.",
+      "Tone is supportive and coaching-oriented throughout; no formal grades or punitive language appears."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

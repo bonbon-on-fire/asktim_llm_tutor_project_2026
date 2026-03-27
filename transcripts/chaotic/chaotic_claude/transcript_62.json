@@ -82,7 +82,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In turns 5 and 6, the tutor provides detailed fill-in-the-blank sentence templates that are nearly submission-ready sentence structures. In turn 7, the tutor extends this to four additional stressors, providing complete academic-language sentence scaffolds with bracketed slots. While the student fills brackets, the tutor has effectively generated the final wording structure, doing the key writing work rather than guiding the student to construct their own sentences.",
+                "reason": "In turns 5 and 6 the tutor provides detailed fill-in-the-blank sentence templates with academic structure, phrasing, and connective language already written out. In turn 7, the tutor extends this to four more stressors with full template sentences including sector labels and suggested mechanisms. While brackets are left empty, the surrounding prose is submission-ready and the student only needs to insert words—this constitutes rewriting student text into near-final wording.",
                 "points": 6
               }
             ],
@@ -105,15 +105,16 @@
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces its policy of not completing the table but does not explain the learning rationale behind guided discovery—e.g., that building the table develops analytical skills students will need for the climate action plan. The refusals are stated as policy without connecting to skill development.",
+                "reason": "The tutor consistently refuses the student's requests but does not explain the learning rationale clearly—it says 'I can't' or 'My role is to guide' without explicitly articulating why the student doing the work themselves builds skills or supports their long-term development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation, the tutor does not prompt any reflection on what the student learned about rating methodology or how the evidence-gathering process works. The conversation ends without reinforcing why the process of justifying ratings matters for later assignments.",
+                "reason": "At no point across the conversation does the tutor prompt the student to reflect on what they have learned about Miami's climate vulnerabilities or how their thinking evolved. The tutor moves from step to step without reinforcing the analytical method the student is developing.",
                 "points": 2
               }
             ],
@@ -157,7 +158,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 2 presents a long bulleted list of 8 potential stressor rows before asking the student to respond, and turn 7 delivers four full multi-clause templates in a single block. These multi-paragraph replies reduce student opportunity to think through options themselves before receiving extensive scaffolding.",
+                "reason": "Several tutor turns are quite long with multi-part instructions, lists, and full template sentences when a shorter, more focused prompt would suffice. Turn 2 lists eight possible stressor rows plus instructions; turn 7 provides four full template sentences across different sectors with explanatory annotations, all in one message, reducing student thinking opportunity.",
                 "points": 4
               }
             ],
@@ -186,14 +187,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready content and repeatedly redirected the student to do their own reasoning, which is commendable for 1.1.A.a avoidance.",
-      "However, the tutor crossed into 1.1.B territory by providing detailed, near-final academic sentence templates in turns 5, 6, and 7. These templates contain nearly all the wording structure a student needs; filling in brackets does not constitute meaningful authorship of the justification form.",
-      "The tutor did not explain the pedagogical rationale for its approach (1.3.A.a), missing opportunities to connect the assignment work to skill development for the later climate action plan.",
-      "No reflection or transfer was prompted at the end of the conversation (1.3.D.a), leaving the student without insight into why the evidence-justification process matters.",
-      "Some turns (2, 7) were excessively long, presenting large amounts of content before checking student understanding, reducing interactive discovery.",
-      "Scaffolding was generally well-calibrated: the tutor built on the student's correct ratings, asked targeted clarifying questions, and avoided restarting from scratch.",
-      "Dialogue quality was strong: the tutor stayed on task, re-anchored the student to the assignment format, and avoided engaging with off-topic content.",
-      "Tone remained supportive and non-grading throughout, with consistent acknowledgment of the student's time pressure without capitulating on academic integrity."
+      "The tutor consistently refuses to produce submission-ready content and uses a structured, scaffolded approach that builds progressively from hazard identification to sector classification, rating, and justification—showing genuine Socratic intent.",
+      "However, the tutor crosses a line in turns 5–7 by providing fully structured academic sentence templates that do most of the rhetorical and organizational work for the student. By turn 7, four more complete template sentences are offered unprompted, which together with the earlier two constitute near-final writing assistance (1.1.B.a, -6 pts).",
+      "The tutor rarely explains why the student must do the work themselves in terms of skill-building or learning goals, limiting meta-learning rationale (1.3.A.a, -2 pts). There is no end-of-session reflection or method reinforcement moment (1.3.D.a, -2 pts).",
+      "Several responses are too long and multi-layered, reducing the student's cognitive engagement opportunity (3.1.A.a, -4 pts). Tone is consistent and supportive throughout, and the tutor never grades or misanchors the assignment."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

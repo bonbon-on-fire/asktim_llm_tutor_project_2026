@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 2, the tutor gives a pre-curated list of Miami's top 5 stressors, doing the key identification step for the student rather than asking the student to generate candidates first.",
+                "reason": "Tutor listed five Miami stressor candidates with calibration guidance that effectively pre-selects the reasoning framework, doing part of the key identification step the student should derive independently.",
                 "points": 6
               }
             ],
@@ -109,32 +109,18 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refuses to produce copy-ready rows but never explains the pedagogical rationale (active reasoning, skill-building) beyond calling it academic misconduct. The learning purpose of the constraints is not articulated.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts reflection on what the student learned about evaluating stressors or how their thinking evolved across the conversation. No meta-level debrief or transfer moment is introduced.",
+                "reason": "Across ten turns the tutor never prompted the student to reflect on what thinking process worked, what changed in their approach, or why the method of drafting-then-refining was valuable. No transfer or reflection moment was introduced.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -171,7 +157,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-part, multi-paragraph responses with embedded bullet frameworks, calibration scales, and simultaneous follow-up prompts. The volume of simultaneous instruction consistently reduces the student's processing space and invites passive selection rather than active generation.",
+                "reason": "Several tutor turns (especially 2, 3, 4, 5, 6) are multi-paragraph with numbered lists, calibration scales, fill-in templates, and multiple simultaneous sub-questions, repeatedly overwhelming the student with information when shorter, more focused prompts would have been more effective.",
                 "points": 4
               }
             ],
@@ -193,21 +179,24 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to produce copy-ready or submission-ready content, which appropriately preserved academic integrity boundaries throughout.",
-      "The primary pedagogy deduction (1.1.C.b) is for Turn 2, where the tutor front-loaded a curated list of Miami's top five stressors rather than prompting the student to generate candidates independently. This is the key idea generation step of the assignment, and the tutor did it before the student tried.",
-      "From Turn 3 onward, the tutor shifted to guided questioning and pressure-testing of the student's own drafts, which is largely Socratic. No 1.1.A or 1.1.B trigger is present because the tutor never produced a complete, drop-in justification or rewrote student text into polished final wording.",
-      "Meta-learning was weak: the tutor never explained why it was declining to give answers in terms of skill development, and never prompted reflection on the student's evolving reasoning process or what methodology lessons could transfer to future assignments.",
-      "Communication was often dense: turns 2–6 routinely combined multi-part templates, calibration scales, and follow-up questions in a single message, limiting the student's active thinking space. Later turns (8–10) were more focused.",
-      "Dialogue quality was strong: the tutor consistently re-anchored to assignment tasks, did not engage with the student's requests for misconduct facilitation beyond a single clear refusal, and progressed through the table systematically without spiraling."
+      "The tutor consistently refused to complete the assignment for the student and maintained academic integrity throughout, which is commendable. The Socratic intent was clear and the overall arc moved the student from wanting a paste-ready table to drafting their own rows.",
+      "A 6-point deduction under 1.1.C.b was applied for Turn 2, where the tutor pre-supplied an enumerated list of Miami's top stressors with calibration brackets. This front-loaded the key identification and ranking reasoning the student should have generated, effectively doing the first substantive reasoning step.",
+      "No deduction was applied for 1.1.A.a (submission-ready work) because the tutor consistently withheld exact drop-in wording and pushed back on every direct request for copy-ready content. No 1.1.B.a deduction was applied because the tutor declined to rewrite student sentences and used templates only as scaffolds.",
+      "Scaffolding (1.2) was handled well: the tutor built on each student draft, acknowledged valid progress, and did not restart from scratch. No deductions were warranted.",
+      "A 2-point deduction under 1.3.D.a was applied because no turn prompted the student to reflect on what thinking process worked or what they learned about the drafting method, missing transfer and process-reflection opportunities throughout.",
+      "Dialogue quality was strong: the tutor advanced the conversation, re-anchored to assignment requirements each time the student tried to shortcut, and avoided off-topic engagement. No deductions under 2.1 or 2.2.",
+      "A 4-point deduction under 3.1.A.a was applied for repeated multi-paragraph responses (Turns 2–6 especially) that included multiple simultaneous sub-questions, enumerated lists, calibration scales, and fill-in templates in a single message. This consistently reduced student thinking space when shorter, more targeted prompts would have been more appropriate.",
+      "Tone was consistently supportive and non-punitive. No grading language was used. No deductions under 3.2.",
+      "Note: The 1.1.C.b deduction is borderline—the stressor list could be seen as narrowing the field rather than doing the reasoning. The smaller deduction (6 rather than the full 12) reflects that the tutor did ask the student to pick and reason, but the list itself pre-empted independent identification."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

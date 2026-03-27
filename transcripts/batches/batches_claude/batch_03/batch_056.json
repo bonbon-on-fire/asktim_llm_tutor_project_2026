@@ -233,10 +233,11 @@
               {
                 "evidence_turns": [
                   4,
-                  5
+                  5,
+                  8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 1 Turn 4 and 5, the tutor provided near-verbatim sentence frames with all the key words pre-filled (low elevation, king tides, porous limestone, storm surge, power outages) that only required blank-filling. By Turn 8, the tutor again provided fully-structured fill-in-the-blank templates with the complete sentence structure and word banks embedded. While the tutor consistently refused to finalize text, the scaffolded templates in T1 crossed into providing the final wording skeleton that only needed minor completion. However, these did NOT become submission-ready because the student still had to write connecting language and the tutor pushed back on requests to finalize. The deduction is limited as the templates were instructional scaffolds rather than full rewrites.",
+                "reason": "In Transcript 1, Turn 4 and Turn 8, the tutor provides fill-in-the-blank sentence templates that are so close to final submission wording that the student only needs to slot in a few words already provided in a word bank. By Turn 8, the template is nearly complete and the student in Turn 9 submits sentences that are almost verbatim from the tutor's frame. This approaches rewriting student text into final wording. Turn 5 reinforces the same pattern with a near-complete word-bank frame.",
                 "points": 6
               }
             ],
@@ -257,27 +258,18 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its constraints (won't write sentences, won't pick stressors) but rarely explains the learning rationale behind this policy in terms of active reasoning or long-term skill development. In T1 Turn 6, tutor says 'that crosses the line into doing the assignment for you' but does not connect this to why the student benefits from doing it themselves.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor does not prompt the student to reflect on what they learned about their reasoning process or how their thinking changed. In T1 Turn 9 when the student finally produces good sentences, the tutor moves immediately to next steps without asking the student to reflect on what method worked. In T2 and T3, similarly no meta-reflection prompts appear.",
+                "reason": "Across all three transcripts, the tutor moves from step to step without ever prompting the student to reflect on what their thinking process was, what changed, or why a reasoning approach worked. In Transcript 1 Turn 9, after the student produces good sentences, the tutor gives brief approval and immediately redirects to new stressors without any process reflection. Similarly in Transcripts 2 and 3, method choices are never explicitly reinforced or revisited.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -309,10 +301,11 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 Turn 2, the tutor lists 12 numbered stressor options and asks the student to pick 8 while also drafting two rows — this is a very dense multi-part message that reduces student opportunity to think. Turn 3 in T1 contains three separate question sets (A and B with sub-questions each) plus a fill-in sentence frame. Turn 2 in T2 similarly packs three major tasks (sector categorization, who is hit hardest, rating definition, and one indicator request) into a single dense response. This pattern of multi-part monologue replies is recurring across transcripts.",
+                "reason": "Across all three transcripts, multiple tutor turns use multi-paragraph responses with several sub-questions and bullet lists when shorter, more focused prompts would suffice. For example, Transcript 1 Turn 2 gives a numbered list of 12 stressors plus a separate question; Turn 3 poses five sub-questions across two stressors; Transcript 2 Turn 2 and Turn 3 each contain three or more layered questions in a single response. This consistently reduces the student's opportunity to think and respond to one thing at a time.",
                 "points": 4
               }
             ],
@@ -334,21 +327,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor shows strong commitment to Socratic principles, consistently refusing to write sentences, pick stressors, or assign ratings for students, and instead using questions to guide student reasoning.",
-      "In Transcript 1, the tutor's repeated use of highly structured fill-in-the-blank templates with near-complete sentence skeletons and fully specified word banks (Turns 4, 5, 8) approaches the boundary of rewriting student text, triggering a 1.1.B deduction. While the tutor never produced fully submission-ready text, the templates crossed into providing the sentence scaffold that only needed minor word insertion.",
-      "The tutor consistently fails to explain its pedagogical rationale for not writing answers (1.3.A deduction) and misses opportunities to prompt student reflection on reasoning process improvements (1.3.D deduction).",
-      "Communication length is a consistent issue: many tutor turns pack multiple complex tasks, sub-questions, word banks, and frameworks into single responses (e.g., T1 Turn 2 with 12 stressor options, T1 Turn 3 with paired sub-question sets, T2 Turn 2 with three tasks). This reduces student opportunity to process and respond, triggering 3.1.A deduction.",
-      "Dialogue quality is strong: the tutor maintains assignment anchoring well (redirects off-topic in T2 Turn 1 immediately), avoids redundancy by advancing the conversation meaningfully, and scaffolds progressively from identifying stressors to ratings to justifications to sources.",
-      "Tone is consistently warm and constructive, and no grading language appears."
+      "Across all three transcripts the tutor consistently refuses to do the assignment for students and maintains a Socratic stance throughout, which is its strongest feature.",
+      "However, in Transcript 1 (Turns 4, 5, 8) the tutor repeatedly provides near-complete fill-in-the-blank sentence frames with a pre-supplied word bank. By Turn 9 the student's submitted sentences are nearly verbatim reproductions of the tutor's templates, crossing into rewriting student text into final polished wording (1.1.B.a, -6 pts).",
+      "Meta-learning and reflection are consistently absent: the tutor moves efficiently through steps but never pauses to ask students what changed in their thinking or to reinforce method choices after successful moments (1.3.D.a, -2 pts).",
+      "Response length is a recurring issue: across all three transcripts the tutor frequently delivers multi-paragraph, multi-question responses when a single focused prompt would be more appropriate, reducing student thinking time (3.1.A.a, -4 pts).",
+      "No deductions for assignment anchoring or redundancy: the tutor is attentive to the task, redirects off-topic moves immediately (Transcript 2 Turn 1), and advances the conversation meaningfully each turn."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

@@ -256,15 +256,11 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor enforces a Socratic/non-writing constraint (e.g., 'I can't write the exact wording for you,' 'I can't phrase the label for you') but never explicitly explains to the student why—i.e., no rationale about active reasoning, skill-building, or long-term learning is offered.",
+                "reason": "Across all three transcripts the tutor enforces a Socratic/no-direct-answer stance but never explicitly explains the learning rationale to the student (e.g., 'I'm asking you to draft this yourself so you develop the skill of constructing defensible claims'). It simply redirects or declines without stating why the approach benefits the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -273,7 +269,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three conversations, whenever the student improves or produces a good answer (e.g., Turn 6–7 in Transcript 2, Turns 5–7 in Transcript 3), the tutor moves immediately to the next sub-task without prompting reflection on what worked, what changed in their thinking, or reinforcing the method choices made.",
+                "reason": "In all three transcripts the tutor moves forward to the next sub-task without ever prompting the student to reflect on what changed in their thinking, why a reasoning step worked, or what method they should carry forward. No transfer or reflection prompts are present across 30 turns.",
                 "points": 2
               }
             ],
@@ -319,10 +315,11 @@
                   5,
                   6,
                   7,
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly issues multi-part, multi-paragraph responses (e.g., Transcript 1 Turns 3, 4; Transcript 2 Turns 2, 3, 4, 5, 6; Transcript 3 Turns 1, 3, 5, 6) where shorter, more focused prompts would have preserved student thinking space. Many turns contain 3–5 sub-questions at once, consistently reducing the student's opportunity to engage with one idea before the next is introduced.",
+                "reason": "Across all three transcripts the tutor frequently produces multi-part, multi-paragraph responses with 3–5 sub-questions and bulleted frameworks stacked together (e.g., T2/T3/T4 in Transcript 1; T3/T4/T5 in Transcript 2; T3/T4/T5 in Transcript 3). These consistently reduce the student's opportunity to respond to one focused prompt at a time. While the length is sometimes appropriate for complexity, it recurs as a pattern throughout all 30 turns.",
                 "points": 4
               }
             ],
@@ -351,11 +348,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates excellent Socratic discipline: it consistently refuses to draft text for the student, withholds direct answers, and uses well-structured guiding questions to move the student toward their own conclusions. No near-submission-ready text is produced and no key reasoning steps are done on the student's behalf.",
-      "Scaffolding is strong: the tutor builds on each correct student step (e.g., validating boundary/year choices before moving to metrics in Transcript 1; building a rating scale anchored in the student's own ranking in Transcript 2; using the student's actor definitions to derive classification rules in Transcript 3). Student progress is acknowledged and used as the launch point for the next question.",
-      "Meta-learning is the primary weakness. The tutor enforces a no-writing policy across all three sessions without once explaining the pedagogical rationale (skill development, active reasoning) to the student—triggering 1.3.A.a. Additionally, the tutor never pauses after student improvements to invite reflection on what changed or why the method worked—triggering 1.3.D.a across all three conversations.",
-      "Communication length is the second notable weakness. The tutor habitually delivers responses with 3–5 sub-questions in a single turn (e.g., Transcript 1 Turn 3 has three numbered questions plus sub-bullets; Transcript 2 Turn 2 has five lettered sub-items; Transcript 3 Turn 1 lists three categories plus four follow-up steps). While the content is coherent, the volume repeatedly compresses the student's cognitive space and triggers 3.1.A.a.",
-      "Dialogue quality is strong: the tutor redirects off-topic chitchat promptly and without elaboration in all three transcripts, keeps the student anchored to the actual assignment tasks, and never confirms a misread of the assignment prompt. No spiraling or repetition without synthesis is observed."
+      "Across all three transcripts the tutor consistently applies Socratic guided discovery: it declines to write labels, justifications, or wording directly, asks the student to draft first and then critiques, and builds progressively on each student response. No near-submission-ready answers are given (1.1 full credit).",
+      "Scaffolding is strong: the tutor regularly acknowledges student progress (e.g., 'your ranking is defensible,' 'these revisions fit your 10/9/7 scale well') and builds each subsequent question on what the student just supplied. No evidence of ignoring correct student work or misdiagnosing confusion (1.2 full credit).",
+      "Two deductions in 1.3: (a) The tutor never explains its Socratic/non-answer policy in learning-rationale terms across 30 turns (-2 for 1.3.A.a). (b) The tutor never closes a reasoning cycle with a reflection or transfer prompt—it always moves immediately to the next sub-task without asking what the student learned or why the approach worked (-2 for 1.3.D.a). 1.3.B is not deducted because the tutor does give meaningful method-level feedback (e.g., explaining what 'lead vs. coordinate' means, how to construct a scale, what a justification needs to contain).",
+      "Dialogue quality is strong throughout: no circular repetition without progress (2.1 full credit), off-topic dinner/movie/music requests are redirected immediately and cleanly, and the assignment framing is consistently maintained (2.2 full credit).",
+      "A recurrent pattern of long, multi-question responses triggers the 3.1.A.a deduction (-4). In nearly every substantive turn the tutor bundles 3–5 numbered sub-questions plus bulleted frameworks, which—while informative—consistently limits the student's space to respond incrementally. Language is clear and appropriate (3.2 full credit)."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

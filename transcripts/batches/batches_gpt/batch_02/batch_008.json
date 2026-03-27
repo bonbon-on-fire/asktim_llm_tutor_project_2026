@@ -232,12 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
                   8,
-                  9
+                  4
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the set, the tutor sometimes supplies key idea content instead of leaving generation to the student—for example, Transcript 3 turn 4 gives five concrete 'missing actor' types, and Transcript 1 turns 8-9 provide ready-made criteria and sentence frames for the central distinction.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor mostly scaffolded well, but it occasionally supplied substantive idea options before the student generated them, such as offering three candidate consequentialist criteria in Transcript 1 Turn 8 and five 'missing actor types' in Transcript 3 Turn 4.",
                 "points": 6
               }
             ],
@@ -255,10 +254,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10
+                  1,
+                  2
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives useful process structures, but rarely prompts reflection on why a method worked or how to transfer it; closing turns stay focused on finishing the assignment rather than consolidating learning.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly states it cannot provide paste-ready work because that would be 'doing the assignment,' but usually frames this as a constraint rather than explicitly explaining the learning rationale for active student reasoning.",
                 "points": 2
               }
             ],
@@ -298,28 +298,16 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
-                  4,
-                  6,
-                  8
+                  8,
+                  2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly uses long, multi-part replies with numbered lists and extended templates where shorter interactive prompts would have preserved more student thinking space.",
+                "reason": "The tutor often uses long, multi-part prompts with several branches or checklists at once (for example Transcript 1 Turns 3 and 8, and Transcript 3 Turn 2), which is heavy for a rushed, overwhelmed student and less bite-sized than needed.",
                 "points": 4
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor sometimes uses avoidably dense language for the student's state, including terms like 'institutional-role sensitivity,' 'assurance/publicity,' and 'assurance-based spillovers,' which add cognitive load.",
-                "points": 2
               }
             ],
-            "score": 0,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -331,25 +319,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently avoids doing the full assignment and keeps the student anchored to the actual task.",
-      "The strongest positives are assignment alignment, scaffolding from student-provided content, and method-oriented prompts.",
-      "Main deductions come from occasional idea-generation that goes beyond pure guidance, limited explicit reflection/transfer support, and repeatedly long or jargon-heavy responses.",
-      "Because multiple transcripts were provided while the schema supports one score, this evaluation scores the tutor's overall behavior across the set; ambiguous pedagogy deductions were applied conservatively."
+      "Across the transcripts, the tutor consistently refused submission-ready writing and kept the student doing the core classification, argument, and drafting work.",
+      "Scaffolding was generally strong: the tutor built on student progress, stayed tightly anchored to each assignment, and gave useful templates and consistency checks.",
+      "Main deductions are for occasionally supplying substantive idea options itself, for explaining refusal mostly as policy/constraint rather than explicit learning rationale, and for repeatedly using long multi-part prompts. The 1.1 deduction is somewhat borderline because the tutor remained largely non-solutionist overall."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

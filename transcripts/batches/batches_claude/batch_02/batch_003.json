@@ -235,29 +235,11 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor provides a detailed 'speedrun source map' with exact table names, exact paths, exact ACS codes, and exact BEA navigation steps. While no numeric values are given, the tutor resolves the key research task — identifying which sources and tables to use — rather than guiding the student to discover this through questions. This does the core reasoning step of the assignment's data-gathering phase.",
-                "points": 6
-              },
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 4, the tutor again provides exact BEA series/table navigation and exact ACS table codes in detail, building on the already comprehensive source map from Turn 3. However, since the 6-point deduction for 1.1.C has already been applied and the cap is 12, this is noted but subsumed under the existing deduction.",
-                "points": 0
-              },
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  6
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "In Transcript 3, the tutor provides a highly detailed sentence-by-sentence template (Turn 3) and then fills that template with specific NYC-concrete options (Turn 4) across all 8 structural slots. Although individual sentences are not written out, the tutor gives the exact claim structure and exact content options, effectively pre-generating most of the intellectual work before the student attempts it. This is distinct from earlier transcripts and constitutes the tutor revealing the conclusion/answer path (sectors, roles, gaps, consequence types) before the student derives them.",
+                "reason": "In T1/Ex3 Turn 3, the tutor provides an elaborate 8-sentence fill-in-the-blank template with exact NYC-specific framing pre-built, and in Turn 4 follows up with a comprehensive bullet-point list of exact NYC-specific facts (program names, agency functions, concrete examples for ConEd, NYSERDA, DEP, MOCEJ, etc.) that the student can directly plug in. Together these turns do the key reasoning work—identifying which actors matter, what they do, and what examples to use—leaving the student only minimal synthesis. This crosses into doing the key reasoning step for the student.",
                 "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -271,19 +253,7 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
                   3,
-                  5,
-                  6,
-                  9
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to provide content but rarely explains the learning rationale behind the constraint. In Transcript 1 the tutor says 'that would be doing the assignment for you' (Turn 1) but never explains why the student's own active reasoning builds long-term research skill. In Transcript 3 the tutor says 'that crosses the line into doing the assignment' without connecting this to skill development. The pedagogical reasoning behind the refusals is almost never articulated.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   4,
                   5,
                   6,
@@ -292,8 +262,20 @@
                   9,
                   10
                 ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently enforces its 'no-draft' policy without ever explicitly explaining to the student the learning rationale—e.g., that producing the work themselves builds reasoning and analytical skills. The tutor says 'I can't' or 'that crosses the line' but never frames this in terms of the student's learning development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves from one step to the next without prompting the student to reflect on what changed in their thinking, why a particular approach (e.g., sector-tagging, evidence anchoring) worked, or what they learned about research methodology. There is no moment where the tutor asks the student to articulate the method improvement they made.",
+                "reason": "Across all three transcripts, when the student makes genuine progress (e.g., drafts strong justification paragraphs in Ex2 T4, or produces a good consequence sentence in Ex3 T8), the tutor moves on to the next step without prompting the student to reflect on what made their approach work or what they could transfer to future stressors/sections.",
                 "points": 2
               }
             ],
@@ -303,7 +285,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 14,
           "max": 24
         }
       },
@@ -340,7 +322,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 3, Turns 3 and 4 are particularly long: Turn 3 provides an 8-sentence fill-in template with full sentence frames for each slot, and Turn 4 provides exhaustive bullet-point content options across all 8 slots with multiple sub-items each. These multi-paragraph responses go well beyond what a focused guiding question would require and substantially reduce the student's cognitive work. Similar but less extreme length appears in Transcript 1 Turn 3 (full source map) and Transcript 2 Turn 2 (multi-part scaffolding dump). Repeated pattern across transcripts.",
+                "reason": "In Ex1, turns 3 and 4 produce multi-item bulleted breakdowns of source paths and exact table/series identifiers across 7 fields—lengthy monologues where shorter prompts asking the student to find one item at a time would suffice. In Ex3, turns 3 and 6 deliver elaborate fill-in-the-blank templates and exhaustive bullet lists that consistently pre-empt student thinking rather than checking understanding first. This pattern recurs across multiple turns in multiple transcripts.",
                 "points": 4
               }
             ],
@@ -362,23 +344,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to supply submission-ready content and maintains appropriate boundaries across all three transcripts, demonstrating genuine commitment to academic integrity.",
-      "However, in Transcript 1 (Turns 3–4), the tutor provides an exhaustive 'speedrun source map' with exact ACS table codes, exact BEA navigation paths, and specific dataset names, effectively doing the core data-sourcing reasoning step rather than guiding the student to discover it — triggering 1.1.C.b for resolving the key reasoning step.",
-      "In Transcript 3, the tutor escalates to providing an 8-slot sentence template with full sentence frames (Turn 3) followed by a comprehensive bullet-point content menu with NYC-specific facts for each slot (Turn 4). This combination pre-generates both structure and content before the student attempts any independent reasoning, triggering 1.1.C.a (conclusion before student reasoning). The cap at 12 points is applied for 1.1.",
-      "Across all transcripts, the tutor does not articulate the learning rationale behind its constraints — it states policy ('that would be doing the assignment') but never connects this to skill-building or long-term reasoning development, triggering 1.3.A.a.",
-      "No reflection or transfer support is offered at any point; the tutor consistently moves from step to step without asking the student to articulate what worked or why, triggering 1.3.D.a.",
-      "Response length is repeatedly excessive: Transcript 3 Turns 3 and 4 are multi-paragraph monologues that go far beyond what focused guiding questions require, and similar patterns appear in Transcript 1 Turn 3 and Transcript 2 Turn 2, triggering 3.1.A.a.",
-      "Scaffolding and assignment anchoring are strong: the tutor builds on student progress correctly, redirects off-task requests consistently, and maintains alignment with assignment requirements throughout.",
-      "Tone is supportive and appropriate; no grading language is used. No redundancy/spiraling is evident — the tutor advances the conversation productively across turns."
+      "The tutor consistently and correctly refuses to produce submission-ready text, maintaining appropriate pedagogical boundaries even under persistent student pressure across all three transcripts.",
+      "The tutor does strong work building scaffolded progressions—moving from city selection to source identification, from stressor identification to justification refinement, from actor listing to gap analysis—and generally builds on correct student contributions (e.g., affirming Jakarta stressor choices, leveraging the student's own drafted sentences in Ex2 T4-T6).",
+      "A significant deduction is applied under 1.1.C.b for Ex3 Turns 3-4: the tutor provides an elaborate 8-sentence fill-in template plus a comprehensive bullet list of exact NYC-specific program names, agency functions, and concrete examples. While individual elements are labeled as 'options,' taken together they pre-build the key reasoning structure—identifying which actors matter and what examples to use—leaving the student only to assemble rather than derive. This constitutes doing the key reasoning step for the student.",
+      "The tutor rarely explains the learning rationale behind its constraints (1.3.A.a)—it frequently says 'I can't' without connecting refusals to the student's skill development or active reasoning goals.",
+      "Reflection and transfer support (1.3.D.a) is absent: when the student produces genuinely good work (e.g., the flooding/heat paragraphs in Ex2, the consequence sentence in Ex3), the tutor moves immediately to the next step without prompting process reflection.",
+      "Response length is a consistent issue (3.1.A.a): turns like Ex1 T3 (7-field source map), Ex1 T4 (dual BEA+ACS breakdown), Ex3 T3 (8-sentence template), and Ex3 T4 (8-category bullet list) are all multi-paragraph monologues where shorter, more interactive prompts would better preserve student thinking space.",
+      "Dialogue quality is strong: the tutor avoids spiraling, consistently re-anchors to assignment tasks, redirects off-topic requests, and advances through logical progressions. Tone is consistently warm and supportive without being condescending."
     ],
-    "total_score": 26,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

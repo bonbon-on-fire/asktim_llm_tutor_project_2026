@@ -235,11 +235,19 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 2 Turn 10, the tutor writes out a complete, polished principle sentence ('It's morally permissible to sacrifice one to save five when the one's death is a foreseen side-effect of redirecting harm or reallocating non-bodily resources; it's impermissible when saving the five requires intentionally using or violating the person's body...') and only then asks the student to tag cases. This is near-submission-ready wording provided directly, crossing into rewriting the student's principle.",
+                "reason": "In Transcript 2 Turn 10, the tutor provides a fully polished, submission-ready sentence ('It's morally permissible to sacrifice one to save five when the one's death is a foreseen side-effect of redirecting harm or reallocating non-bodily resources; it's impermissible when saving the five requires intentionally using or violating the person's body (or bodily integrity) as the means.') framed as a 'template' but is in fact a complete, final-wording principle the student can directly use. This crosses into rewriting student text into polished final language.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 3 Turn 8, the tutor states the AC critique directly ('AC treats means vs side-effect as morally irrelevant') and provides a ready-made one-liner critique ('AC can't respect constraints/rights because it allows intentionally using an innocent person as a tool whenever doing so improves aggregate outcomes'), doing the key reasoning step—bridging AC's failure to rights—before the student derives it.",
                 "points": 6
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -252,21 +260,23 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  10
-                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts the tutor consistently refuses to do the work but rarely explains why (learning rationale/active reasoning/skill development). The constraints are enforced without articulating the pedagogical purpose to the student.",
+                "points": 2
+              },
+              {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on how their thinking evolved or what changed in their reasoning process. Conversations end with next-step prompts rather than any consolidation of what the student learned about their own philosophical method.",
+                "reason": "None of the three conversations include a moment where the tutor prompts the student to reflect on what changed in their thinking, why a particular approach worked, or how to transfer the reasoning method to future problems. The tutor moves from one step to the next without consolidating learning.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 8,
           "max": 24
         }
       },
@@ -299,7 +309,7 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 2 Turn 2, the tutor's response is an extremely long multi-paragraph dump with 5 sections each containing 4 sub-bullets — a 20-item scaffold presented all at once to a panicking student. This reduces the student's opportunity to think and respond and is far longer than needed for interactive guidance.",
+                "reason": "In Transcript 2 Turn 2, the tutor produces an extremely long multi-paragraph response with 5 sections and 20+ sub-questions when a single focused prompt would have been more appropriate and interactive. Similar lengthy scaffolding messages appear across transcripts 1 and 3, consistently outpacing what the student can process before responding.",
                 "points": 4
               }
             ],
@@ -321,20 +331,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready answers across all three transcripts, maintains good assignment anchoring, and makes commendable use of Socratic questioning, templates-with-blanks, and staged pressure-testing to guide student reasoning.",
-      "The primary pedagogy deduction (6 pts, 1.1.B.a) applies to Transcript 2 Turn 10, where the tutor crosses the line by writing out a complete polished principle sentence in its entirety — nearly submission-ready wording — before asking the student to tag cases. This violates the rubric's bar on rewriting student text into final wording, even though the tutor had resisted doing so throughout the earlier turns.",
-      "Meta-learning deduction (2 pts, 1.3.D.a) is applied because none of the three conversations end with any reflection on what the student learned about their reasoning process or philosophical method — the tutor always moves to the next task without consolidating growth.",
-      "The large communication deduction (4 pts, 3.1.A.a) targets Transcript 2 Turn 2, where the tutor dumps a 20-sub-bullet scaffold on a panicked student in one response, far exceeding what an interactive, bite-sized approach warrants. The other two transcripts' turn-2 responses are comparably more focused.",
-      "Scaffolding and progression, redundancy/spiraling, dialogue anchoring, and tone are all handled well across the three transcripts, earning full marks in those areas."
+      "Across all three transcripts the tutor does a commendable job refusing to ghost-write or paste submission-ready answers, consistently redirecting the student back to their own thinking and using fill-in templates rather than finished prose.",
+      "However, two significant pedagogy deductions apply. First, in Transcript 2 Turn 10 the tutor crosses the line into 1.1.B territory by producing a fully polished, academically worded principle sentence under the label of a 'template'—this is functionally finished wording that the student could submit with minimal or no editing. Because 1.1.A and 1.1.B are capped at 12 combined, and 1.1.B alone is 6 points, the 1.1.C.b deduction (6 pts for Transcript 3 Turn 8) pushes the total to 12, zeroing out 1.1 entirely.",
+      "In Transcript 3 Turn 8 the tutor also states the AC critique directly and provides the one-liner before the student reasons to it, constituting a 1.1.C.b violation (doing the key reasoning step for the student).",
+      "On meta-learning (1.3), the tutor never explains the pedagogical rationale for its constraints to the student, and never prompts reflection on thinking process or transfer after a successful step—both 2-point deductions.",
+      "On communication, Transcript 2 Turn 2 is an unusually long dump of 5 sections and ~20 sub-questions in a single reply; similar length patterns recur across conversations, reducing student opportunity to think interactively. This triggers the 3.1.A.a deduction of 4 points.",
+      "No deductions were applied for dialogue quality (2.1/2.2): the tutor stays on topic, redirects effectively, and does not confirm misunderstandings. Tone remains supportive and non-grading throughout."
     ],
-    "total_score": 34,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

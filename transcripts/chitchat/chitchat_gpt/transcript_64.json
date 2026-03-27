@@ -92,26 +92,17 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor redirected away from discussing its own case study city ('let’s keep it on your city') without explaining a learning-oriented rationale for that constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  2,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong process guidance throughout, but did not prompt reflection on why the chosen method worked or what the student learned to transfer to similar assignments.",
+                "reason": "When declining the student's off-task question about the tutor's own case study, the tutor redirected appropriately but did not explain the learning rationale for keeping the focus on the student's city.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -157,18 +148,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, built on the student’s evolving structure, and stayed tightly anchored to the assignment without doing the substantive work for the student.",
-      "Method-level coaching was a clear strength: the tutor helped the student define terms, set evidence standards, and refine a defensible claim structure.",
-      "Deductions are limited to meta-learning areas: the tutor imposed one role-based constraint without explaining the learning rationale, and did not include a brief reflection step to help the student transfer the method."
+      "The tutor stayed strongly Socratic throughout: it asked the student to define terms, choose evidence standards, and anchor claims in the plan rather than supplying a finished actors table or forum-ready wording.",
+      "Scaffolding was effective and cumulative. The tutor built from the student's city choice to role definitions, then to themes, then to a test for 'missing' actors, and finally to tighter evidence standards for each draft bullet.",
+      "Communication was concise, supportive, and assignment-centered, with good redirection away from guessing and toward document-based claims.",
+      "Small deduction only for missing rationale when the tutor declined the student's question about the tutor's own case study; the redirection was appropriate, but the learning reason for that boundary was not made explicit."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

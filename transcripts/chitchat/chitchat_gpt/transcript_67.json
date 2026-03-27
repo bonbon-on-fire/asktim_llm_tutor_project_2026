@@ -86,25 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  8
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor states role/task limits and refuses unrelated chat or paste-ready wording, but does not explain the learning rationale for those limits in terms of building the student's own reasoning or writing skills.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -137,14 +126,23 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The redirect is effective, but the phrasing 'No—stay on task' is rigid and somewhat cold in tone.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
@@ -157,9 +155,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, decision rules, and source-validation checks so the student did the substantive reasoning and data-selection work.",
-      "Dialogue control was strong: the tutor promptly redirected off-topic attempts and kept the conversation tightly anchored to the Jakarta demographic table assignment.",
-      "Only a small deduction was applied because the tutor enforced boundaries by role/task framing without explicitly connecting those constraints to a learning rationale; tone was somewhat firm at moments but not clearly harmful enough to deduct under tone."
+      "The tutor stays tightly anchored to the assignment, uses guided questioning well, and consistently pushes the student to define scope, source quality, comparability, and citation method without doing the work for them.",
+      "Scaffolding is strong and cumulative across turns, with clear next-step prompts and method-level feedback. The main weakness is tone: one refusal of off-topic chat is unnecessarily blunt, which slightly reduces supportiveness."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

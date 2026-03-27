@@ -79,10 +79,11 @@
                 "evidence_turns": [
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor supplied key Miami-specific examples and then selected the strongest three missing actors for the student, doing central evidence selection and some of the argument-building work.",
+                "reason": "Although the tutor refused paste-ready writing, it supplied central content choices and reasoning: specific Miami plans and utility decisions, six Miami-specific missing-actor options, then the 'strongest 3' and the best decision arenas, which reduced student-led discovery on key assignment judgments.",
                 "points": 6
               }
             ],
@@ -100,32 +101,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor enforced limits on writing and polishing but did not explain the learning rationale for those constraints beyond stating what it would or would not do.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
+                  7,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the actor choices and draft, the tutor moved to further fixes and verification without prompting reflection on why the narrowing and actor-decision pairing worked.",
+                "reason": "The tutor gave revision guidance and source-checking help but did not prompt reflection on why the chosen structure or actor-selection method worked, or how to reuse that method on later assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -171,18 +162,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed well anchored to the assignment, kept a supportive tone, and used clear step-by-step scaffolding instead of writing the forum post outright.",
-      "Main deductions come from the tutor doing some of the key content-selection work itself, especially by supplying Miami-specific plans, missing-actor options, and then prioritizing the strongest three actors for the student.",
-      "A smaller deduction was applied for not explaining the pedagogical rationale behind its refusal boundaries and for missing chances to prompt reflection after the student's draft improved."
+      "The tutor stayed tightly anchored to the Miami climate-actors assignment, maintained a supportive non-grading tone, and gave clear structure for the student's draft.",
+      "Main deduction is in guided discovery: despite refusing to write the final post, the tutor supplied several decisive content selections and evidence examples that did substantial assignment thinking for the student.",
+      "A smaller deduction applies for missing reflection/transfer support; the conversation ended with revision and verification advice rather than helping the student articulate a reusable method for future actor-mapping tasks."
     ],
-    "total_score": 36,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

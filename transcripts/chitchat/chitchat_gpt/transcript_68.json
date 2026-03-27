@@ -86,14 +86,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor sets limits on off-topic conversation and refuses exact extraction help, but does not clearly explain the learning rationale for those limits beyond role framing.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -123,13 +133,13 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
                   3,
                   4,
-                  6,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long, multi-part bullet-list prompts with several decisions bundled together, where narrower interactive steps would have reduced cognitive load and left more room for the student to respond.",
+                "reason": "The tutor repeatedly uses long, multi-part prompts and detailed bullet lists where shorter interactive steps could have reduced load and increased student thinking time.",
                 "points": 4
               }
             ],
@@ -145,7 +155,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's phrasing is at times rigid and sharp, such as bluntly skipping the student's social question and saying \"You're trying to outsource judgment calls to me—don't,\" which risks harming tutoring trust.",
+                "reason": "The tone is sometimes rigid and sharp, especially in dismissing small talk and telling the student 'You’re trying to outsource judgment calls to me—don’t,' which could discourage participation.",
                 "points": 2
               }
             ],
@@ -161,18 +171,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment and used strong guided-discovery questioning instead of giving submission-ready content.",
-      "Scaffolding was generally effective: the tutor built from the student's choices, pushed for definitional clarity, and emphasized defensible research method and citation practice.",
-      "Main weaknesses were communication-related: several replies were overly long and densely bundled, and a few turns used unnecessarily rigid wording. The long-response deduction is somewhat judgment-based, so I applied only that single communication deduction rather than penalizing clarity elsewhere."
+      "The tutor stayed tightly anchored to the assignment and consistently used guided questioning rather than supplying submission-ready content.",
+      "Scaffolding was strong: the tutor helped the student define boundaries, source plans, assumptions, and citation checks step by step.",
+      "Main weaknesses were communication style and framing: responses were often overly long and multi-part, and the tone was occasionally rigid or curt.",
+      "A smaller pedagogy deduction was applied because the tutor enforced limits without clearly explaining the learning rationale for those constraints."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

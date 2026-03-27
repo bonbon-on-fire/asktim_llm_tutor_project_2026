@@ -83,7 +83,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 2, the tutor provides the decision rule definitions for Leading/Engaged/Missing that do the key conceptual work. In Turn 3, the tutor provides three fill-in-the-blank gap statement stems that supply the reasoning structure and even the argument logic. In Turn 6, the tutor validates the student's Leading/Engaged split as 'broadly defensible' and then provides detailed sentence frameworks for Con Ed and MTA that supply the core evidence-to-conclusion bridge. In Turn 10, the tutor provides a nearly complete 8-sentence forum post skeleton with specific actor placements already filled in, leaving only blanks for minor details. Across these turns, the tutor does substantial reasoning work—categorization logic, gap argument structure, sentence-level framing—that the student should have derived.",
+                "reason": "In Turn 2, the tutor provides explicit decision rules that do the categorical reasoning work (Leading = sets agenda + convenes + controls plans; Engaged = implements; Missing = not meaningfully represented), pre-structuring the intellectual task. In Turn 6, the tutor tells the student the Lead/Engaged split is 'broadly defensible,' effectively validating the student's framing rather than guiding the student to reason through it. In Turn 3, the tutor gives sentence stems with specific structural slots that resolve the key reasoning step of how to frame gap statements. In Turn 10, the tutor provides a fully structured 6-8 sentence skeleton where every thematic slot is named and ordered — this constitutes doing the key reasoning structure for the student.",
                 "points": 6
               }
             ],
@@ -113,24 +113,18 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to write content but never explains the pedagogical rationale for this to the student—it never says anything like 'I'm asking you to reason through this yourself so you develop the skill of actor-mapping' or 'doing this thinking builds the analytical capacity you'll need for later assignments.' The student is simply told 'I can't' without a learning-rationale explanation.",
+                "reason": "The tutor repeatedly declines to give paste-ready answers but never explains the learning rationale for its constraints — e.g., why active reasoning matters for long-term skill development or understanding of urban governance. It only says 'I can't write it for you' without framing why doing it yourself builds analytical capability.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they learned about actor-mapping methodology, why certain distinctions (leading vs. engaged) matter analytically, or what they would do differently in future cases. The conversation ends without any reflection or transfer moment.",
+                "reason": "The tutor does not prompt the student to reflect on what they learned about NYC's actor landscape or how the process of categorizing actors builds a method for future assignments. At no point does the tutor ask the student what changed in their thinking or reinforce the analytical method after the student improved their draft.",
                 "points": 2
               }
             ],
@@ -147,8 +141,21 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly requests paste-ready content across turns 2, 3, 4, 5, 6, and 10. The tutor responds each time with a slightly reformatted version of 'I won't write it, but here are fill-in frameworks/stems.' The pattern of asking the same scaffolding prompts without consolidation or reframing repeats without synthesis or a change in approach to break the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -160,7 +167,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -172,11 +179,13 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
+                  5,
                   6,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns are very long multi-part responses when shorter, more focused prompts would have been more appropriate. Turn 2 has five sub-questions plus a full sorting exercise. Turn 3 is an elaborate three-step scaffold with four sub-bullets and three gap-statement stems. Turn 10 provides an 8-sentence skeleton. These long responses consistently reduce the student's opportunity to think and respond independently.",
+                "reason": "The tutor repeatedly delivers multi-part, multi-bullet responses with numerous simultaneous sub-questions (e.g., Turn 2 has 5 numbered sub-questions plus a multi-part missing instruction; Turn 3 has three steps with multiple nested prompts; Turn 10 has 8 numbered sentence stubs). This consistently reduces the student's opportunity to think and respond incrementally and contributes to the student's overwhelm and repeated requests for shortcuts.",
                 "points": 4
               }
             ],
@@ -198,21 +207,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor correctly and consistently declined to write the forum post for the student, maintained a helpful and non-dismissive tone, and kept the conversation anchored to the assignment throughout.",
-      "However, across several turns the tutor did substantial reasoning work that the student should have performed: providing the full Leading/Engaged/Missing decision rule (Turn 2), supplying complete gap-statement sentence stems with argument logic (Turn 3), pre-validating the student's actor split and then providing detailed sentence frameworks for Con Ed and MTA (Turn 6), providing example phrases the student could use directly (Turn 8), and providing a near-complete 8-sentence post skeleton with actors already slotted (Turn 10). Together these constitute significant tutor-generated reasoning that approaches doing the key work for the student, triggering a 1.1.C.b deduction.",
-      "The deduction stops short of 1.1.A.a (full 12-point removal) because the tutor never assembled all pieces into a single submission-ready text and consistently left blanks for the student to fill—though the frameworks came close to the threshold.",
-      "The tutor never explained its pedagogical rationale to the student (1.3.A.a) and never prompted reflection or transfer at the end of the conversation (1.3.D.a).",
-      "Responses were frequently very long and multi-part when shorter, more targeted prompts would have better served student reasoning (3.1.A.a).",
-      "Scaffolding was reasonably well-adapted to the student's demonstrated knowledge (actor list was solid), and the tutor did not repeat the same moves without progression, so 1.2 and 2.1 are unpenalized."
+      "The tutor consistently declined to write the forum post for the student, which upholds the core ethical boundary. However, it repeatedly provided highly structured sentence skeletons, decision-rule frameworks, and categorized fill-in stems that did substantial reasoning work on the student's behalf — particularly in Turns 2, 3, 6, and 10. This triggered a 1.1.C.b deduction for doing the key reasoning steps rather than guiding the student to derive them.",
+      "A persistent loop developed across turns 2–10 where the student requested paste-ready output and the tutor responded with only slightly reformatted scaffolding without changing its approach (reframing, consolidating, or addressing the student's resistance differently). This triggered the 2.1.A.a deduction for spiraling without synthesis.",
+      "The tutor's responses were consistently long and multi-part, with Turn 2 presenting five sub-questions at once, Turn 3 offering three nested steps with multiple options each, and Turn 10 delivering an eight-sentence skeleton. This pattern reduced student thinking space and likely contributed to the student feeling overwhelmed and defaulting to shortcut requests. This triggered a 3.1.A.a deduction.",
+      "The tutor never explained why the student should do the reasoning themselves (skill development, understanding for the forum discussion, future assignments), only refusing without rationale. No reflection prompts appeared at any point. These omissions triggered 1.3.A.a and 1.3.D.a deductions.",
+      "Tone was supportive and non-punitive throughout. Assignment anchoring was solid — the tutor kept the student focused on the NYC actors table task. Scaffolding built appropriately on student contributions (e.g., working from the student's own messy list in Turns 2–4)."
     ],
-    "total_score": 32,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

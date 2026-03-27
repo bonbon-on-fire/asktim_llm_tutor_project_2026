@@ -234,18 +234,28 @@
                 "evidence_turns": [
                   5
                 ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 1 Turn 5, the tutor provides a complete 10-row pasteable template with exact row label wording, bracketed placeholders, and structural format for the entire table. While numbers are left blank, the label language and structure are submission-ready and save the student all formatting work, constituting a rewrite of the student's table structure into polished final language.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1, Turn 5, the tutor provides a complete, paste-ready 10-row table template with fully written row labels, bracketed placeholders for values, and all structural wording. While brackets remain for the numbers, the entire scaffolding, wording, and format of the submission artifact is done by the tutor. Combined with the earlier provision of exact source links, row label definitions, and GDP proxy logic across turns 3-4, the tutor has collectively built the near-complete submission structure, leaving only number insertion for the student.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1, Turn 1, before the student has provided any work or attempted any task, the tutor immediately gives a full fill-in structure template unprompted. This is a method dump before checking what the student already understands or has attempted. Similarly in Turn 2, the tutor launches into extensive qualification frameworks before diagnosing what the student's actual confusion point is.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -265,15 +275,11 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to complete work for students but rarely explains the pedagogical rationale (active reasoning, skill-building). In Transcript 1 especially, the tutor says 'I can't' without explaining why guided discovery benefits the student's learning.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (e.g., 'I can't fill out the table for you') but rarely explains the learning rationale—why the student doing the work themselves builds skills or understanding. The tutor mostly says what it won't do without explaining why that's pedagogically important for the student's development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -282,7 +288,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never pauses to help students reflect on their reasoning process or what changed in their thinking. The tutor moves from question to question without prompting meta-reflection on methodology (e.g., after Transcript 2 Turn 6 when the student reaches a good insight about mixing geographies, or after Transcript 3 Turn 4 when the student produces a solid draft justification).",
+                "reason": "Across all transcripts, the tutor never prompts brief process reflection after progress is made—e.g., never asks 'what did you learn from working through that boundary decision?' or 'how has your thinking changed?' The conversation moves from one task step to the next without reinforcing method choices or prompting the student to reflect on why their approach worked.",
                 "points": 2
               }
             ],
@@ -292,7 +298,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 5,
           "max": 24
         }
       },
@@ -313,7 +319,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, the student repeatedly asks for exact links and copy-paste-ready content across turns 2-4, and the tutor cycles through the same structure (give source entry points, ask confirmatory questions) without meaningfully advancing or synthesizing. By Turn 4 the tutor is still asking the same types of questions about table titles. In Transcript 3, the student explicitly signals repeated failure ('that didn't work; trying a different angle') in nearly every turn but the tutor continues the same Socratic questioning approach without reframing, switching to summary, or simplifying the approach to break the spiral.",
+                "reason": "In Transcript 3, the student repeatedly uses the phrase 'that didn't work; trying a different angle' across turns 2-10, signaling persistent confusion and an attempt to get direct answers. The tutor responds to each deflection with another round of diagnostic questions without meaningfully switching strategy—e.g., reframing, simplifying, or synthesizing progress. The same question pattern (asking the student to choose/evaluate proxies) repeats across turns 4-6 without consolidation, while the student spirals on the race/ethnicity proxy issue.",
                 "points": 4
               }
             ],
@@ -347,7 +353,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, multiple tutor turns (especially turns 2, 3, 4) are multi-paragraph responses with extensive lists, multiple clarifying questions, and long explanations when shorter, more targeted prompts would be more appropriate. Turn 2 has a long bulleted source list plus three lettered check questions in what could have been a two-sentence focused prompt. Transcript 3 turns 1 and 2 similarly deploy very long responses with many nested questions before confirming what the student already knows.",
+                "reason": "Across all three transcripts, the tutor repeatedly uses long multi-paragraph replies where shorter, more focused prompts would be more appropriate. For example, Transcript 1 Turn 2 contains an extensive multi-section breakdown with 4 numbered items and 3 check questions when a single clarifying question would suffice. Transcript 2 Turn 1 has three separate multi-part questions before the student has responded once. Transcript 3 Turn 1 launches into three separate conceptual frameworks before the student has even named their city. This pattern consistently reduces student opportunity to think and respond.",
                 "points": 4
               }
             ],
@@ -369,21 +375,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 19,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs well on assignment anchoring (consistently redirecting students who try to get work done for them) and maintains a generally supportive tone without assigning grades.",
-      "A significant deduction in 1.1 is applied for Transcript 1 Turn 5, where the tutor provides a complete 10-row pasteable table template with exact label wording—this constitutes near-submission-ready formatting help (1.1.B.a). The full 1.1.A.a trigger was considered but not applied because actual data values were not filled in; however, the label and structural content is polished enough to warrant the 6-point 1.1.B deduction.",
-      "Meta-learning (1.3) suffers because the tutor almost never explains the pedagogical rationale for its constraints (1.3.A.a) and never prompts students to reflect on what changed in their thinking or why a method worked (1.3.D.a).",
-      "Dialogue quality is penalized under 2.1 because in Transcript 3 the student explicitly signals spiraling ('that didn't work; trying a different angle') in nearly every turn, yet the tutor continues the same Socratic questioning pattern without reframing, summarizing, or simplifying the approach to break the cycle.",
-      "Response length (3.1) is penalized because multiple tutor turns across transcripts 1 and 3 use multi-paragraph monologues with many nested questions when shorter, more focused prompts would reduce cognitive load and give students more thinking space.",
-      "The 1.1.B deduction and 2.1 deduction are the largest drivers of score reduction; all other areas show the tutor performing competently."
+      "Transcript 1 is the most problematic: the tutor provides a fully formatted, paste-ready 10-row table template in Turn 5 with all row labels written out and only bracketed placeholders for numbers. Combined with earlier provision of exact source links and complete row label wording, the tutor effectively completes the submission structure, triggering the 1.1.A.a deduction for all 12 points.",
+      "Transcripts 2 and 3 are notably better: the tutor uses genuine Socratic questioning, guides the student through boundary decisions, and refrains from giving direct answers. In Transcript 2, the student drives the reasoning and the tutor pushes back appropriately. In Transcript 3, the tutor resists giving rankings and proxy selections directly.",
+      "However, Transcript 3 shows a spiraling problem: the student repeats 'that didn't work; trying a different angle' across 8 turns, yet the tutor does not meaningfully shift strategy—it continues asking the student to evaluate proxies using the same diagnostic question pattern without synthesis or reframing, warranting the full 2.1 deduction.",
+      "Across all transcripts, response length is consistently excessive. The tutor launches into multi-paragraph, multi-section responses before establishing what the student understands, reducing the interactive quality of the tutoring and student thinking opportunity.",
+      "Meta-learning is weak across all transcripts: the tutor enforces its limits (won't do the work) without explaining why that serves the student's learning, and never prompts process reflection after student progress. No deduction was applied to 1.3.B since the tutor does provide substantive method-level guidance on source selection, geography definition, and proxy reasoning.",
+      "Assignment anchoring is strong across all three transcripts—the tutor consistently keeps students focused on the correct task and corrects misunderstandings about geography/scope. Tone is consistently supportive and non-grading."
     ],
-    "total_score": 28,
+    "total_score": 19,
     "judge_llm_calls": 1
   }
 }

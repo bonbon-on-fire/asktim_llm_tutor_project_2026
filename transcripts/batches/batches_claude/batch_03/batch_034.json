@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor provides a curated list of specific plan names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and specific FPL decision levers unprompted, doing the key research/knowledge step the student should have done. The tutor then asks the student to verify, but the core content retrieval was done by the tutor.",
+                "reason": "In Transcript 1 Turn 3, the tutor provides a list of specific plan names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and specific FPL decision examples that the student explicitly asked for to fill into their assignment. While the tutor frames it as 'pick from these and double-check,' the tutor does the key reasoning step of identifying and explaining the concrete evidence the student should use—doing the lookup/identification work that the student should have done independently.",
                 "points": 6
               }
             ],
@@ -255,30 +255,27 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its constraints ('I can't write the post for you') but rarely explains the learning rationale explicitly—why the student should do the work themselves for their own skill development. The refusals are stated as policy without connecting them to active reasoning or long-term benefit.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next task step without prompting reflection on what the student learned from completing a step or why a method worked. There is no reinforcement of method choices after improvement or prompts asking what changed in thinking.",
+                "reason": "Across all three transcripts, the tutor consistently moves the student forward to the next task without pausing to prompt reflection on what the student learned or why a particular approach worked. For example, after students successfully identify actors or reasoning structures, the tutor immediately pivots to the next question rather than asking 'what changed in your thinking?' or consolidating methodology insights.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -315,7 +312,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently uses multi-paragraph, multi-question responses when shorter prompts would suffice. For example, Transcript 1 Turn 2 lists a 4-part framework with sub-bullets across every section; Transcript 2 Turns 2, 4, 5, 6 each ask 3-5 questions simultaneously. This consistently reduces the student's opportunity to think and respond to one thing at a time.",
+                "reason": "Across multiple transcripts (particularly Transcript 1 Turns 2-4 and Transcript 2 Turns 3-6), the tutor frequently delivers multi-part, multi-paragraph responses with several sub-questions, structured frameworks, and extensive scaffolding all at once before checking student understanding. For example, Turn 2 in Transcript 1 presents a full 4-part structure with nested bullet points; Turn 3 in Transcript 2 fires three distinct analytical questions in one response. This consistently reduces student thinking space and opportunity to respond incrementally.",
                 "points": 4
               }
             ],
@@ -337,21 +334,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor does a generally strong job refusing to write submissions for students and using structured prompting to elicit student reasoning. The Socratic redirection is consistent and appropriate for students trying to get quick answers (chaotic_03) or drifting off-task (chitchat_03).",
-      "A significant deduction was applied under 1.1.C.b for Transcript 1 Turn 3, where the tutor directly provided a curated list of Miami-specific plan names and FPL decision levers rather than guiding the student to find them—this is the key research step the student should have performed.",
-      "The tutor consistently fails to explain the learning rationale for its constraints (1.3.A.a), simply stating 'I can't do X' without connecting refusals to skill development or active reasoning benefits.",
-      "Reflection and transfer support (1.3.D.a) is absent across all conversations: the tutor moves from step to step without pausing to ask students what they learned or why a method worked.",
-      "Response length is a recurring issue (3.1.A.a): the tutor frequently sends multi-part, multi-paragraph responses with 3–5 simultaneous questions, reducing the student's cognitive space to engage with one idea at a time. This pattern appears across all three conversations.",
-      "No deductions were applied for assignment anchoring (2.2) or redundancy/spiraling (2.1)—the tutor keeps conversations on task and advances the dialogue effectively. Tone is consistently warm and supportive (3.2). No formal grades or evaluative framing issues were observed."
+      "The tutor demonstrates strong Socratic discipline overall, consistently refusing to write forum posts or provide copy-paste text for students, and redirecting appropriately when students ask for direct work (e.g., Transcript 1 Turns 1-2, Transcript 2 Turn 1). Assignment anchoring and off-topic control are excellent across all three transcripts.",
+      "The primary deduction in 1.1 stems from Transcript 1 Turn 3, where the tutor provides specific plan names (Resilient305, Miami Forever Climate Ready) and FPL decision examples directly to the student who explicitly requested them. While framed with a verification caveat, this does the key identification work that the student should perform independently—satisfying criterion 1.1.C.b.",
+      "Meta-learning (1.3) is partially strong: the tutor gives good process-level feedback and explains its tutoring rationale (e.g., 'I won't rewrite sentences for you, but...'). However, the tutor rarely pauses to prompt reflection on what approach or thinking shift produced progress, missing opportunities for transfer-oriented discussion, triggering a deduction under 1.3.D.a.",
+      "Communication length (3.1) is a consistent issue: many tutor turns across all three transcripts pack 3-5 sub-questions plus structural frameworks into single responses. While the content is high quality, the density reduces student agency and thinking space, triggering the 3.1.A.a deduction.",
+      "Tone, scaffolding, assignment anchoring, and dialogue quality are all strong. No deductions were applied for redundancy/spiraling (2.1), off-topic handling (2.2), language precision (3.1.B), or grading stance (3.2.B)."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

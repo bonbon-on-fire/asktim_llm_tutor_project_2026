@@ -101,15 +101,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work for the student and guides using questions, but never explicitly explains the learning rationale for why it uses this Socratic/guided approach (e.g., skill development, active reasoning). It enforces constraints without articulating the pedagogical purpose to the student.",
+                "reason": "The tutor consistently enforces its policy of not writing content for the student but never explains the learning rationale (e.g., active reasoning builds skills that transfer to later assignments in the course). It simply says 'I can't do that' without connecting the constraint to the student's development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At no point does the tutor prompt the student to reflect on how their thinking process evolved or what methods worked. The conversation ends with a task-completion focus but no reflection or transfer prompt (e.g., 'What did you learn about how to analyze stressors that you can apply next time?').",
+                "reason": "The tutor never prompts the student to reflect on what they learned or how their thinking changed across the session. After the student produces strong rows by Turn 9-10, the tutor gives no reflection prompt about the process or method transferability.",
                 "points": 2
               }
             ],
@@ -149,14 +158,17 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns contain multi-part, multi-question responses that pack several sub-tasks simultaneously (e.g., turns 1, 2, 3 each have 3+ numbered questions/tasks). While individually each question is reasonable, the pattern of delivering 3-4 layered items in most responses reduces the student's opportunity to focus and respond incrementally. Turns 4 and 5 show the student struggling to engage with all parts, suggesting the response density is slightly above optimal for interactive tutoring.",
+                "reason": "Many tutor turns are multi-paragraph with several numbered sub-tasks, nested bullet structures, and multiple questions at once (e.g., turns 2, 3, 4, 8, 9, 10). While the individual prompts are purposeful, the density and length of most responses consistently reduces the student's cognitive space to think and respond. Shorter, more focused prompts would have been more appropriate given the interactive nature of the task.",
                 "points": 4
               }
             ],
@@ -185,12 +197,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs strongly on the core Socratic/guided-discovery dimension (1.1): it firmly declines all student requests for pre-written content across turns 1, 2, 5, and 6, consistently redirects work back to the student through targeted scaffolding questions, fill-in templates, and small incremental tasks, and successfully leads the student to produce credible, increasingly specific stressor justifications without doing the intellectual work for them.",
-      "Scaffolding and progression (1.2) are handled well: the tutor builds on each student submission, acknowledges correct work explicitly, and sequences the task in logical chunks (list → rough ratings → evidence → justifications → priorities). No instances of ignoring student progress or misdiagnosing confusion were observed.",
-      "Meta-learning (1.3) is the main weakness. The tutor never explains *why* it is using guided discovery rather than just giving answers (no learning rationale offered), and it provides no end-of-session reflection or transfer prompt. Process-level feedback is present but mostly embedded in task-specific correction rather than generalized method commentary.",
-      "Dialogue quality (sections 2.1, 2.2) is strong throughout: the tutor stays on-task, never engages with off-topic content, maintains assignment anchoring across all turns, and advances the conversation without spiraling.",
-      "Communication (3.1) shows a recurring pattern of multi-part questions (3-4 items per turn in turns 1-5), which is the primary deduction. The student's push-back in turn 5 ('I'm slammed') may partly reflect cognitive overload from dense multi-question prompts. The rubric's 3.1.A.a criterion is met by the repeated pattern; the full 4-point deduction is applied. Language is clear and appropriately leveled throughout (no jargon concerns). Tone is consistently supportive and non-punitive (3.2 full marks).",
-      "Note on 3.1 deduction: there is some ambiguity about whether the multi-part questions cross the threshold since the student does engage with them productively in most turns. The deduction is applied based on the repeated pattern across multiple turns rather than any single egregious instance."
+      "The tutor consistently refused to do the assignment for the student and used well-structured Socratic prompting throughout: it broke the task into manageable steps, used fill-in templates, asked the student to derive ratings and justifications independently, and gave targeted feedback on reasoning and evidence quality. No direct answers, polished writing, or submission-ready content was given.",
+      "Scaffolding and progression were strong: the tutor built on student output turn by turn, acknowledged correct work explicitly (e.g., 'your stressor list is strong,' 'this is solid and not vague'), and sequenced tasks logically from listing to rating to justifying to prioritizing.",
+      "A deduction was applied under 1.3.A.a because the tutor repeatedly declined to write content without ever explaining *why* this serves the student's learning. It said 'that's the substance of what you're being assessed on' (turn 5) but did not frame the constraint in terms of skill-building or transfer value.",
+      "A deduction was applied under 1.3.D.a because the tutor never invited the student to reflect on their process, what changed in their thinking, or how the method used (rating via criteria, evidence-first justification) applies to later assignments.",
+      "The 1.3.B criteria were not triggered: the tutor gave substantive method-level feedback throughout (e.g., pointing out vagueness, distinguishing chronic vs. acute hazards, checking sector tagging logic, distinguishing hazard vs. health-outcome).",
+      "A deduction was applied under 3.1.A.a for response length: most tutor turns contained 3–5 numbered sub-tasks and multiple bullet structures simultaneously, which was consistently dense relative to the interactive format. While the content of each question was purposeful, the volume per turn regularly exceeded what was needed and reduced student thinking space.",
+      "No deductions were warranted for tone, grading stance, assignment anchoring, or redundancy/spiraling."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

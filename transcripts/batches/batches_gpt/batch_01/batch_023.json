@@ -241,14 +241,20 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the provided transcripts, the tutor consistently moved from revision to next steps or self-audit without prompting brief reflection on why the student's method worked or what they would reuse next time.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -277,11 +283,8 @@
           "3.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  9
-                ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "In Transcript 2 turn 9, the tutor exposed internal JSON/pedagogical reasoning alongside the student-facing reply, creating avoidably dense and confusing wording instead of a clean student-directed response.",
+                "reason": "In Transcript 2, Turn 9, the tutor exposed internal JSON-style reasoning ('pedagogical-reasoning') before the student-facing answer, creating avoidable confusion and unnecessary cognitive load.",
                 "points": 2
               }
             ],
@@ -303,18 +306,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided Miami stressor-table conversations, the tutor consistently refused to do submission-ready work and instead kept the student generating stressors, ratings, evidence hooks, and priority logic.",
-      "The tutor scaffolded well, built on student progress, and stayed tightly anchored to the assignment requirements (sectors, ratings, justification, and priority stressors).",
-      "The only clear deduction supported by the transcripts is a communication lapse in Transcript 2 turn 9, where internal reasoning JSON appeared in the response; because multiple transcripts were bundled into one input, ambiguous cases were resolved conservatively."
+      "Across the three provided transcripts, the tutor stayed strongly assignment-anchored, refused to do submission-ready work, and used effective guided questioning and iterative scaffolding.",
+      "The main missed opportunity was reflection/transfer support: the tutor improved drafts well but rarely asked the student to articulate what method they learned or would reuse.",
+      "One communication issue lowered clarity: Transcript 2 exposed internal reasoning in JSON-like form, which was not student-appropriate. Because multiple transcripts were provided in one batch, deductions were kept conservative where evidence was pattern-based rather than tied to a single turn."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -89,6 +89,23 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces its policy of not writing submission-ready text, but rarely explains the learning rationale (developing philosophical reasoning skills, active learning, long-term skill transfer) behind this constraint. It says 'I can't' without connecting that to why active construction benefits the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   6,
                   7,
                   8,
@@ -96,17 +113,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward with the next question or critique without pausing to ask the student to reflect on what changed in their thinking or why a given method worked. No turn explicitly prompts meta-level reflection on the student's own reasoning process.",
+                "reason": "As the conversation concludes, the tutor never prompts the student to reflect on how their thinking evolved (e.g., from pure AC to a rights-based account) or what the process revealed about philosophical method. No explicit reinforcement of method choices or reflection on what changed.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -136,14 +153,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
                   5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Many tutor turns—especially turns 1, 2, 3, 4, and 5—present multi-part, multi-paragraph responses with numbered lists of 4–7 items when shorter, more focused prompts would better preserve student thinking space. The density and length of these turns consistently front-load information rather than checking understanding first.",
+                "reason": "Several tutor responses (turns 2, 3, 4, 5) are multi-paragraph with multiple sub-questions bundled together when shorter, more focused prompts would have been more appropriate for interactive pacing. Turn 2 in particular delivers a 7-item fill-in outline when a single targeted question would have maintained better dialogue rhythm.",
                 "points": 4
               }
             ],
@@ -165,22 +181,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and commendably refused to write submission-ready content, maintained a Socratic posture throughout, and scaffolded the student's thinking from vague request to a philosophically defensible position across 10 turns.",
-      "No deductions for 1.1: the tutor never gave a final answer or near-submission-ready text; it deflected every request for paste-ready sentences and kept the student generating content.",
-      "No deductions for 1.2: the tutor correctly acknowledged each step of student progress (notably turns 6–9) and built subsequent questions on what the student had already established.",
-      "A minor deduction for 1.3.D.a: although the tutor gave good process feedback and pointed out logical tensions, it never explicitly asked the student to reflect on what changed in their reasoning or why a method proved effective—it always moved to the next problem.",
-      "No deductions for 2.1 or 2.2: there was no harmful spiraling; the dialogue advanced coherently toward a clearer philosophical position, and the assignment was kept in frame throughout.",
-      "A full deduction for 3.1.A.a: turns 1–5 in particular feature lengthy multi-part responses (4–7 numbered prompts in a single turn) that load cognitive work onto long lists rather than asking one focused question and waiting for a reply. Later turns (6–10) become more concise and targeted, but the early pattern is persistent enough to trigger the criterion.",
-      "No deductions for 3.2: the tone was consistently supportive and non-punitive, and the tutor never implied it was grading the student formally."
+      "The tutor demonstrates strong pedagogical discipline throughout: it consistently refuses to write submission-ready text, maintains Socratic questioning, builds on student progress turn-by-turn, and never resolves key reasoning steps for the student.",
+      "Scaffolding is solid — the tutor accurately tracks the student's evolving position (from AC to rights-based account), asks targeted consistency tests (Loop, DDE challenge), and correctly identifies when the student's principles are mixing or can cohere.",
+      "The primary deductions are in meta-learning (1.3): the tutor enforces its policy without explaining the learning rationale, and never prompts reflection on what the student's intellectual journey revealed about philosophical method.",
+      "A secondary deduction in communication quality (3.1) reflects that several early responses (especially turns 2 and 3) are quite long and multi-part, reducing the interactive pacing that shorter focused prompts would have preserved.",
+      "No deductions were applied for assignment anchoring or dialogue quality — the tutor keeps the student on-task across all 10 turns without redundancy or spiraling."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

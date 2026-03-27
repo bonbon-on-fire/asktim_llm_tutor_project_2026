@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplied the main Miami top-3 stressors and sector labels before the student generated them, revealing the central answer path instead of having the student derive it.",
+                "reason": "Tutor supplied the core top-3 Miami stressors and sector framing before the student generated them, leading the interpretation path instead of eliciting it first.",
                 "points": 6
               },
               {
@@ -90,7 +90,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor chose the exact evidence bullets and then the 'strongest two' facts for each stressor, performing the key evidence-selection step that supports the student's final ratings.",
+                "reason": "Tutor selected the strongest supporting facts to use for each rating, doing a key evidence-ranking step that materially shapes the student's final justification.",
                 "points": 6
               }
             ],
@@ -165,8 +165,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor maintained firm boundaries against writing a submission-ready table and stayed closely anchored to the assignment, using clear, supportive, bite-sized scaffolds.",
-      "Main deduction is pedagogical: despite refusing final prose, the tutor generated much of the substantive content by naming the top Miami stressors and later selecting the strongest supporting facts for each rating, which reduced guided discovery."
+      "Tutor consistently refused to provide paste-ready sentences or a full finished table, kept the discussion anchored to the Miami stressors assignment, and used concise, structured prompts.",
+      "The main pedagogy loss is that the tutor still chose the core stressors and later ranked the strongest evidence to include, which shifted important reasoning and idea-generation from the student to the tutor."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

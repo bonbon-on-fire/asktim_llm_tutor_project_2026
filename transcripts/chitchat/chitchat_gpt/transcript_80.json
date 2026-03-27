@@ -92,16 +92,19 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced staying on-task and kept the student in a guided mode, but did not explain the learning rationale for those constraints.",
+                "reason": "When refusing the off-topic dinner request, the tutor states a constraint ('we need to stay on the assignment') but does not explain a learning rationale for that limitation.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Even after the student developed a workable framework, the tutor did not prompt reflection on why the classification method worked or how to transfer it to similar assignments.",
+                "reason": "The tutor keeps advancing the task productively but does not prompt reflection on why the student's method worked, what changed in their thinking, or how to transfer the approach to future actor-mapping tasks.",
                 "points": 2
               }
             ],
@@ -164,9 +167,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected the off-topic dinner request immediately, and consistently used guided questioning rather than doing the student's forum post for them.",
-      "Scaffolding was strong: the tutor built from the student's partial ideas toward clearer actor categories, evidence standards, and a defensible leading/engaged/missing framework.",
-      "The main weakness was meta-learning support: the tutor did not explain the rationale for its constraint-setting/guided approach and did not close with reflection on what method the student should reuse in future actor-mapping tasks."
+      "The tutor stayed tightly anchored to the assignment, redirected the off-topic request immediately, and used guided questioning throughout rather than doing the student's actor analysis for them.",
+      "Method feedback was generally strong and specific, but the tutor did not explain the learning rationale behind its initial constraint and did not include reflection/transfer prompts after the student's reasoning improved."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

@@ -241,25 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "When redirecting off-topic requests and enforcing role limits, the tutor says it is 'here as your course tutor' but does not explain the learning rationale for staying on-task or for keeping the student responsible for the core reasoning.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong step-by-step coaching but rarely asks the student to reflect on why a method worked or how to transfer the approach to future rows/assignments; it usually moves straight to the next task after improvement.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 24,
           "max": 24
         }
       },
@@ -305,18 +294,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the transcripts, the tutor consistently uses guided discovery: it refuses to choose the city or fill the table for the student, asks targeted questions, and has the student generate stressors, ratings, evidence hooks, and priority logic.",
-      "Scaffolding is strong and progressive: the tutor builds from rough ideas to merged rows, sector tags, exposure/impact metrics, and source plans while keeping the assignment tightly anchored and redirecting off-topic chat immediately.",
-      "Main weakness is meta-learning: the tutor enforces boundaries without much explicit learning rationale and rarely pauses for reflection or transfer, so the coaching is effective but less method-transparent than it could be."
+      "Across the provided transcripts, the tutor consistently used guided discovery: the student chose the city, generated stressors, assigned ratings, selected evidence formats, and articulated priority rules, while the tutor mainly asked narrowing questions and challenged overlap, logic, and sourcing.",
+      "The tutor stayed tightly anchored to the assignment, redirected repeated off-topic dinner/show chat promptly, and kept responses structured and interactive rather than submission-writing for the student.",
+      "No clear rubric-triggering deductions were supported strongly enough to apply. Multiple transcripts were provided with repeated turn numbering, so deductions were evaluated across the full evidence set and no evidence_turns fields were needed."
     ],
-    "total_score": 42,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

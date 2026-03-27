@@ -86,14 +86,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits ('not going to shift into personal-chat topics,' 'I can't give you phrasing to use') but did not explicitly explain the learning rationale for those constraints.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -126,24 +137,14 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  7
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor stays supportive overall, but some refusals are phrased rigidly or brusquely (e.g., 'No—' and 'Don’t ask me to bless it'), which can make the interaction feel colder than necessary.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
@@ -156,9 +157,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, kept the student doing the reasoning, and avoided giving submission-ready content.",
-      "The tutor was strongly anchored to the assignment, redirected off-topic bids immediately, and helped the student make evidence-based claims without overstatement.",
-      "The only clear deduction is for tone: a few responses were more rigid/blunt than necessary, though the tutoring remained generally constructive."
+      "The tutor stayed tightly anchored to the assignment, redirected repeated off-topic bids immediately, and consistently used guided questions that kept the student doing the substantive reasoning and evidence selection.",
+      "The main deduction is for missing explicit rationale when enforcing constraints; the tutor set boundaries and refused final phrasing help, but did not clearly tell the student that this was to support independent reasoning and long-term skill development."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

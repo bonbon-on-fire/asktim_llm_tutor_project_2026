@@ -250,7 +250,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely explains why it withholds answers or uses Socratic questioning—it simply enforces constraints ('I can't write that for you') without articulating the learning rationale (e.g., active reasoning or skill development). Occasional one-liners like 'your wording, your argument' in T1 are thin and not systematic.",
+                "reason": "Across all three transcripts, the tutor consistently enforces constraints (declining to give verdicts or write sentences) without ever explaining to the student the learning rationale—why the student should do the reasoning themselves for long-term skill development. The tutor says 'I can't' or 'I won't' but does not articulate a pedagogical reason.",
                 "points": 2
               },
               {
@@ -261,7 +261,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In none of the three transcripts does the tutor pause to prompt the student to reflect on how their thinking evolved or what method shift led to progress. The tutor consistently pushes forward to the next question without reinforcing method choices or asking what changed.",
+                "reason": "Across all three conversations, the tutor never pauses to help students reflect on what changed in their thinking, why a method worked, or what they learned from stress-testing their criteria. The tutor always moves forward to the next question without a reflective moment.",
                 "points": 2
               }
             ],
@@ -303,12 +303,11 @@
                 "evidence_turns": [
                   1,
                   2,
-                  4,
                   5,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor repeatedly issues 3–5 question bundles in a single turn (e.g., T1 Turn 1 lists four distinct tasks; T2 Turn 2 lists four numbered questions; T3 Turn 4 lists three numbered prompts). These multi-paragraph responses repeatedly reduce the student's opportunity to think and respond to one focused item before being handed the next.",
+                "reason": "Across all three transcripts the tutor consistently sends multi-part responses with 3-4 numbered sub-questions at once (e.g., Transcript 1 Turn 1: five numbered questions; Transcript 2 Turn 2: four numbered sub-questions; Transcript 3 Turn 5: three sub-questions). This pattern throughout reduces the student's opportunity to think and respond before being hit with another large batch, even when the student is clearly struggling.",
                 "points": 4
               }
             ],
@@ -337,10 +336,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic posture: it consistently refuses to hand over submission-ready content, keeps the student doing the reasoning work, and accurately tracks student progress before moving forward. No deductions apply to 1.1 or 1.2.",
-      "The primary weakness in Pedagogy is meta-learning (1.3): the tutor rarely explains why it withholds answers (no learning rationale beyond brief refusals), and it almost never pauses to prompt the student to reflect on what changed in their thinking or why a method worked—both 1.3.A and 1.3.D deductions are warranted.",
-      "Dialogue quality is strong throughout. The tutor re-anchors appropriately when students drift (T1 T3, T3), stays on-assignment, and avoids spiraling by reframing or advancing when students get stuck.",
-      "Communication quality suffers from a consistent pattern of multi-question turns. In T1 (Turn 1: 4-part task list), T2 (Turn 2: 4 numbered items, Turn 3: 4 items, Turn 7: 3 items), and T3 (Turn 1: 3 items, Turn 4: 3 items), the tutor regularly fires several questions at once instead of one focused prompt, reducing the student's thinking space. A 4-point deduction under 3.1.A.a is applied. Language and tone are appropriate throughout; no deductions for 3.1.B or 3.2."
+      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it consistently refuses to provide submission-ready answers, verdict lists, or polished sentences, and instead scaffolds students toward their own reasoning through structured templates and stress-tests. No deductions apply under 1.1 or 1.2.",
+      "The tutor's dialogue management is excellent: it anchors students to the assignment when they drift (e.g., Transcript 1 Turn 3, when the student can't recall Fuel/Blood, the tutor appropriately refuses to guess and asks the student to reconstruct), and it advances the conversation without spiraling.",
+      "The main weakness is meta-learning (1.3): the tutor never explains *why* it declines to give answers (learning rationale), and it never closes a productive exchange with a reflective prompt asking what changed in the student's thinking. These are consistent omissions across all three conversations.",
+      "Communication is also somewhat over-loaded: the tutor routinely packs 3-5 sub-questions into a single turn, which can overwhelm students (especially the clueless persona) rather than allowing them to engage with one challenge at a time. This is a consistent pattern across all three transcripts warranting a deduction under 3.1.A.a.",
+      "No deductions were applied for 1.3.B since the tutor does give substantive method-level feedback (e.g., flagging when the student's criterion is 'slogan-y', pointing out when a distinction risks being ad hoc). No deductions applied for tone or grading stance."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

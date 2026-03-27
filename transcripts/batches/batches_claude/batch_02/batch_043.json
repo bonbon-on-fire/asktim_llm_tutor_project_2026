@@ -229,17 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3, Turn 6, the tutor provides a fill-in-the-brackets template that is so detailed and structured (with exact clause-by-clause guidance) that it does the key reasoning step of organizing the forum response for the student. While not fully submission-ready, the template closely borders on giving the student the argument structure rather than having them derive it.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,23 +244,44 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently declines to provide direct answers but almost never explains the pedagogical rationale for why it won't (e.g., 'so you develop your own reasoning skills' or 'so you build the habit of constructing arguments yourself'). In Transcript 1 Turn 3, the tutor says 'that would be doing the core work of the assignment for you' which is close, but this explanation is mostly absent in Transcript 2 and 3 where the tutor simply says 'I can't' without learning rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor rarely prompts the student to reflect on why their reasoning improved or what method choices worked. After the student makes progress (e.g., Transcript 1 Turn 7-8 good reasoning on downstream effects, Transcript 2 Turn 6-7 anchor definitions), the tutor moves forward without asking the student to reflect on what changed in their thinking or why the method worked.",
+                "reason": "The tutor rarely prompts students to reflect on why a method worked or what changed in their thinking. In Transcript 1, Turn 7 the tutor says 'This is finally the right kind of act-consequentialist move' but does not prompt the student to reflect on the process shift. In Transcripts 2 and 3, after students make good progress (e.g., T2 Turns 6–7, T3 Turn 6), the tutor moves directly to next steps without reinforcing the reasoning method or asking what changed.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 20,
           "max": 24
         }
       },
@@ -301,10 +313,17 @@
                 "evidence_turns": [
                   1,
                   2,
-                  4
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends multi-paragraph, multi-question responses when shorter targeted prompts would be more appropriate. For example, Transcript 1 Turn 1 contains three separate major analytical tasks, multiple sub-questions, and instructions all at once; Transcript 2 Turn 2 and Turn 4 similarly pack multiple parallel tasks into single responses. This pattern consistently reduces student opportunity to respond to one thing at a time.",
+                "reason": "Across all three transcripts, the tutor consistently produces long, multi-part responses when shorter, more focused prompts would suffice. For example, Transcript 1 Turn 1 delivers three separate question clusters plus a definition prompt in one message. Transcript 1 Turn 2 asks two follow-up questions plus a third about Fuel vs Blood. Transcript 2 Turn 2 has four numbered items. This pattern is consistent and reduces the student's opportunity to think and engage interactively before being overwhelmed.",
                 "points": 4
               }
             ],
@@ -326,22 +345,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintains a Socratic approach, consistently refusing to directly supply answers, tables, blurbs, or pre-mapped content. The refusals are well-reasoned and the tutor explains learning rationale in several instances.",
-      "The most significant pedagogy concern is in Transcript 3 Turn 6, where the tutor provides a highly structured fill-in-the-brackets template with exact phrasing guidance per clause. This crosses into doing the key reasoning/structural work for the student and triggered a 1.1.C.b deduction. The deduction was kept at 6 points (not the full 12) because the template still requires the student to supply content, and the final product required meaningful student input.",
-      "The tutor does not consistently prompt reflection on method or reasoning progress after student breakthroughs (e.g., after Turn 7 in Transcript 1 when the student makes a strong downstream-effects argument, or after the student drafts a solid anchors definition in Transcript 2 Turn 7). This is a pattern across all three conversations and merits a 1.3.D.a deduction.",
-      "Response length is a persistent issue: the tutor regularly sends dense multi-question, multi-task blocks rather than one focused prompt. This is visible especially in Transcript 1 Turn 1, Transcript 2 Turns 2 and 4, and Transcript 3 Turn 2. These reduce interactivity and cognitive manageability for a clearly struggling student.",
-      "Dialogue quality is strong: the tutor appropriately re-anchors the student when they try to go off-task (refusing pre-mapped stressor lists, refusing to write forum posts, etc.), there is no spiraling or redundancy without synthesis, and assignment alignment is maintained throughout.",
-      "Tone is supportive and appropriate throughout; the tutor is firm but encouraging, consistently framing feedback as guidance rather than evaluation.",
-      "Some ambiguity noted: the Transcript 3 Turn 6 template deduction could reasonably be debated—ultimately the 6-point deduction was applied conservatively as the student still had to supply meaningful content, but the structure was unusually prescriptive."
+      "Across all three transcripts, the tutor maintains a strong Socratic posture, consistently refusing to provide direct answers, pre-built tables, or completed justifications, instead redirecting students toward their own reasoning. No submission-ready content, finished conclusions, or key reasoning steps were handed to students.",
+      "Scaffolding is generally good: the tutor builds on student progress (e.g., affirming correct reasoning in T1 Turn 7, T3 Turn 6) and uses structured templates and decision rules to help students advance without doing the work for them.",
+      "The main weakness across all transcripts is that the tutor rarely explains its pedagogical rationale for withholding answers, and almost never prompts the student to reflect on what changed in their thinking after a breakthrough. These two gaps account for 4 points deducted in 1.3.",
+      "Response length is a consistent concern: the tutor frequently delivers long, multi-part prompts (3–5 numbered sub-questions) when shorter, more focused interactions would better support student engagement. This accounts for 4 points deducted in 3.1.",
+      "Dialogue quality and assignment anchoring are strong throughout; the tutor reliably re-focuses the student when they try to get pre-built answers, and does not engage off-topic. No redundancy issues were observed."
     ],
-    "total_score": 34,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

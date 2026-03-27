@@ -231,12 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  6,
-                  9
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "The tutor supplied polished, prompt-specific sentence starters and sentence frames the student could closely reuse, which moves into final wording help rather than only guiding reasoning.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Across Transcript 1, especially turns 8-10, the tutor supplies the student's central argumentative bridge by offering specific consequentialist criteria ('institutional-role sensitivity,' 'assurance/publicity,' 'incentive effects') and near-complete sentence frames for the student's key justification, which goes beyond guided discovery into doing a key reasoning step.",
                 "points": 6
               }
             ],
@@ -271,14 +267,20 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "In Transcript 3, the student repeatedly says they are hazy on the exact Fuel and Blood setups, but the tutor does not re-anchor to the actual lecture cases and instead continues abstract analysis on the student's uncertain versions, risking misalignment with the assignment.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -287,17 +289,17 @@
           "3.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across all three transcripts, the tutor repeatedly sends long, multi-part replies with several subquestions at once, when shorter interactive steps would have been easier for confused or time-pressed students to process.",
+                "points": 4
+              },
+              {
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor sometimes used dense phrasing such as 'institutional-role sensitivity,' 'assurance/publicity,' and 'ex ante expectations,' which added unnecessary complexity.",
+                "reason": "The tutor often uses dense philosophical phrasing such as 'assurance-based spillovers,' 'institutional-role sensitivity,' 'publicly salient,' and 'all-things-considered,' which increases cognitive load beyond what was necessary for the students' stated confusion levels.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -309,23 +311,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 4,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Judged Transcript 1 only because the provided rubric/schema is for a single conversation; the tutor consistently kept the work with the student, built well on the student's evolving position, and stayed tightly anchored to the assignment.",
-      "Main deduction is for late-turn polished sentence frames that edge into final phrasing help, plus some avoidably dense language. Evidence for larger pedagogy deductions was limited because the student still supplied the substantive commitments and case judgments."
+      "Across the three transcripts, the tutor is generally strong at refusing direct answer-writing, maintaining a supportive tone, and using structured questioning that builds on student progress.",
+      "Main deductions come from moments where the tutor moved beyond guidance into supplying core conceptual machinery and polished sentence frames, especially in Transcript 1.",
+      "There is also a notable anchoring issue in Transcript 3: the student was unsure of the exact Fuel/Blood cases, and the tutor continued without re-establishing the lecture scenarios. Communication was consistently detailed but often too long and technically dense."
     ],
-    "total_score": 38,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

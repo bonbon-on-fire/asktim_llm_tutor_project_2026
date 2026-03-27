@@ -232,10 +232,18 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In T2/Transcript 2 Turn 8, the tutor provides exact specific citation titles (including authors, year, journal) for the student to use. While not writing the justification sentences, providing ready-to-cite references with descriptions of their content moves the student very close to submission-ready work without reasoning.",
+                "points": 0
+              },
+              {
+                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 10, the tutor provides the complete, near-submission-ready principle sentence ('It's morally permissible to sacrifice one to save five when the one's death is a foreseen side-effect of redirecting harm or reallocating non-bodily resources; it's impermissible when saving the five requires intentionally using or violating the person's body...'), which is the exact wording the student can use directly as their philosophical principle — the core deliverable of that portion of the assignment.",
+                "reason": "In Transcript 1 Turn 10, the tutor provides a nearly complete, submission-ready rule sentence ('It is morally permissible to sacrifice one to save five when the one's death is a foreseen side-effect of redirecting harm or reallocating non-bodily resources; it is impermissible when saving the five requires intentionally using or violating the person's body (or bodily integrity) as the means.') as a 'template.' This is essentially the final answer the student needed and could submit with minimal or no editing. The student had only said 'prob tweak 1: bodily means bad, but reallocating external resources can be ok' and the tutor completed the principle in polished, submission-ready language.",
                 "points": 12
               }
             ],
@@ -257,15 +265,23 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to help without explaining the learning rationale (e.g., active reasoning, skill development). It mostly just says 'I can't do that' without connecting the refusals to what the student will gain from doing the thinking themselves.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to do student work but rarely explains the pedagogical rationale (e.g., 'so you develop your own reasoning skills' or 'active reasoning builds long-term ability'). The refusals reference academic integrity but not the learning rationale for guided discovery.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
+                  4,
                   5,
                   6,
                   7,
@@ -274,7 +290,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all transcripts, the tutor never prompts the student to reflect on their thinking process, what changed in their reasoning, or why a particular method worked. After the student makes progress (e.g., identifying the means/side-effect distinction in T1, or supplying actor names in T2/T3), the tutor just moves to the next task without reinforcing the reasoning method.",
+                "reason": "No reflection or transfer prompts appear across any of the three transcripts. The tutor moves from one scaffolding step to the next without ever asking the student to reflect on what changed in their thinking, why a particular distinction worked, or how the reasoning process might apply elsewhere.",
                 "points": 2
               }
             ],
@@ -321,7 +337,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Repeatedly across all three transcripts, the tutor sends very long multi-part responses (e.g., T1 Turn 2 with 5 sections of 4 sub-questions each; T2 Turn 3 with 7 stressor prompts and a full sub-task; T3 Turn 5 with an 8-sentence word-budget outline) when shorter, more focused prompts would have been more appropriate and left more room for student thinking.",
+                "reason": "In Transcript 1, Turn 2 is an extremely long multi-part scaffold with 20+ sub-questions across 5 sections before the student has attempted anything. Turn 3 and 4 in Transcripts 2 and 3 also contain multi-paragraph responses with many sub-questions when shorter, more targeted prompts would have been appropriate. This pattern recurs across all three transcripts, reducing the student's opportunity to think and respond.",
                 "points": 4
               }
             ],
@@ -350,13 +366,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor is generally principled about refusing to do the student's work across all three transcripts, maintaining appropriate boundaries even under repeated pressure from a chaotic, deadline-driven student.",
-      "However, in Transcript 1 Turn 10, the tutor crossed a critical line by providing the complete, polished principle sentence that constitutes the philosophical core answer — this is submission-ready content given directly to the student, triggering the 1.1.A.a deduction for 12 points.",
-      "The tutor never explains why it is withholding help (the learning rationale), missing multiple opportunities to foster metacognitive awareness — this triggers the 1.3.A.a deduction.",
-      "Reflection on reasoning progress is absent throughout: after the student makes genuine intellectual advances (e.g., choosing the means/side-effect distinction, identifying missing actors), the tutor never pauses to reinforce the method or ask what changed — triggering 1.3.D.a.",
-      "Communication quality is hurt by consistently long, multi-part responses that reduce student thinking time, particularly in Transcripts 1 and 3 where scaffolding sections span many bullet points and sub-questions across a single turn.",
-      "Scaffolding quality (1.2) is strong: the tutor builds meaningfully on what the student provides across turns, acknowledges correct contributions, and uses diagnostic questions well.",
-      "Dialogue management (2.1, 2.2) is solid: the tutor keeps the student on-task, redirects appropriately, and does not spiral or follow mistaken framings."
+      "The tutor maintains strong assignment anchoring and dialogue coherence across all three transcripts, consistently refusing to write submission-ready work and redirecting the student back to their own reasoning at each turn.",
+      "The critical failure occurs in Transcript 1, Turn 10, where the tutor provides a polished, complete, submission-ready principle sentence ('It is morally permissible to sacrifice one to save five when...') framed as a 'template.' This sentence required no substantive editing and constituted direct final-answer delivery, triggering the full 12-point deduction under 1.1.A.a. This is the dominant penalty.",
+      "The tutor never explains the pedagogical rationale for guided discovery (1.3.A.a), always framing refusals around academic integrity rather than skill development, resulting in a 2-point deduction.",
+      "No reflection or transfer prompts appear in any of the three transcripts; the tutor consistently moves to the next scaffolding step without inviting the student to reflect on their reasoning process (1.3.D.a), costing another 2 points.",
+      "Response length is a recurring issue: Turn 2 of Transcript 1 contains an extraordinarily long, 20+-sub-question scaffold before the student has tried anything. Similar patterns appear in Transcripts 2 and 3. This reduces student cognitive engagement and triggers the 4-point deduction under 3.1.A.a.",
+      "Dialogue quality, tone, assignment anchoring, and scaffolding progression are all strong. The tutor adapts well to the student's confirmed understanding, builds on partial progress, and does not spiral on any one concept."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

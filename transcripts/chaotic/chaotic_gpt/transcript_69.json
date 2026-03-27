@@ -89,10 +89,11 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produced improved final sentences, the tutor kept the interaction at the level of final checks and revisions rather than prompting reflection on why the evidence→exposure→impact method worked or how to transfer it to future assignments.",
+                "reason": "The tutor gave strong process guidance, but after the student successfully produced final rows, it did not prompt reflection on what method worked or how to reuse the evidence→exposure→impact→rating approach in future assignments.",
                 "points": 2
               }
             ],
@@ -155,9 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently avoided doing the assignment for the student and instead used targeted questions, fill-in structures, and student-authored drafts to guide the work.",
-      "The conversation stayed tightly anchored to the stressors table task, built on the student's progress, and offered concrete method-level coaching about sectors, evidence, exposure, impact, ratings, and priority logic.",
-      "The main weakness was limited reflection/transfer support at the end: once the student reached defensible rows, the tutor did not explicitly help the student articulate why the method worked or how to reuse it in later assignments."
+      "The tutor consistently refused to provide paste-ready assignment text and instead used guided prompts, fill-in structures, and targeted checks anchored to the stressors-table task.",
+      "Scaffolding was strong: the tutor built directly on the student's chosen stressors, ratings, sectors, and priority logic, and gave concrete process-level guidance such as using an evidence → exposure → impact → rating chain.",
+      "Only minor deduction: once the student reached a workable final draft, the tutor focused on last adjustments rather than prompting brief reflection on the transferable method for future assignments."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

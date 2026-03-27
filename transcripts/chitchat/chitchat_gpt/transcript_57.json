@@ -86,25 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor helped refine the student's principle, but after improvement mostly moved straight to the next task rather than prompting reflection on why the revised method worked or how to transfer it.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -150,18 +139,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor maintained strong guided discovery throughout: it repeatedly asked the student to supply the decision rule, apply it to cases, refine distinctions, and test implications rather than giving submission-ready conclusions.",
-      "Scaffolding was effective and closely anchored to the assignment, especially when the tutor reconnected the discussion to the prompt's required parts and avoided inventing uncertain lecture details.",
-      "The main weakness was limited explicit reflection/transfer support: once the student's principle improved, the tutor generally advanced to the next writing task instead of briefly prompting the student to articulate why the method now works."
+      "Tutor consistently used guided questioning rather than supplying a submission-ready answer, and repeatedly pushed the student to articulate criteria, test variants, and state a defendable position in their own words.",
+      "The conversation stayed tightly anchored to the assignment prompt and lecture-case structure, with strong scaffolding from act consequentialism to case comparison to general principle.",
+      "Communication was clear, supportive, and appropriately concise, with no evident rubric-based deduction triggers."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

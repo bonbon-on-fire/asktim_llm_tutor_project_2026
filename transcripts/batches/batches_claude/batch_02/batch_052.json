@@ -244,39 +244,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor enforces its policy of not giving answers but rarely articulates the learning rationale to the student. It says 'that defeats the point of the assignment' once (T2 Urban02, turn 3) but generally just declines without explaining how guided discovery builds long-term reasoning skills.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   10,
                   10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three conversations end with any explicit prompt for the student to reflect on how their thinking changed, what strategy worked, or what method to carry forward. The tutor moves to final tightening questions but misses reflection/transfer opportunities at the close of each conversation.",
+                "reason": "Across all three transcripts, the tutor consistently moves to the next task or tightening questions without prompting the student to reflect on why their reasoning improved or what changed in their thinking. In T1 the final turn asks more edge-case tests rather than any process reflection; in T2 the final turn asks for evidence hooks and rating consistency but not why the approach worked; in T3 the final turn prepares the student for posting but does not invite reflection on the decision-making process they just developed.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -303,20 +286,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  3,
-                  4,
-                  7
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor frequently delivers multi-part prompts (3-4 numbered sub-questions at once) across all three transcripts. For example, Turn 1 of Transcript 1 has four sub-questions, Turn 3 of Transcript 1 again has four sub-questions. While each sub-question is reasonably concise, this pattern consistently reduces student opportunity to think and respond incrementally, and is recurrent across all three conversations.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -328,27 +299,26 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates consistently strong Socratic practice: it never writes submission-ready content for the student, reliably redirects copy requests, and builds each exchange on the student's prior responses rather than starting over.",
-      "Scaffolding and progression (1.2) is excellent: the tutor picks up correct student contributions (e.g., the 'side-effect vs means' reasoning in Transcript 1, the flooding anchor in Transcript 2) and builds forward from them each turn.",
-      "The main pedagogy gap is in meta-learning (1.3): the tutor almost never explains *why* it uses guided discovery (1.3.A.a), and none of the three conversations end with a reflection prompt about what the student learned or how their thinking changed (1.3.D.a). A brief process-level comment after the student made real progress would have addressed both.",
-      "Dialogue quality is strong: no topic drift, no assignment misalignment, and no spiraling without synthesis.",
-      "On communication, the tutor's responses are generally clear and well-organized, but the consistent pattern of presenting 3-4 simultaneous sub-questions in a single turn (visible in Transcript 1 Turns 1, 3, 4 and throughout Transcripts 2 and 3) reduces interactive bite-sizing. A more sequenced approach—one or two questions at a time—would better preserve student thinking space. This recurrent pattern warrants the 3.1.A.a deduction.",
-      "Tone is warm and supportive throughout; no grading language is used."
+      "Across all three transcripts the tutor maintains an exemplary Socratic stance: it consistently refuses to provide answers or submission-ready text (even when the student repeatedly attempts copy-and-paste demands), uses structured guided questions to elicit student reasoning, and builds each turn on the student's prior output.",
+      "Scaffolding and progression are strong throughout. The tutor anchors each case study to the student's own prior responses, uses the student's self-generated claims as the scaffold for the next layer of questioning, and corrects misapplications without discarding useful student work.",
+      "Meta-learning is mostly solid — the tutor routinely explains why a constraint exists (e.g., 'there is no single right answer,' 'that defeats the point') and provides method-level feedback (e.g., 'your justification is hand-wavy,' 'force a relative scale'). The one consistent gap is reflection and transfer: at the conclusion of each conversation the tutor pivots directly to the next task or drafting step rather than inviting the student to notice and articulate what changed in their thinking or why their approach improved. This triggers a 2-point deduction under 1.3.D.a.",
+      "Dialogue quality is clean: no spiraling, no off-topic engagement, and the tutor effectively re-anchors each time the student attempts to redirect toward shortcuts.",
+      "Communication quality is strong: responses are well-sized, typically two to four focused sub-questions with an explicit instruction to reply before more guidance is given. Language is direct and accessible throughout."
     ],
-    "total_score": 38,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

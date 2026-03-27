@@ -241,7 +241,7 @@
                   1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 1, Turn 1, the tutor opens with a 5-part question dump (questions 1–5) before checking what the student understands. This is a method dump rather than diagnostic questioning first, especially for a student who says they are 'kinda lost from the beginning.'",
+                "reason": "Turn 1 (Transcript 1) opens with a 5-part question dump without first checking what the student actually knows or where their specific confusion lies, which constitutes giving a full method dump before diagnosing the student's existing understanding.",
                 "points": 3
               }
             ],
@@ -253,36 +253,19 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently enforces its 'I can't give you the answer' policy (e.g., T1/T10, T2/T10, T3/T5, T3/T10) but rarely explains the pedagogical rationale—why refusing and scaffolding instead helps the student build durable skills. The policy is stated as a constraint, not explained as an investment in the student's reasoning ability.",
+                "reason": "The tutor declines to give answers (e.g., Turn 9/10 Transcript 1, Turn 10 Transcript 2) but generally does not explain the learning rationale for why it is withholding—just says 'I can't' without framing the pedagogical benefit to the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "No transcript includes a moment where the tutor asks the student to reflect on what changed in their thinking, what method worked, or why a particular approach was effective. The tutor consistently moves forward to the next scaffold without prompting process reflection.",
+                "reason": "Across all three transcripts, the tutor never pauses to prompt the student to reflect on what changed in their thinking or what method worked. The conversation consistently moves forward task-by-task with no reflection prompts.",
                 "points": 2
               }
             ],
@@ -324,11 +307,10 @@
                 "evidence_turns": [
                   1,
                   2,
-                  5,
-                  7
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across transcripts, the tutor frequently sends multi-part question blocks (5 sub-questions in T1/Turn 1, 3-part questions with extensive scaffolding in T2 and T3) when a single focused prompt would suffice. This consistently reduces the student's opportunity to think and respond incrementally, and the student often returns confused or selectively answers only part of the questions.",
+                "reason": "Multiple turns across transcripts use multi-part, multi-paragraph responses when shorter, focused prompts would have been more appropriate. Turn 1 (Transcript 1) is a 5-part question monologue; Turn 2 (Transcript 3) is a full generic example table plus definitional block before the student has even chosen a city. This pattern of length repeatedly reduces the student's opportunity to think and respond step by step.",
                 "points": 4
               }
             ],
@@ -357,12 +339,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains genuine Socratic restraint: it never supplies a final answer or does the student's core reasoning, correctly declines to write model rows or supply actor lists wholesale, and consistently redirects the student toward their own reasoning. This earns full marks on 1.1.",
-      "The primary pedagogy weakness is an opening multi-part question dump in Transcript 1 Turn 1 (five simultaneous sub-questions for a student who declared total confusion), which triggers the 1.2.B.a deduction for method-dumping before diagnostic questioning.",
-      "Meta-learning (1.3) is consistently weak: the tutor enforces its 'I won't do that' policy without explaining the learning rationale (1.3.A.a), and never prompts the student to reflect on what changed in their thinking or why a method worked (1.3.D.a).",
-      "Dialogue quality is strong: the tutor stays on assignment, re-anchors when the student drifts, and does not spiral on sub-points. Full marks for 2.1 and 2.2.",
-      "Communication quality suffers from a persistent pattern of multi-part question blocks (often 3–5 sub-questions per turn) across all three transcripts. While each individual sub-question is clear, the combined volume regularly overwhelms a self-described confused student, reducing their effective thinking space and earning the 3.1.A.a deduction.",
-      "Tone is consistently warm, non-punitive, and supportive. No grade-like language is used. Full marks for 3.2."
+      "Across all three transcripts the tutor consistently avoids doing the student's work for them, refuses to supply direct answers or filled-in content, and keeps redirecting the student toward their own reasoning—no 1.1.A or 1.1.B violations observed.",
+      "The Socratic method is genuinely applied: the tutor breaks problems into smaller parts, asks the student to choose and justify, and stress-tests emerging ideas rather than supplying conclusions.",
+      "However, Turn 1 of Transcript 1 opens with an overwhelming 5-part question dump before any diagnostic check of what the student knows, triggering a 1.2.B deduction.",
+      "Across all three conversations the tutor never pauses to invite the student to reflect on what changed in their thinking or which method helped them progress (1.3.D deduction), and rarely explains the learning rationale for withholding answers—just states 'I can't' (1.3.A deduction).",
+      "Response length is a recurring issue: several turns contain multi-paragraph explanatory blocks and multi-part numbered lists where one focused prompt would suffice, reducing the student's active thinking space (3.1.A deduction). Transcript 3 Turn 2 is a notable example: a full generic actor table is provided before the student has even chosen a city.",
+      "Assignment anchoring, tone, redundancy/spiraling, and non-grading stance are all handled well with no deductions warranted."
     ],
     "total_score": 35,
     "judge_llm_calls": 1

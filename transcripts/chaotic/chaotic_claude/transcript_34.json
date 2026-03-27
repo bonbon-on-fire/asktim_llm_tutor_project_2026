@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Turn 8 provides a 14-sentence fill-in template that maps out the entire paragraph structure sentence-by-sentence, including the exact content for Switch, Push, Fuel/Blood, the means/side-effect distinction, and the closing principle. Together with the scaffold in Turn 5 and the buzzwords/thesis formula in Turns 9-10, these pieces collectively constitute near-submission-ready answer pieces across turns. However, the most severe single instance is Turn 8's template, which essentially pre-writes the entire paragraph leaving only surface-level fill-in. This qualifies as giving answer pieces across turns that together become submission-ready.",
+                "reason": "In Turn 8, the tutor provides a 14-sentence fill-in template that maps out every structural and content element of the submission: AC definition, Switch/Push application, means vs side-effect distinction, Fuel/Blood analysis, verdict, and closing principle. Together, the template supplies the full reasoning skeleton—claim, evidence, and final framing—leaving the student only to insert words into slots. This is functionally submission-ready work distributed across labeled sentences, which the student can minimally complete and paste.",
                 "points": 12
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly declines to help in various ways but never articulates the learning rationale (e.g., active reasoning builds long-term philosophical argumentation skills). It only states 'that's doing the assignment for you' without explaining why student-generated thinking matters for intellectual development.",
+                "reason": "Throughout the conversation the tutor enforces refusal constraints but never explains the learning rationale—why doing the work themselves builds skill, how philosophical reasoning transfers, or what the student gains by struggling. The tutor only says variants of 'that would be doing the assignment for you' without articulating the pedagogical purpose.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they've learned about their reasoning process, what changed in their thinking, or why certain methods (like applying a consistent test) work better than others. The conversation ends without any metacognitive closure.",
+                "reason": "The tutor never prompts the student to reflect on their thinking process or what changed in their understanding across turns. No moment of 'what did you notice about how you reasoned through Switch vs Push?' or similar metacognitive prompting occurs at any stage.",
                 "points": 2
               }
             ],
@@ -168,17 +168,13 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long multi-paragraph responses when shorter, focused prompts would have been more appropriate. For example, Turn 1 gives a 4-question list, Turn 5 gives a 6-part detailed outline, Turn 6 gives a 3-part critique plus follow-up instructions, Turn 8 gives a 14-sentence template. These extended monologues consistently reduce the student's opportunity to think and respond, which is especially problematic given the student's declared time pressure.",
+                "reason": "Multiple turns feature lengthy multi-part responses when shorter, more focused prompts would have been appropriate. Turn 1 poses four sub-questions at once; Turn 5 provides a six-part structured outline; Turn 6 lists three nested sub-questions about the closing principle; Turn 7 gives an eight-bullet list; Turn 8 delivers a 14-sentence fill-in structure. These long monologue-style replies reduce student cognitive opportunity and thinking space.",
                 "points": 4
               }
             ],
@@ -207,11 +203,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write the student's submission, which is appropriate. However, Turn 8's 14-sentence sentence-by-sentence template constitutes providing answer pieces across turns that together become submission-ready, triggering the full 12-point deduction under 1.1.A.a. The template pre-maps every section of the required paragraph (AC definition, Switch, Push, Fuel/Blood, means/side-effect, closing principle) leaving only surface fill-in work for the student.",
-      "Scaffolding (1.2) was handled reasonably well — the tutor built on student-provided trolley numbers and tried to diagnose what the student lacked, so no deductions were warranted there.",
-      "Meta-learning (1.3) suffered because the tutor never explained why independent reasoning matters for learning (1.3.A.a) and never prompted the student to reflect on what their thinking process revealed (1.3.D.a). The tutor focused on task compliance rather than skill development.",
-      "Dialogue quality (2.1, 2.2) was generally solid: the tutor did not spiral on the same points without progress, and it kept the student anchored to the actual assignment throughout despite repeated attempts to get pre-written answers.",
-      "Communication quality (3.1) was problematic due to consistently long, multi-part responses when the time-pressured student needed concise, focused prompts. This reduced student engagement opportunities throughout the conversation."
+      "The tutor consistently refused direct submission-ready outputs across nine turns, maintaining a principled boundary that merits acknowledgment. However, in Turn 8, the tutor crossed into 1.1.A.a territory by providing a 14-sentence fill-in template that pre-structures every element of the assignment—AC definition, Switch/Push application, means vs side-effect reasoning, Fuel/Blood categorization, verdict, and closing principle—leaving only word-slot completion for the student. This is functionally near-submission-ready work and triggers the full 12-point deduction under 1.1.",
+      "On meta-learning (1.3), the tutor never explained the pedagogical rationale for its refusals (only saying 'that would be doing the assignment for you') and never prompted reflection on the student's reasoning development, triggering deductions of 2+2 points.",
+      "Dialogue quality (section 2) was handled reasonably well: the tutor adapted across turns without excessive spiraling and kept the student anchored to the actual assignment despite repeated deflection attempts.",
+      "Communication quality suffered from consistently long, multi-part responses (Turns 1, 5, 6, 7, 8) that reduced the student's opportunity to think and respond, triggering a 4-point deduction under 3.1.A.a. Tone was supportive and non-punitive throughout, earning full marks on 3.2.",
+      "The 1.3.B criteria were not deducted separately to avoid double-penalizing the same structural issue already captured under 1.1 and 1.3.A/D."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

@@ -235,8 +235,8 @@
                   3,
                   4
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied the exact ACS/BEA source choices and a paste-ready citation path before the student had located or justified them, taking over a key source-selection reasoning step.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor supplied the key source-selection path itself (specific ACS tables, Cook County GDP proxy, and Beck dataset) before the student reasoned through which sources best fit the assignment.",
                 "points": 6
               }
             ],
@@ -259,17 +259,27 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries by saying it could not give values because that would be doing the assignment, but did not clearly explain the learning rationale beyond policy-like refusal.",
+                "reason": "The tutor refused direct answers by saying it would be doing the assignment, but did not explain the learning rationale beyond the policy boundary.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor moved from step to step without prompting reflection on why the source-selection method worked or how to transfer it to the rest of the table.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -282,26 +292,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  12,
-                  14,
-                  23,
-                  24
-                ],
-                "sub_criterion_id": "2.2.A.a",
-                "reason": "When students shifted to a metro framing, the tutor largely followed that framing instead of re-anchoring to the assignment's stated task of gathering data for the chosen city.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -311,10 +309,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  15
+                  4,
+                  6
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "One reply exposed raw JSON/internal pedagogical wording, creating avoidable technical density and reducing clarity for the student.",
+                "reason": "Some replies used avoidably technical language for a stressed student, such as FIPS, raster, and boundary-majority classification, which increased cognitive load.",
                 "points": 2
               }
             ],
@@ -336,18 +335,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcript segments, the tutor consistently kept the student doing the retrieval work, redirected off-topic chat, and generally scaffolded with targeted questions.",
-      "Main weaknesses were taking over some key source-selection decisions, not fully re-anchoring when students drifted from the assignment's city focus to metro-area framing, and one notably unclear JSON-leak response.",
-      "Turn references are treated as global across the combined input (Transcript 1 = 1-10, Transcript 2 = 11-20, Transcript 3 = 21-30); where evidence was somewhat ambiguous, smaller deductions were preferred."
+      "The tutor stayed on-task, prevented direct answer-giving, and scaffolded a workable source-finding process for the data table.",
+      "Main pedagogy weakness: the tutor made several core source-selection decisions for the student instead of eliciting more student reasoning first.",
+      "Multiple transcripts were provided, but this schema supports one conversation score; this evaluation applies to Transcript 1."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

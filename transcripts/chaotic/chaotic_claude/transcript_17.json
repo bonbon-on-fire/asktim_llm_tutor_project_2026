@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 2, the tutor provides a fully fleshed-out thesis template with detailed blank-fill structure and a 6-bullet outline skeleton that maps each section's argumentative content. While framed as a 'template,' it is sufficiently detailed that a student can produce near-submission text with minimal independent reasoning—especially the thesis template which pre-structures the claim, evidence, and conclusion pathway.",
+                "reason": "Tutor provides a fully constructed thesis template with blanks ('On an act consequentialist view, it is morally permissible to kill one person to save five when ___...') and a 6-bullet outline skeleton that pre-structures the entire essay. While not word-for-word submission text, it provides near-complete scaffolding that functions as a ready-made essay structure requiring only minor fill-ins, crossing into rewriting/composing territory rather than guiding discovery.",
                 "points": 6
               }
             ],
@@ -99,35 +99,18 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to write content for the student but does not explain the pedagogical rationale (e.g., that active reasoning builds long-term philosophical skill). It enforces constraints without justifying them in terms of learning development.",
+                "reason": "Tutor declines to provide direct answers but does not explain why (e.g., active reasoning builds long-term philosophical thinking skills). It simply says 'I can't give you a paste-ready thesis' without articulating the pedagogical rationale for the approach.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on how their thinking has evolved across the conversation—e.g., how they moved from a vague consequentialist framing to a DDE-based account, or why the plan-dependence criterion was more satisfying than the outcome-only view. No meta-reflection or transfer prompt appears.",
+                "reason": "At the end of the conversation, the tutor moves on to refinement questions without prompting the student to reflect on how their thinking evolved—e.g., how they moved from wanting a paste-ready answer to constructing a DDE-based principle themselves.",
                 "points": 2
               }
             ],
@@ -168,12 +151,10 @@
               {
                 "evidence_turns": [
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 in particular feature multi-paragraph monologues (full thesis templates, 6-bullet outlines, three principle-type breakdowns with sub-prompts for each case) where shorter, more targeted questions would have been more appropriate. Turn 2 especially is an information dump that reduces student thinking space.",
+                "reason": "Turns 2 and 3 in particular contain very long multi-paragraph replies with extensive content (full thesis template, 6-bullet outline skeleton, 3 principle-types each with sub-prompts) when shorter, more focused questions would have prompted more student thinking. The volume of information in these turns reduces the student's opportunity to reason independently.",
                 "points": 4
               }
             ],
@@ -202,12 +183,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a generally Socratic posture throughout, declining direct requests for submission-ready text and consistently pressing the student to fill in their own reasoning. The conversation shows good progression from consequentialism to DDE to plan-dependence, building meaningfully on student responses.",
-      "However, Turn 2 is the most significant issue: the tutor provides a highly structured thesis template and 6-bullet outline skeleton that, while framed as 'fill in the blanks,' does the core architectural and reasoning work for the student. This crosses into 1.1.B territory (rewriting/pre-structuring final text), warranting a 6-point deduction.",
-      "Turn 3 similarly provides three pre-classified principle types with guiding questions for each case, which leans toward doing the key reasoning step (1.1.C.b), though the tutor does follow up with classification prompts. The primary deduction has been applied under 1.1.B to avoid double-penalizing.",
-      "The tutor's responses in Turns 2–5 are consistently very long, with multi-paragraph layouts and embedded sub-frameworks, reducing student cognitive opportunity. This triggers a 3.1.A.a deduction.",
-      "The tutor never explains why it won't write content for the student in terms of learning rationale, and never prompts the student to reflect on their own reasoning development, triggering 1.3.A.a and 1.3.D.a deductions respectively.",
-      "Dialogue quality (anchoring, redundancy) and tone are generally strong—the tutor keeps the student on task, builds on their progress, and maintains an encouraging but non-grading tone."
+      "The tutor generally maintains a Socratic stance throughout the conversation—refusing to write the essay for the student, prompting self-generated answers, and pressing on consistency across cases. The progression from Turn 3 onward is especially effective: the tutor helps the student build and refine their DDE-style principle through counterfactual tests and mechanism questions.",
+      "The primary deduction in 1.1 stems from Turn 2, where the tutor provides a near-complete thesis template (with fill-in-the-blank slots for every key claim) and a 6-bullet outline skeleton. Although framed as a scaffold, this pre-structures the essay so thoroughly that it functions close to rewriting rather than guided discovery. This triggers the 1.1.B.a deduction (6 points) for providing essay-composing assistance.",
+      "In 1.3, the tutor does not articulate why it declines to write answers (missing pedagogical rationale), nor does it prompt the student at the end to reflect on how their thinking changed across the conversation—both missed opportunities for meta-learning.",
+      "In communication quality, Turns 2 and 3 are notably long monologues: the full thesis template plus 6-part outline in Turn 2, and three full principle-type descriptions each with sub-prompts in Turn 3. These reduce student thinking time and opportunity to respond, triggering the 3.1.A.a deduction (4 points).",
+      "No deductions apply for dialogue quality: the tutor consistently anchors to the assignment, does not engage with off-topic requests, and avoids spiraling repetition—it advances the conversation meaningfully each turn.",
+      "Tone is supportive and non-grading throughout. The rubric's 1.1.A.a (submission-ready full answer) is not triggered because the thesis template requires student-generated content to be usable, and the tutor does not give a finished conclusion."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

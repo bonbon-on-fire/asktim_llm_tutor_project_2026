@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 3, the tutor provides a full, detailed outline (4 bullet sections with sub-bullets specifying what to write in each paragraph), effectively doing the structural reasoning work for the student and handing them a near-complete essay blueprint rather than guiding discovery.",
+                "reason": "In Turn 3, after the student provides their means/side-effect chart, the tutor produces a detailed 4-section outline with specific instructional content for each bullet (e.g., 'explain why, on your view, the one death is a side-effect and why AC says do it'), and in Turn 4 provides fill-in-the-blank templates that pre-structure virtually every sentence of the essay. While templates leave blanks, they do the key reasoning scaffolding work of identifying exactly what arguments to make in each case and what the contrasts should be, crossing into doing the central reasoning structuring for the student.",
                 "points": 6
               }
             ],
@@ -102,32 +102,20 @@
                   2,
                   3,
                   4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation the tutor enforces its 'can't write for you' constraint but never explains the pedagogical rationale—e.g., that generating one's own arguments builds philosophical reasoning skills and long-term ability to construct moral arguments. The student is simply told 'no' without a learning rationale.",
+                "reason": "The tutor consistently refuses to do the work but never explains the learning rationale to the student—e.g., that constructing the argument themselves builds the philosophical reasoning skills that are the course's core objective. The tutor just says 'I can't' without connecting it to long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never pauses to prompt the student to reflect on what worked in their reasoning process or why a particular thinking move succeeded (e.g., when the student correctly classified means vs. side-effect, or when they drafted the rule in Turn 8). No transfer or process reflection is encouraged.",
+                "reason": "The conversation ends without any reflection prompt on why the means/side-effect distinction was hard to pin down, what the student's thinking process yielded, or reinforcement of the method they used to arrive at their rule. The tutor moves straight to the next fill-in without consolidating the learning.",
                 "points": 2
               }
             ],
@@ -170,13 +158,10 @@
                   1,
                   2,
                   3,
-                  4,
-                  6,
-                  7,
-                  9
+                  4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly delivers multi-paragraph responses with multiple sub-questions and extensive lists when shorter, more focused prompts would better serve interactivity. For example, Turn 1 contains a denial plus a multi-part bulleted prompt; Turn 4 provides five fill-in-blank templates spanning many lines; Turn 7 includes a rule skeleton, a rationale question, and a two-question self-test. This pattern consistently reduces the student's opportunity to think before being presented with the next scaffold.",
+                "reason": "Turns 1–4 consistently deliver multi-paragraph responses with extensive lists, sub-bullets, and detailed outlines when a single focused question or two would have sufficed. The student is panicking and repeatedly asks to shortcut; the tutor's long structured dumps reduce the student's opportunity to think and respond and likely increase cognitive load rather than reducing it.",
                 "points": 4
               }
             ],
@@ -205,11 +190,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refused to write submission-ready content, maintaining appropriate boundaries across all 10 turns. The student made genuine progress (correctly classifying means/side-effect, drafting their own rule in Turn 8, applying the necessity-to-the-plan test in Turn 10).",
-      "The main pedagogical weakness is in 1.1: in Turn 3 the tutor provided a fully elaborated 4-section essay outline with sub-bullets specifying the content of each paragraph, which constitutes doing the key structural/reasoning work for the student (1.1.C.b, 6-point deduction). While not quite submission-ready prose, it is a near-complete blueprint that carries the reasoning architecture. The full 1.1.A.a deduction (12 pts) was not applied because the tutor did not produce prose or fill in the arguments—but 1.1.C.b is clearly triggered.",
-      "Meta-learning (1.3) is weak: the tutor never explains why it refuses to write for the student (learning rationale absent), and never prompts reflection on why a student's reasoning move succeeded or what they learned from the process.",
-      "Communication quality is impaired by consistently long, multi-part responses that present several questions and templates simultaneously rather than one focused prompt at a time (3.1.A.a).",
-      "Dialogue quality was generally good: the tutor stayed anchored to the assignment, advanced the conversation each turn, and avoided spiraling. Tone was appropriate and supportive throughout."
+      "The tutor consistently and correctly refuses to write the student's essay, maintaining academic integrity throughout all ten turns.",
+      "However, by Turn 3–4 the tutor crosses into doing substantial reasoning scaffolding: the detailed 4-section outline and the comprehensive fill-in-the-blank sentence templates pre-structure not just the format but the argumentative content of the essay (what to say about each case, how to contrast AC vs. the improved rule), which triggers a 1.1.C.b deduction.",
+      "The tutor never explains *why* it won't write the essay in terms of learning rationale or skill development (1.3.A.a), and the conversation ends without any process reflection or reinforcement of method (1.3.D.a).",
+      "Responses in the first half of the conversation are consistently too long—multi-paragraph outlines with nested bullets when the student is overwhelmed and a single focused question would have served better (3.1.A.a).",
+      "Assignment anchoring, tone, and dialogue progression are all handled well; the tutor keeps the student on task, maintains a respectful tone, and builds incrementally on student contributions. No deductions in 2.1, 2.2, or 3.2.",
+      "The 1.1.C.b deduction was applied conservatively (6 points) given the borderline nature of 'fill-in templates'—they do leave blanks but effectively pre-determine the entire argumentative structure. No double-penalization with 1.1.A.a was applied."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

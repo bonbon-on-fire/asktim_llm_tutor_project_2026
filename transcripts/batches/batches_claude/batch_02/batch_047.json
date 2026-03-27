@@ -235,8 +235,18 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 2, Turn 3, the student expresses being scared of doing it wrong and asks for numbers/sectors directly. The tutor offers a structured breakdown (which is reasonable), but in Turn 4, the student still says 'I'm still lost on sectors'—indicating the tutor's prior responses haven't diagnosed the specific confusion. The tutor jumps into multi-step sector questions without first checking what part of the sector concept the student is stuck on, constituting a partial failure to diagnose before responding.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -256,7 +266,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely explains why it is asking the student to work through the problem rather than giving answers. The tutoring constraints and rationale (e.g., 'I'm asking you to reason through this to build lasting skill') are almost never articulated; the tutor just declines and redirects.",
+                "reason": "Across all three transcripts, the tutor enforces its limits (e.g., 'I can't give you finished rows,' 'I can't list actors for you') without explaining to the student why—e.g., that working through it themselves builds reasoning and research skills. The tutor consistently declines without articulating the learning rationale.",
                 "points": 2
               },
               {
@@ -265,7 +275,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The conversations end without any reflective synthesis. In Transcript 1 (turn 9-10), the student has arrived at a workable thesis but the tutor does not prompt reflection on what changed in their reasoning or why the means/side-effect distinction turned out to be productive. In Transcripts 2 and 3, sessions end mid-process with no consolidation of what the student learned about method.",
+                "reason": "Across all transcripts, and especially at the end of conversations (e.g., Transcript 1 Turn 10, Transcript 2 Turn 10, Transcript 3 Turn 10), the tutor never prompts the student to reflect on what changed in their thinking, what method worked, or why a particular approach succeeded. The conversations end with the next question rather than process consolidation.",
                 "points": 2
               }
             ],
@@ -275,7 +285,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
@@ -285,7 +295,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
@@ -296,7 +305,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 2 (urban studies stressors), the tutor cycles on the same two stressors (flooding and heat) for 10 full turns without the student completing a single row or meaningfully advancing. The tutor repeatedly asks the same types of questions (rate it, pick sectors, give justification) without synthesizing or pivoting to a different scaffolding mode despite repeated student confusion and overwhelm.",
+                "reason": "In Transcript 2, the tutor cycles repeatedly through the same 'give me a tentative rating' and 'name a sector' prompts across Turns 3–10 without substantive progression. The student remains confused about sectors and ratings through Turn 7, and the tutor keeps asking similar multi-part questions without reframing or simplifying the approach. A similar pattern occurs in Transcript 3 where the actor-identification loop repeats without the student making meaningful progress.",
                 "points": 4
               }
             ],
@@ -328,12 +337,10 @@
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor routinely sends multi-part, multi-paragraph responses when a single focused question would be appropriate. For a 'clueless' and overwhelmed student who says 'I'm overwhelmed again,' the tutor continues to pack in 3-4 nested questions per turn. This pattern recurs consistently and reduces the student's opportunity to think and respond incrementally.",
+                "reason": "Across all three transcripts, the tutor consistently responds with multi-part questions (often 3–4 sub-questions per turn), lengthy bullet-point breakdowns, and extended explanations. For a student who is already 'super lost' and overwhelmed, these long responses reduce the student's opportunity to think and respond incrementally. Turns like T2/T3 in Transcript 1, and nearly every turn in Transcripts 2 and 3, feature 4–6 paragraph multi-question responses where one focused question would be more appropriate.",
                 "points": 4
               }
             ],
@@ -355,19 +362,23 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 31,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong Socratic discipline across all three transcripts: it consistently refuses to give final answers, redirects toward student reasoning, and scaffolds from student responses. The guided discovery in Transcript 1 (philosophy) is especially well-executed, successfully walking the student from gut intuition to a defensible philosophical thesis over 10 turns.",
-      "The tutor appropriately builds on correct student progress (e.g., affirming 'high-tide flooding' as a specific-enough stressor, validating the 'means vs side-effect' distinction), and there is no evidence of doing the student's reasoning for them across all three conversations.",
-      "The primary weaknesses are: (1) repeated multi-part responses that overwhelm an already-confused student (3.1.A.a), especially harmful given the 'clueless_04' persona; (2) spiraling on the same stressors for 10 turns in Transcript 2 without consolidating or pivoting (2.1.A.a); (3) no meta-learning rationale given for why the tutor structures the session as it does (1.3.A.a); and (4) no closing reflection or transfer support in any transcript (1.3.D.a).",
-      "The 1.3.B.b deduction was considered but not applied because the tutor does give process-level feedback with sufficient specificity (e.g., explaining the counterfactual dependency test, recommending specific search terms, distinguishing 'leading' vs 'engaged' by observable signals). The redundancy deduction (2.1) is applied once (capped at 4) based primarily on Transcript 2, where the pattern is clearest and most damaging."
+      "The tutor demonstrates strong Socratic discipline across all three transcripts, consistently refusing to do the assignment for the student and using guided questioning to prompt reasoning. This is the tutor's clearest strength.",
+      "Pedagogy (1.1): No deductions warranted. The tutor never gives submission-ready content, never rewrites student text, and never states the key idea before the student has a chance to derive it. The questioning approach is genuinely Socratic.",
+      "Scaffolding (1.2): A 3-point deduction was applied in Transcript 2, where the tutor misses an opportunity to diagnose the student's specific confusion about sectors before offering another multi-part structured breakdown. The student's confusion about 'what counts' repeats across several turns without the tutor checking which specific part is unclear first.",
+      "Meta-learning (1.3): The tutor enforces its tutoring constraints without explaining the learning rationale to the student (e.g., why the student must derive ratings themselves). No turn across any transcript includes process reflection or prompts the student to consolidate what they learned about their own thinking.",
+      "Redundancy/spiraling (2.1): A full 4-point deduction was applied. In Transcripts 2 and 3, the tutor cycles through the same rating/sector/actor-identification loop repeatedly (Turns 3–10) without synthesis, reframing, or switching strategy when the student remains stuck. The student's confusion about sectors, ratings, and actor classification persists across nearly the entire conversation without the tutor escalating to a simpler anchor.",
+      "Assignment anchoring (2.2): No deductions. The tutor consistently keeps the student focused on the actual assignment requirements and re-grounds appropriately when the student drifts.",
+      "Response length (3.1): A 4-point deduction was applied. The tutor's responses are consistently long and multi-part across all three transcripts, regularly presenting 3–6 sub-questions or bullet-point breakdowns in a single turn. For a student who self-identifies as overwhelmed and confused, this format reduces engagement opportunity and likely contributes to the spiraling observed in 2.1.",
+      "Tone and non-grading stance (3.2): No deductions. The tutor maintains a consistently supportive tone and does not assign or imply formal grades."
     ],
-    "total_score": 34,
+    "total_score": 31,
     "judge_llm_calls": 1
   }
 }

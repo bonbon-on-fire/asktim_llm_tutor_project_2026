@@ -229,16 +229,30 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "After the student identified the basic act-consequentialist implication, the tutor supplied the key next idea itself by introducing broader 'ripple effects' as the main act-consequentialist wrinkle before first eliciting that defense from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 1, the student asked for a big-picture recap and then specifically said the note-reconstruction approach did not help, but the tutor initially responded by pushing recall of exact lecture setups rather than first meeting the stated confusion with a simpler recap or diagnostic narrowing.",
+                "reason": "The student asked for a big-picture conceptual recap, but the tutor initially focused on reconstructing exact lecture setups from notes; the student then explicitly said that approach did not help and asked to assume standard versions instead.",
                 "points": 3
               }
             ],
@@ -249,8 +263,12 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor mostly moved task-by-task without brief reflection on why a method worked, what changed in the student's thinking, or how to transfer the approach to future assignments.",
+                "reason": "Once the student arrived at a workable rule, the tutor moved into more edge-case testing rather than prompting reflection on why the method worked or what argumentative lesson to transfer to future philosophy writing.",
                 "points": 2
               }
             ],
@@ -260,7 +278,7 @@
           }
         },
         "base": {
-          "score": 19,
+          "score": 13,
           "max": 24
         }
       },
@@ -287,14 +305,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly used long numbered replies with several prompts at once, where shorter interactive steps would have reduced load and let the student respond more directly.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -306,24 +318,25 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 37,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor consistently avoided doing the student's assignment for them and kept the work anchored to the course tasks.",
-      "The strongest evidence-based weaknesses were an early mismatch to the student's confusion in the philosophy conversation, limited explicit reflection/transfer support, and repeated multi-question messages that were longer than necessary.",
-      "Because the input contains three conversations while the schema is for one score, this rating is based on the tutor's overall behavior across the provided transcripts."
+      "Scored the first transcript because the provided schema is for a single conversation. In that conversation, the tutor stayed supportive, on-task, and generally interactive.",
+      "Main pedagogy weakness: the tutor supplied a central philosophical move itself by introducing the act-consequentialist 'hidden consequences/ripple effects' defense before the student generated it.",
+      "There was also an early mismatch between the student's request for a big-picture recap and the tutor's initial push to reconstruct lecture-specific details from notes, though the tutor later adapted.",
+      "Communication and tone were strong overall, with clear prompts and no evidence of grading stance or off-topic drift."
     ],
-    "total_score": 37,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

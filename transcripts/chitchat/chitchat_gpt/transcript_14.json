@@ -93,7 +93,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor set a constraint on staying on-task and on the student generating the list, but did not explain the learning rationale for those limits.",
+                "reason": "The tutor set participation limits and redirected off-task requests, but did not explicitly explain the learning rationale for those constraints to the student.",
                 "points": 2
               }
             ],
@@ -156,9 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: the student generated the city choice, stressors, ratings, priority logic, evidence standards, and comparison criteria, while the tutor mainly asked targeted questions and refined structure.",
-      "The tutor stayed tightly anchored to the assignment and redirected the initial off-topic prompt immediately without spending time on non-assignment discussion.",
-      "Only a small deduction was applied because the tutor enforced tutoring constraints in the opening turns without explicitly stating the learning rationale; otherwise the conversation showed strong scaffolding, process feedback, and concise interactive pacing."
+      "The tutor stayed strongly in guided-discovery mode throughout: it avoided supplying final table entries, pushed the student to define criteria, indicators, and priority rules, and built each turn on the student's previous work.",
+      "Assignment anchoring and progression were strong; the tutor redirected the initial off-topic question immediately and kept the conversation centered on the stressors table, evidence standards, and priority logic.",
+      "The main weakness was meta-level transparency: when setting boundaries or requiring the student to generate the content, the tutor did not explicitly state the learning rationale for that approach. The opening redirect was somewhat firm, but the overall tone remained supportive, so no additional tone deduction was applied."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

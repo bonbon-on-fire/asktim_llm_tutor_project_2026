@@ -80,16 +80,8 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Turn 4, the tutor provides a detailed fill-in-the-blank template with pre-written sentence scaffolding ('Lead actor (specific office/agency): [____]', 'Why they're the lead (choose 2): owns the plan / controls budget...', etc.) including pre-selected rationale options and word targets. This goes beyond scaffolding into providing the near-complete structural and content skeleton of the submission. Considered against all turns, however, the tutor consistently refused to write the actual post and the template remained unfilled. The deduction is partial rather than full because the template does not constitute submission-ready content on its own—the student must still supply all substantive content. However, this template crosses into doing key structural reasoning for the student by pre-selecting categories, options, and even word counts, reducing student ideation significantly.",
-                "points": 6
-              },
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 8, the tutor provides two 'sentence recipes' with blanks (e.g., 'A key decision arena is the [CITY] Capital Improvement Program process, where [DEPARTMENT/LEAD OFFICE] prioritizes and funds [PROJECT TYPE]...'). These are near-complete sentences in final polished language—students only need to fill proper nouns. This constitutes providing final wording that the student can minimally edit into submission-ready text, overlapping with editing/rewriting territory. Since 1.1.A.a already received a 6-point deduction (capping at 12), and 1.1.B.a would add 6 more points for a total of 12, this triggers the cap.",
-                "points": 6
+                "reason": "In Turn 4, the tutor provides a highly detailed fill-in-the-blank template with exact sentence structures, slot labels, word-count targets per section, and pre-written phrase options (e.g., 'owns the plan / controls budget / convenes partners'). While blanks exist, the skeleton is so complete that inserting the student's earlier rough answers from Turn 3 would produce a near-submission-ready post with minimal student reasoning work. Across turns 4 and 8, the tutor also provides 'sentence recipes' with fully written surrounding language where the student only inserts a few words. Cumulatively, the tutor's scaffolding crossed into supplying the structural and linguistic content of the assignment, reducing the student's reasoning contribution to slot-filling.",
+                "points": 12
               }
             ],
             "score": 0,
@@ -113,18 +105,19 @@
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to draft the post but rarely explains the pedagogical rationale for why the student should do the writing themselves (e.g., building analytical and communication skills, ensuring accurate sourcing). The refusals are mostly policy-enforcement ('I can't do that') without explaining that the skill of identifying and analyzing actors is the learning goal itself.",
+                "reason": "The tutor consistently enforces its 'I can't write this for you' policy across multiple turns but never explains the pedagogical rationale—e.g., that doing the reasoning oneself develops analytical skills or that writing builds long-term capability. The constraint is stated but not justified in learning terms.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   6,
                   7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their reasoning process—e.g., what changed between their rough blanks and the draft, why specificity matters methodologically, or what this actor-mapping exercise will enable in later assignments. The conversation ends without any meta-level synthesis of what the student learned about analyzing decision-making actors.",
+                "reason": "The conversation ends at Turn 10 with the tutor asking the student to paste revised sentences. There is no moment where the tutor prompts the student to reflect on what they learned about actor mapping, what changed in their thinking, or what method they used to identify gaps. No transfer or process reflection is supported.",
                 "points": 2
               }
             ],
@@ -170,7 +163,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple early turns feature long multi-part instructions (Turn 1 has three labeled prompts with sub-questions; Turn 3 has a 4-part structure with nested bullets; Turn 4 has an elaborate framework with four labeled parts, word counts, and multiple bracketed slots). These lengthy monologue-style responses reduce the student's opportunity to think and respond interactively, and appear consistently across several turns rather than being isolated.",
+                "reason": "Several early tutor turns are multi-part, multi-paragraph responses that enumerate 4-6 bullet frameworks with word counts, part labels, and role breakdowns. In Turns 1, 2, 3, and 4 especially, the tutor provides lengthy structured frameworks when shorter, more targeted prompts would have been more appropriate and given the student more space to think. Turn 4's framework in particular spans many bullet lines where one or two focused questions would have sufficed.",
                 "points": 4
               }
             ],
@@ -199,11 +192,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write or draft the student's forum post across all 10 turns, which is commendable. However, the tutor crossed into near-submission territory by providing an elaborate fill-in-the-blank template (Turn 4) with pre-selected rationale options and word targets, and then sentence-recipe templates (Turn 8) that were effectively near-complete polished sentences requiring only proper noun substitution. These together trigger the 1.1.A.a and 1.1.B.a deductions up to the 12-point cap for 1.1.",
-      "Scaffolding and progression (1.2) was handled well—the tutor built on student responses across turns, acknowledged valid contributions in the rough blanks (Turn 3), and progressively narrowed scope toward the student's specific choices rather than restarting.",
-      "Meta-learning (1.3) suffered because the tutor rarely explained the pedagogical rationale for its constraints (1.3.A.a) and never prompted reflection on the student's reasoning process or what the actor-mapping exercise was designed to develop (1.3.D.a). Method feedback was present but mostly implicit.",
-      "Dialogue quality was strong: the tutor stayed on-task, re-anchored when students tried to take shortcuts, and progressed the conversation without spiraling.",
-      "Communication quality lost points primarily due to consistently long, multi-part instructional monologues in early turns (Turns 1–4), which reduced interactivity and placed high cognitive load on a student who was already expressing time pressure."
+      "The central and most significant issue is the 1.1.A.a deduction: the tutor crossed from guided discovery into supplying near-submission-ready content. By Turn 4, the tutor provided a highly detailed template with pre-written sentence skeletons, exact word counts per section, and phrase options to choose from. By Turn 8, it supplied 'sentence recipes' where the student only filled in a handful of words. Even though individual blanks remained, the structural and linguistic scaffolding was so complete that the student's reasoning contribution became minimal slot-filling. This warrants the full 12-point deduction under 1.1.A.",
+      "The tutor did well at consistently refusing to write the post outright (Turns 1–5) and at breaking the task into parts, building on student progress across turns, and maintaining assignment anchoring throughout. Dialogue progression was coherent and non-repetitive.",
+      "Under 1.3, the tutor never explained why it wouldn't write the post in learning terms (no rationale beyond stating the constraint), and never prompted any process reflection or transfer at the end of the session.",
+      "Under 3.1, several tutor turns were overly long and framework-heavy when more focused prompts would have been more appropriate, reducing the student's cognitive engagement.",
+      "Tone was consistently supportive and non-judgmental; no grading language was used. Assignment anchoring was maintained throughout."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

@@ -256,17 +256,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently deflects off-topic requests but never explains the learning rationale (e.g., why guided discovery rather than giving answers helps the student develop research and analytical skills). The tutor just says 'I can't help with X' without framing why the tutoring approach benefits the student's long-term learning.",
+                "reason": "Across all three transcripts, the tutor enforces its 'no off-topic' policy consistently but never explains the learning rationale (e.g., active reasoning, skill-building) behind the constraint. It simply declines and redirects without articulating why the student benefits from staying on task.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  10,
-                  10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The transcripts end without any reflection prompts about what methods worked, what the student's thinking changed on, or how to transfer the evidence-sourcing and sector-mapping approach to future assignments. The tutor moves forward but never closes with process reflection.",
+                "reason": "The tutor consistently moves forward without prompting the student to reflect on what changed in their thinking or why a particular method worked. At the end of each transcript the tutor pushes to the next step rather than consolidating learning process reflection.",
                 "points": 2
               }
             ],
@@ -329,10 +327,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs very well across all three transcripts: it consistently uses Socratic questioning, never gives away answers or does the student's reasoning for them, scaffolds well by building on each student response, redirects off-topic chitchat quickly and appropriately, and keeps responses focused and interactive.",
-      "The main weakness is in meta-learning (1.3): the tutor never explains why it tutors the way it does (learning rationale behind the Socratic approach) and never prompts the student to reflect on the reasoning process or how skills transfer to future assignments. These are consistent omissions across all three conversations.",
-      "No deductions are warranted for 1.1 (the tutor avoids giving direct answers and consistently prompts the student to reason first), 1.2 (scaffolding is tight and builds on student responses), 2.1 (no spiraling), 2.2 (assignment anchoring is strong even under repeated off-topic pressure), 3.1 (responses are appropriately bite-sized), or 3.2 (tone is consistent and supportive without grading).",
-      "One deduction was applied to 1.3.B.a/1.3.B.b in principle but was not applied separately to avoid double-penalizing the same gap already captured in 1.3.A.a and 1.3.D.a. The dominant gaps are absence of rationale-sharing and absence of reflective closure."
+      "Across all three transcripts the tutor maintains strong Socratic discipline: it never gives direct answers, consistently asks the student to supply evidence before offering guidance, builds incrementally on each student response, and redirects off-topic chat efficiently. No 1.1.A, 1.1.B, or 1.1.C violations were observed.",
+      "Scaffolding (1.2) is handled well: the tutor acknowledges valid student steps (e.g., 'Good start,' 'Your distinction is exactly the clarity the table needs'), builds on them, and diagnoses confusion before explaining.",
+      "Two deductions in 1.3: (a) The tutor enforces its no-chat policy across all three conversations without ever explaining the pedagogical rationale for staying on task—students are just redirected, not told why focused work builds their skills. (b) The tutor consistently moves forward without prompting any meta-reflection on what the student learned or how their thinking changed across exchanges.",
+      "The 1.3.B criterion is borderline: the tutor does give process-level feedback (e.g., explaining why 'chronic vs. acute' is important, how to make evidence 'non-hand-wavy') so no deduction was applied there.",
+      "Dialogue quality (2.2): off-topic deflections are quick and consistent; the tutor never substantively engages with restaurant, movie, or snack questions, and always re-anchors to the assignment. No deduction warranted.",
+      "Communication (3.1/3.2): responses are interactive and appropriately sized; tone is warm and encouraging without being evaluative in a grading sense. No deductions."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

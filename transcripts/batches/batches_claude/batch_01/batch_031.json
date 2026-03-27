@@ -249,17 +249,15 @@
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor redirects off-topic requests and enforces constraints (not picking cities, not handing over citations) but rarely explains to the student *why* this approach helps them learn (e.g., 'I want you to find the source so you can verify context yourself' is hinted at in T1-Turn 8, but the learning rationale is not consistently articulated).",
+                "reason": "Across all three transcripts the tutor consistently refuses off-topic detours and enforces a work-focused policy without explaining the pedagogical rationale (e.g., that doing the thinking yourself builds analytical skills or supports long-term assignment development). The constraint is applied but the learning rationale is never articulated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor does not prompt the student to reflect on what their thinking process revealed or what changed after improving their justification approach. Each turn advances the work but does not pause to ask 'what did this exercise in evidence-sourcing teach you about how to justify ratings?'",
+                "reason": "In all three transcripts the conversations end with the tutor sending the student to find sources, but no turn invites the student to reflect on what changed in their thinking, why a particular method (primary vs. secondary sources, evidence-first rating justification) worked better, or what they would do differently next time. The tutor reinforces next steps but never prompts process-level reflection.",
                 "points": 2
               }
             ],
@@ -305,12 +303,10 @@
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part responses with 3-4 sub-questions or checklists per turn. While pedagogically motivated, the consistent pattern of 4-6 paragraph responses with numbered sub-questions reduces the student's opportunity for open-ended thinking and generates cognitive load. A more interactive approach with shorter, more focused prompts would have been more appropriate in several turns.",
+                "reason": "Across all three transcripts the tutor frequently uses multi-part responses (2–4 distinct numbered questions plus additional framing paragraphs) where a single focused prompt would be sufficient. For example, Transcript 1 Turn 5 poses a framework question followed by two numbered sub-questions; Transcript 2 Turns 3–6 each contain 2–3 numbered questions plus preamble, often before the student has processed the previous turn. This consistently limits the student's active thinking space.",
                 "points": 4
               }
             ],
@@ -339,11 +335,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it never hands over stressor lists, ratings, or final table content, consistently requiring the student to propose ideas before the tutor challenges or refines them. Off-topic chitchat is handled firmly but without hostility, and the tutor keeps the conversation anchored to the assignment throughout.",
-      "Scaffolding is well-executed: the tutor builds on each student step (e.g., accepting the student's sector tagging and stressor list before pushing to tighten justifications), and appropriately diagnoses confusion points before diving in.",
-      "The primary weaknesses are in meta-learning: the tutor rarely explains its tutoring rationale (e.g., why it won't pick a citation) in terms of student skill development, and it does not prompt reflection on what the student's thinking process revealed at any stage.",
-      "Response length is a recurring issue: the tutor habitually sends 4-6 sub-questions per turn in all three transcripts, which limits student think-time and makes interactions feel more like a checklist than a dialogue. This is a consistent pattern across the full conversation set, not isolated instances.",
-      "No deductions were applied for dialogue quality (2.1, 2.2): the tutor advances the conversation without spiraling, and re-anchors the student to the assignment effectively whenever they drift. Tone remains constructive and non-evaluative throughout."
+      "All three transcripts show a tutor who maintains excellent Socratic discipline: the tutor never gives final answers, never rewrites student text, and consistently redirects off-topic chitchat quickly and without elaboration. The student does the key reasoning work in every case (city selection, stressor identification, sector tagging, rating justification, source strategy), earning full marks for 1.1.",
+      "Scaffolding (1.2) is also strong: the tutor builds incrementally on each correct student step, affirms valid reasoning before probing weaknesses, and avoids re-explaining things the student has already resolved.",
+      "Two deductions were applied to meta-learning (1.3): the tutor enforces its tutoring constraints (no city picking, no citation handouts) without ever explaining the pedagogical reason behind them (1.3.A.a), and none of the three conversations end with a reflective prompt about what the student's thinking process revealed or how the method could transfer (1.3.D.a).",
+      "Dialogue quality (section 2) is clean: the tutor advances the conversation each turn, never spirals, and keeps the student anchored to the assignment throughout all three sessions.",
+      "The main communication deduction (3.1.A.a) is for consistently multi-part responses. The tutor routinely bundles 2–4 numbered sub-questions into a single turn, sometimes adding a framing paragraph before and a directive after. While each individual question is relevant, the cumulative density frequently forecloses the student's opportunity to think through one issue at a time before the tutor introduces the next. This pattern recurs across all three transcripts. No language-complexity penalty was applied; vocabulary and phrasing are generally accessible.",
+      "No tone or grading-stance issues were observed; the tutor is encouraging without being effusive and never implies formal grade authority."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

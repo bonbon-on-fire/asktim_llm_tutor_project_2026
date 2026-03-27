@@ -235,8 +235,18 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1 Turn 2, the tutor provides an extensive multi-part list of source routes (BPS tables, GRDP definitions, Köppen datasets) before the student has demonstrated any confusion about those specifics. The student only said they wanted numbers—the tutor jumps to a full method dump covering multiple fields without first diagnosing which step was actually blocking the student.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -252,16 +262,18 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines requests without clearly explaining the pedagogical rationale (i.e., why not doing the work for the student benefits the student's own learning and long-term skill development). The tutor says 'I can't' or 'I won't' but rarely articulates that guided discovery builds research skills the student will need later in the course.",
+                "reason": "Across all three transcripts, the tutor repeatedly declines to do the work but rarely explains the pedagogical rationale (active reasoning, skill development). In Transcript 1 the tutor says 'I can't fill it out for you—that would be completing the assignment' without explaining *why* doing it yourself builds skills. The learning rationale is largely absent.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves from topic to topic without prompting brief reflection on what the student learned or how their thinking changed. No moment is used to ask students to reflect on what the boundary-selection or source-evaluation process taught them.",
+                "reason": "Across all three transcripts, the tutor does not prompt students to reflect on why their approach worked or what changed in their thinking. For example, in Transcript 3 Turn 10 when the student produces a good draft sentence, the tutor simply flags gaps without reinforcing the method or asking what the student learned about citing mixed geographies.",
                 "points": 2
               }
             ],
@@ -271,7 +283,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
@@ -307,7 +319,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 (turns 2–5), the tutor repeatedly delivers multi-paragraph replies (listing multiple numbered sub-tasks, bullet frameworks, and conditional guidance) when the student is clearly in a rush and needs short, focused prompts. Turn 2 is particularly long with a full source list when the student has not yet even chosen a boundary. This pattern recurs across transcripts, reducing the student's opportunity to think and respond.",
+                "reason": "In Transcript 1 Turns 2–5 especially, the tutor repeatedly writes multi-paragraph replies with multiple sub-tasks, bullet lists, and layered instructions when shorter, more focused prompts would have been more appropriate for a student who is clearly overwhelmed. This pattern reduces the student's opportunity to think and respond and is consistent across several exchanges.",
                 "points": 4
               }
             ],
@@ -329,22 +341,24 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic approach: it consistently refuses to produce the assignment or near-submission-ready content, redirects off-topic requests efficiently, and uses well-structured questions to scaffold the student's own reasoning.",
-      "Pedagogy 1.1 and 1.2 are fully preserved. The tutor never gives a final answer, never rewrites student text, and does not state the key idea before the student has a chance to reason. Scaffolding builds logically on student progress in all three cases.",
-      "A deduction of 2 points is applied under 1.3.A.a because the tutor typically enforces its 'I won't do that' stance without explaining the learning rationale (e.g., that building one's own source-evaluation skill is needed for later assignments in the course). A 2-point deduction under 1.3.D.a is warranted because no turn across any transcript invites the student to reflect on what changed in their thinking or why a method worked.",
-      "1.3.B is left at full points because the tutor does offer process-level feedback on source credibility, boundary selection, and double-counting issues, even if brief.",
-      "Under 3.1, a 4-point deduction is applied for 3.1.A.a. Especially in Transcript 1 (turns 2–5) and Transcript 3 (turns 3–6), the tutor sends very long, multi-part responses (often 5–8 bullet items plus numbered steps) when the student signals time pressure or confusion. This pattern repeatedly reduces the student's chance to think before the next wave of information arrives. Turns later in each transcript do become shorter and more focused, which is acknowledged, but the early pattern is consistent enough to trigger the criterion.",
-      "Assignment anchoring and off-topic redirection (2.2) are handled well in all transcripts; the Chicago pizza and Netflix requests are declined immediately and the student is redirected without meaningful engagement with the off-topic content.",
-      "No double-penalization was applied across criteria; the length/detail issue was assessed only under 3.1."
+      "Across all three transcripts, the tutor consistently declines to do the assignment for students and uses questioning to guide them toward their own work—this is the strongest aspect of the tutoring.",
+      "In Transcript 1 Turn 2, the tutor dumps an extensive multi-field source guide before diagnosing what the student actually needed, triggering a 1.2.B.a deduction for responding to the wrong confusion point without diagnostic questioning first.",
+      "The tutor rarely explains the pedagogical rationale for its constraints (1.3.A.a): it says 'that would be doing the assignment' without explaining why student-led work builds skills.",
+      "Across all three conversations, the tutor does not prompt reflection on what the student learned or why an approach worked (1.3.D.a), missing multiple closing opportunities especially in later turns.",
+      "In Transcript 1 especially, several tutor turns are long, multi-part monologues with nested bullet lists when a single focused question would have served a time-pressured, overwhelmed student better (3.1.A.a).",
+      "Off-topic redirections (pizza, Netflix, spring break in Transcript 2) are handled promptly and appropriately; assignment anchoring is strong across all transcripts.",
+      "Tone is consistently supportive and non-punitive; no grading-like language is used.",
+      "No evidence of the tutor giving submission-ready answers or carrying the key reasoning steps for students (1.1 full marks).",
+      "No meaningful redundancy or spiraling observed; the tutor advances the conversation purposefully across turns."
     ],
-    "total_score": 38,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

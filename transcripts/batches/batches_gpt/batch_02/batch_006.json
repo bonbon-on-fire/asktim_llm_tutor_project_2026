@@ -232,11 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
+                  26,
                   27
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In a few places the tutor resolved meaningful assignment choices for the student rather than eliciting them, such as ranking the most acceptable GDP proxy options for Barcelona and directly picking the strongest decision-arena/Port Authority combo for the NYC post.",
+                "reason": "The tutor selected the student's content choice for them by picking the strongest decision arena and Port Authority framing, taking over a key analytic selection step instead of having the student decide it.",
                 "points": 6
               }
             ],
@@ -293,19 +293,11 @@
                   24
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long multi-bullet or blueprint-style replies where shorter interactive prompts would have preserved more student thinking space.",
+                "reason": "Several replies were long, bullet-heavy guidance dumps that laid out many sources, filters, or sentence-by-sentence structures before checking understanding, limiting bite-sized interaction.",
                 "points": 4
-              },
-              {
-                "evidence_turns": [
-                  17
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One response exposed a JSON-like internal structure ('pedagogical-reasoning' and 'Student-facing-answer'), creating avoidable density and confusion for the student.",
-                "points": 2
               }
             ],
-            "score": 0,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -317,25 +309,25 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Turn numbering is treated sequentially across the three transcripts (1-30).",
-      "Overall, the tutor consistently refused to do the student's work, kept the conversation tightly anchored to the assignment, and scaffolded next steps with useful methodological prompts.",
-      "The main pedagogy weakness was occasional resolution of key assignment choices for the student rather than always eliciting the student's own judgment.",
-      "The biggest communication weakness was response format: several replies were longer than needed, and one reply used an internal JSON-like structure that increased cognitive load."
+      "Across the three conversations, the tutor consistently refused to provide submission-ready work and kept the student anchored to the actual assignment goals.",
+      "The main pedagogy issue was a clear but limited instance of the tutor making a substantive content choice for the student rather than eliciting that choice from the student.",
+      "The main communication issue was repeated use of long, list-heavy responses where shorter interactive steps would have better supported the student's thinking.",
+      "Any ambiguity was resolved conservatively: deductions were limited to the clearest evidence rather than broader impressions."
     ],
-    "total_score": 34,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

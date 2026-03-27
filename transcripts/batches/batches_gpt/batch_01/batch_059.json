@@ -241,14 +241,20 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the transcripts, after the student developed workable definitions, rating rules, and draft rows, the tutor usually moved straight to the next task rather than prompting brief reflection on why the method worked or what the student should reuse independently next time.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -294,17 +300,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently resisted doing the assignment, re-anchored the student to the actual task, and used guided prompts to help the student choose a city, define stressors, build a rating logic, and identify evidence sources.",
-      "The tutor regularly gave process-level coaching rather than final wording, maintained a supportive non-grading tone, and kept the work aligned to the stressors-table requirements. Some example options were offered at times, but they remained optional prompts rather than submission-ready content or decisive reasoning done for the student."
+      "The tutor consistently kept the student doing the core work: choosing a city, defining stressors, building a rating logic, selecting metrics, and drafting justifications rather than receiving submission-ready content.",
+      "Dialogue control was strong: the tutor repeatedly re-anchored to the assignment, redirected requests for copy-ready tables or exact ratings, and built on the student's evolving ideas with targeted questions and usable heuristics.",
+      "The main recurring weakness was limited reflection/transfer support. Even after the student reached clearer frameworks and draft content, the tutor usually advanced the task instead of asking the student to articulate what method they had learned and how to reuse it."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

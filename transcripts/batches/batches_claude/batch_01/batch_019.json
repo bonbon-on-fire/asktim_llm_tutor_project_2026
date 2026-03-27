@@ -246,7 +246,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "Across all three transcripts, the tutor repeatedly responds to the student's resistance with re-stated fill-in frames and templates rather than first diagnosing why the student is stuck. The tutor correctly identifies that the student is avoiding effort, but consistently defaults to providing progressively more detailed frames (fill-in-the-blank templates with word banks) rather than asking diagnostic questions about what specifically is blocking the student. In Transcript 2 Turn 4, for example, the tutor provides a very detailed fill-in frame with word bank after the student asks for paste-ready sentences—this skips any attempt to understand the student's actual conceptual barrier.",
+                "reason": "In Transcript 2, the tutor repeatedly gives elaborate fill-in frames and word banks after students resist writing their own text, without first diagnosing whether the barrier is conceptual confusion or simply laziness/effort avoidance. The tutor keeps providing increasingly detailed scaffolding templates (turns 4, 5, 6, 8) rather than first checking what the student actually understands vs. what they are avoiding. This pattern appears across all three transcripts.",
                 "points": 3
               }
             ],
@@ -258,7 +258,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -270,24 +269,19 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines student requests but rarely explains the learning rationale. In most turns, the tutor simply says 'I can't do that for you' or 'that crosses the line' without explaining why doing the work themselves would hinder skill development, academic integrity beyond cheating risk, or long-term learning goals. The one exception is Turn 9 of Transcript 1 where academic dishonesty is briefly mentioned. The pedagogical rationale (active reasoning, skill-building) is almost never articulated.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to do the work but rarely explains the pedagogical rationale (active reasoning, skill development) for why the student must do it themselves. The tutor typically just says 'I can't do that for you' without explaining why the student's own reasoning process matters for learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
                   3,
-                  4,
                   5,
-                  6,
                   7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Throughout all three transcripts, the tutor never encourages the student to reflect on their own reasoning process, what they have learned, or why a method works. When the student makes progress (e.g., Transcript 1 Turn 3 where SLR sectors are identified, or Transcript 2 Turn 9 where solid sentences are produced), the tutor briefly affirms and moves on without prompting any reflection on the process or reinforcing the method used.",
+                "reason": "The tutor never prompts the student to reflect on what they learned from the reasoning process or why their own method of deciding ratings/justifications was valuable. The conversation ends without any reflection on process or transfer to future assignments.",
                 "points": 2
               }
             ],
@@ -307,7 +301,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
                   4,
                   5,
                   6,
@@ -317,7 +310,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeats the same move pattern for 8+ turns: student requests completed work → tutor declines and provides a slightly more detailed fill-in frame → student refuses → repeat. The tutor does not substantially reframe, simplify the task, try a different approach (e.g., breaking into a single tiny decision first), or acknowledge the pattern. In Transcript 2, this cycle runs all 10 turns with the tutor progressively adding more elaborate templates without breaking the cycle. The student never gets unstuck from the refusal pattern.",
+                "reason": "In Transcripts 2 and 3 particularly, the tutor cycles through the same pattern repeatedly: student asks for completed content, tutor refuses and provides a fill-in frame, student asks again, tutor refuses and provides another frame. By turns 6-8 in Transcript 2, the tutor has offered nearly identical fill-in templates multiple times without synthesizing or reframing the approach. The tutor does not switch strategy when the student is clearly not engaging with the frames.",
                 "points": 4
               }
             ],
@@ -349,12 +342,10 @@
                   5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor consistently responds with multi-paragraph messages containing multiple bolded sections, enumerated sub-questions, word banks, fill-in templates, and checklists when simpler, shorter prompts would be more appropriate. For example, Transcript 2 Turn 3 contains a full yes/no diagnostic (15 answers requested), a template, and rule-of-thumb sections in one reply. Transcript 3 Turn 4 provides four bullet-point sentence stems plus instructions. The length and density of tutor responses consistently reduces the student's opportunity to think and respond, and the student's increasing resistance may be partly a reaction to this overwhelming format.",
+                "reason": "Across all three transcripts, the tutor consistently produces multi-paragraph responses with elaborate fill-in templates, word banks, numbered lists, and multi-part questions when shorter, more focused prompts would suffice. For example, Turn 2 of Transcript 2 offers a 12-item numbered list plus instructions for 4 sub-points per item, and Turn 3 of Transcript 3 provides a lengthy template plus 15 yes/no questions. These long responses reduce student thinking time and opportunity to engage.",
                 "points": 4
               }
             ],
@@ -383,14 +374,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains a strong and consistent refusal to complete the assignment for the student, never producing paste-ready justifications, ratings, or table content. This is the most important dimension and the tutor handles it well throughout.",
-      "Criterion 1.1: No deductions. The tutor never gives submission-ready content, never rewrites student text, and consistently returns agency to the student. The fill-in frames with blanks are scaffolds, not completed work.",
-      "Criterion 1.2: A 3-point deduction is applied for 1.2.B.a. While the tutor correctly holds the line, it does not effectively diagnose what is actually blocking the student (avoidance? confusion? time pressure?) and instead defaults to increasingly detailed templates. This pattern repeats across all three transcripts.",
-      "Criterion 1.3: Full 6-point deduction applied. The tutor almost never explains why it won't do the work in terms of the student's learning (1.3.A.a), and never prompts the student to reflect on their thinking process or method when progress is made (1.3.D.a). The 1.3.B.b criterion is not triggered independently since some method feedback does occur through the templates.",
-      "Criterion 2.1: Full 4-point deduction for 2.1.A.a. All three transcripts show the same unbroken cycle: student requests → tutor declines → more detailed template → student refuses → repeat. The tutor never reframes, simplifies to a single micro-decision, acknowledges the spiral, or tries a fundamentally different strategy.",
-      "Criterion 2.2: No deductions. The tutor stays consistently anchored to the assignment across all turns in all three transcripts.",
-      "Criterion 3.1: 4-point deduction for 3.1.A.a. The tutor's responses are consistently long and dense, with multiple bold sections, word banks, checklists, and multi-part templates. This reduces student thinking opportunity and likely contributes to the student's resistance.",
-      "Criterion 3.2: No deductions. The tone is generally supportive and non-punitive throughout, though direct. The tutor avoids grading language."
+      "Across all three transcripts, the tutor maintains a strong principled refusal to complete the assignment for the student, consistently declining to provide paste-ready ratings, justifications, or completed tables. This is the tutor's primary strength and earns full marks on 1.1.",
+      "The tutor's scaffolding becomes repetitive and ineffective over time. By mid-conversation in Transcripts 2 and 3, the same refuse-then-provide-a-frame pattern repeats without adaptation, earning a full 2.1 deduction for spiraling without synthesis.",
+      "Response length is a consistent problem: the tutor frequently produces multi-paragraph replies with elaborate templates, 12-item lists, and multiple sub-questions when simpler, more focused prompts would better serve the student and leave more cognitive space for the student to think.",
+      "The tutor rarely explains the pedagogical rationale behind refusing to provide answers, missing opportunities to help the student understand why doing the reasoning themselves matters for learning. Reflection and transfer support are also absent throughout.",
+      "Assignment anchoring is strong: the tutor stays on task, redirects academic dishonesty attempts appropriately (Turn 9, Transcript 1), and does not confirm misunderstandings of the assignment. Tone remains supportive and professional despite a resistant student."
     ],
     "total_score": 31,
     "judge_llm_calls": 1

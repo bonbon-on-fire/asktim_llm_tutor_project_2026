@@ -353,13 +353,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor keeps advancing the draft and coherence checks but does not prompt reflection on why the student's method worked or how to transfer the approach beyond this essay.",
+                "reason": "Across the conversations, the tutor gave strong forward scaffolding but rarely paused for explicit reflection on why a reasoning method worked or what the student should transfer to future philosophy prompts; the focus stayed on finishing the current argument structure.",
                 "points": 2
               }
             ],
@@ -396,8 +391,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used long, multi-part replies with several numbered questions or frameworks at once, especially in the later parts of Transcripts 2 and 3, when shorter checkpoints could have reduced cognitive load and kept the exchange more bite-sized.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -409,23 +410,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Transcript 1: The tutor consistently refused submission-ready writing, stayed anchored to the prompt, and used strong guided discovery through targeted templates and case-comparison questions.",
-      "Minor deduction only for missing explicit reflection/transfer support; the tutor refined the student's reasoning well but never paused to have the student articulate why the method was working."
+      "Across all three transcripts, the tutor consistently refused submission-ready writing and kept the student doing the core argumentative work, which strongly supports full credit for guided discovery.",
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic content immediately, and generally built well on student progress.",
+      "Main weaknesses were communication and transfer: responses were often densely structured and multi-part rather than bite-sized, and there was limited explicit reflection on what reasoning method the student should carry into future work.",
+      "There is some uncertainty on the communication deduction because the longer replies were organized and productive, but they were still repeatedly heavier than necessary."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

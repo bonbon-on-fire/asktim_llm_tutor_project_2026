@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the provided transcripts, the tutor often enforces role limits ('I’m a tutor,' 'stay on task,' 'I can’t write the wording for you') without explicitly giving a learning rationale for why the student should do the source-finding or wording themselves.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -283,20 +277,26 @@
           "3.1": {
             "deductions": [
               {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long, multi-part replies with several numbered questions at once (for example in transcript 1 turns 2 and 6, transcript 2 turns 5 and 8, and transcript 3 turn 5), creating more cognitive load than shorter interactive steps would have.",
-                "points": 4
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The final tutor reply exposes a JSON/meta format with labels like \"pedagogical-reasoning\" rather than a clean student-facing response, adding avoidable complexity.",
+                "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2
+                ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "In transcript 3 turns 1-2, the tutor redirects off-topic chat with a noticeably rigid tone ('No—stay on task') rather than a warmer redirection, which can weaken tutoring trust.",
+                "reason": "The reply \"No—stay on task\" is noticeably rigid and abrupt in a way that could discourage student participation, even though the redirection itself was appropriate.",
                 "points": 2
               }
             ],
@@ -306,24 +306,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scoring reflects the combined evidence across the three provided transcripts because the input included multiple separate conversations rather than one single transcript.",
-      "The tutor consistently used guided discovery, kept the work anchored to the assignment, and pushed the student to make defensible methodological choices rather than supplying submission-ready answers.",
-      "Main weaknesses were repeated long multi-question prompts, occasional rigid tone in off-topic redirection, and role/policy limits that were not always explained with an explicit learning rationale."
+      "Multiple transcripts were provided; this score applies to Transcript 3 because the schema supports one conversation score at a time.",
+      "Tutor stayed well anchored to the assignment, redirected off-topic chatter promptly, and consistently used guided questions instead of doing the table work for the student.",
+      "Main weaknesses were communication-related: an abrupt early redirection and a final reply delivered in visible internal JSON/meta format rather than a simple student-facing explanation."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

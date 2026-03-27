@@ -242,7 +242,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 1 Turn 2, when the student asks for exact sources, the tutor delivers a very long multi-field source dump across all 7 data fields without first checking what the student already understands or diagnosing where they are stuck. In Transcript 2 Turn 2-3, a similar exhaustive dump occurs without diagnostic questioning first.",
+                "reason": "In Transcript 1 Turn 2, the tutor produces a very long, comprehensive list of sources and follow-up questions for every table field before the student has demonstrated any confusion or tried anything. In Transcript 2 Turn 2, similar behavior repeats. Rather than diagnosing what the student already knows and scaffolding from there, the tutor dumps the full method upfront without checking student understanding first.",
                 "points": 3
               }
             ],
@@ -255,27 +255,24 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently refuses to provide direct answers but does not meaningfully explain the learning rationale (e.g., building data literacy, learning to navigate official sources). It just says 'that would be doing the assignment' without connecting the constraint to active reasoning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   4,
                   5,
                   6,
                   7,
                   8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to provide numbers/tables) without clearly explaining the learning rationale—e.g., that finding and verifying data is itself an academic skill being assessed. The tutor says 'that would be doing the assignment' but never articulates why the student's own data-finding builds long-term competence.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across transcripts, the tutor does not prompt the student to reflect on why certain methods (e.g., choosing boundary, pinning a year, labeling proxies) are important for the broader course arc of understanding urban climate vulnerabilities. No reflection or transfer moment is created.",
+                "reason": "Across all three transcripts the tutor never prompts reflection on the process or asks what the student learned from finding/checking a value. There is no moment of 'what did this pull teach you about sourcing data?' or reinforcing why a method worked.",
                 "points": 2
               }
             ],
@@ -292,20 +289,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcripts 1 and 3, the tutor cycles repeatedly through the same pattern: student asks for numbers, tutor refuses and asks student to pull numbers, student pushes back again. In Transcript 2 Turns 4-5 and Transcript 3 Turns 4-5, the tutor repeats essentially the same refusal and redirection without meaningfully reframing the situation, synthesizing what has been established, or switching strategy when the student is clearly spiraling on the same request.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -317,7 +302,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -331,7 +316,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 Turn 2, the tutor produces an extremely long multi-section response with 7 numbered source breakdowns and multiple embedded sub-questions. In Transcript 2 Turn 2, another very long multi-part response with multiple sub-sections appears when shorter, more targeted prompts would have sufficed. These long monologues reduce student opportunity to think and respond interactively.",
+                "reason": "Transcript 1 Turn 2 is an extremely long multi-paragraph response covering all 7 fields at once with numbered subsections, embedded questions, and multiple follow-up prompts. Transcript 2 Turn 2 is similarly dense. These long monologues come before the student has tried anything and reduce the student's opportunity to engage incrementally. One or two focused guiding questions would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -353,20 +338,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 31,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently and correctly refuses to produce paste-ready data for the student, maintaining academic integrity throughout. The Socratic boundary is well held with no direct answer-giving that would constitute completing the assignment.",
-      "The main pedagogy weakness is the 1.2 scaffolding: in early turns the tutor dumps comprehensive multi-field source lists before diagnosing what the student already knows or understands, rather than asking targeted diagnostic questions first.",
-      "Meta-learning suffers because the tutor never articulates a clear learning rationale for why the student must find the data themselves (beyond 'that would be doing the assignment'), and never prompts reflection or transfer on why methodological choices (boundary, year, proxy labeling) matter for the course's climate analysis goals.",
-      "Dialogue quality is significantly penalized for spiraling: the tutor repeats the same refusal-and-redirect pattern across multiple turns in each transcript without reframing, synthesizing, or switching strategy when the student is clearly stuck in a loop.",
-      "Communication quality is penalized for consistently long, multi-section monologue responses in early turns (especially Transcripts 1 and 2 Turn 2), which reduce interactivity. Tone remains supportive and non-punitive throughout, and the tutor never implies formal grading."
+      "Across all three transcripts the tutor consistently upholds the core principle of not doing the assignment for the student—refusing to provide paste-ready numbers, complete citations, or finished table rows even under repeated deadline pressure. This earns full marks on 1.1 (Socratic method) and 2.2 (assignment anchoring).",
+      "The main weaknesses are: (1) In 1.2, the tutor front-loads comprehensive source lists and multi-field instructions before the student has attempted anything, constituting a method-dump before diagnosing confusion (deduction for 1.2.B.a). (2) In 1.3, the tutor never articulates why it withholds answers in terms of skill development (1.3.A.a) and never prompts process reflection at any stage (1.3.D.a). (3) In 3.1, several early responses are very long multi-paragraph monologues covering all table fields simultaneously, reducing student engagement opportunities (3.1.A.a).",
+      "The 1.3.B process/method feedback criterion was evaluated as borderline; the tutor does offer targeted source guidance but rarely comments on the student's thinking process or reasoning quality, since the student never provides substantive analytical work to critique. Given the nature of the exercise (data collection), the absence of method-level feedback is partially mitigated, so no deduction was applied there.",
+      "Dialogue quality (2.1, 2.2) is strong: the tutor redirects off-task requests consistently, keeps the conversation anchored to the assignment, and avoids spiraling."
     ],
-    "total_score": 31,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

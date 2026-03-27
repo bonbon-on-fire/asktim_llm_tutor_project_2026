@@ -77,10 +77,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  2,
+                  5
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor supplied a substantial set of specific Chicago actors and categories before the student generated their own list, giving core assignment ideas rather than eliciting them first.",
+                "reason": "Before the student developed their own reasoning, the tutor supplied specific candidate actors and later confirmed OCEE as a leading actor, contributing substantive assignment ideas the student could adopt.",
                 "points": 6
               }
             ],
@@ -99,12 +100,16 @@
               {
                 "evidence_turns": [
                   1,
+                  3,
                   4,
                   5,
-                  6
+                  6,
+                  7,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-writing boundary but did not clearly explain a learning rationale such as building the student's reasoning or writing skills.",
+                "reason": "The tutor repeatedly enforced the boundary against writing the post but did not explain the learning rationale for that limitation beyond saying the student had to do the writing.",
                 "points": 2
               },
               {
@@ -112,7 +117,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produced a workable sentence, the tutor moved straight to revision prompts without asking for reflection on why the structure or choices worked.",
+                "reason": "After the student produced a workable wrap-up sentence, the tutor suggested revisions but did not prompt reflection on why the sentence now met the prompt or how to transfer that method to the rest of the post.",
                 "points": 2
               }
             ],
@@ -155,11 +160,10 @@
                   2,
                   4,
                   5,
-                  6,
-                  7
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly responded with long multi-bullet templates and explanations where shorter, more focused prompts could have preserved interactivity and reduced cognitive load.",
+                "reason": "The tutor repeatedly used multi-paragraph replies with extensive bullet lists and templates where shorter interactive prompts could have kept the exchange more concise and responsive.",
                 "points": 4
               }
             ],
@@ -188,9 +192,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to write the student's submission and kept the work anchored to the forum-post task.",
-      "Main weaknesses were giving the student a fairly concrete actor list early, offering little explicit learning rationale for the boundary, and using several long template-heavy replies.",
-      "No deduction was applied for repetition because, despite repeated refusals, the tutor's prompts did progressively narrow the task and eventually elicited student-generated content."
+      "The tutor consistently refused to produce submission-ready writing and kept the conversation anchored to the actual assignment, which avoided the largest pedagogy failures.",
+      "Main deductions come from the tutor supplying substantive actor candidates early, repeatedly enforcing limits without explaining the learning rationale, and using several long template-heavy responses instead of tighter interactive steps.",
+      "There was some ambiguity about whether the specific actor suggestions were merely prompts or too much content generation; this was scored with the smaller available deduction rather than a harsher penalty."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

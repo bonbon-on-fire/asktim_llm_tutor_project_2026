@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces a Socratic/guided-discovery approach but never explains to the student why it is asking questions instead of giving answers, nor articulates the learning rationale (active reasoning, skill development).",
+                "reason": "Across all three transcripts, the tutor enforces a Socratic, guided approach but never explains to the student why it is operating this way (e.g., that it is helping the student develop independent research and reasoning skills rather than providing answers). The student frequently asks for direction and the tutor redirects with questions, but the learning rationale behind that choice is never articulated.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, after the student makes progress (e.g., correct boundary framing, solid stressor separation, valid actor tagging), the tutor moves immediately to the next step without prompting reflection on what the student did well or why the approach worked. No reflection or transfer prompts appear.",
+                "reason": "No turn across any of the three transcripts invites the student to reflect on what changed in their thinking, why a particular method worked, or how they might apply the same approach to future tasks. The tutor consistently moves forward to the next step without pausing for process reflection.",
                 "points": 2
               }
             ],
@@ -298,7 +298,7 @@
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, turns 7–9 repeat nearly identical content: the tutor cycles through the same 'which source, what exactly does it say' prompt three turns in a row without synthesis or advancing. The student's Turn 9 is almost identical to Turn 8's question, indicating the loop did not progress.",
+                "reason": "In Transcript 1, turns 7–9 cycle repeatedly on the same question: which type of official BMC/MCGM document to use for area/boundary evidence. The tutor asks the student to bring a boundary citation in turn 7, receives an inconclusive response, repeats the same priority-order guidance in turn 8, and then in turn 9 the student essentially asks the same question again — and the tutor gives the same answer a third time without synthesising or advancing to a different approach.",
                 "points": 4
               }
             ],
@@ -329,12 +329,10 @@
                   3,
                   4,
                   5,
-                  6,
-                  7,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor consistently sends multi-paragraph replies with 3–5 enumerated sub-questions at once (e.g., Transcript 1 Turn 2 has 4 numbered questions plus a decision-rule plus a 'next message' directive). This pattern appears in nearly every turn, reducing the student's opportunity to think through one thing at a time before the next question arrives.",
+                "reason": "Across all three transcripts many tutor turns consist of four to six numbered sub-questions plus a framing paragraph and a 'next message bring' section, resulting in lengthy multi-part monologues. Turns such as T1-Turn 2, T1-Turn 3, T2-Turn 2, T2-Turn 4, T2-Turn 5, T3-Turn 2 and T3-Turn 4 consistently present far more content than the student can process in one exchange, reducing the student's opportunity to think independently. While some length is needed for scaffolding, the pattern is consistent enough to warrant a deduction.",
                 "points": 4
               }
             ],
@@ -363,12 +361,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong Socratic technique across all three transcripts, consistently asking diagnostic questions rather than giving answers, building on student responses, and guiding discovery without doing the reasoning work for the student. No violations of 1.1.A, 1.1.B, or 1.1.C were found.",
-      "Scaffolding is generally strong: the tutor acknowledges correct student reasoning (e.g., BMC boundary choice, stressor separation, actor role tagging) and builds on it. No clear 1.2 violations were found.",
-      "Meta-learning suffers in two areas: the tutor never explains to the student why it is using questions instead of just giving answers (1.3.A.a), and it consistently moves to the next question after student progress without pausing for reflection on what worked and why (1.3.D.a). Process-level feedback is present in several turns, so 1.3.B is not deducted.",
-      "Redundancy is a notable issue in Transcript 1 (turns 7–9), where the tutor cycles on the same BMC source-finding question three times without synthesis or a pivot strategy, resulting in the student repeating almost the same question in turn 9 as in turn 8. This earns a full 4-point deduction under 2.1.",
-      "Communication length is a consistent concern: the tutor routinely sends 3–5 enumerated questions plus a decision rule plus a 'next message' directive in a single turn. This occurs in nearly every turn across all three transcripts, reducing student thinking space. A 4-point deduction is applied under 3.1.A.a.",
-      "Tone is consistently warm, supportive, and non-grading throughout all three transcripts, with no issues found under 3.2."
+      "The tutor demonstrates strong Socratic discipline across all three transcripts: it never gives final answers, never rewrites student text, and consistently drives discovery through targeted questions. No deductions were warranted under 1.1 or 1.2.",
+      "Under 1.3, the tutor loses 4 points: it never explains why it withholds direct answers (1.3.A.a) and never invites reflection on what the student's thinking process produced or how to transfer the method to future work (1.3.D.a). Method-level process feedback is largely embedded in the questions themselves, so 1.3.B was not deducted.",
+      "Under 2.1, a clear spiral occurs in Transcript 1 turns 7–9 where the identical 'which document to cite for BMC area' question is asked and answered three times without synthesis or escalation to a different strategy, warranting the full 4-point deduction.",
+      "Under 2.2 no deduction was warranted: the tutor kept all three conversations firmly anchored to their respective assignment tasks.",
+      "Under 3.1, the tutor's responses are consistently long — most turns include 4–6 numbered sub-questions plus instructional paragraphs plus a 'next message bring' section. This pattern recurs throughout all three transcripts and repeatedly reduces the student's cognitive space. The full 4-point deduction was applied. Language precision was generally appropriate so 3.1.B was not deducted.",
+      "Under 3.2 the tone is consistently warm, non-evaluative, and coaching-oriented; no deductions were warranted."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

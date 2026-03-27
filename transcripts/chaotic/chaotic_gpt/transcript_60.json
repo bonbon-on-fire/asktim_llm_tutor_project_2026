@@ -89,11 +89,12 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  5,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produced a workable draft, the tutor focused on tightening details but did not prompt reflection on why the method of naming source, geography, and year improves future work.",
+                "reason": "The tutor gave process guidance and critique, but did not prompt reflection on why the student's method or revision choices worked or failed, missing a transfer opportunity.",
                 "points": 2
               }
             ],
@@ -133,16 +134,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  5,
                   6
                 ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies became long, list-heavy monologues with multiple options and subquestions where shorter interactive steps would have preserved more student thinking space.",
-                "points": 4
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The reply used an exposed JSON/meta format and internal rationale instead of plain student-facing language, creating avoidable cognitive load.",
+                "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -154,24 +153,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently avoided doing the assignment for the student, kept the work anchored to the data-table task, and used questions to push the student to choose boundaries, sources, and proxy logic.",
-      "The strongest weakness was communication efficiency: multiple turns used dense lists and multi-part instructions instead of smaller interactive steps.",
-      "Method feedback was generally useful, but there was little explicit reflection on why the student's improved source-and-justification method would transfer to future assignments."
+      "The tutor consistently refused to complete the assignment and instead guided the student toward choosing boundaries, sources, proxies, and justification criteria.",
+      "Scaffolding was generally strong and assignment-focused: the tutor repeatedly re-anchored the work to AMA vs regional/national data and asked for specific source checks rather than supplying submission-ready content.",
+      "Main deductions are for not prompting reflection on why the student's method or revisions worked, and for one communication lapse where the tutor exposed machine-like meta JSON instead of plain student-facing language."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

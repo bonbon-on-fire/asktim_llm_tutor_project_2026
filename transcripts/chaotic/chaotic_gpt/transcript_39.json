@@ -82,7 +82,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied key content-generation steps for the student by proposing actor levers, giving concrete examples to cite, and offering specific barrier phrases, rather than having the student derive those analytic choices independently.",
+                "reason": "The tutor supplied central analytical content for the student by proposing specific actor power levers, concrete example options, and barrier phrases rather than having the student derive those key reasoning pieces independently.",
                 "points": 6
               }
             ],
@@ -100,11 +100,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor kept moving the student toward completion but did not prompt reflection on why the chosen method, categorization, or evidence strategy worked, missing a transfer opportunity.",
+                "reason": "After the student made choices and moved toward drafting, the tutor did not prompt any brief reflection on why those choices were more defensible or how the method could transfer to future actor-analysis tasks.",
                 "points": 2
               }
             ],
@@ -153,7 +152,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrase 'posting uncited, potentially wrong specifics is on you, not me' is more rigid and punitive than necessary, creating a mild trust-harming tone shift.",
+                "reason": "The line 'posting uncited, potentially wrong specifics is on you, not me' reads as unnecessarily rigid and could discourage a stressed student.",
                 "points": 2
               }
             ],
@@ -176,9 +175,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide a paste-ready submission and generally kept the student anchored to the assignment with clear, manageable steps.",
-      "Main pedagogy loss comes from later turns where the tutor supplied substantive analytic content (specific levers, examples, and barrier phrases) that the student could directly reuse, reducing guided discovery.",
-      "A smaller communication deduction was applied for one harshly framed sentence in turn 8; overall tone was otherwise supportive."
+      "The tutor stayed tightly anchored to the assignment, refused to produce a paste-ready submission, and scaffolded the work through narrowing scope, categorizing actors, and prompting the student to supply content.",
+      "Main deduction: the tutor still provided several key analytical pieces itself—specific power levers, example options, and barrier phrases—so some central reasoning was done for the student rather than elicited from the student.",
+      "Communication was generally clear and structured, but one response became sharper than necessary when the student asked the tutor to choose uncited examples."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

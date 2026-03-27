@@ -92,7 +92,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing the off-topic detour, the tutor redirects but does not explain a learning rationale for staying on-task beyond stating the constraint.",
+                "reason": "When redirecting the off-topic detour, the tutor invoked role and assignment focus but did not explain a learning rationale for that constraint.",
                 "points": 2
               },
               {
@@ -103,7 +103,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor keeps advancing the argument refinement but never pauses for brief reflection on why the student's revised method worked or how to transfer it to similar philosophy prompts.",
+                "reason": "The tutor kept advancing the analysis with new tests but did not prompt reflection on why the earlier stress-test method clarified the student's view or what changed in the student's reasoning.",
                 "points": 2
               }
             ],
@@ -148,7 +148,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor introduces several dense terms such as \"non-aggregative,\" \"liability,\" \"negative vs positive rights,\" and \"lexical priority\" while the student is already struggling, without simplifying first.",
+                "reason": "The tutor used somewhat dense terminology such as \"non-aggregative,\" \"liability,\" and \"lexical priority,\" which added avoidable cognitive load during a moment when the student had already expressed overload.",
                 "points": 2
               }
             ],
@@ -177,9 +177,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly Socratic throughout: it asked the student to classify cases, test principles, and commit to distinctions rather than supplying a submission-ready answer.",
-      "Scaffolding was generally effective and well anchored to the assignment, including immediate redirection from the off-topic detour and consistent pressure-testing of the student's evolving view.",
-      "Main weaknesses were meta-learning and communication: the tutor did not explain the learning rationale when enforcing constraints, did not prompt end-of-process reflection, and occasionally used avoidably dense philosophical jargon."
+      "The tutor stayed strongly anchored to the philosophy assignment and used guided questioning rather than writing the student's answer for them.",
+      "Scaffolding was generally effective: the tutor built from the student's distinctions about outcomes, consent, means, and redirecting threats, and redirected the off-topic detour immediately.",
+      "Main weaknesses were meta-level: the tutor did not explain the learning rationale when enforcing the assignment focus, did not prompt explicit reflection on why the stress-test method clarified the student's view, and sometimes used dense philosophical terminology that could raise cognitive load."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

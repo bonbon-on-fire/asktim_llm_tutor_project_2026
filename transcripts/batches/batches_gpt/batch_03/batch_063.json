@@ -229,17 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "The tutor refused to provide a verbatim thesis, but then supplied a polished one-sentence thesis formula with most of the argumentative structure already filled in, which is close to final writing help.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,32 +244,23 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  6,
-                  8
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced refusal boundaries, but usually framed them only as 'I can't do the assignment for you' rather than explaining the learning rationale for guided participation.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
+                  5,
+                  7,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The conversation ends without prompting the student to reflect on what reasoning method worked or how their view developed across the cases.",
+                "reason": "The tutor gives strong step-by-step coaching, but does not prompt reflection on why the student's method improved or how to transfer the approach beyond the immediate thesis-building task.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 22,
           "max": 24
         }
       },
@@ -324,17 +306,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only; the tutor was generally well-anchored, interactive, and supportive, consistently pushing the student to generate the core philosophical claims.",
-      "Main deductions are for near-polished thesis-writing help late in the exchange and for limited meta-explanation/reflection; other possible 1.1 deductions were ambiguous, so the smaller supported deduction was used."
+      "Scored Transcript 1 because the input contained multiple transcripts but the schema supports a single conversation score.",
+      "The tutor consistently resisted doing submission-ready work, kept the student generating claims and distinctions, and anchored discussion to the assignment's AC/Fuel/Blood/trolley structure.",
+      "Main weakness was limited explicit reflection on why the student's reasoning method worked or how to reuse it independently on future philosophy prompts."
     ],
-    "total_score": 36,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

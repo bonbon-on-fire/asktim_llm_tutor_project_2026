@@ -256,18 +256,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces a Socratic, non-answer-giving approach but never explicitly explains to the student why it is structuring sessions this way (e.g., to build independent research skills, long-term reasoning ability). The student is often frustrated or confused, yet the tutor never articulates its learning rationale.",
+                "reason": "Across all three transcripts, the tutor consistently applies a Socratic approach without ever explaining to the student why it is doing so—why it asks questions rather than gives answers, and what learning benefit the student gains from this. The constraint is enforced but the rationale is never shared.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves from topic to topic without prompting the student to reflect on why a strategy worked or what changed in their thinking. For example, after the student in T1 correctly identifies the DKI boundary issue, or when the student in T3 reaches a solid draft table, the tutor immediately moves forward without pausing for process reflection or reinforcing the method choices made.",
+                "reason": "In none of the three transcripts does the tutor pause to prompt the student to reflect on their thinking process or what changed in their understanding. Progress is consistently forward-moving but the tutor never asks the student to articulate what they learned or why an approach worked better than their initial one.",
                 "points": 2
               }
             ],
@@ -315,7 +321,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly sends multi-part, multi-paragraph responses with numerous sub-questions stacked together (e.g., T1 Turn 1 has four separate multi-part question blocks; T2 Turn 2 has two-question sub-parts for each of three stressors; T3 Turn 3 lists a 4-point checklist with separate follow-on questions). For a 'clueless' student who is already overwhelmed, this volume consistently reduces the student's opportunity to process and respond, and the student repeatedly expresses confusion. Shorter, more focused prompts were clearly warranted.",
+                "reason": "Throughout all three transcripts, the tutor frequently sends multi-part, multi-paragraph responses with several simultaneous questions and bullet lists. While each question is individually meaningful, the volume of questions per turn (often 3–5 at once) consistently reduces the student's opportunity to focus and respond before being exposed to the next concept. This pattern recurs across all 30 turns, suggesting a systemic tendency toward over-explanation rather than tight interactive exchange.",
                 "points": 4
               }
             ],
@@ -344,13 +350,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong Socratic discipline across all three transcripts, never giving direct answers or near-submission-ready content. It consistently uses guided questions to help the student (Jakarta/Mumbai/Miami) derive their own classifications, source choices, boundary decisions, and actor labels.",
-      "Scaffolding is handled well: the tutor acknowledges student progress (e.g., 'Good—DKI consistency will save you headaches,' 'You're thinking in the right indicators'), builds on prior turns, and avoids restarting from scratch. No deductions were warranted for 1.2.",
-      "Assignment anchoring is solid throughout: the tutor re-grounds the student when scope drifts (e.g., clarifying DKI vs Jabodetabek, City vs metro Miami) and does not let off-topic or misframed content proceed uncorrected.",
-      "The main deductions are in meta-learning (1.3): the tutor never explains its Socratic rationale to the student despite visible frustration, and rarely prompts process reflection after breakthroughs. These are consistent omissions across all three sessions.",
-      "A significant deduction in communication quality (3.1) reflects the tutor's repeated use of very long, multi-part responses with stacked sub-questions. For a self-described 'clueless' student who is already overwhelmed, responses in turns like T1-1, T2-2, T3-3, and T3-4 contain too many simultaneous demands, reducing the student's thinking space. Shorter, staged prompts would have served better.",
-      "Tone is consistently supportive and non-punitive; no grading framing was used. No deductions for 3.2.",
-      "No redundancy or spiraling was observed; the tutor advances the conversation effectively each turn. No deductions for 2.1."
+      "Overall, the tutor performs strongly across all three transcripts, consistently using guided questioning, evidence-based Socratic prompts, and incremental scaffolding without ever doing the substantive work for the student. No full answers, direct final reasoning, or submission-ready content was provided.",
+      "1.1 (Socratic method): Full marks. The tutor never reveals conclusions before the student reasons toward them, never does the key reasoning step, and never rewrites student output. Students are consistently pushed to classify, choose, and justify on their own.",
+      "1.2 (Scaffolding): Full marks. The tutor builds on student progress turn by turn, acknowledges partial correctness, and adjusts to the geography (Jakarta, Mumbai, Miami) and student confusion level without restarting from scratch.",
+      "1.3 (Meta-learning): Two deductions applied. First, the tutor never explains its pedagogical rationale—it always asks questions without explaining why (active reasoning, skill development). Second, no turn across any transcript prompts the student to reflect on what changed in their thinking or why a method worked. The 1.3.B criteria are not triggered because the tutor does give substantive process-level feedback (e.g., labeling source types, consistency rules, citation logic).",
+      "2.1 (Redundancy): Full marks. Each conversation progresses clearly without recycling the same question type or stalling.",
+      "2.2 (Assignment anchoring): Full marks. When students drift (e.g., mixing DKI vs metro, mixing Miami city vs county), the tutor promptly re-anchors to the assignment boundary.",
+      "3.1 (Bite-sized responses): A 4-point deduction was applied. The tutor's responses are consistently multi-paragraph with 3–5 simultaneous questions per turn. While the questions are high-quality, this volume limits student cognitive space and reduces interactivity. This is a persistent pattern across all 30 turns in the dataset.",
+      "3.2 (Tone): Full marks. The tutor is consistently warm, non-judgmental, and coaching-oriented. No grades or score-like framing were used."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

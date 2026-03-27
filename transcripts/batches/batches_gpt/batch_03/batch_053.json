@@ -231,12 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  3,
-                  5
-                ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In transcript 1, the tutor provided polished copy-paste table wording and a ready-formatted race/ethnicity entry with note, which goes beyond guided prompting into final-writing help.",
+                "reason": "In Transcript 1, the tutor formats student-provided data into polished, paste-ready table entries and supplies final wording for the overlap note structure, which crosses into final-writing help rather than only guiding the student.",
                 "points": 6
               }
             ],
@@ -285,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Especially in Transcript 3, several replies are long, multi-part bullet lists with multiple simultaneous questions for a confused student, where shorter targeted steps would have reduced cognitive load.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -298,24 +300,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three conversations, the tutor consistently kept the student responsible for choosing geography, pulling exact figures, and locating official sources rather than completing the table.",
-      "The main weakness was occasional final-writing help in transcript 1, where the tutor drafted polished table text and a ready-formatted race/ethnicity section instead of staying fully Socratic.",
-      "Otherwise, the tutor scaffolded decisions well, redirected off-topic requests immediately, and maintained a supportive, non-grading tone."
+      "Across the three transcripts, the tutor consistently kept the student anchored to the actual assignment, redirected off-topic requests quickly, and avoided doing the full assignment for the student.",
+      "The main pedagogy issue is that Transcript 1 includes polished, paste-ready formatting of student content, which is stronger writing help than the rubric allows even though the tutor otherwise resists full completion.",
+      "The clearest communication weakness is response length: in the more confused interaction, the tutor often used dense multi-question lists instead of smaller interactive steps. No additional scaffolding deduction was applied because the tutor usually did build on student answers and adjust direction."
     ],
-    "total_score": 40,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

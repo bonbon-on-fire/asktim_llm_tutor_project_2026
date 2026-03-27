@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its non-answering constraints and Socratic approach but rarely explains to the student the learning rationale—why it is asking questions rather than giving answers (i.e., to build active reasoning skills). It simply redirects or refuses without explicitly framing this as a pedagogical policy for the student's benefit.",
+                "reason": "Across all three transcripts, the tutor consistently enforces a guiding/non-answer-giving stance but never explicitly explains the pedagogical rationale (e.g., 'I'm guiding you this way so you develop research skills') to the student. The tutor says things like 'I can't do that part for you' or 'don't pick based on what I recommend' without explaining the learning rationale behind the approach.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward without pausing to prompt reflection on why a particular method worked or what changed in the student's thinking. For example, in Transcript 1, after the student resolves their race/ethnicity proxy issue well (Turns 8–9) and the GDP question (Turn 10), the tutor never asks the student to reflect on what they learned about data consistency or source-tracing. Similarly in Transcripts 2 and 3, each resolved sub-problem transitions directly to the next without meta-reflection.",
+                "reason": "Across all three transcripts, the tutor moves from one methodological decision to the next without prompting the student to reflect on why a particular approach worked or what changed in their thinking. There are no moments asking the student to synthesize what they've learned about research methodology or source selection.",
                 "points": 2
               }
             ],
@@ -296,16 +296,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 3, Turn 1, the student asks an off-topic question ('what's your favorite city to visit and why?'). The tutor correctly declines, but the way it is handled is fine—the off-topic question is dismissed quickly. However in Transcript 3 Turn 2, the student tries again ('can you just tell me a quick fun fact about a city you like') and the tutor again firmly redirects without engaging meaningfully with the off-topic content. Overall the tutor handles off-topic control well with only brief acknowledgment. No meaningful deduction warranted here.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -323,10 +314,12 @@
               {
                 "evidence_turns": [
                   2,
-                  6
+                  3,
+                  6,
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turn 2, the tutor delivers a long multi-part question set (6 numbered sub-questions covering all remaining table rows at once) when a more interactive, stepwise approach would have been appropriate—the student had only just identified their city and standardization year. Similarly in Transcript 2, Turn 6, the tutor could have asked a single follow-through question but instead packs three distinct decision items. These are recurring (if not dominant) instances of moderate length imbalance.",
+                "reason": "In Transcript 1 (turns 2, 3) and Transcript 2 (turns 6, 7), the tutor regularly sends multi-paragraph responses with multiple nested questions before checking student understanding of earlier questions. For example, Turn 2 of Transcript 1 asks six separate questions across three categories in one message, reducing student opportunity to think through one decision at a time.",
                 "points": 4
               }
             ],
@@ -355,11 +348,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently avoids giving final answers, refrains from writing submission-ready text for the student, and guides reasoning through targeted questions. The student drives all key choices (city, geography boundary, source selection, proxy indicators), with the tutor probing defensibility at each step.",
-      "Scaffolding and progression are handled well: the tutor acknowledges student progress (e.g., 'Your reasoning for (3) is stronger than nationality'), builds on prior student answers before advancing to new sub-problems, and adjusts when the student is stuck (e.g., offering a search workflow in T1 Turn 6 rather than just asking again).",
-      "The main weaknesses are in meta-learning: the tutor almost never explains why it is asking questions rather than answering (learning rationale is absent), and it consistently moves to the next problem after a student resolution without prompting any reflection on what the student learned or what method worked.",
-      "Communication is generally efficient, but in Transcript 1 Turn 2 the tutor delivers a 6-part question list all at once before the student has done any source work—this front-loads cognitive demand in a way that reduces interactive back-and-forth. Isolated similar instances appear in Transcripts 2 and 3.",
-      "Tone is consistently warm and encouraging without being grade-like or condescending. Assignment anchoring is maintained throughout; off-topic attempts (Transcript 3) are quickly and firmly redirected without engaging with the off-topic content meaningfully."
+      "Across all three transcripts, the tutor demonstrates strong Socratic method: consistently refusing to give direct answers, redirecting chitchat (Transcript 3), and using diagnostic questions to guide student decisions about geography, sources, and data definitions.",
+      "Scaffolding is effective: the tutor builds on prior student progress (e.g., validating BPS reasoning before pushing further, acknowledging strong draft citation notes), maintains consistent assignment anchoring, and avoids scope drift.",
+      "The primary weaknesses are: (1) response length—particularly in Transcript 1 Turn 2 (six questions at once), the tutor repeatedly sends dense multi-question messages that overwhelm rather than scaffold; (2) meta-learning gaps—the tutor never explains the pedagogical rationale for its guiding approach, and never prompts the student to reflect on what their reasoning process revealed about methodology.",
+      "No deductions for 1.1 because the tutor does not give submission-ready content, does not do reasoning for the student, and does not rewrite student text. No deductions for 2.1 or 2.2 because the tutor consistently advances the conversation and re-anchors effectively.",
+      "The 3.1 deduction is applied once for the pattern across transcripts, not per-transcript, to avoid double-counting the same behavior."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

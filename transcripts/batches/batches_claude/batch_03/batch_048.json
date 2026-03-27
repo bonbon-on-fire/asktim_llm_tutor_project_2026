@@ -235,7 +235,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 4, tutor provides a full list of 8 actor categories for Miami (rows 1-8) that effectively does the key categorization/structuring work for the student, rather than guiding the student to derive those categories themselves.",
+                "reason": "In Transcript 1 Turn 4, the tutor provides a ready-made list of 8 actor categories for Miami without the student generating them. This does key reasoning work for the student by constructing the categorization scaffold that the student should have derived.",
                 "points": 6
               }
             ],
@@ -253,20 +253,37 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces its refusal to write content for students but does not explain the pedagogical rationale (e.g., active reasoning, long-term skill development). Students are told 'I can't do that' without explanation of why guiding rather than answering benefits their learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts the tutor does not prompt the student to reflect on what changed in their thinking or why a method worked. In Transcript 1 Turn 10 the tutor gives positive feedback and fine-tuning suggestions but misses the chance to reinforce the reasoning process the student used. Similar pattern holds in T2 and T3.",
+                "reason": "In all three transcripts, the conversation ends without any reflection prompt about the student's process or what they learned methodologically. In Transcript 1 Turn 10, tutor gives correctness feedback but does not ask the student to reflect on how they built their analysis. Transcripts 2 and 3 also end without transfer/reflection prompts.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -303,7 +320,7 @@
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor repeatedly uses long multi-paragraph responses where shorter, more focused prompts would have sufficed. For example, T1 Turn 3 is a lengthy search guide with multiple numbered steps; T1 Turn 9 gives a three-bullet near-template instead of a brief single question; T3 Turn 6 and Turn 8 provide extensive enumerated lists. This pattern consistently reduces student opportunity to think before receiving the next scaffolded block.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-paragraph responses with several sub-questions and numbered lists when shorter, more targeted prompts would better serve each interaction. For example, Transcript 1 Turn 3 and Turn 9 in Transcript 3 include extensive enumerated guidance that reduces student thinking space. This pattern is consistent enough to warrant the deduction.",
                 "points": 4
               }
             ],
@@ -325,20 +342,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to write forum posts or supply paste-ready answers, maintaining a Socratic stance and redirecting off-topic chat promptly (T2 movie/snack requests). The tutor builds progressively on student responses and gives evidence-based feedback.",
-      "The primary 1.1 deduction is in Transcript 1 Turn 4 where the tutor provides a fully formed 8-row actor-category list for Miami. While framed as scaffolding, this supplies the key structural content of the student's table—the central analytical product—before the student has attempted it, triggering criterion 1.1.C.b. The 6-point deduction is capped at 6 to avoid double-counting with other sub-criteria.",
-      "Transcript 1 Turn 9 came close to a 1.1.B.a violation (three near-complete bullets), but the student was asked to convert them into their own sentences and the tutor's wording was clearly labeled as a scaffold rather than final text; the benefit of the doubt is applied per the rubric instruction on ambiguous evidence.",
-      "Meta-learning (1.3.D): No transcript ends with a reflection prompt asking what changed in the student's thinking or what approach worked and why. This one deduction covers all three transcripts.",
-      "Response length (3.1.A.a): The tutor habitually delivers multi-paragraph, multi-bullet responses throughout all three transcripts rather than asking a single focused question and waiting for the student. While the content is pedagogically structured, the pattern consistently loads students with large blocks before they respond, reducing interactive thinking time."
+      "Across all three transcripts, the tutor generally maintains a strong Socratic stance, repeatedly refusing to write copy-paste content for students and redirecting them to do their own reasoning. Off-topic requests are handled cleanly and promptly (Transcript 2).",
+      "The main pedagogy deduction is in 1.1: in Transcript 1 Turn 4, the tutor provides a ready-made 8-row categorization of Miami actor types, doing the key organizational/analytical work the student should have attempted. This triggers the 1.1.C.b deduction (6 points). The tutor does not quite reach the 1.1.A.a threshold across turns because name-filling and labeling are still largely resisted.",
+      "For 1.3, the tutor never explains its tutoring rationale to students (just says 'I can't'), losing 2 points for 1.3.A.a. Additionally, none of the conversations end with a metacognitive reflection prompt or transfer reinforcement, losing another 2 points for 1.3.D.a. The 1.3.B criterion is borderline—the tutor does give some method-level feedback (e.g., 'defensibility test,' causality chain feedback in T1 T10)—so no deduction is applied there.",
+      "Scaffolding (1.2) is solid: the tutor consistently builds on student progress, uses diagnostic prompting, and adjusts scaffolds progressively. No deductions.",
+      "Dialogue quality is strong throughout. The tutor re-anchors students when they drift (Transcript 2), avoids spiraling (each turn advances the analysis), and keeps assignment framing throughout. No deductions for section 2.",
+      "Communication length is a notable weakness: the tutor frequently sends long multi-part responses (4–6 bullet points, multiple numbered questions) in contexts where a single targeted question would have been more effective. This pattern recurs across all three transcripts and reduces student opportunity to think independently, triggering the 3.1.A.a deduction."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

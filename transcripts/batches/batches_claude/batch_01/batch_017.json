@@ -235,8 +235,16 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 3, the tutor directly lists the five standard 'extra consequences' (trust/terror effects, incentive/precedent, institutional effects, epistemic risk, long-run utility of rights-like protections) that consequentialists use to rebut Push/Blood, doing the key reasoning step of identifying and categorizing the main objections instead of having the student generate them. The student was only asked to pick two from the tutor's pre-supplied list.",
+                "reason": "In Transcript 1, Turn 3, the tutor confirms the AC verdict ('yes: your own AC decision rule pushes toward the act that prevents the 5 deaths') and then supplies a complete bulleted list of consequentialist-friendly 'extra consequences' (trust/terror effects, incentive/precedent effects, institutional effects, epistemic/uncertainty risk, long-run utility of rights-like protections) rather than guiding the student to generate these through questioning. The tutor does the key reasoning step of identifying and explaining the bridging considerations.",
                 "points": 6
+              },
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, Turn 7, the tutor supplies two concrete, fully worked-out 'system effects' for Blood (avoidance of care with full mechanism, and erosion of professional norms with specific details). The student only asked for examples; the tutor provided ready-to-use content including the causal mechanism, rather than letting the student derive these.",
+                "points": 0
               }
             ],
             "score": 6,
@@ -244,19 +252,8 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 1, Turns 7–9, the tutor gives two concrete named 'system effects' for Blood (avoidance of care, erosion of professional norms) before the student had attempted to generate any. Rather than diagnostic questioning to see what the student could produce, the tutor pre-supplies fully formed examples. Similarly in Transcripts 2 and 3, the tutor repeatedly provides fill-in templates at length without first checking whether the student could produce any content independently.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -276,21 +273,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces the constraint of not writing submission-ready text but rarely explains the learning rationale (active reasoning, skill development). It says 'that would be doing the assignment for you' but does not articulate why that matters for the student's long-term philosophical reasoning ability.",
+                "reason": "Across all three transcripts, the tutor consistently refuses student requests without explicitly explaining the learning rationale (e.g., that Socratic guidance builds active reasoning and long-term philosophical argumentation skills). The tutor says 'I can't' or 'No' and redirects, but rarely explains *why* this approach serves the student's development better.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   1,
                   2,
+                  3,
                   4,
                   5,
                   6,
                   7,
-                  8
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular method (e.g., applying the AC test, identifying the causal structure) worked. It moves from one fill-in template to the next without pausing to ask the student to consolidate or reflect on their progress.",
+                "reason": "Across all three transcripts, the tutor never prompts reflection on why a method worked or what changed in the student's thinking. When the student makes progress (e.g., Transcript 3 Turns 3-4 where the student develops the means/side-effect distinction well), the tutor moves forward without reinforcing the method choice or asking the student to reflect on their reasoning process.",
                 "points": 2
               }
             ],
@@ -300,7 +300,7 @@
           }
         },
         "base": {
-          "score": 11,
+          "score": 14,
           "max": 24
         }
       },
@@ -317,7 +317,7 @@
                   8
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcripts 2 and 3, the student repeatedly requests submission-ready text and the tutor cycles through the same refusal + fill-in-template pattern across five or more turns without meaningfully synthesizing what the student has already contributed or advancing to a new pedagogical strategy. The student remains in 'just give me the answer' mode and the tutor repeats the same move without reframing.",
+                "reason": "In Transcripts 1 and 2, the tutor cycles through the same refusal-and-template pattern across multiple turns without meaningful synthesis or reframing. In Transcript 2 especially (Turns 4-8), the student repeatedly asks for a draft and the tutor repeatedly refuses with a fill-in template, without adapting the approach when the student remains stuck. The tutor does not switch to a meaningfully different strategy (e.g., simpler step, oral walk-through, summary of what is already established).",
                 "points": 4
               }
             ],
@@ -351,7 +351,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all transcripts, the tutor consistently uses multi-paragraph replies with long bulleted frameworks when the student's state called for one or two focused prompts. For example, Turn 8 in Transcript 2 provides a 14-sentence sentence-by-sentence template in a single response. Turn 5 in Transcript 2 gives a full 6-part outline skeleton when a single question would have sufficed. This length pattern consistently reduces the student's opportunity to think and respond.",
+                "reason": "Across all three transcripts, the tutor repeatedly produces multi-paragraph responses with multiple sub-questions, numbered lists, bold headers, and detailed templates when shorter, more focused prompts would be more appropriate. For example, Transcript 1 Turn 1, Turn 2, Turn 4, Turn 8; Transcript 2 Turn 8 (14-sentence template). These lengthy responses reduce the student's opportunity to think and engage at each step.",
                 "points": 4
               }
             ],
@@ -373,22 +373,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 25,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a firm and consistent refusal to write submission-ready text across all three transcripts, which is a clear strength. It keeps the student anchored to the assignment and avoids directly completing the essay.",
-      "However, in Transcript 1 Turn 3, the tutor pre-supplies the full set of standard 'extra consequences' (five bullet points) that consequentialists use to rebut Push/Blood, doing the key reasoning step for the student. This triggers a 1.1.C.b deduction of 6 points.",
-      "In Transcripts 2 and 3, the tutor falls into a repetitive refusal + template cycle across many turns without synthesizing student progress or switching to a meaningfully different pedagogical strategy, triggering a full 2.1.A.a deduction of 4 points.",
-      "The tutor also gives concrete named examples (system effects for Blood in Transcript 1, Turns 7–8) before the student attempts to generate them, rather than using diagnostic questioning first, triggering a 1.2.B.a deduction.",
-      "Response length is a recurring problem: multi-part templates and long bulleted frameworks appear across nearly every turn in all three transcripts, reducing the student's thinking space and triggering a 3.1.A.a deduction.",
-      "The tutor rarely explains the pedagogical rationale for its constraints (1.3.A.a) and never prompts meaningful reflection on the student's reasoning process or what changed in their thinking (1.3.D.a).",
-      "No deductions were applied for assignment anchoring (2.2) or tone (3.2), as the tutor keeps the student on task and maintains a supportive, non-punitive tone throughout."
+      "The tutor consistently refuses to write submission-ready content and maintains a principled Socratic stance across all three transcripts, which is commendable. The tutor does a good job of assignment anchoring, never following the student's off-task framing, and maintains a supportive, non-dismissive tone throughout.",
+      "However, in Transcript 1 Turn 3, the tutor crosses into doing key reasoning work by supplying a full bulleted list of consequentialist 'extra consequences' before the student has attempted to generate any. This triggers a 1.1.C.b deduction (6 points). The Turn 7 system effects for Blood are similarly pre-supplied but partially overlap with this deduction; given the rubric's anti-double-penalty instruction, only the Turn 3 deduction is applied at full weight.",
+      "The tutor almost never explains the pedagogical rationale for refusing to write answers, missing opportunities to help the student understand why active reasoning matters (1.3.A.a deduction). The tutor also consistently misses reflection/transfer moments—never asking students to step back and notice what they learned or how their thinking evolved (1.3.D.a deduction).",
+      "A significant dialogue quality issue is the repetitive refusal-and-template pattern across Transcripts 1 and 2 (Turns 4-8 especially), where the student spirals requesting a draft and the tutor repeats the same move without reframing or changing strategy. This triggers the full 2.1.A.a deduction.",
+      "Communication length is consistently too long: most tutor turns feature multi-paragraph, multi-question, multi-bullet responses where a single focused prompt would serve better, triggering the 3.1.A.a deduction.",
+      "The 1.3.B (process/method feedback) criterion is not penalized because the tutor does give meaningful method-level feedback on the student's philosophical reasoning approach throughout. The 1.2 criteria are not penalized because the tutor builds appropriately on student contributions. The 2.2 and 3.2 criteria are not penalized as the tutor maintains good assignment anchoring and appropriate tone."
     ],
-    "total_score": 25,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

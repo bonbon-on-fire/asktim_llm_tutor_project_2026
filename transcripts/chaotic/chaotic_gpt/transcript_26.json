@@ -80,7 +80,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "The tutor ultimately supplied a polished, ready-to-use rule sentence that answers the core thesis question and can be pasted with minimal or no editing.",
+                "reason": "The tutor supplies a polished, ready-to-use rule sentence that directly states the student's final principle and can be pasted with minimal editing.",
                 "points": 12
               }
             ],
@@ -100,10 +100,12 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-ghostwriting boundary several times but did not clearly explain the learning rationale behind that limit.",
+                "reason": "The tutor repeatedly refuses to ghostwrite, but does not explicitly explain the learning rationale for the limitation beyond stating that it cannot provide the student's answer.",
                 "points": 2
               }
             ],
@@ -145,10 +147,11 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies were long, multi-part scaffold dumps when the student was rushed and shorter, more targeted interaction would have been more appropriate.",
+                "reason": "The tutor repeatedly gives long, multi-part scaffolds and question lists when shorter, more interactive prompts would have better matched the student's time pressure and supported quicker back-and-forth reasoning.",
                 "points": 4
               }
             ],
@@ -177,9 +180,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was generally well anchored to the assignment, built on the student's evolving view, and used useful pressure-testing questions rather than simply agreeing.",
-      "The main penalty is pedagogical: despite repeated refusals, the tutor eventually supplied a polished thesis-level sentence that effectively does core assignment writing for the student.",
-      "There is mild ambiguity on meta-learning because the tutor did redirect productively, but the no-ghostwriting boundary was mostly stated as a rule rather than explained as a learning-oriented choice."
+      "The tutor generally stayed anchored to the assignment, built on the student's evolving view, and gave useful pressure-testing questions rather than simply agreeing.",
+      "The largest issue is pedagogy: in the final turn, the tutor provided a polished rule sentence that functioned as a near-submission-ready thesis claim.",
+      "Communication was supportive but often too long for the student's rushed state, especially in early turns where extended scaffolds replaced shorter targeted prompts.",
+      "I did not deduct for scaffolding or assignment anchoring because the tutor usually adapted to the student's current principle and kept the discussion focused on the prompt."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

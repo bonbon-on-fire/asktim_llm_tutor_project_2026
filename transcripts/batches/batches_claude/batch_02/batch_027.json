@@ -245,18 +245,32 @@
               {
                 "evidence_turns": [
                   2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "In Transcript 2, when the student says they're tired and asks for productivity tips, the tutor pivots and provides process tips without explicitly stating its tutoring rationale (e.g., why it guides rather than tells). Across all transcripts, the tutor enforces constraints (refusing to list sources, departments, etc.) but seldom explains the underlying pedagogical rationale—why the student must do source-finding themselves for long-term skill development.",
+                "reason": "Across all three transcripts, the tutor consistently enforces a Socratic, student-first approach but never explicitly explains the pedagogical rationale to the student—e.g., why it won't supply ready-made department lists, source titles, or direct answers. The constraint is applied without stating that active reasoning builds long-term skills.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without pausing to ask the student to reflect on what changed in their thinking or why a particular method worked. For example, at the end of Transcript 1 (Turn 10), and repeatedly in Transcript 3, the tutor moves on to the next task without prompting reflection on the reasoning process used.",
+                "reason": "Across all three transcripts, the tutor moves from one sub-task to the next without pausing to prompt the student to reflect on what changed in their thinking or why a method worked. For instance, after the student produces strong differentiation of king-tide vs. drainage vs. saltwater intrusion (T2 Turn 6), the tutor immediately asks new questions without reinforcing the analytic method used.",
                 "points": 2
               }
             ],
@@ -299,10 +313,13 @@
                   2,
                   3,
                   4,
-                  6
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, especially in Transcript 1 (Turns 2, 3, 4) and Transcript 2 (Turn 4), the tutor repeatedly sends multi-part, multi-paragraph responses with 3–6 sub-questions per turn. This pattern consistently reduces the student's opportunity to respond to one thing at a time and increases cognitive load, when shorter, focused prompts would have been more appropriate.",
+                "reason": "Several tutor turns across all three transcripts are multi-paragraph with multiple numbered sub-questions packed together. For example, T1 Turn 2 asks six distinct sub-questions across all rows simultaneously; T1 Turn 4 layers three new question sets; T2 Turn 4 embeds two nested questions within a redirect. While each individual response is substantive, the pattern of dense multi-part responses reduces the student's opportunity to think incrementally and respond step-by-step.",
                 "points": 4
               }
             ],
@@ -331,12 +348,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong Socratic method across all three transcripts, consistently refusing to give direct answers, guiding the student to find their own sources and conclusions, and pushing back on vague student responses with targeted follow-up questions.",
-      "Assignment anchoring is excellent: the tutor promptly and clearly redirects repeated off-topic attempts (comfort movies, neighborhood preference, personal chat) without engaging in the distraction, and keeps the student focused on the relevant tasks.",
-      "Scaffolding is solid—the tutor builds on correct student progress (e.g., acknowledging defensible ratings, building on good citation instincts) and avoids restarting from scratch.",
-      "The primary weakness is response length: the tutor habitually sends dense, multi-part responses with 3–6 simultaneous sub-questions per turn, which is a consistent pattern across all three transcripts. This reduces student thinking space and contradicts best interactive tutoring practice.",
-      "Meta-learning suffers from two gaps: (1) the tutor rarely explains its pedagogical rationale for its constraints (why it won't provide lists, why the student must do source-finding themselves), and (2) there is almost no reflection or transfer prompting at key milestones—the tutor moves forward without asking the student to articulate what they learned from a reasoning step.",
-      "No issues identified with Socratic method (no direct answers given), dialogue quality (no spiraling, no misanchoring), tone (warm and constructive throughout), or grading stance."
+      "The tutor demonstrates strong Socratic discipline across all three transcripts, consistently refusing to supply direct answers, source lists, or pre-built table content, instead guiding the student through iterative reasoning steps.",
+      "Off-topic chitchat attempts (comfort shows, neighborhood preferences, movies) are promptly and cleanly redirected without belaboring the point, and assignment anchoring is well-maintained throughout.",
+      "Scaffolding is effective: the tutor builds on correct student progress (e.g., acknowledging the 'chronic vs. episodic' framing in T2 Turn 3, the refined limitation note in T3), and does not restart from scratch.",
+      "The main deductions concern meta-learning: the tutor does not explain why it refuses to give direct answers (no learning-rationale statement), and it rarely prompts reflective transfer after the student improves (missing chances after strong turns like T2 Turn 6 or T3 Turn 8).",
+      "Communication is the other area of concern: tutor responses are frequently dense, multi-part, and multi-paragraph. T1 Turn 2 launches six sequential sub-questions; T2 Turn 4 asks three nested questions in one block. While the content is well-organized, the pattern slightly over-burdens the student's working memory and reduces interactive back-and-forth.",
+      "No deductions were applied for 1.1 (no direct answers given), 2.1 (no spiraling), 2.2 (good redirection and anchoring), or 3.2 (tone is warm and non-punitive throughout).",
+      "The 1.3.B process-level feedback criterion was not deducted because the tutor does provide method-level comments when student reasoning is weak (e.g., pointing out 'latest available is a red flag' or 'that's still too fuzzy to be reproducible')."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

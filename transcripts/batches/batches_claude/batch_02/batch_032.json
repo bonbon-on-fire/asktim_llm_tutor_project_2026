@@ -256,24 +256,16 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor never explains to the student why it uses a questioning/Socratic approach rather than simply providing answers—it enforces constraints (e.g., 'I'm not going to pick the numbers for you') without articulating the learning rationale of active reasoning or skill development.",
+                "reason": "Across all three transcripts, the tutor consistently enforces a Socratic/non-answer-giving style but never explicitly explains to the student why it is doing so (e.g., 'I'm guiding you rather than answering directly so you develop your own reasoning skills'). In T1 the tutor just poses questions without rationale; in T2 it redirects off-topic but doesn't explain its tutoring approach; in T3 similarly. The learning rationale is never stated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the tutor consistently moves forward without prompting the student to reflect on what changed in their thinking or why a particular method worked. There are no explicit 'what did you learn from this reasoning process?' moments; the tutor advances the task without consolidating process-level insight.",
+                "reason": "Across the transcripts, the tutor rarely prompts the student to reflect on why a method worked. In T3 Turn 9-10, after the student produces a near-final draft, the tutor moves on to final checks without asking the student to reflect on what changed in their thinking or what made the actor-mapping approach effective. Similarly in T1, after the student develops a solid rights-based principle, the tutor moves forward without consolidating method-level learning.",
                 "points": 2
               }
             ],
@@ -296,7 +288,16 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "In T2 Turn 1, the student opens with a request for a city recommendation ('what city are *you* into lately and why?'). The tutor correctly declines and redirects immediately with no substantive engagement. This is appropriately handled. Similarly in T2 Turn 2, the Netflix recs request is promptly dismissed. No meaningful deduction warranted here—this is handled correctly.",
+                "points": 0
+              }
+            ],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -317,15 +318,10 @@
                   2,
                   3,
                   4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long multi-part responses across all three transcripts. For example, Turn 1 (Philosophy) and Turn 2 (Urban Studies Transcript 2) each contain multiple nested numbered lists with several sub-questions before the student has had a chance to respond. This pattern appears consistently and reduces the student's opportunity to think and respond to a single focused prompt.",
+                "reason": "In T1 Turn 1, the tutor opens with a multi-part monologue covering the AC rule, two numbered question sets, and an explicit framing of the 'harder part'—several paragraphs of content before the student responds. In T2 Turns 2-5, the tutor repeatedly sends 3-4 part structured question blocks when simpler 1-2 question prompts would have been more interactive. In T3 Turn 3, a detailed multi-part response follows a reasonably clear student answer. The pattern of multi-part, lengthy responses reduces student opportunity to think and respond. However, this is a consistent pattern though not extreme—the responses do progress the conversation rather than purely monologuing.",
                 "points": 4
               }
             ],
@@ -354,12 +350,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic approach: it never gives away answers directly, consistently asks guiding questions, and makes the student generate their own reasoning. No 1.1 deductions are warranted.",
-      "Scaffolding is effective throughout. The tutor builds on student responses, acknowledges correct progress, and advances the dialogue logically in each conversation. No 1.2 deductions apply.",
-      "The main pedagogy weakness is in meta-learning (1.3): the tutor never explains to the student why it uses a questioning method rather than simply providing answers (1.3.A.a, -2 pts), and never prompts the student to reflect on their reasoning process or what changed in their thinking (1.3.D.a, -2 pts). Method-level feedback (1.3.B) is generally present across the conversations, so no deduction there.",
-      "Dialogue quality is strong. The tutor redirects off-topic chitchat immediately and keeps the student anchored to the assignment. No spiraling is observed; the conversation advances meaningfully each turn.",
-      "The primary communication quality issue is response length. The tutor's turns frequently contain 3–5 numbered sub-questions in a single message, which consistently reduces the space for the student to engage with one focused idea at a time. This is a recurring pattern across all three transcripts and triggers the 3.1.A.a deduction (-4 pts).",
-      "Tone is supportive and appropriately non-evaluative throughout; no grading stance is adopted. No 3.2 deductions are warranted."
+      "Across all three transcripts, the tutor demonstrates strong Socratic practice: it consistently avoids giving direct answers, poses targeted questions, builds on student progress, and guides students to derive principles and evidence for themselves. No deductions were warranted under 1.1 or 1.2.",
+      "In 1.3, the tutor never explains its tutoring rationale to students (e.g., why it won't just give answers), triggering a 2-point deduction under 1.3.A.a. The tutor also rarely prompts reflective consolidation at the end of reasoning sequences—after the student in T1 develops a rights-based constraint or after the T3 student finishes a draft, the tutor moves on without asking what changed in thinking or what method proved useful (1.3.D.a, 2 points).",
+      "Dialogue quality is strong. Off-topic redirections in T2 are immediate and clean. Assignment anchoring is maintained throughout. No deductions applied to section 2.",
+      "The main communication issue is response length: the tutor frequently sends 3-5 part numbered question sets in single turns (T1 Turn 1, T2 Turns 2-5, T3 multiple turns), which can reduce the student's space to think and respond. This triggered a 4-point deduction under 3.1.A.a. Tone is consistently warm, encouraging, and non-evaluative.",
+      "The zero-point deduction listed for 2.2.B.a is included only to document that off-topic redirections were reviewed and found appropriate; no actual deduction was taken."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

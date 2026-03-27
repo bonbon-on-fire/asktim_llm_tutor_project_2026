@@ -244,22 +244,35 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely explains why it is asking questions instead of giving answers. In Transcript 1 Turn 1 the tutor lists a multi-step framework without explaining the learning rationale for guided discovery. In Transcript 2 and 3 it similarly enforces a 'you choose the number' or 'you draft first' stance without ever explicitly telling the student why it is withholding direct answers (e.g., 'I want you to reason this out so you develop the skill').",
+                "reason": "Across all three transcripts, the tutor never explains to the student why it is guiding via questions rather than giving direct answers—no mention of active learning, skill development, or the pedagogical rationale for the Socratic approach.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
                   2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three conversations the tutor moves steadily forward through the task but never pauses to ask the student to reflect on what changed in their thinking, why a prior framing was wrong, or what method they found most useful. For example, in Transcript 1 after the student successfully applies the causal-mechanism test (Turn 8), the tutor immediately proceeds to 'override structure' without inviting any reflection on why that test worked.",
+                "reason": "The tutor consistently moves forward to the next question or step without ever pausing to ask the student to reflect on what changed in their thinking, what method worked, or why a previous approach was improved. No explicit reflection or transfer prompts appear in any of the three transcripts.",
                 "points": 2
               }
             ],
@@ -301,10 +314,15 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 Turns 1 and 2 the tutor sends very long multi-paragraph responses with several sub-questions bundled together before the student has had a chance to respond to any single one. Turn 1 alone has four separate numbered tasks plus an embedded meta-question. Similarly in Transcript 3 Turn 2, the tutor fires off six distinct bullet-point questions before the student can answer any. These monologue-style turns repeatedly reduce the student's space to think and respond incrementally.",
+                "reason": "Across all three transcripts, the tutor frequently delivers long multi-paragraph responses with 3–5 sub-questions simultaneously (e.g., Turn 1 Transcript 1 lists four parallel tasks; Turn 2 Transcript 1 has four numbered sub-questions plus a request; Turn 2 Transcript 3 has five actor-level sub-questions). This pattern repeatedly reduces the student's opportunity to process and respond to one thing at a time, when one focused prompt would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -333,9 +351,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it never gives final answers, consistently asks the student to propose verdicts/numbers/principles first, builds on what the student offers, and redirects rather than resolves key decisions. This earns full marks on 1.1 and 1.2.",
-      "The main weaknesses are in meta-learning (1.3) and response length (3.1). On 1.3, the tutor never explains its own pedagogical rationale to the student (why it withholds direct answers) and never invites process-level reflection at the end of a productive exchange. On 3.1, early turns in Transcripts 1 and 3 are noticeably overloaded—several sub-questions and nested tasks arrive simultaneously before the student has responded, consistently limiting interactive thinking space.",
-      "No deductions were applied for 1.3.B (method/process feedback) because the tutor does give explicit method-level guidance (e.g., the 'two-step rule' for governance classification, the 'causal-mechanism test' for means vs side-effect). Dialogue quality (2.1, 2.2) is strong throughout: the tutor redirects misconceptions promptly and avoids redundant cycling. Tone is consistently warm and constructive, earning full marks on 3.2."
+      "The tutor demonstrates strong Socratic discipline across all three transcripts: it consistently avoids giving direct answers, instead prompting the student with targeted questions that require the student to do the reasoning work. No near-submission-ready content, rewriting of student text, or front-loaded conclusions were observed.",
+      "Scaffolding is well-handled: the tutor builds on student progress (e.g., affirming the student's AC rule draft in Transcript 1 Turn 3 before tightening it, and accepting the student's 9-bullet table in Transcript 3 Turn 8 before stress-testing specific cells), and diagnosis questions are generally appropriate to the student's stated confusion.",
+      "The main deductions fall in 1.3 and 3.1. On meta-learning (1.3): the tutor never explains its own pedagogical rationale to the student (why it asks questions rather than giving answers), and there are no explicit reflection or transfer prompts at any stage across the three conversations—the tutor always moves immediately to the next sub-question without pausing to consolidate what the student just learned.",
+      "On response length (3.1): the tutor's replies are consistently long and multi-part throughout all three transcripts. Turns like Transcript 1 Turn 1 (four parallel tasks), Transcript 1 Turn 2 (four numbered sub-questions plus a follow-on), and Transcript 3 Turn 2 (five actor-level questions) represent a recurrent pattern of over-bundling that reduces the student's interactive space, even though the questions themselves are good.",
+      "Tone is consistently supportive and non-evaluative. Assignment anchoring is maintained throughout; no off-topic drift or missed re-anchoring moments were observed. The 1.3.B criterion was not deducted because the tutor does provide method-level feedback (e.g., explaining the distinction between act and rule consequentialism, teaching a template for actor classification) even if process reflection is absent."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

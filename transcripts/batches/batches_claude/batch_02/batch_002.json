@@ -241,7 +241,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In T6 (Urban Studies Ex 02), the student asks for justifications to paste in. The tutor provides 10 pre-filled sentence shells with blanks. While this scaffolds writing, it represents a jump to a very detailed structure without first diagnosing what specifically confused the student about writing one justification, which would have been more appropriate given the student had already done comparable reasoning in prior turns.",
+                "reason": "In Transcript 2, Turn 6, the student has escalated to a desperate request for paste-ready justifications. The tutor's response provides heavily pre-filled sentence shells with blanks—while scaffolded, this constitutes a near-dump of method/content without first diagnosing what specifically is blocking the student from writing even rough sentences. The tutor does not probe why the student can't produce a basic sentence before providing the elaborate template.",
                 "points": 3
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to do the work but rarely explains the pedagogical rationale (e.g., that active reasoning builds long-term philosophical or analytical skills). The tutor states constraints but does not articulate why the student's own reasoning is important for learning.",
+                "reason": "Across all three transcripts, the tutor enforces its constraints consistently but rarely explains the learning rationale behind why the student must do their own reasoning work. The tutor says 'I can't' repeatedly but seldom states that the reason is to develop the student's own reasoning capacity or philosophical argument skills.",
                 "points": 2
               },
               {
@@ -282,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor does not prompt reflection on what changed in the student's thinking, why a method worked, or what the student learned from the process. The tutor moves from step to step without consolidating or reinforcing methodological insight.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what worked in their reasoning process or why a method succeeded. There is no moment where the tutor asks 'notice what you just did—that's how philosophical argument works' or similar process-transfer prompting.",
                 "points": 2
               }
             ],
@@ -322,10 +322,15 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In T6 of Urban Studies Ex 02, the tutor provides 10 pre-filled sentence shell templates all at once (a very long, multi-part response) when asking the student to fill just 2 first would have been more bite-sized and interactive. Similarly, T1 of the philosophy transcript and T3-T4 of Urban Studies Ex 03 have multi-part responses where fewer focused prompts would have been more appropriate.",
+                "reason": "In multiple turns across transcripts (especially T2 turns 3–4 and T3 turns 2–4), the tutor responds with multi-part, multi-paragraph prompts when shorter, single-focus questions would be more appropriate. The tutor frequently lists 3–4 parallel tasks in one message, reducing the student's opportunity to engage interactively. While this is arguably pedagogically motivated, the pattern recurs consistently and exceeds what is needed for interactive scaffolding.",
                 "points": 4
               }
             ],
@@ -354,14 +359,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently and successfully refuses to produce submission-ready work, maintains Socratic questioning, and guides students through stepwise reasoning. In the philosophy transcript, the tutor skillfully helps the student develop a nuanced philosophical rule through iterative stress-testing (Loop, Footbridge, Blood, Fuel) without ever providing the final argument. In both Urban Studies transcripts, the tutor consistently declines copy-paste requests and uses scaffolded templates and anchor comparisons to move the student forward.",
-      "1.1 (Socratic method): Full marks. The tutor never produces submission-ready content, never gives a final claim or completed reasoning chain, and consistently pushes the student to generate ideas. Even when providing sentence shells with blanks, the substantive content was left to the student.",
-      "1.2 (Scaffolding): Partial deduction applied for T6 of Urban Studies Ex 02, where the tutor dumps all 10 sentence shells at once rather than first checking what specifically the student was struggling with for even one justification. The student had demonstrated reasonable reasoning capacity in earlier turns, suggesting a more targeted diagnostic prompt would have been more appropriate.",
-      "1.3 (Meta-learning): Two deductions applied. The tutor enforces its no-write policy without explaining why active student reasoning matters for learning (1.3.A.a). Across all three transcripts, the tutor also never prompts reflection on what the student learned from the process or why a particular method or distinction worked (1.3.D.a). 1.3.B is not deducted because the tutor does give process-level feedback (e.g., substitution test, selection-under-description, anchor comparison method).",
-      "2.1 (Redundancy): No deduction. While the student repeatedly requests submission-ready content, the tutor consistently advances the dialogue rather than cycling on the same move. It reframes, introduces new tests, and moves to next steps.",
-      "2.2 (Assignment anchoring): No deduction. The tutor keeps the student anchored to the actual assignment across all three transcripts and does not confirm misreadings of the task.",
-      "3.1 (Bite-sized responses): Deduction applied for repeated long monologue-style turns across transcripts. T6 of Urban Studies Ex 02 (10 pre-filled templates at once), T1 of philosophy (three-part multi-paragraph launch), and multiple Urban Studies Ex 03 turns with extended multi-part scaffolds reduce student opportunity to respond interactively. The pattern is consistent enough to trigger 3.1.A.a.",
-      "3.2 (Tone): Full marks. The tutor is consistently warm and practical, never punitive or dismissive, and explicitly validates student work (e.g., 'Good catch,' 'That's not hand-wavy anymore') while maintaining appropriate formative framing."
+      "The tutor performs strongly on the core Socratic/guided-discovery criterion (1.1): it never provides submission-ready content, consistently refuses to write or fill in final answers, and guides students through reasoning using tests, scaffolds, and follow-up questions across all three transcripts. No deductions apply to 1.1.",
+      "Scaffolding (1.2) is generally strong, but in Transcript 2 Turn 6, the tutor provides an elaborate 10-item fill-in template with extensive pre-filled content without first diagnosing why the student cannot produce a rough sentence. This represents a method-dump before checking student understanding, warranting a 3-point deduction under 1.2.B.a.",
+      "Meta-learning (1.3) is the weakest area: the tutor consistently enforces constraints without explaining the pedagogical rationale (e.g., 'so you develop your own reasoning skills'), and never prompts process reflection or transfer at any point across three transcripts. Two 2-point deductions apply.",
+      "Dialogue quality (2.1, 2.2) is strong: no spiraling without progress, good redirection of off-topic requests, and consistent re-anchoring to assignment requirements.",
+      "Communication quality (3.1) suffers from consistently multi-part, multi-paragraph responses where shorter interactive steps would suffice. This pattern is pervasive across all transcripts and reduces the student's thinking space. A 4-point deduction applies. Tone (3.2) is consistently supportive and non-punitive.",
+      "Note: The 3-point deduction on 1.2 is uncertain—the turn-6 template in T2 is highly scaffolded rather than a straight information dump, so a smaller deduction could also be argued. However, the pattern of not checking student understanding before presenting elaborate frameworks is clear enough to warrant the deduction."
     ],
     "total_score": 35,
     "judge_llm_calls": 1

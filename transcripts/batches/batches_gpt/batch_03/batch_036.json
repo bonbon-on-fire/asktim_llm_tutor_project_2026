@@ -241,14 +241,20 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the conversations, the tutor gives strong process guidance but does not prompt the student to reflect on why a method worked, what changed in their thinking, or how to transfer the approach after improvement.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -275,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long, multi-bullet responses and extended frameworks where shorter interactive prompts could have preserved more room for student thinking, especially in Transcripts 1 and 3.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -288,24 +300,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refused to write forum-ready text or fill the assignment content directly, and instead used prompts, templates, source-finding strategies, and revision guidance that kept the student doing the substantive work.",
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic chat quickly, and adapted support to different student states: rushed requests, stress/focus concerns, and confusion about evidence and structure.",
-      "Closest boundary case: in Transcript 1 the tutor offered sentence recipes and wording swaps, but these remained partial scaffolds rather than polished submission-ready prose or direct rewriting, so no deduction was applied."
+      "Overall, the tutor consistently refused to do assignment-ready writing, kept the student anchored to the actual task, and used guided questioning and structured scaffolds effectively.",
+      "Main weaknesses were communication length and a lack of reflection/transfer prompts: the tutor often responded with dense multi-step frameworks and rarely asked the student to articulate what methodological lesson to carry forward.",
+      "Because the input contained three separate transcripts but the schema supports one score, this judgment was applied conservatively across the tutor's overall pattern of behavior."
     ],
-    "total_score": 46,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

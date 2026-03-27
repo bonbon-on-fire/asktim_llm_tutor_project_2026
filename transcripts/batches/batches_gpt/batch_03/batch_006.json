@@ -279,33 +279,22 @@
               {
                 "evidence_turns": [
                   2,
-                  4,
-                  9
+                  21,
+                  23,
+                  24
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "In multiple transcripts, the tutor sometimes used dense technical shorthand before simplifying (e.g., ACS table codes/DP05-B03002, MSA/BEA distinctions, and terms like \"operationalize\" and price-basis distinctions), which could raise cognitive load for confused students.",
-                "points": 2
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long multi-part replies with numbered lists and several simultaneous questions, especially when the student is already overwhelmed, where a narrower next-step prompt would have been easier to process.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  3,
-                  5,
-                  7
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Especially in Transcript 2, repeated off-topic refusals were firm but somewhat rigid (e.g., \"I’m not going to do unrelated chat\" / \"I can’t do music recommendations\"), which slightly reduced warmth even though the tutor redirected appropriately.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
@@ -324,9 +313,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three conversations, the tutor consistently avoided doing the assignment for the student, kept the work anchored to the table requirements, and used guided questions to make the student verify geography, year, source, and method choices.",
-      "The tutor also gave strong process-level coaching on consistency, source credibility, avoiding category mistakes, and documenting assumptions, without providing submission-ready answers.",
-      "Minor deductions only: some replies used avoidably dense technical language, and the redirection of off-topic chatter in Transcript 2 was effective but somewhat rigid in tone."
+      "Turn numbering is concatenated across the 3 transcripts: 1-10, 11-20, 21-30.",
+      "Across all three conversations, the tutor consistently avoids doing the assignment for the student, keeps the work anchored to the actual table, and guides students toward defensible geography/source choices.",
+      "The main weakness is communication pacing: several responses are dense and multi-layered, which is especially noticeable with the more confused student in Transcript 3."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

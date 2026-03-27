@@ -77,14 +77,22 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "Turn 3 provides a near-complete set of exact row labels with full definition strings ready to paste, moving from guidance into completing a structural component of the assignment for the student.",
+                "points": 0
+              },
+              {
+                "evidence_turns": [
                   5
                 ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 5, the tutor provides a complete 10-row pasteable template with exact row label wording, bracket placeholders, and note text (e.g., '1-line note that city-proper GDP not reported in official stats'). This rewrites the student's table structure into final polished language ready for submission with only numbers inserted—crossing into editing/final writing help.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "Turn 5 gives a 10-row fill-in template with exact label wording, bracket placeholders, and source-note format. This is a near-submission-ready assignment scaffold—the student only needs to insert numbers. The tutor effectively completes the formatting/labeling portion of the assignment task, which is itself a deliverable component.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -110,7 +118,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it is refusing to give direct answers—it does not articulate a learning rationale (e.g., 'finding sources yourself builds the skill of evaluating data quality') beyond simply saying it would be 'doing the assignment for you.' The pedagogical purpose of the guided approach is never made explicit to the student.",
+                "reason": "The tutor never explains its tutoring rationale or learning-focused policy to the student. It declines to do the work but does not articulate why (e.g., active learning, skill-building) at any point in the conversation.",
                 "points": 2
               },
               {
@@ -127,7 +135,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "No moment in the conversation invites the student to reflect on what they learned or why a particular approach (e.g., choosing MMR over Maharashtra) was methodologically sound. The tutor moves transactionally from one data point to the next without any metacognitive prompts.",
+                "reason": "No reflection or transfer prompts appear at any point. The tutor never asks what the student learned from the process, what changed in their understanding of data sourcing, or reinforces good methodological choices after the student makes them.",
                 "points": 2
               }
             ],
@@ -137,7 +145,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 8,
           "max": 24
         }
       },
@@ -152,7 +160,7 @@
                   4
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 2, 3, and 4 cycle on essentially the same move: tutor asks the student to look at the Census tables hub and report back table titles/categories, but the student never does and the tutor repeats the same navigational instruction across multiple turns without adjusting strategy or synthesizing what has been established.",
+                "reason": "Across turns 2–4, the tutor repeats the same move: ask diagnostic questions about census definitions, source preferences, and geography levels. The student keeps asking for direct links/numbers and the tutor cycles on the same clarification loop without meaningfully advancing or synthesizing, until it finally capitulates in turn 5.",
                 "points": 4
               }
             ],
@@ -183,7 +191,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2, 3, and 4 are multi-paragraph monologues listing multiple check questions, navigation instructions, and caveats simultaneously. Each message provides far more information than needed before checking what the student understands, consistently reducing the student's opportunity to think and respond incrementally.",
+                "reason": "Turns 2, 3, and 4 are each multi-paragraph monologues with multiple nested clarification questions bundled together. Each response is far longer than needed for a single focused interactive step, consistently reducing the student's opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -205,21 +213,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 22,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a principled stance against doing the assignment outright and consistently redirects the student to official sources, which is commendable.",
-      "However, in Turn 5 the tutor provides a fully formatted 10-row pasteable template with exact label wording and embedded note text, which crosses into final writing/editing help (1.1.B.a deduction of 6 points). Note: the rubric caps 1.1 at 12, so the 6-point deduction from 1.1.B.a leaves a score of 6.",
-      "The tutor never explains its pedagogical rationale to the student (why the guided approach builds skills) and never prompts metacognitive reflection, resulting in deductions under 1.3.A.a and 1.3.D.a.",
-      "Turns 2–4 repeat the same navigational instruction (go to the Census tables hub and report back category names) without synthesis or strategy change when the student does not comply, triggering a 2.1.A.a spiraling deduction.",
-      "Turns 2–4 are also excessively long, covering multiple sub-points and check-questions before the student can respond, triggering the 3.1.A.a length deduction.",
-      "Scaffolding (1.2) and assignment anchoring (2.2) are handled well throughout; tone is supportive and no grading language is used, so 3.2 is full marks."
+      "The most significant deduction is in 1.1: Turn 5 provides a 10-row pasteable template with full label wording and bracket placeholders covering every required field (population, area, SC/ST, religion, language, GDP, income, Köppen), which constitutes near-submission-ready assignment work—the student only needs to insert numbers. This triggers the full 12-point 1.1.A.a deduction.",
+      "The tutor never explains its pedagogical rationale for withholding direct answers (1.3.A.a, -2 pts) and provides no reflection or transfer prompts at any stage (1.3.D.a, -2 pts). Method-level feedback on the student's approach to data collection is absent, but that deduction is not applied separately to avoid double-penalizing what is already captured elsewhere.",
+      "In 2.1, turns 2–4 show a repetitive clarification loop (same diagnostic questions about census definitions and geography) with no synthesis or escalation, triggering the full 4-point redundancy deduction.",
+      "In 3.1, turns 2, 3, and 4 are dense multi-paragraph responses with multiple bundled sub-questions where shorter focused prompts would have been more appropriate (-4 pts).",
+      "Tone is supportive and non-punitive throughout; no grading stance issues were observed. Assignment anchoring is handled well—the tutor consistently redirects toward the actual assignment task."
     ],
-    "total_score": 28,
+    "total_score": 22,
     "judge_llm_calls": 1
   }
 }

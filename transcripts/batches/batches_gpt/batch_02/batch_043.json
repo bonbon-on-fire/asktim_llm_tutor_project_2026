@@ -232,11 +232,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
+                  2,
+                  6,
                   10
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduced major conceptual paths before the student generated them, e.g. foregrounding the means-vs-side-effect distinction and later offering three ready-made defense routes (A/B/C), which steered the student's interpretation and argument development.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor sometimes supplied key argumentative content for the student, including specific downstream consequences that could flip the Blood verdict and three ready-made normative routes (A/B/C) for defending the student's view.",
                 "points": 6
               }
             ],
@@ -289,13 +290,12 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  4,
-                  6,
+                  7,
+                  8,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part replies with several questions and bullet lists at once, which likely increased cognitive load for a very confused student when shorter, narrower steps would have been more appropriate.",
+                "reason": "The tutor repeatedly used long, multi-part prompts with several questions at once, which was more than a very confused student needed in a single step.",
                 "points": 4
               }
             ],
@@ -324,8 +324,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed anchored to the assignment, scaffolded the student's progress across turns, and consistently pushed for student reasoning rather than giving a submission-ready answer.",
-      "Main weaknesses were that the tutor sometimes seeded key philosophical pathways before the student developed them and often packaged guidance in long, multi-question responses that were heavy for the student's state."
+      "The tutor stayed well anchored to the philosophy prompt, avoided writing the paper for the student, and generally advanced the student's reasoning through questions and structured checkpoints.",
+      "The main weakness was that the tutor sometimes supplied substantive argumentative content that the student could have generated, especially concrete consequentialist examples and ready-made philosophical defense routes.",
+      "Another recurring issue was response length: several turns bundled too many subquestions and tasks together for a student who repeatedly signaled confusion.",
+      "Where evidence was mixed, deductions were kept moderate because the tutor's content suggestions were usually framed as scaffolds rather than submission-ready answers."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

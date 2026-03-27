@@ -243,8 +243,13 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  16,
+                  28,
+                  30
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved their work, the tutor mostly moved straight to final checks or next steps rather than prompting brief reflection on why the method worked or how to reuse it on later rows/posts.",
+                "reason": "After clear student improvement, the tutor moved straight into further revision checks and next steps rather than prompting brief reflection on why the approach worked or how to transfer the method to the remaining rows/post.",
                 "points": 2
               }
             ],
@@ -307,10 +312,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently avoided doing the assignment for the student and instead kept the work interactive: asking for choices, ratings, source decisions, and student-written drafts before giving feedback.",
-      "The tutor was well anchored to each assignment's actual deliverable and generally scaffolded effectively with concrete frameworks, source maps, self-checks, and targeted follow-up questions.",
-      "Main weakness: the tutor gave strong process scaffolds but rarely paused for explicit reflection or transfer, so the student got help completing the immediate task without much reinforcement of why the method would generalize to future course work.",
-      "There were a few content-heavy guidance turns, but they still stopped short of giving submission-ready answers, so no larger deduction was applied there."
+      "The tutor consistently refused to provide submission-ready work, kept the student anchored to the actual assignment, and used strong scaffolds such as source maps, sentence structures, self-checks, and targeted follow-up questions.",
+      "The tutor generally built on student progress well and maintained a supportive, non-grading tone even under repeated pressure for direct answers.",
+      "Small deduction only for limited reflection/transfer support: after student improvements, the tutor usually moved to the next revision step rather than asking the student to articulate what method worked and how to reuse it.",
+      "There is some ambiguity because the tutor occasionally supplied content options and source targets, but the conversation still remained primarily guided rather than submission-producing, so no larger pedagogy deduction was applied."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

@@ -101,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains to the student why it won't supply direct answers—i.e., it never articulates the learning rationale (e.g., building research skills, active retrieval, long-term skill development). It simply says 'I can't give you…' without explaining the pedagogical purpose.",
+                "reason": "The tutor never explains why it withholds direct answers or what learning rationale underlies its Socratic approach. The student repeatedly expresses deadline pressure and frustration, and the tutor simply says 'I can't give you the value' without explaining that the purpose is for the student to practice data retrieval skills or develop research methodology.",
                 "points": 2
               },
               {
@@ -118,7 +118,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At no point does the tutor prompt the student to reflect on what the process taught them or reinforce method choices after improvement. The conversation ends on a correctness-check without any transfer or reflection prompt.",
+                "reason": "The tutor never prompts the student to reflect on the research process, what they learned about source selection, or why certain methodological choices (e.g., using official census data vs. random websites) matter for scholarly work. The conversation ends without any transfer-oriented reflection.",
                 "points": 2
               }
             ],
@@ -162,7 +162,7 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1 and 2 are substantially long multi-paragraph monologues listing all source families and all table-row guidance at once, where shorter, more targeted prompts would have been appropriate given the student's specific question. The tutor keeps explaining at length instead of issuing focused, interactive prompts first.",
+                "reason": "Turn 1 is a very long multi-paragraph response with four numbered sections plus a citations block before the tutor even knows which city the student chose. Turn 2 similarly provides a multi-item breakdown. These early responses are more monologue than interaction, reducing the student's opportunity to think and engage step by step. Later turns improve, but the pattern is set early.",
                 "points": 4
               }
             ],
@@ -191,12 +191,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor does an excellent job maintaining Socratic discipline throughout: it consistently refuses to supply direct answers (GDP figures, Köppen codes), instead redirecting the student to retrieve values themselves and justify their choices. No near-submission-ready answers are given, no key reasoning steps are done for the student, and no conclusions are offered before the student reasons through them.",
-      "Scaffolding is handled well: the tutor builds on the student's prior answers turn-by-turn (accepting the GDP proxy rationale, building the table-note iteratively), and it accurately diagnoses the student's confusion points (random map vs. authoritative dataset, ambiguous boundary methods) before responding.",
-      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains *why* it withholds direct answers, missing an opportunity to frame the pedagogical rationale for active retrieval. It also never prompts the student to reflect on what the process taught them about research methodology.",
-      "Dialogue quality is strong throughout: the conversation progresses without redundant spiraling, stays tightly anchored to the assignment tasks, and handles the student's off-task pressure to just 'get the number' with consistent redirection.",
-      "The main communication weakness is in the early turns (1 and 2): both are long multi-paragraph dumps covering all five data categories at once, where shorter interactive prompts would have been more appropriate given the student's focused questions. From turn 3 onward, responses become appropriately concise and bite-sized.",
-      "Tone is consistently supportive and non-grading throughout; the tutor avoids punitive language and does not assign formal scores."
+      "The tutor does a strong job throughout the conversation of refusing to supply direct answers (GDP value, Köppen code) while consistently redirecting the student to authoritative sources and asking diagnostic questions. The Socratic method is well maintained even under repeated pressure from a deadline-stressed student.",
+      "Scaffolding is good: the tutor builds on the student's correct choices (current-dollar GDP, majority-area rule), acknowledges progress (Turn 8: 'It's good'), and refines the note iteratively across turns 7–10 rather than restarting.",
+      "The main weakness is in meta-learning: the tutor never explains why it won't give direct answers (no articulated learning rationale), and there is no reflection prompt at any point about what the student learned about data sourcing or research methodology.",
+      "Communication starts too dense in turns 1–2, with long multi-section monologues before even knowing the student's city, which reduces interactivity early. Later turns are appropriately concise.",
+      "No assignment anchoring or off-topic issues observed; tone is supportive and appropriately firm throughout."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

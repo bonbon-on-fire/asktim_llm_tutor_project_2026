@@ -89,20 +89,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  2,
+                  7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a constraint on the off-topic Netflix request but did not explain a learning-focused rationale for the limitation, only redirecting back to the task.",
+                "reason": "The tutor set limits ('keep it on your Miami actors table,' 'I won't rewrite it for you') but did not explain the learning rationale for those constraints.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
+                  7,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moved the student forward to the next drafting step without prompting reflection on why the approach worked or what method the student could reuse later.",
+                "reason": "The tutor kept advancing the draft and revision process without prompting reflection on why the method worked or how to transfer it to future actor-mapping tasks.",
                 "points": 2
               }
             ],
@@ -145,31 +146,40 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "Saying 'This is basically submission-ready' gives evaluative approval without clearly framing it as coaching guidance.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor showed strong guided discovery: it kept the student generating the substantive content, used targeted follow-up questions, and stayed tightly anchored to the Miami adaptation assignment.",
-      "No deduction was applied for direct answer-giving because the student authored the actual forum draft and revisions, while the tutor mainly challenged specificity and evidence paths rather than writing the submission.",
-      "Main weaknesses were meta-level: the tutor's off-topic refusal lacked a learning rationale, and the conversation missed an explicit reflection step about transferable method."
+      "The tutor was strongly assignment-anchored, used guided questioning well, built directly on the student's Miami-specific progress, and redirected the off-topic Netflix request immediately.",
+      "Small deductions were applied because the tutor imposed constraints without explaining the learning rationale, did not prompt reflection/transfer, and used one phrase ('submission-ready') that sounded more like final approval than clearly formative coaching.",
+      "Potential near-submission concerns were kept at no deduction because the student generated the draft and revisions; the tutor mainly scaffolded, questioned, and checked evidence paths rather than writing the response for the student."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

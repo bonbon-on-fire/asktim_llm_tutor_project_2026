@@ -238,7 +238,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Across these turns, the tutor supplied sentence-by-sentence forum-post templates, option phrases for each blank, and an exact assembly recipe; together these pieces became a near-submission-ready paragraph that the student then pasted almost verbatim.",
+                "reason": "Although the tutor refused to write the post directly, it provided sentence-by-sentence scaffolds, specific content options for each blank, and an exact assembly recipe that together became submission-ready forum-post wording.",
                 "points": 12
               }
             ],
@@ -260,7 +260,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave useful defensibility checks, but did not prompt reflection on why the student's evidence-based drafting method worked or how to transfer that method to later assignments.",
+                "reason": "After the student improved the paragraph, the tutor checked defensibility and flow but did not prompt reflection on why the revision strategy worked or how to transfer that method to future assignments.",
                 "points": 2
               }
             ],
@@ -323,9 +323,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Multiple transcripts were provided, but this score evaluates Transcript 1 because the schema supports a single conversation.",
-      "The tutor stayed strongly anchored to the assignment, required source-based claims, and gave targeted coaching about defensibility and evidence.",
-      "The main deduction is substantial: despite repeated refusals to 'write it,' the tutor provided enough templated wording, option phrases, and assembly instructions to make the student's forum post effectively near-submission-ready."
+      "Scored Transcript 1 only because the schema supports a single conversation score while the input bundled three transcripts.",
+      "The tutor was consistently assignment-focused, supportive, and generally scaffolded well from the student's own progress.",
+      "The main deduction is substantial: across several turns, the tutor supplied enough sentence structure, content options, and assembly instructions that the student was effectively handed a near-submission-ready forum post."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

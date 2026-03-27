@@ -245,10 +245,12 @@
               {
                 "evidence_turns": [
                   9,
-                  10
+                  10,
+                  18,
+                  19
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student developed a workable thesis and case pattern, the tutor continued pressure-testing content but did not prompt reflection on why the method worked or how to transfer it to similar philosophy prompts.",
+                "reason": "After student progress, the tutor usually moved straight into the next refinement step rather than prompting brief reflection on why the method worked or what the student learned for transfer.",
                 "points": 2
               }
             ],
@@ -285,8 +287,24 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  5,
+                  10,
+                  13,
+                  16,
+                  24,
+                  26,
+                  28
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used multi-part, fairly long replies with several questions at once, which reduced interactivity for a confused student who often signaled overwhelm.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -298,24 +316,23 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evaluated Transcript 1 only, since the prompt included three transcripts but the schema supports scoring one conversation.",
-      "The tutor stayed highly Socratic and assignment-anchored: it elicited the student's own formulation of act consequentialism, used targeted cases to surface tensions, and avoided giving submission-ready prose.",
-      "The main weakness was limited reflection/transfer support; once the student reached a usable thesis, the tutor kept refining argument content rather than explicitly helping the student reflect on the method they had learned."
+      "Evidence was judged across all three transcripts, with turns counted sequentially across the batch (1-10, 11-20, 21-30).",
+      "The tutor was consistently assignment-anchored, non-answer-giving, and scaffolded well through guided questions and templates. Main weaknesses were response length/stacking too many prompts for an overwhelmed student and limited explicit reflection on transferable method after moments of progress."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

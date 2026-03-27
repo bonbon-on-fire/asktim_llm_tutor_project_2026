@@ -80,7 +80,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "After the student asked for concrete Miami examples, the tutor supplied specific Miami hazard→stressor formulations and sector links before the student worked them out, revealing key ideas rather than keeping discovery student-led.",
+                "reason": "When the student asked for concrete Miami examples, the tutor supplied city-specific hazard→stressor examples before the student generated their own, revealing much of the answer path.",
                 "points": 6
               }
             ],
@@ -95,14 +95,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave useful process guidance but did not prompt explicit reflection on why the student's improved method worked or how to transfer it across the remaining stressors.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -129,22 +140,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  6,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly gave long, multi-part bullet responses with several instructions/questions at once, even while the student expressed confusion and overwhelm, reducing the interaction to smaller check-ins.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -156,24 +153,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed anchored to the stressors-table assignment and generally used guided questioning, templates, and process feedback rather than writing the assignment outright.",
-      "Main pedagogy weakness: in turn 4, the tutor supplied concrete Miami-specific stressor examples before the student generated them, which reduced guided discovery on a key content step.",
-      "Main communication weakness: responses were often instruction-dense and multi-part for a student who repeatedly said they felt lost; no additional deductions were applied where evidence was weaker or overlapping."
+      "The tutor was generally strong on scaffolding: they kept the student anchored to the stressors-table task, broke the work into manageable decisions, and repeatedly pushed the student to supply the actual content.",
+      "A moderate deduction was applied under 1.1 because turn 4 provided concrete Miami-specific examples that partially generated assignment ideas for the student, though the tutor still stopped short of giving a full copy-ready table or polished final prose.",
+      "The tutor also offered clear method guidance, but there was limited explicit reflection on how the student's reasoning process improved or how to transfer that method to the remaining entries."
     ],
-    "total_score": 36,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

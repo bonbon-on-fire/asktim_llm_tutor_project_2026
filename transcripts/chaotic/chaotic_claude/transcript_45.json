@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 3 the tutor provides fill-in-the-blank sentence templates for both 10-rated stressors ('Already causing [what happens/where]…'), giving the student near-final sentence structures. This moves close to rewriting student text into polished final language, reducing the student's authorship of the justification form.",
+                "reason": "In Turn 3, the tutor provided fill-in-the-blank sentence templates for both 10-rated stressors that are close to submission-ready wording. While the student was asked to fill in specifics, the templates provide polished final-language scaffolding that borders on doing the writing work for the student.",
                 "points": 6
               }
             ],
@@ -101,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation (Turn 10), the tutor wraps up with a submission checklist rather than prompting any reflection on what the student learned about the process, what changed in their thinking, or how they could apply this analytical approach to future assignments.",
+                "reason": "The conversation ends with a final self-audit checklist but the tutor does not prompt the student to reflect on what changed in their thinking across the session, what method worked, or why the iterative process of adding specifics strengthened their justifications.",
                 "points": 2
               }
             ],
@@ -143,11 +143,10 @@
                 "evidence_turns": [
                   2,
                   3,
-                  5,
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns are multi-paragraph responses stacking numerous sub-questions, templates, checklists, and follow-up prompts simultaneously (e.g., Turns 2, 3, 5, 7). This reduces student opportunity to think through one step at a time and consistently prioritises information density over short, interactive exchange.",
+                "reason": "Multiple turns feature lengthy multi-section responses with several embedded sub-questions and structured prompts simultaneously (Turns 2, 3, 7 are especially dense). While the content is relevant, the length and density of these responses consistently reduces the student's opportunity to think incrementally before being hit with the next wave of guidance.",
                 "points": 4
               }
             ],
@@ -176,11 +175,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor refused to complete the assignment outright and maintained a consistent Socratic orientation throughout the conversation, successfully guiding the student through a progressive build of the stressors table across 10 exchanges.",
-      "The main pedagogy deduction falls under 1.1.B.a: in Turn 3 the tutor provided two near-complete fill-in-the-blank sentence templates for the two highest-rated stressors. While the student still needed to insert specifics, the sentence skeletons and closing wording were supplied by the tutor, reducing the student's authorship of that key step.",
-      "Meta-learning (1.3) loses 2 points because the tutor never prompted the student to reflect on what changed in their analytical thinking or how the approach used here (sector-tagging, mechanism-impact-evidence structure, cascade logic) transfers to future assignments.",
-      "Communication quality loses 4 points under 3.1.A.a: several turns (especially 2, 3, 5, 7) present dense multi-part prompts with multiple simultaneous questions, checklists, and templates. While this was not consistently harmful to student engagement, it repeatedly reduced the interactivity and space for the student to reason one step at a time.",
-      "No deductions were made for 1.1.A.a (the tutor never produced a submission-ready full table or gave away the final answer set), 1.1.C (the student consistently proposed ratings and stressors first), 1.2 (scaffolding was well-sequenced and built on student contributions), 2.1 (the conversation advanced without spiraling), 2.2 (no off-topic or misalignment issues), or 3.2 (tone was consistently supportive and non-grading)."
+      "The tutor consistently refused to complete the assignment for the student and maintained a Socratic orientation throughout, which is the session's main strength.",
+      "The primary deduction under 1.1 concerns Turn 3, where the tutor provided near-finished sentence templates for both 10-rated stressors. Although students were instructed to fill in specifics, the polished syntactic frame and pre-selected vocabulary constitute rewriting student text into final wording (1.1.B.a). The full 6-point deduction is applied here. The session does not reach the threshold for 1.1.A.a (no full claim+reasoning handed over), so only the 6-point 1.1.B deduction applies.",
+      "Scaffolding (1.2) is strong throughout: the tutor builds on each student response, validates correct progress, and advances complexity appropriately. No deductions warranted.",
+      "Meta-learning (1.3): the tutor gives reasonable process feedback on mechanism, evidence specificity, and rating consistency, but never prompts the student to reflect on what changed in their own thinking or why the iterative method worked (1.3.D.a, -2 pts). Tutoring rationale is mostly implied rather than explicitly stated, but because the session's coaching orientation is reasonably apparent from context, a deduction for 1.3.A.a is not applied.",
+      "Dialogue quality is strong. The conversation advances steadily, avoids spiraling, and correctly anchors to the assignment throughout. No deductions in section 2.",
+      "Communication quality suffers from response length: Turns 2, 3, and 7 in particular contain multi-part, densely structured prompts that reduce student space for incremental thinking (3.1.A.a, -4 pts). Language is clear and accessible, so no deduction for 3.1.B.a.",
+      "Tone is consistently encouraging and non-evaluative; no grading-stance issues detected. No deductions in 3.2."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

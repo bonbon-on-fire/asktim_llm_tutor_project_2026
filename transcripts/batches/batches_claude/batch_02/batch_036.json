@@ -256,15 +256,16 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces a Socratic style and declines to do work for the student but never explicitly explains the pedagogical rationale (e.g., 'I'm guiding you rather than answering so you develop research/reasoning skills'). Constraints are enforced without articulating the learning goal behind them.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (won't give answers, won't write citations, won't pick cities) without explaining the learning rationale (e.g., that actively deriving answers builds long-term research and reasoning skills). The tutor simply refuses and redirects, but never articulates why the student benefits from doing this work themselves.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward without pausing to prompt the student to reflect on what worked in their process or what changed in their thinking. For example, after the student produces strong justifications in Transcript 2 Turn 8 and a solid forum draft in Transcript 3 Turn 9, the tutor immediately moves to the next task without asking the student to reflect on why their reasoning improved or what method they used.",
+                "reason": "By the end of each transcript the student has made genuine progress (e.g., solidified justifications, drafted forum text, refined citation plans), but the tutor never pauses to ask the student to reflect on what changed in their thinking or what made the process work. There is no reinforcement of method choices after improvement.",
                 "points": 2
               }
             ],
@@ -310,11 +311,10 @@
                   5,
                   7,
                   8,
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends multi-part, multi-paragraph responses when shorter, more focused prompts would better support step-by-step student thinking. For example, in Transcript 1 Turn 3, the tutor asks four sub-questions in one message; Transcript 2 Turns 3 and 5 each combine 3+ numbered questions plus next-step prompts; Transcript 3 Turn 7 and Turn 9 contain lengthy multi-part questions. This pattern consistently reduces student opportunity to think one step at a time.",
+                "reason": "Across all three transcripts the tutor routinely sends multi-part responses stacking 3–5 sub-questions plus framing remarks in a single turn. This pattern is consistent, reducing the student's opportunity to engage with one thing at a time and making responses feel like mini-lectures rather than interactive exchanges.",
                 "points": 4
               }
             ],
@@ -343,12 +343,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor performs well on Socratic method and guided discovery: it consistently declines to give direct answers, redirects off-topic chitchat efficiently, and scaffolds the student's reasoning step by step. There is no evidence of near-submission-ready answer generation, editing of student text, or giving conclusions before student reasoning.",
-      "Scaffolding and progression (1.2) are strong: the tutor builds on each prior student response, acknowledges correct work, and advances tasks logically. No evidence of ignoring student progress or misdiagnosing confusion.",
-      "Meta-learning (1.3) is the main pedagogy weakness. The tutor never explains why it is using Socratic questioning or withholding answers, missing the rationale-transparency criterion (1.3.A.a). The tutor also rarely prompts the student to reflect on what changed in their thinking or why a particular method worked, missing reflection/transfer support (1.3.D.a). Process-level feedback quality (1.3.B) is generally present, so no deduction there.",
-      "Dialogue quality is strong: no pattern-level repetition without synthesis, appropriate off-topic redirection, and good assignment anchoring across all three exercises.",
-      "Communication quality has one notable weakness: the tutor's responses are frequently multi-paragraph with 3–5 sub-questions bundled together. This pattern, visible across most turns in all three transcripts, reduces the student's opportunity to think through one step before being asked to address others. A 4-point deduction under 3.1.A.a reflects this recurring issue.",
-      "Tone is appropriate and supportive throughout; no punitive or cold framing. No grading-related issues observed."
+      "The tutor maintains strong Socratic discipline across all three transcripts: it never gives direct answers, never writes student text, and consistently returns work to the student through targeted follow-up questions. Off-topic detours are handled crisply and without engagement.",
+      "Scaffolding is solid: the tutor builds on each student response (e.g., acknowledging 'solid definitions' before probing consistency, accepting storm-surge reasoning before stress-testing it), and no correct student progress is ignored or restarted.",
+      "The main pedagogical gap is in meta-learning: the tutor enforces its constraints without ever explaining the learning rationale to the student (1.3.A.a), and it misses repeated opportunities at the end of each conversation to prompt the student to reflect on what changed in their thinking or why the method worked (1.3.D.a).",
+      "Communication length is the clearest recurring weakness. The tutor habitually stacks 3–5 sub-questions plus framing text in a single turn across all three transcripts. While each individual question is useful, the density consistently reduces student think-time and interaction opportunity, triggering the 3.1.A.a deduction.",
+      "Dialogue quality is strong throughout: no assignment misframing goes uncorrected, no off-topic tangent is indulged, and the conversation advances without spiraling. Tone is consistently warm but professional, with no grading language."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

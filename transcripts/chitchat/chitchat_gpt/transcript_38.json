@@ -86,24 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  4
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints ('I’m here to tutor you on the stressors table' and 'I’m not going to pick the numbers for you') without explaining the learning rationale for keeping the student doing the reasoning.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -149,18 +139,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-anchored, redirected the off-topic opening immediately, and used guided questioning rather than doing the table for the student.",
-      "Scaffolding was effective: the tutor helped the student define a rating scale, choose indicators, compare evidence strength, and refine claims across turns without supplying submission-ready wording.",
-      "The main deduction is meta-learning rationale: the tutor imposed boundaries and refused to choose ratings, but did not explicitly tell the student that this was to support independent reasoning or long-term skill building."
+      "The tutor consistently used guided questioning rather than supplying submission-ready content, helping the student define rating criteria, test counterarguments, choose indicators, and select sources across turns 2-10.",
+      "The tutor stayed tightly anchored to the assignment, immediately redirected the off-topic detour in turn 1, and maintained a supportive, coaching-oriented tone throughout.",
+      "No clear rubric-supported deductions were evidenced strongly enough to subtract points."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

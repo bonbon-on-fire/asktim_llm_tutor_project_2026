@@ -232,12 +232,27 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Transcript 2, Turn 3: Tutor provides the exact ACS table IDs (DP05, DP03, B03002, B19301, S0101), the full BEA series description, and the full Beck et al. citation ready to paste. This resolves the key research/sourcing reasoning step for the student rather than guiding them to discover which tables to use.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Transcript 3, Turn 9: Tutor provides the direct DOI URL to the Beck PLOS ONE article when student is 'out of time,' handing over a citable source rather than guiding the student to locate it. This is the key data-collection step the student should perform.",
+                "points": 0
+              },
+              {
+                "evidence_turns": [
                   10
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 3 Turn 9, the tutor provides the exact DOI URL for the Beck PLOS ONE article as a direct paste-ready citation component, and in Turn 10 provides the exact BEA GDP URL. These are specific data values (source URLs/citations) the student is supposed to gather themselves. Combined across turns, the tutor supplies the Beck DOI link and the BEA GDP page URL as ready-to-use citation pieces, effectively doing the source-finding work. However, this falls short of providing filled table values (numbers), so the full 12-point deduction is debatable. Applying 1.1.C.b: the tutor resolves the key evidence-gathering step by directly supplying the authoritative source links rather than guiding the student to find them.",
-                "points": 6
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Transcript 3, Turn 10: Tutor provides the direct BEA URL for the NYC MSA GDP page, doing the sourcing step for the student rather than guiding them to find it.",
+                "points": 0
               }
             ],
             "score": 6,
@@ -266,7 +281,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its no-fill-in policy repeatedly but never explicitly articulates the learning rationale (e.g., developing data literacy, active reasoning skills, long-term skill development) to the student. The student is told 'that would be doing the assignment' but not why doing it themselves matters pedagogically.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to do the assignment work but rarely explains the pedagogical rationale (e.g., that the student builds data-literacy skills by doing the sourcing themselves). The tutor says 'I can't' or 'that's doing the assignment' without connecting refusals to learning objectives or long-term skill development.",
                 "points": 2
               },
               {
@@ -283,7 +298,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts reflection on the student's process or method choices. After the student makes progress (e.g., locating infobox data, confirming DKI boundaries, finding Cfa code), the tutor moves immediately to the next step without asking the student to reflect on what they learned or how their approach worked.",
+                "reason": "The conversations end without any reflection prompts about what the student learned about data sourcing, what worked in their approach, or what method insights to carry forward. The tutor never asks the student to reflect on their process or why a particular strategy (boundary choice, source selection) was superior.",
                 "points": 2
               }
             ],
@@ -311,7 +326,7 @@
                   6
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across Transcripts 1 and 3, the tutor repeats the same refusal pattern ('I can't give you that') across many turns without meaningfully advancing the student's actual progress. In Transcript 1 especially, the student repeatedly asks for fill-in help and the tutor cycles through the same response structure without synthesis or a pivot to a simpler/faster pathway. The tutor does not reframe the task or consolidate what the student has already done to break the cycle.",
+                "reason": "Across all three transcripts, the tutor repeatedly cycles through the same pattern: student requests data, tutor refuses and redirects to sources, student requests again. The tutor does not synthesize, reframe, or substantially alter its approach after multiple refusals fail to move the student forward. The same 'I can't give you that value, here's the path' structure repeats across 5-6 turns without meaningful progression.",
                 "points": 4
               }
             ],
@@ -339,11 +354,10 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
-                  5
+                  4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 Turn 2, the tutor sends a large multi-bullet list of source routes before the student has even confirmed the boundary question. In Transcript 2 Turn 3, the tutor provides a comprehensive table of ACS table IDs, BEA series description, and Beck citation before the student has attempted any lookup. In Transcript 3 Turn 2, a similar multi-part response is given upfront. These are multi-paragraph monologues delivered when shorter, focused prompts would have been more appropriate given the chaotic, deadline-stressed student.",
+                "reason": "Transcript 1 Turn 2 and Transcript 2 Turns 3-4: Tutor uses multi-paragraph bullet-point dumps listing multiple source options, table IDs, and decision branches before the student has responded to any prior question. These lengthy responses reduce the student's opportunity to engage and create cognitive overload given the student's stated time pressure.",
                 "points": 4
               }
             ],
@@ -372,13 +386,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently and correctly refuses to supply submission-ready filled table values, maintaining appropriate academic integrity boundaries throughout a high-pressure chaotic student interaction.",
-      "In Transcript 3, Turns 9 and 10, the tutor crosses into doing key evidence-finding work for the student by directly supplying the Beck PLOS ONE DOI URL and the BEA GDP page URL as paste-ready citation components. While not numeric values, these are source-location tasks the student is supposed to perform, representing a 1.1.C.b violation (tutor picks decisive evidence and provides it directly). A 6-point deduction is applied rather than the full 12 because actual table data values were never provided.",
-      "The tutor consistently fails to explain the pedagogical rationale for its constraints (1.3.A.a), only telling the student 'that would be doing the assignment' rather than articulating why finding data themselves builds important skills.",
-      "No reflection or transfer support is offered at any point across all three transcripts (1.3.D.a): the tutor immediately pivots to the next task without prompting process reflection.",
-      "A significant redundancy issue exists, especially in Transcript 1, where the tutor cycles through the same refusal pattern across 6+ turns without meaningfully reframing, consolidating progress, or switching strategies to break the impasse (2.1.A.a, full 4-point deduction).",
-      "Response length is problematic in early turns across all three transcripts: the tutor issues large multi-bullet source guides before the student has attempted any work, reducing the student's opportunity to think and respond (3.1.A.a, 4-point deduction).",
-      "Tone is consistently supportive and non-punitive; no grading-stance issues observed. Assignment anchoring is well-handled throughout."
+      "The tutor consistently and correctly refused to produce submission-ready table entries across all three transcripts, maintaining appropriate academic integrity boundaries throughout.",
+      "However, in Transcript 2 (Turn 3), the tutor gave the student a comprehensive list of exact ACS table IDs (DP05, DP03, B03002, B19301), a full BEA series description, and a ready-to-paste Beck et al. citation — effectively doing the sourcing and research design step for the student. This triggered a 1.1.C.b deduction (6 points) for resolving the key reasoning step rather than guiding the student to discover which tables to use.",
+      "The DOI link in Transcript 3 Turn 9 and BEA URL in Turn 10 were borderline — the tutor had already directed the student to Beck et al. repeatedly and the student was genuinely stuck. These were not separately penalized to avoid double-counting the 1.1.C.b deduction already applied.",
+      "All three conversations show a repetitive cycle: student requests data → tutor refuses → student requests again → tutor repeats same redirect. The tutor never reframes, synthesizes, or substantially changes strategy, triggering the full 2.1.A.a deduction for spiraling without progress.",
+      "The tutor consistently omitted pedagogical rationale for its refusals (1.3.A.a) and never prompted reflection on methodology or skill development at conversation end (1.3.D.a).",
+      "Several tutor responses (especially Transcript 2 Turns 3-4) were multi-paragraph information dumps with multiple simultaneous questions and decision branches, which reduced student engagement opportunity given the student's repeated expressions of time pressure (3.1.A.a).",
+      "Tone was consistently supportive and non-punitive; assignment anchoring was excellent throughout; scaffolding built appropriately on student choices when they were offered."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

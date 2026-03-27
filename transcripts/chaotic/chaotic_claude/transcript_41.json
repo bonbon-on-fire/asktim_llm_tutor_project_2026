@@ -74,17 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 7, the tutor provides a detailed four-section outline with specific content prompts for each paragraph (e.g., 'Define the act-consequentialist standard,' 'Apply it to Switch, Footbridge, Fuel, Blood: for each, what outcome is compared, and what verdict follows?'). This goes beyond structural scaffolding and into providing near-ready content framing that the student can fill in directly, functioning as polished writing direction rather than guided discovery.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -98,36 +89,18 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to give direct answers or write content, but never explains the learning rationale behind this approach (e.g., that Socratic questioning builds long-term reasoning skills, or that the student learns more by deriving conclusions themselves). The constraints are enforced without pedagogical explanation.",
+                "reason": "In Turn 7 the tutor gives a detailed outline with labeled sections and content prompts without explaining why the student is being given structure hints versus asked to generate the outline themselves, missing an opportunity to explain the pedagogical rationale.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Throughout the conversation, the tutor never prompts the student to reflect on their own thinking process or what changed in their reasoning (e.g., from initially wanting a direct answer to developing their own DDE principle). No turn includes a meta-reflective prompt like 'notice how you derived that yourself' or 'what did you learn about how to apply a moral principle?'",
+                "reason": "The conversation ends with the tutor issuing two more questions and asking for a revised sentence, but never prompts the student to reflect on how their thinking evolved across the session or what the process revealed about their own reasoning method.",
                 "points": 2
               }
             ],
@@ -137,7 +110,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 24
         }
       },
@@ -170,12 +143,10 @@
                   2,
                   3,
                   5,
-                  7,
-                  9,
-                  10
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple tutor turns contain multi-part, multi-paragraph responses when shorter, more focused prompts would be more appropriate. Turn 2 poses five distinct sub-questions; Turn 3 poses three layered questions; Turn 7 delivers a full four-section outline with sub-bullets under each; Turn 9 poses four analytical questions. This pattern consistently reduces the student's opportunity to think and respond to one thing at a time.",
+                "reason": "Multiple turns contain multi-part, multi-paragraph replies (2, 3, 5, 7) where shorter, focused prompts would have been more appropriate. Turn 7 especially is a long structured outline when the student could have been asked to generate the structure first.",
                 "points": 4
               }
             ],
@@ -197,21 +168,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready content for the student and uses Socratic questioning to guide the student toward their own conclusions—this is the strongest aspect of the session.",
-      "The main deduction in 1.1 comes from Turn 7, where the tutor provides a detailed four-section essay outline with content-specific prompts under each section. While framed as a scaffold, this crosses into providing near-ready structural and content direction that the student can directly use, triggering the 1.1.B.a criterion.",
-      "No full 1.1.A deduction was applied because the tutor never directly states the final answer or completes the reasoning chain for the student; the student still had to articulate and defend each position.",
-      "In 1.3, the tutor never explains why it refuses to give direct answers (no learning rationale), and never prompts the student to reflect on their own reasoning process or what changed in their thinking across the conversation.",
-      "In 3.1, the tutor repeatedly sends long multi-part responses (e.g., Turns 2, 3, 7, 9, 10), often posing 3–5 questions or sub-tasks at once, which reduces the student's space to respond and think incrementally.",
-      "Scaffolding (1.2) was handled well—the tutor built on student progress each turn and generally diagnosed confusion before responding. Assignment anchoring (2.2) and redundancy (2.1) were also managed well throughout. Tone (3.2) was consistently supportive without being evaluative."
+      "The tutor consistently refused to write submission-ready content, polished sentences, or paste-ready paragraphs, maintaining a strong Socratic stance throughout all 10 turns.",
+      "Guided discovery was well-executed: the tutor pushed the student to apply their own rule, derive case verdicts, choose a framework, and handle counterexamples (Loop) independently before providing any scaffolding.",
+      "Scaffolding and progression were solid: the tutor built on each student contribution, never restarted from scratch, and moved the student from a naive AC thesis through DDE and the means/side-effect distinction organically.",
+      "The main deductions relate to (a) 1.3: the tutor did not consistently explain the pedagogical rationale for its constraints, and did not prompt the student to reflect on how their reasoning evolved over the session; (b) 3.1: several turns used multi-part, multi-paragraph replies when shorter, sharper prompts would have been more appropriate, particularly Turn 7 where the tutor supplied the full essay outline instead of first asking the student to attempt one.",
+      "The Turn 7 outline is borderline but does not cross into 1.1.A territory because it provides labeled section prompts rather than filled-in content, and the tutor explicitly tells the student not to copy it as content. It is scored under 3.1 for length rather than under 1.1 for directness."
     ],
-    "total_score": 32,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

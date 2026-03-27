@@ -231,8 +231,17 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Across the provided transcripts, the tutor supplies near-complete forum-post wording and fill-in templates that already contain the core claim, actor selections, and reasoning, especially the almost-finished paragraph in Transcript 1 Turn 8 and the sentence-by-sentence post frameworks in Transcript 2 Turns 5-6. These pieces together are close to submission-ready assignment work.",
+                "reason": "Although the tutor repeatedly refused to \"write the post,\" it still supplied the actor choices, reasoning pieces, sentence content, and a near-complete paragraph template that together became very close to submission-ready.",
                 "points": 12
               }
             ],
@@ -249,8 +258,13 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  10,
+                  20,
+                  30
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives useful drafting process support, but rarely prompts reflection on why a method worked, what changed in the student's thinking, or how to transfer the approach to later actor-mapping tasks.",
+                "reason": "The tutor gave some method cues, but it did not prompt reflection on why the approach worked or how to transfer the actor-mapping method to future assignments.",
                 "points": 2
               }
             ],
@@ -267,8 +281,22 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  8,
+                  15,
+                  17,
+                  18
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across repeated student requests, the tutor cycled through the same refusal-plus-template move multiple times instead of synthesizing or shifting to a different strategy, creating repetitive interaction.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -280,7 +308,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -289,8 +317,17 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  8,
+                  12,
+                  15,
+                  24
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long, multi-part replies with large bullet lists, templates, and sentence frameworks when shorter interactive steps would better fit the student's time pressure and keep the exchange more student-led.",
+                "reason": "Many tutor turns were long, list-heavy scaffolds or templates when shorter interactive prompts would have preserved more room for student thinking and response.",
                 "points": 4
               }
             ],
@@ -312,18 +349,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 24,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided transcripts, the tutor stayed tightly anchored to the assignment and generally scaffolded the student toward identifying leaders, engaged actors, and participation gaps.",
-      "The main issue is pedagogy: despite repeated refusals to 'write the post,' the tutor ultimately supplied heavily prewritten structures and near-complete wording that substantially reduced the student's own reasoning and drafting burden.",
-      "Method coaching was often strong and concrete, but reflection/transfer support was limited, and several responses were longer than ideal for an anxious, time-pressed student."
+      "The tutor stayed on-task, maintained a supportive tone, and usually scaffolded from the student's latest progress.",
+      "Main weakness: despite explicit refusals, the tutor repeatedly provided highly specific actor selections, reasoning phrases, and near-complete templates that together got very close to doing the assignment for the student.",
+      "There was also substantial repetition in the refusal/template cycle and several overly long responses.",
+      "Ambiguity note: the tutor often framed its help as non-submission support, but the accumulated specificity across turns still warranted the larger 1.1 deduction."
     ],
-    "total_score": 28,
+    "total_score": 24,
     "judge_llm_calls": 1
   }
 }

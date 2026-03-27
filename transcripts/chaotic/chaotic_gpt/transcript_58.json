@@ -77,10 +77,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  6,
+                  9
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor supplied the preferred alternative view ('means vs side-effect') and the central Switch/Footbridge distinction instead of having the student derive the key reasoning step.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied a substantive argumentative path before the student developed it, selecting means-vs-side-effect as the easiest view to defend and later offering standard objection options.",
                 "points": 6
               }
             ],
@@ -98,32 +99,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  5
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly enforced no-copying limits but did not explain the learning rationale behind those constraints beyond simple refusal.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   7,
                   8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor did not prompt reflection on why the student's method or constraint worked, instead moving directly to more drafting support.",
+                "reason": "Even after the student had a working distinction and structure, the tutor did not prompt reflection on why the method worked or how to transfer it to future philosophy prompts.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -169,18 +160,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently resisted producing a paste-ready submission, stayed anchored to the prompt, and used clear, manageable prompts and templates.",
-      "Main deduction: in Turn 6 the tutor moved from guidance to supplying the preferred non-consequentialist account and its key distinction, which is a central reasoning step for the assignment.",
-      "Smaller deductions reflect missing explanation of the learning rationale for refusal and limited explicit reflection on method; otherwise the conversation showed strong scaffolding and supportive tone."
+      "The tutor consistently refused to provide paste-ready prose and mostly kept the interaction scaffolded, assignment-focused, and concise.",
+      "Main deduction: the tutor eventually contributed core substantive content by choosing the preferred constraint family and supplying standard objection options, reducing student-generated reasoning.",
+      "Smaller deduction: the conversation did not include much reflection on why the adopted method worked or how to transfer it beyond this prompt."
     ],
-    "total_score": 36,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

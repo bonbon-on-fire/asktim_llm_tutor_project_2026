@@ -80,7 +80,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 6, the tutor states outright that 'Easiest to defend in that specific pattern is usually the means vs side-effect route' and then provides the core distinction ('in Footbridge/Blood the person's death is part of the plan... in Switch/Fuel you choose an option where one dies as a foreseen cost'). The tutor reveals the answer path and key interpretive distinction before the student reasons to it, then asks for confirmation rather than discovery.",
+                "reason": "In Turn 6, before the student reasons through it, the tutor directly states that the means/side-effect route is 'easiest to defend' and then provides the core distinction between Switch/Footbridge ('the person's death is part of the plan... their death isn't what makes the rescue work'). This reveals the key interpretive conclusion before the student derives it.",
                 "points": 6
               }
             ],
@@ -102,15 +102,10 @@
                   2,
                   3,
                   4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to produce submission-ready content but never explains the pedagogical rationale (e.g., that the student needs to develop their own reasoning skills or that active generation aids long-term philosophical thinking). It says 'I can't' without explaining why this approach benefits the student.",
+                "reason": "The tutor repeatedly refuses requests without explaining the learning rationale (e.g., active reasoning skill-building). It says 'I can't' without connecting the refusal to why independent reasoning matters for the student's philosophical development.",
                 "points": 2
               },
               {
@@ -127,7 +122,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a method worked. There is no meta-reflection moment across all ten turns. When the student does reach a good answer (Turn 7 on Blood vs Fuel), the tutor moves immediately to the next task without reinforcing the method or prompting reflection.",
+                "reason": "The tutor never prompts reflection on why a method worked or failed, never asks what changed in the student's thinking, and never reinforces method choices after moments of progress (e.g., after Turn 7 where the student correctly distinguishes Blood vs Fuel).",
                 "points": 2
               }
             ],
@@ -190,13 +185,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a consistent and admirable refusal to write submission-ready content throughout all ten turns, correctly redirecting a student who is explicitly requesting work they can paste in.",
-      "The main deduction in 1.1 comes from Turn 6, where the tutor proactively names the 'easiest to defend' constraint type (means/side-effect) and then directly articulates the key philosophical distinction between Switch/Footbridge before the student has attempted to reason to it. This constitutes giving the conclusion before the student's exploration, triggering 1.1.C.a for 6 points.",
-      "A borderline case is Turn 8, where the tutor provides a fill-in-the-blank template. The template itself does not complete the reasoning and leaves all substantive content to the student, so it was not treated as a 1.1.A.a violation. The structure is scaffolding, not a drafted answer.",
-      "Turn 9 and 10 show the tutor appropriately offering options and frames rather than finished sentences, which avoids the 1.1.B.a trigger.",
-      "In 1.3, the tutor never explains why it won't write the submission (missing learning rationale per 1.3.A.a) and never prompts process reflection after student progress (missing 1.3.D.a). The student's correct reasoning in Turn 7 is acknowledged but not used as a moment to reinforce method.",
-      "Dialogue quality (Section 2) is strong: the tutor advances the conversation each turn, anchors to the assignment, and does not engage with off-topic requests.",
-      "Communication quality (Section 3) is solid: responses are appropriately sized, tone is supportive without being condescending, and no grading language is used."
+      "The tutor consistently maintained appropriate boundaries against producing submission-ready text, refusing direct copy-paste answers across many turns (Turns 1–5, 8, 10). This is a clear strength.",
+      "However, in Turn 6 the tutor crossed into 1.1.C territory by directly identifying the 'easiest to defend' constraint and providing the core interpretive distinction between Switch and Footbridge before the student reasoned toward it. This is a 6-point deduction under 1.1.C.a (tutor states the key idea/conclusion before student reasoning).",
+      "The rubric criteria 1.1.A and 1.1.B were not triggered: the tutor never produced near-submission-ready paragraphs or rewrote student prose. The fill-in template in Turn 8 contains blanks throughout and does not constitute submission-ready text.",
+      "On meta-learning (1.3): the tutor never explained its pedagogical rationale for refusing requests (2-point deduction under 1.3.A.a) and never prompted reflection on the student's own thinking process or what changed across turns (2-point deduction under 1.3.D.a). The tutor also gave no process-level method feedback, though this overlaps with the above deductions and is captured there.",
+      "Dialogue quality was good: the tutor adapted when the student showed progress, moved efficiently through the cases without spiraling, and kept the assignment in focus throughout.",
+      "Communication quality was strong: responses were concise, well-structured, and appropriately encouraging without being sycophantic."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

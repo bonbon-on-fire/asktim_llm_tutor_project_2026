@@ -77,10 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  3
                 ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 6, the tutor provides a fill-in template with polished sentence structures ('the decision-making structure centers on... and emphasizes...', 'By contrast, [Group] are not explicitly represented...') that constitutes near-final wording the student only needs to populate with nouns. This borders on rewriting the student's draft into submission-ready language.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 3, the tutor provides a detailed, curated list of 10 specific 'missing actor' categories for Miami. While framed as a 'checklist,' this list effectively does the key reasoning step of identifying which groups are absent from governance—work the student should derive by reading the plans. The student can functionally lift these categories directly.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces its no-drafting policy but never explains the learning rationale (e.g., that doing the reasoning develops critical analysis skills for future assignments). The refusals are stated as policy without tying them to the student's skill development.",
+                "reason": "Throughout the conversation, the tutor enforces its 'won't do it for you' constraint multiple times but never explains the pedagogical rationale—e.g., that doing the work themselves builds analytical skills for subsequent assignments or long-term learning. The tutoring policy is asserted without a learning rationale.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their process or what they learned from each step. No moment of 'what changed in your thinking?' or reinforcement of the methodology after improvement is present across the full conversation.",
+                "reason": "The tutor never prompts the student to reflect on their reasoning process or what changed in their thinking (e.g., why naming governance bodies makes the argument stronger, or what kind of evidence makes a 'missing actor' claim defensible in general). Process reflection is entirely absent.",
                 "points": 2
               }
             ],
@@ -167,14 +167,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
+                  4,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns are multi-paragraph monologues with extensive lists (e.g., Turn 2 lists 6 numbered questions, Turn 3 provides 10 bullet checklist categories, Turn 8 provides 20+ Ctrl+F search terms). These consistently frontload large amounts of information before checking what the student already understands, reducing interactive opportunity.",
+                "reason": "Several turns feature multi-paragraph, heavily formatted responses when shorter, more focused prompts were appropriate. Turn 2 lists six numbered sub-tasks; Turn 3 provides a 10-item bulleted checklist; Turn 8 provides three categorized lists of Ctrl+F search terms. These lengthy monologues reduce the student's opportunity to think and respond and consistently go beyond what was needed to prompt the next step.",
                 "points": 4
               }
             ],
@@ -203,12 +203,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently maintained boundaries against doing the student's work and kept the conversation anchored to the assignment throughout all 10 turns.",
-      "The tutor applied good scaffolding by building on student progress across turns (e.g., Turn 5 draft → Turn 10 refined sentence), and dialogue did not spiral redundantly.",
-      "A significant deduction was applied to 1.1 (6 points under 1.1.B.a) for Turn 6, where the tutor provided polished fill-in template sentences that constituted near-submission-ready wording, requiring only noun substitution from the student.",
-      "Meta-learning was weak: the tutor never explained why it refused to draft (no learning rationale), and never prompted process reflection or reinforced methodology after improvements, warranting full deductions under 1.3.A.a and 1.3.D.a.",
-      "Communication length was a consistent issue: Turns 1, 2, 3, 7, and 8 all used multi-paragraph responses with large numbered or bulleted lists where shorter, more interactive prompts would have been more appropriate, warranting the 3.1.A.a deduction.",
-      "Tone was consistently supportive and non-grading throughout; no deductions in 3.2. Assignment anchoring and redundancy/spiraling were also well-managed."
+      "The tutor consistently refuses to do the work for the student and maintains good assignment anchoring throughout, never drifting off-topic and always re-grounding the student in the Miami climate plan documents.",
+      "The primary pedagogy deduction (1.1.C.b) is for Turn 3, where the tutor provides a detailed 10-item categorized list of 'missing actor' types for Miami. Although framed as a checklist, this effectively does the key analytical reasoning step—identifying which groups are absent from governance structures—before the student has attempted it from their sources. The student could plausibly use these categories directly without engaging with the plans.",
+      "No 1.1.A.a (submission-ready content) deduction is applied because the tutor never produces actual named organizations or completed table rows; the curated list in Turn 3 is conceptual/categorical rather than a filled-in submission, and the tutor consistently asks the student to verify specifics against documents.",
+      "Meta-learning (1.3) suffers because the tutor never explains why independent document analysis matters for skill development (1.3.A.a) and never prompts the student to reflect on how their reasoning evolved (1.3.D.a). Method feedback is present (Turn 5's critique of the draft), so 1.3.B is not penalized.",
+      "Communication quality is penalized for response length: Turns 2, 3, 7, and 8 in particular deploy large multi-section formatted blocks when a single focused prompt would suffice, consistently limiting student thinking time.",
+      "Dialogue quality scores full marks—no spiraling, strong assignment anchoring, and effective redirection each time the student tries to short-circuit the task.",
+      "Turn 10 features an unusual format where the student's message contains what appears to be tutor-authored template language, likely a formatting artifact in the transcript. This was not penalized as the tutor's subsequent response continues to ask the student to fill in specifics rather than confirming a completed submission."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

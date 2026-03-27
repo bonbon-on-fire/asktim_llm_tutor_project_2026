@@ -235,7 +235,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Transcript 1 Turn 5: The tutor provides 6 near-complete sentence starters with blanks that only require plugging in actor names the student already identified. Together with the student's previously supplied actors, these starters constitute a submission-ready forum post requiring minimal student effort. The tutor essentially writes the structure and content of the post, leaving only name insertion.",
+                "reason": "Transcript 1, Turn 5: The tutor provides six near-complete sentence starters with blanks to fill in actor names. These starters contain the full structure, argumentation flow, and most of the substantive reasoning (e.g., 'Major gaps remain: ___ and ___ are missing or underrepresented due to ___ and ___ (specific barriers), which suggests NYC's strategies could improve by ___.'). Together with the actor names and levers the student already had, these constitute submission-ready text requiring only slot-filling. This crosses into providing the product for the student.",
                 "points": 12
               }
             ],
@@ -255,34 +255,19 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces constraints (refusing to write posts/tables) but rarely explains the pedagogical rationale clearly. Occasional references to 'doing the assignment for you' are present but the deeper learning rationale—active reasoning, skill development, long-term transfer—is mostly absent.",
+                "reason": "Across all three transcripts, the tutor consistently enforces a 'you must do the work' stance but rarely explains the pedagogical rationale (e.g., that doing it yourself builds skills you'll need for later assignments or that sourcing is necessary for academic integrity in a specific learning context). The rationale is implied but not articulated as a learning principle.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on why a method worked or what changed in their thinking. After students make progress (e.g., T1 Turn 3, T3 Turns 9-10), the tutor moves immediately to the next task without inviting any metacognitive reflection or reinforcing method choices.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a particular approach worked. At the end of Transcript 3 (Turn 10), when the student's sentences are nearly post-ready, the tutor gives fix notes but does not ask the student to reflect on the process or what made the revision stronger. No transfer or method consolidation occurs.",
                 "points": 2
               }
             ],
@@ -299,8 +284,22 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Transcripts 1 and 3 both show extended spiraling where the student repeatedly asks for ready-made text in nearly identical ways (turns 3–8 in T3; turns 4–8 in T1) and the tutor cycles through the same 'I won't write it but here is a template/frame' pattern without meaningfully advancing the student's reasoning or consolidating what was already established. The tutor does not synthesize progress or reframe the interaction to break the loop more decisively.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -312,7 +311,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -331,7 +330,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently uses multi-paragraph responses with multiple sub-questions, numbered lists, and templates when shorter, more focused prompts would suffice. For example, T1 Turn 2 and T2 Turn 2 both front-load many instructions before the student has a chance to respond, reducing student opportunity to think and engage.",
+                "reason": "Throughout all three transcripts, the tutor consistently responds with long multi-paragraph replies (often containing multiple numbered lists, bulleted frameworks, phrase banks, and template structures) when the student is clearly disengaged and a shorter, more targeted prompt would have been more effective. For example, Transcript 1 Turn 4 provides a full table template plus a 6-part forum outline; Transcript 3 Turns 4–7 escalate in scaffolding density each time the student refuses to engage. The length consistently reduces student opportunity to think independently.",
                 "points": 4
               }
             ],
@@ -353,20 +352,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 22,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 is the primary driver of the 1.1.A.a deduction. In Turn 5, the tutor provides six near-complete sentence starters for the forum post. Given that the student had already supplied specific actor names across earlier turns, these sentence starters—with only blank slots for names—constitute a near-submission-ready product. The student needed only to paste actor names into pre-written, polished sentence structures to produce a complete forum post. This triggers the full 12-point 1.1.A.a deduction.",
-      "Transcripts 2 and 3 show much stronger Socratic discipline: the tutor consistently refuses to generate actor lists, write sentences, or do the mapping work, instead pushing the student to propose names, justify placements, and draft their own text. Transcript 3 Turn 10 is particularly strong, with the tutor giving specific, targeted feedback on student-written sentences rather than rewriting them.",
-      "The 1.3 deductions reflect consistent gaps across all three transcripts: the tutor enforces constraints without explaining the learning rationale (1.3.A.a), and never prompts the student to reflect on what they learned or why a method worked (1.3.D.a). No deduction was applied for 1.3.B as the tutor does give method-level feedback in several turns.",
-      "The 3.1.A.a deduction reflects a recurring pattern of multi-part, lengthy responses across all three transcripts, even when a single focused question would have been more pedagogically appropriate. This is a consistent pattern but not severe enough to question scoring boundaries.",
-      "No deductions were applied to 1.2, 2.1, 2.2, or 3.2. Scaffolding is generally solid; there is no spiraling or repetition without synthesis; the assignment is kept on track; and the tone is consistently supportive and appropriate throughout."
+      "The tutor maintained a consistent and principled stance against ghostwriting across all three transcripts, repeatedly refusing to provide paste-ready text or actor lists, and this is commendable.",
+      "However, in Transcript 1 Turn 5, the tutor crossed the line by providing six near-complete sentence starters with structural argumentation, role verbs, and contribution phrases already filled in—leaving only actor name slots. Combined with the actor names and levers already established in prior turns, this constitutes submission-ready material, triggering the full 1.1.A.a deduction.",
+      "A significant pattern of spiraling dialogue (2.1.A.a) is evident across Transcripts 1 and 3: the student repeatedly attempts the same request (ghostwrite for me) and the tutor cycles through similar 'I won't but here's a template' responses without meaningfully advancing the student's reasoning, consolidating prior progress, or decisively reframing the interaction.",
+      "Response length was a consistent issue (3.1.A.a): the tutor frequently deployed dense multi-paragraph replies with layered numbered lists, phrase banks, and template structures when shorter, more direct prompts would have been more pedagogically effective for this disengaged student.",
+      "Meta-learning gaps (1.3.A.a and 1.3.D.a) were present: the tutor rarely articulated the learning rationale for its constraints, and never invited the student to reflect on what had changed in their thinking or what made their revisions stronger.",
+      "Scaffolding and assignment anchoring were strong throughout: the tutor built on student contributions (e.g., affirming BMC, BEST, MOCEJ as valid starts), kept the conversation on-task, and consistently steered toward the assignment's actual requirements."
     ],
-    "total_score": 26,
+    "total_score": 22,
     "judge_llm_calls": 1
   }
 }

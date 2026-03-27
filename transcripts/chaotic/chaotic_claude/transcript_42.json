@@ -92,7 +92,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Throughout the conversation the tutor moves from one sub-problem to the next without pausing to ask the student to reflect on what changed in their thinking or why a particular analytical move worked. At the end (Turn 10) the tutor answers the objection question and closes without prompting any meta-reflection on the student's overall reasoning process or method development.",
+                "reason": "At the end of the conversation, the tutor provides objections to consider but does not prompt the student to reflect on how their thinking evolved across the session or why the means/side-effect framework was ultimately chosen over pure AC. No consolidating reflection on the student's reasoning journey is invited.",
                 "points": 2
               }
             ],
@@ -135,11 +135,10 @@
                   2,
                   3,
                   4,
-                  5,
-                  8
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple tutor turns (e.g., Turns 2, 3, 5, 8) contain multi-paragraph responses with several simultaneous sub-questions, bullet structures, and analytical prompts at once. While the questions are pedagogically sound, the sheer volume in a single response repeatedly reduces the student's opportunity to think and reply to one focused idea before moving on.",
+                "reason": "Several tutor responses are multi-paragraph with multiple sub-tasks bundled together (e.g., turns 2, 3, and 5 each contain several layered questions and instructions), which reduces space for the student to think and respond incrementally. A more targeted single question per turn would better serve interactive discovery.",
                 "points": 4
               }
             ],
@@ -168,10 +167,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write submission-ready content and instead guided the student through Socratic questioning, applying the act-consequentialist framework step by step across Switch, Footbridge, Fuel, and Blood cases. No direct answers, finished paragraphs, or submission-ready wording was provided.",
-      "Scaffolding was strong: the tutor built on each student response, acknowledged correct work (e.g., Turn 2 affirming the Switch analysis), and redirected when the student drifted toward requesting pre-written content.",
-      "The main deductions are: (1) Response length — several tutor turns (e.g., Turns 2, 3, 5, 8) bundled multiple sub-questions and analytic frameworks simultaneously, making responses fairly dense rather than bite-sized. This was the most consistent weakness across the conversation. (2) Meta-learning/reflection — the tutor never paused to ask the student to reflect on what worked in their reasoning process or why the means/side-effect distinction emerged as their framework, missing opportunities for transfer and method reinforcement.",
-      "No redundancy or off-topic issues were observed; the tutor maintained assignment focus throughout and redirected attempts to outsource work clearly and concisely."
+      "The tutor consistently refused to produce submission-ready content and maintained a strong Socratic approach throughout, redirecting the student toward independent reasoning at every turn.",
+      "Scaffolding was effective: the tutor built on the student's Switch analysis to scaffold Footbridge, then Fuel and Blood, progressing logically toward the general account the prompt requires.",
+      "Meta-learning was largely strong — the tutor explained its rationale for not writing content (turns 1, 4, 5, 8) and gave process-level feedback on weak reasoning (e.g., 'and/or' inconsistency in turn 7). A small deduction applies because the session ended without inviting the student to reflect on how their thinking changed or why the chosen framework was methodologically sound.",
+      "No redundancy or spiraling occurred; the conversation advanced meaningfully each turn.",
+      "Assignment anchoring was solid throughout; the tutor consistently re-grounded the student toward the actual prompt requirements (notably flagging the 'general account' requirement in turn 6).",
+      "A deduction was applied for response length: several turns (especially 2, 3, 5) bundled multiple questions and structured tasks into long monologues that reduced student thinking space. More concise, single-focus prompts would have been preferable.",
+      "Tone was consistently supportive and non-evaluative; no grade-like judgments were made."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

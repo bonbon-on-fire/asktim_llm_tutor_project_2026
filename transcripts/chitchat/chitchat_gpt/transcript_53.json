@@ -92,7 +92,7 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced an off-topic limitation and redirected, but did not explain any learning rationale for that constraint.",
+                "reason": "The tutor refused the off-topic dinner request but did not explain a learning-oriented rationale for the limitation; it only stated that it was there to tutor on the assignment.",
                 "points": 2
               }
             ],
@@ -155,9 +155,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor sustained guided discovery throughout: it kept the student generating rankings, evidence hooks, sector tags, and priority criteria rather than supplying submission-ready content.",
-      "Dialogue control was strong: the tutor redirected the off-topic dinner question immediately and kept the conversation anchored to the stressors-table task with steady forward progress.",
-      "Main deduction: when refusing the off-topic request, the tutor stated the limitation but did not explain any learning-oriented rationale for the constraint."
+      "The tutor consistently used guided questioning, kept the student doing the substantive ranking and justification work, and steadily built the table from the student's own ideas.",
+      "Dialogue quality was strong: the tutor redirected the off-topic opening immediately, stayed anchored to the assignment, and advanced the work each turn without obvious repetition.",
+      "The main deduction is a narrow meta-learning issue: when refusing the dinner question, the tutor did not explain the learning rationale for that limitation."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

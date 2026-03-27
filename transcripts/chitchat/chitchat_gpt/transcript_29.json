@@ -92,26 +92,17 @@
                   2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing the off-topic dinner request, the tutor enforced scope ('I'm here as your course tutor') without explaining a learning rationale for the constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  7,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After clear student improvement, the tutor kept advancing the task but did not prompt brief reflection on why the evidence-format and ranking method worked or how to transfer it to later assignments.",
+                "reason": "Tutor enforced an off-topic boundary ('I can’t help with dinner ideas') without explaining the learning rationale for staying focused on the assignment.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -157,18 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-centered and used guided discovery well: the student chose the city, proposed stressors, merged overlaps, set ratings, selected evidence formats, and articulated a priority rule.",
-      "No deduction was taken for direct-answering because the tutor consistently prompted the student's own reasoning rather than supplying submission-ready rows or final conclusions.",
-      "Main weaknesses were meta-level: the tutor's off-topic refusal did not include a learning rationale, and the conversation missed explicit reflection on why the student's method choices worked and how to reuse them later."
+      "Tutor consistently used guided discovery: the student chose the city, generated the stressor list, proposed merges, set ratings, selected evidence formats, and drafted rows while the tutor challenged logic and overlap.",
+      "Scaffolding was strong and assignment-anchored throughout, including redirecting the off-topic dinner question immediately and sequencing the work from city choice to Step 5 priority rules.",
+      "Only clear deduction is that the tutor imposed the off-topic boundary without briefly explaining the pedagogical reason for staying focused; otherwise the dialogue was clear, supportive, and non-grading."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

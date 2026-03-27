@@ -250,16 +250,17 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to do the assignment but rarely explains the pedagogical rationale (e.g., 'so you develop the skill of evidence-based reasoning'). It enforces constraints ('I can't do that') without articulating the learning benefit to the student.",
+                "reason": "Across all three transcripts, when the tutor declines to do work for the student it sometimes just states the constraint ('I can't fill in the table for you') without consistently explaining the learning rationale (e.g., why the student generating their own ratings builds reasoning skill). This is clearest in Transcript 1 turns 1-4 and Transcript 3 turns 3, 6, 7, 10 where refusals are policy-stated but the growth/learning reason is not articulated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor does not prompt students to reflect on what changed in their thinking or why a particular approach worked. Conversations end with next-step prompts but no meta-reflection ('what did you notice about how you built the justification?').",
+                "reason": "Across all transcripts, the tutor does not prompt the student to reflect on what changed in their thinking or why a method worked. In Transcript 1 turn 10, Transcript 2 turn 10, and Transcript 3 turn 10 the tutor moves forward to the next task without asking the student to briefly reflect on their reasoning process or what they learned from refining their approach.",
                 "points": 2
               }
             ],
@@ -301,12 +302,14 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
                   5,
                   7,
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor frequently sends multi-part, multi-paragraph responses (e.g., Transcript 1 Turn 5 gives two challenge questions plus a multi-step rating task; Transcript 3 Turn 8 gives a three-part sanity-check with sub-bullets) when shorter, more focused prompts would keep the student more actively engaged. This is a recurring pattern, not isolated incidents.",
+                "reason": "Across all three transcripts, the tutor routinely sends multi-part, multi-question responses (often 3-5 numbered sub-questions in one turn) when shorter, more focused prompts would better serve interaction. For example, Transcript 1 Turn 3 asks four sub-questions plus an evidence task; Transcript 2 Turn 7 asks 3 questions plus a write-up request; Transcript 3 Turn 8 asks three multi-part questions with sub-bullets. This pattern is consistent throughout all conversations and limits the student's opportunity to process one idea at a time.",
                 "points": 4
               }
             ],
@@ -335,11 +338,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor is exemplary at maintaining Socratic discipline: it never fills in ratings, drafts full rows, or writes submission-ready text for the student, even under repeated pressure from the chaotic and clueless personas. Students are consistently pushed to propose their own stressors, ratings, sector tags, and justifications, with the tutor pressure-testing rather than supplying answers. No 1.1 deductions apply.",
-      "Scaffolding is strong: the tutor builds on each correct student step, uses tiering and anchoring techniques to un-block stuck students, and distinguishes chronic from acute stressors appropriately. No 1.2 deductions apply.",
-      "The main weakness in pedagogy is meta-learning. The tutor enforces its 'I can't do that' boundary clearly but almost never explains why that constraint exists in terms of student learning goals (1.3.A.a). At conversation ends, no turn prompts the student to reflect on what their thinking process revealed or what method they now understand better (1.3.D.a). Process feedback is generally present (tutor flags 'your evidence is vague' or 'your ratings look arbitrary'), so 1.3.B is not penalized.",
-      "Dialogue quality is strong throughout. Conversations advance steadily, the tutor re-anchors students to the assignment when they drift toward seeking direct answers, and there is no meaningful off-topic engagement. No 2.1 or 2.2 deductions apply.",
-      "Communication quality has one notable pattern-level issue: the tutor routinely sends responses containing three or more sub-questions plus a multi-step instruction block. While the individual questions are clear, the cumulative length of many responses (especially in Transcript 1 Turn 5, Transcript 2 Turns 4–7, Transcript 3 Turn 8) reduces the student's opportunity to respond to one focused prompt at a time. This triggers 3.1.A.a for a 4-point deduction. Language is generally clear and appropriately calibrated to the student, so 3.1.B is not penalized. Tone is consistently supportive and non-grading throughout all three transcripts."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to generate stressors, ratings, or justifications for students, instead asking structured follow-up questions that guide student reasoning. No direct assignment work was produced by the tutor at any point (1.1 full marks).",
+      "Scaffolding is effective: the tutor builds on student contributions across turns, acknowledges progress explicitly, and challenges inconsistencies rather than restarting from scratch (1.2 full marks).",
+      "Two meta-learning deductions apply. First (1.3.A.a), the tutor's refusals are framed as policy ('I can't') rather than as learning rationale ('you need to develop this skill yourself because...'), and this is a consistent pattern across all three transcripts. Second (1.3.D.a), the tutor never pauses to ask the student to reflect on how their thinking improved—e.g., 'What changed between your first and final draft of these ratings?' This is a missed opportunity present at the end of all three conversations.",
+      "No process-method feedback deduction was applied (1.3.B) because the tutor gives consistent method-level direction throughout (e.g., explaining frequency/trend/exposure/coping framework, sector coverage requirements, evidence hook specificity).",
+      "Dialogue quality is strong: there is no problematic repetition or spiraling, and the tutor consistently re-anchors to the assignment requirements (e.g., noting missing culture sector in Transcript 1 Turn 8, checking for double-counting in Transcript 3 Turn 8).",
+      "Response length is the clearest weakness across all three transcripts (3.1.A.a): the tutor habitually bundles 3–5 sub-questions into single turns. While each question is pedagogically purposeful, the cumulative load in a single message—especially for struggling students like in Transcript 3—reduces the student's space to think through one step before being asked the next. This is a consistent pattern warranting a full 4-point deduction.",
+      "Tone is consistently supportive and constructive across all transcripts; no grading stances or dismissive language were identified."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

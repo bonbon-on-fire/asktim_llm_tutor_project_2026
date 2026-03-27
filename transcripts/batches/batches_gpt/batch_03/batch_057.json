@@ -243,14 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  5,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student made usable progress on hooks, ranges, and ratings, the tutor kept advancing the drafting process but did not prompt brief reflection on why the rating method or evidence-selection method worked.",
+                "reason": "Across the three transcripts, the tutor gives strong process coaching and transfer prompts, but does not explicitly pause for brief reflection on why the student's method improved or what they learned from the process.",
                 "points": 2
               }
             ],
@@ -313,9 +307,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the provided schema is for a single conversation, while the prompt included three transcripts.",
-      "The tutor consistently refused to produce submit-ready table content and instead used structured prompts, rating anchors, and evidence-selection steps to keep the student doing the core reasoning.",
-      "The main weakness was limited reflection/transfer support: once the student began producing workable hooks and ratings, the tutor pushed forward to the next drafting step rather than pausing to reinforce why the method was effective."
+      "Judged across the three provided transcripts, the tutor consistently avoided doing submission-ready work, redirected off-topic or shortcut-seeking requests back to the assignment, and used targeted questioning to scaffold student reasoning.",
+      "The strongest evidence is in Transcripts 2 and 3, where the tutor builds from student answers, sharpens criteria, and anchors choices to evidence, source quality, and assignment structure.",
+      "Only minor deduction: despite strong process coaching, the tutor rarely prompts explicit reflection on why the method worked or what the student should carry forward to future tasks."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

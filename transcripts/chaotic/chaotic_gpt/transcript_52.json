@@ -74,17 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor resolved the key assignment choice for GDP by recommending BEA metro GDP as the most defensible option, rather than first having the student reason through that tradeoff.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -101,7 +92,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor provided process help throughout but did not prompt any brief reflection on what sourcing or table-building method the student could reuse next time.",
+                "reason": "The tutor gave a reusable template and offered to check one filled example, but did not prompt reflection on why the source-selection and labeling method worked or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
@@ -111,7 +102,7 @@
           }
         },
         "base": {
-          "score": 16,
+          "score": 22,
           "max": 24
         }
       },
@@ -138,17 +129,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One response exposed internal meta-formatting and used avoidable technical wording, which added cognitive load instead of keeping the help maximally simple.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -160,25 +142,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly maintained assignment boundaries, kept the work anchored to the actual data-table task, and generally used guided process support rather than supplying submission-ready content.",
-      "Main deduction in pedagogy is from turn 3, where the tutor effectively made the substantive GDP-choice tradeoff for the student by recommending metro GDP; this is somewhat ambiguous because it was framed as a defensible option, so I applied the smaller relevant deduction rather than a harsher one.",
-      "The tutor offered useful sourcing and citation method help, but there was little explicit reflection or transfer prompt about what general research method the student should carry forward.",
-      "Communication was mostly clear and supportive, though turn 5's exposed meta-reasoning/JSON-style formatting made that response less simple than needed."
+      "The tutor consistently avoided doing the assignment for the student, redirected toward official datasets, and kept the work anchored to the required table fields for NYC.",
+      "Scaffolding was generally strong: the tutor narrowed scope (city proper, year), pointed to concrete sources (ACS, Gazetteer, BEA), and helped with defensible labeling choices without supplying the actual data values.",
+      "The main missed opportunity was meta-learning: the conversation ended with templates and procedural help, but without a brief reflection prompt about how to generalize the source-selection and citation method."
     ],
-    "total_score": 36,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

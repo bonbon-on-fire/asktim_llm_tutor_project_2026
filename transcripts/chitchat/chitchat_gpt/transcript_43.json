@@ -89,22 +89,31 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
+                  1,
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced limits on casual or non-academic discussion by citing role/topic boundaries, but usually did not explain the learning rationale for those constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong procedural coaching, but after the student improved search and citation strategy, it moved straight to the next task instead of prompting reflection on why the method worked or how to transfer it to the next field.",
+                "reason": "The tutor moved the student from one source-checking task to the next without prompting reflection on what source-evaluation method the student had learned or could transfer to the remaining fields.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -117,14 +126,30 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "After the student said they planned to use the Miami metro area, the tutor adopted and reinforced the MSA framing instead of re-anchoring to the assignment's stated focus on the chosen city and its city data table.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -150,19 +175,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently redirected off-topic bids, stayed anchored to the assignment, and used guided questions rather than supplying submission-ready content.",
-      "Method support was strong: the tutor emphasized geography consistency, source quality, exact dataset labels, units, and year precision, and it built on the student's correct progress.",
-      "The main weakness was limited reflection/transfer prompting; once the student adopted better strategies, the tutor advanced the task without briefly consolidating why those strategies worked.",
-      "I kept deductions conservative: although some refusals were firm, the tutor generally maintained a supportive coaching stance and did not meaningfully engage in off-topic conversation."
+      "The tutor stayed largely Socratic: they avoided giving submission-ready answers, redirected repeated off-topic bids, and used focused questions to guide source selection and citation checking.",
+      "Main weaknesses were meta-learning support and assignment anchoring. The tutor often framed refusals as role limits rather than explicitly explaining the learning value, and they did not prompt reflection on the transferable sourcing method.",
+      "The 2.2.A deduction is based on the prompt's city-centered wording; while metro-level economic data can sometimes be defensible, the tutor did not explicitly reconnect that choice to the assignment requirements."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

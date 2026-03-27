@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied the key source path and specific table/dataset choices (DP05, DP03, BEA county GDP, Beck dataset) before the student independently identified them.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -89,12 +99,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7,
-                  9,
-                  10
+                  1,
+                  5,
+                  6
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives procedural next steps and citation templates but does not prompt reflection on why the source-selection/citation method works or what the student learned for future assignments.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor stated it could not do the assignment or provide values, but did not explain the learning rationale for that boundary beyond policy enforcement.",
                 "points": 2
               }
             ],
@@ -104,7 +114,7 @@
           }
         },
         "base": {
-          "score": 22,
+          "score": 16,
           "max": 24
         }
       },
@@ -150,18 +160,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submission-ready data values, kept the work anchored to the assignment, and guided the student through source selection, scope decisions, and citation drafting in a generally Socratic, scaffolded way.",
-      "A small deduction was applied because the tutor did not add reflection or transfer prompts about why the chosen research method and citation process were effective for future assignments.",
-      "It was somewhat ambiguous whether recommending specific ACS/BEA/Koppen sources in turn 3 counted as doing too much of the reasoning; no deduction was taken because the tutor still left the final source choice, data retrieval, and table completion to the student."
+      "Tutor consistently refused to provide submission-ready values, kept the conversation anchored to the actual assignment, and used concise, supportive prompts.",
+      "Main pedagogy deduction: the tutor gave the student the decisive source/table path rather than having the student derive it first.",
+      "Smaller deduction: the tutor enforced boundaries but only weakly explained the learning rationale behind those limits.",
+      "There is some ambiguity on whether recommending exact datasets should count as 1.1.C, so the scoring does not add any further pedagogy penalties beyond that primary deduction."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

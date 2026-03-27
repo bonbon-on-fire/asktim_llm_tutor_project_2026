@@ -86,25 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong immediate drafting support, but did not prompt brief reflection on why the hedging/evidence method made the claims more defensible or how to reuse that method on later actor-mapping assignments.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -150,18 +139,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the actual assignment, repeatedly refused to provide submission-ready text, and instead used fill-in scaffolds, targeted prompts, and caution about evidentiary overclaiming.",
-      "Scaffolding was strong and cumulative: the tutor built from the student's Miami-specific facts, narrowed claims when evidence was weak, and kept the interaction practical under deadline pressure.",
-      "Only a small deduction was applied because the tutor focused on getting the student to finish this post, without adding explicit reflection on why the drafting method worked or how to transfer it to future course tasks."
+      "The tutor consistently refused to provide submission-ready writing and kept the work anchored to the actual assignment, using targeted prompts, fill-in structures, and evidence checks to keep authorship with the student.",
+      "The tutor built directly on the student's Miami-specific facts across turns, shifted to safer hedged claims when evidence was weak, and offered process-level checks about attribution, hedging, and function rather than just correctness.",
+      "Some later responses were fairly dense, but they still advanced the student's draft in interactive steps; there was not enough evidence of rubric-level failure to justify a deduction."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

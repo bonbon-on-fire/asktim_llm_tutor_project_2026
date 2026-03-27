@@ -93,7 +93,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced boundaries ('stick to the table' and refused to sanity-check/rewrite wording) without clearly explaining a learning rationale such as building the student's own reasoning or writing skills.",
+                "reason": "The tutor enforced constraints twice ('stick to the table' and refusal to sanity-check/rewrite wording) without explaining the learning rationale for those limits.",
                 "points": 2
               }
             ],
@@ -156,9 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected the initial off-topic detour immediately, and used guided questions that kept the student making the substantive choices about sources, methods, and table conventions.",
-      "The tutor generally scaffolded well by building on the student's answers and pushing for explicit decision rules, source credibility checks, and consistent methodology across fields.",
-      "Main weakness: when enforcing tutoring constraints, the tutor did not explicitly explain the learning rationale for those limits, so the boundary-setting could have been more transparently framed as support for the student's own skill development."
+      "The tutor stayed tightly anchored to the assignment, redirected the initial off-topic detour immediately, and used strong guided questioning to keep the student making the substantive choices about sources, definitions, and methods.",
+      "Scaffolding was generally effective and cumulative: the tutor built from the student's own proposed city, field choices, source ideas, and note wording rather than supplying a submission-ready table entry.",
+      "The clearest weakness was meta-framing: when the tutor enforced boundaries on detours and rewriting, it did not explain the learning rationale behind those limits. Other possible deductions were not applied because the tutor's advice remained interactive and non-submission-ready."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

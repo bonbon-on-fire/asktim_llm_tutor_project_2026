@@ -229,8 +229,14 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Across the provided transcripts, the tutor sometimes completed substantive assignment reasoning/content instead of keeping the student as the generator—for example, Transcript 2 Turn 7 supplies sector tags for all 10 Miami stressors, and Transcript 3 Turns 5 and 10 resolve key content choices about who counts as the lead actor and which functions/hazards to emphasize.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -244,7 +250,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step coaching, but did not prompt reflection on why the student's method worked, what changed in their thinking, or how to transfer the method beyond these cases.",
+                "reason": "The tutor gives strong step-by-step coaching, but usually moves straight to the next task rather than prompting brief reflection on why the method worked or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
@@ -254,7 +260,7 @@
           }
         },
         "base": {
-          "score": 22,
+          "score": 16,
           "max": 24
         }
       },
@@ -300,18 +306,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused submission-ready writing and kept the student doing the core reasoning, using targeted questions to build from act consequentialism to a student-owned rule.",
-      "Scaffolding was strong: the tutor acknowledged correct steps, stress-tested the student's rule across Switch, Footbridge, Loop, Blood, and Fuel, and stayed tightly anchored to the assignment.",
-      "Only minor deduction: the conversation was highly procedural but did not explicitly prompt reflection on why the method worked or how to transfer the reasoning strategy beyond this paper."
+      "Scored jointly across the 3 provided transcripts because the input bundled multiple full conversations into one item.",
+      "The tutor consistently refused submission-ready writing, kept the student working, and used effective scaffolds such as anchors, templates, comparison tests, and targeted follow-up questions.",
+      "The main weakness was occasional completion of substantive assignment content for the student, especially in the urban studies conversations where the tutor supplied classifications/content choices rather than eliciting them first.",
+      "A smaller deduction was applied for limited reflection/transfer support; otherwise the tutor stayed well anchored to the tasks, avoided redundancy, and communicated clearly in manageable steps."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

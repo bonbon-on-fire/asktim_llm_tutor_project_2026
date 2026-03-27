@@ -92,11 +92,12 @@
                   1,
                   2,
                   3,
+                  7,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly states it cannot provide submission-ready content, but does not clearly explain a learning-oriented rationale beyond policy/compliance.",
+                "reason": "The tutor repeatedly states it cannot provide submission-ready work, but does not explain the learning rationale for that boundary beyond policy-like refusal.",
                 "points": 2
               },
               {
@@ -107,7 +108,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor helps with next steps but never prompts reflection on why the sourcing/checking method works or how to transfer it to future assignments.",
+                "reason": "The tutor supports task completion steps but never prompts reflection on why the sourcing/checking method works or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
@@ -144,37 +145,55 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The response exposes internal JSON/meta labels and some unnecessary technical phrasing, which adds avoidable cognitive load compared with a plain student-facing answer.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrasing 'No—I’m not going to give you the code' is notably rigid and could feel dismissive under the student’s deadline pressure.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed aligned to the assignment, refused to do submission-ready work, and gave actionable scaffolding such as source selection, ACS table IDs, geography filters, and consistency checks.",
-      "The main weakness was meta-learning: the tutor framed refusals mostly as policy/completion limits rather than explaining the learning rationale, and it did not prompt reflection on the sourcing/method choices.",
-      "There was a mild hint about NYC's broad climate type in turn 2, but it was not scored as a 1.1 violation because the tutor still withheld the required code and kept the student responsible for sourcing it."
+      "The tutor stayed well anchored to the assignment and consistently avoided doing the student’s submission-ready work, while still giving actionable steps on sources, filters, and consistency checks.",
+      "Main deductions come from limited meta-learning support: the tutor enforced boundaries without explaining the learning rationale, and it did not prompt reflection or transfer after the student made progress.",
+      "Communication was mostly clear, but turn 4’s JSON/meta formatting was unnecessarily dense, and turn 8’s refusal was firmer than needed. These were smaller deductions rather than major failures."
     ],
-    "total_score": 42,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

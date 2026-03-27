@@ -247,19 +247,20 @@
                   1,
                   3,
                   5,
-                  18
+                  8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries ('I can't fill it in,' 'I can't do random/off-topic questions') but usually framed them as role/policy limits rather than explaining a learning rationale such as building the student's own research and citation skills.",
+                "reason": "The tutor repeatedly enforced refusal boundaries, but mostly framed them as role/policy limits rather than explaining a learning rationale such as skill-building or active reasoning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  16,
-                  28
+                  6,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "When the student improved their method (for example, setting a verification plan and a year-selection rule), the tutor moved straight into the next task instead of prompting brief reflection on why that method choice was effective and transferable.",
+                "reason": "The tutor guided source-finding and checking, but did not prompt the student to reflect on why the method worked or how to transfer it to future rows/tasks.",
                 "points": 2
               }
             ],
@@ -276,24 +277,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  3,
-                  4,
-                  5,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Especially in Transcript 1, the tutor repeated the same refusal-plus-paste-it-here pattern across many turns without meaningfully switching strategy, summarizing, or simplifying after the student kept pushing for a faster path.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -305,29 +290,15 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  6,
-                  21,
-                  24,
-                  26
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies were multi-part lists with multiple follow-up questions and explanations where a shorter, narrower prompt would have been more interactive and easier for the student to act on immediately.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -336,11 +307,10 @@
               {
                 "evidence_turns": [
                   1,
-                  5,
-                  18
+                  5
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's phrasing was sometimes rigid or sharp ('I'm your tutor, not a do-it-for-you service,' 'No—I'm not going to pick one'), which could make the interaction feel more policing than supportive.",
+                "reason": "The tutor's phrasing is at times rigid and slightly punitive (e.g., 'not a do-it-for-you service' and refusing to 'pick one'), which could reduce rapport for a stressed student.",
                 "points": 2
               }
             ],
@@ -350,24 +320,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor stayed strongly anchored to the assignment and generally used guided discovery rather than giving submission-ready content.",
-      "Main weaknesses were repetitive refusal patterns, long multi-part replies, and a somewhat rigid tone in places, especially when the student pushed for direct answers or off-topic chat.",
-      "A smaller-deduction approach was used where evidence was borderline, such as the tutor's placeholder citation scaffolding; it was not scored as direct assignment writing because key source-specific content was still withheld."
+      "This evaluation scores Transcript 1 only, since the rubric schema is structured for one conversation at a time.",
+      "The tutor stayed strongly anchored to the assignment, refused to do the student's table directly, and provided usable source-selection scaffolds without giving submission-ready content.",
+      "Main weaknesses were limited explanation of the pedagogical rationale behind refusals, little reflection/transfer support, and a somewhat rigid tone in a few turns."
     ],
-    "total_score": 32,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

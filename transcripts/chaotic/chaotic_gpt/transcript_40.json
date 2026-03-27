@@ -86,24 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor repeatedly advanced the task with sourcing and classification prompts, but did not pause to ask the student to reflect on why the source-grounded method or role-based sorting approach worked for this or future assignments.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -136,14 +126,23 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The refusal 'Still no—I'm your tutor, not your ghostwriter' is sharper and more rigid than needed, even though the tutor remains broadly supportive afterward.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
@@ -156,8 +155,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly upheld guided discovery: they refused to provide a ready-to-submit table or forum post, kept the work anchored to the actual assignment, and consistently pushed the student toward source-based actor identification and role classification.",
-      "The main weakness was meta-learning closure. Even after the student made concrete progress, the tutor did not prompt reflection on why this research-and-bucketing method is useful beyond the immediate task."
+      "The tutor consistently avoided doing the assignment for the student, kept the conversation anchored to the Mumbai actor-mapping task, and used guided prompts, category buckets, and source-checking steps to preserve student ownership.",
+      "The tutor also built on the student's partial progress by using the actors already named and moving toward role classification and gap analysis rather than restarting from scratch.",
+      "The only clear deduction is tone: one refusal became unnecessarily rigid ('not your ghostwriter'). Reflection support was limited, but given the student's persistent resistance and lack of draft text, there is not enough clear evidence to deduct further."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

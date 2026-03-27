@@ -93,17 +93,27 @@
                   2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor enforced limitations and redirection ('I can’t help with dinner/show recommendations') without explaining a learning rationale for staying focused on the assignment.",
+                "reason": "The tutor enforces a task-only boundary ('I can’t help with dinner/show recommendations') but does not explain a learning-oriented rationale for that limitation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gives strong forward guidance but does not prompt reflection on why the student's method for distinguishing, rating, and evidencing stressors worked or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -149,18 +159,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed strongly assignment-centered, redirected off-topic requests immediately, and used guided questioning to help the student build sector categories, ratings, evidence choices, and distinctions between overlapping stressors.",
-      "The tutor consistently scaffolded from the student's prior answers and avoided giving submission-ready wording or doing the core reasoning for the student.",
-      "Small deduction only for not explaining the learning rationale behind its limitation/redirection; otherwise pedagogy, dialogue control, and clarity were strong."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic prompts immediately, and used short, targeted questions that built the student's table row-by-row without doing the writing for them.",
+      "Scaffolding was strong: the tutor repeatedly built on the student's prior answers, pushed for clearer distinctions between overlapping stressors, and asked for evidence, indicators, and rating cutoffs.",
+      "Main deductions are in meta-learning: the tutor set boundaries without explaining a learning rationale, and the conversation ended without explicit reflection on the method the student can reuse in later course assignments."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

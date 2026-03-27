@@ -244,11 +244,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
                   6,
                   7,
                   8,
@@ -256,16 +251,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces its 'no direct answer' and 'stay on task' stance without ever explaining why this serves the student's learning or long-term skill development. It simply redirects without articulating a rationale (e.g., 'I guide rather than give answers because active reasoning builds philosophical argumentation skills').",
+                "reason": "The tutor enforces a guide-don't-tell approach but rarely explains the learning rationale behind it (e.g., why the student should derive the principle rather than be given it, how this builds long-term philosophical reasoning skills). The policy is implicit at best across all three transcripts.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, once the student reaches a strong formulation, the tutor moves directly to the next stress-test without prompting any reflection on how the student's thinking has evolved, what changed, or why the method worked. No turn invites the student to step back and notice their own intellectual progress.",
+                "reason": "None of the three conversations include a moment where the tutor prompts the student to reflect on what changed in their thinking, why a particular reasoning move worked, or how to apply this method to future philosophical questions. The tutor moves on to the next question without reinforcing or consolidating method choices.",
                 "points": 2
               }
             ],
@@ -307,16 +303,14 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
                   5,
                   6,
-                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor regularly delivers multi-part responses (3–4 numbered sub-questions per turn) where one or two focused prompts would suffice. This pattern is consistent throughout and reduces the student's opportunity to think through one question at a time before the tutor piles on the next. For example, Transcript 1 Turn 2, Transcript 2 Turn 2 and 3, Transcript 3 Turn 2 all deploy 3–4 simultaneous questions when a single probe and pause would be more interactive and appropriate.",
+                "reason": "Across all three transcripts, the tutor consistently packages 3–4 numbered sub-questions per turn even when a single focused question would better serve the student. Many responses run multi-paragraph with layered sub-parts, reducing the student's opportunity to think before being flooded with follow-ups. This is a recurrent pattern throughout all 10-turn conversations.",
                 "points": 4
               }
             ],
@@ -345,12 +339,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "All three transcripts show a consistently strong Socratic approach: the tutor never gives final answers, avoids writing the student's argument for them, and builds step-by-step from the student's own responses. No deductions are warranted for 1.1 or 1.2.",
-      "Scaffolding is effective: the tutor acknowledges correct student progress (e.g., 'You've got a clear act-consequentialist picture'), builds on it, and adapts the line of questioning as the student advances. No deductions for 1.2.",
-      "Meta-learning (1.3) incurs two deductions. First, the tutor never explains why it guides rather than tells — it enforces its stance without giving learning rationale. Second, across all three 10-turn conversations, the tutor never pauses to invite the student to reflect on how their thinking has changed or why a method worked, missing repeated opportunities for transfer-level consolidation.",
-      "Dialogue quality is strong throughout. The tutor anchors to the assignment consistently, redirects off-topic requests immediately (Turn 1 of all three transcripts), and advances rather than spirals. No deductions for 2.1 or 2.2.",
-      "The main communication quality issue is response length (3.1.A.a): the tutor habitually delivers 3–4 numbered sub-questions per turn across all three transcripts. While each individual question is well-targeted, the pattern of overwhelming the student with multiple simultaneous demands reduces interactive rhythm and limits student thinking space. This is a consistent pattern across all three transcripts and warrants the full 4-point deduction.",
-      "Tone is appropriate and supportive throughout, with no grading language. No deductions for 3.2."
+      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it never gives away the answer, consistently draws out the student's own reasoning through targeted questions, and correctly redirects off-topic requests at Turn 1 in each conversation.",
+      "Scaffolding is solid throughout. The tutor builds on the student's prior steps in each turn, uses the student's own language when pressing for precision, and advances the conversation progressively toward a defensible general account.",
+      "The primary weakness in pedagogy is meta-learning (1.3): the tutor never explains why it is guiding rather than telling (1.3.A.a), and never prompts reflection on what shifted in the student's thinking or how the method generalised (1.3.D.a). These are consistent omissions across all three conversations.",
+      "Dialogue quality is strong: no problematic spiraling, no misanchoring, and off-topic requests are handled efficiently without engaging with the irrelevant content.",
+      "Communication quality is penalised under 3.1.A.a. The tutor's most persistent habit is bundling 3–4 numbered sub-questions per turn in virtually every response across all three transcripts. While each individual question is useful, the cumulative density reduces the student's space to think and respond, and shorter focused prompts would have been more appropriate in many turns. No language-simplicity or tone problems were observed."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

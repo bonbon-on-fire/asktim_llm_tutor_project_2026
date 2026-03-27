@@ -245,8 +245,6 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
                   4,
                   5,
                   6,
@@ -256,17 +254,18 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor never explains why it is guiding rather than giving answers directly—it enforces the constraint ('I can't give you the numbers') but does not articulate the learning rationale (active reasoning, long-term skill development).",
+                "reason": "Across all three transcripts, the tutor consistently declines to do work for the student but rarely explains the learning rationale behind this (e.g., why guided discovery builds long-term skills). In Transcript 1 the tutor mostly says 'I can't' without explaining the pedagogical benefit of self-extraction. This pattern recurs across transcripts without the tutor articulating why the approach serves the student's learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The conversations conclude without the tutor prompting the student to reflect on what their approach was, what worked, or what they learned about sourcing/methodology. In transcript 1 (T10) and transcript 2 (T10) the tutor moves to the next task without any reflection prompt. In transcript 3 the focus stays on next steps rather than consolidating what the student has learned.",
+                "reason": "Across all three transcripts, the tutor moves efficiently from one data field to the next but rarely pauses to prompt reflection on what the student's thinking process revealed or what method choice worked well and why. In Transcript 2 turns 7-10 and Transcript 3 turns 7-10, successful steps are acknowledged but not used as occasions to reinforce method reasoning or ask the student what changed in their understanding.",
                 "points": 2
               }
             ],
@@ -289,16 +288,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In transcript 2 turn 1, the student makes an off-topic request (movie/show recommendation). The tutor redirects immediately and does not engage with off-topic content—no deduction warranted here. No off-topic engagement issue found across transcripts.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -318,10 +308,11 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In transcripts 1 and 3, several tutor turns are very long multi-paragraph responses with multiple sub-questions simultaneously, when shorter focused prompts would be more appropriate. For example, transcript 1 turn 2 presents five bullet-point sourcing areas and two clarifying questions at once; transcript 3 turn 2 has four numbered multi-part questions. This pattern reduces student opportunity to process and respond interactively.",
+                "reason": "Across Transcripts 1 and 2 especially, the tutor repeatedly delivers multi-paragraph responses when one focused prompt would suffice. Turn 2 (T1) lists all sourcing pathways simultaneously before the student has even clarified the boundary question. Turn 5 (T2) and Turns 2-5 (T3) similarly front-load extensive guidance across multiple sub-topics in a single message, reducing the student's opportunity to engage one step at a time.",
                 "points": 4
               }
             ],
@@ -350,11 +341,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to do the assignment for the student and instead guides through Socratic questioning and source direction—no direct final answers, finished drafts, or paste-ready table entries are provided. Criterion 1.1 is fully intact.",
-      "Scaffolding (1.2) is strong: the tutor acknowledges partial student progress (e.g., T3/T4 boundary logic in transcripts 2 and 3), builds on correct steps, and uses diagnostic questioning rather than method dumps when students are confused.",
-      "Meta-learning (1.3) loses 4 points: the tutor never explains the learning rationale for its constraints (why it won't just give numbers), and ends conversations with next-step prompts rather than inviting reflection on what the student learned or how their approach improved.",
-      "Dialogue quality (2.2) is fully intact: the off-topic request in transcript 2 turn 1 is immediately and cleanly redirected with no substantive engagement. No spiraling patterns detected.",
-      "Communication quality (3.1) loses 4 points for consistently long, multi-part responses in transcripts 1 and 3 (e.g., four-part numbered questions, five-bullet sourcing guides in single turns) where one or two focused prompts would have served better. Transcript 2 is generally more concise. Tone (3.2) is warm, supportive, and appropriately non-evaluative throughout all transcripts."
+      "Across all three transcripts, the tutor consistently refuses to complete the assignment for the student and uses Socratic questioning to guide data extraction, source evaluation, and methodological decisions—no deductions for 1.1.",
+      "Scaffolding is solid: the tutor builds on the student's progress turn by turn, acknowledges partially correct reasoning (e.g., ADHB/ADHK guess, boundary choice logic), and adapts appropriately to each student's confusion—no deductions for 1.2.",
+      "Meta-learning is weaker: the tutor enforces its 'I can't do this for you' stance without explaining the learning rationale to students, and does not prompt reflection after successful steps. Two deductions applied for 1.3.A.a and 1.3.D.a.",
+      "Dialogue quality is strong overall. The tutor redirects the off-topic request in T2 immediately (turn 1), anchors students to the assignment throughout, and advances rather than loops on concepts—no deductions for 2.1 or 2.2.",
+      "Communication quality is mixed. The tutor consistently uses too many concurrent sub-questions and multi-paragraph responses where a single focused prompt would serve better (turns 2-6 in T1, turns 2-5 in T2 and T3), earning a -4 deduction for 3.1.A.a. Tone remains supportive and non-evaluative throughout—no deductions for 3.2."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

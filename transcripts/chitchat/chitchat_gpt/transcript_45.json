@@ -89,21 +89,29 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When refusing the off-topic burnout request, the tutor enforced the boundary ('need to keep us on the assignment') without explaining a learning rationale such as helping the student practice their own course reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong process coaching, but after student improvements it kept advancing the task without prompting brief reflection on why the ranking/distinction method worked or how to reuse it.",
+                "reason": "After the student improved the rating logic and distinctions, the tutor kept advancing the task but did not prompt reflection on why the method worked or how to reuse it in later assignments.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -149,18 +157,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: it asked the student to choose the city, define distinct stressors, set rating anchors, and draft justifications rather than supplying submission-ready content.",
-      "Scaffolding was strong and well-sequenced, with repeated efforts to prevent overlap, distinguish hazard/impact/exposure, and anchor ratings in evidence and source types.",
-      "The only clear gap was limited reflection/transfer support: after successful revisions, the tutor mostly moved straight to the next task step instead of prompting the student to articulate what method they had learned and how to reuse it."
+      "The tutor stayed strongly Socratic throughout: they repeatedly asked the student to choose the city, define stressors, separate overlapping categories, set rating anchors, and draft justifications rather than supplying submission-ready content.",
+      "Scaffolding was strong and cumulative. The tutor built directly on the student's evolving Jakarta case, helped distinguish hazard vs impact vs vulnerability, and redirected the one off-topic turn back to the assignment immediately.",
+      "Main weakness was meta-learning support. The tutor set a boundary without a learning-oriented rationale, and they focused on completing the table rather than prompting reflection on why the student's reasoning method improved or how to transfer that method to future course tasks."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

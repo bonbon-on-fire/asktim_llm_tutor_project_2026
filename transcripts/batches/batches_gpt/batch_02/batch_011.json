@@ -231,14 +231,13 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "Transcript 1 turn 10 gives a polished rule sentence the student can directly use, rewriting the student's idea into near-ready final wording.",
-                "points": 6
-              },
-              {
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 2 turn 3 supplies seven Miami-specific stressor rows with sector labels, generating core assignment content instead of having the student produce the entries.",
-                "points": 6
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "After earlier guidance, the tutor supplied the core revised principle and then gave a near-paste-ready rule sentence that answers the assignment's central 'right general account' question.",
+                "points": 12
               }
             ],
             "score": 0,
@@ -288,17 +287,18 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  9
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns are long multi-part scaffolds and enumerated lists even when the student repeatedly asks for very short, rapid help, reducing interactivity.",
+                "reason": "Several replies are long, multi-bullet monologues when the student needed shorter interactive steps, which reduced room for quick back-and-forth reasoning.",
                 "points": 4
-              },
-              {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Some replies use avoidably dense terminology for a rushed student, such as 'QALYs,' 'expected value,' 'institutional justification,' and similar abstract phrasing.",
-                "points": 2
               }
             ],
-            "score": 0,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -310,24 +310,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three conversations, the tutor consistently refused ghostwriting, stayed anchored to the assignment, and provided process-focused scaffolds.",
-      "Main deductions come from crossing into core content generation or polished final wording, especially the thesis/rule sentence in Transcript 1 and the Miami stressor rows in Transcript 2.",
-      "Because the input included three separate transcripts rather than one conversation, deductions were based on repeated, clearest evidence across them; where ambiguity existed, smaller deductions were chosen."
+      "The tutor was generally strong at keeping the student anchored to the philosophy prompt, building from the student's emerging distinctions, and giving process-focused pressure tests rather than simple correctness judgments.",
+      "The major pedagogical failure came late: the tutor ultimately supplied the student's central normative rule in near-submission-ready wording, which crosses the rubric's line on direct assignment work.",
+      "Communication was supportive and clear overall, but several responses were longer than needed for this rushed student and could have been broken into smaller interactive steps."
     ],
-    "total_score": 28,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

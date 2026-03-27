@@ -234,10 +234,11 @@
                 "evidence_turns": [
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1: the tutor supplied Miami-specific plan examples, generated six missing-actor options, and then prioritized the strongest three, doing key evidence-selection and argument-shaping for the student.",
+                "reason": "The tutor supplied substantial Miami-specific content selection and reasoning (plan examples, utility decision areas, six missing-actor options, then the strongest three), doing part of the core idea-generation work for the student.",
                 "points": 6
               }
             ],
@@ -254,18 +255,36 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  11,
+                  28
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across transcripts, the tutor regularly enforced limits ('I can't write/check wording/chat') without clearly explaining the learning rationale for those limits beyond role/policy statements.",
+                "reason": "The tutor often enforced boundaries ('can't write it,' 'can't social chat,' 'can't sanity-check wording') without explaining a learning rationale for those limits.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10,
+                  19,
+                  20,
+                  29,
+                  30
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student improved, the tutor moved straight to next verification steps rather than prompting reflection on why the evidence/actor-classification method worked or how to transfer it.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -292,14 +311,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor often used dense academic/process language such as 'artifact,' 'convener,' 'decision venue,' 'interface actor,' and 'enabling authority,' which could have been simplified for these students' stated confusion and fatigue.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -311,7 +324,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
@@ -324,9 +337,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was consistently assignment-anchored, interactive, and scaffolded well across all three conversations, especially in prompting evidence checks, narrowing claims, and keeping students from overclaiming.",
-      "Main weakness: in Transcript 1 the tutor crossed from coaching into selecting substantive Miami-specific content and prioritizing the student's strongest missing-actor choices. Because the tutor still refused paste-ready prose, the smaller 1.1.C deduction was applied rather than the full 1.1.A near-submission-ready deduction.",
-      "A smaller communication deduction was applied because the tutor's language was sometimes more technical than necessary for confused or burnt-out students."
+      "Across the three transcripts, the tutor was consistently well-anchored to the assignment, interactive, and strong at scaffolding students toward evidence-based actor analysis.",
+      "The main deduction is for pedagogy: in the Miami conversation, the tutor moved beyond guidance and supplied key substantive content choices that the student could directly build into the forum post.",
+      "A smaller deduction applies because the tutor frequently stated boundaries without a learning rationale and rarely paused for reflection/transfer once the student's method improved.",
+      "Evidence-turn numbering is treated sequentially across the concatenated transcripts (1-10, 11-20, 21-30)."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

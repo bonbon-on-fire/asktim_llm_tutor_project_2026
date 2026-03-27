@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 7, the tutor provides fully filled-in mechanisms for all 10 rows (e.g., 'higher baseline seas → more high-tide flooding + drainage limits', 'surge + wind + compound rainfall', 'salinity moving into aquifer/soils', etc.). While brackets are left for evidence and affected groups, the tutor completes the key reasoning step—the causal mechanism that bridges the hazard to the stressor—for every single row. This is the core intellectual work the student should be doing, not just selecting facts to fill in.",
+                "reason": "In Turn 7, the tutor provides pre-filled mechanisms, evidence categories, and affected sectors for all 10 stressor rows inside fill-in-the-blank shells. This effectively does the key reasoning step—connecting each hazard to its mechanism and sector impact—leaving only trivial bracket-filling for the student. The tutor resolved the critical bridge from hazard to justification structure for every row.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces its 'I can't do this for you' stance multiple times but never explains the learning rationale to the student—why doing this work themselves builds a skill (e.g., evidence-based reasoning, stressor analysis) that matters for the course or future assignments. The tutor mentions 'skill this assignment is testing' once (Turn 5) but does not elaborate on what skill or why it matters for the student's development.",
+                "reason": "Throughout the conversation, the tutor enforces its no-direct-answer policy but rarely explains the learning rationale (active reasoning or long-term skill development) in a substantive way. The one brief mention in Turn 5 ('short-circuits the skill this assignment is testing') is limited and not expanded upon as a rationale for the constraints applied throughout.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their reasoning process or what changed in their thinking. There is no invitation to consider why a particular rating approach works, or what method they used to arrive at their anchors. The conversation ends on a factual lookup task with no reflective component.",
+                "reason": "The tutor never prompts the student to reflect on why a method worked or what changed in their thinking. No reflection or transfer-support prompts appear at any point in the conversation.",
                 "points": 2
               }
             ],
@@ -144,26 +144,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles repeatedly through the same pattern: student requests completed work → tutor refuses → tutor provides a structured scaffold that does increasing amounts of the work. By Turns 7–10, the tutor is providing sentence templates with mechanisms filled in, directing the student to specific NOAA sources, and naming the exact tide gauge station. The tutor does not consolidate progress, synthesize what the student has accomplished, or shift strategy in a meaningful way. The student continues to push and the tutor continues to give incrementally more without reframing or synthesizing.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -175,7 +157,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -186,13 +168,13 @@
               {
                 "evidence_turns": [
                   2,
+                  3,
                   4,
                   5,
-                  6,
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor responses are multi-paragraph monologues that provide extensive structured content (e.g., Turn 2 lists 10 hazard buckets with evidence anchors; Turn 4 gives a detailed pairwise comparison framework; Turn 5 restates the entire anchor framework; Turn 7 provides a full 10-row template with mechanisms filled in). These lengthy replies reduce the student's opportunity to think independently and repeatedly front-load content that the student should generate. The pattern is consistent across multiple turns.",
+                "reason": "Multiple turns feature long multi-paragraph responses that provide extensive lists, structured frameworks, and fully fleshed-out scaffolding before checking what the student already knows. Turn 2 lists all 10 Miami hazard buckets. Turn 5 provides a full decision rule. Turn 7 delivers a 10-row template with pre-filled mechanisms. These lengthy responses repeatedly reduce the student's opportunity to think independently.",
                 "points": 4
               }
             ],
@@ -214,20 +196,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to complete the assignment outright, which is appropriate, and maintains good assignment anchoring throughout. The tutor also does a reasonable job scaffolding the student's rating process by introducing anchor points and pairwise comparison.",
-      "However, in Turn 7 the tutor crosses into doing the key reasoning work for the student by pre-filling all 10 causal mechanisms in the sentence templates, which triggers a 1.1.C.b deduction. While brackets are left for facts and affected parties, the mechanism (the intellectual core of the justification) is provided by the tutor rather than elicited from the student.",
-      "The conversation also exhibits a clear spiraling pattern (2.1.A.a): the tutor repeats a similar structure across all 10 turns—refuse → scaffold—without meaningfully synthesizing progress or shifting strategy. By the final turns, the tutor is naming the exact NOAA tide gauge station, which represents further incremental slippage.",
-      "Meta-learning is weak throughout: the tutor does not explain the learning rationale behind its constraints (beyond a brief mention in Turn 5), and never invites the student to reflect on their reasoning process or what skills they are developing.",
-      "Communication is often heavy: multiple turns feature long multi-paragraph responses with dense scaffolds that, while structured, reduce student cognitive engagement rather than increasing it. The tone remains supportive and non-punitive throughout."
+      "The tutor consistently refused to complete the assignment for the student and maintained appropriate boundaries across all 10 turns, which is commendable. It correctly declined to paste ready-made stressor rows, ratings, or justifications.",
+      "However, Turn 7 represents a significant guided-discovery failure: the tutor provided pre-filled mechanisms, evidence categories, and affected-sector links for all 10 stressor rows inside a fill-in-the-blank template. This effectively did the core reasoning work (connecting hazard → mechanism → sector) for every row, constituting criterion 1.1.C.b (tutor does the key reasoning step). A -6 deduction is applied under 1.1.",
+      "The tutor never explained the pedagogical rationale behind its constraints in a substantive way, and never prompted the student to reflect on their learning process or transfer insights—leading to deductions in 1.3.A.a and 1.3.D.a.",
+      "Several responses (Turns 2, 5, 7) were notably long and front-loaded with full frameworks or lists, reducing student cognitive engagement and prompting a -4 deduction under 3.1.A.a.",
+      "Scaffolding and progression (1.2) were handled well: the tutor built on the student's submitted anchor choices and progressed the task logically. Dialogue anchoring (2.2) and tone (3.2) were also solid throughout."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

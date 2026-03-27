@@ -120,8 +120,22 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used long, multi-part replies with extensive templates/checklists where shorter interactive prompts may have been more appropriate, increasing cognitive load despite otherwise clear structure.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -133,24 +147,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submission-ready philosophy content and instead used structured prompts, templates, and case-by-case questions to keep the student doing the reasoning.",
-      "Across the conversation, the tutor built directly on the student's developing thesis about means, side effects, rights, and consent, and stayed anchored to the assigned cases rather than drifting off-task.",
-      "Some replies were firm and repeatedly reasserted authorship boundaries, but they still advanced the student's reasoning each time, so no clear rubric-supported deduction was applied."
+      "The tutor consistently avoided doing the assignment for the student, maintained authorship boundaries, and used guided questions and templates to elicit the student's own thesis and case analysis.",
+      "Scaffolding was strong: the tutor built on the student's emerging distinction between means/side-effect and later rights/consent, and stayed tightly anchored to the actual prompt and lecture-case uncertainty.",
+      "Main weakness: responses were often quite long and heavily structured across many turns, which somewhat reduced bite-sized interactivity even though the content remained clear and supportive."
     ],
-    "total_score": 46,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

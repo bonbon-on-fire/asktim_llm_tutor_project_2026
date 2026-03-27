@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the provided conversations, the tutor gave strong step-by-step coaching but rarely prompted explicit reflection on what method the student could reuse or why the process choices worked beyond the immediate task.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -267,14 +261,20 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "Across Transcripts 2 and 3, the student worked for many turns with only 3 stressors and no clear culture coverage, despite the assignment explicitly asking students to consider culture among sectors; the tutor only re-anchored to that breadth late (e.g., asking about culture at the end rather than earlier).",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -300,18 +300,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided transcripts, the tutor consistently used guided questioning, built on student choices, and avoided doing submission-ready work for the student.",
-      "The main gap was limited explicit reflection/transfer support: the tutor improved the student's table entries well, but rarely paused to help the student name a reusable method for future stressor-rating tasks.",
-      "Because turn numbering resets across the three transcripts, deductions are based on repeated conversation-level evidence rather than a single shared turn index."
+      "The tutor consistently used guided questioning, kept the student doing the reasoning, and avoided writing submission-ready content for the student.",
+      "Scaffolding was strong: the tutor built on student answers, helped separate overlapping stressors, and gave concrete method-level guidance about evidence, metrics, and rating logic.",
+      "Tone was supportive and appropriately redirecting when the student went off-topic.",
+      "Main weakness: assignment breadth was not re-anchored early enough in Transcripts 2 and 3, where the student spent most of the exchange on only three stressors with no culture-related coverage before the tutor raised that issue near the end."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -351,20 +351,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the provided transcripts, the tutor gave strong analytic scaffolds and stress tests, but did not explicitly prompt brief reflection on why the method worked or how to transfer it beyond the immediate draft task.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -391,14 +385,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used multi-part, template-heavy replies with several prompts at once; given the student's time pressure, shorter single-step checks would have been more interactive and lower-load.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -410,25 +398,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided transcripts, the tutor consistently refused to do submission-ready writing and instead used guided questions, templates, and case-by-case stress testing to keep the student doing the core reasoning.",
-      "The tutoring stayed tightly anchored to the assignment and generally built well on student progress, especially when refining distinctions like means vs side-effect and testing them across cases.",
-      "Main weaknesses were communication load and transfer support: several responses bundled too many prompts at once, and explicit reflection on why a method worked or how to reuse it was limited.",
-      "Because multiple transcripts were supplied under a single-conversation schema, this score reflects the consistent tutoring pattern across the provided transcripts; turn-specific references were omitted due repeated turn numbering."
+      "Across the supplied transcripts, the tutor consistently refused submission-ready writing, avoided supplying thesis sentences, polished prose, or case verdicts the student could directly paste, and instead used structured prompts, templates, contrast tests, and follow-up questions to keep authorship with the student.",
+      "The tutor stayed tightly anchored to the assignment, built on the student's developing distinctions (means vs side-effect, rights/consent, targeting, substitution), and gave method-level feedback that helped the student refine a defensible principle across cases.",
+      "No clear rubric-triggering violations appear. Although the tutor repeatedly restated refusal boundaries, those refusals were paired with new scaffolds and rationale rather than unproductive repetition."
     ],
-    "total_score": 40,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

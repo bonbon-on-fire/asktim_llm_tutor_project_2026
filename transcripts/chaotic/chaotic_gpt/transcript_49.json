@@ -74,8 +74,19 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Although the tutor refused to write the essay, it supplied major answer content and the key reasoning bridge: the all-cases act consequentialist verdict pattern and the core alternative principle built around side-effect vs means/rights, which substantially resolved the central philosophical move for the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -89,33 +100,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  6,
+                  7,
                   9
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-writing boundary but did not clearly explain the learning rationale beyond stating that the student must do the writing.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  7,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved their position, the tutor checked consistency and added next steps, but did not prompt reflection on why the method worked or what the student had learned for transfer.",
+                "reason": "Once the student produced a workable principle and case classification, the tutor checked consistency but did not prompt reflection on why that method worked or how to transfer it to similar moral cases.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 16,
           "max": 24
         }
       },
@@ -161,18 +160,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly avoided doing the student's assignment and consistently used guided prompts, templates, and classification tests to keep the student reasoning through act consequentialism, trolley variants, and the student's own alternative principle.",
-      "Scaffolding was generally strong: the tutor built on the student's emerging means/side-effect distinction, checked internal consistency across cases, and kept the conversation anchored to the prompt despite repeated requests for a submission-ready answer.",
-      "Main deductions are limited to meta-learning: the tutor enforced boundaries without much explicit explanation of the learning rationale, and there was little explicit reflection on why the student's method or revisions worked once the argument became coherent."
+      "The tutor stayed anchored to the assignment, maintained a supportive non-grading tone, and generally scaffolded the student's progress through short targeted prompts rather than writing the submission.",
+      "Main deduction: despite refusing paste-ready prose, the tutor gave away substantial substantive content, especially the core alternative principle and its application pattern, which reduced student-generated reasoning on the assignment's central philosophical issue.",
+      "A smaller deduction was applied for limited reflection/transfer support after the student reached a workable framework; no larger penalty was taken because the conversation still showed real back-and-forth progress and consistent refusal to provide a full submit-ready response."
     ],
-    "total_score": 42,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

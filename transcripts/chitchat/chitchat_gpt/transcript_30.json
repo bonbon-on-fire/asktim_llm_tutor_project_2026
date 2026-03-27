@@ -89,22 +89,34 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states boundaries and refusals, but does not explain the learning rationale for why the student should do the reasoning work.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
                   6,
                   8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step coaching, but did not prompt the student to reflect on why the narrowing, labeling, or endpoint-selection methods were working or how to reuse them later.",
+                "reason": "After the student makes progress, the tutor keeps advancing the task without prompting reflection on why the narrowing, labeling, or endpoint-selection method worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -150,18 +162,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic turns immediately, and used guided discovery rather than supplying the city, stressors, or final table entries.",
-      "Scaffolding was strong: the tutor progressively moved from city selection to stressor distinctness, sector labeling, endpoints, and source-ready metrics while building on the student's prior answers.",
-      "The main gap was meta-learning transfer: the tutor rarely paused to ask the student to reflect on why a chosen method helped or how to reuse the approach for later assignments."
+      "The tutor stayed strongly assignment-focused, redirected off-topic turns immediately, and consistently used guided prompts rather than doing the student's city selection or stressor table work.",
+      "Scaffolding was effective: the tutor built from the student's guesses, narrowed choices, emphasized non-overlap, and chunked the task into manageable next steps.",
+      "Main weaknesses were meta-learning related: the tutor enforced boundaries without explicitly giving a learning rationale, and rarely asked the student to reflect on why the decision process or structure was effective.",
+      "Tone was firm but remained supportive and task-oriented, so deductions were kept limited."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

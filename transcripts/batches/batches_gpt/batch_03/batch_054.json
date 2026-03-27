@@ -235,31 +235,34 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signaled time pressure or inability to browse, but the tutor kept assigning new lookup steps instead of first diagnosing the minimal help needed or adapting the support to that constraint.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the conversations, the tutor frequently enforced refusal boundaries without clearly explaining the learning rationale for those limits; e.g., Transcript 1 repeatedly says it will not provide the code, citation, or DOI, but rarely frames this in terms of skill-building or long-term learning.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives process guidance, but rarely prompts explicit reflection on why a method worked or what the student learned after progress; the conversations generally move task-to-task without brief transfer-oriented reflection.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 21,
           "max": 24
         }
       },
@@ -268,8 +271,17 @@
           "2.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Transcript 1 shows repeated refusal-plus-search prompts without enough synthesis or adjustment despite the student's continued time pressure and inability to browse; the tutor cycles through similar moves across turns 2-10 with limited forward progress.",
+                "reason": "The exchange spirals on the same refusal-plus-lookup pattern around the Köppen code and citation details without real progress, synthesis, or a switch to a simpler strategy.",
                 "points": 4
               }
             ],
@@ -300,8 +312,13 @@
           "3.2": {
             "deductions": [
               {
+                "evidence_turns": [
+                  4,
+                  6,
+                  10
+                ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Especially in Transcript 1, several refusals are phrased in a rigid way ('No—I won’t give you the code,' 'I’m not going to supply the DOI for you'), which risks sounding cold and may reduce tutoring trust even though the tutor stays task-focused.",
+                "reason": "Several replies use blunt refusal framing (for example, 'No—I won’t give you the code') that reads as rigid and may increase student frustration.",
                 "points": 2
               }
             ],
@@ -317,19 +334,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 37,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently avoids doing submission-ready work and usually keeps the student anchored to the assignment with reasonable guided questions.",
-      "The strongest weakness is Transcript 1's repetitive refusal pattern: the tutor keeps asking for searches/checks without sufficiently adapting when the student repeatedly signals time pressure or inability to browse.",
-      "Transcript 2 and Transcript 3 show stronger scaffolding and better use of the student's partial progress, which is why pedagogy and assignment anchoring remain relatively strong overall.",
-      "Because the input contains three separate transcripts rather than one continuous conversation, deductions were applied conservatively and based on the clearest recurring patterns."
+      "Scored Transcript 1 only because the provided schema supports one conversation at a time.",
+      "The tutor stayed assignment-focused, avoided doing the graded table entry for the student, and generally used guided questioning rather than giving submission-ready answers.",
+      "Main weaknesses were repeated spiraling on the same Köppen-source issue without adapting when the student said they could not browse, plus a somewhat rigid refusal tone in several turns."
     ],
-    "total_score": 36,
+    "total_score": 37,
     "judge_llm_calls": 1
   }
 }

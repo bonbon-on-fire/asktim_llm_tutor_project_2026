@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In turn 2, the tutor provides a comprehensive, detailed list of exact sources, URLs, and precise metrics for every single field in the table (location, population, race/ethnicity, area, income, GDP, Köppen zone). This does the key reasoning step of identifying and selecting the appropriate sources and metrics for the student, rather than guiding the student to find and evaluate sources themselves.",
+                "reason": "In Turn 2, the tutor provides an extensive, near-complete list of all sources, precise URLs, exact metric names, and BEA page descriptions for every single field in the table—effectively doing the research/sourcing step that the student was supposed to do, rather than guiding them to find these sources themselves.",
                 "points": 6
               }
             ],
@@ -109,13 +109,12 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to give direct answers but never explicitly explains the pedagogical rationale (e.g., that finding and evaluating sources is a core skill, or that this develops long-term research capacity). It simply says 'I can't' without articulating a learning rationale.",
+                "reason": "The tutor never explains why it won't just give answers to the student (the rationale of building research skills or active learning). It simply refuses without explaining the pedagogical reasoning behind guided discovery.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   2,
-                  3,
                   4,
                   5,
                   6,
@@ -125,7 +124,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they are learning about source evaluation, geographic consistency, or citation practice. The conversation ends without any consolidation of the methods used or transfer-oriented reflection.",
+                "reason": "The tutor never prompts the student to reflect on what they've learned about how to find and evaluate urban data sources, or why the method of checking source labels/vintages matters for data quality. No transfer or reflection support is offered across the conversation.",
                 "points": 2
               }
             ],
@@ -168,7 +167,7 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 2 is an extremely long monologue with seven numbered source sections, sub-bullets, URLs, ACS table IDs, and two follow-up questions. This is far more than an interactive focused prompt; it overwhelms the student with information all at once and significantly reduces the student's opportunity to think and engage.",
+                "reason": "Turn 2 is an extremely long monologue listing all seven data fields with sources, URLs, exact metric descriptions, and two follow-up questions. This multi-paragraph response does the exploratory work for the student rather than using short, interactive steps to prompt the student to find sources incrementally.",
                 "points": 4
               }
             ],
@@ -197,11 +196,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintained a Socratic stance throughout the conversation—declining to give final numbers, redirecting the student back to sources, and asking verification questions. This was consistent and well-applied across turns 3–10.",
-      "The main deduction in 1.1 is from turn 2, where the tutor provided a highly detailed, pre-organized list of exact sources, URLs, ACS table codes, and metric choices for every single table field. This crosses into doing the key reasoning step (source identification and selection) for the student rather than guiding them to discover it, triggering 1.1.C.b.",
-      "Turn 2 is also penalized under 3.1 for being an excessively long monologue. Seven numbered sections with sub-bullets and follow-up questions is far beyond a focused, bite-sized prompt appropriate for this stage.",
-      "Meta-learning (1.3) is penalized because the tutor never explains why it withholds direct answers (no learning rationale articulated) and never prompts reflection on method or process at any point in the conversation.",
-      "Scaffolding (1.2), dialogue quality (2.1, 2.2), and tone (3.2) are all strong—the tutor builds appropriately on student progress, keeps the student on-task, and maintains a supportive and professional tone throughout."
+      "The tutor generally maintains a Socratic approach—refusing to fill in the table directly, verifying student-found values, and asking students to return with specific data before confirming it. However, Turn 2 is a significant departure: the tutor provides a complete, field-by-field sourcing guide with exact URLs, metric names, and methodology notes for all seven required table fields. This effectively does the research/sourcing step for the student (1.1.C.b) and also constitutes a lengthy monologue that reduces student thinking opportunity (3.1.A.a). These two deductions are applied to different criteria to avoid double-penalization.",
+      "From Turn 3 onward, the tutor recovers well, consistently asking the student to report exact labels before confirming them, refusing to provide the Köppen code directly, and refusing to provide the BEA number. Scaffolding and progression are handled well throughout: the tutor builds on each student-provided piece of information and correctly diagnoses and addresses confusion points.",
+      "The tutor never explains its pedagogical rationale (why it won't just give answers), and never prompts any reflection or transfer about research methodology skills being developed—both are missed opportunities across the full conversation.",
+      "Dialogue quality is strong: no spiraling, no off-topic content, and the assignment is kept well-anchored throughout. Tone is consistently supportive and not condescending."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

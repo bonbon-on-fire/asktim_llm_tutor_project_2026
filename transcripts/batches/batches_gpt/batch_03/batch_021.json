@@ -243,8 +243,12 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  7,
+                  10
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor consistently pushed to the next research or rating step but did not pause for brief reflection on why the student's method now worked or how to transfer the method to later stressors.",
+                "reason": "The tutor gave strong step-by-step coaching, but after the student improved, it did not prompt explicit reflection on what method the student could reuse for the rest of the table or why the calibration approach worked.",
                 "points": 2
               }
             ],
@@ -281,14 +285,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One reply exposed internal JSON/meta labels (for example, the Transcript 1 response with \"pedagogical-reasoning\" and \"Student-facing-answer\") instead of clean student-facing language, creating avoidable complexity and cognitive load.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -300,25 +298,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided conversations, the tutor stayed strongly assignment-anchored, refused to do paste-ready work, and used guided questioning to make the student choose cities, stressors, sector tags, ratings, and evidence.",
-      "The tutor generally scaffolded well by building on student drafts rather than restarting, and gave useful method-level guidance about defining rating rules, separating stressors from impacts, and matching claims to evidence.",
-      "Main weaknesses were limited reflection/transfer support at the end of successful steps and one clear communication lapse where internal meta-formatting was shown to the student.",
-      "Because the input bundled three conversations rather than one, deductions were kept conservative and based only on clear repeated patterns or unmistakable single-turn issues."
+      "Scored using Transcript 1 only, since multiple transcripts were provided but the schema supports a single conversation score and turn references would otherwise be ambiguous.",
+      "The tutor consistently refused submission-ready work, kept the student anchored to the Miami stressors table, and used short, targeted questions to make the student supply tags, ratings, mechanisms, and evidence.",
+      "Main weakness: the tutor emphasized immediate task completion well but offered limited explicit reflection on how the student could transfer the rating/justification method to future rows or assignments."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

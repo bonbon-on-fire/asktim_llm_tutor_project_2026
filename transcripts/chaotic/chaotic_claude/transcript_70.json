@@ -83,10 +83,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  2,
+                  3
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student asked for sentence starters (Turn 5), the tutor provided them without first asking what the student already knew or diagnosing where the writing difficulty lay. The tutor gave a full method dump (5 pre-written frames) without checking what the student understood about academic justification writing.",
+                "reason": "When the student expressed time pressure and confusion in turns 2 and 3, the tutor responded with fairly detailed lists and options rather than diagnosing the exact sticking point (what did the student already know? what was stopping them from starting?). The tutor launched into a structured method explanation rather than first asking a targeted diagnostic question.",
                 "points": 3
               }
             ],
@@ -98,13 +99,19 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
                   6,
                   7,
                   8,
-                  9
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.3.B.a",
-                "reason": "Turns 6–9 are dominated by citation formatting help. The tutor provides detailed APA formatting guidance without offering any method-level feedback about why or how citations support academic arguments, or how to integrate them meaningfully. The tutor focuses entirely on mechanics, not process.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced constraints (e.g., 'I can't draft a table for you') but rarely explained the pedagogical rationale—why the student doing the work matters for their learning or skill development. The occasional brief mention ('that would be doing the assignment') falls short of explaining the learning benefit.",
                 "points": 2
               },
               {
@@ -121,7 +128,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts reflection on the student's thinking process, never asks what changed in the student's understanding, and never reinforces method choices. The conversation ends without any moment of process reflection or transfer support.",
+                "reason": "The tutor never prompted the student to reflect on their thinking process, what they had learned, or how the methods they were developing would transfer to later parts of the course (e.g., building a climate action plan). No metacognitive check-in or reinforcement of method choices occurred.",
                 "points": 2
               }
             ],
@@ -153,7 +160,7 @@
                   9
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "Turns 6–9 are entirely off-task: the student asks for pre-made citations and APA formatting help, which is not part of the assignment (the assignment says 'general evidence/conditions' may suffice and citation style was never specified as a task). The tutor engages fully and substantially with this off-topic request across four full turns instead of redirecting to the actual stressor table work.",
+                "reason": "Turns 6 through 9 drifted substantially off-task into formatting citations and APA style, which is not part of the Stressors Table assignment. The tutor engaged substantively and repeatedly with citation formatting requests, providing multiple formatted references and detailed APA rules, rather than quickly redirecting the student back to the core assignment work (selecting stressors, rating them, and writing justifications).",
                 "points": 4
               }
             ],
@@ -178,7 +185,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2, 3, and 4 contain multi-paragraph replies with extensive menus, templates, and multi-step instructions where shorter, more focused prompts would have been more appropriate. Turn 2 especially gives a long structured method dump when a brief refusal plus one simple question would have sufficed.",
+                "reason": "In turns 2, 3, and 4, the tutor repeatedly gave multi-part, list-heavy responses when shorter, more targeted prompts would have been more appropriate given the student's stated time pressure and confusion. Long menus of stressor options and multi-step instructions appeared where a single focused question or a minimal nudge would have served better.",
                 "points": 4
               }
             ],
@@ -207,12 +214,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refused to do the student's assignment (ratings, justifications, full table), which is the strongest element of the session. 1.1 receives full marks.",
-      "However, across turns 6–9 the tutor engaged substantially with citation-formatting requests (APA 7, full references, in-text formats, multi-agency authorship rules) that are peripheral to the actual assignment task, constituting a significant off-topic engagement penalized under 2.2.B.a.",
-      "The tutor provided sentence-starter frames (Turn 5) and citation templates without first diagnosing what the student already understood or where the difficulty lay, triggering 1.2.B.a.",
-      "No meta-learning or reflection was offered at any point: the tutor never commented on the student's reasoning process quality, never asked the student to reflect on what they learned, and never reinforced method choices, triggering both 1.3.B.a and 1.3.D.a.",
-      "Several tutor turns (especially 2, 3, 4) were long and menu-heavy when brief, focused prompts would have been more interactive and pedagogically effective, triggering 3.1.A.a.",
-      "Tone was consistently supportive and respectful throughout; no grading-stance issues were observed."
+      "The tutor consistently refused to do the assignment for the student (turns 1–3, turn 10), maintaining academic integrity boundaries well, which is the strongest feature of this conversation.",
+      "On 1.1, the tutor never gave final answers, drafted the table, or provided submission-ready content; even the sentence frames in turns 5 and 10 required the student to supply all factual content. No deduction was warranted.",
+      "On 1.2, turns 2–3 show the tutor jumping into structured option lists without first diagnosing where the student was stuck, which triggered a 1.2.B.a deduction.",
+      "On 1.3, the tutor never explained the pedagogical rationale for withholding direct help, and never prompted the student to reflect on their process or think about skill transfer, triggering deductions on both 1.3.A.a and 1.3.D.a.",
+      "On 2.2, the conversation drifted substantially off the assignment from turn 6 onward into APA citation formatting. The tutor engaged repeatedly and in depth with citation-related requests that were not part of the Stressors Table exercise, warranting a full 2.2.B.a deduction.",
+      "On 3.1, the tutor's responses in turns 2–4 were notably long and list-heavy given the student's stated time pressure, reducing the student's opportunity to think and respond. A full 3.1.A.a deduction was applied.",
+      "Tone throughout was supportive and constructive with no grading language, so 3.2 retained full marks.",
+      "No double-penalization was applied: the citation drift (2.2) and long responses (3.1) are distinct behaviors."
     ],
     "total_score": 31,
     "judge_llm_calls": 1

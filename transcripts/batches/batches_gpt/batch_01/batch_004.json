@@ -231,8 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the transcripts, the tutor supplies substantial assignment content by naming specific actors, offices, plans, organizations, centers, and program examples for the student to plug in, rather than keeping idea generation primarily with the student.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Across the set, the tutor sometimes resolved key content choices for the student instead of eliciting them first, such as choosing the safer NYC lead/framing options and recommending which hazards/barriers to emphasize.",
                 "points": 6
               }
             ],
@@ -249,18 +249,23 @@
           "1.3": {
             "deductions": [
               {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries ('I can’t write this for you') without clearly explaining the learning rationale beyond brief refusal.",
+                "points": 2
+              },
+              {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives useful drafting process support, but does not meaningfully prompt reflection on why a method worked, what the student learned, or how to transfer the approach beyond this assignment.",
+                "reason": "The tutor gave process prompts and checks, but did not meaningfully prompt reflection on why the method worked or what the student learned for future assignments.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -290,7 +295,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly gives long, checklist-heavy and template-heavy replies where shorter interactive prompts would have preserved more student thinking space.",
+                "reason": "The tutor repeatedly used long checklist/template responses where shorter interactive moves were more appropriate, especially given the student's time pressure.",
                 "points": 4
               }
             ],
@@ -312,18 +317,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the supplied transcripts, the tutor consistently refuses submission-ready writing, stays anchored to the assignment, and offers supportive coaching-oriented alternatives.",
-      "Main deductions come from supplying a fair amount of core assignment content (specific actors, plans, offices, and examples) and from using lengthy scaffold/template responses that sometimes reduce interactivity.",
-      "Because multiple transcripts were provided in one prompt, deductions are based on recurring overall patterns; where evidence was somewhat ambiguous, the smaller deduction was chosen."
+      "Across the three provided transcripts, the tutor consistently refused submission-ready writing and kept the conversation anchored to the assignment with structured scaffolds.",
+      "Main deductions come from occasional direct resolution of key content choices for the student, limited explanation of the tutoring rationale, lack of reflection/transfer support, and repeatedly long template-heavy replies.",
+      "Because the input bundled three separate transcripts while the schema supports one score, this judgment aggregates repeated patterns across the set and applies conservative deductions where evidence could fit multiple rubric areas."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

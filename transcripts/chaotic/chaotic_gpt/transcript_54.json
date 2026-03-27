@@ -74,17 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "After the student drafted a sentence, the tutor supplied line-level replacement wording (e.g., swapping in specific phrases), which crosses into polishing final text rather than only coaching process.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -98,10 +89,11 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor stayed task-focused and did not prompt brief reflection on why the evidence-extraction/citation method worked or how to transfer it to the remaining stressors.",
+                "reason": "After the student successfully used the source-check method to draft a citation-based sentence, the tutor gave local revision guidance but did not prompt reflection on why this method worked or how to reuse it for the remaining stressors.",
                 "points": 2
               }
             ],
@@ -111,7 +103,7 @@
           }
         },
         "base": {
-          "score": 16,
+          "score": 22,
           "max": 24
         }
       },
@@ -157,18 +149,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor strongly resisted doing the assignment for the student, kept the work anchored to the stressors-table task, and provided concrete scaffolds for rating, sourcing, and citation.",
-      "Main deduction is for turn 10, where the tutor gave line-level wording substitutions on the student's sentence; this is limited rather than a full rewrite, but it still edges into final-writing help under the rubric.",
-      "A smaller deduction was applied because the conversation ended without explicit reflection or transfer support after the student made progress."
+      "The tutor consistently refused to provide submission-ready content, repeatedly re-anchored the student to doing the reasoning and source extraction themselves, and used stepwise prompts and templates to keep the work aligned to the assignment.",
+      "Communication was concise, supportive, and on-task. The only clear gap was limited reflection/transfer support after the student began succeeding with the citation method."
     ],
-    "total_score": 38,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

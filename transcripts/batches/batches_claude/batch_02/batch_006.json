@@ -235,7 +235,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 5, tutor provides the proxy geography options and a fill-in justification template that essentially does the key reasoning step of selecting and framing the GDP proxy for the student, rather than guiding the student to reason through the trade-offs themselves.",
+                "reason": "In Transcript 1 Turn 5, tutor provides a fully formed justification template with specific fill-in choices for all blanks (proxy geography, year, dataset), doing the key reasoning step of framing the GDP proxy defense rather than letting the student work through how to justify the boundary choice.",
                 "points": 6
               }
             ],
@@ -253,36 +253,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
+                  10,
+                  10,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces constraints (declining to fill in tables, write paragraphs, etc.) without consistently explaining the learning rationale—e.g., why the student benefits from doing the reasoning themselves for long-term skill development. The refusals are stated but the pedagogical 'why' is largely absent.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what their thinking process revealed or what changed in their understanding. Sessions end with task completion without any reflection on method or learning transfer.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
                   4,
                   5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  6
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked, or what they learned from the process. Conversations end on task completion with no transfer or reflection support.",
+                "sub_criterion_id": "1.3.B.b",
+                "reason": "In Transcript 2 Turns 4-6, tutor feedback is largely confirmatory ('broadly defensible,' 'tags look right') without directing the student toward stronger evidence-gathering methodology or how to approach rating stressors more rigorously.",
                 "points": 2
               }
             ],
@@ -324,12 +310,10 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
-                  5,
-                  6
+                  4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turns 2, 3, 4, 5, and 6 are multi-paragraph monologues with many sub-points, lists, and multiple questions at once, consistently reducing the student's opportunity to process and respond incrementally. The density of information across many turns reduces interactive dialogue quality.",
+                "reason": "In Transcript 1 Turns 2-4, the tutor repeatedly produces very long multi-paragraph responses with extensive lists of sources, filters, and options when shorter, more focused prompts would better preserve student thinking time. Turn 2 is especially dense with seven numbered sections each containing multiple sub-bullets.",
                 "points": 4
               }
             ],
@@ -338,17 +322,7 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Not applicable here; keeping 3.2 clean.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
@@ -368,13 +342,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across three transcripts the tutor consistently refuses to complete the assignment for the student and uses Socratic questioning to guide the student toward their own answers—this is a genuine strength.",
-      "However, in Transcript 1 Turn 5, the tutor provides a GDP proxy justification template with fill-in blanks that effectively does the key reasoning step (selecting and framing the proxy) for the student, triggering a 1.1.C.b deduction of 6 points. The template in Turn 6 is borderline but less severe because the student had already made their own choice (NUTS3/Eurostat).",
-      "The tutor rarely explains the learning rationale for its constraints (1.3.A.a), which means students experience refusals without understanding why doing the work themselves matters for their development.",
-      "No reflection or transfer prompts appear in any of the three conversations (1.3.D.a); conversations end on task completion without consolidating what the student learned methodologically.",
-      "In Transcript 1 especially, responses are frequently multi-paragraph with many simultaneous questions and sub-items, reducing the student's opportunity for interactive thinking (3.1.A.a). Transcripts 2 and 3 are better but still occasionally verbose.",
-      "Tone is consistently supportive and professional, assignment anchoring is strong throughout, and the tutor never spirals unproductively—these are positive aspects not penalized.",
-      "The 3.2 deduction entry with 0 points was included in error; it carries no deduction and does not affect the score."
+      "The tutor consistently refuses to complete assignments for the student across all three transcripts, correctly maintaining academic integrity boundaries and redirecting toward student-generated work.",
+      "In Transcript 1 Turn 5, the tutor provides a near-complete justification template with all fill-in options specified, crossing into doing the key reasoning step for the student (1.1.C.b). This is penalized at 6 points.",
+      "Meta-learning is weak throughout: the tutor never prompts reflection on process or methodology after successful student revisions, and feedback tends to confirm correctness without directing toward stronger research or argumentation methods.",
+      "Communication in Transcript 1 is notably over-long, with multi-paragraph source-listing responses (Turns 2-4) that reduce student cognitive engagement. This is penalized under 3.1.A.a.",
+      "Scaffolding and dialogue quality are strong: the tutor consistently builds on student-supplied content, redirects from off-task requests, and advances the conversation without spiraling or losing assignment focus.",
+      "No evidence of rewriting student text for submission (1.1.B), fabricating submission-ready content (1.1.A), or misreading the assignment scope (2.2.A). Tone is consistently supportive and appropriate throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

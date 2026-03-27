@@ -90,11 +90,12 @@
               {
                 "evidence_turns": [
                   5,
-                  7,
+                  6,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moved the student to the next data-row decision without prompting reflection on why the consistency/geography/source-selection method worked or how to reuse it later.",
+                "reason": "The tutor gave strong step-by-step process guidance, but did not prompt brief reflection on why the chosen consistency/labeling/source-selection method worked or how to reuse it on future rows.",
                 "points": 2
               }
             ],
@@ -157,9 +158,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-focused, redirected off-topic turns promptly, and used guided questions that kept the student doing the substantive decision-making.",
-      "Support was well scaffolded around geography choice, source consistency, labeling, and citation logic without giving submission-ready content.",
-      "Main weakness: the tutor rarely paused for brief reflection or transfer, so the student was not explicitly helped to generalize the method beyond the immediate next row of the table."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic turns promptly, and used guided questions to keep the student making the substantive choices about geography, source consistency, labeling, and data fields.",
+      "The tutor avoided doing submission-ready work and mostly scaffolded well from the student's prior answers.",
+      "Small deduction only for limited reflection/transfer support: the tutor rarely paused to help the student articulate why the method they used would generalize to the rest of the table."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

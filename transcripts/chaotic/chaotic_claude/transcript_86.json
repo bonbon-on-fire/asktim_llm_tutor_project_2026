@@ -87,8 +87,8 @@
                   4,
                   5
                 ],
-                "sub_criterion_id": "1.2.A.a",
-                "reason": "In turns 3–5, the tutor consistently re-explains the same formula/checklist approach rather than building on what the student had already demonstrated (e.g., the student had already chosen stressors and supplied rough ratings and fragments). The tutor restarts with new checklists rather than scaffolding forward from the student's existing output.",
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student resisted drafting and kept asking for pre-written content, the tutor repeatedly restructured its ask (checklist, formula, fragments) without first diagnosing why the student was stuck. Each turn added a new scaffold rather than checking what specifically was blocking the student, which is closer to a method-dump than targeted diagnostic questioning.",
                 "points": 3
               }
             ],
@@ -102,13 +102,10 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5,
-                  6
+                  3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the first six turns, the tutor enforces its constraints (refusing to write justifications, templates, or tables) without explaining the learning rationale — e.g., never stating that the goal is for the student to develop analytical skills or that working through the reasoning builds understanding. The student is told 'I can't' repeatedly without a pedagogical explanation.",
+                "reason": "The tutor consistently refuses to do the work but does not explain the learning rationale (e.g., active reasoning, skill development) until it is implicit at best. It never explicitly tells the student why doing this themselves matters for learning.",
                 "points": 2
               },
               {
@@ -118,7 +115,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "When the student produced a strong justification in turn 8, the tutor praised it and moved on without prompting any reflection on what made the approach effective or how the student could replicate the method for B, D, and E. No transfer-supporting reflection was offered.",
+                "reason": "After turn 8 produces a strong student draft, the tutor moves straight to the next task without prompting reflection on what made the approach work or how the student's thinking changed.",
                 "points": 2
               }
             ],
@@ -144,7 +141,7 @@
                   6
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern — refuse to write content, offer a checklist/formula, ask student to draft — across turns 3, 4, 5, and 6 without synthesis or adaptive reframing. Each refusal produces a new slightly-different checklist, but the interaction does not advance. The tutor does not adjust strategy (e.g., simplify task, acknowledge friction, reframe the task granularity) despite the student repeating the same resistance.",
+                "reason": "The tutor cycles through multiple reformulations of the same refusal + 'give me fragments' request across turns 3–6 without meaningfully advancing the student. Each turn the student resists, the tutor repackages the same request in a slightly different form (table formula, 5-item checklist, 3-fragment prompt) rather than consolidating, reframing more substantively, or briefly moving on.",
                 "points": 4
               }
             ],
@@ -170,14 +167,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3,
                   4,
                   5,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially 2, 4, 5, and 9) contain multi-part bullet lists and multi-paragraph instructions when one focused prompt was more appropriate. For instance, turn 2 presents a six-option menu plus instructions for evidence phrases; turn 4 contains four separate sub-prompts for four stressors simultaneously; turn 5 gives a five-item checklist. This consistently reduces student opportunity to respond incrementally.",
+                "reason": "Several tutor turns (especially 4 and 9) include multi-part sub-prompts and layered instructions when a single focused question would have been more effective. Turn 4 lists four separate stressor-specific sub-questions plus a two-part formula; turn 9 adds a verification note plus three-part fill-in plus a draft request, reducing the student's cognitive space to respond.",
                 "points": 4
               }
             ],
@@ -206,12 +201,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready content, which correctly protects academic integrity and preserves the student's reasoning role throughout all 10 turns.",
-      "However, the tutor fell into a repetitive loop (turns 3–6) of refusing and re-issuing checklists without adapting strategy when the student showed persistent resistance, triggering the redundancy/spiraling deduction.",
-      "Scaffolding suffered because the tutor often re-explained the approach from scratch rather than building on the student's prior contributions (e.g., the stressor selections in turn 3, the rough fragments in turn 7).",
-      "Meta-learning was penalized because the tutor rarely articulated why it was withholding direct answers (no learning rationale offered) and did not prompt reflection after the student's successful turn 8 draft.",
-      "Communication was penalized for consistently oversized responses — multiple simultaneous sub-prompts across many turns — which competes with the interactive, bite-sized engagement expected in a tutoring context.",
-      "Tone was consistently respectful and non-dismissive throughout, and assignment anchoring remained strong — the tutor never let the student drift off-task or misframe the assignment."
+      "The tutor maintains a firm, appropriate boundary throughout: it never writes submission-ready content, never polishes the student's text, and never provides example sentences to mirror. This is the strongest aspect of the session and earns full marks on 1.1.",
+      "However, turns 3–6 show clear spiraling: the tutor reformulates the same 'give me your fragments first' request four times without synthesizing or changing strategy, triggering the 2.1.A.a deduction for a full 4-point loss.",
+      "Scaffolding (1.2) loses 3 points because when the student stalled, the tutor kept stacking new scaffold layers (formula, checklist, 3-fragment prompt) rather than first diagnosing what specifically was blocking the student.",
+      "Meta-learning (1.3) loses 4 points: the tutor never articulates the learning rationale for its constraints, and after the student produces a strong turn-8 draft, the tutor immediately pivots to the next stressor without any reflection prompt.",
+      "Communication quality (3.1) loses 4 points for multi-part, dense responses in turns 4 and 9 that pack several simultaneous asks into single messages, consistently reducing the student's thinking space.",
+      "No deductions were applied to assignment anchoring (2.2) or tone (3.2); the tutor stays on-task and supportive throughout."
     ],
     "total_score": 31,
     "judge_llm_calls": 1

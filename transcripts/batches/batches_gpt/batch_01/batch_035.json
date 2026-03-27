@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the conversations, boundary-setting refusals about personal/off-topic requests were usually framed as role/policy limits ('stay focused,' 'I can't share that') without an explicit learning rationale for why the restriction supports the student's skill development.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -300,18 +294,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three conversations, the tutor consistently used guided discovery: it refused to fill in the student's table, asked the student to propose cities/stressors/ratings, and repeatedly pushed for clearer mechanisms, evidence, sector tags, and rating logic.",
-      "Scaffolding was strong and assignment-anchored throughout. The tutor built on student drafts, helped distinguish overlapping stressors, and redirected off-topic/personal questions back to the task without engaging substantially off-topic.",
-      "Only a small deduction was applied because some refusals were framed mainly as policy/role boundaries rather than explicitly explaining the learning rationale behind the limitation."
+      "Across the provided transcripts, the tutor consistently used guided discovery: it refused to complete the table, pushed the student to generate cities, stressors, ratings, indicators, and priority rules, and then refined the student's reasoning.",
+      "The tutor stayed tightly anchored to the assignment, redirected repeated off-topic personal-chat attempts immediately, and helped the student distinguish overlapping stressors, define rating logic, and identify evidence types without writing submission-ready content.",
+      "There is some mild ambiguity because many tutor turns are multi-part, but they still function as progressive scaffolding rather than redundant monologues, so no clear rubric-triggering deduction is supported."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

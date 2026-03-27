@@ -236,7 +236,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "Tutor provided paste-ready row labels and citation/source-note templates that move the student's table wording close to final submission language.",
+                "reason": "Tutor provided paste-ready row-label and citation templates in polished final wording, which is direct final-writing help for the assignment.",
                 "points": 6
               }
             ],
@@ -255,11 +255,11 @@
               {
                 "evidence_turns": [
                   3,
-                  6,
-                  8
+                  7,
+                  9
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor reinforced choices and moved to next steps, but did not prompt reflection on why the source/definition-selection method worked or how to transfer it.",
+                "reason": "Tutor kept moving to the next sourcing step after student improvements without prompting reflection on why the chosen method or boundary decision worked.",
                 "points": 2
               }
             ],
@@ -285,7 +285,7 @@
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Tutor repeatedly used the same refusal-plus-navigation pattern and asked the student to report what they saw, without enough synthesis or a changed strategy despite the student's continued time pressure.",
+                "reason": "Tutor repeated the same pattern of giving portal entry points and asking the student to report back table titles instead of synthesizing a faster alternative when the student stayed pressed for time.",
                 "points": 4
               }
             ],
@@ -314,11 +314,13 @@
                   2,
                   3,
                   4,
+                  6,
                   7,
+                  8,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Tutor often replied with long, list-heavy messages and multiple questions where shorter interactive steps would have preserved more student thinking space.",
+                "reason": "Tutor frequently responded with long multi-part messages and lists where shorter, more targeted interaction would have fit the student's urgent state better.",
                 "points": 4
               }
             ],
@@ -347,9 +349,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently kept the work anchored to definitions, geography, and source credibility, and generally avoided doing the full table for the student.",
-      "Main weaknesses were near-final wording help in templates, repeated refusal/navigation loops without enough strategy shift, and responses that were often longer than needed.",
-      "Input contained multiple transcripts, but this score applies to Transcript 1 because the required schema is for a single conversation."
+      "Scored Transcript 1 only: the tutor consistently refused to provide exact fill-in values and kept the work mostly student-owned.",
+      "Main weaknesses were repeated procedural loops, long responses, and one clear instance of paste-ready final-writing help through row-label/citation templates.",
+      "The tutor stayed well anchored to the assignment and maintained a supportive, non-grading tone throughout."
     ],
     "total_score": 30,
     "judge_llm_calls": 1

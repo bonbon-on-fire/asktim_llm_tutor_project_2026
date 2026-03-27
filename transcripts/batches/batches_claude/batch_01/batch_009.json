@@ -235,11 +235,11 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 2, Turn 2: The tutor provides a detailed 7-point sentence plan with fully-formed framing sentences and structural logic (e.g., 'Define AC principle: An act is right iff it maximizes expected overall well-being, counting all downstream effects'), doing significant reasoning scaffolding that amounts to generating the key argumentative structure for the student. However, this is borderline since blanks are left for the student to fill.",
-                "points": 0
+                "reason": "In Transcript 2 Turn 2, the tutor provides a detailed 6-point sentence plan with specific sentence starters and structural breakdown that gives the student a near-complete framework, doing much of the reasoning scaffolding that should emerge from the student. However, the tutor stops short of filling in the key claims, which somewhat mitigates the concern. Similarly, in Transcript 2 Turn 6, the tutor provides 14 specific academic sentence starters with full philosophical framing. While framed as generic frames, many of the starters already encode the reasoning path (e.g., 'One must distinguish the local outcome from the policy-/practice-level consequences...'), doing key reasoning steps for the student rather than prompting them to derive these insights themselves.",
+                "points": 6
               }
             ],
-            "score": 12,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,32 +253,29 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
                   7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a particular method worked. The tutor moves from topic to topic without consolidating learning or reinforcing method choices after the student improves.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "While the tutor consistently refuses to write for the student, it rarely explains the pedagogical rationale (why active reasoning builds long-term skill) beyond brief implicit refusals. In Transcript 3 especially, the tutor just says 'I can't' without articulating the learning benefit.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked or failed, or what they learned about philosophical argumentation. The conversation moves from concept to concept without pausing to consolidate meta-level insights about how to construct philosophical arguments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 16,
           "max": 24
         }
       },
@@ -310,10 +307,11 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly produces very long multi-paragraph responses with extensive frameworks, template options, and enumerated sub-questions when shorter, more focused prompts would have been more effective. Turns 2 and 3 in Transcript 1, Turn 2 in Transcript 2, and Turn 4 in Transcript 3 all feature wall-of-text responses that reduce the student's opportunity to engage interactively.",
+                "reason": "Across all three transcripts, the tutor consistently delivers very long, multi-part responses when shorter, more focused prompts would be more appropriate. For example, Transcript 1 Turn 2 provides a full thesis template plus a 6-bullet outline skeleton plus a follow-up question. Transcript 2 Turn 2 delivers a 3-part fill-in template with 7 sub-items plus two additional questions. Transcript 2 Turn 6 provides 14 sentence starters. These lengthy responses reduce the student's opportunity to think and respond, and the pattern is consistent throughout all transcripts.",
                 "points": 4
               }
             ],
@@ -335,21 +333,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong commitment to Socratic method: it consistently refuses to write submission-ready content, instead using templates with blanks, probing questions, and counterfactual challenges to guide the student toward their own reasoning. There is no evidence of directly supplying final answers, finished theses, or submission-ready paragraphs.",
-      "The tutor builds well on student progress (1.2): it explicitly acknowledges correct student claims (e.g., 'Your mapping is a standard DDE-style package and it's coherent'), challenges inconsistencies productively, and advances the student's reasoning across turns without ignoring valid steps.",
-      "The main weaknesses are in meta-learning (1.3): the tutor rarely explains why it withholds direct answers in terms of the student's long-term skill development, and never prompts explicit reflection on what changed in the student's thinking or why a method worked. These omissions are consistent across all three transcripts.",
-      "Communication length is a recurring issue (3.1): the tutor frequently produces multi-paragraph, heavily enumerated responses when a single focused question would have been more pedagogically effective. This pattern is most pronounced in Transcripts 1 and 2, where early turns contain 6-7 item frameworks and multiple parallel templates that could overwhelm a time-pressured student.",
-      "Assignment anchoring and dialogue focus are well-managed: the tutor consistently re-anchors to the prompt's structure (AC + case analysis + general account) and redirects away from requests for ghostwriting without engaging substantively with those requests.",
-      "No double-penalization was applied: the 1.3.A and 1.3.D deductions address distinct failings (explaining rationale vs. post-improvement reflection), and the 3.1 length deduction is kept separate from the 1.3.B process feedback criterion."
+      "The tutor consistently refuses to write submission-ready content for the student, which is commendable and preserves academic integrity across all three transcripts.",
+      "The primary deduction in 1.1 is for providing overly detailed reasoning scaffolds—particularly the 14 sentence starters in Transcript 2 Turn 6 and the detailed 6-bullet outline in Transcript 1 Turn 2—that do substantial reasoning work for the student rather than guiding them to derive these insights independently. The student could assemble a near-submission-ready answer from the provided frameworks with minimal original thinking. This crosses into 1.1.C.b territory (doing key reasoning steps) but not quite 1.1.A.a (direct final answer), as the key claims remain blank.",
+      "Scaffolding is strong: the tutor consistently builds on student contributions, acknowledges correct progress, and moves the conversation forward productively. No deductions warranted for 1.2.",
+      "Meta-learning feedback is good on process (explaining why DDE matters, how to avoid circularity) but the tutor never pauses to prompt reflection on the student's own thinking development or what skills they're building, warranting a 1.3.D deduction.",
+      "Response length is a consistent issue across all transcripts. The tutor habitually produces multi-part, multi-paragraph responses that could be substantially condensed, reducing the student's opportunity for independent thinking.",
+      "Tone is appropriate and supportive throughout; no grading language used. Dialogue quality is strong with good assignment anchoring and no spiraling."
     ],
-    "total_score": 38,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

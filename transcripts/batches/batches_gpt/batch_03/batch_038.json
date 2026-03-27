@@ -232,11 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "The tutor first chooses the substantive fix for the student's view (bodily means vs. external resources) and then provides a polished rule sentence the student can use nearly verbatim, making the core thesis/conclusion close to submission-ready.",
+                "reason": "Tutor supplied a polished rule sentence that directly answers the student's requested position and could be pasted into the assignment with little or no editing.",
                 "points": 12
               }
             ],
@@ -257,10 +256,11 @@
                   1,
                   2,
                   3,
+                  4,
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforces a no-ghostwriting boundary but does not clearly explain the learning rationale for requiring the student to generate the wording and reasoning themselves.",
+                "reason": "Tutor repeatedly enforced refusal boundaries but did not clearly explain the learning rationale beyond saying it would become the student's outline or lines to paste.",
                 "points": 2
               }
             ],
@@ -303,11 +303,10 @@
                   2,
                   3,
                   4,
-                  8,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies are long, multi-part scaffolds with many questions at once, which is a poor fit for a rushed student and reduces the chance of short interactive progress checks.",
+                "reason": "Several replies were long, multi-part scaffolds when the student was time-pressed and would likely have benefited from shorter interactive steps.",
                 "points": 4
               }
             ],
@@ -336,9 +335,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evaluated Transcript 1. The tutor stayed tightly anchored to the assignment and generally built on the student's evolving distinctions across turns 3-9.",
-      "The largest deduction is for direct assignment work: by turns 9-10 the tutor supplies the student's substantive fix and a polished rule sentence that functions as a near-ready thesis.",
-      "Secondary issues were limited explanation of the no-ghostwriting rationale and repeated long, multi-part prompts that were not very bite-sized for this rushed student."
+      "Scored Transcript 1 only, since the schema is for a single conversation and multiple transcripts were provided in one prompt.",
+      "Tutor was generally assignment-focused, supportive, and good at pressure-testing the student's emerging principle.",
+      "Largest deduction is for crossing into near-submission-ready help at the end by providing a polished rule sentence the student could paste directly.",
+      "Some replies were overly long for the student's rushed state, but the tutor mostly scaffolded appropriately and built on student progress."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

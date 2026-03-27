@@ -184,8 +184,8 @@ def _format_batch_conversation_for_judge(
 def judge_transcript_batch(
     batch_file_path: str,
     *,
-    prompt_name: str = "judge_05",
-    rubric_name: str = "rubric_05",
+    prompt_name: str = "judge_06",
+    rubric_name: str = "rubric_06",
     output_path: str | None = None,
 ) -> JudgeResult:
     """Grade a batch of transcripts combined into one prompt.

@@ -90,20 +90,22 @@
               {
                 "evidence_turns": [
                   1,
-                  3
+                  3,
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor states it cannot fill in the table or provide paste-ready text, but does not explicitly explain the learning rationale for that limit beyond refusal.",
+                "reason": "The tutor states it cannot complete or rewrite the assignment, but usually frames this as refusal or accuracy caution rather than explicitly explaining a learning rationale such as skill-building or active reasoning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   7,
                   8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improves the proxy explanation and citation approach, the tutor moves on to the next task without prompting reflection on why the method or revision was stronger.",
+                "reason": "After the student improves the proxy explanation and citation approach, the tutor moves forward without prompting reflection on why the method worked or how to transfer it to the remaining data-table items.",
                 "points": 2
               }
             ],
@@ -140,17 +142,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The reply exposes internal JSON-style metadata (e.g., \"pedagogical-reasoning\") instead of plain student-facing language, creating avoidable technical complexity.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -162,25 +155,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly anchored to the assignment, refused to do the student's work, and consistently used guided prompts to make the student locate sources and define units like DKI Jakarta versus metro area.",
-      "Scaffolding was generally effective and built on the student's progress, especially around source authority, proxy variables, and citation components.",
-      "Main weaknesses were meta-level: the tutor did not clearly explain the learning rationale for its refusal to provide direct answers, and it missed chances to prompt reflection after the student's reasoning improved.",
-      "A smaller communication issue appears in turn 8, where internal JSON-style formatting made the response more technical and less student-friendly than necessary."
+      "The tutor strongly avoided doing the assignment for the student and consistently used guided prompts tied to source verification, geographic unit definitions, and citation structure.",
+      "Dialogue stayed well anchored to the actual task, especially around DKI Jakarta vs. metro area, proxy handling for race/ethnicity, and APA citation requirements.",
+      "I applied only limited deductions in 1.3: the tutor explained boundaries, but mostly as refusal/accuracy protection rather than explicit learning rationale, and it did not include much reflection or transfer prompting after student improvement."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

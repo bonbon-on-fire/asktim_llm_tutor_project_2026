@@ -243,13 +243,24 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  4,
+                  7,
+                  21
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the conversations, the tutor repeatedly enforces limits on off-topic chat and on drafting final wording, but does not explain the learning rationale for those constraints beyond saying it is 'here to tutor' or that the student 'needs to draft it.'",
+                "reason": "The tutor repeatedly enforced no-chitchat limits but did not explain a learning rationale for staying focused on student reasoning and assignment progress.",
                 "points": 2
               },
               {
+                "evidence_turns": [
+                  10,
+                  20,
+                  30
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong process guidance, but rarely prompts reflection on why the chosen method worked or what the student learned that could transfer to later assignments.",
+                "reason": "Across conversation endings, the tutor kept the student moving to the next task but did not prompt reflection on why the chosen research method or evidence-selection approach worked.",
                 "points": 2
               }
             ],
@@ -288,41 +299,62 @@
           "3.1": {
             "deductions": [
               {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor often uses somewhat dense, technical phrasing and stacked prompts ('unit of analysis,' 'minimum viable set,' 'decision leverage,' 'governance authority') that could have been simplified for a student repeatedly describing themselves as fried or distracted.",
-                "points": 2
+                "evidence_turns": [
+                  2,
+                  5,
+                  12,
+                  15,
+                  23,
+                  28
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor frequently used multi-part, list-heavy replies with several questions and contingencies at once, when shorter interactive steps would have reduced cognitive load for a tired student.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  7,
+                  11,
+                  21
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The repeated refusal phrasing was functional but somewhat rigid and could feel cold rather than warmly redirective, especially for a student explicitly saying they were fried or distracted.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 8,
+          "score": 4,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor stays tightly anchored to the assignment, redirects off-topic chatter quickly, and uses guided questioning rather than doing submission-ready work for the student.",
-      "The main weaknesses are meta-level: the tutor enforces constraints without explaining the learning rationale, offers little explicit reflection/transfer support, and sometimes uses denser terminology than necessary.",
-      "No deduction was applied for redundancy or assignment anchoring because, despite repeated source-checking prompts, the student continues to make concrete progress in each conversation."
+      "Across the three provided transcripts, the tutor consistently kept the work anchored to the assignment, avoided doing the student's submission-ready thinking or writing, and generally used guided questioning well.",
+      "Main weaknesses were meta-level support and communication style: the tutor enforced boundaries without explaining the learning rationale, rarely invited reflection on transferable method, and often packed replies with too many questions at once.",
+      "Turn references are numbered sequentially across the three transcripts (1-10, 11-20, 21-30)."
     ],
-    "total_score": 40,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

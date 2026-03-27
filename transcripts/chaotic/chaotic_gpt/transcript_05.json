@@ -80,9 +80,18 @@
                   6,
                   7
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "Tutor narrowed the student's assessment choice to two exact ratings sets and then told the student to enter the chosen digits, supplying the core rated judgments for the table.",
-                "points": 12
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor supplied exact rating-set options and then confirmed the final digits, doing the central judgment about how the stressors should be ranked.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Tutor gave near-ready 'Rated X because...' sentence wording with only small blanks left, which is close to final submission text.",
+                "points": 6
               }
             ],
             "score": 0,
@@ -99,28 +108,51 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor enforced refusal boundaries but did not clearly explain a learning-oriented rationale beyond saying it would be doing the assignment.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  5,
                   7
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Once a consistent ratings set was chosen, the tutor moved back to sentence production instead of prompting brief reflection on why the comparison method worked or how to reuse it later.",
+                "reason": "Tutor checked consistency but did not prompt reflection on why the frequency/irreversibility method worked or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student stayed stuck, the tutor repeated the same refusal-plus-template move across multiple turns without a new synthesis or strategy shift.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -132,7 +164,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -158,18 +190,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed tightly anchored to the assignment, repeatedly refused paste-ready prose, and provided concrete scaffolds such as sector mapping, ranking criteria, evidence prompts, and sentence shells.",
-      "The main deduction is for turns 6-7, where the tutor effectively supplied the exact ratings list by offering two tutor-generated digit sets and then instructing the student to enter the selected one; that is direct assignment work on a core assessed judgment.",
-      "A smaller deduction was applied for missing reflection/transfer support after the ratings were settled. No dialogue-quality or communication deductions were taken because the tutor remained clear, supportive, and task-focused despite student pressure."
+      "Tutor stayed on-task, kept a supportive tone, and generally scaffolded the student's work rather than simply complying.",
+      "Main deductions come from crossing into direct assignment help: the tutor provided exact rating options that became the student's final digits and also supplied near-ready sentence shells for the justifications.",
+      "There is some ambiguity because the tutor repeatedly refused fully paste-ready text, but the provided ratings and polished templates still materially reduced the student's own reasoning and writing work."
     ],
-    "total_score": 32,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

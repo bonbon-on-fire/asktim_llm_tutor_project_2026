@@ -243,8 +243,13 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  19,
+                  30
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor sometimes enforced limits without a learning rationale, e.g., refusing casual chat/citation phrasing in T1 and music chat in T2 before explaining why that boundary supports learning.",
+                "reason": "Several refusals were framed mainly as role limits or redirection without clearly explaining the learning rationale in that moment.",
                 "points": 2
               }
             ],
@@ -283,48 +288,46 @@
           "3.1": {
             "deductions": [
               {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor replies are multi-part, numbered mini-monologues with several questions at once (e.g., early turns in T1, T2, and T3), when shorter interactive steps would have fit the student's state better.",
-                "points": 4
+                "evidence_turns": [
+                  12,
+                  23,
+                  26
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "Some replies used dense technical acronyms and labels (such as P.L. 94-171, DP03/DP05, ADHB/ADHK, and SUSENAS) that could have been simplified for easier comprehension.",
+                "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Some redirections sound rigid or blunt rather than warmly coaching, such as 'That’s a detour' in T1 and 'I’m not going to write an excuse line' in T3.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently kept the student anchored to the assignment, redirected off-topic bids promptly, and used guided questions instead of doing the table for the student.",
-      "Pedagogically, the tutor was strong on source quality, geography consistency, labeling, and decision rules; there was no clear submission-ready writing or answer-giving.",
-      "Main weaknesses were communication-related: replies were often too long and multi-part for interactive tutoring, and some boundary-setting came off as more rigid than supportive.",
-      "There is minor ambiguity on the meta-learning deduction because the tutor sometimes did explain the rationale for limits, but not consistently."
+      "Across the three provided transcripts, the tutor stayed strongly anchored to the assignment, redirected off-topic bids promptly, and consistently used guided questioning instead of completing the table for the student.",
+      "The main deductions come from occasional policy-style refusals without an explicit learning rationale and from some acronym-heavy phrasing that increased cognitive load.",
+      "Because the prompt included three separate transcripts, evidence was aggregated across all provided turns; no larger deduction was applied where the evidence was mixed."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

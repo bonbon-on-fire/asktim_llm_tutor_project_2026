@@ -244,6 +244,8 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
                   4,
                   5,
@@ -254,17 +256,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely explains why it is asking questions rather than providing answers, or why it is withholding direct ratings/justifications. The tutoring rationale (guided discovery for skill development) is almost never made explicit to the student.",
+                "reason": "Across all three transcripts, the tutor enforces a no-direct-answers policy but rarely explains the learning rationale (active reasoning, skill development) behind it. The tutor says 'I can't phrase it for you' or 'I can't write the justifications for you' without explaining why this approach helps the student learn.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward without prompting reflection on what changed in the student's reasoning process or reinforcing why the method of building one's own criteria first works better than asking for answers directly.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a particular framing worked better than another, or how the methodology they used (e.g., anchoring ratings to a consistent definition) could apply to future assignments. The tutor moves from step to step without metacognitive consolidation.",
                 "points": 2
               }
             ],
@@ -313,7 +322,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends multi-part, multi-question responses that are quite long, especially in early and middle turns. Rather than asking one focused question and waiting for a reply, the tutor often fires 3–4 sub-questions at once, reducing the student's opportunity to think and respond to a single manageable prompt.",
+                "reason": "Across all three transcripts, many tutor turns contain multi-part, multi-paragraph responses with several numbered sub-questions at once. For example, Transcript 1 Turn 2 asks three separate stressors with multiple bullet sub-prompts; Turn 4 asks four distinct sub-questions simultaneously; Turn 7 also has three numbered checks. This consistently reduces the student's opportunity to focus and respond to one thing at a time. The pattern is pervasive but not so extreme that it dominates every turn.",
                 "points": 4
               }
             ],
@@ -342,10 +351,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to provide direct ratings, finished justifications, or final table rows on behalf of the student, instead eliciting the student's own reasoning through targeted pressure-test questions. No 1.1.A or 1.1.B violations were observed.",
-      "Scaffolding is effective: the tutor builds each conversation from city identification → stressor selection → rating criteria definition → justification drafting → evidence sourcing → priority identification, consistently using the student's prior answers as the basis for the next step.",
-      "The main weaknesses are in meta-learning and communication length. The tutor almost never explains its pedagogical rationale (why it is asking rather than telling), nor does it prompt process reflection at the end. Response length is a consistent issue: many turns contain 3–5 sub-questions or multi-paragraph instructions when a single, focused prompt would have been more appropriate and left more cognitive space for the student.",
-      "Assignment anchoring and off-topic redirection are handled well in all three transcripts. Tone is supportive and consistently coaching-oriented throughout."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it never provides direct ratings, justifications, or submission-ready text, consistently asking the student to propose numbers and draft sentences before offering feedback. Scaffolding is well-sequenced—the tutor builds from city/stressor identification through rating anchors, evidence selection, and table formatting in a logical progression that tracks student progress.",
+      "The main deductions are in meta-learning (1.3) and communication length (3.1). The tutor enforces its guidance-only role without explaining the pedagogical rationale to the student (1.3.A.a), and never prompts reflection on why the chosen methodology (e.g., anchoring ratings to a consistent definition) worked or what the student can transfer to future assignments (1.3.D.a).",
+      "On communication, the tutor frequently bundles multiple sub-questions into single long turns (e.g., Transcript 1 Turns 2, 4, 7; Transcript 2 Turns 2, 4, 8; Transcript 3 Turns 3, 5, 6), creating information-dense responses that reduce the student's chance to think through one question at a time. This pattern is consistent across all three runs and warrants the full 3.1.A.a deduction.",
+      "No deductions were applied for 1.1 (the tutor never gives final answers or does the student's reasoning), 1.2 (scaffolding appropriately builds on student output), 2.1 (no spiraling—the tutor advances each turn), or 2.2 (off-topic redirections are handled immediately and cleanly). Tone is consistently supportive and non-grading throughout."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

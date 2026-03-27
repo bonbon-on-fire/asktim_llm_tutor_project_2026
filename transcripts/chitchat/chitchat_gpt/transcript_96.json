@@ -97,7 +97,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced assignment-only boundaries but did not explain a learning rationale for those limits beyond role framing.",
+                "reason": "The tutor repeatedly enforced an assignment-only boundary for off-topic requests but did not explain the learning rationale for that constraint beyond saying they were sticking to the assignment.",
                 "points": 2
               },
               {
@@ -106,7 +106,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student developed a workable method and summary, the tutor moved straight to filling remaining slots rather than prompting reflection on why the actor-mapping approach worked or how to reuse it.",
+                "reason": "After the student improved their actor logic and forum sentences, the tutor moved straight to finalizing names without prompting reflection on why the method worked or how to reuse it on later assignments.",
                 "points": 2
               }
             ],
@@ -169,8 +169,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, built on the student's Miami-specific progress, and kept the conversation anchored to the assignment despite repeated off-topic attempts.",
-      "No deduction was taken for directness because the tutor did not supply a submission-ready answer; the main weaknesses were limited meta-explanation for its constraints and little reflection on transferable method once the student improved."
+      "The tutor stayed tightly anchored to the Miami climate-actors task, redirected off-topic requests immediately, and used guided questions to help the student build a defensible actors map rather than supplying a submission-ready answer.",
+      "Scaffolding was strong: the tutor progressively moved from actor categories, to evidence in the Miami Forever plan, to labels such as leading/engaged/missing, and finally to forum-ready summary sentences.",
+      "Main deductions are in meta-learning: the tutor enforced boundaries without explicitly framing the learning rationale, and it missed a chance near the end to prompt reflection on the method the student had developed for identifying actors and gaps."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

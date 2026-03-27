@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provides the full Fuel and Blood case setups (who dies, what choice, options) without requiring the student to reconstruct them first. This does the key interpretive groundwork that the student should have been guided to retrieve from their own notes.",
+                "reason": "Tutor provides the actual case setups for Fuel and Blood (the key content details) rather than directing student to their lecture notes first or asking diagnostic questions about what the student does recall. This gives the student substantive content they needed to reason from, doing a key step for them.",
                 "points": 6
               }
             ],
@@ -110,16 +110,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to help directly but never articulates the learning rationale (e.g., that generating ideas builds philosophical reasoning skills). It simply says 'I can't' without explaining why doing the work yourself matters for development.",
+                "reason": "Tutor repeatedly declines to do work for the student but never explains the pedagogical rationale (e.g., that the goal is to develop the student's own reasoning skills or active learning). The tutor simply says 'I can't' without grounding the constraint in learning benefit.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "By turn 9-10 the student has made real conceptual progress (side-effect vs. tool distinction, defeasible constraint, catastrophe threshold), but the tutor never pauses to help the student reflect on how their thinking evolved or what reasoning method they used to get there.",
+                "reason": "Across the full conversation, the tutor never prompts the student to reflect on what their thinking process achieved or what changed in their understanding. The conversation ends without any meta-reflection on the student's reasoning development.",
                 "points": 2
               }
             ],
@@ -162,11 +170,10 @@
                   1,
                   2,
                   5,
-                  6,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature dense multi-part instructions and numbered lists across several paragraphs when a single focused prompt would have sufficed. Turn 1 is especially long with a three-part scaffolding framework before the student has responded at all.",
+                "reason": "Several tutor turns (especially 1, 2, 5, 6) are multi-paragraph with multiple nested sub-questions and detailed instructions before the student has responded. For example, Turn 1 gives four distinct tasks in one message, and Turn 2 provides a full bulleted template. These reduce the student's opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -195,12 +202,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a firm, commendable refusal to write submission-ready content throughout, consistently redirecting the student to generate their own claims. This earns full marks on assignment anchoring and avoids the most severe 1.1.A deductions.",
-      "However, in Turn 3 the tutor supplies complete Fuel and Blood case descriptions — including the agent's choice framing and who survives under each option — which is the key interpretive step the student should have been prompted to recall or derive. This triggers a 1.1.C.b deduction (6 points) for doing the core reasoning groundwork.",
-      "The tutor never explains *why* it declines to write things for the student; it only says 'I can't' or 'I won't,' omitting any rationale about skill-building or learning value. This violates 1.3.A.a (2 points deducted).",
-      "Reflection and transfer (1.3.D) are entirely absent: by Turn 9-10 the student has independently developed a nuanced position (side-effect/tool distinction, defeasible constraint, catastrophe threshold), but the tutor never acknowledges this growth or helps the student see what thinking moves enabled it (2 points deducted).",
-      "Several turns (1, 2, 5, 6, 8) are excessively long with multi-step numbered frameworks delivered before checking student understanding, reducing student thinking time. This triggers a 3.1.A.a deduction (4 points).",
-      "Dialogue quality is strong: no spiraling, no off-topic tangents, and assignment framing remains consistent throughout. Tone is warm and constructive with no grading language."
+      "The tutor consistently and correctly declined to write submission-ready content for the student across all 10 turns, maintaining a principled stance against doing the assignment for them.",
+      "A significant deduction was applied under 1.1.C.b: in Turn 3, the tutor provided the actual Fuel and Blood case setups in 1-2 lines each, which constitutes giving key content the student needed for reasoning rather than directing them to their own notes or asking what they did recall. This was the most substantive lapse in Socratic method.",
+      "The tutor was not penalized under 1.1.A (near-submission-ready) because no combination of tutor outputs across turns constitutes a complete, submittable answer. The tutor gave structural templates and fill-in-the-blank scaffolds but not finished content.",
+      "The tutor was not penalized under 1.1.B because although Turn 8 provides a 'structure formula,' it requires the student to fill all substantive content and is not a rewrite of student text into polished language.",
+      "Under 1.3, the tutor never explains why it withholds direct answers (no learning rationale given), and never prompts reflection on the student's progress or thinking development across the conversation.",
+      "Under 3.1, multiple early turns (1, 2, 5, 6) are lengthy and present multiple tasks before the student responds, reducing interactive bite-sized engagement. Later turns (7-10) become more focused and appropriately short.",
+      "Dialogue quality (Section 2) was largely preserved: the tutor kept the conversation on-task, redirected off-topic requests, and advanced the student's thinking across turns without significant redundancy.",
+      "Tone was supportive and non-dismissive throughout; no grading stances were taken."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

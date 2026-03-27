@@ -232,10 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7
+                  4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 7: Tutor provides a pre-categorized list of decision-arena options and 'where missing groups are often absent' options, doing the key reasoning step of identifying what specific venues and channels apply to Miami—essentially handing the student the bridging content rather than asking the student to derive it.",
+                "reason": "Transcript 1, Turn 4: The tutor provides a detailed fill-in-the-blank template with pre-written sentence stubs for all four sections, including pre-selected vocabulary ('owns the plan / controls budget / convenes partners'), role categories, and consequence options. This resolves much of the key reasoning work (how to structure each actor's role, what criteria distinguish lead vs. engaged, what consequences follow from gaps) before the student attempts it. The student need only slot in names.",
                 "points": 6
               }
             ],
@@ -253,12 +253,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts the conversations end without any reflection prompt: the tutor does not ask the student to look back on what changed in their thinking, what worked about the method, or how to transfer the actor-identification skill to the next assignment. The conversations close mid-task without process reinforcement.",
+                "reason": "Across all three transcripts, the tutor consistently moves forward to the next task without pausing to prompt reflection on why a prior approach worked or what the student's thinking changed. For example, in Transcript 1 after the student produces solid sentences in Turn 9, the tutor immediately redirects to verification without asking the student to reflect on what made those sentences stronger than earlier attempts. In Transcript 2, after the student articulates a clear evidence rule in Turn 6, the tutor moves on without reinforcing why that methodological choice matters. No turn across any transcript invites retrospective process reflection.",
                 "points": 2
               }
             ],
@@ -299,14 +301,12 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
                   3,
                   4,
-                  6,
-                  7
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor repeatedly delivers long, multi-part responses—structured frameworks, multi-bullet frameworks, numbered skim protocols—where shorter prompts checking understanding first would have been more appropriate. Transcript 1 Turns 1–4, Transcript 3 Turns 3–6 are particularly dense, consistently reducing the student's opportunity to think and respond before receiving the next block.",
+                "reason": "Across all three transcripts the tutor repeatedly delivers long multi-part responses when shorter, more focused prompts would suffice. Turn 1 in T1 contains three separate structured prompts in one message. Turn 3 in T3 lists 15 numbered actor categories in full. Turn 4 in T3 is a comprehensive guide to evidence sources (9 bullet types plus sourcing rules). Turn 6 in T3 is a 7-step skim protocol with sub-bullets per step. These walls of instruction consistently reduce the student's opportunity to think before receiving the next scaffold.",
                 "points": 4
               }
             ],
@@ -335,11 +335,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to write or copy-paste student work, maintains firm pedagogical boundaries even under persistent pressure, and keeps redirecting students back to their own reasoning—solid core Socratic stance.",
-      "The primary pedagogy deduction (1.1, -6) comes from Transcript 1 Turn 7, where the tutor supplies a ready-made, categorized list of Miami-specific decision arenas and absence venues, performing the key reasoning step (identifying relevant venues and barriers) that the student should have derived, crossing from scaffolding into doing the intellectual work.",
-      "Meta-learning (1.3) loses 2 points because none of the three conversations close with any reflection or transfer prompt; the tutor ends each session mid-task without reinforcing the method or asking the student to articulate what they learned about how to approach actor identification.",
-      "Communication quality (3.1) loses 4 points because the tutor's responses are frequently very long and multi-part—structured frameworks with 6+ bullets, numbered skim protocols, 15-row category lists—delivered before checking student comprehension, consistently crowding out student thinking space. This pattern repeats across multiple turns in all three transcripts.",
-      "Dialogue quality and tone are strong: the tutor handles off-topic deflection and chitchat cleanly, re-anchors to the assignment efficiently, avoids grading language, and maintains an encouraging but firm tone throughout."
+      "Across all three transcripts the tutor maintains a clear and consistent refusal to write submission-ready content for students, redirecting each attempt (chaotic_03 asking for a draft post, chitchat_03's off-topic detours, clueless_03's request for a template) with firm, policy-consistent responses. This earns high marks for assignment anchoring and topic control.",
+      "The main pedagogy deduction (1.1, -6) applies to Transcript 1 Turn 4, where the tutor provides a detailed fill-in-the-blank template that pre-structures all four sections with sentence stubs, vocabulary menus, and consequence options. While blanks remain, the template resolves the core reasoning task—how to distinguish lead from engaged, what criteria matter, what consequences to anticipate—before the student attempts it. This crosses into 1.1.C.b territory (tutor does the key reasoning step).",
+      "A meta-learning deduction (1.3.D, -2) applies across all three transcripts: the tutor consistently advances to the next task without pausing to prompt the student to reflect on why a prior approach worked or what changed in their thinking. Moments such as after Turn 9 in T1 (student produces strong sentences) or Turn 6 in T2 (student articulates a solid evidence rule) pass without any process-reflection prompt.",
+      "Communication quality loses 4 points under 3.1.A.a for repeated long monologue responses across T1 and T3 (e.g., T1 Turn 1's triple-structured prompt, T3 Turn 3's 15-row category list, T3 Turn 4's nine-type evidence guide, T3 Turn 6's seven-step skim protocol). These responses, while substantive, consistently front-load information before checking student understanding, reducing interactive thinking opportunity.",
+      "Scaffolding (1.2) is generally strong: the tutor builds on student progress (e.g., T2 Turn 6 affirming the student's evidence rule before advancing, T1 Turn 6 building on the student's draft with specific revision moves), and tone remains consistently supportive across all three transcripts without grading language."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

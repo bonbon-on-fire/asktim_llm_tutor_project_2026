@@ -244,12 +244,18 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its constraints (refusing personal opinions, not re-lecturing, not giving direct answers) but rarely explains the pedagogical rationale to the student—e.g., 'I'm asking you to derive this because active reasoning builds the skill you need.' The redirections are brief and policy-stating rather than learning-rationale-giving.",
+                "reason": "Across all three transcripts the tutor consistently declines to give answers and redirects, but never explains *why* it operates this way (i.e., the rationale of active reasoning, long-term skill development, or Socratic learning). The student is told what won't happen but not given a pedagogical rationale.",
                 "points": 2
               },
               {
@@ -258,7 +264,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without any explicit reflection prompt—no 'what changed in your thinking?' or 'why did that approach work better?' moment. The tutor moves from content refinement to next steps without reinforcing method choices after improvement.",
+                "reason": "The conversations end with task-completion steps without any prompting for the student to reflect on what they learned or how their thinking changed. No turn invites meta-reflection on method choices (e.g., 'what shifted in your reasoning about AC?' or 'what did the evidence-standard exercise teach you?').",
                 "points": 2
               }
             ],
@@ -300,11 +306,16 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
                   5,
-                  8
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly packs 3–4 distinct sub-questions into single turns (e.g., Transcript 1 Turn 2 and Turn 3, Transcript 2 Turn 3 and Turn 4, Transcript 3 Turn 2 and Turn 4). While each question is purposeful, the volume consistently reduces the student's opportunity to process and respond to one idea before the next is introduced. This is a recurring pattern across all three conversations.",
+                "reason": "Many tutor turns across all three transcripts pack 3–4 sub-questions plus instructional framing into a single message. While the multi-question pattern is partially justified by Socratic scaffolding, several turns (e.g., T2 urban studies ex.2, T3 philosophy, T8 philosophy) are dense multi-paragraph replies where 1–2 focused questions would have been more interactive and given the student room to think before being hit with the next wave.",
                 "points": 4
               }
             ],
@@ -333,11 +344,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor performs well on the core Socratic criteria: it consistently refuses to do the student's reasoning, redirects off-topic chitchat efficiently, maintains strong assignment anchoring, and guides the student to derive ideas through well-sequenced questions rather than providing conclusions first.",
-      "The tutor's scaffolding is generally strong—it builds on correct student progress turn-by-turn, especially visible in the philosophy trolley-problem conversation and the Miami stressors table progression.",
-      "Two deductions are applied under 1.3: (a) the tutor never explains its pedagogical rationale to the student when enforcing constraints (e.g., why it won't re-lecture or give direct answers), and (b) no conversation ends with a reflection or transfer prompt—the tutor closes by pointing to the next task rather than consolidating what the student learned about the process.",
-      "A 4-point deduction is applied under 3.1 for consistently multi-question turns. While each sub-question is justified and the questions are clear, packing 3–4 distinct prompts per turn is a recurring structural choice that reduces interactivity and student cognitive space. This pattern appears in all three transcripts without the tutor checking comprehension between questions.",
-      "No deductions are made for 1.1 (the tutor never gives submission-ready content), 1.2 (scaffolding and progression are solid), 2.1 (no spiraling), 2.2 (strong anchoring), or 3.2 (tone is consistently supportive and non-grading)."
+      "Across all three transcripts the tutor performs strongly on the core Socratic dimension: it consistently refuses to give direct answers, redirects off-topic requests efficiently, and guides the student to generate claims, principles, and evidence rankings themselves. No near-submission-ready content was produced by the tutor, and the student did the key reasoning work throughout.",
+      "Scaffolding is also solid: the tutor builds on each student response, acknowledges valid progress, and advances the conversation rather than repeating the same moves.",
+      "The main weaknesses are in meta-learning. The tutor never explains why it is asking questions rather than giving answers, missing an opportunity to help the student understand the value of Socratic method. It also never invites end-of-conversation reflection on how the student's thinking evolved.",
+      "On communication, the tutor's habit of bundling 3–4 sub-questions per turn is the clearest recurring issue. Many turns are dense multi-part messages that reduce the student's space to think before being asked the next question. This pattern appears across all three transcripts and in most turns, justifying a deduction under 3.1.A.a.",
+      "No grading-stance or tone issues were observed; the tutor maintains a coaching voice throughout. Assignment anchoring is excellent: off-topic requests are shut down immediately, and the student is never allowed to stray from the task."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

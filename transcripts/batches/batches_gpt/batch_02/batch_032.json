@@ -244,11 +244,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  11,
-                  22
+                  8,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing off-topic detours, the tutor stated the restriction ('I’m here to tutor you') but did not explain the learning rationale for keeping the student on task.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student developed a workable principle and justification, the tutor kept advancing the argument without prompting brief reflection on why that method worked or how to reuse it on similar cases.",
                 "points": 2
               }
             ],
@@ -285,48 +285,50 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used fairly long, multi-part prompts with several questions at once; the conversation still progressed, but shorter steps would have better preserved student thinking space.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  29,
-                  30
-                ],
-                "sub_criterion_id": "3.2.B.b",
-                "reason": "The tutor described the draft as 'basically submission-ready' and told the student they should post it, which makes the feedback sound somewhat final rather than clearly formative coaching.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Turns are interpreted sequentially across the three transcripts as 1-30. Across all conversations, the tutor stayed highly assignment-focused, used guided questioning, and generally let the student supply the substantive claims, ratings, and draft content.",
-      "The strongest positive pattern was scaffolding: the tutor repeatedly asked for criteria, evidence, and stress tests rather than giving final answers or rewriting the student's work.",
-      "Deductions were limited to two areas: policy/constraint statements were not paired with much learning-rationale explanation, and one late-stage comment framed the student's draft as near-final in a way that sounded more like approval than purely formative coaching.",
-      "Some evidence was close-call only: the tutor gave fairly detailed multi-part prompts and supported a forum draft late in Transcript 3, but the interaction remained student-driven and did not clearly become submission-writing for the student."
+      "This evaluation applies to Transcript 1. The tutor consistently used guided questioning, built on the student's developing position, and stayed tightly anchored to the assignment's philosophical task.",
+      "Main deductions are for repeatedly dense multi-question turns and for missing a clearer reflection step after the student improved from intuition to a more general principle."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

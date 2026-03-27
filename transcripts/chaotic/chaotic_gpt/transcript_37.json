@@ -88,12 +88,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student articulated a workable rating logic, the tutor moved directly into completion steps and drafting frames rather than prompting brief reflection on why that reasoning method worked or how to transfer it.",
+                "reason": "The tutor gave strong structures and critique prompts, but did not explicitly prompt reflection on why the method used here would work for future assignments or what the student learned from the rating/justification process.",
                 "points": 2
               }
             ],
@@ -156,9 +152,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly anchored to the assignment, refused to do paste-ready work, and consistently used guided prompts that kept the student responsible for ratings, evidence, and prioritization.",
-      "Method support was generally strong: the tutor helped structure reasoning with sectors, rating distinctions, and a claim-evidence-consequence template, while also refusing to assist with fabricated quotations.",
-      "The main missed opportunity was explicit reflection/transfer; after the student's reasoning improved, the tutor did not pause to ask what method had helped or how to reuse that approach on future stressors."
+      "The tutor consistently avoided doing the assignment for the student, redirected toward student-generated ratings and evidence, and used strong scaffolds such as sector mapping, rating distinctions, and a claim-evidence-consequence template.",
+      "Dialogue stayed tightly anchored to the stressors table, including a firm and appropriate refusal to fabricate a quote, with clear redirection back to paraphrase or source-checking.",
+      "Main weakness: the tutor did not close the loop with explicit reflection or transfer, such as asking the student what they learned about rating stressors or how to reuse the method in later climate-action assignments."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

@@ -236,7 +236,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 1, Turn 7, the tutor provides a fully pre-written fill-in-the-blank template with polished sentence structures including near-final wording ('Most active sectors appear to be ___ and ___ because the plan says...'). In Turn 8, the tutor then fills that template with the actual actors from the student's sentence, producing near-submission-ready table rows with only bracketed placeholders remaining. Together, these constitute rewriting student text into final wording and turning rough student material into near-ready submission text.",
+                "reason": "In Transcript 1 Turn 7, the tutor provides a detailed fill-in-the-blank template with fully drafted sentence structures including complete forum post language (e.g., 'Most active sectors appear to be ___ and ___ because the plan says...' and 'A key participation gap is ___; the plan only references ___ as ___...'). In Turn 8, the tutor then fills in all actor slots from the sentence, producing near-complete table rows. Together these turns constitute rewriting student content into polished final-wording structures the student can paste with minimal effort.",
                 "points": 6
               }
             ],
@@ -254,12 +254,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the conversations end at Turn 10 without the tutor prompting any reflection on what the student learned about the process of actor analysis, what thinking changed, or why the method of evidence-anchoring works. The tutor moves on to the next task step without consolidating method insights.",
+                "reason": "Across all three transcripts, the tutor rarely pauses to help the student reflect on what changed in their thinking or why a method worked. For example, in Transcript 1 Turn 10 and Transcript 3 Turn 10, after the student shows genuine progress, the tutor moves immediately to the next task without prompting any reflection on the student's reasoning process or what they learned about finding actors.",
                 "points": 2
               }
             ],
@@ -282,18 +280,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcripts 1 and 2, students embed off-topic chat attempts (asking about the tutor's day, music preferences) and the tutor acknowledges these before redirecting. While redirections are appropriate, the tutor in Transcript 2 Turn 1 engages briefly with the off-topic framing before redirecting. However, in Transcript 1 Turn 3, the tutor gives a substantive refusal and returns immediately, and in Transcript 2 the redirection is swift and clear. The off-topic engagement is minimal and handled well overall; deduction is not strongly supported.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -312,12 +299,10 @@
                 "evidence_turns": [
                   2,
                   4,
-                  5,
-                  6,
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends multi-paragraph replies with 3–5 sub-questions when one or two focused prompts would suffice. Turn 2 (Transcript 1) gives 4 numbered sub-questions plus additional guidance; Turn 4 (Transcript 1) gives a detailed 4-part numbered extract method; Turn 7 (Transcript 1) delivers a full pre-written template with 7 bullet categories and a 2-sentence forum post template. Turn 4 (Transcript 2) similarly provides a 4-step PDF navigation method. These lengthy responses consistently reduce student thinking space.",
+                "reason": "Several tutor turns across transcripts are multi-paragraph monologues with multiple numbered sub-questions. For example, Transcript 1 Turn 2 lists four multi-part numbered questions across several paragraphs before asking for a reply. Transcript 2 Turn 4 presents a four-step method dump. Transcript 1 Turn 7 provides an extensive fill-in template with seven rows plus a two-part forum post template. These repeatedly reduce student opportunity to process and respond interactively.",
                 "points": 4
               }
             ],
@@ -346,12 +331,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refuses to write submissions for the student and maintains a firm Socratic stance in the face of repeated manipulation attempts (off-topic chat, requests for generic posts, requests to 'just pick one'). This is a clear strength.",
-      "The primary pedagogical deduction (1.1.B.a, -6 points) applies to Transcript 1, Turns 7–8, where the tutor provides a fully pre-written fill-in-the-blank template with near-final sentence wording, then fills the same template with the student's actual actors, producing near-submission-ready table rows with only bracketed stubs remaining. This crosses from scaffolding into rewriting student text.",
-      "Meta-learning suffers across all three transcripts: the tutor never closes a conversation by asking the student to reflect on why the evidence-anchoring method works or what their thinking process revealed. The conversations end on next-step prompts rather than consolidating methodology insights (1.3.D.a, -2 points).",
-      "Communication length is a recurring issue. The tutor frequently sends 4–7 sub-question responses when 1–2 focused prompts would better preserve student thinking space. This pattern appears in all three transcripts and consistently reduces the student's opportunity to engage before being given the next instruction set (3.1.A.a, -4 points).",
-      "No deductions were applied to 1.2 (scaffolding), 2.1 (redundancy), or 2.2 (assignment anchoring). The tutor builds appropriately on student progress across turns, stays on-topic despite off-topic provocations, and does not spiral on concepts without advancement.",
-      "The 1.1.B.a deduction (6 points) and 3.1.A.a deduction (4 points) are primary; the 1.3.D.a deduction (2 points) is secondary. No double-penalization was applied across overlapping criteria."
+      "The tutor consistently refused to write submission-ready content and maintained good assignment anchoring across all three transcripts, redirecting off-topic chitchat and student attempts to elicit generic answers.",
+      "The primary deduction in 1.1 is for Transcript 1 Turns 7-8: the tutor provided a highly detailed fill-in-the-blank template with near-complete forum post wording and then pre-filled all actor slots from the student's sentence, crossing into editing/rewriting territory (1.1.B.a). This fell short of full 1.1.A.a because the student still needed to supply justifications and a 'missing' group, and the filled example was explicitly labeled 'do not paste as-is.'",
+      "Meta-learning (1.3) loses 2 points because the tutor rarely prompted reflection on reasoning process or what the student learned methodologically, especially at moments of clear student progress (Turns 9-10 across transcripts).",
+      "Communication (3.1) loses 4 points for consistently long, multi-part responses. The tutor's thoroughness, while pedagogically motivated, frequently produced walls of numbered sub-questions that reduced interactivity and overwhelmed students who were already struggling to engage.",
+      "Scaffolding (1.2) is kept at full points: the tutor consistently built on correct student contributions and diagnosed confusion before pivoting methods.",
+      "Dialogue quality (2.1, 2.2) is kept at full points: the tutor avoided spiraling, redirected off-topic attempts efficiently, and maintained strong assignment alignment throughout."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

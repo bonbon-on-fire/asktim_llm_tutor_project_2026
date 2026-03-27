@@ -232,7 +232,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Although the tutor refused to fully write the submission, it provided polished sentence options, assembly instructions, filled template lines, and candidate actor lists that together substantially completed the student's forum post/table content.",
+                "reason": "The tutor ultimately supplied sentence stems, selectable content options, and an exact assembly recipe that together let the student produce a near-submission-ready forum paragraph with minimal original reasoning.",
                 "points": 12
               }
             ],
@@ -247,22 +247,34 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave process guidance and checks for defensibility, but did not meaningfully prompt reflection on why the student's method worked or how to transfer it to future actor-mapping tasks.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
+          "score": 10,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across the conversations, the tutor repeatedly cycled through the same refusal-plus-template move over many turns instead of synthesizing earlier progress more efficiently.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -274,15 +286,21 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Responses were often long, template-heavy, and multi-step when shorter interactive prompts would have fit the student's time pressure and preserved more room for student thinking.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -294,24 +312,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 24,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently kept the work anchored to the actual assignment, asked for source-based evidence, and usually scaffolded with manageable prompts and templates.",
-      "The main deduction is severe boundary slippage under 1.1: across transcripts, the tutor's sentence options, assembly recipes, filled template examples, and candidate actor lists effectively supplied near-submission-ready content even while verbally refusing to do so.",
-      "Outside that core issue, the tutor showed solid process coaching on evidence, defensibility, and specificity, with clear and generally supportive communication."
+      "The tutor consistently stayed on the assignment and maintained a supportive, non-grading tone.",
+      "The largest issue was pedagogy: despite repeated refusals, the tutor in effect built a near-ready submission by supplying scaffolded sentence content, selectable claims, and exact assembly instructions.",
+      "A secondary weakness was efficiency: the tutor often used long, repetitive template-based replies rather than shorter synthesis or stronger adaptation to the student's time pressure.",
+      "Because the input bundled three separate transcripts with overlapping turn numbers, deductions are based on clear cross-transcript patterns and omit turn indices to avoid ambiguous citation."
     ],
-    "total_score": 34,
+    "total_score": 24,
     "judge_llm_calls": 1
   }
 }

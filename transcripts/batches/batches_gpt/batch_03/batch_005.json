@@ -277,12 +277,17 @@
           "3.1": {
             "deductions": [
               {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across Transcript 1 turn 2, Transcript 2 turn 2, and Transcript 3 turn 1, the tutor repeatedly gave long multi-part bullet replies with several decisions/questions at once, where shorter interactive steps would have better preserved student thinking time.",
-                "points": 4
+                "evidence_turns": [
+                  14,
+                  15,
+                  22
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The tutor sometimes used avoidably dense wording such as \"audit-proof,\" \"queryable,\" \"delineation,\" and \"defensible,\" which could add cognitive load for confused students when simpler phrasing would have worked.",
+                "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -294,24 +299,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently avoided doing the assignment for the student, kept the work anchored to the table task, and used guided questions to make the student define geography, sources, labels, and notes themselves.",
-      "The main weakness was response length: several tutor turns bundled many prompts, options, and caveats into one message, which likely increased cognitive load for already-stuck students.",
-      "Because the user provided three transcripts rather than one, deductions were applied conservatively and only where the same pattern clearly appeared across multiple conversations."
+      "Across the three conversations, the tutor consistently refused to complete the assignment directly, redirected off-topic requests immediately, and kept the student doing the substantive boundary/source/labeling decisions.",
+      "The tutor also gave strong method-level coaching: it repeatedly pushed the student to define geography, justify proxies, label limitations transparently, and cite sources in a traceable way.",
+      "Minor deduction only for occasional jargon-heavy wording; otherwise the conversations were well anchored and pedagogically strong. Evidence turn numbers are sequential across the three transcripts (1-10, 11-20, 21-30)."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

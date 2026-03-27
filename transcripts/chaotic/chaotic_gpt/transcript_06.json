@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor completed a core assignment step by assigning 2–3 sector tags for all 10 stressors, doing key categorization work the student was supposed to perform.",
+                "reason": "Tutor supplied sector tags for all 10 stressors, doing a substantive classification step that the student was supposed to determine.",
                 "points": 6
               }
             ],
@@ -98,13 +98,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   5,
-                  6,
-                  8
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly said it could not provide submission-ready work because that would be 'doing the assignment,' but did not clearly explain the learning rationale behind that limit.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Tutor gave useful next-step coaching, but did not prompt reflection on why the student's method or revisions worked so the approach could transfer to later assignments.",
                 "points": 2
               }
             ],
@@ -167,8 +166,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed anchored to the assignment, refused submission-ready writing, and generally scaffolded the student through rating logic, evidence selection, and consistency checks.",
-      "Main pedagogy issue: the tutor still supplied direct content for a core assignment step by giving sector tags for all 10 stressors. I applied the smaller deduction rather than a full 1.1.A penalty because the tutor did not assemble a full submission-ready table."
+      "Tutor consistently refused to provide a submission-ready table and instead scaffolded the student's rating logic, evidence choices, and drafting process.",
+      "The main deduction is for directly supplying sector classifications for all 10 stressors, which completed a meaningful assignment step for the student.",
+      "A smaller deduction reflects limited reflection/transfer support: the tutor coached the immediate task well but did not ask the student to articulate why the method worked for future case-study assignments."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

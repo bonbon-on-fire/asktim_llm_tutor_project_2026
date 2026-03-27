@@ -229,19 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "While refusing to write the final answer, the tutor still supplied key substantive reasoning for the student's conclusion by adding necessity/proportionality constraints, giving a near-final 'Permissible iff...' structure, and offering terminology options that shaped the central principle.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -252,23 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student reached a coherent set of criteria, the tutor moved straight into application without prompting reflection on what method or distinction had helped the student improve.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 24,
           "max": 24
         }
       },
@@ -314,19 +294,14 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
-    "overview": [
-      "Multiple transcripts were provided; this score evaluates Transcript 1 only because the schema supports a single conversation score.",
-      "The tutor consistently refused submission-ready writing, stayed focused on the assignment, and used structured questions to build from the student's own distinctions.",
-      "The main deduction is for supplying too much of the student's final reasoning structure through added conditions and fill-in templates for the conclusion.",
-      "A smaller deduction is warranted because the tutor did little explicit reflection or transfer-oriented discussion once the student arrived at a workable principle."
-    ],
-    "total_score": 38,
+    "overview": [],
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

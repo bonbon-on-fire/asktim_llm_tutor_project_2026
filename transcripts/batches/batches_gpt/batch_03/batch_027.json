@@ -231,12 +231,8 @@
           "1.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  7,
-                  10
-                ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "After substantial student work, the tutor still supplies a decisive conceptual bridge for the final position by telling the student to treat means-talk as evidence of rights violation and by giving the 'appropriation vs imposition' distinction.",
+                "reason": "Across the transcripts, the tutor sometimes does the central argumentative bridge for the student instead of only eliciting it, e.g. proposing that 'means' should be treated as evidence of a rights/consent violation (Transcript 1, Turn 7), supplying the 'appropriation vs imposition' distinction (Transcript 1, Turn 10), and giving ready-made tests like the 'counterfactual' and 'mechanism' tests to classify Fuel (Transcript 2, Turn 6).",
                 "points": 6
               }
             ],
@@ -253,31 +249,18 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces a no-paste-ready-writing limit but does not explain the learning rationale for that constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor keeps refining the student's position but never prompts reflection on why the chosen method or distinction worked across cases.",
+                "reason": "When refusing submission-ready writing, the tutor usually states a boundary but does not clearly explain the learning rationale behind that limit; the refusals are framed as policy/compliance rather than explicit skill-building guidance (especially Transcript 1, Turns 1-2 and Turn 5).",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -304,8 +287,19 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly gives long, multi-part monologues when shorter interactive prompts would have sufficed, especially in later turns of all three transcripts; this reduces the student's room to think and respond stepwise.",
+                "points": 4
+              },
+              {
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The tutor often uses dense philosophical language ('deontic constraint,' 'instrumentalization,' 'contractualism,' 'ceteris paribus'), and Transcript 3, Turn 5 even exposes internal JSON-style reasoning, adding unnecessary cognitive load.",
+                "points": 2
+              }
+            ],
+            "score": 0,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -317,24 +311,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 4,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Transcript 1: strong assignment anchoring and scaffolding; the tutor consistently avoids writing the student's submission and builds the student's own view across cases.",
-      "Main deduction is late-stage idea generation: the tutor supplies a central framing ('appropriation vs imposition') that does important argumentative work for the student's final answer.",
-      "The tutor also gives little explicit rationale for its refusal policy and misses chances to prompt reflection on why the final method generalizes."
+      "The tutor consistently stayed on-task, avoided doing submission-ready writing, and generally scaffolded the student through the philosophy prompt rather than simply answering it.",
+      "The main pedagogical weakness is that the tutor sometimes supplied the key conceptual distinctions and classification machinery that effectively resolve the student’s central argumentative choice.",
+      "Communication was the weakest area: replies were frequently long and jargon-heavy, and one response exposed internal reasoning/JSON formatting, which hurt clarity.",
+      "Because multiple separate transcripts were provided, evidence was judged conservatively and transcript/turn references are named in reasons rather than encoded as a single unified turn index."
     ],
-    "total_score": 36,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

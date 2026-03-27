@@ -74,8 +74,27 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor supplied substantial NYC-specific content options and consequence pathways, including concrete examples and argument paths the student could directly select, which shifted key idea-generation and evidence selection from student to tutor.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Tutor gave line-level revision guidance for the student's sentence by specifying exact insertions and replacements, producing near-final wording for a submission sentence.",
+                "points": 6
+              }
+            ],
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,24 +105,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave specific feedback and next steps, but did not prompt reflection on why the student's revised method worked or how to transfer that approach beyond the immediate draft.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 12,
           "max": 24
         }
       },
@@ -135,10 +144,11 @@
                 "evidence_turns": [
                   3,
                   4,
-                  6
+                  6,
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies became long, content-heavy monologues with scripts, bullet lists, and multi-step instructions where shorter interactive prompts could have preserved more student thinking space.",
+                "reason": "Tutor repeatedly used long, list-heavy replies and multi-step scripts where shorter interactive prompts would have preserved more room for student thinking and response.",
                 "points": 4
               }
             ],
@@ -160,18 +170,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed aligned to the assignment, consistently refused to write a submission-ready post, and used structured questioning and templates to keep the student doing the substantive writing.",
-      "The main weaknesses were communication and meta-learning: several turns were longer than necessary for the student's rushed state, and the tutor rarely paused to help the student reflect on why a revision strategy worked or how to reuse it later.",
-      "Some turns came close to providing plug-in content, but the tutor still stopped short of giving final prose or a full submission-ready answer, so no larger pedagogy deduction was clearly warranted."
+      "Tutor consistently refused to produce a full submission-ready forum post and kept the conversation aligned to the NYC decision-makers assignment.",
+      "Main deductions come from crossing into content generation and sentence-level editing: the tutor provided ready-made NYC-specific examples and consequence pathways, then later prescribed exact wording changes for a final sentence.",
+      "Communication was generally clear and supportive, but several responses were longer and more directive than necessary for an interactive tutoring exchange."
     ],
-    "total_score": 40,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

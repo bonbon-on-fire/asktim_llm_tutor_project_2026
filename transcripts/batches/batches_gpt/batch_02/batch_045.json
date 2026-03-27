@@ -229,8 +229,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "In transcript 2 turn 6, the tutor supplied a list of candidate Miami stressors, and in transcript 3 turn 3 it supplied a 15-row actor-category list; these moves generated core assignment ideas before the student did that ideation.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -241,27 +251,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  12,
-                  27,
-                  28,
-                  30
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced limits on providing direct answers/templates but often framed this only as \"I can't\" rather than explicitly explaining the learning rationale for those constraints.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 18,
           "max": 24
         }
       },
@@ -292,13 +289,11 @@
               {
                 "evidence_turns": [
                   1,
-                  4,
-                  14,
-                  24,
-                  26
+                  6,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across transcripts, the tutor often replied with long multi-part frameworks and several questions at once, which increased cognitive load for a confused student when shorter, tighter steps would have been more appropriate.",
+                "reason": "Across the transcripts, the tutor often used long checklist-style replies (for example transcript 1 turn 1, transcript 3 turn 6, and transcript 3 turn 9) where shorter, more focused interactive steps would likely have reduced overload for this confused student.",
                 "points": 4
               }
             ],
@@ -320,18 +315,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Turn references are sequential across the three transcripts: 1-10 for Transcript 1, 11-20 for Transcript 2, and 21-30 for Transcript 3.",
-      "The tutor was consistently assignment-focused, highly scaffolded, and generally strong on guided discovery: it avoided doing submission-ready work, pushed the student to define decision rules, and helped build defensible methods for sourcing, rating, and actor-mapping.",
-      "Main weaknesses were communication efficiency and meta-framing: responses were often overly long for this student's confusion level, and refusals to provide direct wording/templates were not always paired with a clear explanation of the tutoring rationale."
+      "The tutor consistently kept the work anchored to the assignment, asked useful diagnostic questions, and generally avoided giving submission-ready answers.",
+      "Main deductions are for occasionally generating central assignment content for the student (candidate stressors and actor categories) and for repeatedly using long, multi-part replies that could overwhelm a very unsure student.",
+      "No larger direct-answer deduction was applied because the tutor usually stopped short of final wording or fully completed analysis."
     ],
-    "total_score": 40,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

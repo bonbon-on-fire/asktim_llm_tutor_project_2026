@@ -91,10 +91,11 @@
                 "evidence_turns": [
                   1,
                   4,
-                  7
+                  7,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a non-academic boundary ('I can’t help with non-academic chat') without explaining the learning rationale for that limitation.",
+                "reason": "The tutor repeatedly enforced limits ('I can’t help with non-academic chat' and 'I can’t write the wording for you') without briefly explaining the learning rationale for those constraints.",
                 "points": 2
               }
             ],
@@ -157,10 +158,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, used guided questions well, and avoided doing the student’s substantive work or writing.",
-      "Scaffolding was strong: the tutor helped the student choose a city, define a unit of analysis, standardize sources, and think through coordinate-labeling decisions step by step.",
-      "The main deduction is for enforcing boundaries on off-topic chat without explaining the pedagogical reason for those limits.",
-      "Tone was somewhat rigid in the refusals, but the responses remained polite and quickly redirected back to the task, so no communication-quality deduction was applied."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic detours quickly, and used guided questions to help the student choose a city, define geography, and set a source-checking method without doing the table for them.",
+      "Main deduction: when refusing non-academic chat or ready-to-paste wording, the tutor stated limits but did not explain the learning rationale behind those constraints."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

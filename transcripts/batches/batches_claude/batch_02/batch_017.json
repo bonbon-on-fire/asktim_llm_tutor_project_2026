@@ -235,7 +235,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 3 Turn 8, the tutor fills in the entire template with near-complete table entries from the student's own sentence. Although the tutor says 'don't paste this as-is,' the entries include all actor names, their exact roles, and the evidence phrases—leaving only bracketed placeholders for justification. This amounts to producing near-submission-ready content that the student only needs to minimally supplement, crossing into rewriting the student's work.",
+                "reason": "In Transcript 3 Turn 8, the tutor fills out the entire template with actor names, role labels, and evidence phrases drawn from the student's sentence. Although framed as 'format demonstration,' the filled entries (Leading actor, Engaged actors, community/civil society row, missing row) constitute near-final wording that the student could submit with minimal editing, crossing into rewriting the student's work.",
                 "points": 6
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces constraints on writing submission-ready content but rarely explains the pedagogical rationale (e.g., that the goal is developing the student's own reasoning and long-term skills). The tutor mostly says 'I can't do that' without connecting refusals to the learning purpose.",
+                "reason": "Across all three transcripts the tutor consistently refuses to provide direct answers but rarely explains the learning rationale behind that stance. The pedagogical reason (e.g., 'so you develop the skill of constructing arguments/identifying actors yourself') is almost never articulated; the tutor mostly just says 'I can't do that' without connecting it to active reasoning or long-term skill development.",
                 "points": 2
               },
               {
@@ -277,7 +277,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all transcripts, the tutor moves forward through tasks without prompting the student to reflect on why a method worked, what changed in their thinking, or reinforcing process choices after improvement. When progress is made (e.g., Transcript 1 Turn 9, Transcript 2 Turn 6), no metacognitive reflection is prompted.",
+                "reason": "Across the transcripts the tutor pushes forward to the next task without prompting the student to reflect on why a particular method (e.g., anchoring ratings to an indicator, separating 'means' from 'side-effect') worked or what changed in their thinking. No 'what did you learn from tightening that bullet?' moments appear.",
                 "points": 2
               }
             ],
@@ -326,7 +326,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends long multi-part responses with 3–5 numbered sub-questions plus additional instructions, when shorter focused prompts would have served better. For example, Transcript 1 Turn 2 and Turn 3, Transcript 2 Turns 3–6, and Transcript 3 Turns 2, 5, 6 all use extensive multi-paragraph replies. This pattern consistently reduces student opportunity to respond interactively.",
+                "reason": "In Transcripts 2 and 3 especially, several tutor turns are multi-paragraph with multiple numbered questions stacked before the student can respond (e.g., T2 Turn 3 asks four questions plus a tightening note; T3 Turn 2 poses four numbered sub-questions; T3 Turn 6 poses three prompts plus a two-part forum-post directive). This pattern consistently reduces student opportunity to think and respond one step at a time.",
                 "points": 4
               }
             ],
@@ -355,12 +355,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (Philosophy): The tutor does well maintaining Socratic structure throughout, consistently refusing to write answers and pushing the student to generate their own claim, principle, and reasoning. The progression from AC principle → case analysis → stress-testing → general account is well-scaffolded.",
-      "Transcript 2 (Urban Studies Exercise 02): The tutor consistently refuses to fill in content and guides the student step-by-step through indicator selection and bullet drafting. Feedback is methodologically grounded and pushes for precision. No major pedagogy failures.",
-      "Transcript 3 (Urban Studies Exercise 03): The primary concern is Turn 8, where the tutor fills in the complete template with all five actors, their roles, and evidence phrases—leaving only bracketed justification gaps. While the disclaimer is present, the resulting output is near-submission-ready and constitutes rewriting student content (1.1.B.a). This is the most significant single deduction.",
-      "Meta-learning: Across all transcripts, the tutor rarely explains why it won't write submission-ready content in terms of the student's learning development. The constraint is enforced but not pedagogically framed. Additionally, no reflection or transfer prompting occurs after student progress is made.",
-      "Communication: The tutor's responses are consistently long, multi-part, and dense with simultaneous questions. While the content is good, the format regularly gives students 4–6 things to do at once, reducing the interactivity that Socratic tutoring requires. This pattern is sustained enough across all three transcripts to warrant the full 4-point deduction.",
-      "Note on 1.1 deduction: The 6-point deduction for 1.1.B.a is applied once and capped. The 1.1.A.a (12-point) deduction is not triggered because the content in Turn 8 of Transcript 3, while near-ready, still required student-supplied justification and was framed as a format demonstration rather than a full answer."
+      "Across all three transcripts the tutor generally maintains a Socratic stance, refusing repeated requests to write submission-ready content and consistently returning the generative work to the student. This earns strong marks in dialogue quality (assignment anchoring and anti-redundancy) and tone.",
+      "The primary deduction in 1.1 comes from Transcript 3 Turn 8, where the tutor fills in the actor table template with real names, role labels, and evidence phrases from the student's own sentence. Although framed as a 'format demonstration,' the result is functionally a near-complete draft table that the student could submit with minimal change, triggering the 1.1.B.a rewriting deduction (6 points).",
+      "Meta-learning (1.3) suffers because the tutor almost never explains why it won't write for the student (learning rationale, 1.3.A.a, -2) and never pauses to ask the student to reflect on what changed in their thinking after a successful revision (1.3.D.a, -2).",
+      "Communication length (3.1.A.a) is a consistent weakness: many turns in Transcripts 2 and 3 present 4–5 numbered sub-questions plus structural directives in a single message, which reduces the student's chance to respond incrementally and increases cognitive load (-4).",
+      "No deductions were applied for 1.2 (scaffolding builds well on student progress), 2.1 (no unproductive spiraling), 2.2 (always re-anchors to the assignment), or 3.2 (tone is supportive and non-grading throughout). The 1.1.B.a and 1.1.A.a deductions were not double-stacked; only 1.1.B.a was applied because the Turn 8 behavior is best characterized as rewriting student work rather than providing a fully independent submission-ready answer (the student still needed to fill in justification blanks)."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

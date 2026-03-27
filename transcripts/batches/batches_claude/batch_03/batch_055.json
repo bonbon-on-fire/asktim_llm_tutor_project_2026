@@ -244,6 +244,8 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
                   4,
                   5,
@@ -254,11 +256,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains to the student why it is guiding rather than providing answers directly—no rationale about active learning, skill-building, or long-term development is given. The tutor simply states what it won't do without connecting the refusal to a pedagogical purpose.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (won't fill tables, won't write lines, won't give quotes) but rarely explains the learning rationale behind these limits. The tutor says 'I can't do that for you' or 'I can't give you...' without articulating that the goal is to develop the student's own analytical skills or long-term competency.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
@@ -267,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In none of the three conversations does the tutor prompt the student to reflect on how their thinking evolved or why a method worked (e.g., after the student improves a justification or selects better evidence, the tutor simply moves to the next task without asking the student what changed in their reasoning).",
+                "reason": "In all three transcripts, the tutor consistently moves forward without ever prompting reflection on what the student's thinking process yielded. No turn asks the student to reflect on why a method worked (e.g., 'Notice how anchoring with two extremes made your other ratings easier to justify?') or what changed in their reasoning. The tutor advances tasks but skips process reflection.",
                 "points": 2
               }
             ],
@@ -296,7 +302,7 @@
                   1
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 1, the student asks about music before starting the task. The tutor briefly dismisses it ('I can't do the music question') but this is handled cleanly and immediately. However, on closer inspection the tutor does redirect immediately without any substantive engagement, so no deduction is warranted here.",
+                "reason": "In Transcript 2 (chitchat student), the student asks about music before starting the task. The tutor briefly declines ('I can't do the music question') but then immediately proceeds with assignment help in the same turn without pausing or redirecting more explicitly—this is a minor but real engagement with off-topic framing, though it is very brief. However, this is borderline; the tutor does redirect immediately. Deduction not applied here.",
                 "points": 0
               }
             ],
@@ -316,6 +322,7 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -327,7 +334,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part, multi-paragraph responses with several sub-questions and structured checklists in a single turn. For example, Transcript 1 Turn 5 poses two sets of questions with sub-bullets; Transcript 2 Turns 4–8 each contain extensive checklists and multiple follow-up questions. While detailed guidance is sometimes warranted, consistently stacking 3–5 sub-questions per turn reduces student opportunity to think and respond incrementally. This pattern is recurrent enough to trigger the deduction.",
+                "reason": "Across all three transcripts, many tutor responses are multi-paragraph with several simultaneous questions and sub-tasks. For example, Transcript 1 Turn 5 bundles two multi-part tasks at once; Transcript 2 Turn 6 asks five numbered questions across two stressors plus a step-5 prompt in one turn; Transcript 3 Turn 5 asks four distinct questions simultaneously. While individually defensible in some cases, the pattern across the full set is consistently dense and multi-pronged, reducing student thinking space and making it harder for students to respond clearly.",
                 "points": 4
               }
             ],
@@ -356,11 +363,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains strong Socratic discipline—consistently refusing to write, fill in, or produce submission-ready content for the student, instead using fill-in frames, targeted questions, and provisional-rating logic to keep the cognitive work with the student. No 1.1 deductions are warranted.",
-      "Scaffolding is solid: the tutor builds on student answers turn-by-turn, uses student-generated content as the basis for the next question, and adapts its prompts to each student's confusion level (Transcript 3 clueless student receives more foundational anchoring than Transcript 2's more capable student).",
-      "Meta-learning is the main weakness: the tutor never explains why it guides rather than answers (no rationale about skill-building or active learning), and it does not prompt students to reflect on how their thinking changed after improvements—missing both 1.3.A.a and 1.3.D.a across all three conversations. 1.3.B is mostly satisfied: the tutor regularly gives method-level feedback (e.g., 'your rating logic needs to be explicit,' 'name a concrete metric') and avoids purely correctness-based comments.",
-      "Dialogue quality is high: no spiraling or redundancy is observed; the tutor advances the conversation each turn. Assignment anchoring is maintained throughout, including a clean, immediate redirect to the off-topic music question in Transcript 2.",
-      "Communication quality is the secondary weakness: the tutor's responses are consistently multi-part with 3–5 sub-questions stacked per turn. While none are incomprehensible, this pattern reduces the student's opportunity to engage one idea at a time, triggering the 3.1.A.a deduction. Language clarity is good and tone is supportive throughout, with no grading-stance issues."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to fill in the table, write submission-ready text, or fabricate quotes (Transcript 1 Turn 9), guiding students to generate their own content through structured prompting. The fill-in frames in Transcript 1 (Turns 6, 7, 10) are genuinely scaffolded rather than submission-ready because they leave substantive blanks requiring student reasoning.",
+      "Scaffolding and progression are well-handled: the tutor builds on each student's prior correct steps (e.g., validating provisional ratings before tightening logic in Transcript 2, Turns 3–5; confirming the flooding=9 framing before asking for evidence in Transcript 3, Turns 3–4), and diagnostic questioning occurs before delivering correction.",
+      "The main pedagogical weakness is in meta-learning (1.3): the tutor never explains why it withholds direct answers in terms of skill development, and it virtually never prompts students to reflect on what their thinking process revealed or improved. These are consistent omissions across all 30 tutor turns.",
+      "Communication length is a recurrent issue: many turns pile three to five simultaneous questions or sub-tasks onto the student (e.g., Transcript 2 Turn 6 has five labeled follow-up questions; Transcript 3 Turn 5 has four; Transcript 1 Turn 5 has two multi-part bundles). While the tutor is always focused on the assignment, this density systematically reduces student response quality and thinking time.",
+      "Tone is consistently warm, supportive, and non-punitive even when the student attempts academic dishonesty (Transcript 1 Turn 9). Assignment anchoring is strong with no meaningful off-topic engagement. No grading language appears."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

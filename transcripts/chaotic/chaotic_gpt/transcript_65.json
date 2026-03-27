@@ -81,7 +81,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor resolved key argumentative choices for the student by telling them to treat means-talk as evidence of rights violation and supplying the central 'appropriation vs imposition' distinction, rather than leaving the core bridge from cases to conclusion for the student to derive.",
+                "reason": "The tutor resolved a central conceptual choice for the student by telling them to treat 'means' as evidence of rights/consent violation and then supplying the 'appropriation vs imposition' distinction, which does part of the key reasoning work.",
                 "points": 6
               }
             ],
@@ -101,32 +101,22 @@
                 "evidence_turns": [
                   1,
                   2,
-                  5
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced the no-writing boundary but did not explain the learning rationale behind that limitation beyond saying it would be writing the submission.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  8,
-                  9,
+                  4,
+                  5,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Even after the student's view became clearer, the tutor did not prompt reflection on why the framing improved or how to transfer the method to similar philosophy prompts.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-writing boundary but did not explain the learning rationale for that limitation, beyond simply refusing submission-ready help.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -156,30 +146,17 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  5,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used multi-bullet, multi-question replies where shorter interactive prompts would have fit the student's time pressure and preserved more room for the student to respond.",
-                "points": 4
-              },
-              {
-                "evidence_turns": [
                   5,
                   6,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor used avoidably dense philosophical language such as 'ceteris paribus,' 'deontic constraint,' and 'instrumentalization,' which added cognitive load for a rushed student.",
+                "reason": "The tutor used avoidably dense terminology such as 'ceteris paribus,' 'deontic constraint,' 'instrumentalization,' and 'DDE' with a rushed student who was asking for quick clarification.",
                 "points": 2
               }
             ],
-            "score": 0,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -191,25 +168,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 30,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed on-assignment, maintained a supportive tone, and generally scaffolded from the student's partial ideas rather than writing a submit-ready response.",
-      "Main deductions come from supplying central philosophical reasoning moves itself, especially the rights-vs-means framing and the 'appropriation vs imposition' distinction, which did part of the core argumentative work.",
-      "Communication was the weakest area: several replies were long and jargon-heavy for a student explicitly under time pressure.",
-      "There is some ambiguity on 1.1 because the tutor consistently refused paste-ready prose; the deduction there is limited to the moments where it supplied decisive conceptual bridges rather than full written answers."
+      "The tutor stayed anchored to the assignment, maintained a supportive tone, and built a coherent scaffold from rule statement to case comparison and evaluation.",
+      "The main pedagogy loss is that the tutor eventually supplied a decisive conceptual frame ('appropriation vs imposition' and how 'means' relates to rights), which goes beyond pure guided discovery and performs part of the student's reasoning.",
+      "A smaller deduction was applied for enforcing refusal boundaries without explicitly giving a learning-oriented rationale, and for using some dense philosophy jargon that could increase cognitive load for this rushed student."
     ],
-    "total_score": 30,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

@@ -146,9 +146,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed firmly in a guided-discovery role: it refused to supply submission-ready numbers or wording, redirected the student to authoritative sources, and asked targeted questions that kept the student doing the retrieval and decision-making.",
-      "Across the conversation, the tutor built on student progress well, especially around the GDP measure choice and the Köppen note, giving concrete method-level feedback about defensibility, reproducibility, and honest source use.",
-      "Responses were generally clear, structured, and supportive, and the tutor consistently re-anchored the work to the assignment requirements without drifting off-topic."
+      "Tutor consistently avoided giving submission-ready table entries despite repeated pressure, and instead guided the student to authoritative sources, definitional choices, and reproducible decision rules.",
+      "The tutoring built on the student's progress across turns: first narrowing sources by geography, then helping the student justify current-dollar GDP, then refining a transparent Köppen classification note without rewriting it for them.",
+      "Communication stayed supportive, clear, and assignment-focused throughout, with no meaningful off-topic drift or grading-like scoring."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

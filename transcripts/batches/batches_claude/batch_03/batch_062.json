@@ -247,15 +247,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its 'no writing for you' constraint but rarely explains the underlying learning rationale (e.g., active reasoning builds long-term skill). Turn 10 of T1 is representative: objections are offered without linking them to why the student should work through them independently.",
+                "reason": "Across all three transcripts, the tutor rarely explains *why* it is using a guided-discovery approach (e.g., that it builds long-term reasoning skill) rather than simply telling the student what it won't do. Turn 10 of T1 is a good example: objections are listed without framing why the student should work through them independently.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  10,
+                  10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three transcripts end with the tutor prompting the student to reflect on how their thinking changed or what method worked. T1 ends with objections for the student to answer but no meta-level invitation to reflect on the process. T2 and T3 end with further tasks rather than any consolidation of what the student learned.",
+                "reason": "None of the three conversations end with a reflective prompt asking the student to review what changed in their thinking or to generalise the method used. Each transcript closes by pushing forward to the next content task rather than pausing to consolidate the reasoning process.",
                 "points": 2
               }
             ],
@@ -295,13 +297,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
-                  4
+                  4,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns across all three transcripts are multi-paragraph with multiple sub-questions bundled together (e.g., T1 Turn 2 lists four separate tasks; T2 Turn 1 lists five numbered items; T3 Turn 4 includes two sub-prompts). While individually justified, the pattern of consistently dense, list-heavy responses reduces the student's opportunity to engage with one thing at a time.",
+                "reason": "In all three transcripts the tutor consistently sends multi-paragraph replies containing several numbered sub-questions at once (e.g. T1-Turn2 lists 'one case' plus three sub-tasks; T2-Turn1 poses five numbered questions before any student work; T3-Turn8 adds a grid task plus a further conceptual question). This pattern recurs throughout and persistently crowds out student thinking space where one focused prompt would have been sufficient.",
                 "points": 4
               }
             ],
@@ -330,12 +333,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains a strong Socratic approach: it consistently refuses to write submission content, redirects students who ask for finished answers, and uses well-designed pressure questions to scaffold reasoning (1.1 fully intact).",
-      "Scaffolding is solid: the tutor builds on each student's prior answers, uses the student's own formulations to push further, and adapts when students are stuck (1.2 fully intact).",
-      "The primary pedagogy deduction is in 1.3: the tutor rarely explains why it won't write for the student in terms of the student's learning development, and none of the three conversations close with process reflection or meta-commentary on what the student's thinking accomplished.",
-      "Dialogue quality is strong throughout: no spiraling, no off-topic engagement, and the tutor consistently re-anchors to the assignment when students try to get pre-written answers.",
-      "The main communication deduction is 3.1.A.a: the tutor's responses are frequently dense multi-paragraph messages with three to five sub-questions bundled together. While the questions are individually well-chosen, this pattern consistently reduces the interactivity of the dialogue and the student's opportunity to think through one step before being presented with the next. This is most pronounced in T2 Turn 1 (five numbered items) and T1 Turn 2 (four tasks in one reply).",
-      "No tone or grading-stance issues were detected; the tutor is consistently encouraging and formative."
+      "All three conversations demonstrate strong Socratic discipline: the tutor consistently refuses to write submission-ready content, steadily elicits student reasoning via targeted questions, and builds on correct student progress rather than restarting (1.1 and 1.2 full marks).",
+      "The main pedagogical gap is in meta-learning (1.3): the tutor almost never explains *why* it withholds answers (the learning-rationale criterion), and none of the ten-turn conversations end with a reflective prompt asking the student to articulate what changed in their thinking or how to transfer the method.",
+      "Dialogue quality is strong across all three transcripts: the tutor re-anchors consistently when students misremember Fuel/Blood, redirects off-task requests ('just write it for me') immediately, and avoids unproductive spiraling.",
+      "The clearest recurring weakness is response length (3.1): the tutor habitually fires multi-part numbered lists (sometimes 4–5 sub-questions) in a single turn instead of a single focused prompt. This pattern appears in every transcript and reduces the student's opportunity to think before the next move."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

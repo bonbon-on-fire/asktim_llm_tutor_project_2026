@@ -89,20 +89,22 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing the Netflix request, the tutor states a limitation ('I'm your philosophy tutor for this assignment') but does not give a learning-oriented rationale for the boundary.",
+                "reason": "The tutor consistently enforced an active-response structure and later refused the off-topic Netflix request, but did not explain the learning rationale for those limits beyond role framing.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  6,
                   7,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improves the thesis and argument structure, the tutor keeps advancing to more case-testing without prompting reflection on why the method worked or what the student learned.",
+                "reason": "After the student improved the thesis and argument structure, the tutor moved directly into more case-testing without prompting reflection on what method helped or how to transfer the reasoning approach.",
                 "points": 2
               }
             ],
@@ -165,9 +167,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly Socratic, repeatedly eliciting the student's own thesis, case classifications, and objections rather than writing the argument for them.",
-      "Scaffolding was effective and assignment-focused: the tutor built from the student's partial answers into a thesis, mini-table, and P1/P2/C structure.",
-      "Main weakness was meta-learning: the tutor rarely explained the pedagogical reason for its constraints and did not prompt reflection on why the student's method improved after progress."
+      "The tutor was strongly assignment-anchored, interactive, and scaffolded the student toward their own thesis rather than supplying a submission-ready answer.",
+      "The main weakness was metacognitive framing: the tutor rarely explained why it was withholding direct answers or why the questioning structure supports learning.",
+      "A smaller but clear gap was reflection/transfer support; after progress, the tutor kept advancing the draft instead of prompting the student to articulate what reasoning method had worked."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

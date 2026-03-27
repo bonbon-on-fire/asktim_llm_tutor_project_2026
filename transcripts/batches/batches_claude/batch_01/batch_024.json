@@ -236,7 +236,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, turns 7-8, the tutor generates three labeled options for each blank (including the key reasoning bridge from evidence to conclusion), then assembles a recipe that maps out exactly how the student should combine choices. While the student picks A/B/C, the intellectual work of identifying what each blank should convey is done by the tutor. This is a borderline case but crosses into tutor doing the key reasoning step.",
+                "reason": "In Transcript 1, Turn 7, the tutor provides 3 pre-written options for each blank in the template sentences—including fully formed phrases like 'critical infrastructure resilience and service continuity during climate stress' and 'solutions that don't match neighborhood priorities or lived experience.' These are not prompts for student reasoning but ready-made answer choices that do the key analytical reasoning for the student. In Turn 8, the tutor then provides an 'exact assembly recipe' that essentially tells the student exactly how to stitch the chosen options into the final sentences. Together these turns mean the tutor resolved the central analytical work (what the emphasis was, what the gap consequences were, what the board should do) before the student had to derive it.",
                 "points": 6
               }
             ],
@@ -254,20 +254,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next task step without prompting the student to reflect on their reasoning process or what they learned. In T1-T10, T2-T10, T3-T10, there is no moment where the tutor asks the student to step back and consider what their approach reveals about how to analyze actor participation gaps methodologically.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   1,
                   2,
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses student shortcut requests but does not explain the learning rationale beyond implicit references to 'doing the assignment' or 'your post needs to reflect your sourcing.' The tutor does not articulate that the reason for guided discovery is to build the student's analytical skills for future course work (actor mapping, action mapping, etc.).",
+                "reason": "Across all three transcripts, the tutor consistently declines to help in certain ways but only rarely explains the learning rationale. In Transcript 1 Turn 1 the tutor says 'I can't write a submission-ready table for you' without explaining why the student's own reasoning matters for skill development. Turn 3 says 'generating it for you would be doing the deliverable' which is closer but still procedural rather than articulating active reasoning or long-term skill development as the reason.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why the method of evidence-anchoring worked. At the end of Transcript 1 (Turns 9-10) and Transcript 3 (Turn 10), the conversation ends with tactical corrections but no reflection on process or transfer question about how to approach similar actor-mapping tasks in future.",
                 "points": 2
               }
             ],
@@ -315,7 +316,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor repeatedly sends multi-paragraph responses with multiple numbered sub-questions and detailed frameworks when shorter, more focused prompts would better serve the chaotic student's attention and learning pace. For example, T1-Turn2 has 6 numbered extraction prompts, T1-Turn5 has a detailed 4-sentence scaffold plus a follow-up question, T2-Turn2 has 3 numbered questions plus instructions, T3-Turn5 provides 6 expansion slots plus 3 gap types. This consistently reduces student opportunity to think and respond incrementally.",
+                "reason": "Across all three transcripts, the tutor consistently delivers multi-paragraph, highly structured responses with multiple sub-questions, labeled tables, multi-item scaffolds, and enumerated prompts when shorter, more focused prompts would have been more appropriate. For example, Transcript 1 Turn 2 asks six numbered sub-questions in one message; Turn 3 presents a full 8-row table skeleton plus two questions; Turn 5 gives a 4-sentence scaffold with labeled sentence slots. Transcript 2 Turn 5 asks six fill-in questions; Transcript 3 Turn 6 lists 18 candidate organizations across 6 slots. This pattern consistently reduces student opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -344,12 +345,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and firmly refuses to write submission-ready content, which is the correct baseline approach. Across all three transcripts, the tutor maintains its policy when the student repeatedly requests paste-ready outputs.",
-      "The main pedagogy deduction (1.1.C.b) applies to Transcript 1 Turns 7-8, where the tutor generates all three options for all four blanks, effectively doing the key reasoning work (identifying what each conceptual slot should capture) before the student engages. The student merely selects A/B/C from tutor-authored options. This is a borderline case—the student does make choices—but the tutor resolves the conceptual content of each blank rather than asking the student to generate candidate ideas first.",
-      "Meta-learning deductions are applied because the tutor does not explain its tutoring rationale in terms of skill development (1.3.A.a), and does not prompt any process reflection at the end of extended exchanges (1.3.D.a). The 1.3.B criterion is not deducted because the tutor does give method-level feedback on evidence defensibility and specificity throughout.",
-      "The communication quality deduction (3.1.A.a) is applied because the tutor's responses are consistently long and multi-part even when the student is clearly overwhelmed. Shorter, sequential prompts would better match this student's attention capacity and leave more room for student thinking.",
-      "No deductions are applied for assignment anchoring (2.2) or redundancy (2.1): the tutor consistently re-grounds the student to the actual task and adapts its approach across turns rather than cycling without progress.",
-      "The 1.3.B criterion is kept at full points across transcripts because the tutor does give substantive method feedback (e.g., on what makes a claim 'defensible,' on distinguishing lead vs. engaged actors, on specificity requirements), even if it could be more explicit about process transfer."
+      "Across all three transcripts, the tutor maintains a firm and consistent refusal to write submission-ready content for the student, which is the most important boundary for academic integrity. The tutor is generally well-anchored to the assignment and redirects off-task requests effectively.",
+      "The primary deduction in 1.1 arises in Transcript 1 (Turns 7-8), where the tutor provides fully pre-written multiple-choice options for each blank in a template—covering the key analytical claims about sectors, consequences, and mechanisms—effectively doing the reasoning work before the student. While framed as 'options to pick,' the options themselves contain the analytical substance that the student should have generated. This triggered a 1.1.C.b deduction (6 points).",
+      "In 1.3, the tutor rarely explains the pedagogical rationale for its limitations (why student-generated reasoning matters for skill development) and never prompts process reflection or transfer at conversation's end across any of the three transcripts.",
+      "In 3.1, a consistent pattern of long, densely structured responses with multiple enumerated sub-questions appears throughout, reducing the student's opportunity for active incremental thinking. This is a clear 3.1.A.a pattern across all three conversations.",
+      "No deductions were applied for redundancy/spiraling or assignment anchoring—the tutor progressed the student meaningfully and stayed on-task throughout. Tone was supportive and non-punitive. No grading framing was used."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

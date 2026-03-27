@@ -94,7 +94,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor kept the student moving through drafting and application, but did not explicitly prompt reflection on why the chosen method or distinction worked beyond the immediate answer.",
+                "reason": "After the student arrived at a workable rule, the tutor kept moving into the next drafting step and stress-tests rather than prompting reflection on why this method helped or how to transfer it beyond the immediate cases.",
                 "points": 2
               }
             ],
@@ -131,8 +131,17 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "Turn 8 includes exposed JSON/meta labels such as \"pedagogical-reasoning\" and \"Student-facing-answer,\" which add unnecessary technical language and cognitive load.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -144,25 +153,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submission-ready writing and instead used templates, forced-choice prompts, stress-tests, and targeted questions to keep the student doing the core argumentative work.",
-      "The conversation stayed well anchored to the assignment: act consequentialism, Fuel/Blood, trolley variants, and the student's own proposed constraint were all handled directly.",
-      "The main supported weakness is limited reflection/transfer support: the tutor helped the student build an answer but did not explicitly pause to help the student reflect on why the method succeeded or how to reuse it on future philosophy arguments.",
-      "Some replies were fairly structured and directive, but there was enough progression and interactivity that stronger deductions for monologuing or repetition were not clearly supported."
+      "The tutor stayed firmly non-substitutive: they refused repeated requests for a paste-ready essay, avoided rewriting the student's work, and consistently redirected toward thesis-building, case comparison, and self-generated rules.",
+      "Scaffolding was strong and assignment-anchored throughout: the tutor built from the student's own Fuel/Blood/trolley judgments, used templates and stress-tests, and kept the discussion focused on act consequentialism and the improved general account.",
+      "Minor deductions: explicit reflection/transfer support was limited once the student reached a workable rule, and one response used awkward JSON/meta formatting. The reflection issue is somewhat mild because the tutor did provide method prompts and consistency checks."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -243,14 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  4,
-                  8,
-                  26
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced limits ('can't do casual chatting,' 'can't tell you which label to put,' 'can't phrase/write the citation line,' 'not going to do the side question') without explaining a learning rationale such as why student-generated reasoning is important.",
+                "reason": "Across the transcript set, the tutor often enforced boundaries ('can't chat,' 'can't write the citation line for you') without consistently giving an explicit learning rationale for those limits, even though it did so occasionally.",
                 "points": 2
               }
             ],
@@ -273,14 +267,20 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "In Transcript 3, the assignment context assumes the student already has a chosen case study city, but the tutor helped the student choose and then switch cities instead of re-anchoring to the existing case study city required by the scaffolded course design.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -293,42 +293,31 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  7,
-                  26
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's repeated off-topic refusals use somewhat rigid phrasing ('That's a detour,' 'I can't recommend shows/podcasts,' 'I'm not going to do the side question'), which risks sounding inflexible even though the tutor keeps the student on task.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three exercises, the tutor consistently kept the student anchored to the assignment and used questions, criteria, and source-checking prompts to make the student generate the substantive content.",
-      "There is no clear evidence of the tutor giving submission-ready answers, choosing final ratings/actors for the student, or rewriting the student's work into polished final prose.",
-      "Main deductions are for not explaining the learning rationale behind repeated refusals/limits and for occasionally rigid boundary-setting language; the tone deduction is modest because task progress was still maintained."
+      "Across the three transcript blocks, the tutor consistently used guided questions, built on the student's partial answers, and avoided doing submission-ready work for the student.",
+      "The strongest weakness was assignment anchoring in Transcript 3: the tutor did not correct the student's drift away from the already-selected case study city and instead supported choosing/switching cities.",
+      "Method feedback was generally strong and specific, but the tutor's refusals and boundaries were not always paired with an explicit learning rationale."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

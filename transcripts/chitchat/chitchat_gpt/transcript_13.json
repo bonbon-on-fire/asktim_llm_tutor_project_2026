@@ -146,9 +146,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently redirected off-topic turns back to the assignment, then used structured questioning to help the student choose a city, define stressors, identify sectors, select metrics, evaluate source quality, and prepare defensible justifications.",
-      "The tutor avoided doing submission-ready work: it offered options and process guidance, but repeatedly required the student to make the key choices, find sources, and articulate why a rating was justified.",
-      "Scaffolding was strong and progressive, with each turn building on the student's prior answer and moving from topic selection to evidence standards, citation quality, and accurate use of hotspot versus typical rates."
+      "Tutor consistently used guided discovery: it redirected off-topic turns quickly, had the student choose the city and stressors, and pushed the student to generate sector tags, ratings, metrics, and source strategy rather than supplying submission-ready content.",
+      "Scaffolding was strong and cumulative, moving from city selection to stressor framing to evidence standards, source credibility, and accurate citation/use of hotspot vs typical rates.",
+      "Communication stayed clear, structured, and supportive, with concise checklists and targeted questions; no clear rubric-supported deduction is warranted from the transcript."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

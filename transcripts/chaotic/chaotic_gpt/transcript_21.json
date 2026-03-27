@@ -146,10 +146,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready content and instead used guided prompts, templates, comparison anchors, and coherence checks to keep the student doing the core reasoning and writing.",
-      "Scaffolding was strong throughout: the tutor built directly on the student's chosen city, stressor list, ratings, and draft justifications, then narrowed the work into manageable next steps rather than restarting or ignoring progress.",
-      "The conversation stayed tightly anchored to the assignment requirements (stressors, sectors, ratings, justifications, priority logic), with supportive tone and clear formative framing rather than grading.",
-      "There was some template-heavy prompting and fairly structured guidance, but the evidence does not clearly cross the rubric threshold for a deduction because the student still supplied the actual selections, ratings, evidence cues, and final wording."
+      "The tutor consistently refused to do submission-ready work, kept the student generating the actual ratings and justifications, and used structured prompts, consistency checks, and targeted follow-up questions to scaffold progress toward the assignment requirements.",
+      "The tutor stayed tightly anchored to the stressors-table task, built on the student's emerging list and rating logic, and maintained a supportive, non-grading tone throughout.",
+      "Some scaffolds were highly structured, but they retained blanks and required the student to supply the substantive content, so there was not clear evidence for a rubric-triggering deduction under direct-answer or rewriting criteria."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

@@ -301,9 +301,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor consistently refused to do submission-ready work, redirected the student into drafting their own content, and used guided prompts, templates, comparison questions, and scale-anchoring to move the student forward.",
-      "The tutor stayed tightly anchored to the assignment, immediately redirected off-topic content, built on student progress turn by turn, and provided method-level feedback about evidence, rating consistency, double-counting, sector coverage, and justification structure.",
-      "No rubric-triggering deduction was clearly supported by the evidence; where the tutor used templates or suggested options, they still preserved student authorship and did not cross into final-answer delivery."
+      "Scored Transcript 1. The tutor consistently refused to do submission-ready work, then used guided prompts, rating anchors, comparison criteria, templates with blanks, and checklist-based self-audits to keep the student doing the substantive reasoning.",
+      "The tutor built directly on the student's drafts across turns, gave concrete process feedback on evidence, mechanism, rating consistency, and double-counting, and stayed tightly anchored to the assignment requirements and table structure.",
+      "A minor ambiguity is that some sentence templates came close to wording support, but they still required the student to supply the actual claims, specifics, and final language, so no deduction was applied under the rubric."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

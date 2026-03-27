@@ -235,7 +235,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 6, the tutor provides a list of 14 academic sentence starters specifically crafted for the student's prompt (AC, downstream effects, trust). While framed as 'generic frames,' many are substantively filled out with the core consequentialist argument content (e.g., 'A narrow focus on body count is incomplete insofar as it ignores…', 'Even granting that the act saves more lives in the short run, it may be all-things-considered worse because…'). This effectively does significant reasoning/framing work for the student rather than asking the student to generate these ideas.",
+                "reason": "In Transcript 1 Turn 6, the tutor provides 14 academic sentence starters that are directly usable in the student's submission. While framed as 'generic frames,' they supply the rhetorical scaffolding so completely that the student can stitch together a near-ready paragraph with minimal reasoning contribution. This crosses into doing a key reasoning/writing step for the student.",
                 "points": 6
               }
             ],
@@ -253,22 +253,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor repeatedly refuses student requests without explaining the learning rationale (e.g., active reasoning, skill development). It just says 'I can't do that' without explaining why doing the work yourself matters for learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting the student to reflect on what changed in their thinking, why a particular approach worked, or what method they used. For instance, in Transcript 1 Turn 10 the student reaches a near-final formulation, but the tutor only gives content-level tweaks; in Transcript 2 Turn 10 the tutor similarly pushes forward to the next task without asking the student to reflect on the reasoning process they developed.",
+                "reason": "At the end of Transcripts 1 and 2, the tutor does not prompt the student to reflect on what they learned about their reasoning process or what changed in their thinking. In Transcript 1 Turn 10, the tutor gives content feedback but misses a chance to ask the student to reflect on the overall method used. Similarly in Transcript 2 Turn 10, the session ends with task-level prompts rather than process reflection.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -304,7 +314,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor's responses in Transcript 1 are frequently long and multi-layered. Turn 2 provides a multi-part fill-in template with three numbered sections and two follow-up questions. Turn 3 has four numbered multi-part sub-questions. Turn 4 provides a 7-point ordered paragraph plan. Turn 6 gives 14 sentence starters. While structure is valuable, this pattern of long, dense responses reduces the student's opportunity to think and respond to focused prompts, and consistently prioritizes information delivery over short interactive dialogue.",
+                "reason": "Across all three transcripts, the tutor frequently delivers multi-paragraph, multi-question responses when shorter, focused prompts would be more effective. Turn 2 (T1) uses a full template with two separate question prompts. Turn 3 (T1) has four multi-part sub-questions. Turn 6 (T1) provides 14 sentence starters. Turn 3 (T3) asks six numbered category questions. This pattern consistently reduces the student's opportunity to think incrementally.",
                 "points": 4
               }
             ],
@@ -326,24 +336,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong commitment to not writing submission-ready content across all three transcripts, consistently refusing to draft, fill in, or supply near-final answers despite persistent student pressure. This is a clear strength.",
-      "The tutor uses Socratic questioning effectively throughout, particularly in Transcripts 2 and 3, guiding the student to generate their own actor classifications, ratings, and justifications.",
-      "However, in Transcript 1 Turn 6, the tutor provides 14 substantively-developed sentence starters that do significant reasoning work for the student—going beyond 'generic frames' to supply the key consequentialist argument moves. This triggers a 1.1.C.b deduction (6 points).",
-      "Response length is a consistent issue, especially in Transcript 1: turns 2, 3, 4, and 6 are long multi-part responses that limit the student's thinking space. This triggers a 3.1.A.a deduction (4 points).",
-      "The tutor rarely invites the student to reflect on what changed in their reasoning or why a particular method worked, missing opportunities for metacognitive reinforcement (1.3.D.a, 2 points deducted).",
-      "Scaffolding is well-executed: the tutor builds on student progress, acknowledges correct steps, and uses principled progression through the assignment tasks without restating from scratch.",
-      "Tone is warm and appropriately supportive throughout; no grading-like language or dismissive framing is used.",
-      "Assignment anchoring is strong: the tutor never follows the student's attempts to derail or abbreviate, and always redirects to the actual assignment task.",
-      "The 1.1.C.b deduction is the primary point of interpretive uncertainty—the sentence starters are framed as templates, but their content-specificity means the tutor is doing more reasoning work than guidance alone would require."
+      "The tutor consistently refuses to do the work outright and uses genuine Socratic questioning across all three transcripts, building on student responses and pushing for reasoning at each step.",
+      "In Transcript 1 Turn 6, the tutor provides 14 polished academic sentence starters that, taken together, supply the rhetorical substance of a submission-ready response. This is borderline 1.1.A territory but is assessed as 1.1.C.b since the starters are framed as generic and the student still fills in the claims; nonetheless a 6-point deduction applies under that criterion.",
+      "The tutor rarely explains *why* it declines to do the work for students (the learning rationale), simply saying 'I can't' without grounding this in skill development or academic integrity principles (1.3.A.a).",
+      "The tutor does not prompt meta-reflection or process consolidation at the end of sessions—conversations end with task-level prompts rather than asking students what they learned about their reasoning approach (1.3.D.a).",
+      "Response length is a consistent issue: many tutor turns are multi-paragraph with several sub-questions stacked, which reduces the student's thinking space. This is especially evident in Transcripts 1 and 3 (3.1.A.a).",
+      "Assignment anchoring and redundancy are handled well—the tutor keeps students on task and avoids cycling without progress.",
+      "Tone is supportive and non-grading throughout all three conversations."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

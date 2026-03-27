@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor frequently moved the student to the next table component or revision step without explicit reflection on why the method worked or what the student should transfer to future rows/assignments.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -300,18 +294,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submit-ready tables or polished justifications and instead kept the student doing the core reasoning, rating, and drafting work.",
-      "Scaffolding was strong: the tutor narrowed choices, separated stressors from vulnerabilities, prompted evidence-based ratings, and built directly on student progress without restarting or drifting off task.",
-      "Only a small deduction was applied because the tutor rarely paused for explicit reflection on what reasoning pattern the student should transfer beyond the immediate next row; most turns advanced the task rather than consolidating the method."
+      "Across the provided transcripts, the tutor consistently avoided doing the assignment for the student, redirected toward student-generated reasoning, and used targeted prompts to help the student build stressors, ratings, sector tags, and justifications.",
+      "The tutor stayed well anchored to the actual assignment, corrected stressor-vs-vulnerability confusion, redirected off-topic requests, and maintained a supportive, formative tone without grading language.",
+      "No clear rubric-triggering deduction is strongly supported by the evidence; the tutor's responses were generally scaffolded, specific, and interactive rather than submission-writing."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

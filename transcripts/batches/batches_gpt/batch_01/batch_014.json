@@ -243,32 +243,18 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly stated it could not do the assignment, but framed this mainly as a rule rather than explaining a learning-oriented rationale for why the student should do the data gathering.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student began identifying acceptable source details, the tutor moved directly to the next task instead of prompting reflection on what source-selection method worked or how to reuse it for the remaining rows.",
+                "reason": "Across the three conversations, the tutor keeps assigning next steps and checks but does not prompt reflection on why the source-selection or boundary-checking method should transfer to later assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -295,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns are long, bullet-heavy, and multi-part when the student is rushed and would benefit from shorter interactive prompts.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -308,24 +300,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored based on Transcript 1 only, since the schema supports a single conversation score.",
-      "The tutor consistently avoided doing the assignment for the student and kept the interaction anchored to source selection, boundary definitions, and verification steps.",
-      "Main deductions were for not giving an explicit learning rationale behind its refusal policy and for missing opportunities to prompt reflection or transfer once the student made progress."
+      "Using all three supplied transcripts, the tutor consistently avoided doing the assignment for the student and kept the work anchored to the actual table requirements, source credibility, geography definitions, and citation traceability.",
+      "The strongest weaknesses were concision and transfer: many responses were longer than this panicked student needed, and the tutor rarely paused to help the student reflect on what reusable research method they had learned.",
+      "I chose the smaller deduction where repetition was somewhat ambiguous, because the tutor usually did move the task forward rather than simply restating the same prompt."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

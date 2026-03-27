@@ -301,9 +301,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided transcripts, the tutor consistently refused to ghostwrite or provide paste-ready assignment text, instead using questions, templates, decision rules, and evidence prompts to keep the student doing the core reasoning.",
-      "The tutor stayed tightly anchored to the actual stressors-table task, redirected off-topic moves immediately, and built on student progress with targeted follow-up questions rather than restarting or overriding the student's ideas.",
-      "Method-level coaching was strong throughout: the tutor helped students define scoring criteria, avoid double-counting, choose indicators, separate hazard vs stressor framing, and set evidence standards in ways that support transfer to later assignment work."
+      "Across all three transcripts, the tutor consistently refused ghostwriting while keeping the student doing the substantive reasoning, ratings, evidence selection, and wording.",
+      "The tutor used strong scaffolding: targeted questions, templates, evidence criteria, rating rules, and priority-selection logic that built directly on student progress.",
+      "Dialogue stayed anchored to the assignment, redirected off-topic content promptly, and maintained a supportive coaching stance without grading language.",
+      "Some responses were structured and detailed, but they remained interactive and did not clearly cross the rubric threshold for overlong monologue or excessive density."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

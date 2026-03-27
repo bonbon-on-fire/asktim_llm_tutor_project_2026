@@ -245,12 +245,11 @@
               {
                 "evidence_turns": [
                   1,
-                  8,
-                  21,
-                  27
+                  11,
+                  21
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced off-topic limits as policy ('I’m here as your course tutor') with little explicit learning rationale about why staying on-task supports the student’s skill development.",
+                "reason": "The tutor repeatedly enforces the no-off-topic boundary by saying it is here only as the course tutor, but does not explain a learning rationale for that constraint or how it supports the student's skill development.",
                 "points": 2
               }
             ],
@@ -267,23 +266,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9,
-                  10,
-                  28,
-                  29,
-                  30
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "When the student did not have pages open, the tutor repeated essentially the same extraction request across multiple turns (verbatim source strings / named actors) instead of switching to a simpler fallback, synthesis, or alternate step to keep momentum.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -295,7 +279,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -311,13 +295,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  8,
-                  21,
-                  27
+                  27,
+                  30
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor stayed focused, but several off-topic refusals were terse and rigid ('I can’t...'; 'No—my job here...'), which slightly weakens rapport and warmth.",
+                "reason": "The tutor's redirections are effective but occasionally sound rigid or blunt (e.g., 'No—my job here...' and 'Generic labels are a weak move here'), which could reduce rapport.",
                 "points": 2
               }
             ],
@@ -333,18 +315,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor remained strongly assignment-anchored, resisted doing the student’s work, and usually used guided questions that built directly from the student’s answers.",
-      "Main weaknesses were repetitive prompting when the student lacked source pages or exact excerpts, and a somewhat rigid tone in repeated off-topic refusals.",
-      "Evidence-turn numbering is sequential across the three transcripts combined (1-30)."
+      "Across the three transcripts, the tutor consistently kept the student doing the substantive work through targeted questions, source-check prompts, ranking prompts, and requests for the student's own wording rather than supplying submission-ready answers.",
+      "The strongest performance was in assignment anchoring: off-topic chat was redirected quickly, and the tutor stayed closely aligned to each assignment's task structure and evidence needs.",
+      "Deductions are limited to two areas: the tutor enforced boundaries without explaining a learning rationale, and the tone was occasionally more rigid/blunt than supportive. Evidence turns are numbered sequentially across the three transcripts (1-10, 11-20, 21-30)."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

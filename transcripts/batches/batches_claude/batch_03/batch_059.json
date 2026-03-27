@@ -235,7 +235,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Transcript 2 Turn 8, the tutor provides polished sentence-starter templates (five fill-in frames with complete sentence structure and phrasing) that the student can directly copy and fill in minimal words. This crosses into providing near-final wording rather than guiding the student to construct sentences independently.",
+                "reason": "In Transcript 2 Turn 8, the tutor provides polished sentence-starter frames for all five sections of the forum post ('In Miami, adaptation work is led mostly by...'), which, combined with the student's prior work, amount to near-final wording scaffolds. However, the student still had to fill in many specifics. This is borderline; the more direct issue is the tutor in Turn 8 of Transcript 2 gives sentence-frame templates close to submission-ready wording. Applying the 6-point deduction here.",
                 "points": 6
               }
             ],
@@ -253,20 +253,39 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor rarely explains why it is refusing to give direct answers in terms of long-term skill development. It mostly says 'that's the assignment's core work' or 'I can't do this for you' without framing it as building research or analytical skills.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next action step without prompting students to reflect on why their approach worked, what changed in their thinking, or reinforcing method choices after improvement. No turn explicitly asks the student to reflect on what they learned about actor-mapping methodology or why a particular approach succeeded.",
+                "reason": "In all three transcripts, the tutor moves forward without prompting the student to reflect on what changed in their thinking or why a method worked. No turn explicitly asks the student to reflect on their process improvement.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -279,16 +298,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 2, the student asks for Netflix recommendations (off-topic). The tutor does respond briefly ('I can't help with non-academic topics here') which is appropriate, but this is handled well. No meaningful deduction warranted here.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -309,10 +319,12 @@
                   3,
                   4,
                   5,
-                  6
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns include multi-part instructions with 3-5 sub-questions bundled together. For example, Transcript 1 Turns 2-4 and Transcript 2 Turns 3-6 repeatedly present 3+ numbered questions simultaneously rather than one focused prompt, reducing student opportunity to think and respond incrementally.",
+                "reason": "Across all three transcripts, the tutor frequently delivers multi-paragraph responses with multiple sub-questions bundled together (e.g., Transcript 1 Turn 2 has 3 numbered steps plus a skeleton template; Transcript 2 Turn 4 has 3 questions; Transcript 3 Turn 4 has 3 steps). This consistently reduces student opportunity to think incrementally and respond before another wave of instructions lands.",
                 "points": 4
               }
             ],
@@ -334,20 +346,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_05): The tutor consistently refuses to do the assignment for the student across 10 turns, maintaining a strong Socratic stance even under repeated pressure. The tutor guides the student toward self-discovery by prompting concrete searches and naming tasks rather than supplying answers. No 1.1.A violation occurs. However, in Turn 8, the tutor provides five near-complete sentence-starter templates with full grammatical structure that the student need only fill with names—this is borderline 1.1.B territory; assessed as a shared violation across transcripts.",
-      "Transcript 2 (chitchat_05): The tutor does excellent scaffolded work through Turns 1-7, building progressively from categories to decision levers to evidence to draft. Turn 8 of this transcript provides 5 fill-in sentence templates with polished framing—these are effectively near-final sentences the student fills with names, constituting rewriting assistance (1.1.B.a). The tutor also redirects the Netflix off-topic request cleanly in Turn 2. The forum draft that emerges by Turn 9 is essentially submission-ready, though this is largely driven by the student's own good work.",
-      "Transcript 3 (clueless_05): The tutor demonstrates strong diagnostic questioning, especially in Turns 1-7, asking the student to distinguish actors from programs and test claims with evidence. The tutor avoids supplying actor names even in Turn 10 when the student is panicking. Scaffolding is appropriate and builds on student progress.",
-      "Cross-transcript issues: (1) All three transcripts show a pattern of bundling 3-5 questions per tutor turn rather than one focused prompt, consistently reducing student response space—this warrants a 3.1.A deduction. (2) No turn in any transcript explicitly prompts students to reflect on what their approach revealed or what changed in their thinking about actor-mapping methodology, triggering 1.3.D.a. (3) The 1.3.A.a criterion (explaining tutoring rationale) is partially met—the tutor in Transcript 1 explains why it won't supply answers ('that's the assignment's core work'), so no deduction there. (4) The sentence-starter templates in Transcript 1 Turn 8 and Transcript 2 Turn 8 are treated as a single 1.1.B violation to avoid double-penalizing the same pattern.",
-      "No 1.1.A (full 12-point) violation is triggered: the tutor never supplies a complete, submission-ready answer. The 1.1.B deduction (6 points) is applied for the sentence-starter templates. No 1.1.C deduction is applied separately as the same behavior is captured by 1.1.B."
+      "Transcript 1 (chaotic_05): The tutor does strong work refusing to provide ready-made actor lists and consistently redirecting the student to do their own research. It guides via Socratic questions across all 10 turns. The main weakness is that it never explains the learning rationale behind its refusals and misses reflection opportunities.",
+      "Transcript 2 (chitchat_05): The tutor handles off-topic content appropriately and guides the student well through increasingly specific actor identification. However, in Turn 8, the tutor provides polished sentence-frame templates that serve as near-submission-ready scaffolding, triggering the 1.1.B deduction. The conversation otherwise demonstrates good progression and assignment anchoring.",
+      "Transcript 3 (clueless_05): Good handling of a confused student. The tutor correctly diagnoses actor vs. program confusion and scaffolds effectively. It avoids giving away actor names even under pressure in Turn 10. Minor weaknesses in meta-learning (no reflection prompts, no rationale for withholding).",
+      "Response length: All three transcripts show a consistent pattern of multi-part, multi-paragraph responses that bundle 3+ questions at once, reducing student thinking space. This triggers the 3.1.A.a deduction.",
+      "No double-counting: The 1.1.B deduction for Transcript 2 Turn 8 sentence frames is applied once under 1.1 and not under 1.3 or 3.1. The 1.3 deductions for rationale and reflection are applied only where clearly absent across all three conversations."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

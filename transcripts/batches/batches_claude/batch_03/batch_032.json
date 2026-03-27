@@ -256,15 +256,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor never explains why it is guiding rather than giving answers (e.g., it does not say 'I ask questions so you develop the reasoning skill yourself'). It simply enforces constraints ('I can't write that for you') without articulating the learning rationale.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to do the work for students but rarely explains the pedagogical rationale (i.e., that the student develops stronger analytical skills or long-term transfer by reasoning independently). The constraint is enforced but the learning purpose is almost never articulated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without the tutor prompting any reflection on what the student's thinking process revealed or what changed in their understanding. Transcript 3 ends at Turn 10 with a format checklist; Transcript 1 ends with content questions; Transcript 2 ends with source-checking questions. None invite the student to step back and reflect on method.",
+                "reason": "In all three transcripts, the tutor moves on to the next task without prompting students to reflect on what they learned from a reasoning step or what changed in their thinking. There are no closing reflection prompts or method-reinforcement moments after improvements.",
                 "points": 2
               }
             ],
@@ -309,11 +318,13 @@
                   4,
                   5,
                   6,
+                  7,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor consistently delivers multi-part, multi-paragraph responses with three or more numbered sub-questions per turn. For example, Transcript 1 Turn 2 packs a rating framework plus three separate sub-tasks; Transcript 2 Turn 3 contains three numbered questions each with sub-parts; Transcript 3 Turn 2 has a full template plus two additional prompts. This pattern recurs throughout, reducing the student's opportunity to think and respond to one thing at a time.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-part responses with 3 simultaneous sub-questions and extensive instructions when shorter, more focused prompts would preserve student thinking space. This pattern is consistent and reduces student opportunity to respond to a single focused prompt before receiving more guidance.",
                 "points": 4
               }
             ],
@@ -342,11 +353,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "All three transcripts show a tutor that consistently refuses to do the assignment for the student, maintains Socratic questioning throughout, and successfully guides students from vague requests to concrete, evidence-grounded stressor entries. There is no evidence of giving submission-ready answers, rewriting student text, or stating conclusions before students reason them out.",
-      "Scaffolding is strong: the tutor builds on each student's prior responses, corrects misconceptions without ignoring valid student work, and sequences tasks appropriately for each student's level (chaotic, chitchat, clueless personas are handled differently).",
-      "The primary weakness is communication length: nearly every tutor turn contains three or more numbered sub-questions with multiple nested parts, which is consistently excessive for an interactive tutoring context. This pattern appears in all three transcripts and warrants a full 3.1.A.a deduction.",
-      "Meta-learning gaps: the tutor never explains why it withholds answers in terms of the student's long-term skill development (1.3.A.a), and none of the conversations close with a process-reflection prompt asking students what their thinking revealed (1.3.D.a). The 1.3.B criteria are not deducted because the tutor does give method-level feedback on reasoning process throughout.",
-      "No deductions were applied for redundancy, assignment anchoring, tone, or grading stance. The tutor stays on task, redirects off-topic attempts (Transcript 2 Turn 1), and maintains a supportive, non-punitive voice throughout."
+      "Across all three transcripts the tutor performs well on its core pedagogical mission: it consistently refuses to write student content (no fill-in tables, no polished justifications, no city selections), guides students through incremental reasoning steps, and uses Socratic questioning effectively. The stressor/vulnerability distinction in Transcript 3 is a particularly clean example of guided discovery.",
+      "Deduction 1.3.A.a: The tutor enforces its 'I can't do this for you' policy in every transcript but almost never explains why—what skill the student is building, or why the struggle matters for later assignments. The learning rationale is absent.",
+      "Deduction 1.3.D.a: No transcript includes a moment where the tutor asks the student to reflect on what changed in their thinking, what worked about their approach, or how the reasoning method they just used will transfer to the next assignment step.",
+      "Deduction 3.1.A.a: The tutor's responses are consistently multi-part (typically 3 numbered sub-questions per turn) even when a single focused question would suffice. This pattern reduces the student's ability to engage deeply with one thought before being asked to do three more things simultaneously. This is a persistent pattern across all three conversations and qualifies for the full 4-point deduction."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

@@ -74,18 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  8
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "The tutor provided polished sentence blueprints that effectively rewrote the student's rough justifications into near-final submission wording, leaving the student mainly to plug in specific terms.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -99,34 +89,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  3,
-                  5,
-                  6,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries by saying it would be 'doing the assignment' but did not clearly explain the learning rationale for requiring the student to do the reasoning and writing.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the justifications, the tutor moved directly to the next task instead of prompting brief reflection on why the revised method worked or how to transfer it to the remaining rows.",
+                "reason": "After the student successfully produced stronger justifications, the tutor moved directly to the next table items rather than prompting brief reflection on why the mechanism-impact method worked or how to reuse it.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 22,
           "max": 24
         }
       },
@@ -172,18 +149,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-anchored, refused to provide a full paste-ready table, and generally used guided questioning and stepwise scaffolds to keep the student doing the substantive choices.",
-      "The main pedagogy issue was that several sentence frames became near-final prose for the student’s submission, especially once the tutor transformed rough student lines into polished justifications with only blanks left to fill.",
-      "A smaller deduction was applied for repeatedly invoking policy-style refusal without clearly stating the learning rationale, and for not prompting reflection after the student successfully improved the first two rows."
+      "The tutor consistently avoided doing the assignment for the student, kept the work anchored to the stressors-table task, and used structured prompts, sentence frames, and targeted follow-up questions to move the student toward producing their own justifications.",
+      "A small deduction was applied for missed reflection/transfer support: once the student improved, the tutor validated the work and advanced to the next task instead of explicitly helping the student generalize the method. The tutor did supply candidate Miami stressors, which bordered on idea generation, but this did not rise to submission-ready content and was not double-penalized."
     ],
-    "total_score": 36,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

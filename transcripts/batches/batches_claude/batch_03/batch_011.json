@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces constraints (refusing to write text, refusing to fill fragments, refusing to supply names) without explaining the learning rationale to the student—e.g., never saying 'I'm asking you to do this step because active reasoning builds the skill you need for future assignments.' The tutor says 'I can't' but rarely articulates why the student benefits from doing it themselves.",
+                "reason": "Across all three transcripts, the tutor enforces its 'I can't write this for you' policy repeatedly but rarely articulates the learning rationale (e.g., that doing the reasoning builds skills for later assignments). The tutor says 'that would be doing the submission' or 'that's the assignment' but does not explain why the student's own reasoning is pedagogically important.",
                 "points": 2
               },
               {
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, conversations end without prompting the student to reflect on what their thinking process produced or what changed. Transcript 1 ends asking for a 'concrete reference point'; Transcript 2 ends with a template for the student to fill; Transcript 3 ends directing next search steps. No reflection or transfer prompt is offered at any closing point.",
+                "reason": "Across all three transcripts the tutor never prompts students to reflect on what changed in their thinking or why a particular method (e.g., anchoring to a document, role-based categorization) worked. Sessions end with next-step task prompts rather than any consolidation of method insights.",
                 "points": 2
               }
             ],
@@ -295,7 +295,7 @@
                   3
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turns 2 and 3, the student asks for a movie recommendation and comfort food picks. The tutor correctly refuses but in Turn 3 uses a full sentence ('I can't help with comfort-food picks—I'm here to tutor you on the assignment') and then immediately continues normally. This is minimal engagement and borderline; however the tutor does not provide meaningful off-topic responses, so the deduction is not triggered. No clear violation across all three transcripts.",
+                "reason": "In Transcript 2, the student asks for a movie recommendation (turn 2) and a comfort-food recommendation (turn 3). The tutor correctly refuses but in both cases spends a sentence acknowledging the off-topic request before redirecting, rather than a brief immediate refocus. This is minor and borderline; however, the engagement with off-topic content is minimal and handled quickly, so full deduction is not warranted. No deduction applied.",
                 "points": 0
               }
             ],
@@ -317,11 +317,12 @@
                 "evidence_turns": [
                   2,
                   4,
-                  6,
+                  5,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor regularly delivers multi-paragraph responses that combine policy, questions, scaffolding templates, and examples in a single turn—e.g., Transcript 1 Turn 2 (five-item checklist plus three-part sub-question block), Transcript 2 Turn 4 (four-paragraph instructions plus multiple nested questions), Transcript 3 Turn 8 (five-item numbered skeleton plus follow-up question). These regularly reduce student thinking space before the student has responded.",
+                "reason": "Across all three transcripts, multiple tutor turns consist of dense multi-part responses with several sub-questions, numbered lists, and conditional branches packed into a single reply. For example, Transcript 1 Turn 2 offers a checklist of 5 plan names plus three multi-part prompts; Transcript 3 Turn 7 lists 8 actor types and asks two questions; and many other turns similarly pile on options when shorter, more focused prompts would be more appropriate for students who are overwhelmed or impatient. This pattern reduces student opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -350,12 +351,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic stance, consistently refusing to write submission-ready text, fill in student fragments, or supply direct actor lists—satisfying 1.1 fully.",
-      "Scaffolding is well-executed: the tutor builds on each student's prior answers, adapts to the chaotic/chitchat/clueless personas appropriately, and never restarts from scratch when partial progress is made (1.2 full credit).",
-      "The main pedagogy deduction falls on meta-learning (1.3): the tutor rarely explains *why* the student must do the reasoning step (the learning rationale), and never prompts end-of-conversation reflection on method or transfer—both systematically absent across all three conversations.",
-      "Dialogue quality is strong: no topic spiraling, no substantive engagement with off-topic requests, and no failure to re-anchor to the assignment. The brief movie/food deflections in Transcript 2 are handled appropriately and do not rise to a rubric violation.",
-      "The primary communication deduction (3.1.A.a) is for consistently long, multi-part tutor turns—especially in Transcripts 1 and 3—that pile scaffolding, examples, rules, and questions into single responses where shorter, more focused prompts would have better preserved student thinking space. This is a recurring pattern, not an isolated instance.",
-      "Tone is consistently warm, encouraging, and formative throughout; no grading language or dismissive framing observed (3.2 full credit)."
+      "Across all three transcripts the tutor does an excellent job refusing to write submission-ready content, consistently redirecting students who attempt to get answers directly, and scaffolding the reasoning process through targeted questions.",
+      "The Socratic method is well-maintained: the tutor never gives the conclusion before the student reasons, never fills in the assignment content, and never rewrites student text into polished final language. No deductions apply to 1.1 or 1.2.",
+      "The main pedagogical weakness is in meta-learning (1.3): the tutor almost never explains the learning rationale behind its policy (just says 'I can't' rather than 'you need to do this to develop your analytic skills'), and at no point prompts students to reflect on what changed in their thinking or why the method worked.",
+      "Communication quality is hurt by response length: many tutor turns in all three transcripts present multiple sub-questions, long lists of actor types or plan options, and conditional branches in a single message, which is particularly problematic for the 'chaotic' and 'clueless' students who are already overwhelmed. Shorter, more focused prompts one or two at a time would have been more appropriate.",
+      "Dialogue quality is strong: the tutor stays on-task, quickly redirects off-topic requests (movie, comfort food), and does not drift from assignment anchoring. Tone is consistently supportive and non-punitive."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

@@ -106,26 +106,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "The tutor spent four turns on APA reference formatting and citation mechanics rather than redirecting to the stressors table task, which is the stated assignment focus.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -151,17 +139,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the assignment for the student, using refusals plus scaffolds such as a blank table, stressor menu, rating rule, and sentence frames.",
-      "Main deduction: although source support is tangentially relevant, turns 6-9 shifted substantially into APA citation formatting rather than keeping the conversation anchored on completing the stressors table."
+      "The tutor consistently refused to provide paste-ready assignment content while still offering useful scaffolds: a blank table, stressor menu, rating heuristic, sentence starters, and source/citation support tied to the student’s evidence-building process.",
+      "Dialogue stayed supportive, clear, and task-relevant. The citation-formatting detour in later turns was somewhat tangential to the table itself, but it remained plausibly connected to the assignment’s justification/evidence needs, so no clear rubric-based deduction was applied."
     ],
-    "total_score": 42,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

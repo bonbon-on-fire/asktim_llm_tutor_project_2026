@@ -235,8 +235,8 @@
                   7,
                   8
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "In Transcript 2 Turn 7, the tutor identifies 'climate gentrification/displacement' as the easiest to defend and points to the Keenan paper before the student has reasoned through it, then in Turn 8 summarizes the core claim ('higher elevation → higher investment/prices → displacement risk') before the student attempts to derive it. The tutor reveals the conclusion and evidence path rather than asking the student to explore.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 2 Turn 7, the tutor picks the 'easiest to defend' culture stressor (climate gentrification) for the student and names a specific source (Keenan paper) before the student has tried to reason it out. In Turn 10, the tutor frames the culture stressor description ('loss of place/heritage and disrupted community identity from recurrent flooding and adaptation costs') before the student has articulated it, doing the key reasoning step of connecting the concept to Miami. These are isolated instances; the overall pattern across all three transcripts is guided and Socratic.",
                 "points": 6
               }
             ],
@@ -262,15 +262,16 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently declines to do the work but rarely explains the learning rationale (active reasoning, skill development). The refusals are stated as policy ('that would be doing the assignment') without connecting to why students benefit from doing the work themselves.",
+                "reason": "The tutor consistently enforces a 'I won't do this for you' constraint across all three transcripts but rarely explains the learning rationale behind it (e.g., why active reasoning builds skills, what the student gains). The refusals are stated as policy without linking them to long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of Transcript 3 the student produces a good paragraph, and the tutor gives corrective feedback but does not prompt any reflection on what changed in the student's thinking or reinforce the method choices that led to a defensible argument. No reflection or transfer moment is initiated across any of the three transcripts.",
+                "reason": "Across the three transcripts the tutor does not prompt the student to reflect on what changed in their thinking or reinforce method choices after improvement. In Transcript 3 Turn 10, the tutor validates the paragraph ('This is legit') but does not invite any metacognitive reflection on the process or what the student learned about building the argument.",
                 "points": 2
               }
             ],
@@ -287,21 +288,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, the tutor cycles through essentially the same refusal and redirect pattern across Turns 2–6 without synthesising what the student has provided or switching to a meaningfully different approach. The conversation does not advance to a new level of the task; it repeatedly loops on the same 'send me numbers and I'll check them' move while the student keeps asking for a filled table.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -313,7 +301,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -329,7 +317,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts many tutor turns are multi-paragraph responses with several numbered lists and sub-prompts delivered at once (e.g., T1 Turn 2 lists five source routes plus boundary question; T2 Turn 6 gives a template, three options for culture stressor, and a priority formula simultaneously). These lengthy monologues consistently reduce the student's opportunity to think and respond one step at a time.",
+                "reason": "Multiple turns across Transcripts 1 and 2 contain multi-paragraph, heavily bulleted blocks that go well beyond what is needed for a single interactive step. For example, Transcript 1 Turn 2 lists five separate source routes with detailed instructions before the student has responded to even one, and Turn 5 provides another large block of instructions. These long responses repeatedly reduce the student's opportunity to think and respond before the next wave of guidance arrives.",
                 "points": 4
               }
             ],
@@ -351,22 +339,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to complete assignments for the student and maintains appropriate boundaries across all three transcripts, which is commendable.",
-      "However, in Transcript 2 Turn 7, the tutor identifies the 'easiest-to-defend' culture stressor and surfaces the Keenan paper before the student reasons through it, and in Turn 8 pre-states the paper's core causal claim—triggering a 1.1.C.a deduction (6 points) for giving the conclusion before student reasoning.",
-      "Across Transcript 1, Turns 2–6 repeat essentially the same pattern (refuse → redirect → ask for numbers) without synthesising or shifting strategy as the student loops; this triggers a full 2.1.A.a deduction (4 points).",
-      "Most tutor responses across all transcripts are multi-paragraph with nested numbered lists delivered simultaneously, reducing the student's opportunity to reason one step at a time; a 3.1.A.a deduction of 4 points is applied.",
-      "The tutor rarely explains the learning rationale behind its refusals (1.3.A.a, 2 points) and does not prompt process reflection at conversation ends (1.3.D.a, 2 points).",
-      "No deductions were applied for scaffolding (1.2), assignment anchoring (2.2), or tone (3.2); the tutor builds well on student contributions when they are provided and maintains a respectful, supportive tone throughout.",
-      "Note: 1.1.B.a was considered for Turn 9 of Transcript 3 where the tutor provides bullet-point content very close to final wording, but the explicit instruction to convert to the student's own sentences and the subsequent student draft suggest it falls just below the threshold; the 1.1.C.a deduction already captures the most significant pedagogy failure."
+      "The tutor maintains a strong, consistent refusal to produce submission-ready content across all three transcripts, which is the most important pedagogical behavior.",
+      "The primary 1.1 deduction (6 points, 1.1.C.b) is triggered in Transcript 2, where the tutor identifies the 'easiest to defend' culture stressor and later frames the stressor description before the student has reasoned it out, doing key reasoning steps on the student's behalf. This is not a full 12-point deduction because the overall pattern is guided and Socratic; the transgression is isolated to a sub-thread.",
+      "For 1.3, the tutor enforces constraints without explaining learning rationale (2-point deduction, 1.3.A.a) and consistently misses opportunities to prompt reflection or reinforce method choices after the student makes progress (2-point deduction, 1.3.D.a). Process feedback (1.3.B) is generally present and actionable, so no deduction there.",
+      "Dialogue quality is strong: the tutor re-anchors the student when needed, avoids off-topic detours, and does not spiral on sub-points.",
+      "Communication length is a recurring issue (4-point deduction, 3.1.A.a): multiple turns feature large multi-part instruction blocks before the student has responded, reducing interactive opportunity. Tone is supportive and non-grading throughout."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

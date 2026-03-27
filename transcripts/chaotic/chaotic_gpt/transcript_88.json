@@ -96,17 +96,16 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-drafting boundary but did not clearly explain the learning rationale beyond saying it would be 'doing the submission' or that the student 'need[s] to do the writing.'",
+                "reason": "The tutor repeatedly enforced a no-writing boundary ('I can’t draft/write/polish it for you') without explaining the learning rationale or how this supports the student's skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
-                  9,
+                  5,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Even after the student produced a more defensible claim structure, the tutor did not prompt reflection on why the method worked or how to transfer the approach to future forum posts or actor analyses.",
+                "reason": "The tutor gave iterative critique and next steps but did not prompt reflection on why the stronger framing worked or how the method could transfer to similar assignments.",
                 "points": 2
               }
             ],
@@ -169,10 +168,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed firmly within guided-discovery boundaries: it refused to draft submission-ready work, redirected the student back to source-based evidence, and used concrete scaffolds such as targeted prompts, templates, and PDF search terms.",
-      "Dialogue quality was strong overall: the tutor remained anchored to the assignment, advanced the task in manageable steps, and adjusted support from broad prompts to more operational tactics when the student lacked time.",
-      "Main weakness was meta-learning: the tutor enforced boundaries without much explicit explanation of the pedagogical rationale, and it did not prompt reflection on why the evidence-checking method was effective or how to reuse it later.",
-      "Turn 10 contains some role-label ambiguity, but it does not materially change the scoring because the tutor's final response still shows source-alignment coaching rather than direct answer generation."
+      "The tutor consistently avoided doing the assignment for the student and stayed tightly anchored to the actual task: identifying actors from the Miami plans and supporting claims with plan evidence.",
+      "Scaffolding was generally strong: the tutor broke the work into document checks, claim tests, search terms, and evidence standards rather than supplying submission-ready prose.",
+      "Main weaknesses were meta-level: the tutor's refusal policy was not explained as a learning strategy, and the conversation lacked reflection on why the improved evidence-based framing was better or how to reuse that method.",
+      "A possible borderline issue was Turn 3's checklist of likely missing groups, but it was framed as a test against the documents rather than a final Miami-specific answer, so no deduction was applied under 1.1."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

@@ -232,10 +232,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  4,
+                  6,
+                  7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplies a substantive new reasoning path for act consequentialism by introducing hospital-trust and social-fear ripple effects, rather than first eliciting that key move from the student.",
+                "reason": "Tutor supplied major reasoning moves and candidate principles for the student, including the hidden-consequences defense of act consequentialism and specific constraint options such as rights/consent and means vs side-effect.",
                 "points": 6
               }
             ],
@@ -310,9 +312,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the input bundled multiple conversations while the schema supports one conversation score.",
-      "The tutor was consistently structured, responsive, and assignment-focused, with strong scaffolding and method-testing throughout.",
-      "The main deduction is for supplying the hidden-consequences route within act consequentialism, which gave the student a key philosophical move instead of fully drawing it out first."
+      "Tutor consistently kept the student reasoning through the cases with targeted questions, avoided writing a submission-ready answer, and stayed closely tied to the assignment prompt.",
+      "Main deduction: the tutor sometimes introduced key argumentative paths before the student generated them independently, especially the ripple-effects consequentialist move and the candidate deontological constraints.",
+      "Communication was clear, supportive, and interactive, with no major issues in tone, anchoring, or unnecessary repetition."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

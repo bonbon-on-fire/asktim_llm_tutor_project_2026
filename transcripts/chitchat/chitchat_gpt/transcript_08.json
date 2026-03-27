@@ -86,14 +86,34 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a limitation on drafting final wording ('I can’t draft language for your table or forum post') without explicitly giving the learning rationale for that constraint in that turn.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student improved the scope, actor roles, and participation-gap framing, the tutor kept moving the task forward but did not prompt reflection on why the role-based method worked or how to transfer it to future assignments.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 20,
           "max": 24
         }
       },
@@ -139,18 +159,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently used guided questioning and role-based scaffolds rather than supplying submission-ready content, even when the student asked for direct confirmation or final wording.",
-      "The conversation stayed tightly anchored to the assignment, with immediate redirection from off-topic movie/food requests and steady progression from city selection to actor categorization and gap framing.",
-      "Feedback was process-oriented and specific: the tutor repeatedly pushed the student to define scope, distinguish lead vs engaged by function, and use defensible, source-aware phrasing."
+      "The tutor stayed strongly assignment-focused, redirected off-topic requests promptly, and consistently used guided questions rather than doing the actor-analysis work for the student.",
+      "Method-level coaching was a strength: the tutor helped the student define 'leading,' narrow scope, and shift to safer role-based claims when source certainty was limited.",
+      "A small deduction was applied for limited metacognitive support: the tutor sometimes enforced boundaries without explicit learning rationale in that moment, and it did not close with reflection on how the student could reuse the method."
     ],
-    "total_score": 46,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -95,7 +95,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moved from one scaffolded step to the next after student improvement, but did not prompt brief reflection on why the method of identifying roles, levers, and evidence worked or how to transfer it.",
+                "reason": "The tutor consistently advanced the task with new prompts but did not pause for brief reflection on why the student's approach worked or how to transfer the method to future assignments.",
                 "points": 2
               }
             ],
@@ -158,10 +158,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor kept the student doing the substantive work: choosing the city, generating actor categories, distinguishing roles, and defining evidence and decision levers through targeted questions rather than supplying a submission-ready answer.",
-      "Dialogue quality was strong: the tutor redirected the off-topic music question immediately, stayed anchored to the assignment deliverable, and progressively narrowed the task from broad actor types to table rows, columns, and supporting artifacts.",
-      "Small deduction only for meta-learning/reflection: the tutor gave useful process scaffolds, but rarely paused to ask the student to reflect on why the approach worked or how to reuse it on later course tasks.",
-      "There was some ambiguity around Turn 3 because the tutor named possible NYC actor categories, but these were framed as options for the student to evaluate rather than as final conclusions, so no 1.1 deduction was applied."
+      "The tutor stayed strongly anchored to the assignment, redirected off-topic content immediately, and used structured questions to keep the student doing the reasoning.",
+      "Scaffolding was effective: the tutor built from the student's guesses toward a clearer actor map, evidence plan, and forum-post structure without giving a submission-ready answer.",
+      "The main weakness was limited reflection/transfer support; the tutor rarely asked the student to articulate what method they had learned for analyzing actors beyond this NYC example."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

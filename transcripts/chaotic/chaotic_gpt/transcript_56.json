@@ -77,11 +77,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3
+                  3,
+                  7
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplied specific candidate 'missing' groups and a menu of underrepresented actors before the student independently generated them, narrowing the answer path.",
+                "reason": "The tutor supplied substantive answer-path content before the student fully derived it, including a menu of likely 'missing actor' categories for Miami and likely department names to use, which steered key assignment ideas rather than eliciting them first.",
                 "points": 6
               }
             ],
@@ -99,32 +99,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly enforced refusal boundaries without clearly explaining the learning rationale beyond not doing the assignment for the student.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   6,
-                  7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor gave process guidance but did not prompt brief reflection on why the student's improved method or evidence choices were working.",
+                "reason": "The tutor gave process guidance but never prompted reflection on why the student's approach improved or how to transfer the method to future assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
@@ -151,8 +140,20 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several replies were long, checklist-heavy monologues with many subquestions, even after the student repeatedly said they were rushed, which reduced opportunities for short interactive progress.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -164,24 +165,23 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused to write the forum post and kept the conversation anchored to the actual assignment, using checklists, stems, and verification steps rather than producing submission-ready text.",
-      "Main pedagogy weakness: the tutor sometimes generated substantive content options for the student, especially by proposing specific 'missing actor' categories before the student had reasoned them out.",
-      "Scaffolding was generally strong and responsive, and communication remained clear and supportive; the main non-content weakness was limited explicit explanation of the learning rationale and little reflection/transfer prompting."
+      "The tutor consistently refused to write the student's forum post and kept the conversation anchored to the assignment, which avoided the largest pedagogy failures.",
+      "Main deductions come from occasionally supplying answer-path content (missing-actor options and likely agency names), using several long multi-part replies, and not prompting reflection on transferable method; the 1.1 deduction is limited because the tutor still stopped short of producing submission-ready text."
     ],
-    "total_score": 36,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

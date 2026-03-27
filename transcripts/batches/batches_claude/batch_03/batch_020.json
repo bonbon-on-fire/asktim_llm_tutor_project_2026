@@ -232,11 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  8
+                  3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 3, the tutor provides sector mappings ('Sectors (choose): environmental + infrastructure + social') and structured evidence blanks with specific content filled in, effectively doing the key reasoning step of linking stressors to sectors before the student does. In Turn 8, the tutor provides three generic indicator phrases ('frequency of high-tide (sunny-day) flooding events,' 'days with hazardous heat index,' 'storm surge/evacuation zones') that the student explicitly requested to paste verbatim, narrowing the line between scaffolding and providing submission content. However, these are framed as 'placeholder' types and the tutor consistently refused to finalize entries, so this is a borderline case—partial deduction is appropriate but not the full 12-point hit.",
+                "reason": "In Transcript 1 Turn 3, the tutor provides sector mappings directly ('Sectors (choose): environmental + infrastructure + social') and fills in the evidence structure so completely that the student only needs to plug in a few words. While framed as templates, the tutor resolves the cross-sector mapping step that students should derive themselves.",
                 "points": 6
               }
             ],
@@ -266,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to do assignment work but rarely explains the pedagogical rationale (active reasoning, skill-building) for those limits. In Transcript 1 the tutor says 'that's writing the submission for you' or 'that's the research + justification piece of this assignment,' but does not articulate the learning benefit (e.g., developing evidence-evaluation skills for future assignments or the climate action plan). The rationale for the constraint is stated in terms of what the tutor 'can't' do, not why the student benefits from doing it themselves.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to do the work but rarely explains the pedagogical rationale—e.g., why active reasoning builds skills for later assignments or develops analytical capacity. The tutor just says 'I can't' without framing the learning purpose.",
                 "points": 2
               },
               {
@@ -283,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves steadily forward without pausing to help students reflect on what their reasoning process has revealed or why a particular approach worked. In Transcript 2, after the student develops a strong selection rule (Turn 6), the tutor immediately moves to the next evidence question without asking the student to articulate what they learned about prioritization method. In Transcript 3, when the student successfully applies the 3-part evidence skeleton (Turn 5), the tutor only points to vague spots without reinforcing why the skeleton approach is effective. No turn across any transcript explicitly prompts process-level reflection.",
+                "reason": "Across all three transcripts, the tutor never prompts students to reflect on what changed in their thinking, why a method worked, or what they would do differently. The conversations move forward without consolidation of learning gains.",
                 "points": 2
               }
             ],
@@ -300,8 +299,26 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor repeats essentially the same move across turns 2–10: refuse the request, reframe as templates/prompts, ask the student to fill in blanks. Despite the student's persistent refusals and lack of any real engagement, the tutor does not switch strategy (e.g., simplify dramatically, explain the stakes, or suggest a different entry point). The same cycle repeats without synthesis or escalation to a genuinely different approach.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -313,7 +330,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -326,11 +343,12 @@
                   2,
                   3,
                   4,
+                  6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor frequently sends multi-section, multi-question responses that cover many angles at once before checking student understanding. Transcript 1 Turn 2 has four separate numbered sub-questions across three stressors, Turn 3 has three elaborate fill-in-the-blank templates with sector lists and evidence types all at once. Transcript 3 Turns 1, 2, 4, 7, 8 each contain multiple numbered questions with explanatory paragraphs before the student has responded. This pattern consistently reduces the student's opportunity to think and respond to one focused prompt at a time.",
+                "reason": "In Transcripts 1 and 3, the tutor frequently delivers multi-paragraph responses with multiple numbered sub-questions, frameworks, and structural templates in a single turn (e.g., T1 Turn 2, T1 Turn 3, T1 Turn 4, T3 Turns 2, 4, 8). This reduces student opportunity to think before being presented with the next layer of structure. The pattern recurs across both transcripts, indicating a consistent tendency toward overlong, multi-part replies.",
                 "points": 4
               }
             ],
@@ -352,21 +370,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to produce submission-ready content and maintains that boundary well across all three transcripts and diverse student pressure tactics (chaotic, chitchat, clueless personas).",
-      "The primary pedagogy deduction (6 points under 1.1.C.b) is for Transcript 1 Turn 3 where the tutor pre-fills sector mappings and provides three structured evidence templates with content already embedded, narrowing the boundary between scaffolding and doing the reasoning step. Turn 8 providing generic but paste-ready indicator phrases compounds this. The full 12-point hit (1.1.A.a) was not applied because the tutor did not assemble a final submission-ready table at any point and continued to require the student to fill in specifics; partial 6-point deduction under 1.1.C.b is the appropriate calibration.",
-      "Scaffolding (1.2) is strong: the tutor builds on student progress across all three transcripts, acknowledges correct student work, and uses student-generated ideas as the foundation for next steps. No deductions apply.",
-      "Meta-learning (1.3) shows two consistent gaps: the tutor does not explain the pedagogical rationale for its constraints (1.3.A.a, -2 pts) and does not prompt process-level reflection after student breakthroughs (1.3.D.a, -2 pts). Method feedback is present but could more clearly link to transferable skills.",
-      "Dialogue quality is strong. There is no spiraling or repetition without synthesis across any transcript; the tutor redirects off-topic content promptly (Transcript 2 Turn 1) and keeps the conversation anchored to the assignment throughout.",
-      "Communication quality is penalized for response length (3.1.A.a, -4 pts): the tutor systematically sends long multi-part responses with several questions and explanatory paragraphs at once, reducing the student's space to think before the next prompt. Tone is consistently supportive and non-grading throughout."
+      "Across three transcripts, the tutor consistently refuses to do the assignment for students and maintains appropriate pedagogical boundaries, especially under persistent pressure in Transcript 1. The tutor is effective at assignment anchoring, building on student progress, and adapting to different student types.",
+      "The most significant deduction in 1.1 (6 points) comes from Transcript 1 Turn 3, where the tutor pre-maps sectors for all three stressors and scaffolds evidence so completely that the student's required reasoning step—determining which sectors a stressor touches—is effectively resolved by the tutor. This is a borderline case, but the sector mapping is presented as a given rather than derived through questioning.",
+      "In 1.3, the tutor does not explain why it withholds help in terms of student learning goals (just says 'I can't'), and never prompts students to reflect on what changed in their thinking or what method worked—missing both the rationale and transfer sub-criteria.",
+      "In 2.1, Transcript 1 shows clear spiraling: the student repeatedly refuses to engage, and the tutor repeats the same refuse-and-template move without meaningfully switching strategy. Transcripts 2 and 3 do not show this problem.",
+      "In 3.1, the tutor's responses in Transcripts 1 and 3 are frequently very long, multi-part, and multi-question, reducing student cognitive space. Transcript 2 is better-paced. The deduction reflects a pattern across multiple transcripts rather than isolated instances.",
+      "No deductions were applied for 1.2 (the tutor builds on student progress well), 2.2 (assignment anchoring is strong), or 3.2 (tone is consistently supportive and non-grading)."
     ],
-    "total_score": 32,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

@@ -232,14 +232,16 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7
+                  3,
+                  4,
+                  5
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 7, the tutor provides a detailed 4-section essay outline with explicit content prompts for each body paragraph (e.g., 'Define the act-consequentialist standard. Apply it to Switch, Footbridge, Fuel, Blood: for each, what outcome is compared, and what verdict follows?'). This goes well beyond structural scaffolding—it specifies the exact argumentative moves, case applications, and what to conclude in each section, constituting direct assignment work that, combined with the reasoning already developed in prior turns, produces near-submission-ready content.",
-                "points": 12
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Transcript 3, the tutor provides detailed fill-in-the-blank templates with near-complete sentence content across multiple turns (turns 4, 5, 6, 7, 8). By turn 7, the tutor gives three pre-written options per blank, and turn 8 provides an 'assembly recipe' that is effectively the finished paragraph with only mechanical insertion required. Across turns 4-8, the tutor progressively supplies all substantive language, reducing the student's role to selecting from pre-written choices and copying. This collectively produces submission-ready wording without the student doing meaningful writing work.",
+                "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,39 +255,42 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across transcripts, the tutor enforces its constraint of not providing submission-ready answers but rarely explains the underlying learning rationale (e.g., why active reasoning builds long-term philosophical or analytical skill). The refusals are policy statements without pedagogical framing.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
+                  10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, once the student arrives at a defensible answer, the tutor moves on to the next step without prompting any reflection on what worked in the student's reasoning process or what changed in their thinking.",
+                "reason": "Across all three transcripts, the tutor rarely prompts the student to reflect on why a method worked or what changed in their thinking. In Transcript 1 Turn 10 and Transcript 2 Turn 10, the tutor moves on to next steps without asking the student to articulate what they learned about their reasoning process or method choices.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 8,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 3, the tutor cycles through the same forum-post-writing task across five turns (4–8) without meaningfully advancing the student's own writing ability. Each turn the student asks the tutor to do more of the work, and instead of reframing or consolidating, the tutor keeps offering progressively more scaffolded fill-in templates, options lists, and assembly recipes—circling the same task without synthesis or a decisive redirect.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -297,7 +302,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -313,7 +318,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly sends multi-paragraph responses with multiple simultaneous sub-questions, templates, checklists, and options rather than shorter, more focused prompts. For example, Transcript 1 Turn 2 has three layered steps; Turn 3 asks three distinct questions at once; Transcript 2 Turn 2 has four numbered questions plus a follow-up sub-question; Transcript 3 Turn 7 provides four sets of triple-option menus. This pattern consistently reduces the student's opportunity to think and respond to one thing at a time.",
+                "reason": "Across transcripts 1 and 2, the tutor frequently uses multi-part, multi-paragraph responses where shorter, single-focused prompts would be more appropriate. For example, Transcript 1 Turn 3 poses three numbered questions in one turn; Transcript 2 Turn 2 gives a full method framework plus four sub-questions; Transcript 2 Turn 7 has four numbered sub-questions with sub-bullets. This pattern consistently reduces the student's opportunity to think before being confronted with numerous simultaneous demands.",
                 "points": 4
               }
             ],
@@ -335,23 +340,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 30,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready work and maintains appropriate boundaries across all three transcripts, redirecting the student back to their own thinking repeatedly.",
-      "However, in Transcript 1 Turn 7, the tutor provides a highly detailed 4-section essay outline with explicit argumentative content cues for each paragraph. Combined with the full reasoning arc already developed in prior turns (AC verdicts, DDE principle, Loop resolution), this collectively produces near-submission-ready essay scaffolding, triggering the 1.1.A.a deduction of 12 points.",
-      "The 1.1.A.a deduction is the single largest driver of score loss. The evidence is primarily concentrated in Transcript 1 Turn 7, where the outline specifies not just structure but the actual argumentative moves and case-by-case reasoning.",
-      "Scaffolding and progression (1.2) is handled well: the tutor builds on each student response, acknowledges correct steps, and advances the conversation in all three transcripts.",
-      "Meta-learning (1.3) is weakest: the tutor enforces constraints without explaining the pedagogical rationale, and never prompts the student to reflect on what worked or what changed in their thinking.",
-      "Dialogue quality (2.1, 2.2) is strong overall—the tutor advances the conversation without spiraling and keeps the student anchored to the assignment, even when the student tries to shortcut.",
-      "Response length (3.1) is a consistent issue: the tutor frequently sends complex multi-part responses with templates, checklists, and triple-option menus that reduce student cognitive space. This is penalized once under 3.1.A.a.",
-      "Tone (3.2) is appropriate throughout—supportive, never punitive, and framed as guidance rather than grading."
+      "Transcript 1 (Philosophy): The tutor performs well overall—consistently refusing to write submission-ready content, using Socratic questioning to guide the student through act consequentialism and DDE, and building on the student's own reasoning at each step. The tutor avoids giving away answers and keeps the student doing the intellectual work. Minor issue: responses are sometimes multi-part in ways that could overwhelm.",
+      "Transcript 2 (Urban Studies stressors): Strong scaffolding throughout—tutor guides the student through building their own justifications using templates and targeted questions, builds on student progress, and maintains good assignment anchoring. Some responses are very long with multiple simultaneous sub-questions (e.g., turns 2, 7), which slightly reduces student thinking space.",
+      "Transcript 3 (Decision-making Actors): The most significant weakness across all three transcripts. The tutor correctly refuses to write the forum post initially, but progressively supplies more and more of the substantive language—first a 4-sentence scaffold with blanks, then three pre-written options per blank, then an 'assembly recipe.' By turn 8-9, the student is essentially just copying and inserting the tutor's pre-written phrases. This constitutes editing/near-submission-ready writing help (1.1.B.a). The tutor also cycles on the same task for five turns without reframing or decisively redirecting the student to do more independent work (2.1.A.a).",
+      "Reflection and transfer: Across all three transcripts, the tutor rarely pauses to ask the student what they learned about their thinking process, representing a missed opportunity for meta-learning (1.3.D.a).",
+      "Tone and assignment anchoring are consistently strong across all transcripts. The tutor maintains a supportive, non-grading stance and consistently re-anchors to the assignment when students try to shortcut."
     ],
-    "total_score": 26,
+    "total_score": 30,
     "judge_llm_calls": 1
   }
 }

@@ -86,24 +86,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  9
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently steers the student to do the reasoning, but does not explicitly explain that this constraint is for active learning or skill-building; the one refusal in Turn 9 is framed as reliability, not tutoring rationale.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -149,19 +139,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor maintained a strongly Socratic, student-driven discussion: it repeatedly asked the student to define act consequentialism, apply it to cases, stress-test distinctions, and refine a general principle without supplying a submission-ready answer.",
-      "Scaffolding was strong and cumulative: each tutor turn built directly on the student's last claim, tightened distinctions like means vs side effect, and kept the conversation anchored to the assignment's cases.",
-      "Communication was clear, concise, and supportive, with targeted questions rather than long lectures.",
-      "Small deduction only for meta-rationale: although the tutor enforced an active-reasoning approach, it did not explicitly explain that pedagogical choice as a learning rationale; this was somewhat ambiguous, so the deduction was kept minimal."
+      "Tutor consistently used guided questioning rather than supplying conclusions, pushed the student to define principles and test them across Footbridge, Switch, Blood, and potential Fuel, and avoided doing submission-ready writing.",
+      "The exchange showed strong scaffolding: the tutor built directly on the student's claims, identified tensions in the student's evolving hybrid view, and repeatedly asked for sharper criteria, consistency checks, and case transfers.",
+      "Dialogue stayed tightly anchored to the assignment, including a careful refusal to reconstruct Fuel from memory without the lecture setup. Any possible concern about multi-part prompts was too weak to justify a deduction because the student continued to respond productively and the conversation kept advancing."
     ],
-    "total_score": 44,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

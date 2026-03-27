@@ -235,19 +235,19 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor provides the setup descriptions for Fuel and Blood (the key case details the student needs to reason from) rather than directing the student to their lecture notes or asking guiding questions. This does the bridging work of supplying the premises for the student's reasoning.",
+                "reason": "In Transcript 1 Turn 3, the tutor provides the full case setups for Fuel and Blood directly ('Fuel (typical setup): ... Blood (typical setup): ...'), doing the key retrieval/framing work instead of guiding the student to consult their notes or reconstruct the setups themselves. This gives the student ready-made content for reasoning.",
                 "points": 6
               },
               {
                 "evidence_turns": [
                   8
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 8, the tutor provides a full plain-terms explanation of the double-effect defense AND the main objection, rather than guiding the student to derive or articulate these through questions. The tutor carries out the key reasoning step of explaining why plan structure matters morally.",
-                "points": 0
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Transcript 1 Turn 8, the tutor provides a near-complete sentence formula with bracketed slots that only require filling in the student's already-stated choices, making the thesis essentially tutor-authored: 'Although act consequentialism implies [same verdict...] because [only aggregate outcomes matter], it is [correct/acceptable] in [Switch] yet mistaken in [Footbridge] since [Footbridge involves using a person as a means]...' Several brackets are already filled with the student's exact answers, making this close to final wording rewriting.",
+                "points": 6
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -273,24 +273,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces the 'I can't write this for you' policy consistently but rarely explains the pedagogical rationale (active reasoning, skill development) beyond brief implicit refusals. The learning rationale is not articulated to the student.",
+                "reason": "Across all three transcripts, the tutor enforces its 'I can't write this for you' constraint consistently but rarely explains the learning rationale behind it. The student in Transcript 1 is repeatedly refused without being told why working through the reasoning themselves builds philosophical skill.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves the student forward without prompting reflection on what changed in their thinking or reinforcing method choices after improvements. There are no explicit prompts asking the student to reflect on why a reasoning move worked or what they learned about their process.",
+                "reason": "None of the three transcripts end with reflection prompts on what the student's thinking process looked like, what changed, or why a particular approach worked. The final turns ask for more content generation (one more sentence, which case to pick) without prompting the student to reflect on their reasoning journey.",
                 "points": 2
               }
             ],
@@ -300,7 +291,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 8,
           "max": 24
         }
       },
@@ -330,12 +321,13 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
-                  5,
-                  9
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly uses multi-part, multi-paragraph responses when shorter, more focused prompts would be appropriate. For example, Transcript 1 Turn 2 lists four separate tasks with multiple sub-items; Transcript 2 Turn 2 has three numbered multi-part questions; Transcript 3 Turn 9 contains three diagnostic sub-questions. This pattern consistently reduces the student's opportunity to think and respond to a single focused step.",
+                "reason": "Across Transcripts 1, 2, and 3, the tutor repeatedly gives multi-part, multi-paragraph responses with 3–4 sub-questions per turn. In Transcript 1 Turn 1, the tutor issues a long structured prompt with a three-part task before the student has even demonstrated basic understanding. In Transcript 2 Turns 2–5, responses consistently run 3+ paragraphs with multiple numbered questions. This pattern reduces student opportunity to engage step by step.",
                 "points": 4
               }
             ],
@@ -357,20 +349,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor does an excellent job refusing to produce submission-ready content and consistently redirects students to generate their own reasoning, earning full marks on 1.1.A (near-submission-ready). The tutor also handles off-topic and assignment-anchoring issues well.",
-      "A deduction of 6 points is applied under 1.1.C.b for Transcript 1 Turn 3, where the tutor supplies the Fuel and Blood case setups directly rather than directing the student to their lecture notes or asking guiding questions—doing the key bridging work of providing the premises for the student's reasoning. The Transcript 3 Turn 8 double-effect explanation was considered for a second deduction, but to avoid double-penalizing, only one 6-point deduction is applied under 1.1.C as the cap allows.",
-      "Under 1.3, the tutor consistently enforces limits without explaining the pedagogical rationale to the student (1.3.A.a, -2 pts), and across all conversations the tutor misses opportunities to prompt reflection on what changed in the student's thinking or to reinforce method choices after progress (1.3.D.a, -2 pts). The 1.3.B process feedback criterion is not deducted because the tutor generally provides substantive method-level feedback when student approaches are weak.",
-      "Dialogue quality is strong: the tutor does not spiral or repeat without progress, keeps the student on-task, and re-anchors when students try to go off-topic.",
-      "Communication quality suffers a 4-point deduction under 3.1.A.a because the tutor's responses are frequently multi-paragraph with multiple numbered sub-tasks, which reduce the student's opportunity to think and respond to a single focused prompt. This is a consistent pattern across all three transcripts. Tone is warm and appropriate throughout."
+      "The tutor consistently refuses to write submission-ready answers and maintains a generally supportive, Socratic tone throughout all three transcripts.",
+      "However, in Transcript 1 Turn 3, the tutor provides full case setups for Fuel and Blood rather than directing the student to their notes, doing key framing/retrieval work the student should perform. This triggers a 1.1.C.b deduction.",
+      "In Transcript 1 Turn 8, the tutor provides an almost-complete thesis sentence template with several brackets already filled with the student's stated positions and the key philosophical content pre-supplied, functioning close to final wording assistance. This triggers a 1.1.B.a deduction.",
+      "Because both a 1.1.C.b (6 pts) and a 1.1.B.a (6 pts) deduction apply and the cap is 12 pts, the full 12 points are deducted from 1.1.",
+      "The tutor does not explain its tutoring rationale/policy to the student (1.3.A.a) and does not prompt end-of-session reflection on process or skill development (1.3.D.a), resulting in 4 points deducted from 1.3.",
+      "Response length is consistently too long across all transcripts, with multi-paragraph multi-question responses in nearly every turn, reducing student thinking opportunity (3.1.A.a, 4 points deducted).",
+      "Scaffolding, assignment anchoring, redundancy control, tone, and non-grading stance are all handled well across the three transcripts."
     ],
-    "total_score": 32,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

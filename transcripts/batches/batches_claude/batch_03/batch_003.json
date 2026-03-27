@@ -244,20 +244,40 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently enforces constraints (refusing to write thesis paragraphs, principles, or polished sentences) but rarely explains *why* this approach benefits the student's learning or skill development. The rationale given is generally implicit ('you need to do the writing') rather than framed around active reasoning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting students to reflect on why a method worked or what changed in their thinking. In T1 turn 10, T2 turn 10, and T3 turn 10, sessions end with next-step tasks but no reflection prompt on the reasoning journey or methodology gains made.",
+                "reason": "In all three transcripts the tutor moves from step to step without prompting the student to reflect on what changed in their thinking or why a particular method (e.g., the counterfactual test) worked. There is no moment where the tutor asks the student to consolidate what they learned about their own reasoning process.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -270,7 +290,17 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "In Transcript 2, Turn 4 the student goes fully off-topic (restaurant recommendation). The tutor's redirect in Turn 5 is prompt and brief, which is appropriate. No meaningful off-topic engagement occurred, so no deduction is warranted.",
+                "points": 0
+              }
+            ],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -289,10 +319,11 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor's opening turns regularly contain multi-paragraph, multi-question replies (e.g., T1 Turn 1 has three numbered sub-questions with sub-parts; T2 Turn 1 has four numbered questions; T3 Turn 1 has four numbered prompts each with sub-bullets). These long monologues reduce the student's opportunity to engage interactively and occur repeatedly, especially in early turns where shorter, more focused prompts would be more appropriate.",
+                "reason": "Across all three transcripts, the tutor frequently sends multi-part, multi-paragraph responses (e.g., 4-question lists in Transcript 1 Turn 1, Transcript 3 Turns 1–4) when one or two focused prompts would have been more appropriate. This consistently reduces the student's opportunity to think and respond, particularly for the chaotic and clueless personas who are already overwhelmed.",
                 "points": 4
               }
             ],
@@ -314,21 +345,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains an excellent Socratic approach: it consistently refuses to provide submission-ready answers, thesis paragraphs, or finished principles—even under persistent pressure from the chaotic student (T1). Instead, it uses targeted questions and structural scaffolds to lead students to derive their own positions.",
-      "Scaffolding is well-managed: the tutor builds on correct student contributions (e.g., T2 Turn 3 acknowledging the student's AC/rights distinction; T3 Turn 5 affirming the counterfactual test result), moves cases forward in logical sequence, and diagnoses confusion appropriately before responding.",
-      "The primary weakness in pedagogy is a consistent absence of meta-learning and reflection prompts. The tutor rarely invites students to step back and articulate what changed in their reasoning or why a particular method (counterfactual test, means/side-effect distinction) was effective. Sessions close with next-step action items rather than process reflection.",
-      "The main communication deduction is for consistently lengthy, multi-question opening turns across all three transcripts. While the questions are well-structured, the sheer volume in T1 Turn 1, T2 Turn 1, and T3 Turn 1 reduces interactivity. Later turns tend to be better scoped, but the pattern is pronounced enough to warrant deduction.",
-      "Dialogue quality is strong throughout: the tutor redirects off-topic content immediately (T2 Turn 4), keeps discussion anchored to the assignment, and avoids repetitive loops by advancing the argument at each turn.",
-      "Tone is consistently warm, clear, and coaching-oriented, with no grades or evaluative scoring language used."
+      "Across all three transcripts the tutor maintains a strong Socratic posture: it consistently refuses to write thesis statements, principles, or submission-ready text, instead redirecting students to produce their own reasoning at each step. No direct final answers or near-submission-ready content was provided, so 1.1 retains full marks.",
+      "Scaffolding (1.2) is generally good: the tutor builds on correct student progress turn-by-turn, uses the students' own language, and applies targeted stress-tests and counterfactual tools. No significant failures to build on student progress or misdiagnoses of confusion were found.",
+      "Meta-learning (1.3) has two deductions. First, the tutor enforces its constraints without explaining the pedagogical rationale to the student (e.g., why refusing to supply the principle develops reasoning skill). Second, the tutor never explicitly prompts reflection on what changed in the student's thinking or why a method (like the counterfactual test) worked — opportunities arise at multiple points across all three conversations but are consistently missed.",
+      "Dialogue quality (2.2) is handled well. The off-topic restaurant query in Transcript 2, Turn 4 is redirected immediately and briefly; no substantive off-topic engagement occurred. Redundancy (2.1) is not a problem: the tutor advances and synthesizes across turns rather than cycling.",
+      "Communication quality (3.1) is the main weakness. The tutor habitually sends lengthy multi-part prompts (3–5 numbered questions at once) across all transcripts, particularly in opening turns and when students are confused. This reduces the student's cognitive space and interaction opportunities. A deduction of 4 points is applied under 3.1.A.a. Language is appropriately accessible, so 3.1.B is not penalized.",
+      "Tone (3.2) is consistently warm, non-punitive, and coaching-oriented. No grading language or formal evaluation framing is used."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

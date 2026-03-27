@@ -232,10 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 5, tutor gives the likely ACS table code (B19301) directly, doing the key lookup step for the student rather than guiding them to find it themselves. While the tutor frames it as provisional, the student gets the specific answer they were angling for.",
+                "reason": "Transcript 1, Turn 2: Tutor provides a full list of specific URLs for every required field (location, population, race/ethnicity, area, income per capita, GDP, Köppen) unprompted by any student attempt. The tutor does the key research step of identifying and mapping sources to each field rather than asking the student to propose sources first.",
                 "points": 6
               }
             ],
@@ -253,7 +253,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -265,24 +264,19 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its constraints (refusing to provide final answers, refusing to write excuse lines) but rarely explains *why* this serves the student's long-term learning or skill development. The rationale given is typically just 'that would be doing the assignment for you' without connecting to meta-learning goals.",
+                "reason": "Across all three transcripts, the tutor never explains its tutoring rationale or learning policy to the student (e.g., why it won't give direct answers, why Socratic questioning supports skill development). It enforces constraints (e.g., 'I can't fill it out for you') without articulating the pedagogical benefit to the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
                   2,
-                  3,
                   4,
-                  5,
                   6,
-                  7,
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves steadily through task steps but never pauses to ask the student to reflect on what they learned, why a method worked, or what changed in their thinking. No reflection prompts appear in any transcript.",
+                "reason": "Across all transcripts, the tutor never prompts the student to reflect on what they learned or why an approach worked. Conversations end on task-level steps without any meta-reflection prompt (e.g., 'What did you learn from finding that source?').",
                 "points": 2
               }
             ],
@@ -326,7 +320,7 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcripts 1 and 2, the tutor's early responses are multi-paragraph monologues covering source hierarchies, trust criteria, geographic decisions, and next steps simultaneously. Turn 2 of Transcript 1 lists every source field with URLs before the student has done anything. Turn 1 of Transcript 2 delivers a full taxonomy of sources, trust hierarchy, and four clarifying questions at once. These consistently reduce the student's space to think and respond.",
+                "reason": "Transcripts 1 and 2, Turns 1–2: Several early responses are multi-paragraph monologues covering multiple sub-topics before any student input (e.g., trust hierarchies, boundary definitions, source lists). These extended responses consistently reduce the student's opportunity to think and respond before receiving comprehensive information.",
                 "points": 4
               }
             ],
@@ -355,11 +349,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to do the assignment for students and maintains a Socratic stance across most of the conversation, which is commendable. However, in Transcript 3 Turn 5, the tutor directly supplies the likely ACS table code (B19301) after a student claims they cannot access the site—this is a key lookup step the student was supposed to perform, triggering a 1.1.C.b deduction.",
-      "Scaffolding and assignment anchoring are strong across all three transcripts. The tutor correctly redirects off-topic gambits (music chat, excuse line requests) and consistently re-grounds students in the actual task. No spiraling or redundancy issues are observed.",
-      "Meta-learning is the weakest area: the tutor enforces its constraints without explaining the pedagogical rationale for doing so, and never prompts students to reflect on why an approach worked or what changed in their thinking.",
-      "Communication length is a recurring issue in early turns across Transcripts 1 and 2, where the tutor front-loads multiple questions, full source lists, and decision frameworks in single responses rather than taking one interactive step at a time. Later turns are more bite-sized.",
-      "Tone is consistently warm and supportive throughout. No grading language is used."
+      "Transcript 1 (chaotic_06): The tutor appropriately refused to complete the assignment but undermined Socratic principles in Turn 2 by proactively mapping out specific URLs for every required field before the student made any attempt. This constitutes doing the key research-sourcing step for the student (1.1.C.b). Later turns are well-handled: the tutor held the line on not writing final row text, directed the student to check BEA units directly, and encouraged formatting decisions with minimal handholding.",
+      "Transcript 2 (chitchat_06): Generally strong guided-discovery practice. The tutor navigated two off-topic attempts cleanly and redirected appropriately. Turn 2 also included a fairly comprehensive source-mapping response, but framed more as scaffolding with explicit decisions left to the student. No strong evidence of 1.1.C.b in this transcript beyond what was already penalized in Transcript 1.",
+      "Transcript 3 (clueless_06): Solid Socratic work. The tutor declined to give ACS table codes directly at first, redirected 'can't access site' attempts into strategies, and consistently asked the student to reason before confirming. Turn 5 provided the B19301 table code when the student claimed inability to access the site—a borderline concession, but the student was asked to verify it. No separate 1.1.C.b deduction applied here to avoid double-penalizing.",
+      "Across all transcripts, the tutor never explains why it withholds direct answers (1.3.A.a) and never prompts reflection on process or method after student progress (1.3.D.a). Process-level feedback was generally present, so 1.3.B was not penalized.",
+      "Dialogue quality was strong overall: no spiraling, no off-topic engagement beyond brief acknowledgment, and assignment anchoring was consistently maintained.",
+      "Communication quality deductions center on several lengthy multi-paragraph opening responses (especially Transcripts 1 and 2) that front-loaded significant information before the student could respond. This recurred across multiple turns and reduced interactive engagement."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

@@ -90,12 +90,11 @@
               {
                 "evidence_turns": [
                   3,
-                  5,
-                  7,
-                  8
+                  4,
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries ('non-academic,' 'off-assignment,' 'not going to') without consistently explaining the learning rationale for those limits.",
+                "reason": "The tutor repeatedly enforced boundaries on help ('I can’t do Netflix recommendations,' 'I can’t drop cite-ready links,' 'I can’t write a tagline') without consistently explaining the learning rationale for those limits.",
                 "points": 2
               }
             ],
@@ -138,31 +137,40 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Some redirections were phrased rigidly ('I’m not going to chase the detour,' 'I’m not going to give you a verbatim click-path'), which could feel brusque even though they kept the student on task.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic detours quickly, and used guided questions to keep the student doing the city-selection and source-finding work.",
-      "Method support was generally strong and specific (standardizing year, distinguishing resident vs total population, checking table fit), but boundary-setting often lacked an explicit pedagogical rationale, so a small deduction was applied under meta-learning.",
-      "Tone was firm and efficient; while somewhat rigid at moments, there was not enough clear evidence of harmful dismissiveness to deduct under tone."
+      "The tutor stayed strongly anchored to the assignment, used guided questions well, and avoided doing the student’s city choice, sourcing, or wording for them.",
+      "Minor deductions reflect repeated constraint-setting without much explicit learning rationale and a somewhat rigid tone in a few off-topic redirects."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

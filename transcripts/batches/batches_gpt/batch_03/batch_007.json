@@ -233,15 +233,14 @@
               {
                 "evidence_turns": [
                   6,
-                  7,
-                  8
+                  7
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "Tutor supplied exact rating options, then confirmed the final digits for the student to enter, providing core assignment judgments and near-ready answer pieces.",
-                "points": 12
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, the tutor narrowed the student to two exact Miami rating sets and then confirmed the chosen list '(10, 9, 9, 8, 8)', performing the assignment's central rating judgment rather than having the student derive it independently.",
+                "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -252,36 +251,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly states it cannot provide paste-ready text, but does not explain the learning rationale for keeping the student responsible for the judgments and writing.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor checks consistency but does not prompt reflection on why the rating method worked or what the student learned from the comparison process.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 8,
+          "score": 18,
           "max": 24
         }
       },
@@ -291,12 +268,13 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  6,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "After the student remained stuck, the tutor repeated the same refusal-plus-template move across multiple turns without switching to a more synthesizing or simplified strategy.",
+                "reason": "In Transcript 1, after repeated requests for paste-ready text, the tutor repeatedly used the same refusal-plus-template move across several turns without changing strategy or synthesizing a more effective path forward.",
                 "points": 4
               }
             ],
@@ -319,8 +297,17 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "In Transcript 2 Turn 9, the tutor exposed a JSON-style 'pedagogical-reasoning' wrapper to the student, adding avoidable technical language and cognitive load instead of speaking directly and simply.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -332,23 +319,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Transcript 1 stayed on-task and tried to preserve student ownership, but it crossed into direct assignment work by giving exact rating sets and confirming the final digits to enter.",
-      "The main dialogue weakness was late-stage repetition: once the student insisted on paste-ready text, the tutor largely repeated refusals and fill-in shells without a new strategy."
+      "Scored across all three provided transcripts; deduction reasons specify the relevant transcript when needed.",
+      "The tutor was generally strong at maintaining assignment integrity, building from student ideas, and coaching the student toward criteria, evidence types, and defensible justifications.",
+      "The main pedagogy issue was Transcript 1, where the tutor ultimately supplied/confirmed the exact rating set for the student; the main dialogue issue was repeated refusal-template cycling without a new strategy.",
+      "A smaller communication deduction was applied for the student-visible JSON/technical wrapper in Transcript 2 Turn 9."
     ],
-    "total_score": 26,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

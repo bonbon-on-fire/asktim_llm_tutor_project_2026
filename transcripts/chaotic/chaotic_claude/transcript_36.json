@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 3, the tutor provides a largely pre-formatted, partially completed template that includes the population value already filled in ('Total population: 8,258,035') and citation attribution ready to paste ('U.S. Census Bureau, QuickFacts...'). While placeholders remain, the structure and partial fill-in go beyond guiding the student to do this work themselves—the tutor is doing the formatting and citation scaffolding in near-final form, effectively turning rough student input into ready submission text.",
+                "reason": "In Turn 3, the tutor provides a partially pre-filled template with the population value already inserted (8,258,035, 2023, source label) and the structural wording for all fields written out. While placeholders remain, the tutor is doing significant formatting/writing work for the student, essentially producing polished final-ready table text that the student only needs to fill numbers into. This crosses into rewriting/producing submission-ready text rather than guiding.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do work for the student but never explains the underlying learning rationale (e.g., that locating and verifying data is a core urban studies skill that builds research capacity). The tutor's refusals cite academic dishonesty concerns but do not frame limitations in terms of the student's long-term skill development.",
+                "reason": "The tutor enforces its policy of not completing work without once explaining the learning rationale—e.g., that doing the work develops research skills or serves the student's long-term ability. It only cites academic dishonesty risk, not pedagogical purpose.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they are learning through the process of locating and verifying data, nor does it reinforce method choices after improvements (e.g., in Turn 10 after the student writes an accurate note, the tutor moves on without asking the student to articulate what made the revision successful).",
+                "reason": "The tutor never prompts the student to reflect on what they learned through the process, what changed in their thinking, or why verifying sources and constructing the table themselves is valuable. No transfer or reflection support is offered across the full conversation.",
                 "points": 2
               }
             ],
@@ -167,12 +167,13 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-paragraph, heavily structured responses where one or two focused prompts would suffice. Turn 2 contains a numbered 5-step list with embedded sub-questions. Turn 3 reproduces the entire template in detail. Turn 4 repeats a 3-source workflow. These long monologues consistently reduce student opportunity to think and respond incrementally.",
+                "reason": "Turns 1–4 consistently feature multi-paragraph, heavily structured responses with numbered lists, bolded headers, and multi-step instructions delivered all at once. Rather than asking one focused question and waiting for a student response, the tutor front-loads large blocks of information, reducing the student's opportunity to engage step by step.",
                 "points": 4
               }
             ],
@@ -201,11 +202,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor does well at refusing to complete the assignment for the student and at redirecting academic dishonesty requests clearly and consistently (Turns 4, 6). It also maintains good assignment anchoring and avoids spiraling.",
-      "The main deduction in 1.1 is for Turn 3, where the tutor provides a pre-formatted, partially filled-in template with the population value and citation attribution already inserted. This goes beyond guiding the student and begins doing the formatting and citation work for them, approaching 1.1.B (rewriting into near-final submission form). The deduction is 6 points rather than 12 because the template is not fully completed and significant blanks remain for the student to fill.",
-      "The tutor never explains the learning rationale behind its refusals (1.3.A.a) and does not prompt reflection or method consolidation at any point in the conversation, even after the student makes genuine progress in Turns 8–10 (1.3.D.a).",
-      "Several responses (Turns 2, 3, 4) are unnecessarily long and structured, with multi-step numbered workflows appearing where a single focused prompt would have been more pedagogically appropriate (3.1.A.a).",
-      "No deductions for tone, assignment anchoring, redundancy, scaffolding, or language simplicity."
+      "The tutor maintains a principled refusal to complete the assignment for the student throughout all 10 turns, consistently redirecting the student to do the actual data-finding work. This is commendable and prevents full 1.1.A deductions.",
+      "However, in Turn 3, the tutor provides a substantially pre-filled, polished table template with the population value already entered and all field labels and source attribution language pre-written. This constitutes rewriting/producing submission-ready text (1.1.B.a), warranting a 6-point deduction.",
+      "The tutor never explains its pedagogical rationale for not doing the work—only citing academic integrity concerns. The learning benefit of self-directed research is never articulated. This triggers 1.3.A.a.",
+      "No reflection or transfer support is offered at any point in the conversation. The student completes steps without being prompted to think about why the method matters or what they've learned. This triggers 1.3.D.a.",
+      "Turns 1–4 are consistently dense and multi-part, front-loading several numbered steps and bolded instructions before checking what the student can do. This reduces student opportunity to think and respond interactively, triggering 3.1.A.a.",
+      "Dialogue quality is strong: the tutor stays on topic, re-anchors appropriately when the student drifts (e.g., wanting fabricated numbers), and avoids redundant cycling. Tone is supportive and non-punitive throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

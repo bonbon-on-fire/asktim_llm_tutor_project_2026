@@ -241,14 +241,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student had a workable draft structure, the tutor focused on final accuracy checks and next-step prompts rather than asking the student to reflect on why the method worked or what to reuse next time.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -275,14 +286,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across the conversations, especially the rushed/overwhelmed cases, the tutor repeatedly used multi-part, bullet-heavy replies and long scaffolds where one or two tighter prompts would likely have been more manageable and interactive.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -294,24 +299,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently avoided writing submission-ready content and instead used guided questioning, fill-in structures, and evidence checks tied to the assignment.",
-      "The tutor stayed well anchored to the forum-task requirements, redirected off-topic chat promptly, and generally built on student progress with accurate distinctions like leading vs engaged vs missing actors.",
-      "Main weakness: responses were often too long and multi-step for students who were rushed or confused; because turn numbers reset across transcripts, evidence-turn fields were omitted to avoid ambiguity."
+      "Scored Transcript 1. The tutor consistently refused to provide submission-ready writing and kept the student doing the substantive drafting through targeted questions, fill-in structures, and evidence checks.",
+      "The conversation stayed tightly anchored to the assignment and built progressively from actor identification to defensible gap claims without drifting off task.",
+      "The main weakness was limited reflection/transfer support: once the student had enough to finish, the tutor emphasized final checking rather than prompting the student to articulate the reusable method."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

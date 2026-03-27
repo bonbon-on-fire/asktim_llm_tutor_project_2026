@@ -90,13 +90,11 @@
               {
                 "evidence_turns": [
                   6,
-                  7,
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave useful process checks, but did not prompt brief reflection on why the student's revised method or formatting choices worked, missing a transfer opportunity near the end.",
+                "reason": "The tutor gave useful checks and confirmations, but did not prompt brief reflection on why the student's revised wording/citation/source-selection method worked or how to transfer the method to future data-table tasks.",
                 "points": 2
               }
             ],
@@ -159,10 +157,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to complete the table or provide paste-ready data values, instead guiding the student to specific sources, labels, units, and consistency checks.",
-      "Scaffolding was strong and assignment-focused: the tutor narrowed source choices, handled the city-proper vs metro GDP issue cautiously, and built on the student's drafts without taking over.",
-      "A small deduction was applied for missing reflection/transfer support: after the student improved their formatting and citation approach, the tutor did not prompt reflection on why those methods were effective.",
-      "A possible concern about the tutor's conditional approval of metro GDP as a proxy was treated conservatively and not separately deducted because the tutor kept the advice transparent, conditional, and labeling-focused."
+      "The tutor consistently avoided doing the assignment for the student, kept the work anchored to the actual data-table task, and used guided prompts to help the student identify sources, labeling choices, unit conversions, and citation components.",
+      "Scaffolding was generally strong: the tutor adapted to the student's time pressure, clarified the city-proper versus metro GDP issue, and built on the student's draft wording instead of restarting or ignoring progress.",
+      "The clearest missed opportunity was reflection/transfer support: after the student improved notes and source-formatting choices, the tutor did not ask the student to articulate why those choices were better or how to reuse the method on future assignments.",
+      "There was some ambiguity around the tutor's GDP guidance, but it was framed as a labeling/transparency choice rather than supplying the assignment's final content, so no larger pedagogy deduction was applied."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

@@ -91,10 +91,10 @@
                 "evidence_turns": [
                   1,
                   2,
-                  5
+                  4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor states it cannot provide a paste-ready post, but does not explain the learning rationale for that limitation beyond saying it would be doing the assignment.",
+                "reason": "The tutor repeatedly states it cannot write a pasteable post, but mostly frames this as a prohibition on doing the assignment rather than explaining the active-learning rationale for requiring the student to generate the analysis.",
                 "points": 2
               },
               {
@@ -103,7 +103,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student's revision improved, the tutor moved to final sanity checks without prompting reflection on what made the revision stronger or how to reuse that method.",
+                "reason": "After the student's revision becomes much stronger, the tutor gives final content checks but does not prompt reflection on why specificity improved the argument or how to reuse that method on future assignments.",
                 "points": 2
               }
             ],
@@ -166,9 +166,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the student's forum post and instead used templates, sentence frames, and targeted revision prompts that kept the student doing the substantive writing.",
-      "Scaffolding was strong: the tutor narrowed the task to an adaptation lens, built on the student's chosen actors, and pushed for clearer mechanisms, sector activity, and participation gaps tied to the actual assignment.",
-      "Main deductions are in meta-learning: the tutor enforced limits without much explicit learning rationale, and it missed a chance near the end to prompt reflection on why the student's revision became stronger."
+      "The tutor stayed firmly non-substitutive: it refused repeated requests for a paste-ready post, used templates and targeted prompts, and steadily moved the student from vague actor labels toward specific, assignment-aligned analysis.",
+      "The main weakness was meta-level support: the tutor enforced boundaries without clearly explaining the learning rationale, and it missed a chance near the end to help the student reflect on why the stronger revision worked and how to transfer that method."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

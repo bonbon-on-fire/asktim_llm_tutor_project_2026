@@ -93,27 +93,17 @@
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing off-topic requests, the tutor states a role boundary but does not explain a learning rationale for staying within assignment-focused tutoring.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  6,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor advances to the next evidence-gathering step without prompting reflection on why the student's method improved or what general approach they should reuse.",
+                "reason": "When redirecting the student's off-topic dinner/movie requests, the tutor stated role limits but did not explain a learning rationale for the constraint beyond saying it was their role.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -159,18 +149,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-anchored, redirected off-topic requests immediately, and used guided questions rather than supplying a submission-ready answer.",
-      "Scaffolding was effective and responsive to the student's progress, with specific evidence-hunting prompts tied to the Miami case and the forum deliverable.",
-      "Main deductions are limited to meta-learning: the tutor enforced boundaries without much learning rationale, and it did not explicitly prompt reflection on what reasoning method the student should transfer to future work."
+      "The tutor consistently used guided questions, evidence tests, and small next steps rather than doing the assignment for the student.",
+      "The conversation stayed tightly anchored to the Miami actor-mapping task, with immediate redirection from off-topic prompts.",
+      "The main deduction is that the tutor's role-based refusals did not explicitly explain the learning rationale for those constraints."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

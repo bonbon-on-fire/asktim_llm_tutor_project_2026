@@ -245,11 +245,12 @@
               {
                 "evidence_turns": [
                   1,
-                  11,
+                  2,
+                  8,
                   22
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly states role limits when refusing off-topic requests, but does not explain a learning-oriented rationale for that constraint beyond saying it is 'here to tutor' on the assignment.",
+                "reason": "The tutor repeatedly enforces scope limits for off-topic requests ('I can't help with...') without explaining a learning-oriented rationale for the constraint; the conversation stays on task, but the limitation is not framed as pedagogy.",
                 "points": 2
               }
             ],
@@ -312,9 +313,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor stays strongly assignment-focused, redirects off-topic chitchat promptly, and consistently uses guided questioning rather than doing the student’s writing or core reasoning for them.",
-      "The tutor also scaffolds well: it builds from student choices, asks for evidence-based distinctions, and helps the student create defensible criteria for ratings, source selection, and actor classification.",
-      "The only clear deduction is meta-level rationale: when enforcing role limits, the tutor does not explain the learning reason for those constraints, though otherwise its process coaching is strong."
+      "Across the three transcripts, the tutor consistently uses guided discovery: it redirects off-topic chat immediately, asks the student to choose boundaries/criteria/evidence, and avoids writing submission-ready text or doing the core interpretive work for the student.",
+      "Scaffolding is strong and assignment-anchored throughout; the main weakness is meta-framing, because the tutor often states scope limits without explaining the pedagogical reason. This deduction is kept small because the tutor sometimes gives method-focused coaching elsewhere."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

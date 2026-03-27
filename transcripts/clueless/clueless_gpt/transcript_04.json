@@ -91,11 +91,10 @@
                 "evidence_turns": [
                   7,
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong procedural guidance, but after the student made workable choices, it kept advancing to the next table detail rather than prompting reflection on why the decision method worked or how to transfer it to other rows.",
+                "reason": "After the student began making defensible choices, the tutor kept moving to the next task without prompting brief reflection on why the source-checking and labeling method worked or how to reuse it.",
                 "points": 2
               }
             ],
@@ -132,8 +131,17 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The response included internal JSON/meta reasoning and abstract phrasing beyond the student-facing help, adding avoidable cognitive load.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -145,24 +153,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, used guided questioning well, and avoided doing the table for the student.",
-      "It scaffolded the student's choices effectively around unit definition, source verification, proxy use, labeling, and citation without becoming submission-ready.",
-      "Only a small deduction applies because the conversation emphasized step-by-step completion more than reflection on why the student's decision process was sound or reusable."
+      "The tutor stayed well anchored to the assignment, used guided questions effectively, and avoided completing the student's table or writing submission-ready content.",
+      "Method support was generally strong, especially around source verification, boundary consistency, and proxy labeling.",
+      "Main deductions were for limited explicit reflection/transfer once the student improved and for one response that exposed dense internal meta text to the student.",
+      "Potential concerns about the tutor suggesting examples such as PDRB/GRDP were treated conservatively because the tutor still required the student to justify and label choices independently."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -256,21 +256,16 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its Socratic constraints (e.g., refusing to pick the city, refusing to give stressor examples directly) without ever explaining the pedagogical rationale—why the student should derive ideas themselves for long-term learning. The tutor says 'I can't' or 'we can do this, but...' but never links the constraint to active reasoning or skill development.",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than providing direct answers (e.g., why it asks the student to propose stressors rather than listing them, or what long-term skill the back-and-forth is building). Constraints are enforced but the learning rationale is never stated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, the tutor moves briskly from one step to the next without prompting the student to reflect on what changed in their thinking (e.g., why their driver-pathway framing improved, why their rating logic became more consistent). There is no moment where the tutor reinforces the method choice after improvement or asks the student what they learned from a correction.",
+                "reason": "In none of the three transcripts does the tutor prompt the student to reflect on how their thinking evolved (e.g., how their understanding of driver→pathway linkage or rating logic changed), or reinforce the method choices after improvement. The conversations end without any process-level reflection prompt.",
                 "points": 2
               }
             ],
@@ -293,25 +288,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcripts 2 and 3, the student repeatedly attempts off-topic chitchat (asking about the tutor's city, comfort shows, memorable student projects, neighborhood preference). The tutor does redirect each time, but in some turns provides a brief acknowledgment or partial engagement before redirecting (e.g., T3 Transcript 3: 'Your 9 and 8 are defensible... I can't share memorable student projects...'), giving a meaningful on-topic response before the refusal rather than immediately refocusing. This is a borderline case; the tutor does redirect but not always immediately and cleanly.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -332,7 +316,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor consistently sends multi-part, multi-question responses (often 3–5 numbered sub-questions per turn) when shorter, more focused prompts would have allowed the student more space to think. For example, T1 Turn 2, T1 Turn 4, T2 Turn 2, T3 Turn 4, T3 Turn 5, and T3 Turn 6 all contain 3+ distinct questions/tasks stacked together. This pattern is consistent across all 10-turn conversations.",
+                "reason": "Across all three transcripts, the tutor consistently sends multi-part, multi-question responses (often 3–5 distinct numbered sub-questions per turn). Many turns pile questions before the student has had a chance to respond to earlier ones, reducing the student's cognitive space and the interactive quality of the exchange. This pattern is pervasive rather than occasional.",
                 "points": 4
               }
             ],
@@ -354,21 +338,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic approach: it consistently refuses to pick the city, generate stressor lists, or provide ratings, instead prompting the student through driver-pathway-sector-evidence reasoning at each step. No submission-ready content was provided, so 1.1 receives full marks.",
-      "Scaffolding (1.2) is also strong: the tutor builds on each student response, calls out when framing improves ('This is much better'), and uses calibration checks ('what would move this to a 9–10') that advance student thinking incrementally.",
-      "Meta-learning (1.3) is the primary pedagogical gap. The tutor never explains why it refuses to give answers—no connection is made to active reasoning or skill development goals—triggering 1.3.A.a. Additionally, after student thinking visibly improves (e.g., Turn 4 T1), the tutor moves on without asking the student to reflect on what changed or why the new framing worked, triggering 1.3.D.a.",
-      "Assignment anchoring (2.2) receives a partial deduction. The student attempts multiple off-topic chitchat diversions across Transcripts 2 and 3. The tutor does redirect each time, but several turns include a substantive on-topic response before or alongside the refusal rather than an immediate clean redirect, which meets the threshold for 2.2.B.a. This is noted as borderline and scored conservatively.",
-      "Communication (3.1) is the other notable weakness. Nearly every tutor turn contains 3–5 stacked numbered questions/sub-tasks, which consistently reduces the student's opportunity to think independently and respond before being asked the next question. This pattern is persistent enough across all three transcripts to trigger 3.1.A.a.",
-      "Tone (3.2) remains supportive and non-punitive throughout. The tutor never uses grades or score-like language. No deductions apply."
+      "Across all three transcripts the tutor maintains a strong Socratic posture: it declines to pick cities or generate stressor lists for the student, consistently asks the student to propose ratings/stressors first, challenges ratings with follow-up questions, and never produces submission-ready text. No deductions under 1.1 or 1.2 are warranted.",
+      "The scaffolding is well-executed: each turn builds on the student's prior answer (driver→pathway refinement, rating calibration, sector coverage checks), and the tutor redirects chitchat cleanly without losing the thread.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains why it is using this guided approach (learning rationale), and it never invites the student to step back and reflect on how their thinking changed—both are missed opportunities in all three conversations.",
+      "Communication quality is the most significant weakness: the tutor routinely fires 3–5 numbered sub-questions per turn across all transcripts, which is a persistent pattern that limits student thinking time and makes responses feel like a quiz rather than a dialogue. This triggers the 3.1.A.a deduction.",
+      "Tone is consistently supportive and professional; the tutor acknowledges student progress ('this is much better,' 'good—those are concrete and researchable') without being sycophantic or assigning formal grades."
     ],
-    "total_score": 34,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

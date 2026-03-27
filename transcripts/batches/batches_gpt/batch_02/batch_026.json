@@ -229,17 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplied a menu of likely objections to act consequentialism ('rights/constraints,' 'doing vs allowing,' 'means vs side-effects,' etc.) before the student independently generated them, narrowing idea generation early.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,24 +244,25 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  4,
-                  6,
-                  8,
-                  10
+                  8
                 ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a writing-help limit ('I can’t help you phrase it') without explaining the learning rationale for that limitation.",
+                "points": 2
+              },
+              {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor gave strong forward-moving coaching, but did not explicitly prompt reflection on what reasoning method worked, what changed in the student's thinking, or how to transfer the method beyond this essay.",
+                "reason": "Across the conversations, the tutor scaffolded well but did not explicitly prompt reflection on why the student's method worked or what changed in their reasoning.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 20,
           "max": 24
         }
       },
@@ -297,22 +289,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Tutor repeatedly used multi-part, bullet-heavy prompts instead of smaller interactive steps; by turn 9 the student explicitly said they were 'stuck trying to answer your four bullet prompts cleanly,' showing the response size sometimes hindered progress.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -324,24 +302,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Input contained three transcripts, but the schema supports one conversation score; this evaluation is for Transcript 1 (philosophy).",
-      "Tutor was consistently assignment-anchored, supportive, and strong at scaffolding the student's reasoning through pressure-testing rather than giving a finished essay.",
-      "Main weaknesses were early idea-framing by the tutor, limited explicit reflection/transfer coaching, and repeatedly oversized prompt bundles that sometimes overloaded the student."
+      "The tutor consistently used guided questioning, built on student progress, and stayed tightly anchored to the assignment rather than doing the work for the student.",
+      "The main weakness was meta-level support: refusals/limits were usually not explained in learning-rationale terms, and the conversations did not include explicit reflection on why the student's reasoning method improved.",
+      "Because the prompt included multiple transcripts with turn numbers resetting, cited turns are representative examples rather than an exhaustive list."
     ],
-    "total_score": 34,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -232,12 +232,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  12,
-                  22,
-                  28
+                  2,
+                  6,
+                  8
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor sometimes supplied substantial idea-generation content before the student had produced it, including a long Miami stressor menu, pre-sorted actor buckets, and a near-complete forum-post template, which narrowed student-led discovery.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied central reasoning content and structure for the student's argument (the act consequentialist decision rule, and added necessity/proportionality conditions) rather than eliciting all key steps from the student first.",
                 "points": 6
               }
             ],
@@ -255,11 +255,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  20,
-                  30
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved a sentence or chose a coherent framework, the tutor moved directly to the next revision step instead of prompting brief reflection on why the method worked or how to reuse it.",
+                "reason": "After the student arrived at a coherent principle, the tutor moved straight to application without prompting brief reflection on why the method worked or how to transfer it to other cases.",
                 "points": 2
               }
             ],
@@ -296,20 +295,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  12,
-                  22,
-                  28
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, list-heavy replies and elaborate templates when shorter, more targeted prompts would have been more appropriate for the student's panicked, deadline-driven state.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -321,25 +308,23 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evidence turns are counted sequentially across the combined 30-turn input.",
-      "The tutor consistently refused to do the assignments for the student, stayed anchored to each prompt, and usually built useful scaffolds from the student's partial progress.",
-      "Main weaknesses were over-providing substantive content in some places (especially menus/templates that partially pre-generated ideas) and using responses that were often too long for the student's rushed context.",
-      "A smaller deduction was applied for missed reflection/transfer opportunities; a harsher near-submission penalty was not applied because the tutor still stopped short of fully writing final answers."
+      "The tutor consistently refused to do the assignment for the student and used structured prompts, templates, and follow-up questions to keep the student engaged in producing their own argument.",
+      "Main deduction: the tutor still introduced some decisive argumentative content itself, especially the act consequentialist rule and the added necessity/proportionality structure, which reduced student-generated discovery."
     ],
-    "total_score": 34,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

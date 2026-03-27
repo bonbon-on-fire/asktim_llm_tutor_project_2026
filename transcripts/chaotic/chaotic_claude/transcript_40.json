@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "Turn 8 provides five near-complete sentence frames ('In Mumbai, the main municipal lead for climate resilience is ___, while state-level coordination...') that are polished, submission-ready template language the student can fill in with a single word per blank. This crosses into rewriting/drafting final wording for the student rather than guiding them to construct their own sentences.",
+                "reason": "In Turn 8, the tutor provides polished sentence-starter templates with explicit structural blanks ('In Mumbai, the main municipal lead for climate resilience is ___, while state-level coordination for disasters/response involves ___.'). These are near-ready submission sentences that only require name insertion, functioning as rewritten final wording rather than guiding the student to construct their own sentences.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to do the work but never explicitly explains the pedagogical rationale—e.g., that discovering actors yourself builds the analytical skills needed for later assignments in the course, or that sourcing actors yourself ensures accuracy. It just says 'I can't' or 'that's doing the assignment for you' without articulating the learning benefit.",
+                "reason": "The tutor repeatedly refuses to do the student's work but rarely explains the pedagogical rationale (active reasoning, skill-building) clearly. In Turn 7, the tutor says 'you need to produce the text yourself' but doesn't explain why this builds learning skills. The refusals are enforced without consistently articulating the learning benefit.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on the process or transfer the method: e.g., asking what the student learned about how to map actors, or noting that the search strategy used here would apply to other assignment phases. No reflection moment is created at any point in the conversation.",
+                "reason": "The tutor never prompts the student to reflect on their own reasoning process or what they've learned from the actor-identification work. There is no moment where the tutor asks 'what did you learn about how to find actors?' or reinforces method choices after progress is made.",
                 "points": 2
               }
             ],
@@ -157,7 +157,7 @@
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern for eight turns—student asks for actor names, tutor declines and sends them to Google, student resists—without reframing, synthesizing what has been established, or switching to a meaningfully different strategy. The same search-and-paste loop is proposed repeatedly without consolidation or escalation to a different approach.",
+                "reason": "The tutor cycles through nearly identical moves across 8 turns: refuse the shortcut → give a structured task → ask the student to paste names. The pattern repeats without meaningful reframing, synthesis, or a shift in strategy despite the student's persistent resistance. The tutor never tries an alternative scaffolding approach (e.g., starting from a single actor and building outward differently, or acknowledging the pattern and proposing a new path).",
                 "points": 4
               }
             ],
@@ -187,10 +187,12 @@
                   3,
                   4,
                   6,
-                  9
+                  7,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns contain multi-paragraph monologues combining refusal explanation, search instructions, skeleton frameworks, and follow-up questions simultaneously. Turns 2 and 3 in particular pack dense multi-step instructions into long blocks when a single focused prompt would have been more interactive and manageable for a clearly overwhelmed student.",
+                "reason": "The tutor repeatedly produces multi-paragraph responses with numbered sub-tasks, bullet lists of actor categories, and embedded rules of thumb—where single focused questions or minimal prompts would suffice given the student's clearly overwhelmed, low-engagement state. The length and density of responses consistently reduce the student's opportunity to think and respond, and the student's pattern of ignoring the detailed tasks suggests the responses are too long to act on.",
                 "points": 4
               }
             ],
@@ -219,12 +221,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor firmly and consistently refused to produce submission-ready content, maintaining academic integrity throughout all 10 turns. This is its clearest strength.",
-      "However, in turn 8 the tutor provided five polished, near-complete sentence templates (fill-in-the-blank frames with full grammatical structure) that function as rewritten final wording, triggering a 1.1.B deduction.",
-      "The tutor never explained the pedagogical rationale for its constraints—it repeatedly said 'I can't do this for you' without articulating why the student would learn better by doing the research themselves, and never prompted any reflection on method or transfer (1.3.A and 1.3.D deductions).",
-      "The dialogue spiraled badly: for eight consecutive turns the tutor issued the same 'search Google and paste names' instruction without reframing, synthesizing established progress, or switching strategy when it clearly was not working (2.1.A deduction, full 4 points).",
-      "Several responses were excessively long—combining refusal language, multi-step search instructions, skeleton frameworks, and follow-up questions in single replies—reducing the student's opportunity to think and respond interactively (3.1.A deduction).",
-      "Tone was consistently supportive and non-condescending. Assignment anchoring was solid throughout: the tutor never confirmed a misreading of the task."
+      "The tutor consistently refused to do the assignment for the student, which is commendable and pedagogically appropriate. The tutor also correctly anchored the conversation to the assignment and maintained a respectful, non-dismissive tone throughout.",
+      "However, the tutor crossed into near-submission-ready help in Turn 8 by providing polished sentence-starter templates with explicit structural blanks that only required name insertion—these function as rewritten final wording under rubric 1.1.B.a, warranting a 6-point deduction.",
+      "A significant weakness is the repetitive cycle of the same pedagogical move (refuse → structured task → ask to paste names) across 8 consecutive turns without synthesis or strategic reframing, triggering the full 2.1.A.a deduction for spiraling.",
+      "The tutor's responses were consistently too long and multi-part for a student who was clearly overwhelmed and low-engagement. Shorter, single-focus prompts would have been more appropriate and actionable, triggering the 3.1.A.a deduction.",
+      "Meta-learning was limited: the tutor rarely explained its pedagogical rationale for refusing help in terms of skill-building, and never prompted reflection on the student's developing process or what the actor-identification exercise was teaching them.",
+      "The tutor never confirmed whether the student completed any steps between turns, which combined with the length of responses, likely contributed to the student's repeated attempts to shortcut the process."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

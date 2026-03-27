@@ -92,7 +92,7 @@
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor imposed an active-reasoning constraint ('you write them, not me') without explaining the learning rationale for that limitation.",
+                "reason": "The tutor imposed a boundary ('you write them, not me') without explaining the learning rationale for that limitation.",
                 "points": 2
               }
             ],
@@ -155,9 +155,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly Socratic throughout, using targeted questions to help the student choose Miami, distinguish overlapping stressors, define a rating rule, and generate their own evidence and priorities.",
-      "Scaffolding was strong and cumulative: the tutor consistently built on the student's previous answers rather than restarting, and kept the discussion tightly anchored to the assignment despite the student's off-topic location question in Turn 1.",
-      "The only clear deduction is minor and somewhat ambiguous: in Turn 9 the tutor explicitly withheld doing the final writing ('you write them, not me') without explaining the learning rationale for that constraint."
+      "The tutor stayed strongly Socratic throughout: it asked targeted, sequential questions, built directly on the student's Miami choice and evolving stressor list, and avoided supplying submission-ready claims or prose.",
+      "Assignment anchoring was strong, including redirecting the off-topic location question and repeatedly re-centering the table requirements (sector coverage, current-stress rule, indicators, sources).",
+      "The main deduction is meta-learning rationale: when the tutor set a boundary about the student writing the final priorities, it did not explain why that limitation supports learning. Reflection/transfer support was brief but present through method reinforcement, so no further deduction was taken."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

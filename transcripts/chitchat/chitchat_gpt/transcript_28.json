@@ -89,11 +89,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
+                  4,
+                  6,
+                  8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step method guidance but never prompted reflection or transfer, such as summarizing why the chosen source-selection method works for future city-table tasks.",
+                "reason": "The tutor gave strong procedural guidance, but did not prompt reflection on why the chosen method worked or what the student should transfer to future case-study research.",
                 "points": 2
               }
             ],
@@ -136,7 +138,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "One reply exposed internal JSON/meta labels (e.g., pedagogical reasoning), adding avoidable technical formatting instead of a plain-language student-facing response.",
+                "reason": "One response exposes internal JSON/meta reasoning (\"pedagogical-reasoning\") rather than clean student-facing language, adding avoidable complexity and cognitive load.",
                 "points": 2
               }
             ],
@@ -165,9 +167,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic comments promptly, and used guided questioning well to help the student choose geography, source types, and documentation methods without simply doing the table for them.",
-      "Scaffolding was strong: the tutor built on the student's decisions, emphasized consistent geography/year definitions, and gave concrete process advice on source matching and citation.",
-      "Main weaknesses were limited reflection/transfer support and one confusing meta-formatted turn. The communication deduction is modest because the rest of the conversation was generally clear and well-paced."
+      "The tutor stayed well anchored to the assignment, used clarifying questions, and avoided doing the student’s table or giving the final Köppen classification directly.",
+      "Main weaknesses were limited reflection/transfer support and one confusing meta-JSON response that reduced communication clarity.",
+      "No stronger deductions were applied because the tutor generally scaffolded choices appropriately and redirected off-topic turns immediately."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

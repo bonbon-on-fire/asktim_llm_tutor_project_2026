@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 3, the tutor provides specific Census table IDs (DP05, DP03), exact BEA navigation instructions, and detailed step-by-step source guidance that effectively does the research structuring work for the student rather than having the student reason through source selection independently.",
+                "reason": "In Transcript 1 Turn 3, the tutor provides a near-complete breakdown of exactly which ACS tables to use (DP05, DP03), the Gazetteer, and BEA with precise navigation instructions. While not the final numbers, the tutor effectively does the sourcing/lookup reasoning step for the student rather than guiding the student to reason through which sources to choose.",
                 "points": 6
               }
             ],
@@ -253,19 +253,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
+                  10,
+                  10,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked or failed, or what general lessons to take from the process. The tutor consistently moves forward without brief process reflection.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what they learned about source evaluation or how their thinking about data selection evolved. The conversations end without any reflection on method or transfer of reasoning skills.",
                 "points": 2
               }
             ],
@@ -305,12 +298,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 (Turns 2-3) and Transcript 3 (Turn 6), the tutor produces long multi-paragraph responses with bullet lists of source categories, table IDs, and detailed navigation instructions where shorter, more focused prompts would better support guided discovery. Turn 3 (T1) in particular is a dense multi-paragraph block that reduces student opportunity to think independently.",
+                "reason": "Turn 3 (Transcript 1) provides a lengthy, multi-section breakdown of five data sources with specific table IDs and navigation instructions when a shorter prompt directing the student to identify sources would suffice. Turn 6 (Transcript 3) provides a comprehensive multi-section list of source families across six row types when briefer scaffolding was appropriate. These multi-paragraph responses repeatedly reduce the student's opportunity to think independently.",
                 "points": 4
               }
             ],
@@ -339,15 +331,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor demonstrates strong assignment anchoring across all three transcripts, consistently redirecting off-topic requests (comfort movies, city suggestions) and maintaining focus on the data table task.",
-      "The tutor generally avoids completing the assignment for students, repeatedly declining to hand over filled-in values, specific numbers, or ready-to-submit citations, which is a key strength.",
-      "However, in Transcript 1 Turn 3, the tutor provides specific Census table IDs (DP05, DP03), detailed BEA navigation paths, and Gazetteer instructions that effectively do the research structuring work rather than scaffolding the student to reason through source selection. This triggers the 1.1.C.b deduction.",
-      "Similarly in Transcript 3 Turn 6, the tutor produces an extensive bulleted list of 'safe source families' for every row, which while not providing specific numbers, substantially reduces the student's independent reasoning about source evaluation.",
-      "The deduction for 1.1 was kept to 6 points (1.1.C.b) rather than 12 (1.1.A.a) because the tutor never provides actual data values or submission-ready content; the issue is doing reasoning steps for the student, not completing the assignment itself.",
-      "Across all three conversations, there is no evidence of the tutor prompting students to reflect on why their approach worked or what they learned about the research process, triggering the 1.3.D.a deduction.",
-      "Response length is frequently excessive in Transcript 1 (Turns 2-3) and Transcript 3 (Turn 6), with multi-paragraph monologues replacing what could be shorter, more interactive prompts.",
-      "Scaffolding and progression are handled well: the tutor builds on student progress (e.g., validating 'metro GDP + BEA' in T2), acknowledges correct reasoning, and uses diagnostic questions before diving into new content.",
-      "Tone is consistently supportive and non-punitive even when declining student requests, and the tutor never assigns formal grades or implies grading authority."
+      "The tutor consistently refuses to provide direct answers or complete table entries for students, maintaining appropriate academic integrity boundaries across all three transcripts.",
+      "In Transcript 1 Turn 3, the tutor crosses into doing the key reasoning step by providing specific ACS table IDs (DP05, DP03), navigation paths, and the exact BEA series name—effectively doing the source identification work that the student should have done. This triggers a 1.1.C.b deduction of 6 points.",
+      "Across all transcripts, the tutor never facilitates reflection on method or asks students to consider what their experience taught them about data sourcing and research process, triggering a 1.3.D.a deduction of 2 points.",
+      "Several tutor responses are notably long and detailed (Transcript 1 Turn 3, Transcript 3 Turn 6), delivering multi-section breakdowns when shorter, targeted prompts would better serve the student's learning. This triggers a 3.1.A.a deduction of 4 points.",
+      "Scaffolding is generally well-handled: the tutor builds on student contributions, addresses confusion diagnostically, and redirects off-topic chat promptly and clearly.",
+      "Tone is consistently supportive and non-grading throughout all transcripts.",
+      "One area of ambiguity: Transcript 3 Turn 6's source families list is extensive but does preserve some student agency in selecting among source types rather than specifying exact documents. The deduction was applied to 3.1 (response length) rather than 1.1 (direct work) to avoid double-penalizing."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

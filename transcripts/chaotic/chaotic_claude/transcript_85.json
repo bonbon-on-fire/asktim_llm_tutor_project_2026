@@ -74,23 +74,23 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor directly maps the student's A/B/C scores to specific rating ranges (e.g., '8–10', '6–8') for all five stressors. This does the key reasoning step of translating evidence into numeric severity bands, which is precisely what the assignment asks the student to do. The student did not derive these ranges themselves.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In turn 2, when the student is clearly stuck and unwilling to engage, the tutor provides a detailed 7-item shortlist with a 4-part template framework without first diagnosing what the student actually knows or understands about Miami's climate stressors. The tutor jumps to a method dump rather than asking a simple diagnostic question first.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the entire conversation, the tutor enforces its constraints (won't fill out the table, won't assign ratings, won't write justifications) without once explaining the pedagogical rationale—why active reasoning by the student builds long-term analytical or research skills.",
+                "reason": "The tutor consistently refuses to do the student's work but never explains the learning rationale — e.g., why the student doing the ratings themselves builds a skill for the course's later climate action plan assignments. The tutor enforces the constraint without providing a pedagogical explanation.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts reflection on the student's reasoning process or why a particular approach worked. After the student successfully provides severity buckets and hooks in Turn 5, the tutor does not reinforce or consolidate that method before moving on.",
+                "reason": "The tutor never prompts the student to reflect on their reasoning process, what changed in their thinking, or why certain methods (e.g., the 3-check scoring rubric) worked. No transfer or reflection support is offered across any turn.",
                 "points": 2
               }
             ],
@@ -137,7 +137,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 17,
           "max": 24
         }
       },
@@ -159,7 +159,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern across nearly every turn: refuse the request, provide a slightly modified scaffold, ask the student to fill blanks. There is minimal synthesis or escalation of approach as the student repeatedly pushes back. The tutor does not reframe the interaction or shift strategy in a meaningful way.",
+                "reason": "The tutor cycles through turns 1–7 asking the student to provide their own buckets/hooks/numbers using slight variations of the same approach (fill-in-the-blank templates, yes/no questions, anchor ranges) without consolidating or adapting strategy when the student repeatedly refuses. The same refusal-then-scaffold pattern repeats without reframing, synthesis, or shift in approach.",
                 "points": 4
               }
             ],
@@ -190,13 +190,10 @@
                   4,
                   5,
                   6,
-                  7,
-                  8,
-                  9,
-                  10
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Most tutor turns contain multi-part templates, numbered scaffolds, bulleted rules, and lengthy instructions when shorter, targeted prompts would suffice. Especially in Turns 2–4, the tutor's replies are longer than the interaction requires and risk overwhelming the student rather than drawing out engagement.",
+                "reason": "Turns 2–7 repeatedly use multi-part templates, multi-step frameworks, and multi-question structures when simple one-focused prompts would have been more appropriate given the student's disengagement. For example, turn 2 gives a 7-item shortlist plus a 4-part fill-in template; turn 3 offers a 3-type template plus 3 yes/no questions; turn 4 provides stem sentences for all 5 stressors. The length consistently reduces the student's opportunity to think independently.",
                 "points": 4
               }
             ],
@@ -218,22 +215,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 31,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to do the assignment for the student, which is appropriate, but the execution has several weaknesses.",
-      "In Turn 8, the tutor crosses a boundary by directly computing and providing severity ranges (8–10, 6–8, etc.) from the student's A/B/C scores, effectively doing the key quantitative reasoning step the assignment requires. This triggered a 1.1.C.b deduction.",
-      "The tutor never explains why it is withholding direct answers (no pedagogical rationale offered), missing an opportunity to help the student understand the value of doing the work themselves. This triggered a 1.3.A.a deduction.",
-      "The tutor also never prompts the student to reflect on their reasoning process or consolidate learning after successful steps, triggering a 1.3.D.a deduction.",
-      "The overall dialogue pattern is highly repetitive—nearly every turn follows the same refuse-then-scaffold structure without reframing, synthesis, or strategy escalation, triggering the 2.1.A.a deduction.",
-      "Tutor responses are consistently too long, with multi-part templates and numbered bullet lists that reduce student thinking space and inflate cognitive load, triggering a 3.1.A.a deduction.",
-      "Assignment anchoring (2.2) is handled well: the tutor keeps the conversation focused on Miami and the stressors table throughout. Scaffolding progression (1.2) is adequate—the tutor does build on student inputs across turns. Tone (3.2) is appropriate and non-punitive."
+      "The tutor successfully avoids doing the student's work for them throughout all 10 turns — no submission-ready content, ratings, or justifications are ever provided, preserving full 1.1 credit.",
+      "Assignment anchoring is strong: the tutor never loses track of the actual task or follows the student's framing of 'just give me the answer.'",
+      "The tone remains patient, constructive, and supportive throughout despite repeated student resistance, earning full 3.2 credit.",
+      "Key deductions fall in three areas: (1) Scaffolding — in turn 2, the tutor jumps to a detailed multi-part scaffold without diagnostic questioning to assess what the student already knows; (2) Meta-learning — the tutor never explains the learning rationale for why the student must do the work themselves, nor prompts any reflection on the student's evolving reasoning; (3) Redundancy — the same refusal-plus-scaffold cycle repeats across turns 1–7 without meaningful strategy shift, consolidation, or reframing; (4) Communication — most turns are unnecessarily long with layered templates and multi-question structures where focused single prompts would better serve the disengaged student."
     ],
-    "total_score": 28,
+    "total_score": 31,
     "judge_llm_calls": 1
   }
 }

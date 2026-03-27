@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces constraints (refusing to write bullets, fill tables, pick ratings) but rarely explains to the student why this approach serves their learning (e.g., active reasoning, skill development for later assignments). The rationale is implicit at best.",
+                "reason": "Across all three transcripts the tutor enforces its 'I can't do this for you' constraints without explaining the learning rationale (e.g., active reasoning, skill development). The refusals are consistent but the pedagogical why is never articulated to the student.",
                 "points": 2
               },
               {
@@ -264,7 +264,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without the tutor prompting the student to reflect on their reasoning process, what changed in their thinking, or how to apply this method to future stressors/assignments. No meta-reflection is elicited.",
+                "reason": "In all three transcripts the conversations end without the tutor prompting any reflection on what the student's thinking changed or what process worked. Transcript 1 Turn 10 ends with a self-audit checklist but no reflection on method choices or what the student learned about the process.",
                 "points": 2
               }
             ],
@@ -306,14 +306,13 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
                   5,
                   6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, several tutor turns contain multi-part, multi-paragraph responses with numerous simultaneous questions and sub-prompts (e.g., Transcript 1 Turns 2, 3, 5, 6, 7, 8, 9; Transcript 2 Turns 3, 4, 5, 6, 7, 8). While individual turns are often purposeful, the consistent pattern of presenting 4–6 numbered questions/steps per response before checking student understanding reduces student thinking space and creates cognitive overload, especially for a student who is already overwhelmed.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-paragraph responses with multiple sub-questions, numbered lists, and templates when shorter, more focused single-question prompts would have been more appropriate given the student's 'chaotic' engagement style. For example, Transcript 1 Turn 2 poses a full scaffolding structure, templates, AND a separate question chain in one block. This pattern reduces student opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -342,12 +341,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains a strong Socratic stance: it consistently refuses to write submission-ready content, pick ratings for the student, or draft justifications. Instead it repeatedly redirects the student back to doing the reasoning themselves using templates, frameworks, and targeted questions. This results in full scores on 1.1 and 1.2.",
-      "Scaffolding is effective: the tutor builds on student-provided lists, ratings, and bullets turn-by-turn. It acknowledges correct work (e.g., 'These are solid drafts,' 'Much better'), identifies specific weaknesses (vague language, missing specificity), and consistently advances rather than restarts. No deductions warranted for 1.2.",
-      "Assignment anchoring is well-handled: the tutor keeps the student focused on the assignment's sector, rating, and justification requirements across all conversations, even when the student tries to shortcut. Dialogue stays on task throughout.",
-      "Meta-learning is the main weakness: the tutor almost never explains why it refuses to write things for the student (beyond a brief 'that would be doing the assignment'), missing an opportunity to articulate learning rationale. Reflection is also absent—no turn invites the student to step back and consider what their reasoning process reveals about how to approach future assignments.",
-      "Response length is a consistent pattern concern: across all three transcripts, many tutor turns contain 4–6 simultaneous numbered prompts, template blocks, and multi-bullet checklists. While individually purposeful, this pattern reduces the student's chance to think and respond step-by-step. A more bite-sized approach—one or two focused questions per turn—would better match the student's 'chaotic/overwhelmed' persona.",
-      "Tone is warm, supportive, and non-punitive throughout. No formal grading language is used. No deductions for 3.2."
+      "Across all three transcripts, the tutor maintains a strong Socratic stance: it consistently refuses to fill in the table, write submission-ready sentences, or pick ratings for the student, instead using targeted questioning to push the student to generate their own content. The student's ideas, ratings, sector tags, and justifications are genuinely student-produced throughout.",
+      "Scaffolding is well-executed: the tutor builds on each student contribution, acknowledges correct progress (e.g., 'Your mechanisms/exposures are solid'), challenges weak logic with pointed follow-up questions, and advances the work incrementally rather than restarting.",
+      "The main pedagogical gap is in meta-learning: the tutor never explains WHY it won't write things for the student (the learning rationale), and no conversation ends with a reflection prompt on what the student's thinking changed or what process choices proved useful. This costs 4 points under 1.3.",
+      "Communication length is a consistent issue. Even though the tutor's multi-part responses are well-structured, they often pack 4-6 sub-questions or a full template plus a challenge question into a single turn. For a self-described 'slammed' and chaotic student, this reduces interactive space and could be cognitively overwhelming. This is penalized under 3.1.A.a.",
+      "Assignment anchoring is strong: the tutor consistently re-grounds the student to the assignment steps (sectors, rating scale, justifications, priority stressors) and redirects off-task requests (filling out the table) immediately and clearly.",
+      "Tone is appropriately firm but not cold or punitive. The tutor uses phrases like 'Good start,' 'Much better,' and 'That's a defensible logic' to encourage without over-praising.",
+      "No formal grades or letter grades are assigned anywhere; feedback is consistently framed as coaching."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

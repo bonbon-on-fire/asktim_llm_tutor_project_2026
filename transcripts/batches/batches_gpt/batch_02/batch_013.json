@@ -237,7 +237,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor gives key interpretive content before the student fully works it out, including confirming the cross-case act consequentialist verdict under stated assumptions and supplying candidate critique frameworks/examples for Blood.",
+                "reason": "The tutor supplied key interpretive content before the student developed it independently, including the conditional AC verdict, concrete consequentialist 'extra consequences,' and candidate alternative constraints.",
                 "points": 6
               }
             ],
@@ -252,14 +252,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced refusal boundaries but did not clearly explain a learning-centered rationale beyond saying the student needed to do the writing.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -305,17 +319,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused copy-pasteable writing and kept the discussion tightly anchored to the philosophy prompt, using templates, targeted questions, and stepwise prompts to scaffold the student's own answer.",
-      "Main deduction: the tutor still supplied substantive answer content at key moments, especially by confirming the act consequentialist verdict across the cases under stipulated assumptions and providing candidate critique frameworks and concrete system-effect examples, which reduced student-led discovery."
+      "The tutor stayed firmly anchored to the philosophy prompt, resisted paste-ready writing requests, and scaffolded the student's own reasoning with templates, targeted questions, and feedback on assumptions and structure.",
+      "Main deduction is in guided discovery: the tutor still supplied substantive answer content the student could directly use, especially the conditional act-consequentialist verdict and lists of consequentialist/system-effects and alternative constraint options.",
+      "A smaller deduction was applied for not clearly explaining the pedagogical rationale for refusal. Evidence for stronger penalties was ambiguous because the tutor did not provide polished submission-ready prose."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

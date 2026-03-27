@@ -236,7 +236,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 3-4: Tutor gives the student the exact ACS table IDs (DP05, DP03, B03002, B19301, S0101), BEA series name, and Beck et al. citation details before the student has attempted any research. The tutor does the key reasoning step of selecting and explaining the right data sources, bridging evidence to action directly rather than guiding the student to discover them.",
+                "reason": "Transcript 1, Turn 3-4: Tutor gives specific ACS table IDs (DP05, DP03, B19301, B03002), BEA series names, and the full Beck et al. citation with journal/year/DOI-level detail. This is doing the key source-identification work for the student rather than guiding them to discover it.",
                 "points": 6
               }
             ],
@@ -254,7 +254,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
@@ -265,19 +264,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its constraints (refusing to give direct answers, refusing off-topic content) but rarely explains the learning rationale—e.g., that the student benefits from finding sources themselves for long-term research skill development. The refusals are stated as policy without connecting to active reasoning or skill-building goals.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to give direct answers but rarely explains *why* this approach benefits the student's learning. The rationale given is mostly 'I can't do the assignment for you' (rule-based) rather than explaining active learning or skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
                   2,
+                  3,
                   4,
+                  5,
                   6,
+                  7,
                   8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all transcripts, when students make progress (e.g., selecting BEA income, choosing FUA, narrowing source type), the tutor moves immediately to the next task without prompting any reflection on why the choice worked or what the student's thinking process revealed. No transfer prompts or process reinforcement appear.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on their process, what changed in their thinking, or why a method worked. The conversation always moves forward task-by-task without consolidating learning.",
                 "points": 2
               }
             ],
@@ -322,10 +326,14 @@
                   3,
                   4,
                   5,
-                  6
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly delivers multi-paragraph replies with numerous sub-questions and layered options in single turns. For example, Transcript 1 Turn 3 gives a full breakdown of 5 ACS tables with caveats; Transcript 2 Turn 1 delivers a 3-category breakdown with 5 sub-questions; Transcript 3 Turn 4 lists all columns and rows. These consistently reduce the student's opportunity to think and respond interactively.",
+                "reason": "Across all three transcripts, the tutor routinely sends multi-paragraph responses with nested bullet lists, multiple sub-questions, and lengthy caveats when shorter, more focused prompts would have been appropriate. For example, Transcript 1 Turn 2 and Turn 3, Transcript 2 Turn 1, Turn 2, and Transcript 3 Turn 4 all contain responses that overwhelm the student with information when one or two focused questions were needed.",
                 "points": 4
               }
             ],
@@ -354,10 +362,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_04): The tutor correctly refused to fill out the table directly and maintained a Socratic boundary in most turns. However, in Turns 3–4, the tutor preemptively provided extensive ACS table IDs, BEA series details, and a full Beck et al. citation before the student had made any attempt to research these—doing the key sourcing reasoning step for the student. This triggered a 1.1.C.b deduction. Later turns (5–10) were well-handled: the tutor consistently redirected the student to find FIPS and Köppen data themselves.",
-      "Transcript 2 (chitchat_04): The tutor handled off-topic redirections (restaurant, Chicago vibe) cleanly and kept assignment anchoring strong. Turns 2–10 showed good progression from geography lock-in through source selection and CBSA identification. No major pedagogy violations, though responses were often long and multi-pronged, reducing interactive quality.",
-      "Transcript 3 (clueless_04): The tutor guided a genuinely confused student through city selection, metro definition, and source strategy without doing the work for them. The handling of the 'just pick for me' requests in Turns 7–8 was appropriate. However, responses were consistently verbose with multiple sub-questions per turn, and the tutor never prompted reflection on why certain choices worked or explained the rationale for its non-giving-answers policy.",
-      "Cross-transcript patterns: Response length was consistently excessive across all three conversations—most tutor turns contained multi-paragraph replies with 2–5 sub-questions, which crowded out student thinking space. Meta-learning gaps were consistent: no explanation of tutoring rationale for refusals, no reflection prompts after student progress. These patterns triggered deductions in 1.3 and 3.1."
+      "Across all three transcripts, the tutor consistently refuses to do the assignment outright and redirects off-topic questions appropriately, maintaining good assignment anchoring and avoiding spiraling.",
+      "The main pedagogy deduction is in 1.1: in Transcript 1 (Turns 3–4), the tutor crosses into doing the key source-identification work by naming exact ACS table IDs (DP05, DP03, B19301), the full Beck et al. citation with journal and year, and the BEA series name. This is the reasoning step the student should have discovered, triggering the 1.1.C.b deduction of 6 points.",
+      "The tutor does not explain the learning rationale for withholding answers (1.3.A.a), typically citing policy ('I can't do this for you') without connecting it to skill development or active reasoning.",
+      "Reflection and transfer (1.3.D.a) are consistently absent across all three transcripts; the tutor moves task-to-task without prompting process reflection or consolidating method insights.",
+      "Communication is consistently verbose: responses are frequently multi-paragraph with nested bullets and multiple sub-questions where shorter, targeted prompts would better serve the student, especially for the already-overwhelmed personas in Transcripts 1 and 3.",
+      "Tone is supportive throughout and no formal grading language is used, so 3.2 receives full marks.",
+      "Scaffolding (1.2) is generally well-executed: the tutor builds on student choices (city proper vs metro, ACS year, income definition) and the few moments of confusion are met with appropriate diagnostic questions rather than method dumps."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

@@ -231,8 +231,13 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  24,
+                  27,
+                  28
+                ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In transcript 3, the tutor provided sentence templates, multiple-choice content for each blank, and an exact assembly recipe that the student then turned into a near-ready forum paragraph almost verbatim. Across those turns, the tutor supplied answer pieces that together became submission-ready direct assignment work.",
+                "reason": "In Transcript 3, the tutor supplied a four-sentence forum-post scaffold, then provided option phrases for each blank and an exact assembly recipe; across turns, this became near-submission-ready assignment wording.",
                 "points": 12
               }
             ],
@@ -247,20 +252,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly says it cannot write or polish the submission, but usually presents this as a boundary ('I can't do that for you') rather than explaining the learning rationale for why generating the work themselves will help the student build the skill.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
+          "score": 12,
           "max": 24
         }
       },
@@ -306,18 +305,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was generally strong at keeping the student anchored to the assignment, eliciting student thinking, and giving structured scaffolds rather than simply dumping answers.",
-      "The biggest deduction is in pedagogy: in transcript 3, the tutor's templates, option lists, and assembly instructions effectively produced a near-submission-ready forum post through guided assembly, which crosses the rubric's line on direct assignment work.",
-      "A smaller deduction applies because the tutor usually stated refusal boundaries without explicitly explaining the learning rationale behind those limits. Because the input contains three transcripts with repeated turn numbering, deductions are cited at the transcript level rather than with turn-number arrays."
+      "Across all three transcripts, the tutor was generally strong on assignment anchoring, incremental scaffolding, and supportive tone.",
+      "The main deduction is concentrated in pedagogy: in Transcript 3 the tutor moved from refusal into providing sentence-level forum-post components that the student could directly assemble into a ready-to-post paragraph.",
+      "Evidence turns are numbered sequentially across the full input: Transcript 1 = 1-10, Transcript 2 = 11-20, Transcript 3 = 21-30."
     ],
-    "total_score": 32,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

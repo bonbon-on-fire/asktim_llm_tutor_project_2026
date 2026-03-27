@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its 'I can't do this for you' policy repeatedly but never explains the learning rationale—why the student benefits from doing the work themselves (e.g., building research and citation skills for future assignments). The constraint is stated but not justified in terms of student development.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to fill in data, refusing to write citations, refusing to list sources) without explaining the learning rationale—e.g., never says 'I'm doing this so you build the skill of evaluating sources yourself' or similar. The tutoring policy is applied but not justified pedagogically to the student.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In none of the three transcripts does the tutor pause to help the student reflect on why a method worked or what changed in their thinking. For instance, in Transcript 3 the student makes explicit progress from vague to narrower asks, but the tutor never reinforces what made the narrower approach more productive or prompts reflection on process.",
+                "reason": "In all three transcripts the tutor consistently moves forward to the next task without prompting the student to reflect on what they learned from each step (e.g., why a given source type is stronger, why the geographic unit choice matters as a transferable skill). Opportunities for process reflection are systematically missed.",
                 "points": 2
               }
             ],
@@ -317,10 +317,14 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor repeatedly uses multi-paragraph, multi-question responses when shorter, more focused prompts would better invite student response. For example, Transcript 1 Turn 1 asks five separate questions in one message; Transcript 3 Turn 3 provides an entire template plus a choice question plus a year-rule question in one message. This pattern consistently reduces student thinking space.",
+                "reason": "Across all three transcripts, many tutor responses are multi-paragraph with multiple nested sub-questions and bullet lists when a shorter, more focused single question would have kept the student active and thinking. For example, Transcript 1 Turn 1 fires five bullet sub-questions at once; Transcript 2 Turn 4 delivers a three-part structured response to a simple request; Transcript 3 Turn 3 gives a full template plus a framework question plus a year-rule question simultaneously. This pattern consistently reduces student thinking space.",
                 "points": 4
               }
             ],
@@ -349,11 +353,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains strong Socratic discipline: it consistently refuses to do the table work for the student, provides templates and frameworks rather than completed answers, asks questions that require genuine student reasoning, and builds on student responses appropriately (1.1 full marks).",
-      "Scaffolding is handled well: the tutor acknowledges correct student contributions (e.g., validating 'definitions are solid' in Transcript 2 Turn 3, building on the student's 'not available' decision in Transcript 3 Turn 7), and does not restart from scratch when students make partial progress (1.2 full marks).",
-      "The main recurring weakness is in meta-learning (1.3): the tutor enforces its 'I can't do this for you' policy in every transcript but never explains the pedagogical rationale to the student—e.g., why independent source-finding builds transferable research skills. Additionally, the tutor misses multiple opportunities to prompt reflection on process (e.g., in Transcript 3 the student explicitly notes their own strategic shifts, but the tutor never reinforces what made those shifts effective). These two distinct failures each warrant a 2-point deduction.",
-      "Dialogue quality is strong throughout: the tutor redirects off-topic attempts efficiently (Transcript 2 Turns 1, 5, 7), re-anchors to the assignment when students try to shift frame, and avoids redundant spiraling.",
-      "Communication quality is penalized for response length: in all three transcripts the tutor habitually sends long, multi-part messages that pack several questions, frameworks, and bullet lists into a single turn. While the content is always relevant, the format consistently limits student cognitive engagement and opportunity to respond to one thing at a time. This warrants the full 4-point deduction under 3.1.A.a."
+      "Across all three transcripts the tutor demonstrates strong adherence to Socratic principles: it consistently refuses to complete assignment work for the student, never provides finished answers or near-submission-ready content, instead guiding with targeted questions and scaffolded prompts. No deductions are warranted under 1.1 or 2.x criteria.",
+      "Scaffolding (1.2) is handled well: the tutor picks up on student progress (e.g., correct definitions in Transcript 2 Turn 3, sensible proxy reasoning in Transcript 1 Turn 7) and builds forward from it. No deductions apply.",
+      "Meta-learning (1.3) is the primary weakness. The tutor consistently enforces its 'I won't do this for you' policy without ever explaining the learning rationale to the student (1.3.A.a, -2 pts). Additionally, the tutor rarely invites process reflection—it moves from one task step to the next without asking students what they learned or why a method worked (1.3.D.a, -2 pts). There is marginal method-level feedback present (e.g., 'your definitions are solid' in T2T3, 'too vague to be credible' in T1T7), so 1.3.B is not deducted.",
+      "Response length (3.1) is a consistent issue: across all three transcripts the tutor fires multiple layered sub-questions and bullet lists in single turns where one focused question would suffice. This reduces student thinking opportunity and matches the pattern described in 3.1.A.a (-4 pts).",
+      "Off-topic redirection (2.2.B) is well-handled in Transcript 2—the tutor quickly deflects the student's casual chat attempts without engaging substantively. Tone (3.2) is warm and supportive throughout. No deductions for 2.2 or 3.2.",
+      "Total deductions: 2 (1.3.A.a) + 2 (1.3.D.a) + 4 (3.1.A.a) = 8 points off from 46, yielding a score of 38."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

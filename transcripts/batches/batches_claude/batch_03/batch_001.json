@@ -366,7 +366,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to write for the student but rarely explains the learning rationale (i.e., that the student's active reasoning builds philosophical skill). Refusals are justified by 'that's the assignment' or 'that would be academically inappropriate,' but the tutor does not explain why guided discovery benefits the student's long-term development.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to write submission content but rarely explains the pedagogical rationale (e.g., 'so you develop your own reasoning skills' or 'so you retain authorship of your thinking'). In Transcript 1 especially, the tutor enforces constraints throughout without providing a clear learning-rationale explanation.",
                 "points": 2
               },
               {
@@ -376,7 +376,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the tutor drives forward to the next question without prompting reflection on what worked or changed in the student's thinking. For example, in Transcript 2 Turn 8-10 and Transcript 3 Turn 8-10, after the student makes real progress (e.g., articulating the means/side-effect distinction), the tutor immediately issues new stress-tests rather than asking the student to reflect on how their thinking evolved or why the method they used succeeded.",
+                "reason": "In all three transcripts, conversations end without prompting the student to reflect on what changed in their thinking or why certain methods (e.g., the counterfactual test, the 2x2 grid) worked. The tutor moves from one probe to the next without consolidating process-level learning.",
                 "points": 2
               }
             ],
@@ -405,7 +405,7 @@
                   1
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 1, the student asks for a comfort movie recommendation before engaging with the assignment. The tutor briefly redirects but does so appropriately and without substantive engagement with the off-topic request. This is a minimal, correctly handled instance with only one short sentence acknowledging the off-topic nature before refocusing. No meaningful deduction warranted here.",
+                "reason": "In Transcript 2 Turn 1, the student asks for a comfort movie recommendation. The tutor refuses and redirects immediately with no substantive off-topic engagement. This is actually correct behavior; no deduction warranted here.",
                 "points": 0
               }
             ],
@@ -437,7 +437,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor routinely issues multi-part responses with three to five sub-questions in a single turn. For example, Transcript 1 Turn 1 gives a multi-paragraph scaffolding task with three labeled jobs; Transcript 2 Turn 3 asks three separate questions across multiple paragraphs; Transcript 3 Turn 5 ends with two multi-part tasks. While the content is pedagogically sound, the consistent length and multi-question format reduces student opportunity to respond to one focused prompt at a time and can overwhelm the student before they have processed the previous question.",
+                "reason": "Across all three transcripts, the tutor routinely sends multi-part, multi-paragraph responses. For example, Transcript 1 Turn 1 lists multiple overarching tasks and many sub-questions simultaneously; Transcript 2 Turn 3 and Turn 8 each ask four distinct questions at once; Transcript 3 Turn 5 has a large block of instructions with multiple open threads. While the questions are individually appropriate, the sheer volume per turn repeatedly reduces student opportunity to focus and respond before more complexity is added.",
                 "points": 4
               }
             ],
@@ -466,13 +466,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs very well on the core pedagogical criteria: across all three transcripts it consistently refuses to write submission-ready content, does not hand over thesis sentences or bullets for pasting, and uses genuine Socratic questioning (counterfactual tests, stress-test cases, fill-in templates) to guide students to derive their own positions.",
-      "Scaffolding and progression are strong: the tutor tracks student progress accurately (e.g., building from Switch → Footbridge → Blood → loop in Transcript 2; the counterfactual test in Transcript 3), acknowledges correct student moves, and builds progressively on what the student has established.",
-      "The main weakness in pedagogy is meta-learning: the tutor rarely explains why it is refusing to write for the student (learning rationale) and almost never pauses to ask students to reflect on how their thinking changed or why a method worked, which are missed opportunities for meta-cognitive transfer.",
-      "Dialogue quality is excellent: the tutor maintains tight assignment focus, redirects off-topic requests immediately, avoids redundancy, and consolidates student progress rather than cycling on the same point.",
-      "The primary communication deduction is for response length: across all three transcripts, the tutor's turns consistently contain three to five sub-questions or multi-part tasks, which is pedagogically rich but frequently longer than needed and limits the student's opportunity to respond to a single focused prompt before being given the next set.",
-      "Tone is consistently supportive and non-grading throughout all three conversations.",
-      "The 2.2.A.a entry in the deductions list is noted with 0 points because the off-topic redirect in Transcript 2 Turn 1 was handled correctly and immediately; no deduction is applied there."
+      "Across all three transcripts, the tutor consistently and correctly refuses to write submission-ready content, maintains Socratic questioning throughout, and draws out student reasoning effectively. The guided-discovery approach is strong: in Transcript 2, the tutor helps the student progress from a raw intuition to a well-structured philosophical account (means vs. side-effect, liability, loop case). In Transcript 3, the counterfactual test (Turn 6-7) is a particularly effective scaffold. In Transcript 1, the tutor holds the line firmly even under persistent pressure.",
+      "1.1 (Socratic method): No deductions. The tutor never writes the student's thesis, fills in case analysis, or produces paste-ready text. Even when offering sentence skeletons, these remain genuine prompts rather than submission-ready content.",
+      "1.2 (Scaffolding): No deductions. The tutor consistently builds on correct student progress (e.g., affirming Switch analysis before moving to Footbridge, building from the 2x2 grid in Transcript 2), and addresses confusion points appropriately rather than jumping ahead.",
+      "1.3 (Meta-learning): Deductions of 4 points. The tutor consistently declines to write for the student but rarely explains why in terms of learning rationale (1.3.A.a, -2). Additionally, across all three transcripts the conversations end or advance without pausing to have the student reflect on what method worked or what changed in their thinking (1.3.D.a, -2).",
+      "2.1 (Redundancy): No deductions. The tutor does not spiral on the same points; each turn advances the argument.",
+      "2.2 (Assignment anchoring): No deductions. When the student in Transcript 2 asks about comfort movies, the tutor immediately redirects without substantive off-topic engagement.",
+      "3.1 (Response length): Deduction of 4 points. The tutor's responses are consistently multi-paragraph and multi-question throughout all three conversations. While the questions are individually relevant, the volume per turn is systematically high and repeatedly reduces the student's ability to focus and respond incrementally.",
+      "3.2 (Tone): No deductions. The tutor is consistently firm but supportive, never punitive or dismissive."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

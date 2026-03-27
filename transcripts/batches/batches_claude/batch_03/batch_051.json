@@ -234,12 +234,12 @@
                 "evidence_turns": [
                   7
                 ],
-                "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 7, the tutor provides four nearly complete, polished sentences that directly state the act-consequentialist view, apply the means/side-effect test to Switch and Footbridge/Blood, and apply it to Fuel. These are labeled a 'fill-in template' but are substantively complete arguments the student only needs to paraphrase minimally. Together with Turn 8 where the tutor provides five synonym lists for key terms, the tutor carries the core reasoning and near-final wording across turns, constituting submission-ready content.",
-                "points": 12
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Transcript 1 Turn 7, the tutor provides four fully written, polished sentences as a 'fill-in template' that together constitute a near-complete paragraph on act consequentialism, means vs side-effect, and the Fuel/Blood application. The student is only asked to 'rewrite in your own voice,' meaning the tutor has produced the substantive final wording and logical structure, functioning as ghostwriting with superficial paraphrase requested.",
+                "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -258,29 +258,18 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor in Transcript 1 never explains why it won't write submission-ready text beyond 'that would be writing it for you'—it does not articulate the learning rationale (active reasoning, skill development). The same pattern holds across Transcripts 2 and 3; the tutor enforces its policy without clearly connecting it to the student's long-term skill-building.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts the tutor never prompts students to reflect on why their thinking evolved or what changed in their approach. Conversations conclude with the next task rather than a moment of process reflection.",
+                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting the student to reflect on what changed in their thinking or why a particular method (e.g., the 'plan-success-condition' test) worked. After students make breakthroughs (e.g., accepting the 'causal mechanism' criterion in Transcript 3 Turn 10, or identifying the means/side-effect distinction in Transcript 1), the tutor immediately moves to the next question without reinforcing the process insight.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 8,
+          "score": 16,
           "max": 24
         }
       },
@@ -322,7 +311,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor consistently sends multi-part, multi-paragraph responses with 3–4 numbered sub-questions at once. In Transcripts 2 and 3 in particular, turns 1–4 each fire 4 simultaneous sub-questions, reducing the student's opportunity to think through one step before being pushed to the next. This pattern is repeated throughout, indicating a structural tendency to over-load responses.",
+                "reason": "Across all three transcripts, the tutor routinely sends multi-part responses with 3–4 sub-questions in nearly every turn (e.g., Transcript 3 Turn 1 has 4 numbered questions plus an explanation plus a three-part framing at the end; Transcript 1 Turn 2 has three bullet-pointed sub-questions; Transcript 2 Turn 3 has two numbered parts each with nested sub-questions). This pattern is consistent throughout all 30 turns, reducing the student's opportunity to think and respond to one focused idea at a time.",
                 "points": 4
               }
             ],
@@ -344,21 +333,23 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 is the most problematic: Turn 7 provides four near-complete polished sentences covering the act-consequentialist framing, the means/side-effect test, and application to all cases, constituting submission-ready content under 1.1.A.a. Turn 8 then supplies synonym lists to facilitate paraphrasing, confirming the pattern. This triggers the full 12-point deduction for 1.1.",
-      "Transcripts 2 and 3 show genuine Socratic guidance—the tutor withholds verdicts, elicits student reasoning step by step, and avoids stating conclusions before the student. No 1.1 deduction applies to those two transcripts independently, but the 12-point deduction from Transcript 1 governs the combined score.",
-      "All three transcripts show the tutor enforcing its no-answer policy without explaining the pedagogical rationale (1.3.A.a) and never prompting process reflection at any point (1.3.D.a). The 1.3.B criteria are largely satisfied because the tutor does give method-level feedback on approach quality.",
-      "The tutor consistently fires 3–4 sub-questions per turn across all transcripts. While the questions are well-constructed, the volume per turn consistently reduces student thinking space, triggering 3.1.A.a.",
-      "No deductions for dialogue quality (2.1, 2.2): the tutor redirects off-topic bids promptly in Transcripts 1 and 2, stays anchored to the assignment, and does not spiral repetitively.",
-      "Tone is supportive and non-punitive throughout; no grading language is used. No deductions for 3.2."
+      "The tutor performs well overall on Socratic method, consistently refusing to write answers for students and redirecting off-topic requests effectively. Across all three transcripts, the tutor keeps the student doing the reasoning work through targeted questions.",
+      "The most significant deduction (1.1.B.a, -6 points) comes from Transcript 1 Turn 7, where the tutor provides four fully written polished sentences as a 'template,' which in practice constitutes near-submission-ready prose. While the tutor asks the student to paraphrase, the substantive content, structure, and specific wording are supplied, crossing into rewriting territory.",
+      "The tutor does not trigger 1.1.A.a (full submission-ready answer) or 1.1.C.a/b (giving conclusions before student reasoning) because the tutor consistently uses Socratic questioning and lets students develop their own positions before offering framing.",
+      "Scaffolding (1.2) is strong: the tutor builds on student progress appropriately across all three personas, including adapting to the clueless student's confusion with patient step-by-step probing.",
+      "Meta-learning (1.3) is partially penalized (-2 for 1.3.D.a): the tutor rarely pauses to help students reflect on why a method worked, missing multiple natural opportunities for process reinforcement after breakthroughs.",
+      "Communication quality is penalized (-4 for 3.1.A.a): the tutor's persistent use of 3–4 sub-questions per turn is a consistent pattern across all transcripts and all turns, which reduces interactive bite-sizing. This is a clear and repeated pattern, not an isolated incident.",
+      "Tone is consistently warm and supportive without being grade-assigning or condescending, earning full marks on 3.2.",
+      "Assignment anchoring (2.2) is excellent: the tutor redirects off-topic attempts immediately and re-anchors misframing without delay. Dialogue progression (2.1) is strong with no spiraling."
     ],
-    "total_score": 26,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

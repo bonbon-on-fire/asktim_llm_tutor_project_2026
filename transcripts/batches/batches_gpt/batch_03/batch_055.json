@@ -243,18 +243,33 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced refusal boundaries (not filling tables, rewriting lines, or fabricating quotes) without explicitly giving a learning-oriented rationale for those limits.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  15,
+                  20,
+                  30
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor gave strong process guidance but did not explicitly prompt reflection on why the rating/source-selection method worked or how the student could transfer that method to later assignments.",
+                "reason": "Even after students improved their rating logic and row structure, the tutor usually moved straight to the next task or source check rather than prompting brief reflection on why the method worked or how to transfer it.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -300,18 +315,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently used guided questioning, kept the student doing the substantive reasoning, and refused paste-ready writing or fabricated quotes.",
-      "The tutor stayed well anchored to the assignment, redirected off-topic or dishonest requests appropriately, and generally built on student progress with concrete structure for ratings, evidence, and sector logic.",
-      "Main deduction: despite strong coaching on method, the tutor rarely paused to ask the student to reflect on why the method worked or how to reuse it in future course tasks."
+      "Across the three transcripts, the tutor consistently kept the student doing the substantive work, used guided questions well, and stayed tightly anchored to the stressors-table assignment.",
+      "Strongest evidence is in the scaffolding: the tutor repeatedly helped students build rating criteria, distinguish overlapping stressors, choose evidence types, and refine sector logic without becoming submission-ready.",
+      "Main deductions are meta-level rather than core pedagogy: the tutor often stated refusals without an explicit learning rationale, and there were few reflection prompts about why the method worked or how to reuse it in later assignments."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

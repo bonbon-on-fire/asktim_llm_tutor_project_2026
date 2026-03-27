@@ -74,8 +74,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor directly made the key inference from the student's evidence by declaring the Mayor/Mayor's Office as the leading actor, rather than having the student articulate that conclusion first.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -93,7 +102,7 @@
           }
         },
         "base": {
-          "score": 24,
+          "score": 18,
           "max": 24
         }
       },
@@ -134,7 +143,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor repeatedly redirects off-topic comments with somewhat rigid phrasing (e.g., 'I’m not going to do personal chat'), which comes across as cold rather than warmly redirective.",
+                "reason": "The repeated refusals to engage in brief off-topic chat were efficient but phrased somewhat rigidly ('I’m not going to do personal chat'), creating a slightly cold tutoring tone.",
                 "points": 2
               }
             ],
@@ -150,18 +159,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, consistently used guided discovery, and pushed the student to ground claims in document evidence rather than supplying a finished answer.",
-      "Scaffolding was strong: the tutor progressively refined categories like leading, engaged, and missing, and gave process-level tests for what counts as decision power or representation.",
-      "The main weakness was tone during off-topic redirection; although the tutor redirected appropriately, the phrasing was at times rigid/cold rather than warmly supportive."
+      "The tutor was strongly assignment-anchored, used evidence-seeking questions well, and scaffolded the student toward a forum-ready structure without writing the submission for them.",
+      "Main deduction is for one moment of doing the key inference for the student in Turn 6. Tone was mostly supportive, though the repeated off-topic refusals were somewhat rigid; this deduction is modest because the tutor still redirected efficiently and constructively."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

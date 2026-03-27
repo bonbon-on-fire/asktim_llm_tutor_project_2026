@@ -77,10 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor provides three ready-to-use indicator phrases (e.g., 'frequency of high-tide (sunny-day) flooding events,' 'days with hazardous heat index,' 'large share of the metro in storm surge/evacuation zones') described as usable without verifying exact numbers. These are not just hints but near-complete phrasings the student can directly insert, performing the key evidence-selection step for the student.",
+                "reason": "In turn 3, the tutor provides fill-in-the-blank templates with sector mappings pre-assigned ('Sectors (choose): environmental + infrastructure + social') and pre-structures the evidence logic for each stressor, doing the key reasoning step of mapping stressors to sectors rather than prompting the student to derive this.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do work for the student but never explains the pedagogical rationale (e.g., developing research skills, active reasoning, long-term skill building). It only states 'that's the assignment' or 'I'm a tutor, not a ghostwriter' without explaining why the student benefits from doing it themselves.",
+                "reason": "The tutor consistently declines to do work for the student but rarely articulates the learning rationale behind its constraints—it mainly says 'that's the assignment' or 'that's writing the submission for you' without explaining that the student develops analytical skills through doing the justification work themselves.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their reasoning process or what they learned about climate vulnerability analysis. No turn asks 'why does that indicator matter?' or 'what does this tell you about Miami's priorities?' The conversation ends without any process reflection.",
+                "reason": "The tutor never invites the student to reflect on their thinking process or what they've learned through the interaction. There is no moment of 'notice what you just did' or 'what changed in your understanding of stressors?'—the tutor focuses purely on task completion.",
                 "points": 2
               }
             ],
@@ -144,25 +144,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles repeatedly through the same pattern: refuse to do the work, provide a template/prompt structure, ask the student to fill in blanks. Despite the student's persistent refusal to engage, the tutor does not meaningfully reframe its approach, shift strategy, or address the root cause of the student's disengagement. The conversation spirals without productive synthesis.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -174,7 +157,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -186,10 +169,12 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple early responses are excessively long. Turn 2 lists three stressors with three sub-prompts each across multiple bullet points. Turn 3 provides two blank-fill structures per stressor plus source-finding instructions. Turn 4 adds a decision rule plus another multi-part prompt. These multi-paragraph responses reduce student opportunity to think and respond incrementally.",
+                "reason": "Multiple tutor turns (especially 2, 3, 4) present long multi-part question lists and extensive fill-in-the-blank templates in a single response, when shorter focused prompts would have been more interactive. Turn 8 provides three pre-phrased indicator examples in a block, again reducing the student's opportunity to think first.",
                 "points": 4
               }
             ],
@@ -211,20 +196,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and appropriately refused to generate submission-ready content, maintaining academic integrity throughout all ten turns. Assignment anchoring was strong, and the tutor correctly identified the student's misframing requests each time.",
-      "However, in Turn 8 the tutor crossed a line by providing three complete, polished indicator phrases described as usable without verification. This is the key evidence-selection step for the assignment and constitutes doing the reasoning work for the student (1.1.C.b, -6 points).",
-      "The tutor never explained the pedagogical rationale for its refusals—it only cited 'that's the assignment' rather than explaining how doing the work themselves builds the skills the course aims to develop (1.3.A.a, -2 points). No reflective or transfer-oriented prompts appeared at any point (1.3.D.a, -2 points).",
-      "Despite the student's persistent disengagement, the tutor repeated the same template-and-refuse cycle across nine turns without switching strategies, summarizing progress, or addressing why the student was avoiding the work (2.1.A.a, -4 points).",
-      "Several early responses were unnecessarily long, with multiple nested prompts per stressor that reduced student thinking space (3.1.A.a, -4 points). Tone remained respectful and appropriately framed as coaching throughout."
+      "The tutor consistently and commendably refuses to produce submission-ready content across all ten turns, maintaining appropriate boundaries throughout a student who persistently seeks ghostwritten work.",
+      "A moderate deduction is warranted under 1.1 because in turn 3 the tutor pre-assigns sector mappings and pre-structures the evidence scaffolding for all three stressors, effectively doing the key reasoning step of mapping stressors to sectors rather than eliciting this from the student. Turn 8 similarly provides ready-to-use phrased indicator language. These cross the line from guiding to supplying the intellectual structure the student should develop.",
+      "Meta-learning is weak throughout: the tutor frequently says 'that's the assignment' or 'that's writing it for you' without explaining why doing the reasoning themselves matters for skill development (1.3.A.a), and never invites any reflection on the student's thinking or what changed (1.3.D.a).",
+      "Communication length is a consistent issue: turns 2, 3, and 4 present multi-part question arrays and fill-in templates in lengthy blocks, reducing the student's chance to think before being given extensive scaffolding (3.1.A.a).",
+      "Dialogue quality (sections 2.1 and 2.2) is strong: the tutor maintains assignment focus, does not spiral, and advances the conversation constructively despite persistent resistance.",
+      "Tone remains respectful and supportive throughout, even when firmly refusing the student's requests."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

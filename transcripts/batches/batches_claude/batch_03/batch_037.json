@@ -241,7 +241,7 @@
                   1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 3 Turn 1, when the student says they are lost, the tutor immediately fires a 5-part question list (questions 1–5) that covers the entire assignment scope rather than doing brief diagnostic probing first to understand where exactly the student is stuck. This is a method dump before checking what the student already understands.",
+                "reason": "In Transcript 3 Turn 1, when the student says they are lost, the tutor fires a five-part question list without first diagnosing what the student already understands. A short diagnostic probe would have been more appropriate before dumping multiple questions.",
                 "points": 3
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently refuses to write or polish content but never explicitly explains the pedagogical rationale (e.g., 'I want you to develop your own reasoning skills' or 'doing it for you wouldn't help you learn'). The constraints are enforced without a learning rationale being communicated to the student.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to write content or give direct answers but never explains the pedagogical rationale (e.g., active learning, skill development). The student is only told 'I can't' or 'my role is' without a learning-focused explanation.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three conversations ends with any reflection prompt asking what changed in the student's thinking or reinforcing method choices. The sessions close by pushing to the next task without prompting process-level reflection.",
+                "reason": "In all three transcripts, no turn prompts the student to reflect on what changed in their thinking or what method worked. The conversations end with forward-pointing tasks but no reflection on the reasoning process the student used.",
                 "points": 2
               }
             ],
@@ -296,7 +296,16 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "In Transcript 2 Turn 1 and Transcript 1 Turn 8 (and similarly Transcript 3 Turn 8), when students go off-topic, the tutor briefly acknowledges and then redirects. The off-topic engagement is minimal and redirection is immediate, so this is borderline. No full deduction is warranted.",
+                "points": 0
+              }
+            ],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -313,16 +322,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
+                  1
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Repeatedly across all three transcripts, and especially in Transcript 3 Turn 1 (5-part question dump) and Transcripts 1–2 in multiple turns, the tutor sends lengthy multi-question blocks when shorter, more focused prompts would better serve the student. Students frequently ignore or address only part of the questions, suggesting the length reduces productive engagement.",
+                "reason": "In Transcript 3 Turn 1, the tutor sends a five-part multi-paragraph question list to a student who is already confused and lost. This is an over-long monologue that reduces the student's opportunity to respond and would have been better handled with one focused starter question. Similarly, Transcript 1 Turn 1 includes a three-part structured list that, while each part is reasonable, collectively is a heavy opening. Pattern of lengthy multi-question responses reduces interactive thinking opportunity.",
                 "points": 4
               }
             ],
@@ -351,12 +354,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to write or give paste-ready answers, maintains a Socratic stance, and redirects off-topic requests quickly—no deductions for 1.1 or 2.2.",
-      "Scaffolding deduction (1.2): In Transcript 3 Turn 1 the tutor issues a 5-part question battery before any diagnostic probing, constituting a method dump rather than targeted scaffolding.",
-      "Meta-learning deductions (1.3): The tutor never explains the pedagogical rationale for withholding answers (1.3.A.a) and none of the three sessions ends with process-reflection prompts (1.3.D.a).",
-      "Communication deduction (3.1): Multi-question blocks recur across all three transcripts; students regularly respond to only part of the questions, indicating the length reduces productive exchange. A 4-point deduction is warranted.",
-      "No deductions for 2.1 (the tutor adapts and advances the dialogue in each conversation) or 3.2 (tone is consistently supportive and non-grading).",
-      "Note on 1.3.B.b: The tutor does give some methodological feedback (e.g., 'your core idea is promising, but you need sharper edges'), so no additional deduction was applied here beyond what is already captured."
+      "Across all three transcripts the tutor maintains a strong Socratic posture: it consistently refuses to write submission-ready content, declines to give paste-in answers, and uses probing questions to lead students toward their own conclusions. No deduction for 1.1 is warranted.",
+      "Scaffolding (1.2) is generally good in Transcripts 1 and 2, where the tutor builds on each student's responses progressively. However, in Transcript 3 Turn 1, the tutor opens with a five-part question dump for a self-described confused student without first diagnosing what they already understand, triggering a 1.2.B.a deduction.",
+      "Meta-learning (1.3) is the clearest weakness. The tutor never explains why it refuses to give direct answers in terms of learning benefits (1.3.A.a), and none of the three conversations end with any reflection prompt about what the student's thinking process revealed or what worked (1.3.D.a). A 2-point deduction for each sub-criterion was applied.",
+      "Dialogue quality is strong: no significant redundancy/spiraling and off-topic redirections are swift and appropriate in all three transcripts.",
+      "Communication quality is hurt by the tutor's habit of delivering long multi-question responses when a single focused probe would serve better, particularly in Transcript 3 Turn 1. A 3.1.A.a deduction of 4 points was applied. Language is clear and appropriately pitched throughout, so no 3.1.B deduction.",
+      "Tone is consistently supportive and non-grading across all three conversations; no deductions for 3.2."
     ],
     "total_score": 35,
     "judge_llm_calls": 1

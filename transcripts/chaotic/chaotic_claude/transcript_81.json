@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In Turn 7, the tutor provides four complete, polished model sentences that lay out the full argument structure (AC thesis, Switch verdict + reasoning, Footbridge/Blood verdict + reasoning, Fuel verdict). While framed as a 'template,' these sentences together form a near-complete submission-ready paragraph that only requires paraphrasing, not genuine student reasoning. This crosses into rewriting/writing the answer for the student.",
+                "reason": "In Turn 7, the tutor provides four near-complete polished sentences that directly model the submission text for the student ('Act consequentialism says...', 'In the trolley Switch case...', etc.). While framed as a 'fill-in template,' the sentences are essentially finished prose the student only needs to superficially rephrase, functioning as rewritten final wording.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly declines to do work for the student but never explains the pedagogical rationale — why building the argument themselves develops philosophical reasoning skill. The tutor says 'I can't write a submission-ready answer' without articulating the learning benefit of doing the work independently.",
+                "reason": "The tutor consistently enforces its limits on writing the answer but never explicitly explains the pedagogical rationale—e.g., that the goal is to develop the student's own reasoning skills for long-term learning. Refusals are stated as policy without learning justification.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking, what the means/side-effect framework revealed about their intuitions, or why Socratic questioning helped them arrive at their own position. No reflective synthesis or transfer moment is introduced.",
+                "reason": "Throughout the conversation, the tutor moves from one reasoning step to the next without prompting the student to reflect on how their thinking evolved—e.g., why the means/side-effect distinction emerged as the right framing, or what changed when they rejected pure act consequentialism. No reflection or transfer prompts appear.",
                 "points": 2
               }
             ],
@@ -172,7 +172,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2, 3, and 4 each contain multi-part questions (3 numbered sub-questions each) combined with explanatory prose. While individually reasonable, the pattern of presenting 3 simultaneous questions per turn consistently reduces the student's opportunity to think and respond to one thing at a time, and could be replaced by shorter, more interactive exchanges.",
+                "reason": "Several tutor turns (notably 2, 3, 4) contain multi-part, multi-paragraph responses with numbered sub-questions and multiple concepts at once. While not extreme, this pattern repeatedly reduces the student's space to process and respond to one idea at a time, going beyond what focused one-or-two-prompt steps would require.",
                 "points": 4
               }
             ],
@@ -201,12 +201,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintains a Socratic stance throughout the conversation, refusing to write submission-ready answers and consistently redirecting the student toward producing their own reasoning. The tutor builds well on student progress — acknowledging good steps, sharpening distinctions, and scaffolding through the means/side-effect framework coherently.",
-      "However, Turn 7 represents a significant lapse: the tutor provides four complete, polished model sentences that together form a submission-ready paragraph. Although framed as a 'fill-in template,' the sentences contain the full argument (AC thesis, Switch causal analysis, Blood/Footbridge analysis, Fuel verdict) in near-final language. A student could lightly paraphrase and submit. This triggers 1.1.B.a (6-point deduction).",
-      "Turn 8 also shows minor drift: providing lists of five synonyms for core terms is closer to paraphrasing assistance than guided discovery, though it is not severe enough to trigger an additional full deduction (already captured under 1.1.B.a).",
-      "On meta-learning (1.3), the tutor never explains why independent reasoning matters for skill development, and never invites the student to reflect on their own thinking process or what changed. Two 2-point deductions apply.",
-      "On communication quality, the tutor's multi-part questions (3 sub-questions per turn in Turns 2, 3, 4) are consistently lengthy and reduce the student's space to think one step at a time; a 4-point deduction applies under 3.1.A.a.",
-      "No issues were found with assignment anchoring, redundancy, tone, or scaffolding progression. The tutor's handling of repeated requests for direct answers (Turns 1, 5, 6) was appropriate and firm without being dismissive."
+      "The tutor generally maintained a Socratic stance, refusing repeated requests to write the answer for the student and guiding the student through their own reasoning step-by-step.",
+      "However, in Turn 7 the tutor crossed a significant line by providing four near-complete, polished sentences forming a coherent submission-ready paragraph, framed as a 'template.' This constitutes rewriting final wording and triggered a 6-point deduction under 1.1.B.a.",
+      "The tutor never explained why it was withholding direct answers (no reference to skill-building or learning rationale), and never prompted the student to reflect on how their thinking evolved across the conversation, triggering deductions under 1.3.A.a and 1.3.D.a.",
+      "Several turns (2, 3, 4) presented too many sub-questions at once, reducing the student's opportunity to think independently and respond to one thing at a time, triggering the 3.1.A.a deduction.",
+      "Assignment anchoring and dialogue progression were handled well—the tutor maintained focus on the exercise, advanced the student's argument sequentially, and avoided redundancy. Tone was consistently supportive and appropriate."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

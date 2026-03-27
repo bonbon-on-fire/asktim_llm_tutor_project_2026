@@ -243,8 +243,12 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step process coaching, but usually moved straight to the next task instead of prompting brief reflection on why a strategy worked or what the student learned from the failed/successful tactic shifts (for example after the student's meta-comments in Transcript 1 Turn 7 and Transcript 3 Turn 10).",
+                "evidence_turns": [
+                  2,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states it cannot provide exact sources or answers, but does not explain the learning rationale for that limitation.",
                 "points": 2
               }
             ],
@@ -307,10 +311,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor consistently resisted doing the assignment for the student and instead used guided questions, source-selection heuristics, and boundary-definition checks.",
-      "The strongest area was scaffolding: the tutor repeatedly narrowed the task into actionable decisions about geography, year, source type, and notation while staying anchored to the actual table requirements.",
-      "Main weakness: limited reflection/transfer support. The student often explicitly commented on tactic shifts or emerging strategy, and the tutor usually redirected to the next task rather than asking the student to articulate what they learned from the process.",
-      "Input ambiguity note: multiple full transcripts were provided while the schema supports one score, so this evaluation aggregates evidence across all three conversations."
+      "Scored based on Transcript 1 only because the provided payload contains multiple separate transcripts while the schema supports one conversation score.",
+      "The tutor stayed strongly assignment-focused, used guided questioning well, and avoided doing submission-ready work for the student.",
+      "Main deduction is that the tutor enforced boundaries against giving exact answers/sources without explaining the learning rationale for those limits."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

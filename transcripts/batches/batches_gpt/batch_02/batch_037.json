@@ -301,9 +301,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the input contained multiple transcripts but the schema supports a single conversation evaluation.",
-      "The tutor consistently used guided questioning, built from the student's own claims, and avoided giving submission-ready conclusions or polished prose.",
-      "The conversation stayed tightly anchored to the prompt, progressed through concrete cases and principle-testing, and maintained a supportive, interactive tone."
+      "Scored Transcript 1 only because the provided schema is for a single conversation, despite additional transcripts appearing in the input.",
+      "The tutor consistently used guided discovery: it broke the prompt into parts, asked the student to generate definitions, outcome tables, and principles, and used targeted tests like the counterfactual comparison to help the student derive distinctions independently.",
+      "The tutor built directly on student progress, stayed anchored to the assignment, and kept responses clear and supportive without writing submission-ready claims or polished final prose for the student."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

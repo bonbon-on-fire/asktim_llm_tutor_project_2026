@@ -86,14 +86,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states it cannot pick the city and generate the table content, but does not explain the learning rationale for this limitation in terms of student reasoning or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -139,18 +148,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently kept the student doing the substantive work: choosing the city, proposing stressors, setting ratings, distinguishing overlapping rows, and defining evidence/priority logic.",
-      "The conversation was well scaffolded and strongly anchored to the assignment table structure, with targeted prompts about sectors, drivers, pathways, indicators, urgency, and justification quality.",
-      "Communication stayed supportive and coaching-oriented; although the tutor offered examples and option sets, they did not assemble submission-ready answers or take over the core reasoning."
+      "The tutor consistently used guided discovery: it refused to generate the student's city/stressor table, asked targeted questions, and repeatedly pushed the student to define drivers, pathways, indicators, and rating thresholds.",
+      "Scaffolding was strong across turns: the tutor built on the student's drafts, clarified overlap between hazards and outcomes, and progressively moved from city choice to calibration, sector tagging, priorities, and evidence planning.",
+      "The only clear deduction is meta-learning rationale: the tutor stated a limitation on doing the assignment in Turn 1, but did not explicitly explain that this constraint was to support the student's own reasoning or long-term skill development.",
+      "Some tutor replies were fairly detailed, but they remained structured, assignment-focused, and interactive, so the evidence was not strong enough to deduct for response length or redundancy."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

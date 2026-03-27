@@ -229,14 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor usually resisted doing the work, but in Transcript 2 Turn 2 it supplied a Miami-specific shortlist of likely stressors before the student generated ideas, and in Transcript 3 Turn 5 it offered a phrase bank with substantive actor-role content. I treated this as a moderate idea-generation issue rather than direct assignment completion.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -249,23 +243,18 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly enforced limits by saying it could not do the assignment or that doing so would be dishonest, but it rarely explained a learning rationale such as why the student should do the reasoning to build the course skill.",
-                "points": 2
-              },
-              {
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "When the student improved a draft or chose a method, the tutor usually moved to the next fix rather than prompting reflection on why the revision was stronger or how to reuse the method later (for example after the stronger draft in Transcript 3 Turn 10).",
+                "reason": "Across the transcripts, the tutor gives useful next-step coaching and checks drafts, but does not prompt reflection on why the student's method worked, what changed in their thinking, or how to transfer the approach to future assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 22,
           "max": 24
         }
       },
@@ -292,49 +281,38 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, list-heavy replies where shorter interactive prompts would likely have been better for this time-pressed student, especially in Transcript 1 Turns 2-3, Transcript 2 Turns 2-6, and Transcript 3 Turns 2-6.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The overall tone was mostly supportive, but several refusals sounded rigid or sharp, such as 'I’m your tutor, not a do-it-for-you service' (Transcript 1 Turn 1) and repeated 'No—I can’t...' responses that could feel discouraging.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 30,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided giving paste-ready submissions and kept the student anchored to the actual task, with generally solid scaffolding and assignment alignment.",
-      "Main pedagogy weakness: the tutor sometimes seeded substantive content before student generation, especially the Miami stressor shortlist and later phrase-bank support; I treated this as a smaller 1.1.C deduction rather than a harsher direct-answer penalty because the tutor still refused submission-ready output.",
-      "The clearest recurring issues were policy enforcement without much learning-rationale explanation, little reflection/transfer support, overlong responses for a rushed student, and occasional rigid tone."
+      "The tutor consistently avoided doing the assignments for the student and instead used templates, narrowing questions, source guidance, and sanity-check offers to keep ownership with the student.",
+      "Scaffolding was generally strong: the tutor built from student-provided cities, stressors, hooks, ranges, and draft sentences rather than restarting or ignoring progress.",
+      "Main deduction: the tutor coached process well in the moment but rarely added reflection or transfer prompts about why the method worked or how the student could reuse it on later course tasks.",
+      "No direct-answer deduction was applied despite strong structural help, because the tutor did not provide filled tables, final Miami/NYC claims, or complete citation content ready to submit."
     ],
-    "total_score": 30,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

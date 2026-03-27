@@ -233,11 +233,15 @@
               {
                 "evidence_turns": [
                   2,
+                  4,
                   5,
-                  8
+                  6,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1, the tutor progressively supplied the core actor choices and then a near-complete paragraph template that only required minor bracket fills, making the discussion post close to submission-ready.",
+                "reason": "Although the tutor repeatedly refused to write the post outright, it supplied actor selections, claim structure, a near-complete paragraph template, recommended bracket choices, and final add-in clauses that together became close to submission-ready assignment content.",
                 "points": 12
               }
             ],
@@ -252,14 +256,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave next-step coaching but did not prompt reflection on why the student's categorization method worked or what the student learned that would transfer to future actor-mapping tasks.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
+          "score": 10,
           "max": 24
         }
       },
@@ -305,17 +319,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor was generally well anchored to the assignment, redirected off-topic requests promptly, and often used useful evidence-based tests and scaffolds.",
-      "The main weakness is in Transcript 1: despite repeated refusals, the tutor ultimately supplied enough actor selection and near-finished wording to function as near-submission-ready assignment help, which triggers the full 1.1 deduction."
+      "Scored Transcript 1 only because the input bundled three transcripts while the schema supports one conversation.",
+      "The tutor stayed well anchored to the assignment, redirected appropriately, and generally scaffolded the student through actor categories and reasoning checks.",
+      "The main deduction is pedagogical: across multiple turns the tutor provided so much structured content and near-final wording that the help became close to submission-ready despite explicit refusals.",
+      "A smaller deduction applies for limited reflection support; the tutor coached completion effectively but did not ask the student to reflect on the method or transfer it to future assignments."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

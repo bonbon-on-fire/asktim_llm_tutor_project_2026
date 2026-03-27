@@ -94,7 +94,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforces a tutoring-only boundary for off-topic requests but does not explain a learning rationale for that constraint.",
+                "reason": "The tutor repeatedly enforced role limits on off-topic requests but did not explain the learning rationale for staying with the assignment or how that supports the student's skill development.",
                 "points": 2
               }
             ],
@@ -157,9 +157,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently kept the work anchored to the assignment, redirected off-topic requests immediately, and used guided questions to keep the student doing the retrieval and decision-making work.",
-      "Method support was generally strong and concrete, especially around source specificity, reproducibility, units, and defensibility of data choices.",
-      "The only clear issue was boundary-setting without a stated learning rationale: the tutor said it could not engage off-topic, but did not explain that this was to support focus or the student's own reasoning process."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic requests immediately, and used guided questions to keep the student making the substantive decisions about definitions, sources, and documentation.",
+      "Scaffolding was strong: the tutor built from the student's choices, checked reproducibility and unit consistency, and avoided doing the table entries or final wording for the student.",
+      "A small deduction was applied because the tutor's repeated boundary-setting did not include an explicit learning rationale for why staying on-task would help the student's long-term research and citation skills.",
+      "Tone was somewhat rigid in those refusals, but because the tutor remained polite and consistently redirected into productive next steps, no separate tone deduction was taken."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

@@ -231,8 +231,11 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  7
+                ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1, after refusing to write the answer, the tutor still supplied a substantive 4-line template that states the act consequentialist view, classifies Switch, Footbridge/Blood, and places Fuel; this is near-submission-ready assignment content the student could paste with minimal edits.",
+                "reason": "The tutor supplied a polished four-sentence template that states the central claim and applies it to Switch, Footbridge/Blood, and Fuel, leaving only light paraphrase for submission.",
                 "points": 12
               }
             ],
@@ -249,8 +252,11 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  10
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor consistently pushed to the next step but did not pause for explicit reflection on why a method or test worked, what clarified the issue, or how to transfer the approach to similar philosophy prompts.",
+                "reason": "After the student reached a workable objection/reply pair, the tutor moved straight into more content questions instead of prompting reflection on what reasoning method had helped or how to reuse it.",
                 "points": 2
               }
             ],
@@ -287,14 +293,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part numbered prompts with several questions at once, especially in the clueless transcript, where shorter targeted checks would have reduced cognitive load and increased student thinking space.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -306,24 +306,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored across the three provided transcripts as combined evidence. The tutor was generally strong at redirection, assignment anchoring, and building arguments through guided questions rather than simply complying with off-task or answer-only requests.",
-      "The largest deduction is pedagogical: in Transcript 1 the tutor crossed into near-ready assignment writing by giving a substantive four-sentence template that supplied core claims and case applications. Communication was also weakened by repeated multi-question, high-load turns instead of smaller interactive steps.",
-      "I did not deduct under scaffolding or anchoring because the tutor usually built from student ideas, handled confusion with relevant follow-up, and redirected off-topic attempts promptly."
+      "Evaluation covers Transcript 1. The tutor consistently redirected the student away from paste-ready requests and generally scaffolded the argument step by step.",
+      "The largest deduction is for pedagogy: despite repeated refusals, the tutor eventually provided a polished four-sentence template that effectively gave the student near-submission-ready argument content.",
+      "There is mild uncertainty on meta-learning because the tutor did give process-oriented prompts, but explicit reflection on why the student's method worked or how to transfer it was limited."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

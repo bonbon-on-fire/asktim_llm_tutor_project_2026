@@ -241,11 +241,11 @@
                   1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Transcript 1 Turn 1, the tutor jumps directly to a multi-part scaffolding framework (4 questions + a thesis template) without any diagnostic questioning to assess what the student already understands about act consequentialism or the cases. While the student gave no substantive material to build on, the tutor could have started with one simple diagnostic question before launching a full framework dump.",
-                "points": 2
+                "reason": "In Transcript 1 Turn 1, when student is clearly stuck and on a deadline, the tutor jumps straight into a detailed scaffolding structure (4 questions + thesis template) without first diagnosing which specific aspect the student is confused about. The same pattern appears in Transcript 3 Turn 1 where the tutor gives a multi-part method dump to a self-described 'totally lost' student.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -254,18 +254,10 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its policy of not writing answers for students without explaining the learning rationale (active reasoning, skill development). In Transcript 1 Turn 1-2, in Transcript 2 Turn 2-4, and in Transcript 3 Turn 3-5, the tutor says 'I can't do that' or 'that would be doing the core work' without articulating why it benefits the student's philosophical reasoning skills.",
+                "reason": "Across all three transcripts, the tutor enforces its 'no writing for you' constraint without consistently explaining the learning rationale (active reasoning, skill development). In T1 Turn 1 and T2 Turn 2, the tutor declines but offers only a brief 'that's still me doing the core writing' without elaborating on why student-driven reasoning builds the needed skills.",
                 "points": 2
               },
               {
@@ -274,7 +266,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts, as students near completion of their reasoning, the tutor does not prompt reflection on how the student's thinking evolved or what changed in their approach. In Transcript 1 Turn 9-10, Transcript 2 Turn 9-10, and Transcript 3 Turn 9-10, the tutor moves forward to next steps without helping students reflect on the process they used to reach their conclusions.",
+                "reason": "In all three transcripts, when students make genuine progress (e.g., T1 Turn 9, T2 Turn 9, T3 Turn 9-10), the tutor moves on to the next challenge without prompting reflection on what changed in their thinking or reinforcing what method worked. The final turns in each conversation push to the next question rather than consolidating the reasoning process.",
                 "points": 2
               }
             ],
@@ -284,7 +276,7 @@
           }
         },
         "base": {
-          "score": 18,
+          "score": 17,
           "max": 24
         }
       },
@@ -301,10 +293,10 @@
               {
                 "evidence_turns": [
                   2,
-                  3
+                  4
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 2, the student asks about comfort movies/albums (off-topic). The tutor redirects quickly in Turn 2, which is appropriate. However, in Turn 4, the student again asks for non-course podcast/YouTube recommendations, and the tutor again redirects without engaging—this is actually handled well. No meaningful off-topic engagement occurred, so deduction is not warranted.",
+                "reason": "In T2 Turn 2 and Turn 4, the student attempts off-topic chat (comfort movie, podcast recommendations). The tutor redirects appropriately and without delay, so no deduction applies here.",
                 "points": 0
               }
             ],
@@ -326,12 +318,10 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor consistently produces very long multi-part responses when shorter, more focused questions would be more appropriate. Transcript 1 Turn 1 contains a 4-question structure plus a full thesis template in one message; Turn 2 provides a 6-bullet outline skeleton plus additional prompts; Transcript 2 Turn 1 has four distinct numbered questions plus a Fuel/Blood comparison request; Transcript 3 Turn 4 delivers two elaborate template structures plus 8 yes/no sub-questions. This pattern recurs throughout and consistently reduces the student's opportunity to respond to one focused idea at a time.",
+                "reason": "Across all three transcripts, the tutor consistently gives very long multi-part responses when shorter, more focused prompts would be more appropriate. T1 Turn 2 provides both a filled thesis template AND a 6-bullet outline skeleton plus additional questions. T3 Turn 1 launches into four distinct analytical tasks for a self-described lost student. T2 Turn 1 similarly presents four numbered questions. This pattern recurs throughout all conversations, consistently reducing student opportunity to respond to one thing at a time.",
                 "points": 4
               }
             ],
@@ -353,20 +343,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor maintains a strong Socratic stance: it consistently refuses to write theses, outlines, or arguments for students, uses fill-in-the-blank templates rather than completed answers, and presses students to derive conclusions through guided questioning. No near-submission-ready material is produced and no key reasoning steps are done for the student, so 1.1 remains at full marks.",
-      "Scaffolding is generally sound—the tutor builds on student progress and acknowledges correct moves—but in Transcript 1 Turn 1 (and similarly in Transcript 2 Turn 1 and Transcript 3 Turn 1), the tutor launches into extensive multi-part frameworks without first diagnosing what the student already knows, triggering a modest deduction under 1.2.B.a.",
-      "Meta-learning is the weakest area. The tutor never explains *why* it declines to give direct answers in terms of the student's learning benefit (1.3.A.a), and across all transcripts it consistently fails to prompt students to reflect on how their thinking evolved at natural closure points (1.3.D.a).",
-      "Dialogue quality is strong: the tutor redirects off-topic chat promptly and efficiently (Transcript 2 Turns 2, 4), maintains assignment focus throughout, and avoids spiraling repetition. Full marks for section 2.",
-      "Communication is the second major weakness. The tutor's responses are frequently very long—multi-paragraph with numbered sub-lists, templates, AND follow-up questions bundled together—when a single focused question would better support student thinking. This pattern is consistent across all three transcripts and all early turns, warranting the maximum deduction under 3.1.A.a. Tone is supportive and non-evaluative throughout, so 3.2 is unaffected."
+      "Across all three transcripts, the tutor consistently refuses to do assignment work for students and uses Socratic questioning to guide student reasoning, earning full marks on 1.1. The tutor never gives direct answers, thesis statements, or ready-to-submit content, and redirects off-topic attempts promptly.",
+      "The main weaknesses are: (1) Response length—the tutor routinely delivers multi-part, multi-paragraph responses when the student would benefit more from a single focused question. This is consistent across all three transcripts and across all turns, not just at the start. (2) Meta-learning gaps—the tutor rarely explains why it refuses to provide answers in terms of student learning benefit, and rarely prompts reflection when students make genuine breakthroughs. (3) Minor scaffolding issue—in Transcripts 1 and 3, when students first present as stuck or confused, the tutor jumps into structured scaffolding without first asking a simple diagnostic question to identify the precise point of confusion.",
+      "The 2.2 deduction entry with 0 points was included for documentation but does not affect scoring. The tutor tone throughout is collegial and supportive, and it consistently avoids grading language."
     ],
-    "total_score": 36,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

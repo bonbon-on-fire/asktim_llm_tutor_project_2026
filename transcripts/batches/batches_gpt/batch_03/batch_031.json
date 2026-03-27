@@ -229,14 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "Across the conversations, especially Transcript 1, the tutor sometimes seeded specific stressor ideas before the student generated them (for example, prompting saltwater intrusion, drainage/sewage problems, insurance/displacement, and tourism/cultural asset threats), which narrowed the answer path instead of keeping idea generation fully with the student.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -249,8 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly stated limits such as not being able to write or fill out the assignment, but usually framed this as avoiding doing the assignment rather than explicitly explaining the learning rationale for the constraint.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the transcripts, the tutor gave strong process scaffolds but rarely paused for explicit reflection on why the method worked or how the student could transfer it independently; the exchanges usually moved straight to the next drafting step.",
                 "points": 2
               }
             ],
@@ -260,7 +254,7 @@
           }
         },
         "base": {
-          "score": 16,
+          "score": 22,
           "max": 24
         }
       },
@@ -306,18 +300,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor consistently refused to provide submission-ready work, kept the conversation anchored to the assignment, and used structured questioning, calibration checks, and evidence-oriented prompts well.",
-      "Main deductions came from occasional tutor-seeded content that narrowed idea generation for the student, and from limited explanation of why the no-direct-answer boundary supported learning rather than just policy.",
-      "Because multiple transcripts were provided in one input, deductions were based on repeated patterns across conversations rather than a single turn-number sequence."
+      "Across the provided transcripts, the tutor consistently avoided doing submission-ready work and instead used guided discovery: asking the student to choose cities, propose stressors, set rating anchors, distinguish overlapping rows, and select evidence types.",
+      "The tutor stayed closely anchored to the assignment requirements (city-specific stressors, sector tagging, ratings, justifications, and priorities) and repeatedly redirected requests for paste-ready content back into student-authored drafts.",
+      "Only a small deduction was applied for limited explicit reflection/transfer support: the tutor usually advanced the student to the next task rather than asking them to briefly articulate what reasoning strategy they had learned and how to reuse it."
     ],
-    "total_score": 38,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

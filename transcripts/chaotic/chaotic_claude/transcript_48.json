@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In turn 8, the tutor fills in the entire table template with actors, roles, evidence phrases, and structure — leaving only bracketed placeholders for justification. The completed template is near-submission-ready: it provides all actor names, role classifications, and evidence quotes the student needs. The student can paste this with minimal edits, constituting direct assignment work.",
+                "reason": "In Turn 8, the tutor fills in nearly the entire template with actor names, roles, evidence phrases, and structural wording drawn directly from the student's source sentence. While some brackets remain, the filled-in rows covering Leading, all Engaged actors, and partial Missing are submission-ready in form and content. The student only needs to add brief justifications in the bracketed slots, meaning the tutor has carried the bulk of the reasoning and drafting work.",
                 "points": 12
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its 'I won't write this for you' policy but never explains the learning rationale — e.g., that the student builds critical analysis skills through sourcing and classification work. The constraint is stated repeatedly but the pedagogical purpose is never articulated.",
+                "reason": "The tutor repeatedly refuses to do the work but never explains the learning rationale behind that stance (e.g., developing sourcing skills, practicing evidence-to-claim reasoning, or long-term research methodology). The tutor enforces constraints without articulating why doing the work oneself matters for skill development.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their thinking process, what changed in their approach, or why a particular method (evidence-anchored classification) is valuable. The conversation ends without any reflection or transfer prompt.",
+                "reason": "No turn prompts the student to reflect on their reasoning process, what they learned about how to identify actors or gaps, or why a particular method (skimming for lead entities vs. advisory roles) worked. The conversation ends without any process reflection or transfer prompt.",
                 "points": 2
               }
             ],
@@ -167,7 +167,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -177,7 +176,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout most turns, the tutor delivers multi-paragraph responses with multiple numbered sub-questions and scaffolded prompts when shorter, more focused prompts would have been more appropriate and interactive. Turns 2, 3, 4, 6, and 8 especially use lengthy monologue-style structures that reduce student opportunity to think and respond incrementally.",
+                "reason": "Several tutor turns are multi-paragraph monologues listing 3–5 sub-questions with detailed instructions before the student has responded. Turns 2, 3, 5, 6, 7, and 8 consistently exceed what a focused one- or two-prompt interaction would require, reducing the student's opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -206,11 +205,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains a consistent refusal to write submission-ready content across most turns, employing scaffolded prompts, fill-in templates, and Socratic questioning effectively through turns 1–7 and 9–10.",
-      "However, turn 8 represents a significant breach of 1.1.A: the tutor fills in the entire table template with all actor names, role classifications, evidence phrases, and structural formatting, leaving only bracketed placeholders. This is near-submission-ready work — the student can paste and minimally edit, triggering the full 12-point deduction under 1.1.A.a.",
-      "The tutor never explains the pedagogical rationale for its constraints (1.3.A.a) and misses all opportunities for reflection or transfer (1.3.D.a), resulting in 4 points deducted from meta-learning.",
-      "Communication is a consistent weakness: the tutor repeatedly sends multi-paragraph, multi-question responses when one or two focused prompts would have sufficed, reducing student engagement opportunities (3.1.A.a, 4 points deducted).",
-      "Scaffolding and progression (1.2), dialogue quality (2.1, 2.2), and tone (3.2) are well-handled throughout — the tutor builds on student-provided actors, stays on task, redirects off-topic requests appropriately, and maintains a supportive tone."
+      "The tutor maintains a principled stance throughout—refusing to write submission-ready content and consistently redirecting the student to do their own work. Scaffolding and progression are solid: the tutor builds on each student response, uses a fill-in template at the right moment (Turn 7), and escalates in a structured way.",
+      "The critical failure occurs in Turn 8, where the tutor fills in almost the entire template using the student's actors, including roles, evidence phrases, and structural wording. Only a few bracketed placeholders remain. This constitutes near-submission-ready assignment work under 1.1.A.a, triggering the full 12-point deduction for criterion 1.1.",
+      "Under 1.3, the tutor never explains why independent sourcing and reasoning matters for skill development (1.3.A.a), and never prompts the student to reflect on what worked or why (1.3.D.a). The method feedback that appears (e.g., 'your logic is workable, but anchor it to evidence') is present but not developed into a transferable skill lesson.",
+      "Across most turns, the tutor's responses are notably long—Turn 2 alone poses four multi-part questions with detailed sub-instructions. This pattern of multi-paragraph explanations before checking what the student already understands triggers the 3.1.A.a deduction.",
+      "Tone is consistently supportive and appropriately non-grading throughout. Assignment anchoring is strong. No off-topic engagement or spiraling is observed."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

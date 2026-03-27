@@ -231,8 +231,12 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the provided transcripts, most clearly in the NYC exchange, the tutor supplied substantial assignment content such as specific actor examples, program names, and plug-in evidence choices, taking over part of the key evidence-selection and reasoning work.",
+                "reason": "Transcript 1: the tutor supplied NYC-specific actor/program options and concrete evidence choices for most sentence slots (e.g., PlaNYC, Cloudburst Management, ConEd/NYSERDA examples, missing-group mechanisms), doing substantial idea generation and evidence selection for the student.",
                 "points": 6
               }
             ],
@@ -283,8 +287,14 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  6
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part bullet lists and detailed step dumps instead of shorter interactive moves, especially when students were overwhelmed or asking for a quick path forward.",
+                "reason": "Transcript 1 repeatedly uses long, template-heavy multi-part replies when shorter, more targeted interaction would have reduced overload for a rushed student.",
                 "points": 4
               }
             ],
@@ -313,10 +323,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor stayed anchored to the assignment, redirected off-topic content appropriately, and generally scaffolded the students with clear decision rules and evidence standards.",
-      "The main weakness was that the tutor sometimes provided too much assignment-specific content, especially concrete actor/program examples that reduced student ownership of the evidence-selection step.",
-      "A second recurring issue was response length: many replies were heavily structured and useful, but often longer than necessary for the students' immediate confusion or time pressure.",
-      "Because the input contained three transcripts rather than one, deductions were kept to clear recurring patterns and ambiguity was resolved conservatively."
+      "Across the three transcripts, the tutor was generally well-anchored to the assignment, non-dismissive, and strong on process coaching: it pushed for evidence-based classification, clarified criteria for leading/engaged/missing, and often asked the student to define decision rules.",
+      "The main pedagogy issue appears in Transcript 1, where the tutor, while refusing to write the final post, still supplied substantial NYC-specific content and example choices that did part of the student's idea-generation and evidence-selection work.",
+      "Communication was also weaker in Transcript 1 because several replies were long and highly structured; this likely increased cognitive load for an already rushed student. I did not deduct more heavily because the tutor still maintained progress and did not produce a full submission-ready answer."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

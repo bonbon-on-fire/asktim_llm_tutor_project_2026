@@ -232,10 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  3,
                   6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 6, the tutor provides 3-4 specific named candidate organizations per slot (e.g., 'Miami-Dade Water and Sewer Department (WASD), Florida Power & Light (FPL), City of Miami Stormwater Management') across 6 categories, effectively doing the key identification work of finding Miami climate actors. The student merely had to pick from lists the tutor generated rather than research or reason through actor identification themselves.",
+                "reason": "In T3/Ex1, the tutor provides a citation template with exact author formatting, table, URL, and access date fields—essentially completing the structural reasoning for the student. In T6/Ex3, the tutor lists six specific candidate organizations per slot (Miami-Dade WASD, FPL, Catalyst Miami, CLEO Institute, etc.), doing the key knowledge-retrieval work that should be the student's. While not fully submission-ready, these moves hand the student the decisive content rather than scaffolding discovery.",
                 "points": 6
               }
             ],
@@ -253,36 +254,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
+                  10,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to do work for the student but rarely explains the learning rationale—i.e., that the student needs to develop their own research/reasoning skills for long-term benefit. The tutor says 'I can't do X' but seldom explains why this approach helps the student learn.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across all three transcripts the tutor never pauses to ask the student to reflect on what changed in their thinking or why their approach worked. At the end of T10/Ex2, for example, the tutor advances to the next rows without prompting any reflection on the reasoning process used so far.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  3
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts reflection on process—never asks what the student learned about finding sources, constructing arguments, or analyzing actors. There is no moment where the tutor asks the student to step back and reflect on their reasoning approach or what improved in their thinking.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refuses to provide direct answers but rarely explains the learning rationale (active skill development, long-term research skill) behind those refusals. The student is told 'I can't' without being told why that constraint benefits them.",
                 "points": 2
               }
             ],
@@ -299,8 +285,24 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Ex3, the student repeatedly asks for paste-ready content across turns 3–10 and the tutor repeatedly cycles on the same refusal pattern ('I can't give you X, but fill in blanks Y') without meaningfully reframing the interaction or consolidating progress. The tutor does not synthesize what has been built or try a different scaffolding approach when the student remains stuck in the same request loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -312,7 +314,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -323,12 +325,12 @@
               {
                 "evidence_turns": [
                   1,
+                  2,
                   3,
-                  5,
-                  6
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In multiple turns across the three transcripts (e.g., T1-Turn1, T2-Turn3, T3-Turn3, T3-Turn5, T3-Turn6), the tutor produces multi-paragraph responses with many sub-questions and bullet lists when shorter, more focused prompts would serve better. The student is chaotic and slammed; the long structured dumps reduce the student's opportunity to engage meaningfully and can be overwhelming.",
+                "reason": "Multiple turns across all three transcripts feature multi-paragraph, multi-bullet responses where a single focused question would suffice. T1/Ex1 bombards the student with five sub-questions at once; T3/Ex3 has a long candidate-slot section plus gap directions in a single reply; T5/Ex2 and similar turns pile multiple tasks when one guided step would keep the interaction tighter.",
                 "points": 4
               }
             ],
@@ -350,23 +352,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor is consistently firm in refusing to do the assignment for the student, maintaining a Socratic stance throughout three difficult transcripts with a resistant, 'slammed' student persona.",
-      "The main pedagogy deduction comes from Transcript 3 Turn 6, where the tutor crosses into doing the key reasoning work by generating a menu of 3-4 specific named candidate organizations per slot across 6 categories, effectively completing the actor identification step that is central to the assignment.",
-      "The tutor rarely explains the learning rationale for its constraints and never prompts process reflection, resulting in deductions under 1.3.",
-      "Scaffolding is generally strong: the tutor builds on student responses, acknowledges progress, and escalates step by step. No deduction for 1.2.",
-      "Dialogue quality is strong: the tutor stays on-task, redirects off-topic requests, and keeps the conversation anchored to the assignment. No deductions for section 2.",
-      "Communication suffers from frequent multi-part, multi-paragraph responses that could be more concise and interactive, especially given the student's chaotic, resistant style; deduction applied under 3.1.A.a.",
-      "Tone is consistently supportive and non-grading throughout. No deductions for 3.2.",
-      "The 1.1 deduction for 1.1.C.b in T3-Turn6 is scored as 6 points per rubric cap (not duplicated with 1.1.A). The overall Socratic effort across other turns is genuinely strong, which is why no full 12-point deduction is applied."
+      "The tutor consistently refuses to complete the assignment for the student and maintains a Socratic boundary throughout all three transcripts, which is its clearest strength.",
+      "However, the tutor crosses into 1.1.C.b territory in notable moments: providing a fully structured APA citation template with exact field names (Ex1 T8–T9) and a long enumerated list of specific Miami actor candidates by slot (Ex3 T6). These moves hand the student the key knowledge content rather than scaffolding discovery.",
+      "The 1.1.C.b deduction of 6 points is applied once (not doubled) to represent both instances, per rubric cap and double-penalty avoidance guidance.",
+      "Meta-learning (1.3) suffers on two axes: the tutor rarely explains why it won't give direct answers in terms of student benefit, and never prompts the student to reflect on their reasoning process or what changed in their thinking.",
+      "Dialogue quality (2.1) is the weakest area: in Ex3, the student loops on the same 'just give me the list' pattern across 8 turns, and the tutor cycles through near-identical refusals without reframing, summarizing progress, or shifting approach—a clear pattern-level repetition without synthesis.",
+      "Response length (3.1) is frequently excessive: the tutor routinely posts multi-paragraph multi-bullet replies when a single focused question would preserve student thinking space. This is consistent across all three transcripts.",
+      "Assignment anchoring (2.2), tone (3.2), and scaffolding progression (1.2) are all handled well and receive no deductions."
     ],
-    "total_score": 32,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

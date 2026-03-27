@@ -229,8 +229,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the central discriminator itself ('redirecting an existing threat' vs 'making the saving depend on imposing harm as a tool'), doing a key reasoning step that strongly shapes the student's final principle.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -249,7 +258,7 @@
                   23
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When redirecting off-topic requests, the tutor enforced boundaries but did not explain the learning rationale for staying with active assignment work.",
+                "reason": "When redirecting off-topic requests, the tutor enforces scope limits but does not explain the learning rationale for staying with the student's own reasoning or assignment goals.",
                 "points": 2
               },
               {
@@ -259,7 +268,7 @@
                   30
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After substantial student progress, the tutor kept pushing to the next task but rarely prompted reflection on what method or distinction had helped, limiting transfer support.",
+                "reason": "Across the conversation endings, the tutor keeps pushing to the next task step without prompting reflection on what method worked, what changed in the student's thinking, or how to transfer the approach.",
                 "points": 2
               }
             ],
@@ -269,7 +278,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 14,
           "max": 24
         }
       },
@@ -315,18 +324,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently used guided questioning, built from student answers, and avoided doing submission-ready assignment work.",
-      "The tutor also handled off-topic turns well by redirecting quickly back to the assignment and keeping the conversations anchored to the actual deliverables.",
-      "Main weaknesses were meta-level rather than core pedagogy: boundary-setting was not paired with a learning rationale, and the tutor rarely asked the student to reflect on what method or distinction had improved their thinking."
+      "Turn references are numbered globally across the three transcripts in the order provided (1-30).",
+      "The tutor was consistently well-anchored to the assignments, redirected off-topic chat promptly, and usually scaffolded effectively through targeted questions that built on student progress.",
+      "Main deductions come from one notable moment of supplying the core philosophical distinction for the student in Transcript 1, plus weak meta-learning support: scope limits were enforced without explaining the learning rationale, and the tutor rarely invited reflection on transferable method."
     ],
-    "total_score": 42,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

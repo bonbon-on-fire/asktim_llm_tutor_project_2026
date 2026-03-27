@@ -77,15 +77,25 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Tutor supplied polished header/footer templates and sentence structures that were close to submission wording, even with blanks left for the student to fill.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
                   3,
                   8
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor resolved the key proxy choice for the student by stating that foreign-born was usually better than nationality and later endorsing Barcelona Province GDP as the safer proxy before the student independently reasoned through those tradeoffs.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor made the key interpretive choices for the student by recommending foreign-born as the better proxy and Barcelona Province GDP as the safer proxy, including the reasoning for those choices.",
                 "points": 6
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -99,32 +109,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly enforced refusal boundaries ('I can’t,' 'I won’t') without clearly explaining a learning-focused rationale for those limits.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor helped finalize wording choices but did not prompt reflection on why the proxy-selection method worked or how to transfer that approach to future assignments.",
+                "reason": "Tutor checked wording and consistency but did not prompt reflection on why the proxy-selection method worked or how to transfer that method to future assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
+          "score": 10,
           "max": 24
         }
       },
@@ -151,8 +151,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Tutor repeatedly used long bulleted replies and multi-part instructions when the student was rushed and shorter interactive steps would have better preserved student participation.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -164,24 +177,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed anchored to the assignment, avoided directly filling the table, and generally scaffolded the student through source selection and proxy labeling.",
-      "Main pedagogy deduction: the tutor made central substantive choices for the student (foreign-born over nationality; Barcelona Province GDP as the preferred proxy) rather than eliciting the student's reasoning first.",
-      "Communication was clear and supportive, but the tutor gave little explicit learning rationale for its refusal policy and did not build in reflection on the method after the student improved."
+      "The tutor stayed on-task, kept a supportive tone, and consistently anchored the conversation to the assignment requirements and source quality.",
+      "Main deductions come from pedagogy: despite refusing to fill in the table, the tutor still made central reasoning choices for the student and provided near-ready wording templates for headers and explanatory notes.",
+      "Communication was generally clear, but several replies were longer and more procedural than ideal for a student who repeatedly signaled urgency and limited ability to search or draft."
     ],
-    "total_score": 36,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

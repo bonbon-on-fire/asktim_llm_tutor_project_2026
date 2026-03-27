@@ -241,14 +241,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor constrained the student to reconstruct the cases and avoid guessing, but did not explain the learning rationale for that constraint.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -275,8 +285,20 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  6,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "The tutor repeatedly used somewhat dense phrasing for a confused student (for example 'iff,' 'stipulate,' 'empirical predictions,' 'wrong-making feature,' and 'circular') when simpler wording could have preserved meaning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -288,24 +310,23 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently used guided questioning rather than supplying a submission-ready answer, building from the student's own claims about act consequentialism, rights, consent, means/side-effect, and intention.",
-      "The conversation stayed tightly anchored to the prompt, progressed case-by-case, and included method-level scaffolds for constructing the eventual thesis without drifting off task.",
-      "Responses were concise, supportive, and interactive; no clear rubric-triggering violations were evidenced in this transcript."
+      "Scored Transcript 1 (philosophy). The tutor was strongly Socratic, kept the discussion anchored to the assignment, and steadily built the student's own argument rather than supplying a submission-ready answer.",
+      "Minor deductions were applied for not explicitly explaining the learning rationale behind some constraints and for occasionally using avoidably dense terminology with a confused student."
     ],
-    "total_score": 46,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

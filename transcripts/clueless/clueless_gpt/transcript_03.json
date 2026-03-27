@@ -89,23 +89,30 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When the student asked for a start-to-finish walkthrough, the tutor shifted into a guided-question approach without explaining the learning rationale for not being more direct.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   4,
-                  5,
                   7,
-                  9
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong process coaching, but after several student improvements it kept moving to the next task without brief reflection on why the decision rules worked or how to transfer them.",
+                "reason": "The tutor kept moving the student to the next research step but did not pause to prompt reflection on what search/verification method had been learned or how to reuse it for other table fields.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -121,7 +128,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Once the student was stuck on locating and verifying the correct tables, the tutor repeated similar inspect-the-PDF prompts across several turns instead of consolidating into a simpler summary or stronger fallback, so confusion persisted without clear synthesis.",
+                "reason": "After the student repeatedly said they were stuck navigating the PDF and verifying year/units, the tutor continued with similar checklists and prompts rather than synthesizing a simpler path or changing strategy.",
                 "points": 4
               }
             ],
@@ -144,8 +151,23 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly gave multi-part responses with several questions and tasks at once, which was heavy for a student who had already said they were lost and later overwhelmed.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -157,24 +179,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was consistently assignment-focused, supportive, and strongly Socratic: it helped the student define scope, choose defensible proxies, and build a source-selection method rather than doing the table for them.",
-      "The main weakness came late in the conversation, when the student remained stuck on finding and verifying specific tables; the tutor continued similar probing moves instead of synthesizing a simpler concrete procedure, so progress stalled.",
-      "A smaller deduction was applied for missing reflection/transfer support: despite good method coaching, the tutor rarely paused to help the student articulate what decision rules they had learned and could reuse."
+      "The tutor stayed strongly anchored to the assignment and generally used guided discovery rather than doing the table for the student.",
+      "Main weaknesses were process pacing and repetition: the student remained stuck on source selection and PDF navigation, but the tutor kept issuing similar multi-part prompts instead of simplifying or switching strategies.",
+      "I did not deduct under 1.1 because, although the tutor steered choices and suggested possible proxies, the student still made the key boundary and variable decisions rather than receiving submission-ready content."
     ],
-    "total_score": 40,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

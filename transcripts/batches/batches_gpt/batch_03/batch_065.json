@@ -243,15 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong next-step guidance, but did not prompt brief reflection on why the citation/source-checking method works or how to transfer it to the rest of the table.",
+                "reason": "Across the set, the tutor gives strong next-step coaching but rarely prompts explicit reflection on why a source-selection or framing method worked or failed; after progress, it usually moves straight to the next task instead of consolidating transferable takeaways (e.g., Transcript 1 throughout; Transcript 2 turns 6-10; Transcript 3 turns 7-10).",
                 "points": 2
               }
             ],
@@ -288,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long, multi-part replies with several questions or contingencies at once when shorter interactive steps would have been easier to act on, especially in Transcript 1 turns 2-5, Transcript 2 turns 2-5 and 7-10, and Transcript 3 turns 1-6.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -301,24 +300,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evaluation is based on Transcript 1 only, since the rubric and schema are for a single full conversation.",
-      "The tutor consistently refused to do the student's assignment, kept the work anchored to the required table fields, and used guided prompts and source-selection questions rather than giving submission-ready content.",
-      "Only a small deduction was applied because the conversation emphasized immediate task completion without an explicit reflection step on how the method could transfer to future rows."
+      "Input contains three transcripts; scoring reflects the tutor's performance across the set, with deductions applied only where the pattern was clearly supported.",
+      "The tutor consistently avoided doing the assignment for the student, stayed anchored to the task, redirected off-topic moves appropriately, and gave concrete source-selection and labeling guidance.",
+      "Main weaknesses were response length/cognitive load and limited explicit reflection prompts to help the student generalize what method choices to reuse later."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

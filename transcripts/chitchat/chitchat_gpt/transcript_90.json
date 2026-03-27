@@ -86,14 +86,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints ('my role is to tutor you on the assignment,' 'I can’t draft the outline for you') without clearly explaining the learning rationale for those limits.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -139,17 +149,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed tightly anchored to the assignment, redirected the initial off-topic prompt immediately, and used guided questions throughout to make the student articulate principles, test cases, and refine distinctions rather than supplying a submission-ready answer.",
-      "Across the conversation, the tutor built directly on the student's answers, progressively stress-tested the student's emerging view, and maintained clear, supportive, non-grading language. No clear rubric-supported deduction was warranted."
+      "The tutor consistently used guided questioning, built on the student's emerging distinctions, and kept the conversation anchored to the assignment rather than supplying a submission-ready argument.",
+      "Method-level coaching was strong: the tutor pushed the student to define principles, test cases, and distinguish mechanism, consent, and intention across Blood, Footbridge, Switch, Fuel, and Loop.",
+      "The main weakness was meta-framing: when refusing detours or outline drafting, the tutor stated limits but did not explicitly explain the learning rationale behind those constraints."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

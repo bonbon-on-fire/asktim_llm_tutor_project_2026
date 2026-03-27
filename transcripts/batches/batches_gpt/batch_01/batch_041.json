@@ -244,21 +244,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
-                  10
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing off-topic detours, the tutor redirected the student but did not explain a learning rationale or limitation beyond staying on task.",
+                "reason": "The tutor enforces staying on-task but does not explain the learning rationale for that constraint.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends with more classification work but no prompt for reflection on what method helped or how to transfer it.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -285,30 +293,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part prompts with several numbered questions at once, which reduced interactivity and increased cognitive load.",
-                "points": 4
-              },
-              {
-                "evidence_turns": [
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor sometimes used avoidably dense philosophy jargon such as 'non-aggregative,' 'liability,' and 'lexical priority' instead of simpler phrasing.",
-                "points": 2
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -320,24 +306,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the input contained three transcripts but the schema supports a single conversation score.",
-      "The tutor stayed strongly anchored to the assignment and used guided questioning rather than giving a submission-ready answer.",
-      "Main weaknesses were communication-related: repeated multi-part prompts and occasional jargon made the interaction heavier than necessary."
+      "Scored the first transcript only, since the prompt includes three separate conversations but the schema supports one conversation score.",
+      "The tutor consistently uses guided questioning, builds on the student's developing distinctions, and keeps the discussion tightly anchored to the assignment rather than supplying a submission-ready answer.",
+      "Main deductions are for limited meta-level framing: the tutor does not explain why it is restricting detours or withholding direct answers, and it misses a clear chance to prompt reflection on the method the student developed."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

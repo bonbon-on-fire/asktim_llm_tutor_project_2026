@@ -86,7 +86,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, when the student said GDP and race/ethnicity are confusing them, the tutor immediately launched into a multi-part method dump (two clarifying questions plus a full step-by-step search workflow) without first asking a diagnostic question to understand what specifically about those fields the student found confusing.",
+                "reason": "In Turn 2, the tutor immediately presents a structured two-decision framework and detailed next steps rather than first diagnosing what the student already knows or has tried, effectively front-loading method before checking existing understanding.",
                 "points": 3
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation the tutor consistently refuses to do work for the student, but rarely explains the learning rationale behind this (e.g., building research skills, academic integrity as a learning principle). The refusals are stated as policy ('I can't do the assignment for you') without articulating why this approach benefits the student's learning.",
+                "reason": "Throughout the conversation the tutor enforces its 'can't give you the answer' policy without ever explaining the learning rationale—e.g., that working through sources builds research and citation skills that students need for later assignments.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their research process, what they learned about finding city-level data, or how to apply these source-finding strategies to other fields in the table. There is no transfer or reflection moment across the full conversation.",
+                "reason": "The tutor never prompts reflection on the student's process or method choices. No turn asks the student to consider why verifying primary sources matters or what changed in their thinking as they moved from wanting paste-ready answers to agreeing to look up real data.",
                 "points": 2
               }
             ],
@@ -171,7 +171,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 are notably long, with multi-part numbered lists, bold-formatted search instructions, and multi-question prompts all in one reply. While the student expressed urgency and need for speed, these responses increase cognitive load rather than focusing on one actionable step at a time.",
+                "reason": "Turns 2 and 3 are multi-paragraph monologues containing layered decisions, specific search instructions, and multiple sub-questions all at once, reducing the student's opportunity to think and respond step by step when shorter, more focused prompts would have been more effective.",
                 "points": 4
               }
             ],
@@ -200,11 +200,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and firmly refuses to do the assignment for the student, maintaining academic integrity boundaries throughout all ten turns. The Socratic approach is generally sound: the tutor redirects the student to find their own data, offers structured templates rather than filled examples, and adapts when the student pivots (e.g., accepting religion as an ethnicity proxy).",
-      "The main pedagogy deduction in 1.2 is for Turn 2, where the tutor responds to the student's stated confusion about GDP and race/ethnicity with a long multi-step workflow rather than first diagnosing what specifically was confusing. This is a method-dump rather than diagnostic scaffolding.",
-      "Meta-learning (1.3) suffers because the tutor never explains its pedagogical rationale for refusing to provide data (beyond 'that would be me doing the assignment'), and never invites any process reflection or transfer discussion at any point in the conversation.",
-      "Communication quality is penalized under 3.1 because Turns 2 and 3 are multi-paragraph, multi-question responses that pile on instructions when the student has clearly indicated they are pressed for time; shorter, more focused prompts would have been more effective.",
-      "No deductions were applied for 1.1 (the tutor never gives submission-ready answers, never rewrites student text, and never pre-states conclusions), 2.1 (the tutor successfully pivots and advances the dialogue when earlier strategies don't work), 2.2 (the tutor stays anchored to the assignment throughout), or 3.2 (the tone is supportive and non-punitive even when refusing problematic requests)."
+      "The tutor consistently and correctly refused to produce submission-ready data, fabricated citations, or made-up numbers, maintaining strong academic integrity throughout all 10 turns.",
+      "On Socratic method (1.1), the tutor never gave direct answers or near-submission-ready content; it redirected every request and kept the student as the agent responsible for finding real data, earning full marks.",
+      "On scaffolding (1.2), Turn 2 front-loaded a structured two-decision framework and detailed search steps before checking what the student had already tried or understood, which triggers the 1.2.B.a deduction. The student was never asked what they already knew or had attempted.",
+      "On meta-learning (1.3), the tutor enforced its constraints throughout without once explaining why working through primary sources independently builds skills (1.3.A.a). There was also no moment where the tutor prompted the student to reflect on what shifted in their approach or why verifying sources matters (1.3.D.a). Method-level feedback was largely absent beyond correctness of source type.",
+      "Dialogue quality was strong: the tutor avoided repetition, advanced the conversation meaningfully each turn, and kept the student anchored to the actual assignment task despite repeated off-task requests.",
+      "Communication length was a concern in Turns 2 and 3, which were dense multi-paragraph responses with multiple nested sub-questions when shorter, focused prompts would have been more appropriate and interactive. This triggered the 3.1.A.a deduction.",
+      "Tone remained warm, pragmatic, and non-punitive throughout, and no grading language was used."
     ],
     "total_score": 35,
     "judge_llm_calls": 1

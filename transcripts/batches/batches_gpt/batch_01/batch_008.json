@@ -233,11 +233,12 @@
               {
                 "evidence_turns": [
                   2,
-                  3,
-                  5
+                  4,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied much of the core actor content itself by proposing specific Chicago offices, utilities, NGOs, universities, and missing groups, which performs a key idea-generation step for the assignment.",
+                "reason": "Across the transcripts (e.g., T1.2, T2.4/T2.8, T3.7), the tutor sometimes supplied key actor candidates, classifications, and example evidence instead of having the student generate all of the central reasoning.",
                 "points": 6
               }
             ],
@@ -261,15 +262,12 @@
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced the no-writing boundary but did not explain a learning-oriented rationale for that limitation.",
+                "reason": "The tutor repeatedly enforced the no-writeup boundary, but usually framed it as policy/ownership ('that would be me writing your submission') without explaining the learning rationale for the constraint.",
                 "points": 2
               },
               {
-                "evidence_turns": [
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave final revision advice but did not prompt reflection on why the student's process worked or what method to reuse on future forum posts.",
+                "reason": "The conversations end with checklists and final revisions, but there is little explicit reflection on why the student's method for sorting actors or identifying gaps worked and how to reuse that method later.",
                 "points": 2
               }
             ],
@@ -332,10 +330,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Evaluated Transcript 1 only, since multiple separate transcripts were included but the schema allows one conversation score.",
-      "The tutor strongly anchored to the assignment, refused to produce a submission-ready post, and scaffolded the student's work with usable structures and checks.",
-      "Main weakness: the tutor still generated a substantial share of the assignment's content by naming many specific Chicago actors and missing groups, reducing student-led discovery.",
-      "A smaller weakness was limited meta-explanation for the refusal policy and little explicit reflection/transfer support at the end."
+      "Across all three conversations, the tutor consistently refused to provide submission-ready writing and kept the work tightly anchored to the actual forum-post task.",
+      "The strongest weakness was in 1.1: the tutor occasionally supplied substantive actor candidates, classifications, and example evidence, which partially reduced student discovery even though it never became copy-ready prose.",
+      "Scaffolding, assignment alignment, clarity, and tone were strong overall; the main remaining gaps were limited explanation of the learning rationale behind the refusal and limited process reflection/transfer at the end."
     ],
     "total_score": 36,
     "judge_llm_calls": 1

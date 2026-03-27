@@ -93,7 +93,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor enforced assignment-only boundaries for off-topic requests by citing role limits, but did not explain the learning rationale for keeping the student doing their own philosophical reasoning.",
+                "reason": "When refusing off-task requests, the tutor states role limits but does not explain the learning rationale for staying in active assignment-focused reasoning.",
                 "points": 2
               }
             ],
@@ -156,9 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed strongly Socratic: the student generated the act consequentialist test, candidate principles, revisions, and case verdicts rather than receiving a submission-ready answer.",
-      "Scaffolding was effective and assignment-anchored: the tutor redirected off-topic turns immediately, stress-tested the student's principle across Footbridge, Loop, Transplant/Blood, and Fuel, and built on each revision.",
-      "Only clear deduction is meta-learning rationale: when refusing movie and dinner requests, the tutor cited role boundaries but did not explain why staying on the student's own reasoning supports learning."
+      "The tutor consistently used guided questioning rather than giving a submission-ready thesis, and kept the student doing the core philosophical work of distinguishing act consequentialism from competing principles.",
+      "Dialogue control was strong: off-topic movie/dinner requests were redirected immediately, and the tutor repeatedly re-anchored the student to the prompt, including the need to analyze specific Lecture 13 cases.",
+      "Responses were clear, structured, and interactive, with useful stress-testing prompts and case comparisons; the main gap was that the tutor stated role limits without explaining the learning rationale for those constraints."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

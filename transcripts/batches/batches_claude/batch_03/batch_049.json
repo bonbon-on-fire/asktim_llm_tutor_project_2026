@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 3, the tutor directly lists five concrete 'extra consequences' (trust/terror effects, incentive/precedent effects, institutional effects, epistemic/uncertainty risk, long-run utility of rights-like protections) that AC theorists use to flip the verdict in Push/Blood. The student had asked for these and the tutor supplied them rather than guiding the student to generate them.",
+                "reason": "In Transcript 1 Turn 3, the tutor directly lists the standard 'extra consequences' (trust/terror effects, incentive/precedent effects, institutional effects, epistemic/uncertainty risk, long-run utility of rights-like protections) before the student reasons through them, effectively doing the key reasoning step of identifying why AC might diverge from 'kill 1 to save 5' in Push/Blood. The student had only asked for confirmation of the basic verdict; the tutor supplied the full catalogue of objections unprompted.",
                 "points": 6
               }
             ],
@@ -265,24 +265,16 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently refuses to give direct answers but rarely explains the learning rationale for this (e.g., 'I can't give you bullets — you'd just be pasting my work' in T1T2 mentions a reason, but the pedagogical rationale of building active reasoning skills is almost never articulated as an explicit meta-learning explanation).",
+                "reason": "Across all three transcripts, the tutor consistently refuses to give direct answers and scaffolds effectively, but never explicitly explains to the student *why* it is guiding rather than answering (e.g., to build reasoning skills, for long-term philosophical skill development). The constraints are enforced without articulating the learning rationale.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never pauses to ask students to reflect on their thinking process, what changed, or why a particular move worked. Progress is always immediately channeled into the next analytical step without metacognitive consolidation.",
+                "reason": "None of the three transcripts include a moment where the tutor prompts the student to reflect on what changed in their thinking, why a particular method (e.g., the A/B/C framework or the 'redirecting vs introducing' distinction) worked, or how they might apply these reasoning strategies to future cases. The tutor moves on to the next question without reinforcing meta-level method choices.",
                 "points": 2
               }
             ],
@@ -328,7 +320,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 especially (Turns 1, 2, 4, 5) the tutor repeatedly issues multi-part question batteries (3-5 questions plus structured templates) in a single message, significantly reducing space for students to think and respond incrementally. This pattern appears across all three transcripts' early turns.",
+                "reason": "Across all three transcripts, early tutor turns are consistently multi-paragraph with 3–5 sub-questions stacked together (e.g., Transcript 1 Turn 1 asks for AC definition then a 5-part application; Transcript 2 Turn 1 asks four large questions at once; Transcript 3 Turn 1 has four sub-questions). This repeatedly reduces the student's opportunity to think and respond incrementally. While some long responses are justified by the complexity of the task, the pattern of front-loading many questions at once rather than interactive step-by-step checking is consistent across conversations.",
                 "points": 4
               }
             ],
@@ -357,12 +349,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic stance, consistently refusing to write submission-ready text and redirecting students to do their own reasoning. This earns full credit on 1.1.A and 1.1.B.",
-      "A notable deduction in 1.1 (6 points, 1.1.C.b) is applied to Transcript 1 Turn 3, where the tutor lists five complete 'extra consequences' categories rather than guiding the student to generate them. This is the clearest instance of the tutor doing a key reasoning step for the student.",
-      "Scaffolding (1.2) is strong throughout: the tutor builds on each student's prior answers, uses graduated stress tests, and moves coherently from simpler to harder cases.",
-      "Meta-learning (1.3) is weak: the tutor never explains the pedagogical rationale for withholding answers beyond one-line pragmatic remarks (T1T2), and never pauses to invite process reflection or reinforce method choices after student breakthroughs.",
-      "Dialogue quality (2.1, 2.2) is good: there is no problematic spiraling, the tutor keeps students anchored to the assignment, and the brief off-topic request in T2T6 is handled cleanly and quickly.",
-      "Communication quality is partially penalized: the tutor frequently issues 3-5 question multi-part batteries in a single message (T1T1, T1T2, T1T4, T2T1, T2T2, T3T1, T3T8 etc.), which overloads students rather than inviting focused incremental responses. Language is generally clear and appropriately pitched."
+      "Across all three transcripts, the tutor demonstrates strong resistance to producing copy-pasteable content and consistently redirects students to reason for themselves. It successfully maintains the Socratic framing throughout and handles an off-topic deflection (Transcript 2 Turn 6) well.",
+      "The primary deduction in 1.1 is in Transcript 1 Turn 3, where the tutor supplies a full, organised list of 'extra consequences' (trust/terror, incentive/precedent, institutional, epistemic, long-run rights utility) before the student has reasoned through even one. This is a key reasoning step the student should have been guided to discover; the tutor instead gave the bridge from evidence to conclusion directly (1.1.C.b). The 6-point deduction is applied once to avoid double-penalizing across transcripts.",
+      "Meta-learning is a consistent gap: the tutor never explains why it is withholding answers (no learning rationale per 1.3.A.a), and never prompts students to reflect on what changed in their thinking or why a method succeeded (1.3.D.a).",
+      "Communication length is a recurring issue: early turns in all three conversations stack 3–5 sub-questions at once instead of asking one focused question and waiting for a response, reducing the student's cognitive space (3.1.A.a). This is a clear pattern across the transcripts.",
+      "Scaffolding and progression (1.2) are well-executed: the tutor builds on student answers, uses their language, and advances without restarting. Dialogue quality (2.1, 2.2) is also strong: no spiraling, no off-topic drift sustained, and assignments remain well-anchored. Tone (3.2) is consistently supportive without being evaluative or grade-like."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

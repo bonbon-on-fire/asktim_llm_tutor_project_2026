@@ -235,7 +235,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 2: Tutor provides a detailed menu of specific Miami actors sorted into three buckets (leading, engaged, missing) with named categories and options, doing the core identification and categorization reasoning that the student should do. This goes beyond scaffolding into supplying the key analytical content.",
+                "reason": "Transcript 1, Turn 2: The tutor provides pre-sorted, labeled menus of likely 'leading,' 'engaged,' and 'missing' actors for Miami specifically, doing the core categorical reasoning step rather than asking the student to derive it. The student only needs to choose letters from a pre-solved list.",
                 "points": 6
               }
             ],
@@ -253,22 +253,23 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor rarely prompts the student to reflect on their thinking process or what changed in their understanding. The conversations end without any reflection on method or skill development.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   1,
                   2,
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to do student work but rarely explains the pedagogical rationale (e.g., why the student doing the reasoning matters for skill development or learning outcomes). It just says 'I can't' without articulating the learning benefit.",
+                "reason": "Across all three transcripts, the tutor never explains to the student *why* it won't write the post (e.g., 'this develops your analytical skills for future assignments,' 'active reasoning builds the capability you'll need later'). It simply says 'I can't' or 'my job is to help you think,' without grounding refusals in a learning rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across all transcripts, whenever the student makes genuine progress (e.g., T2 Transcript 3 Turn 10, T1 Turn 10, T2 Turn 8), the tutor moves straight to the next task without prompting any reflection on what the student figured out or how the reasoning method worked.",
                 "points": 2
               }
             ],
@@ -285,24 +286,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Across all three transcripts, the tutor repeatedly cycles through the same pattern: student requests ready-made text, tutor refuses and offers a template/scaffold, student asks again. The tutor does not meaningfully shift strategy (e.g., reframing why the student should do the work, changing the type of scaffold, or simplifying the ask significantly) across many turns, leading to spiraling without consolidation.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -314,7 +299,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -330,7 +315,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across transcripts, particularly in Transcript 1 (Turn 2) and Transcript 2 (Turns 4, 5, 6), the tutor repeatedly sends multi-paragraph responses with multiple embedded questions, long menus, and detailed frameworks. These long monologues reduce the student's opportunity to think and respond incrementally, and the length does not decrease even after it is clear the student is overwhelmed.",
+                "reason": "Across all three transcripts, the tutor repeatedly sends multi-paragraph responses with extensive menus, numbered lists, sentence starters, and fill-in scaffolds in single turns (e.g., T1 Turn 2 with three labeled buckets and 10+ items, T2 Turn 5 with 8-sentence framework, T3 Turn 4 with 8-row table). These consistently reduce the student's opportunity to think independently and respond before receiving more structure.",
                 "points": 4
               }
             ],
@@ -352,22 +337,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and commendably refuses to write submission-ready text for the student, maintaining a firm pedagogical boundary across all three transcripts and all 30 turns. This is the strongest feature of the tutoring.",
-      "However, Transcript 1 Turn 2 is a significant concern under 1.1.C.b: the tutor provides a detailed, pre-sorted menu of specific Miami actors (named categories, labeled into leading/engaged/missing buckets) that does the core analytical identification work the student is supposed to do. This supplies the key reasoning step—identifying and categorizing actors—rather than guiding the student to derive it.",
-      "The tutor's scaffolding often involves very detailed multi-part templates, menus, and word-budget outlines that, while not submission-ready text, are sometimes so close to the answer that they do most of the structural thinking. This is borderline but the deduction is applied only once under 1.1 to avoid double-penalizing.",
-      "A persistent pattern across all transcripts is the tutor repeating the same basic move (refuse → offer template/scaffold) without meaningfully adjusting strategy when the student continues to resist. The tutor does not reframe, simplify radically, or consolidate progress in a way that breaks the cycle. This triggers the 2.1 redundancy deduction.",
-      "Meta-learning is weak: the tutor does not explain its pedagogical rationale for why the student must do the work (skill development, learning transfer), and ends sessions without prompting reflection on process or what the student learned. These are two separate deductions under 1.3.",
-      "Response length is a consistent issue: the tutor sends multi-paragraph, multi-question responses even when the student is clearly overwhelmed and time-pressured. Shorter, more targeted prompts would have better served the student and are warranted across all transcripts.",
-      "Tone is consistently warm and supportive. The tutor never implies official grading. Assignment anchoring is strong—the tutor keeps the student focused on the correct task throughout."
+      "The tutor is commendably consistent in refusing to write submission-ready text across all three transcripts, maintaining appropriate boundaries under persistent pressure from a chaotic student persona. It successfully keeps the student doing incremental work (picking options, writing sentences, making choices) and builds progressively on student contributions.",
+      "The primary deduction in 1.1 comes from Transcript 1 Turn 2, where the tutor pre-solves the core analytical task—categorizing Miami actors into leading/engaged/missing buckets with labeled items—before the student attempts any reasoning. This amounts to doing the key reasoning step (1.1.C.b) by revealing the sorted categorization the student is supposed to derive. A full 6-point deduction applies. This behavior does not rise to 1.1.A.a (full 12-point) because the tutor never assembles complete text the student can paste.",
+      "On meta-learning (1.3), the tutor consistently refuses without explaining the pedagogical rationale (1.3.A.a), and never prompts reflection on process after student progress (1.3.D.a). The tutor does provide method-level feedback in several places (e.g., T3 Turn 6, T1 Turn 9), so 1.3.B is not deducted.",
+      "On communication quality (3.1), the tutor's responses are frequently very long and front-load extensive menus and scaffolds before the student has a chance to respond. This pattern is consistent across all three transcripts and reduces interactive dialogue. The language is generally clear, so 3.1.B is not deducted.",
+      "Dialogue quality is largely strong: the tutor avoids spiraling, re-anchors to the assignment whenever the student tries to go off-task, and does not confirm misunderstandings. No deductions apply to section 2.",
+      "Tone is supportive and non-judgmental throughout; no grading language is used. Section 3.2 receives full marks."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

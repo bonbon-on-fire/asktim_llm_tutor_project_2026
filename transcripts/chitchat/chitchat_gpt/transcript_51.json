@@ -95,7 +95,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced limits on unrelated questions and redirection to the assignment, but did not explain the learning rationale for that constraint beyond saying to stay on the assignment.",
+                "reason": "The tutor repeatedly enforced scope limits on off-topic requests but did not explain a learning rationale such as preserving time for assignment reasoning or skill-building.",
                 "points": 2
               }
             ],
@@ -158,8 +158,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed closely anchored to the assignment, redirected off-topic requests promptly, and used guided questions to help the student define geography, source choices, category scheme, and methodological notes without doing the table for them.",
-      "Method-level coaching was strong on consistency, double-counting, source credibility, and time planning. The main weakness was meta-explanation: the tutor enforced its limits and redirections without explicitly framing why that constraint supports learning."
+      "The tutor stayed strongly anchored to the assignment, redirected off-topic questions promptly, and used guided questioning to help the student define geography, source choices, category rules, and documentation practices without doing the table for them.",
+      "Scaffolding was solid: the tutor built on the student's choices, highlighted methodological pitfalls like race/Hispanic double-counting and GDP geography mismatch, and kept the next step actionable.",
+      "The main deduction is meta-level framing: when refusing off-topic requests, the tutor enforced limits but did not explain the tutoring rationale in learning terms."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

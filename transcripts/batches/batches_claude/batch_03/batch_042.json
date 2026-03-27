@@ -235,7 +235,15 @@
                   9
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1, Turn 9, the tutor provides the DOI URL for the Beck et al. PLOS ONE article directly to the student, giving a submission-ready citation source without requiring any student effort. While this is a borderline case (it is a URL rather than data), the tutor had repeatedly guided the student to find it themselves, and only relented here after sustained pressure. Combined with Turn 10, where the tutor also provides the BEA URL directly, these constitute borderline submission-assistance but not full direct answers. However, reviewing the full picture across Transcripts 1, 2, and 3: the tutor largely avoids giving data values and consistently redirects, so a full 12-point deduction is not warranted. The URL provision in Turns 9 and 10 of Transcript 1 are the closest violations but are not full answers.",
+                "reason": "In Transcript 1 Turn 9, the tutor provides the exact DOI URL (https://doi.org/10.1371/journal.pone.0162148) as a citation to paste directly. While this is a single data point (a source URL), it is a submission-ready citation value the student requested and received without doing any work. However, this is borderline—it is a citation link rather than a data value. Considering the rubric's intent about giving answer pieces that together become submission-ready, this alone may not fully trigger 1.1.A.a. Assessed as ambiguous; choosing smaller deduction (0 points here, addressed under 1.1.C instead).",
+                "points": 0
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1 Turn 10, the tutor provides the exact BEA URL (https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas) for the student to cite directly. Combined with the DOI in Turn 9, the tutor is supplying ready-to-paste citation links across turns. While these are source links rather than data values themselves, they reduce meaningful student work in gathering sources. Still borderline and ambiguous; alone neither triggers the full 1.1.A criterion. Applying 0 points deduction here and noting in overview.",
                 "points": 0
               }
             ],
@@ -265,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to give answers) without clearly explaining the pedagogical rationale to the student—e.g., never stating that the goal is to build data-gathering skills or critical source evaluation. The tutor says 'that's your work' or 'that's a key part of the data-gathering task' but does not articulate why this matters for learning.",
+                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to supply answers) but rarely explains the learning rationale—e.g., why the student finding sources themselves builds skills needed later in the course. The tutor says 'I can't fill in the table for you' and 'that's your work' without connecting this to active reasoning or long-term skill development.",
                 "points": 2
               },
               {
@@ -282,7 +290,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "No reflection or transfer prompts appear in any of the three transcripts. The tutor moves from task to task without asking students to reflect on what they learned about source evaluation, boundary definition choices, or data consistency.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking, why a method worked, or what they learned from the process of sourcing data. The tutor moves from task to task without any reflection or transfer support.",
                 "points": 2
               }
             ],
@@ -326,7 +334,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turns 2 and 3, the tutor provides multi-paragraph responses with numbered lists of data sources and table IDs before checking whether the student has confirmed the geography or understood what to do next. This dumps more information than needed for one interactive step.",
+                "reason": "In Transcript 1 Turns 2 and 3, the tutor provides multi-paragraph responses listing all required ACS table IDs, BEA search queries, and Köppen steps at once rather than focusing on one item at a time. This reduces the student's opportunity to think and work before receiving the next step. Similar pattern appears in Transcript 3 Turn 2 where a lengthy 'approved menu' for all sources is provided in one block before the student has answered a single diagnostic question.",
                 "points": 4
               }
             ],
@@ -355,12 +363,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently maintains appropriate boundaries, refuses to supply data values directly, and guides students to authoritative sources through questioning—demonstrating strong Socratic discipline overall.",
-      "In Transcript 1, the tutor provides the DOI URL (Turn 9) and BEA URL (Turn 10) under deadline pressure. These are borderline cases: they supply citation URLs but not data values. Given that the tutor had repeatedly redirected the student throughout, this does not rise to a full 1.1.A.a violation, so no deduction is applied there.",
-      "The tutor consistently fails to explain the pedagogical rationale for withholding answers (1.3.A.a) and never prompts students to reflect on their process or transfer skills (1.3.D.a), resulting in a 4-point deduction under 1.3.",
-      "Transcript 1, Turns 2–3 involve multi-paragraph information dumps (sources, table IDs, BEA series) before confirming student understanding, triggering the 3.1.A.a deduction of 4 points. Transcripts 2 and 3 show more appropriately paced, interactive responses.",
-      "Assignment anchoring and off-topic control are handled well across all transcripts: the tutor redirects food and music questions immediately (Transcript 2), and keeps Wikipedia-reliance framed correctly (Transcript 3).",
-      "Tone is consistently warm, supportive, and encouraging without being dismissive or punitive. No grading stance is adopted."
+      "Across all three transcripts, the tutor consistently refuses to supply direct answers, citation values, or finished table rows, which demonstrates a strong Socratic stance overall. The tutor appropriately redirects off-topic questions (Transcript 2), re-anchors to the assignment task, and builds progressively on student choices.",
+      "In Transcript 1, the tutor eventually provides two exact URLs (DOI for Beck et al. in Turn 9 and BEA GDP page in Turn 10) as paste-ready citations. These are borderline cases—they are source links rather than data values—and while they reduce some student work, they do not collectively constitute a 'near-submission-ready' table. No 1.1.A deduction was applied; this is noted as ambiguous and the smaller deduction (0) was chosen per rubric guidance.",
+      "The main pedagogical weakness across all transcripts is the absence of meta-learning support: the tutor never explains why it refuses to give answers in terms of student skill development (1.3.A.a), and never prompts reflection on the student's learning process or method choices (1.3.D.a). These deductions cost 4 points in 1.3.",
+      "Response length is occasionally a problem, particularly in Transcript 1 Turns 2–3 and Transcript 3 Turn 2, where the tutor front-loads multiple source lists and step-by-step instructions before the student has answered prior questions, reducing the student's space to think. This triggers a 3.1.A.a deduction of 4 points.",
+      "Scaffolding (1.2) and dialogue quality (2.1, 2.2) are handled well throughout: the tutor builds on student answers, avoids spiraling, and keeps the conversation anchored to the assignment. No deductions in these areas.",
+      "Tone is consistently supportive and appropriate. No grading language is used. No deductions in 3.2."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

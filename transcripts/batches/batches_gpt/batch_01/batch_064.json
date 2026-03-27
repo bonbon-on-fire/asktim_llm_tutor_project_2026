@@ -232,11 +232,12 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
                   5,
-                  7
+                  28
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied a substantive Miami-specific candidate actor list and partially resolved classification logic (for example, FEMA as engaged and a resilience office as a strong leading candidate), which does part of the core actor-identification and sorting work for the student.",
+                "reason": "The tutor sometimes supplied substantial starter content for the core task by giving example actor rows, candidate Miami actors, and a menu of likely Miami-Dade units with roles, which does part of the key actor-identification and categorization work for the student.",
                 "points": 6
               }
             ],
@@ -254,10 +255,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10
+                  10,
+                  20,
+                  30
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor kept assigning the next search step but did not prompt reflection on why the source-based method was helping or how to reuse it for the rest of the table.",
+                "reason": "The tutor consistently moved the student to the next search step but did not prompt reflection on why the sourcing-and-labeling method worked or how the student's understanding had changed.",
                 "points": 2
               }
             ],
@@ -297,14 +300,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  5,
-                  8,
-                  9,
-                  10
+                  12,
+                  13,
+                  30
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-bullet replies and extended checklists when the student was very unsure and likely needed shorter, more interactive steps.",
+                "reason": "Several replies were list-heavy, multi-step monologues when the student was already overwhelmed and would likely have benefited from shorter, more interactive prompts.",
                 "points": 4
               }
             ],
@@ -333,10 +334,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only, since the provided schema supports one conversation at a time.",
-      "The tutor stayed well anchored to the assignment, maintained a supportive tone, and generally scaffolded from definitions to sourcing and classification.",
-      "Main deductions came from doing some of the core actor-identification/classification work for the student and from repeatedly using long list-based replies instead of tighter interactive steps.",
-      "A smaller deduction was applied for limited reflection support: the tutor emphasized next actions but did not explicitly help the student articulate the reusable method they had developed."
+      "Across the provided transcripts, the tutor stayed well anchored to the assignment, kept a supportive tone, and usually used guided questions rather than giving a full ready-to-submit answer.",
+      "The main pedagogy weakness was partial idea-generation for the student: the tutor occasionally supplied candidate actors or likely units and their functions, which overlaps with the assignment's core identification work.",
+      "Communication was generally clear, but some responses were too long and list-dense for a confused student, and there was little reflection support on why the search-and-classification method worked.",
+      "Evidence turns are numbered sequentially across the three transcripts as provided (1-10, 11-20, 21-30)."
     ],
     "total_score": 34,
     "judge_llm_calls": 1

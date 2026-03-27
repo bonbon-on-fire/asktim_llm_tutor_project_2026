@@ -89,7 +89,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student repeatedly expresses time pressure and inability to look things up, the tutor continues issuing the same style of directive prompts (find a source, paste numbers, look at a map) without diagnosing why the student is stuck or adjusting the scaffolding strategy. The tutor does not ask what specifically is blocking the student or attempt to simplify the pathway, resulting in a mismatch between the student's actual obstacle and the tutor's repeated response pattern.",
+                "reason": "Student repeatedly signals they cannot or will not browse for data, yet tutor continues issuing research-lookup prompts without shifting strategy (e.g., diagnostic questioning about what the student does have access to, or pivoting to a different scaffolding approach). The same lookup-and-report pattern is repeated across turns 3–6 without checking what the underlying obstacle is.",
                 "points": 3
               }
             ],
@@ -113,7 +113,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its 'I can't do that' constraint across all turns without ever explaining the learning rationale—e.g., that finding the source and code themselves builds research skills or helps them apply the same method to other data categories. The tutor never articulates why the student's engagement is important beyond compliance.",
+                "reason": "The tutor consistently declines to provide direct answers but never explains the pedagogical rationale (e.g., that active retrieval builds research skills or supports long-term learning). The student is told 'I can't' without understanding why.",
                 "points": 2
               },
               {
@@ -130,7 +130,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts reflection on why a method worked or failed, never asks the student to articulate what they learned from any step, and never reinforces method choices after any improvement. The conversation ends without any reflective or transfer-supporting move.",
+                "reason": "There is no moment where the tutor prompts the student to reflect on what they are learning through the process, why a method worked, or what changed in their thinking. The conversation ends without any process-level reflection or transfer support.",
                 "points": 2
               }
             ],
@@ -150,7 +150,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
@@ -158,7 +157,7 @@
                   7
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeats the same 'find a source and report what you see' move across six consecutive turns without synthesizing progress, reframing the approach, or switching to a simpler pathway. The student remains stuck and the tutor does not consolidate or advance the interaction in a meaningfully different way.",
+                "reason": "The tutor cycles through the same 'go look it up and report back' prompt pattern across five consecutive turns without synthesizing, reframing, or suggesting a different path. The student remains stuck; the tutor does not switch to summary, simplification, or a materially different approach.",
                 "points": 4
               }
             ],
@@ -189,7 +188,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor responses are multi-paragraph with embedded bullet lists, decision trees, and multiple sub-questions when a single focused prompt would have been more appropriate given the student's expressed time constraints and resistance. Turns 2, 3, and 4 in particular are longer than needed and reduce student opportunity to think and respond.",
+                "reason": "Several tutor turns (especially turns 2 and 4) include multi-paragraph explanations with bullet lists, threshold rules, and decision trees when shorter, more focused prompts would have been more appropriate given the student's stated time pressure and confusion.",
                 "points": 4
               }
             ],
@@ -198,44 +197,33 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "In turn 4, the tutor opens with 'No—I won't give you the code, because that's literally a table entry you're being graded on.' The blunt 'No' and the framing 'you're being graded on' is slightly cold/punitive in tone and could discourage further participation.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 29,
+    "total_base_score": 31,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to do the student's work for them, which is appropriate and earns full marks on 1.1. No submission-ready content, rewrites, or direct answers were given.",
-      "However, the tutor repeats the same instructional pattern (find a source, look at the map, report what you see) across nearly every turn without adapting when the student signals a genuine obstacle. This earns a full deduction on 2.1 for spiraling without progress.",
-      "Scaffolding (1.2) is partially penalized because the tutor does not diagnose why the student is stuck before re-issuing nearly identical prompts, particularly in turns 3–6.",
-      "Meta-learning (1.3) is penalized for two issues: the tutor never explains the learning rationale for its refusals, and never invites reflection or transfer at any point in the 10-turn conversation.",
-      "Communication quality suffers from multi-paragraph responses in several early turns (3.1) and one mildly dismissive/cold phrasing in turn 4 (3.2).",
-      "Assignment anchoring (2.2) is solid throughout; the tutor keeps the student focused on the actual table task. No off-topic engagement occurs.",
-      "Note on 1.2.B.a: the deduction reflects that the tutor misreads the student's core obstacle as laziness rather than as a possible comprehension or access barrier, and responds with the same directive style rather than diagnostic questioning. Confidence is moderate; the student may genuinely be avoiding work, but the rubric targets the tutor's response pattern."
+      "The tutor consistently and correctly refuses to do the assignment work for the student (no 1.1.A deduction), maintains good assignment anchoring throughout, and keeps an encouraging tone without implying formal grading.",
+      "The primary weakness is a repetitive scaffolding pattern: across turns 3–7 the tutor issues near-identical 'go look it up and report back' prompts without diagnosing why the student cannot proceed or pivoting to a meaningfully different approach, triggering both 1.2.B and 2.1.A deductions.",
+      "The tutor never explains the pedagogical rationale for withholding answers (1.3.A) and misses all opportunities to prompt process reflection or transfer (1.3.D), resulting in a full 4-point deduction in 1.3.",
+      "Some turns (notably turns 2 and 4) are longer than necessary given the student's stated time pressure, earning a 3.1.A deduction for monologue-heavy responses.",
+      "No deductions were applied for 1.1 (tutor never gives submission-ready content), 2.2 (tutor keeps the student anchored to the actual task), or 3.2 (tone is supportive throughout)."
     ],
-    "total_score": 29,
+    "total_score": 31,
     "judge_llm_calls": 1
   }
 }

@@ -243,21 +243,13 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  8
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor redirects off-topic requests by stating its role, but does not explain the learning rationale for its constraints or question-driven approach.",
+                "reason": "When refusing off-topic requests, the tutor states role limits ('I’m here as your tutor') but does not explain the learning rationale for staying in a guided, assignment-focused mode.",
                 "points": 2
               },
               {
-                "evidence_turns": [
-                  6,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improves the distinction and overall view, the tutor moves straight into the next task and final argument map without prompting reflection on why the method worked or how to transfer it.",
+                "reason": "Across the conversations, the tutor consistently advances to the next task but rarely prompts brief reflection on why the student's method worked, what changed in their thinking, or how to transfer the approach.",
                 "points": 2
               }
             ],
@@ -294,8 +286,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses multi-part, numbered prompts with several questions at once, which reduces interactivity and often asks the student to handle too many decisions in a single turn.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -307,24 +305,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently kept the student anchored to the philosophy prompt, redirected off-topic chat immediately, and used guided questions rather than supplying a submission-ready answer.",
-      "Scaffolding was strong: the tutor built from the student's act consequentialist summary toward distinctions like means versus side-effect, threshold constraints, and case application.",
-      "Main deductions are in meta-learning: the tutor did little to explain the pedagogical rationale for its constraints and missed chances to prompt brief reflection on why the student's method improved."
+      "Across the three transcripts, the tutor stays strongly anchored to the assignment, redirects off-topic chat immediately, and uses guided questioning rather than giving submission-ready answers.",
+      "Scaffolding is generally strong: the tutor builds from student responses, sharpens distinctions, and asks for evidence, criteria, and applications tailored to each assignment.",
+      "Main weaknesses are meta-learning and response size: the tutor rarely explains the learning rationale behind its constraints, rarely prompts reflection on method transfer, and often bundles many questions into one turn instead of using smaller interactive steps.",
+      "No deduction was taken for direct-answering because the tutor's examples and prompts stayed at the level of scaffolding rather than completing the student's final work."
     ],
-    "total_score": 42,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

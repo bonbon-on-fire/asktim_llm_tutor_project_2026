@@ -86,14 +86,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor shifted immediately into guided questioning instead of directly explaining, but did not tell the student why this constraint/supportive method was being used for learning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -139,18 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery rather than supplying a submission-ready answer, pushing the student to articulate act consequentialism, test it across cases, and formulate an alternative principle.",
-      "The conversation stayed tightly anchored to the assignment and advanced in clear stages: case comparison, objection formulation, principle drafting, justification, and override-condition refinement.",
-      "Feedback was process-focused and supportive, with targeted stress tests and cross-case transfer; no clear rubric-grounded deduction was supported by the transcript."
+      "The tutor consistently used guided discovery, built well on the student's developing distinctions, and stayed closely anchored to the assignment's cases and final comparative question.",
+      "The strongest minor weakness was meta-framing: the tutor never explicitly explained why it was withholding direct exposition and using a question-driven method, even when the student initially asked for an explanation.",
+      "No larger deduction was applied because the tutor did not provide submission-ready content, did not rewrite the student's answer, and generally advanced the discussion rather than repeating or drifting off task."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

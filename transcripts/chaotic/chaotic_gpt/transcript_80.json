@@ -94,7 +94,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student reached a workable answer, the tutor focused on final verification and submission but did not prompt reflection on why the categorization method worked or how to reuse it on later assignments.",
+                "reason": "The tutor helps the student finalize and verify the post but does not prompt reflection on why the categorization method worked or how to reuse the approach on later assignments.",
                 "points": 2
               }
             ],
@@ -157,9 +157,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the student’s forum post and instead used guided prompts, templates, and category checks tied closely to the assignment.",
-      "Scaffolding was strong: the tutor built from the student’s rough lists, distinguished leading vs engaged vs missing actors, and gave concise, actionable revision checks without rewriting the submission.",
-      "Only a small deduction was applied for missing reflection/transfer support: once the student had a viable post, the tutor did not ask the student to reflect on the method or how to apply the actor-mapping approach in future course tasks."
+      "The tutor consistently avoided doing the assignment for the student and instead used structured prompts, templates, and category checks to keep the student producing the core reasoning.",
+      "The conversation stayed tightly anchored to the forum task, and the tutor built on the student's NYC-specific actor list with targeted distinctions such as leader vs engaged and agency vs resident voice.",
+      "The main missing element was reflection/transfer: once the student had a workable answer, the tutor focused on submission checks rather than briefly reinforcing the reusable method for future actor-mapping work."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

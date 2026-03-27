@@ -89,12 +89,14 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  3,
+                  4,
                   6,
                   7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student had developed all three rows and a citation method, the tutor continued with completeness checks and next-step prompting rather than asking the student to reflect on why the metric/evidence approach worked or how to transfer it to later assignments.",
+                "reason": "The tutor gave strong process coaching but did not prompt brief reflection on why the student's method choices worked or how to transfer them beyond this table.",
                 "points": 2
               }
             ],
@@ -157,9 +159,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor stayed strongly assignment-centered, immediately redirected the off-topic opener, and consistently anchored discussion to the Phoenix stressors table requirements.",
-      "Pedagogy was largely strong: the tutor used guided questions, asked the student to choose metrics/ratings/sources, and avoided writing submission-ready content for the student.",
-      "The main gap was meta-learning reflection: although the tutor gave good process guidance, it did not explicitly prompt the student to reflect on what method they had learned or how to reuse it in later assignments."
+      "The tutor consistently redirected to the assignment, built on the student's progress, and used targeted questions that kept the student doing the substantive reasoning.",
+      "Process feedback was generally specific and useful: the tutor pushed for clearer metrics, source choices, evidence-to-claim matching, and avoidance of double-counting.",
+      "Only a small deduction was applied because the conversation focused on task completion without explicit reflection on why the student's approach was working or how to transfer that method to future assignments."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

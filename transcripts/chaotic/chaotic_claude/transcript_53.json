@@ -98,18 +98,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it withholds submission-ready answers (e.g., the learning rationale around active reasoning or skill development). It simply declines and redirects without articulating the pedagogical constraint to the student.",
+                "reason": "The tutor never explains its tutoring rationale or why it withholds direct answers. It enforces 'I won't give paste-ready text' without articulating the pedagogical reason (active reasoning, skill development) to the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   6,
                   7,
-                  8,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor does not prompt any reflection on the student's thinking process or what changed in their reasoning as the paragraphs improved across turns. No transfer-oriented questions appear (e.g., 'what did you notice about how you built that justification?').",
+                "reason": "Once the student's paragraphs are strong (Turn 6), the tutor moves forward to sourcing and table completion without prompting the student to reflect on what changed in their thinking or why the revision process worked.",
                 "points": 2
               }
             ],
@@ -154,7 +153,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 in particular contain multi-paragraph monologues with multiple simultaneous instructions, criteria lists, and embedded questions that consistently crowd out student thinking space. Turn 4 also packs a full two-part critique structure when shorter focused prompts would suffice.",
+                "reason": "Several tutor turns (e.g., Turn 2, Turn 4) are multi-paragraph monologues with multiple simultaneous questions and structured sub-prompts where shorter, more focused exchanges would have been more appropriate for the student's cognitive load.",
                 "points": 4
               }
             ],
@@ -183,11 +182,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to provide submission-ready content, maintains Socratic questioning throughout all ten turns, and builds effectively on student progress (e.g., acknowledging good sector tags in Turn 3, affirming and refining drafts in Turns 4–6). No 1.1.A.a, 1.1.B.a, or 1.1.C triggers are found.",
-      "Scaffolding is well-handled: the tutor sequences tasks logically (sectors → rating → draft → revision → sourcing → priority stressors → remaining stressors), builds directly on student contributions, and does not restart from scratch. No 1.2 deductions apply.",
-      "Meta-learning is partially present: the tutor gives good process-level feedback on rating logic and evidence use, but never explains the pedagogical rationale for withholding answers (1.3.A.a), and never invites the student to reflect on what changed in their thinking between drafts (1.3.D.a). A deduction of 2+2=4 is applied, leaving 2/6.",
-      "Dialogue quality is strong throughout: no spiraling or repetition without progress, assignment is kept on track, and no off-topic diversions occur.",
-      "Communication quality is partially penalized: multiple early turns (2, 3, 4) use dense multi-paragraph formats with stacked instructions and simultaneous questions rather than short, focused prompts—this reduces student opportunity to think. Later turns improve in conciseness. A 4-point deduction under 3.1.A.a is applied."
+      "The tutor firmly maintained Socratic discipline throughout all 10 turns, consistently refusing to produce paste-ready text and always returning the reasoning task to the student. This is the strongest aspect of the conversation.",
+      "Scaffolding was effective: the tutor built on each student contribution, validated correct steps, and introduced new complexity only after prior steps were consolidated. The progression from stressor identification → sector tagging → rating logic → justification drafting → revision → sourcing → priority ranking followed the assignment steps well.",
+      "Meta-learning was a weakness: the tutor never explained *why* it withholds direct answers (rationale for active learning) and missed clear opportunities to prompt reflection on the student's own growth or method improvement after the strong Turn 6 drafts.",
+      "Dialogue quality was strong: no spiraling, strong assignment anchoring, and productive redirection when the student pressed for paste-ready bullets in Turns 1, 2, 3, and 9.",
+      "Communication suffered from response length: Turns 2, 3, and 4 in particular contained multi-paragraph, multi-question responses that front-loaded a lot of instruction before the student had a chance to respond. While the content was valuable, shorter focused prompts would have been more pedagogically appropriate for an already-resistant student.",
+      "Tone was consistently warm, encouraging, and non-punitive throughout, and the tutor avoided any grade-like framing."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

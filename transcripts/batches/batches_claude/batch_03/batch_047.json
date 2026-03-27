@@ -235,7 +235,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 5, the tutor provides 8 near-complete sentence starters with significant content filled in, effectively doing the key structural reasoning step: telling the student exactly what each sentence should contain and in what order, leaving only blanks to fill rather than having the student generate the framework.",
+                "reason": "In Transcript 1 Turn 5, the tutor provides a near-complete 8-sentence sentence-by-sentence framework with specific blanks pre-labeled with the student's own content, coming very close to doing the reasoning work for the student. However, the student still had to fill the blanks, so this is borderline. More clearly problematic: in Turn 5 of Transcript 1, the tutor pre-labels and pre-structures sentences 1–8 with explicit content from the student already inserted, effectively doing the bridge-building from evidence to conclusion.",
                 "points": 6
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently declines to write content but rarely explains the learning rationale (developing analytical skills, long-term research competence, etc.). The refusals are mostly policy statements ('I can't write this for you') without explaining why the student benefits from doing it themselves.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to write for students but rarely explains the learning rationale (i.e., that the student develops skills through active reasoning or long-term transfer). The constraint is enforced ('I can't write this for you') without substantive explanation of why doing the work themselves builds learning.",
                 "points": 2
               },
               {
@@ -276,7 +276,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In Transcripts 2 and 3, the tutor does not prompt the student to reflect on what changed in their thinking or why their analytical approach improved. The conversation ends without prompting process-level reflection on how the student arrived at their actor classifications.",
+                "reason": "Across transcripts, the tutor moves students forward through content but rarely prompts reflection on why an approach worked or what changed in their thinking. In Transcript 2 Turn 10, the tutor does point forward to the next assignment step, which partially addresses transfer, but systematic reflection on method is absent.",
                 "points": 2
               }
             ],
@@ -293,23 +293,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, the tutor cycles through multiple variations of the same move (fill-in scaffold, sentence starters, word budgets) across 7 turns without substantially advancing the student or synthesizing. The student repeatedly asks the tutor to write the post and the tutor keeps refusing and offering a slightly modified scaffold variant rather than switching strategy.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -321,7 +306,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -338,7 +323,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 (turns 2-6) and Transcript 2 (turns 2-4), the tutor consistently delivers multi-part, multi-paragraph responses with several nested questions and elaborate scaffolds when shorter, more focused prompts would better invite student thinking. Turn 5 of Transcript 1 in particular is an 8-sentence fill-in framework spanning many lines where 1-2 targeted questions would suffice.",
+                "reason": "Across all three transcripts, the tutor repeatedly provides multi-part, multi-paragraph responses with numerous sub-questions and detailed frameworks when shorter, more focused prompts would be more appropriate. For example, Transcript 1 Turns 2, 3, 4, and 5 each contain multi-section scaffolds with 3–8 sub-questions that overwhelm a student who is clearly struggling. Transcript 3 Turns 2, 3, 5, 6, 7 similarly load multiple questions and frameworks onto a confused student rather than reducing to a single actionable step.",
                 "points": 4
               }
             ],
@@ -360,23 +345,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across three transcripts, the tutor consistently refuses to write submission-ready content for students and maintains appropriate boundaries, which is a clear strength.",
-      "Transcript 2 (NYC, chitchat persona) is the strongest performance: the tutor uses well-sequenced Socratic questioning, builds on student progress effectively, and guides the student to produce a credible, well-structured forum post almost entirely through student-driven reasoning.",
-      "Transcript 1 (Miami, chaotic persona) has a significant pedagogy issue: by Turn 5, the tutor produces an 8-sentence fill-in framework with so much pre-filled content (specific documents, actor names, suggested wording options) that the structural reasoning work is largely done for the student. This triggers a 1.1.C.b deduction rather than a full 1.1.A.a deduction since the student still needs to supply connecting reasoning, but it is a clear case of the tutor doing key reasoning steps.",
-      "Transcript 1 also shows problematic spiraling: across 7+ turns, the tutor keeps offering slightly varied scaffolds (fill-in outline → word-budget outline → 8-sentence starters → sentence starters again) in response to repeated 'just write it for me' requests, without switching to a genuinely different pedagogical strategy.",
-      "Across all transcripts, the tutor almost never explains the rationale for its approach (e.g., 'I'm asking you to do this so you develop the skill of...'). Refusals are policy-based, not learning-rationale-based.",
-      "Response length is frequently excessive: most tutor turns contain multiple nested bullet lists, several sub-questions, and elaborate frameworks when 1-2 focused questions would be more pedagogically appropriate and invite more student engagement.",
-      "Transcript 3 (Phoenix, clueless persona) shows good responsiveness to a confused student, appropriately scaffolding from city selection through actor identification, though it also suffers from overly long responses.",
-      "Meta-learning feedback is weak across all transcripts: the tutor comments on correctness and structure but rarely on the thinking process itself, and never prompts students to reflect on what changed in their analytical approach."
+      "Across all three transcripts, the tutor maintains a consistent and principled refusal to write submission-ready content for students, which is the most important pedagogical boundary. The tutor is effective at redirecting off-topic requests (Transcript 2 Turn 1, Turn 3), keeping assignment focus strong throughout.",
+      "The main 1.1 deduction is in Transcript 1, where the tutor's Turn 5 eight-sentence scaffold goes significantly beyond guiding—it pre-populates nearly all structural content with the student's own details already inserted, constituting a near-complete framework that bridges evidence to conclusion for the student. This crosses into 1.1.C.b territory (doing a key reasoning step) and warrants a 6-point deduction.",
+      "For 1.3, the tutor never explains the learning rationale behind its 'I can't write this for you' stance (1.3.A.a), and process reflection on method is largely absent throughout, particularly in transcripts 1 and 3 (1.3.D.a). The 1.3.B criteria are partially met—the tutor does give method-level direction—so no deduction is applied there.",
+      "For communication quality, all three transcripts show a consistent pattern of overly long, multi-part responses delivered when a struggling or resistant student would benefit from a single focused prompt. This is most pronounced in Transcripts 1 and 3 (3.1.A.a, 4-point deduction). Language is generally clear and appropriate, so no 3.1.B deduction applies.",
+      "Scaffolding (1.2) and dialogue quality (2.1, 2.2) are strong—the tutor builds on student progress, doesn't spiral, and keeps assignment anchoring tight. No deductions in those criteria."
     ],
-    "total_score": 28,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

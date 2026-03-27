@@ -74,17 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor supplied a Miami-specific shortlist of likely stressors before the student generated their own options, reducing student-led idea generation on the core assignment content.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -99,20 +90,24 @@
               {
                 "evidence_turns": [
                   1,
+                  2,
+                  4,
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced the boundary against submit-ready help but did not clearly explain the learning rationale beyond saying it was the deliverable.",
+                "reason": "The tutor repeatedly enforces a no-direct-answer boundary but does not explain the learning rationale for that limitation beyond saying it cannot do the submission content.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  5,
+                  6,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student successfully mapped ranges and chose ratings, the tutor moved directly into drafting steps without prompting reflection on why the method worked or how to reuse it.",
+                "reason": "The tutor gives process steps and checks, but never asks the student to reflect on why the rating method works or how to transfer it to future assignments.",
                 "points": 2
               }
             ],
@@ -122,7 +117,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 24
         }
       },
@@ -168,20 +163,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the student's assignment and kept the conversation anchored to the stressors-table task with short, structured prompts.",
-      "Scaffolding was generally effective: the tutor used templates, buckets, anchors, and checks that progressively moved the student toward making their own ratings and justification logic.",
-      "Main weakness: the tutor partially generated assignment ideas by offering a Miami-specific shortlist before the student had produced their own stressors.",
-      "There was also limited explicit meta-explanation of why the boundary supported learning, and little reflection or transfer support after the student successfully applied the rating method.",
-      "A possible borderline issue was whether the Miami shortlist should count as scaffolding or idea generation; applying the rubric conservatively, this was scored as a single smaller pedagogy deduction rather than compounded elsewhere."
+      "The tutor consistently avoided doing the student’s assignment and instead used structured prompts, templates, and rating heuristics to keep the student doing the substantive work.",
+      "Scaffolding was generally strong: the tutor narrowed the task, built from the student’s hooks and self-chosen scores, and stayed tightly anchored to the Stressors Table requirements.",
+      "Main weakness was meta-learning support: the tutor did not explain the educational rationale for its boundary-setting and did not prompt reflection on how the student could reuse the method in later case-study assignments."
     ],
-    "total_score": 36,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

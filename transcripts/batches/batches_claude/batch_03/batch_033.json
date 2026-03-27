@@ -253,7 +253,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor rarely pauses to prompt reflection on the student's thinking process or methodology—e.g., asking 'what changed in your approach?' or 'why did that framing work better?' The tutor consistently moves forward without reinforcing method choices after improvements or inviting brief process reflection.",
+                "reason": "Across all three transcripts, the tutor consistently moves to the next step without ever prompting the student to reflect on how their thinking changed or why their method worked. In Transcript 1, after the student successfully refines their stressors, the tutor simply moves to next steps without asking what the student learned about the justification-building process. Similar pattern in Transcripts 2 and 3—no reflection prompts appear at any point.",
                 "points": 2
               }
             ],
@@ -293,14 +293,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
-                  3,
                   4,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, especially in Transcript 1 (turns 1–4) and Transcript 3 (turns 2–6), the tutor repeatedly sends multi-paragraph replies with several embedded questions, fill-in templates, numbered instructions, and bullet-pointed rules simultaneously. These dense responses consistently reduce student opportunity to think step-by-step and respond; shorter, more focused prompts would better serve the interactive scaffolding.",
+                "reason": "In Transcript 1, Turns 2 and 4 are notably long and multi-part, providing extensive fill-in templates and multi-layered instructions when shorter, more focused prompts would suffice. In Transcript 3, Turn 6 again presents multiple layered options and sub-questions when a single focused question would have been more appropriate. These are recurrent across all transcripts, not isolated instances.",
                 "points": 4
               }
             ],
@@ -329,10 +327,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a strong Socratic stance throughout: it consistently refuses to produce paste-ready or submission-ready content even under repeated pressure (Transcript 1, turns 1–4; Transcript 2, turns 1, 3, 6), uses well-structured fill-in templates and probing questions to keep the student doing the reasoning, and builds effectively on each student's prior answers rather than restarting (Transcript 3, turns 3–9). No deductions are warranted for 1.1 or 1.2.",
-      "The tutor explains its policy limits clearly and with learning rationale ('that would be doing the assignment for you'), satisfying 1.3.A. It also gives concrete method-level feedback—e.g., distinguishing chronic vs. episodic stressors, pointing out rating-justification contradictions, and coaching sector-tagging logic—satisfying 1.3.B. However, across all three transcripts the tutor almost never pauses to ask students to reflect on what they just learned or why an approach worked, missing reinforcement of process gains after improvements (1.3.D deduction: -2).",
-      "Dialogue quality is strong. The tutor re-anchors the chitchat student (Transcript 2) promptly and without over-engagement on off-topic material, and it does not spiral or repeat without progression in any transcript.",
-      "Communication quality carries the main penalty. In all three transcripts, especially early turns, the tutor sends very long multi-part responses with several simultaneous sub-questions, templates, bullet rule-sets, and options stacked together. While the content is pedagogically sound, the format consistently overwhelms the interactive exchange and reduces the student's cognitive space to respond to one thing at a time (3.1.A.a deduction: -4). Language complexity is generally appropriate for the student level, so no deduction for 3.1.B. Tone is supportive and non-grading throughout."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to produce paste-ready answers, redirects students when they ask for completed work, and scaffolds through targeted questions. In Transcript 1 (chaotic_03), the tutor deflects multiple direct requests for completed table entries and instead uses fill-in templates and calibration questions that keep the student doing the cognitive work. In Transcript 2 (chitchat_03), off-topic attempts are cleanly redirected with brief, non-punitive explanations. In Transcript 3 (clueless_03), the tutor does exemplary scaffolding from 'what is a stressor' all the way to table assembly, always prompting the student to derive their own rating logic.",
+      "Scaffolding is strong throughout: the tutor builds on student progress, avoids restarting, and appropriately addresses the actual source of confusion in each case. No significant deductions apply to 1.1 or 1.2.",
+      "A consistent gap is the absence of reflection or transfer prompts. At no point in any transcript does the tutor ask students to look back on how their thinking evolved, what method choices worked, or what they would apply differently in future stressor analyses. This warrants a 1.3.D.a deduction.",
+      "Response length is a recurrent issue. The tutor frequently provides multi-part responses with several nested sub-questions, fill-in templates, ranked lists of options, and multiple instructional layers in a single turn (especially visible in Transcript 1 Turns 2 and 4, and Transcript 3 Turns 3, 4, 5, 6). These could have been broken into shorter, more interactive exchanges to give students more space to think. The 3.1.A.a deduction is warranted as this pattern is consistent across transcripts.",
+      "Tone is consistently supportive and non-punitive. The tutor explains its refusal to do the work in terms of learning rationale (Transcript 1, Turn 1: 'that would be doing the assignment for you'; Turn 3: 'That's still writing your submission'). Assignment anchoring is well-maintained; no misinterpretations go uncorrected."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

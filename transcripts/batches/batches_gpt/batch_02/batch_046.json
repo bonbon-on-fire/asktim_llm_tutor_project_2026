@@ -243,31 +243,42 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  5,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When declining to provide direct answers or filled-out examples, the tutor usually says that would be 'doing the assignment' without clearly explaining the learning rationale behind that limit.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor regularly moves from one scaffolded step to the next without prompting brief reflection on why a method worked, what changed in the student's thinking, or how to reuse the approach independently.",
+                "reason": "Across transcripts 1.9-1.10, 2.10, and 3.5, the tutor says it cannot give the answer because that would be doing the assignment, but usually does not explain the learning rationale behind that limit.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In transcript 1 turns 8-10 and transcript 3 turns 8-10, the student stays confused, but the tutor largely repeats the same pattern of asking the student to look something up or fill a template rather than switching to a clearer summary or simpler reframe.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -279,7 +290,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -288,8 +299,13 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across the conversations, many tutor turns are long multi-part prompts with several numbered questions, definitions, and examples at once, which is heavy for a very confused student and reduces bite-sized interaction.",
+                "reason": "Across the conversations, many tutor turns use long, multi-part prompts with 3-5 numbered questions at once (for example transcript 1 turn 1, transcript 2 turns 2-4, and transcript 3 turn 2), which is heavy for a student repeatedly saying they are lost.",
                 "points": 4
               }
             ],
@@ -311,19 +327,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently stayed assignment-anchored, used guided questioning, and avoided producing submission-ready answers.",
-      "The main weaknesses were process-level meta support: the tutor rarely explained the learning rationale for answer-limits and rarely prompted reflection or transfer after student progress.",
-      "A secondary weakness was response packaging: many turns stacked multiple questions and options into one message, which likely increased cognitive load for this confused student.",
-      "Turn numbers reset within each transcript, so deduction entries omit evidence_turns."
+      "The tutor consistently stayed anchored to the assignment and used guided questioning rather than supplying submission-ready content.",
+      "Strongest areas were Socratic prompting, constructive tone, and method scaffolds like claim-evidence-so what, relative ranking, and authority tests.",
+      "Main weaknesses were repeated multi-question turns that overloaded a confused student, and some late-conversation repetition without enough simplification when the student remained stuck.",
+      "A smaller deduction was applied for refusing direct-answer requests without usually explaining the pedagogical reason for that constraint."
     ],
-    "total_score": 38,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

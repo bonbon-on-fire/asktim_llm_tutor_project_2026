@@ -101,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its no-submission-writing constraint without explicitly explaining the pedagogical rationale—e.g., that struggling to produce language builds the student's own reasoning and writing skills. The tutor says 'I can't' but rarely explains the learning benefit of doing it themselves.",
+                "reason": "The tutor consistently refuses to provide direct answers but never explicitly articulates the learning rationale (e.g., active reasoning, long-term skill development) to the student. It just says 'I can't do X' without explaining why this approach helps the student learn better.",
                 "points": 2
               },
               {
@@ -109,7 +109,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation, once the student produces solid final sentences, the tutor gives correctness checks but misses an opportunity to help the student reflect on what made the iterative process work or what method they could transfer to future stressors/assignments.",
+                "reason": "At the end of the conversation, when the student has produced good final sentences, the tutor does not prompt any reflection on what the student learned or how their thinking changed. No metacognitive reinforcement or method transfer support is offered.",
                 "points": 2
               }
             ],
@@ -154,7 +154,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 3 contain multi-paragraph responses with extensive scaffolding templates, fill-in frames, and rules lists when shorter, more targeted prompts would suffice. The length consistently reduces the student's opportunity to think independently before seeing structured guidance.",
+                "reason": "Early turns (1, 2, 3) feature multi-paragraph responses with extensive fill-in templates, structured rules, and multiple sub-questions all at once. While the content is useful, the density and length of these responses—particularly the elaborately scaffolded fill-in frames in turns 1 and 2—reduce student opportunity to think and respond, going well beyond what short interactive prompts required.",
                 "points": 4
               }
             ],
@@ -183,11 +183,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor does an excellent job maintaining the Socratic boundary throughout: it consistently refuses to produce paste-ready table entries despite repeated pressure, redirects the student back to their own drafting, and builds progressively on the student's work at each turn (acknowledging correct picks, asking targeted follow-up questions, and providing syntax templates without filling in content).",
-      "Scaffolding and progression are strong: the tutor builds on the student's existing stressors, evidence types, and tentative ratings rather than restarting, and each turn advances the conversation toward a defensible final product.",
-      "The primary deductions fall in meta-learning (1.3): the tutor enforces its no-submission-writing policy without explaining why doing the work themselves builds the student's skills (1.3.A.a), and at the close of the conversation it checks correctness but does not prompt the student to reflect on what the iterative process revealed about their own thinking or how the method transfers (1.3.D.a).",
-      "Communication length is the second issue: turns 1–3 deploy extensive multi-paragraph templates and fill-in frames upfront, before the student has had a chance to attempt anything. Shorter initial prompts would have preserved more cognitive space for the student.",
-      "No deductions were applied for redundancy, assignment anchoring, tone, or non-grading stance—the tutor stays on task, maintains a supportive tone, and never implies official grading authority."
+      "The tutor does an excellent job maintaining Socratic principles throughout: it consistently refuses to produce submission-ready content, uses guided fill-in templates, and progressively scaffolds the student's thinking across all ten turns. No direct answers were given and the student was required to do real intellectual work.",
+      "Scaffolding and progression are strong. The tutor consistently builds on student-supplied stressor choices, ratings, and evidence types, moving the conversation forward without restarting or ignoring student contributions.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains its tutoring rationale to the student (why it won't just give answers in terms of learning benefit), and at the end it misses a chance to have the student reflect on their process or what changed in their thinking.",
+      "Response length in early turns (1, 2, 3) is a moderate issue: the tutor provides elaborate multi-part fill-in templates with multiple sub-questions simultaneously, which is somewhat overwhelming and reduces space for student thinking, triggering the 3.1.A.a deduction.",
+      "Dialogue quality is strong: the tutor stays on-task throughout, redirects the student's repeated requests for shortcuts effectively, and advances the conversation without spiraling.",
+      "Tone is consistently supportive and non-punitive, and the tutor avoids grade-like judgments throughout."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

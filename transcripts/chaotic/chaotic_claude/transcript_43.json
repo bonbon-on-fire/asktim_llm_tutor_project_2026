@@ -83,10 +83,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  5
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 4 the student says they cannot locate the population table in the PDF. The tutor gives a set of search strings to try—this is broadly appropriate—but does not ask any diagnostic question about what the student has already tried or what's blocking them (e.g., is the PDF in Indonesian only? Is the file not downloading?). The tutor jumps straight to a method-dump of keyword search terms without checking what the student already understands about navigating a BPS PDF, which is the pattern described in 1.2.B.a.",
+                "reason": "In Turn 5, when the student says they can't access the PDF and asks for table captions, the tutor launches into a long list of BPS search phrases and pivots to a new conceptual question about race/ethnicity proxies—without first diagnosing whether the student's access problem was temporary or permanent, or checking what the student already understood about finding tables in BPS reports. The tutor gives a method dump before confirming what the student already knows.",
                 "points": 3
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its 'I can't do that for you' policy across the conversation but never explains the learning rationale—e.g., why filling in the table themselves helps build research and citation skills, or what long-term competency is at stake. The student is told repeatedly what the tutor won't do without being told why this approach benefits their learning.",
+                "reason": "The tutor consistently declines to do the work for the student but does not explain to the student why—i.e., no mention of the rationale around active reasoning, skill-building, or academic integrity beyond 'I can't fill the table for you.' The learning-rationale behind the Socratic approach is never articulated.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The conversation ends without any moment of reflection or transfer. The tutor never prompts the student to step back and consider what they have learned about finding authoritative statistics, using citation templates, or handling unavailable data categories. No reflection questions appear across the 10 turns.",
+                "reason": "At no point in the conversation does the tutor prompt the student to reflect on what they learned from the search/citation process, what changed in their thinking, or how the methodology they used (source selection, proxy reasoning, APA formatting) could transfer to other assignments. The conversation ends task-focused without any process reflection.",
                 "points": 2
               }
             ],
@@ -168,12 +168,11 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
                   5,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns present multi-part bullet lists and multi-paragraph explanations when a single focused question would have been more appropriate and interactive. Turn 1 opens with five parallel sub-questions before the student has said anything beyond requesting help. Turn 5 lists seven keyword search strings and immediately adds a conceptual question about race/ethnicity proxies. Turn 9 provides three separate APA template blocks (reference, in-text, table note) before the student confirmed which scenario applies. These repeatedly reduce the student's opportunity to think and respond incrementally.",
+                "reason": "Several tutor turns are multi-paragraph monologues when shorter, focused prompts would have been more appropriate. Turn 1 presents five sub-questions at once before the student has responded at all. Turn 5 lists seven Indonesian-language search strings plus a new conceptual question. Turn 9 provides three separate APA format blocks plus a follow-up question, all in one turn. This pattern repeatedly reduces the student's opportunity to think and engage before more information arrives.",
                 "points": 4
               }
             ],
@@ -202,11 +201,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to complete the assignment for the student and instead redirects toward self-directed research, maintaining appropriate Socratic boundaries throughout all 10 turns. No submission-ready work is generated.",
-      "Scaffolding is generally solid but falters in Turn 4, where the tutor provides a keyword-dump without first diagnosing what the student has already tried or what is blocking access—matching 1.2.B.a.",
-      "Meta-learning suffers in two ways: the tutor never explains the learning rationale behind its constraints (1.3.A.a), and no reflection or transfer moment is created at any point in the conversation (1.3.D.a).",
-      "Dialogue quality is strong: no spiraling occurs, the tutor keeps the conversation anchored to the Jakarta data table task, and off-topic drift is not a factor.",
-      "Communication is the weakest area. Multiple turns (1, 2, 5, 9) present dense, multi-part bullet lists when one focused prompt would have been more appropriate, consistently reducing student thinking space (3.1.A.a). Tone is supportive and non-grading throughout."
+      "The tutor successfully maintains a Socratic, non-completion stance throughout all 10 turns—never filling out the table, writing citations, or providing the data values the student repeatedly requests. This is the conversation's strongest feature and earns full marks on 1.1.",
+      "Scaffolding (1.2) loses points in Turn 5: when the student reports a PDF access problem, the tutor skips diagnostic questioning and immediately provides a long list of Indonesian search strings plus a new conceptual question, constituting a method dump before checking what the student already understood.",
+      "Meta-learning (1.3) is underdeveloped. The tutor never explains to the student *why* it won't do the work directly (no rationale about skill-building or academic integrity), and never prompts any process reflection at the end of any subtask—both of which are consistent omissions across the full conversation.",
+      "Dialogue quality (2.1, 2.2) is strong: the tutor does not spiral, consistently advances the conversation, and keeps the student anchored to the assignment task even when the student tries to divert to copy-paste requests.",
+      "Communication quality (3.1) is penalized because the tutor repeatedly delivers multi-paragraph, multi-question responses (Turns 1, 5, 9 are clearest examples) when one focused prompt at a time would have been more effective and less cognitively overwhelming. Tone (3.2) is consistently supportive and non-judgmental throughout."
     ],
     "total_score": 35,
     "judge_llm_calls": 1

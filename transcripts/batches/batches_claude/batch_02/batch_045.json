@@ -235,8 +235,17 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Turn 1 of Transcript 1: the student simply says they are lost and asks what to put in each field. Rather than first diagnosing what the student already understands, the tutor immediately dumps a comprehensive methodology (primary vs. secondary source hierarchy, six field-specific sub-questions, guidance on rounding) before checking baseline knowledge. A short diagnostic question first would have been more appropriate.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -249,35 +258,24 @@
                   3,
                   4,
                   5,
-                  6
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces a Socratic/no-direct-answer policy but never explicitly explains to the student WHY this approach benefits their learning (e.g., active reasoning, long-term skill-building). The tutor says 'I can't fill the table for you' or 'I can't write a template' but does not articulate the learning rationale behind these constraints.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor rarely prompts the student to reflect on why a method worked or what changed in their thinking. After the student makes good progress (e.g., T4 in transcript 2 producing solid anchor definitions, T7 producing a good 5-row table draft), the tutor moves directly to the next task without consolidating or reinforcing method choices. No explicit 'what did you learn from building this framework' moments occur.",
+                "reason": "Across all three transcripts, the tutor consistently moves forward to the next task without ever pausing to ask the student to reflect on what changed in their thinking, why a particular approach worked, or what general lessons they can carry forward to future assignments. No turn in any transcript explicitly prompts process-level reflection or transfer.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 19,
           "max": 24
         }
       },
@@ -290,14 +288,24 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "Transcript 2, Turn 1: the student has not yet chosen a city and explicitly says so. The tutor engages substantively with stressor-rating methodology before the city is chosen, treating the conversation as if the assignment is underway. While the tutor eventually asks for a city, it devotes significant text to methodology first, partly continuing on a framing that cannot be grounded without a city choice.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -312,11 +320,10 @@
                   3,
                   4,
                   5,
-                  6,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor frequently uses multi-paragraph, multi-question responses when shorter, more focused prompts would better serve the student. For example, T1 in transcript 1 contains six numbered sub-questions plus a general framework paragraph, and T6 in transcript 3 is an extremely long skim-protocol response with 7 numbered sections and sub-bullets when a briefer, more targeted nudge was appropriate. This pattern is consistent across all three transcripts and reduces the student's opportunity to think and respond incrementally.",
+                "reason": "Across all three transcripts, the tutor's responses are consistently very long — multi-paragraph replies with bulleted lists, numbered sub-questions, and detailed methodology — even in early turns where a short focused prompt would have been more appropriate. For example, T1/Turn1 is a massive orientation dump; T2/Turn2 gives a full scale-building framework; T3/Turn6 provides an exhaustive 7-step skim protocol. This pattern reduces the student's opportunity to think and respond and is not isolated to one turn.",
                 "points": 4
               }
             ],
@@ -338,18 +345,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 33,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor maintains strong Socratic discipline throughout all three transcripts, consistently refusing to do the student's work for them and guiding through targeted questions. The pedagogical approach is sound: the tutor scaffolds well (building from city choice to boundary selection to rating frameworks), acknowledges student progress (e.g., T4-T7 in transcript 2), and does not give away answers even under repeated student pressure for shortcuts.",
-      "The primary deduction in section 1 is for meta-learning (1.3): the tutor does not explain its own tutoring rationale to the student (why it won't give direct answers), and consistently misses opportunities to prompt reflection on method choices after the student makes progress.",
-      "The main deduction in section 3 is for response length: the tutor habitually produces long, multi-part responses with many simultaneous questions and extensive frameworks, when briefer, more focused interventions would better support active student thinking. This pattern is consistent across all three transcripts."
+      "The tutor does an excellent job maintaining Socratic discipline across all 30 turns: it consistently refuses to write or complete assignment work for the student, gives guiding questions rather than answers, and keeps the student as the reasoning agent throughout. No deduction for 1.1 is warranted.",
+      "Scaffolding is mostly strong but the tutor stumbles on 1.2.B.a in Transcript 1 Turn 1 by front-loading a large methodology dump rather than asking a short diagnostic question first; a 3-point deduction is applied here.",
+      "Meta-learning is weakened by a consistent absence of reflection prompts across all three transcripts. The tutor always moves forward but never asks the student to step back and consider what they learned or how their thinking evolved (1.3.D.a, -2 points). No deduction for 1.3.A or 1.3.B because the tutor does explain its constraints and gives method-level feedback.",
+      "Assignment anchoring loses 4 points under 2.2.A.a for Transcript 2 Turn 1: the student has no city yet, but the tutor still engages substantively with stressor-definition methodology rather than firmly requiring city selection first.",
+      "Dialogue is otherwise non-redundant; the tutor pivots and advances effectively when students spiral or deflect.",
+      "Communication quality is the most significant weakness: tutor responses are uniformly long and dense across all three transcripts, with multi-paragraph monologues appearing even in early turns where a single focused question would have served better. A full 4-point deduction is applied under 3.1.A.a.",
+      "Tone is consistently warm, non-grading, and supportive throughout; no deductions in 3.2."
     ],
-    "total_score": 38,
+    "total_score": 33,
     "judge_llm_calls": 1
   }
 }

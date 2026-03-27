@@ -241,14 +241,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10,
+                  20,
+                  30
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor keeps moving to the next check or research step at the end of each conversation, but does not prompt brief reflection on why the method used worked or how to transfer it.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -278,25 +289,25 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
-                  12,
-                  13,
-                  24,
-                  30
+                  17,
+                  18,
+                  28
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Tutor repeatedly uses long multi-part replies with several questions and examples before pausing, when shorter interactive steps would have sufficed.",
+                "reason": "The tutor repeatedly uses long, multi-part replies with several questions and distinctions at once when shorter interactive steps would better fit the student's confusion.",
                 "points": 4
               },
               {
                 "evidence_turns": [
-                  17,
+                  3,
+                  7,
+                  8,
                   28
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "Tutor twice includes exposed meta/JSON-style pedagogical language (e.g., \"pedagogical-reasoning\") that adds avoidable jargon and cognitive load.",
+                "reason": "The tutor often uses dense abstract language and jargon-like phrasing such as 'epistemic discipline,' 'symmetry test,' 'override structure,' and 'structural influence' instead of simpler wording.",
                 "points": 2
               }
             ],
@@ -318,17 +329,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three provided transcripts, the tutor consistently uses guided questioning, builds on student answers, and avoids doing the assignment for the student.",
-      "Main weakness is communication control: replies are often lengthy and densely packed, and two turns expose internal meta-reasoning in JSON-like form. Turns above are counted sequentially across all three transcripts (1-30)."
+      "Turn numbers are counted sequentially across the 3 transcripts (1-10, 11-20, 21-30).",
+      "The tutor is consistently strong on guided discovery, building from student responses, and keeping discussion anchored to the assignment rather than supplying submission-ready content.",
+      "Main weaknesses are communication load and limited reflection: replies are often too long and concept-dense for a confused student, and the conversations end with next-step prompts rather than short reflection on what method was learned."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

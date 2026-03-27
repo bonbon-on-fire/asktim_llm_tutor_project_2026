@@ -232,11 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7,
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor pre-filled the student's template by classifying actors and assigning roles from the source sentence, doing a central interpretation step the student had been asked to perform.",
+                "reason": "In Transcript 1 turn 8, the tutor fills the template by classifying the quoted actors into leading/engaged roles and assigning role labels from the sentence, which performs the core interpretation/classification step for the student.",
                 "points": 6
               }
             ],
@@ -311,9 +310,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently kept the student anchored to the actual assignment, redirected off-topic chat quickly, and avoided writing a submission-ready forum post.",
-      "The strongest weakness was one clear moment of over-helping: the tutor classified Miami actors into leading/engaged roles for the student using the source sentence, which crossed from guidance into doing a key reasoning step.",
-      "Turn numbers in evidence are counted cumulatively across the three provided transcripts because each transcript restarts local numbering."
+      "Across the three transcripts, the tutor consistently kept the student anchored to the Decision-making Actors task, redirected off-topic pivots promptly, and used concrete evidence-gathering methods such as document-section targeting, keyword searches, and role-vs-visibility distinctions.",
+      "The main deduction is limited to Transcript 1, where the tutor moved from guidance into doing the central actor-classification step in a filled template example; because it was framed as a model rather than a finished submission, no harsher direct-answer deduction was applied."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

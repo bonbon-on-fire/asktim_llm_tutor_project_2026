@@ -235,8 +235,18 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Transcript 1 Turn 1: When the student says they are lost, the tutor immediately provides a two-part structured task (criterion + case setup) without first asking a diagnostic question to find out what the student already understands about consequentialism or the cases. Transcript 2 Turn 1: Tutor provides a definitional overview of stressor vs. vulnerability and a four-factor rating framework without first checking what the student already understands about the assignment.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -256,7 +266,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces limits (e.g., 'I can't do a one-go dump,' 'I can't pick the number for you,' 'I'm not going to give you a template sentence') without ever explaining the pedagogical rationale—that the student builds stronger understanding and long-term analytical skills by doing the reasoning themselves. The learning purpose is never stated.",
+                "reason": "Across all three transcripts the tutor enforces constraints (e.g., refusing to give ratings, refusing to write sentences, refusing to remind case details) but never explicitly explains the learning rationale—why the student doing this work themselves develops philosophical reasoning or research skills. The tutor just says 'I can't do that' without articulating the pedagogical reason.",
                 "points": 2
               },
               {
@@ -264,7 +274,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves forward through tasks without prompting the student to reflect on what changed in their thinking or why a method worked. In Transcript 1 Turn 10, the tutor asks for a structured outline but does not invite the student to notice how their position evolved from the start. Similarly in Transcripts 2 and 3, after the student makes progress, the tutor simply advances to the next task without reinforcing method choices or asking 'what did you learn from working through this?'",
+                "reason": "In all three transcripts the conversations end with the tutor pushing forward to the next task rather than prompting the student to reflect on what shifted in their thinking, what method worked, or why. No reflection or transfer-support moment is offered before moving on.",
                 "points": 2
               }
             ],
@@ -274,7 +284,7 @@
           }
         },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
@@ -306,6 +316,7 @@
                 "evidence_turns": [
                   1,
                   2,
+                  3,
                   4,
                   5,
                   6,
@@ -313,7 +324,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor frequently sends multi-part, multi-paragraph responses where one or two focused prompts would suffice. For example, Turn 1 in Transcript 1 poses two numbered questions and previews the next steps. Turn 2 poses three numbered questions simultaneously. Turn 3 in Transcript 2 asks for a search, then bullets, then a separate missing-group question in one message. This pattern reduces student thinking space and is consistent throughout.",
+                "reason": "Across all three transcripts, many tutor turns are multi-paragraph blocks that combine definitions, task instructions, multiple sub-questions, and framing caveats simultaneously. For example, Transcript 1 Turns 1, 2, 3, 7, 8, 9, 10 and Transcript 2 Turns 1, 2, 7 each deliver several distinct questions in a single response, reducing student opportunity to engage with one idea before being confronted with the next. This is a consistent pattern across the full conversation set.",
                 "points": 4
               }
             ],
@@ -335,20 +346,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs strongly across all three transcripts on core Socratic method criteria: it consistently refuses to supply answers, redirects guessing, builds on student responses turn by turn, and prompts the student to derive conclusions rather than handing them over. No 1.1.A, 1.1.B, or 1.1.C violations were found.",
-      "Scaffolding (1.2) is handled well: the tutor acknowledges student progress (e.g., 'Good—your trolley setup is clear,' 'That's a real principle candidate'), builds from prior turns, and appropriately applies diagnostic questioning when the student is confused.",
-      "The main deductions are in meta-learning (1.3) and communication length (3.1). The tutor repeatedly enforces constraints without explaining why active reasoning benefits the student long-term (1.3.A.a), and never prompts the student to reflect on how their thinking changed (1.3.D.a). The process-feedback criterion (1.3.B) was borderline—the tutor does give some method-level feedback (e.g., noting when 'severity' answers are too abstract) but given the other two deductions already cap 1.3 at 6 points, no additional deduction was applied.",
-      "On communication length (3.1.A.a), the tutor consistently fires multiple simultaneous questions across all three transcripts—frequently 3–4 prompts per turn—which reduces student thinking time and opportunity to engage one idea before being asked another. This pattern is consistent enough across all transcripts to warrant the full 4-point deduction.",
-      "Dialogue quality (2.1, 2.2) and tone (3.2) are clean: the tutor stays on task, redirects off-topic requests well, and maintains an encouraging, non-grading tone throughout."
+      "Across all three transcripts the tutor consistently avoids doing the student's work, refuses to supply final answers, ratings, or polished sentences, and guides the student through step-by-step reasoning—no deductions under 1.1 are warranted.",
+      "The tutor generally builds well on student progress (1.2.A not triggered), but in both Transcripts 1 and 2 opens with a method-dump or definitional overview rather than a diagnostic question to locate the student's confusion, triggering a 1.2.B.a deduction (3 points).",
+      "Meta-learning is the weakest area: the tutor never explains why it refuses to give direct answers (no learning rationale articulated, 1.3.A.a, 2 points) and never prompts the student to reflect on what shifted in their thinking or what method succeeded (1.3.D.a, 2 points).",
+      "Dialogue quality is strong: the tutor redirects off-topic attempts effectively (Transcript 2 and 3 student meta-commentary), advances through cases without spiraling, and keeps the student anchored to the assignment.",
+      "Communication is the second-largest weakness: the tutor consistently fires multiple sub-questions per turn across all three conversations, reducing the student's opportunity to think through one question before another arrives (3.1.A.a, 4 points). Language is appropriately accessible so no 3.1.B deduction is warranted.",
+      "Tone is supportive and non-punitive throughout; no grading language is used. No deductions under 3.2."
     ],
-    "total_score": 38,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

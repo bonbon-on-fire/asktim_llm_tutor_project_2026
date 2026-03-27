@@ -146,9 +146,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused submission-ready writing and kept the student responsible for selecting stressors, assigning ratings, and drafting justifications.",
-      "Tutor scaffolded effectively with constrained choices, formulas, checklists, and targeted follow-up questions that built directly on the student's progress.",
-      "Communication stayed concise, assignment-anchored, and coaching-oriented throughout, with no clear rubric-supported deductions."
+      "Tutor consistently refused requests for submission-ready content and kept the student responsible for choosing stressors, assigning ratings, and drafting justifications.",
+      "Scaffolding was strong and incremental: the tutor broke the task into manageable decisions, built on the student's partial progress, and gave specific process-level guidance such as formulas, checklists, and criteria for stronger evidence.",
+      "The conversation stayed tightly anchored to the assignment and used concise, supportive responses. A minor ambiguity is that turn 2 offered Miami-specific stressor options, but the student still had to make the core decisions and reasoning, so no deduction was applied."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

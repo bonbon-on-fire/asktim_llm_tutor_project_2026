@@ -235,7 +235,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 2: Tutor gives the top-3 Miami stressors with sector tags before the student attempts any identification, doing the key idea-generation step for the student.",
+                "reason": "In Transcript 1 Turn 2, the tutor provides a pre-built top-3 candidate stressor list for Miami (sea level rise, hurricanes, extreme heat) with sector tags already filled in, doing the key identification/categorization work before the student attempts it.",
                 "points": 6
               }
             ],
@@ -253,6 +253,27 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts the tutor consistently enforces its no-direct-answer policy but rarely or never explains the pedagogical rationale (e.g., active reasoning, skill development for later assignments) behind these constraints to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
@@ -261,17 +282,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never pauses to help the student reflect on why a method worked or what changed in their thinking. The conversation ends without any consolidation of what was learned methodologically.",
+                "reason": "In all three transcripts the tutor consistently moves forward to the next step without prompting the student to reflect on what changed in their thinking or why a particular method (e.g., anchoring ratings to evidence, separating stressors by planning logic) worked. No consolidation of learning gains occurs.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -286,7 +307,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Transcript 1, Turns 8–10: The student repeats the same request (give me the top two facts per stressor) across three turns, and the tutor responds each time with essentially the same bullet-list of facts rather than reframing the approach or synthesizing and moving the student forward.",
+                "reason": "In Transcript 1, Turns 8–10 repeat the same 'here are the 2–3 key facts per stressor' pattern without meaningful progression: Turn 8 offers the full bullet list, Turn 9 re-ranks them, and Turn 10 repeats the same pairs again. The student is still not writing, and the tutor cycles without synthesizing or switching strategy.",
                 "points": 4
               }
             ],
@@ -313,7 +334,6 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
                   3,
                   4,
                   5,
@@ -324,7 +344,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor consistently produces multi-paragraph, heavily bulleted responses with multiple sub-questions per turn. In Transcript 3 Turn 1 there are four numbered diagnostic questions plus a closing request; Transcript 1 Turn 5 provides fill-in-the-blank templates in a long block; Transcript 2 Turn 10 gives a five-item checklist. This pattern reduces student opportunity to think and respond and is repeated throughout.",
+                "reason": "Across all three transcripts, the tutor frequently uses multi-part, multi-paragraph responses with nested bullet structures when shorter focused prompts would suffice. For example, Transcript 1 Turn 5 provides a template with three separate fill-in-the-blank sentence frames; Transcript 3 Turns 7–9 each contain several layered questions and structured sub-lists. This consistently reduces student opportunity to think before encountering the next prompt.",
                 "points": 4
               }
             ],
@@ -346,21 +366,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 30,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to produce submission-ready work and maintains appropriate academic-integrity boundaries throughout all three transcripts, which is a clear strength.",
-      "In Transcript 1 Turn 2 the tutor does the key idea-generation step by listing the top-3 Miami stressors with full sector tags before the student attempts any identification, triggering a 6-point deduction under 1.1.C.b. The deduction is capped at 6 because the tutor did not provide ratings or justifications — the student still did the ratings and reasoning — so full 1.1.A criteria are not triggered.",
-      "In Transcript 1 Turns 8–10 the student repeats the same request ('give me the two strongest facts per stressor') and the tutor responds each time with essentially the same bullet list without synthesizing, reframing, or advancing the student past the impasse, triggering the full 2.1 deduction.",
-      "Across all three transcripts, the tutor's responses are consistently multi-paragraph with multiple nested questions and checklists per turn, reducing the student's opportunity to respond incrementally. This triggers the 3.1.A.a deduction.",
-      "No meta-level reflection or process consolidation is offered at any point in any transcript; the tutor never asks students to articulate what they learned about methodology, triggering the 1.3.D.a deduction.",
-      "Scaffolding, assignment anchoring, tone, and off-topic handling are all handled well, with no deductions in 1.2, 2.2, or 3.2."
+      "Across all three transcripts, the tutor maintains a firm, consistent refusal to produce submission-ready content and repeatedly redirects student avoidance behavior, demonstrating strong boundary-keeping. No full assignment work is given.",
+      "However, in Transcript 1 Turn 2, the tutor crosses into 1.1.C.b by pre-generating the top-3 Miami stressor list with sector tags before the student attempts any identification work, doing the key categorical reasoning step for them.",
+      "Transcript 1 Turns 8–10 show clear spiral repetition (2.1.A.a): the tutor cycles through the same 'here are the 2–3 key facts' pattern three times without advancing or switching strategy, while the student still has not written anything.",
+      "Throughout all transcripts the tutor gives lengthy, multi-part responses with nested bullets and fill-in templates where shorter, single-prompt exchanges would better preserve student thinking space (3.1.A.a). This is a consistent pattern, not isolated.",
+      "The tutor never explains the learning rationale behind its constraints (1.3.A.a), and rarely prompts reflection on what the student's thinking process has accomplished (1.3.D.a), missing opportunities for meta-learning.",
+      "Scaffolding and assignment anchoring are both strong: the tutor builds productively on student progress (e.g., Transcript 3) and keeps conversations on-task. Tone is appropriate and supportive throughout. No grading language is used."
     ],
-    "total_score": 30,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

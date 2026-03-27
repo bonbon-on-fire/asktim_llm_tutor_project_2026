@@ -256,15 +256,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces a Socratic constraint (never writing for the student, never confirming answers) but rarely explains the learning rationale behind the constraint. In Transcript 1 Turn 8 the tutor says 'I can't help you phrase it, since you have to do the writing,' and in Transcript 3 Turn 3 says 'I'm not going to confirm it for you,' but neither instance explains *why* (e.g., 'so you build the skill of evaluating evidence yourself'). The policy is enforced without the pedagogical reasoning being made transparent to the student.",
+                "reason": "Across all three transcripts, the tutor enforces a Socratic, non-answer-giving approach consistently but rarely explains to the student *why* it operates that way (e.g., 'I want you to reason this out yourself to build your own skills'). The constraints are applied without explicitly articulating the learning rationale for active reasoning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without any reflective prompt. Transcripts 1 and 2 end with new task questions; Transcript 3 ends with 'send the screenshot.' No turn asks the student what changed in their thinking, what method worked, or why the approach succeeded. The opportunity for process reflection and transfer is missed throughout.",
+                "reason": "The tutor consistently moves to the next set of questions after each student response without prompting the student to reflect on why a method worked or what changed in their thinking. For example, in Transcript 1 (Turns 5–10) and Transcript 2 (Turns 6–10), once the student makes a good step, the tutor advances immediately rather than asking 'what does this change in your approach?' or reinforcing process choices made.",
                 "points": 2
               }
             ],
@@ -305,15 +314,14 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
                   3,
-                  4,
                   5,
                   6,
-                  7
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor consistently fires multiple questions per turn (3–5 sub-questions is the norm, sometimes more). In Transcript 1 Turn 1, Turn 3, Turn 5, Turn 7 each contain 4–5 distinct prompts. In Transcript 2 Turns 3, 5, 7, 8, 9 and Transcript 3 Turns 4, 5, 6, 7, 8 follow the same pattern. While the tutor keeps each cluster focused, the volume of simultaneous questions repeatedly reduces the student's space to process and respond one step at a time. The pattern is consistent enough across all transcripts to warrant a length-control deduction.",
+                "reason": "Across all three transcripts, the tutor frequently delivers multi-part, multi-question responses (3–5 distinct sub-questions or prompts per turn) when shorter, more focused single-question interactions would be more appropriate. For example, Transcript 1 Turn 1 lists three separate multi-part exercises, Turn 3 has three independent follow-up blocks; Transcript 2 Turns 3–10 similarly stack 3–4 questions per turn. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -342,9 +350,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a consistently strong Socratic posture: it never writes for the student, never gives away conclusions before the student reasons to them, never rewrites student text, and never confirms answers. The Guided discovery in Transcript 1 (philosophy) is especially effective, with each turn building precisely on what the student produced. Scaffolding is solid throughout: the tutor acknowledges correct student progress and diagnoses confusion before responding.",
-      "The primary deductions are: (1) Meta-learning: the tutor enforces its constraints without explaining the learning rationale to the student (1.3.A.a, -2 pts) and ends all three conversations without any reflection or transfer prompt (1.3.D.a, -2 pts). (2) Communication: the tutor's consistent pattern of asking 3–5 simultaneous sub-questions per turn across all three transcripts reduces student processing space in a way that qualifies as repeated long-monologue-style questioning rather than short interactive steps (3.1.A.a, -4 pts).",
-      "No deductions were applied for 1.1 (Socratic method), 1.2 (scaffolding), 2.1 (redundancy), 2.2 (assignment anchoring), or 3.2 (tone). Off-topic redirections in Transcripts 2 and 3 were handled cleanly and promptly. The 3.1 deduction is conservative: the multi-question pattern is a persistent stylistic issue but the questions are focused and interconnected, not rambling; a full -4 is applied because the pattern is documented across all three transcripts with consistent evidence."
+      "Across all three transcripts, the tutor maintains a strong Socratic posture throughout: it consistently refuses to give answers, rewrites student text, or confirm student hunches without evidence, instead redirecting via targeted diagnostic questions. The philosophy transcript (T1) is exemplary—the tutor builds progressively from the act-consequentialist rule through case stress-tests to a candidate general principle, always asking the student to commit before advancing. The urban studies transcripts (T2, T3) likewise keep the student doing the work of city selection, sector mapping, source identification, and gap reasoning.",
+      "The main weakness is response length: nearly every tutor turn stacks 3–5 independent sub-questions or prompts, which is cognitively dense and reduces interactive back-and-forth. A more bite-sized approach (one or two focused questions per turn) would better support the student's thinking process.",
+      "The tutor also never explains *why* it won't simply confirm or provide answers—i.e., it does not articulate the pedagogical rationale for active reasoning or skill development. And while it advances the student's work effectively, it rarely prompts the student to step back and reflect on what changed in their thinking or why their current approach is an improvement over an earlier one.",
+      "No deductions were applied for 1.1 (no final answers given, no submission-ready content produced, no idea generation by tutor), 1.2 (scaffolding and progression are handled well across both courses), 2.1 (no repetitive spiraling), or 2.2 (the tutor redirected off-topic chitchat promptly and maintained assignment focus). Tone was consistently supportive and formative, with no grading language used."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provides a categorized, detailed menu of specific Miami actors sorted into 'leading,' 'engaged,' and 'missing' buckets, doing the key reasoning step of identifying which actors belong in which category before the student attempts any analysis. The student had not engaged with sources or reasoning yet.",
+                "reason": "Tutor provides a pre-sorted, labeled menu of specific actors for Miami across all three buckets (leading, engaged, missing), doing the key reasoning step of identifying and categorizing relevant actors rather than guiding the student to derive them.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to write the post but rarely explains the learning rationale (active reasoning, long-term skill building). The refusals are stated as policy ('I can't') without clearly articulating why doing the work themselves matters for the student's development.",
+                "reason": "The tutor consistently refuses to write content but never explains the pedagogical rationale (e.g., active reasoning, skill development) behind those refusals in a way that helps the student understand the learning purpose.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Throughout the conversation the tutor focuses entirely on producing the immediate assignment output. There is no moment where the tutor prompts the student to reflect on what they are learning about actor-mapping methodology, why this approach matters for climate analysis, or what transferable skills they are developing.",
+                "reason": "The tutor never prompts the student to reflect on their thinking process or what they've learned about how to map stakeholders, missing any opportunity to reinforce the analytical method.",
                 "points": 2
               }
             ],
@@ -144,8 +144,24 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycles through the same pattern—student asks for ready-made text, tutor refuses and offers a template/menu—without meaningfully advancing the student's independent engagement or synthesizing progress. The same avoidance-and-scaffold loop repeats across 8 turns without strategic reframing or escalation.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -157,7 +173,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -168,7 +184,6 @@
               {
                 "evidence_turns": [
                   2,
-                  3,
                   4,
                   5,
                   6,
@@ -176,7 +191,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature extensive multi-paragraph responses with long menus, skeleton templates, bracket-filled paragraphs, and numbered sub-lists when short focused prompts would have been more interactive. For example, turns 2 and 5 are especially long with categorized lists and full paragraph templates that reduce the student's opportunity to think independently.",
+                "reason": "Several tutor turns are very long (turns 2, 4, 5, 6, 8), providing multi-paragraph menus, templates, and fill-in-the-blank frameworks that reduce the student's opportunity to think independently and respond. Short, targeted prompts would have been more appropriate given the student's avoidance pattern.",
                 "points": 4
               }
             ],
@@ -198,22 +213,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write the forum post directly, which is positive, and maintained a supportive, non-dismissive tone throughout.",
-      "However, in turn 2, the tutor pre-sorted Miami actors into 'leading,' 'engaged,' and 'missing' buckets with specific names and examples before the student had done any analysis, doing the key reasoning step that the student should have performed (1.1.C.b). This is the primary pedagogy deduction.",
-      "The tutor never explained the learning rationale behind its refusals (1.3.A.a), framing constraints as policy rather than as opportunities for skill development.",
-      "There was no reflection or transfer support at any point—the conversation was entirely output-focused with no prompts for the student to reflect on why actor-mapping matters or what they learned (1.3.D.a).",
-      "Response length was frequently excessive, with long menus, skeleton templates, and bracket-filled paragraphs across multiple turns that reduced student cognitive engagement (3.1.A.a).",
-      "Dialogue quality was strong: the tutor maintained assignment anchoring well, avoided redundant spiraling, and progressively advanced the student toward completing the task.",
-      "Note on 1.1: The deduction was placed under 1.1.C.b rather than 1.1.A.a because the actor menus and templates, while leading, still required the student to make choices and supply reasoning; the post was never fully assembly-ready from the tutor's output alone."
+      "The tutor consistently refused to write submission-ready content, which is a clear strength and avoids the most severe rubric penalties.",
+      "However, in turn 2 the tutor pre-generated a comprehensive, labeled actor menu for Miami across all three categories (leading, engaged, missing), doing the core categorization reasoning step that the student should have performed independently. This triggers a 1.1.C.b deduction.",
+      "The same refusal-then-template loop repeated across nearly every turn without meaningful synthesis, escalation, or reframing—triggering the 2.1.A.a spiraling deduction.",
+      "Multiple turns (2, 4, 5, 6, 8) were excessively long with menus, skeletons, and fill-in templates that further reduced student cognitive engagement and triggered the 3.1.A.a length deduction.",
+      "The tutor never explained its pedagogical rationale (why refusal helps learning) and never prompted the student to reflect on the process, resulting in deductions for 1.3.A.a and 1.3.D.a.",
+      "Assignment anchoring (2.2) was handled well—the tutor consistently kept the student focused on the correct Miami actor-mapping task. Tone (3.2) remained supportive and non-punitive throughout. Scaffolding (1.2) was appropriate given what the student offered."
     ],
-    "total_score": 32,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

@@ -93,16 +93,17 @@
                   2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a boundary ('that's your work') but did not clearly explain the learning rationale for withholding direct completion help.",
+                "reason": "The tutor enforces limits on completing the assignment but frames them mainly as 'that's your work' or 'that would be completing the assignment' without explaining a learning rationale for those constraints.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student made progress, the tutor moved to the next source/task without prompting any reflection on what method worked or how to reuse it.",
+                "reason": "After the student begins using the source-finding process successfully, the tutor checks completion details but does not prompt reflection on why the method worked or how to transfer it to the rest of the table.",
                 "points": 2
               }
             ],
@@ -119,21 +120,8 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycled through the same 'find the map/link and send it' move on the Köppen item despite the student's repeated time-pressure, with limited synthesis or simplification.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -145,7 +133,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -171,18 +159,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly anchored to the assignment, refused to provide submission-ready values, and generally scaffolded the student's data-gathering process with credible source paths.",
-      "Main weaknesses were meta-learning and dialogue efficiency: the tutor stated boundaries without much learning-oriented rationale, did not prompt reflection, and got stuck in a repetitive Köppen-source loop across several turns.",
-      "Slight ambiguity: the tutor did give some practical methodology advice, so deductions were kept limited to the clearest rubric triggers rather than broader pedagogy penalties."
+      "The tutor stayed well anchored to the assignment, resisted doing the student's submission-ready work, and scaffolded the data-gathering process through narrowing questions and source guidance.",
+      "Main deductions are in meta-learning: the tutor stated limits without much explicit learning rationale, and it missed a chance to prompt brief reflection or transfer once the student had a workable method.",
+      "There was some repeated refusal language across turns, but it was paired with concrete next steps and progress, so no dialogue-quality deduction was applied."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

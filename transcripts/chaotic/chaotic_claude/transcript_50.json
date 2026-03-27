@@ -80,7 +80,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Turn 10 the tutor provides a full, detailed essay structure (4 numbered sections with sentence counts per section and per case) that is submission-ready scaffolding. Combined with the substantial conceptual work the tutor has guided through (principle, case verdicts, critique, alternative account), this final structural outline tells the student exactly how to assemble the essay—effectively completing the organizational and argumentative skeleton. This, together with earlier turns where the tutor supplied the four labelled candidate distinctions (A/B/C/D) in Turn 3 and the three override condition types in Turn 8 rather than having the student generate them, collectively crosses into providing answer pieces that together become submission-ready.",
+                "reason": "In Turn 10, the tutor provides a submission-ready essay outline with explicit section headers, sentence counts per section, and a 'rule of thumb' for each case. This constitutes direct assignment structuring that is ready to be followed as a blueprint, effectively doing the organizational reasoning work for the student rather than guiding the student to develop their own essay structure.",
                 "points": 12
               }
             ],
@@ -100,13 +100,10 @@
                 "evidence_turns": [
                   3,
                   4,
-                  5,
-                  6,
-                  7,
-                  8
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor guides the student through concept refinement and case analysis without ever explaining why it refuses to give direct answers (e.g., the learning rationale of active reasoning, long-term skill development, or philosophical argumentation practice). It simply says 'I can't' without articulating the pedagogical purpose.",
+                "reason": "The tutor guides the student through candidate distinctions (A/B/C/D in Turn 3) without explaining why it asks the student to choose rather than just providing the answer—i.e., the tutoring rationale (active reasoning, skill development) is not made explicit to the student.",
                 "points": 2
               },
               {
@@ -119,7 +116,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on why certain moves (e.g., choosing means/intent over long-run consequences as the main critique) were good methodological choices, or what changed in their thinking. The conversation ends without any metacognitive consolidation.",
+                "reason": "The tutor consistently moves forward to the next sub-problem without pausing to prompt the student to reflect on why a particular reasoning move worked, what changed in their thinking, or to consolidate method insights before advancing.",
                 "points": 2
               }
             ],
@@ -169,7 +166,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across multiple turns the tutor consistently delivers long multi-part responses (3–4 numbered sub-questions, labelled lists, multiple guiding prompts) when shorter, more focused single questions would have been more appropriate. Turns 1, 2, 3, 4, 5, and 8 are all multi-paragraph with 3+ sub-questions, reducing the student's opportunity to think before receiving the next prompt.",
+                "reason": "Throughout the conversation, the tutor consistently delivers multi-part, multi-paragraph responses with multiple sub-questions (e.g., A/B/C in Turn 2, 1/2/3 in Turn 7, 1/2/3 in Turn 8) where shorter, more focused prompts would have been more appropriate for interactive guided discovery.",
                 "points": 4
               }
             ],
@@ -198,12 +195,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor appropriately refused to write a submission-ready answer and maintained a Socratic stance for most of the conversation. However, in Turn 10 it provided a detailed, numbered essay structure with per-section sentence counts, which—combined with the conceptual content already developed across prior turns—constitutes providing submission-ready organizational and argumentative scaffolding (1.1.A.a), triggering the full 12-point deduction for criterion 1.1.",
-      "In Turn 3, the tutor listed four labelled candidate distinctions (A/B/C/D) for the student to choose from rather than asking the student to identify them, and in Turn 8 it listed three named override condition types. These moves lean toward 1.1.C.b (giving key reasoning steps), but the primary and sufficient trigger for the 12-point deduction is the Turn 10 essay structure combined with the cumulative content built throughout the conversation.",
-      "Scaffolding and progression (1.2) was generally strong: the tutor acknowledged student progress, built on student drafts, and used well-targeted follow-up questions across turns.",
-      "Meta-learning (1.3) was weak: the tutor never explained its pedagogical rationale for withholding direct answers, and never prompted the student to reflect on why their methodological choices were sound.",
-      "Dialogue quality (2.1, 2.2) was good: the conversation progressed without spiraling, and the tutor kept the student on-task and within the assignment scope.",
-      "Communication quality suffered from consistently long, multi-part prompts (Turns 1, 2, 3, 4, 5, 8) that reduced the student's space to think and respond incrementally."
+      "The tutor does well for most of the conversation: it refuses to write submission-ready text, uses structured questioning to guide the student through act consequentialism, the trolley variants, and the means/side-effect distinction, and keeps the student generating most of the philosophical reasoning.",
+      "The primary and decisive failure is in Turn 10: when the student asks for an essay structure, the tutor provides a fully prescriptive outline with labeled sections, sentence counts per section, and a per-case rule of thumb. This is submission-ready organizational work—it tells the student exactly how many sentences to write per section and per case, leaving essentially nothing structural for the student to figure out. This triggers the 1.1.A.a deduction (all 12 points).",
+      "On meta-learning (1.3), the tutor does not explain to the student why it is asking them to generate ideas rather than supplying them (no explicit tutoring rationale), and it never pauses to invite the student to reflect on what changed in their thinking or why a method worked. These are consistent omissions across the conversation.",
+      "On response length (3.1), the tutor habitually delivers multi-part questions (3–4 sub-questions per turn) when one focused question per turn would better support interactive guided discovery. This is a consistent pattern across Turns 1–8.",
+      "Dialogue quality is strong: the tutor keeps the conversation anchored to the assignment, redirects off-topic requests cleanly, and progresses without spiraling. Scaffolding is also strong, as the tutor builds appropriately on the student's correct steps. Tone is consistently supportive and non-punitive.",
+      "Note on Turn 10 ambiguity: one could argue the essay structure guidance is merely organizational advice rather than philosophical content. However, the rubric covers 'answer pieces across turns that together become submission-ready' and 'tutor carries the full reasoning work.' Providing a prescriptive structural blueprint with sentence counts for a philosophy essay crosses into doing the assignment-level work of organizing the argument, so the 1.1.A.a deduction is applied."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

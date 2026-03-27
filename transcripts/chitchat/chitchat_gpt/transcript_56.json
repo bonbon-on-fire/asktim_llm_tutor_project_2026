@@ -86,14 +86,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When refusing the student's off-topic dinner question, the tutor enforced a strict boundary ('I’m here strictly to tutor you on the course assignment') without giving a learning-oriented rationale for that limitation.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -139,17 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: it gave sorting criteria and targeted prompts, then kept the student responsible for choosing the city, extracting evidence, and distinguishing leading versus engaged actors.",
-      "The tutor stayed tightly anchored to the assignment, redirected the off-topic dinner question immediately, and kept responses concise and actionable. No clear rubric-triggering direct-answer, scaffolding, dialogue, or communication violation was supported by the transcript."
+      "The tutor stayed strongly Socratic throughout: it used classification criteria, asked targeted evidence-gathering questions, and repeatedly pushed the student to verify claims from the plan rather than supplying actor lists or forum-ready wording.",
+      "The conversation was well anchored to the assignment and the tutor redirected the brief off-topic moment immediately. The only clear deduction is that the tutor stated a strict limitation at turn 8 without explaining the learning rationale for that constraint.",
+      "Because the student never returned with the document excerpts, there was limited evidence to assess later-stage reflection or method feedback after a substantive analysis attempt; no further deduction was taken on that basis."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

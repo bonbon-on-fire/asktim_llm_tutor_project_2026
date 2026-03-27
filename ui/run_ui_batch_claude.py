@@ -33,7 +33,7 @@ BATCHES_DIR = _REPO_ROOT / "transcripts" / "batches"
 # ---------------------------------------------------------------------------
 # Change these values to control batch type and concurrency.
 # ---------------------------------------------------------------------------
-BATCH_TYPE = "03"
+BATCH_TYPE = "01"
 PARALLEL_WORKERS = 6
 
 

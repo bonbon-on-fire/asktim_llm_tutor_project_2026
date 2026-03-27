@@ -81,7 +81,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplied Miami stressor candidates and city-specific evidence cues before the student generated them, reducing student-led idea formation on the core assignment content.",
+                "reason": "For a task centered on identifying city stressors and evidence, the tutor supplied Miami-specific candidate stressors and evidence cues before the student generated them, narrowing the interpretive path instead of keeping idea generation primarily with the student.",
                 "points": 6
               }
             ],
@@ -156,9 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused to provide paste-ready assignment content and instead used questions, calibration frameworks, and scope checks to keep the student doing the work.",
-      "Main deduction: the tutor still generated substantial core content for Miami by listing likely top stressors and evidence cues early, which reduced student-led discovery on the central task.",
-      "Otherwise the conversation showed strong scaffolding, tight assignment anchoring, concise responses, and a supportive non-grading tone."
+      "The tutor consistently refused to provide submission-ready text, kept the discussion anchored to the assignment, and scaffolded the student's own rating logic with targeted prompts about scope, evidence, and defensibility.",
+      "The main deduction is in guided discovery: after initial resistance, the tutor still supplied a substantial answer path by naming likely Miami stressors and offering Miami-specific evidence cues, which reduced student-generated idea formation for this assignment.",
+      "No further deductions were applied because the tutor generally built on the student's drafts, gave concrete process-level feedback, maintained a supportive non-grading stance, and avoided repetitive spiraling."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

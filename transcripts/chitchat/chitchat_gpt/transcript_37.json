@@ -92,26 +92,17 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor redirected the off-task music question, but did not explain the learning rationale for keeping the conversation focused on the assignment.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  8
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the rating logic and priority selection, the tutor moved straight to the next task without prompting reflection on why the method worked or how to reuse it.",
+                "reason": "The tutor refused the off-task music question by saying it was not part of the course task, but did not explain a learning-oriented rationale for that limitation.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -138,8 +129,19 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across several late turns, the tutor kept adding multi-part checklists and extra refinements where shorter, more convergent prompts would have been more appropriate, extending the interaction after the student already had usable rows.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -151,24 +153,23 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected the off-topic music question immediately, and used strong guided discovery rather than supplying submission-ready content.",
-      "Scaffolding was effective: the tutor asked the student to define rating criteria, compare stressors, choose indicators, and refine distinctions such as heat versus urban heat island.",
-      "Small deductions were applied only in meta-learning: the tutor did not explain the learning rationale for the initial constraint, and the conversation had little explicit reflection on how the student could transfer the method to future assignments."
+      "The tutor stayed strongly anchored to the assignment, used guided questioning well, and consistently built on the student's emerging Phoenix stressor framework rather than supplying a finished submission.",
+      "Main deductions are for not giving a learning-oriented rationale when refusing the off-task music question, and for repeatedly extending the exchange with additional detailed refinements after the student already had table-ready material."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

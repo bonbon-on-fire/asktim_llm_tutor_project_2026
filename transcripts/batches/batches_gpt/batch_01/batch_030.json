@@ -241,25 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  4,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-chitchat constraint but did not explain the learning rationale for keeping the student doing the work and staying assignment-focused.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -286,37 +275,50 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across the provided transcripts, the tutor repeatedly used multi-part replies with several bullets, alternatives, and follow-up questions at once. This kept the exchange interactive, but often exceeded the most bite-sized form for a tired student and increased cognitive load when one focused next step would have sufficed.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor generally stayed professional, but repeated refusals to small rapport-building bids were sometimes blunt or rigid (for example, flat rejections of movie/travel/app chat), which could discourage participation for this student persona.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
+          "score": 4,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the provided schema is for a single conversation.",
-      "The tutor consistently used guided questioning, kept the student responsible for decisions and wording, and redirected off-topic chat quickly back to the assignment.",
-      "Only clear deduction: the tutor stated tutoring constraints several times without explicitly giving the student a learning-oriented rationale for those limits."
+      "Across the provided transcripts, the tutor consistently avoided doing the assignment for the student and instead used guided questions, source-selection prompts, and decision rules to help the student choose cities, define geography, justify sources, and document methods.",
+      "The tutor was strongly anchored to the assignment and redirected off-topic turns quickly without getting pulled into non-assignment content.",
+      "The main weaknesses were communication-related: replies were often densely packed with multiple prompts at once, and the repeated refusal style for light personal detours sometimes sounded rigid rather than warmly redirective.",
+      "Input contained three separate transcripts with turn numbering reset in each, so deductions are based on repeated patterns across the batch rather than a single renumbered turn sequence."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

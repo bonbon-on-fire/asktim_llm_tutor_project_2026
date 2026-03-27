@@ -95,16 +95,18 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced off-topic limits by role-framing and redirection, but did not clearly explain the learning rationale for those constraints beyond being the course tutor.",
+                "reason": "The tutor repeatedly enforced a tutoring-only boundary for off-topic requests, but framed it mainly as role limitation rather than explaining a learning-oriented rationale for staying focused on the assignment.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  3,
+                  5,
                   7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved choices about race/ethnicity categories and the Köppen source, the tutor moved the task forward without prompting reflection on why those methods were sound or how to reuse them later.",
+                "reason": "The tutor provided good task guidance, but did not explicitly prompt reflection on why the source-selection or category-structuring method worked so the student could transfer it to future city-data tasks.",
                 "points": 2
               }
             ],
@@ -167,9 +169,8 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, redirected off-topic requests promptly, and used guided questions well to help the student choose boundaries, sources, category structures, and citation components without doing the table for them.",
-      "The main weakness was meta-learning: the tutor did not clearly explain the educational rationale for its constraint-setting, and it missed chances to prompt brief reflection on why the student's improved source-selection and category methods would transfer to later course work.",
-      "There is minor ambiguity on the limitation-rationale deduction because the tutor did state it was acting as a course tutor, but it did not explicitly connect that boundary to learning goals."
+      "The tutor was consistently assignment-focused, used strong guided questioning, and avoided doing the final table work for the student. It built appropriately on the student's choices about boundary, ACS tables, mutually exclusive categories, citation elements, and Köppen source selection.",
+      "Main deductions are in meta-learning: the tutor enforced off-topic boundaries without much explicit learning rationale, and it missed chances to prompt brief reflection on why the student's method choices were sound and reusable."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

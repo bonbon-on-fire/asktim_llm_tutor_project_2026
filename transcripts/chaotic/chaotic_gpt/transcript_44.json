@@ -89,11 +89,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave procedural help and next steps, but did not prompt any brief reflection on why the sourcing/citation method was safer or how to transfer it to the rest of the table.",
+                "reason": "After the student adopted a workable source-checking plan, the tutor moved straight into next-step logistics instead of prompting brief reflection on why this method works or how to reuse it on the rest of the table.",
                 "points": 2
               }
             ],
@@ -156,10 +156,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the assignment for the student, refused fabricated or paste-ready data, and stayed tightly anchored to the actual table requirements.",
-      "Guidance was scaffolded and practical: the tutor narrowed city definitions, distinguished GRDP from national GDP, suggested official-source workflows, and provided citation templates without inventing source details.",
-      "Communication stayed concise, clear, and supportive despite repeated student pressure to bypass the work.",
-      "The main missed opportunity was meta-learning transfer: the tutor did not explicitly ask the student to reflect on why the source-validation/citation process worked or how to reuse it for the remaining fields."
+      "The tutor consistently refused to provide submit-ready data, citations, or fabricated content, and instead kept the student anchored to source-finding, source selection, and citation-building steps.",
+      "Scaffolding was generally strong: the tutor narrowed definitions (DKI vs. metro, GRDP vs. national GDP), suggested legitimate fallback strategies, and kept the work interactive rather than completing it.",
+      "Only clear weakness was limited reflection/transfer support; once the student accepted a workable process, the tutor did not pause to reinforce why that process was effective for future fields."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

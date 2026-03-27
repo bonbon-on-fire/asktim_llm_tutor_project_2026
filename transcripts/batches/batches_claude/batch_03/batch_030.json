@@ -244,20 +244,34 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor consistently enforces a 'won't give you the answer' policy but rarely articulates the learning rationale (e.g., active reasoning, skill development) behind this constraint. The policy is applied without explaining why doing the retrieval work themselves benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves to the next task without prompting the student to reflect on what they learned from the process (e.g., why majority-area or City Hall fallback is the right methodological choice, or why ADHB vs ADHK matters conceptually). In Transcript 3 Turn 9-10, the tutor confirms the cell is 'bulletproof' and immediately pivots to the next column without any process reflection.",
+                "reason": "The tutor does not prompt students to reflect on their reasoning process or what changed in their thinking. Each conversation ends without encouraging the student to consolidate what method worked and why, missing opportunities for transfer support.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -270,7 +284,17 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "In Transcript 2, Turn 1, the student asks an off-topic 'favorite city' question. The tutor briefly declines before returning to task, which is appropriate. However in Turn 2, the student tries again and the tutor gives a slightly dismissive 'No—stay on task' before moving on. This is borderline but the tutor does redirect immediately rather than engaging substantially. No full deduction is warranted as the tutor does not engage with off-topic content.",
+                "points": 0
+              }
+            ],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -291,7 +315,7 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Transcript 1 Turn 1 and Transcript 3 Turn 1-2 feature lengthy multi-paragraph informational dumps (source lists, tier systems, numbered rules) before the student has had a chance to engage. These monologues reduce student opportunity to think and respond, and would have been better replaced by a single focused question.",
+                "reason": "In Transcript 1 Turn 1 and Transcript 3 Turns 1-2, the tutor provides long multi-paragraph replies with exhaustive source lists before even knowing the student's city or current understanding. These monologues reduce student opportunity to think and respond first. This pattern recurs across multiple conversations at the start.",
                 "points": 4
               }
             ],
@@ -313,21 +337,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to provide final answers (GDP values, Köppen codes, exact cell wording) and instead redirects students with targeted questions that require them to reason through choices themselves. No deductions are warranted under 1.1 or 2.1/2.2.",
-      "Scaffolding (1.2) is handled well: the tutor acknowledges student progress (e.g., confirming BPS source reasoning in Transcript 2 Turn 4, confirming GDP cell components in Transcript 3 Turn 8-9) and does not restart from scratch when students partially answer correctly.",
-      "Meta-learning (1.3) is generally good on process feedback but weak on reflection and transfer. After resolving a sub-problem the tutor moves straight to the next item without prompting the student to articulate what changed in their thinking or why the method worked. A 2-point deduction under 1.3.D.a is applied.",
-      "Communication length (3.1) is the most notable weakness. Transcript 1 Turn 1 and Transcript 3 Turns 1-2 contain very long multi-section monologues with source tiers, numbered rules, and multiple questions stacked together before the student has engaged. This pattern recurs enough to warrant the full 4-point deduction under 3.1.A.a. Later turns in all transcripts become more concise and interactive, so no additional deduction is applied. No jargon/density issues (3.1.B) are found.",
-      "Tone (3.2) is consistently supportive and non-punitive across all transcripts. No grading or formality issues are evident. No deductions under 3.2.",
-      "Total deductions: 2 (1.3.D.a) + 4 (3.1.A.a) = 6 points off 46."
+      "Across all three transcripts, the tutor demonstrates strong Socratic method and guided discovery — consistently refusing to supply direct answers, redirecting students to find values themselves, and using probing questions to move students toward independent conclusions. No deductions for 1.1 are warranted.",
+      "Scaffolding and progression is solid. The tutor builds on student progress appropriately (e.g., affirming the DKI Jakarta choice in Transcript 2/3, confirming the student's ADHB reasoning in Transcript 3), and generally diagnoses confusion before dumping methods.",
+      "Meta-learning suffers from two gaps: (1) the tutor never explains the pedagogical rationale for withholding answers — it just says 'I can't' without explaining why doing the work builds skills; (2) there is no end-of-session or mid-session reflection prompt asking students what they learned from their process, missing transfer support opportunities.",
+      "Dialogue quality is strong overall. The tutor avoids redundancy and spiraling effectively. Off-topic attempts in Transcript 2 are redirected immediately without engaging with the off-topic content.",
+      "Communication quality loses points on response length: Turn 1 responses in Transcripts 1 and 3 are notably long multi-paragraph source dumps before the tutor even knows the student's city or level of confusion. This pattern is most pronounced at the start of conversations but improves as the conversation progresses.",
+      "Tone is consistently warm, supportive, and coaching-oriented throughout all three transcripts. No grading-stance issues were observed."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

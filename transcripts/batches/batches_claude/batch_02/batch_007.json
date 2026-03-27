@@ -235,7 +235,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 3, the tutor directly supplies concrete program names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and specific FPL decision domains the student would need to look up themselves. This resolves a key reasoning step—identifying credible, specific actor-plan links—that the student should have done, effectively doing the research/discovery work for the student.",
+                "reason": "In Transcript 3 Turn 3, the tutor provides concrete names of specific Miami plans (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and specific categories of FPL decisions. While framed as 'pick from these,' the tutor is doing the key research/factual lookup step that the student should be doing, effectively supplying the specific evidence the student needs rather than guiding them to find it.",
                 "points": 6
               }
             ],
@@ -265,16 +265,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently declines to write answers but rarely explains the pedagogical rationale (e.g., that working through it yourself builds long-term philosophical/analytical skill). It just says 'I can't' or 'that would be me doing the work' without grounding it in a learning rationale.",
+                "reason": "Across all three transcripts, the tutor consistently enforces constraints (won't write for the student) but rarely explains the learning rationale—why active reasoning matters for skill development. Occasionally implied but never explicitly stated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of Transcripts 1, 2, and 3 the tutor moves to next steps or final checks without prompting the student to reflect on what changed in their thinking, why the method they used (DDE/counterfactual test, stressor anchoring, actor categorization) worked, or what they would do differently. No transfer/reflection prompt appears.",
+                "reason": "Across all three transcripts, the tutor never prompts reflection on what thinking strategies worked or why. When students improve their responses, the tutor moves on without reinforcing the method or asking what changed in their reasoning.",
                 "points": 2
               }
             ],
@@ -316,10 +324,12 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
+                  5,
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns across the transcripts are very long multi-part monologues (e.g., T1 Turn 2 with a full 6-bullet skeleton and thesis template, T2 Turn 7 with all six fill-in-the-blank prompt sets at once, T3 Turn 3 with three named plans plus three FPL domains). These reduce student thinking opportunity and consistently exceed what a focused one-or-two-prompt response would require.",
+                "reason": "Across multiple turns in all three transcripts, the tutor repeatedly gives long, multi-part responses with numerous bullet points and sub-questions when shorter, more focused prompts would serve better. For example, Turn 2 in Transcript 1 provides a full thesis template plus a 6-bullet outline skeleton in a single turn; Turn 3 in Transcript 2 gives 5 numbered research prompts plus a rating framework simultaneously; Turn 7 in Transcript 2 gives 6 fill-in-the-blank templates at once. These consistently reduce the student's opportunity to think before being given extensive scaffolding.",
                 "points": 4
               }
             ],
@@ -348,12 +358,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to produce submission-ready text and makes good use of templates, anchor questions, and incremental scaffolding to keep the student doing the core reasoning work.",
-      "The main deduction in 1.1 is in Transcript 3 Turn 3, where the tutor directly supplies specific Miami program names (Resilient305, Miami Forever Climate Ready, Miami-Dade Sea Level Rise Strategy) and categorized FPL decision domains instead of asking the student to research or recall these themselves. This resolves a key factual/research step that is part of the assignment's intellectual work, triggering the 1.1.C.b doing-key-reasoning-step deduction at 6 points.",
-      "The tutor does not explain its pedagogical rationale for withholding answers (1.3.A.a, -2 pts): it says 'I can't' or 'that would be me doing the work' but never grounds refusals in skill-development or learning rationale.",
-      "No end-of-conversation reflection or transfer prompt appears in any transcript (1.3.D.a, -2 pts): the tutor moves directly to next steps or a final check without asking the student to articulate what changed in their thinking or how the method generalises.",
-      "Several tutor turns are excessively long, delivering multiple scaffolding layers at once rather than one focused prompt (3.1.A.a, -4 pts): e.g., T1 Turn 2 thesis template + 6-bullet skeleton simultaneously; T2 Turn 7 all six fill-in-blank sets at once; T3 Turn 3 three plans plus three FPL domains in one block.",
-      "Tone is consistently supportive and non-evaluative; assignment anchoring is strong; no redundant spiraling detected; no grading language used."
+      "The tutor consistently refused to do the work for students, maintained good assignment anchoring across all three transcripts, and progressed logically from student responses. Socratic questioning was generally strong in Transcripts 1 and 2.",
+      "The main deduction in 1.1 comes from Transcript 3 Turn 3, where the tutor supplied specific Miami plan names and FPL decision categories—performing the key research lookup the student should have done, rather than guiding them to find it. This is scored under 1.1.C.b (does the key reasoning/evidence step) rather than 1.1.A.a since the overall conversation remains student-driven.",
+      "Meta-learning (1.3) was weak throughout: the tutor enforced constraints without explaining why active reasoning builds skill, and never prompted reflection on what method worked after improvements were made.",
+      "Communication length was consistently excessive (3.1): the tutor frequently sent multi-part, heavily bulleted responses when a single focused question would have better preserved student thinking time. This was a recurring pattern across all three transcripts.",
+      "No redundancy/spiraling issues noted—the tutor advanced topics effectively. Tone was supportive and non-grading throughout. Scaffolding built appropriately on student responses without ignoring prior progress."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

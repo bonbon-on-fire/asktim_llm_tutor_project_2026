@@ -80,15 +80,7 @@
                   9
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Tutor provides the exact DOI URL as a paste-ready citation value (https://doi.org/10.1371/journal.pone.0162148), which is a core submission component the student asked for. While this is a single data point rather than full assignment work, it crosses into giving a finished answer piece. However, across turns 1–8 the tutor consistently refused to supply numbers or wording; turn 9 is a marginal concession of one citation URL. Given overall pattern, applying 1.1.A.a (all-or-nothing trigger) would be disproportionate; but rubric 1.1.A.a says 'answer pieces across turns that together become submission-ready.' The tutor also in turn 10 gives the BEA landing page URL. Together these are two citation sources supplied directly, but they are source-locator URLs rather than data values or written table rows. The tutor repeatedly declined to supply the actual data numbers or row wording. This is a borderline case; applying a partial deduction under 1.1.C.b is more appropriate than the full 12-point removal.",
-                "points": 0
-              },
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In turn 10, the tutor directly gives the BEA GDP landing page URL and specifies exactly which MSA to pick ('New York-Newark-Jersey City, NY-NJ-PA (MSA)'), performing the lookup-locating step for the student rather than guiding the student to locate it independently. Combined with providing the DOI in turn 9, the tutor does the key source-identification reasoning steps for two table fields. This constitutes doing a key reasoning step (locating/selecting sources) that should belong to the student.",
+                "reason": "In turn 9, the tutor provides the exact DOI URL for the Beck PLOS ONE article as a direct paste-ready citation. While providing a source URL is borderline, the tutor had repeatedly refused to supply values and this is a bibliographic pointer rather than substantive content. However, the tutor also provides the exact BEA URL in turn 10 as a direct citation link. Together with turn 9, these provide two paste-ready citation URLs on demand, moving toward submission-ready help rather than guided discovery. This is a marginal case; the deduction is kept small since no data values were provided.",
                 "points": 6
               }
             ],
@@ -113,10 +105,12 @@
                   5,
                   6,
                   7,
-                  8
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces constraints (e.g., 'I can't fill in the table for you,' 'I can't give you the Köppen code') without ever explaining the pedagogical rationale—that the student needs to develop independent data-gathering skills or that active reasoning builds long-term competency. The tutor frames refusals in terms of assignment rules but never articulates why doing the work themselves matters for learning.",
+                "reason": "Throughout the conversation the tutor enforces its 'I can't do this for you' policy but never explicitly explains the learning rationale—e.g., that the student needs to practice data extraction, build research skills, or develop long-term competency. The tutor only says things like 'that's your work' or 'that's a core data value you're supposed to extract' without connecting it to skill development.",
                 "points": 2
               },
               {
@@ -133,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts any reflection on the student's process or what the student learned about data-gathering methods. There is no moment where the tutor asks the student to consider why using credible cited sources matters or what skill the exercise is building. The conversation ends without any transfer or reflection prompt.",
+                "reason": "The tutor never prompts the student to reflect on what they learned from the data-gathering process, what changed in their thinking, or why the method of citing sources matters beyond this assignment. The conversation ends without any reflection or transfer-oriented prompt.",
                 "points": 2
               }
             ],
@@ -153,8 +147,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3,
                   4,
                   5,
                   6,
@@ -162,7 +154,7 @@
                   8
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles repeatedly on the Köppen source/citation issue across turns 4–8 without meaningful progression. The student repeatedly asks for a direct answer; the tutor repeatedly declines and restates the same instruction pattern ('open the map, read the code, send it to me'). While each refusal is principled, the tutor does not switch strategies—e.g., reframing why the citation matters or offering a simplified path—resulting in a spiraling loop on one sub-point that consumes five turns.",
+                "reason": "The tutor cycles repeatedly on the Köppen citation issue across five turns (4–8) without synthesizing or advancing. The student keeps asking for the code/URL, the tutor keeps refusing and re-asking, using essentially the same pattern each time. The tutor does not switch to a more efficient reframing or acknowledge that the repetition is unproductive.",
                 "points": 4
               }
             ],
@@ -192,7 +184,7 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 are multi-paragraph responses that pre-emptively list all table rows, table IDs, and source guidance before the student has even confirmed city choice or geography. This reduces student opportunity to think and respond, and the density of the responses is higher than needed for the student's immediate question.",
+                "reason": "Turns 2 and 3 contain multi-paragraph, heavily structured responses with extensive bulleted source guidance before the student has even confirmed their city choice or answered basic clarifying questions. These long information dumps reduce student thinking opportunity and front-load detail that isn't yet needed.",
                 "points": 4
               }
             ],
@@ -221,13 +213,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor generally maintained a principled stance against doing the assignment for the student, consistently refusing to supply data values, table rows, or paste-ready numbers across turns 1–8.",
-      "However, the tutor capitulated in turns 9–10 by supplying two specific URLs (DOI and BEA landing page) as direct, paste-ready citation sources. Under 1.1.C.b, this constitutes performing the key source-identification step for the student on two table fields, triggering a 6-point deduction.",
-      "The Köppen citation sub-sequence (turns 4–8) became a repetitive loop where the tutor used the same instructional pattern five times without switching strategy, reframing, or consolidating—triggering a full 2.1 deduction for spiraling.",
-      "The tutor never explained its pedagogical rationale for refusals (1.3.A.a) and never prompted reflection or transfer (1.3.D.a), each costing 2 points under 1.3.",
-      "Turns 2–3 were notably dense and pre-emptive, listing all table fields and source paths before basic choices were confirmed, reducing student thinking opportunity and triggering a 3.1 deduction.",
-      "Assignment anchoring (2.2) was strong: the tutor kept the student focused on the actual task throughout. Tone (3.2) was appropriate and non-punitive. Scaffolding (1.2) was generally solid despite the spiraling loop.",
-      "The 1.1 deduction note: applying the full 12-point 1.1.A.a removal was considered but declined because the tutor supplied only URL locators, not actual data values or written rows. The 6-point 1.1.C.b deduction was applied instead as the more proportionate penalty."
+      "The tutor consistently refused to supply data values and maintained appropriate boundaries around not completing the assignment for the student. Assignment anchoring and tone were strong throughout.",
+      "The primary deduction in 1.1 arises from turns 9–10, where the tutor provided exact paste-ready citation URLs (DOI and BEA landing page) on direct student request. While no numeric data values were handed over, providing ready-to-paste citation links on demand approaches submission-ready help, particularly since the assignment explicitly requires gathering information with traceable sources. This is scored as a 1.1.B-level deduction (6 points) rather than full 1.1.A, because data values were never supplied.",
+      "In 1.3, the tutor never explained why it was withholding direct answers in terms of learning rationale or skill development, and never prompted reflection or transfer at any point in the conversation.",
+      "The most significant dialogue quality issue is the König/Köppen spiraling across turns 4–8, where the tutor repeated essentially the same pattern of refusing the code, pointing to Beck et al., and asking the student to report back—without reframing, synthesizing, or adapting its approach when the student remained stuck.",
+      "Responses in turns 2 and 3 were excessively long with structured detail provided before basic setup decisions were confirmed, reducing student agency and thinking time."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

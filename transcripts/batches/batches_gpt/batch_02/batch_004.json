@@ -229,8 +229,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor was usually Socratic, but in places it performed key reasoning/content selection for the student: in transcript 1 turn 5 it laid out the core inconsistency in the student's Loop position and supplied three resolution strategies, and in transcript 2 turn 2 it supplied the top-3 Miami stressor set rather than first eliciting it from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -241,22 +251,45 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student improved, the tutor typically moved straight into the next drafting task instead of prompting reflection on why the method worked or how to transfer it to future assignments (e.g., transcript 1 turn 10 and transcript 3 turn 10).",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In transcripts 2 and 3, the tutor repeatedly returned to the same refusal-plus-template move over many turns while the student stayed stuck and time-pressured, with limited synthesis or meaningful strategy change.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -268,7 +301,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -294,18 +327,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only: the input contains three transcripts, but the required schema supports one conversation; this evaluation is based on the philosophy transcript.",
-      "The tutor consistently refused submission-ready writing, kept the student doing the core reasoning, and used targeted questions and stress tests to help the student refine a rights-based alternative to act consequentialism.",
-      "The tutor built closely on the student's progress turn by turn, stayed tightly anchored to the actual prompt, and communicated in clear, structured, coaching-oriented steps without evident rubric-triggering overreach."
+      "Across the three transcripts, the tutor consistently refused submission-ready writing, stayed anchored to the assignment, and usually scaffolded well with targeted questions and templates.",
+      "Main deductions are for occasionally doing substantive idea-selection/reasoning for the student, not prompting reflection after progress, and getting repetitive in transcripts 2 and 3 when the student stayed stuck.",
+      "Because the input contains three separate transcripts with repeating turn numbers, deduction turn references are representative examples rather than a complete index of all supporting instances."
     ],
-    "total_score": 46,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

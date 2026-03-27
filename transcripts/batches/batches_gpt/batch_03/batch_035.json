@@ -232,12 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  4,
-                  23
+                  4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied substantive actor categories and likely \"missing\" groups for the student, partially doing the core content-generation step instead of keeping idea generation with the student.",
+                "reason": "Transcript 1 Turn 4 gives five specific LA 'missing actor' types for the student, and those categories later carry into the student's final table, so the tutor supplied a substantive idea-generation step instead of fully eliciting it.",
                 "points": 6
               }
             ],
@@ -286,58 +284,37 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  14,
-                  24
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across transcripts, the tutor repeatedly used long multi-part bullet responses and extended demos where shorter, more focused prompts would have preserved more room for student thinking.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  11,
-                  12
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Some refusals to off-topic chat were phrased rigidly and bluntly before redirecting, which made the tone feel colder than necessary.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor stayed strongly anchored to the assignment, resisted doing paste-ready work, and generally used guided questioning tied to evidence and source quality.",
-      "The main pedagogy deduction is for occasionally supplying substantive actor categories or likely missing groups, which partially shifted idea generation from the student to the tutor.",
-      "Communication was usually clear, but several replies were longer than necessary, and some off-topic refusals in Transcript 2 came across as rigid. Evidence turns are numbered sequentially across the three transcripts (1-10, 11-20, 21-30)."
+      "Across the three transcripts, the tutor stayed well anchored to the assignment, resisted ready-to-submit writing, and consistently used source-based prompting, evidence/inference checks, and student-generated categorization.",
+      "The main supported deduction is in Transcript 1, where the tutor directly supplied a five-item 'missing actors' list for LA; this materially generated assignment content rather than keeping that idea-generation step with the student.",
+      "Potential concerns about firmness in off-topic redirection were not deducted because the tutor redirected quickly and productively, and the conversations still advanced."
     ],
-    "total_score": 34,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

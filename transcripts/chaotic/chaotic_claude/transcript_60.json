@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 2, the tutor provides a detailed list of official sources with URLs for each row (population, ethnicity, area, income per capita, GDP, Köppen) and implicitly indicates which proxy level is appropriate for each variable. This does most of the key research legwork—identifying which sources to use and why—before the student has attempted any exploration, effectively doing the reasoning step of source identification for the student.",
+                "reason": "In Turn 2, the tutor provides an extensive list of official sources with URLs and detailed guidance on which source to use for each variable (population, ethnicity, area, income, GDP, Köppen), effectively doing the source-identification reasoning work that the student should have attempted first. While the tutor doesn't give final numbers, it preemptively resolves the key research step before the student tries anything.",
                 "points": 6
               }
             ],
@@ -109,11 +109,12 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to give direct answers but rarely explains the learning rationale behind these refusals in terms of active reasoning or long-term skill development. The tutor says 'I can't give you X' but mostly frames it as a policy constraint rather than explaining why the student benefits from doing the work themselves.",
+                "reason": "The tutor consistently refuses to give direct answers but rarely explains the pedagogical rationale (e.g., that finding sources yourself builds research skills). In Turn 1, it briefly says 'that would be submitting the assignment for you,' but across subsequent turns the refusals are stated as policy without tying them to active reasoning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -125,7 +126,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they've learned about data sourcing, proxy selection, or citation methodology. No turn asks what changed in the student's thinking or reinforces method choices after any improvement (e.g., after the student correctly chose GNI per capita in Turn 8 or produced a reasonable draft in Turn 9).",
+                "reason": "The tutor never pauses to help the student reflect on what they've learned about data sourcing methodology or why the approach of layered proxies works. There is no moment where the tutor asks the student to consolidate their process understanding or transfer lessons to future data-gathering tasks.",
                 "points": 2
               }
             ],
@@ -150,10 +151,11 @@
                   5,
                   6,
                   7,
-                  8
+                  8,
+                  10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycles through the same pattern: student asks for direct output, tutor declines and asks the student to do it themselves, student resists again. Across Turns 3–8 this loop repeats without meaningful synthesis or reframing. The tutor does not consolidate progress, switch strategies in a substantive way, or suggest moving to a different part of the task to break the cycle.",
+                "reason": "The tutor repeats the same pattern across many turns: student asks for direct output, tutor refuses and asks diagnostic questions, student pushes again. The tutor does not meaningfully reframe the approach, synthesize what has been accomplished, or suggest a different angle when this pattern clearly isn't progressing the student's independent work. The cycle repeats without significant structural adaptation.",
                 "points": 4
               }
             ],
@@ -184,7 +186,7 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 2 is a very long multi-paragraph response listing all six data rows with URLs, sub-questions for each, and multiple boundary options—far more than a single focused prompt. Turn 5 provides a lengthy fill-in-the-blank template plus a full breakdown of which variables force proxies. Turn 6 embeds a JSON reasoning field alongside the student-facing answer, adding cognitive clutter. These repeatedly use long monologues where shorter interactive steps were more appropriate.",
+                "reason": "Turn 2 is a very long monologue listing all six data categories with URLs, sub-questions, and decision trees before the student has attempted anything. Turn 5 provides a lengthy fill-in-the-blank template plus a detailed variable-by-variable proxy guide in one response. Turn 6 lists seven World Bank indicator codes with descriptions plus a multi-part justification checklist. These multi-paragraph dumps consistently reduce the student's opportunity to engage interactively.",
                 "points": 4
               }
             ],
@@ -213,12 +215,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to do the assignment for the student, which is appropriate, and maintains a supportive, non-punitive tone throughout the conversation.",
-      "However, in Turn 2, the tutor does significant source-identification reasoning for the student—listing all official sources with URLs for each data row and explaining proxy logic before the student has attempted any searching—triggering a 1.1.C.b deduction for doing the key reasoning step.",
-      "The tutor falls into a repetitive cycle across Turns 3–8 where the student asks for direct output, the tutor declines and asks the student to draft something, and the student resists again without the tutor meaningfully reframing or advancing the dialogue; a full 2.1.A.a deduction applies.",
-      "Meta-learning is weak: the tutor rarely explains why the student should do the work themselves in terms of skill development (1.3.A.a), and never prompts reflection on method after any successful student contribution such as the correct indicator choice in Turn 8 or the solid draft in Turn 9 (1.3.D.a).",
-      "Several tutor responses—especially Turns 2, 5, and 6—are excessively long multi-paragraph monologues that reduce student opportunity to think and engage, triggering a 3.1.A.a deduction.",
-      "The tutor does well at scaffolding progression within turns and stays anchored to the assignment throughout. No deductions apply to 1.2 or 2.2."
+      "The tutor generally maintained a principled stance against doing the assignment for the student, consistently refusing to provide final numbers or submission-ready text across all ten turns. This is a clear strength.",
+      "However, in Turn 2 the tutor preemptively resolved the key research reasoning step by listing all six data sources with URLs and detailed sub-guidance before the student had attempted any research, triggering a 1.1.C.b deduction for doing the key reasoning work instead of the student.",
+      "The conversation fell into a repetitive cycle (student demands output → tutor refuses and re-asks diagnostic questions) without meaningful reframing or synthesis, triggering a full 2.1.A.a deduction for spiraling without progress.",
+      "Several responses (notably Turns 2, 5, 6) were excessively long monologues with multi-part lists and templates, reducing student cognitive engagement and triggering a 3.1.A.a deduction.",
+      "Meta-learning was largely absent: the tutor did not explain its pedagogical rationale in most turns and never prompted the student to reflect on their process or transfer lessons learned, resulting in deductions under 1.3.A.a and 1.3.D.a.",
+      "Tone was supportive throughout, assignment anchoring was maintained, and the tutor correctly avoided grading language, earning full marks in 2.2 and 3.2.",
+      "Scaffolding was adequate given the student's resistance; the tutor did build progressively from boundary definition to variable selection to sentence drafting, earning full marks in 1.2."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

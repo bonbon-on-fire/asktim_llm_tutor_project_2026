@@ -243,13 +243,23 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  11,
+                  21
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the transcripts, the tutor consistently uses guided discovery but does not explicitly explain that this constraint is meant to support the student's learning or why it is avoiding more direct answers.",
+                "reason": "The tutor consistently enforced a guided-questioning approach and withheld direct answers, but did not explain that this was for the student's learning or skill-building.",
                 "points": 2
               },
               {
+                "evidence_turns": [
+                  10,
+                  20,
+                  30
+                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong step-by-step coaching, but rarely pauses for brief reflection on why a source-selection method or labeling strategy worked, or what the student should transfer to future assignments.",
+                "reason": "The tutor usually ended by assigning the next search/check step rather than prompting reflection on what source-selection method had worked or how to reuse it on other fields.",
                 "points": 2
               }
             ],
@@ -274,7 +284,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, turns 8-10 repeat nearly the same source-priority instruction for finding a BMC boundary citation after the student remains stuck, rather than switching to a new summary, simplification, or alternate tactic.",
+                "reason": "When the student stayed stuck on what counted as the cleanest BMC boundary citation, the tutor repeated nearly the same source-priority advice across multiple turns without synthesizing or reframing the task.",
                 "points": 4
               }
             ],
@@ -300,14 +310,17 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  2,
+                  3,
+                  4,
+                  24
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "In Transcript 3 turn 4, the response includes avoidably dense phrasing and unexplained multilingual insertions ('داخل', 'рядом'), which add cognitive load for a confused student.",
-                "points": 2
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used dense multi-part replies with several numbered questions at once, which was more than this confused student needed and reduced opportunities for simpler back-and-forth progress.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -319,24 +332,25 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor is generally strong on guided discovery, assignment alignment, and process-oriented coaching without doing the student's work.",
-      "Main deductions come from limited explicit meta-learning framing, little reflection/transfer prompting, one clear repetition pattern when the student stayed stuck, and one instance of unnecessarily dense wording.",
-      "The repetition deduction is based primarily on the end of Transcript 1; elsewhere the dialogue mostly advances appropriately."
+      "Across all three transcripts, the tutor stayed strongly assignment-focused, avoided doing the student's table for them, and usually used guided discovery well.",
+      "Main deductions come from process-level omissions: the tutor did not explain why it was using a question-driven approach, and it rarely invited reflection on what source-evaluation method the student had learned.",
+      "The clearest dialogue weakness was repetition in the first transcript's boundary-citation sequence, where the tutor restated nearly the same priority order over several turns instead of reframing.",
+      "I applied a moderate communication deduction because many replies bundled 4-5 prompts at once; this was sometimes effective, so I did not take additional clarity deductions beyond response length."
     ],
-    "total_score": 36,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

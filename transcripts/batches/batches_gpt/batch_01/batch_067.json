@@ -241,25 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step coaching, but after clear student progress it kept advancing the task without prompting reflection on why the method worked or what changed in the student's reasoning.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -275,10 +264,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "2.2.A.a",
-                "reason": "The tutor imposed a new rule that the table should have only 1-2 stressors rated 9-10, which is not in the assignment and conflicts with the prompt's note that duplicate high ratings are allowed.",
+                "reason": "Tutor introduced and then accepted the incorrect idea that the student should have only 1–2 stressors rated 9–10, instead of re-anchoring to the assignment note that duplicate high ratings are allowed when justified.",
                 "points": 4
               }
             ],
@@ -314,18 +304,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, built on the student's partial ideas, and avoided doing the table for the student.",
-      "The main assignment-alignment issue was introducing an unsupported cap on how many stressors could receive 9-10 ratings, despite the assignment explicitly allowing duplicate ratings.",
-      "Method coaching was strong, but the conversation did not include much explicit reflection to help the student generalize why the rating-and-evidence approach was working."
+      "Scored Transcript 1 only because the schema supports a single conversation; the tutor was otherwise strongly guided, interactive, and method-focused throughout.",
+      "The main issue was assignment mis-anchoring: the tutor imposed a non-prompt rule limiting how many stressors could receive 9–10 ratings, and then let the student adopt that mistaken framing."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

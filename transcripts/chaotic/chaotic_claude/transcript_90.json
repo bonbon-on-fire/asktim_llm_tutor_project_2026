@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 7, the tutor directly states the act consequentialist position on 'means vs side effect' in one sentence rather than prompting the student to reason it out. This resolves the key philosophical point for the student instead of guiding the student to derive it.",
+                "reason": "In Turn 7, the tutor directly states the act consequentialist position on 'means vs side effect' as a complete, citable answer: 'An act consequentialist treats means vs side effect as morally irrelevant in itself—it matters only insofar as it affects the overall consequences.' This resolves the key reasoning step the student needed to work out, rather than guiding the student to derive it.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor consistently declines to give direct answers but never clearly explains why—e.g., what learning rationale (active reasoning, skill development) underlies the constraint. Statements like 'I can't give you paste-ready lines' or 'I can't hand you a thesis sentence' enforce boundaries without explaining the pedagogical purpose.",
+                "reason": "The tutor consistently refuses to do student work but never explains the pedagogical rationale (e.g., that generating ideas themselves builds philosophical reasoning skill). The tutor just says 'I can't' without explaining why active reasoning matters for learning.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why their approach improved (e.g., moving from 'lives-only' to 'lives + broader consequences'). There is no moment where the tutor reinforces method choices or asks the student to articulate what they learned about philosophical reasoning.",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking, why a certain approach worked, or how a method choice (e.g., expanding from lives-only to broader consequences) developed their philosophical reasoning. The conversation ends without any reflective synthesis.",
                 "points": 2
               }
             ],
@@ -164,8 +164,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several turns contain multi-part numbered lists with 3-4 sub-questions delivered at once when a single focused prompt would have been more appropriate and interactive. Turns 2, 5, and 8 in particular present 4-point lists that give the student a lot to process before they have shown where they are stuck.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -177,28 +190,26 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to provide ready-made answers and maintained Socratic discipline across nearly all turns—redirecting the student to generate their own reasoning, using structured templates without filling them in, and building on student progress turn-by-turn.",
-      "A notable deduction was applied in Turn 7: when the student asked for a one-sentence confirmation of the act consequentialist view on 'means vs side effect,' the tutor directly supplied the philosophical answer ('An act consequentialist treats means vs side effect as morally irrelevant in itself—it matters only insofar as it affects overall consequences') rather than prompting the student to derive it. This resolves the central reasoning step for the student and qualifies as doing the key reasoning step under 1.1.C.b.",
-      "No deduction for 1.1.A (near-submission-ready work): the tutor never assembled or handed over submission-ready text; the fill-in templates and incremental prompts kept the work-generation burden on the student.",
-      "No deduction for 1.1.B (editing and final writing): the tutor declined all polishing requests explicitly.",
-      "Deductions in 1.3 were applied for: (a) failing to explain the learning rationale behind withholding answers (1.3.A.a), and (b) never prompting the student to reflect on their evolving method or what changed in their thinking (1.3.D.a). No method-level feedback was flagged as missing since the tutor consistently directed the student toward consistency checks and philosophical precision.",
-      "Dialogue quality was strong: no spiraling, no off-topic engagement, and the tutor kept the conversation anchored to the assignment throughout.",
-      "Communication quality was strong: responses were well-sized, interactive, and accessible in language."
+      "The tutor does well at refusing to write answers for the student and consistently redirects to guided questioning throughout the conversation. The student makes genuine progress from a vague definition to a more refined consequentialist framework.",
+      "The primary deduction in 1.1 is for Turn 7, where the tutor directly provides the act consequentialist verdict on 'means vs side effect' as a citable sentence, resolving a key reasoning step rather than guiding the student to derive it. This triggered the 1.1.C.b deduction of 6 points.",
+      "In 1.3, the tutor never explains why it won't write answers (no learning rationale given), and never invites the student to reflect on their intellectual progress or method choices—both clear misses.",
+      "Communication quality is penalized primarily because the tutor routinely delivers 4-part numbered question lists in a single turn, which is more of a method dump than an interactive exchange. This pattern repeats across multiple turns.",
+      "No deductions were applied for dialogue quality: the tutor keeps the conversation on-task and advances through the assignment material progressively without redundant spiraling."
     ],
-    "total_score": 36,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

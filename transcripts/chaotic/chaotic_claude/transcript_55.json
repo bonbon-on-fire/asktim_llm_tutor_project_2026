@@ -77,14 +77,16 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  2,
+                  3,
+                  6
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 4, the tutor provides a detailed bullet-point list of NYC-specific facts, program names, and concrete examples for every actor category (MOCEJ functions, DEP program names, ConEd examples, NYSERDA examples, etc.). This does the key research/content-finding step for the student, giving them the exact factual content to 'plug in,' rather than guiding the student to find or reason through those facts themselves.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "The tutor provides fill-in-the-blank sentence templates (Turn 2, 3, 6) that map almost directly onto the submission structure, with only blanks left for the student to complete. In Turn 3, the tutor provides 8 near-complete sentences with explicit wording like 'Leadership is centered in MOCEJ, which ___ ...' and 'DEP is a key implementer because it ___', supplying the framing, transitions, and connective logic. Across turns 2, 3, and 6, these templates progressively become more complete, collectively constituting near-submission-ready text where the student's contribution is merely inserting facts already supplied by the tutor in Turn 4.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -110,7 +112,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces its policy of not writing the post but never clearly explains the learning rationale—why this refusal helps the student develop skills in the long run. The tutor says 'my role is to tutor you' (Turn 3) but does not connect the constraint to active reasoning or skill development.",
+                "reason": "Throughout the conversation, the tutor repeatedly enforces its policy of not writing the post for the student but never explains the underlying rationale—e.g., that active reasoning builds analytical skills needed for future assignments, or that the scaffolded work serves long-term academic development. The tutor says 'I can't' or 'that crosses the line' without articulating the pedagogical purpose.",
                 "points": 2
               },
               {
@@ -127,7 +129,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At no point does the tutor prompt reflection on the student's process—what changed in their thinking, why the structured approach worked, or what method they might apply next time. The conversation ends with Turn 10 without any metacognitive wrap-up.",
+                "reason": "The tutor never pauses to help the student reflect on what worked in their approach or why a particular method (e.g., breaking down actors by role and mechanism) is effective. After Turn 8 when the student produces a good sentence, the tutor moves on to the next task without prompting any reflection on how the student arrived at that quality or what thinking strategy produced it.",
                 "points": 2
               }
             ],
@@ -137,29 +139,15 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 8,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycles through the same pattern across multiple turns: 'I can't write it for you; answer these questions.' The student explicitly flags that the back-and-forth is not working (Turn 3, Turn 6), but the tutor does not meaningfully reframe or try a different mode of engagement. The same question-and-fill-in-the-blank structure recurs without synthesis or a change in approach to break the deadlock.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -171,7 +159,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -181,15 +169,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
-                  5,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1–6 consistently feature very long, multi-part responses (some with 5–8 sub-questions plus templates plus instructions) when shorter, more focused prompts were appropriate. This reduces the student's opportunity to think and respond, and likely contributed to the student's repeated frustration and requests to skip the process.",
+                "reason": "Multiple turns feature extremely long, multi-paragraph responses that overwhelm rather than scaffold. Turn 3 alone delivers 8 near-complete sentence starters with extended sub-clauses. Turn 2 contains a five-question checklist plus a multi-part template. Turn 4 provides exhaustive bullet-point factual lists. Turn 6 presents a multi-step sprint framework with 8 sentence frames. These consistently substitute lengthy monologue for focused, interactive prompting.",
                 "points": 4
               }
             ],
@@ -211,21 +197,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 28,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write submission-ready text and maintained appropriate assignment boundaries throughout, which is commendable.",
-      "However, in Turn 4 the tutor crossed into doing the student's key research/content work by supplying comprehensive, specific NYC factual content (program names, agency functions, concrete examples) as direct plug-in options—this is the kind of content-finding and evidence work the student should do, and it represents a meaningful lapse in the Socratic approach (1.1.C.b, -6 points).",
-      "The tutor's approach stagnated across turns 1–6: the same pattern of 'I can't write it; answer these questions' repeated without adaptation even after the student explicitly flagged the approach was not working for them, triggering the spiraling deduction (2.1.A.a, -4 points).",
-      "Responses in the early turns were consistently long and multi-part (sometimes 5–8 sub-questions plus templates in a single turn), which reduced student thinking space and likely compounded frustration (3.1.A.a, -4 points).",
-      "The tutor never explained why the 'no draft' policy benefits the student's learning (1.3.A.a, -2 points) and never prompted any metacognitive reflection on the student's process or method (1.3.D.a, -2 points).",
-      "Scaffolding and progression (1.2) was handled well: the tutor consistently built on student-supplied content and did not ignore correct student contributions. Tone remained supportive and non-punitive throughout (3.2 full marks). Assignment anchoring was maintained throughout (2.2 full marks)."
+      "The tutor consistently refused to write a final submission, which is commendable, and it maintained appropriate tone throughout a pressure-filled conversation where the student repeatedly demanded copy-pasteable text.",
+      "However, the central problem is that the tutor's scaffolding crossed into near-submission territory. By Turn 3, the tutor provided 8 sentence templates with explicit wording, transitions, and structural logic—leaving only factual blanks. By Turn 4, the tutor supplied all the NYC-specific facts needed to fill those blanks. Together across turns 2–6, the templates and facts combine into an essentially complete submission. This triggers the 1.1.A.a deduction for providing near-submission-ready answer pieces across turns.",
+      "The tutor also never articulated why it was withholding direct help (learning rationale), and never invited the student to reflect on their own thinking process or method—missing key meta-learning opportunities (1.3.A.a and 1.3.D.a).",
+      "Communication was consistently too lengthy; nearly every tutor turn was a multi-paragraph response with extensive lists and templates when a focused one or two-question prompt would have been more appropriate (3.1.A.a).",
+      "Scaffolding and dialogue quality were handled well: the tutor built on student progress turn by turn, maintained assignment focus, redirected off-topic requests cleanly, and avoided spiraling."
     ],
-    "total_score": 28,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

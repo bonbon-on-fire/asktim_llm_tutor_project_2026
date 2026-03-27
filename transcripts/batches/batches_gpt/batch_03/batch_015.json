@@ -232,10 +232,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  2,
+                  7
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "Tutor supplied a central objection/interpretive path ('using an innocent person as a tool... ignoring rights/constraints') before the student generated it, giving the key idea first rather than eliciting it.",
+                "reason": "The tutor supplied core interpretive content before the student derived it, including the act-consequentialist rule and a suggested rights/consent-based revision path, rather than keeping idea generation primarily with the student.",
                 "points": 6
               }
             ],
@@ -253,12 +254,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
                   7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor helped the student progress and organize ideas, but did not prompt reflection on why the method worked or what to transfer to future argument analysis.",
+                "reason": "The tutor helped structure the answer and sanity-check content, but did not prompt reflection on why the student's method worked or how to transfer it to future cases.",
                 "points": 2
               }
             ],
@@ -321,10 +321,10 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused to provide a submission-ready paragraph and kept the student doing the core case-mapping and principle-building work.",
-      "The main deduction is that the tutor introduced a central objection to act consequentialism ('using an innocent person as a tool/ignoring rights') before the student independently articulated it.",
-      "Scaffolding, assignment anchoring, and tone were strong throughout; the main missing element was explicit reflection on why the student's method worked and how to transfer it.",
-      "Multiple transcripts were provided, but this score evaluates Transcript 1 only because the required schema supports one conversation at a time."
+      "Scored Transcript 1 only because the provided schema supports a single conversation, though three transcripts were included.",
+      "The tutor consistently resisted giving submission-ready prose, kept the student doing most of the writing, and scaffolded the prompt well through targeted questions and templates.",
+      "Main deduction: the tutor still introduced key content early, especially the act-consequentialist rule and a rights/consent objection path, which reduced student-led discovery on the central ideas.",
+      "Smaller deduction: the conversation ended with packaging and checking, but without explicit reflection on why the method succeeded or how to reuse it on future philosophy prompts."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

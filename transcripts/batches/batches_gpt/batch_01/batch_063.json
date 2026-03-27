@@ -243,26 +243,18 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  10
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing to provide filled-out rows, the tutor states it would be 'doing your assignment' but does not clearly explain the learning rationale for that limitation.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor emphasizes next steps and replication of the method but does not explicitly prompt reflection on why the method worked or what changed in the student's thinking.",
+                "reason": "When refusing to provide finished rows or exact ratings, the tutor mostly frames this as not doing the assignment for the student, with only limited explicit learning-rationale explanation.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -289,8 +281,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses multi-part prompts with several questions, options, and frameworks in one turn, even as the student repeatedly signals being lost or overwhelmed.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -302,25 +300,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor consistently kept the student doing the substantive work, used guided questions, and stayed tightly anchored to the assignment requirements.",
-      "The strongest area was pedagogy through scaffolding: the tutor repeatedly broke the task into sectors, ratings, evidence, and justification steps without giving submission-ready rows.",
-      "Minor deductions were applied only for limited meta-learning support: the tutor refused direct answer requests without fully explaining the learning rationale, and it rarely prompted explicit reflection on why the student's method or judgment process improved.",
-      "Because the evidence came from multiple similar transcripts and some possible concerns were ambiguous, smaller deductions were favored."
+      "Across the transcripts, the tutor stays strongly anchored to the assignment, uses guided questions rather than giving submission-ready answers, and gives useful process structures such as ranking, sector tagging, and claim-evidence-so what.",
+      "Main weakness: the tutor often responds with dense, multi-step prompts that appear to overload this confused student; the student repeatedly signals overwhelm.",
+      "The deduction on tutoring rationale is modest because the tutor does give some boundary explanation, but it is usually framed as not doing the assignment rather than explicitly as a learning strategy."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

@@ -235,7 +235,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Transcript 1, Turn 2: Tutor provides the full top-3 stressor list for Miami (SLR/king tides, hurricanes/storm surge, extreme heat) with sector tags before the student has attempted to identify them, doing the key identification step the assignment requires.",
+                "reason": "Transcript 1, Turn 2: Tutor proactively supplies a complete ranked top-3 stressor list for Miami (names, sector tags, implied ordering) before the student has attempted any reasoning, doing the key identification step for them.",
                 "points": 6
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its refusal to write content but rarely explains the learning rationale (i.e., that active reasoning builds skills for later assignments). The tutor says 'that would be doing the assignment for you' without connecting refusals to long-term skill development or active reasoning benefits.",
+                "reason": "Across all three transcripts the tutor enforces constraints ('I can't give you paste-ready sentences') but never explains the learning rationale—why doing the work themselves builds the skill needed for later assignments like the climate action plan.",
                 "points": 2
               },
               {
@@ -282,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a method worked. Every turn focuses on the next step forward without consolidating learning or prompting process reflection.",
+                "reason": "No turn across any of the three transcripts prompts the student to reflect on what their reasoning process revealed, what changed in their thinking, or why a method worked. The tutor always pivots to the next task without consolidation.",
                 "points": 2
               }
             ],
@@ -302,14 +302,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
-                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Transcript 1 (Turns 6–10): The tutor cycles repeatedly through the same pattern—student asks for copy-ready content, tutor refuses and re-offers a template or bullet list of facts—without switching strategy, consolidating progress, or suggesting the student can move on. The student remains in the same place through the last turn.",
+                "reason": "Transcript 1, Turns 8–10: The student asks the same 'which facts/bullets to use' question three times and the tutor responds in the same way each time (listing bullet choices) without switching to a different approach, reframing, or suggesting a different path forward.",
                 "points": 4
               }
             ],
@@ -340,11 +338,11 @@
                   4,
                   5,
                   6,
-                  8,
-                  9
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across transcripts 1 and 2, several tutor turns use multi-paragraph replies with numbered lists of options, fill-in templates, and calibration questions simultaneously, when shorter focused prompts asking one question at a time would be more effective and leave more thinking room for the student.",
+                "reason": "Across all three transcripts many tutor turns consist of multi-part, multi-paragraph responses with numbered lists, templates, and multiple embedded questions when a single focused prompt would have been more appropriate given the student's need for momentum.",
                 "points": 4
               }
             ],
@@ -373,13 +371,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and firmly refuses to produce submission-ready content, maintaining academic integrity boundaries across all three transcripts and 30 turns, which is a significant strength.",
-      "However, in Transcript 1 Turn 2, the tutor generates the complete top-3 Miami stressor list with sector tags before the student has made any attempt, doing a core identification step that the assignment requires the student to do. This triggers 1.1.C.b (6-point deduction).",
-      "Across Transcripts 1 and 2 (particularly Turns 6–10 of Transcript 1), the tutor falls into a repetitive loop: student demands copy-ready content, tutor refuses and re-offers bullet facts or templates, student repeats request. No strategy shift (reframing, consolidating what was achieved, suggesting partial completion) occurs, triggering the full 2.1 deduction.",
-      "The tutor never explains the pedagogical rationale for its constraints (skill-building for later assignments, active reasoning) and never prompts process reflection at any point across all three conversations, triggering 1.3.A.a and 1.3.D.a deductions.",
-      "Many tutor turns are multi-part with numbered sub-questions and fill-in templates presented simultaneously, consistently reducing the student's opportunity to think and respond to a single focused prompt.",
-      "The tutor's tone remains supportive and non-dismissive throughout; it correctly anchors to the assignment and handles off-topic requests (ghostwriting) appropriately. Scaffolding generally builds on student progress (e.g., Transcript 3 progressively builds from city choice to stressor selection to evidence to rating calibration).",
-      "1.3.B (method-level feedback) is borderline—the tutor does give process feedback on evidence quality and rating logic—so no deduction was applied there to avoid double-penalizing."
+      "The tutor consistently refused to produce submission-ready content and maintained appropriate academic-integrity boundaries throughout all three transcripts, which is commendable.",
+      "1.1 deduction: In Transcript 1 Turn 2 the tutor pre-generates the complete top-3 stressor list for Miami (names, sector tags, implicit ranking) before the student has attempted any identification, performing the key reasoning step for them. This triggers 1.1.C.b for 6 points. The full 12-point 1.1.A.a penalty was not applied because the tutor never assembled a submission-ready table; the stressor list is a significant assist but not complete submission work.",
+      "1.3 deductions: The tutor never explains why it withholds answers in terms of skill development or long-term learning goals (1.3.A.a, -2). No turn across the three transcripts invites the student to reflect on what changed in their thinking or why a method worked (1.3.D.a, -2). 1.3.B was not penalized because the tutor does offer process-level guidance (calibration rules, templates, critique checklists).",
+      "2.1 deduction: In Transcript 1 Turns 8–10 the student asks the same 'which bullets/facts to prioritize' question three successive times and the tutor responds with the same format each time rather than reframing, summarizing, or switching strategy, triggering 2.1.A.a for 4 points.",
+      "3.1 deduction: Tutor responses are frequently multi-paragraph with multiple sub-questions, templates, and numbered lists when the interaction context called for shorter, more focused prompts. This is a consistent pattern across all three transcripts, triggering 3.1.A.a for 4 points.",
+      "No deductions were applied to 1.2 (scaffolding builds well on student progress each time), 2.2 (assignment anchoring is consistently maintained), or 3.2 (tone is warm and non-grading throughout)."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

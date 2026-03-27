@@ -232,11 +232,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8,
-                  9
+                  5,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "After the student identified an objection, the tutor supplied a substantive reply angle and core rights-based distinction ('appropriating' a person as a resource vs redirecting an existing threat), doing a key reasoning step for the student's critique.",
+                "reason": "Although the tutor mostly resisted writing the essay, it later supplied the key argumentative bridge for the critique by giving the core distinction itself (using a person as a resource/means vs redirecting an existing threat, plus ready-made tests for that distinction).",
                 "points": 6
               }
             ],
@@ -251,14 +252,37 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-submission-ready boundary, but did not clearly explain the learning rationale behind that limit beyond saying it would not do it.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor pushed the student through choices and stress tests, but did not pause for brief reflection on why a chosen method or distinction was working or failing.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 14,
           "max": 24
         }
       },
@@ -285,8 +309,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Responses repeatedly came as long numbered checklists and multi-part prompts when shorter, more targeted interaction would have been more appropriate for the student's time pressure and confusion.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -298,24 +335,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scoring applies to Transcript 1 only because the schema is for a single full conversation.",
-      "The tutor consistently resisted submission-ready writing and kept the exchange anchored to the assignment through structured prompts, contrastive questions, and stress tests.",
-      "The main deduction is for one clear moment where the tutor supplied a substantive reply angle and distinction that performed a central reasoning step for the student's final critique rather than eliciting it from the student."
+      "Scored Transcript 1 only because the schema is for a single conversation.",
+      "The tutor strongly resisted doing the assignment for the student and kept the discussion anchored to the prompt, with generally good scaffolding.",
+      "Main weaknesses were late-stage supply of the core argumentative distinction for the student's critique, repeated refusal without much learning-rationale explanation, limited reflection prompts, and responses that were often longer than necessary."
     ],
-    "total_score": 40,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

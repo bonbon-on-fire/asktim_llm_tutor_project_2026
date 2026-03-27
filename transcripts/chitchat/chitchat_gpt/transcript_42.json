@@ -89,30 +89,22 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor immediately imposed a student-led answering structure (\"you supplying the key claims\") without explaining the learning rationale for that constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor kept advancing to new stress tests and refinements without prompting explicit reflection on why the student's method worked or what changed in their reasoning.",
+                "reason": "After the student arrived at a workable distinction and draft account, the tutor moved directly into further stress tests rather than prompting reflection on why the method worked or what the student had learned for future argument construction.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -158,18 +150,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery, kept the discussion tightly anchored to the MIT philosophy prompt, and helped the student build a defensible argument without supplying submission-ready content.",
-      "Deductions are limited to meta-learning: the tutor did not clearly explain the rationale for its student-led constraint at the start, and it missed chances to prompt explicit reflection on why the student's method succeeded or how it transferred across cases.",
-      "I kept full points on communication despite multi-part prompts because they remained interactive, structured, and responsive rather than turning into answer-giving monologues."
+      "The tutor consistently used guided questioning, kept the student doing the substantive philosophical work, and stayed tightly anchored to the assignment's act consequentialism and trolley-case structure.",
+      "Scaffolding was strong: the tutor built from the student's claims, handled uncertainty about Fuel/Blood carefully, and helped the student refine a testable non-consequentialist principle without supplying a submission-ready answer.",
+      "Minor deduction only for limited reflection/transfer support: once the student had a coherent framework, the tutor kept pressure-testing it rather than briefly consolidating why that argumentative method succeeded."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

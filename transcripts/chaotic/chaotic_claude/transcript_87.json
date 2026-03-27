@@ -74,17 +74,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provides a detailed 'phrase bank' with specific ready-made phrases for each actor (e.g., 'grid hardening and outage planning during heat/flood events' for ConEd, 'community-led priorities/accountability for frontline neighborhoods' for EJ alliance, 'risk mapping, heat/flood research, evaluation' for universities). This does the key reasoning step of explaining what each actor contributes, which the student should have been guided to derive.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -110,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but never explains the learning rationale (e.g., developing analytical skills, long-term ability to map actors independently). It just says 'I can't' without framing why guided discovery benefits the student.",
+                "reason": "The tutor consistently refuses to write for the student but never explains the pedagogical rationale—e.g., that doing the work actively builds the analytical skills assessed by the assignment or aids long-term learning. It simply says 'I can't do that for you' without articulating why guided discovery matters for skill development.",
                 "points": 2
               },
               {
@@ -119,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produces improved sentences, the tutor moves directly to checking content without prompting any reflection on what changed in the student's thinking or reinforcing the process improvements made.",
+                "reason": "After the student produces improved sentences in turns 9–10, the tutor gives corrective fix-notes but never prompts reflection on what changed in the student's thinking or reinforces why the revision process led to stronger analysis. There is no invitation to reflect on method.",
                 "points": 2
               }
             ],
@@ -129,7 +120,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 24
         }
       },
@@ -166,7 +157,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns (especially 3, 4, 5, 6) contain multi-paragraph responses with elaborate templates, fill-in-the-blank scaffolds, and phrase banks when shorter, more targeted prompts would have been sufficient. The density of instructions in each turn reduces student opportunity to think before being given a near-complete framework.",
+                "reason": "Multiple tutor turns (3, 4, 5, 6, 7) contain lengthy multi-section responses with numbered sub-prompts, phrase banks, blueprints, and bracket-filling templates simultaneously, when shorter, one-step prompts would have been more appropriate and interactive. This consistently reduces the student's opportunity to think before receiving additional scaffolding.",
                 "points": 4
               }
             ],
@@ -188,22 +179,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write the forum post or stitch sentences together, maintaining a clear boundary against doing the assignment for the student across all ten turns.",
-      "The main deduction in 1.1 is for the phrase bank in Turn 5, which provided specific ready-made descriptions for each engaged actor (ConEd, EJ Alliance, universities), doing the key reasoning step of interpreting what each actor contributes rather than guiding the student to derive it.",
-      "The tutor never explained why the guided approach benefits the student's learning (1.3.A.a), and missed the opportunity at the end of the conversation to prompt reflection on the student's thinking process (1.3.D.a).",
-      "Response length was frequently excessive: turns 3–7 used elaborate multi-part templates and phrase banks when more targeted, shorter prompts would have been more appropriate and left more cognitive work to the student (3.1.A.a).",
-      "Scaffolding and progression (1.2) was handled well—the tutor built on student-provided content each turn rather than restarting, and correctly diagnosed where the student was stuck.",
-      "Assignment anchoring (2.2) was strong throughout; the tutor kept the student focused on the specific deliverable without allowing off-topic drift.",
-      "Tone was consistently supportive and non-punitive despite repeated requests to do the work outright (3.2 full marks)."
+      "The tutor performed very well on the core pedagogical principles: it consistently refused to write the assignment for the student, maintained Socratic questioning throughout all 10 turns, built on the student's own contributions (e.g., leveraging the actor names and roles the student provided in turns 3 and 6), and kept the conversation anchored to the assignment without any significant off-topic drift or spiraling.",
+      "The primary deduction in 1.3 (meta-learning) is that the tutor never explained its rationale for not writing the post—it only said 'I can't do that for you' without articulating the learning benefit of guided discovery. Additionally, after the student produced noticeably improved sentences in turns 9–10, the tutor moved straight to fix-notes without prompting any reflection on what made the revision better or reinforcing the method.",
+      "The main communication deduction (3.1) is for response length: several mid-conversation turns (3, 4, 5, 6, 7) presented multiple elements simultaneously—numbered sub-prompts, phrase banks, blueprints, bracket templates—when a single focused next-step question would have been more interaction-friendly and less cognitively overwhelming for a clearly time-pressured student.",
+      "No deductions were applied for 1.1 (the tutor never gave submission-ready content), 1.2 (scaffolding built progressively on student responses), 2.1 (no circular spiraling), 2.2 (assignment framing was maintained throughout), or 3.2 (tone was firm but supportive and non-grading throughout)."
     ],
-    "total_score": 32,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

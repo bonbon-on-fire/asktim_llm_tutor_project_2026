@@ -231,8 +231,13 @@
           "1.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  3,
+                  7,
+                  10
+                ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the transcripts, the tutor sometimes performs the central philosophical reasoning instead of eliciting it from the student—for example, confirming that AC permits the one-for-five cases under stipulated assumptions and supplying the Switch/Footbridge/Blood/Fuel means-vs-side-effect mapping and consequentialist \"extra consequences\" itself.",
+                "reason": "Tutor supplies key argumentative content by confirming the core act-consequentialist verdict under stipulated assumptions and providing concrete consequentialist considerations/constraint options for Blood and related cases, instead of having the student generate those ideas first.",
                 "points": 6
               }
             ],
@@ -247,14 +252,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student makes substantive progress, the tutor keeps advancing the outline/argument but does not prompt reflection on why the chosen method worked or how to transfer it to similar philosophy prompts.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -300,18 +315,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor consistently refused paste-ready writing, kept the conversation anchored to the assignment, and used structured prompts and templates to push the student to produce their own claims.",
-      "The main deduction is in pedagogy: the tutor occasionally supplied substantive philosophical content that resolved key reasoning steps for the student, especially on act consequentialist verdicts and the means-vs-side-effect framing.",
-      "Because the input contained three parallel transcripts rather than one single conversation, scoring was kept conservative where similar evidence appeared repeatedly."
+      "Tutor consistently refused to provide paste-ready prose and kept the work anchored to the actual philosophy prompt.",
+      "The strongest deduction is in guided discovery: the tutor sometimes supplied central substantive content (e.g., confirming the act-consequentialist verdict under stipulated assumptions and offering concrete system-effects/constraint options) rather than eliciting it first from the student.",
+      "Scaffolding was strong overall: the tutor built from the student's partial answers, used templates productively, and gave targeted argumentative feedback.",
+      "A smaller deduction was applied for limited reflection/transfer support; after improvement, the tutor mostly moved the argument forward rather than prompting the student to reflect on why the method worked."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

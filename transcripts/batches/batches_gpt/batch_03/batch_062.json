@@ -233,10 +233,10 @@
               {
                 "evidence_turns": [
                   8,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied substantive argumentative content the student could have generated, including a tutor-framed \"two-part test\" and two ready-made objections to the student's view.",
+                "reason": "The tutor at times crystallizes the student's framework into a two-part test and then maps it onto the cases, supplying key bridge steps from principle to verdict.",
                 "points": 6
               }
             ],
@@ -251,14 +251,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor stress-tests content well, but does not explicitly prompt reflection on why the student's reasoning method worked or how to reuse the method on future prompts.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -304,18 +314,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only because the schema is for a single conversation, though multiple transcripts were provided.",
-      "The tutor was generally strong: it refused submission-ready writing, kept the student anchored to the prompt, and progressively stress-tested the student's emerging principle.",
-      "Main deduction: late in the exchange, the tutor contributed notable argumentative content itself by framing the student's view as a two-part test and by supplying standard objections, which moves beyond guided discovery into idea generation."
+      "Across the provided conversations, the tutor consistently refused submission-ready writing, kept the student doing most of the argumentative work, and repeatedly re-anchored discussion to the actual lecture cases and prompt.",
+      "The main pedagogy weakness is that the tutor sometimes consolidated the student's emerging view into a fairly complete framework and case mapping, which reduces student ownership of the key reasoning step.",
+      "Evidence for process-level reflection support was weaker than evidence for scaffolding; where ambiguous, deductions were kept modest."
     ],
-    "total_score": 40,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

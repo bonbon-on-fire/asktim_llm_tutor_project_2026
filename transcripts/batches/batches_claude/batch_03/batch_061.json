@@ -235,7 +235,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Transcript 1, Turn 7: The tutor provides a full four-section essay outline with specific content instructions for each paragraph (e.g., 'Define the act-consequentialist standard,' 'Apply it to Switch, Footbridge, Fuel, Blood: for each, what outcome is compared, and what verdict follows?', 'Use Blood or Fuel as your test case,' 'State your principle: permissible if death is a foreseen side-effect, not intended/used as a means. Re-run the cases... Address Loop: you bite the bullet'). This constitutes giving the student the full reasoning structure and content map of what is essentially a near-submission-ready outline, carrying the structural and argumentative work instead of the student.",
+                "reason": "Transcript 1, Turn 7: Tutor provides a detailed four-part essay outline (Intro, Body 1, Body 2, Body 3) with specific content prompts for each section that together form a near-submission-ready structural scaffold. The outline fills in the claim, the evidence ordering, and the argument flow, doing significant reasoning work the student should do independently.",
                 "points": 12
               }
             ],
@@ -265,24 +265,16 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers directly (e.g., 'I'm doing this so you develop the skill of applying philosophical frameworks yourself'). It refuses requests but does not articulate the learning rationale behind its approach.",
+                "reason": "Across all three transcripts, the tutor enforces its constraints (e.g., 'I can't write that for you') but rarely explains the learning rationale—why the student doing the work themselves builds philosophical reasoning skill. The refusals are brief and policy-like without grounding them in active reasoning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In none of the three transcripts does the tutor prompt the student to reflect on what changed in their thinking, why a method worked or failed, or reinforce method choices after improvement. The conversation always moves forward to the next question without consolidating what was learned.",
+                "reason": "None of the three transcripts end with reflection prompts asking the student what changed in their thinking or reinforcing which method choices proved productive. The tutor continues pushing content forward without pausing to consolidate learning or prompt metacognitive transfer.",
                 "points": 2
               }
             ],
@@ -308,10 +300,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  1,
+                  2
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "Transcript 2, Turn 1: The student asks about the assignment but also asks 'what's your fave movie rn?' The tutor briefly declines ('Let's stay on the assignment—I can't do the favorite-movie question here') and redirects immediately. This is appropriate and minimal engagement with off-topic content. No meaningful deduction warranted.",
+                "reason": "Transcript 2, Turn 1: Student asks a casual off-topic question ('what's your fave movie rn?'). The tutor dismisses it in one brief clause ('I can't do the favorite-movie question here') before pivoting—this is handled efficiently and correctly. No meaningful deduction warranted here.",
                 "points": 0
               }
             ],
@@ -338,10 +331,12 @@
                   5,
                   6,
                   7,
-                  8
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, the tutor consistently sends multi-question, multi-paragraph responses (often 4-6 distinct questions or sub-tasks per turn) when shorter, more focused prompts would have been more appropriate. For example, Transcript 1 Turn 2 has 4 distinct sub-questions; Transcript 3 Turn 3 has 4 sub-questions plus a directive; Transcript 1 Turn 7 is an extended outline with sub-instructions under each heading. This pattern consistently reduces student opportunity to think and respond to one thing at a time.",
+                "reason": "Across all three transcripts, tutor responses are frequently multi-paragraph with several sub-questions bundled together (e.g., Transcript 1 Turn 2 has three layered tasks; Transcript 3 Turn 3 has four numbered questions). While structured, these consistently give the student many items to process at once rather than one focused prompt, reducing the student's opportunity to think and respond iteratively.",
                 "points": 4
               }
             ],
@@ -370,15 +365,14 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_06): The tutor generally uses Socratic method and refuses to write submission-ready content, but in Turn 7 provides a detailed four-section essay outline with specific content prompts under each heading—this crosses into 1.1.A.a territory by carrying the full structural and argumentative work for the student, resulting in a full 12-point deduction for criterion 1.1.",
-      "Transcripts 2 and 3 (chitchat_06, clueless_06): The tutor maintains strong Socratic discipline throughout, consistently refusing to give verdicts or principles directly and pushing students to derive their own. No 1.1 deductions are warranted for these transcripts, but the 1.1 score is already zeroed by Transcript 1.",
-      "Criterion 1.2: Scaffolding is strong across all three transcripts. The tutor builds on student progress, acknowledges correct steps, and adapts to confusion without ignoring valid work. No deductions.",
-      "Criterion 1.3: The tutor never explains its pedagogical rationale for withholding answers (1.3.A.a), and never prompts students to reflect on what changed in their thinking or why a method worked (1.3.D.a). Process feedback is present but these two dimensions are absent throughout. 4 points deducted.",
-      "Criterion 2.1: No redundancy or spiraling observed; the tutor consistently advances the conversation and reframes when students are stuck.",
-      "Criterion 2.2: The off-topic movie question in Transcript 2 Turn 1 is handled immediately and minimally; no meaningful deduction. Assignment anchoring is otherwise strong.",
-      "Criterion 3.1: All three transcripts show a persistent pattern of multi-question, multi-paragraph responses where one focused prompt would have been more appropriate. This reduces student thinking time and response opportunity throughout. 4 points deducted.",
-      "Criterion 3.2: Tone is consistently supportive, collaborative, and non-grading throughout all transcripts. No deductions.",
-      "Note: The 1.1.A.a deduction is triggered by Transcript 1 Turn 7 alone; the behavior in Transcripts 2 and 3 is largely clean. The multi-question response length pattern (3.1.A.a) is pervasive across all three transcripts."
+      "The dominant deduction is the 1.1 near-submission-ready penalty triggered by Transcript 1, Turn 7, where the tutor provides a four-section essay outline with specific content directions for each body paragraph. This effectively does the structural and argumentative framing work for the student across claim, evidence, and logical flow—meeting the 1.1.A.a threshold.",
+      "Across all three transcripts the tutor generally maintains a Socratic posture outside that turn: it refuses to give verdicts or thesis sentences directly, uses templates to scaffold student drafting, and consistently asks the student to apply their own stated rule. This limits additional deductions in 1.1.",
+      "Scaffolding (1.2) is handled well: the tutor builds on student progress turn-by-turn, acknowledges correct steps, and does not restart from scratch. No deductions applied.",
+      "Meta-learning (1.3) loses points because the tutor never explains its refusal policy in terms of why the student doing the work builds philosophical skill, and endings across all three transcripts push forward without any reflective pause or transfer moment.",
+      "Dialogue quality is strong: the tutor redirects off-topic content quickly and stays assignment-anchored throughout. No deductions in section 2.",
+      "Communication quality loses points for consistently bundling 3–4 sub-questions per turn across all transcripts. While each individual response is coherent, the pattern of multi-part prompts reduces interactive space for students, particularly for a lost or chaotic student who may be overwhelmed.",
+      "Tone is consistently supportive and non-punitive; no grading language is used. No deductions in 3.2.",
+      "The 2.2 deduction entry with 0 points was included only for documentation; it does not affect scores."
     ],
     "total_score": 26,
     "judge_llm_calls": 1

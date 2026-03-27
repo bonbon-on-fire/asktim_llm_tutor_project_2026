@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently refuses to draft for students but rarely explains the pedagogical rationale (active reasoning, skill-building, academic integrity). It says 'I can't write that for you' without explaining why doing so would harm the student's learning, especially in Transcript 1 where the refusal is repeated across many turns with no learning-rationale offered.",
+                "reason": "Across all three transcripts, the tutor consistently refuses to write submission content but rarely explains the learning rationale (active reasoning, skill development) behind those refusals. In Transcript 1 the tutor just says 'I can't write this for you' repeatedly without explaining why that helps the student learn. In Transcripts 2 and 3 the pedagogical purpose is similarly implicit.",
                 "points": 2
               },
               {
@@ -264,7 +264,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the conversations end without any explicit prompt for reflection on what method worked, what changed in the student's thinking, or how the process they used could transfer to future assignments. The tutor moves to the next question rather than pausing to reinforce method choices.",
+                "reason": "In all three transcripts the conversations end without any prompt for the student to reflect on what worked in their approach or what changed in their thinking. The tutor moves forward with the next task each time rather than reinforcing method choices or inviting process-level reflection.",
                 "points": 2
               }
             ],
@@ -281,8 +281,24 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly asks the tutor to write the post for them across turns 1–8. The tutor repeats the same refusal pattern and re-presents very similar fill-in skeleton structures multiple times (turns 3, 4, 5, 7) without meaningfully advancing the conversation or synthesizing progress. By turn 8 the student is still making the same request, suggesting the cycle was not broken effectively. A more productive switch to a different strategy (e.g., asking the student to attempt even one sentence, or acknowledging stalemate and reframing) was warranted but did not happen.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -294,7 +310,7 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -310,13 +326,10 @@
                   4,
                   5,
                   6,
-                  7,
-                  8,
-                  9,
-                  10
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, especially Transcripts 2 and 3, the tutor repeatedly sends multi-paragraph replies with multiple embedded questions, bullet clusters, column frameworks, and nested instructions in a single turn. In Transcript 2 Turn 1 alone the tutor poses two distinct question sets and a detailed six-column table suggestion before the student has engaged at all. In Transcript 3 Turns 2–4 each tutor reply contains 4–6 sub-questions. This consistently reduces student opportunity to think and respond between prompts.",
+                "reason": "Across all three transcripts the tutor frequently delivers very long multi-part responses when shorter, focused prompts would suffice. For example, Transcript 1 Turn 2 is a large multi-section list of candidates across all three categories; Transcript 2 Turn 1 is a multi-paragraph reply with six column suggestions plus two sub-questions before the student has even named their city; Transcript 3 Turn 2 is similarly dense with five actor-specific diagnostic questions. While content is useful, the consistent length reduces student opportunity to think before being given extensive scaffolding.",
                 "points": 4
               }
             ],
@@ -338,19 +351,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 34,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it refuses to draft submission-ready content repeatedly and under sustained pressure (Transcript 1), redirects off-topic requests cleanly (Transcript 2 Turn 2), builds scaffolding progressively from rough ideas to defensible claims (Transcript 3), and consistently keeps the student as the author of ideas and wording. No deductions were warranted under 1.1 or 1.2.",
-      "The main pedagogy gap (1.3) is twofold: (a) the tutor enforces its no-drafting policy without explaining the learning rationale to the student—particularly conspicuous across Transcript 1's nine refusal turns—and (b) the conversations end without any meta-reflection prompt that would help students see what process or mindset shift made their work improve.",
-      "Response length is the clearest structural weakness. Especially in Transcripts 2 and 3, tutor turns routinely pack multiple question clusters, column-design frameworks, and step-by-step templates into single replies. While the content is pedagogically sound, the sheer density reduces the student's cognitive space and violates the 'bite-sized' principle. A 4-point deduction under 3.1 is warranted.",
-      "Tone, assignment anchoring, and redundancy all hold up well: the tutor is warm and encouraging without being sycophantic, keeps students on task, and consistently advances rather than repeating the same diagnostic loop."
+      "All three transcripts show a tutor who is consistently Socratic: refuses to write submission text, asks guiding questions, builds on student contributions, and helps students develop defensible reasoning rather than providing conclusions. No submission-ready content is produced across all 30 turns.",
+      "Scaffolding is strong throughout. In Transcript 1 the tutor provides progressively more refined fill-in structures as the student resists. In Transcripts 2 and 3 the tutor builds incrementally from the student's own lists and interpretations, acknowledging correct steps before challenging weak ones.",
+      "Meta-learning is a consistent gap: the tutor never explains why it declines to write for students in terms of student benefit or skill development, and no transcript ends with a reflection prompt on what the student learned about their own analytical process.",
+      "Transcript 1 shows a significant spiraling problem: the student asks to have the post written for them in turns 1, 2, 3, 4, 5, 6, 7, and 8 and the tutor repeats structurally similar refusals and skeleton templates without pivoting to a meaningfully different strategy to break the cycle.",
+      "Response length is a consistent issue: many turns contain multi-section, multi-paragraph replies with multiple embedded questions before the student has had a chance to respond to even the first prompt. This is most evident in Transcripts 2 and 3 early turns, where dense framing reduces the student's cognitive space. This is penalized once under 3.1.A.a to avoid double-counting.",
+      "Tone is warm, non-punitive, and consistently coaching-oriented across all three conversations. No grading language or inappropriate framing is observed."
     ],
-    "total_score": 38,
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

@@ -229,17 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.1.B.a",
-                "reason": "After refusing to write the thesis, the tutor supplied a polished thesis-sentence formula that closely rewrote the student's idea into near-final wording.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -250,14 +241,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gives revision prompts and structure help, but never asks the student to reflect on why the improved method works or what changed in their reasoning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 22,
           "max": 24
         }
       },
@@ -284,8 +285,19 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several replies are long, bullet-heavy templates and checklists when shorter interactive steps would have been more manageable for this rushed student.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -297,7 +309,7 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
@@ -310,8 +322,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored Transcript 1 only. The tutor consistently refused ghostwriting, kept the student anchored to the prompt, and used structured questions, outlines, and templates to push the student to do the reasoning.",
-      "Main deduction: despite generally strong boundaries, the tutor crossed into near-final writing help at the end by giving a highly polished thesis template that closely packaged the student's argument for submission."
+      "Because the schema supports one conversation, this score is based on Transcript 1 (the philosophy exchange).",
+      "The tutor consistently refused to ghostwrite and kept the student anchored to the actual prompt through guided questions, structure, and argument-focused scaffolding.",
+      "Main weaknesses were limited reflection on learning process and repeated long template/checklist responses that could overwhelm a rushed student."
     ],
     "total_score": 40,
     "judge_llm_calls": 1

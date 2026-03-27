@@ -256,7 +256,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces Socratic constraints (not writing answers, not phrasing arguments for the student) but rarely explains the learning rationale behind this—e.g., 'I want you to do the reasoning so you build the skill of philosophical argument.' In Transcript 1 Turn 1, the tutor says 'I can't write a submission-ready answer for you' without explaining why this benefits the student's learning. This pattern repeats throughout.",
+                "reason": "Across all three transcripts, the tutor never explains to the student why it is guiding rather than answering directly (i.e., no explicit rationale such as 'I'm asking you these questions so you develop the reasoning skill yourself'). It enforces its non-answer policy without articulating the pedagogical purpose.",
                 "points": 2
               },
               {
@@ -273,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor drives the student forward effectively but rarely pauses to prompt reflection on method—e.g., 'Notice how stress-testing a definition helped you find the flaw?' or 'What did you learn about how to construct a philosophical principle from this exchange?' The tutor misses consistent opportunities to reinforce why the approach (stress-testing, anchoring to cases, picking one justification) is a transferable method.",
+                "reason": "In none of the three transcripts does the tutor pause to prompt the student to reflect on what changed in their thinking, why a reasoning move worked, or what method the student used to make progress. Turns move forward without reinforcing method choices after improvement.",
                 "points": 2
               }
             ],
@@ -302,7 +302,7 @@
                   1
                 ],
                 "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2, Turn 1, the student explicitly asks to go off-topic (movies/random chat). The tutor redirects immediately and appropriately with no substantive off-topic engagement. This is handled correctly, so no deduction is warranted here.",
+                "reason": "In Transcript 2, Turn 1, the student asks to chat about movies/random topics. The tutor correctly refuses and redirects immediately with minimal engagement, so no deduction is warranted here.",
                 "points": 0
               }
             ],
@@ -332,7 +332,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns are multi-paragraph with 3–5 sub-questions bundled together. For example, Transcript 1 Turn 1 poses four distinct multi-part tasks at once (AC rule, table, features list, and a 3-part intuition check). Transcript 3 Turn 1 is a particularly long monologue with four separate framing questions before any student response. While this breadth reflects genuine pedagogical intent, it consistently reduces the student's opportunity to think and respond to one thing at a time, and the pattern repeats across many turns.",
+                "reason": "Across all three transcripts, many tutor turns consist of multi-paragraph responses with 3–5 sub-questions asked simultaneously before checking student understanding. For example, Transcript 1 Turn 1 and Turn 2, Transcript 3 Turns 1–3 deliver dense multi-part monologues. This consistently reduces the student's space to think incrementally and respond.",
                 "points": 4
               }
             ],
@@ -361,12 +361,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "All three transcripts show a highly skilled Socratic tutor who consistently refuses to do the work for the student, instead pressure-testing reasoning, surfacing tensions, and guiding students to commit to positions and defend them. No submission-ready content is generated; the tutor never rewrites student arguments or supplies conclusions before the student works toward them. This earns full marks on 1.1.",
-      "Scaffolding (1.2) is excellent: the tutor builds progressively on each student response, acknowledges correct steps, and adapts to each student persona. No deductions are warranted.",
-      "The primary weakness is in meta-learning (1.3): the tutor enforces its Socratic approach without explaining its learning rationale to the student (1.3.A.a), and consistently moves forward without prompting the student to reflect on what the methodological process itself taught them (1.3.D.a). Both deductions (2 points each) are supported across all three transcripts.",
-      "Dialogue quality is strong: the tutor redirects the off-topic request in Transcript 2 immediately and firmly (no deduction for 2.2.B.a), and there is no problematic spiraling or redundancy across any of the three conversations.",
-      "The main communication weakness (3.1.A.a, -4 points) is that the tutor consistently sends long, multi-question turns—often 4–6 sub-questions at once—where shorter, more focused prompts would better support student thinking. This pattern appears in all three transcripts and is most pronounced in Transcript 3 Turn 1 and Transcript 1 Turn 1. Tone is warm, supportive, and appropriately non-evaluative throughout (no deductions for 3.2).",
-      "One clarifying note: the zero-point 'deduction' object added under 2.2 was included in error during drafting; the actual score for 2.2 remains 8/8 with no real deduction applied."
+      "All three transcripts demonstrate strong Socratic discipline: the tutor consistently refuses to write answers for students, asks probing questions, and guides students through stress-testing their reasoning step by step. No deduction for 1.1 is warranted.",
+      "Scaffolding is solid: the tutor builds on student responses, acknowledges progress (e.g., 'Good—your grid is coherent'), and adjusts the level of challenge as students advance. No deduction for 1.2.",
+      "The main pedagogical weakness is in meta-learning (1.3): the tutor never explains *why* it uses the Socratic approach (missing 1.3.A.a), and never explicitly prompts students to reflect on how their thinking changed or which method worked (missing 1.3.D.a). Method-level process feedback is present but reflection and transfer support is absent throughout all three conversations.",
+      "Dialogue quality is strong: no spiraling or repetition without synthesis, and the single off-topic request in Transcript 2 is handled promptly with an immediate redirect. No deductions for 2.1 or 2.2.",
+      "Communication quality is the other notable weakness: across all transcripts, the tutor routinely delivers multi-paragraph responses with 3–5 simultaneous sub-questions, especially in early turns (e.g., Transcript 3 Turn 1 has four distinct tasks and five sub-questions). This reduces student opportunity to think and respond incrementally, triggering a 4-point deduction under 3.1.A.a. Language is clear and appropriately calibrated to the philosophical content, so no deduction for 3.1.B. Tone is consistently supportive and non-evaluative throughout all three transcripts; no deductions for 3.2."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

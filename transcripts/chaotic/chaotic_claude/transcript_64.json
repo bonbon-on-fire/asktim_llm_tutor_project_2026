@@ -77,10 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor provides a detailed menu of exact verb-phrase roles for each actor and specific barriers for each missing group, effectively doing the key reasoning step of determining how actors engage and why groups are excluded. The student only needed to pick from a pre-built list rather than derive these connections themselves.",
+                "reason": "In Turn 3, tutor provides two specific NGO/university candidates (NYC-EJA and Columbia Climate School) with brief justifications, doing some key reasoning that the student should have generated. While framed as 'candidates to verify,' the tutor is essentially supplying the actor choices rather than guiding the student to find them.",
                 "points": 6
               }
             ],
@@ -104,10 +104,13 @@
                   4,
                   5,
                   6,
-                  7
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but rarely explains the learning rationale (e.g., building analytical skills, understanding real actors). Refusals are phrased mostly as policy ('that's doing the work for you') without connecting the constraint to the student's long-term skill development.",
+                "reason": "The tutor repeatedly enforces its no-writing constraint across turns but rarely explains the learning rationale (active reasoning, skill development). Turn 7 briefly mentions 'my job is to help you learn and produce your own work,' but most refusals are stated without explaining why doing the work themselves builds long-term skills.",
                 "points": 2
               },
               {
@@ -124,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their learning process or what changed in their thinking across the conversation. There is no moment of consolidation or transfer-oriented questioning.",
+                "reason": "The tutor never prompts the student to reflect on their thinking process, what they learned from identifying actors, or why the methodology of mapping decision-makers matters. The conversation ends without any reflection or transfer support.",
                 "points": 2
               }
             ],
@@ -168,10 +171,11 @@
                   3,
                   4,
                   5,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-paragraph replies with extensive lists, bullet menus, and options when shorter, more targeted prompts would have been more appropriate. Turns 2, 4, and 8 in particular present walls of text with many sub-points that reduce the student's opportunity to think and respond actively.",
+                "reason": "Multiple turns feature multi-paragraph, dense responses with extensive bullet lists and sub-options when shorter, more focused prompts would have been more effective. For example, Turn 2 lists a long multi-part guided lookup with many sub-questions; Turn 8 provides six full option-lists across actors and barriers. These consistently reduce student thinking space.",
                 "points": 4
               }
             ],
@@ -200,12 +204,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refuses to write submission-ready content for the student, maintaining academic integrity throughout a challenging conversation where the student repeatedly tries to get the tutor to do the work.",
-      "Scaffolding is generally well-managed: the tutor breaks the task into actor types, sectors, and structured steps, and progresses with the student's contributions across turns.",
-      "However, in Turn 8, the tutor crosses into 1.1.C.b territory by providing a comprehensive, pre-built list of exact verb-phrase roles and barriers for all six actor/group slots. This effectively performs the key reasoning step—connecting actors to roles and missing groups to barriers—leaving the student only to pick from a menu rather than derive these ideas themselves. This warrants a 6-point deduction under 1.1.C.",
-      "Under 1.3, the tutor rarely explains the pedagogical rationale for its refusals beyond 'that's doing the work for you,' missing opportunities to frame the constraint around skill development. There is also no reflection or transfer prompting at any point in the conversation.",
-      "Communication quality suffers from consistently lengthy, multi-part replies (Turns 2, 4, 8 especially) that pack many bullet lists and options into single messages, reducing interactivity and cognitive space for the student.",
-      "Assignment anchoring and redundancy control are strong: the tutor keeps the student on task and does not spiral or confirm misframing."
+      "The tutor consistently and firmly refuses to write submission-ready content for the student across all 10 turns, maintaining appropriate boundaries throughout a challenging conversation where the student repeatedly pushes for copy-pasteable text.",
+      "The main pedagogical deduction (1.1.C.b, -6) is applied for Turn 3 where the tutor supplies specific NGO and university candidates (NYC-EJA, Columbia Climate School) rather than guiding the student to discover them. While framed as 'candidates to verify,' this crosses into doing the key actor-identification reasoning for the student. Subsequent turns (4, 8) also provide pre-packaged role and barrier options, which compound this issue, but the primary deduction captures the pattern.",
+      "The tutor never explains why the refusal to write benefits the student's learning (1.3.A.a, -2), and misses all opportunities for process reflection or transfer (1.3.D.a, -2). The tutor also does not provide method-level feedback on the student's reasoning approach beyond correctness checks; however, given the student never produced substantive work to critique, 1.3.B was not deducted to avoid penalizing for student behavior.",
+      "Response length is a consistent problem: turns 2, 3, 4, 7, and 8 in particular deliver extensive multi-paragraph blocks with multiple nested options and sub-questions when a single focused prompt would have been more pedagogically effective (3.1.A.a, -4).",
+      "Tone remains supportive and non-punitive throughout; no grading stance issues were observed. Assignment anchoring is strong. No spiraling or redundancy deductions apply as the tutor consistently advances through the task despite student resistance."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

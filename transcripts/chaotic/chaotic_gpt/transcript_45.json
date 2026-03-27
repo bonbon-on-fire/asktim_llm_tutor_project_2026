@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor seeded most of the substantive Miami stressor ideas up front ('pick from' a list that closely matches the student's final rows), which reduced student-led idea generation before exploration.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,14 +96,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states it cannot complete the assignment, but does not clearly explain the learning rationale for keeping the student doing the reasoning and writing.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 16,
           "max": 24
         }
       },
@@ -139,18 +158,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor consistently refused to provide submission-ready content and instead kept the student generating the claims, ratings, priorities, and justifications through prompts, templates, comparisons, and revision checks across Turns 1-10.",
-      "Scaffolding was strong and cumulative: the tutor built from the student's draft list to definitions of the rating scale, then to mechanisms, evidence hooks, sector tags, consistency checks, and final priority logic without restarting or ignoring student progress.",
-      "Communication remained concise, structured, and supportive. A possible borderline issue is that Turn 1 offered example Miami stressors, but they were framed as optional prompts rather than as the completed assignment content, so no deduction was applied."
+      "The tutor was strongly assignment-anchored, scaffolded the work step by step, and consistently pushed the student to supply evidence, mechanisms, comparisons, and Miami-specific details rather than simply handing over finished prose.",
+      "Main deductions are pedagogical: the tutor supplied most of the core Miami stressor ideas at the start, which limited student idea generation, and it enforced the no-completion boundary without clearly stating the learning rationale. I did not deduct for editing/final writing because the tutor used templates and critique rather than fully rewriting submission-ready answers."
     ],
-    "total_score": 46,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

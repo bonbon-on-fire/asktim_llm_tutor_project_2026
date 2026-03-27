@@ -89,29 +89,21 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a role boundary ('I can’t do a personal chat') without giving a learning-focused rationale for that constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  2,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong step-by-step coaching, but did not prompt explicit reflection on why the student's method improved or how to transfer the approach to future actor-mapping tasks.",
+                "reason": "After the student developed clearer criteria and indicators, the tutor moved straight to finalizing categories and sources rather than prompting brief reflection on why the method worked or how to reuse it on later assignments.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -157,18 +149,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly assignment-centered, redirected the initial off-topic request immediately, and used guided questioning throughout rather than supplying a submission-ready answer.",
-      "Scaffolding was strong: the tutor helped the student distinguish 'leading' vs 'engaged,' operationalize evidence standards, and pressure-test missing actors with concrete documents and indicators.",
-      "The main weakness was meta-learning: the tutor did not explain the learning rationale behind the opening boundary, and there was little explicit reflection on why the student's method improved or how to reuse it on future assignments."
+      "The tutor consistently used guided questioning, built on the student's emerging ideas, and kept the discussion tightly anchored to the actor-mapping assignment.",
+      "Responses were concise, structured, and supportive, with strong process guidance on evidence, categorization, and how to verify claims without doing the assignment for the student.",
+      "The main missed opportunity was explicit reflection/transfer: once the student's method improved, the tutor did not pause to help the student articulate why those criteria and indicators were effective for future course tasks."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

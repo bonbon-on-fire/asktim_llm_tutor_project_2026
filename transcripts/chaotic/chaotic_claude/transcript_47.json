@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 7, the tutor generates three full options for each of the four blanks—complete phrasings like 'resilience and sustainability planning offices and interagency coordination,' 'unequal distribution of benefits and burdens across communities,' etc. These are not hints or scaffolding prompts; they are the substantive content options the student merely selects from. The student does no reasoning to generate the ideas; they only pick A/B/C. This constitutes the tutor doing the key reasoning step (resolving what to say and how to phrase it) on the student's behalf. The student's 'authorship' of content is reduced to a menu selection. This is a significant violation, though not as extreme as 1.1.A.a since the student still assembles sentences themselves. Applying the 1.1.C.b deduction of 6 points.",
+                "reason": "In Turn 7, the tutor provides 3 full options per blank—complete, polished phrases such as 'resilience and sustainability planning offices and interagency coordination' and 'hardening systems against flooding/sea level rise and extreme rainfall impacts.' Rather than prompting the student to reason through what the evidence shows, the tutor hands over pre-built phrase choices that together constitute the core reasoning. Once the student merely picks A/B/B/A, the argument is essentially complete without the student deriving any interpretation from sources. This is a decisive reasoning step done by the tutor.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to do the work but never explains the pedagogical rationale—e.g., 'the reason I ask you to generate ideas is so you build the skill of identifying actors from primary sources.' The tutor says 'I can't' but not 'here's why this matters for your learning.' No explanation of active reasoning or long-term skill development is given.",
+                "reason": "The tutor consistently declines to do work for the student but rarely explains the learning rationale—e.g., why working through sources yourself builds skills needed for later assignments. Across the conversation, the tutor simply states 'I can't do this for you' without grounding the constraint in active reasoning or long-term skill development goals.",
                 "points": 2
               },
               {
@@ -119,7 +119,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student produces a full paragraph (Turn 9) and revises it (Turn 10), the tutor never prompts reflection on what the student learned about identifying actors, what the process revealed about Miami's governance gaps, or how this method would transfer to future assignments. The conversation ends without any process reflection or transfer moment.",
+                "reason": "At the end of the conversation (Turns 9-10) when the student has produced a complete forum post paragraph, the tutor checks for defensibility but does not prompt any reflection on what the student learned about identifying participation gaps, how their thinking developed, or how this actor-mapping method will transfer to the next assignment. The opportunity to reinforce the method is missed.",
                 "points": 2
               }
             ],
@@ -167,7 +167,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly produces large multi-part responses—detailed table skeletons with 8 rows, 4-sentence scaffolds with blanks and labeled options, assembly recipes with verbatim template text—when shorter, more focused interactive prompts would better serve the student. Turns 3, 4, 5, 6, 7, and 8 all contain substantial walls of text that reduce the student's cognitive engagement. Turn 7 in particular is a dense 4-blank × 3-option grid that essentially replaces student thinking.",
+                "reason": "Multiple tutor turns present dense multi-part templates, skeleton tables, and sentence-by-sentence scaffolding that run to considerable length. For instance, Turn 3 provides a full 8-row table skeleton with tri-column blanks, Turns 4-6 repeat the full 4-sentence scaffold with fill-in-the-blank phrasing, and Turn 7 gives 12 fully-worded phrase options across 4 blanks. This pattern of consistently long, pre-structured outputs reduces the student's cognitive engagement and opportunity to think independently, when shorter prompts checking one thing at a time would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -196,11 +196,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refuses to write submission-ready content, appropriately anchors to the assignment, and maintains a constructive, non-dismissive tone throughout. The refusals in Turns 1–6 and 8–9 are on-point and model good boundary-setting.",
-      "However, the major deduction in 1.1 is driven by Turn 7, where the tutor generates three fully-worded content options for each of four blanks. While the tutor frames this as 'pick one,' the substantive ideas—the specific phrasings describing governance mechanisms, equity consequences, and advisory board functions—are entirely tutor-generated. The student contributes no original reasoning; they merely select. This violates 1.1.C.b (tutor does the key reasoning step) at the 6-point level.",
-      "On meta-learning (1.3), the tutor never explains why it won't do the work (no learning rationale), and the conversation ends without any reflection or transfer moment after the student succeeds in Turn 9-10.",
-      "On communication quality, the tutor's responses are frequently very long and dense (Turns 3–8), with table skeletons, 4-part scaffolds, and full assembly recipes that reduce student cognitive effort rather than promote it. This triggers the 3.1.A.a deduction.",
-      "Dialogue quality is strong: the tutor avoids spiraling, stays anchored to the assignment, and progressively builds on student contributions (Miami-Dade/City of Miami identification, utilities). Scaffolding in 1.2 is solid—the tutor consistently builds on what the student has provided."
+      "The tutor consistently refuses to write the deliverable directly for the student and maintains that boundary throughout all 10 turns, which is a strong positive. The tutor successfully keeps the conversation anchored to the assignment, builds progressively on student contributions (Miami-Dade/City of Miami as leads, utilities, Little Haiti), and uses appropriate tone throughout.",
+      "The primary pedagogy deduction (1.1.C.b, -6 points) is triggered in Turn 7, where the tutor provides 12 fully-worded, polished phrase options across 4 blanks. At that point, the student only needed to select letters (A/B/B/A) and the core reasoning was effectively complete without the student having derived any interpretation from their sources. This crosses from scaffolding into doing the key reasoning step for the student.",
+      "Meta-learning (1.3) suffers on two dimensions: the tutor never explains the learning rationale for its constraints (always just 'I can't'), and there is no reflection or transfer moment at the end despite a natural opportunity when the forum post is finished.",
+      "Communication length (3.1.A.a, -4 points) is a consistent issue: multi-part skeleton tables, repeated full 4-sentence scaffolds, and 12-option menus in single turns reduce the student's opportunity to think and produce. Shorter, more targeted prompts would have been more effective.",
+      "No deductions were applied to dialogue quality (2.1, 2.2): the tutor avoids redundancy, re-anchors well, and never engages off-topic content.",
+      "Note on 1.1: The deduction is applied under 1.1.C.b (6 points) rather than 1.1.A.a (12 points) because the tutor never assembled the full submission text; the student did write sentences and make choices, and the tutor provided building blocks rather than a finished product. The boundary is close, and the smaller deduction was chosen given the ambiguity."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

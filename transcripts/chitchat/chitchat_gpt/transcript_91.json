@@ -86,14 +86,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refused to choose the city for the student ('I can’t choose it for you') without explaining a learning-oriented rationale for that limitation.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -126,11 +135,12 @@
                   1,
                   2,
                   3,
+                  5,
                   8,
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part checklist responses where one or two focused prompts could have kept the interaction lighter and more interactive, especially after the student signaled limited access on a phone.",
+                "reason": "Across several turns, the tutor used long multi-part replies with bullet lists and multiple questions when shorter interactive prompts would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -152,19 +162,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed well anchored to the assignment, used guided questioning rather than completing the table, and generally built appropriately on the student's decisions about Jakarta, DKI boundaries, source hierarchy, and indicator definitions.",
-      "Method support was strong: the tutor helped the student reason about source credibility, administrative unit choice, mixed-year justification, GDP versus GRDP labeling, and citation practice without supplying submission-ready content.",
-      "The main weakness was communication length. Several replies packed in many sub-questions and procedural steps at once; this likely increased cognitive load and reduced the chance for shorter, more iterative student thinking.",
-      "No other deductions were clearly supported by the transcript, so scoring remains conservative outside the response-length issue."
+      "The tutor stayed strongly anchored to the assignment, scaffolded the student's decisions well, and avoided doing the table entries for the student.",
+      "Most deductions come from communication style: several replies were longer than needed and packed with multiple instructions/questions at once.",
+      "A smaller pedagogy deduction was applied because the tutor refused to choose the city in Turn 1 without giving a clear learning rationale for that constraint."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

@@ -243,12 +243,8 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  8,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong structure and stress tests, but after the student improved the principle, the tutor moved straight into outline-building rather than prompting brief reflection on why the revised method worked or what changed in the student's thinking.",
+                "reason": "Across Transcripts 1-3, the tutor coached the work well but did not explicitly prompt reflection on why the student's method worked or how to transfer it to future tasks.",
                 "points": 2
               }
             ],
@@ -311,9 +307,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scoring reflects Transcript 1 only because the provided schema supports one conversation score. In that transcript, the tutor consistently used guided discovery, kept the student doing the core reasoning, and anchored discussion tightly to the assignment cases.",
-      "The tutor was especially strong at breaking the philosophy task into manageable steps, building from the student's own distinctions, and avoiding direct answer-giving or polished write-up assistance.",
-      "The main missed opportunity was explicit reflection/transfer: after the student refined a workable principle, the tutor shifted to outline production rather than asking the student to reflect on why the method improved their reasoning."
+      "Across all three transcripts, the tutor consistently used guided questioning, withheld submission-ready answers, and kept the student doing the core reasoning.",
+      "The tutor stayed well anchored to each assignment, built on student progress, and gave concrete process-level prompts rather than just correctness judgments.",
+      "Main gap: despite strong scaffolding, the tutor rarely paused for explicit reflection on why a method worked or how to reuse that method on future tasks."
     ],
     "total_score": 44,
     "judge_llm_calls": 1

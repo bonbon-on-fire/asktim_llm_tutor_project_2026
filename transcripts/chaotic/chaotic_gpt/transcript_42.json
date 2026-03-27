@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "After substantial student work, the tutor still crystallized the student's theory into a tutor-supplied 'two-part test' and then mapped that framework onto the cases, taking over a central reasoning/application step.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -93,7 +103,7 @@
           }
         },
         "base": {
-          "score": 24,
+          "score": 18,
           "max": 24
         }
       },
@@ -139,18 +149,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submission-ready content and instead used guided questions, case-by-case scaffolding, and stress-testing of the student's own principle (Turns 1-10).",
-      "The tutor stayed tightly anchored to the assignment, especially when the student repeatedly requested full paragraphs or exact sentences, and redirected back to reconstructing lecture cases and building a defensible general account (Turns 3-8).",
-      "Responses were clear, structured, and supportive. A few turns included substantive synthesis of the student's emerging view, but this mostly restated and sharpened the student's own reasoning rather than crossing into submission-ready writing, so no deduction was applied."
+      "The tutor consistently refused to provide submission-ready prose, kept the discussion anchored to the actual MIT prompt, and used sequenced questions to make the student articulate principles, case analyses, and objections.",
+      "The main supported deduction is limited to late turns where the tutor supplied a fairly complete two-part framework and explicit case mapping, which goes beyond pure guided discovery and performs part of the central argumentative work."
     ],
-    "total_score": 46,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

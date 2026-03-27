@@ -231,8 +231,13 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "Across Transcript 1, the tutor supplied core answer-path ideas before the student generated them, including a preselected Miami top-3 stressor set and later the strongest facts to use for each stressor, which narrowed the student's interpretation and justification choices substantially.",
+                "evidence_turns": [
+                  2,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor selected the core Miami stressors and later chose the strongest evidence pairs for each rating, doing central content-selection and evidence-ranking work that should primarily come from the student.",
                 "points": 6
               }
             ],
@@ -281,14 +286,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "In Transcript 3, one tutor reply exposed non-student-facing JSON/meta text ('pedagogical-reasoning' and 'Student-facing-answer'), adding avoidable formatting and cognitive load instead of simple direct tutoring language.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -300,24 +299,24 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Overall, the tutor was strongly assignment-anchored, resisted doing submission-ready work, and usually scaffolded with focused questions that built on student progress.",
-      "Main pedagogy weakness: in Transcript 1 the tutor still supplied major content choices for Miami before the student reasoned them out, especially the top-3 stressors and the strongest evidence elements for each.",
-      "Communication was generally clear and supportive, but one Transcript 3 response included internal/meta JSON formatting; because the input bundled three separate conversations, deductions were applied conservatively where ambiguity existed."
+      "Tutor consistently refused to provide submission-ready wording and kept the student anchored to the assignment, using short interactive steps and clear redirection.",
+      "Main deduction: the tutor still supplied key content choices for the student by proposing Miami's top stressors and later selecting the strongest evidence elements for each rating, which reduced student-generated reasoning.",
+      "Multiple transcripts were provided, but the schema supports one conversation score; this evaluation reflects Transcript 1."
     ],
-    "total_score": 38,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

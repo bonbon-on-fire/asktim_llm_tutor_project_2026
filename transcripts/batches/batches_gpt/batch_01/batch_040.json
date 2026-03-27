@@ -229,17 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  26
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor directly identified the Mayor/Mayor's Office as the leading actor from the source line instead of first asking the student to infer that classification.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -257,7 +248,7 @@
           }
         },
         "base": {
-          "score": 18,
+          "score": 24,
           "max": 24
         }
       },
@@ -290,41 +281,31 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  24,
-                  25
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "A few off-topic redirects were noticeably rigid ('non-academic'; 'I’m not going to do personal chat') rather than warmly redirecting, which could discourage participation.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 46,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor was strongly assignment-anchored across the bundled transcripts: it consistently redirected off-topic chat, asked for document-based evidence, and scaffolded the student toward classifying actors as leading, engaged, or missing.",
-      "Main pedagogy deduction: in the bundled input's Transcript 3 Turn 6 (counted here as evidence turn 26), the tutor directly supplied the 'leading actor' conclusion instead of first eliciting the student's inference from the evidence.",
-      "Tone was mostly professional and supportive, but the wording of some redirects was somewhat rigid; this was a smaller and slightly ambiguous deduction. Evidence turns are numbered sequentially across the three transcripts (1-30)."
+      "Scored the first transcript only because the provided schema supports one conversation at a time; the tutor consistently used guided questions, built directly on the student's evolving Miami actor map, and kept the student doing the substantive reasoning.",
+      "The tutor redirected off-topic requests promptly without engaging them, kept the discussion anchored to the assignment deliverable, and repeatedly asked for evidence, criteria, and student-authored classifications rather than supplying submission-ready content.",
+      "Responses stayed clear and structured, with concrete next steps and transferable method cues (for example, distinguishing mitigation from adaptation by stated purpose), so no rubric-supported deductions were necessary."
     ],
-    "total_score": 38,
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

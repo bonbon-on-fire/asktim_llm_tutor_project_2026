@@ -146,9 +146,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: it asked the student to supply the act consequentialist rule, case breakdowns, candidate principles, and a four-sentence skeleton rather than providing submission-ready content.",
-      "Scaffolding was strong and cumulative across turns, with the tutor building from the student's own distinctions (means vs side-effect, assurance, contractualism) and stress-testing them through Loop, rare-exception, and justification objections.",
-      "The tutor stayed anchored to the assignment, appropriately refused to invent missing Fuel/Blood details, explained that limitation to avoid building on false premises, and kept a supportive, non-grading tone throughout."
+      "The tutor consistently used guided questioning, built directly on the student's emerging distinctions, and avoided giving submission-ready claims or prose.",
+      "The conversation stayed tightly anchored to the assignment, especially when the tutor refused to invent Fuel/Blood details and instead asked for lecture text before classification.",
+      "Communication was supportive, structured, and interactive; no clear rubric-supported deduction was warranted from the transcript."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

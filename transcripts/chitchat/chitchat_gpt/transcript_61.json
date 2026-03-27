@@ -92,7 +92,7 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced an off-topic boundary and role constraint without explaining a learning rationale such as why staying on the assignment would better support the student's skill development.",
+                "reason": "The tutor enforces an on-task boundary and role limit but does not explain a learning rationale for that constraint.",
                 "points": 2
               },
               {
@@ -102,7 +102,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student improved the evidence-selection approach, the tutor kept moving to the next sourcing step without prompting reflection on why the method worked or how to transfer it to other stressors in the table.",
+                "reason": "After the student develops a workable evidence-selection method, the tutor keeps moving to the next sourcing step without prompting reflection on why that method works or how to transfer it.",
                 "points": 2
               }
             ],
@@ -165,10 +165,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the assignment, used guided questioning effectively, and avoided doing submission-ready work for the student.",
-      "Method support was strong: the tutor helped the student define a rating rule, distinguish frequency from disruption evidence, and narrow to official sources that match the claim.",
-      "Main weaknesses were meta-level: the tutor set constraints in turn 1 without explaining the learning rationale, and later focused on next-step execution rather than prompting reflection or transfer of the method to other stressors.",
-      "I did not deduct for the firm redirection in turn 1 under tone because it remained task-focused and supportive overall."
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic content immediately, and used guided questioning well to help the student define a rating standard, align evidence to claims, and narrow source choices without doing the table entry for them.",
+      "Main weaknesses were meta-level: the tutor set boundaries in Turn 1 without explaining the learning rationale, and later did not prompt reflection on why the student's evidence-selection method was effective or how to reuse it on other stressors.",
+      "Some responses were fairly structured and directive, but they still advanced the student's thinking step by step, so no larger communication or repetition deduction was clearly supported."
     ],
     "total_score": 42,
     "judge_llm_calls": 1

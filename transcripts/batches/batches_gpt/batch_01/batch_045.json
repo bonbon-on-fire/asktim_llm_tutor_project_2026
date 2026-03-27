@@ -229,14 +229,8 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor sometimes supplies the central reasoning move instead of fully eliciting it from the student, especially by introducing the key explanatory split/tests (for example, the A/B framing and the later 'would the plan still work if the person were not harmed?' test) that drive the student's final position.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -247,14 +241,25 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "In Transcript 1 Turn 1, the tutor refuses the off-task movie question ('I can’t do the favorite-movie question here') without giving a learning-oriented rationale for that limitation.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the conversations, the tutor keeps refining the argument but rarely pauses for brief reflection on what method worked, what changed in the student's thinking, or how to transfer the approach to future philosophy prompts (e.g., endings of Transcripts 1-3 continue pressure-testing rather than reflecting).",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 20,
           "max": 24
         }
       },
@@ -284,7 +289,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Many tutor turns are long, multi-part prompt bundles with several numbered questions and examples at once, which reduces think-time and makes the interaction less bite-sized than it could be.",
+                "reason": "The tutor repeatedly uses long, multi-part prompts when shorter interactive steps were available, such as Transcript 2 Turn 1's five-part setup and several later turns across Transcripts 1-3 that stack 3-5 questions at once. This reduces bite-sized interactivity.",
                 "points": 4
               }
             ],
@@ -306,19 +311,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the provided transcripts, the tutor was strongly assignment-focused, kept the student doing most of the argumentative work, and used effective case-by-case stress testing.",
-      "The main weakness was communication load: replies were frequently long and packed with multiple subquestions, which made the tutoring less bite-sized and interactive.",
-      "A conservative pedagogy deduction was applied because the tutor sometimes supplied the decisive distinction/test that the student later used, rather than having the student derive that core move independently.",
-      "Because three transcripts were provided under one prompt, deductions were kept conservative where evidence could be interpreted more than one way."
+      "Across the three transcripts, the tutor is strongly assignment-focused and consistently uses guided questioning rather than giving a submission-ready answer.",
+      "The tutor generally builds on the student's developing view well, especially by stress-testing distinctions like means vs side-effect and helping the student structure objections to act consequentialism.",
+      "Main weaknesses are repeated overpacked prompts and limited explicit meta-level framing: the tutor seldom explains tutoring constraints in learning terms and rarely prompts reflection on transferable argument-building method."
     ],
-    "total_score": 36,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

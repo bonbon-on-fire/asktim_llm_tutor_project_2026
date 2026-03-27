@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 7, the tutor provides a highly detailed fill-in-the-blank template for SLR that is so complete—with specific terminology ('king-tide/sunny-day flooding'), specific verbs, specific assets, and specific consequences—that it does nearly all the reasoning work for the student. The student only needs to select from pre-supplied options rather than independently construct the argument.",
+                "reason": "In Turn 7, the tutor provides a highly detailed fill-in-the-blank template for sea level rise that includes the specific evidence terms ('king-tide/sunny-day flooding,' 'recurrent tidal flooding,' 'drainage/stormwater limits'), specific assets (roads, stormwater system, property access, critical facilities), and social/health consequences (displacement risk, exposure to contaminated floodwater, inequitable impacts). This does the key reasoning step—bridging evidence to consequence—for the student, leaving only superficial selection among pre-supplied options.",
                 "points": 6
               }
             ],
@@ -110,15 +110,11 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly declines to do work for the student but never explains the pedagogical rationale—e.g., that reasoning through the stressors builds skills the student will need for later assignments (the climate action plan). It only says 'I can't,' not why guided work serves the student's learning.",
+                "reason": "The tutor consistently enforces constraints (refusing to fill the table, write lines, or provide quotes) but never explicitly explains the pedagogical rationale—why doing the thinking themselves develops skills, supports long-term learning, or improves academic integrity understanding. The refusals are stated but not framed in terms of the student's learning benefit.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -127,7 +123,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At no point does the tutor prompt the student to reflect on their reasoning process, what changed in their thinking, or why a particular approach (e.g., chronic vs episodic distinction) worked well. The conversation ends without any metacognitive consolidation.",
+                "reason": "The tutor never prompts the student to reflect on how their thinking has evolved, what approach worked, or why the structured method (claim+evidence+consequence) is effective. The conversation ends without any consolidation of what the student learned about climate vulnerability analysis.",
                 "points": 2
               }
             ],
@@ -169,11 +165,10 @@
                 "evidence_turns": [
                   5,
                   6,
-                  7,
-                  10
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Turns 5–7 and 10, the tutor repeatedly provides multi-part, highly detailed fill-in frames with numerous embedded options (e.g., selecting verbs, assets, consequences from supplied lists). These lengthy templates reduce student thinking opportunities rather than prompting a simple next step. A more interactive approach would ask one focused question at a time.",
+                "reason": "Turns 5–7 involve multi-part prompts with numbered sub-questions and detailed template structures stacked together. Turn 7 in particular presents a long fill-in template with multiple embedded brackets and options, which is more complex than necessary and reduces student cognitive space. While not pervasive across all turns, these responses are consistently longer than needed at a stage when simpler single-focus prompts were more appropriate.",
                 "points": 4
               }
             ],
@@ -202,13 +197,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and appropriately refused to do the work for the student across all 10 turns, including declining to fabricate a quote in Turn 9 (a clear integrity moment handled well).",
-      "The primary pedagogy deduction (6 pts, 1.1.C.b) is applied for Turn 7's fill-in-the-blank SLR template, which pre-supplied so many specific terms, verbs, assets, and consequences that it effectively did the key reasoning step for the student, leaving only menu selection rather than genuine construction.",
-      "The tutor never explained why it was refusing to provide answers, missing opportunities to motivate the student with learning rationale (1.3.A.a, -2 pts).",
-      "No metacognitive or reflective prompts appeared at any point in the conversation, even at the end when the student had made genuine progress on the chronic/episodic distinction (1.3.D.a, -2 pts).",
-      "Several turns featured lengthy, multi-part templates with pre-loaded vocabulary and options, reducing rather than creating student thinking space (3.1.A.a, -4 pts).",
-      "Scaffolding and progression were generally handled well: the tutor built stressor-by-stressor, acknowledged the student's chronic/episodic reasoning in Turn 5, and kept the student moving forward. No deductions under 1.2 or 2.1 or 2.2.",
-      "Tone remained supportive and non-judgmental throughout, including when handling the fabrication request. No grading language was used."
+      "The tutor consistently refused to do the assignment for the student and maintained a principled stance on academic integrity throughout, including appropriately declining to fabricate a quote in Turn 9.",
+      "The primary deduction in 1.1 stems from Turn 7, where the fill-in template pre-supplied specific evidence terms, asset names, and consequence categories, effectively doing the key reasoning work of linking evidence to consequence and leaving the student only to choose among pre-formed options. This triggers 1.1.C.b at 6 points.",
+      "The tutor did not explain its pedagogical rationale for refusing student requests (1.3.A.a) and missed opportunities at the end of the conversation to prompt reflection on what the student learned or how their analytical approach improved (1.3.D.a), resulting in a 4-point deduction on 1.3.",
+      "On communication quality, several responses—particularly Turns 5, 6, and 7—were more complex than necessary, presenting multi-part prompts and elaborate fill-in templates simultaneously rather than one focused question at a time. This reduces student cognitive space and triggers a 3.1.A.a deduction.",
+      "Dialogue quality was strong: the tutor consistently kept the conversation anchored to the assignment, advanced through the stressors progressively, avoided spiraling, and redirected off-task requests appropriately. No deductions apply to section 2.",
+      "Tone was supportive and non-grading throughout; the tutor validated student progress ('Good,' 'Your logic is coherent') while maintaining appropriate formative framing."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

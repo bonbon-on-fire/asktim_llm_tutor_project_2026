@@ -244,22 +244,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
+                  2,
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When redirecting the student away from off-topic requests (comfort movie, podcast recommendation), the tutor enforces the constraint without explaining the learning rationale (e.g., that guiding discovery builds long-term reasoning skills). It simply says 'my role here is to keep you on the philosophy assignment' without framing the pedagogical purpose.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts the tutor consistently moves forward without prompting reflection on what changed in the student's thinking or reinforcing why a particular method choice worked. In T1 Turn 10, after the student has worked through means/side-effect and reached a defensible constraint, the tutor simply asks them to pick a route without pausing to note what intellectual progress the student made. Similar pattern in T2 and T3: the tutor consistently advances without asking the student to step back and articulate what they now understand that they didn't before.",
+                "reason": "The conversation ends without any prompt for the student to reflect on what changed in their thinking, what the means/side-effect distinction actually accomplishes philosophically, or how the method of testing intuitions against cases worked. The tutor moves forward to the next step without reinforcing the reasoning process the student developed.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -286,26 +293,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts the tutor frequently sends multi-part responses with 3–5 sub-questions at once (e.g., T1 Turn 1 has four numbered sub-questions; T2 Turns 2, 4, 5, 6, 7, 8, 9 each contain multiple bullets or sub-questions; T3 similar). These long, densely structured replies repeatedly reduce the student's opportunity to think and respond incrementally before being asked something new. Short, focused prompts were consistently available but not used.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -317,25 +306,25 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor demonstrates strong Socratic discipline: it consistently refuses to do the work for the student, redirects off-topic requests immediately, generates no submission-ready content, and scaffolds each conversation by building on the student's own prior answers. No deductions are warranted for 1.1 or 1.2.",
-      "For meta-learning (1.3), the tutor gives solid process-level feedback and explains its policy when redirecting, but it consistently misses the opportunity to prompt the student to reflect on what changed in their thinking—there are no 'what did you learn from that move?' moments across any of the three conversations.",
-      "The main technical weakness is response length (3.1): the tutor habitually sends 3–5 sub-questions in a single turn across all three transcripts. While each question is individually useful, the cumulative density consistently reduces the student's interactive space and could overwhelm rather than scaffold. This is a clear pattern, not an isolated instance.",
-      "Tone, assignment anchoring, and redundancy are all handled well; no deductions apply to those criteria."
+      "Across all three transcripts, the tutor demonstrates strong Socratic practice: it consistently refuses to supply answers, makes the student propose stressors/actors/ratings/arguments first, and then asks focused diagnostic questions to test and refine those proposals. No submission-ready content is produced by the tutor at any point.",
+      "Scaffolding is excellent: the tutor builds on each student response before moving on, acknowledges correct progress explicitly (e.g., 'Your difference-spotting is exactly the right direction,' 'This is solid'), and catches the student's off-topic diversions without losing the thread of the task.",
+      "The main deduction falls in 1.3 (meta-learning). When blocking off-topic requests in Transcript 1 (Turns 2 and 4), the tutor states its role constraint but does not articulate the learning rationale—why working things out yourself builds lasting philosophical skill. Additionally, none of the three conversations end with a prompt for the student to reflect on what changed in their thinking or what the method revealed, missing the reflection/transfer opportunity (1.3.D.a). A 1.3.B deduction was considered but not applied because the tutor does give substantive method-level feedback throughout (e.g., distinguishing climate driver from pathway in T2, testing means vs side-effect with specific intention-check questions in T1).",
+      "Communication quality is consistently high: responses are usually two to four focused questions, no unnecessary jargon, and tone is supportive and collegial without assigning grades. The Urban Studies sessions occasionally run slightly long, but not to a degree warranting a full deduction under 3.1.A.a since student thinking time is preserved."
     ],
-    "total_score": 40,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

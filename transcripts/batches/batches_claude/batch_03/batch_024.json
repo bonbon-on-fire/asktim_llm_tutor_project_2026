@@ -234,12 +234,12 @@
                 "evidence_turns": [
                   4
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 4, the tutor provides a detailed sentence-by-sentence blueprint (Paragraph 1: Sentence 1 sets NYC/lens, Sentences 2-4 map leading actors with their roles, Sentences 5-7 map engaged actors, Sentence 8 adds regional layer; Paragraph 2 similarly scripted) that specifies which actor goes in which sentence and what it says. This does the key structural reasoning step—determining how evidence maps to conclusion and in what order—for the student rather than guiding them to reason it out themselves.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1 Turn 4, after the student provides examples, the tutor gives a detailed 2-paragraph blueprint with sentence-by-sentence instructions including exact content (e.g., 'Sentence 2–4: Leading = MOCEJ (sets adaptation policy/requirements), NYCEM (alerts/shelters/emergency response), DEP (stormwater + sewers/CSO infrastructure)'). This blueprint essentially pre-writes the paragraphs with all content filled in, leaving the student to only transcribe it into prose. Combined with the earlier content already extracted, this constitutes the tutor carrying the full reasoning and near-submission-ready structure across turns.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -254,21 +254,35 @@
               {
                 "evidence_turns": [
                   5,
+                  6,
+                  7,
                   8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves from one sub-task to the next without prompting the student to reflect on what changed in their thinking or why a reasoning method worked. In T1 Turn 10, the tutor offers a 30-second self-audit checklist but frames it as a submission gate rather than a reflection on method. No turn explicitly asks the student to look back at how their thinking evolved or what the productive method was.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on why a method worked or what changed in their thinking. The conversation always advances to the next task step without consolidating learning or asking process-level reflection questions (e.g., 'What did you learn from building the actor table this way?' or 'Why does the lead/engaged/missing distinction matter?').",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "In Transcript 1, the tutor enforces the 'no writing for you' constraint but does not explain why doing so supports the student's learning or skill development. The rationale is implied but never explicitly stated to the student in terms of active reasoning or long-term benefit.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 8,
           "max": 24
         }
       },
@@ -298,10 +312,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  4,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turn 4, the tutor's response is an unusually long blueprint (8+ sentence-by-sentence instructions across two paragraphs) where a shorter, focused prompt would have been more appropriate. This reduces the student's opportunity to think and is one clear instance of an overly long monologue. The pattern does not fully repeat across other turns at this level of granularity, so the deduction is applied once rather than as a full deduction.",
+                "reason": "In Transcript 1, Turn 4 delivers a highly detailed 2-paragraph blueprint with sentence-by-sentence prescriptions—a multi-paragraph monologue that removes student thinking opportunity. Turn 5 in Transcript 1 also gives a lengthy multi-part response when one or two focused questions would suffice. This pattern of long, prescriptive responses recurs across turns rather than short interactive steps.",
                 "points": 4
               }
             ],
@@ -310,32 +326,42 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Transcript 1 Turn 5, the tutor says 'this is strong and very close to forum-ready,' which sounds like a final evaluative verdict rather than coaching-oriented guidance. The student could reasonably read this as an official grading judgment rather than formative feedback.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 6,
+          "score": 4,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 24,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_02): The tutor consistently refuses to write text for the student and repeatedly redirects to student authorship, which is commendable. However, Turn 4 crosses a line by providing a detailed sentence-by-sentence blueprint that specifies which actor goes in which sentence and what that sentence should say — this does the key structural reasoning (claim-to-conclusion bridging) for the student, triggering 1.1.C.b. The same turn also constitutes the clearest instance of an overly long monologue (3.1.A.a). Turns 5 and 7 are borderline but fall short of full 1.1.A.a (no final wording is produced). Turn 7 (picking C and 1 for the student) was considered for 1.1.C.a but the tutor still withholds the sentence and asks the student to write it, so no additional deduction was applied there.",
-      "Transcript 2 (chitchat_02): The tutor effectively redirects off-topic chat immediately (Turn 1), maintains strong Socratic questioning throughout, and guides the student through actor identification and evidence evaluation without doing the reasoning for them. No significant rubric violations found.",
-      "Transcript 3 (clueless_02): The tutor demonstrates strong scaffolding, building from definitional confusion to structured table design to synthesis of findings. Questioning is genuinely diagnostic and progressive. No major rubric violations found.",
-      "Across all transcripts: No reflection-on-method moments are present (1.3.D.a deduction). The tutors do not explain their pedagogical rationale (1.3.A.a was considered but the tutors do briefly state their non-writing policy in some turns, so a deduction was not applied there). The overall approach is largely sound with one significant pedagogy violation in Transcript 1."
+      "Transcript 1 is the primary source of major deductions. In Turn 4, the tutor provides a sentence-by-sentence paragraph blueprint that pre-populates all the content (actor names, roles, missing groups, consequences) the student had already supplied—effectively writing the submission for the student across turns. While the tutor consistently refused to write prose directly, the blueprint in Turn 4 is so prescriptive and complete that it constitutes near-submission-ready content (1.1.A.a), triggering the full 12-point deduction for criterion 1.1.",
+      "The tutor's communication style across all three transcripts is sometimes overly long and monologue-heavy (especially in Transcript 1), with multi-part responses that reduce student thinking opportunity (3.1.A.a). The evaluative 'strong and very close to forum-ready' framing in Transcript 1 Turn 5 sounds more like grading than coaching (3.2.B.b).",
+      "None of the three transcripts include explicit reflection prompts or process-level metacognitive support after student progress (1.3.D.a), and the 'no writing for you' policy in Transcript 1 is enforced without a stated learning rationale (1.3.A.a). The method-level feedback deduction (1.3.B) was not applied as the tutor does give substantive process direction throughout.",
+      "Transcripts 2 and 3 show good Socratic technique, city-anchoring, and scaffolded progression. The tutor successfully guides students to define actor categories, test source quality, and build evidence-based claims without writing for them. No deductions apply to dialogue quality (2.1, 2.2) across any transcript.",
+      "The 1.3.A.a deduction is applied with some ambiguity: the tutor in Transcript 1 does implicitly signal that the student needs to author their own work, but never frames the constraint in terms of student skill-building or active reasoning benefit."
     ],
-    "total_score": 34,
+    "total_score": 24,
     "judge_llm_calls": 1
   }
 }

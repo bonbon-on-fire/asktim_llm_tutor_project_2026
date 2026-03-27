@@ -74,8 +74,19 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "For this data-table assignment, the tutor selected the source-and-metric plan for most required fields and later confirmed the student's final Köppen reporting rule, doing substantial assignment reasoning instead of eliciting those choices from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,14 +97,24 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student developed a workable method for handling the Köppen boundary issue, the tutor validated it and moved on without prompting brief reflection on why that method is useful for similar ambiguous data tasks.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 16,
           "max": 24
         }
       },
@@ -139,18 +160,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the assignment for the student, redirected requests for exact answers back into source-checking and method choices, and kept the conversation anchored to the table requirements.",
-      "The tutor scaffolded effectively by having the student choose geography, verify row labels, and justify ambiguous cases like Köppen classification, while reinforcing transferable practices such as consistent geography, recording vintages, and documenting method notes.",
-      "Responses were generally clear, supportive, and appropriately bounded; the tutor was firm about not pasting answers but paired that limit with practical next steps and credible-source guidance."
+      "The tutor stayed well anchored to the assignment, refused to provide copy-ready numbers, and generally scaffolded the student's source checking and metric selection effectively.",
+      "Main deduction is in 1.1 because, for this assignment type, choosing the exact source/metric set for nearly every field is a key part of the work; this is somewhat borderline and could be read as strong resource guidance rather than full reasoning replacement.",
+      "A smaller deduction was applied for limited reflection/transfer support: the tutor gave good tactical advice but rarely asked the student to articulate why a method would generalize to future data ambiguities."
     ],
-    "total_score": 46,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

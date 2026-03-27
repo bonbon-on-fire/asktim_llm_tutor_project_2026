@@ -243,33 +243,18 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  12,
-                  23,
-                  30
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforces limits on giving copyable rows, lists, or sentence templates without explaining the learning rationale for those limits.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  19,
-                  29
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student makes progress, the tutor usually moves straight to the next task rather than prompting brief reflection on why the method worked or how to transfer it.",
+                "reason": "Across the conversations, the tutor repeatedly refused to provide copyable rows/lists/templates but usually framed this as not doing the assignment for the student rather than explicitly explaining the learning rationale for the constraint.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -298,31 +283,12 @@
           "3.1": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2,
-                  6,
-                  12,
-                  18,
-                  24
-                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Responses are frequently long, multi-part monologues with several numbered prompts, which is heavy for a confused beginner and reduces room for shorter back-and-forth thinking.",
+                "reason": "The tutor frequently used long, multi-part replies with several bullets and follow-up questions at once, which reduced the student's opportunity to respond in smaller steps and likely added cognitive load for a very confused student.",
                 "points": 4
-              },
-              {
-                "evidence_turns": [
-                  3,
-                  7,
-                  24,
-                  29
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor often uses avoidably dense terms such as \"methodologically honest,\" \"audit-proof,\" \"jurisdiction/mandate,\" and \"convenor,\" increasing cognitive load.",
-                "points": 2
               }
             ],
-            "score": 0,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -334,24 +300,24 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across all three transcripts, the tutor stays strongly assignment-focused and generally uses guided discovery rather than doing the student’s substantive work.",
-      "Main weaknesses are communication and meta-framing: answers are often too long and terminology-heavy for this student, and refusals to provide fuller examples/templates are usually not paired with an explicit learning rationale.",
-      "Evidence turns are counted sequentially across the three transcripts: 1-10, 11-20, and 21-30."
+      "Scored conservatively across all three provided transcripts; deductions were limited to patterns clearly supported across conversations.",
+      "The tutor was consistently assignment-anchored, avoided doing the student's work, and generally used guided discovery effectively.",
+      "Main weaknesses were communication length and the lack of explicit learning-rationale framing when refusing direct examples/templates."
     ],
-    "total_score": 36,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

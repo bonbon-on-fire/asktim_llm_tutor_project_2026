@@ -235,11 +235,11 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1, Turn 3, the tutor provides a detailed, nearly complete template with population already filled in (8,258,035, year 2023, source label) and structured placeholders for every required field. While placeholders remain, the tutor has done the organizational/structural work and pre-filled one key data point, bringing the table closer to submission-ready than the student's own effort warrants at that stage.",
-                "points": 0
+                "reason": "In Transcript 1, Turn 3, the tutor provides a near-complete, copy-paste ready table template with the population number already filled in (8,258,035, 2023, with source label pre-written), along with pre-written source labeling and citation structures. While placeholders remain, the tutor has completed substantial portions of the actual assignment work, giving the student a nearly submission-ready document rather than guiding them to build it themselves.",
+                "points": 12
               }
             ],
-            "score": 12,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,46 +253,20 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces constraints (won't fill in data, won't fabricate numbers, won't rewrite sentences) but rarely explains the learning rationale—why doing it themselves builds research skills, citation habits, or analytical thinking. Occasional references to 'doing the assignment for you' appear but there is virtually no mention of active reasoning or long-term skill development as the reason for the constraint.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts reflection on why a method worked or what changed in the student's thinking. After correct student steps (e.g., Transcript 1 Turn 8 good sentence, Transcript 2 Turn 4 correct tradeoff identification, Transcript 3 Turn 4 DKI rationale), the tutor moves forward without asking the student to reflect on their process or transfer the approach.",
+                "reason": "Across all three transcripts, the tutor rarely prompts the student to reflect on why a method worked or what changed in their thinking. For example, in Transcript 1 Turn 10, when the student finally gets the note sentence right, the tutor confirms it's accurate but immediately moves on to the next data field without asking the student to reflect on the process (e.g., why verifying exact labels matters, what the student learned about data citation). Similar missed reflection opportunities occur throughout Transcripts 2 and 3.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 10,
           "max": 24
         }
       },
@@ -323,10 +297,11 @@
               {
                 "evidence_turns": [
                   1,
-                  2
+                  2,
+                  3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1 Turns 1 and 2, and Transcript 3 Turns 1 and 2, the tutor sends very long multi-paragraph responses with multiple embedded questions and ordered task lists when a shorter, more focused prompt would have been more appropriate for getting the student started. Turn 2 of Transcript 1 in particular is a lengthy multi-part instruction dump before checking what the student has done. However, this is not uniformly problematic across the full conversation—many later turns are appropriately concise. The deduction is warranted but moderate.",
+                "reason": "In Transcript 1, Turns 1 and 2 feature very long multi-paragraph responses with extensive bulleted lists when a shorter, more focused question would have been more appropriate for a student who is already overwhelmed and asking for quick help. Turn 3 provides an entire pre-formatted 8-section table template with lengthy instructions. Similarly in Transcript 3, Turns 1 and 2 are substantially long with multiple nested questions and bullet lists when the student is confused and needs simpler entry points. These patterns reduce student opportunity to think and respond.",
                 "points": 4
               }
             ],
@@ -348,20 +323,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor performs strongly on core Socratic method and assignment anchoring: it consistently refuses to fabricate data, rewrite student sentences, or complete the assignment, redirects off-topic requests promptly, and guides the student step-by-step toward their own answers.",
-      "The 1.1 deduction was not applied: the Turn 3 template in Transcript 1 is borderline (it pre-fills one data point and provides full structure) but does not rise to the level of near-submission-ready because all substantive data fields remain blank and the student must do the actual research. No clear 1.1.A.a, 1.1.B.a, or 1.1.C violation is definitively established, so full points are kept.",
-      "Meta-learning (1.3) suffers two deductions: the tutor never explains the learning rationale behind its constraints (1.3.A.a) and never prompts process reflection after student progress (1.3.D.a). Method-level feedback (1.3.B) is adequate—the tutor does comment on approach quality and gives process-level direction.",
-      "Communication quality (3.1) is penalized because several early turns (especially Transcript 1 Turn 2, Transcript 3 Turns 1–2) are multi-paragraph information dumps with many simultaneous questions, reducing student opportunity to think before responding. Later turns are more concise. The full 4-point deduction is applied because the pattern is recurrent across multiple transcripts.",
-      "Dialogue quality is strong throughout: no spiraling, no assignment misanchoring, and off-topic requests are always redirected immediately and briefly."
+      "The primary deduction comes from Transcript 1, Turn 3, where the tutor provides a near-complete, copy-paste ready 8-section table with the population number already filled in, source labels pre-written, and citation structure provided. This constitutes doing significant portions of the assignment for the student and triggers the 1.1.A.a criterion (full 12-point deduction). The student's requests for a completed table were largely refused in turns 1, 2, and 4, showing good boundary-setting, but Turn 3 crossed the line into near-submission-ready output.",
+      "Communication length is a secondary concern across all three transcripts. The tutor's initial responses (particularly Transcripts 1 and 3, Turns 1-2) were heavily front-loaded with multiple questions, extensive bulleted lists, and detailed instructions, reducing the student's opportunity to think and engage incrementally. This pattern is most apparent in Transcript 3 where a confused student receives complex multi-part responses.",
+      "The tutor generally demonstrates good scaffolding and progression—it builds on student answers, acknowledges correct thinking (e.g., Transcript 2 Turn 4 affirming the student's tradeoff reasoning), and redirects off-topic chitchat efficiently. Assignment anchoring is strong throughout. The 1.3 deduction for reflection is modest but warranted: the tutor consistently moves on after correctness is confirmed without prompting students to internalize methodological lessons.",
+      "No deductions were applied for redundancy/spiraling (the tutor adapts strategies across turns), tone (supportive and constructive throughout), or assignment anchoring (off-topic redirects are prompt and clear). The 1.1.A.a deduction is the dominant factor in the score."
     ],
-    "total_score": 38,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

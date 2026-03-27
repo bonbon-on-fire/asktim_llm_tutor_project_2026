@@ -229,8 +229,14 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Across the conversations, the tutor occasionally supplies key conceptual bridges rather than having the student derive them, especially when proposing distinctions like 'imposing a new threat' vs. 'redirecting an already-unavoidable threat' and a hierarchy of rights in Transcript 2, Turn 10.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -243,21 +249,23 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces a no-chitchat boundary but does not explain a learning rationale for the constraint beyond role limitation.",
+                "reason": "When refusing off-task chat or personal opinions, the tutor states the boundary ('I’m here just to tutor you on this assignment') but does not explain the learning rationale for that constraint in Transcript 1, Turn 1 and Transcript 2, Turn 1.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently advances the argument but does not pause for reflection on why the student's method worked, what changed in their thinking, or how to transfer the approach to similar philosophy prompts.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 14,
           "max": 24
         }
       },
@@ -284,8 +292,14 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long, multi-part prompts with 3-4 numbered questions in a single turn across all three transcripts, which reduces the interaction to dense response bundles rather than smaller step-by-step checks.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -297,25 +311,25 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided questioning, pressure tests, and student-generated principles rather than supplying a submission-ready answer.",
-      "Scaffolding was strong: the tutor built directly on the student's developing view, repeatedly stress-tested it across Switch, Footbridge, Loop, Blood, and Fuel, and kept the discussion anchored to the assignment.",
-      "The only clear deduction is for not giving a learning-rationale explanation when refusing off-task chat at the start; otherwise the conversation was well-structured, on-topic, and supportive.",
-      "Multiple transcripts were provided, but this score reflects Transcript 1 only because the schema supports a single conversation evaluation."
+      "Across the three transcripts, the tutor is consistently assignment-focused, supportive, and strongly scaffolded around the prompt.",
+      "The main weakness is that the tutor sometimes supplies central distinctions for the student, especially when the student is stuck, rather than fully eliciting them through guided discovery.",
+      "Another recurring weakness is communication density: many tutor turns bundle several questions at once instead of using smaller interactive steps.",
+      "Because multiple transcripts were provided in one input while the schema is conversation-shaped, deductions are based on repeated patterns across the set rather than a single turn-number sequence."
     ],
-    "total_score": 44,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

@@ -93,15 +93,16 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced scope limits on off-topic requests but did not explain a learning rationale for redirecting back to the assignment.",
+                "reason": "When refusing off-task chat, the tutor states a boundary but does not explain a learning rationale for keeping the student focused on active reasoning for the assignment.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  6,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student reached a clearer position, the tutor moved straight to organizing the answer rather than prompting reflection on what method or distinction helped resolve the cases.",
+                "reason": "The tutor steadily advances the argument but does not prompt brief reflection on why the student's method improved or how to transfer the approach beyond these cases.",
                 "points": 2
               }
             ],
@@ -138,22 +139,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly bundled 3-4 questions and long task lists into single turns, reducing interaction and likely contributing to the student's overload by turn 8.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -165,24 +152,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the philosophy prompt and mostly used guided questioning rather than supplying a submission-ready answer.",
-      "Main deductions are for missing meta-learning moves: the tutor redirected off-topic requests without explaining the learning rationale, and it did not prompt reflection on what reasoning method clarified the cases.",
-      "Communication was the biggest weakness: several turns stacked multiple questions and sub-tasks, and the student's statement that they were 'fried' supports that the pacing became cognitively heavy."
+      "The tutor consistently used guided questioning, built on the student's developing view, and kept the discussion tightly anchored to the philosophy prompt, especially when the student tried to go off-topic.",
+      "No deduction was taken for direct-answer behavior because the tutor did not supply a submission-ready thesis or full reasoning; instead, it scaffolded distinctions, objections, and an argument map.",
+      "Deductions were limited to meta-learning: the tutor enforced focus boundaries without explaining the learning rationale, and it missed chances to prompt explicit reflection on why the student's method improved or how to transfer it."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

@@ -77,13 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6,
-                  7,
-                  8
+                  9
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Across turns 5–8, the tutor provides specific, submission-ready factual content (names of real LA community/EJ orgs, UCLA/USC climate centers, LA City sustainability offices, and regional agencies) that together assemble into the core content of the student's forum post. While each individual turn looks like 'just names,' collectively they supply the actor lists the student explicitly said they would 'plug in' to the sentence frames given in turn 4—effectively completing the assignment's actor identification task for the student. In turn 9, the tutor additionally provides a near-complete 150-word template paragraph with all the specific names filled in as bracketed prompts (e.g., 'Mayor's Office of Sustainability / LADWP / LASAN / City Planning,' 'UCLA IoES / UCLA Luskin Center / USC Wrigley Institute; CBE/Coalition for Clean Air/SAJE,' etc.), which only requires the student to remove brackets. Taken together, these turns give the student submission-ready answer pieces across turns.",
+                "reason": "In Turn 9, the tutor provides a 120–150 word template paragraph with nearly all the actor names and reasoning already filled in as examples inside the blanks (Mayor's Office of Sustainability, LADWP, LASAN, LA Metro, SCAG, LA County Chief Sustainability Office, South Coast AQMD, MWD, UCLA IoES, UCLA Luskin, USC Wrigley, CBE, Coalition for Clean Air, SAJE, renters, unhoused, outdoor workers, etc., plus the reasoning bridges like 'Implementation momentum is strongest where policy authority and infrastructure investment align'). The student only needs to copy the bracketed examples verbatim to produce a submission-ready paragraph. Combined with the fact that Turns 5–8 supplied all the specific names the student needed, the tutor has collectively supplied claim + evidence + reasoning structure + wording that is effectively submission-ready.",
                 "points": 12
               }
             ],
@@ -92,18 +89,8 @@
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student resisted doing the work (turn 2), the tutor escalated to a detailed numbered checklist of 19 specific actors for the student to choose from. Rather than diagnosing what the student already knew about LA's climate governance before giving a method dump, the tutor front-loaded a comprehensive, pre-researched list, reducing thinking demand. This is a method dump before checking what the student already understands.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -117,17 +104,37 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to write the post but never explains the pedagogical rationale (e.g., that the student builds research and synthesis skills by doing the actor identification themselves, or that the forum is a learning activity not just a deliverable). The tutor says 'I can't' without connecting this to learning goals or skill development.",
+                "reason": "The tutor consistently enforces its 'I can't write this for you' policy without explaining the learning rationale—e.g., why doing the reasoning themselves builds analytical skills needed for later assignments in the course. The refusals are stated as constraints only, not connected to the student's long-term development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.B.a",
+                "reason": "When the student pivots to requesting name-only lists in Turns 5–8, the tutor complies without giving any method-level feedback on why simply collecting names without understanding their roles is a weak approach to the assignment's analytical goals.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At no point does the tutor invite the student to reflect on what they learned about the LA actor landscape or why the Socratic method was used. The conversation ends with a mechanical self-check rather than any prompt for process reflection or transfer.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 7,
+          "score": 6,
           "max": 24
         }
       },
@@ -157,13 +164,13 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
-                  4,
-                  9
+                  4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor's responses in turns 2, 3, 4, and 9 are consistently very long—turn 2 lists 19 numbered actors across three categories, turns 3 and 4 provide elaborate multi-section outlines and 12-line sentence frame sets, and turn 9 provides a 150-word pre-filled template paragraph. These multi-paragraph replies go well beyond what was needed to guide the student interactively, consistently reducing the student's opportunity to think and respond.",
+                "reason": "Turns 1–4 each contain multi-paragraph, heavily itemized responses with numerous sub-lists and nested questions. While scaffolding is valuable, each response dumps substantial content before checking whether the student has processed prior guidance, consistently reducing student thinking opportunity.",
                 "points": 4
               }
             ],
@@ -185,22 +192,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 25,
+    "total_base_score": 24,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor began strongly by refusing to write the forum post and asking the student to supply content (turn 1). However, the tutor progressively eroded this boundary across the conversation.",
-      "In turns 5–8, the tutor supplied specific, real-world names (community orgs, university centers, city offices, regional agencies) that the student explicitly stated they would 'plug in' to complete the assignment. While each individual name-drop might seem minor, together they constituted the core actor-identification content of the assignment—the very thing the assignment asks students to research and select.",
-      "In turn 9, the tutor provided a near-complete 150-word template paragraph with all specific actor names already embedded as bracketed fill-ins, effectively giving the student a paste-ready takeaway with minimal effort required. This triggered 1.1.A.a: answer pieces across turns collectively become submission-ready.",
-      "The turn-2 checklist of 19 pre-researched LA actors also constituted a method dump rather than diagnostic questioning, triggering 1.2.B.a.",
-      "The tutor never articulated the learning rationale for its constraints (1.3.A.a), which may have made it easier for the student to keep pushing for more direct help.",
-      "On communication, the tutor's responses were consistently long and dense (turns 2, 3, 4, 9), with multi-part outlines and 12-line templates that reduced student thinking opportunity.",
-      "Tone remained consistently supportive and non-grading throughout, and the tutor maintained good assignment anchoring and avoided redundancy."
+      "The tutor begins with a principled refusal to write the post and constructs a well-structured three-bucket scaffold in Turn 1, correctly applying Socratic method early.",
+      "However, the session deteriorates from Turn 5 onward: the tutor supplies specific LA organization names on request across Turns 5–8 with no analytical engagement, and then in Turn 9 provides a template paragraph where the bracketed examples contain the full actor inventory and reasoning bridges already composed—effectively making the paragraph submission-ready by simply copying the examples.",
+      "This triggered the 1.1.A.a deduction (all 12 points) because the tutor gradually filled claim, evidence, and final wording across turns until the content was effectively complete.",
+      "All three 1.3 sub-criteria were also deducted: the tutor never explained the learning rationale for its refusals, gave no method-level feedback when the student pivoted to a name-collection strategy, and missed all opportunities for process reflection.",
+      "Dialogue quality was largely preserved: the tutor stayed on-assignment and did not spiral. Assignment anchoring and redundancy criteria were not triggered.",
+      "Communication was penalized under 3.1.A.a for consistently oversized multi-part responses in Turns 1–4 that reduced student thinking space, though language clarity itself was good.",
+      "Tone remained supportive and non-grading throughout; no 3.2 deductions were warranted."
     ],
-    "total_score": 25,
+    "total_score": 24,
     "judge_llm_calls": 1
   }
 }

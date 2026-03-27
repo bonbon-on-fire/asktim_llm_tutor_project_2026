@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 3, the tutor provides an extensive 'speedrun source map' listing exact table names, datasets, and navigation paths for every single field. While no values are given, the tutor does the key reasoning step of identifying which exact tables and sources to use for each field, rather than asking the student to explore or reason about which sources might be appropriate. This effectively resolves the core intellectual work of source identification for the student.",
+                "reason": "In Turn 3, the tutor provides a comprehensive 'speedrun source map' that does the key reasoning step for the student—identifying exactly which ACS tables (DP05, DP03, S0301), which Census datasets (Gazetteer), which BEA series, and which Köppen reference to use, along with step-by-step navigation instructions. The tutor resolves all the 'which source' questions for the student without asking the student to attempt this first.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor enforces its policy of not providing values but rarely explains the pedagogical rationale clearly. In Turn 1, it briefly says 'that would be doing the assignment for you,' but subsequent turns (e.g., Turns 5, 6, 7) only state 'I can't' without connecting refusals to learning goals like developing research skills or long-term capability.",
+                "reason": "The tutor enforces constraints throughout (refusing to supply table values, refusing to write sentences, etc.) without explaining the pedagogical rationale for why the student doing this work themselves matters for their learning or skill development. The tutor says 'I can't' or 'that's me completing the assignment' but never connects this to active reasoning or long-term skill development.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their process, what they learned about source selection, or how the experience of finding data themselves builds research skills. There is no reflection or transfer support across the entire conversation.",
+                "reason": "The tutor never prompts the student to reflect on their process, what they learned about finding climate or demographic data, or why certain source choices matter methodologically. No process reflection is encouraged at any turn.",
                 "points": 2
               }
             ],
@@ -171,7 +171,7 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 3 and 4 are multi-paragraph, heavily detailed responses listing exact table IDs, navigation paths, and multiple sub-considerations for every field. These are long monologues where focused, interactive prompts would have been more appropriate—especially given the student's stated time pressure and the tutor's own goal of guiding rather than providing.",
+                "reason": "Turns 3 and 4 contain long multi-section monologues (Turn 3 is a 7-item detailed source list with sub-bullets and navigation steps, Turn 4 provides a full BEA + ACS path breakdown) when shorter, more focused prompts asking the student to attempt one field at a time would have been more appropriate and would have left more room for student thinking.",
                 "points": 4
               }
             ],
@@ -200,13 +200,13 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to supply table values directly, which is appropriate and upholds academic integrity throughout the conversation.",
-      "However, in Turn 3, the tutor provided an exhaustive 'speedrun source map' that pre-resolved the key intellectual task of source identification for every table field. While no numeric values were given, identifying which exact ACS tables, BEA series, and datasets to use for each field is a core reasoning step the student should have worked through. This triggered the 1.1.C.b deduction for doing the key reasoning step.",
-      "Turns 3 and 4 also featured multi-paragraph monologues with dense technical detail that reduced the student's opportunity to engage interactively, warranting the 3.1.A.a deduction.",
-      "The tutor never explained its pedagogical rationale beyond 'that would be doing the assignment for you,' and never prompted the student to reflect on their own process or the skills they were developing, resulting in deductions under 1.3.A.a and 1.3.D.a.",
-      "Scaffolding and progression (1.2) were solid: the tutor consistently built on the student's prior inputs, asked targeted clarifying questions, and maintained productive sequencing across turns.",
-      "Dialogue quality (2.1, 2.2) was strong: the tutor did not spiral, repeated moves only when necessary to hold the line, and kept the conversation anchored to the assignment.",
-      "Tone was appropriate and supportive throughout (3.2), with no grading-like language or dismissive responses."
+      "The tutor consistently and correctly refuses to supply submission-ready table values across all 10 turns, maintaining an appropriate boundary against doing the assignment for the student.",
+      "However, in Turn 3 the tutor provides a comprehensive 'speedrun source map' listing all seven data fields with exact table codes (DP05, DP03), dataset names, navigation paths, and citation recommendations—this constitutes doing the key reasoning step of source identification for the student, triggering 1.1.C.b deduction (6 points).",
+      "Turn 4 follows the same pattern with exact BEA series and ACS table IDs, reinforcing the same issue. The deduction is applied once under 1.1.C.b to avoid double-penalizing.",
+      "The tutor never explains why it withholds answers in terms of learning rationale (1.3.A.a), and never prompts reflection on method or process at any point (1.3.D.a).",
+      "Turns 3 and 4 also feature long multi-section monologue responses where shorter, more interactive guidance would have been appropriate, triggering the 3.1.A.a deduction.",
+      "Scaffolding and progression (1.2) and dialogue quality (2.1, 2.2) are handled well: the tutor builds on student choices, stays anchored to the assignment, handles off-topic pressure gracefully, and does not spiral.",
+      "Tone is consistently supportive and non-judgmental throughout; no grading language is used."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

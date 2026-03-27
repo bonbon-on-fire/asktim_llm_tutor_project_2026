@@ -244,22 +244,20 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  20,
-                  30
+                  1,
+                  2,
+                  8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor rarely explains why it is asking questions rather than giving answers, or articulates a learning rationale for its Socratic approach. It enforces constraints (e.g., refusing off-topic chat) with brief statements but does not frame these as supporting the student's long-term reasoning skills.",
+                "reason": "When redirecting off-topic chitchat (turns 1, 8 in T1; turns 2, 3 in T2/T3), the tutor simply states 'I can't help with that' without explaining the pedagogical rationale (e.g., active reasoning, skill-building). No learning rationale is ever offered.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  10,
-                  20,
-                  30
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three conversations include moments where the tutor asks the student to reflect on why a particular method or move improved their thinking. The tutor advances the student's work effectively but consistently moves forward without prompting process reflection (e.g., 'what changed in your thinking?', 'why did naming a concrete metric help here?').",
+                "reason": "Across all three transcripts the tutor consistently moves to the next task without prompting the student to reflect on what changed in their thinking or why a method worked. In T1 turn 10, after a full conversation, the student is asked to produce an argument map but there is no reflection on the reasoning journey.",
                 "points": 2
               }
             ],
@@ -301,12 +299,13 @@
                 "evidence_turns": [
                   3,
                   4,
+                  5,
                   6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcripts 1 and 2 especially, the tutor frequently poses 3–4 multi-part questions in a single turn (e.g., turns 3, 4, 6, 7, 8 across T1 and T2). While the questions are good, the volume consistently reduces student opportunity to think deeply about any one question before the next is introduced. More interactive, one-question-at-a-time steps would have been more appropriate in several turns.",
+                "reason": "Across all three transcripts the tutor routinely sends multi-part messages with 3–4 numbered sub-questions in a single turn (e.g., T1 turns 3, 4, 6, 7; T2 turns 4, 5, 6, 8; T3 turns 3, 4, 5). This consistently reduces the student's opportunity to think and respond incrementally, and multi-paragraph replies appear where one or two focused prompts were often more appropriate.",
                 "points": 4
               }
             ],
@@ -335,11 +334,11 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it never gives final answers, never rewrites student text, and consistently redirects off-topic requests quickly and without harshness. The student does the core reasoning work in every conversation.",
-      "Scaffolding is effective—the tutor builds on correct student progress (e.g., validating merged stressor rows before asking for further detail), does not ignore valid student contributions, and generally identifies the right confusion point before responding.",
-      "The main pedagogical weakness is in meta-learning: the tutor does not articulate its tutoring rationale to the student (why it asks questions rather than tells), and never prompts the student to reflect on what changed in their thinking or why a method worked. These are consistent absences across all three conversations.",
-      "Communication quality is mostly strong (clear language, appropriate tone, no grading stance), but the tutor frequently packs 3–5 sub-questions into a single turn across Transcripts 1 and 2. This pattern reduces the student's opportunity to engage deeply with any single question and constitutes a recurring length-control issue. The deduction of 4 points is applied here.",
-      "No deductions are applied for 1.1 (Socratic method), 1.2 (scaffolding), 2.1 (redundancy), 2.2 (assignment anchoring), or 3.2 (tone). The tutor handles off-topic redirects well and keeps the student anchored to the assignment throughout."
+      "Across all three transcripts the tutor maintains strong Socratic discipline: it never gives answers, never rewrites student text, consistently uses diagnostic probes to surface confusion, and builds on prior student work in each turn. No deductions apply under 1.1 or 1.2.",
+      "The tutor handles chitchat well structurally but fails every time to explain why it is redirecting (the learning rationale), triggering a 1.3.A.a deduction. Reflection on why a method worked or what changed in the student's thinking is consistently absent at turn-end, triggering a 1.3.D.a deduction. No 1.3.B deduction is applied because the tutor does give method-level feedback (e.g., 'you're hiding behind vague quantities,' 'make it defensible vs slogan-like').",
+      "Dialogue quality is strong throughout: no spiraling, no misanchoring, no off-topic engagement beyond brief refusals.",
+      "The most consistent weakness is response length. Across all three conversations the tutor routinely packs 3–5 numbered sub-questions into a single turn. While each individual question is purposeful, the cumulative effect reduces student think-time and makes each exchange feel more like a written quiz than an interactive dialogue, triggering a 3.1.A.a deduction of 4 points.",
+      "Tone is consistently warm, encouraging, and constructive; no grading stance is adopted."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

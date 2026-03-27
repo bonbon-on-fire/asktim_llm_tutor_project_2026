@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor provides lists of specific phrase options for each blank ('intend', 'aim at', 'choose as an end'; 'work', 'succeed', 'achieve the rescue'; etc.), doing the key reasoning work of identifying which philosophical terms are appropriate rather than guiding the student to derive them. This effectively hands the student the vocabulary needed to complete the principle without requiring the student to think through what the terms mean or why they fit.",
+                "reason": "In Turn 8, tutor provides a menu of specific phrase options for each blank (e.g., 'intend', 'aim at', 'choose as an end'; 'work', 'succeed', 'achieve the rescue'), which does the key reasoning work of identifying academically valid terminology and narrowing down choices for the student. This gives the student the substance without requiring them to derive it.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor refuses to write answers but rarely explains the learning rationale (active reasoning, skill development). Turn 1 briefly says 'help you build your own argument' but this is not repeated or elaborated as a pedagogical principle in subsequent turns where the tutor continues to decline requests.",
+                "reason": "The tutor consistently declines to do work for the student but never explains the pedagogical rationale (active learning, skill development) behind its approach. It just says 'I can't' without connecting refusals to learning goals.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their own thinking process or what changed in their reasoning. The conversation ends without any reflection on method or consolidation of the student's learning journey.",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why an approach worked. The conversation ends at Turn 10 with a yes/no check and two follow-up questions but no meta-reflection prompt.",
                 "points": 2
               }
             ],
@@ -144,8 +144,19 @@
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Turns 7–9 cycle on the same blank-filling exercise across three turns without meaningful synthesis or progression. In each turn the tutor restates the same template/option lists, and the student keeps requesting the answer more directly. The tutor does not reframe or consolidate in a way that breaks the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -157,15 +168,28 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Multiple turns (especially 1, 2, 4, 5, 6) contain multi-paragraph replies with several sub-questions bundled together, when shorter, more focused prompts would have been more appropriate given the student's panic and time pressure. The tutor repeatedly packs 3–4 sub-tasks into a single message.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -177,26 +201,26 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently maintained a Socratic stance by refusing to write submission-ready text, redirecting the student to supply their own answers, and using structured scaffolding questions across the conversation.",
-      "A moderate deduction under 1.1 is warranted for Turn 8, where the tutor provided specific lists of candidate phrases for each blank in the principle template. Although the tutor asked the student to 'pick one,' supplying the exact philosophical vocabulary effectively did the key intellectual work of identifying appropriate terminology, partially crossing into 1.1.C.b territory. This was not sufficient to trigger the full 12-point 1.1.A.a deduction (the student still had to assemble and test the principle), but the 6-point 1.1.C.b deduction applies.",
-      "Under 1.3, the tutor rarely explained the pedagogical rationale for withholding direct answers (1.3.A.a), and never prompted the student to reflect on what they had learned or how their thinking evolved (1.3.D.a). There was no method-level feedback on the quality of the student's reasoning process itself, but because 1.3.B was not clearly violated in isolation from the above issues, only the two triggered deductions are recorded.",
-      "Dialogue quality was strong: the tutor kept the conversation anchored to the assignment, progressed the student from consequentialism basics to a worked principle, and avoided repetition without synthesis.",
-      "Communication quality was appropriate: responses were well-structured and concise given the complexity of the task, and tone was supportive and non-punitive throughout."
+      "The tutor consistently refused to write submission-ready content and maintained appropriate Socratic pressure throughout, which is praiseworthy. However, Turn 8 crossed into doing key reasoning work for the student by providing curated lists of academically valid phrase options for each criterion blank, reducing the student's intellectual task to mere selection rather than generation—triggering a 1.1.C.b deduction.",
+      "The tutor never explained the pedagogical rationale behind its refusals (learning by doing, skill transfer), missing an opportunity to engage the student's buy-in and triggering 1.3.A.a. It also never prompted reflection on the student's own thinking process, triggering 1.3.D.a.",
+      "The blank-filling loop in Turns 7–9 spiraled without meaningful reframing or consolidation, with the tutor repeating nearly the same prompt structure three times while the student kept escalating for more direct help. This triggered the 2.1.A.a deduction.",
+      "Communication length was a recurring issue: many turns packed multiple sub-questions into long messages, which likely increased cognitive load for a student who was already panicking. This triggered the 3.1.A.a deduction.",
+      "Assignment anchoring was strong throughout—the tutor consistently kept the student focused on the philosophical task and correctly declined off-task requests. Tone was supportive and non-condescending. Scaffolding was generally good: the tutor acknowledged the student's Switch vs Footbridge intuition in Turn 5 and built on it in Turn 6."
     ],
-    "total_score": 36,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

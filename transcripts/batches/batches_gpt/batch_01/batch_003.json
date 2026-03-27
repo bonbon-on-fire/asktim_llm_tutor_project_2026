@@ -231,12 +231,16 @@
           "1.1": {
             "deductions": [
               {
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Across the three transcripts, the tutor sometimes did key reasoning for the student by supplying concrete sector tags, narrowing ratings to tutor-generated patterns/options, and in one case confirming the exact digit set to enter, rather than keeping the central judgment fully with the student.",
-                "points": 6
+                "evidence_turns": [
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "The tutor supplied exact rating-set options and then confirmed the student should enter (10, 9, 9, 8, 8), which is direct assignment work on the table’s core judgment.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -247,20 +251,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave strong procedural guidance, but rarely paused for reflection on why the student's method worked or how to transfer the rating/justification approach beyond the immediate table.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 12,
           "max": 24
         }
       },
@@ -269,8 +267,15 @@
           "2.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  3,
+                  5,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Especially in Transcript 1, the tutor repeated the same refusal-plus-template move across several turns after the student stayed stuck, with limited synthesis or a new strategy to break the loop.",
+                "reason": "After repeated student requests and continued time pressure, the tutor kept repeating the same refusal-plus-template pattern without meaningfully changing strategy or synthesizing to move the interaction forward.",
                 "points": 4
               }
             ],
@@ -293,8 +298,18 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used long list-heavy replies and templates where shorter, more targeted prompts would have been more interactive and cognitively lighter for the student.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -306,23 +321,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Scored across all three provided transcripts; turn-level citations were omitted because numbering resets within each transcript.",
-      "The tutor was consistently assignment-anchored, clear, and generally scaffolded well without writing full submission text, but sometimes crossed into doing central judgment work by supplying exact rating options/sector tags and became repetitive when the student kept demanding paste-ready output."
+      "The tutor was consistently assignment-anchored and generally supportive, with clear attempts to scaffold ratings, sector tags, and evidence rather than writing full justifications.",
+      "However, the strongest deduction is pedagogical: the tutor eventually supplied exact rating outputs for the student’s table, crossing into direct assignment work on a core assessed judgment.",
+      "Across the transcripts, the tutor also tended to repeat the same refusal-plus-template move and often responded with long structured lists, which reduced progress and interactivity."
     ],
-    "total_score": 34,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

@@ -247,27 +247,17 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor redirects away from social chat by citing role constraints, but does not explain a learning-oriented rationale for that limitation.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives strong forward guidance but does not prompt brief reflection on why the student's evidence-based method improved or how to reuse that method later.",
+                "reason": "The tutor enforced the no-chitchat boundary but did not explain a learning-oriented rationale beyond staying on task.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -294,8 +284,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly bundled many questions and sub-tasks into single turns, which increased cognitive load when shorter interactive steps would have been more manageable.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -307,24 +310,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Multiple transcripts were provided in the prompt; this score applies to Transcript 1.",
-      "The tutor consistently uses guided discovery: it asks targeted, evidence-seeking questions, builds the table progressively, and avoids giving submission-ready claims or polished final prose.",
-      "The main deductions are meta-learning related: the tutor enforces role limits without explaining the learning rationale, and it misses chances to prompt reflection on why the student's evidence-based method became stronger."
+      "The tutor stayed tightly anchored to the assignment, used strong guided-discovery questioning, and consistently built on the student's developing Chicago actor map without doing the substantive reasoning for them.",
+      "The main weakness was response size: several turns stacked multiple analytic questions and deliverable requests at once, which reduced bite-sized interaction and was somewhat mismatched to the student's stated burnout.",
+      "A smaller deduction was applied for policy framing because the tutor redirected away from social chat without clearly explaining the learning rationale for that boundary."
     ],
-    "total_score": 42,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

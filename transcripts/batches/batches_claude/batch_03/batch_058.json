@@ -235,7 +235,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "In Transcript 1 Turn 5, the tutor provides 6 near-complete sentence starters with blank slots that are fully structured, include specific actor-type placeholders, and include parenthetical examples for the blanks. Combined with the prior turns where the tutor already scaffolded all actor categories, levers, and missing groups, these starters give the student a nearly submission-ready forum post shell that only needs names plugged in. Together with Turn 4's table template (pre-structured with all categories), the tutor has carried the structural reasoning and writing framework to near-submission-ready status.",
+                "reason": "In Transcript 1, Turn 5, the tutor provides six near-complete sentence starters with blanks for actor names. These starters contain the full structure, framing, argument sequence, and much of the wording of the required forum post. A student can plug in actor names already identified in prior turns and produce a submission-ready forum post with minimal cognitive effort. This constitutes giving answer pieces across turns that together become submission-ready, and specifically giving finished wording that needs only tiny edits.",
                 "points": 12
               }
             ],
@@ -265,7 +265,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces constraints (not writing the table/post) but rarely explains the learning rationale behind doing so. In Transcript 1 Turn 1, the refusal is stated but no learning rationale is offered. In Turn 8 ('posting uncited, potentially wrong specifics is on you, not me') the framing is more punitive than pedagogical. The rationale for guided discovery vs. direct provision is never explained.",
+                "reason": "Across all three transcripts, the tutor never explains its pedagogical rationale to the student. In Transcript 1 especially, when the tutor refuses to write the table or post, it says 'that's the core work you're being graded on' and 'I can't turn it into a submission-ready table' but never articulates why guided discovery builds transferable skill or why doing the reasoning oneself leads to better long-term learning. The refusals are stated as constraints, not as learning rationale.",
                 "points": 2
               },
               {
@@ -282,7 +282,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts students to reflect on what changed in their thinking or why a method worked. In Transcript 2, even at Turn 10 where substantial progress has been made, the tutor moves directly to the next task without asking the student to reflect on the process. In Transcript 3, similarly no reflection is invited at any point.",
+                "reason": "In all three transcripts, the tutor never prompts the student to reflect on their thinking process or what changed in their understanding. After students make progress (e.g., the chaotic student correctly identifying actors, the clueless student reasoning through FPL roles), the tutor moves directly to the next task without pausing to ask 'what helped you figure that out?' or reinforcing method choices that worked.",
                 "points": 2
               }
             ],
@@ -305,16 +305,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 Turn 2, the student asks an off-topic question about music. The tutor does redirect, but first gives a substantive response to the actual assignment content before addressing the off-topic comment. This is minor and handled quickly, so only a partial concern; however, a stricter reading finds the redirection is immediate and clear ('I can't do the music chat—I'm here as your course tutor'). Evidence is borderline—no deduction applied.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -337,12 +328,11 @@
                   5,
                   6,
                   7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns are multi-paragraph responses with multiple numbered sub-questions, extensive templates, and lists. In Transcript 1 Turns 2, 3, 4, and 5, responses are very long with multiple simultaneous demands that reduce student thinking space. In Transcript 2, similar multi-part long responses appear throughout. The pattern of consistently long, multi-question responses rather than focused single prompts is recurring.",
+                "reason": "Across all three transcripts, the tutor frequently sends multi-part, multi-paragraph responses when shorter focused prompts would be more appropriate. For example, in Transcript 1 Turns 2, 3, and 4, the tutor packs 3 numbered questions with sub-bullets each time. In Transcript 2 Turns 3, 5, and 6, the tutor similarly sends dense multi-question blocks. In Transcript 3 Turns 2, 3, 8, and 9, questions are layered without waiting for student response. This pattern consistently reduces the student's opportunity to think, respond, and self-correct before the next batch of scaffolding arrives.",
                 "points": 4
               }
             ],
@@ -351,43 +341,33 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "In Transcript 1 Turn 8, the tutor says 'posting uncited, potentially wrong specifics is on you, not me'—this phrasing is somewhat punitive/dismissive in tone and could discourage a struggling student rather than support them.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 24,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The most significant issue is in Transcript 1 (1.1): by Turn 5, the tutor had already scaffolded all actor categories, levers, and missing groups, and then provided 6 fully-structured sentence starters covering all assignment components. Combined with the pre-built table template in Turn 4, the tutor effectively carried the structural and writing work to near-submission-ready status, triggering the 1.1.A.a deduction of 12 points.",
-      "Transcripts 2 and 3 demonstrate much better guided-discovery pedagogy, consistently asking the student to reason through actor classifications, power levers, and evidence gaps themselves, without pre-supplying answers.",
-      "Meta-learning (1.3) is consistently weak across all three transcripts: the tutor rarely explains the learning rationale for constraints, does not prompt process reflection at natural endpoints, and misses opportunities to reinforce methodological choices after student progress.",
-      "Communication length is a recurring issue: most tutor turns contain multiple numbered sub-questions and multi-paragraph explanations that could have been broken into shorter, more interactive exchanges.",
-      "The tone deduction in Transcript 1 Turn 8 ('on you, not me') is minor but represents a shift toward punitive framing that contrasts with the otherwise supportive approach.",
-      "Assignment anchoring and redundancy/spiraling were not major concerns: the tutor consistently kept students on task and progressed the conversation rather than cycling on the same points."
+      "The tutor performs well in Transcripts 2 and 3, maintaining genuine Socratic scaffolding throughout: it asks diagnostic questions, builds on student contributions, and avoids doing the reasoning for the student. Transcript 3 in particular shows strong guided discovery as the tutor walks the clueless student through the actor/stakeholder distinction and the FPL classification entirely via questioning.",
+      "The critical failing is in Transcript 1, Turn 5, where the tutor provides six near-complete sentence starters that contain the full structure, argument sequence, framing, and wording of the required forum post. With actor names already established in prior turns, a student could produce a submission-ready post by filling in blanks. This triggers the 1.1.A.a near-submission-ready deduction of 12 points. The earlier provision of a structured template in Turn 4 is borderline but stops short of containing finished prose; the sentence starters in Turn 5 cross the line.",
+      "Across all three transcripts, the tutor never explains its pedagogical rationale when declining to do student work (1.3.A.a) and never prompts reflection on what changed in the student's thinking after progress is made (1.3.D.a). These are consistent omissions that cost 4 points in 1.3.",
+      "On communication, the tutor regularly sends long multi-part responses with 3+ numbered questions and sub-bullets in a single turn. While the questions are well-targeted, the volume consistently reduces student think-and-respond opportunity, triggering the 3.1.A.a deduction of 4 points.",
+      "No deductions were applied for 1.2 (scaffolding builds well on student progress across all three conversations), 2.1 (no spiraling or unproductive repetition observed), 2.2 (the tutor stays anchored to the assignment throughout, redirecting the music tangent in Transcript 2 Turn 2 immediately), or 3.2 (tone is consistently encouraging and non-evaluative)."
     ],
-    "total_score": 24,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

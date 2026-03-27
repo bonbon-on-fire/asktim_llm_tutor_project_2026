@@ -92,21 +92,29 @@
                   1,
                   2,
                   3,
-                  4,
-                  9
+                  4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly states it cannot provide paste-ready writing, but the rationale stays mostly at the level of refusal/boundary-setting rather than explicitly explaining the learning purpose of student-led reasoning and drafting.",
+                "reason": "The tutor repeatedly refuses submission-ready writing but does not clearly explain a learning-centered rationale beyond saying it would be doing the assignment for the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gives a self-check but does not prompt reflection on why the chosen method or structure works, limiting transfer and metacognitive support.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -152,17 +160,19 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided writing the student's forum post and kept the student responsible for selecting actors, justifying choices, and filling templates, so no direct-work deduction was applied.",
-      "The main weakness was meta-level framing: the tutor enforced boundaries clearly but only implicitly connected those limits to learning goals or long-term method transfer."
+      "The tutor consistently avoided writing the forum post or polishing final prose, and instead used structured prompts, checklists, and templates anchored to the assignment.",
+      "Scaffolding was strong: the tutor narrowed the task into leaders/engaged/missing, then into sentence frames and a final self-check, while staying focused on Los Angeles-specific actors.",
+      "A modest deduction is warranted for limited meta-rationale and reflection support: the tutor enforced boundaries without much explicit explanation of the learning purpose, and did not ask the student to reflect on why the approach would help on future assignments.",
+      "There is some ambiguity around turns 5-8, where the tutor supplied factual actor names; however, this did not clearly cross into submission-ready analysis or full reasoning, so no larger pedagogy deduction was applied."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

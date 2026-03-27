@@ -101,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains its tutoring rationale or policy to the student. In Turn 1 it simply says 'I can't write a submission-ready answer for you' without explaining that the reason is to support active reasoning or long-term skill development.",
+                "reason": "The tutor never explains to the student why it is using a Socratic/guided approach rather than just giving answers. It enforces constraints (turn 1: 'I can't write a submission-ready answer for you'; turn 3: 'I can't phrase it for you') without offering a rationale tied to learning or skill development.",
                 "points": 2
               },
               {
@@ -118,7 +118,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Throughout the conversation the tutor moves from one set of questions to the next without ever prompting the student to reflect on what changed in their thinking, why a particular move worked, or what they learned methodologically. No meta-reflection or transfer support is offered.",
+                "reason": "The tutor moves from one set of follow-up questions to the next across all 10 turns without ever prompting the student to reflect on what changed in their thinking or why a particular method or move worked. There is no moment of process reflection or reinforcement of the student's philosophical reasoning method.",
                 "points": 2
               }
             ],
@@ -170,7 +170,7 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Nearly every tutor turn is a multi-part, multi-paragraph response. Turns 1, 3, 4, 5, 6, 7, 8, 9, and 10 all contain 4–5+ sub-questions or extended explanations before allowing the student to respond, consistently reducing the student's opportunity to think through one issue at a time.",
+                "reason": "Nearly every tutor turn contains 4–6 sub-questions bundled into a single response. For example, turn 1 asks for the AC decision rule, a full case table, an analysis of morally relevant features, AND a critique all at once. Turn 4 again bundles four numbered sub-questions. This pattern consistently reduces student opportunity to think incrementally and respond before being given the next layer of guidance.",
                 "points": 4
               }
             ],
@@ -199,12 +199,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to do the student's work and maintained a Socratic, question-driven approach throughout all ten turns. It never gave away final answers, polished the student's prose, or stated conclusions before the student reasoned them out—1.1 is unpenalized.",
-      "Scaffolding (1.2) was strong: the tutor built on every valid student move (e.g., acknowledging the coherent grid in Turn 4, affirming 'argument-shaped' reasoning in Turn 7) and correctly diagnosed where the student was confused (Loop, the means criterion) before drilling in.",
-      "Meta-learning (1.3) suffered on two counts. The tutor never explained why it was refusing to write the answer (no learning-rationale statement, just 'I can't'), which triggers 1.3.A.a. It also never prompted the student to step back and reflect on how their thinking evolved or what methodological lesson to carry forward, triggering 1.3.D.a. No deduction was applied for 1.3.B because the tutor gave substantive process feedback throughout.",
-      "Dialogue quality (2.1, 2.2) was excellent: the conversation advanced steadily, looping back on Loop purposefully rather than repetitively, and remained tightly anchored to the prompt.",
-      "Communication quality (3.1) was hurt by consistently long, multi-question turns. Every single tutor message presented 3–5 sub-questions simultaneously, leaving little space for the student to work through one issue before being handed another. This pattern across nearly all turns warrants the 4-point deduction under 3.1.A.a. Language was clear and appropriately academic, so no deduction for 3.1.B.",
-      "Tone (3.2) was supportive and coaching-oriented throughout; no grades or punitive framing were used."
+      "The tutor consistently refuses to do the student's work and instead uses probing questions to guide the student through developing their own philosophical position — a strong application of the Socratic method with no near-submission-ready content given at any point.",
+      "Scaffolding is effective: the tutor builds on each of the student's responses, acknowledging progress (e.g., 'your setup is strong', 'this is finally argument-shaped', 'this is coherent now') and drilling into the next level of precision rather than restarting.",
+      "The tutor never explains why it is withholding direct answers, missing a clear opportunity to frame the pedagogical rationale around skill-building or autonomous reasoning (1.3.A.a deduction applied).",
+      "No reflective or transfer-focused moments appear across the 10 turns: the tutor consistently advances to the next set of questions without prompting the student to pause and assess what their thinking process revealed (1.3.D.a deduction applied).",
+      "The main communication weakness is response length: virtually every tutor turn bundles 3–6 distinct sub-questions, reducing interactivity and cognitive manageability. Shorter, more focused exchanges would better support student engagement (3.1.A.a deduction applied).",
+      "Tone is consistently supportive and non-evaluative, assignment anchoring is excellent throughout, and there is no problematic redundancy or spiraling."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

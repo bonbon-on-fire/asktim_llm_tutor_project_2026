@@ -238,7 +238,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.A.a",
-                "reason": "Transcript 1, Turns 5–8: The tutor provides a near-complete template with nearly all the substantive content pre-filled—specific actors named, sector assignments made, evidence reasoning supplied, and a full paragraph structure with only bracket choices left for the student. By Turn 8, the student can fill in a handful of bracketed words to produce a submission-ready forum post. The tutor effectively carries the full reasoning work across turns, leaving trivial fill-in as the student's only task. This satisfies 1.1.A.a (tutor gives answer pieces across turns that together become submission-ready; tutor gradually fills claim, evidence, and final wording until it is complete).",
+                "reason": "In Transcript 1, across turns 5-8, the tutor provides an increasingly complete fill-in-the-blank template that becomes nearly submission-ready. By Turn 8, the tutor provides a near-complete paragraph with most of the substantive content already filled in (actor names, their roles, equity framing), leaving only bracket choices for the student. The student only needs to select from pre-supplied options to complete the post. Together these turns constitute the tutor carrying the full reasoning and providing the submission text.",
                 "points": 12
               }
             ],
@@ -256,65 +256,28 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor enforces its 'I won't write it for you' constraint repeatedly but never explains the pedagogical rationale—e.g., that the student develops analytical skill by doing the reasoning themselves. The tutor says 'I can't' without saying why this benefits the student's learning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor does not prompt the student to reflect on what changed in their thinking or why a particular move (e.g., using the primary-purpose test, identifying governance mechanisms) worked. The conversation ends without reinforcing method choices or inviting metacognitive reflection.",
+                "reason": "Across all three transcripts, the tutor consistently moves forward without asking the student to reflect on what changed in their thinking or why a reasoning method worked. In Transcript 2 Turn 10 and Transcript 3 Turn 10, the conversations end without any reflection prompt about the process the student used or what they learned methodologically.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Transcript 1: The tutor cycles through essentially the same structure—'I won't write it, here is a template/menu, now you fill it'—across Turns 2 through 8 without consolidating or advancing the student's reasoning. Each time the student resists or asks for more hand-holding, the tutor repeats a slightly expanded version of the same scaffold rather than switching strategy (e.g., shifting to a more pointed diagnostic question, reframing the task, or calling out the pattern directly).",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -326,7 +289,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -340,11 +303,10 @@
                   4,
                   5,
                   6,
-                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Transcript 1: Multiple turns (especially T2, T4, T5, T6, T7, T8) contain multi-paragraph responses with extensive menus, numbered sub-items, and prefilled templates where shorter, more focused prompts would have been appropriate. The length and density of these responses consistently reduce the student's opportunity to think independently and respond. Transcript 3 also has some lengthy turns (T2, T5) that front-load content rather than check understanding first, though less severely.",
+                "reason": "In Transcript 1, the tutor repeatedly uses long multi-paragraph responses with extensive menus, templates, and nested bullet lists when shorter, more interactive prompts would be more appropriate. Turns 2, 4, 5, 6, and 8 all feature multi-paragraph replies that reduce student opportunity to think. The length of these responses, especially the actor menus and fill-in templates, consistently pre-empts student reasoning rather than inviting it.",
                 "points": 4
               }
             ],
@@ -366,20 +328,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 22,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Transcript 1 (chaotic_04) is the most problematic. Despite consistent refusals to 'write the post,' the tutor cumulatively provides near-submission-ready content: by Turn 5 a full paragraph template is given with only bracket choices remaining; by Turn 8 that template is nearly complete and the student only needs to fill trivial words. This triggers 1.1.A.a (12-point deduction). The tutor also cycles through the same 'here is a menu, pick items, now fill in' loop five or more times without switching strategy, triggering 2.1.A.a (4-point deduction). Response length is also a consistent issue across T2/T4/T5/T6/T7/T8, triggering 3.1.A.a (4-point deduction).",
-      "Transcript 2 (chitchat_04) is the strongest of the three. The tutor maintains Socratic guidance, redirects off-topic requests immediately, builds on student progress, and uses appropriately concise turns. No major deductions apply here.",
-      "Transcript 3 (clueless_04) is generally well-handled: the tutor avoids giving direct answers and uses candidate-verification and evidence-hunting scaffolds. No major rubric violations are triggered.",
-      "Across all transcripts, the tutor never explains the pedagogical rationale behind its 'I won't write it' stance (1.3.A.a) and never prompts metacognitive reflection on method (1.3.D.a). These two deductions apply globally.",
-      "No double-penalization: the 1.1.A.a deduction (12 pts) for Transcript 1 covers the substance-generation failure; 1.1.B and 1.1.C are not separately charged since 1.1.A.a already captures the maximum. The 2.1.A.a deduction is limited to Transcript 1's spiraling loop and does not overlap with 1.1."
+      "Transcript 1 (chaotic_04) is the most problematic. Despite consistent refusals to write the post outright, the tutor progressively builds a near-complete submission across turns 2-8 by providing actor menus, fill-in templates with pre-supplied rationale, and then in Turn 8 a nearly complete paragraph where the student only chooses from pre-filled bracket options. This triggers the 1.1.A.a deduction (full 12 points) because the tutor effectively assembles the full claim, evidence, and wording, leaving trivial bracketed choices.",
+      "Transcripts 2 (chitchat_04) and 3 (clueless_04) are conducted with sound Socratic technique: the tutor consistently asks the student to reason, build evidence, and make choices before giving guidance. Off-topic requests are appropriately redirected (Transcript 2 Turns 2-3). Scaffolding across all three transcripts builds well on student progress without restarting from scratch.",
+      "A minor deduction for 1.3.D.a (reflection/transfer) is applied because across all three conversations the tutor moves forward through each step without ever prompting the student to reflect on what their reasoning process revealed or what methodological lesson they can carry forward.",
+      "A 3.1.A.a deduction is applied primarily for Transcript 1, where the tutor's multi-paragraph actor menus and elaborate fill-in templates in turns 2, 4, 5, 6, and 8 are consistently longer than needed, reducing student cognitive engagement. Transcripts 2 and 3 are more balanced in response length.",
+      "No deductions for 1.2, 2.1, 2.2, or 3.2: scaffolding and progression are strong, there is no spiraling, assignment framing is maintained throughout, and tone is consistently supportive and appropriately non-grading."
     ],
-    "total_score": 22,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

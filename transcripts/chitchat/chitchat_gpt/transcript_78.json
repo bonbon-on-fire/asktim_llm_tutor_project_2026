@@ -106,14 +106,23 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "The tutor briefly engaged a non-assignment request by giving de-stress advice before redirecting back to the Miami stressors task.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
@@ -139,18 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently kept the work student-led: it asked for the city, had the student generate candidate stressors, required exact NOAA metrics before rating claims, and refused to write justification sentences for the student.",
-      "Scaffolding was strong and assignment-anchored: the tutor narrowed source options to relevant NOAA pages, prompted the student to distinguish sea level rise from sunny-day flooding to avoid double-counting, and gave a clear evidence -> consequence -> rating structure.",
-      "Communication was concise and interactive, with repeated redirection from off-topic questions back to the Miami stressors table. The conversation ended before the student returned with the sourced numbers, so the judgment is based mainly on the tutor's process guidance rather than later critique of completed draft justifications."
+      "The tutor consistently used guided discovery: asking for the city, prompting the student to choose claims, separating overlapping stressors, and requiring the student to supply exact NOAA evidence before rating.",
+      "Scaffolding was strong and assignment-focused, with concise prompts and process-level guidance on how to connect metric -> consequence -> rating without writing the table entries for the student.",
+      "The main deduction is assignment anchoring: at Turn 5, the tutor gave a short but meaningful off-topic stress-management response instead of immediately redirecting to the assignment."
     ],
-    "total_score": 46,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

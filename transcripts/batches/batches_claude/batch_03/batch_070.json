@@ -232,11 +232,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7,
-                  8
+                  7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1, Turn 7, the tutor provides three pre-written options for each blank in the forum post template. While framed as choices, the tutor is doing the key reasoning work by generating the substantive content phrases (e.g., 'critical infrastructure resilience and service continuity,' 'unequal distribution of benefits and burdens') that become the student's submission. The student only picks A/B/C labels. This crosses from scaffolding into providing the decisive content.",
+                "reason": "In Transcript 1 Turn 7, the tutor provides three pre-written option sets for each blank (12 options total), each a fully formed phrase ready to drop into sentences. While framed as a menu, the tutor is doing the key reasoning work—generating the substantive claims (e.g., 'unequal distribution of benefits and burdens across communities') rather than asking the student to reason through what consequences follow from exclusion. The student's contribution is merely selecting A/B/C.",
                 "points": 6
               }
             ],
@@ -254,20 +253,38 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces constraints (refusing to write content, refusing to fill tables, refusing to polish text) but rarely explains the learning rationale—why the student benefits from doing this work themselves, or how doing the reasoning builds skills for subsequent assignments. The policy is stated but the pedagogical reason is consistently omitted.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what they learned about the process of identifying actors or what analytical method worked. The tutor consistently moves forward without reinforcing why the method (criteria-setting, evidence-anchoring) was effective or asking what changed in the student's thinking.",
+                "reason": "In all three transcripts, the tutor moves the student toward the deliverable without prompting reflection on what the student's thinking process revealed or how their understanding changed. In Transcript 1 Turn 10, Transcript 2 Turn 10, and Transcript 3 Turn 10, the tutor closes with forward-looking questions without asking the student to reflect on what surprised them or what the process taught them about actor analysis.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -280,16 +297,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2, Turn 3, the student asks an off-topic question about music. The tutor correctly declines the music question but then immediately expands into a three-part substantive tutoring sequence without pausing to redirect—this is a minor issue since the music refusal was clean. No major engagement with off-topic content occurred.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -309,10 +317,12 @@
                   3,
                   4,
                   5,
-                  6
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 1, Turns 3–6, the tutor repeatedly sends multi-part, multi-paragraph responses with large template scaffolds, numbered lists, and fill-in-blank structures all at once. Turn 3 includes an 8-row table skeleton plus two questions; Turn 4 gives a 4-sentence scaffold with bolded labels; Turn 5 restates the scaffold again with yet more blanks. This pattern reduces student opportunity to think incrementally and consistently front-loads information rather than checking understanding first.",
+                "reason": "In Transcript 1 Turns 3–8, the tutor consistently responds with multi-part scaffolds (4-sentence templates, 6-question lists, 12-option menus) when shorter, more interactive prompts would have better preserved student thinking space. The length of individual responses (especially Turns 3, 5, 7) consistently reduces the student's opportunity to think independently. Similar patterns appear in Transcript 2 (Turns 3–5) and Transcript 3 (Turns 2–4).",
                 "points": 4
               }
             ],
@@ -334,22 +344,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts, the tutor demonstrates strong assignment anchoring and consistent refusal to write submission-ready content, appropriately redirecting off-topic requests and resisting repeated student demands to do the work for them.",
-      "In Transcript 1 (chaotic_06), the tutor's approach in Turns 5–8 crosses into providing the key reasoning content: it generates three pre-written fill-in options per blank (Turn 7) that cover the substantive claims students need to make, reducing the student's contribution to selecting A/B/C labels. This triggers a 1.1.C.b deduction (6 points), though it falls short of the 1.1.A threshold since the sentences are not fully assembled for the student.",
-      "The 'assembly recipe' in Turn 8 (Transcript 1) is borderline but does not fully assemble the sentences—the student must still paste and combine, so 1.1.A.a is not triggered. The deduction is capped at 6 points for 1.1.",
-      "Response length is a consistent issue in Transcript 1 particularly: Turns 3–6 feature multi-paragraph, multi-list responses that reduce the interactive back-and-forth needed for guided discovery. Transcripts 2 and 3 are somewhat better calibrated but still occasionally verbose.",
-      "Meta-learning feedback is present but the tutor never prompts students to reflect on why their analytical method worked or what changed in their thinking—a missed opportunity across all three conversations.",
-      "Scaffolding and progression (1.2) are strong: the tutor builds on student progress consistently, acknowledges correct steps, and challenges weak placements rather than ignoring them (e.g., Transcript 3, Turn 5–6).",
-      "Tone is supportive and non-punitive throughout; no formal grade-like language is used."
+      "Across all three transcripts, the tutor consistently refuses to do the assignment for students and redirects them to generate their own content—a strong baseline for Socratic practice.",
+      "However, in Transcript 1 Turn 7, the tutor provides 12 pre-written phrase options for blanks (3 per blank), each a substantive, submission-ready claim. This crosses from scaffolding into doing the key reasoning work (1.1.C.b), since the student only selects A/B/C rather than generating the ideas. A 6-point deduction is applied under 1.1.",
+      "The tutor never explains the pedagogical rationale behind refusals—only states the policy. Students are told 'I can't do that' but not told why doing it themselves builds the skills this assignment targets. This triggers the 1.3.A.a deduction.",
+      "Reflection and transfer are consistently absent at conversation close. Tutors in all three transcripts end with forward-looking verification questions but never prompt the student to consider what their thinking process revealed. This triggers 1.3.D.a.",
+      "Response length is a recurring issue in Transcript 1 especially (Turns 3, 5, 6, 7, 8 all contain multi-part scaffolds with pre-written language options). Rather than short interactive prompts, the tutor provides dense templates that reduce student thinking space. This triggers 3.1.A.a.",
+      "No deductions for 1.2 (scaffolding is well-matched to student progress in all three cases), 2.1 (no spiraling), 2.2 (assignment anchoring is maintained—off-topic chitchat redirected appropriately in Transcript 2), or 3.2 (tone is consistently supportive and non-grading).",
+      "The 1.1 deduction was limited to 1.1.C.b (6 points) rather than the full 12-point 1.1.A.a because the options menu, while problematic, does not constitute a fully submission-ready answer—the student still assembles sentences and produces the final paragraph. The boundary is ambiguous but the smaller deduction is applied."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

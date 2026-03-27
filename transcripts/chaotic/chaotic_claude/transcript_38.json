@@ -82,7 +82,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In turns 4, 5, and 8, the tutor provides highly structured fill-in-the-blank sentence frames with nearly all content pre-supplied (low elevation, king tides, porous limestone, storm surge, electric grid, hospitals). By turn 8 the student simply fills the blanks with exactly the words the tutor listed, producing submission-ready text that originated largely from the tutor. This constitutes rewriting student text into final wording.",
+                "reason": "In turns 4, 5, and 8 the tutor provides fill-in-the-blank sentence frames with most of the final wording already in place. By turn 8 the template reads almost verbatim like the student's turn-9 submission; the student merely inserted the bracketed words, meaning the tutor effectively drafted the near-final text.",
                 "points": 6
               }
             ],
@@ -100,20 +100,34 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refuses to write for the student but never explains the learning rationale—e.g., that active reasoning builds the skills needed for later assignments or for developing a climate action plan. It simply says 'that's doing the assignment' without connecting refusal to learning goals.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student finally produces acceptable justifications in turn 9, the tutor moves straight to building the next rows without prompting any reflection on what worked in the student's writing process or why the revised sentences were stronger.",
+                "reason": "After the student produces good sentences in turn 9, the tutor moves on to the next rows without prompting any reflection on what made the justifications work or how the student's process improved, missing a clear opportunity for metacognitive reinforcement.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -150,7 +164,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably 2, 3, 4, 5, 8) contain multi-part questions, numbered lists, word banks, sentence frames, and bullet checklists stacked together. These consistently long, information-dense responses reduce the student's opportunity to think and respond, and a more focused single-question prompt per turn would have been more effective.",
+                "reason": "Multiple turns contain lengthy multi-part instructions, numbered lists, bolded sub-questions, and word banks stacked together. Several responses could have been condensed to one or two focused prompts; instead the tutor front-loads extensive scaffolding that reduces the student's cognitive engagement space.",
                 "points": 4
               }
             ],
@@ -172,22 +186,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready answers and maintained a clear policy of guided authorship throughout the conversation, which is commendable.",
-      "However, by turns 4–8 the tutor's fill-in-the-blank sentence frames pre-supplied almost all substantive content (stressor names, mechanisms, specific systems), leaving the student only to slot words into scaffolding the tutor wrote. This crosses into rewriting territory under 1.1.B.a, warranting a 6-point deduction.",
-      "The 1.1.A.a full-credit removal was not applied: the student ultimately wrote out the sentences themselves (turn 9) and the tutor never directly produced final copy; the deduction is placed at 1.1.B.a instead to avoid double-penalizing.",
-      "Scaffolding and progression (1.2) were handled well: the tutor built on each student response, acknowledged correct contributions, and advanced the task turn by turn without restarting.",
-      "Meta-learning (1.3) was adequate in explaining why the tutor would not write answers (1.3.A satisfied) and giving process feedback on sentence structure (1.3.B satisfied), but the tutor missed an opportunity to prompt student reflection after turn 9's success (1.3.D deduction).",
-      "Dialogue quality was strong: no off-topic drift, no misread assignment framing, and the tutor effectively redirected the student's repeated requests without losing the thread.",
-      "Communication quality was hurt by consistently dense, multi-part turns that stacked word banks, sentence frames, numbered lists, and sub-questions together; simpler, more focused prompts would have preserved student thinking time."
+      "The tutor consistently refused to simply hand over a completed table, maintained assignment anchoring throughout, and made good use of progressive questioning to move the student from zero engagement to producing two defensible justification sentences.",
+      "The primary weakness is in 1.1: while the tutor never wrote full sentences outright, the fill-in-the-blank templates in turns 4, 5, and 8 supplied almost all the final wording. The student's turn-9 output is almost word-for-word the tutor's template with blanks filled—this constitutes near-submission-ready writing assistance that triggers the 1.1.B.a deduction (6 points).",
+      "The tutor never explained the pedagogical rationale for its refusals (1.3.A.a, -2 pts) and missed the opportunity to prompt process reflection after the student succeeded in turn 9 (1.3.D.a, -2 pts).",
+      "Response length was consistently excessive: turns 2, 3, 4, 5, and 8 each contain multi-part numbered lists and word banks that could have been replaced by a single focused question, reducing the student's active thinking space (3.1.A.a, -4 pts).",
+      "Tone was appropriate and supportive throughout; no grading language was used; dialogue avoided spiraling and kept the student on task."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

@@ -232,14 +232,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  4
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 8, the tutor does the reasoning for the student by calculating '6 fields × 15 min = 90 minutes, plus ~25% buffer puts it around ~2 hours' and then explicitly stating where the student is underestimating—effectively resolving the time-estimation reasoning for the student rather than asking the student to derive it.",
-                "points": 6
+                "reason": "In Transcript 3 Turn 4, the tutor provides direct motivational/productivity advice ('Burnout is real—keep it mechanical. Try a 15–20 minute sprint: one variable per sprint, with a 3-minute break.') and then in Turn 5 partly coaches instrumental focus setup, drifting into non-assignment coaching rather than redirecting cleanly.",
+                "points": 0
               }
             ],
-            "score": 6,
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -253,6 +253,10 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
@@ -261,15 +265,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor never explains to the student why it is using a guided-discovery approach rather than just giving answers (e.g., no statement about active learning or skill-building rationale). It enforces its policy by refusing off-topic requests but does not explain the learning rationale behind its tutoring method.",
+                "reason": "Across all three transcripts, the tutor enforces its limitations (no dinner, no music, no movie recommendations) but rarely explains the learning rationale—why guided questioning helps the student develop independent research skills. The tutor just says 'I can't help with non-academic topics' without explaining the pedagogical purpose of keeping the student doing the reasoning work.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "None of the three transcripts include a moment where the tutor prompts the student to reflect on what changed in their thinking or reinforces method choices after improvement. The conversations end without any process reflection.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what changed in their thinking or why a particular method (e.g., deciding on boundary first, using primary datasets, pre-deciding rules before searching) worked well. Conversations end with next steps rather than reflection on the reasoning process.",
                 "points": 2
               }
             ],
@@ -279,7 +292,7 @@
           }
         },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 24
         }
       },
@@ -312,10 +325,11 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns are multi-paragraph with three or more sub-questions asked simultaneously (e.g., Transcript 1 Turn 3 asks three numbered questions; Transcript 2 Turn 2 lists three questions; Transcript 3 Turn 3 asks three questions). This pattern consistently reduces the student's opportunity to think and respond one step at a time.",
+                "reason": "Across all three transcripts, several tutor turns pack 3–5 sub-questions at once (e.g., Transcript 1 Turn 3 asks three distinct questions; Transcript 2 Turn 2 asks three questions; Transcript 3 Turn 2 asks about unit, ACS vs decennial, and Köppen source type simultaneously). While the questions are productive, multi-question dumps repeatedly reduce the student's opportunity to think through one thing at a time, and single focused prompts would have been more appropriate in many of these cases.",
                 "points": 4
               }
             ],
@@ -337,20 +351,24 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 32,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor is generally strong at redirecting off-topic chitchat, maintaining assignment focus, and building coherent scaffolding across the data-table fields. It consistently asks students to justify decisions before moving on, which supports guided discovery.",
-      "However, in Transcript 3 Turn 8, the tutor does the time-estimation arithmetic for the student ('6 fields × 15 min = 90 minutes, plus ~25% buffer puts it around ~2 hours') rather than asking the student to compute and reflect on it. This constitutes doing the key reasoning step for the student (1.1.C.b), triggering a 6-point deduction under criterion 1.1. The deduction is capped at 6 because no full submission-ready content was provided and 1.1.A.a was not triggered.",
-      "Across all three transcripts, the tutor never explains the pedagogical rationale for its guided-discovery approach (1.3.A.a) and never prompts process reflection at conversation's end (1.3.D.a), both deducted under 1.3.",
-      "Response length is a consistent issue: the tutor routinely poses three or more sub-questions in a single turn (e.g., Transcripts 1–3, early turns), which reduces student thinking time and triggers a 3.1.A.a deduction.",
-      "No evidence of assignment misanchoring, redundant spiraling, tone problems, or grading stance issues was found."
+      "Across all three transcripts, the tutor does a strong job redirecting off-topic requests (movies, dinner, music, travel) clearly and promptly, maintaining assignment focus throughout.",
+      "The Socratic method is generally well-applied: the tutor consistently asks students to make decisions (boundary choice, year alignment, source type) rather than supplying answers directly, and refuses to draft table text for students.",
+      "The main pedagogy weakness is in meta-learning (1.3): the tutor almost never explains why it is guiding rather than telling, and never prompts the student to reflect on what their reasoning process revealed or what thinking changed across the conversation.",
+      "Communication quality suffers from a recurring pattern of 3–5 sub-questions packed into single turns across all transcripts, which can overwhelm students and limit independent thinking time; a more bite-sized approach would be preferable.",
+      "Scaffolding and progression (1.2) are handled well—the tutor builds on student decisions (e.g., CDMX boundary → GDP label → notes column) and acknowledges correct steps before advancing.",
+      "No submission-ready content is provided (1.1.A not triggered), and the tutor does not rewrite student text (1.1.B not triggered).",
+      "Dialogue quality (2.1, 2.2) is strong with no spiraling and consistent assignment anchoring.",
+      "Tone is supportive and non-punitive throughout (3.2 full marks).",
+      "The Transcript 3 Turn 4 burnout response providing productivity advice is a borderline case; it was brief and did not provide academic content, so no deduction was applied to 1.1, but it slightly undermines focus discipline."
     ],
-    "total_score": 32,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

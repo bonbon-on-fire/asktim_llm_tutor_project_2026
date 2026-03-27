@@ -81,7 +81,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In turns 5 and 6, the tutor provides a fill-in-the-blank template with most of the substantive wording already in place ('foreseen side-effect of redirecting a threat rather than intentionally using the person as the instrument of saving the five'). The bracketed portions are minimal placeholders, meaning the tutor has essentially drafted the core sentence for the student. This crosses into producing near-final wording rather than guiding the student to construct it.",
+                "reason": "In turns 5 and 6, the tutor provides fill-in-the-blank sentence templates that, combined with the student's minimal word substitution, produce near-final polished wording. By turn 7, the student submits a sentence that is essentially submission-ready with minimal effort, having been scaffolded by the tutor's near-complete language. This amounts to the tutor rewriting or providing the final wording for the student's key principle sentence.",
                 "points": 6
               }
             ],
@@ -111,18 +111,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to provide answers but rarely explains the learning rationale for why guided discovery benefits the student long-term. It says 'my job is to help you build your own' but does not explain how this builds philosophical reasoning skills or what the student gains pedagogically.",
+                "reason": "Throughout the conversation the tutor enforces its policy of not writing answers but never explains the learning rationale (active reasoning, skill development, academic integrity). It simply says 'I can't' without explaining why refusing to hand over sentences benefits the student's learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At no point does the tutor ask the student to reflect on their thinking process or what changed in their understanding. The tutor moves from topic to topic without prompting reflection on why the means/side-effect distinction matters methodologically or how the student's reasoning evolved.",
+                "reason": "At the end of the conversation, the tutor moves directly to outlining next steps without prompting reflection on how the student's thinking evolved or why the means/side-effect framework helped. No reflection or transfer support is offered.",
                 "points": 2
               }
             ],
@@ -164,10 +161,12 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Particularly in turns 1, 2, and 3, the tutor sends lengthy multi-part prompts with several numbered sub-questions at once, reducing the student's opportunity to think and respond incrementally. Turn 1, for example, gives a three-part outline task when a single focused question would have been more interactive.",
+                "reason": "Many of the tutor's early replies are multi-paragraph blocks covering several sub-questions simultaneously (turns 1, 2, 3, 4 especially). Given the student's stated time pressure and confusion, shorter, more focused prompts one at a time would have been more appropriate and given the student more room to think before being inundated.",
                 "points": 4
               }
             ],
@@ -196,11 +195,10 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refuses to write submission-ready answers, maintains good Socratic intent, and keeps the student engaged in the reasoning process across all ten turns. Assignment anchoring is strong—the tutor never loses track of the prompt and correctly orients the student toward the relevant cases and philosophical frameworks.",
-      "The main deduction in 1.1 comes from turns 5–6, where the tutor provides fill-in-the-blank templates with most of the substantive philosophical wording already supplied (means vs. side-effect language, 'redirecting a threat,' 'instrument'). Although bracketed, the templates effectively drafted the core principle sentence, crossing into 1.1.B territory (rewriting student text into final wording). The deduction was applied as 6 points under 1.1.B.a rather than full 12 under 1.1.A because the student still had to synthesize and apply the principle; this was not a full submission-ready answer across the whole essay.",
-      "Meta-learning (1.3) suffered because the tutor never explained its pedagogical rationale in learning-development terms, and never prompted the student to reflect on how their thinking evolved. The tutor's refusals were policy-stated but not educationally framed.",
-      "Communication length was frequently excessive in early turns (1–3), where multi-part numbered prompts reduced the student's active thinking opportunity. Later turns were more targeted.",
-      "No deductions were applied for redundancy/spiraling or assignment anchoring, as the tutor made steady progress and kept the conversation on-task. Tone was consistently supportive without being condescending."
+      "The tutor appropriately refuses to write a submission-ready essay and maintains Socratic engagement throughout, keeping the student working toward their own conclusions. Dialogue quality is strong: the tutor stays on-task, builds on student progress turn by turn, and advances the argument without spiraling.",
+      "However, the fill-in-the-blank sentence templates in turns 5 and 6 cross into providing near-final wording. By turn 7 the student's submitted sentence is essentially ready to paste—only possible because the tutor supplied the syntactic and conceptual scaffolding in nearly complete form. This triggers the 1.1.B.a deduction of 6 points.",
+      "On meta-learning, the tutor never explains its tutoring rationale (why it won't hand over sentences) and misses the opportunity for reflection at the end of the conversation, warranting deductions under 1.3.A.a and 1.3.D.a.",
+      "On communication, several early turns are multi-paragraph information dumps that pile multiple sub-questions on a confused, time-pressured student, warranting a 3.1.A.a deduction. Tone remains supportive and non-grading throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

@@ -229,8 +229,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the central reasoning fork for the hardest case (Loop) and gave a substantive candidate distinction ('agency/targeting means' vs causal means), including how it would classify Loop and Blood, rather than having the student derive that key bridge independently.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -247,17 +257,25 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced an assignment-only boundary for the off-topic request but did not explain the learning rationale for that limitation.",
+                "reason": "The tutor enforced the assignment-only boundary but did not explain a learning rationale for that constraint beyond role framing.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation closed without prompting the student to reflect on why the final method worked or what transferable reasoning move they developed.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 14,
           "max": 24
         }
       },
@@ -284,21 +302,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  4,
-                  6,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly gave multi-part, dense prompts with several questions at once, creating longer monologues than necessary for interactive step-by-step tutoring.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -310,24 +315,25 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed tightly anchored to the philosophy prompt, redirected off-topic chit-chat immediately, and used sustained guided questioning rather than giving a submission-ready answer.",
-      "Scaffolding was strong: the tutor built from the student's distinctions, pushed the student to test principles across cases, and helped organize the argument without taking over the final stance.",
-      "Main weaknesses were communication and meta-framing: the tutor often bundled too many questions into one turn, and the initial refusal of the off-topic request did not explain a learning-oriented rationale."
+      "Evaluated Transcript 1 only because the provided schema supports a single conversation score.",
+      "The tutor was strong on assignment anchoring, progressive questioning, and building the student's paper structure without writing the essay for them.",
+      "Main deduction: near the end, the tutor provided the decisive conceptual path for classifying Loop/Blood via an 'agency/targeting' distinction, which crosses from guidance into doing a key reasoning step.",
+      "A smaller deduction applies for limited meta-level framing: the tutor stated boundaries and gave strong in-task coaching, but did not explain the learning rationale for constraints or prompt end-of-conversation reflection."
     ],
-    "total_score": 40,
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

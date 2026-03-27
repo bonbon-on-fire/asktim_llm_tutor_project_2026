@@ -244,6 +244,7 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -255,11 +256,13 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor redirects off-topic attempts and enforces task focus but never explicitly explains to the student *why* it guides instead of giving answers (e.g., active reasoning, skill development). The rationale for the Socratic approach is never articulated.",
+                "reason": "Across all three transcripts the tutor enforces a no-off-topic policy and redirects repeatedly, but never explains the learning rationale (e.g., active reasoning, skill development) behind guiding the student to find information themselves rather than being told it.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
                   3,
                   4,
                   5,
@@ -270,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward to the next task without pausing to prompt the student to reflect on what they learned from a completed step or why a method worked. For example, in transcript 2 after the student successfully develops justification logic (turns 3–5), the tutor proceeds without prompting process reflection. Same pattern throughout all three transcripts.",
+                "reason": "The tutor consistently moves forward without pausing to help the student reflect on why the method (e.g., using coordinates for Köppen, splitting stressors, verifying sources) worked or what changed in their thinking. No turns prompt brief process reflection or reinforce method choices after improvement.",
                 "points": 2
               }
             ],
@@ -307,23 +310,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns contain multi-part numbered lists with several sub-questions packed together. For example, Transcript 1 Turn 2 asks two questions each with sub-parts; Turn 3 layers GDP year/units and Köppen source in one message; Transcript 2 Turns 5–7 pile multiple questions. While the content is pedagogically appropriate, the consistent pattern of multi-paragraph responses with 3–5 simultaneous sub-prompts reduces the student's opportunity to think and respond to one thing at a time.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -335,26 +323,26 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor performs well on Socratic method and guided discovery (1.1): it consistently avoids giving final answers, asks targeted questions, and scaffolds reasoning through student-generated ideas across all three transcripts. No deductions were warranted under 1.1.A, 1.1.B, or 1.1.C.",
-      "Scaffolding and progression (1.2) is also handled well: the tutor builds on student responses turn-by-turn, acknowledges correct reasoning (e.g., 'your hurricane comparison is exactly the kind of reasoning that makes a 10 defensible'), and appropriately diagnoses confusion before adding complexity. No deductions.",
-      "Meta-learning (1.3) has two clear gaps. First, the tutor never explains to the student *why* it is guiding rather than answering directly—it enforces constraints (refusing off-topic chat, refusing to provide links) without articulating the learning rationale (1.3.A.a, -2 pts). Second, the tutor consistently moves from one sub-task to the next without pausing to prompt reflection on why a method worked or what the student's thinking changed (1.3.D.a, -2 pts). The 1.3.B process feedback criterion is partially met—the tutor does give method-level feedback in several places (e.g., 'generic labels are a weak move here')—so no deduction was applied there.",
-      "Dialogue quality (2.1, 2.2) is strong. The tutor does not spiral or repeat without progress; it successfully re-anchors and redirects off-topic attempts immediately and consistently across all three transcripts. No deductions.",
-      "Communication quality (3.1) shows a consistent pattern of overly dense, multi-part turns. Many responses contain 3–5 numbered sub-prompts within a single message, often with bulleted follow-ups. While each individual question is sensible, the cumulative load within single turns repeatedly reduces the student's ability to engage with one idea at a time. This triggered a 4-point deduction under 3.1.A.a. Tone (3.2) is appropriate throughout—supportive without being sycophantic, firm in redirections without being dismissive. No deductions."
+      "The tutor demonstrates strong Socratic practice throughout all three transcripts: it consistently asks questions rather than giving answers, guides the student to derive their own evidence, ratings, and actor lists, and never provides submission-ready content. Criterion 1.1 is clean.",
+      "Scaffolding (1.2) is handled well: the tutor builds incrementally (one row at a time for the stressors table, one actor type at a time), acknowledges and builds on correct student contributions, and applies appropriate diagnostic questioning before moving on.",
+      "The main weakness is in meta-learning (1.3): the tutor never explains its own tutoring rationale or constraints to the student (why it won't give answers, why it keeps redirecting), losing 2 points on 1.3.A.a. It also misses multiple opportunities across all three conversations to prompt process reflection—e.g., noting what the student's improved reasoning demonstrated or asking them what made a method work—losing 2 more points on 1.3.D.a. No deduction was applied to 1.3.B because the tutor does give substantive method-level feedback (e.g., 'don't leave it as something like', 'generic labels are a weak move', 'tighten two things') throughout.",
+      "Dialogue quality is strong: the tutor redirects off-topic chat quickly and without lengthy engagement (2.2), keeps conversations on-task, and avoids spiraling by progressing the student to new rows/actors once a point is consolidated (2.1).",
+      "Communication quality is also strong: responses are well-scoped, chunked into numbered sub-questions, and language is clear and appropriately direct without being punitive. No formal grades are assigned (3.2)."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

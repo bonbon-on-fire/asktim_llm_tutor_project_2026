@@ -301,9 +301,9 @@
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the transcripts, the tutor consistently redirected off-topic chitchat back to the assignment immediately and kept the work anchored to the Stressors Table task.",
-      "The tutor used guided questioning rather than supplying submission-ready content: it asked the student to choose cities, define rating criteria, identify indicators, set evidence standards, and distinguish overlapping stressors.",
-      "Method support was strong: the tutor repeatedly gave concrete process tools such as inclusion checklists, decision rules, evidence hierarchies, and source-selection guidance without rewriting the student into final polished prose."
+      "Across all three transcripts, the tutor consistently redirected off-topic chitchat back to the assignment, kept the student doing the substantive reasoning, and avoided giving submission-ready claims or polished wording.",
+      "The tutor repeatedly used guided questions, evidence standards, and decision rules to help the student choose cities, define stressors, assign ratings, and justify priorities, showing strong scaffolding and method-level coaching.",
+      "No clear rubric-supported deductions were triggered; while some responses were firm and structured, they remained coaching-oriented, assignment-anchored, and appropriately interactive."
     ],
     "total_score": 46,
     "judge_llm_calls": 1

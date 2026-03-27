@@ -229,23 +229,24 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 6, the tutor fills in the complete A/B/C framework for the switch trolley case with exact wording (Aim, Means, Foreseen byproduct), doing the key reasoning step of modeling how to distinguish means from side-effects. While framed as a scaffold, this gives the student the decisive bridge from evidence to conclusion before the student derives it, reducing the cognitive work the student needs to do.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1 Turn 5, the student is confused about the A/B/C framework. In Turn 6, the tutor jumps directly to providing a fully worked example for switch-trolley without first probing what specifically confused the student (e.g., whether it was the concept of 'means' vs 'side-effect' or the format itself). A brief diagnostic question would have been more appropriate before modeling.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -253,22 +254,46 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  10,
-                  10,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces a Socratic approach (e.g., 'I can't just tell you,' 'I'd be doing the table for you') without explicitly explaining to the student *why* this method benefits their learning in the long run. No turn frames the rationale as active reasoning, skill development, or exam/writing preparation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor consistently moves forward without prompting the student to reflect on what changed in their thinking or why a method worked. In Transcript 1 Turn 10, the student produces a coherent thesis but the tutor does not pause to ask what reasoning shift led there. In Transcripts 2 and 3, the tutor never invites reflection on why the evidence-to-rating or actor-classification methods worked or failed.",
+                "reason": "None of the three transcripts include a moment where the tutor pauses to ask the student to reflect on what changed in their thinking or why a particular method (e.g., the A/B/C framework, the 3-factor rating system) worked. The tutor moves forward without reinforcing process-level wins.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 17,
           "max": 24
         }
       },
@@ -300,11 +325,12 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3,
-                  5
+                  5,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, many tutor turns use multi-paragraph replies with 3–4 sub-questions simultaneously when shorter, single-question prompts would have been more appropriate. For example, Transcript 1 Turn 1 contains 4 numbered questions at once; Turn 5 of Transcript 2 lists multiple detailed source-type categories plus a two-part question. This repeatedly limits the student's opportunity to think and respond incrementally.",
+                "reason": "In all three transcripts, the tutor repeatedly sends multi-part responses with 3–5 sub-questions or layered instructions in a single turn (e.g., Transcript 1 Turn 1 has 4 numbered questions; Turn 5 introduces a 3-part A/B/C framework; Transcript 2 Turn 1 has a multi-part reply; Transcript 3 Turn 2 has 3 sub-questions). This pattern consistently crowds the student's thinking space and reduces opportunities for incremental engagement. The student (clueless_05) shows signs of overwhelm throughout.",
                 "points": 4
               }
             ],
@@ -326,20 +352,21 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 35,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across three transcripts, the tutor demonstrates strong Socratic instincts overall—consistently asking the student to reason first, building incrementally on student responses, and anchoring discussion to the assignment. The tutor is particularly effective at scaffolding (1.2) and at keeping the student on-task (2.2).",
-      "The primary deduction in pedagogy (1.1) comes from Transcript 1 Turn 6, where the tutor fills in the full A/B/C trolley-switch example with exact language, preempting the student's own reasoning on the pivotal means-vs-side-effect distinction. This was the central conceptual step the student needed to derive, making it a 1.1.C.b violation.",
-      "Meta-learning (1.3) is weak on reflection and transfer: the tutor never pauses after student progress to ask what changed in thinking or why a method worked, missing consistent opportunities across all three transcripts.",
-      "Communication quality (3.1) is penalized because the tutor habitually issues 3–4 sub-questions per turn, which reduces the student's chance to think and respond. While the questions are usually well-designed, the sheer volume per turn consistently compresses student thinking space.",
-      "Tone (3.2) is consistently warm and appropriate; the tutor avoids grading language and maintains a coaching stance throughout. Dialogue quality (2.1, 2.2) is strong—the tutor advances the conversation without redundancy and re-anchors to assignment requirements wherever needed."
+      "The tutor demonstrates a genuinely strong Socratic approach across all three transcripts: never giving away final answers, consistently redirecting student reasoning, and maintaining appropriate scaffolding for a clueless persona. 1.1 is fully intact with no evidence of near-submission-ready answers, editing assistance, or reasoning takeover.",
+      "A minor deduction in 1.2 is applied because in Transcript 1 Turn 6, the tutor models the full A/B/C example for switch-trolley without first diagnosing what exactly confused the student in Turn 5—moving to solution-provision before checking understanding.",
+      "1.3 suffers consistent omissions: the tutor never explains its Socratic constraints as a learning strategy (1.3.A.a) and never invites the student to reflect on how their thinking evolved or why a method worked (1.3.D.a). The 1.3.B criterion (process/method feedback) is borderline but the tutor does give structured method-level guidance (e.g., A/B/C framework, 3-factor rating logic), so no deduction is applied there.",
+      "2.1 and 2.2 are fully intact: the tutor advances through each conversation without spiraling, and keeps students anchored to their assignments effectively throughout.",
+      "The main communication weakness (3.1.A.a) is persistent across all three transcripts: the tutor routinely delivers 3–5 nested sub-questions or multi-layer instructions in single turns. For a 'clueless' student persona, these dense responses repeatedly increase cognitive load. This pattern is consistent and clear enough to trigger the full 4-point deduction.",
+      "Tone is appropriate and supportive throughout; no grading language is used. 3.2 is fully intact."
     ],
-    "total_score": 34,
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

@@ -86,14 +86,23 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When redirecting the student's off-topic music question, the tutor enforced the constraint ('I can't do the music chat here') without explaining a learning-focused rationale for staying assignment-centered.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 24,
+          "score": 22,
           "max": 24
         }
       },
@@ -139,19 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently used guided discovery: it asked the student to choose boundaries, years, datasets, labels, and notes rather than supplying finished assignment content.",
-      "Scaffolding was strong throughout; each turn built directly on the student's prior decisions and narrowed the next concrete task.",
-      "Dialogue stayed tightly anchored to the assignment, including immediate redirection from the off-topic music question in Turn 9.",
-      "Responses were concise, structured, and supportive, with clear process-oriented checks on source consistency, boundary mismatch, and citation transparency."
+      "The tutor stayed strongly assignment-anchored, used guided questioning throughout, and avoided doing the student's work; the exchange steadily moved from source selection to labeling, notes, and draft-row preparation.",
+      "Method-level coaching was generally strong: the tutor pressed for boundary consistency, source defensibility, labeling of mismatches, and verification steps rather than supplying final content.",
+      "Small deduction only for meta-learning rationale: when redirecting the student's off-topic music question, the tutor set the boundary but did not explain why staying focused would support the student's learning; this evidence is limited, so the deduction is modest."
     ],
-    "total_score": 46,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

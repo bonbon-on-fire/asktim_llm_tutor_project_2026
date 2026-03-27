@@ -256,11 +256,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts the tutor consistently enforces limits on producing answers but rarely explains the learning rationale (active reasoning, skill development) behind those limits. The refusals are stated as policy ('I can't') without connecting them to why the student benefits from doing the work themselves.",
+                "reason": "Across all three transcripts, the tutor consistently enforces a policy of not providing answers/content but rarely explicitly articulates the learning rationale (e.g., 'I want you to develop reasoning skills for your later action plan'). In Transcript 1, the tutor refuses repeatedly but only occasionally hints at a rationale. The rationale is largely implicit rather than explicitly stated to help the student understand why this approach benefits their long-term learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
                   7,
@@ -269,7 +273,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "In all three transcripts the tutor moves from one step to the next without pausing to prompt the student to reflect on what changed in their thinking or why a particular method worked. For example, in Transcript 2 after the student produces strong justifications (Turn 10) the tutor immediately pressure-tests details without reinforcing what the student did well methodologically or asking them to articulate their reasoning process.",
+                "reason": "Across all three transcripts, the tutor effectively guides students forward but rarely pauses to ask students to reflect on what changed in their thinking, why a method worked, or what they learned about the process of evidence-based reasoning. Students improve, but the tutor does not reinforce method choices after improvement or prompt process-level reflection.",
                 "points": 2
               }
             ],
@@ -292,17 +296,7 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Transcript 2 (Turn 1) the student opens with an off-topic chat request about music. The tutor declines appropriately and redirects immediately, so no meaningful engagement with off-topic content occurs. No deduction warranted here.",
-                "points": 0
-              }
-            ],
+            "deductions": [],
             "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
@@ -326,11 +320,10 @@
                   6,
                   7,
                   8,
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Across all three transcripts, and especially Transcripts 1 and 3, many tutor turns contain multi-part lists, numbered sub-questions, multiple simultaneous prompts, and lengthy explanations where shorter, more focused prompts would have sufficed. For example, Transcript 1 Turn 3 presents a full template plus 15 yes/no questions at once; Transcript 3 Turns 5–9 stack two or three sub-questions per turn. This consistently reduces student thinking space.",
+                "reason": "Across all three transcripts, the tutor frequently sends multi-paragraph responses with multiple layered questions and structured templates in a single turn. While this scaffolding is valuable, many turns (e.g., T1 turns 2-7, T2 turns 3-9, T3 turns 2-9) pack multiple questions, frameworks, and sub-questions that reduce student opportunity to process one thing at a time. This is a recurring pattern across all transcripts.",
                 "points": 4
               }
             ],
@@ -359,12 +352,12 @@
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor maintains a consistently strong Socratic stance, refusing to produce submit-ready content even under repeated pressure (Transcript 1) and guiding students through their own reasoning step by step. No 1.1 deductions are warranted.",
-      "Scaffolding is solid: the tutor builds on each student's prior answers, avoids restarting from scratch, and asks targeted follow-up questions rather than generic prompts. No 1.2 deductions apply.",
-      "The main pedagogy gap is in meta-learning (1.3): the tutor rarely explains why it refuses to produce answers (learning rationale) and almost never prompts students to reflect on what changed in their thinking or why a method worked, missing opportunities at natural milestone moments across all three conversations.",
-      "Dialogue quality is strong. The tutor advances the conversation meaningfully each turn without repetitive spiraling, stays anchored to the assignment, and redirects the off-topic chat request in Transcript 2 immediately. No 2.1 or 2.2 deductions apply.",
-      "The primary communication weakness is response length. Many tutor turns pack multiple numbered sub-questions, templates, and explanatory bullets into a single message, which reduces student cognitive space and opportunity to think before being given the next scaffold. This pattern is most pronounced in Transcript 1 (Turns 2–4) and Transcript 3 (Turns 5–9). A 4-point deduction under 3.1.A.a is applied.",
-      "Tone is consistently supportive and non-punitive across all three transcripts, and the tutor never implies formal grading. No 3.2 deductions apply."
+      "Across all three transcripts, the tutor demonstrates strong adherence to Socratic method and guided discovery. In Transcript 1 (chaotic persona), the tutor consistently refuses to produce submit-ready content and instead scaffolds the student's reasoning with frameworks, templates, and yes/no diagnostic questions, never crossing into doing the work for the student. In Transcript 2 (chitchat persona), the tutor redirects off-topic content immediately and guides the student through a well-structured progression from stressor identification to sector classification, ratings, justifications, and priorities. In Transcript 3 (clueless persona), the tutor patiently builds conceptual foundations before asking the student to apply them, consistently using diagnostic questions to identify confusion before providing guidance.",
+      "Scaffolding and progression is strong in all three transcripts. The tutor acknowledges and builds on student contributions (e.g., T2 Turn 4: 'Your hurricane comparison is exactly the kind of reasoning that makes a 10 defensible'), and consistently advances from simpler to more complex tasks without ignoring student progress.",
+      "Meta-learning receives a deduction for two criteria: (1) The tutoring rationale is rarely made explicit—while the tutor enforces constraints well, it does not consistently explain to students why working through the reasoning themselves builds skills for future assignments. (2) Reflection and transfer support is absent across all transcripts; after students improve or produce good work, the tutor moves forward without prompting them to articulate what changed in their thinking or why the method worked.",
+      "Dialogue quality is strong. The tutor avoids redundancy by switching strategies when students resist (e.g., T1: moves from open questions to structured Y/N diagnostic frameworks), maintains assignment anchoring even when the chitchat student goes off-topic, and effectively redirects.",
+      "Communication quality receives a deduction for response length. While the structured templates and multi-question turns are pedagogically motivated, they are consistently multi-paragraph in nature across all three transcripts. Many turns combine 2-4 distinct sub-questions plus a framework plus next-step instructions, which can overwhelm students and reduce their opportunity to process one concept at a time. This pattern is most pronounced in Transcripts 1 and 3.",
+      "Tone is consistently supportive and non-punitive across all transcripts. The tutor does not assign grades or use evaluative language that would be misread as formal grading."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

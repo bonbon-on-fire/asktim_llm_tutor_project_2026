@@ -235,7 +235,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 5, when the student asks what proxy/boundary to use for GDP and requests 'a one-sentence justification I can paste in the notes column,' the tutor both resolves the proxy question (AMB > province > NUTS3 ranking) and provides a fill-in justification template. While it leaves blanks, the template is nearly complete and does the key reasoning step of selecting the proxy and framing the justification for the student.",
+                "reason": "In Transcript 1 Turn 5, the tutor provides the most acceptable proxy geography decision and then hands the student a complete fill-in justification template that supplies the bridge from the evidence gap to the table note. The student only needs to fill in a word or two; the reasoning and wording structure are given rather than derived by the student.",
                 "points": 6
               }
             ],
@@ -253,6 +253,24 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains the rationale for its tutoring constraints (e.g., why it asks Socratic questions instead of providing data, or how that develops the student's independent research skills). It enforces its limits but doesn't articulate the learning purpose.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
@@ -264,17 +282,17 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what worked in their reasoning process, what changed in their thinking, or why a method succeeded or failed. The tutor consistently moves forward to the next task without reinforcing process choices.",
+                "reason": "None of the three transcripts include any moment where the tutor prompts the student to reflect on their thinking process, what changed in their understanding, or why a method worked. The tutor consistently moves forward to the next step without reinforcing process choices.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 24
         }
       },
@@ -288,7 +306,7 @@
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 3, Turns 8 and 9 are nearly identical: in Turn 8 the student asks which of the three source types is the right citation for BMC area, and in Turn 9 the student asks exactly the same question again. The tutor's response in Turn 8 already gave a clear priority order (1/2/3), yet in Turn 9 the student repeats the same confusion and the tutor simply restates the same priority order without synthesizing, reframing, or diagnosing why the student is not moving forward.",
+                "reason": "In Transcript 3, Turns 8 and 9 cover virtually the same ground: the student asks which source type to use for BMC boundary evidence, the tutor gives an answer in Turn 8, and the student repeats essentially the same question in Turn 9 (asking again which of the three source types is best), and the tutor repeats the same ranked list without synthesis or reframing. The tutor did not consolidate or advance past this loop.",
                 "points": 4
               }
             ],
@@ -315,10 +333,12 @@
               {
                 "evidence_turns": [
                   2,
-                  3
+                  3,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Transcript 1 Turn 2 is an exceptionally long monologue covering all seven table fields with sub-bullets, multiple choice questions per field, and layered source guidance before the student has done any searching. Similarly Turn 3 provides extensive source navigation detail for three fields at once. These multi-paragraph responses consistently reduce student thinking time and could have been broken into shorter interactive steps checking one field at a time.",
+                "reason": "In Transcript 1 Turns 2 and 3 especially, and in Transcript 3 Turns 5 and 6, the tutor delivers large multi-section monologues (numbered lists of 6-7 items with sub-bullets) when one focused prompt would have been more appropriate. This pattern consistently reduces the student's opportunity to process and respond interactively.",
                 "points": 4
               }
             ],
@@ -340,22 +360,22 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 30,
+    "total_base_score": 28,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor consistently refuses to do the assignment for the student and maintains appropriate boundaries when students request paste-ready numbers or off-topic chat, which is a genuine strength.",
-      "The main pedagogy deduction (1.1.C.b, -6) is triggered in Transcript 1 Turn 5, where the tutor resolves the proxy choice for Barcelona GDP (AMB > province > NUTS3) and then supplies a nearly complete justification sentence template, doing the key reasoning and writing step the student should have performed.",
-      "The deduction for 1.1 is capped at 6 (not 12) because no full submission-ready answer is produced and the tutor still leaves blanks for the student to fill.",
-      "Meta-learning (1.3.D.a, -2): the tutor never pauses to ask the student to reflect on what changed in their thinking or why a source choice worked, missing every natural opportunity across all three conversations.",
-      "Redundancy (2.1.A.a, -4): in Transcript 3 Turns 8-9 the student repeats the exact same confusion about which BMC source to use, and the tutor simply restates the identical priority list without diagnosing why the student is stuck or reframing the task, constituting clear spiraling without synthesis.",
-      "Communication length (3.1.A.a, -4): Transcript 1 Turns 2 and 3 are very long monologues covering all fields simultaneously before the student has begun searching; shorter, field-by-field exchanges would have been more appropriate and more interactive.",
-      "No deductions were applied for assignment anchoring, scaffolding, tone, or non-grading stance, as the tutor performed well on those dimensions throughout."
+      "The tutor consistently refuses to do the assignment for the student and maintains appropriate boundaries across all three transcripts, which is commendable.",
+      "In Transcript 1 Turn 5, the tutor provides a ready-made justification template for the GDP proxy that effectively does the key reasoning step for the student (selecting and framing the proxy choice), triggering a 1.1.C.b deduction of 6 points.",
+      "The tutor never explains why it uses Socratic methods or what learning benefit the student gains from the approach, triggering a 1.3.A.a deduction. No reflection or transfer moments are offered across any of the three transcripts (1.3.D.a deduction).",
+      "A clear spiraling loop in Transcript 3 Turns 8-9 shows the tutor repeating the same ranked source list without synthesis when the student re-asked the identical question, triggering a 2.1.A.a deduction of 4 points.",
+      "Responses in Transcripts 1 and 3 are frequently very long multi-part monologues that reduce interactive pacing, triggering the 3.1.A.a deduction of 4 points.",
+      "The tutor's tone is consistently supportive and non-punitive, and it never implies grades, so no deductions in 3.2.",
+      "Scaffolding and assignment anchoring are strong throughout; the tutor builds well on student progress and keeps the student on task even when off-topic questions arise."
     ],
-    "total_score": 30,
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

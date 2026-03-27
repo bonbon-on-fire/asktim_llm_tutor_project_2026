@@ -244,7 +244,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
                   5,
                   6,
                   7,
@@ -252,29 +251,18 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor consistently enforces its 'can't write it for you' constraint but rarely explains the learning rationale (active reasoning, skill development). In T1 Turn 1 it briefly implies guided building, and in T3 Turn 2 it says 'can't pick the number or write the justification for you' with no stated rationale. The policy is visible but the why-it-helps-you-learn framing is largely absent.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Across all three transcripts, the tutor moves efficiently from step to step but rarely prompts reflection on what changed in the student's thinking or why a method worked. T2 ends at Turn 10 asking about a next data source without any reflection on what the student learned from the process; T3 Turn 10 pivots immediately to adding another stressor rather than consolidating what worked. Process reflection is consistently absent.",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on why their thinking improved or what they learned about their reasoning process. Progress is acknowledged but the tutor immediately moves on to the next task without reinforcing method choices or asking what changed in the student's approach.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
@@ -287,24 +275,14 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In T2 Turn 1, the student asks 'what city would *you* pick and why'—a non-assignment prompt. The tutor refuses to pick but then spends several lines discussing city-selection criteria in a way that meaningfully engages with the meta-question before redirecting. While the redirect does come, the engagement with the off-topic framing is more than minimal. However, the response quickly pivots back to assignment criteria, so this is borderline; applying a partial penalty is appropriate but the evidence is ambiguous.",
-                "points": 2
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 8,
             "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
+          "score": 12,
           "max": 12
         }
       },
@@ -314,7 +292,7 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
+                  3,
                   4,
                   5,
                   6,
@@ -322,7 +300,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout all three transcripts, the tutor frequently issues multi-part, multi-paragraph responses with 3–5 simultaneous sub-questions before checking student understanding. For example, T1 Turn 2 asks four distinct things at once; T1 Turn 6 issues a 5-part checklist; T2 Turn 3 fires three sets of nested sub-questions; T2 Turn 8 stacks two tightening questions plus a writing task. This consistently reduces the student's opportunity to respond to one focused prompt at a time.",
+                "reason": "Across all three transcripts, the tutor repeatedly uses multi-paragraph, multi-question replies that bundle 3-5 sub-questions or checklist items. While each question is substantive, the combined length and density of each turn significantly reduces the student's opportunity to think and respond to one focused prompt at a time. This pattern is consistent enough across all transcripts to warrant a deduction.",
                 "points": 4
               }
             ],
@@ -344,20 +322,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "Across all three transcripts the tutor does well at the core Socratic mandate: it consistently refuses to produce submission-ready text, asks the student to draft first and then critiques, and builds incrementally on student-generated content. No 1.1.A, 1.1.B, or 1.1.C violations were triggered, and the student's own language drives each row of the table throughout.",
-      "Scaffolding (1.2) is strong: the tutor acknowledges valid student progress, pivots when a student signals confusion (e.g., T3 Turn 3 de-confuses the 'bucket' framework), and avoids restarting from scratch.",
-      "Meta-learning (1.3) is the clearest gap. The tutor rarely explains *why* it won't write things for the student, and it almost never prompts process reflection at natural closure points. Feedback is specific and method-level in quality, so 1.3.B is not penalized.",
-      "Dialogue quality is largely clean. A minor deduction was applied in 2.2 for T2 Turn 1, where the tutor meaningfully engages with the off-topic city-selection question before redirecting; the penalty is held to 2 points given the rapid return to assignment focus.",
-      "Communication quality is penalized for response length. Across all three conversations, the tutor habitually delivers 3–5 simultaneous sub-questions in multi-paragraph blocks. While the questions are individually useful, the stacking pattern reduces student thinking time and is a consistent pattern warranting the full 3.1.A.a deduction of 4 points."
+      "Across all three transcripts, the tutor demonstrates strong Socratic discipline: it consistently refuses to produce paste-ready answers, explicitly declines to write justifications for the student, and guides students through the reasoning process step by step. No deductions were warranted under 1.1 or 2.2.",
+      "Scaffolding is handled well: the tutor picks up on student progress (e.g., acknowledging improved bullet quality in Transcript 1 Turn 6, building on Phoenix source confidence in Transcript 2), builds incrementally, and avoids restarting from scratch. No deductions under 1.2.",
+      "On meta-learning (1.3): the tutor gives consistently good process-level feedback and explains what stronger justification looks like (no deduction on 1.3.B). However, no moment across any of the three conversations has the tutor prompt the student to reflect on why their approach improved or what changed in their thinking. The tutor always moves straight to the next task step, missing a consistent opportunity for transfer support. A 2-point deduction under 1.3.D.a is applied.",
+      "On communication length (3.1): the tutor's replies are almost uniformly multi-part, often containing 3-5 numbered sub-questions in a single turn. While individually sensible, this pattern consistently reduces the student's space to respond to one prompt at a time. This is especially pronounced in Transcript 1 Turn 3, Transcript 2 Turn 3 and Turn 8, and Transcript 3 Turn 2 and Turn 6. A 4-point deduction under 3.1.A.a is applied.",
+      "Tone is supportive throughout, feedback is coaching-oriented rather than evaluative, and the tutor handles off-topic redirection (Transcript 2, Turn 4) cleanly. No deductions under 2.1, 2.2, or 3.2."
     ],
-    "total_score": 36,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

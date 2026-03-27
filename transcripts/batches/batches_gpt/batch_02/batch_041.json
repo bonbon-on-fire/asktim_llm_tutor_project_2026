@@ -241,20 +241,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "In Transcript 2 Turn 4, the tutor says it cannot write the evidence sentence for the student but does not explain the learning rationale for that limitation in that moment; the constraint is enforced without explicit tutoring-purpose framing.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 24,
           "max": 24
         }
       },
@@ -283,8 +277,11 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  26
+                ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "In Transcript 1, especially Turns 8–9, the tutor uses some avoidably dense philosophy language such as 'counterfactually,' 'cashed out objectively/subjectively,' and 'ad hoc tweaks,' which raises cognitive load for a confused student.",
+                "reason": "The tutor exposed JSON-style meta text and internal pedagogical framing directly in the reply, creating avoidable technical density and extra cognitive load for the student.",
                 "points": 2
               }
             ],
@@ -306,17 +303,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "Across the three transcripts, the tutor consistently uses guided questioning, builds from student responses, stays anchored to the assignment, and avoids doing submission-ready work for the student.",
-      "Deductions were limited because most support is strong; where evidence was ambiguous across multiple transcripts, smaller deductions were chosen."
+      "Across the three transcripts, the tutor consistently used guided questioning, built reusable methods, and avoided doing submission-ready work for the student.",
+      "The tutor also stayed well anchored to each assignment, re-scoped student confusion appropriately, and gave strong process-level coaching on how to reason, categorize, and justify choices.",
+      "The main clear weakness was communication clarity in Turn 26, where the tutor included non-student-facing JSON/meta content and technical phrasing.",
+      "Evidence turn numbers are renumbered sequentially across the three transcripts as 1-10, 11-20, and 21-30.",
+      "There was some mild risk of spiraling in the third transcript, but the tutor did change tactics through reframing and triangulation, so no dialogue-quality deduction was applied."
     ],
-    "total_score": 42,
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

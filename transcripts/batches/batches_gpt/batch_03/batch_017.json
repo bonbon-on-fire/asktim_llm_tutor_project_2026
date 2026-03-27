@@ -229,8 +229,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  27
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor sometimes resolves key methodological choices for the student instead of first eliciting the student's reasoning, such as endorsing the county-sum area proxy and selecting the race/Hispanic table structure.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -243,8 +253,15 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "Across the conversations, the tutor gives strong procedural guidance but rarely prompts reflection on why a method worked or what the student should transfer to future sourcing tasks.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  9,
+                  11,
+                  13
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor repeatedly enforces assignment-completion limits but usually frames them as refusal/policy rather than explaining the learning rationale for why the student should do the retrieval and writing.",
                 "points": 2
               }
             ],
@@ -254,7 +271,7 @@
           }
         },
         "base": {
-          "score": 22,
+          "score": 16,
           "max": 24
         }
       },
@@ -263,8 +280,14 @@
           "2.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, especially around the MSA area row, the tutor repeats the same pattern of refusal-plus-request for the student to fetch values without substantially reframing once the student remains stuck.",
+                "reason": "When the student stayed blocked on retrieving area values, the tutor repeated the same extract-and-report pattern across several turns instead of switching to a clearer synthesis or alternative route.",
                 "points": 4
               }
             ],
@@ -289,20 +312,41 @@
           "3.1": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  12,
+                  15,
+                  21
+                ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long, multi-part replies with several subquestions and bullet lists when shorter interactive steps would have been more manageable for these stuck students.",
+                "reason": "Tutor frequently gives long, multi-part replies with several questions and caveats where shorter interactive steps would have preserved more student thinking space.",
                 "points": 4
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  16,
+                  20
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "Tutor uses avoidably dense technical language such as ACS 1-year vs 5-year, TIGER/Line, cartographic boundary, CRS, and ETRS89/UTM without always simplifying first for the student's confusion level.",
+                "points": 2
               }
             ],
-            "score": 2,
+            "score": 0,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [
               {
+                "evidence_turns": [
+                  13
+                ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Some boundary-setting is overly rigid or blunt, such as the flat refusal of brief personal chat in Transcript 2, which risks sounding cold rather than supportive.",
+                "reason": "The reply rejecting the student's off-topic movie question is notably rigid and could discourage participation.",
                 "points": 2
               }
             ],
@@ -312,25 +356,25 @@
           }
         },
         "base": {
-          "score": 4,
+          "score": 2,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 26,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoids doing the assignment for the student and stays well anchored to the data-table task.",
-      "Strengths include strong sourcing logic, careful attention to geography/year consistency, and generally good scaffolding of research choices.",
-      "Main weaknesses are repetition without enough adaptation when a student is stuck, frequent overly long replies, and occasional rigid tone.",
-      "Because three transcripts were provided even though the rubric is designed for one full conversation, scoring was done conservatively using only clearly supported aggregate deductions."
+      "Scored across all three supplied transcripts together; evidence_turns use global numbering 1-30 in transcript order.",
+      "Tutor consistently stayed assignment-focused and usually scaffolded well, especially around source selection, geography definitions, and table structure.",
+      "Main weaknesses were occasional over-directing of key choices, repeated refusal/retrieval loops without enough strategy shift, long jargon-heavy responses, and one notably rigid tone moment.",
+      "Some deductions were somewhat ambiguous because the tutor remained broadly Socratic overall, so deductions were limited to the clearest supported triggers."
     ],
-    "total_score": 34,
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }
