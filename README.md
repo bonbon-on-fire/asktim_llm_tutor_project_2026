@@ -33,7 +33,7 @@ python run_batch_gpt.py     # GPT batch experiments
 python run_batch_claude.py  # Claude batch experiments
 ```
 
-Pre-generated batches for experiments are available in `judge/transcript_batches/` with 198 batch files across 3 experiment types.
+Pre-generated batches for experiments are available in `transcripts/batches/` with 198 batch files across 3 experiment types.
 
 ## Project Structure
 
@@ -46,10 +46,11 @@ Pre-generated batches for experiments are available in `judge/transcript_batches
 │   ├── run_judge_claude.py      # Single transcript Claude judge
 │   ├── run_judge_batch_gpt.py   # Batch GPT judge for bundles
 │   ├── run_judge_batch_claude.py # Batch Claude judge for bundles
-│   └── transcript_batches/      # Batch files for judging experiments
+│   └── ...
 ├── run_batch_gpt.py     # GPT batch experiment runner
 ├── run_batch_claude.py  # Claude batch experiment runner
 ├── transcripts/         # Generated conversation transcripts
+│   └── batches/         # 198 batch files for judging experiments
 ├── web_ui/              # Flask web interface
 ├── terminal_ui/         # Command-line interface
 ├── transcripts_ui/      # Transcript viewer dashboard
@@ -98,7 +99,7 @@ from judge.run_judge_batch_gpt import judge_transcript_batch
 
 results = judge_transcript_batch(
     "unused",
-    batch_file_path="judge/transcript_batches/batch_01_001.txt"
+    batch_file_path="transcripts/batches/batch_01/batch_001.txt"
 )
 ```
 

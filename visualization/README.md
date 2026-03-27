@@ -1,61 +1,37 @@
 # Visualization
 
-Generate score visualizations comparing GPT and Claude transcript grading outputs.
+Generate score comparison charts for GPT vs Claude transcript grading.
 
 ## Inputs
 
-The script reads:
+Reads judged transcript JSON files from:
 
-- `transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json` (GPT-judged runs)
-- `transcripts/<persona_type>/<persona_type>_claude/transcript_*.json` (Claude-judged runs)
+- `transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_claude/transcript_*.json`
 
-Required JSON fields:
+Required JSON fields per file:
 
-- `tutor_prompt`
-- `student_persona`
-- `course`
-- `exercise_number`
-- `judge_prompt`
-- `judge_rubric`
-- `grade.total_score`
-- `grade.max_score`
+- `tutor_prompt`, `student_persona`, `course`, `exercise_number`
+- `grade.total_score`, `grade.max_score`
 
-`transcript_name` is derived from each file name (for example, `transcript_01`).
+`transcript_name` is derived from each file name (e.g. `transcript_01`).
 
 ## Run
 
-From repo root:
-
 ```powershell
 python -m visualization.run_visualization
-```
-
-If `matplotlib` is missing:
-
-```powershell
-python -m pip install matplotlib
 ```
 
 ## Outputs
 
 Written to `visualization/outputs/`:
 
-1. `grades_per_transcript_gpt_vs_claude.png`
-   - Line chart of transcript-level total scores
-   - GPT and Claude shown in different colors
-   - Includes Pearson Correlation and Spearman Correlation computed on matched GPT/Claude transcript pairs
-2. `grade_distribution_per_persona_gpt_vs_claude.png`
-   - Side-by-side boxplot distributions of total scores per persona type
-   - GPT and Claude distributions are shown for each persona
-3. `grade_distribution_per_persona_version_<NN>_gpt_vs_claude.png`
-   - One side-by-side boxplot per persona version suffix (`_01`, `_02`, ...)
-   - Each chart compares GPT vs Claude distributions by persona type for that version only
+- **`individual_grades_gpt_vs_claude.png`**
+  Line chart of total scores per transcript (individual judging), sorted by
+  persona/course/exercise. Includes Pearson r, Spearman rho, and mean scores.
 
-## Notes
+## Alignment
 
-- The script aligns GPT and Claude transcript lines by:
-  - `student_persona`
-  - `course`
-  - `exercise_number`
-  - `transcript_name`
-- Missing rows in either provider folder are handled by leaving gaps (`NaN`) in the line chart.
+Transcripts are matched across providers by composite key:
+`student_persona | course | exercise_number | transcript_name`.
+Missing rows in either provider appear as gaps (NaN) in the line chart.

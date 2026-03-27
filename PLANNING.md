@@ -468,9 +468,9 @@ web_ui/
     - Type 01 (72 batches): Same persona + same version + same exercise
     - Type 02 (54 batches): Same persona + same version + different exercise
     - Type 03 (72 batches): Different persona + same version + same exercise
-  - Batch files stored in `judge/transcript_batches/batch_##_###.txt`
+  - Batch files stored in `transcripts/batches/batch_##/batch_###.txt`
   - Individual graded outputs named: `{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
-- **Usage**: `judge_transcript_batch("unused", batch_file_path="judge/transcript_batches/batch_01_001.txt")`
+- **Usage**: `judge_transcript_batch("unused", batch_file_path="transcripts/batches/batch_01/batch_001.txt")`
 - **Benefits**: Enables holistic grading experiments where LLM judges multiple transcripts together for comparative analysis.
 
 ### 03/27/2026 — GPT judge known issues
