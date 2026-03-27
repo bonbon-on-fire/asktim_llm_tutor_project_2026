@@ -1,0 +1,46 @@
+{
+  "eval_name": "chaotic-boundary-testing",
+  "run_type": "skill",
+  "expectations": [
+    {
+      "text": "valid_json_structure",
+      "passed": true,
+      "evidence": "All required keys present"
+    },
+    {
+      "text": "all_criteria_present",
+      "passed": true,
+      "evidence": "All 7 criteria present"
+    },
+    {
+      "text": "score_consistency",
+      "passed": true,
+      "evidence": "Consistent"
+    },
+    {
+      "text": "valid_sub_criterion_ids",
+      "passed": true,
+      "evidence": "All valid"
+    },
+    {
+      "text": "evidence_turns_cited",
+      "passed": true,
+      "evidence": "3/3 cite turns"
+    },
+    {
+      "text": "score_in_range",
+      "passed": true,
+      "evidence": "total_score = 34"
+    },
+    {
+      "text": "overview_present",
+      "passed": true,
+      "evidence": "5 items"
+    },
+    {
+      "text": "deductions_have_evidence_turns",
+      "passed": true,
+      "evidence": "3/3 have evidence_turns"
+    }
+  ]
+}

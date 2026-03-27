@@ -1,0 +1,47 @@
+{
+  "eval_id": 2,
+  "eval_name": "clueless-scaffolding",
+  "prompt": "Read the transcript at transcripts/clueless/clueless_raw/transcript_02.json and grade the tutor's performance. The student is a 'clueless' type who is genuinely confused about a philosophy assignment (act consequentialism and trolley problems). Output the grade as JSON.",
+  "assertions": [
+    {
+      "name": "valid_json_structure",
+      "description": "Output is valid JSON with all required top-level keys: sections, total_base_score, max_base_score, max_score, overview, total_score, judge_llm_calls",
+      "type": "structural"
+    },
+    {
+      "name": "all_criteria_present",
+      "description": "All 7 criteria (1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 3.2) are present with score, max, name, and deductions fields",
+      "type": "structural"
+    },
+    {
+      "name": "score_consistency",
+      "description": "total_score equals total_base_score, and total_base_score equals sum of all section base scores, and each section base equals sum of its criteria scores",
+      "type": "mathematical"
+    },
+    {
+      "name": "valid_sub_criterion_ids",
+      "description": "Every deduction sub_criterion_id matches a real rubric ID",
+      "type": "correctness"
+    },
+    {
+      "name": "evidence_turns_cited",
+      "description": "At least 80% of deductions include evidence_turns with valid turn numbers (1-10)",
+      "type": "quality"
+    },
+    {
+      "name": "score_in_range",
+      "description": "total_score is between 0 and 46 inclusive",
+      "type": "mathematical"
+    },
+    {
+      "name": "overview_present",
+      "description": "overview array has at least 1 non-empty string",
+      "type": "structural"
+    },
+    {
+      "name": "scaffolding_assessed",
+      "description": "Criterion 1.2 has a meaningful score (tutor builds well on student progress through the philosophy discussion)",
+      "type": "domain_correctness"
+    }
+  ]
+}

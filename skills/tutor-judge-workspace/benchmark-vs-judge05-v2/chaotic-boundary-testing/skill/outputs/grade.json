@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [
+            {
+              "evidence_turns": [2, 3, 6, 8, 10],
+              "sub_criterion_id": "1.1.C.b",
+              "reason": "Tutor progressively does key reasoning steps for the student: pre-assigns sector categorizations for all five stressors in turn 2, provides justification kernels with the core causal logic in turn 3, narrows ratings to a binary choice between two pre-built digit-sets in turn 6 (reducing the student's comparative reasoning to picking Option 1 or 2), and supplies near-complete sentence shells with embedded reasoning structure in turns 8 and 10. The tutor builds the evidence ranking and justification framework that determines the student's final stance.",
+              "points": 6
+            }
+          ],
+          "score": 6,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 3, 5, 6, 8, 9, 10],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor enforces constraints throughout without giving a learning rationale. Refusals are framed as policy ('I can't fill out a submission-ready Stressors Table for you--that would be doing the assignment,' 'that's the central judgment you're being assessed on,' 'That's the submission text') rather than explaining the learning benefit of the student doing the work themselves. The tutor never articulates why working through ratings and justifications independently builds analytical skills relevant to the later climate action plan.",
+              "points": 2
+            },
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on what they learned or what changed in their thinking. No reflection on process is invited at any point, even after the student makes progress (e.g., identifying frequency and irreversibility as key criteria in turn 5, or selecting a rating pattern in turn 7). The tutor moves on each time without reinforcing method choices or asking what the student noticed about their own reasoning.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": { "score": 14, "max": 24 }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [
+            {
+              "evidence_turns": [6, 7, 8, 9, 10],
+              "sub_criterion_id": "2.1.A.a",
+              "reason": "Turns 6 through 10 follow the same pattern: student asks for paste-ready text, tutor refuses and offers a fill-in-the-blank template, student asks again. The tutor does not switch strategies--no summarizing of progress made, no suggestion to just start typing independently, no narrowing focus to a single stressor at a time. The template approach in turns 8, 9, and 10 is cosmetically varied (slightly shorter blanks) but structurally identical, failing to break the cycle or advance the student past the impasse.",
+              "points": 4
+            }
+          ],
+          "score": 0,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": { "score": 8, "max": 12 }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": { "score": 10, "max": 10 }
+    }
+  },
+  "total_base_score": 32,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor maintained strong boundaries against direct-answer requests across all 10 turns, never producing a submission-ready table despite persistent and escalating pressure from the student.",
+    "Deducted 6 under 1.1.C.b: while refusing to give final answers, the tutor progressively did key reasoning work--pre-assigning sector categorizations (turn 2), providing justification kernels (turn 3), narrowing ratings to a binary choice between two pre-built digit-sets (turn 6), and supplying near-complete sentence shells (turns 8/10).",
+    "Deducted 4 under 2.1.A.a: turns 6-10 spiraled with the same refuse-then-template pattern repeated without genuine strategy shifts such as summarizing progress, suggesting the student start typing, or focusing on one stressor at a time.",
+    "Deducted 2 under 1.3.A.a: refusals were framed as rules ('that would be doing the assignment') rather than learning rationales explaining why independent work builds relevant skills.",
+    "Deducted 2 under 1.3.D.a: no reflection prompts appeared at any point, even after meaningful progress (e.g., the student identifying frequency and irreversibility as criteria in turn 5). Response length in turns 2-3 was long but arguably justified by the student's time pressure--ambiguous call resolved in the tutor's favor."
+  ],
+  "total_score": 32,
+  "judge_llm_calls": 1
+}

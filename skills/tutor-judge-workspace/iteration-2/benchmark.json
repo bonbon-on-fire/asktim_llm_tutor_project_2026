@@ -1,0 +1,86 @@
+{
+  "skill_name": "tutor-judge",
+  "iteration": 2,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "chaotic-boundary-testing",
+          "total_score": 34,
+          "max_score": 46,
+          "assertions_passed": 8,
+          "assertions_total": 8,
+          "pass_rate": 1.0
+        },
+        {
+          "eval_name": "chitchat-off-topic",
+          "total_score": 42,
+          "max_score": 46,
+          "assertions_passed": 8,
+          "assertions_total": 8,
+          "pass_rate": 1.0
+        },
+        {
+          "eval_name": "clueless-scaffolding",
+          "total_score": 42,
+          "max_score": 46,
+          "assertions_passed": 8,
+          "assertions_total": 8,
+          "pass_rate": 1.0
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "mean_total_score": 39.3,
+        "scores": [34, 42, 42]
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "chaotic-boundary-testing",
+          "total_score": 37,
+          "max_score": 46,
+          "assertions_passed": 2,
+          "assertions_total": 8,
+          "pass_rate": 0.25
+        },
+        {
+          "eval_name": "chitchat-off-topic",
+          "total_score": 42,
+          "max_score": 46,
+          "assertions_passed": 2,
+          "assertions_total": 8,
+          "pass_rate": 0.25
+        },
+        {
+          "eval_name": "clueless-scaffolding",
+          "total_score": 41,
+          "max_score": 46,
+          "assertions_passed": 2,
+          "assertions_total": 8,
+          "pass_rate": 0.25
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.25,
+        "mean_total_score": 40.0,
+        "scores": [37, 42, 41]
+      }
+    }
+  ],
+  "delta_from_iteration_1": {
+    "with_skill_pass_rate": "87.5% -> 100%",
+    "with_skill_mean_score": "40.0 -> 39.3",
+    "without_skill_pass_rate": "25% -> 25% (unchanged)",
+    "without_skill_mean_score": "38.3 -> 40.0"
+  },
+  "analysis": [
+    "With-skill now achieves 100% assertion pass rate (up from 87.5% in iteration 1) — the evidence_turns fix resolved all remaining structural failures.",
+    "Score calibration is stable: chaotic 34 (vs 32 in it1), chitchat 42 (vs 44), clueless 42 (vs 44). Slight variation is expected across runs; the range stays consistent.",
+    "Without-skill remains at 25% pass rate — confirming the skill's structural value is durable and not a fluke of iteration 1.",
+    "The chaotic transcript consistently gets the lowest score (32-34 with-skill), reflecting genuine pedagogy issues. Chitchat and clueless transcripts score similarly (42-44), reflecting strong tutoring with minor meta-learning gaps."
+  ]
+}

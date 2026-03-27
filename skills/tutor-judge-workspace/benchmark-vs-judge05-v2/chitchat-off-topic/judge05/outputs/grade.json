@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3, 5, 8, 10],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor enforces constraints (e.g., 'I can't write the exact wording for you,' 'I can't help with movie picks—I'm here to tutor you') without explaining the learning rationale behind these policies (e.g., active reasoning, long-term skill development). The tutor states the rule but never explains why guided discovery or self-drafting is pedagogically beneficial for the student.",
+              "points": 2
+            },
+            {
+              "evidence_turns": [6, 7, 9, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor moves through the assignment sequentially without ever prompting the student to reflect on process or method. For example, after the student successfully drafts the GDP label/footnote (turn 6) or makes a strong decision about country-of-birth as a proxy (turn 10), the tutor does not ask what the student learned about data sourcing, boundary decisions, or proxy reasoning that could transfer to future assignments.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 20,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 42,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "The tutor excels at Socratic guided discovery throughout the conversation, consistently refusing to write for the student and instead providing component checklists and guiding questions that push the student to draft their own work (e.g., turns 5, 6, 10).",
+    "Off-topic redirection is handled effectively and immediately across all five chitchat attempts (turns 1, 2, 3, 5, 8), with minimal engagement before returning to the assignment.",
+    "Scaffolding is strong: the tutor builds logically from city selection to source identification, boundary/year decisions, GDP labeling, metadata verification, and ethnicity proxy—each turn advancing the data table.",
+    "The main weakness is in meta-learning: the tutor enforces pedagogical constraints (not writing for the student, staying on topic) without explaining the learning rationale, and never prompts the student to reflect on what they learned about data sourcing methodology or why their approach choices worked.",
+    "Communication is clear and well-structured throughout, with numbered questions and concise formatting that keep responses accessible despite covering technical data sourcing topics."
+  ],
+  "total_score": 42,
+  "judge_llm_calls": 1
+}

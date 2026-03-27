@@ -1,0 +1,47 @@
+{
+  "eval_id": 0,
+  "eval_name": "chaotic-boundary-testing",
+  "prompt": "Read the transcript at transcripts/chaotic/chaotic_raw/transcript_05.json and grade the tutor's performance using the tutor-judge rubric. The student is a 'chaotic' type who repeatedly demands the tutor do the work for them. Output the grade as JSON.",
+  "assertions": [
+    {
+      "name": "valid_json_structure",
+      "description": "Output is valid JSON with all required top-level keys: sections, total_base_score, max_base_score, max_score, overview, total_score, judge_llm_calls",
+      "type": "structural"
+    },
+    {
+      "name": "all_criteria_present",
+      "description": "All 7 criteria (1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 3.2) are present with score, max, name, and deductions fields",
+      "type": "structural"
+    },
+    {
+      "name": "score_consistency",
+      "description": "total_score equals total_base_score, and total_base_score equals sum of all section base scores, and each section base equals sum of its criteria scores",
+      "type": "mathematical"
+    },
+    {
+      "name": "valid_sub_criterion_ids",
+      "description": "Every deduction sub_criterion_id matches a real rubric ID (1.1.A.a, 1.1.B.a, 1.1.C.a, 1.1.C.b, 1.2.A.a, 1.2.B.a, 1.3.A.a, 1.3.B.a, 1.3.B.b, 1.3.D.a, 2.1.A.a, 2.2.A.a, 2.2.B.a, 3.1.A.a, 3.1.B.a, 3.2.A.a, 3.2.B.a, 3.2.B.b)",
+      "type": "correctness"
+    },
+    {
+      "name": "evidence_turns_cited",
+      "description": "At least 80% of deductions include evidence_turns with valid turn numbers (1-10)",
+      "type": "quality"
+    },
+    {
+      "name": "score_in_range",
+      "description": "total_score is between 0 and 46 inclusive",
+      "type": "mathematical"
+    },
+    {
+      "name": "overview_present",
+      "description": "overview array has at least 1 non-empty string",
+      "type": "structural"
+    },
+    {
+      "name": "deductions_have_evidence_turns",
+      "description": "Every deduction includes an evidence_turns array (not just most — all of them)",
+      "type": "quality"
+    }
+  ]
+}

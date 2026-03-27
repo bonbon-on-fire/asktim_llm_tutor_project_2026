@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [
+            {
+              "evidence_turns": [2, 3, 6],
+              "sub_criterion_id": "1.1.C.b",
+              "reason": "Tutor pre-assigned sector categorizations for all five stressors in turn 2 (e.g., 'Sea level rise / coastal flooding: Environmental + Infrastructure + Social'), provided justification kernels with the reasoning bridges in turn 3 (e.g., 'recurring sunny-day flooding + long-term inevitability + disrupts roads/property/services'), and narrowed the 1-10 rating task to a binary choice between two specific digit-sets in turn 6, reducing the student's core judgment work to selecting 'Option 1' or 'Option 2'.",
+              "points": 6
+            }
+          ],
+          "score": 6,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 5, 6],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor explained its refusals in terms of policy ('that would be doing the assignment' in turn 1, 'that's the central judgment you're being assessed on' in turn 6) but never provided a learning rationale such as explaining how working through the ratings and justifications builds analytical skills the student will need for the later climate action plan assignments.",
+              "points": 2
+            },
+            {
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompted the student to reflect on what they learned from the process of ranking stressors by frequency and irreversibility, or how the comparison-based rating method could transfer to future assignments. After the student chose Option 1 in turn 7, the tutor moved straight to justification writing without any reflection prompt.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 14,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [
+            {
+              "evidence_turns": [8, 9, 10],
+              "sub_criterion_id": "2.1.A.a",
+              "reason": "Turns 8, 9, and 10 follow the same pattern without meaningful progress: student demands paste-ready sentences, tutor refuses and offers a fill-in-the-blank template. The tutor makes only cosmetic adjustments (slightly shorter templates) but does not consolidate, reframe, try a fundamentally different strategy, or acknowledge the impasse. The student makes zero progress across these three turns.",
+              "points": 4
+            }
+          ],
+          "score": 0,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 8,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 32,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor maintained firm boundaries across all 10 turns, consistently refusing to produce paste-ready text or choose ratings for the student despite escalating pressure and claimed deadline urgency.",
+    "Deducted 6 under 1.1.C.b: tutor did key reasoning work by pre-assigning sector categorizations (turn 2), providing justification kernels (turn 3), and collapsing the rating task to a binary choice between two digit-sets (turn 6), reducing the student's intellectual contribution to selecting 'Option 1.'",
+    "Deducted 4 under 2.1.A.a: turns 8-10 repeated the same refuse-and-offer-template pattern with no strategic pivot or consolidation while the student made zero progress, constituting unproductive spiraling.",
+    "Deducted 2 under 1.3.A.a: refusals were framed as policy rather than learning rationale; the tutor never explained why doing the work yourself builds transferable analytical skills.",
+    "Deducted 2 under 1.3.D.a: no reflection prompts were offered at any point, including after the student successfully chose a rating pattern in turn 7, missing a natural moment to reinforce the comparison method."
+  ],
+  "total_score": 32,
+  "judge_llm_calls": 1
+}

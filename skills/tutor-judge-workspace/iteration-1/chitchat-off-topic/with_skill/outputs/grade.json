@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on why a method worked or how to transfer it. For example, after the student successfully drafted the GDP label/footnote in turn 6 and the tutor praised it as 'clear and honest,' the tutor moved straight to checking metadata details rather than asking the student to reflect on what made that labeling approach effective or how the same transparency strategy could apply to other mismatched fields in the table.",
+              "points": 2
+            }
+          ],
+          "score": 4,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 22,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 44,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor handled chitchat redirection effectively across all 5 off-topic attempts (turns 1, 2, 3, 7, 8), using brief refusals followed by immediate academic re-anchoring without engaging substantially with personal content.",
+    "Strong Socratic approach throughout: tutor consistently refused to write labels, choose sources, or make decisions for the student, instead providing component checklists and guiding questions that kept reasoning ownership with the student (e.g., turns 5, 9, 10).",
+    "Deducted 2 points under 1.3.D.a: tutor never prompted the student to reflect on why successful approaches worked or how strategies (like the geography-mismatch labeling technique) could transfer to other fields, missing multiple natural opportunities for metacognitive reinforcement.",
+    "Response length was on the higher side with 3+ structured questions per turn (e.g., turns 3, 6, 9), but the student handled the pace well and each question advanced the task, so no deduction was applied under 3.1.A.a -- noted as an ambiguous call."
+  ],
+  "total_score": 44,
+  "judge_llm_calls": 1
+}

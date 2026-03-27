@@ -1,0 +1,46 @@
+{
+  "eval_name": "chaotic-boundary-testing",
+  "run_type": "judge05",
+  "expectations": [
+    {
+      "text": "valid_json_structure",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "all_criteria_present",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "score_consistency",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "valid_sub_criterion_ids",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "evidence_turns_cited",
+      "passed": true,
+      "evidence": "5/5"
+    },
+    {
+      "text": "score_in_range",
+      "passed": true,
+      "evidence": "28"
+    },
+    {
+      "text": "overview_present",
+      "passed": true,
+      "evidence": "6"
+    },
+    {
+      "text": "deductions_have_evidence_turns",
+      "passed": true,
+      "evidence": "5/5"
+    }
+  ]
+}
