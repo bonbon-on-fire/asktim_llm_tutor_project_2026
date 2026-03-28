@@ -71,54 +71,68 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 4, the student says 'I'm getting hung up on the evidence part' and asks what a good evidence sentence would look like. The tutor immediately provides a detailed breakdown of evidence types and a 3-part skeleton rather than first asking a short diagnostic question to locate exactly where the student is stuck (e.g., 'Do you have any facts from your sources at all, or is the issue knowing which facts count?'). The tutor jumps to a full method dump before checking what the student already understands.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Across the 10-turn conversation, the tutor never generalizes the scoring/stressor-identification method to future assignments or other cities. The advice stays tightly bound to Phoenix and this specific table. A brief note like 'this criteria-based scoring approach works for any city or hazard type' would have transferred the method.",
-                "points": 1
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding with questions rather than simply giving answers—there is no moment where it names the rationale (active reasoning, skill-building, independent thinking) behind its Socratic approach.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends without any prompt for the student to reflect on what thinking strategies worked or why (e.g., 'What did you notice about how you built your justification? How might you apply that to the next stressor?'). The tutor always moves forward to the next task without pausing for process reflection.",
+                "points": 2
               }
             ],
-            "score": 4,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor consistently guided rather than told, reinforced method choices, and gave process-level feedback throughout. The single scaffolding miss and transfer miss are already captured above.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,85 +142,66 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No catch-all deduction warranted. The conversation progressed cleanly from hazard identification through stressor framing, rating, and justification, staying anchored to the assignment steps throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
-                  2
+                  2,
+                  4,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1 and 2 are notably long multi-part responses. Turn 1 introduces a 4-question hazard framework AND a 4-criteria scoring system AND asks two follow-up questions simultaneously. Turn 2 similarly layers a hazard-to-stressor phrasing method, a sector-coding task, a dust-storm validity discussion, and a 4-criteria 0–2 scoring conversion system all in one message. While the content is pedagogically sound, the density consistently reduces the student's opportunity to think and respond before being given the next layer of scaffolding. This pattern of multi-paragraph replies where one or two focused prompts would have been more appropriate recurs across early turns.",
-                "points": 2
+                "reason": "Multiple turns feature long multi-paragraph responses where shorter, more focused prompts would have sufficed. For example, Turn 1 provides an entire scoring methodology unprompted before the student even names their city; Turn 2 explains granularity and scoring in parallel; Turn 4 lays out a full 3-part skeleton plus a separate double-counting rule. This pattern consistently reduces the student's opportunity to struggle productively before receiving scaffolding.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted beyond the length/density issue already captured in 3.1.A.a. From Turn 3 onward the tutor's responses become more focused and appropriately sized.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout: it never wrote stressor rows, evidence sentences, or justifications for the student, consistently redirected the student to produce their own reasoning, and used well-structured guiding questions to advance each step of the assignment.",
-      "Pedagogy (1.1): No deductions. The tutor avoided giving direct answers, used the student's own bullets as the basis for each next question, and kept ownership firmly with the student across all 10 turns.",
-      "Scaffolding (1.2): A 2-point deduction was applied at Turn 4. When the student said they were stuck on 'what counts as evidence,' the tutor immediately provided a full taxonomy of evidence types and a 3-part skeleton rather than first asking a short diagnostic question to locate the specific gap. This is a single-turn jump-to-method-dump rather than a pattern, so only the 2-point sub-criterion was triggered.",
-      "Meta-learning (1.3): A 1-point deduction for failure to transfer the scoring/stressor method beyond the current assignment. The tutor gave excellent process feedback and explained its rationale implicitly through consistent behavior, but never explicitly generalized the criteria-based scoring approach to future tasks or other cities.",
-      "Dialogue quality (2.1, 2.2): No deductions. The conversation progressed without spiraling or redundancy, and the tutor kept every turn anchored to the assignment's specific steps (identify, categorize, rate, justify, prioritize).",
-      "Communication (3.1): A 2-point deduction for response length in Turns 1 and 2. Both turns layer multiple frameworks, multiple tasks, and multiple follow-up questions simultaneously, which is more appropriate for a written guide than an interactive tutoring exchange. From Turn 3 onward the tutor's responses are appropriately focused.",
-      "Tone and formatting (3.2, 3.3): No deductions. The tutor maintained a consistently supportive, non-grading tone, validated student reasoning without being sycophantic, and used formatting (bold, bullets, lettered choices) effectively to aid readability."
-    ],
-    "total_score": 42,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor does an excellent job maintaining Socratic method throughout all 10 turns—it never gives the student final content but consistently asks the student to produce bullets, labels, sentences, and scores before reacting. The student ends the conversation with a well-reasoned, self-generated draft, which is strong evidence the tutor avoided doing the work for them.",
+      "Scaffolding and progression are handled well: the tutor builds each turn on the student's prior output, acknowledges correct steps ('Your draft does follow the 3-part structure'), and tests granularity with criteria that come from the student's own evidence.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never names why it is guiding rather than telling (missing 1.3.A rationale), and never pauses to help the student reflect on the thinking process that made their draft stronger (missing 1.3.D reflection/transfer). A single sentence per criterion would have captured both.",
+      "Communication is consistently too long. Nearly every tutor turn contains 3–5 structured sub-sections (numbered or bulleted) delivered before the student attempts anything. This is the clearest deduction in the transcript: the tutor preloads frameworks, scoring schemas, and 'next stressor' questions in the same message, leaving the student less cognitive space to struggle. A 4-point deduction under 3.1.A.a is warranted.",
+      "Dialogue quality is strong: there is no spiraling, the assignment stays on track throughout, and no off-topic detours occur. No deductions applied in Section 2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -101,36 +101,29 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it uses guided questioning rather than giving direct answers. When the student expresses confusion or asks for help, the tutor simply continues Socratic questioning without articulating the pedagogical rationale or learning benefit to the student.",
+                "reason": "The tutor never explains why it is asking questions rather than giving answers—it never articulates a learning-rationale such as 'I want you to work this out yourself so you build the skill.' Constraints are applied consistently but the pedagogical purpose is never made explicit to the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the reasoning strategies (means/foreseen distinction, rights-based constraints) to future philosophical tasks or generalize the method beyond this specific assignment.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At the end of Turn 10, after the student has moved from confusion to a coherent intended-vs-foreseen framework, the tutor moves straight to next-step drafting tasks. There is no prompt for the student to reflect on what changed in their thinking, why their earlier answers were incomplete, or what method helped them get there.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor maintains consistent Socratic method and scaffolding throughout all 10 turns.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -140,82 +133,67 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps. The conversation progresses cleanly through the assignment cases with good anchoring and no significant redundancy.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 1 asks the student to define act consequentialism AND pick a case AND answer three sub-questions about that case simultaneously. This is a somewhat overwhelming opening that could have been broken into a simpler first prompt (e.g., just the definition), reducing cognitive load for a student who is already lost.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Nearly every tutor turn contains multiple layered sub-questions or bullet lists alongside explanatory paragraphs. For a student who opens with 'idk tbh—I'm kinda lost,' the consistent multi-part, multi-paragraph replies reduce the student's opportunity to think through one thing at a time and push back. This pattern is repeated across all ten turns rather than being isolated.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the single-turn concision miss already captured. Responses are generally well-structured and appropriately sized for the philosophical complexity.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic method throughout all 10 turns, never providing direct answers to the assignment and consistently guiding the student to discover key philosophical distinctions (act consequentialism's test, means vs. side-effect, intended vs. foreseen) through targeted questioning.",
-      "Scaffolding is excellent: each turn builds directly on the student's prior response, acknowledges correct progress, and advances to the next logical step. The tutor handles the student's inability to recall Fuel/Blood cases appropriately by providing factual case descriptions as placeholders while keeping the analytical work with the student.",
-      "Meta-learning is the primary weakness: the tutor never explains why it uses guided questioning rather than giving direct answers, missing opportunities to help the student understand the pedagogical rationale. Transfer to future tasks is also absent.",
-      "Dialogue quality is strong with no significant redundancy, good consolidation at key moments (e.g., Turn 7 synthesizing the rights/consent conflict), and consistent assignment anchoring throughout.",
-      "Communication is generally clear and well-toned, matching the student's casual register while maintaining philosophical rigor. Turn 1 is slightly overloaded with simultaneous sub-questions for a student who opened by saying they were lost."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic technique throughout: it never gives the philosophical answer, never rewrites student text, and never states the key idea before the student tries to derive it. Instead it consistently uses targeted questions that build on each student response, guiding the student from 'idk' to a nuanced intended-vs-foreseen distinction by Turn 10. Scaffolding and assignment anchoring are both handled well.",
+      "The main weaknesses are: (1) Meta-learning — the tutor never explains *why* it is using this question-driven approach (no explicit learning rationale), and never prompts the student to reflect on what changed in their thinking at the end. (2) Response length — almost every turn contains multiple bullet lists and layered sub-questions in multi-paragraph blocks, which is consistently more than the student's level of engagement calls for and reduces the student's thinking space. These two issues account for all deductions."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

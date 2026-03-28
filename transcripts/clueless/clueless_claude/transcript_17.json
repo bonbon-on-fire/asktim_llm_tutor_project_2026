@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   6
                 ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "In Turn 6, the tutor directly supplies three concrete downstream consequences (avoidance behavior, breakdown of cooperation, precedent/incentives) with explanations of why each matters, rather than prompting the student to generate them. This pre-selects the decisive evidence the student was supposed to reason toward.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 6, when the student asked for concrete downstream consequences that could flip the act-consequentialist verdict in Blood, the tutor provided three fully-developed examples (avoidance behavior, breakdown of cooperation, precedent/incentives) rather than prompting the student to generate them. This gives the student the key reasoning content rather than guiding them to derive it.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -98,154 +98,105 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
                   7,
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly coaches the student on efficient learning strategies—e.g., how to use lecture notes, how to reconstruct cases from first principles, or why generating one's own reasoning improves retention. The closest it comes is refusing to supply content, but it never explains the pedagogical rationale for that refusal in terms of learning benefit.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently pushes the student forward without explaining why it is guiding discovery rather than giving answers. While this is sometimes implicit, the tutor never explains its Socratic approach or learning rationale to the student (e.g., why it won't supply case facts or conclusions), which could help the student understand and internalize the method.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   7,
-                  8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the reasoning strategies developed (e.g., the 'expand what counts as consequences' move, the 'causal mechanism' test) to future philosophical tasks or assignments beyond this specific prompt.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "As the conversation matures and the student makes real progress (Turn 7 reasoning, Turn 9 crisp bullets), the tutor moves immediately to the next stress-test without pausing to help the student reflect on how their thinking changed or why the method of expanding 'consequences' or building a constraint worked. No reflection or transfer prompts appear.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The Turn 6 content-supply issue was already captured under 1.1.C.c. No additional uncaptured pedagogy consistency gaps are evident beyond what was already deducted.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 3–5 cycle repeatedly on the Fuel/Blood recall problem without meaningful progress. The tutor asks the student to retrieve case facts in Turn 3, offers placeholder templates in Turn 4, and then asks yes/no questions in Turn 5—all circling the same obstacle. The student remains stuck on the same sub-point across three exchanges without the tutor consolidating or reframing the approach.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling on Fuel/Blood recall was already captured under 2.1.A.a. No additional uncaptured flow or anchoring issues are present.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
+                  2,
                   4,
                   5,
-                  6,
-                  8,
-                  9,
-                  10
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-part responses when shorter, more focused prompts would have been more appropriate. Turn 1 in particular contains three separate analytical frameworks and multiple sub-questions simultaneously. Turn 4 includes two templates plus three verification questions. This pattern recurs throughout, consistently reducing the student's opportunity to think and respond before being given the next layer.",
-                "points": 2
+                "reason": "Across multiple turns (especially Turns 1, 4, 5, 6), the tutor consistently sends multi-paragraph, multi-question responses with several parallel tasks embedded. Turn 1 alone has three multi-part question clusters plus a summary request. This consistently reduces the student's cognitive space to think and respond one step at a time, and the student's repeated 'I'm stuck' signals suggest the volume is counterproductive.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The response-length issue was already captured under 3.1.A.a. No additional uncaptured communication quality gaps are present.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 34,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong assignment anchoring throughout, consistently returning to the prompt's core questions (act consequentialism, the specific cases, and the 'right general account') and never drifted off-topic.",
-      "Scaffolding and progression were generally strong: the tutor built on each student response, acknowledged correct moves (e.g., Turn 7 praising the downstream-effects reasoning), and advanced the student from vague intuitions to a structured argument skeleton by Turn 10.",
-      "The primary pedagogy deduction (1.1.C.c, -6 points) was triggered in Turn 6, where the tutor directly supplied three labeled downstream consequences with explanations rather than prompting the student to generate them. This was the decisive evidence-selection step the student was supposed to perform.",
-      "A spiraling pattern (2.1.A.a, -2 points) occurred across Turns 3–5, where the tutor cycled through three different approaches to the same Fuel/Blood recall obstacle without consolidating or decisively reframing the problem.",
-      "Response length was a consistent issue (3.1.A.a, -2 points): many turns contained multiple simultaneous sub-questions and frameworks, reducing the student's cognitive space to respond before being given the next layer of prompts.",
-      "Meta-learning deductions were applied for the tutor's failure to explain the pedagogical rationale for its guided approach (1.3.A.b, -2 points) and for not helping the student transfer reasoning strategies to future tasks (1.3.D.b, -1 point).",
-      "Tone was consistently warm and supportive; the tutor adapted well to student frustration and never sounded dismissive or punitive."
-    ],
-    "total_score": 34,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a genuinely Socratic orientation throughout, consistently refusing to write the assignment for the student and pressing for student-generated reasoning at each turn. The conversation shows clear progression from the student's confusion to a defensible philosophical position.",
+      "The main pedagogy deduction (1.1.C.b, -6) is triggered in Turn 6, where the tutor directly supplies three concrete downstream consequences (avoidance behavior, cooperation breakdown, precedent/incentives) that the student explicitly asked to be given. These are the key reasoning content items the student needed to generate. This did not rise to the 1.1.A.a threshold (full assignment-ready work), but it did constitute doing the key reasoning step for the student.",
+      "For 1.3, the tutor never explains its own Socratic rationale to the student (-2 for 1.3.A.a), and consistently moves to the next challenge without prompting the student to reflect on how their thinking evolved (-2 for 1.3.D.a). Method-level feedback is reasonable throughout (no 1.3.B deduction warranted).",
+      "Dialogue quality is strong: the tutor re-anchors effectively when the student drifts, avoids off-topic detours, and does not spiral redundantly. No deductions in Section 2.",
+      "The primary communication weakness is response length (3.1.A.a, -4): the tutor repeatedly sends dense, multi-part instructions across many turns, which likely contributed to the student's repeated expressions of being stuck. The tone remains supportive and appropriate throughout with no grading stance issues."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

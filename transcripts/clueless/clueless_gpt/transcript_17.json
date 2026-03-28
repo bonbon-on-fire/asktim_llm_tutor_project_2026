@@ -71,22 +71,23 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  6,
+                  10
                 ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "Tutor supplied a ready-made list of concrete downstream consequences (avoidance behavior, breakdown of cooperation, precedent/incentives) that function as key evidence/considerations the student had been asked to generate, partially taking over idea/evidence generation rather than eliciting it first.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied key argumentative content for the student by proposing concrete downstream consequences in Blood and, later, offering three ready-made defense routes (rights, separateness of persons, agency/consent), which reduced the student's need to generate the central reasoning path independently.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -96,23 +97,17 @@
           },
           "1.3": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 17,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 18,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,81 +117,50 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The opening tutor message is relatively long and multi-part; it could have been trimmed into fewer prompts to reduce cognitive load for a student who reported being 'totally lost.'",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "One tutor turn included an internal JSON object with 'pedagogical-reasoning' alongside the student-facing answer (Turn 3), which is a medium/formatting mismatch that could distract or confuse the student, even though the substantive guidance remained clear.",
-          "score": 1,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor largely maintained guided discovery and kept the student doing the core reasoning, avoiding submission-ready answers and instead using structured prompts, tables, and targeted questions tied to the prompt.",
-      "Main pedagogy issue: in Turn 6 the tutor provided a pre-made set of downstream-consequence ideas that the student had struggled to generate, partially taking over evidence/idea generation.",
-      "Communication was generally clear and supportive, but Turn 1 could be more concise for a lost student, and Turn 3 contained an internal JSON-format block that risks distracting from the tutoring."
-    ],
-    "total_score": 39,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor was generally strong on scaffolding: it kept the student anchored to the prompt, used short structured questions, built on the student's developing distinctions, and repeatedly pushed for justification rather than polished prose.",
+      "The main deduction is in guided discovery: at key moments the tutor introduced major substantive ideas for the student, especially concrete consequence-types and final normative defense routes, rather than eliciting those core argument options first.",
+      "No other deductions were clearly supported; where evidence was somewhat mixed, the smaller-penalty reading favored the tutor."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

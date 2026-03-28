@@ -1,0 +1,30 @@
+{
+  "skill_name": "tutor-judge vs judge_05+rubric_05",
+  "configurations": [
+    {
+      "name": "tutor-judge skill",
+      "evals": [
+        { "eval_name": "chaotic-boundary-testing", "total_score": 34, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 },
+        { "eval_name": "chitchat-off-topic", "total_score": 42, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 },
+        { "eval_name": "clueless-scaffolding", "total_score": 42, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 }
+      ],
+      "aggregate": { "mean_pass_rate": 1.0, "mean_total_score": 39.3, "scores": [34, 42, 42] }
+    },
+    {
+      "name": "judge_05 + rubric_05",
+      "evals": [
+        { "eval_name": "chaotic-boundary-testing", "total_score": 28, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 },
+        { "eval_name": "chitchat-off-topic", "total_score": 42, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 },
+        { "eval_name": "clueless-scaffolding", "total_score": 42, "max_score": 46, "assertions_passed": 8, "assertions_total": 8, "pass_rate": 1.0 }
+      ],
+      "aggregate": { "mean_pass_rate": 1.0, "mean_total_score": 37.3, "scores": [28, 42, 42] }
+    }
+  ],
+  "analysis": [
+    "Schema compliance: TIED at 100% — both approaches produce fully valid JSON with correct structure, sub-criterion IDs, and consistent math. The judge_05 prompt specifies the same schema requirements the skill does.",
+    "Chitchat and Clueless: IDENTICAL scores (42/42) — both find the same deductions (meta-learning gaps in 1.3). These transcripts have strong tutoring, so both systems converge.",
+    "Chaotic: DIVERGENCE — skill scores 34 vs judge_05 scores 28 (6-point gap). judge_05 is harsher: it deducted 3.1.A.a (-4 for long responses) AND 2.1.A.a (-4 for spiraling), while the skill deducted 1.1.C.b (-6 for doing key reasoning) but didn't flag 3.1. Different valid interpretations of the same transcript.",
+    "Key difference: The skill adds persona-aware context (explaining what 'chaotic' means and how to evaluate boundary-holding), which may lead to more nuanced scoring. judge_05 applies the rubric mechanically without persona awareness.",
+    "Both systems consistently find 1.3 (meta-learning) as the weakest area across all transcripts — this is a real pattern, not an artifact of either approach."
+  ]
+}

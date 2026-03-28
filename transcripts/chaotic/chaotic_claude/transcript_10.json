@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,27 +79,18 @@
                 "evidence_turns": [
                   8
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 8, the tutor provides three fully developed objection-reply pairs (A, B, C), each with a named objection and a detailed 'reply strategy.' This gives the student the key reasoning content—the decisive intellectual work—before the student has attempted to generate it. The student only had to 'pick one,' which is minimal intellectual effort. The tutor did the core reasoning step of identifying and articulating the strongest objections and their counter-moves.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 8, the tutor provides fully-developed objections and reply strategies—including the key reasoning bridge from evidence to conclusion—without asking the student to attempt them first. The tutor does the central intellectual work of identifying and articulating the strongest objections and how to rebut them.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student is clearly frustrated and asking for a shortcut. The tutor responds with another multi-part framework question rather than first diagnosing what the student actually understands or doesn't understand. A brief diagnostic check ('Do you know what act consequentialism's core principle is?') would have been more appropriate before launching into another structured prompt.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -119,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to write for the student but never explains the pedagogical rationale—why guided questioning leads to better learning, why producing one's own wording matters for retention and understanding. When the student is frustrated (Turns 3, 7), the tutor simply says 'I can't' without connecting the constraint to a learning benefit.",
+                "reason": "The tutor consistently declines requests without explaining the pedagogical rationale (e.g., active reasoning, long-term skill development). It says 'I can't' or 'I won't' without explaining why this benefits the student's learning.",
                 "points": 2
               },
               {
@@ -135,66 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the reasoning strategies (means/side-effect distinction, rights-based constraints, stress-testing principles) to future philosophical tasks. All coaching remains tightly bound to this specific prompt with no generalization of method.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's Turn 8 delivery of three complete objection-reply pairs represents a significant pedagogy consistency failure not fully captured above. The tutor had maintained strong Socratic discipline through Turns 1–7 but then broke pattern substantially in Turn 8 by doing the intellectual work of generating and articulating the objections and reply strategies. This inconsistency undermines the overall pedagogical approach.",
-          "score": 1,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 1–4 show a repetitive pattern: the student asks for direct answers, the tutor refuses and issues another multi-part structured prompt. The same cycle repeats without meaningful synthesis or a change in approach. By Turn 4, the tutor is still issuing the same type of fill-in-the-blank prompt without consolidating what has been established or adapting the strategy to the student's evident resistance.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on their own thinking progress or what changed in their reasoning. After the student correctly derived AC verdicts in Turn 5 and articulated a principle in Turn 6, the tutor moves on without reinforcing the method or asking the student to reflect on what they figured out.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional deductions warranted beyond those already captured. The tutor maintained strong assignment anchoring throughout and the redundancy issue was already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -209,69 +176,44 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long multi-part prompts (Turns 1, 2, 4, 5, 6, 7, 8) when shorter, more focused single questions would have been more appropriate and interactive. Turn 2 alone contains four numbered items with sub-bullets. Turn 8 contains three fully elaborated objection-reply pairs. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Several tutor turns contain multi-paragraph responses with numerous sub-questions or options when shorter, more focused prompts would have been more appropriate. For example, Turn 1 gives an intro plus three sub-questions with detail; Turn 2 lists four fill-in prompts with sub-bullets; Turn 8 provides three fully elaborated objection+reply-strategy blocks. These repeatedly reduce student opportunity to think and respond.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  7
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "In Turns 3 and 7, the student expresses clear frustration ('Ugh ok' and 'No, I really need'). The tutor does not adjust tone to acknowledge the frustration or provide reassurance—it simply reissues another structured prompt. A brief empathetic acknowledgment before redirecting would have been appropriate.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality deductions warranted beyond those already captured in 3.1 and 3.2.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong assignment anchoring throughout and consistently refused to write submission-ready content for the student, which is commendable. The Socratic discipline held well through Turns 1–7.",
-      "However, Turn 8 represents a significant lapse: the tutor provided three fully developed objection-reply pairs with named strategies, effectively doing the core intellectual work the student was supposed to generate. This triggered a 1.1.C deduction of 6 points.",
-      "Turn 9 also provided a polished 'reply angle' (appropriating vs. managing an existing threat) that supplied the student with a ready-made argumentative move, though this was partially mitigated by follow-up questions. Given the Turn 8 deduction already captured the pattern, no additional points were deducted for Turn 9 to avoid double-penalizing.",
-      "The tutor never explained the pedagogical rationale for its Socratic approach, missing opportunities to help the frustrated student understand why guided discovery benefits learning (1.3.A.a deduction).",
-      "Dialogue showed a repetitive cycle in Turns 1–4 where the same refusal-plus-multi-part-prompt pattern repeated without adaptation or consolidation (2.1.A.a deduction).",
-      "Communication was consistently verbose—multi-part prompts with sub-bullets appeared in nearly every turn, reducing interactivity. Tone adaptation was absent when the student showed frustration in Turns 3 and 7.",
-      "The 1.4 malus of 1 point reflects the inconsistency between strong Socratic discipline in early turns and the substantial intellectual giveaway in Turn 8."
-    ],
-    "total_score": 29,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
-    "judge_llm_calls": 2
+    "overview": [
+      "The tutor consistently refuses to write submission-ready content and redirects the student to produce their own work, which is commendable and generally reflects good Socratic practice.",
+      "However, in Turn 8 the tutor provides fully elaborated objections and reply strategies—doing the key intellectual work the student should have attempted first—triggering a deduction under 1.1.C.b.",
+      "The tutor never explains the learning rationale behind its refusals (1.3.A.a), missing an opportunity to help the student understand why the process is beneficial.",
+      "No reflection or transfer support was offered at any point; after the student made genuine progress (Turns 5–6), the tutor moved on without reinforcing methodology or prompting meta-cognition (1.3.D.a).",
+      "Several tutor turns are notably long and multi-part, consistently reducing the student's space to think and respond independently (3.1.A.a). Turn 8 especially provides three complete objection-plus-reply-strategy blocks rather than asking the student to propose objections first.",
+      "Dialogue quality is strong: no significant redundancy/spiraling, no assignment misanchoring, and no off-topic engagement issues.",
+      "Tone is warm and appropriately non-grading throughout. No formal grades are implied."
+    ],
+    "total_score": 32,
+    "judge_llm_calls": 1
   }
 }

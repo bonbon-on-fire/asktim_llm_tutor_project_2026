@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student says they are fuzzy on Fuel/Blood and asks the tutor to restate them, the tutor declines and asks the student to recall fragments. While pedagogically defensible, the tutor does not ask a short diagnostic question to locate exactly what the student does/doesn't know before launching into a multi-part follow-up. The response jumps to a 2-part recall prompt plus a steering question rather than first checking what the student's confusion actually is.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,28 +100,32 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor never generalizes the reasoning strategies (e.g., how to stress-test a moral principle, how to use counterfactual tests, how to handle threshold vs. absolute constraints) to future philosophical tasks. All coaching stays tightly bound to this specific prompt.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is asking Socratic questions rather than providing answers, nor does it offer any rationale about the learning approach (active reasoning, long-term skill development). Constraints are enforced implicitly without explanation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends with the student having developed a refined account, but the tutor never prompts the student to reflect on what changed in their thinking or why the method (counterfactual test, means/side-effect distinction) worked. The tutor moves directly to new stress tests without consolidating process-level reflection.",
+                "points": 2
               }
             ],
-            "score": 4,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided discovery, gave process-level feedback, and reinforced method choices. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -139,97 +134,69 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "Turn 1 launches a 5-part outline scaffold without explicitly anchoring to the assignment's specific sub-questions (e.g., 'Does AC get these cases right? If not, what is the right general account?'). The task wording is not quoted or referenced, making the initial framing slightly weakly anchored to the assignment text.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. Progression was clear and purposeful across all turns. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
+                  2,
+                  4,
                   5,
                   6,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several turns (especially 1, 5, 6, 8) present 4–5 numbered sub-questions in a single response. While each question is individually focused, the cumulative length of these multi-part prompts repeatedly reduces the student's opportunity to think and respond to one thing at a time. The tutor does often say 'answer just #1 and #2 first,' but the full list is still presented, adding cognitive load.",
-                "points": 2
+                "reason": "The tutor repeatedly uses multi-part lists of 4–5 sub-questions per turn across most of the conversation. While the tutor often asks the student to answer only one or two, the sheer volume of questions in each turn increases cognitive load and reduces the student's opportunity to think and respond to a focused prompt. This pattern is consistent across turns 1, 2, 4, 5, 6, 7, and 8.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part question pattern is already captured in 3.1.A.a. No additional communication gaps in clarity or structure beyond that deduction.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated excellent Socratic discipline throughout: it never gave the student a complete answer, consistently asked the student to supply key claims, and progressively stress-tested the student's emerging principle across all 10 turns. No deductions were warranted under 1.1.",
-      "A minor scaffolding deduction (1.2.B.a) was applied at Turn 3, where the tutor declined to restate Fuel/Blood but did not first ask a short diagnostic question to locate the student's exact confusion before launching a multi-part recall prompt.",
-      "A meta-learning deduction (1.3.D.b) was applied because the tutor never generalized the reasoning strategies used (counterfactual testing, threshold vs. absolute constraints, stress-testing moral principles) to future philosophical tasks; all coaching remained tied to this specific assignment.",
-      "A minor anchoring deduction (2.2.B.a) was applied at Turn 1 because the initial 5-part scaffold did not explicitly reference the assignment's specific sub-questions, making the framing slightly weakly anchored to the task wording.",
-      "A response-length deduction (3.1.A.a) was applied because several turns (1, 5, 6, 8) presented 4–5 numbered sub-questions simultaneously. While the tutor often instructed the student to answer only the first two, the full list was still displayed, repeatedly adding cognitive load. This is a pattern-level issue.",
-      "Tone was consistently warm, encouraging, and well-calibrated to the student's level of engagement. No deductions under 3.2 or 3.3.",
-      "No catch-all malus deductions were applied in any section, as all identified issues were already captured in primary criteria."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates excellent Socratic method throughout: it never gives the student the answer, consistently asks the student to generate claims before evaluating them, builds on student progress turn by turn, and appropriately narrows focus as the student's account develops.",
+      "Scaffolding is strong: the tutor acknowledges correct steps (e.g., turns 2, 5, 6, 8), redirects productively when the student is uncertain about the cases (turns 3–4), and advances the student from a vague consequentialist sketch to a refined counterfactual test for 'used as a means.'",
+      "The main pedagogy weakness is in meta-learning: the tutor never explains the rationale for its Socratic approach (1.3.A.a, -2pts) and never prompts the student to reflect on the arc of their reasoning development or what changed in their thinking (1.3.D.a, -2pts). Process-level feedback on method quality is absent.",
+      "Dialogue quality is strong: there is no spiraling, no off-topic drift, and the assignment prompt is consistently anchored throughout all 10 turns.",
+      "Communication has one notable weakness: many tutor turns present 4–5 sub-questions at once (turns 1, 2, 4, 5, 6, 7, 8), which reduces focus and increases cognitive load even when the tutor nominally asks the student to pick one. This pattern is consistent enough to warrant a full deduction under 3.1.A.a (-4pts). Language is clear and appropriately pitched.",
+      "Tone is consistently supportive, non-evaluative, and coaching-oriented throughout. No formal grade language is used."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

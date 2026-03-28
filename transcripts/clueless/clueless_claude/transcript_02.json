@@ -71,27 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 9, the student explicitly says 'I'm torn on #3' and signals genuine confusion about whether to defend act consequentialism or a side-constraint. The tutor in Turn 9 responds with two more clarifying questions and asks for a mini-outline, but does not first ask a short diagnostic question to locate exactly where the confusion lies (e.g., 'What would it take for you to be convinced it's purely consequentialist?'). Instead, the tutor jumps to a fairly complex two-question + outline task. This is a mild instance of responding to a broad confusion with a multi-part prompt rather than a targeted diagnostic probe.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,28 +100,39 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor does an excellent job guiding the student through the specific cases, but never explicitly helps the student transfer the reasoning method (e.g., 'how to stress-test a moral principle with edge cases,' 'how to distinguish empirical from normative claims in ethics') to future philosophical tasks beyond this assignment. The tutor stays tightly focused on the current exercise without generalizing the analytical strategy.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is asking guiding questions rather than giving answers directly—no learning rationale or tutoring policy is communicated across the entire conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently moves forward to the next question without ever pausing to ask the student to reflect on what changed in their thinking or why a method worked. No process-reflection prompts appear.",
+                "points": 2
               }
             ],
-            "score": 4,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided discovery, gave process-level feedback, and maintained student ownership throughout. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -140,33 +141,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Turn 10, the tutor's response focuses on tightening the side-constraint concept and asks about Fuel, but does not explicitly re-anchor to the assignment's specific requirement to address 'the right general account of when it is morally okay to kill one to save five' and to evaluate whether act consequentialism 'gets these cases right.' The student's outline is accepted without checking that it addresses all required components of the prompt (e.g., the Fuel case is only mentioned in passing, and the explicit evaluation of act consequentialism's verdict is not tied back to the assignment wording).",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The conversation progressed well with minimal redundancy and good anchoring overall. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -184,58 +170,42 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably Turns 1, 4, 6, 8, 9, 10) contain multi-part prompts with 3 or more sub-questions plus explanatory framing, making them fairly long. While each part is purposeful, the cumulative length of many turns (especially Turn 1 with a 3-part checklist, Turn 4 with 3 guiding questions plus a choice, Turn 8 with 3 edge-case questions) consistently reduces the student's opportunity to respond to a single focused prompt. This is a mild but recurring pattern rather than a single-turn issue.",
-                "points": 2
+                "reason": "Nearly every tutor turn contains multiple paragraphs with several sub-questions stacked together before the student has a chance to respond. Turns 1, 4, 6, 8, 9, and 10 each pose three or more distinct questions with explanatory framing, creating long monologues where one focused prompt would suffice. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part question pattern is already captured in 3.1.A.a. No additional communication quality gaps beyond those already deducted. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic method throughout, never giving direct answers or doing the student's reasoning work. The student was consistently asked to generate ideas, draft principles, and test edge cases independently.",
-      "Scaffolding was generally excellent, building from the simple switch case to footbridge, then Blood, then toward Fuel and a general principle. A mild deduction was applied in 1.2 because when the student expressed genuine torn-ness between act consequentialism and a side-constraint (Turn 9), the tutor responded with a complex multi-part prompt rather than a short diagnostic probe to locate the confusion more precisely.",
-      "Meta-learning was strong in process feedback but the tutor never explicitly helped the student transfer the analytical method (stress-testing principles with edge cases, distinguishing empirical from normative claims) to future philosophical tasks beyond this assignment.",
-      "Assignment anchoring was good overall, but in Turn 10 the tutor accepted the student's outline without explicitly checking it against all required components of the prompt (especially the Fuel case and the explicit evaluation of act consequentialism).",
-      "Communication was clear and well-toned throughout, but the tutor's consistent use of 3+ sub-question prompts in most turns (Turns 1, 4, 6, 8, 9, 10) is a recurring pattern that reduces the student's opportunity to respond to a single focused question, warranting a deduction under 3.1.A.a.",
-      "No malus deductions were applied as all identified issues were captured in primary criteria."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
-    "judge_llm_calls": 1
+    "overview": [
+      "The tutor demonstrates strong Socratic technique throughout: it never gives away the final answer, consistently asks the student to generate reasoning before confirming or pressing, builds sequentially across cases (switch, push, Blood, Fuel), and uses well-chosen edge cases (consent, negligence, secrecy) to sharpen the student's principle.",
+      "Scaffolding is effective: the tutor acknowledges correct student progress at each turn and builds on prior answers rather than restarting.",
+      "The main weaknesses are in meta-learning and communication length. The tutor never explains its own tutoring strategy or why it asks guiding questions rather than just providing answers, missing a valuable learning-rationale opportunity. There is also no moment where the student is asked to reflect on what changed in their thinking or how the method worked.",
+      "Response length is a consistent issue: almost every tutor turn packages three or more distinct sub-questions with explanatory framing into a single reply. While the questions are individually good, the volume per turn reduces the student's processing space.",
+      "Assignment anchoring and dialogue flow are handled well; the tutor keeps the conversation on-task and advances steadily toward the essay outline without spiraling. Tone is supportive and appropriately non-grading throughout."
+    ],
+    "total_score": 38,
+    "judge_llm_calls": 2
   }
 }

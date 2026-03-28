@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,29 +79,18 @@
                 "evidence_turns": [
                   8
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 8, the tutor provides fill-in sentence frames that are mostly complete answers. The frames include substantive structural content (e.g., 'In Mumbai, the main municipal lead for climate resilience is ___, while state-level coordination for disasters/response involves ___') where the student only needs to insert actor names. These are near plug-and-play templates that reduce the student's writing work to minimal insertion rather than genuine composition.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Turn 8 provides five near-complete sentence frames ('In Mumbai, the main municipal lead for climate resilience is ___, while state-level coordination...') that are polished, submission-ready template language the student can fill in with a single word per blank. This crosses into rewriting/drafting final wording for the student rather than guiding them to construct their own sentences.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "1.2.A.a",
-                "reason": "In Turn 4, the student provides correct actor names (BMC, BEST, Central/Western Railway). The tutor acknowledges them briefly but then continues asking for more names in the same pattern without building on the student's demonstrated ability to find actors. Across Turns 4–6, the tutor does not consolidate or advance from the student's growing list; instead it keeps repeating the same 'find more names' loop without scaffolding toward the analytical work (bucketing, gap analysis) that the assignment requires.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -115,10 +104,13 @@
                   4,
                   5,
                   6,
-                  7
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to provide direct answers but never explains the pedagogical rationale—why guided discovery leads to better learning, why the student benefits from doing the work themselves. The refusals are framed as policy ('I can't do the assignment for you') rather than learning rationale ('you'll retain this better / be able to defend it / develop transferable skills'). Turn 7 comes closest ('you need to produce the text yourself') but still lacks a genuine learning-benefit explanation.",
+                "reason": "The tutor consistently declines to do the work but never explicitly explains the pedagogical rationale—e.g., that discovering actors yourself builds the analytical skills needed for later assignments in the course, or that sourcing actors yourself ensures accuracy. It just says 'I can't' or 'that's doing the assignment for you' without articulating the learning benefit.",
                 "points": 2
               },
               {
@@ -134,28 +126,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the actor-mapping method to future assignments or generalizes the stakeholder analysis strategy beyond this specific Mumbai task. No mention of how this skill applies to other cities, other assignments in the course, or how to approach stakeholder mapping generally.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on the process or transfer the method: e.g., asking what the student learned about how to map actors, or noting that the search strategy used here would apply to other assignment phases. No reflection moment is created at any point in the conversation.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 9,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's consistent refusal pattern is pedagogically sound in intent, but across 10 turns it never shifts to reinforcing method choices, praising the student's improving engagement, or coaching the student on how to think about actor categorization analytically. This missed reinforcement of method is not fully captured in 1.2 or 1.3 deductions.",
-          "score": 1,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
@@ -167,46 +153,31 @@
                   5,
                   6,
                   7,
+                  8,
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeats the same move across many turns: refuse to give names, ask the student to find names, provide a skeleton/list of categories to fill. This pattern cycles without meaningful synthesis or progression. By Turn 6–7, the student is still being asked to find names rather than being advanced to the analytical bucketing and gap-analysis work. The tutor does not consolidate the growing list of actors the student has provided into a usable checkpoint or shift the conversation toward higher-order analysis.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.C.a",
-                "reason": "By Turn 4, the student has provided BMC, BEST, and Central/Western Railway. The tutor does not briefly synthesize these into a partial table or checkpoint before asking for more. Multiple turns accumulate actor names without any consolidation into the three-bucket structure the assignment requires.",
-                "points": 1
+                "reason": "The tutor cycles through the same pattern for eight turns—student asks for actor names, tutor declines and sends them to Google, student resists—without reframing, synthesizing what has been established, or switching to a meaningfully different strategy. The same search-and-paste loop is proposed repeatedly without consolidation or escalation to a different approach.",
+                "points": 4
               }
             ],
-            "score": 1,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repetitive name-finding loop across turns 2–9 represents avoidable dialogue repetition not fully captured in 2.1. The tutor could have pivoted earlier to the analytical work (bucketing, gap identification) once the student had 3–4 actors, but instead kept the conversation in the same 'find more names' register for too long.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -219,71 +190,43 @@
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-paragraph replies with numbered lists, skeleton frameworks, and extended instructions when shorter, more focused prompts would have been more appropriate. For example, Turn 2 includes a full skeleton template plus a 3-step search plan plus a question—all in one message. Turn 6 provides a 5-part numbered plan. These long responses reduce the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Multiple turns contain multi-paragraph monologues combining refusal explanation, search instructions, skeleton frameworks, and follow-up questions simultaneously. Turns 2 and 3 in particular pack dense multi-step instructions into long blocks when a single focused prompt would have been more interactive and manageable for a clearly overwhelmed student.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  5,
-                  7
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "The student shows increasing frustration across turns (Turn 3: 'idk man I'm slammed'; Turn 5: 'bruh just say...😭'; Turn 7: 'cmon it's just a discussion post'). The tutor's tone remains consistent and task-focused but does not adapt to acknowledge the student's stress or provide reassurance. A brief empathetic acknowledgment of the student's workload pressure before redirecting would have been appropriate.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already captured in 3.1 and 3.2.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 26,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently and correctly refuses to do the assignment for the student, maintaining appropriate academic integrity boundaries throughout all 10 turns.",
-      "However, in Turn 8, the tutor provides fill-in sentence frames that are substantively complete templates—these cross into 1.1.B.d territory as they reduce the student's writing task to minimal name insertion rather than genuine composition, triggering an 8-point deduction.",
-      "The conversation suffers from significant repetitive spiraling: the same 'find actor names' loop repeats across Turns 2–9 without consolidating the student's growing list or advancing to the analytical bucketing and gap-analysis work the assignment requires.",
-      "The tutor never explains the pedagogical rationale for guided discovery (why the student benefits from doing the work), framing refusals as policy rather than learning benefit.",
-      "Tone adaptation is weak: the student signals frustration and time pressure multiple times (Turns 3, 5, 7) but the tutor does not acknowledge this or adjust its register.",
-      "Response length is consistently too long—multi-paragraph replies with numbered lists and skeleton frameworks appear throughout when shorter, more focused prompts would have been more effective.",
-      "Assignment anchoring is strong throughout; the tutor never loses sight of the task requirements and consistently redirects toward the three-bucket structure.",
-      "Note on 1.1.B.d deduction: the sentence frames in Turn 8 are borderline—they do provide structural scaffolding that could be considered legitimate pedagogical support. However, given that the frames include substantive content (role descriptions, relationship language) and the student only needs to insert names they have already been asked to find, the balance tips toward 'mostly complete answers' under the rubric."
-    ],
-    "total_score": 24,
+    "max_score": 46,
+    "total_base_score": 28,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor firmly and consistently refused to produce submission-ready content, maintaining academic integrity throughout all 10 turns. This is its clearest strength.",
+      "However, in turn 8 the tutor provided five polished, near-complete sentence templates (fill-in-the-blank frames with full grammatical structure) that function as rewritten final wording, triggering a 1.1.B deduction.",
+      "The tutor never explained the pedagogical rationale for its constraints—it repeatedly said 'I can't do this for you' without articulating why the student would learn better by doing the research themselves, and never prompted any reflection on method or transfer (1.3.A and 1.3.D deductions).",
+      "The dialogue spiraled badly: for eight consecutive turns the tutor issued the same 'search Google and paste names' instruction without reframing, synthesizing established progress, or switching strategy when it clearly was not working (2.1.A deduction, full 4 points).",
+      "Several responses were excessively long—combining refusal language, multi-step search instructions, skeleton frameworks, and follow-up questions in single replies—reducing the student's opportunity to think and respond interactively (3.1.A deduction).",
+      "Tone was consistently supportive and non-condescending. Assignment anchoring was solid throughout: the tutor never confirmed a misreading of the task."
+    ],
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

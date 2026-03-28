@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,41 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly states it cannot do or rewrite the assignment, but does not explicitly explain the learning rationale beyond saying it would be 'doing the assignment.'",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student's improvement, the tutor gives next-step revision advice but does not prompt reflection on why the revised justification worked or how to transfer the method to the remaining rows.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,81 +130,51 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One response included an 11-item stressor menu plus instructions; it was helpful, but could have been slightly tighter (e.g., offer 8–10 items only, or chunk into two shorter prompts) to reduce cognitive load under a 20-minute deadline.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to produce submission-ready content and instead used guided prompts, templates, and targeted revision criteria that preserved student ownership (notably in turns 3–10).",
-      "Strong scaffolding: moved from selecting stressors to evidence hooks to turning notes into defensible one-liners, then coached specificity (frequency, exposure, consequence) aligned with ratings.",
-      "Minor issue: one turn was somewhat long/list-heavy given the time pressure, though it remained relevant and actionable."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently avoided doing the student's assignment, kept the interaction anchored to the actual stressors-table task, and used prompts, templates, and targeted feedback to move the student from notes to stronger justifications.",
+      "Scaffolding was effective: the tutor built on the student's Miami examples, diagnosed what was missing in each justification, and asked for manageable next steps rather than giving submission-ready text.",
+      "Main weakness was meta-learning support: the tutor enforced boundaries without much explicit explanation of the learning rationale, and it missed a chance to prompt reflection or transfer once the student's revision improved.",
+      "There was some ambiguity about whether providing a Miami stressor menu in Turn 2 counted as over-generating ideas, but the tutor still required the student to choose, rate, and justify, so no deduction was applied there."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

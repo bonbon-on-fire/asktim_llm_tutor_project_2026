@@ -71,27 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  5
+                  1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 5 the student produces a genuine thesis draft and flags that they lack Fuel/Blood details. The tutor's response is reasonable, but across Turns 4–5 the tutor does not first ask a short diagnostic question to locate exactly what the student is stuck on before launching into a full checklist; it jumps straight to a multi-point framework rather than a brief probe.",
-                "points": 2
+                "reason": "In turn 1, the tutor immediately presents a detailed multi-part framework (two questions per case, a list of potential missing features) before first checking what the student already understands about act consequentialism or the cases. This is a structured method dump rather than diagnostic questioning.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning and self-authorship improve learning or retention. It enforces the constraint consistently but never connects the refusal to a learning rationale (e.g., 'writing it yourself builds the reasoning skill the course is testing').",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refuses to write submission-ready content but does not clearly explain the pedagogical rationale—e.g., that guided discovery builds long-term philosophical reasoning skills. Refusals are stated as policy ('I can't / I won't') without articulating why this approach benefits the student's learning.",
                 "points": 2
               },
               {
@@ -127,71 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the means-vs-side-effect or rights/consent framework beyond this specific assignment. No transfer coaching appears (e.g., 'this distinction will recur in deontological ethics generally').",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Throughout the conversation, the tutor never invites the student to reflect on their own reasoning process or what changed in their thinking (e.g., from intuition-listing to applying the means/side-effect distinction). The conversation ends without any process reflection prompt.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor is highly consistent in refusing to do the student's work and in pressing for student-generated reasoning. No additional catch-all pedagogy deduction is warranted beyond what was already captured.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Across several turns (e.g., Turns 6–7 and 8–9) the tutor repeats nearly the same refusal framing and nearly the same checklist structure without meaningfully varying the approach or consolidating prior progress into a shorter, more targeted prompt. The pattern is not severe enough for the full 2-point pattern deduction but represents a single-turn redundancy miss in at least one turn.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all dialogue deduction is warranted; the single redundancy issue was already captured in 2.1.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -209,58 +179,43 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly produces long multi-part responses with numbered checklists, bold headers, and multiple sub-questions across nearly every turn. While the content is pedagogically sound, the length and density of each response consistently reduces the student's opportunity to think and respond to a single focused prompt. A shorter, more targeted question in each turn would have been more appropriate.",
-                "points": 2
+                "reason": "Across virtually every turn, the tutor gives multi-paragraph, heavily structured responses (lengthy refusals + detailed frameworks + multiple sub-questions + case-by-case checklists) when shorter, more focused prompts would have been more appropriate. This pattern is consistent and reduces the student's opportunity to think before receiving additional scaffolding.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue was already captured in 3.1.A.a. No additional catch-all communication deduction is warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains an exemplary and consistent refusal to write any submission-ready content across all ten turns, correctly applying Socratic method and never crossing into 1.1.A or 1.1.B territory. The student repeatedly and explicitly requests paste-ready answers, and the tutor holds the line every time while offering structured scaffolding.",
-      "Pedagogy (1.1) is essentially flawless: the tutor never gives a thesis, never writes bullets, and never polishes student text. It consistently redirects to student-generated reasoning using targeted prompts and fill-in frameworks.",
-      "Scaffolding (1.2) is generally strong but earns a deduction because the tutor occasionally jumps to multi-point checklists rather than first asking a short diagnostic question to locate the student's specific confusion point.",
-      "Meta-learning (1.3) is the weakest area: the tutor never explains *why* self-authorship matters for learning (no rationale linking the refusal to skill development or retention), and never generalizes the philosophical distinctions to future tasks or broader contexts.",
-      "Dialogue quality is high: the tutor stays anchored to the assignment throughout and never drifts off-topic. A minor redundancy deduction applies because the refusal framing and checklist structure repeat with little variation across several turns without consolidation.",
-      "Communication quality suffers from consistently long, multi-part responses with numerous sub-questions and bold headers in every turn. While individually clear, the cumulative density reduces student thinking space and warrants a 3.1.A.a deduction. Tone is warm, supportive, and well-calibrated to the student's frustration throughout."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently and correctly refuses to produce submission-ready content, avoiding the most serious pedagogy violations (1.1.A, 1.1.B, 1.1.C). The Socratic approach is fundamentally sound: the tutor draws out the student's own reasoning (means vs. side-effect thesis, Switch/Transplant analysis) rather than supplying answers.",
+      "A deduction is applied under 1.2.B.a because in turn 1 the tutor launches a detailed multi-part framework without first diagnosing what the student already knows, representing a method dump rather than diagnostic scaffolding.",
+      "Deductions under 1.3 reflect two consistent gaps: (a) the tutor never explains why refusing to write answers benefits the student's learning (rationale is policy-framed, not learning-framed), and (b) there is no moment where the student is asked to reflect on how their thinking evolved across the conversation.",
+      "The most consistent structural issue is response length (3.1.A.a): nearly every turn features multi-paragraph replies with multiple sub-questions and checklists when a single focused prompt would have served better and left more cognitive space for the student.",
+      "No deductions are applied for dialogue quality (2.1, 2.2): the tutor does not spiral, and the conversation stays well-anchored to the assignment. Tone is supportive and appropriately non-evaluative throughout (3.2 full marks).",
+      "Note on 1.2.B.a: there is some ambiguity about whether the turn-1 framework constitutes a full 'method dump' versus reasonable initial scaffolding for a student who opened with a demand for a finished answer. The deduction is applied because the multi-part structure precedes any diagnostic exchange, but this is the most uncertain deduction in the evaluation."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

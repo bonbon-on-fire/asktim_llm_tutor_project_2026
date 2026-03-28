@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -91,31 +91,35 @@
                 "evidence_turns": [
                   1,
                   3,
+                  4,
                   6,
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly refused to provide a submission-ready table/citations, but mainly framed it as 'doing the assignment' rather than explicitly explaining the learning/skill-building rationale for student ownership (especially when the student was stressed about time).",
+                "reason": "The tutor repeatedly states it cannot complete the assignment, but mostly frames this as a refusal/policy boundary rather than explaining the learning rationale for active student work.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "When the student finally begins supplying usable information, the tutor moves straight into the next task without prompting reflection on why the boundary/year/source-checking method worked.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,83 +129,71 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   2,
+                  3,
                   5,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns were multi-paragraph and could have been shortened into smaller interactive steps (e.g., fewer bullets at once), which slightly reduced student thinking space despite the tutor still asking questions.",
-                "points": 2
+                "reason": "Several replies are multi-step, bulleted monologues even though the student is under time pressure and shorter interactive prompts would have been more appropriate.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The response becomes somewhat rigid and blunt ('If you “can’t rn,” then you also can’t submit accurate numbers—so let’s be realistic'), which risks discouraging participation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 4,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor appropriately refused to produce a paste-ready filled table and instead guided the student toward boundary choices, defensible sources, and stepwise extraction/checking.",
-      "Main pedagogy gap: refusals were not explicitly paired with a learning-focused rationale (student ownership/skill-building), mostly stating that doing so would be completing the assignment.",
-      "Communication was generally clear and structured, but several turns were longer than necessary and could have been broken into smaller prompts."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 36,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently avoided doing the assignment for the student and kept the conversation anchored to the actual task through source selection, boundary definition, and field-by-field checking.",
+      "Main deductions are for limited explicit learning-rationale/reflection support and for several overlong responses when the student needed very short, high-pressure guidance.",
+      "Tone was mostly supportive, but one blunt exchange under time pressure warranted a small deduction rather than a larger penalty."
+    ],
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

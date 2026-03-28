@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   8
                 ],
-                "sub_criterion_id": "1.1.B.b",
-                "reason": "In Turn 8, the tutor fills in the template with nearly complete table rows—actor names, role labels, and quoted evidence phrases are all provided. The only blanks left are bracketed justifications. This constitutes a partial solution with polished sentences the student can directly copy with minimal additions.",
-                "points": 8
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In turn 8, the tutor fills in the entire table template with actors, roles, evidence phrases, and structure — leaving only bracketed placeholders for justification. The completed template is near-submission-ready: it provides all actor names, role classifications, and evidence quotes the student needs. The student can paste this with minimal edits, constituting direct assignment work.",
+                "points": 12
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -100,40 +100,70 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor consistently refuses to do the work but rarely explains why guided questioning benefits the student's learning. Turn 3 briefly mentions 'defeats the point' but does not explain how active reasoning improves retention or skill development.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces its 'I won't write this for you' policy but never explains the learning rationale — e.g., that the student builds critical analysis skills through sourcing and classification work. The constraint is stated repeatedly but the pedagogical purpose is never articulated.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "At the end of the conversation, the tutor does not help the student transfer the actor-mapping method to future assignments or generalize the strategy beyond this specific task.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on their thinking process, what changed in their approach, or why a particular method (evidence-anchored classification) is valuable. The conversation ends without any reflection or transfer prompt.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's Turn 7 forum post template ('Most active sectors appear to be ____ and ____ because the plan says...') provides sentence-level scaffolding that pre-fills the logical structure of the forum summary, reducing student ownership of the reasoning. This is a mild additional pedagogy consistency gap not fully captured in 1.1.B.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
@@ -141,101 +171,48 @@
                   2,
                   3,
                   4,
+                  5,
                   6,
                   7,
-                  8,
-                  9
+                  8
                 ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeats the same refusal pattern ('I won't write it for you') across nearly every turn without meaningfully varying the approach or consolidating the repeated refusals into a single clear pedagogical statement. The conversation spirals on the same dynamic without synthesis.",
-                "points": 2
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Throughout most turns, the tutor delivers multi-paragraph responses with multiple numbered sub-questions and scaffolded prompts when shorter, more focused prompts would have been more appropriate and interactive. Turns 2, 3, 4, 6, and 8 especially use lengthy monologue-style structures that reduce student opportunity to think and respond incrementally.",
+                "points": 4
               }
             ],
             "score": 2,
-            "max": 4,
-            "name": "Redundancy and spiraling"
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6,
-            "name": "Assignment anchoring"
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was captured in 2.1.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "communication": {
-        "criteria": {
-          "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 are multi-paragraph responses with 3–4 numbered sub-questions each. Turn 2 in particular is very long, asking the student to open the plan and answer four detailed questions simultaneously. These monologue-style responses reduce student opportunity to think and respond incrementally.",
-                "points": 2
-              }
-            ],
-            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond what was captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 32,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to write submission-ready content and maintained assignment anchoring throughout all 10 turns, which is commendable.",
-      "However, Turn 8 is the critical failure point: the tutor filled in the template with nearly complete table rows (actor names, role labels, quoted evidence), leaving only bracketed justifications for the student. This constitutes a partial solution with polished, copy-ready sentences, triggering the 8-point 1.1.B deduction.",
-      "Turn 7's forum post template also pre-fills the logical sentence structure of the summary, reducing student ownership of the reasoning, captured as a malus under 1.4.",
-      "Meta-learning was weak: the tutor rarely explained why guided discovery benefits the student beyond brief mentions, and missed transfer/reflection opportunities at the conversation's end.",
-      "The repeated refusal pattern across 8 turns without consolidation or variation triggered a 2.1.A.a deduction for spiraling without synthesis.",
-      "Turns 2 and 3 were overly long with multiple simultaneous sub-questions, reducing student thinking space and triggering a 3.1.A.a deduction.",
-      "Scaffolding and progression (1.2) were strong: the tutor built on student responses and advanced the conversation meaningfully at each step where the student engaged."
-    ],
-    "total_score": 31,
+    "max_score": 46,
+    "total_base_score": 26,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a consistent refusal to write submission-ready content across most turns, employing scaffolded prompts, fill-in templates, and Socratic questioning effectively through turns 1–7 and 9–10.",
+      "However, turn 8 represents a significant breach of 1.1.A: the tutor fills in the entire table template with all actor names, role classifications, evidence phrases, and structural formatting, leaving only bracketed placeholders. This is near-submission-ready work — the student can paste and minimally edit, triggering the full 12-point deduction under 1.1.A.a.",
+      "The tutor never explains the pedagogical rationale for its constraints (1.3.A.a) and misses all opportunities for reflection or transfer (1.3.D.a), resulting in 4 points deducted from meta-learning.",
+      "Communication is a consistent weakness: the tutor repeatedly sends multi-paragraph, multi-question responses when one or two focused prompts would have sufficed, reducing student engagement opportunities (3.1.A.a, 4 points deducted).",
+      "Scaffolding and progression (1.2), dialogue quality (2.1, 2.2), and tone (3.2) are well-handled throughout — the tutor builds on student-provided actors, stays on task, redirects off-topic requests appropriately, and maintains a supportive tone."
+    ],
+    "total_score": 26,
     "judge_llm_calls": 1
   }
 }

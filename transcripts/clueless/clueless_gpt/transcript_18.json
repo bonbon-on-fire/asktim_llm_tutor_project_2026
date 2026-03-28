@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,30 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently pushed the argument forward but did not pause to prompt reflection on what reasoning move helped the student improve or how to transfer that method to future cases.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,81 +119,50 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One tutor turn stacks multiple multi-part tasks (defense of Switch vs Loop, anticipated AC pushback, triage vs homicide feature) that could be tightened or split to reduce cognitive load and keep interaction more bite-sized.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery rather than supplying a submission-ready position, prompting the student to articulate AC, apply it across cases, and develop/pressure-test an alternative principle.",
-      "Strong scaffolding: the tutor helped the student refine from 'human barrier' to a clearer 'intended as a means/step' constraint and repeatedly anchored discussion to the assignment deliverables (verdicts, divergences, general account, anticipated objections).",
-      "Minor concision issue in a late turn where several multi-part prompts are bundled together, increasing cognitive load."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly Socratic, kept the student doing the core philosophical work, and anchored the discussion tightly to the assignment's cases and prompts.",
+      "Scaffolding was effective: the tutor built from the student's partial recall of the cases toward a more precise principle and repeatedly used targeted hypotheticals to refine distinctions.",
+      "Only a small deduction was applied for limited explicit reflection/transfer support: the tutor did not clearly pause to help the student name the method they had developed or how to reuse it on future moral cases."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

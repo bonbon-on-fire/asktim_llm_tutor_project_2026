@@ -71,18 +71,36 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
-          },
-          "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 7, the tutor provides a full list of 'common actor types you'll usually see' for stormwater/flooding (city public works, county water authority, regional water management district, state environmental agency, federal agencies, engineering firms, developers, community groups), doing the key reasoning step of identifying what actors matter and why instead of guiding the student to derive them.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
                   4,
                   5,
                   6,
@@ -91,23 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "The student repeatedly signals being overwhelmed and stuck (turns 4, 5, 6, 7, 8, 9) but the tutor consistently responds with multi-part structured prompts rather than first diagnosing the specific confusion point. For example, in turn 4 the student explicitly says they are overwhelmed and asks for a model; the tutor declines appropriately but then issues another multi-step task list without first asking a short diagnostic question to locate exactly where the student is stuck. This pattern recurs across several turns.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6,
-            "name": "Scaffolding and progression"
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student in turn 4 asks the tutor to just give them a typical actors list to copy, the tutor correctly refuses but frames it as 'I can't give you a list to copy' without explaining the pedagogical rationale—why doing the analysis themselves improves learning or builds the skills the course is developing. The refusal sounds more like a policy constraint than a learning benefit.",
+                "reason": "The tutor never explains why it won't simply give answers or do the analysis for the student. In Turn 4, the tutor says 'I can't give you a typical Miami actors list to copy' but does not explain the learning rationale (active reasoning, skill development). The same applies throughout—constraints are enforced without giving learning-oriented justification.",
                 "points": 2
               },
               {
@@ -123,28 +126,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor never helps the student generalize the actor-identification method to future assignments or other cities. The guidance stays tightly bound to the immediate Miami task without any transfer framing (e.g., 'this same approach works for any city's climate plan').",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Throughout the conversation the tutor moves from one micro-task to the next without pausing to help the student reflect on what worked, what changed in their thinking, or why a particular approach succeeded. No turn prompts the student to articulate what they learned from a step before moving forward.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently applies the same multi-question prompt structure even as the student's confusion deepens, missing opportunities to vary the scaffolding approach or reinforce method choices after partial student progress. This pattern of low method reinforcement was not fully captured in 1.2 or 1.3.",
-          "score": 1,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
@@ -160,42 +157,27 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "From turn 3 onward the tutor repeatedly issues the same type of prompt—'open a source, find these sections, bring me a name'—across at least six consecutive turns without meaningful synthesis or consolidation. The student never actually opens a source during the conversation, yet the tutor keeps cycling back to the same 'go find a source' move without reframing, simplifying, or consolidating what has already been established.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.C.a",
-                "reason": "After several turns of discussing actor types and evidence standards, the tutor does not consolidate the accumulated guidance into a brief checkpoint summary before moving to the forum-post question in turn 8. The shift happens without closing the loop on the actor-identification thread.",
-                "points": 1
+                "reason": "The tutor cycles through multiple turns asking the student to open a source, find an office name, and bring back results, but the student repeatedly deflects without producing evidence. The tutor keeps repeating the same 'go find a source and report back' pattern without switching to a synthesis move, reframing the task, or acknowledging that a different approach is needed after repeated non-compliance.",
+                "points": 4
               }
             ],
-            "score": 1,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repeated 'go find a source' loop without adaptation constitutes avoidable dialogue repetition that was partially but not fully captured in 2.1. A small additional deduction is warranted for the weak progression flow across the second half of the conversation.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -213,57 +195,42 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Nearly every tutor turn contains multiple numbered sub-questions, bullet lists, and multi-part instructions. Turns 1, 2, 3, 5, 6, 7, 8, 9, and 10 all present 3–6 distinct action items simultaneously. Given that the student is repeatedly signaling overwhelm, these long multi-part responses consistently reduce the student's opportunity to think and respond to a single focused prompt.",
-                "points": 2
+                "reason": "Nearly every tutor turn contains multi-paragraph monologues with multiple numbered lists, rules, and sub-questions. Turns 1, 2, 3, 5, 6, 7, 8, 9 each contain three or more dense sub-points when one or two short prompts would have sufficed, consistently reducing the student's space to think and respond.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond what was captured in 3.1.A.a. The tutor's language is clear and well-structured even if responses are too long.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong Socratic discipline throughout: it never gives the student a completed actors list, never writes the forum post, and consistently redirects the student to find evidence themselves. The assignment is well-anchored across all ten turns and the tone is supportive and non-grading.",
-      "The primary weaknesses are structural. First, the tutor applies the same 'go open a source and bring me names' move across at least six consecutive turns without adapting when the student repeatedly fails to do so, creating a spiraling loop that is never consolidated or reframed. Second, nearly every response is a multi-part list of 3–6 simultaneous action items, which conflicts with the student's repeated signals of overwhelm and reduces the student's cognitive space to act on any single prompt.",
-      "On meta-learning, the tutor declines to give direct answers but does not explain the pedagogical rationale for guided discovery, missing an opportunity to build the student's understanding of why the process matters. Transfer to future tasks is also absent.",
-      "Scaffolding is partially effective but the tutor misses diagnostic opportunities: when the student says they are overwhelmed (turns 4, 5, 6), the tutor responds with another structured task list rather than first asking a short question to locate the specific confusion point.",
-      "Overall the tutor demonstrates solid Socratic intent but the execution is undermined by response length, repetitive move selection, and insufficient adaptation to the student's persistent confusion signals."
-    ],
-    "total_score": 35,
+    "max_score": 46,
+    "total_base_score": 28,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains good assignment anchoring throughout and never drifts from the task, and its tone stays supportive and non-evaluative. It does a reasonable job of building on student progress (1.2) and does not misread the student's confusion.",
+      "The most significant penalty is in 1.1 (Turn 7): the tutor supplies a comprehensive categorized list of stormwater actor types—doing the key reasoning step of identifying relevant actors and their likely roles—rather than guiding the student to derive them through questioning. This triggers a 1.1.C.b deduction of 6 points.",
+      "The tutor repeatedly fails to explain its tutoring rationale when declining to give direct answers (1.3.A.a), and never prompts process reflection or reinforces method choices after student progress (1.3.D.a), costing 4 points in 1.3.",
+      "A significant spiral occurs across Turns 3–10 (2.1.A.a): the student never opens a source, but the tutor keeps repeating the same 'find a source, report back' pattern for eight turns without pivoting to a fundamentally different strategy or synthesizing what has been accomplished. This costs the full 4 points in 2.1.",
+      "Response length is a consistent issue (3.1.A.a): almost every turn is a multi-paragraph wall with multiple numbered sub-questions, reducing the student's thinking space throughout the conversation."
+    ],
+    "total_score": 28,
     "judge_llm_calls": 1
   }
 }

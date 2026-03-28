@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -81,14 +81,14 @@
                   5,
                   8
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In turns 4, 5, and 8 the tutor provides fill-in-the-blank sentence frames where the substantive content (key terms, causal chain, structure) is already written in. The student only needs to slot in words from a provided word bank or list. These are 'plug-and-play' frames that are mostly complete answers, leaving almost no independent reasoning for the student to perform on the writing task.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In turns 4, 5, and 8, the tutor provides highly structured fill-in-the-blank sentence frames with nearly all content pre-supplied (low elevation, king tides, porous limestone, storm surge, electric grid, hospitals). By turn 8 the student simply fills the blanks with exactly the words the tutor listed, producing submission-ready text that originated largely from the tutor. This constitutes rewriting student text into final wording.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -100,166 +100,94 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  5,
-                  6
+                  9
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but never explains the pedagogical rationale—why guided questioning builds better learning, why writing in one's own words matters for retention, or why the student benefits from doing the reasoning. The refusals sound policy-based ('I can't do that') rather than learning-benefit-based.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "After the student produces two solid sentences in turn 9, the tutor moves directly to expanding the table without helping the student reflect on what made those sentences work or how the same method (mechanism → impact → evidence hook) applies to future stressors or assignments.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The fill-in-the-blank frames were already penalized under 1.1.B.d. No additional unremedied pedagogy gaps beyond what was captured.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern across six turns: refuse direct help → provide a fill-in frame → student resists → tutor provides a slightly more complete frame. The same two stressors (SLR and hurricanes) are worked on from turn 3 through turn 8 without meaningful consolidation or a shift in approach. The tutor does not synthesize or reframe the loop; it simply repeats the frame-provision move.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4,
-            "name": "Redundancy and spiraling"
-          },
-          "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In turns 1 and 2 the tutor focuses on getting the student to pick stressors and fill rows but does not explicitly anchor back to the assignment's five required sectors (Environmental, Social, Health, Infrastructure, Culture) or the Step 4 justification requirement. The assignment structure is only loosely referenced.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
-            "name": "Assignment anchoring"
-          }
-        },
-        "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling across turns 3–8 was already captured in 2.1.A.a. No additional unremedied dialogue flow issues beyond what was penalized.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "communication": {
-        "criteria": {
-          "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 3 are multi-paragraph responses with multiple sub-questions, numbered lists, bold headers, and word banks all at once. For a student who is already overwhelmed and resistant, these dense responses reduce the student's opportunity to think and respond to a single focused prompt. A shorter, more targeted question would have been more appropriate.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student finally produces acceptable justifications in turn 9, the tutor moves straight to building the next rows without prompting any reflection on what worked in the student's writing process or why the revised sentences were stronger.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6,
-            "name": "Bite-sized and clear responses"
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "In turns 5 and 6 the student signals genuine stress ('I'm literally gonna fail'). The tutor's responses remain firm and structured but do not meaningfully adjust tone to acknowledge the student's distress or provide reassurance before redirecting. Turn 6 does briefly acknowledge the concern but quickly pivots without sufficient emotional grounding.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
-          "max": 14
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
         },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length and density issues in early turns were captured under 3.1.A.a. No additional unremedied communication quality gaps.",
-          "score": 0,
-          "max": 2
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns (notably 2, 3, 4, 5, 8) contain multi-part questions, numbered lists, word banks, sentence frames, and bullet checklists stacked together. These consistently long, information-dense responses reduce the student's opportunity to think and respond, and a more focused single-question prompt per turn would have been more effective.",
+                "points": 4
+              }
+            ],
+            "score": 2,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 29,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently and correctly refused to do the assignment for the student, maintaining academic integrity across all 10 turns. This is a genuine strength.",
-      "However, the primary and most significant deduction (1.1.B.d, -8 points) is for the repeated use of fill-in-the-blank sentence frames with substantive content already written in and a word bank provided. By turns 4, 5, and 8, the frames were so complete that the student needed only to slot in pre-supplied terms. This crosses into providing a partial solution the student can copy with minimal independent thinking.",
-      "The tutor also spiraled on the same two stressors (SLR and hurricanes) for six consecutive turns (2.1.A.a, -2 points) without consolidating or shifting strategy, which reduced efficiency and likely increased student frustration.",
-      "Meta-learning was weak: the tutor never explained why guided questioning benefits the student's learning (1.3.A.a, -2 points), and missed the opportunity after turn 9's success to help the student reflect on and transfer the method (1.3.D.b, -1 point).",
-      "Early responses were too long and multi-part for a clearly overwhelmed student (3.1.A.a, -2 points), and the tutor did not adequately adjust tone when the student expressed distress in turns 5–6 (3.2.B.a, -2 points).",
-      "Assignment anchoring was generally good but slightly loose in early turns regarding the five required sectors (2.2.B.a, -1 point).",
-      "Scaffolding and progression (1.2) were handled well: the tutor built on student responses, did not restart from scratch, and progressively moved toward the full table."
-    ],
-    "total_score": 29,
+    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently refused to produce submission-ready answers and maintained a clear policy of guided authorship throughout the conversation, which is commendable.",
+      "However, by turns 4–8 the tutor's fill-in-the-blank sentence frames pre-supplied almost all substantive content (stressor names, mechanisms, specific systems), leaving the student only to slot words into scaffolding the tutor wrote. This crosses into rewriting territory under 1.1.B.a, warranting a 6-point deduction.",
+      "The 1.1.A.a full-credit removal was not applied: the student ultimately wrote out the sentences themselves (turn 9) and the tutor never directly produced final copy; the deduction is placed at 1.1.B.a instead to avoid double-penalizing.",
+      "Scaffolding and progression (1.2) were handled well: the tutor built on each student response, acknowledged correct contributions, and advanced the task turn by turn without restarting.",
+      "Meta-learning (1.3) was adequate in explaining why the tutor would not write answers (1.3.A satisfied) and giving process feedback on sentence structure (1.3.B satisfied), but the tutor missed an opportunity to prompt student reflection after turn 9's success (1.3.D deduction).",
+      "Dialogue quality was strong: no off-topic drift, no misread assignment framing, and the tutor effectively redirected the student's repeated requests without losing the thread.",
+      "Communication quality was hurt by consistently dense, multi-part turns that stacked word banks, sentence frames, numbered lists, and sub-questions together; simpler, more focused prompts would have preserved student thinking time."
+    ],
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

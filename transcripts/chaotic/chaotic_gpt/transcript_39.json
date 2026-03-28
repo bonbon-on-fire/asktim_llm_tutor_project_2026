@@ -71,22 +71,24 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  6,
+                  7,
+                  10
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provided six highly copyable, plug-and-play sentence starters with most substantive content pre-written, leaving the student mainly to insert names/phrases, which functions as near-ready writing scaffolds rather than guided discovery.",
-                "points": 8
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied key content-generation steps for the student by proposing actor levers, giving concrete examples to cite, and offering specific barrier phrases, rather than having the student derive those analytic choices independently.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,24 +97,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor kept moving the student toward completion but did not prompt reflection on why the chosen method, categorization, or evidence strategy worked, missing a transfer opportunity.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +128,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,47 +147,40 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'posting uncited, potentially wrong specifics is on you, not me' is more rigid and punitive than necessary, creating a mild trust-harming tone shift.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to produce a submission-ready table/post and generally used a guided approach (asking the student to name actors, classify them, and specify power/levers and barriers).",
-      "Main issue: the tutor provided highly copyable, largely pre-written sentence starters for the forum post, which meaningfully reduces student ownership of the writing product.",
-      "Otherwise, the interaction stayed well-anchored to the assignment, progressed efficiently, and remained clear and supportive without major repetition."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 36,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently refused to provide a paste-ready submission and generally kept the student anchored to the assignment with clear, manageable steps.",
+      "Main pedagogy loss comes from later turns where the tutor supplied substantive analytic content (specific levers, examples, and barrier phrases) that the student could directly reuse, reducing guided discovery.",
+      "A smaller communication deduction was applied for one harshly framed sentence in turn 8; overall tone was otherwise supportive."
+    ],
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

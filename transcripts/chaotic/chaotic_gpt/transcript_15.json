@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   2
                 ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "Despite refusing a paste-ready list, the tutor still pre-selected multiple specific, high-impact actors (e.g., ComEd, Elevate, MPC, UIC/Northwestern/UChicago) that effectively determine key evidence choices for the student’s table/forum post, reducing student ownership of idea/evidence generation.",
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor supplied a substantial set of specific Chicago actors and categories before the student generated their own list, giving core assignment ideas rather than eliciting them first.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -99,35 +99,34 @@
               {
                 "evidence_turns": [
                   1,
-                  3,
                   4,
                   5,
-                  6,
-                  8,
-                  9
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly refused to write submission-ready text but did not clearly explain the learning/skill-building rationale for guided questioning (the explanations were primarily framed as 'that would be me writing your submission' rather than why student-authored reasoning/writing matters).",
+                "reason": "The tutor repeatedly enforced a no-writing boundary but did not clearly explain a learning rationale such as building the student's reasoning or writing skills.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student produced a workable sentence, the tutor moved straight to revision prompts without asking for reflection on why the structure or choices worked.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy-consistency issues beyond the specific deductions already applied.",
-          "score": 0,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -137,72 +136,63 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No extra dialogue-flow penalties warranted; the tutor kept re-anchoring to the deliverable and moved the student forward.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly responded with long multi-bullet templates and explanations where shorter, more focused prompts could have preserved interactivity and reduced cognitive load.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication-quality issues beyond the scored criteria.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor appropriately refused to produce submission-ready writing and consistently pushed the student to supply wording, using clear scaffolds (sentence skeletons, role/contribution prompts) aligned to the assignment requirements.",
-      "Main pedagogy weakness: the tutor still supplied several specific actor candidates early on, which materially shaped the student’s evidence choices rather than eliciting them first.",
-      "Meta-learning rationale for not providing the write-up was mostly framed as 'I can’t write your submission' rather than explicitly connecting guided drafting to learning/skill development."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently refused to write the student's submission and kept the work anchored to the forum-post task.",
+      "Main weaknesses were giving the student a fairly concrete actor list early, offering little explicit learning rationale for the boundary, and using several long template-heavy replies.",
+      "No deduction was applied for repetition because, despite repeated refusals, the tutor's prompts did progressively narrow the task and eventually elicited student-generated content."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provided a near-copyable justification sentence skeleton with substantial content already filled in for the specific city/stressor (e.g., \"frequent/record-setting in Phoenix,\" \"low-income renters/unhoused\"), which functions as a plug-and-play template the student could submit with minimal additional thinking.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -102,27 +93,21 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing to choose the rating or write the justification, tutor did not clearly explain the learning/ownership rationale for guided questioning (framed mainly as \"can't\" and \"decide it quickly and defensibly\" rather than why student-generated reasoning/wording matters).",
+                "reason": "The tutor states it cannot choose the rating or write the sentence, but does not explain the learning rationale for that limit.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 13,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy issues beyond the noted template-provision and limited rationale for refusal.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -132,23 +117,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No extra dialogue-flow or anchoring problems observed beyond the base criteria.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -158,46 +137,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional clarity/structure issues requiring a catch-all deduction.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor generally used guided prompts (severity/frequency/exposure/adaptive capacity) and had the student generate the rating and reasoning, keeping the work aligned to the Stressors Table tasks and building a repeatable method across stressors.",
-      "Main pedagogy issue: tutor provided a highly specific fill-in justification template that could be copied nearly verbatim, reducing student ownership of final wording (Turn 4).",
-      "Meta-learning gap: when refusing to provide the exact rating/justification, tutor did not clearly articulate the learning/ownership rationale for why the student should generate it, even though the subsequent guidance was effective."
-    ],
-    "total_score": 37,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently used guided questioning, short prompts, and student-generated reasoning rather than supplying submission-ready content.",
+      "Scaffolding was strong: the tutor built from the student's Phoenix example, transferred the same 4-part rating logic to a second stressor, and kept the discussion tightly anchored to the Stressors Table task.",
+      "The main weakness was meta-explanation: when refusing to choose the number or write the justification, the tutor did not explain why that limit supports the student's learning."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

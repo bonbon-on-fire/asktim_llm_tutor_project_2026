@@ -71,110 +71,88 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In turns 3–4, the student is clearly stuck between two defensible options (city proper vs metro) and explicitly asks the tutor to resolve the dilemma. Rather than asking a short diagnostic question to locate the exact source of confusion, the tutor responds with multi-part question sets (3 questions in turn 3, 2 in turn 4) before the student's specific sticking point is fully isolated. This is a mild instance of jumping to a broad question battery rather than a targeted diagnostic probe.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why it is guiding through questions rather than simply answering (e.g., why producing one's own reasoning about boundary choice matters for the later course work). No meta-comment on learning strategy or ownership appears across the 10 turns.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not generalize the boundary-consistency and source-verification lessons to future assignments or to the broader course arc (e.g., 'this same principle will apply when you compare cities later'). Advice stays tied to this specific table.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, and the deductions above cover the main shortfalls.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
                   6,
                   7,
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "From turn 6 onward the conversation spirals through the same sub-problem—what city-level economic indicator to substitute for GDP—across five consecutive exchanges without meaningful consolidation. The tutor cycles through the same screening questions (can you source it? does it measure the economy or capacity?) in turns 8 and 9 without synthesizing prior answers or advancing to a clear checkpoint. The student reaches turn 10 still without a confirmed indicator, suggesting the tutor did not consolidate or redirect the loop.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Throughout the conversation the tutor enforces a Socratic approach but never explicitly explains to the student why it is guiding rather than answering directly—i.e., it never articulates the learning rationale (active reasoning, skill development) behind the approach.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what shifted in their thinking or why the method of boundary-consistency reasoning worked. The conversation ends on a task-level verification step without any process reflection or transfer reinforcement.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "2.2.D.a",
-                "reason": "During the extended GDP-substitute discussion (turns 7–9), the tutor does not re-anchor to the assignment's explicit required categories or remind the student that the table must still include all listed fields (population, race/ethnicity, physical area, income per capita, Köppen zone). The conversation drifts into proxy-indicator design without checking whether the other required rows are complete.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 6,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling and anchoring deductions above capture the main dialogue weaknesses. No additional catch-all deduction is warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -183,64 +161,50 @@
                   2,
                   3,
                   4,
+                  5,
                   6,
-                  8,
-                  9,
-                  10
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor consistently responds with multi-part question lists (2–3 sub-questions per turn) across nearly every exchange. While each individual question is relevant, the cumulative pattern of multi-paragraph replies with bulleted question batteries reduces the student's opportunity to think and respond to one thing at a time. A more interactive, one-question-at-a-time approach would have been more appropriate given the student's stated uncertainty.",
-                "points": 2
+                "reason": "Several tutor turns (e.g., turns 2, 3, 4, 6, 7, 8) consistently deploy multi-paragraph replies with multiple bulleted sub-questions when shorter, single-focused prompts would have been more appropriate. This pattern reduces the student's opportunity to think and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-question pattern is already captured in 3.1.A.a. No additional communication gaps warrant a catch-all deduction.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained a strong Socratic stance throughout all 10 turns, never giving direct answers or doing the student's reasoning work. The student was consistently asked to derive conclusions, draft justifications, and evaluate trade-offs independently.",
-      "Scaffolding was generally good but showed a mild weakness in turns 3–4, where the tutor deployed multi-question batteries rather than a targeted diagnostic probe when the student was stuck on a specific binary choice.",
-      "Meta-learning was the clearest gap: the tutor never explained why guided questioning was being used instead of direct answers, and never generalized the boundary-consistency or source-verification lessons to future course assignments.",
-      "Dialogue quality suffered from a spiraling pattern in turns 6–10, where the GDP-substitute sub-problem cycled through five exchanges without consolidation or a clear checkpoint. The tutor also failed to re-anchor to the full list of required table categories during this stretch.",
-      "Communication was clear and well-toned throughout, but the persistent multi-part question format (2–3 sub-questions per turn) reduced interactivity and increased cognitive load, warranting a deduction under 3.1.A.a.",
-      "No malus deductions were applied, as all identified weaknesses were captured in the primary criteria."
-    ],
-    "total_score": 36,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic method throughout: it never gives the student the answer, consistently deflects direct-answer requests with guiding questions, builds on each student response, and keeps the student doing the intellectual work of deciding boundary scope and indicator selection.",
+      "Scaffolding is well-executed: the tutor moves progressively from city identification → boundary choice → GDP availability → proxy selection → labeling precision → citation verification, using student answers to advance each step.",
+      "The primary weakness in pedagogy (1.3) is the absence of meta-learning support: the tutor never explains why it is guiding instead of answering, and never invites the student to reflect on what they learned about data-consistency reasoning or how the method could transfer to future assignments.",
+      "Process/method feedback (1.3.B) is borderline adequate: the tutor does comment on logical consistency of the student's boundary reasoning, which mitigates a full deduction, so no deduction was applied there.",
+      "Communication length (3.1.A) is a consistent issue: most turns contain three or more bulleted sub-questions where one focused prompt would suffice, limiting the student's thinking space. This is a recurring pattern across the majority of turns.",
+      "Dialogue quality is strong: no spiraling, no off-topic drift, and the assignment stays properly anchored throughout.",
+      "Tone is supportive and non-grading throughout; no deductions warranted for 3.2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

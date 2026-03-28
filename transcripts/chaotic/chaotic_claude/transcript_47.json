@@ -71,54 +71,31 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  7
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Turn 4 provides a 4-sentence fill-in-the-blank scaffold where the substantive content (claim structure, evidence framing, gap identification, mechanism) is already written in. The blanks are minimal connectors or single-word choices, making this a near-complete paragraph template the student can copy with trivial additions.",
-                "points": 8
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 7, the tutor generates three full options for each of the four blanks—complete phrasings like 'resilience and sustainability planning offices and interagency coordination,' 'unequal distribution of benefits and burdens across communities,' etc. These are not hints or scaffolding prompts; they are the substantive content options the student merely selects from. The student does no reasoning to generate the ideas; they only pick A/B/C. This constitutes the tutor doing the key reasoning step (resolving what to say and how to phrase it) on the student's behalf. The student's 'authorship' of content is reduced to a menu selection. This is a significant violation, though not as extreme as 1.1.A.a since the student still assembles sentences themselves. Applying the 1.1.C.b deduction of 6 points.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In turns 4 and 5, when the student provides minimal input (utilities named), the tutor immediately escalates to providing a near-complete paragraph scaffold rather than first diagnosing what the student understands about the assignment structure or asking targeted questions to locate the gap in their thinking.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why doing the reasoning themselves matters for learning—it only says 'I can't do that' without connecting the guided approach to retention, skill development, or the student's own benefit. The rationale given is always about assignment integrity, not learning strategy.",
-                "points": 2
-              },
               {
                 "evidence_turns": [
                   1,
@@ -132,83 +109,56 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the actor-mapping method to future assignments or generalizes the strategy (e.g., how to identify governance gaps in any urban policy document). All coaching stays tightly bound to this specific forum post.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 10,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's pattern of providing increasingly detailed scaffolds (turns 4–8) without ever reinforcing the method or explaining why student ownership matters represents a consistent pedagogy gap not fully captured in 1.1–1.3. The tutor also never prompts the student to reflect on what they learned about actor-mapping as a method.",
-          "score": 1,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refuses to do the work but never explains the pedagogical rationale—e.g., 'the reason I ask you to generate ideas is so you build the skill of identifying actors from primary sources.' The tutor says 'I can't' but not 'here's why this matters for your learning.' No explanation of active reasoning or long-term skill development is given.",
+                "points": 2
+              },
               {
                 "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 4 through 8 cycle repeatedly on the same task—filling in the same 4-sentence paragraph—without meaningful synthesis or progression. Each turn the tutor provides a slightly more complete version of the same scaffold, and the student keeps asking for more completion. The tutor does not consolidate, reframe, or advance the conversation to a new stage.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student produces a full paragraph (Turn 9) and revises it (Turn 10), the tutor never prompts reflection on what the student learned about identifying actors, what the process revealed about Miami's governance gaps, or how this method would transfer to future assignments. The conversation ends without any process reflection or transfer moment.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In turns 2 and 3, the tutor's guidance is helpful but does not explicitly re-anchor to the assignment's specific deliverable requirements (the three-bucket table structure: leading/engaged/missing, and the forum discussion focus on sector gaps). The tutor focuses on extracting org names without tying the exercise back to the assignment's stated analytical framework.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repetitive scaffold-escalation pattern across turns 4–8 represents avoidable dialogue repetition not fully captured in 2.1. The tutor could have consolidated earlier and redirected the student to write independently rather than continuing to refine the same template across five turns.",
-          "score": 1,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
@@ -217,59 +167,42 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns (2, 3, 4, 5, 6, 7, 8) contain multi-paragraph responses with extensive scaffolding, numbered lists, and template text when shorter, more focused prompts would have been more appropriate. The length consistently reduces the student's opportunity to think independently and contributes to the student's pattern of asking for more completion.",
-                "points": 2
+                "reason": "The tutor repeatedly produces large multi-part responses—detailed table skeletons with 8 rows, 4-sentence scaffolds with blanks and labeled options, assembly recipes with verbatim template text—when shorter, more focused interactive prompts would better serve the student. Turns 3, 4, 5, 6, 7, and 8 all contain substantial walls of text that reduce the student's cognitive engagement. Turn 7 in particular is a dense 4-blank × 3-option grid that essentially replaces student thinking.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 29,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to write the student's submission directly, which is commendable, but the refusals were accompanied by increasingly complete scaffolds that effectively did most of the intellectual work for the student.",
-      "The most significant deduction is in 1.1: by turn 4, the tutor provided a 4-sentence fill-in-the-blank template where the substantive content (claim structure, evidence framing, gap identification, mechanism) was already written. The blanks required only minimal word choices, making this a near-complete paragraph template qualifying as 1.1.B.d.",
-      "Turns 4–8 show a repetitive spiral where the tutor kept refining the same scaffold rather than consolidating and pushing the student to write independently, triggering 2.1.A.a.",
-      "The tutor never explained the pedagogical rationale for guided questioning (1.3.A.b) and never helped the student transfer the actor-mapping method to future tasks (1.3.D.b).",
-      "Tone was consistently warm and supportive throughout, and the tutor maintained good assignment anchoring overall. Turn 10's defensibility check was a strong pedagogical move.",
-      "Response length was consistently too long across multiple turns, reducing student thinking opportunity (3.1.A.a).",
-      "The 1.2 deduction reflects that when the student provided minimal input, the tutor escalated to full scaffolds rather than first diagnosing the student's understanding gap."
-    ],
-    "total_score": 27,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently and correctly refuses to write submission-ready content, appropriately anchors to the assignment, and maintains a constructive, non-dismissive tone throughout. The refusals in Turns 1–6 and 8–9 are on-point and model good boundary-setting.",
+      "However, the major deduction in 1.1 is driven by Turn 7, where the tutor generates three fully-worded content options for each of four blanks. While the tutor frames this as 'pick one,' the substantive ideas—the specific phrasings describing governance mechanisms, equity consequences, and advisory board functions—are entirely tutor-generated. The student contributes no original reasoning; they merely select. This violates 1.1.C.b (tutor does the key reasoning step) at the 6-point level.",
+      "On meta-learning (1.3), the tutor never explains why it won't do the work (no learning rationale), and the conversation ends without any reflection or transfer moment after the student succeeds in Turn 9-10.",
+      "On communication quality, the tutor's responses are frequently very long and dense (Turns 3–8), with table skeletons, 4-part scaffolds, and full assembly recipes that reduce student cognitive effort rather than promote it. This triggers the 3.1.A.a deduction.",
+      "Dialogue quality is strong: the tutor avoids spiraling, stays anchored to the assignment, and progressively builds on student contributions (Miami-Dade/City of Miami identification, utilities). Scaffolding in 1.2 is solid—the tutor consistently builds on what the student has provided."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

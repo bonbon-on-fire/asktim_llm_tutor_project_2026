@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -92,27 +92,30 @@
                   1
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student asked to chat due to burnout, the tutor refused and re-directed to the assignment but did not explain a learning-oriented rationale (e.g., why staying on-task or using guided questions helps the student).",
+                "reason": "The tutor enforced a role boundary ('I can’t do a personal chat') without giving a learning-focused rationale for that constraint.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave strong step-by-step coaching, but did not prompt explicit reflection on why the student's method improved or how to transfer the approach to future actor-mapping tasks.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +125,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,46 +145,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery (criteria for leading/engaged/missing, falsifiable indicators, boundary checks) and kept ownership of the actor choices/evidence with the student rather than writing a submission-ready forum post.",
-      "Strong scaffolding: moved from brainstorming to a constrained 5-actor set, then to evidence artifacts and participation-gap claims tied to observable indicators.",
-      "Main gap: early refusal to chat when the student was burnt out did not include a learning-oriented rationale for staying in guided, assignment-focused mode."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly assignment-centered, redirected the initial off-topic request immediately, and used guided questioning throughout rather than supplying a submission-ready answer.",
+      "Scaffolding was strong: the tutor helped the student distinguish 'leading' vs 'engaged,' operationalize evidence standards, and pressure-test missing actors with concrete documents and indicators.",
+      "The main weakness was meta-learning: the tutor did not explain the learning rationale behind the opening boundary, and there was little explicit reflection on why the student's method improved or how to reuse it on future assignments."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

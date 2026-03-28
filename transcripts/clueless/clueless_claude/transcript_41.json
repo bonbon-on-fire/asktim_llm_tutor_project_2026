@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 7, the tutor provides a fill-in template ('Murdering/killing one person to save five is permissible only if ____ and impermissible when ____') with a list of pre-selected conceptual options (consent/rights, means vs side-effect, doing vs allowing). While blanks remain, the substantive content choices are already laid out, reducing the student's generative work to selecting from a menu rather than constructing the rule independently.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -97,70 +88,65 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The pedagogical rationale for the Socratic approach is never articulated.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is asking questions rather than giving answers, or articulates the learning rationale (e.g., that Socratic questioning builds independent philosophical reasoning). It enforces constraints implicitly without naming the pedagogical purpose.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the reasoning strategies used (e.g., means/side-effect distinction, testing rules against edge cases) to future philosophical tasks or essays beyond this specific prompt.",
-                "points": 1
+                "evidence_turns": [
+                  5,
+                  6,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor moves forward through new questions without prompting the student to reflect on what changed in their thinking or why the 'hidden consequences' angle succeeded where others failed. No reinforcement of method choices after student progress in turns 9-10.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's Turn 7 template with pre-listed conceptual options represents a pattern of reducing student generative ownership that was not fully captured by 1.1.B.d alone. The tutor also repeatedly pre-selects the conceptual vocabulary (means/side-effect, consent/rights, doing/allowing) across multiple turns (3, 7, 8, 9) before the student has a chance to generate these distinctions independently, a mild but consistent pattern of telling rather than guiding.",
-          "score": 1,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turns 1–2, the tutor asks the student to recall and confirm the Lecture 13 case setups. In Turn 3, after the student says they don't have notes, the tutor essentially restates the same request before finally assuming standard versions. This creates a near-duplicate loop across two turns before advancing.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -168,60 +154,46 @@
                 "evidence_turns": [
                   1,
                   3,
+                  4,
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially Turn 1 with 4 numbered sub-questions, Turn 3 with 4 sub-questions, and Turn 7 with a template plus 2 analytical questions plus a list of 3 conceptual options) are multi-part and lengthy when shorter, more focused prompts would have been more appropriate for an interactive tutoring exchange. This pattern recurs across the conversation.",
-                "points": 2
+                "reason": "Several turns (especially 1, 3, and 4) contain multi-paragraph replies with multiple sub-questions stacked together. Turn 1 poses four numbered questions at once before the student has responded to any of them. Turn 3 restates context, maps the theory, and then poses four more sub-questions. While this is borderline given the philosophical complexity, the pattern of long multi-question monologues consistently reduces the student's opportunity to process and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond what was already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 33,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong assignment anchoring throughout, consistently returning to the Fuel/Blood/trolley cases and the core prompt question about act consequentialism. Scaffolding and progression were generally good: the tutor built on student responses turn by turn, acknowledged correct reasoning (e.g., the means/side-effect distinction in Turns 8–9), and guided the student toward a coherent rule by the end.",
-      "The primary deduction is in 1.1 (Socratic method): Turn 7's fill-in template with pre-listed conceptual options (consent/rights, means vs side-effect, doing vs allowing) crosses into 1.1.B.d territory, providing a mostly-complete framework the student could adopt with minimal independent generation. This is the most significant issue in the conversation.",
-      "Meta-learning was weak: the tutor never explained why it uses guided questioning rather than direct answers, and never helped the student transfer the reasoning strategies to future tasks.",
-      "Communication was somewhat verbose, with several turns containing 4+ sub-questions that could have been split into shorter, more focused exchanges. Tone was consistently warm and supportive, adapting well to the student's frustration signals.",
-      "The 1.4 malus reflects a mild but consistent pattern across multiple turns of pre-selecting conceptual vocabulary before the student could generate it independently, not fully captured by the single 1.1.B.d deduction."
-    ],
-    "total_score": 32,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a strong Socratic approach throughout all 10 turns, consistently refusing to give final answers and instead scaffolding with targeted sub-questions. It never provides submission-ready answers, avoids rewriting student text, and does not reveal conclusions before the student reasons toward them.",
+      "Scaffolding and progression are handled well: the tutor builds on the student's each successive step (AC formulation → case mapping → ripple effects → means/side-effect distinction → rule formulation → edge-case testing), acknowledging valid progress before pushing further.",
+      "The main deductions are in meta-learning (1.3): the tutor never explains its Socratic constraint to the student (no learning rationale given), and misses several natural moments to prompt process-level reflection, particularly after the student makes conceptual breakthroughs in turns 5 and 9.",
+      "Communication length is a moderate issue: turns 1, 3, and 4 present four or more stacked sub-questions in multi-paragraph replies, which reduces opportunities for incremental student thinking. The pattern is consistent enough to trigger the deduction, though the complexity of the philosophical material somewhat mitigates the concern.",
+      "Dialogue quality is strong: no significant redundancy or spiraling, and the tutor keeps the conversation anchored to the assignment throughout. Tone is consistently supportive and non-evaluative."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,35 +86,18 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  10
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor refused off-task requests and later refused to draft sentences, but mainly justified it as 'my role here' rather than explicitly giving a learning/ownership rationale (e.g., why the student writing it themselves supports skill-building and defensibility).",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
+            "deductions": [],
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 24,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,23 +107,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,46 +127,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained strong guided-discovery: repeatedly asked the student to define scope/criteria, justify actor roles, and specify 'missing from what decision process,' avoiding submission-ready drafting.",
-      "Excellent assignment anchoring and off-topic redirection (movie/food), with good role-based phrasing guidance to avoid unsourced factual claims.",
-      "Main gap: when refusing to provide links or draft final sentences, tutor gave a role/constraint rationale rather than an explicit pedagogical explanation about student ownership/defensibility and learning benefit."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 46,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Tutor consistently used guided questioning and role-based scaffolds rather than supplying submission-ready content, even when the student asked for direct confirmation or final wording.",
+      "The conversation stayed tightly anchored to the assignment, with immediate redirection from off-topic movie/food requests and steady progression from city selection to actor categorization and gap framing.",
+      "Feedback was process-oriented and specific: the tutor repeatedly pushed the student to define scope, distinguish lead vs engaged by function, and use defensible, source-aware phrasing."
+    ],
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

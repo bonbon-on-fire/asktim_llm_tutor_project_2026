@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 10, the student asks for a common objection to pre-empt. The tutor immediately provides two detailed objections rather than first asking a short diagnostic question (e.g., 'What objections can you think of?'). This is a case where the tutor jumps to explanation instead of probing what the student already knows.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,39 +89,24 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never explicitly helps the student transfer the means/side-effect distinction or the general account methodology to future philosophical tasks. The coaching stays tightly bound to this specific prompt without generalizing the strategy.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Throughout the conversation the tutor moves from one sub-problem to the next without pausing to ask the student to reflect on what changed in their thinking or why a particular analytical move worked. At the end (Turn 10) the tutor answers the objection question and closes without prompting any meta-reflection on the student's overall reasoning process or method development.",
+                "points": 2
               }
             ],
             "score": 4,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor consistently maintained Socratic guidance, refused to write submission content, and provided strong process-level coaching throughout. The two deductions above capture the main gaps.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -139,34 +115,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "In Turns 3 and 4, the tutor repeatedly emphasizes that the exact lecture versions of Fuel and Blood are needed, but does not explicitly re-anchor to the specific assignment prompt language (e.g., 'the cases we considered in Lecture 13'). The tutor's concern is valid but the connection back to the assignment's explicit framing is implicit rather than stated.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The conversation progressed well without significant redundancy or anchoring failures beyond what was already captured.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -175,64 +135,45 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially Turns 2, 3, 4, and 5) are multi-paragraph with multiple simultaneous tasks and bullet lists. While each part is relevant, the cumulative length and number of simultaneous requests in a single turn repeatedly reduces the student's opportunity to focus and respond to one thing at a time. Turn 2 in particular asks for a Footbridge table, Fuel/Blood summaries, and a three-part evaluation framework all at once.",
-                "points": 2
+                "reason": "Multiple tutor turns (e.g., Turns 2, 3, 5, 8) contain multi-paragraph responses with several simultaneous sub-questions, bullet structures, and analytical prompts at once. While the questions are pedagogically sound, the sheer volume in a single response repeatedly reduces the student's opportunity to think and reply to one focused idea before moving on.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "A minor additional deduction of 1 point is warranted for the consistent pattern of packing multiple simultaneous sub-tasks into single turns (e.g., Turns 2, 3, 5, 8 each ask for 3–4 distinct deliverables at once). This creates cognitive overload beyond what the 3.1.A.a deduction fully captures, as the issue is not just length but the multi-threaded task structure.",
-          "score": 1,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed strongly overall, consistently refusing to write submission content, maintaining a Socratic stance across all 10 turns, and guiding the student from a vague request to a coherent philosophical principle with stress-tested applications.",
-      "Pedagogy (1.1): No deductions. The tutor never gave a direct answer, never assembled a submission-ready response across turns, and never took over the student's reasoning. Every turn ended with a question or task for the student.",
-      "Pedagogy (1.2): A 2-point deduction was applied for Turn 10, where the student asked for objections and the tutor immediately provided two detailed ones rather than first probing what the student could generate independently. This is a missed diagnostic opportunity.",
-      "Pedagogy (1.3): A 1-point deduction for failing to help the student transfer the means/side-effect methodology to future philosophical tasks. The coaching was entirely prompt-specific with no generalization of the analytical strategy.",
-      "Dialogue (2.1): No deductions. The conversation progressed well with clear advancement each turn and no spiraling or redundant loops.",
-      "Dialogue (2.2): A 1-point deduction for minor anchoring misses in Turns 3–4, where the tutor's insistence on lecture-specific details was valid but not explicitly tied back to the assignment's own framing ('Lecture 13 cases').",
-      "Communication (3.1): A 2-point deduction for repeatedly long, multi-task turns (especially Turns 2–5) that asked students to produce 3–4 distinct deliverables simultaneously, reducing focus and increasing cognitive load.",
-      "Communication (3.2, 3.3): No deductions. Tone was consistently warm, supportive, and appropriately firm without being dismissive. Formatting was clear and well-structured.",
-      "Malus (3.4): A 1-point catch-all deduction for the multi-threaded task structure pattern that compounds the 3.1.A.a issue beyond simple length."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently refused to write submission-ready content and instead guided the student through Socratic questioning, applying the act-consequentialist framework step by step across Switch, Footbridge, Fuel, and Blood cases. No direct answers, finished paragraphs, or submission-ready wording was provided.",
+      "Scaffolding was strong: the tutor built on each student response, acknowledged correct work (e.g., Turn 2 affirming the Switch analysis), and redirected when the student drifted toward requesting pre-written content.",
+      "The main deductions are: (1) Response length — several tutor turns (e.g., Turns 2, 3, 5, 8) bundled multiple sub-questions and analytic frameworks simultaneously, making responses fairly dense rather than bite-sized. This was the most consistent weakness across the conversation. (2) Meta-learning/reflection — the tutor never paused to ask the student to reflect on what worked in their reasoning process or why the means/side-effect distinction emerged as their framework, missing opportunities for transfer and method reinforcement.",
+      "No redundancy or off-topic issues were observed; the tutor maintained assignment focus throughout and redirected attempts to outsource work clearly and concisely."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

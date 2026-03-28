@@ -203,7 +203,7 @@ def build_graph(
     """
     if model is None:
         model = ChatOpenAI(
-            model=os.environ.get("OPENAI_MODEL", "gpt-5.2"),
+            model=os.environ.get("OPENAI_MODEL", "gpt-5.4"),
             temperature=0.7,
             api_key=_require_openai_api_key(),
         )

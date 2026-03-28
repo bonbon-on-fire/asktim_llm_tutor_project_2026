@@ -126,6 +126,6 @@ Judged transcripts additionally include:
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
-| `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
+| `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`). |
 | `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required by `ui.run_ui_claude`. |
 | `ANTHROPIC_MODEL` | No | Model name for Claude judge (default: `claude-sonnet-4-6`). |

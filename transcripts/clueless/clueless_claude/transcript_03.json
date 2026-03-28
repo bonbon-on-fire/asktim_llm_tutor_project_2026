@@ -71,97 +71,88 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 8, the student explicitly says they are stuck and cannot navigate the PDF. The tutor responds with a long list of Indonesian keyword patterns and a decision-point question rather than first asking a short diagnostic question to locate exactly where the student is confused (e.g., 'What chapter are you in?' or 'What table list do you see?'). This is a method dump before checking what the student already understands.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Across the full conversation, the tutor never explains to the student why it is guiding them through questions rather than just providing the table structure or source links directly. There is no moment where the tutor connects the guided-discovery approach to learning benefits (retention, skill transfer, ownership). The student repeatedly asks for direct answers (Turn 1: 'just walk me through'; Turn 6: 'Can you tell me which exact BPS publication'; Turn 8: 'Could you just tell me...') and the tutor redirects without explaining the pedagogical rationale.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains its Socratic/guided approach to the student—why it is asking questions rather than giving direct answers. Constraints are enforced silently throughout.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the data-verification routine or source-selection decision rule to future assignments. The 'decision rule' in Turn 6 is task-specific and not framed as a transferable research skill. No turn explicitly says 'this approach applies whenever you are building a data table for any city.'",
-                "points": 1
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on the process: what strategies worked, what changed in their thinking, or how the decision-rule approach could transfer to future research tasks.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The main pedagogy gaps (no rationale explanation, one diagnostic miss) are already captured in 1.2 and 1.3. The tutor is consistently Socratic and builds on student progress across turns.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same 'pin down definitions / audit-proof your choices' pattern across Turns 4–7 without meaningful synthesis or consolidation. Each turn adds a new layer of micro-decisions (lifetime vs recent migrant, total vs per-capita GRDP, which BPS publication) that could have been consolidated into a single structured checklist. The student is making progress but the tutor keeps probing at the same granularity rather than consolidating and advancing to the actual data-collection step.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling pattern in Turns 4–7 is already captured in 2.1.A.a. No additional catch-all deduction is warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -179,58 +170,43 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor consistently uses multi-part, multi-paragraph responses across nearly every turn. Most replies contain 3–5 numbered sub-questions plus a 'Next step' directive. While each part is individually relevant, the cumulative length and density of questions in each turn reduces the student's opportunity to think and respond incrementally. Turns 1, 2, 4, 5, 6, 8, and 10 are particularly long relative to what a focused one-or-two-question prompt would achieve.",
-                "points": 2
+                "reason": "Nearly every tutor turn consists of multiple paragraphs with 3–5 sub-questions before checking understanding. Turns 1, 2, 4, 6, 8, 9, and 10 are all multi-question monologues that reduce student thinking space. More focused, single-question exchanges would have been more appropriate given the student's repeatedly stated confusion.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue is already captured in 3.1.A.a. No additional catch-all deduction is warranted for communication quality.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains a strong Socratic approach throughout all 10 turns, never giving direct answers or doing the student's reasoning work. The student is consistently pushed to make their own decisions on scope, source selection, variable definitions, and citation format.",
-      "The main pedagogy weakness is in meta-learning: the tutor never explains why it uses guided questioning (no rationale given when the student repeatedly asks for direct answers in Turns 1, 6, and 8), and never generalizes the research/verification skills to future tasks.",
-      "A scaffolding miss occurs in Turn 8 where the student is clearly stuck navigating a PDF; the tutor responds with a keyword list and decision question rather than first diagnosing exactly where the student is in the document.",
-      "Dialogue quality is hurt by a spiraling pattern in Turns 4–7 where the tutor keeps adding micro-definition questions (lifetime vs recent migrant, total vs per-capita, which BPS publication) without consolidating prior decisions into a usable checklist and advancing to actual data collection.",
-      "Communication quality is consistently impacted by response length: nearly every turn contains 3–5 numbered sub-questions plus a 'Next step' block, which is denser than needed and reduces the student's space to think between prompts. This is a pattern-level issue rather than isolated turns.",
-      "Assignment anchoring is strong throughout; the tutor consistently ties discussion back to the Geographic and Demographic Data Table requirements and the DKI Jakarta scope decision. Tone is supportive and appropriate across all turns."
-    ],
-    "total_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic discipline throughout: it never gives direct answers or near-submission-ready content, consistently returning questions to the student and guiding them to derive their own decisions (scope boundary, GRDP variable choices, demographic proxies). No deductions apply under 1.1 or 1.2.",
+      "The tutor builds well on correct student progress (e.g., affirming the DKI Jakarta choice, the BPS/GRDP decision, the harga berlaku reasoning) and does not misdiagnose confusion, so 1.2 remains at full marks.",
+      "Meta-learning (1.3) is the main weakness: the tutor never explains why it is asking questions rather than giving answers (no rationale for its guided approach), and at no point prompts the student to reflect on what strategies or thinking shifts worked, missing transfer-learning opportunities.",
+      "Dialogue quality (2.1, 2.2) is strong: the tutor advances the conversation progressively without redundant loops and keeps the student anchored to the actual assignment tasks throughout.",
+      "Communication quality suffers under 3.1: nearly every turn is a multi-paragraph, multi-question block. Given that the student repeatedly expressed being overwhelmed or lost, shorter, more focused prompts would have been more appropriate. Response length consistently reduces student opportunity to think and respond in a targeted way. Tone and framing remain supportive and non-grading throughout, so 3.2 is full marks.",
+      "1.3.B (process/method feedback) is left undeducted: the tutor does provide method-level guidance (decision rules, consistency checks, citation structure) even if it does not explicitly label these as transferable skills."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

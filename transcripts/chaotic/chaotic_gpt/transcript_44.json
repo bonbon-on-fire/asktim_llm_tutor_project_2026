@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave procedural help and next steps, but did not prompt any brief reflection on why the sourcing/citation method was safer or how to transfer it to the rest of the table.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,23 +117,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,46 +137,31 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to provide submission-ready numbers/citations or invented sources, maintaining student ownership while offering fast, concrete workflows (search terms, what to look for, and what to report back).",
-      "Guidance stayed anchored to the assignment fields (Jakarta/DKI scope, GRDP vs national GDP, ethnicity vs proxy demographics, Köppen not addressed because student didn’t ask), and scaffolding progressed toward an actionable plan: student retrieves titles/metadata, drafts citations, tutor checks consistency.",
-      "Communication was clear and well-structured (numbered steps, specific questions), with a supportive tone and explicit academic integrity rationale when the student requested fabricated data."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently avoided doing the assignment for the student, refused fabricated or paste-ready data, and stayed tightly anchored to the actual table requirements.",
+      "Guidance was scaffolded and practical: the tutor narrowed city definitions, distinguished GRDP from national GDP, suggested official-source workflows, and provided citation templates without inventing source details.",
+      "Communication stayed concise, clear, and supportive despite repeated student pressure to bypass the work.",
+      "The main missed opportunity was meta-learning transfer: the tutor did not explicitly ask the student to reflect on why the source-validation/citation process worked or how to reuse it for the remaining fields."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

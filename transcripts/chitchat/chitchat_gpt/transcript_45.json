@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -89,30 +89,25 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
+                  8,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student asked about burnout, the tutor refused and redirected without a learning- or ownership-based rationale (it reads policy/role-based: “I can’t help… need to keep us on the assignment”), missing a chance to briefly explain why staying on-task (or doing smaller steps) supports progress.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave strong process coaching, but after student improvements it kept advancing the task without prompting brief reflection on why the ranking/distinction method worked or how to reuse it.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy-consistency issues beyond the specific meta-learning deduction.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +117,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Tutor maintained strong on-task anchoring and forward motion; no extra dialogue-flow penalty warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,56 +136,31 @@
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "Student signaled burnout/deadline stress; tutor’s response was rigid and did not adapt tone to the student’s emotional state, giving a blunt refusal without supportive framing before redirecting.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Overall clarity and structure were strong; no additional catch-all communication penalty beyond the tone deduction.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery (questions, distinctions between hazard/impact, evidence hooks, anchors for the 1–10 scale) and avoided producing a submission-ready table for the student.",
-      "Scaffolding was strong: the tutor moved from city selection → stressor differentiation → metric/source planning → bucketed severity → numeric ratings → justification structure.",
-      "Main weakness was affect/metadata handling when the student raised burnout (turn 4): the tutor redirected, but without supportive tone or a brief pedagogical rationale for staying on task."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently used guided discovery: it asked the student to choose the city, define distinct stressors, set rating anchors, and draft justifications rather than supplying submission-ready content.",
+      "Scaffolding was strong and well-sequenced, with repeated efforts to prevent overlap, distinguish hazard/impact/exposure, and anchor ratings in evidence and source types.",
+      "The only clear gap was limited reflection/transfer support: after successful revisions, the tutor mostly moved straight to the next task step instead of prompting the student to articulate what method they had learned and how to reuse it."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

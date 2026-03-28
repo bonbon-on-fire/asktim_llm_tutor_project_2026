@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -92,27 +92,21 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student explicitly asked for help turning their view into the requested items, the tutor refused to 'fill those items in' but did not clearly explain the learning/tutoring rationale for sticking to guided completion (ownership/skill-building) beyond offering a template.",
+                "reason": "The tutor refuses to fill in the outline items ('I can’t fill those items in for you') but does not explain the learning rationale for that constraint; it simply imposes the limit and moves to a template.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +116,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,46 +136,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery: elicited the student's one-sentence act-consequentialist rule, then pushed for case-by-case application and consistency checks rather than supplying verdicts or prose the student could submit.",
-      "Strong scaffolding: the tutor identified and resolved the student's inconsistency about bracketing vs using downstream effects, and helped operationalize a criterion for when long-run effects count.",
-      "Main weakness: when refusing to 'fill in' the mapping bullets, the tutor offered a template but did not explicitly state the learning rationale for why the student should supply the substantive bullets (meta-pedagogical explanation)."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently uses guided discovery: it asks the student to articulate a rule, test it across cases, resolve tensions, and map claims back to the prompt rather than supplying a submission-ready answer.",
+      "Scaffolding is strong and assignment-focused throughout, especially in helping the student turn a general consequentialist view into conditions, case applications, and a stress-test objection.",
+      "The only clear deduction is meta-level framing: when the tutor withholds direct completion of the student's outline, it does not explicitly explain the learning rationale for that limit. I considered the Fuel-case refusal as a possible issue, but the tutor there gives an accuracy-based reason and avoids inventing facts, so I did not deduct further."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

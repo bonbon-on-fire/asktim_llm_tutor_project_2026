@@ -68,4 +68,4 @@ msg = get_next_student_message(
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
-| `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
+| `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`). |

@@ -71,22 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  5,
+                  6,
+                  8,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provides a near-complete paragraph that can be copied with only bracket-fill edits, which functions as a mostly complete plug-and-play forum post template rather than guided discovery.",
-                "points": 8
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "Across turns, the tutor supplied a near-complete forum paragraph, sentence content for the blanks, and guidance on which Miami-specific choices to use, leaving only tiny edits/fill-ins and making the response effectively near submission-ready.",
+                "points": 12
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -98,30 +102,25 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor moves to final completion steps (adding two clauses) without prompting brief reflection on what reasoning/selection method worked or changed in the student's thinking.",
-                "points": 1
+                "reason": "After the student settled on consistent choices, the tutor checked consistency and moved to final polishing without prompting reflection on why that selection method worked or how to reuse it on future actor-mapping tasks.",
+                "points": 2
               }
             ],
             "score": 4,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -131,23 +130,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -157,46 +150,29 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor appropriately refuses repeated requests to write a ready-to-submit post and generally uses structured prompts and scaffolding to keep student ownership.",
-      "However, the near-complete paragraph template (with only bracket substitutions) is close to a copyable final product, reducing the need for student-generated writing and triggering a major pedagogy deduction.",
-      "Scaffolding, anchoring to the assignment buckets (leading/engaged/missing), and tone are strong; reflection/transfer was only lightly emphasized at the end."
-    ],
-    "total_score": 38,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Major deduction: although the tutor repeatedly refused to write the post outright, it ultimately provided a nearly complete Miami paragraph template plus specific content choices that, together across turns, came very close to submission-ready work.",
+      "Otherwise, the tutor stayed anchored to the assignment, built on the student's selections step by step, and maintained a supportive, non-grading tone."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

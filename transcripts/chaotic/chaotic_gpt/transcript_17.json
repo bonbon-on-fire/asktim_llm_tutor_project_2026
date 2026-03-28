@@ -71,13 +71,22 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied the main candidate 'right general account' options (rights/constraints, means vs. side-effect, doing vs. allowing) before the student generated alternatives, narrowing the core idea space for the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,34 +95,18 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor refused to provide a submission-ready thesis/outline but gave limited pedagogical rationale; the refusal was framed mainly as 'I can't/I'm not going to' and 'that's me doing the core writing,' without clearly explaining the learning benefit/ownership rationale for guided questioning under deadline pressure.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
+            "deductions": [],
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 18,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -123,23 +116,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -149,46 +136,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently avoided providing a submission-ready thesis/outline and instead used guided questions, templates with substantive blanks, and consistency checks (e.g., counterfactual tests, plan-dependence) that kept student ownership of the central claims.",
-      "Scaffolding was strong: the tutor built from the student's chosen maximand and principle, helped repair potential inconsistencies, and repeatedly prompted the student to apply definitions across Switch/Fuel/Blood/Footbridge and then reconnect to act consequentialism.",
-      "Main gap: when refusing direct answers (especially under deadline pressure), the tutor gave only limited explicit learning-rationale for why guided discovery/ownership matters, beyond policy-like statements about not doing the core writing."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Tutor was generally strong on interactive scaffolding: it refused paste-ready writing, kept the discussion anchored to the MIT OCW prompt, and repeatedly asked the student to apply a principle across Fuel, Blood, Switch, and Footbridge.",
+      "Main deduction: the tutor introduced the central menu of possible replacement principles itself in Turn 3, which reduced student-generated discovery on the assignment's key argumentative choice.",
+      "I did not deduct for near-submission-ready writing because the tutor mostly used templates, checks, and prompts rather than giving a full thesis, full outline, or polished final prose."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

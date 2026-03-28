@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student provided solid exposure/mechanism descriptions and proposed ratings with reasoning. The tutor's response immediately asks for more specificity (concrete recurrence indicators, sector tags, double-counting avoidance) without first briefly acknowledging or validating the quality of the student's reasoning before pushing further. While not egregious, the tutor skips a short diagnostic check and jumps to a multi-part demand, slightly missing the opportunity to locate exactly where the student's understanding was weakest before piling on four sub-questions.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student pushes back (Turn 4, Turn 10), the tutor simply refuses without explaining the pedagogical benefit of doing the work themselves.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it declines to write content for the student (e.g., active reasoning, skill development). It simply says 'I can't' without a learning rationale.",
                 "points": 2
               },
               {
@@ -126,131 +117,92 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the strategies used (e.g., anchoring ratings to indicators, distinguishing chronic vs. acute stressors, avoiding double-counting) to future assignments or transferable analytical skills. All coaching remains tightly bound to the current Miami stressors table.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never pauses to help the student reflect on what their thinking process has improved or why particular methods (e.g., anchoring to indicators, separating acute vs. chronic hazards) worked. It moves forward each time without consolidating method-level learning.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor maintained consistent Socratic guidance throughout and the deductions above cover the primary gaps.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turn 5, the student submitted revised bullets. In Turn 6, the tutor's response largely restates the same structural requirements (bullet 1 = indicator, bullet 2 = who/where, bullet 3 = worsening mechanism) that were already given in Turn 3 and Turn 5, before asking the student to revise again. This creates a single-turn redundancy where the tutor re-explains the same three-bullet structure rather than moving directly to the new content (sector tags, priority, remaining stressors).",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond the single-turn redundancy already captured.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   3,
+                  4,
                   5,
                   6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably Turns 3, 5, 6, and 8) are multi-part, multi-paragraph responses that ask 4–5 sub-questions simultaneously. While each question is individually useful, the cumulative length and density of simultaneous demands consistently reduces the student's opportunity to think and respond to one thing at a time. Turn 5 in particular asks the student to revise bullets AND answer sector tags AND decide on double-counting AND confirm ratings all at once.",
-                "points": 2
+                "reason": "Multiple tutor turns contain dense multi-part numbered lists (4–5 sub-questions at once) when shorter, more focused prompts would have preserved more student thinking space. Turns 3, 4, 5, 6, 7, and 8 each pile on several simultaneous questions rather than checking one thing at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The response length issue is already captured in 3.1.A.a.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to do the student's work for them across all 10 turns, maintaining strong Socratic discipline even under direct pressure (Turns 4 and 10). The student was guided to generate their own stressor list, propose their own ratings, draft their own bullets, and refine their own reasoning — all core assignment tasks.",
-      "Scaffolding was generally strong: the tutor built progressively from stressor identification → exposure/mechanism → indicator selection → bullet drafting → sector tagging → priority logic → table integration. The student's work visibly improved from Turn 3 to Turn 6.",
-      "The main pedagogy gap is in meta-learning: the tutor never explained why it uses guided questioning (1.3.A.b), and never helped the student transfer the analytical strategies (indicator anchoring, chronic vs. acute distinction, double-counting avoidance) to future assignments (1.3.D.b). When the student pushed back in Turns 4 and 10, the tutor simply declined without connecting the refusal to learning rationale.",
-      "A minor scaffolding concern: in Turn 3, the tutor piled on four sub-questions immediately after the student gave solid exposure/mechanism answers, without a brief diagnostic check to locate the weakest point first (1.2.B.a).",
-      "Dialogue quality was mostly clean. One single-turn redundancy occurred in Turn 6, where the tutor re-explained the three-bullet structure already established in prior turns before moving to new content.",
-      "Communication was clear and well-structured, but several turns (3, 5, 6, 8) contained 4–5 simultaneous sub-questions in multi-paragraph blocks, which consistently reduced the student's cognitive space to respond to one thing at a time. This pattern across multiple turns triggers the 3.1.A.a deduction.",
-      "Tone was consistently warm, encouraging, and appropriately adapted to the student's casual register. No grading language was used. Assignment anchoring was maintained throughout."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor successfully avoided doing the assignment for the student throughout the conversation, consistently redirecting requests for paste-ready content and using Socratic questioning to develop the student's reasoning step-by-step. This is the strongest aspect of the session.",
+      "Scaffolding and progression were handled well: the tutor built on each student response, acknowledged correct work, and advanced logically from exposures/mechanisms to indicators, sector tags, and priority rules without reverting to scratch.",
+      "Assignment anchoring was solid; the tutor kept the student focused on the stressors table format and did not allow off-topic drift.",
+      "The main weaknesses are in meta-learning: the tutor never explained why it was declining to write content (no learning rationale offered), and it never prompted the student to reflect on what their thinking process had improved—it simply moved to the next step each time.",
+      "Communication was consistently overloaded: nearly every tutor turn listed 4–5 numbered sub-questions simultaneously, reducing the student's opportunity to think through one issue before the next arrived. Shorter, more focused prompts would have improved interactivity.",
+      "No tone or grading issues were observed; the tutor maintained a coaching framing throughout."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

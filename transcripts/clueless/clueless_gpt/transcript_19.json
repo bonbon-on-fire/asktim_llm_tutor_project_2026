@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,27 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states it cannot fill in the table for the student but does not explain the learning rationale for that limit beyond immediately moving into task guidance.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,81 +116,62 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  1,
+                  2,
+                  4,
+                  8
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The initial reply is information-dense with a long multi-part checklist and could be tightened into fewer, more immediately actionable questions (especially before the student has provided the city/boundary).",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly uses long, multi-part replies with several questions and bullet points where a shorter, more focused interactive step would likely have been clearer and lighter for the student.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently maintained student ownership: refused to fill the table, asked boundary/definition questions, and coached source selection via decision rules, checklists, and replicability expectations.",
-      "Strong scaffolding and assignment anchoring: guided the student from boundary choice to credible source types, fallback indicators (without mislabeling), and defensible Notes/definitions tied to the table requirements.",
-      "Only minor communication issue: the first tutor turn was somewhat long and could have been split into fewer immediate questions to reduce cognitive load."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly assignment-focused, scaffolded the student's boundary/source decisions well, and consistently pushed the student to justify choices rather than doing the table for them.",
+      "Main weaknesses were communication efficiency and meta-framing: replies were often overlong with many simultaneous prompts, and the initial refusal to complete the work did not explicitly explain the learning rationale.",
+      "No stronger pedagogy deduction was applied because, despite occasional concrete suggestions, the tutor generally kept the key reasoning and final source selection with the student."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

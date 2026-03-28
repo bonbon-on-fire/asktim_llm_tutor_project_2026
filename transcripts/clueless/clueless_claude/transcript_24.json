@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "In Turn 3, the tutor provides a full 'generic usual suspects' list of actor types (10 rows with labels and descriptions) that substantially pre-selects the evidence categories for the student. While framed as 'types not a copyable Jakarta list,' the list is detailed enough that the student can directly map it without doing the analytical work of identifying which actor types are relevant to Jakarta's specific levers.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation, the tutor never explicitly explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The tutor does refuse to give templates/stems but does not articulate the pedagogical rationale for doing so.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Throughout the conversation the tutor enforces its limits (e.g., 'I can't give you sample wording to reuse,' 'I can't lay out the likely actors in a way you can copy') but never explains the learning rationale—why doing the work themselves builds skills, supports long-term analytical development, or why active reasoning matters. The constraint is enforced without any pedagogical explanation.",
                 "points": 2
               },
               {
@@ -126,67 +117,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the actor-mapping methodology to future tasks or other cities. All advice remains tightly tied to Jakarta and this specific assignment. No reusable method patterns are articulated (e.g., 'this decision-lever approach works for any urban governance analysis').",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The Turn 4 demo table (8 hypothetical actor rows with roles and power descriptions) edges close to providing a structural scaffold the student can directly copy, even though it is labeled hypothetical. This is a mild additional pedagogy concern not fully captured by 1.1.C.c, which focused on the actor-type list in Turn 3. Deducting 1 point.",
-          "score": 1,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycles through the same pattern of 'I can't give you that, but here are guiding questions' across Turns 3–7 without meaningfully advancing the student's position. The student keeps asking for templates/examples and the tutor keeps redirecting with similar diagnostic questions. By Turn 7, the conversation has not substantially progressed beyond where it was in Turn 3 on the core actor-identification problem.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never invites the student to reflect on what changed in their thinking, why a particular approach worked, or what method insights they can transfer to future work. The conversation moves from confusion to clarification on specific sub-questions, but there is no metacognitive prompt at any point to consolidate learning or reinforce process choices.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality issues beyond those already captured in 2.1.A.a. The tutor maintains consistent assignment anchoring and does not drift off-topic.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -195,62 +161,46 @@
                   1,
                   2,
                   3,
-                  4
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1–4 are consistently long multi-part responses with multiple sub-questions, bullet lists, and explanatory sections. Turn 1 alone contains three numbered guiding questions plus a multi-bullet 'missing' framework plus a closing prompt. Turn 3 provides a 10-item actor-type list plus a 3-question follow-up. These responses reduce the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Multiple early turns (1–5 especially) feature multi-paragraph responses with layered guidance, typological lists, demo tables, and multiple sub-questions presented simultaneously. Turns 1 and 3 in particular combine conceptual framing, categorization frameworks, and several follow-up questions into very long blocks, reducing the student's space to think and respond before the next layer arrives. While the length decreases somewhat later, the pattern in the early half of the conversation is consistently over-long relative to the interactive step needed.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality issues beyond those captured in 3.1.A.a. Responses are clear and well-structured despite being long.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 34,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong assignment anchoring throughout and consistently refuses to write the student's forum post or provide copy-paste templates, which is commendable. Tone is supportive and the participation-ladder framework introduced in Turn 9 is a genuinely useful pedagogical tool.",
-      "The primary pedagogy deduction (1.1.C.c, -6 pts) is for the Turn 3 'usual suspects' actor-type list, which pre-selects the analytical categories the student should have derived independently. While labeled as generic types rather than a Jakarta-specific answer, the list is detailed enough (10 rows with role labels) to substantially reduce the student's analytical work.",
-      "The Turn 4 hypothetical demo table (8 rows with roles and power descriptions) also edges toward providing a structural scaffold the student can copy, contributing to the 1.4 malus deduction.",
-      "Meta-learning (1.3) suffers because the tutor never explains why it uses guided questioning rather than direct answers when the student expresses frustration, and never generalizes the decision-lever methodology to future tasks beyond this specific assignment.",
-      "Dialogue quality is penalized for repetitive spiraling (2.1.A.a): across Turns 3–7, the tutor repeatedly uses the same 'I can't give you that, but here are questions' pattern without meaningfully advancing the student's position or switching to a consolidation/reframing strategy.",
-      "Communication quality is penalized for consistently long, multi-part responses in Turns 1–4 that reduce student thinking space. Later turns (7–10) are more appropriately concise.",
-      "Scaffolding (1.2) is strong: the tutor consistently builds on student progress, acknowledges correct reasoning (e.g., validating the two-national-rows decision in Turn 9), and adapts questions to the student's evolving understanding."
-    ],
-    "total_score": 33,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a strong Socratic approach throughout, consistently refusing to write the student's content (sample wording, filled tables, actor lists) and redirecting toward the student's own reasoning with targeted follow-up questions. This earns full marks on 1.1.",
+      "Scaffolding is solid: the tutor builds on the student's answers across turns, separates the granularity question from the 'missing' question, and introduces the participation ladder progressively. No deductions warranted for 1.2.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains why it refuses to give direct answers (no learning rationale), and never prompts reflection on what the student's thinking process revealed or how the method can transfer. Two deductions applied here.",
+      "Dialogue quality is strong. The tutor redirects the student's requests for copyable templates without engaging with off-topic content substantively, and keeps the conversation anchored to the assignment. No deductions for 2.1 or 2.2.",
+      "Communication quality is the other main weakness: early turns (1–5) consistently deliver dense, multi-paragraph replies with stacked frameworks and multiple simultaneous questions, reducing the student's cognitive space. Later turns are more focused, but the early pattern is clear enough to warrant a deduction under 3.1.A.a. Tone is consistently warm, non-evaluative, and supportive throughout."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

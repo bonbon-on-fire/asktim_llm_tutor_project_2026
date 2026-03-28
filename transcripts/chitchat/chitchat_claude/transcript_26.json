@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -88,33 +88,47 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The tutoring rationale is implicit at best.",
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it uses Socratic questioning or guided discovery rather than providing answers, leaving the student without a rationale for the pedagogical approach.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not generalize the reasoning strategies (e.g., stress-testing principles, distinguishing means vs. side-effects) beyond this specific assignment. No transfer to future philosophical tasks is encouraged.",
-                "points": 1
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular refinement of their principle worked better. The conversation ends without any metacognitive consolidation.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided discovery and built on student progress.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,85 +138,66 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring and avoided redundancy throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  3,
                   4,
+                  5,
                   6,
-                  8
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (e.g., turns 4, 6, 8) contain three-part multi-question responses where one or two focused prompts would have been more appropriate. The consistent pattern of asking 3 sub-questions per turn reduces the student's opportunity to think and respond to each point before moving on.",
-                "points": 2
+                "reason": "Throughout the conversation the tutor consistently poses 2–3 multi-part sub-questions per turn, resulting in lengthy multi-paragraph replies when shorter, single-focused prompts would have been more appropriate and given the student more space to think before being directed to the next issue.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the response length issue already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic method throughout, consistently refusing to give direct answers and instead guiding the student through progressive refinement of their principle across all 10 turns.",
-      "Assignment anchoring was excellent: off-topic requests (movie, dinner) were immediately and briefly redirected without engagement, and the conversation stayed tightly focused on the Lecture 13 cases.",
-      "Scaffolding was well-executed: the tutor built on each student response, acknowledged correct progress (e.g., 'Good—your test captures the act consequentialist core'), and advanced the student's thinking incrementally from basic act consequentialism to a nuanced deontological principle.",
-      "The main weakness is the consistent pattern of posing 3 sub-questions per turn (turns 3, 4, 5, 6, 7, 8, 10), which reduces interactivity and can overwhelm the student. A more bite-sized approach with 1-2 focused questions would have been more pedagogically effective.",
-      "Meta-learning was partially present (process feedback was given) but the tutor never explained why guided questioning is used rather than direct answers, and did not help the student transfer the reasoning strategies to future philosophical tasks.",
-      "Tone was consistently warm, encouraging, and appropriately adapted to the student's casual register without being unprofessional."
-    ],
-    "total_score": 42,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor does an excellent job of maintaining Socratic guided discovery throughout the conversation: it never gives the final principle or conclusion for the student, instead pressing the student to refine and stress-test their own formulations across multiple turns. Assignment anchoring is strong—off-topic requests (movie, dinner) are deflected quickly and cleanly.",
+      "Scaffolding is solid: the tutor consistently builds on whatever the student has just offered (e.g., picking up 'using as a means,' then 'Loop,' then 'coercive control') rather than restarting.",
+      "The main weaknesses are: (1) Meta-learning — the tutor never explains why it is asking questions rather than simply answering (1.3.A.a, -2pts), and never pauses to help the student reflect on what their iterative refinements reveal about philosophical method (1.3.D.a, -2pts). (2) Response length — nearly every tutor turn contains 2–3 numbered sub-questions in multi-paragraph blocks, which reduces the student's opportunity to engage with one idea before being pushed to the next (3.1.A.a, -4pts). These issues are real but do not undermine the fundamentally sound pedagogical approach."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

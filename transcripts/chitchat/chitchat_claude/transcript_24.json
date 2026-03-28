@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 7, the student asks a direct question about whether 'renters/tenant orgs' is defensible and asks the tutor to 'suggest how to connect that to climate resilience.' The tutor correctly refuses to bless it, but rather than first asking a short diagnostic question to locate exactly where the student's uncertainty lies (is it about the plan's framing? the actor category? the connection logic?), the tutor immediately launches into a three-part structured prompt. This is a minor instance of jumping to a structured response before diagnosing the specific confusion point.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation, the tutor consistently guides the student using Socratic questioning but never explicitly explains why this approach benefits the student's learning (e.g., why producing one's own wording matters, how active reasoning improves retention, or why the tutor is asking questions rather than confirming answers). The tutor says 'I'm not going to confirm it for you—use evidence to prove it' but does not connect this to a learning rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces a no-answer/no-confirmation policy throughout (e.g., 'I'm not going to confirm it for you,' 'Don't ask me to bless it') but never explicitly explains the pedagogical rationale—i.e., that the student will build stronger reasoning skills by deriving answers independently. The constraint is applied but not given a learning-oriented justification.",
                 "points": 2
               },
               {
@@ -126,28 +117,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the evidence-evaluation and actor-mapping methodology to future tasks. No generalizable strategy is articulated (e.g., 'this approach to identifying missing actors from plan documents applies to any policy analysis'). All coaching remains tightly tied to the current Miami assignment.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently moves forward to the next task without ever prompting the student to reflect on what changed in their thinking, why a method worked, or what they learned from refining their claims. No turn encourages meta-reflection on the process.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor maintained strong Socratic discipline throughout and consistently pushed student ownership. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,88 +142,65 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor redirected off-topic attempts cleanly and kept the conversation well-anchored to the assignment deliverable throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
                   6,
-                  7
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses multi-part structured prompts (3–4 numbered sub-questions per turn) across many turns. While each question is purposeful, the cumulative length of responses in Turns 2, 3, 4, 5, 6, and 7 consistently exceeds what a single focused interactive step would require. This pattern reduces the student's opportunity to respond incrementally and think between steps, as the student is repeatedly given 3–4 things to address simultaneously.",
-                "points": 2
+                "reason": "Several tutor turns contain multi-part, multi-paragraph numbered question lists (turns 3, 4, 5, 7 each contain 3–4 sub-questions plus follow-up prompts) when shorter, more focused single-step prompts would have allowed the student more room to think and respond incrementally. The pattern is consistent enough across the conversation to constitute a repeated issue.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part prompt pattern is already captured in 3.1.A.a. No additional communication quality gaps beyond those already deducted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout the conversation, consistently refusing to confirm answers, give direct recommendations, or do the student's reasoning work. Off-topic attempts (Turns 1 and 2) were redirected cleanly and efficiently without engaging the distraction.",
-      "The tutor's guided questioning was well-structured and evidence-focused, pushing the student to derive conclusions from the Miami Forever Carbon Neutral plan rather than accepting the tutor's interpretations. The 'missing actors' scaffolding in Turns 5–7 was particularly strong, teaching the student to distinguish documented evidence from inference.",
-      "A minor scaffolding deduction (1.2.B.a) was applied for Turn 7, where the tutor jumped to a structured multi-part prompt without first asking a short diagnostic question to locate the student's specific confusion about the renters/tenant orgs framing.",
-      "Meta-learning gaps were noted: the tutor never explained the pedagogical rationale for guided questioning (1.3.A.b) and never helped the student generalize the evidence-evaluation methodology to future tasks (1.3.D.b). These were consistent omissions across the full conversation.",
-      "The main communication deduction (3.1.A.a) reflects a consistent pattern of multi-part prompts (3–4 numbered sub-questions per turn) across Turns 2–7. While each question was purposeful and well-targeted, the cumulative length of responses repeatedly exceeded what a single focused interactive step would require, reducing the student's opportunity for incremental thinking between steps.",
-      "No issues were found with assignment anchoring, redundancy/spiraling, tone, or formatting. The tutor maintained appropriate formative framing throughout."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor does strong work on Socratic method and guided discovery: it refuses to do the student's reasoning for them, consistently redirects off-topic bids, and scaffolds progressively from city selection through evidence-gathering and claim construction. No near-submission-ready content is given, no key reasoning steps are resolved for the student, and assignment anchoring is maintained throughout.",
+      "The main pedagogical weakness is in meta-learning (1.3): the tutor applies a 'no-confirming' policy but never explains why—e.g., that working through evidence independently builds transferable analytical skill. Similarly, no turn prompts reflection on what the student's thinking process produced or how their approach improved across turns.",
+      "On communication quality, the tutor's responses are frequently long and multi-part (4-question numbered lists in turns 3, 4, 5, 7) where shorter, sequenced prompts would better preserve student cognitive space. This is a recurring pattern that warrants the 3.1 deduction.",
+      "Tone is consistently supportive-but-firm without being punitive; the tutor never assigns grades. Scaffolding builds cleanly on student progress (e.g., the transition from city selection to lead-actor identification to missing-actors documentation). No spiraling or redundancy is observed."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

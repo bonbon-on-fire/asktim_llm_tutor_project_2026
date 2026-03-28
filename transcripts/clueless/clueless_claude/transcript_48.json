@@ -71,27 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6
+                  2
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In turns 5–6, the student says wifi is spotty and they haven't yet retrieved sources, but the tutor continues asking for two named partners and specific org names rather than first diagnosing whether the student understands what counts as a 'named partner' vs. a category. The tutor jumps to requesting specific evidence outputs before checking whether the student's conceptual confusion (e.g., conflating county government with non-gov partners) is resolved. Turn 6 then has to correct the Miami-Dade misclassification, suggesting a diagnostic question earlier would have been more efficient.",
-                "points": 2
+                "reason": "In Turn 2, after the student said they didn't know who counts as non-government actors, the tutor immediately provides a structured four-category breakdown (utilities, universities, private sector, community/advocacy) with named examples (UM, FIU, FPL). Rather than asking a diagnostic question first to find out what the student already knew or had encountered, the tutor gives a full category dump, reducing the student's opportunity to reason independently.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it is guiding them through questions rather than providing direct answers, nor does it explain how this process of building evidence-based reasoning improves learning or retention. When the student explicitly tries to get templates or generic lists, the tutor declines but only says 'that's writing for you' without connecting this to any learning rationale or skill-building benefit.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the entire conversation, the tutor enforces its tutoring constraints (refusing to give template sentences, refusing generic lists, asking the student to find sources themselves) but never explicitly explains the learning rationale—e.g., that the student is developing independent research and argumentation skills, or that finding their own evidence is what builds lasting competency. The student even anticipates and tests the tutor's limits without receiving a pedagogical explanation for why they matter.",
                 "points": 2
               },
               {
@@ -119,69 +118,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student generalize the actor-mapping methodology to future assignments or other cities. The conversation ends without any transfer prompt—e.g., how this stakeholder-identification process applies to other urban sustainability contexts or future course assignments.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently maintained Socratic questioning and never gave away answers, so no further malus is warranted.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycles through the same pattern across many turns: 'give me bullet fragments / named actors / specific sources.' While each turn adds a small increment, the overall loop of 'name a specific org → student guesses → tutor asks for more specificity' repeats without meaningful consolidation or synthesis until turn 9. The student's wifi/source problem is acknowledged but the same request structure recurs without reframing or a consolidation checkpoint that would break the cycle.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "By Turns 9–10 the student has made genuine progress (distinguishing county from city, identifying multiple actor types, understanding evidence-based claims). The tutor moves forward with next steps but never prompts the student to reflect on what changed in their thinking or why the process of distinguishing guesses from verified facts matters. No transfer-supporting reflection is offered.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repetitive loop was already captured in 2.1.A.a. No additional dialogue quality gaps beyond those already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -189,67 +161,47 @@
                 "evidence_turns": [
                   1,
                   2,
+                  3,
                   4,
-                  5,
-                  7,
-                  8,
-                  9,
-                  10
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor consistently uses multi-part responses with numbered sub-questions (often 3–4 items per turn) when shorter, more focused prompts would have been more appropriate. Nearly every tutor turn contains multiple numbered questions plus a summary of what to reply with, creating high cognitive load and reducing the student's opportunity to think through one thing at a time. This pattern is consistent across the majority of turns.",
-                "points": 2
+                "reason": "Multiple early turns feature multi-paragraph responses that combine explanations, numbered sub-questions, and follow-up prompts simultaneously. For example, Turn 1 gives a 3-part post outline plus two follow-up questions; Turn 2 gives a 4-category breakdown plus an additional directive. This consistently reduces the student's opportunity to think before receiving further guidance.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part response pattern was already captured in 3.1.A.a. No additional communication quality gaps beyond those already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it never gave away answers, consistently refused templates, and kept the student doing the reasoning work. No deductions were warranted under 1.1.",
-      "Under 1.2, a 2-point deduction was applied because the tutor missed a diagnostic opportunity in turns 5–6. The student's wifi excuse and continued guessing suggested a conceptual confusion (gov vs. non-gov actors) that a short clarifying question could have surfaced earlier, rather than continuing to request specific named sources the student couldn't yet retrieve.",
-      "Under 1.3, the tutor lost 2 points for never explaining the pedagogical rationale for guided questioning (1.3.A.b) and 1 point for not helping the student transfer the actor-mapping methodology to future tasks (1.3.D.b). The tutor did provide process-level feedback and actionable next steps, so 1.3.B and 1.3.C were not penalized.",
-      "Under 2.1, a 2-point deduction was applied for a repetitive loop across turns 3–9 where the same 'name a specific org / find a source' pattern recurred without a consolidation checkpoint. The tutor did eventually synthesize in turn 9, but the loop ran longer than necessary given the student's stated access constraints.",
-      "Under 2.2, the tutor maintained strong assignment anchoring throughout, consistently tying discussion back to the three-part forum post structure and the actor-table deliverable. No deductions.",
-      "Under 3.1, a 2-point deduction was applied for consistently long, multi-part responses (often 3–4 numbered sub-questions per turn) when shorter, more focused prompts would have been more appropriate for a student who was already showing signs of being overwhelmed. The clarity of individual responses was good, so 3.1.C was not penalized.",
-      "Tone was consistently warm, encouraging, and appropriately calibrated to the student's casual register and frustration signals. No deductions under 3.2 or 3.3."
-    ],
-    "total_score": 38,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains strong Socratic discipline throughout: it refuses to write for the student, withholds template sentences, pushes for specific evidence, and guides the student from vague impressions to a defensible draft forum post through progressive questioning. No near-submission-ready content or idea generation in place of the student is observed, so 1.1 retains full marks.",
+      "The primary pedagogy deduction (1.2) is for a single instance in Turn 2 where the tutor provides a full four-category non-government actor taxonomy with named examples rather than first diagnosing what the student already knew. This reduces the scaffolding score by 3.",
+      "Meta-learning deductions (1.3) are applied for two gaps: the tutor never articulates the learning rationale behind its constraints (2 pts), and it misses the opportunity at the close of the conversation to prompt the student to reflect on their thinking progress (2 pts). Method-level feedback is generally present so 1.3.B is not penalized.",
+      "Dialogue quality is largely clean: the tutor advances the conversation each turn, re-grounds the student appropriately (e.g., pointing out Miami-Dade is government in Turn 6), and there is no off-topic drift.",
+      "Communication quality loses 4 points for consistently long, multi-part responses in early turns (Turns 1–5) that front-load information and reduce student think-time. Tone is consistently supportive and non-evaluative, so 3.2 is not penalized."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

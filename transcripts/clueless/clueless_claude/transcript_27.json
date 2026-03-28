@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9
-                ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In turn 9, the tutor provides a fill-in-the-blank template with substantive content already written ('no consistent city-level GDP / GDP is commonly published at metro scale', 'regional economic context', 'labeled separately from city-only metrics'). The student only needs to swap in a few specifics; the core reasoning and phrasing are already supplied. This crosses into providing a mostly-complete answer frame.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it is guiding rather than giving direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student repeatedly asks for direct answers (turns 3, 4, 6, 7, 9), the tutor declines but does not articulate the learning rationale behind guided discovery.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces a 'no direct answers' policy throughout (e.g., Turn 4: 'I can't give you a copy-ready table') but never explains to the student why—no mention of active learning, skill-building, or pedagogical rationale.",
                 "points": 2
               },
               {
@@ -126,67 +117,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the strategies learned (e.g., how to evaluate source credibility, how to handle geography mismatches in data tables) to future assignments or tasks. All advice remains tightly tied to the current Miami data table.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The fill-in-the-blank template in turn 9 was already penalized under 1.1.B.d. No additional uncaptured pedagogy consistency gaps are evident beyond what was already deducted.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same boundary-choice question across turns 2, 3, and 4 without meaningful synthesis or consolidation. The student repeatedly says they don't know, and the tutor keeps re-asking variants of the same question (city vs. county vs. metro) without reframing or simplifying the approach. Similarly, the year-rule question is revisited across turns 5 and 6 with the same pattern. The conversation spirals on these sub-points without a clear consolidation step.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what they have learned or how their thinking changed across turns. The conversation ends without any consolidation, summary reflection, or transfer prompt.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling on boundary choice was already captured in 2.1.A.a. No additional uncaptured dialogue flow issues are evident.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -196,62 +162,45 @@
                   3,
                   4,
                   5,
-                  6,
-                  8
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-paragraph responses with several sub-questions, bullet lists, and explanatory sections when shorter, more focused prompts would have been more appropriate. For example, turns 2, 3, 4, and 5 each contain extensive explanatory content plus multiple questions, reducing the student's opportunity to think and respond incrementally. This pattern is consistent across the conversation.",
-                "points": 2
+                "reason": "Multiple turns contain lengthy multi-paragraph responses with numbered sub-sections, bullet lists, and embedded 'quick guides' when shorter, focused prompts would have been more appropriate. For example, Turns 2, 3, 4, and 6 each include extensive explanatory blocks before posing a question, consistently reducing the student's opportunity to think independently.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The response length issue was already captured in 3.1.A.a. No additional uncaptured communication quality gaps are evident.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 32,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong assignment anchoring throughout, consistently redirecting the student back to the data table task and its specific requirements. Scaffolding and progression are generally sound: the tutor builds on student responses, acknowledges partial progress, and moves the conversation forward step by step.",
-      "The most significant deduction is under 1.1.B.d (fill-in template): in turn 9, the tutor provides a nearly complete sentence template with substantive content already filled in, leaving the student only minor substitution work. This crosses the line from coaching into providing a mostly-complete answer, triggering the 8-point deduction.",
-      "Meta-learning is weak: the tutor never explains why it guides rather than gives direct answers (missing the learning rationale), and never helps the student transfer strategies to future tasks. These are consistent omissions across the full conversation.",
-      "Dialogue quality suffers from spiraling on the boundary-choice question across turns 2–4 and the year-rule question across turns 5–6. The tutor re-asks similar questions without consolidating or reframing when the student repeatedly says they don't know, triggering the 2.1.A.a deduction.",
-      "Communication quality is affected by consistently long, multi-part responses throughout the conversation. While the content is clear and well-structured, the tutor frequently delivers multi-paragraph replies with multiple sub-questions when shorter, more focused prompts would better support student thinking.",
-      "Tone is warm and supportive throughout, and the tutor appropriately declines to do the assignment for the student while remaining encouraging. No grading stance issues were observed."
-    ],
-    "total_score": 32,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic discipline throughout, consistently refusing to do the assignment for the student and redirecting each request for direct answers into structured guiding questions. The boundary/geography scaffolding across Turns 2–4, the year-rule discussion in Turns 5–6, and the GDP footnote coaching in Turns 8–10 all reflect genuine guided discovery.",
+      "No deductions were applied under 1.1 because the tutor never gives submission-ready content, never rewrites student text into final form, and the fill-in-the-blank structure in Turn 9 is appropriately non-final.",
+      "Deductions were applied under 1.3 for two reasons: (a) the tutor's 'no direct answers' policy is enforced but never explained in terms of learning rationale (1.3.A.a), and (b) the conversation closes in Turn 10 without any metacognitive reflection prompt asking the student what they now understand differently or how they would approach a similar task (1.3.D.a). No method-level feedback deduction was taken for 1.3.B because the tutor does comment on process quality (e.g., labeling, transparency, source credibility).",
+      "Under 3.1, a 4-point deduction was applied because several responses (especially Turns 2, 3, 4, 6) are structured as long, multi-part monologues with extensive explanatory material before a question is posed. This pattern consistently reduces the student's cognitive space to respond and think. The student's repeated 'idk / can u just tell me' reactions may partly reflect information overload from these dense turns.",
+      "No deductions were applied under 2.1, 2.2, or 3.2. The tutor progressively advances topics, maintains assignment focus, avoids off-topic engagement, and sustains a warm yet professional tone throughout."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

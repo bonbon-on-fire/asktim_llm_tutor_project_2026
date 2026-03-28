@@ -1,0 +1,103 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [
+            {
+              "evidence_turns": [2, 3, 6, 8, 10],
+              "sub_criterion_id": "1.1.C.b",
+              "reason": "Tutor provided sector categorizations for all five stressors (turn 2), justification 'kernels' summarizing the reasoning for each stressor (turn 3), two complete digit-set options reducing the rating task to a binary choice (turn 6), and near-complete sentence shells with only 2-4 blank words remaining (turns 8 and 10). While the tutor never delivered a single paste-ready table, across these turns the tutor built the evidence-to-conclusion bridge for each stressor, doing the key reasoning step of connecting signals to ratings and justifications. Ambiguity note: this is borderline with 1.1.A.a (answer pieces across turns becoming submission-ready), but the student was still required to make choices and fill blanks, so the smaller deduction is applied.",
+              "points": 6
+            }
+          ],
+          "score": 6,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [4, 7],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor missed opportunities to prompt reflection on method. After turn 4, when the student proposed ratings and the tutor challenged their consistency, the tutor could have asked the student to reflect on why comparison-based ranking helped them make decisions. After turn 7, when the student selected Option 1, the tutor moved directly to justification writing without asking the student to briefly reflect on how choosing between constrained options clarified their thinking. No reflection prompts appear anywhere in the conversation.",
+              "points": 2
+            }
+          ],
+          "score": 4,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 16,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [
+            {
+              "evidence_turns": [2, 5, 8],
+              "sub_criterion_id": "3.1.A.a",
+              "reason": "Tutor repeatedly used long multi-paragraph responses when shorter interactive steps were more appropriate. Turn 2 laid out a full 5-stressor template with sector labels, rating blanks, and multi-line justification prompts for each -- a single modeled example would have been more interactive. Turn 5 delivered a lengthy explanation of two rating patterns plus evidence guidance plus a request, when one focused question would have moved the student forward. Turn 8 provided five detailed sentence templates with bracketed fill-ins when one example sentence would have demonstrated the pattern. These lengthy responses reduced the student's opportunity to engage incrementally.",
+              "points": 4
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 6,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 34,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor maintained firm boundaries against direct-answer requests across all 10 turns, consistently refusing to produce paste-ready text despite escalating pressure from the chaotic student -- a strong core performance.",
+    "Deducted 6 under 1.1.C.b: while no single turn delivered a finished table, the tutor incrementally provided sector categorizations (turn 2), justification kernels (turn 3), constrained digit-set options (turn 6), and near-complete sentence shells (turns 8/10), collectively doing significant reasoning work. Borderline with 1.1.A.a; smaller deduction applied per ambiguity rule.",
+    "Deducted 4 under 3.1.A.a: turns 2, 5, and 8 were notably long multi-paragraph responses that front-loaded all five stressors at once rather than modeling one example interactively -- reducing student opportunity for incremental engagement.",
+    "Deducted 2 under 1.3.D.a: no reflection prompts appeared in the conversation; after the student proposed ratings (turn 4) and selected an option (turn 7), the tutor moved on without asking the student to reflect on what the comparison or selection process revealed about their reasoning.",
+    "No deduction under 2.1 despite turns 8-10 appearing repetitive: the tutor progressively simplified its scaffold across those turns (detailed templates to micro-sentence shells), representing genuine strategy iteration rather than pure repetition."
+  ],
+  "total_score": 34,
+  "judge_llm_calls": 1
+}

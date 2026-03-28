@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 3, when the student says they're blanking on concrete examples, the tutor provides 2 illustrative examples for each of the three actors (state, FPL, HOAs) before the student attempts to reason through them. While framed as illustrative, the tutor reveals the 'decision' concept with concrete content before the student tries to derive it, reducing student ownership of the reasoning step.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -110,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it uses guided questioning rather than giving direct answers. When the student asks for examples (Turn 3) or direct guidance (Turn 6), the tutor provides them without explaining the pedagogical rationale for the Socratic approach or the learning benefit of the student doing their own reasoning.",
+                "reason": "The tutor never explains why it is guiding rather than simply answering, nor does it articulate any learning rationale (e.g., 'I want you to work through this so you develop the skill of identifying actors'). Constraints on direct answers are enforced silently.",
                 "points": 2
               },
               {
@@ -119,87 +110,41 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation (Turns 9-10), when the student arrives at a solid working hypothesis, the tutor does not prompt reflection on what changed in the student's thinking or why the three-role framework helped. No process reflection is encouraged.",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the actor-classification method (propose/approve/implement framework, leading vs. engaged distinction) to other actors they still need to analyze for their table. The advice remains tied to FPL/grid hardening only.",
-                "points": 1
+                "reason": "At the end of Turn 10, when the student has arrived at a defensible conclusion, the tutor moves to final checks rather than prompting any reflection on what changed in the student's thinking or what method helped them reach the classification.",
+                "points": 2
               }
             ],
-            "score": 1,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 13,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently applies the three-question framework (decide/implement/influence) but never reinforces it as a reusable method the student should internalize. The conversation ends without the student being reminded to apply this same framework to the other actors in their table (state government, HOAs, community advocates, etc.). This is a missed pedagogy consistency issue not fully captured above.",
-          "score": 1,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Turns 4-6 spend three consecutive exchanges on the narrow sub-topic of how to find a PSC filing. While responsive to student questions, the tutor could have consolidated the search guidance more efficiently rather than extending the search methodology discussion across three turns.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.2.D.a",
-                "reason": "The assignment requires mapping multiple actor types (government, private sector, academics, community advocates, affected residents) and identifying gaps in participation. From Turn 4 onward, the conversation focuses almost exclusively on FPL and grid hardening. The tutor never redirects to the broader assignment scope—other actor types, the 'missing actors' column, or the forum discussion requirement about which sectors are most active and where gaps exist.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The conversation never circles back to the full actors table scope. The student ends the conversation having only worked through one actor (FPL) in one workstream, with no guidance on how to proceed with the remaining required actor types or the 'missing actors' analysis. This represents a weak progression flow not fully captured in 2.2.",
-          "score": 1,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -207,61 +152,47 @@
                 "evidence_turns": [
                   2,
                   3,
-                  6
+                  5,
+                  6,
+                  8
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 2 asks three sub-questions for each of three actors (nine total questions), which is more than a student can productively engage with at once. Turn 3 provides two examples for each of three actors before the student has tried any reasoning. Turn 6 provides a long list of document title types when a shorter, prioritized list would suffice. Each of these turns could be sharper.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Multiple turns (especially 2, 3, 5, 6, 8) contain multi-paragraph replies with several sub-questions, illustrative examples, and multi-step search ladders when a single focused prompt would have been more interactive. The length repeatedly reduces the student's cognitive space to respond.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond what was captured in 3.1.B.a. The tutor's use of bullet points, numbered lists, and clear headers is generally effective throughout.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 33,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic intent throughout, consistently asking the student to reason through each step rather than providing final answers. The three-role framework (propose/approve/implement) introduced in Turn 8 is a particularly effective scaffolding move.",
-      "The most significant deduction is in 1.1 (6 points) for Turn 3, where the tutor provides two concrete illustrative examples for each of three actors before the student attempts to reason through them. While framed as illustrative, this reduces student ownership of the key reasoning step. The rubric's 1.1.C.a criterion applies because the tutor states the key idea (what counts as a 'decision') with concrete content before the student tries to derive it.",
-      "Meta-learning (1.3) is weak: the tutor never explains its pedagogical rationale for guided questioning, misses reflection opportunities at the end of the conversation, and does not help the student transfer the actor-classification framework to other actors in their table.",
-      "Assignment anchoring (2.2) suffers from a significant scope drift: from Turn 4 onward, the conversation focuses exclusively on FPL/grid hardening, never returning to the full assignment requirement of mapping multiple actor types and identifying gaps in participation.",
-      "Communication quality is generally good with clear structure and supportive tone. Minor deductions for some turns being longer than necessary (Turns 2, 3, 6).",
-      "The 1.1 deduction of 6 points reflects 1.1.C.a (tutor gives conclusion/examples before student reasoning) applied once for the Turn 3 pattern. The rubric states 'Remove 6 points if any one is triggered' for the 1.1.C category."
-    ],
-    "total_score": 31,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it consistently withholds direct answers, uses a repeated decision-test framework (propose/approve/implement), and builds progressively from actor definition to evidence sourcing to classification, never writing the student's table for them.",
+      "Scaffolding is well-executed: the tutor builds on each student response, acknowledges correct partial reasoning (Turn 9: 'solid working hypothesis'), and avoids restarting from scratch.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never articulates why it is guiding instead of answering, and does not prompt the student to reflect on what worked in their reasoning process at the end of the conversation.",
+      "Communication is the other notable weakness: several turns (2, 3, 5, 6, 8) are densely packed with multiple sub-questions, step ladders, and illustrative lists. While substantively accurate, the length in those turns reduces student think-and-respond space and would benefit from tighter, one-prompt-at-a-time delivery.",
+      "No issues with assignment anchoring or tone: the tutor keeps the conversation squarely on the actors table task and maintains an encouraging, non-evaluative voice throughout."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

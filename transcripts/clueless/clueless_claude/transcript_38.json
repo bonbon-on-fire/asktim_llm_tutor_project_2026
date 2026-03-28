@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 9, the tutor provides a complete model set of anchors (3/7/10) with full wording before the student has attempted to reason through what those anchors should be. Although framed as 'illustrative,' the student explicitly asked for an example and the tutor supplied the full conceptual structure, reducing the student's reasoning work. This is a mild instance of giving the conclusion before student reasoning.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -110,7 +101,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it uses guided questioning rather than giving direct answers. When the student expresses frustration or uncertainty (e.g., 'idk', 'i'm stuck', 'can u give me an example'), the tutor continues the Socratic approach without explaining the learning rationale behind it.",
+                "reason": "The tutor never explains why it is asking the student to do reasoning work rather than simply providing answers—it enforces a guided-discovery approach throughout but never offers any rationale about active learning or long-term skill development to the student.",
                 "points": 2
               },
               {
@@ -126,126 +117,92 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the rating/evidence methodology to other stressors or future assignments. All coaching remains tied to the specific tidal flooding stressor without generalizing the approach.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends at turn 10 with the student still gathering evidence. The tutor never pauses to prompt reflection on the student's thinking process—e.g., what changed in their understanding of 'stressor vs. impact,' or what they learned about evidence-based rating. There is no reinforcement of method choices after improvements.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The 1.1.C.a deduction of 6 points for Turn 9 may be too harsh given the student explicitly requested an example and the tutor framed it as illustrative. However, across the conversation the tutor does consistently provide structured frameworks (cause-effect chains, 2-part evidence chains, sector tagging rules) that reduce student reasoning load in ways not fully captured elsewhere. A small additional deduction is warranted.",
-          "score": 1,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Across Turns 4-6, the tutor repeatedly asks the student to find/provide evidence sources (NOAA tide gauge, city report, map/link) without the student ever producing them. The tutor keeps asking for the same type of deliverable across multiple turns without consolidating or adjusting the ask.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deductions warranted beyond what was already captured in 2.1.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   4,
-                  8
+                  5,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 4 contains multiple sub-questions (2-part evidence chain explanation + 3 rapid-fire diagnostic questions + instruction to write rating and 2 evidence items), making it somewhat dense. Turn 8 similarly packs a framework introduction plus a 3-dimension rating system plus an anchor-writing task. These are single-turn concision misses rather than a pattern.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns contain multi-paragraph blocks with multiple sub-questions posed simultaneously (e.g., turns 4, 5, 7, 8, 9, 10). While individually each turn is substantive, the consistent pattern of presenting multiple layered questions and explanation blocks before the student can respond reduces the student's opportunity to think independently. Turn 1 alone contains a full explanation, a checklist, an example, and an open question.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deductions warranted beyond what was already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong assignment anchoring and consistent Socratic questioning throughout the 10-turn conversation, never giving direct assignment answers and always returning to Miami-specific evidence and the stressors table task.",
-      "The primary deduction is in 1.1 (6 points under 1.1.C.a) for Turn 9, where the tutor provides a complete model anchor set (3/7/10) with full wording before the student attempts to reason through the scale. While the student explicitly requested an example and the tutor framed it as illustrative, this still reduces the student's reasoning ownership on a key conceptual task. This deduction may be somewhat aggressive given the explicit student request, but the rubric criterion applies.",
-      "Meta-learning (1.3) is weak: the tutor never explains the rationale for guided questioning when the student expresses frustration, and never helps transfer the methodology to other stressors or future assignments.",
-      "Dialogue quality is strong with minor redundancy in repeatedly requesting evidence sources (Turns 4-6) without the student producing them.",
-      "Communication quality is generally good with minor density issues in Turns 4 and 8 where multiple sub-questions are stacked.",
-      "Tone is consistently warm and supportive, adapting well to the student's casual register and expressed uncertainty."
-    ],
-    "total_score": 35,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it never provides final answers or does the student's reasoning work, consistently uses diagnostic questions, builds on the student's own correct steps (e.g., validating the cause→effect chain in turns 2–3), and advances the task progressively across all 10 turns. No deductions are warranted under 1.1 or 1.2.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains to the student why it is guiding rather than telling (1.3.A.a, -2 pts), and it never invites the student to reflect on what their thinking has clarified across the conversation (1.3.D.a, -2 pts). The 1.3.B process-feedback criterion is borderline—the tutor does give method-level direction (evidence chain, anchor methodology)—so no deduction was applied there.",
+      "Dialogue quality is excellent: the tutor stays tightly anchored to the assignment throughout, redirects productively when the student drifts (e.g., sector-tagging in turns 7–8), and avoids repetition by advancing the conversation at each step.",
+      "Communication quality has a consistent length/pacing issue (3.1.A.a, -4 pts): most tutor turns present multi-paragraph responses with multiple simultaneous sub-questions, reducing the student's cognitive space to respond. This is a recurring pattern, not an isolated instance, so the full 4-point deduction applies.",
+      "Tone is warm, non-evaluative, and appropriately supportive throughout; no deductions apply under 3.2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

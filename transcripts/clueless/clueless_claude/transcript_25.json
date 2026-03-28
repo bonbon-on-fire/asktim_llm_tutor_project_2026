@@ -71,26 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  1
                 ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the student says they are blanking on Fuel/Blood. Rather than asking a short diagnostic question to locate exactly what the student does or doesn't remember, the tutor immediately launches into a three-part structural reconstruction exercise. While the approach is creative, it skips a brief check ('Do you have your notes? Can you recall any names or actions?') that would have better located the confusion before diving into a full sub-exercise.",
-                "points": 2
+                "sub_criterion_id": "1.2.A.a",
+                "reason": "In Turn 1, the tutor poses five sub-questions at once without first checking what the student already knows or building incrementally on any prior student answer. The student had indicated confusion, but the tutor jumped to a wide scaffolding dump rather than starting from a single diagnosed gap.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,16 +109,12 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation the tutor never explains to the student why it is guiding rather than telling—why the student's own reasoning matters for learning and retention. When the student expresses frustration or confusion (Turns 9, 10), the tutor declines to give answers but does not articulate the pedagogical rationale (e.g., 'working through this yourself builds the skill you'll need on the exam/essay').",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently avoids giving answers but never explains to the student why it is doing so (e.g., it never says 'I'm asking you to work this out because active reasoning builds the skill you'll need for the essay'). In Turn 9, when the student explicitly asks for the content, the tutor says 'I can't tell you what to put' without offering a learning-rationale for that constraint.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -126,66 +122,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the reasoning method to future tasks. There is no moment where the tutor says 'this framework—identify the theory's decision rule, apply it, then stress-test with intuitions—is how you should approach any normative ethics question.' The coaching stays entirely tied to the specific trolley/Fuel/Blood cases.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor maintained strong Socratic discipline throughout, and the deductions already captured the main gaps (no meta-learning rationale, no transfer coaching). The 1.2 deduction was a single-turn miss, not a pattern.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The Fuel/Blood confusion recurs across Turns 2, 3, 9, and 10 without meaningful resolution. The tutor keeps probing structurally (Turns 2–3) and then asking the student to look up notes (Turns 9–10), but the student remains stuck in the same place each time. By Turn 10 the tutor is still asking the same 'find your notes' prompt it gave in Turn 9, with no reframing, no consolidation, and no pivot to a different strategy (e.g., offering to work with a generic placeholder case). The conversation spirals on this sub-point without progress.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never pauses to prompt the student to reflect on what changed in their thinking or why a particular move worked. After the student develops the two-part rule in Turns 6-8, the tutor immediately pushes to the next task without reinforcing or asking the student to articulate what the progression taught them.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling on Fuel/Blood was already captured in 2.1.A.a. No additional catch-all deduction is warranted; the rest of the dialogue progressed well and stayed anchored to the assignment.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -194,77 +166,43 @@
                   1
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 1 is a five-part question block (questions 1–5 plus a closing instruction) delivered to a student who opened by saying they are 'kinda lost.' This is a long monologue-style response where one or two focused prompts would have been more appropriate for a confused student. The length reduces the student's opportunity to engage meaningfully with any single idea before being asked to address the next.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 8 asks the student to produce a four-case verdict table plus a reason plus a one-sentence account in a single response. While the content is appropriate, the response could have been split into two shorter steps (e.g., verdicts first, then the account), reducing cognitive load.",
-                "points": 1
+                "reason": "Turn 1 is a five-part multi-paragraph monologue delivered to a student who said they were lost. The length and number of simultaneous sub-questions reduced the student's opportunity to engage one idea at a time; a single focused prompt would have been more appropriate at this juncture.",
+                "points": 4
               }
             ],
-            "score": 3,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "In Turns 9 and 10 the student explicitly signals confusion and frustration ('Idk how to do that outline tbh,' 'Sorry I'm still super lost rn'). The tutor's tone remains instructional and task-focused without any reassurance, acknowledgment of the student's frustration, or adjustment to a warmer, more supportive register. A brief 'That's okay, let's slow down' would have been appropriate.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 9,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue in Turn 1 and the multi-part ask in Turn 8 were already captured. No additional catch-all deduction is warranted; the remaining turns were generally well-structured and readable.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 35,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it never gave direct answers, consistently asked the student to reason before confirming, and built a coherent progression from the basic act-consequentialist definition through to a two-part alternative principle. No near-submission-ready content was provided.",
-      "The main pedagogy gap is in meta-learning: the tutor never explained why guided questioning is used instead of direct answers (especially when the student was frustrated in Turns 9–10), and never helped the student transfer the analytical method to future ethics questions.",
-      "A single 1.2 deduction was applied for Turn 2, where the tutor launched into a structural reconstruction exercise without first asking a short diagnostic question to locate exactly what the student remembered about Fuel/Blood.",
-      "The Fuel/Blood confusion was never resolved. The tutor's strategy of asking the student to find their notes was reasonable but was repeated without variation across Turns 9 and 10, constituting a spiraling pattern (2.1.A.a).",
-      "Communication quality suffered in Turn 1, where a five-part question block was delivered to a self-described lost student—a length that reduced the student's ability to engage with any single idea. Turn 8 also packed too many simultaneous tasks into one prompt.",
-      "Tone adaptation was missing in Turns 9–10: the student signaled frustration and the tutor remained purely instructional without any reassurance or acknowledgment of the student's emotional state.",
-      "Assignment anchoring was strong throughout; the tutor consistently tied discussion back to the specific cases and the prompt's requirements."
-    ],
-    "total_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintained a genuine Socratic approach throughout: it never gave the student the philosophical conclusions, never rewrote student text, and consistently returned questions to the student even when explicitly asked for answers (Turns 9-10). This is the strongest part of the conversation.",
+      "The primary weakness is the opening turn: the tutor front-loaded five complex sub-questions simultaneously for a visibly confused student, violating both scaffolding progression (1.2) and bite-sized communication norms (3.1). A single diagnostic question would have been more appropriate.",
+      "The tutor also never explained its pedagogical constraints to the student (1.3.A.a). When the student asked for direct answers in Turns 9-10, the tutor correctly declined but gave no rationale for why working it out matters for learning.",
+      "No reflection or transfer moments were created (1.3.D.a): after the student successfully built the two-part rule in Turns 6-8, the tutor moved straight to the next challenge without reinforcing or asking what the student's thinking process had revealed.",
+      "Assignment anchoring was solid: the tutor kept the conversation tied to the specific cases and the broader prompt throughout, and there were no significant off-topic diversions.",
+      "Tone was supportive and non-grading throughout; no redundancy or spiraling was evident—the tutor consistently advanced the conversation even when the student repeated confusion."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

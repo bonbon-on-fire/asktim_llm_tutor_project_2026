@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,163 +79,155 @@
                 "evidence_turns": [
                   3
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 3, the tutor provides a fill-in scaffold with substantive content already written (actor names, category labels, and framing language). The blanks are minimal connectors and examples, making it close to a plug-and-play paragraph structure. While not fully submission-ready, it crosses into 1.1.B territory by providing a mostly complete answer frame.",
-                "points": 8
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 3, the tutor provides a fully structured 4-part fill-in scaffold with all major argument components (leads, engaged actors, missing groups, bottom line) laid out with labels and placeholder prompts. Across Turns 3–6 the tutor progressively fills in the actor names, document names, and even proposes specific wording for the gap claim (Option A/B in Turn 7), until by Turn 8 the student essentially only needs to assemble pre-supplied pieces. The scaffold across turns together constitutes near-submission-ready work where the tutor has supplied all key content elements.",
+                "points": 12
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 7, when the student says they don't have time to look up committees, the tutor immediately provides two pre-written gap-claim options (A and B) for the student to choose from rather than asking a short diagnostic question to understand what the student does know or can quickly verify. This is a jump to solution rather than locating the confusion first.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to write the post but never explains the pedagogical rationale—why guided questioning and student-authored writing leads to better learning outcomes. The refusals sound policy-based ('I can't write it for you') rather than learning-benefit-based. No turn explains why the student's own reasoning and writing matters for retention or skill development.",
+                "reason": "The tutor repeatedly refuses to write the post but does not explain the pedagogical rationale (e.g., that the student develops analytical reasoning, academic integrity, long-term skill-building) beyond implying 'you need to do the writing.' No learning rationale is given for why active drafting matters.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the actor-mapping method to future assignments or broader urban studies work. The conversation stays entirely tied to this specific forum post without any transfer framing.",
-                "points": 1
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts reflection on the student's thinking process or what they are learning about actor mapping methodology. There is no moment where the tutor asks the student to consider why a certain approach to identifying gaps or leads is analytically stronger, or reinforces method choices after the student makes progress.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's repeated provision of sentence starters with substantive content already filled in (Turns 3, 4, 5, 6) creates a pattern where the student's cognitive work is minimal—choosing among pre-written options rather than generating ideas. This pattern of low student ownership across multiple turns was partially captured in 1.1.B.d but the consistency of the pattern across the full conversation warrants an additional catch-all deduction.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
                   3,
                   4,
                   5,
-                  6
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across Turns 3–6, the tutor repeats the same structural move: provide a fill-in scaffold, ask for actor names/evidence, and refuse to write the post. The student keeps asking for the same thing (write it for me) and the tutor keeps responding with the same type of scaffold without meaningfully advancing the student's understanding or changing approach. The conversation spirals on the same refusal-scaffold loop without consolidation or reframing.",
-                "points": 2
+                "reason": "The tutor cycles through the same pattern across nearly every turn: refuse to write, provide a more detailed scaffold/sentence starters, ask for a few more details. The move from Turn 2 through Turn 8 is structurally identical each time—tutor adds more scaffolding without meaningfully advancing the interaction type. The student's repeated refusals to engage never prompt the tutor to fundamentally reframe, consolidate, or change strategy.",
+                "points": 4
               }
             ],
-            "score": 2,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
           "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond what was captured in 2.1.A.a. The tutor maintained strong assignment anchoring throughout and the spiraling was already penalized.",
-          "score": 0,
-          "max": 2
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
+                  3,
                   4,
                   5,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-part responses when shorter, more focused prompts would have been more appropriate. Turn 1 asks three multi-part questions at once. Turn 4 provides a full word-budget outline with three sections. Turn 5 provides an 8-sentence framework with detailed instructions. Turn 6 repeats the 8 sentence starters in full. These consistently long responses reduce the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Multiple turns (2, 3, 4, 5, 6) contain long multi-part responses with elaborate bullet lists, word-count targets, multiple questions, and extensive scaffolds all in one message. This consistently reduces the student's opportunity to think and respond to focused prompts; the tutor keeps piling on new structure rather than waiting for student engagement with simpler prompts.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The length issue was already captured in 3.1.A.a, and clarity/structure were generally adequate throughout.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to write the forum post for the student, which is appropriate, but the method of refusal was problematic: across Turns 3–6, the tutor provided increasingly detailed fill-in scaffolds with substantive content already written (actor names, category labels, sentence starters with key content pre-filled), crossing into 1.1.B.d territory. By Turn 5, the tutor provided an 8-sentence framework with nearly all structural and much substantive content already supplied, leaving the student only to fill minimal blanks.",
-      "The tutor never explained the pedagogical rationale for guided questioning—refusals were framed as policy ('I can't') rather than learning benefit, missing opportunities to build student buy-in and meta-learning awareness.",
-      "A significant spiraling pattern emerged across Turns 3–6 where the tutor repeated the same refusal-scaffold loop without meaningfully changing approach or consolidating progress, despite the student repeatedly requesting the same thing.",
-      "Assignment anchoring was strong throughout—the tutor consistently kept the conversation tied to the specific forum post requirements and actor-mapping task.",
-      "Tone was appropriate and supportive given the student's time pressure and frustration. The tutor adapted well to the student's casual register without being dismissive.",
-      "Response length was consistently too long for the interactive context—multiple turns featured multi-part, multi-section responses when shorter, more focused single questions would have been more pedagogically effective and more likely to elicit student engagement.",
-      "Note on 1.1.B.d deduction: This is a borderline case. The scaffolds stop short of being fully submission-ready (key content blanks remain), but the density of pre-written structure across multiple turns justifies the 8-point deduction under 1.1.B rather than the full 12-point 1.1.A deduction."
-    ],
-    "total_score": 29,
+    "max_score": 46,
+    "total_base_score": 22,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a consistent and commendable stance of refusing to write submission text for the student throughout all 10 turns, and keeps the conversation anchored to the assignment. Tone is supportive and never dismissive.",
+      "However, the most significant deduction is under 1.1: across Turns 3–8, the tutor progressively supplies all the substantive components of the forum post—actor names, document names, sentence starters with blanks for every key claim, and even pre-written gap-claim options (A/B in Turn 7). The cumulative effect is that the student could assemble a near-complete post by simply filling in minimal connective phrases. This constitutes 1.1.A.a (near-submission-ready work built across turns), triggering the full 12-point deduction.",
+      "The dialogue also suffers from persistent structural repetition (2.1.A.a): the tutor's response pattern—refuse, add more scaffold, ask for details—does not meaningfully evolve across nine turns despite the student's repeated non-compliance. No consolidation, reframing, or strategy shift occurs.",
+      "Response length is a recurring issue (3.1.A.a): several turns contain elaborate multi-part outlines, word-count instructions, and layered questions all at once, consistently crowding out student thinking space.",
+      "Meta-learning is weak: the tutor never explains the pedagogical rationale for requiring the student to write (1.3.A.a), and never prompts reflection on what the student is learning about actor-mapping methodology (1.3.D.a). The 1.3.B criterion is not deducted separately to avoid double-penalizing what is already captured under 1.1 and 1.3.D.",
+      "Assignment anchoring and tone are handled well throughout; no deductions are warranted for 2.2 or 3.2."
+    ],
+    "total_score": 22,
     "judge_llm_calls": 1
   }
 }

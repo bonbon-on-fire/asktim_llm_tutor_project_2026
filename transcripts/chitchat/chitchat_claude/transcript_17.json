@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -88,33 +88,25 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is pedagogically valuable or how active reasoning improves retention. When the student says 'it feels like I'm overthinking it,' the tutor redirects but does not explain the learning rationale behind the Socratic approach.",
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends at Turn 10 without any reflection or transfer prompting. The tutor never asks the student to step back and consider what their reasoning process revealed about the limits of act consequentialism or what method they used to pressure-test a principle. The tutor moves immediately to the next argumentative task without consolidating what the student learned.",
                 "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not generalize the means/side-effect distinction or the constraint-testing method to future philosophical tasks. Advice stays tied to the specific trolley/Blood/Fuel cases without prompting transfer to other moral philosophy problems.",
-                "points": 1
               }
             ],
-            "score": 2,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently reinforced method (intention-check questions, pressure-testing constraints) and built on student progress across turns.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,82 +116,54 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps. The tutor redirected off-topic requests promptly and maintained clear progression through the assignment's sub-questions.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 1 tutor response presents four numbered sub-questions at once before the student has engaged at all. While each question is purposeful, the combined length and density of the opening prompt slightly reduces the student's opportunity to think and respond incrementally.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the single-turn concision miss already noted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic method throughout: no direct answers were given, the student was consistently guided to generate their own definitions, case analyses, and constraints. The progression from defining act consequentialism → applying it to cases → identifying intuitive conflicts → formulating and pressure-testing a constraint was well-structured and built on each student contribution.",
-      "Off-topic requests (comfort movie, podcast recommendation) were handled promptly and appropriately, with immediate redirection and a constructive alternative path offered each time.",
-      "The main pedagogy gap is in meta-learning (1.3): the tutor never explained why guided questioning is used rather than direct answers, missing an opportunity when the student expressed frustration ('feels like I'm overthinking it'). Transfer to future tasks was also absent—the means/side-effect method was never framed as a reusable philosophical tool.",
-      "A minor deduction was applied for the opening turn presenting four sub-questions simultaneously, which is slightly dense for a first student engagement, though each question was purposeful and the overall conversation remained interactive.",
-      "No redundancy, anchoring, tone, or formatting issues were identified. The tutor's responses were generally clear, well-structured, and appropriately concise across the ten turns."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic method throughout: it never gives the student answers, consistently uses targeted questions to draw out reasoning, and advances the student's thinking turn by turn from a basic definition of act consequentialism all the way to a nuanced constraint about means vs. side-effects and the loop case.",
+      "Scaffolding is well-executed: the tutor builds on each student contribution (e.g., picking up the student's 'means vs side-effect' intuition in Turn 7 and formalizing it in Turn 8, then pressure-testing it in Turns 8–9).",
+      "Off-topic detours in Turns 2 and 4 are handled cleanly and briefly, with immediate redirection to the task.",
+      "Assignment anchoring is maintained throughout; the tutor keeps the conversation tied to the specific cases from Lecture 13.",
+      "The one deduction is for meta-learning: the tutor never prompts the student to reflect on the reasoning process itself—what method they used, why the pressure-testing approach worked, or what the exercise reveals about how to evaluate moral theories. The conversation ends at Turn 10 with another forward-looking task prompt rather than any consolidation or transfer question.",
+      "Response length is well-calibrated throughout: the tutor uses short, focused multi-part questions rather than long monologues.",
+      "Tone is supportive and appropriately non-grading throughout."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

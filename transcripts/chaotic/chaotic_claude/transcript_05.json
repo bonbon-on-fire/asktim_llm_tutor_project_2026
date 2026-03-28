@@ -71,22 +71,22 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  6
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Turn 2 provides a detailed fill-in template with sector categorizations already completed, ratings blanks, and guiding sub-questions for each stressor. The template is mostly complete—sectors are pre-assigned, structure is pre-built, and the student only needs to insert numbers and a sentence. This is a near plug-and-play paragraph structure with substantive content already filled.",
-                "points": 8
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In turn 6, the tutor presents two complete digit-sets—Option 1: (10,9,9,8,8) and Option 2: (10,9,8,8,7)—which are the core quantitative outputs of the assignment. This reduces the student's reasoning task to a binary pick rather than independent derivation, constituting direct assignment work. Combined with the fully pre-structured sentence templates in turns 8 and 10 that require only 1–2 word fill-ins, the tutor's outputs across turns together constitute near-submission-ready material for the rating and justification steps of the task.",
+                "points": 12
               }
             ],
-            "score": 4,
+            "score": 0,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -99,13 +99,18 @@
               {
                 "evidence_turns": [
                   1,
+                  2,
                   3,
+                  4,
+                  5,
                   6,
+                  7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to do the work but frames it primarily as a constraint ('I can't') rather than explaining the pedagogical rationale—why the student's own reasoning and wording matters for learning. The learning benefit is never articulated across the conversation.",
+                "reason": "The tutor repeatedly declines to help with direct text but never explains the learning rationale—why producing the ratings and justifications independently develops the student's analytical skills or prepares them for later assignments in the course. The constraint is enforced but the pedagogical reason is not articulated.",
                 "points": 2
               },
               {
@@ -121,28 +126,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the stressor-analysis method to future assignments or generalizes the approach (e.g., how to evaluate severity/urgency for any city or any future climate assignment). All guidance stays tightly bound to the immediate task.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends without any moment of reflection on what the student's own reasoning produced or what analytical steps worked. The tutor never prompts the student to consolidate what they learned about Miami's vulnerabilities or how the rating process might apply to later assignments.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor's sector pre-assignments in Turn 2 and the justification 'kernels' in Turn 3 represent additional pedagogy consistency gaps not fully captured above—the tutor repeatedly does interpretive work (sector mapping, evidence framing) that the student should have been guided to do. A 1-point malus is warranted.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
@@ -158,109 +157,73 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "From Turn 3 onward the tutor cycles through the same pattern repeatedly: student asks for paste-ready text, tutor refuses and offers a slightly different template/shell. The same move (refuse + offer fill-in template) repeats across 7 turns without meaningful synthesis, consolidation, or a fundamentally different approach to break the impasse.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.C.a",
-                "reason": "After the student provides frequency/irreversibility criteria in Turn 5, the tutor introduces two named patterns (A/B) without consolidating the prior discussion into a clear takeaway before pivoting to the new framing.",
-                "points": 1
+                "reason": "From turn 3 onward the student repeatedly requests paste-ready text and the tutor repeatedly declines and asks for one more piece of student input. This pattern cycles without meaningful progress or synthesis: the student never engages and the tutor never reframes the impasse (e.g., offering to help the student draft one sentence live, or acknowledging that the session has stalled and suggesting a different approach).",
+                "points": 4
               }
             ],
-            "score": 1,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repetitive refuse-and-template loop across Turns 3–10 represents avoidable dialogue repetition not fully captured by 2.1.A.a alone. The tutor never meaningfully reframes the interaction or tries a genuinely different approach (e.g., asking the student to verbally explain one stressor, then building from that). A 1-point malus is warranted.",
-          "score": 1,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 2 is a very long multi-paragraph response with a full five-stressor template, sub-questions for each stressor, and a closing instruction. Given the student's stated time pressure and the interactive nature of the task, a much shorter, focused prompt would have been more appropriate.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
+                  2,
                   3
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 3 includes five 'justification kernels' in addition to the calibration instructions, adding length beyond what was needed for the immediate goal of getting the student to pick a top stressor.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Turns 2 and 3 are lengthy multi-paragraph responses with fully pre-structured templates for all five stressors, including sector assignments, guiding questions, and fill-in scaffolds. This level of detail exceeds what a short interactive prompt would require and reduces the student's opportunity to think independently before receiving the next batch of information.",
+                "points": 4
               }
             ],
-            "score": 3,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 11,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already captured in 3.1 deductions.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to produce submission-ready text, which is commendable, and maintained appropriate tone and assignment anchoring throughout. However, the primary pedagogy failure is in Turn 2, where the tutor pre-assigned sector categorizations and provided a near-complete five-stressor fill-in template—doing the interpretive and structural work the student was supposed to do. This triggered the 1.1.B.d deduction (8 points).",
-      "From Turn 3 onward, the conversation entered a repetitive loop: the student repeatedly asked for paste-ready text, and the tutor repeatedly refused and offered a slightly different template or shell. This pattern persisted for seven turns without meaningful reframing, consolidating, or a genuinely different pedagogical approach, triggering the 2.1.A.a deduction.",
-      "Meta-learning was weak: the tutor framed refusals as constraints ('I can't') rather than explaining the learning rationale, and never helped the student transfer the stressor-analysis method to future tasks.",
-      "Turn 2 was also notably long given the student's stated time pressure, and Turn 3 added unnecessary justification kernels, triggering length-related deductions under 3.1.",
-      "Tone, assignment anchoring, and formatting were all handled well throughout the conversation."
-    ],
-    "total_score": 28,
+    "max_score": 46,
+    "total_base_score": 22,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently refuses to produce fully written submission text, which reflects genuine boundary-setting, and it does a reasonable job of keeping the conversation anchored to the Miami assignment and maintaining a supportive tone throughout.",
+      "However, in turn 6 the tutor crosses a key line by presenting two complete, ready-to-use digit-sets for all five stressors, reducing the student's core rating task to a binary choice. This, combined with the highly pre-filled sentence templates in turns 2, 8, and 10 (requiring only 1–2 word insertions), collectively constitutes near-submission-ready material for both the rating and justification steps of the assignment. This triggers the full 12-point deduction under 1.1.A.a.",
+      "The dialogue spirals badly from turn 3 onward: the student makes the same request for paste-ready text seven times and the tutor responds with the same refusal-plus-template pattern each time without reframing the situation, consolidating progress, or switching strategy. This earns the full 4-point deduction under 2.1.A.a.",
+      "The tutor never explains to the student why it is asking her to produce her own ratings and justifications—what skill is being developed, or how this table feeds into later assignments. The constraint is enforced but the learning rationale is absent (1.3.A.a). No end-of-session reflection or transfer prompt appears (1.3.D.a).",
+      "Turns 2 and 3 are overlong, pre-structuring all five stressors simultaneously with sector assignments, guiding questions, and fill-in prompts before the student had engaged at all (3.1.A.a). Shorter, more interactive prompts would have been more appropriate.",
+      "No deductions were applied for assignment anchoring, tone, or language complexity, as the tutor remained on-task and respectful throughout."
+    ],
+    "total_score": 22,
     "judge_llm_calls": 1
   }
 }

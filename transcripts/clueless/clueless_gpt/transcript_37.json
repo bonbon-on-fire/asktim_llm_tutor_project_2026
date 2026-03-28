@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,27 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When declining to choose the student's 5–7 stressors, the tutor enforced the boundary by saying otherwise it would be 'doing the table' for the student, but did not explicitly explain the learning rationale for that limitation.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy issues beyond the main criteria; tutor consistently maintained student ownership and method-focused coaching.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,81 +116,50 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Dialogue stayed on-task and moved forward with clear next actions; no extra malus warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 7 bundles many prompts (new scoring rule + three cutoff questions + two applications + instruction to re-check course definition) that could be streamlined into fewer immediate actions.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Overall communication was clear and well-structured; only a minor concision issue already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained strong guided-discovery: elicited student-proposed stressors/ratings, built a defensible rating logic, and avoided doing the table content for the student (notably Turn 9).",
-      "Excellent assignment anchoring and scaffolding: moved from hazards → rating justifications → evidence targets → search queries → sector tagging and de-duplication checks.",
-      "One communication issue: a dense multi-part prompt (Turn 7) risked overload; otherwise clarity and tone were strong."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed closely anchored to the stressors-table task, kept the student doing the substantive reasoning, and scaffolded well through rating logic, evidence standards, search-query design, and overlap checks.",
+      "There was no clear direct completion of the assignment or rewriting into submission-ready text; the tutor consistently redirected the student to propose claims, thresholds, sources, and final row choices.",
+      "Main weakness: the tutor briefly enforced a boundary on not choosing the student's stressors without explicitly stating the broader learning rationale, so a small meta-learning deduction applies."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

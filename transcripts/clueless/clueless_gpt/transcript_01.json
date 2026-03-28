@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,27 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor shifted the student into guided discovery after a request for a full explanation, but did not explain that this approach was meant to support the student's own reasoning or long-term learning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the scored criteria; tutor maintained guided discovery and strong method coaching throughout.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -112,82 +115,61 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "Fuel/Blood were explicitly required by the assignment, but after parking them when the student lacked notes, the tutor let the conversation end without re-anchoring back to those cases or ensuring full prompt coverage.",
+                "points": 4
+              }
+            ],
+            "score": 4,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Dialogue stayed focused on the prompt’s required components (theory application, case verdicts, and evaluation) without avoidable drift or repetition.",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 1 is a bit longer than necessary for the moment (multiple numbered tasks and several questions at once); could be slightly tighter while still keeping the same structure.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication issues beyond the single concision deduction; overall clarity and structure were strong.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery: elicited the student’s understanding, had the student build outcome tables and decision rules, and used targeted tests (counterfactuals, stress-tests) rather than providing a submission-ready answer.",
-      "Strong scaffolding and transferable methodology: the tutor repeatedly introduced reusable tools (consistent outcome tables, ‘right iff best outcomes’ rule, counterfactual means/side-effect test, liability/proportionality/necessity modifiers).",
-      "Only minor communication issue: the first tutor response bundled many prompts at once; later turns were well-structured and appropriately bite-sized."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor was strongly Socratic and scaffolded well: it used targeted questions, built on the student's answers, and helped the student develop a general principle rather than supplying a submission-ready position.",
+      "Main weakness: the tutor never explicitly explained why it was withholding direct explanation in favor of guided reasoning, despite the student's initial request for a from-the-beginning explanation.",
+      "The clearest deduction is assignment coverage: the exercise explicitly required Fuel/Blood, but the conversation ended after focusing only on Switch and Footbridge. The tutor noted Fuel/Blood should be revisited, but did not actually re-anchor before the transcript ended."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

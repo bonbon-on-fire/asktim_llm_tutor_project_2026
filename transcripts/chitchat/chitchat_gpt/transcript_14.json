@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set a constraint on staying on-task and on the student generating the list, but did not explain the learning rationale for those limits.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy issues beyond the scored criteria; tutor consistently maintained student ownership and method focus.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,23 +117,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No extra dialogue-control issues observed; the tutor redirected off-topic content quickly and kept steady progress.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,46 +137,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication issues beyond the scored criteria; structure and clarity were strong throughout.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery: required the student to propose stressors/ratings, then refined via targeted questions (merging overlaps, defining indicators, urgency/equity checks) rather than supplying a copy-ready table.",
-      "Strong scaffolding and assignment anchoring: kept work aligned to the Stressors Table requirements (sectors, 1–10 ratings, evidence justifications, priority logic) and moved from hazards → draft list → merge/metrics → evidence standards.",
-      "Communication was clear and actionable, with well-structured prompts and supportive tone; no repetitive spiraling or off-topic engagement."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently used guided discovery: the student generated the city choice, stressors, ratings, priority logic, evidence standards, and comparison criteria, while the tutor mainly asked targeted questions and refined structure.",
+      "The tutor stayed tightly anchored to the assignment and redirected the initial off-topic prompt immediately without spending time on non-assignment discussion.",
+      "Only a small deduction was applied because the tutor enforced tutoring constraints in the opening turns without explicitly stating the learning rationale; otherwise the conversation showed strong scaffolding, process feedback, and concise interactive pacing."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

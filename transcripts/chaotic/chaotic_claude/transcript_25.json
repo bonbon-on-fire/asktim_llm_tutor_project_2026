@@ -71,36 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  7
+                  8
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 7, the tutor provides a fill-in template with blanks that are mostly complete: the structure, the logical connectives, and the substantive content of each condition are already written. The student only needs to supply a few words per blank. While the tutor frames this as scaffolding, the template is close to a plug-and-play paragraph structure with substantive content already filled in, reducing the student's cognitive work to near-zero.",
-                "points": 8
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 8, the tutor provides lists of specific phrase options for each blank ('intend', 'aim at', 'choose as an end'; 'work', 'succeed', 'achieve the rescue'; etc.), doing the key reasoning work of identifying which philosophical terms are appropriate rather than guiding the student to derive them. This effectively hands the student the vocabulary needed to complete the principle without requiring the student to think through what the terms mean or why they fit.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student says they cannot access lecture notes (Turn 3–4), the tutor correctly declines to invent case setups, but then pivots to the trolley cases without first asking short diagnostic questions to determine what the student actually does know about Fuel/Blood. The tutor jumps to a workaround strategy rather than probing the student's partial knowledge more carefully.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -116,10 +106,11 @@
                   6,
                   7,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation the tutor repeatedly declines to give direct answers but never explains the pedagogical rationale—why guided questioning helps the student learn better, why producing one's own wording matters for retention, or why the tutor's approach benefits the student's long-term skill development. The refusals consistently sound policy-based ('I can't') rather than learning-benefit-based.",
+                "reason": "Throughout the conversation, the tutor refuses to write answers but rarely explains the learning rationale (active reasoning, skill development). Turn 1 briefly says 'help you build your own argument' but this is not repeated or elaborated as a pedagogical principle in subsequent turns where the tutor continues to decline requests.",
                 "points": 2
               },
               {
@@ -135,154 +126,77 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the reasoning strategies used (e.g., the means/side-effect distinction, the counterfactual test) to future philosophical tasks. All coaching remains tightly tied to this specific prompt with no generalizable method patterns offered.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on their own thinking process or what changed in their reasoning. The conversation ends without any reflection on method or consolidation of the student's learning journey.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The template in Turn 7 represents a significant lapse in maintaining Socratic consistency that was not fully captured by 1.1.B.d alone. The tutor's overall pattern of refusing direct answers but then providing near-complete scaffolding in Turn 7 and offering multiple-choice word lists in Turn 8 undermines the pedagogical stance maintained elsewhere. A small additional deduction is warranted for this inconsistency.",
-          "score": 1,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 7–9 cycle on the same micro-task (filling in the principle template) without meaningful progression. The tutor repeats the same type of prompt—'pick from these options'—across three consecutive turns without synthesizing or advancing. The student remains stuck on the same sub-task and the tutor does not reframe or consolidate.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "When the student cannot access Fuel/Blood case details (Turns 3–4), the tutor pivots to trolley cases and a checklist but does not explicitly re-anchor to the assignment's requirement to address Fuel/Blood specifically. The assignment explicitly names these cases, and the tutor's workaround, while practical, is weakly tied to the assignment text.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 7,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond what was already captured in 2.1 and 2.2. The tutor generally maintained assignment focus and the spiraling in Turns 7–9 was already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature multi-part, multi-paragraph responses when shorter, more focused prompts would have been more appropriate. For example, Turn 1 asks three numbered questions plus a meta-instruction; Turn 2 asks four numbered sub-questions; Turn 6 asks three numbered sub-questions plus a formatting directive. This pattern consistently reduces the student's opportunity to think and respond to one thing at a time.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.2.B.a",
-                "reason": "By Turns 7–9 the student is clearly panicking and under time pressure ('I'm literally out of time', 'Ugh ok fine'). The tutor does not adjust tone to acknowledge the student's distress or provide any reassurance. The responses remain procedurally focused without any emotional acknowledgment of the student's stressed state.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
           "score": 10,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The length and tone issues were already captured in 3.1.A.a and 3.2.B.a.",
-          "score": 0,
-          "max": 2
+          "max": 10
         }
       }
     },
-    "total_base_score": 27,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained a consistent refusal to write submission-ready content, which is commendable, but the pedagogical approach was significantly undermined in Turn 7 by providing a near-complete fill-in template that reduced the student's cognitive work to supplying a few words per blank. This triggered the 1.1.B.d deduction of 8 points.",
-      "The tutor never explained the learning rationale behind its guided-questioning approach, making all refusals sound policy-based rather than pedagogy-based (1.3.A.a). Transfer support was also absent throughout (1.3.D.b).",
-      "Turns 7–9 exhibited a repetitive spiral on the same micro-task without meaningful progression or consolidation (2.1.A.a).",
-      "Response length was consistently too long across many turns, with multi-part numbered questions appearing when shorter, more focused prompts would have been more appropriate (3.1.A.a).",
-      "The tutor failed to adapt tone when the student expressed clear distress and time pressure in Turns 7–9 (3.2.B.a).",
-      "Assignment anchoring was generally good, with only a minor miss when the Fuel/Blood pivot in Turns 3–4 was not explicitly re-tied to the assignment's specific case requirements.",
-      "The 1.1.B.d deduction of 8 points is the dominant penalty. There is some ambiguity about whether the template in Turn 7 rises to the full 8-point threshold versus a lesser deduction; however, the template provides the full logical structure and substantive content of each condition, leaving only connector words for the student, which meets the rubric's 'plug-and-play paragraph structures with substantive content filled' criterion."
-    ],
-    "total_score": 26,
+    "max_score": 46,
+    "total_base_score": 36,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently maintained a Socratic stance by refusing to write submission-ready text, redirecting the student to supply their own answers, and using structured scaffolding questions across the conversation.",
+      "A moderate deduction under 1.1 is warranted for Turn 8, where the tutor provided specific lists of candidate phrases for each blank in the principle template. Although the tutor asked the student to 'pick one,' supplying the exact philosophical vocabulary effectively did the key intellectual work of identifying appropriate terminology, partially crossing into 1.1.C.b territory. This was not sufficient to trigger the full 12-point 1.1.A.a deduction (the student still had to assemble and test the principle), but the 6-point 1.1.C.b deduction applies.",
+      "Under 1.3, the tutor rarely explained the pedagogical rationale for withholding direct answers (1.3.A.a), and never prompted the student to reflect on what they had learned or how their thinking evolved (1.3.D.a). There was no method-level feedback on the quality of the student's reasoning process itself, but because 1.3.B was not clearly violated in isolation from the above issues, only the two triggered deductions are recorded.",
+      "Dialogue quality was strong: the tutor kept the conversation anchored to the assignment, progressed the student from consequentialism basics to a worked principle, and avoided repetition without synthesis.",
+      "Communication quality was appropriate: responses were well-structured and concise given the complexity of the task, and tone was supportive and non-punitive throughout."
+    ],
+    "total_score": 36,
     "judge_llm_calls": 1
   }
 }

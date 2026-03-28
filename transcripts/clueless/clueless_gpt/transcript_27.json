@@ -71,22 +71,23 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  9
+                  6,
+                  8
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provided a near plug-and-play, fill-in-the-blank sentence that largely supplies the substantive justification language for the student's notes section (only requiring minor detail insertion).",
-                "points": 8
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor directly resolved key methodological choices—the year-selection rule and whether metro GDP was acceptable—rather than having the student derive and defend those choices first.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,24 +96,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave process guidance but did not prompt reflection on why the chosen transparency method worked or how to transfer it to future source-selection decisions.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy issues beyond the already-deducted copy-ready template element.",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,81 +127,50 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No catch-all dialogue issues; the tutor consistently re-anchored to boundary/year/source constraints and kept forward progress.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One response was somewhat longer than needed (multiple lists and categories at once) when a shorter step plus a single immediate action could have reduced cognitive load.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the single concision deduction.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor generally used guided questioning to help the student decide boundary/year rules, evaluate source credibility, and justify exceptions (GDP), maintaining clear alignment to the assignment.",
-      "Main pedagogy issue: the fill-in-the-blank note in Turn 9 was close to copy-ready wording for a key assignment component, reducing student ownership of phrasing.",
-      "Communication was mostly clear and supportive; one longer turn (Turn 4) could have been more bite-sized."
-    ],
-    "total_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed closely anchored to the assignment, diagnosed the student's source/boundary confusion well, and used clear step-by-step scaffolding without doing the whole table.",
+      "Main deduction: in a few places the tutor chose key methodological answers for the student (especially the year rule and GDP-geometry decision) instead of eliciting the student's reasoning first.",
+      "A smaller deduction was applied for limited reflection/transfer support; otherwise the tone was supportive, interactive, and appropriately non-grading."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -13,7 +13,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from langchain_core.messages import AIMessage, HumanMessage
+from langchain_core.messages import AIMessage, HumanMessage  # pyright: ignore[reportMissingImports]
 
 from students.run_student import build_graph as build_student_graph
 from students.run_student import get_next_student_message, list_personas
@@ -45,11 +45,11 @@ _TUTOR_CALL_MAX_RETRIES = 2
 TUTOR_PROMPTS: list[str] = ["tutor_03"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["clueless_01", "clueless_02", "clueless_03", "clueless_04", "clueless_05", "clueless_06"]
+STUDENT_PERSONAS: list[str] = ["clueless_01"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01"), ("urban_studies", "01"), ("urban_studies", "02"), ("urban_studies", "03")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
 
 # Turn size per conversation (student+tutor exchanges).
 TURN_SIZE: int = 10
@@ -232,7 +232,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
                 break
             except Exception as error:  # noqa: BLE001
                 tutor_error = error
-                if _is_retryable_openai_payload_error(error) and attempt <= _TUTOR_CALL_MAX_RETRIES:
+                if _is_retryable_openai_payload_error(error) and attempt < _TUTOR_CALL_MAX_RETRIES + 1:
                     # Rebuild graph before retrying in case model/client state is corrupted.
                     tutor_graph = create_tutor_graph(system_prompt)
                     print(

@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -80,13 +80,13 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 7, the tutor performs the decisive reasoning step by evaluating all three candidate labels against the student's causal chain and identifying which one 'best cues your rent/investment mechanism,' effectively doing the comparative analysis the student should have done. The student only needed to be given the evaluation criteria and asked to apply them.",
+                "reason": "In turn 7, the tutor explicitly analyzes all three student-generated labels and identifies which one 'best cues your rent/investment mechanism,' effectively resolving the key reasoning step (label selection) for the student by explaining why 'Recurrent tidal flooding rent pressure' passes both tests better than the others. While the tutor nominally asks the student to 'commit,' the evaluative work is already done.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -109,82 +109,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student expresses frustration and asks for plug-and-play examples, the tutor declines but only says it 'would be doing the assignment' without explaining the learning benefit of the student doing the work themselves.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking, why the stressor/vulnerability distinction finally clicked, or how the reasoning process they used could transfer to future rows. The conversation ends with task instructions but no metacognitive reflection.",
                 "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helps the student transfer the stressor-vs-vulnerability distinction or the causal-chain method to future assignments or tasks beyond the current table. No generalizable strategy is articulated.",
-                "points": 1
               }
             ],
-            "score": 2,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "Turn 7 represents a notable lapse in Socratic consistency not fully captured by 1.1.C.b alone: the tutor had already given the student the evaluation criteria in Turn 6 and the student produced three candidates, yet the tutor still performed the full comparative analysis rather than asking the student to apply the criteria themselves. This pattern of doing the reasoning step after scaffolding it is a missed reinforcement opportunity not already penalized elsewhere.",
-          "score": 1,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 5, 6, and 7 cycle repeatedly on the same narrow sub-question of how to label the stressor row. Turn 5 asks the student to write candidate labels; Turn 6 gives a word bank and asks for 2–3 candidates; Turn 7 receives the candidates and evaluates them. The conversation spirals on this minor labeling issue across three turns without meaningful synthesis or advancement, when a single well-structured prompt in Turn 5 could have resolved it.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already penalized in 2.1.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -192,61 +152,48 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4
+                  4,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2, 3, and 4 are consistently multi-paragraph responses with multiple sub-sections, word banks, templates, and guiding questions stacked together. Turn 2 in particular includes a full template, rating quick-rules, and two follow-up prompts in one message. This pattern reduces the student's opportunity to think and respond incrementally and is more appropriate for a reference document than an interactive tutoring exchange.",
-                "points": 2
+                "reason": "Several turns (especially turns 2, 3, 4) contain multi-paragraph responses with multiple embedded sub-questions, word banks, bullet frameworks, and guiding questions simultaneously. This consistently reduces student thinking space and front-loads information rather than checking understanding incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already penalized in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 34,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong assignment anchoring throughout, consistently keeping the student focused on the stressor table task and correctly distinguishing stressors from vulnerabilities. Tone is supportive and appropriate, and the tutor appropriately declines to write the table for the student.",
-      "The primary pedagogy weakness is in Turn 7, where the tutor performs the decisive comparative reasoning step—evaluating all three candidate labels against the causal chain—rather than asking the student to apply the evaluation criteria already provided in Turn 6. This triggers a 1.1.C.b deduction of 6 points.",
-      "A secondary pedagogy issue is the absence of any meta-learning rationale: the tutor never explains why guided questioning is used instead of direct answers (especially when the student is frustrated in Turn 2), and never helps the student transfer the stressor/vulnerability distinction or causal-chain method to future work.",
-      "Dialogue quality suffers from a three-turn spiral (Turns 5–7) on the narrow question of how to label a single table row, which could have been resolved in one well-structured prompt.",
-      "Communication quality is reduced by consistently long, multi-section responses in Turns 2–4 that stack templates, rating rules, and multiple follow-up questions simultaneously, reducing the student's opportunity for incremental thinking.",
-      "A 1-point malus is applied for the Turn 7 pattern of doing the reasoning step after having already scaffolded the evaluation criteria, representing a missed reinforcement opportunity not fully captured by the 1.1.C.b deduction alone."
-    ],
-    "total_score": 33,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong assignment anchoring and consistently avoids doing the student's work outright, refusing multiple requests for plug-and-play examples and redirecting toward student-generated content.",
+      "A significant deduction under 1.1 is warranted at turn 7, where the tutor evaluates all three student-proposed labels in detail, ranks them, and explains which best fits the causal chain—effectively completing the key reasoning step the student was meant to perform independently. This triggers the 1.1.C.b criterion (tutor does the key reasoning step).",
+      "Scaffolding across the conversation is generally strong: the tutor builds on student progress (the causal chain in turn 5 is acknowledged and incorporated in turns 6–7), and the progression from concept-clarification to row-drafting is logical.",
+      "Meta-learning is partially present (the tutor explains rationale for refusing to give answers in turns 1–2 and provides rating heuristics) but the tutor never prompts the student to reflect on their own learning process or what changed in their thinking, triggering a 1.3.D.a deduction.",
+      "Response length is a recurring issue: turns 2, 3, and 4 are notably dense with simultaneous multi-part questions, word banks, template rows, and quick-reference rule sets that reduce student thinking time, triggering the 3.1.A.a deduction.",
+      "Tone is consistently supportive and non-punitive throughout. No grading language is used."
+    ],
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

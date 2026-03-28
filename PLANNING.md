@@ -131,7 +131,7 @@ This section tracks the ongoing restructuring of the codebase. The goal is to ma
 
 | Decision | Detail |
 | -------- | ------ |
-| **Model** | `gpt-5.2` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.2")`. |
+| **Model** | `gpt-5.4` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.4")`. |
 | **API key required** | Every component must have `OPENAI_API_KEY` set. If missing, fail immediately with a clear error. No silent fallbacks, no offline/mock modes. |
 | **No mock/offline modes** | All CLI mock-tutor modes are removed. The system always talks to the real LLM. |
 | **Curriculum will grow** | The `curriculum/` folder will have more courses and exercises added over time. The structure must make adding new content trivial. |
@@ -263,7 +263,7 @@ tutor/
 ### Phase 3: Judge module rework ✦ DECIDED
 
 **Problems:**
-- Model defaulted to `gpt-4o` instead of `gpt-5.2`.
+- Model defaulted to `gpt-4o` instead of `gpt-5.4`.
 - `.env` loaded at import time with a `try/except` fallback — inconsistent with other modules.
 - Pydantic warning suppression duplicated code already in `sitecustomize.py`.
 - `_extract_json_object` was duplicated identically in tutor and judge.
@@ -296,7 +296,7 @@ judge/
     rubric_01.md       — grading rubric (renamed from judge_rubric.md)
 ```
 
-- **Model → `gpt-5.2`** default.
+- **Model → `gpt-5.4`** default.
 - **Removed** `.env` loading and Pydantic warning suppression.
 - **Fail-fast** API key (same `_require_openai_api_key()` pattern).
 - **Judge prompt** moved to `judge/prompts/judge_01.txt` — template with `{rubric}` and `{schema}` placeholders filled at runtime.
@@ -455,3 +455,41 @@ web_ui/
 ### Documentation follow-up (completed)
 
 - Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.
+
+### 03/20/2026 — Batch judging system (completed)
+
+- **Problem**: Need to judge transcript bundles together for comparative analysis experiments.
+- **Solution**: Created parallel batch judge runners that process multiple transcripts in a single LLM call.
+- **Implementation**:
+  - `judge/run_judge_batch_gpt.py` — GPT batch judge for transcript bundles
+  - `judge/run_judge_batch_claude.py` — Claude batch judge for transcript bundles  
+  - `create_batch.py` — Script to generate 198 transcript bundles across 3 experiment types
+  - Batch types with zero overlap within each type:
+    - Type 01 (72 batches): Same persona + same version + same exercise
+    - Type 02 (54 batches): Same persona + same version + different exercise
+    - Type 03 (72 batches): Different persona + same version + same exercise
+  - Batch files stored in `transcripts/batches/batch_##/batch_###.txt`
+  - Individual graded outputs named: `{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
+- **Usage**: `judge_transcript_batch("unused", batch_file_path="transcripts/batches/batch_01/batch_001.txt")`
+- **Benefits**: Enables holistic grading experiments where LLM judges multiple transcripts together for comparative analysis.
+
+### 03/27/2026 — GPT judge known issues
+
+#### Issue 1: GPT judge returning identical perfect scores
+
+- **Symptom**: All GPT-graded transcripts returned 46/46 (or 47/47 for rubric_04) with zero deductions and empty overviews, regardless of transcript content.
+- **Root cause**: GPT-5.2+ returns a list of content blocks including a `ReasoningBlock(type='reasoning')` that has no `.text` attribute. The `_extract_text_from_model_content()` function fell through to `str(item)`, converting the reasoning block into a Python repr string (single-quoted dict) prepended to the actual grade JSON. Then `extract_json_object()` in `utils/parsing.py` found the **first** `{` — which was in the reasoning block's string, not the grade JSON. `ast.literal_eval()` successfully parsed it as `{'id': 'rs_...', 'summary': [], 'type': 'reasoning'}`. This dict was treated as the grade payload: no sections found → empty deductions → max score for every criterion.
+
+#### Issue 2: Stale output files from rubric_04 runs on disk
+
+- **Symptom**: Some `chaotic_gpt/` files showed `max_score=47` and criterion 3.3 ("Formatting and medium") despite running with `--rubric rubric_05` (which has `max_score=46` and no criterion 3.3).
+- **Root cause**: Files were left over from a previous run that used `rubric_04`. Subsequent runs either didn't reach those files (interrupted) or wrote to a different process context (background task). The stale files were never overwritten.
+
+#### Issue 3: Parallel execution race condition
+
+- **Symptom**: When using `--parallel 4`, many transcripts failed with `Transcript not found` errors. Only a handful of files persisted on disk after a "successful" run.
+- **Root cause**: The original parallel implementation copied all 288 raw files upfront in a sequential loop, then submitted all grading tasks to a `ThreadPoolExecutor`. Workers started immediately and tried to read files that hadn't been copied yet (the copy loop was still running for later files).
+
+#### Issue 4: GPT grading leniency
+
+- **Symptom**: GPT-5.2 with `reasoning_effort=medium` gave perfect 46/46 to 43% of transcripts. Claude on the same transcripts ranged 22-42. This is a model/prompt behavior issue, not a code bug.

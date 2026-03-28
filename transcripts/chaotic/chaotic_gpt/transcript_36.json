@@ -71,23 +71,22 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
                   5
                 ],
-                "sub_criterion_id": "1.1.B.b",
-                "reason": "Tutor provided copy-pasteable, assignment-ready content blocks (e.g., population entry with source and a formatted race/ethnicity breakdown plus an overlap note) rather than keeping the work primarily student-generated.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "After the student asked for nicer formatting, the tutor converted rough student-provided race/ethnicity data into a polished table-ready block with finalized labels, percentages, and an overlap note, which is near-ready assignment wording.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -96,24 +95,31 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave strong step-by-step process support, but did not prompt the student to reflect on why the sourcing/verification method worked or how to transfer that method to the rest of the table.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the noted copy-pasteable writing help.",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -123,81 +129,51 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No catch-all dialogue issues observed (good redirection and consistent alignment to task constraints).",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "One response is longer than necessary for the moment; it could have been tightened while still asking the same diagnostic questions and giving the same source pathway.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication-structure issues beyond the single concision miss.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor appropriately refused to complete or fabricate the assignment and repeatedly redirected the student toward verified sources and student ownership.",
-      "Main pedagogy issue: tutor still produced several paste-ready, formatted content blocks (population/source entry and a race/ethnicity block with an explanatory note), reducing guided discovery/ownership.",
-      "Conversation stayed well-anchored to the assignment requirements, with clear sequencing of sources (QuickFacts/BEA/NYC Planning) and effective anti-fabrication guidance."
-    ],
-    "total_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently refused to fabricate or fully complete the assignment, kept the conversation anchored to the actual table task, and used clear source-based scaffolding.",
+      "Main deduction: in Turn 5, the tutor crossed into polished assignment-writing help by formatting the student's raw race/ethnicity information into a near-paste-ready subsection with finalized wording and note.",
+      "A smaller deduction was applied for limited reflection/transfer support: the tutor checked accuracy and process, but did not ask the student to reflect on the method or how to reuse it independently for the remaining categories.",
+      "Evidence for stronger penalties was limited because the tutor generally preserved student responsibility, redirected appropriately, and maintained a supportive non-grading tone."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

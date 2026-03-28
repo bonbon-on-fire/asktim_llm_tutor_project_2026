@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -89,45 +89,35 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student says they are burnt out, the tutor redirects but does not explain why guided questioning is used instead of just giving answers—no learning rationale is offered for the pedagogical approach.",
+                "reason": "In turn 9, the tutor gives pre-filled row data ('Metric: Population / Value: (your number) / Year: 2020 / Source: QuickFacts link / Units: (leave blank or people)') without explaining the learning rationale for why it is scaffolding rather than just doing the work for the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  3,
                   4,
                   5,
-                  6,
-                  7,
                   8,
-                  9,
-                  10
+                  9
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the data-gathering or source-evaluation strategies to future assignments or other cities. All coaching stays tightly bound to the current Chicago table with no transfer framing.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never pauses to ask the student to reflect on what they have learned about how to make methodology decisions (e.g., why the census vs. estimate tradeoff matters for cross-city comparisons, or why standardizing units is good practice). The conversation moves from task to task without any reflection or transfer prompting.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured in 1.3.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -137,82 +127,62 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  5,
+                  9
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 5 asks the student to include four specific items (label, number, URL, access date) and then adds a separate question about the table format. The combined ask is slightly overloaded for a single short reply; splitting into two turns or trimming the checklist would have been sharper.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Turns 5 and 9 include multi-part checklists and pre-filled row templates that go beyond a single focused question, making responses longer than needed. Turn 9 in particular lists a full formatted table row plus a follow-up question about the next data source, reducing the student's opportunity to think independently.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the single-turn concision miss already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it never gave the student the population number, consistently redirected off-topic requests (music, Netflix) with minimal friction, and guided the student through source selection, table design, and unit conventions via targeted questions.",
-      "Scaffolding was well-executed: each turn built on the student's prior answer, conventions were locked in before moving forward, and the tutor correctly diagnosed the student's final stall (Turn 10) with a concrete diagnostic step rather than a lecture.",
-      "The main weakness is in meta-learning (1.3): the tutor never explained why it uses guided questioning rather than direct answers (especially relevant at Turn 1 when the student was burnt out), and it never helped the student transfer the source-evaluation or data-gathering strategies to future assignments or other cities.",
-      "A minor single-turn concision issue appears in Turn 5, where a four-item checklist plus a table-format question slightly overloads one reply.",
-      "No double-penalization was applied; all deductions are grounded in specific transcript evidence."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently used Socratic questioning throughout—it declined to give direct data answers (turns 3, 10), pushed students to make their own methodological choices (turns 3–4, 7–8), and kept the conversation on-task when the student went off-topic (turns 1, 6).",
+      "Scaffolding was well-executed: the tutor built incrementally on the student's choices (city → source → metric selection → format conventions) and acknowledged correct student reasoning before moving forward.",
+      "The main weaknesses are in meta-learning: the tutor never explained its pedagogical constraints (why it won't just give the census number), never prompted the student to reflect on why the choices they made were sound methodology, and missed transfer moments throughout.",
+      "Response length was occasionally excessive: turns 5 and 9 delivered multi-item checklists and pre-filled row templates rather than single focused prompts, reducing the student's reasoning space.",
+      "No issues with tone, grading stance, redundancy, or assignment anchoring were observed."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

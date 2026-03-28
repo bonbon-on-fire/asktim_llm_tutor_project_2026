@@ -71,162 +71,134 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student explicitly asked 'Can you tell me which of these seem off or missing, and which 2–3 you think should be priority.' The tutor responded with probing questions rather than first diagnosing what the student already understood about prioritization. While the questions are good, the tutor did not ask a short diagnostic question to locate the student's confusion before launching into a multi-part probe. However, this is borderline since the student's draft was already detailed and the tutor's questions were targeted. Applying a reduced deduction given ambiguity.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why it is guiding through questions rather than providing direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. There are no moments where the tutor explains the pedagogical rationale for the Socratic approach.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the evidence-evaluation and prioritization methodology to future assignments or other cities. The conversation stays tightly focused on Miami without generalizing the approach (e.g., 'this evidence-threshold method will work for any stressor table').",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deductions warranted beyond what was already captured. The tutor maintained strong Socratic discipline throughout and consistently built on student progress.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
                 "evidence_turns": [
+                  3,
+                  4,
+                  5,
                   6,
                   7,
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The displacement vs. saltwater intrusion comparison cycle runs across Turns 5–10 with a similar pattern: tutor asks student to set an evidence threshold, student does so, tutor asks for the same structure again for the other stressor. By Turn 9–10, the student has essentially resolved the question but the tutor continues asking near-duplicate 'what metric/geography/timeframe' questions without consolidating the comparison into a clear decision or synthesis. The conversation spirals on the displacement evidence question across multiple turns without a consolidation step.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding rather than answering directly (e.g., no mention of building research skills, active reasoning, or long-term analytical development). Constraints are applied implicitly without articulating the learning rationale to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently moves to the next question or next step without pausing to prompt the student to reflect on how their thinking changed or what method worked. For example, after the student successfully develops a selection rule and tests it (turns 5–6), the tutor proceeds directly to next steps without asking the student to articulate what they learned about the reasoning process.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling on displacement evidence was already captured in 2.1.A.a. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   2,
+                  3,
                   4,
                   5,
                   6,
-                  8
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns contain multi-part numbered question lists (3–4 sub-questions per turn) when a single focused prompt would have been more appropriate. For example, Turn 2 asks for top 2 hazards + impact pathways + one stressor per sector + 1–3 combo stressors + ratings + evidence all at once. Turn 4 has three numbered sub-questions. Turn 6 has three numbered sub-questions. This pattern of multi-part prompts recurs across the conversation and reduces the student's opportunity to think and respond to one thing at a time.",
-                "points": 2
+                "reason": "The tutor consistently sends multi-part, multi-paragraph replies with several simultaneous sub-questions and numbered lists. Turns 2, 3, 4, 5, and 6 each contain 3–4 questions plus framing paragraphs, reducing the student's space to respond to one thing at a time. A single focused prompt would have been more appropriate at several points.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part question pattern was already captured in 3.1.A.a. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it never gave the student a list of stressors, never assigned ratings, and consistently returned questions to the student for reasoning and evidence decisions. The student did all the substantive intellectual work.",
-      "The main pedagogy gap is in meta-learning: the tutor never explained why it was guiding rather than answering directly, and never helped the student generalize the evidence-threshold methodology to future tasks or other cities.",
-      "A 1.2.B.a deduction was applied at Turn 3 where the student asked the tutor to identify what was 'off or missing' and which items should be priority—the tutor launched into a multi-part probe without a short diagnostic question to locate the student's specific confusion first. This is borderline and the deduction reflects the ambiguity.",
-      "The displacement vs. saltwater intrusion comparison cycle (Turns 5–10) spiraled without consolidation: the tutor repeatedly asked for the same evidence-threshold structure for each stressor across multiple turns without synthesizing the comparison into a clear decision framework or checkpoint.",
-      "Communication quality was generally strong but the tutor consistently used multi-part numbered question lists (3–4 sub-questions per turn) when a single focused prompt would have been more appropriate, reducing the student's opportunity to think and respond to one thing at a time.",
-      "Assignment anchoring was excellent throughout: the tutor consistently tied discussion back to the Stressors Table requirements and the assignment's evidence/justification expectations."
-    ],
-    "total_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor excels at Socratic method and guided discovery throughout the conversation: it never gives stressors, ratings, or priority lists directly, instead using targeted questions to prompt the student to generate and test their own ideas (turns 2–10). Student progress is consistently acknowledged and built upon (e.g., validating the merge idea in turn 4, affirming the selection-rule approach in turn 6). Assignment anchoring is solid—the tutor redirects the off-topic opener in turn 1 and keeps the session focused on the stressors table.",
+      "The main deductions are: (1) The tutor does not explain its tutoring rationale at any point—it applies a Socratic approach without ever telling the student why it is working this way or what skill the student is building (1.3.A.a, -2). (2) The tutor never invites the student to reflect on how their thinking evolved or what method proved useful, missing multiple natural opportunities after turns 5–6 where the student made clear intellectual progress (1.3.D.a, -2). (3) Response length is a persistent issue: almost every tutor turn contains 3–4 simultaneous numbered questions plus framing prose, which overloads the student and reduces their opportunity to think through one step before the next is introduced (3.1.A.a, -4).",
+      "No deductions were applied for 1.3.B (method feedback) because the tutor does give process-level guidance on evidence standards, indicator selection, and reasoning structure throughout. No deduction for 2.1 (spiraling) because the conversation advances meaningfully each turn. Language is appropriately accessible for the subject matter."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

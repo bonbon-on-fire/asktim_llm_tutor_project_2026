@@ -84,7 +84,7 @@ class TutorState(TypedDict):
 def create_tutor_graph(system_prompt: str):
     """Build and compile the LangGraph for the tutor."""
     model = ChatOpenAI(
-        model=os.environ.get("OPENAI_MODEL", "gpt-5.2"),
+        model=os.environ.get("OPENAI_MODEL", "gpt-5.4"),
         api_key=_require_openai_api_key(),
     )
 

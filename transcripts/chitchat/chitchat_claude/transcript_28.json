@@ -71,60 +71,68 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In turns 9–10, the student says they haven't pulled the CBSA code yet and asks for navigation help. The tutor immediately provides a detailed step-by-step click path rather than first asking a short diagnostic question (e.g., 'Have you opened data.census.gov yet? What do you see?'). This is a minor instance of jumping to explanation before locating the confusion, though it is not egregious.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it uses guided questioning rather than just supplying answers (e.g., when it declines to give the Köppen class code in turn 7). It enforces the constraint well but misses the opportunity to connect the approach to learning benefits.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it won't simply provide answers (e.g., to develop research and critical-thinking skills). It refuses off-topic requests and declines to give the Köppen class but never articulates the pedagogical rationale—only that 'my role is to keep you on the course assignment.'",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not generalize the source-selection and definition-consistency strategies beyond this specific assignment. No transfer language appears (e.g., 'this approach of anchoring on official codes applies whenever you compare metro-level data').",
-                "points": 1
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation concludes without any reflection prompt. The tutor never asks the student to consolidate what they have learned about source selection, definition choices, or the process they followed, nor does it reinforce method choices after the student demonstrates understanding.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, and the deductions above cover the main shortfalls.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -133,33 +141,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In turn 2, the tutor briefly acknowledges the off-topic restaurant request ('I can't help with restaurant recommendations') before redirecting. The redirect is immediate and appropriate, but the acknowledgment adds a small avoidable delay.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. Progression was clear and on-task throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -167,62 +160,49 @@
                 "evidence_turns": [
                   1,
                   2,
-                  9,
-                  10
+                  3,
+                  4,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several turns (notably turns 1, 2, 9, and 10) contain multi-paragraph responses with multiple sub-questions and bullet lists where shorter, more focused prompts would have been more appropriate. Turn 1 in particular is a long monologue covering all three data fields at once before the student has even confirmed their city. Turn 10 lists four sequential workarounds before the student has attempted any of them.",
-                "points": 2
+                "reason": "Multiple turns feature large multi-paragraph blocks with several sub-questions and bullet lists combined. For example, Turn 1 presents three numbered source categories each with bullet sub-points and two trailing questions before the student has said anything substantive. Turn 2 and Turn 6 similarly pack multiple nested options into single responses. While each individual turn may not be unreasonably long in isolation, the consistent pattern of multi-paragraph replies with stacked questions reduces the student's opportunity to process and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond those already captured. Clarity and structure were generally good despite length issues.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed well on the core Socratic dimension: it consistently declined to supply direct answers (e.g., refusing to give the Köppen class code in turn 7), redirected off-topic requests promptly, and guided the student through source selection with targeted questions rather than prescriptive answers.",
-      "The main pedagogy shortfall is in meta-learning: the tutor never explained why it withholds direct answers, missing the opportunity to connect guided questioning to learning benefits (1.3.A.b). It also did not help the student transfer the source-consistency strategy to future tasks (1.3.D.b).",
-      "Scaffolding was mostly strong, but in turns 9–10 the tutor jumped to a detailed navigation walkthrough before diagnosing whether the student had even opened the interface, a minor instance of 1.2.B.a.",
-      "Communication was clear and well-structured but consistently verbose: turn 1 covers all three data fields before the city is confirmed, and turn 10 lists four workarounds before the student has tried any. This pattern of front-loading information reduces student thinking space (3.1.A.a).",
-      "Assignment anchoring was excellent; the only minor issue was a brief acknowledgment of the restaurant off-topic request before redirecting (2.2.B.b), which was handled quickly.",
-      "No malus deductions were applied as all identified issues were captured in the primary criteria."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently uses a Socratic, question-driven approach, refusing to give direct answers (e.g., declining to state the Köppen class code) and instead guiding the student to find and verify information themselves. Guided discovery is well-maintained across the full conversation.",
+      "Scaffolding is strong: the tutor builds logically from geography definition → data sources → citation consistency → technical navigation, acknowledging and building on each student response before moving to the next step.",
+      "A recurring weakness is message length. Turns 1, 2, 3, 5, and 6 consistently deliver multi-paragraph blocks with stacked bullet lists and multiple simultaneous questions, which limits the student's processing space and drives a pattern of information-dump rather than short interactive exchange.",
+      "Meta-learning is partially missing: the tutor never articulates why it guides rather than tells (no learning-rationale explanation), and the conversation ends without any reflection prompt to help the student consolidate the process they have worked through.",
+      "Off-topic redirections (restaurant question, winter-vibe question) are handled promptly and appropriately, with immediate re-anchoring to the task.",
+      "Tone is consistently supportive and professional; no grading language appears. No major redundancy or spiraling is observed—the tutor advances the conversation purposefully each turn."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

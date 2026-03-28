@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student explicitly says 'I'm kinda stuck making the table tbh—can u confirm the outcomes?' This is a clear signal of confusion about the task mechanics. The tutor's response immediately validates the student's outcome summaries and moves on to deeper questions, rather than first asking a short diagnostic question to locate exactly where the student was stuck (e.g., whether they understood the case descriptions, or just needed reassurance). The tutor jumps to the next conceptual layer without checking what specifically caused the stall.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -103,49 +94,36 @@
                   3,
                   4,
                   5,
+                  6,
                   7,
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation, the tutor never explains to the student why it uses guided questioning rather than just giving answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. There is no moment where the tutor says something like 'I'm asking you to work through this yourself because constructing your own argument builds philosophical reasoning skills.' This is a consistent omission across the full conversation.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains its pedagogical rationale or why it is guiding rather than answering directly. It enforces the Socratic approach throughout without once articulating to the student why this method benefits their learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  7,
-                  8,
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the reasoning strategies used (e.g., the mechanism test, the baseline test, the consent/rights distinction) to future philosophical tasks. All coaching stays tightly tied to the specific trolley/Fuel/Blood cases. No transfer language appears (e.g., 'this kind of test—checking whether someone is a means or a bystander—is useful whenever you analyze deontological constraints').",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends with the tutor posing another question rather than prompting any reflection on the process the student used or what changed in their thinking across the 10 turns. No transfer or reflection moment is offered.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided discovery, built on student responses, and maintained Socratic structure throughout. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -159,28 +137,22 @@
                 "evidence_turns": [
                   6
                 ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turn 6, the student asks about the tutor's favorite movies/music. The tutor correctly redirects, but the response includes a brief explanatory sentence ('I'm your philosophy tutor here, and we need to stay on the assignment') before re-engaging. This is a minor delay—the redirect is appropriate and quick, but the framing sentence is slightly longer than strictly necessary for an immediate refocus.",
-                "points": 1
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "When the student asked about the tutor's favorite movie/music (clearly off-topic), the tutor appropriately redirected without engaging with the off-topic request. No meaningful deduction applies here.",
+                "points": 0
               }
             ],
-            "score": 5,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The conversation progresses well turn-by-turn with good anchoring to the assignment. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -190,58 +162,42 @@
                   2
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1 and 2 are notably long multi-part responses. Turn 1 asks the student to do four distinct things simultaneously (define act consequentialism, apply it to all cases, identify intuition clashes, and propose a constraint). Turn 2 introduces a full table structure with five columns plus three diagnostic labels. For a student who is just getting started, these responses pack too many simultaneous demands into single turns, reducing the student's opportunity to think and respond incrementally. The student's Turn 3 response ('I'm kinda stuck making the table tbh') is partly a consequence of this overload.",
-                "points": 2
+                "reason": "Turns 1 and 2 are notably long, multi-part prompts that ask the student to address four or five sub-questions simultaneously (e.g., Turn 1: list options, outcome totals, theory picks, clash type, constraint; Turn 2: full table plus diagnostic plus labeling clash). This volume reduces the student's space to think incrementally and likely contributed to the student being 'stuck' in Turn 3.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The early turns (1 and 2) are already penalized for length. Later turns are well-calibrated and concise. No additional catch-all deduction warranted beyond what is already captured.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic discipline throughout: it never gives direct answers, consistently asks the student to derive conclusions, and builds each turn on the student's prior response. No deductions apply under 1.1.",
-      "Scaffolding is generally good but falters at Turn 3, where the student signals being stuck and the tutor validates and advances rather than first diagnosing the specific source of confusion (1.2.B.a, -2 pts).",
-      "Meta-learning is the weakest area: the tutor never explains why guided questioning is used (1.3.A.b, -2 pts) and never generalizes the reasoning strategies to future philosophical tasks (1.3.D.b, -1 pt). Process-level feedback is present but transfer support is absent.",
-      "Dialogue quality is strong. The off-topic redirect in Turn 6 is handled appropriately with only a minor delay (2.2.B.b, -1 pt). No spiraling or redundancy issues are present.",
-      "Communication quality suffers in the early turns: Turns 1 and 2 are dense multi-part prompts that overload the student, likely contributing to the 'stuck' signal in Turn 3 (3.1.A.a, -2 pts). Later turns are well-calibrated and concise.",
-      "Tone is consistently warm, encouraging, and appropriately adapted. No grading stance issues. No malus deductions applied in any section."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a strong Socratic approach throughout: it never supplies verdicts or reasoning the student should generate, consistently asks the student to classify, test, and defend their own positions, and builds each turn on the student's previous answer. No deductions apply under 1.1 or 1.2.",
+      "Under 1.3, the tutor never explains why it is withholding direct answers (no learning-rationale disclosure), and at the end of the 10-turn conversation it poses another open question rather than inviting the student to reflect on what their thinking process produced. Method-level feedback within individual turns is generally adequate, so no deduction is applied there.",
+      "Dialogue quality is strong: the tutor progresses through consent → rights → redirecting/initiating without cycling, and it redirects the off-topic movie/music request immediately and briefly (Turn 6) without engaging substantially.",
+      "The main communication weakness is in Turns 1 and 2, where the tutor issues very long, multi-part prompts listing four to five simultaneous sub-questions. The student explicitly signals being stuck in Turn 3, which is consistent with cognitive overload from these opening salvos. From Turn 3 onward the tutor corrects course and uses shorter, more focused prompts. Because the problematic pattern is concentrated at the opening and then corrected, the full 4-point deduction under 3.1.A.a is applied but no additional language-complexity deduction is warranted.",
+      "Tone is consistently encouraging and non-evaluative throughout; no grade-like language is used."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

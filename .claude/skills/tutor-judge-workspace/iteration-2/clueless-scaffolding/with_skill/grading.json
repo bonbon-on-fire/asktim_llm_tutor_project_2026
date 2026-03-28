@@ -1,0 +1,46 @@
+{
+  "eval_name": "clueless-scaffolding",
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "valid_json_structure",
+      "passed": true,
+      "evidence": "All required keys present"
+    },
+    {
+      "text": "all_criteria_present",
+      "passed": true,
+      "evidence": "All 7 criteria present with required fields"
+    },
+    {
+      "text": "score_consistency",
+      "passed": true,
+      "evidence": "All scores internally consistent"
+    },
+    {
+      "text": "valid_sub_criterion_ids",
+      "passed": true,
+      "evidence": "All sub_criterion_ids match rubric"
+    },
+    {
+      "text": "evidence_turns_cited",
+      "passed": true,
+      "evidence": "2/2 deductions (100%) cite valid turns"
+    },
+    {
+      "text": "score_in_range",
+      "passed": true,
+      "evidence": "total_score = 42"
+    },
+    {
+      "text": "overview_present",
+      "passed": true,
+      "evidence": "overview has 5 items"
+    },
+    {
+      "text": "scaffolding_assessed",
+      "passed": true,
+      "evidence": "1.2 score = 6"
+    }
+  ]
+}

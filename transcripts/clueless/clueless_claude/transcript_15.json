@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student explicitly says 'I keep writing paragraphs because everything overlaps' and 'how do I force myself to classify without feeling like I'm lying?'—a clear confusion signal. The tutor responds with a detailed two-step rule and multiple sub-questions rather than first asking a short diagnostic question to locate the specific sticking point (is it the definition of 'leading,' the overlap between levels, or the template format?). The tutor jumps to a full method dump before checking what the student already understands.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,9 +100,9 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor gives excellent turn-by-turn coaching but never generalizes the strategies used (e.g., 'primary power' classification, defensible simplification, evidence tagging) to future assignments or broader urban governance analysis tasks. No statement like 'this actor-mapping approach applies whenever you face multi-level governance' appears.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is guiding through questions rather than providing direct answers—no learning rationale or tutoring policy is stated across the entire conversation.",
+                "points": 2
               },
               {
                 "evidence_turns": [
@@ -127,126 +118,87 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never pauses to prompt the student to reflect on what changed in their thinking (e.g., 'Notice how forcing a one-line template helped you stop over-explaining—why do you think that worked?'). Progress is acknowledged but process reflection is not explicitly invited.",
-                "points": 1
+                "reason": "The conversation ends with practical next steps but no reflection prompt asking the student to look back on what changed in their thinking, what classification method proved most useful, or why certain steps worked—no transfer/reflection moment is created.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor consistently reinforced the 'primary power' classification method and the 'defensible simplification' principle across turns. The deductions already captured in 1.2 and 1.3 cover the main gaps.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turns 2–5, the tutor repeatedly asks the student to apply the same 'one-sentence power template' to Bappenas and Dinas SDA across multiple turns without meaningfully advancing the classification. The student provides the two-line answer in Turn 4, but Turns 5 and 6 still circle back to the same two actors before consolidating. This is a borderline single-turn redundancy rather than full pattern-level repetition, but the Bappenas/Dinas SDA loop runs one turn longer than necessary.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The single redundancy instance was already captured in 2.1.B.a, and the tutor maintained strong assignment anchoring throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 are notably long multi-paragraph responses. Turn 2 contains a full rule-of-thumb block, five actor-specific sub-questions, and two additional clarifying questions—all in one message. Turn 3 similarly delivers a two-step rule, a four-type power taxonomy, a classification guide, a template instruction with example, and two application questions. While the content is relevant, the density consistently reduces the student's opportunity to think and respond incrementally. This pattern appears across at least two consecutive turns.",
-                "points": 2
+                "reason": "Turns 1–3 are consistently long multi-paragraph responses with dense bullet lists, frameworks, and multiple sub-questions asked at once, reducing the student's space to think and respond before receiving more instruction.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted beyond the 3.1.A.a deduction already applied. Later turns (7–10) show the tutor successfully tightening response length, so the verbosity issue is not pervasive across the full conversation.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic discipline throughout: no direct answers or submission-ready content are provided, and the student is consistently asked to reason, classify, and draft independently. The 'primary power' framework and 'defensible simplification' principle are introduced early and reinforced across turns, giving the student a reusable analytical tool.",
-      "The main pedagogy gap is in meta-learning: the tutor never prompts the student to reflect on why the template approach worked or to generalize the actor-mapping method to future governance tasks. Transfer support is absent.",
-      "A scaffolding miss occurs in Turn 3, where the student signals a specific confusion ('how do I force myself to classify?') and the tutor responds with a full method dump rather than a short diagnostic question to locate the exact sticking point first.",
-      "Dialogue quality is strong overall. Assignment anchoring is maintained throughout, and the tutor consistently redirects toward the forum deliverable. A minor redundancy occurs in Turns 2–5 where the Bappenas/Dinas SDA classification loop runs one turn longer than necessary before consolidating.",
-      "Communication quality is good in later turns but suffers in Turns 2–3, where multi-paragraph responses with five or more sub-questions reduce the student's opportunity for incremental thinking. The tutor self-corrects by Turn 7 onward, keeping responses tighter.",
-      "Tone is consistently warm and supportive, especially when the student expresses anxiety about sources (Turn 6) and classification uncertainty. No grading language is used."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it never provides the student's actor classifications directly, consistently asks the student to choose and justify, and progresses from framework-setting to draft-testing to gap-filling in a logical scaffold.",
+      "Scaffolding (1.2) is solid—each turn builds on the student's prior answer, misclassifications are caught by questions rather than corrections, and the student's confusion about PLN is productively resolved by asking her to apply her own stated criteria.",
+      "The main pedagogy gap (1.3) is a consistent absence of meta-learning support: the tutor never explains why it is guiding rather than telling (no learning rationale stated), and the conversation closes with practical tasks rather than any prompt for the student to reflect on what changed in her thinking or how the classification method could transfer.",
+      "Dialogue quality (2.2, 2.1) is strong: the tutor keeps the student anchored to the three-bucket assignment structure, redirects citation anxiety back to the task, and avoids repetitive loops by consolidating and advancing each exchange.",
+      "Communication quality suffers in early turns (1–3): the tutor front-loads long multi-paragraph, multi-question responses that limit the student's thinking space. Turns 4–10 improve considerably, with tighter, more focused prompts. The deduction is applied for the early pattern. Language is generally clear and appropriate for an urban studies context."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

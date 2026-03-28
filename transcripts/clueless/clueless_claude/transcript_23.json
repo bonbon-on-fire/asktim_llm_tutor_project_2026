@@ -71,54 +71,46 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 8, the student asks the tutor to 'sanity-check' a specific revised sentence. Rather than asking a short diagnostic question to locate what the student is uncertain about, the tutor immediately provides a three-part checklist that addresses the sentence directly. While the tutor avoids rewriting the sentence, it jumps to a structured critique framework without first checking what the student already understood or was confident about.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor provides excellent turn-by-turn coaching, but never explicitly helps the student generalize the actor-classification method or the evidence-calibration approach to future assignments or other case study cities. No transfer moment is offered.",
-                "points": 1
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently moved the student forward through successive refinements but never paused to prompt reflection on what the student's thinking process had changed or improved across the conversation—no explicit meta-reflection moment about why certain methods (vulnerability test, mandate/money rule) worked.",
+                "points": 2
               }
             ],
             "score": 4,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, explained its rationale for not writing content (Turn 5, Turn 8), and reinforced method choices. No catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,84 +120,51 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Dialogue progressed cleanly from actor definition → classification → missing actors → forum framing → evidence calibration. No notable redundancy or anchoring drift not already addressed.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2 and 3 are multi-part, multi-paragraph responses that pack several sub-questions and frameworks simultaneously. Turn 2 in particular asks the student to apply a rule across five entities while also introducing a new split (developers into two sub-types) and hinting at missing actors—all in one message. This consistently reduces the student's opportunity to think and respond incrementally, and the student's Turn 3 reply shows they were still second-guessing, suggesting the density was counterproductive.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue in Turns 2–3 is already captured under 3.1.A.a. Later turns (4–10) are well-sized and focused. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout: it consistently refused to write content for the student (Turns 5, 8), used yes/no diagnostic questions to resolve classification uncertainty (Turn 3), and scaffolded the student from abstract confusion about 'actors' all the way to evidence-calibrated forum language.",
-      "No deductions were applied under 1.1 because the tutor never gave a complete answer, never assembled a submission-ready response across turns, and never took over the student's reasoning. The student did all the classifying, drafting, and evidence-linking.",
-      "A 2-point deduction was applied under 1.2 (1.2.B.a) for Turn 8: when the student asked for a 'sanity-check,' the tutor jumped directly to a structured three-part critique checklist rather than first asking a short diagnostic question to locate the student's specific uncertainty. This is a single instance, not a pattern.",
-      "A 1-point deduction was applied under 1.3 (1.3.D.b) because the tutor never helped the student generalize the actor-classification or evidence-calibration methods to future assignments or other cities. Every piece of coaching remained tightly bound to the Miami/Resilient305 context.",
-      "A 2-point deduction was applied under 3.1 (3.1.A.a) for Turns 2 and 3, which were dense multi-part responses that asked the student to apply a new rule across five entities simultaneously while also introducing sub-splits and hinting at missing actors. The student's continued second-guessing in Turn 3 is consistent with cognitive overload from the message density. Later turns (4–10) were appropriately concise.",
-      "Tone, assignment anchoring, formatting, and dialogue progression were all strong. The tutor maintained a warm, non-grading stance, kept the conversation tightly anchored to the assignment deliverable, and advanced the dialogue without redundancy."
-    ],
-    "total_score": 42,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrated consistently strong Socratic practice throughout all 10 turns, refusing to classify actors for the student (Turn 2), declining to write forum-ready text (Turn 5), and refusing to edit the student's sentence (Turn 8), always redirecting to self-check frameworks instead.",
+      "Scaffolding was well-executed: the tutor built on each student contribution progressively, acknowledged the student's correct leverage-thinking in Turn 3, and introduced the vulnerability test only after the student had established a flooding focus.",
+      "The single deduction is for 1.3.D.a: while process-level feedback was consistently strong, the tutor never explicitly prompted the student to reflect on how their thinking changed across the conversation or what made the mandate/money/accountability framework useful—missing a clear meta-reflection moment.",
+      "No other deductions were warranted: responses stayed appropriately concise and interactive, tone was consistently supportive and non-grading, the student's misread attempts were caught and redirected (e.g., displacement vs. housing instability), and no spiral or off-topic content appeared."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

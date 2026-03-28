@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   7
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 7, the tutor provides a detailed four-section outline with labeled content prompts for each paragraph (intro, body 1, body 2, body 3), including what to define, what to apply, what to argue, and what to address. While framed as 'prompts,' the structure is so complete and content-specific that it functions as a near-plug-and-play essay scaffold, reducing the student's intellectual ownership of the organizational and argumentative structure.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 7, the tutor provides a detailed four-section outline with specific content prompts for each paragraph (e.g., 'Define the act-consequentialist standard,' 'Apply it to Switch, Footbridge, Fuel, Blood: for each, what outcome is compared, and what verdict follows?'). This goes beyond structural scaffolding and into providing near-ready content framing that the student can fill in directly, functioning as polished writing direction rather than guided discovery.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -109,28 +109,39 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never explicitly helps the student generalize the reasoning strategies (e.g., how to apply DDE to novel cases, how to stress-test any moral principle) beyond the specific assignment. The coaching stays tightly tied to this prompt's cases without prompting transfer to future philosophical reasoning tasks.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refuses to give direct answers or write content, but never explains the learning rationale behind this approach (e.g., that Socratic questioning builds long-term reasoning skills, or that the student learns more by deriving conclusions themselves). The constraints are enforced without pedagogical explanation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Throughout the conversation, the tutor never prompts the student to reflect on their own thinking process or what changed in their reasoning (e.g., from initially wanting a direct answer to developing their own DDE principle). No turn includes a meta-reflective prompt like 'notice how you derived that yourself' or 'what did you learn about how to apply a moral principle?'",
+                "points": 2
               }
             ],
-            "score": 4,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The Turn 7 outline deduction under 1.1.B.d captures the main over-scaffolding issue. No additional unremedied pedagogy consistency gaps warrant a further malus beyond what was already penalized.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -140,85 +151,67 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The conversation progresses cleanly through the assignment's sub-questions without notable drift or anchoring failures. No additional deduction warranted beyond what was already captured.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   2,
-                  7
+                  3,
+                  5,
+                  7,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns are multi-part, multi-paragraph responses when shorter, more focused prompts would have been more appropriate. Turn 2 asks three distinct sub-questions across multiple bullet points before the student has even confirmed their understanding of the first. Turn 7 delivers a full four-section essay outline with detailed sub-prompts in each section, which is a long monologue-style response that reduces the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Multiple tutor turns contain multi-part, multi-paragraph responses when shorter, more focused prompts would be more appropriate. Turn 2 poses five distinct sub-questions; Turn 3 poses three layered questions; Turn 7 delivers a full four-section outline with sub-bullets under each; Turn 9 poses four analytical questions. This pattern consistently reduces the student's opportunity to think and respond to one thing at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue in Turns 2 and 7 is already captured under 3.1.A.a. No additional communication quality gaps in concision, clarity, or structure warrant a further malus.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to write submission-ready content and maintained a Socratic stance across most turns, successfully guiding the student from a vague thesis to a defensible DDE-based account with case-by-case verdicts.",
-      "The primary deduction is under 1.1.B.d (Turn 7): the four-section essay outline with labeled content prompts for each paragraph is so complete and content-specific that it functions as a near-plug-and-play scaffold, substantially reducing the student's intellectual ownership of the essay's structure and argument organization. This triggers the 8-point deduction for partial solution / fill-in template.",
-      "Scaffolding and progression (1.2) are strong: the tutor consistently builds on student answers, advances the conversation, and does not restart from scratch.",
-      "Meta-learning (1.3) is mostly good but the tutor never explicitly helps the student generalize the DDE stress-testing method or rights-grounding approach to future philosophical tasks, warranting a 1-point deduction under 1.3.D.b.",
-      "Dialogue quality is clean: no redundancy spiraling, no assignment drift, and the tutor re-anchors effectively whenever the student tries to get direct answers.",
-      "Communication quality is generally good but several turns (especially Turn 2 and Turn 7) are multi-part, multi-paragraph responses where shorter, more focused prompts would have been more appropriate, triggering a 2-point deduction under 3.1.A.a.",
-      "Tone is consistently supportive and non-grading throughout. No issues with 3.2 or 3.3."
-    ],
-    "total_score": 36,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently refuses to write submission-ready content for the student and uses Socratic questioning to guide the student toward their own conclusions—this is the strongest aspect of the session.",
+      "The main deduction in 1.1 comes from Turn 7, where the tutor provides a detailed four-section essay outline with content-specific prompts under each section. While framed as a scaffold, this crosses into providing near-ready structural and content direction that the student can directly use, triggering the 1.1.B.a criterion.",
+      "No full 1.1.A deduction was applied because the tutor never directly states the final answer or completes the reasoning chain for the student; the student still had to articulate and defend each position.",
+      "In 1.3, the tutor never explains why it refuses to give direct answers (no learning rationale), and never prompts the student to reflect on their own reasoning process or what changed in their thinking across the conversation.",
+      "In 3.1, the tutor repeatedly sends long multi-part responses (e.g., Turns 2, 3, 7, 9, 10), often posing 3–5 questions or sub-tasks at once, which reduces the student's space to respond and think incrementally.",
+      "Scaffolding (1.2) was handled well—the tutor built on student progress each turn and generally diagnosed confusion before responding. Assignment anchoring (2.2) and redundancy (2.1) were also managed well throughout. Tone (3.2) was consistently supportive without being evaluative."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

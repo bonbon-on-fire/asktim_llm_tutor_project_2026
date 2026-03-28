@@ -71,45 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  4
                 ],
-                "sub_criterion_id": "1.1.C.e",
-                "reason": "Across multiple turns, the tutor repeatedly uses an answer-first or tell-then-ask style. In Turn 1, the tutor provides the full sector taxonomy with examples before the student has attempted any categorization. In Turn 4, the tutor provides three concrete Miami-level stressor examples (sea level rise → chronic tidal flooding; hurricanes → storm surge; extreme heat → heat illness) with sector tags, which are close to submission-ready stressor entries. In Turn 6, the tutor validates the student's three pairings and provides the rating methodology (relative ranking, spacing, 1-10 conversion). This pattern of telling before guiding is consistent across the conversation.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 4, the tutor gives three concrete Miami stressor examples with full wording (sea level rise → chronic tidal flooding reducing road passability; hurricanes → storm surge overwhelming drainage; extreme heat → heat illness risk for outdoor workers/older adults). These examples perform the key reasoning step—naming the system, the failure, and the affected group—before the student attempts it, effectively doing the stressor-formulation work the student was supposed to derive.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 8, the student explicitly identifies their core confusion: not knowing what counts as a 'good' justification vs 'vibes.' The tutor responds with a 5-item checklist and a label ('salience bias') before asking the student to attempt a draft. While somewhat diagnostic, the tutor jumps to a full framework dump rather than asking a short check question to locate the specific gap (e.g., 'What does your current justification look like?'). In Turn 9, the student asks for an example and the tutor again provides a detailed fill-in template rather than first probing what the student already understands about justification structure.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -128,84 +109,59 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student repeatedly asks for examples to copy (Turns 2, 4, 5, 9), the tutor declines but does not explain the learning rationale—it simply redirects without articulating why the student's own reasoning matters for learning.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains its rationale for not providing direct examples or model answers (e.g., Turn 4 gives examples anyway; Turn 9 briefly mentions 'that crosses into doing the writing for you' but does not explain the learning benefit). The tutoring constraints are applied inconsistently and without a clear pedagogical explanation about active reasoning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
                   8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor does not prompt the student to reflect on why their reasoning improved or what changed in their thinking. In Turn 8, after identifying 'salience bias,' the tutor moves directly to a checklist without asking the student to reflect on how that bias affected their earlier reasoning. In Turn 10, after the student produces a solid draft, the tutor immediately moves to tightening questions without pausing to acknowledge the student's progress or prompt reflection on what made the draft better.",
-                "points": 1
+                "reason": "Throughout the conversation the tutor moves on to the next step without prompting the student to reflect on their reasoning process or what changed in their thinking (e.g., after Turn 8 where the student identifies their 'salience bias', the tutor notes it but does not ask the student to reflect on what that reveals about their broader research approach before moving forward).",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently provides frameworks, examples, and structured templates before the student has attempted reasoning, reducing student ownership across the full conversation. This pattern was partially captured in 1.1.C.e but the pervasiveness of the tell-first approach across all 10 turns warrants an additional catch-all deduction.",
-          "score": 1,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turns 3, 4, and 5, the tutor repeatedly asks the student to pick systems and write stressor sentences using slightly varied framings ('what system fits best,' 'pick ONE system,' 'either/or questions'). The student keeps expressing uncertainty and the tutor cycles through similar prompts without consolidating or reframing the approach.",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.C.a",
-                "reason": "After three turns of cycling on system selection (Turns 3-5), the tutor does not synthesize the discussion into a clear takeaway before moving on. Turn 6 simply accepts the student's choices without briefly consolidating what was learned about the hazard→system→stressor framework.",
-                "points": 1
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond what was captured in 2.1. The tutor maintained reasonable assignment anchoring throughout and the redundancy issues were already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -213,64 +169,51 @@
                 "evidence_turns": [
                   1,
                   2,
-                  4,
+                  3,
+                  5,
                   6,
+                  7,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long multi-paragraph responses when shorter, more focused prompts would be more appropriate. Turn 1 is especially long, providing sector definitions, a 4-step process, format instructions, and example stressors all at once. Turn 2 provides a full pattern explanation plus city-selection criteria plus a format example. Turn 4 provides three concrete examples plus a new sentence frame. Turn 6 provides rating criteria options, ranking methodology, and justification structure simultaneously. This pattern of dense, multi-part responses reduces the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Nearly every tutor turn is a multi-paragraph response containing several sub-questions, numbered lists, and framing paragraphs when a single focused prompt would suffice. For example, Turn 1 includes four numbered tasks plus a request for three pieces of information; Turn 6 gives criteria guidance, a relative ranking method, a justification framework, and a question all at once. This consistently reduces space for the student to think and respond.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The length issue was captured in 3.1.A.a and the responses, while long, were generally clear and well-structured.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 32,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong assignment anchoring throughout, consistently redirecting the student back to the Stressors Table task and refusing to write submission-ready content when asked (Turns 2, 9). Tone was consistently warm and supportive, and the tutor did a good job validating the student's progress while pushing for more specificity.",
-      "The primary weakness is a pervasive tell-first pattern (1.1.C.e): across nearly every turn, the tutor provides frameworks, examples, sector definitions, rating methodologies, and fill-in templates before the student has attempted reasoning. Turn 4 is the clearest example, where three near-complete Miami stressor examples are provided with sector tags. This significantly reduces student ownership of the core intellectual work.",
-      "Scaffolding was adequate but the tutor missed opportunities to use short diagnostic questions when the student expressed confusion (Turns 8-9), instead jumping to comprehensive checklists and templates.",
-      "Meta-learning was weak: the tutor never explained why guided questioning is used instead of direct answers, and missed opportunities to help the student reflect on their reasoning progress or transfer the methodology to future tasks.",
-      "Response length was consistently too long, with multi-paragraph replies appearing in most turns where one or two focused prompts would have been more effective. This reduced the student's opportunity for active thinking between exchanges.",
-      "Dialogue showed some redundancy in Turns 3-5 where the system-selection question cycled without consolidation, though the tutor did eventually move forward."
-    ],
-    "total_score": 31,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
-    "judge_llm_calls": 2
+    "overview": [
+      "The tutor keeps the student anchored to the assignment throughout (no off-topic drift, no misread prompt) and builds logically from city choice to hazard identification to stressor framing to rating and justification, which is good scaffolding.",
+      "The most significant deduction is in 1.1: Turn 4 provides three fully worked Miami stressor examples with systems, failures, and affected groups identified—performing the central reasoning step the student was supposed to attempt. This triggers the 1.1.C.b deduction (6 pts). The examples were not submission-ready paragraphs, so the higher 1.1.A.a penalty was not applied.",
+      "Response length is a persistent problem (3.1.A.a, 4 pts): almost every tutor turn combines multiple frameworks, numbered sub-questions, and examples into long monologues, leaving the student little processing space. The student's repeated requests for direct answers suggest the density may be contributing to their confusion rather than alleviating it.",
+      "On meta-learning (1.3), the tutor never articulates why it withholds direct answers (1.3.A.a) and misses repeated opportunities to ask the student to reflect on what changed in their thinking (1.3.D.a), particularly after the salience-bias observation in Turn 8.",
+      "Tone is consistently supportive and non-grading; no redundancy or spiraling; assignment anchoring is maintained throughout."
+    ],
+    "total_score": 32,
+    "judge_llm_calls": 1
   }
 }

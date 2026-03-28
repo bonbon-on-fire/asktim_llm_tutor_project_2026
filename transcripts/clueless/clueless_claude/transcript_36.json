@@ -71,28 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  5,
-                  6
+                  2
                 ],
-                "sub_criterion_id": "1.1.C.e",
-                "reason": "Across multiple turns the tutor repeatedly provides specific methodological answers before the student attempts them: naming exact source agencies (BPS, PSA, INEGI) in Turn 2, providing a ready-made Google search query in Turn 5, and listing the exact decision paths in Turn 6, rather than prompting the student to reason through these steps first.",
-                "points": 6
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 2 the tutor asks multiple layered questions about city proper vs. metro and source buckets before the student has shown confusion about those details—effectively a method dump before checking what the student already understands.",
+                "points": 3
               }
             ],
-            "score": 6,
-            "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -100,41 +98,50 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
                   5,
                   6,
-                  7
+                  7,
+                  8,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it uses guided questioning rather than just providing the data directly, missing opportunities to connect the research-verification process to long-term skill development in urban studies research.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding through questions rather than giving direct answers—no learning rationale or tutoring policy is communicated to the student throughout the conversation.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "At the end of the conversation, the tutor does not help the student generalize the citation/documentation strategy to future table rows or future assignments; advice remains tied only to the race/ethnicity row.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what worked or what shifted in their thinking—no process reflection or transfer support appears across all ten turns.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently tells the student what to do methodologically rather than coaching the student to derive the method, a pattern not fully captured by 1.1.C.e alone. An additional deduction is warranted for the overall low student-ownership pattern in methodology guidance.",
-          "score": 1,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -144,23 +151,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was already captured.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -168,62 +169,48 @@
                 "evidence_turns": [
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 3 are multi-paragraph responses with multiple nested sub-questions and bullet lists. Turn 2 in particular is very dense, combining city choice, geography definition, source buckets, and a Köppen search query all at once, reducing the student's opportunity to think and respond to one thing at a time.",
-                "points": 2
+                "reason": "Multiple turns (especially 2, 3, and 5) contain lengthy multi-paragraph replies with several nested sub-questions at once rather than one focused prompt, consistently reducing the student's space to think and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond the response length issue already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong assignment anchoring throughout and never writes the student's table content, avoiding the most serious pedagogy violations.",
-      "However, the tutor repeatedly provides specific methodological answers (source names, search queries, decision paths) before the student attempts to reason through them, triggering 1.1.C.e across multiple turns. This is the largest single deduction.",
-      "Meta-learning is weak: the tutor does not explain why guided questioning is used, and does not help the student generalize the citation/documentation strategy beyond the immediate row.",
-      "Communication is impacted by consistently long, multi-part responses in early turns (Turns 1-3), which reduce student thinking space.",
-      "Dialogue quality is strong: no redundancy, good progression, and consistent assignment anchoring including direct reference to prompt language in Turn 6.",
-      "Tone is consistently supportive and appropriate throughout the conversation.",
-      "The 1.1.C.e deduction of 6 points is the primary driver of the score reduction; the rubric cap for 1.1 is 12 points, so the score of 6 reflects this single trigger."
-    ],
-    "total_score": 35,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently uses Socratic questioning and avoids doing the assignment for the student—no full answers, finished cells, or submission-ready content are given (1.1 full marks).",
+      "Scaffolding is generally progressive, but Turn 2 front-loads multiple advanced distinctions (city proper vs. metro, four source categories, geography labeling) before the student has shown confusion about those specific issues, triggering a 1.2.B.a deduction.",
+      "Meta-learning suffers because the tutor never explains its own pedagogical approach to the student (1.3.A.a) and never prompts reflection on the student's reasoning process at any point in the conversation (1.3.D.a). Method-level process feedback is present in some turns (e.g., explaining why Wikipedia alone is insufficient), so 1.3.B is not penalized.",
+      "Dialogue quality is strong: no spiraling, no off-topic engagement, and assignment anchoring is consistently maintained across all ten turns.",
+      "Communication is the clearest weakness: Turns 2, 3, and 5 in particular are dense multi-paragraph blocks with several simultaneous sub-questions, which crowds out student thinking time (3.1.A.a). Language is occasionally jargon-laden (e.g., 'trailhead,' 'provisional move') but not to a degree that clearly raises cognitive load beyond the student's apparent level, so 3.1.B is not triggered.",
+      "Tone is supportive and non-grading throughout; no formal grade language appears (3.2 full marks)."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

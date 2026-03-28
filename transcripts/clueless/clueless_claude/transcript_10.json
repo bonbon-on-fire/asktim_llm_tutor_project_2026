@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the student expressed uncertainty about whether act consequentialism uses actual vs. expected outcomes. Rather than asking a short diagnostic question to locate the confusion, the tutor immediately launched into a multi-part prompt that included the answer framing ('actual vs expected outcomes') and additional sub-questions about available acts and extra consequences. A brief check question first would have been more appropriate.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,39 +89,24 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never explicitly helped the student generalize the reasoning method (e.g., the means/side-effect distinction, the expected-value framework, the stress-testing approach) to future philosophical tasks or assignments beyond this specific exercise. The coaching remained tightly tied to the current trolley/Blood cases without prompting transfer.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends without prompting the student to reflect on how their thinking evolved or what the experience of stress-testing a principle taught them methodologically. The tutor moves straight to assignment mapping without a moment of process reflection.",
+                "points": 2
               }
             ],
             "score": 4,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor maintained strong Socratic discipline throughout, consistently guided the student to derive conclusions, and provided good process feedback. The deductions already captured in 1.2 and 1.3 cover the main gaps.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -140,23 +116,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The conversation progressed clearly from act consequentialism to the student's own principle, with good anchoring to the assignment's specific cases (Fuel, Blood, trolley variants) throughout.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -168,58 +138,43 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly used long, multi-part prompts (often 3–5 sub-questions at once) when shorter, more focused interactive steps would have been more appropriate. For example, Turn 2 asks about actual vs. expected outcomes, available acts, AND extra consequences simultaneously; Turn 7 poses three distinct philosophical questions at once. This pattern consistently reduced the student's opportunity to think through one thing at a time before being asked the next.",
-                "points": 2
+                "reason": "Several tutor turns pose three or more nested sub-questions simultaneously (e.g., Turn 2 asks about actual vs expected outcomes, available acts, and 2-3 extra consequences; Turn 7 asks about loop, non-lethal Blood variant, and the act-consequentialism evaluation). This consistently limits the student's opportunity to think and respond to one thing at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "A minor additional deduction of 1 point is warranted for the consistent pattern of multi-part questions that, while individually clear, collectively created a high cognitive load per turn. This is partially captured in 3.1.A.a but the pattern was pervasive enough across the full conversation to warrant a small additional catch-all penalty for overall response density.",
-          "score": 1,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated excellent Socratic discipline throughout the conversation, never giving away answers and consistently guiding the student to derive the act-consequentialist framework, stress-test it, and develop their own principle (means/side-effect distinction). No direct answer or near-submission-ready content was provided.",
-      "Scaffolding was generally strong, building progressively from act consequentialism to idealized/realistic cases to the student's own general account. A minor deduction was applied in 1.2 because in Turn 2 the tutor jumped to a multi-part prompt rather than first asking a short diagnostic question when the student expressed uncertainty about actual vs. expected outcomes.",
-      "Meta-learning was good overall—the tutor taught stress-testing and the counterfactual criterion for 'means'—but missed opportunities to help the student generalize these methods to future philosophical tasks beyond the current exercise.",
-      "Dialogue quality was strong: no redundancy, no spiraling, and the conversation remained well-anchored to the assignment's specific cases (Blood, Fuel, trolley variants) throughout all ten turns.",
-      "The main communication weakness was the consistent use of multi-part prompts (3–5 sub-questions per turn) across many turns, which reduced the student's opportunity to think through one question at a time. While each individual question was clear, the cumulative density was high. A 3.1.A.a deduction and a small malus were applied for this pattern.",
-      "Tone was warm, encouraging, and well-adapted to the student's confusion and uncertainty throughout. No grading stance issues were observed."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates excellent Socratic practice throughout: it consistently refuses to give answers (e.g., declining to label loop as 'means' or 'side-effect' in Turn 8), instead providing diagnostic questions and counterfactual tests that guide the student to reason independently. No submission-ready content is given, and idea generation is almost entirely student-led.",
+      "Scaffolding is strong: each turn builds directly on the student's prior response, acknowledging correct progress (e.g., 'That's a coherent act-consequentialist way to structure it') and advancing to the next layer (expected vs actual, idealized vs realistic, means vs side-effect, objective vs subjective).",
+      "Meta-learning feedback is partially present—the tutor explains its refusal policy with a learning rationale in Turn 8—but the conversation closes in Turn 10 without inviting the student to reflect on how their thinking evolved, warranting a 2-point deduction under 1.3.D.a.",
+      "The main structural weakness is response length: multiple turns (2, 3, 4, 7) pose three or more simultaneous sub-questions, reducing the student's processing space. This pattern is consistent enough to trigger the 4-point deduction under 3.1.A.a.",
+      "Dialogue quality is strong: the tutor keeps the conversation anchored to the assignment cases throughout, avoids redundancy, and advances the discussion productively each turn. No off-topic drift occurs.",
+      "Tone is consistently supportive and non-evaluative, with no formal grading language used."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

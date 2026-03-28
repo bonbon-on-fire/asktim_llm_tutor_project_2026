@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student asked 'who else should I list?' (Turn 2), the tutor gave a structured multi-part prompt rather than first diagnosing what the student already knew. In Turn 3, the student provided a solid list, and the tutor moved forward well. However, in Turn 3 the student also asked a personal de-stress question and the tutor's redirect was appropriate. The main issue is minor: the tutor occasionally jumps to multi-part structured prompts without a brief diagnostic check of where the student is stuck, though this is not severe.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,19 +89,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never explicitly helps the student transfer the actor-mapping methodology to future tasks or generalizes the approach beyond this specific assignment. While Turn 10 briefly mentions 'next step in this course usually asks how these actors interact,' this is a task preview rather than a genuine transfer of the analytical method (e.g., how to apply sector/lever/role analysis to other cities or contexts).",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
                   3,
                   4,
                   5,
@@ -120,28 +98,33 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is used instead of just providing a list of actors, nor does it connect the student's active reasoning effort to long-term skill development or retention. There is no moment where the tutor explains the pedagogical rationale for the Socratic approach.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it asks questions rather than providing answers—there is no articulation of a learning rationale or tutoring policy to the student at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Once the student reaches a strong forum draft, the tutor moves directly into final polish checks without prompting any reflection on how the student's thinking evolved or what reasoning process led to the stronger analysis. No transfer or process reflection is encouraged.",
                 "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor is consistently Socratic and never gives away answers, but it misses reinforcing the method rationale across the full conversation. No additional deduction beyond what was already captured in 1.2 and 1.3.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -151,23 +134,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was already assessed. The conversation progresses cleanly, stays anchored to the assignment, and avoids repetition.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -180,56 +157,43 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses multi-part, multi-question prompts across many turns (e.g., Turn 2 asks for 6–8 actors across 4 categories; Turn 3 has 3 numbered sub-questions each with multiple sub-parts; Turn 4 has 3 actors × concrete examples plus 2 'missing' sub-questions plus a 'leading' criterion question; Turn 5 has 3 numbered questions). While the questions are pedagogically sound, the sheer density of simultaneous asks in each turn consistently reduces the student's opportunity to think and respond to one thing at a time. This pattern recurs across at least 5 turns.",
-                "points": 2
+                "reason": "Several tutor turns (2, 3, 4, 5, 6) contain multi-part, multi-bullet lists with 3–5 sub-questions at once. While each question is useful, the cumulative density of questions per turn consistently exceeds what a student can productively process in one reply, reducing interactive discovery and overloading responses.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part prompt pattern is already captured in 3.1.A.a. No additional communication quality gaps beyond what was assessed.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performs very well overall: it maintains a consistently Socratic approach throughout all 10 turns, never gives away answers or does the student's work, redirects off-topic requests cleanly and immediately (Turns 1 and 3), and keeps the conversation tightly anchored to the assignment deliverable.",
-      "The main deductions are: (1) In 1.2, the tutor occasionally jumps to multi-part structured prompts without a brief diagnostic check of where the student is confused, triggering a 1.2.B.a deduction. (2) In 1.3, the tutor never explains the pedagogical rationale for guided questioning (1.3.A.b, -2 pts) and does not help the student transfer the actor-mapping methodology to future contexts beyond a brief task preview (1.3.D.b, -1 pt). (3) In 3.1, the tutor's responses across multiple turns consistently contain 3–5 simultaneous sub-questions, which reduces the student's opportunity to think and respond to one thing at a time (3.1.A.a, -2 pts).",
-      "No deductions were applied for 1.1 (Socratic method), 2.1 (redundancy), 2.2 (anchoring), 3.2 (tone), or 3.3 (formatting). The conversation progresses cleanly from actor identification to labeling to forum draft to final refinement, with the student doing the substantive reasoning throughout.",
-      "The 1.2.B.a deduction is applied with some uncertainty: the tutor's multi-part prompts could be interpreted as structured scaffolding rather than a failure to diagnose confusion. The smaller deduction (2 pts) was chosen given this ambiguity."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor is consistently Socratic throughout: it never provides a finished actor table or draft language before the student attempts it, consistently poses probing follow-up questions, and effectively guides the student from a vague list to a well-structured forum post. 1.1 and 1.2 receive full marks.",
+      "Assignment anchoring and off-topic redirection (2.2) are handled cleanly: the tutor immediately redirects the dinner-recs query in Turn 1 and the de-stress sidebar in Turn 3 without meaningfully engaging off-topic.",
+      "Redundancy (2.1) is absent: each exchange builds on the prior, with clear analytical progression from actor listing → lever identification → leading/engaged/missing classification → draft refinement.",
+      "The main pedagogy gap is in meta-learning (1.3): the tutor never explains the rationale for its Socratic approach (1.3.A.a), and once the student reaches a strong draft it moves straight to polish without inviting any reflection on thinking process or method transfer (1.3.D.a). The 1.3.B criteria (method feedback quality) are met adequately throughout.",
+      "The main communication issue is response density (3.1.A.a): turns 2–6 each contain 3–5 simultaneous sub-questions, which is more information than a student can productively engage with at once. This pattern is consistent enough across multiple turns to warrant the full 4-point deduction. Language is clear and jargon is appropriate for the course level, so 3.1.B is not deducted.",
+      "Tone is supportive and coaching-oriented throughout (3.2 full marks)."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -71,23 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "Tutor pre-selected key sources/tables (ACS DP05/DP03, BEA GDP by county, Beck Köppen-Geiger) rather than having the student identify and justify evidence choices, reducing student ownership of the central evidence-selection step for the data table.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -99,31 +89,26 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  6
+                  7,
+                  9,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor refused doing parts of the assignment but did not clearly explain a learning-oriented rationale (e.g., why student retrieval/decision-making matters for skill-building), mostly framing it as 'doing the assignment' rather than pedagogy.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gives procedural next steps and citation templates but does not prompt reflection on why the source-selection/citation method works or what the student learned for future assignments.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the deductions already applied.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -133,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No catch-all dialogue issues observed; the tutor kept the interaction on-task and moving.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -159,46 +138,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication issues beyond the scored criteria.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor appropriately refused to produce submission-ready work or give the requested final numeric values (e.g., FIPS and Köppen code), and instead set up a process with source-credibility checks and citation templates.",
-      "Main weakness: the tutor directly selected the key evidence sources/tables for the student (ACS profiles, BEA county GDP, Beck Köppen dataset), which partially replaces the student’s core task of identifying and justifying data sources for the table.",
-      "Meta-learning rationale for refusing direct answers was present but thin; refusals were not consistently framed in explicit learning/skill-building terms."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently refused to provide submission-ready data values, kept the work anchored to the assignment, and guided the student through source selection, scope decisions, and citation drafting in a generally Socratic, scaffolded way.",
+      "A small deduction was applied because the tutor did not add reflection or transfer prompts about why the chosen research method and citation process were effective for future assignments.",
+      "It was somewhat ambiguous whether recommending specific ACS/BEA/Koppen sources in turn 3 counted as doing too much of the reasoning; no deduction was taken because the tutor still left the final source choice, data retrieval, and table completion to the student."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -89,31 +89,25 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  7
+                  1,
+                  10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing off-topic help (restaurants/winter vibe) and refusing to provide the Köppen class code, the tutor framed it mainly as a role/policy boundary (“I can’t…my role…”, “that would be giving you the answer”) rather than briefly connecting the refusal to learning/ownership benefits (e.g., why the student doing the lookup and documenting method matters).",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave strong step-by-step method guidance but never prompted reflection or transfer, such as summarizing why the chosen source-selection method works for future city-table tasks.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -123,23 +117,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -148,55 +136,40 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.B.a",
-                "reason": "The tutor included an internal JSON blob (“pedagogical-reasoning” / “Student-facing-answer”) in the student-visible response, adding unnecessary content and reducing clarity/concision for what the student should read and do next.",
-                "points": 1
+                "reason": "One reply exposed internal JSON/meta labels (e.g., pedagogical reasoning), adding avoidable technical formatting instead of a plain-language student-facing response.",
+                "points": 2
               }
             ],
-            "score": 5,
+            "score": 4,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 10
         }
       }
     },
-    "total_base_score": 44,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor stayed strongly assignment-anchored, asked clarifying questions (metro definition, year alignment), and guided the student toward defensible, citable sources (ACS/BEA) and replicable methods (CBSA code matching, coordinate-based Köppen lookup) without doing the table for them.",
-      "Main issues were (1) refusals that leaned on role/policy language rather than brief learning/ownership rationale, and (2) a clarity/concision glitch where internal JSON reasoning was exposed in a student-facing turn."
-    ],
-    "total_score": 44,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic comments promptly, and used guided questioning well to help the student choose geography, source types, and documentation methods without simply doing the table for them.",
+      "Scaffolding was strong: the tutor built on the student's decisions, emphasized consistent geography/year definitions, and gave concrete process advice on source matching and citation.",
+      "Main weaknesses were limited reflection/transfer support and one confusing meta-formatted turn. The communication deduction is modest because the rest of the conversation was generally clear and well-paced."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

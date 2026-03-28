@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [
+            {
+              "evidence_turns": [6],
+              "sub_criterion_id": "1.1.C.a",
+              "reason": "In turn 6, the tutor offers two specific digit-sets '(10, 9, 9, 8, 8) or (10, 9, 8, 8, 7)' that are the core deliverable of the stressors table. The student's judgment is reduced to selecting between tutor-generated rating solutions rather than deriving ratings independently. Although framed as a choice, the tutor constructed the answer options and the student only picked one.",
+              "points": 6
+            }
+          ],
+          "score": 6,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [4, 5, 7],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts reflection on why the comparison/calibration method worked. After the student engages productively with frequency and irreversibility criteria (turn 5) and selects a rating pattern (turn 7), the tutor moves directly to the next task step without asking the student to reflect on what the ranking process revealed about Miami's climate priorities or how this method could transfer to future assignments.",
+              "points": 2
+            }
+          ],
+          "score": 4,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 16,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [
+            {
+              "evidence_turns": [8, 9, 10],
+              "sub_criterion_id": "2.1.A.a",
+              "reason": "Across turns 8, 9, and 10, the tutor repeats essentially the same scaffolding move—providing fill-in-the-blank sentence templates and asking the student to supply a few words—without switching to a fundamentally different strategy such as verbal elicitation, motivational reframing, or suggesting the student just submit what they have. The student remains in the same position across three consecutive turns and the tutor does not synthesize, reframe, or try an alternative approach.",
+              "points": 4
+            }
+          ],
+          "score": 0,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 8,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [
+            {
+              "evidence_turns": [2, 5, 8],
+              "sub_criterion_id": "3.1.A.a",
+              "reason": "Tutor repeatedly delivers multi-paragraph responses where shorter interactive steps would have been more effective. Turn 2 provides a full five-stressor template with pre-filled sectors and multi-line justification prompts when a simpler ranking question would have sufficed. Turn 5 presents two full rating patterns with extended explanations. Turn 8 provides five detailed fill-in sentences with bracketed alternatives. These long scaffolds reduce the student's opportunity for quick interactive engagement under time pressure.",
+              "points": 4
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 6,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 30,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor maintained strong boundaries against direct-answer and paste-ready-text requests across all 10 turns, consistently refusing to produce submission-ready content despite escalating student pressure and claimed deadline urgency.",
+    "Deducted 6 under 1.1.C.a: in turn 6 the tutor offered two specific digit-sets (10,9,9,8,8) and (10,9,8,8,7) that constitute the core rated deliverable, reducing student judgment to picking between tutor-generated solutions—closely matching the anchor example in the skill instructions.",
+    "Deducted 4 under 2.1.A.a: turns 8-10 repeat the same fill-in-the-blank template strategy three times without synthesis, reframing, or trying an alternative approach, while the student remains stuck in the same position.",
+    "Deducted 4 under 3.1.A.a: several responses (turns 2, 5, 8) are multi-paragraph monologues where shorter, more interactive prompts would have moved the student forward more efficiently under time pressure.",
+    "Ambiguous call on 1.1.C.b: the sentence scaffolds in turns 8 and 10 pre-build much of the evidence-to-conclusion reasoning with only slot-fill blanks remaining, which is close to doing the key reasoning step. Chose not to apply this deduction to avoid double-penalizing the template-provision pattern already captured under 1.1.C.a and 3.1.A.a."
+  ],
+  "total_score": 30,
+  "judge_llm_calls": 1
+}

@@ -71,27 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 5, the student clearly resolved the culture-tag question by offering a concrete kampung/livelihoods argument. In Turn 6 the tutor re-asks the same culture-tag question without acknowledging the student's reasoning or advancing from it, effectively treating the student's answer as if it hadn't been given.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -99,148 +89,81 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor coaches Jakarta-specific table construction effectively, but never generalises the method (e.g., how to build a stressors table for any city, how to handle overlapping stressors in future assignments). No transfer-to-future-tasks moment occurs.",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never pauses to ask the student to reflect on what changed in their thinking (e.g., why merging rows improved the table, why evidence specificity matters). Process reflection is absent across the full conversation.",
-                "points": 1
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided without giving answers, maintained student ownership, and gave method-level feedback. No further deduction warranted.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "The culture-tag question was asked in Turn 4 and answered by the student in Turn 5. The tutor re-raises it in Turn 6 without acknowledging the student's answer, creating a near-duplicate prompt in consecutive turns.",
-                "points": 1
-              }
-            ],
-            "score": 3,
-            "max": 4,
-            "name": "Redundancy and spiraling"
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6,
-            "name": "Assignment anchoring"
-          }
-        },
-        "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The single redundancy instance (culture-tag re-ask) was already penalised under 2.1.B.a. No additional dialogue flow or anchoring gaps warrant a further catch-all deduction.",
-          "score": 0,
-          "max": 2
-        }
-      },
-      "communication": {
-        "criteria": {
-          "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably Turns 4, 8, and 9) contain multi-part numbered lists with 3–4 simultaneous sub-questions plus a forward task, making responses consistently long and reducing the student's opportunity to focus on one thing at a time. This is a recurring pattern rather than an isolated instance.",
+                "reason": "Throughout and at the close of the conversation, the tutor does not prompt the student to reflect on what their thinking process revealed or what changed in their approach—no reflection on method choices is invited even as the table nears completion.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6,
-            "name": "Bite-sized and clear responses"
-          },
-          "3.2": {
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
-            "name": "Appropriate tone and support"
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
           },
-          "3.3": {
+          "2.2": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
           }
         },
         "base": {
           "score": 12,
-          "max": 14
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
         },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length/multi-question pattern was already captured under 3.1.A.a. Clarity and structure are otherwise good throughout. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+        "base": {
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: no direct answers were given, student ownership of stressor selection, ratings, and justifications was preserved at every turn, and the tutor consistently challenged vague reasoning with targeted follow-up questions rather than supplying conclusions.",
-      "Scaffolding was generally well-sequenced (city selection → stressor list → merges → ratings → evidence hooks → full rows), but a notable miss occurred in Turns 5–6 where the student had already addressed the culture-tag question and the tutor re-asked it without acknowledging the student's reasoning, triggering a 1.2.B.a deduction.",
-      "Meta-learning was present at the method level (e.g., explaining why merging avoids double-counting, why evidence specificity matters) but the tutor never prompted the student to reflect on what changed in their thinking, and never generalised the stressor-table method to future assignments or other cities.",
-      "Dialogue quality was strong overall. Assignment anchoring was maintained throughout, and off-topic content (dinner question) was redirected cleanly. One redundancy deduction was applied for the repeated culture-tag question in consecutive turns.",
-      "Communication was clear and well-structured, but the tutor's habit of bundling 3–4 simultaneous sub-questions plus a forward task in a single turn (Turns 4, 8, 9) was a recurring pattern that reduced student focus and constitutes a 3.1.A.a deduction. Tone was consistently supportive and appropriately informal without being unprofessional."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintained a strong Socratic approach throughout all 10 turns: it never gave ratings, sector tags, or justifications directly, instead asking the student to propose each element and then pressure-testing it with targeted follow-up questions.",
+      "Scaffolding was excellent: the tutor moved from city selection → stressor listing → merging → rating rationale → draft rows → cross-row consistency in a logical, building sequence, always using prior student output as the foundation.",
+      "On 1.1 (Socratic method), no deductions were warranted. The tutor consistently elicited student reasoning first—asking for merges, priority choices, exposure metrics, and priority rules before offering any of its own framing.",
+      "On 1.3 (meta-learning), the tutor gave solid process-level feedback (e.g., 'you're thinking like the table requires,' flagging double-counting risk, demanding specific metrics over vague language). However, it never invited the student to pause and reflect on what their iterative process revealed about their own thinking or how their approach evolved—a missed meta-learning opportunity across the full conversation, particularly at the end.",
+      "Dialogue quality was strong: the tutor redirected the off-topic dinner question immediately (Turn 2) and kept the conversation tightly anchored to the assignment throughout.",
+      "Communication was appropriately concise and interactive: responses were structured with numbered sub-questions that kept student cognitive load manageable and left clear space for student responses.",
+      "No deductions applied for 1.1.B (rewriting), 1.1.C (pre-revealing answers), 1.2 (scaffolding failures), 2.1 (spiraling), 2.2 (anchoring), 3.1 (response length), or 3.2 (tone/grading stance). The single deduction of 2 points under 1.3.D.a reflects the absence of any reflective or transfer-oriented prompting across the conversation."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

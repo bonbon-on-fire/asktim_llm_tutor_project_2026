@@ -71,59 +71,77 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
                   5
                 ],
-                "sub_criterion_id": "1.1.C.d",
-                "reason": "In Turn 5, the student asked for a reminder of the Fuel/Blood case facts. The tutor provided the core structure of both cases directly, including the key moral details (scarce resource sustaining one person, taking blood/organs without consent). While framed as a 'bare-bones refresher,' this gave the student the factual and morally loaded framing they needed to proceed, reducing the interpretive work the student should have done. However, this is a borderline case since the student genuinely could not recall the facts, and the tutor did ask the student to cross-check notes and still required the student to do the means/side-effect analysis.",
-                "points": 6
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says they cannot recall the Fuel/Blood case details, the tutor immediately provides the bare-bones case summaries rather than first asking diagnostic questions (e.g., 'What do you remember about them?' or 'Which element is fuzzy—who acts, or how the five are saved?'). This is a direct method-dump in response to student confusion without checking what partial knowledge the student already held.",
+                "points": 3
               }
             ],
-            "score": 6,
-            "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explained to the student why it uses guided questioning rather than giving direct answers, nor did it connect the student's active reasoning effort to long-term skill development or retention. There were several moments (e.g., Turn 5 when the student asked for facts, Turn 1 when the student was stuck) where a brief meta-comment on the value of working through the reasoning would have been appropriate.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is guiding rather than simply giving answers, nor does it articulate the learning rationale (e.g., developing the student's own philosophical reasoning skills, preparing them to defend arguments independently). Constraints are simply enacted without pedagogical framing.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor did not help the student transfer the reasoning strategies used (means/side-effect distinction, stress-testing principles, argument structure) to future philosophical tasks or assignments. The conversation stayed tightly tied to the specific cases without generalizing the method.",
-                "points": 1
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on how their thinking changed across the conversation (e.g., 'How does the principle you have now differ from what you started with, and why?'). It consistently moves forward to the next question without consolidating or reinforcing the student's methodological progress.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 14,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The Turn 5 deduction under 1.1.C.d is borderline—the tutor did provide the case facts directly, which reduced student interpretive ownership, but the student genuinely could not recall them and the tutor still required substantive analysis afterward. No additional catch-all deduction is warranted beyond what was already captured.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -137,91 +155,74 @@
                 "evidence_turns": [
                   1
                 ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turn 1, the tutor briefly acknowledged the off-topic movie question ('I can't do the favorite-movie question here') before redirecting. The redirection was immediate and appropriate, but the acknowledgment, while minimal, was slightly longer than strictly necessary—a single redirect without any engagement would have been cleaner.",
-                "points": 1
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "The student asks an off-topic question ('what's your fave movie rn?'). The tutor correctly declines but then devotes only one brief sentence to that refusal before immediately returning to the task. This is appropriate and minimal engagement, not a substantive off-topic response. No deduction warranted.",
+                "points": 0
               }
             ],
-            "score": 5,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The conversation progressed well through the assignment, and the single minor anchoring issue in Turn 1 was already captured under 2.2.B.b.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
+                  3,
                   4,
+                  6,
                   7,
-                  8
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably Turns 2, 4, 7, and 8) contain multi-part questions stacked together—sometimes three or four distinct sub-questions in a single response. While each question is individually relevant, the cumulative length and density of these turns reduces the student's opportunity to think and respond to one thing at a time. Turn 2 in particular asks three separate conceptual questions in sequence, which is more than needed for a single exchange.",
-                "points": 2
+                "reason": "Most tutor turns contain multiple layered sub-questions (often 3–4 questions at once) in multi-paragraph replies. While philosophical scaffolding naturally involves some complexity, the consistent pattern of posing several simultaneous questions reduces the student's space to think and respond to each one carefully. Simpler, more focused prompts would have been more appropriate across the conversation.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-question stacking pattern was already captured under 3.1.A.a. No additional catch-all deduction is warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 35,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic scaffolding throughout most of the conversation, consistently asking the student to reason through distinctions (means vs. side-effect, intention vs. causal mechanism) rather than providing conclusions. The progression from basic act consequentialist rule to stress-testing a draft principle was well-structured and responsive to student progress.",
-      "The main pedagogy deduction (1.1.C.d, 6 points) was applied for Turn 5, where the tutor provided the core factual and morally loaded structure of both Fuel and Blood cases directly. This was a borderline judgment: the student genuinely could not recall the cases, and the tutor did require subsequent analysis. However, the framing provided included the key moral details (scarce resource sustaining one person; taking blood/organs without consent) that shaped the student's subsequent means/side-effect labeling, reducing interpretive ownership. The deduction reflects this reduction in student-generated meaning-making.",
-      "Meta-learning (1.3) was weak: the tutor never explained why guided questioning was being used instead of direct answers, and did not help the student transfer the reasoning strategies to future tasks. These were missed opportunities given the length and depth of the conversation.",
-      "Dialogue quality was strong overall. The only deduction was a minor one in Turn 1 for briefly acknowledging the off-topic movie question before redirecting, which was handled quickly and appropriately.",
-      "Communication quality suffered from a consistent pattern of stacking multiple sub-questions per turn (Turns 2, 4, 7, 8), which reduced the student's opportunity to engage with one idea at a time. This was the primary communication deduction.",
-      "Tone was consistently warm, encouraging, and well-calibrated to the student's level of engagement and confusion. No grading stance issues were observed."
-    ],
-    "total_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrated strong Socratic discipline throughout, consistently refusing to give away conclusions and instead guiding the student through case analysis, principle formulation, and stress-testing. No near-submission-ready content or direct final answers were provided (1.1 full marks).",
+      "The main pedagogical deduction (1.2) comes from Turn 5: when the student admitted they could not recall the Fuel/Blood details, the tutor immediately supplied a case summary rather than first probing what the student did remember. This missed a diagnostic opportunity.",
+      "Meta-learning (1.3) suffered because the tutor never explained why it was guiding rather than telling, nor did it ever invite the student to reflect on how their own reasoning had evolved across the conversation—both missed throughout all 10 turns.",
+      "Dialogue quality was strong: the tutor kept the conversation anchored to the assignment, handled the off-topic movie question with a single brief dismissal, and advanced the discussion without unproductive spiraling.",
+      "Communication quality was penalized for the persistent pattern of multi-question turns (3–4 sub-questions per response) across almost every exchange, which regularly crowded the student's response space. Tone was consistently warm and constructive, with no grading language."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

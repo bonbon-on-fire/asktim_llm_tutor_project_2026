@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gives workable criteria and next steps, but does not prompt the student to reflect on why the sourcing/classification method works or how to transfer it to future actor-mapping tasks.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,72 +117,61 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several responses are long, bullet-heavy explanations with multiple tasks at once while the student is overwhelmed; shorter, more focused prompts would have been more manageable.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained student ownership by refusing to supply LA-specific actor lists while still providing clear decision rules (lead vs engaged vs missing) and a manageable evidence workflow (anchor doc, scan for governance/partners sections).",
-      "Guidance was well-scaffolded: the tutor progressively narrowed the task (pick adaptation/heat, pick one anchor source, find one sentence/heading, then classify actors) and addressed the student's evidence anxiety with concrete, realistic standards for citing.",
-      "Communication remained clear, supportive, and consistently anchored to the assignment deliverable (a forum summary of actor-sector patterns and gaps, not a submitted table)."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stays well anchored to the assignment, avoids doing the student’s LA actor table for them, and provides concrete decision rules for distinguishing leading, engaged, and missing actors.",
+      "Main weaknesses are communication and transfer: several replies are longer than ideal for an overwhelmed student, and the conversation ends with procedural guidance rather than reflection on how the method generalizes."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

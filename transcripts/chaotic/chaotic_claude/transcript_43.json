@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
@@ -86,11 +86,11 @@
                   4
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 4, the student says they can't find the table in the PDF and asks for the page/table name. The tutor immediately gives a list of search terms to try rather than first asking a short diagnostic question to understand what the student has already tried or what specific obstacle they're facing (e.g., 'Have you opened the PDF yet? What do you see when you open it?'). This is a minor instance of jumping to a method dump before locating the confusion.",
-                "points": 2
+                "reason": "In Turn 4 the student says they cannot locate the population table in the PDF. The tutor gives a set of search strings to try—this is broadly appropriate—but does not ask any diagnostic question about what the student has already tried or what's blocking them (e.g., is the PDF in Indonesian only? Is the file not downloading?). The tutor jumps straight to a method-dump of keyword search terms without checking what the student already understands about navigating a BPS PDF, which is the pattern described in 1.2.B.a.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning and self-discovery are used instead of just providing answers. When the student expresses frustration (Turn 4: 'Ugh ok', Turn 6: 'Ok fine'), the tutor continues to enforce the approach without connecting it to learning benefits, retention, or skill development. A brief explanation of why producing one's own work matters would have been appropriate.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces its 'I can't do that for you' policy across the conversation but never explains the learning rationale—e.g., why filling in the table themselves helps build research and citation skills, or what long-term competency is at stake. The student is told repeatedly what the tutor won't do without being told why this approach benefits their learning.",
                 "points": 2
               },
               {
@@ -126,65 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the strategies being used (e.g., how to navigate official statistical sources, how to construct proxy variable justifications, how to build APA citations) to future tasks or assignments. All coaching remains tightly tied to the current Jakarta data table without any transfer-oriented framing.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends without any moment of reflection or transfer. The tutor never prompts the student to step back and consider what they have learned about finding authoritative statistics, using citation templates, or handling unavailable data categories. No reflection questions appear across the 10 turns.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently maintained Socratic discipline and scaffolded well across most turns.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Turns 8–10 cycle repeatedly on citation format details (generic template → APA 7 template → URL specificity) without consolidating into a single actionable checklist. Each turn re-covers overlapping citation ground rather than synthesizing into one clear 'here is what you need to gather' summary.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring throughout and redirected off-task requests appropriately.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -196,76 +173,42 @@
                   9
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several turns feature multi-part, multi-paragraph responses when shorter, more focused prompts would have been more appropriate. Turn 1 lists five parallel sub-questions at once before the student has even confirmed their city. Turn 5 provides a long list of BPS search strings plus a follow-up question about race/ethnicity framing. Turn 9 provides three separate APA template blocks (reference, in-text, table note) when the student only needed one. This pattern consistently reduces student cognitive space to respond.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 8 includes a visible internal reasoning block ('{\"pedagogical-reasoning\": ...}') that was not stripped before delivery. This adds noise and reduces clarity for the student.",
-                "points": 1
+                "reason": "Several tutor turns present multi-part bullet lists and multi-paragraph explanations when a single focused question would have been more appropriate and interactive. Turn 1 opens with five parallel sub-questions before the student has said anything beyond requesting help. Turn 5 lists seven keyword search strings and immediately adds a conceptual question about race/ethnicity proxies. Turn 9 provides three separate APA template blocks (reference, in-text, table note) before the student confirmed which scenario applies. These repeatedly reduce the student's opportunity to think and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 3,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "3.3.D.a",
-                "reason": "Turn 8 exposes an internal JSON reasoning block ('pedagogical-reasoning') to the student, which is a formatting/medium issue that undermines clarity and could confuse the student about the nature of the feedback being given.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 10,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond those already captured. The exposed JSON block and response length issues were penalized above.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout, consistently refusing to complete the table or write paste-ready content for the student, and redirecting each request toward guided self-discovery. No 1.1.A or 1.1.B violations were found.",
-      "Scaffolding was generally good but Turn 4 showed a minor diagnostic miss: when the student said they couldn't find the table, the tutor jumped to a search-term list rather than first asking a short question to locate the specific obstacle.",
-      "Meta-learning was the weakest pedagogy area. The tutor never explained the rationale for guided questioning to the student (especially when frustration was visible in Turns 4 and 6), and never generalized the strategies used to future tasks.",
-      "Assignment anchoring was excellent throughout; the tutor kept the conversation tightly tied to the data table assignment and never drifted off-topic.",
-      "Communication quality suffered from consistently long, multi-part responses (Turns 1, 2, 5, 9) that reduced student cognitive space. Turn 9 in particular provided three APA template blocks when only one was needed.",
-      "Turn 8 exposed an internal JSON reasoning block to the student, which is a formatting error penalized under both 3.1.B and 3.3.D (without double-counting the same behavior across both—3.1.B captures the clarity/noise issue, 3.3.D captures the framing/medium issue).",
-      "Tone was consistently warm and supportive, and the tutor adapted well to student frustration without becoming dismissive or punitive."
-    ],
-    "total_score": 37,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
-    "judge_llm_calls": 2
+    "overview": [
+      "The tutor consistently refuses to complete the assignment for the student and instead redirects toward self-directed research, maintaining appropriate Socratic boundaries throughout all 10 turns. No submission-ready work is generated.",
+      "Scaffolding is generally solid but falters in Turn 4, where the tutor provides a keyword-dump without first diagnosing what the student has already tried or what is blocking access—matching 1.2.B.a.",
+      "Meta-learning suffers in two ways: the tutor never explains the learning rationale behind its constraints (1.3.A.a), and no reflection or transfer moment is created at any point in the conversation (1.3.D.a).",
+      "Dialogue quality is strong: no spiraling occurs, the tutor keeps the conversation anchored to the Jakarta data table task, and off-topic drift is not a factor.",
+      "Communication is the weakest area. Multiple turns (1, 2, 5, 9) present dense, multi-part bullet lists when one focused prompt would have been more appropriate, consistently reducing student thinking space (3.1.A.a). Tone is supportive and non-grading throughout."
+    ],
+    "total_score": 35,
+    "judge_llm_calls": 1
   }
 }

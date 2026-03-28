@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -94,27 +94,21 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor refused several off-topic prompts with policy-like constraint language (“I can’t help… I’m here to tutor…”) but did not add a brief learning-oriented rationale for keeping focus (e.g., preserving time/attention for the assignment, how staying on-task supports progress).",
+                "reason": "When refusing off-topic requests, the tutor states the constraint but does not explain a learning rationale for the limitation or tutoring approach.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,46 +138,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained strong guided-discovery: repeatedly asked the student to choose definitions (CDMX vs metro/FUA), articulate rules, and plan what to enter in each table column, avoiding giving submission-ready values/wording.",
-      "Scaffolding was effective and progressive (definitions → source credibility → workflow → how to document evidence/citations).",
-      "Main gap: when refusing off-topic questions, tutor did not add a brief pedagogical rationale for staying on-task; otherwise method coaching was clear and actionable."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently used guided questioning, built on the student's choices, and kept the work anchored to the Mexico City data-table task rather than supplying finished entries.",
+      "A small deduction was applied because the tutor's repeated refusals of off-topic questions stated the boundary but did not explain the learning rationale for that constraint.",
+      "No stronger deduction was applied for direct-answering because the tutor largely kept the student making the key definitional and sourcing decisions."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

@@ -1,0 +1,94 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3, 8],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor repeatedly enforces off-topic constraints with bare role statements ('I can't help with movie picks—I'm here to tutor you,' 'I can't help with dinner ideas,' 'I can't help with non-class questions like music,' 'I can't do general life/motivation coaching here') but never provides a learning rationale explaining why staying on-task benefits the student's skill development or active reasoning.",
+              "points": 2
+            },
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on why a method worked or what changed in their thinking. For example, after the student successfully drafted the GDP label/footnote in turn 6 and the tutor confirmed it was 'clear and honest,' there was no prompt to reflect on what made that documentation approach effective or transferable to other fields in the table.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 20,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 42,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Strong Socratic approach throughout: tutor consistently refused to write for the student (turns 5, 10) and used guiding questions to help the student make decisions about boundary definitions, source selection, and data labeling without providing answers.",
+    "Excellent off-topic redirection for a chitchat student: tutor handled five off-topic requests (turns 1, 2, 3, 8, and partially 7) with brief refusals followed by immediate task-relevant redirections, never engaging substantially with non-academic content.",
+    "Deducted 2 points under 1.3.A.a: the tutor's off-topic refusals across turns 1, 2, 3, and 8 stated its role ('I'm here to tutor you') but never explained the pedagogical rationale for staying on-task, such as the value of sustained focus for skill-building.",
+    "Deducted 2 points under 1.3.D.a: the tutor moved efficiently through the data table fields but never prompted the student to reflect on why their approaches worked (e.g., after the successful GDP label draft in turn 6, no reflection on what made that documentation strategy effective or transferable)."
+  ],
+  "total_score": 42,
+  "judge_llm_calls": 1
+}

@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,40 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced scope limits and refusal to guess, but did not explain the learning rationale for those constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave forward-looking steps but did not prompt reflection on why the student's method worked or what changed in their thinking.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,23 +129,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,46 +149,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery (questions + extraction steps) rather than supplying actor lists or a submission-ready forum post, preserving student ownership of evidence and conclusions.",
-      "Strong scaffolding: moved from identifying anchor documents, to locating governance/credit pages, to coding roles (lead/engaged/listed) and then to an evidence-based method for identifying missing actors.",
-      "Clear, structured, and appropriately concise guidance with effective re-anchoring when the student attempted off-topic pivots."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly Socratic and assignment-anchored: it asked targeted extraction questions, refused to guess case-specific answers, and consistently pushed the student to gather evidence from Miami documents rather than supplying conclusions.",
+      "The main weakness was meta-learning support: although the tutor set useful constraints and methods, it did not explain the learning rationale behind those constraints, and it rarely asked the student to reflect on why the method was effective or how it could transfer to later assignments.",
+      "Slight ambiguity on the rationale deduction: the tutor did state scope limits clearly, but it did not explicitly connect those limits to learning goals, so the smaller supported deduction was applied."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

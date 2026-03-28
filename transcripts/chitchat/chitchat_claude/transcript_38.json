@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -100,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The tutoring rationale is implicit throughout but never articulated.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains its tutoring rationale or policy to the student—e.g., why it asks guiding questions rather than giving answers, or how this approach supports the student's skill development. Constraints are applied without a stated learning justification.",
                 "points": 2
               },
               {
@@ -117,67 +117,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the methodology (e.g., how to define rating scales, how to select indicators, how to caveat data sources) beyond this specific assignment. No transfer to future tasks or reusable method patterns is offered.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular reasoning method worked. The conversation ends without any meta-reflection on the process followed.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided the student through reasoning steps without doing the work for them, and scaffolding was well-maintained throughout.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Across turns 3–7, the tutor repeatedly asks the student to 'sanity-check' or 'lock' ratings using slightly varied but structurally similar prompts (define 9 vs 10, test against definition, name a concrete disruption). While each turn does advance the conversation somewhat, there is one instance of near-duplicate questioning that could have been consolidated earlier.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring throughout and redirected the off-topic opener immediately.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -185,62 +160,52 @@
                 "evidence_turns": [
                   2,
                   3,
+                  4,
+                  5,
+                  6,
+                  7,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably turns 2, 3, 8, and 9) are multi-paragraph with multiple sub-questions and bullet lists. While the content is relevant, the density and length of these responses repeatedly reduces the student's opportunity to think and respond to one focused question at a time. Turn 2 in particular asks about sector classification, rating definitions, and indicator selection simultaneously.",
-                "points": 2
+                "reason": "Multiple tutor turns are multi-paragraph responses with several simultaneous sub-questions, rather than focused single prompts. For example, turns 2 and 3 each contain 3–4 layered questions, which reduces the student's space to respond to one clear thing at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond those already captured. Clarity and structure were generally strong; the main issue (response length) was already penalized under 3.1.A.a.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed strongly on Socratic method and guided discovery (1.1): it never gave direct answers, consistently pushed the student to define their own rating criteria, select their own indicators, and test their own reasoning. No deductions were warranted under 1.1.",
-      "Scaffolding (1.2) was excellent: the tutor built on each student response, acknowledged progress, and advanced the conversation logically from sector identification through rating justification to source selection.",
-      "Meta-learning (1.3) had two gaps: the tutor never explained why it was using guided questioning rather than giving direct answers (1.3.A.b), and it never helped the student transfer the methodology (defining scales, selecting indicators, caveating data) to future assignments (1.3.D.b). These cost 3 points.",
-      "Dialogue quality was strong overall. Assignment anchoring was maintained throughout, and the off-topic opener was redirected immediately. A minor redundancy deduction (2.1.B.a) was applied for the rating-locking loop across turns 3–7, which could have been consolidated one turn earlier.",
-      "Communication quality was generally good in tone, clarity, and formatting. However, several turns (especially turns 2, 3, 8, 9) were multi-paragraph with multiple simultaneous sub-questions, reducing the student's opportunity to respond to one focused prompt at a time. This triggered a 2-point deduction under 3.1.A.a.",
-      "No malus deductions were applied in any section, as all identified issues were captured in the primary criteria."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a strong Socratic approach throughout: it consistently refuses to give final answers, redirects off-topic prompts immediately, asks the student to derive sector assignments and ratings from their own evidence, and scaffolds the rating process step by step across the conversation.",
+      "Scaffolding and progression are handled well: the tutor builds on each student response, acknowledges valid reasoning (e.g., 'your sector picks are defensible'), and moves forward rather than repeating ground unnecessarily.",
+      "The main pedagogical weakness is in meta-learning (1.3): the tutor never explains why it is guiding rather than answering (rationale for its approach), and at no point prompts the student to reflect on what the reasoning process taught them or how their thinking evolved. Both deductions are applied.",
+      "A secondary deduction is applied under communication (3.1.A.a): many tutor turns contain multiple layered sub-questions in one message (e.g., turns 2, 3, 8, 9). While the questions are pedagogically sound, the density of simultaneous prompts consistently reduces student space to engage with one thing at a time. The full 4-point deduction is applied.",
+      "No deductions are made for 1.1 (the tutor never gives near-submission-ready answers, never rewrites student text, and avoids stating conclusions before the student), 2.1 (no unproductive spiraling—each turn advances the student's reasoning), 2.2 (no off-topic engagement beyond a brief, appropriate redirect in turn 1), or 3.2 (tone is consistently supportive and non-grading).",
+      "One area of ambiguity: 1.3.B (process and method feedback) — the tutor does give some implicit method feedback (e.g., 'basing differences on evidence strength, not vibes' in turn 7), so no deduction is applied there."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

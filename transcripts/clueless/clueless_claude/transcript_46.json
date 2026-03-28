@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 4, the student explicitly flags a strategy note ('next I'll prob get stuck on wording') signaling an anticipated confusion point. The tutor immediately provides a fill-in logic skeleton rather than first asking a short diagnostic question to locate what specifically about wording the student finds difficult. While the skeleton is not a full answer, the tutor jumps to a structured template before checking what the student already knows about constructing a justification sentence.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,9 +100,9 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor never generalizes the 4-prompt rating framework or the evidence-hook + limiter method to future assignments or other cities. All coaching stays tightly bound to the current Phoenix stressors without any transfer-oriented comment like 'this approach works for any stressor you'll analyze.'",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it refuses to give direct answers or write justifications for the student. It simply declines ('I can't pick the number or write the justification for you') without articulating the learning rationale—e.g., that working through the reasoning builds the skill needed for later assignments.",
+                "points": 2
               },
               {
                 "evidence_turns": [
@@ -127,27 +118,21 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never pauses to prompt the student to reflect on what changed in their thinking or why the guided-question approach worked better than the 'big overview' they previously found unhelpful. The student even self-notes the strategy shift in Turn 4, but the tutor does not reinforce or deepen that metacognitive observation.",
-                "points": 1
+                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular approach (e.g., the 4-prompt breakdown) worked. The student even notes 'strategy check' in Turn 4, but the tutor does not leverage this for meta-level reflection on the process.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, built on student answers, and maintained student ownership throughout.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,82 +142,52 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps. The conversation progressed cleanly through the assignment steps without off-topic drift or unaddressed spiraling.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 2 includes both the 4-prompt framework and a conversion rule paragraph. The conversion rule ('if you're describing (a)…(b)…(c)…(d)…') largely restates what the prompts already imply and adds length without advancing the immediate task. A shorter version asking only the 4 prompts would have been sufficient.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "One minor concision miss already captured in 3.1.B.a. No additional communication quality gaps warrant a catch-all deduction.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it consistently refused to supply ratings or justification sentences directly, instead using targeted 4-prompt frameworks and evidence-hook + limiter checks that kept the student doing the core reasoning work. No near-submission-ready content was produced by the tutor.",
-      "Scaffolding was generally well-sequenced—each turn built on the student's prior answer—but in Turn 4 the tutor pre-empted a stated confusion point by immediately offering a fill-in skeleton rather than first asking a short diagnostic question to locate what specifically about wording the student found difficult (1.2.B.a, -2).",
-      "Meta-learning was partially addressed: the tutor explained its guided-question approach implicitly through practice, but never explicitly named the learning rationale, never prompted the student to reflect on why the strategy shift worked (1.3.D.a, -1), and never generalized the rating framework to future stressors or cities (1.3.D.b, -1).",
-      "Dialogue quality was strong: no redundancy, no off-topic drift, and the conversation stayed tightly anchored to the assignment's five-step structure throughout all ten exchanges.",
-      "Communication was clear and appropriately concise in most turns. One minor verbosity issue in Turn 2 (a redundant conversion-rule paragraph after the 4 prompts) warranted a small deduction (3.1.B.a, -1). Tone was consistently warm and encouraging without being effusive."
-    ],
-    "total_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it consistently refuses to give ratings or write justifications for the student, instead breaking reasoning into small, answerable prompts (4-prompt framework in Turn 2, bucket-testing in Turn 3, skeleton filling in Turn 4). No near-submission-ready content is provided.",
+      "Scaffolding is well-executed: each turn builds directly on the student's prior answer, acknowledging correct steps (e.g., 'Good—your reasoning matches the criteria' in Turn 4) and adding the next layer only after the student produces something.",
+      "The primary weaknesses are in meta-learning. The tutor never explains why it withholds direct answers—it simply declines without giving a learning rationale (1.3.A.a). It also misses opportunities to prompt process reflection; the student explicitly signals awareness of their own strategy in Turns 4 and 5, but the tutor does not engage with what that strategy change means for their learning (1.3.D.a).",
+      "Method-level feedback (1.3.B) is borderline adequate: the tutor does flag when reasoning is 'a bit abstract' (Turn 8) and explains what is missing (mechanism, evidence hook), which constitutes process-level direction. No deduction was applied here.",
+      "Dialogue quality is clean: no spiraling, no assignment drift, no off-topic tangents. Communication is concise and well-paced throughout."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

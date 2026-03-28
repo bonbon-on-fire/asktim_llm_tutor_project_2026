@@ -71,26 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  3
+                  1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3 the student says 'I feel stuck at the searching part' and asks for the official page. The tutor immediately provides a detailed search method (exact search phrases, domain verification, publisher line checks) without first asking a short diagnostic question to locate exactly where the student's search process was breaking down. This is a minor instance of jumping to method explanation before checking what the student had already tried.",
-                "points": 2
+                "reason": "Turn 1 opens with a long enumerated dump of all seven table categories plus three sources lists before diagnosing what the student already knows or where confusion lies. The student had only said they were 'lost,' yet the tutor supplied the full category explanation upfront rather than asking a diagnostic question first.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,45 +109,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation the tutor stays tightly focused on the immediate task steps (finding the PDF, labeling variables, citation format) but never generalizes the strategies to future assignments. For example, the source-verification method (checking domain, publisher, ISSN) is a transferable research skill that is never framed as reusable beyond this one document.",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular method worked. After the student makes good decisions (e.g., choosing DKI, choosing harga berlaku, choosing pengeluaran as proxy), the tutor moves directly to the next step without a brief process-reflection prompt.",
-                "points": 1
+                "reason": "Throughout the conversation the tutor never prompts the student to reflect on their own thinking process—e.g., why a method worked, what changed in their understanding, or what strategy succeeded. The conversation ends at Turn 10 still focused on citation mechanics without any meta-reflective prompt.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently used Socratic questioning, avoided giving direct answers, and reinforced student ownership throughout. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,83 +134,63 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The conversation progressed logically from city choice to source verification to variable labeling to citation format, with no notable redundancy or anchoring drift.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  1,
+                  2
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 1 is notably long: it lists all seven table categories with explanations, three source categories, and then asks two follow-up questions. Given that the student had not yet named their city, much of this content was premature and could have been deferred until after the city was confirmed, making the response longer than necessary for the immediate goal.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Turns 1 and 2 are multi-paragraph responses covering the full table structure, all seven categories, source lists, and decision trees before the tutor knew what the student's city or specific confusions were. These long monologues reduce student thinking opportunity when a shorter diagnostic prompt was clearly more appropriate at that stage.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Turn 5 contains a visible JSON reasoning block ('pedagogical-reasoning') in the student-facing response, which is a formatting artifact that should not appear in the output. This is a minor but concrete communication quality gap not captured elsewhere.",
-          "score": 1,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout all 10 turns, consistently refusing to give direct answers (e.g., declining to paste a URL in Turn 4, declining to pick the 'safer' variable in Turn 6) and instead posing targeted questions that kept the student doing the reasoning work.",
-      "Scaffolding was generally well-sequenced—city choice, then boundary definition, then source verification, then variable labeling, then citation format—but in Turn 3 the tutor jumped to a detailed search method without first diagnosing exactly where the student's search process was failing, triggering a minor 1.2.B.a deduction.",
-      "Meta-learning was present in the form of source-verification criteria and labeling principles, but the tutor never prompted the student to reflect on what changed in their thinking (1.3.D.a) and never generalized the research strategies to future assignments (1.3.D.b).",
-      "Dialogue quality was strong: no redundancy spirals, no off-topic drift, and the conversation remained well-anchored to the assignment's data table requirements throughout.",
-      "Communication was mostly concise and clear, with one instance of a premature information dump in Turn 1 before the city was even named (3.1.B.a). A formatting artifact—a visible JSON reasoning block in Turn 5—was penalized under the 3.4 malus as it is a communication quality gap not captured by other criteria.",
-      "No double-penalization was applied; each deduction targets a distinct behavior."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintained strong Socratic discipline throughout: it consistently refused to hand the student direct answers (e.g., declining to give a single URL in Turn 4, declining to pick between PDRB choices in Turn 6), asked the student to commit to decisions with reasoning, and guided source verification through criteria rather than look-up.",
+      "The primary pedagogy weakness is in Turn 1: before learning anything about the student's city or specific confusions, the tutor pre-emptively listed all seven table categories with explanations and three full source lists. This is a method dump that anticipates confusion rather than diagnosing it first, triggering a 1.2.B.a deduction.",
+      "The same Turn 1 (and Turn 2) pattern also produced excessively long initial responses—multi-paragraph replies with enumerated sub-points where a brief diagnostic question was more appropriate—triggering a 3.1.A.a deduction.",
+      "No reflection or transfer prompts appeared anywhere in the 10-turn conversation; the tutor moved from task to task without ever asking the student to articulate what their approach taught them or how they would handle similar data decisions in future assignments, resulting in a 1.3.D.a deduction.",
+      "Dialogue quality was strong: the tutor consistently re-anchored the student to the assignment, advanced the conversation progressively, avoided repetition, and efficiently redirected when the student tried to get the tutor to make decisions for them.",
+      "Tone was consistently supportive and non-grading. No formal grade language was used. Language was accessible and appropriate for the student's evident level."
+    ],
+    "total_score": 37,
     "judge_llm_calls": 1
   }
 }

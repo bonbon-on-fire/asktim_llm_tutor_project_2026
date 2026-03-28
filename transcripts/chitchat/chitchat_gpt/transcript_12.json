@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,24 +86,29 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced staying on-task and refused direct answer requests, but did not explicitly explain the learning rationale for those constraints (such as building independent source-finding and citation skills).",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the scored criteria.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Dialogue stayed focused on the assignment with efficient redirection and no notable drift requiring an extra catch-all penalty.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,50 +143,34 @@
                   3
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Tutor response was blunt/rigid (“No—random/personal chat… isn’t part of this tutoring session”), which could discourage participation even though the redirection was on-task.",
+                "reason": "The reply 'No—random/personal chat like favorite movies isn’t part of this tutoring session' was noticeably rigid and could feel discouraging even though it did redirect to the task.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No extra communication issues beyond the tone deduction already applied.",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained strong guided-discovery: prompted the student to find sources, interpret coordinate formats, and justify source choices rather than supplying coordinates/climate codes directly.",
-      "Progression was well scaffolded (Wikipedia DMS → student conversion → searching for official sources → diagnosing IGN coordinate system and next steps).",
-      "Main weakness was tone in one refusal turn, which came off unnecessarily rigid even though it successfully redirected back to the assignment."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic turns promptly, and consistently used guided questions instead of supplying the table entries directly.",
+      "Scaffolding was strong: the tutor built on the student's progress, validated correct steps, and pushed source evaluation, coordinate format decisions, and citation defensibility.",
+      "Minor deductions were applied because the tutor enforced constraints without clearly stating the learning rationale, and one redirection was unnecessarily rigid in tone."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

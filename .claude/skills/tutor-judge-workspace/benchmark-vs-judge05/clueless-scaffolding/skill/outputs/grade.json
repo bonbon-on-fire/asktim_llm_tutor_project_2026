@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor never explains why it uses questions instead of the walkthrough the student requested in turn 1. It pivots to Socratic prompts without giving a learning rationale for the approach, leaving the student unaware of why the tutor structures the session this way.",
+              "points": 2
+            },
+            {
+              "evidence_turns": [3, 5, 7, 9],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor moves from case to case (switch to footbridge to Blood to general principle) without ever prompting the student to reflect on what changed in their thinking or why the case-by-case comparative method is effective. Transitions like 'now let's stress-test it with the other trolley case' (turn 3) and 'now step back and try to write a candidate general principle' (turn 7) advance the task but miss opportunities for process reflection.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 20,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 42,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Strong Socratic method throughout: the tutor consistently asks questions that lead the student to discover the act-consequentialist framework, the key case distinctions, and their own general principle without ever providing a submission-ready answer.",
+    "Excellent scaffolding and progression: the tutor builds systematically from the student's initial confusion through switch, footbridge, Blood, and toward a general account, acknowledging correct steps and building on them at each stage.",
+    "Deducted 2 points under 1.3.A.a: the tutor never explains its pedagogical approach when the student explicitly asks for a walkthrough in turn 1, missing the chance to frame the question-driven method as intentional for learning.",
+    "Deducted 2 points under 1.3.D.a: across transitions between cases and toward the general principle, the tutor does not prompt the student to reflect on what shifted in their thinking or why the comparative-case method is productive.",
+    "Borderline call on 1.1.C.b in turn 4 where the tutor presents two labeled moves for the act consequentialist (deny the intuition vs translate into consequences); resolved as no deduction because the student still had to evaluate, choose, and justify which move was stronger."
+  ],
+  "total_score": 42,
+  "judge_llm_calls": 1
+}

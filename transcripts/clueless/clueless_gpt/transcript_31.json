@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   5
                 ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "After the student asked to be told the main actors for Miami flooding, the tutor provided a fairly specific multi-level list of candidate actors (city, county, regional district, state, FEMA/Army Corps). Even with a disclaimer to verify, this substantially pre-selects the core actors/evidence for the student’s case, reducing student ownership of a key assignment step (identifying decision-makers).",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "After the student asked for the main actors in Miami flooding, the tutor supplied a city-specific list of candidate actors across city, county, regional, state, and federal levels, doing a substantial part of the idea-generation central to the assignment.",
                 "points": 6
               }
             ],
             "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,24 +95,28 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave useful next-step methods, but did not prompt reflection on why the authority test or source-search method worked, instead moving straight to the next task.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 17,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the main ownership/idea-generation deduction.",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,81 +126,50 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No extra dialogue-quality issues not already captured in other criteria.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The response includes a long multi-bullet example structure plus several actor examples; it could be slightly tighter while still answering the student’s request, to keep the interaction more bite-sized.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the minor concision deduction.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Strong scaffolding and assignment anchoring: the tutor clarifies the deliverable, distinguishes leading/engaged/missing with workable tests, and gives a concrete evidence-finding method (search + extract responsibility language).",
-      "Main pedagogy issue: the tutor partially takes over a central assignment step by listing many likely Miami flooding actors, which effectively pre-selects much of the student’s actor set even if framed as “candidates to verify.”",
-      "Communication is generally clear and supportive, with only a minor tendency toward slightly long, list-heavy turns."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor generally stayed well anchored to the assignment, broke the task into manageable decisions, and used supportive, interactive prompts.",
+      "Main deduction: in turn 5, the tutor supplied a fairly detailed Miami-specific actor list, which reduced student-led discovery on the core task of identifying decision-makers.",
+      "A smaller deduction was applied for limited reflection/transfer support: the tutor emphasized immediate next steps but did not ask the student to articulate what method they had learned or why it worked."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

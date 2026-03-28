@@ -71,25 +71,32 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied the main Miami top-3 stressors and sector labels before the student generated them, revealing the central answer path instead of having the student derive it.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.1.C.c",
-                "reason": "Tutor pre-selected major content that substantially determines the student's submission (top-3 stressors for Miami; then lists of facts per stressor; then explicitly choosing the 'strongest two' facts for each one-liner), taking over key evidence decisions rather than having the student generate/select them.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor chose the exact evidence bullets and then the 'strongest two' facts for each stressor, performing the key evidence-selection step that supports the student's final ratings.",
                 "points": 6
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -99,23 +106,17 @@
           },
           "1.3": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 17,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,23 +126,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -151,45 +146,29 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to produce submission-ready content and pushed the student to supply ratings/justifications, using calibration questions and drafting scaffolds (e.g., yardstick comparison and fragment-based drafting).",
-      "However, the tutor still took over a key ownership component by selecting the city's top stressors and then narrowing/choosing the strongest evidence elements for each stressor, which substantially shapes what the student will submit."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Tutor maintained firm boundaries against writing a submission-ready table and stayed closely anchored to the assignment, using clear, supportive, bite-sized scaffolds.",
+      "Main deduction is pedagogical: despite refusing final prose, the tutor generated much of the substantive content by naming the top Miami stressors and later selecting the strongest supporting facts for each rating, which reduced guided discovery."
+    ],
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

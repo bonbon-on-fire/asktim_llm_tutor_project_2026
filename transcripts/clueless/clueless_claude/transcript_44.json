@@ -71,28 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were 'totally lost' on Köppen and then admitted they didn't have numbers handy, the tutor jumped into multi-step explanations and full threshold rules rather than first asking a short diagnostic question to locate exactly where the student's understanding broke down. For example in Turn 4, the student said they didn't have numbers—the tutor could have asked what source they planned to use before dumping all the cutoff formulas.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -111,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explained to the student why guided questioning and not giving direct answers is beneficial for their learning. The student repeatedly pushed for direct answers and the tutor declined, but never connected this stance to learning rationale (e.g., retention, skill development, ownership of reasoning). The refusals were consistent but lacked pedagogical framing.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refuses to give direct answers but never explicitly explains the learning rationale—e.g., that guided discovery builds the student's own analytical skills for the course. The refusals are enforced without articulating why this approach benefits the student.",
                 "points": 2
               },
               {
@@ -128,80 +117,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helped the student transfer the strategies being practiced (e.g., how to evaluate source credibility, how to apply classification logic) to future tasks or assignments. All coaching remained tightly tied to the current table without generalizing the method.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what they have learned or how their thinking has progressed across turns. No transfer prompts or process-reflection moments appear in any exchange.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor was consistently Socratic and never gave away answers, but across 10 turns never once reinforced why the student's own reasoning process matters for learning. This pattern of missing pedagogical rationale is not fully captured by 1.3.A.b alone—the tutor also missed opportunities to praise or reinforce the student's incremental progress (e.g., when the student produced a draft note in Turn 8) in a way that would build method confidence. A small catch-all deduction is warranted.",
-          "score": 1,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turn 1, the tutor provided a full template with all required rows before the student had even confirmed their city or year range. Then in Turn 2, the tutor re-listed the same two diagnostic questions (temperature and rainfall) that were implicit in the template discussion. Some restating of prior content occurred without advancing the student's position.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.2.B.a",
-                "reason": "From Turn 5 onward, the conversation focused heavily on the ethnicity/notes row. While this is part of the assignment, the tutor rarely re-anchored to the broader assignment goal (completing the full data table) or reminded the student that other rows (GDP, area, income per capita) still needed attention. The assignment requires multiple data categories, but the tutor allowed the conversation to narrow without checking on overall table progress.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The single-turn redundancy and minor anchoring miss were already captured above, and the tutor generally maintained good flow and redirected the student's repeated off-task pushes effectively.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -212,69 +163,43 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several turns featured multi-paragraph responses with extensive lists when shorter, more focused prompts would have been more appropriate. Turn 1 gave a full 7-column template plus all required rows plus a closing question—far more than needed to get the student started. Turn 4 gave all three Köppen tropical cutoff formulas in one block before the student had even looked up a single number. These long monologues reduced the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Several responses—especially turns 1, 2, and 4—are multi-paragraph monologues containing extensive pre-built lists (full template, full Köppen rules with formulas) delivered before checking what the student already understands. This consistently reduces the student's opportunity to think and respond before receiving the information.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  7,
-                  9
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's repeated refusals ('I can't just hand you...', 'I can't write the note text for you', 'I can't give you paste-ready text') were consistent but occasionally came across as slightly rigid or formulaic. While not cold or dismissive, the tone did not sufficiently acknowledge the student's expressed time pressure and frustration, which could reduce tutoring trust over repeated turns.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
-            "name": "Appropriate tone and support"
-          },
-          "3.3": {
             "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
           }
         },
         "base": {
-          "score": 10,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The length and tone issues were already captured in 3.1.A.a and 3.2.A.a, and the tutor's formatting and clarity were generally good throughout.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout all 10 turns, consistently refusing to provide direct answers, templates, or canned text despite the student's repeated and varied attempts to extract them. No deductions were warranted under 1.1.",
-      "Scaffolding was generally good but the tutor occasionally jumped to multi-step explanations (full Köppen rules, full template) before diagnosing exactly where the student was stuck, triggering a 1.2.B.a deduction.",
-      "Meta-learning suffered because the tutor never explained the pedagogical rationale for guided questioning (1.3.A.b) and never helped the student transfer strategies to future tasks (1.3.D.b). A small malus was added for the pattern of missing method reinforcement.",
-      "Dialogue quality was strong overall. A minor redundancy deduction was applied for Turn 1's over-complete template, and a minor anchoring deduction for the tutor's failure to re-anchor to the full table scope in the second half of the conversation.",
-      "Communication quality was the weakest area. Several turns (1, 2, 4) featured long monologues with extensive lists that reduced student thinking opportunity (3.1.A.a). The tone, while not hostile, was somewhat formulaic in its refusals and did not sufficiently adapt to the student's expressed frustration and time pressure (3.2.A.a).",
-      "Note on 3.2.A.a: the deduction was applied under 3.2.A.a (cold/rigid tone) rather than 3.2.B.a (failure to adapt) because the primary issue was the formulaic rigidity of the refusal language rather than a failure to detect distress signals. The student's frustration was acknowledged but the tone did not meaningfully soften."
-    ],
-    "total_score": 35,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor does an excellent job of refusing direct answers and consistently redirecting the student to derive or research information themselves, which earns full marks on 1.1 (Socratic method).",
+      "Scaffolding is solid: the tutor builds on each student response, adapts when the student switches topics, and never discards valid student progress—full marks on 1.2.",
+      "A 4-point deduction applies on 3.1 because turns 1, 2, and 4 contain lengthy pre-built information dumps (full table template, full Köppen classification rules with precise mm formulas) delivered before the tutor checks what the student already knows or has tried. This pattern reduces student thinking opportunity.",
+      "On 1.3, two deductions are applied: (a) the tutor never explains why it uses a guided-discovery approach rather than direct answers, and (b) no reflection or transfer prompts appear anywhere in the conversation. Method-level feedback is present but not reinforced with process reflection.",
+      "Dialogue quality (2.1, 2.2) is strong throughout: the tutor re-anchors to the assignment when the student tries to derail, handles topic shifts appropriately, and avoids spiraling.",
+      "Tone is consistently warm and supportive; no grading language is used; turn 10 explicitly clarifies the tutor is not the grader—full marks on 3.2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

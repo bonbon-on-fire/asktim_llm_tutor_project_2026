@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor never explains why it uses Socratic questioning instead of the walkthrough the student requests in turn 1. In turn 1 the student asks 'Can you just walk me through' and the tutor redirects to questions without any rationale about why guided discovery supports learning. Across all 10 turns the tutor enforces a question-driven approach without ever giving a learning rationale for this constraint.",
+              "points": 2
+            },
+            {
+              "evidence_turns": [3, 5, 7, 8, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on why a method worked or what changed in their thinking. At key transition points (e.g., after the student successfully built the act-consequentialist template in turn 3, after resolving the act-vs-rule confusion in turn 5, after producing a draft principle in turn 8), the tutor moves immediately to the next question set without asking the student to notice or articulate what shifted in their reasoning process.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": { "score": 20, "max": 24 }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": { "score": 12, "max": 12 }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": { "score": 10, "max": 10 }
+    }
+  },
+  "total_base_score": 42,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Strong Socratic approach throughout: tutor consistently used numbered questions to guide the student through trolley switch, footbridge, and Blood cases without providing conclusions, allowing the student to build their own act-consequentialist analysis and general principle.",
+    "Excellent scaffolding and progression: conversation moved logically from defining the act-consequentialist decision rule to applying it case-by-case, surfacing the key tensions (means/ends, act vs rule, trust effects), and culminating in the student drafting a candidate principle and essay outline.",
+    "Deducted 2 points under 1.3.A.a: tutor never explained its pedagogical rationale when the student explicitly asked for a walkthrough in turn 1, enforcing the Socratic method without giving any learning-based reason for why guided discovery would be more beneficial.",
+    "Deducted 2 points under 1.3.D.a: at multiple transition points where the student made breakthroughs (e.g., building the template, distinguishing act vs rule, drafting a principle), the tutor advanced to new questions without prompting reflection on what changed in the student's thinking or why the approach worked."
+  ],
+  "total_score": 42,
+  "judge_llm_calls": 1
+}

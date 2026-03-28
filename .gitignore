@@ -1,6 +1,9 @@
 # API key and secrets (never commit)
 .env
 
+# Logs
+logs/
+
 # Python cache/artifacts
 __pycache__/
 *.py[cod]

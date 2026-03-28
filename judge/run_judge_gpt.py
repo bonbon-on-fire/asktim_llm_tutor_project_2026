@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import ast
+import hashlib
 import json
-import math
+import logging
 import os
 import re
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -18,56 +19,220 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
 from typing_extensions import NotRequired, TypedDict
 
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 from utils.parsing import extract_json_object
 
-_REPO_ROOT = Path(__file__).resolve().parent.parent
+PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
+RUBRICS_DIR = Path(__file__).resolve().parent / "rubrics"
 TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
-_PROMPTS_DIR = _REPO_ROOT / "judge" / "prompts"
-_RUBRICS_DIR = _REPO_ROOT / "judge" / "rubrics"
 
-_DEFAULT_OPENAI_MODEL = "gpt-5.2"
-_ALLOWED_REASONING = {"low", "medium", "high", "off"}
-_DEFAULT_REASONING = "medium"
+_DEFAULT_OPENAI_MODEL = "gpt-5.4"
 _MAX_ATTEMPTS = 3
 
-_SECTION_KEYS = ("pedagogy", "dialogue", "communication")
-_SECTION_CRITERIA: dict[str, tuple[str, ...]] = {
-    "pedagogy": ("1.1", "1.2", "1.3"),
-    "dialogue": ("2.1", "2.2"),
-    "communication": ("3.1", "3.2", "3.3"),
-}
-_SECTION_MALUS_ID = {"pedagogy": "1.4", "dialogue": "2.3", "communication": "3.4"}
-_CRITERIA_MAX = {"1.1": 12, "1.2": 6, "1.3": 5, "2.1": 4, "2.2": 6, "3.1": 6, "3.2": 5, "3.3": 3}
-_CRITERIA_NAME = {
-    "1.1": "Socratic method, guided discovery, and direct work",
-    "1.2": "Scaffolding and progression",
-    "1.3": "Meta-learning and methodology feedback",
-    "2.1": "Redundancy and spiraling",
-    "2.2": "Assignment anchoring",
-    "3.1": "Bite-sized and clear responses",
-    "3.2": "Appropriate tone and support",
-    "3.3": "Formatting and medium",
-}
-_MAX_BASE_SCORE = 47
-_MAX_MALUS_SECTION = 2
-_MAX_MALUS_TOTAL = 6
-_MAX_TOTAL_SCORE = 47
+# ---------------------------------------------------------------------------
+# Structured JSONL debug logging
+# ---------------------------------------------------------------------------
+_LOG_PATH = _REPO_ROOT / "logs" / "judge_gpt_debug.jsonl"
 
+
+class _JsonLogFormatter(logging.Formatter):
+    def format(self, record: logging.LogRecord) -> str:
+        payload: dict[str, Any] = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "level": record.levelname,
+            "event": getattr(record, "event", ""),
+            "transcript_name": getattr(record, "transcript_name", ""),
+        }
+        for key, value in record.__dict__.items():
+            if key.startswith("_log_"):
+                field_name = key[5:]
+                if isinstance(value, str) and len(value) > 50_000:
+                    value = value[:50_000]
+                    payload[field_name + "_truncated"] = True
+                payload[field_name] = value
+        return json.dumps(payload, ensure_ascii=False, default=str)
+
+
+def _setup_debug_logger() -> logging.Logger:
+    logger = logging.getLogger("judge_gpt_debug")
+    if logger.handlers:
+        return logger
+    logger.setLevel(logging.DEBUG)
+    _LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    handler = logging.FileHandler(_LOG_PATH, mode="a", encoding="utf-8")
+    handler.setFormatter(_JsonLogFormatter())
+    logger.addHandler(handler)
+    logger.propagate = False
+    return logger
+
+
+_debug_log = _setup_debug_logger()
+
+
+def _log_event(event: str, transcript_name: str = "", level: int = logging.INFO, **fields: Any) -> None:
+    extra = {"event": event, "transcript_name": transcript_name}
+    for key, value in fields.items():
+        extra[f"_log_{key}"] = value
+    _debug_log.log(level, "", extra=extra)
+
+
+def _sha256_short(text: str) -> str:
+    return hashlib.sha256(text.encode()).hexdigest()[:16]
+
+
+# ---------------------------------------------------------------------------
+# Rubric specifications
+# ---------------------------------------------------------------------------
+
+_RUBRIC_SPECS: dict[str, dict[str, Any]] = {
+    "rubric_04": {
+        "max_base_score": 47,
+        "max_score": 47,
+        "criterion_max": {
+            "1.1": 12, "1.2": 6, "1.3": 5,
+            "2.1": 4, "2.2": 6,
+            "3.1": 6, "3.2": 5, "3.3": 3,
+        },
+        "criterion_names": {
+            "1.1": "Socratic method and guided discovery",
+            "1.2": "Scaffolding and progression",
+            "1.3": "Meta-learning and methodology feedback",
+            "2.1": "Redundancy and spiraling",
+            "2.2": "Assignment anchoring",
+            "3.1": "Bite-sized and clear responses",
+            "3.2": "Appropriate tone and support",
+            "3.3": "Formatting and medium",
+        },
+        "sections": {
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2", "3.3"]},
+        },
+    },
+    "rubric_05": {
+        "max_base_score": 46,
+        "max_score": 46,
+        "criterion_max": {
+            "1.1": 12, "1.2": 6, "1.3": 6,
+            "2.1": 4, "2.2": 8,
+            "3.1": 6, "3.2": 4,
+        },
+        "criterion_names": {
+            "1.1": "Socratic method and guided discovery",
+            "1.2": "Scaffolding and progression",
+            "1.3": "Meta-learning and methodology feedback",
+            "2.1": "Redundancy and spiraling",
+            "2.2": "Assignment anchoring",
+            "3.1": "Bite-sized and clear responses",
+            "3.2": "Appropriate tone and support",
+        },
+        "sections": {
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2"]},
+        },
+    },
+    "rubric_06": {
+        "max_base_score": 46,
+        "max_score": 46,
+        "criterion_max": {
+            "1.1": 12, "1.2": 6, "1.3": 6,
+            "2.1": 4, "2.2": 8,
+            "3.1": 6, "3.2": 4,
+        },
+        "criterion_names": {
+            "1.1": "Socratic method and guided discovery",
+            "1.2": "Scaffolding and progression",
+            "1.3": "Meta-learning and methodology feedback",
+            "2.1": "Redundancy and spiraling",
+            "2.2": "Assignment anchoring",
+            "3.1": "Bite-sized and clear responses",
+            "3.2": "Appropriate tone and support",
+        },
+        "sections": {
+            "1_pedagogy": {"criteria": ["1.1", "1.2", "1.3"]},
+            "2_dialogue_quality": {"criteria": ["2.1", "2.2"]},
+            "3_communication_quality": {"criteria": ["3.1", "3.2"]},
+        },
+    },
+}
+
+
+# ---------------------------------------------------------------------------
+# Public types
+# ---------------------------------------------------------------------------
 
 class JudgeError(RuntimeError):
-    """Raised when parsing/validation fails for judge output."""
+    """Raised when transcript judging fails."""
 
 
-@dataclass(frozen=True)
+@dataclass(slots=True)
 class JudgeResult:
     total_score: int
     max_score: int
     output_path: Path
 
 
+# ---------------------------------------------------------------------------
+# LangGraph state
+# ---------------------------------------------------------------------------
+
+class _JudgeState(TypedDict):
+    attempts: int
+    system_prompt: str
+    conversation_text: str
+    num_turns: int
+    transcript_name: str
+    last_output: NotRequired[str]
+    last_error: NotRequired[str]
+    grade_json: NotRequired[dict[str, Any]]
+
+
+# ---------------------------------------------------------------------------
+# Value helpers
+# ---------------------------------------------------------------------------
+
+def _coerce_int(value: Any, *, default: int = 0) -> int:
+    if isinstance(value, bool):
+        return int(value)
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        return int(round(value))
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return default
+        try:
+            return int(round(float(text))) if "." in text else int(text)
+        except ValueError:
+            return default
+    return default
+
+
+def _sanitize_text(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value
+    return str(value)
+
+
+def _normalize_json_value(value: Any) -> Any:
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if isinstance(value, dict):
+        return {str(k): _normalize_json_value(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple, set)):
+        return [_normalize_json_value(v) for v in value]
+    return str(value)
+
+
 def _env_truthy(name: str) -> bool:
-    value = (os.environ.get(name) or "").strip().lower()
-    return value in {"1", "true", "yes", "on"}
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _require_openai_api_key() -> str:
@@ -77,575 +242,363 @@ def _require_openai_api_key() -> str:
     return key
 
 
-def _openai_reasoning_effort() -> str:
-    effort = (os.environ.get("JUDGE_OPENAI_REASONING_EFFORT") or _DEFAULT_REASONING).strip().lower()
-    if effort not in _ALLOWED_REASONING:
-        raise JudgeError("JUDGE_OPENAI_REASONING_EFFORT must be one of: low, medium, high, off.")
-    return effort
+# ---------------------------------------------------------------------------
+# JSON extraction from model output
+# ---------------------------------------------------------------------------
 
-
-def _openai_reasoning_config() -> dict[str, Any]:
-    effort = _openai_reasoning_effort()
-    if effort == "off":
-        return {}
-    return {"effort": effort}
-
-
-def _parse_python_dict_literal(text: str) -> dict[str, Any] | None:
-    try:
-        value = ast.literal_eval(text)
-    except (SyntaxError, ValueError):
-        return None
-    if isinstance(value, dict):
-        return _to_json_compatible(value)
-    return None
-
-
-def _to_json_compatible(value: Any) -> Any:
-    if isinstance(value, dict):
-        return {str(k): _to_json_compatible(v) for k, v in value.items()}
-    if isinstance(value, list):
-        return [_to_json_compatible(v) for v in value]
-    if isinstance(value, tuple):
-        return [_to_json_compatible(v) for v in value]
-    if isinstance(value, (str, int, float, bool)) or value is None:
-        return value
-    return str(value)
-
-
-def _parse_json_from_model_output(text: str) -> dict[str, Any]:
-    raw = (text or "").strip()
-    if not raw:
-        raise JudgeError("Model output was empty.")
-
-    py_data = _parse_python_dict_literal(raw)
-    if py_data is not None:
-        return py_data
-
-    obj = extract_json_object(raw)
-    if obj is None:
-        raise JudgeError("Could not find a JSON object in model output.")
-    try:
-        data = json.loads(obj)
-        if isinstance(data, dict):
-            return data
-    except json.JSONDecodeError:
-        py_data = _parse_python_dict_literal(obj)
-        if py_data is not None:
-            return py_data
-    raise JudgeError("Model output JSON was invalid.")
+def _fenced_json(text: str) -> str | None:
+    match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
+    return match.group(1).strip() if match else None
 
 
 def _extract_text_from_model_content(content: Any) -> str:
-    """
-    Normalize OpenAI response content to a plain text string.
-
-    GPT responses may return content as a string, a list of blocks, or nested
-    dict-like structures. We collect text-bearing fields first and only fall
-    back to JSON/string conversion when necessary.
-    """
+    """Extract text from model response, skipping OpenAI ReasoningBlocks."""
     if isinstance(content, str):
         return content
-
     if isinstance(content, list):
-        parts: list[str] = []
+        chunks: list[str] = []
         for item in content:
             if isinstance(item, str):
-                parts.append(item)
+                chunks.append(item)
+                continue
+            item_type = getattr(item, "type", None) or (item.get("type") if isinstance(item, dict) else None)
+            if item_type == "reasoning":
                 continue
             if isinstance(item, dict):
                 text = item.get("text")
                 if isinstance(text, str):
-                    parts.append(text)
+                    chunks.append(text)
                     continue
-                for key in ("output_text", "content", "value"):
-                    candidate = item.get(key)
-                    if isinstance(candidate, str):
-                        parts.append(candidate)
-                        break
-        if parts:
-            return "\n".join(parts)
-        return json.dumps(content, ensure_ascii=False)
-
-    if isinstance(content, dict):
-        text = content.get("text")
-        if isinstance(text, str):
-            return text
-        for key in ("output_text", "content", "value"):
-            candidate = content.get(key)
-            if isinstance(candidate, str):
-                return candidate
-        return json.dumps(content, ensure_ascii=False)
-
+            text_attr = getattr(item, "text", None)
+            if isinstance(text_attr, str):
+                chunks.append(text_attr)
+                continue
+            chunks.append(str(item))
+        return "\n".join(chunks)
     return str(content)
 
 
-def _write_failed_output_debug(
-    *,
-    source_path: Path,
-    prompt_name: str,
-    rubric_name: str,
-    model_name: str,
-    last_error: str,
-    last_output: str,
-) -> Path | None:
-    """Write failed model output for debugging; returns path on success."""
-    debug_dir = source_path.parent / "_judge_failures"
-    debug_dir.mkdir(parents=True, exist_ok=True)
-    debug_path = debug_dir / f"{source_path.stem}__{prompt_name}__{rubric_name}__gpt_failed_output.txt"
-    payload = (
-        f"model={model_name}\n"
-        f"prompt={prompt_name}\n"
-        f"rubric={rubric_name}\n"
-        f"source={source_path}\n"
-        f"error={last_error}\n\n"
-        "----- raw_model_output -----\n"
-        f"{last_output}\n"
-    )
-    try:
-        debug_path.write_text(payload, encoding="utf-8")
-        return debug_path
-    except OSError:
-        return None
+def _parse_json_from_model_output(output_text: str) -> dict[str, Any]:
+    text = _sanitize_text(output_text).strip()
+    candidates = [text, _fenced_json(text), extract_json_object(text)]
+    for candidate in candidates:
+        if not candidate:
+            continue
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict):
+                return _normalize_json_value(parsed)
+        except json.JSONDecodeError:
+            continue
+
+    extracted = extract_json_object(text)
+    if extracted:
+        try:
+            literal = ast.literal_eval(extracted)
+            literal = _normalize_json_value(literal)
+            if isinstance(literal, dict):
+                return literal
+        except (SyntaxError, ValueError):
+            pass
+
+    raise JudgeError("Judge response does not contain a valid JSON object.")
 
 
-def _as_dict(x: Any, *, path: str) -> dict[str, Any]:
-    if isinstance(x, dict):
-        return x
-    raise JudgeError(f"Expected object at {path}, got {type(x).__name__}.")
+# ---------------------------------------------------------------------------
+# Grade payload validation and normalization
+# ---------------------------------------------------------------------------
 
+def _normalize_deduction(item: Any, *, enforce_sub_criterion_ids: bool) -> dict[str, Any]:
+    if not isinstance(item, dict):
+        item = {}
+    evidence_raw = item.get("evidence_turns")
+    evidence: list[int] = []
+    if isinstance(evidence_raw, list):
+        for v in evidence_raw:
+            n = _coerce_int(v, default=0)
+            if n > 0:
+                evidence.append(n)
+    elif evidence_raw is not None:
+        n = _coerce_int(evidence_raw, default=0)
+        if n > 0:
+            evidence.append(n)
 
-def _as_list(x: Any, *, path: str) -> list[Any]:
-    if isinstance(x, list):
-        return x
-    raise JudgeError(f"Expected array at {path}, got {type(x).__name__}.")
+    sub_criterion_id = _sanitize_text(item.get("sub_criterion_id")).strip()
+    if enforce_sub_criterion_ids and not sub_criterion_id:
+        sub_criterion_id = "missing"
 
-
-def _as_int(x: Any, *, path: str) -> int:
-    if isinstance(x, bool):
-        raise JudgeError(f"Expected integer at {path}, got bool.")
-    if isinstance(x, int):
-        return x
-    if isinstance(x, float) and math.isfinite(x) and x.is_integer():
-        return int(x)
-    raise JudgeError(f"Expected integer at {path}, got {type(x).__name__}.")
-
-
-def _coerce_int(x: Any) -> int | None:
-    if isinstance(x, bool):
-        return None
-    if isinstance(x, int):
-        return x
-    if isinstance(x, float) and math.isfinite(x) and x.is_integer():
-        return int(x)
-    return None
-
-
-def _clamp(v: int, lo: int, hi: int) -> int:
-    return max(lo, min(v, hi))
-
-
-def _is_complete_grade_shape(payload: dict[str, Any]) -> bool:
-    sections = payload.get("sections")
-    if not isinstance(sections, dict):
-        return False
-    for section_key in _SECTION_KEYS:
-        sec = sections.get(section_key)
-        if not isinstance(sec, dict):
-            return False
-        if not isinstance(sec.get("criteria"), dict):
-            return False
-        if not isinstance(sec.get("base"), dict):
-            return False
-        if not isinstance(sec.get("malus"), dict):
-            return False
-        for crit in _SECTION_CRITERIA[section_key]:
-            if not isinstance(sec["criteria"].get(crit), dict):
-                return False
-    return True
-
-
-def _unwrap_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    if isinstance(payload.get("sections"), dict):
-        return payload
-    for key in ("grade", "result", "output", "data", "response"):
-        inner = payload.get(key)
-        if isinstance(inner, dict) and isinstance(inner.get("sections"), dict):
-            return inner
-    dict_values = [v for v in payload.values() if isinstance(v, dict)]
-    if len(dict_values) == 1 and isinstance(dict_values[0].get("sections"), dict):
-        return dict_values[0]
-    return payload
+    deduction: dict[str, Any] = {}
+    if evidence:
+        deduction["evidence_turns"] = evidence
+    if sub_criterion_id:
+        deduction["sub_criterion_id"] = sub_criterion_id
+    deduction["reason"] = _sanitize_text(item.get("reason")).strip()
+    deduction["points"] = max(0, _coerce_int(item.get("points"), default=0))
+    return deduction
 
 
 def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    out = _unwrap_grade_payload(dict(payload))
-    if "overview" not in out:
-        out["overview"] = out.get("justifications", []) if isinstance(out.get("justifications"), list) else []
+    payload = _normalize_json_value(payload)
+    if not isinstance(payload, dict):
+        raise JudgeError("Grade payload must be a JSON object.")
+    if "sections" not in payload or not isinstance(payload.get("sections"), dict):
+        payload["sections"] = {}
+    if "overview" not in payload:
+        summary = payload.get("summary")
+        payload["overview"] = summary if isinstance(summary, list) else []
+    if not isinstance(payload.get("overview"), list):
+        payload["overview"] = [str(payload["overview"])]
+    payload["overview"] = [_sanitize_text(v) for v in payload["overview"]]
+    return payload
 
-    if not _is_complete_grade_shape(out):
-        return out
 
-    sections_in = _as_dict(out["sections"], path="sections")
-    sections_out: dict[str, Any] = {}
-    total_base = 0
-    total_malus = 0
+def _rubric_spec(rubric_name: str) -> dict[str, Any]:
+    key = rubric_name.strip().lower()
+    if key not in _RUBRIC_SPECS:
+        available = ", ".join(sorted(_RUBRIC_SPECS.keys()))
+        raise JudgeError(f"Unsupported rubric '{rubric_name}'. Available: {available}")
+    return _RUBRIC_SPECS[key]
 
-    for section_key in _SECTION_KEYS:
-        sec_in = _as_dict(sections_in.get(section_key), path=f"sections.{section_key}")
-        crit_in = _as_dict(sec_in.get("criteria"), path=f"sections.{section_key}.criteria")
-        crit_out: dict[str, Any] = {}
-        section_base = 0
 
-        for crit_id in _SECTION_CRITERIA[section_key]:
-            c_in = _as_dict(crit_in.get(crit_id), path=f"sections.{section_key}.criteria.{crit_id}")
-            deductions = c_in.get("deductions") if isinstance(c_in.get("deductions"), list) else []
-            d_out: list[dict[str, Any]] = []
-            total_deduction = 0
-            for d in deductions:
-                if not isinstance(d, dict):
-                    continue
-                dd: dict[str, Any] = {}
-                if isinstance(d.get("evidence_turns"), list):
-                    turns = [t for t in (_coerce_int(x) for x in d["evidence_turns"]) if t is not None]
-                    if turns:
-                        dd["evidence_turns"] = turns
-                dd["sub_criterion_id"] = str(d.get("sub_criterion_id", "")).strip()
-                dd["reason"] = str(d.get("reason", "")).strip()
-                points = _coerce_int(d.get("points"))
-                dd["points"] = points if points is not None else d.get("points")
-                d_out.append(dd)
-                if points is not None and points > 0:
-                    total_deduction += points
+def _validate_grade_payload(
+    payload: dict[str, Any],
+    *,
+    num_turns: int,
+    enforce_sub_criterion_ids: bool,
+    rubric_name: str,
+) -> dict[str, Any]:
+    del num_turns
+    spec = _rubric_spec(rubric_name)
+    sections_in = payload.get("sections")
+    if not isinstance(sections_in, dict):
+        raise JudgeError("Grade payload must include an object at 'sections'.")
 
-            crit_max = _CRITERIA_MAX[crit_id]
-            score = _clamp(crit_max - total_deduction, 0, crit_max)
-            crit_out[crit_id] = {"deductions": d_out, "score": score, "max": crit_max, "name": _CRITERIA_NAME[crit_id]}
-            section_base += score
+    normalized_sections: dict[str, Any] = {}
+    criterion_max = spec["criterion_max"]
+    criterion_names = spec["criterion_names"]
 
-        malus_in = _as_dict(sec_in.get("malus"), path=f"sections.{section_key}.malus")
-        malus_raw = _coerce_int(malus_in.get("score"))
-        if malus_raw is None:
-            malus_score_out: Any = malus_in.get("score")
-            malus_for_total = 0
-        else:
-            malus_score_out = _clamp(malus_raw, 0, _MAX_MALUS_SECTION)
-            malus_for_total = malus_score_out
+    for section_id, section_spec in spec["sections"].items():
+        section_in = sections_in.get(section_id)
+        if not isinstance(section_in, dict):
+            section_in = {}
+        criteria_in = section_in.get("criteria")
+        if not isinstance(criteria_in, dict):
+            criteria_in = {}
 
-        sections_out[section_key] = {
-            "criteria": crit_out,
-            "base": {"score": section_base, "max": sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])},
-            "malus": {
-                "id": _SECTION_MALUS_ID[section_key],
-                "explanation": str(malus_in.get("explanation", "")).strip(),
-                "score": malus_score_out,
-                "max": _MAX_MALUS_SECTION,
-            },
+        section_criteria: dict[str, Any] = {}
+        section_score = 0
+        section_max = 0
+
+        for criterion_id in section_spec["criteria"]:
+            criterion_in = criteria_in.get(criterion_id)
+            if not isinstance(criterion_in, dict):
+                criterion_in = {}
+            deductions_in = criterion_in.get("deductions")
+            if not isinstance(deductions_in, list):
+                deductions_in = []
+
+            max_points = int(criterion_max[criterion_id])
+            deductions = [
+                _normalize_deduction(d, enforce_sub_criterion_ids=enforce_sub_criterion_ids)
+                for d in deductions_in
+            ]
+            deducted = sum(_coerce_int(d.get("points"), default=0) for d in deductions)
+            score = max(0, min(max_points, max_points - deducted))
+
+            section_criteria[criterion_id] = {
+                "deductions": deductions,
+                "score": score,
+                "max": max_points,
+                "name": criterion_names.get(criterion_id, criterion_id),
+            }
+            section_score += score
+            section_max += max_points
+
+        normalized_sections[section_id] = {
+            "criteria": section_criteria,
+            "base": {"score": section_score, "max": section_max},
         }
-        total_base += section_base
-        total_malus += malus_for_total
 
-    out["sections"] = sections_out
-    out["total_base_score"] = total_base
-    out["max_base_score"] = _MAX_BASE_SCORE
-    out["total_malus"] = total_malus
-    out["max_malus"] = _MAX_MALUS_TOTAL
-    out["max_score"] = _MAX_TOTAL_SCORE
-    out["total_score"] = _clamp(total_base - total_malus, 0, _MAX_TOTAL_SCORE)
+    total_base_score = sum(int(s["base"]["score"]) for s in normalized_sections.values())
+
+    out: dict[str, Any] = {
+        "sections": normalized_sections,
+        "max_score": int(spec["max_score"]),
+        "total_base_score": total_base_score,
+        "max_base_score": int(spec["max_base_score"]),
+    }
+    out["total_score"] = total_base_score
+    out["overview"] = payload.get("overview", [])
+    if not isinstance(out["overview"], list):
+        out["overview"] = [str(out["overview"])]
+    out["overview"] = [_sanitize_text(v) for v in out["overview"]]
+    out["judge_llm_calls"] = _coerce_int(payload.get("judge_llm_calls"), default=1)
     return out
 
 
 def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    ordered: dict[str, Any] = {}
-    sections = payload.get("sections")
-    if isinstance(sections, dict):
-        sections_out: dict[str, Any] = {}
-        for section_key in _SECTION_KEYS:
-            sec = sections.get(section_key)
-            if not isinstance(sec, dict):
-                continue
-            criteria = sec.get("criteria")
-            criteria_out: dict[str, Any] = {}
-            if isinstance(criteria, dict):
-                for crit_id in _SECTION_CRITERIA[section_key]:
-                    crit = criteria.get(crit_id)
-                    if not isinstance(crit, dict):
-                        continue
-                    deductions: list[dict[str, Any]] = []
-                    if isinstance(crit.get("deductions"), list):
-                        for d in crit["deductions"]:
-                            if not isinstance(d, dict):
-                                continue
-                            dd: dict[str, Any] = {}
-                            if isinstance(d.get("evidence_turns"), list):
-                                dd["evidence_turns"] = d["evidence_turns"]
-                            dd["sub_criterion_id"] = d.get("sub_criterion_id", "")
-                            dd["reason"] = d.get("reason", "")
-                            dd["points"] = d.get("points", 0)
-                            deductions.append(dd)
-                    criteria_out[crit_id] = {
-                        "deductions": deductions,
-                        "score": crit.get("score", 0),
-                        "max": crit.get("max", _CRITERIA_MAX[crit_id]),
-                        "name": crit.get("name", _CRITERIA_NAME[crit_id]),
-                    }
-            sections_out[section_key] = {
-                "criteria": criteria_out,
-                "base": sec.get("base", {"score": 0, "max": 0}),
-                "malus": sec.get(
-                    "malus",
-                    {"id": _SECTION_MALUS_ID[section_key], "explanation": "", "score": 0, "max": _MAX_MALUS_SECTION},
-                ),
-            }
-        ordered["sections"] = sections_out
-
-    for key in ("total_base_score", "max_base_score", "total_malus", "max_malus", "max_score", "overview", "total_score"):
+    ordered: dict[str, Any] = {"sections": payload["sections"]}
+    for key in ("max_score", "total_base_score", "max_base_score"):
         if key in payload:
             ordered[key] = payload[key]
-    for key in ("model", "timestamp_utc", "judge_llm_calls"):
+    for key in ("id", "summary", "type", "model", "timestamp_utc"):
         if key in payload:
             ordered[key] = payload[key]
+    ordered["overview"] = payload.get("overview", [])
+    ordered["total_score"] = payload["total_score"]
+    ordered["judge_llm_calls"] = payload.get("judge_llm_calls", 1)
     return ordered
 
 
-@lru_cache(maxsize=1)
-def _rubric_04_sub_ids() -> frozenset[str]:
-    rubric_path = _RUBRICS_DIR / "rubric_04.md"
-    if not rubric_path.exists():
-        raise JudgeError(f"Rubric file not found: {rubric_path}")
-    text = rubric_path.read_text(encoding="utf-8")
-    ids = set(re.findall(r"(?m)^\s*-\s*((?:[1-3]\.[1-4])\.[A-Z]\.[a-z])\b", text))
-    if not ids:
-        raise JudgeError("No rubric_04 sub-criterion IDs discovered.")
-    return frozenset(ids)
+def _extract_deduction_summary(payload: dict[str, Any]) -> dict[str, dict[str, int]]:
+    summary: dict[str, dict[str, int]] = {}
+    sections = payload.get("sections")
+    if not isinstance(sections, dict):
+        return summary
+    for section in sections.values():
+        if not isinstance(section, dict):
+            continue
+        criteria = section.get("criteria")
+        if not isinstance(criteria, dict):
+            continue
+        for cid, criterion in criteria.items():
+            if not isinstance(criterion, dict):
+                continue
+            deductions = criterion.get("deductions", [])
+            if not isinstance(deductions, list):
+                deductions = []
+            total_pts = sum(
+                max(0, int(d.get("points", 0))) for d in deductions if isinstance(d, dict)
+            )
+            summary[str(cid)] = {"count": len(deductions), "total_points": total_pts}
+    return summary
 
 
-def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int, enforce_sub_criterion_ids: bool) -> dict[str, Any]:
-    root = _as_dict(payload, path="$")
-    sections = _as_dict(root.get("sections"), path="sections")
-    valid_sub_ids = _rubric_04_sub_ids() if enforce_sub_criterion_ids else frozenset()
-    total_base = 0
-    total_malus = 0
+# ---------------------------------------------------------------------------
+# Schema and prompt loading
+# ---------------------------------------------------------------------------
 
-    for section_key in _SECTION_KEYS:
-        sec = _as_dict(sections.get(section_key), path=f"sections.{section_key}")
-        criteria = _as_dict(sec.get("criteria"), path=f"sections.{section_key}.criteria")
-        section_base = 0
-
-        for crit_id in _SECTION_CRITERIA[section_key]:
-            crit = _as_dict(criteria.get(crit_id), path=f"sections.{section_key}.criteria.{crit_id}")
-            deductions = _as_list(crit.get("deductions"), path=f"sections.{section_key}.criteria.{crit_id}.deductions")
-            deduction_total = 0
-
-            for i, d in enumerate(deductions):
-                dpath = f"sections.{section_key}.criteria.{crit_id}.deductions[{i}]"
-                dd = _as_dict(d, path=dpath)
-                if not str(dd.get("reason", "")).strip():
-                    raise JudgeError(f"Deduction reason must be non-empty at {dpath}.reason")
-                points = _as_int(dd.get("points"), path=f"{dpath}.points")
-                if points <= 0:
-                    raise JudgeError(f"Deduction points must be > 0 at {dpath}.points")
-                if "evidence_turns" in dd:
-                    turns = _as_list(dd.get("evidence_turns"), path=f"{dpath}.evidence_turns")
-                    for ti, turn in enumerate(turns):
-                        t = _as_int(turn, path=f"{dpath}.evidence_turns[{ti}]")
-                        if t < 1 or t > num_turns:
-                            raise JudgeError(
-                                f"evidence_turn out of bounds at {dpath}.evidence_turns[{ti}] "
-                                f"(got {t}, expected 1..{num_turns})."
-                            )
-                if enforce_sub_criterion_ids:
-                    sid = str(dd.get("sub_criterion_id", "")).strip()
-                    if not sid:
-                        raise JudgeError(f"sub_criterion_id is required at {dpath}.sub_criterion_id")
-                    if sid not in valid_sub_ids:
-                        raise JudgeError(f"Unknown sub_criterion_id at {dpath}.sub_criterion_id: {sid}")
-                deduction_total += points
-
-            expected_score = _clamp(_CRITERIA_MAX[crit_id] - deduction_total, 0, _CRITERIA_MAX[crit_id])
-            crit_score = _as_int(crit.get("score"), path=f"sections.{section_key}.criteria.{crit_id}.score")
-            crit_max = _as_int(crit.get("max"), path=f"sections.{section_key}.criteria.{crit_id}.max")
-            if crit_max != _CRITERIA_MAX[crit_id]:
-                raise JudgeError(f"Invalid criterion max at sections.{section_key}.criteria.{crit_id}.max")
-            if crit_score != expected_score:
-                raise JudgeError(
-                    f"Inconsistent criterion score at sections.{section_key}.criteria.{crit_id}.score "
-                    f"(expected {expected_score}, got {crit_score})."
-                )
-            section_base += crit_score
-
-        base = _as_dict(sec.get("base"), path=f"sections.{section_key}.base")
-        if _as_int(base.get("score"), path=f"sections.{section_key}.base.score") != section_base:
-            raise JudgeError(f"Inconsistent section base score at sections.{section_key}.base.score")
-        section_max = sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])
-        if _as_int(base.get("max"), path=f"sections.{section_key}.base.max") != section_max:
-            raise JudgeError(f"Invalid section base max at sections.{section_key}.base.max")
-
-        malus = _as_dict(sec.get("malus"), path=f"sections.{section_key}.malus")
-        if str(malus.get("id", "")).strip() != _SECTION_MALUS_ID[section_key]:
-            raise JudgeError(f"Invalid malus id at sections.{section_key}.malus.id")
-        malus_score = _as_int(malus.get("score"), path=f"sections.{section_key}.malus.score")
-        malus_max = _as_int(malus.get("max"), path=f"sections.{section_key}.malus.max")
-        if malus_max != _MAX_MALUS_SECTION:
-            raise JudgeError(f"Invalid malus max at sections.{section_key}.malus.max")
-        if malus_score < 0 or malus_score > _MAX_MALUS_SECTION:
-            raise JudgeError(f"malus.score out of range at sections.{section_key}.malus.score")
-        if malus_score > 0 and not str(malus.get("explanation", "")).strip():
-            raise JudgeError(f"malus.explanation must be non-empty when malus.score > 0 at sections.{section_key}")
-
-        total_base += section_base
-        total_malus += malus_score
-
-    total_base_score = _as_int(root.get("total_base_score"), path="total_base_score")
-    max_base_score = _as_int(root.get("max_base_score"), path="max_base_score")
-    total_malus_score = _as_int(root.get("total_malus"), path="total_malus")
-    max_malus_score = _as_int(root.get("max_malus"), path="max_malus")
-    max_score = _as_int(root.get("max_score"), path="max_score")
-    total_score = _as_int(root.get("total_score"), path="total_score")
-
-    if total_base_score != total_base:
-        raise JudgeError(f"Inconsistent total_base_score (expected {total_base}, got {total_base_score}).")
-    if max_base_score != _MAX_BASE_SCORE:
-        raise JudgeError(f"Invalid max_base_score (expected {_MAX_BASE_SCORE}, got {max_base_score}).")
-    if total_malus_score != total_malus:
-        raise JudgeError(f"Inconsistent total_malus (expected {total_malus}, got {total_malus_score}).")
-    if max_malus_score != _MAX_MALUS_TOTAL:
-        raise JudgeError(f"Invalid max_malus (expected {_MAX_MALUS_TOTAL}, got {max_malus_score}).")
-    if max_score != _MAX_TOTAL_SCORE:
-        raise JudgeError(f"Invalid max_score (expected {_MAX_TOTAL_SCORE}, got {max_score}).")
-
-    expected_total = _clamp(total_base - total_malus, 0, _MAX_TOTAL_SCORE)
-    if total_score != expected_total:
-        raise JudgeError(f"Inconsistent total_score (expected {expected_total}, got {total_score}).")
-
-    overview = _as_list(root.get("overview"), path="overview")
-    if total_score == _MAX_TOTAL_SCORE and not any(isinstance(x, str) and x.strip() for x in overview):
-        raise JudgeError("Perfect score requires at least one non-empty overview rationale.")
-    return root
-
-
-def _build_expected_schema(*, rubric_name: str) -> dict[str, Any]:
-    example_sub = "1.1.A.a" if rubric_name.strip().lower() == "rubric_04" else ""
-    return {
-        "sections": {
-            "pedagogy": {
-                "criteria": {
-                    "1.1": {
-                        "deductions": [
-                            {
-                                "evidence_turns": [1, 2],
-                                "sub_criterion_id": example_sub,
-                                "reason": "Tutor supplied direct answer pieces.",
-                                "points": 4,
-                            }
-                        ],
-                        "score": 8,
-                        "max": 12,
-                        "name": _CRITERIA_NAME["1.1"],
-                    },
-                    "1.2": {"deductions": [], "score": 6, "max": 6, "name": _CRITERIA_NAME["1.2"]},
-                    "1.3": {"deductions": [], "score": 5, "max": 5, "name": _CRITERIA_NAME["1.3"]},
-                },
-                "base": {"score": 19, "max": 23},
-                "malus": {"id": "1.4", "explanation": "", "score": 0, "max": 2},
+def _grade_schema_for_prompt(rubric_name: str) -> dict[str, Any]:
+    spec = _rubric_spec(rubric_name)
+    sections: dict[str, Any] = {}
+    for section_id, section_spec in spec["sections"].items():
+        criteria: dict[str, Any] = {}
+        for criterion_id in section_spec["criteria"]:
+            criteria[criterion_id] = {
+                "deductions": [
+                    {
+                        "evidence_turns": [1, 2],
+                        "sub_criterion_id": f"{criterion_id}.A.a",
+                        "reason": "Short evidence-based deduction reason.",
+                        "points": 1,
+                    }
+                ],
+                "score": spec["criterion_max"][criterion_id],
+                "max": spec["criterion_max"][criterion_id],
+                "name": spec["criterion_names"][criterion_id],
+            }
+        sections[section_id] = {
+            "criteria": criteria,
+            "base": {
+                "score": sum(spec["criterion_max"][c] for c in section_spec["criteria"]),
+                "max": sum(spec["criterion_max"][c] for c in section_spec["criteria"]),
             },
-            "dialogue": {
-                "criteria": {
-                    "2.1": {"deductions": [], "score": 4, "max": 4, "name": _CRITERIA_NAME["2.1"]},
-                    "2.2": {"deductions": [], "score": 6, "max": 6, "name": _CRITERIA_NAME["2.2"]},
-                },
-                "base": {"score": 10, "max": 10},
-                "malus": {"id": "2.3", "explanation": "", "score": 0, "max": 2},
-            },
-            "communication": {
-                "criteria": {
-                    "3.1": {"deductions": [], "score": 6, "max": 6, "name": _CRITERIA_NAME["3.1"]},
-                    "3.2": {"deductions": [], "score": 5, "max": 5, "name": _CRITERIA_NAME["3.2"]},
-                    "3.3": {"deductions": [], "score": 3, "max": 3, "name": _CRITERIA_NAME["3.3"]},
-                },
-                "base": {"score": 14, "max": 14},
-                "malus": {"id": "3.4", "explanation": "", "score": 0, "max": 2},
-            },
-        },
-        "total_base_score": 43,
-        "max_base_score": 47,
-        "total_malus": 0,
-        "max_malus": 6,
-        "max_score": 47,
-        "overview": ["Brief evidence-based summary."],
-        "total_score": 43,
-        "judge_llm_calls": 1,
+        }
+
+    payload: dict[str, Any] = {
+        "sections": sections,
+        "max_score": spec["max_score"],
+        "total_base_score": spec["max_base_score"],
+        "max_base_score": spec["max_base_score"],
     }
+    payload["overview"] = ["Brief evidence-based overview."]
+    payload["total_score"] = spec["max_score"]
+    payload["judge_llm_calls"] = 1
+    return payload
 
 
-def load_judge_prompt(*, prompt_name: str = "judge_03", rubric_name: str = "rubric_04") -> str:
-    prompt_path = _PROMPTS_DIR / f"{prompt_name}.txt"
-    rubric_path = _RUBRICS_DIR / f"{rubric_name}.md"
+def load_judge_prompt(*, prompt_name: str = "judge_05", rubric_name: str = "rubric_05") -> str:
+    prompt_path = PROMPTS_DIR / f"{prompt_name}.txt"
+    rubric_path = RUBRICS_DIR / f"{rubric_name}.md"
     if not prompt_path.exists():
-        raise JudgeError(f"Prompt file not found: {prompt_path}")
+        available = sorted(p.stem for p in PROMPTS_DIR.glob("*.txt"))
+        raise JudgeError(f"Judge prompt '{prompt_name}' not found. Available: {available}")
     if not rubric_path.exists():
-        raise JudgeError(f"Rubric file not found: {rubric_path}")
-    prompt = prompt_path.read_text(encoding="utf-8")
-    rubric = rubric_path.read_text(encoding="utf-8")
-    schema = json.dumps(_build_expected_schema(rubric_name=rubric_name), ensure_ascii=False, indent=2)
-    return prompt.format(rubric=rubric, schema=schema)
+        available = sorted(p.stem for p in RUBRICS_DIR.glob("*.md"))
+        raise JudgeError(f"Judge rubric '{rubric_name}' not found. Available: {available}")
+
+    prompt_template = prompt_path.read_text(encoding="utf-8")
+    rubric_text = rubric_path.read_text(encoding="utf-8")
+    schema_text = json.dumps(_grade_schema_for_prompt(rubric_name), ensure_ascii=False, indent=2)
+    return prompt_template.format(rubric=rubric_text.strip(), schema=schema_text).strip()
 
 
-def _judge_repair_prompt(error: str) -> str:
-    return (
-        "Your previous JSON did not validate against the required schema / consistency rules.\n"
-        f"Validation error: {error}\n\n"
-        "Return corrected JSON ONLY that fixes the error while keeping your original grading intent.\n"
-        "Do NOT add extra wrapper keys like `grade`, `result`, or `output`.\n"
-        "All required integer totals must be present and non-null: total_score, max_score, "
-        "total_base_score, max_base_score, total_malus, max_malus.\n"
-        "Ensure all totals and maxima are correct and internally consistent.\n"
-    )
-
+# ---------------------------------------------------------------------------
+# Conversation formatting
+# ---------------------------------------------------------------------------
 
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
-    context = transcript.get("context", "")
-    exercise = transcript.get("exercise", "")
-    exchanges = transcript.get("exchanges", [])
-    lines: list[str] = ["Assignment input:"]
-    if str(context).strip():
-        lines.append("Context:")
-        lines.append(str(context).strip())
+    lines: list[str] = []
+    context = _sanitize_text(transcript.get("context")).strip()
+    exercise = _sanitize_text(transcript.get("exercise")).strip()
+    if context:
+        lines.append("CONTEXT:")
+        lines.append(context)
         lines.append("")
-    lines.append("Exercise:")
-    lines.append(str(exercise).strip())
-    lines.append("")
-    lines.append("Conversation transcript (student+tutor exchanges):")
-    for ex in exchanges:
-        turn = ex.get("turn")
-        lines.append(f"Turn {turn} — Student: {ex.get('student', '')}")
-        lines.append(f"Turn {turn} — Tutor: {ex.get('tutor', '')}")
+    if exercise:
+        lines.append("EXERCISE:")
+        lines.append(exercise)
         lines.append("")
+
+    lines.append("TRANSCRIPT:")
+    exchanges = transcript.get("exchanges")
+    if not isinstance(exchanges, list):
+        exchanges = []
+    for i, exchange in enumerate(exchanges, start=1):
+        if not isinstance(exchange, dict):
+            continue
+        turn = _coerce_int(exchange.get("turn"), default=i)
+        student = _sanitize_text(exchange.get("student")).strip()
+        tutor = _sanitize_text(exchange.get("tutor")).strip()
+        lines.append(f"Turn {turn}")
+        lines.append(f"Student: {student}")
+        lines.append(f"Tutor: {tutor}")
+        lines.append("")
+
     return "\n".join(lines).strip()
 
 
-def _default_output_path(*, transcript_path: Path, prompt_name: str, rubric_name: str, provider: str) -> Path:
-    return transcript_path.with_name(f"{transcript_path.stem}__{prompt_name}__{rubric_name}__{provider}.json")
+# ---------------------------------------------------------------------------
+# LangGraph judge pipeline
+# ---------------------------------------------------------------------------
+
+def _judge_repair_prompt(last_error: str) -> str:
+    return (
+        "Your previous response could not be validated as the required grade JSON.\n"
+        f"Validation error: {last_error}\n"
+        "Return ONLY corrected JSON that matches the expected schema exactly."
+    )
 
 
-class _JudgeState(TypedDict):
-    attempts: int
-    system_prompt: str
-    conversation_text: str
-    num_turns: int
-    last_output: NotRequired[str]
-    last_error: NotRequired[str]
-    grade_json: NotRequired[dict[str, Any]]
+def _build_openai_model(*, model_name: str, api_key: str):
+    effort = os.environ.get("JUDGE_OPENAI_REASONING_EFFORT", "medium").strip().lower()
+    if effort in {"low", "medium", "high", "off"}:
+        try:
+            return ChatOpenAI(
+                model=model_name,
+                api_key=api_key,
+                model_kwargs={"reasoning": {"effort": effort}},
+            )
+        except TypeError:
+            pass
+    return ChatOpenAI(model=model_name, api_key=api_key)
 
 
-def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_ids: bool):
-    reasoning = _openai_reasoning_config()
-    kwargs: dict[str, Any] = {"model": model_name, "temperature": 0, "api_key": api_key}
-    if reasoning:
-        kwargs["reasoning"] = reasoning
-    model = ChatOpenAI(**kwargs)
+def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_ids: bool, rubric_name: str):
+    model = _build_openai_model(model_name=model_name, api_key=api_key)
 
     def judge_node(state: _JudgeState) -> dict[str, Any]:
+        tname = state.get("transcript_name", "")
         messages = [SystemMessage(content=state["system_prompt"])]
         if state.get("last_error") and state.get("last_output"):
             messages.append(
@@ -656,21 +609,81 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
                 )
             )
         messages.append(HumanMessage(content=state["conversation_text"]))
+        attempt = int(state.get("attempts", 0)) + 1
+
+        _log_event("judge_node_input", tname,
+                   attempt=attempt,
+                   num_messages=len(messages),
+                   message_roles=[m.type for m in messages],
+                   human_message_length=len(messages[-1].content),
+                   human_message_hash=_sha256_short(messages[-1].content),
+                   has_repair_prompt=bool(state.get("last_error")))
+
         resp = model.invoke(messages)
         content = _extract_text_from_model_content(resp.content)
-        return {"last_output": content, "attempts": int(state.get("attempts", 0)) + 1}
+
+        resp_meta = getattr(resp, "response_metadata", {}) or {}
+        _log_event("judge_node_output", tname,
+                   attempt=attempt,
+                   raw_content_type=type(resp.content).__name__,
+                   raw_content_length=len(str(resp.content)),
+                   extracted_text_length=len(content),
+                   extracted_text_hash=_sha256_short(content),
+                   extracted_text_first_500=content[:500],
+                   extracted_text_last_500=content[-500:],
+                   has_deductions_in_raw=bool(re.search(r'"deductions"\s*:\s*\[(?!\s*\])', content)),
+                   deduction_count_estimate=content.count('"points"'),
+                   response_model=resp_meta.get("model_name", ""),
+                   usage_tokens=resp_meta.get("token_usage", {}))
+
+        return {"last_output": content, "attempts": attempt}
 
     def validate_node(state: _JudgeState) -> dict[str, Any]:
+        tname = state.get("transcript_name", "")
         try:
             parsed = _parse_json_from_model_output(state.get("last_output", ""))
+
+            _log_event("json_parsed", tname,
+                       parsed_keys=list(parsed.keys()),
+                       has_sections="sections" in parsed,
+                       section_ids=list(parsed.get("sections", {}).keys()) if isinstance(parsed.get("sections"), dict) else [],
+                       deductions_summary=_extract_deduction_summary(parsed))
+
             parsed = _sanitize_grade_payload(parsed)
+
+            _log_event("payload_sanitized", tname,
+                       deductions_per_criterion=_extract_deduction_summary(parsed),
+                       overview_length=len(parsed.get("overview", [])))
+
             validated = _validate_grade_payload(
                 parsed,
                 num_turns=int(state["num_turns"]),
                 enforce_sub_criterion_ids=enforce_sub_criterion_ids,
+                rubric_name=rubric_name,
             )
+
+            scores_per_criterion: dict[str, dict[str, int]] = {}
+            for section in validated.get("sections", {}).values():
+                if isinstance(section, dict):
+                    for cid, crit in section.get("criteria", {}).items():
+                        if isinstance(crit, dict):
+                            scores_per_criterion[str(cid)] = {
+                                "score": crit.get("score", 0),
+                                "max": crit.get("max", 0),
+                            }
+            _log_event("payload_validated", tname,
+                       total_score=validated.get("total_score"),
+                       max_score=validated.get("max_score"),
+                       scores_per_criterion=scores_per_criterion,
+                       deductions_per_criterion=_extract_deduction_summary(validated),
+                       overview_items=len(validated.get("overview", [])))
+
             return {"grade_json": _order_grade_payload(validated), "last_error": None}
         except JudgeError as e:
+            _log_event("validation_error", tname, level=logging.WARNING,
+                       error_message=str(e),
+                       attempt=state.get("attempts", 0),
+                       raw_output_first_500=str(state.get("last_output", ""))[:500])
             return {"grade_json": None, "last_error": str(e)}
 
     graph = StateGraph(_JudgeState)
@@ -688,18 +701,36 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
     return graph.compile()
 
 
+# ---------------------------------------------------------------------------
+# Public API — single-transcript judging
+# ---------------------------------------------------------------------------
+
 def judge_transcript(
     transcript_name: str,
     *,
-    prompt_name: str = "judge_03",
-    rubric_name: str = "rubric_04",
+    prompt_name: str = "judge_05",
+    rubric_name: str = "rubric_05",
     output_name: str | None = None,
 ) -> JudgeResult:
-    name = (transcript_name or "").strip()
-    if not name:
-        raise JudgeError("transcript_name is required (path without .json).")
+    """Grade a single transcript and write the result to disk.
 
-    source_path = TRANSCRIPTS_DIR / f"{name}.json"
+    Parameters
+    ----------
+    transcript_name:
+        Relative path (without ``.json``) under ``transcripts/``,
+        e.g. ``"chaotic/chaotic_gpt/transcript_01"``.
+    prompt_name:
+        Judge prompt stem from ``judge/prompts/``.
+    rubric_name:
+        Rubric stem from ``judge/rubrics/``.
+    output_name:
+        If provided, the output file is written as ``<output_name>.json``
+        in the same directory as the source transcript.  Otherwise a
+        default name is generated.
+    """
+    name = transcript_name.strip()
+    source_path = (TRANSCRIPTS_DIR / f"{name}.json").resolve()
+
     if not source_path.exists():
         raise JudgeError(f"Transcript not found: {source_path}")
 
@@ -714,42 +745,52 @@ def judge_transcript(
     if not isinstance(exchanges, list) or not exchanges:
         raise JudgeError("Transcript must contain a non-empty 'exchanges' array.")
 
+    _log_event("transcript_loaded", name,
+               source_path=str(source_path),
+               num_exchanges=len(exchanges),
+               exchange_lengths=[len(json.dumps(e)) for e in exchanges],
+               context_length=len(str(transcript.get("context", ""))),
+               exercise_length=len(str(transcript.get("exercise", ""))),
+               student_persona=str(transcript.get("student_persona", "")))
+
+    normalized_rubric = rubric_name.strip().lower()
     model_name = os.environ.get("OPENAI_MODEL", _DEFAULT_OPENAI_MODEL)
     graph = _create_judge_graph(
         model_name=model_name,
         api_key=_require_openai_api_key(),
-        enforce_sub_criterion_ids=rubric_name.strip().lower() == "rubric_04",
+        enforce_sub_criterion_ids=normalized_rubric in {"rubric_04", "rubric_05", "rubric_06"},
+        rubric_name=normalized_rubric,
     )
+    system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
+    conversation_text = _format_conversation_for_judge(transcript)
+
+    _log_event("system_prompt_loaded", name,
+               prompt_name=prompt_name, rubric_name=rubric_name,
+               system_prompt_length=len(system_prompt),
+               system_prompt_hash=_sha256_short(system_prompt))
+
+    _log_event("conversation_formatted", name,
+               conversation_text_length=len(conversation_text),
+               conversation_text_hash=_sha256_short(conversation_text),
+               conversation_text_first_200=conversation_text[:200],
+               conversation_text_last_200=conversation_text[-200:],
+               num_turns_in_text=conversation_text.count("Turn "))
+
     result = graph.invoke(
         {
             "attempts": 0,
-            "system_prompt": load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name),
-            "conversation_text": _format_conversation_for_judge(transcript),
+            "system_prompt": system_prompt,
+            "conversation_text": conversation_text,
             "num_turns": len(exchanges),
+            "transcript_name": name,
         }
     )
     grade_json = result.get("grade_json")
     if grade_json is None:
-        last_error = str(result.get("last_error") or "unknown validation error")
-        last_output = str(result.get("last_output") or "")
-        debug_path = _write_failed_output_debug(
-            source_path=source_path,
-            prompt_name=prompt_name,
-            rubric_name=rubric_name,
-            model_name=model_name,
-            last_error=last_error,
-            last_output=last_output,
-        )
-        debug_hint = f" Debug output: {debug_path}" if debug_path is not None else ""
-        raise JudgeError(f"Judge failed to produce valid grade JSON. Last error: {last_error}.{debug_hint}")
+        raise JudgeError(f"Judge failed to produce valid grade JSON. Last error: {result.get('last_error')}")
 
     grade_payload = dict(grade_json)
-    grade_payload["model"] = {
-        "provider": "openai",
-        "model": model_name,
-        "temperature": 0,
-        "reasoning_effort": _openai_reasoning_effort(),
-    }
+    grade_payload["model"] = {"provider": "openai", "model": model_name}
     grade_payload["judge_llm_calls"] = int(result.get("attempts", 0))
     if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
         grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
@@ -765,8 +806,30 @@ def judge_transcript(
         else source_path.with_name(f"{output_name}.json")
     )
     output_path.write_text(json.dumps(out_transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    all_deductions_empty = all(
+        len(crit.get("deductions", [])) == 0
+        for sect in grade_payload.get("sections", {}).values()
+        if isinstance(sect, dict)
+        for crit in sect.get("criteria", {}).values()
+        if isinstance(crit, dict)
+    )
+    _log_event("judge_complete", name,
+               total_score=int(grade_payload["total_score"]),
+               max_score=int(grade_payload["max_score"]),
+               judge_llm_calls=int(grade_payload.get("judge_llm_calls", 0)),
+               output_path=str(output_path),
+               all_deductions_empty=all_deductions_empty,
+               overview_empty=len(grade_payload.get("overview", [])) == 0)
+
     return JudgeResult(
         total_score=int(grade_payload["total_score"]),
         max_score=int(grade_payload["max_score"]),
-        output_path=output_path,
+        output_path=Path(output_path),
     )
+
+
+def _default_output_path(*, transcript_path: Path, prompt_name: str, rubric_name: str, provider: str) -> Path:
+    stem = transcript_path.stem
+    filename = f"{stem}__{prompt_name}__{rubric_name}__{provider}.json"
+    return transcript_path.with_name(filename)

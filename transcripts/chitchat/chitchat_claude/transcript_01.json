@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -88,33 +88,44 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The pedagogical rationale for the Socratic approach is never made explicit across the conversation.",
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains its pedagogical rationale or tutoring constraints to the student (e.g., why it asks questions instead of giving answers, or what the student gains from the Socratic approach). It enforces a tutoring style without naming the learning rationale.",
                 "points": 2
               },
               {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor does not help the student transfer the reasoning strategies (e.g., the means/side-effect distinction, the liability criterion, the 2x2 grid method) to future philosophical tasks or generalize the method beyond this specific prompt.",
-                "points": 1
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on how their thinking evolved (e.g., what changed from the initial intuition to the refined principle), nor does it reinforce method choices after improvements. The conversation ends with stress-testing rather than consolidating what the student learned about philosophical argumentation.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deductions warranted. The tutor consistently maintained Socratic guidance, built on student progress, and gave strong process-level feedback. The deductions already captured in 1.3 cover the main gaps.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,23 +135,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deductions warranted. The conversation progressed cleanly through the assignment's sub-questions without notable drift or redundancy beyond what was already assessed.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -149,61 +154,51 @@
                   2,
                   3,
                   4,
-                  8
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses multi-part, multi-paragraph responses across many turns (e.g., turns 2, 3, 4, 8 each contain 3–4 distinct sub-questions or tasks). While the content is pedagogically sound, the length and density of these turns consistently reduces the student's opportunity to think and respond to one focused prompt at a time. A more interactive, bite-sized approach would have been more appropriate.",
-                "points": 2
+                "reason": "Throughout the conversation the tutor consistently poses 3–4 multi-part questions in a single turn (e.g., turns 2, 3, 4, 5, 6, 7, 8, 9, 10), producing multi-paragraph replies when shorter, more focused prompts would better support step-by-step student thinking. This pattern reduces the student's opportunity to reason through one question at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deductions warranted beyond the 3.1.A.a deduction already applied. The responses, while long, were well-structured and clear.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor delivered an excellent Socratic session throughout the 10-turn conversation. It never gave direct answers or did the student's reasoning for them, instead consistently probing with targeted questions that built on the student's prior responses (e.g., the 2x2 grid in turn 6, the loop case in turns 8-9).",
-      "Scaffolding was strong: the tutor moved from act consequentialism basics to case-by-case application to principle formation to stress-testing, always building on what the student had already established.",
-      "The main weakness was in meta-learning: the tutor never explained why it was using guided questioning rather than direct answers, and never helped the student transfer the reasoning strategies (means/side-effect distinction, liability criterion) to future philosophical tasks.",
-      "Communication was generally clear and well-structured, but the tutor consistently posed 3-4 sub-questions per turn, which reduced the student's opportunity to focus on one idea at a time. This pattern across multiple turns triggered the 3.1.A.a deduction.",
-      "Assignment anchoring was excellent throughout: the tutor kept the conversation tightly focused on the Fuel/Blood/trolley cases and the specific prompt questions, and immediately redirected the off-topic movie request in turn 1.",
-      "Tone was consistently warm, encouraging, and appropriately calibrated to the student's level of engagement and confidence."
-    ],
-    "total_score": 42,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic discipline throughout: it never gives away the philosophical conclusion, consistently poses targeted questions, builds on student responses turn by turn, and keeps the student doing the real reasoning work from switching/footbridge distinctions through to the final means/appropriation principle.",
+      "Scaffolding is effective: the tutor acknowledges valid student progress (e.g., 'Good—those are the pressure points', 'Nice—your grid exposes exactly where the action is'), builds the 2x2 grid exercise on the student's own categories, and advances the dialogue progressively rather than looping.",
+      "The primary pedagogy weakness is in meta-learning (1.3): the tutor never explains its Socratic rationale to the student (why it asks rather than tells), and it does not prompt reflection on the student's intellectual journey or reinforce transferable method choices at any point in the conversation.",
+      "Communication quality is consistently impaired by multi-part question clustering (3.1): nearly every tutor turn poses 3–4 distinct sub-questions in multi-paragraph format, which reduces the student's opportunity to reason through one step at a time. This is a persistent pattern rather than an isolated instance.",
+      "Assignment anchoring and off-topic control are handled well: the opening off-topic request is dismissed promptly and the conversation stays tightly focused on the prompt throughout.",
+      "Tone is consistently warm and encouraging without being evaluative, and the tutor avoids any grade-like framing. No deductions warranted for 3.2 or 2.2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

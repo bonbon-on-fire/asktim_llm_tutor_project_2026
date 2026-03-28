@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 6, the student expressed confusion about which ACS table IDs to use and asked for specific table codes. The tutor responded with a search strategy rather than first asking a short diagnostic question to locate exactly where the student was stuck (e.g., whether they had already tried the ACS table finder or what they had already found). The tutor jumped to a method explanation before checking the student's current state.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,9 +100,9 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never helped the student generalize the source-evaluation and geography-locking strategies to future assignments or other cities. The decision rules (official source preference, geography consistency, labeling non-matching geographies) were always tied to Miami and this specific table, with no explicit transfer framing such as 'this approach works for any city you study.'",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is asking questions rather than giving direct answers, nor provides any rationale about active learning or skill development throughout the conversation.",
+                "points": 2
               },
               {
                 "evidence_turns": [
@@ -127,64 +118,41 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompted the student to reflect on what changed in their thinking or why a particular method worked. After the student successfully resolved the race/ethnicity confusion (Turns 7–9), the tutor moved on without asking the student to articulate what the key insight was or why the approach they chose was sound.",
-                "points": 1
+                "reason": "The tutor never prompts the student to reflect on what they have learned about source evaluation, geographic consistency, or data methodology as transferable skills. The conversation ends without any reflection or transfer prompt.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor maintained consistent Socratic scaffolding throughout and the deductions above cover the primary gaps.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turns 1–3, the tutor repeatedly asked the student to paste sources or links (Turn 1: 'paste 2 sources'; Turn 2: 'paste the titles/links'; Turn 3: 'reply with the exact wording of your table headers'). The student never provided these materials, and the tutor continued advancing the conversation without consolidating or noting the missing inputs. This created a mild redundancy in the request pattern without synthesis.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond the single-turn redundancy already captured in 2.1.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -199,57 +167,43 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-paragraph replies with several embedded questions, decision rules, and sub-points. For example, Turn 1 contains a full decision framework, two diagnostic questions, a three-part decision rule, and a request for source pastes all in one message. Turn 2 similarly packs a geography decision test, three sub-questions, and a source request. While the content is pedagogically sound, the length and density of these responses consistently reduces the student's opportunity to think and respond to one thing at a time.",
-                "points": 2
+                "reason": "Tutor responses are consistently multi-paragraph with several sub-questions packed into each turn, reducing the student's opportunity to think and respond incrementally. Turns 1 and 2 in particular contain dense instruction blocks that could have been broken into shorter, more focused exchanges.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted. The length issue is already captured in 3.1.A.a and the responses are otherwise clear and well-structured.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic method throughout: no direct answers were given, the student was consistently asked to reason before receiving confirmation, and the tutor built on student responses turn by turn. No deductions were warranted under 1.1.",
-      "Scaffolding was generally good but the tutor missed one diagnostic opportunity in Turn 6, jumping to a search strategy for ACS tables without first checking what the student had already tried or where exactly the confusion lay.",
-      "Meta-learning was solid in process coaching but the tutor never prompted reflection on why the chosen methods worked, nor did it generalize the source-evaluation and geography-locking strategies to future assignments or other cities.",
-      "Dialogue quality was strong with consistent assignment anchoring. A minor redundancy deduction was applied for the repeated pattern of requesting source pastes that the student never provided, without the tutor consolidating or adapting the approach.",
-      "Communication was clear and well-toned throughout, but several turns (especially 1, 2, 3, 6, 7) were notably long and multi-layered, packing multiple questions and decision frameworks into single responses. This pattern reduced the student's opportunity to engage with one idea at a time and warranted a 3.1.A.a deduction."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrated strong Socratic method throughout: it consistently posed guiding questions, asked the student to derive decisions, and avoided giving direct final answers or doing the student's reasoning work. No deductions were warranted under 1.1.",
+      "Scaffolding was effective: the tutor built on each student response, acknowledged correct steps (e.g., validating the race/ethnicity plan, the geographic decision), and never restarted from scratch. No deductions under 1.2.",
+      "Under 1.3, the tutor lost 2 points for never explaining its pedagogical approach or why it was asking rather than telling (1.3.A.a), and 2 points for never prompting reflection or transfer at any point in the conversation (1.3.D.a). Method-level feedback was generally adequate, so 1.3.B was not penalized.",
+      "Dialogue quality was strong: no redundant cycling, and the tutor kept the student anchored to the assignment task throughout. Full points for 2.1 and 2.2.",
+      "Under 3.1, the tutor's response length was consistently problematic: most turns contained multi-paragraph blocks with multiple sub-questions, reducing student thinking space. 4 points were deducted under 3.1.A.a. Language was generally accessible, so 3.1.B was not penalized.",
+      "Tone was warm, non-evaluative, and supportive throughout. No deductions under 3.2."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

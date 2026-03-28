@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student confirmed boundary/year choices and provided solid source plans. The tutor acknowledged them briefly but immediately launched into three new sub-questions without first checking whether the student understood why those choices were workable or probing what the student already knew about income metrics. This is a minor instance of jumping to the next set of questions rather than doing brief diagnostic checking.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,7 +89,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -109,13 +99,12 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explained to the student why it uses guided questioning rather than giving direct answers, nor did it connect the student's active reasoning effort to long-term skill development or retention. The tutor simply declined to give direct answers without articulating the pedagogical rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces a Socratic approach throughout (e.g., 'I can't write the exact wording for you') but never explains to the student why it withholds direct answers—no rationale around active reasoning or long-term skill development is given.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -126,28 +115,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helped the student transfer the data-sourcing and boundary-labeling strategies to future assignments or other cities. All advice remained tightly tied to the Barcelona table without any generalization of reusable method patterns.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on what worked in their reasoning process (e.g., why locking boundary/year first was important, or what the exercise taught about data sourcing). Each turn moves forward without any consolidation of method learning.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently used Socratic questioning and scaffolded well across most turns. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -156,33 +139,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turn 1, the tutor's refusal of the movie question was appropriate but slightly longer than necessary before redirecting to the assignment. A single sentence redirect would have sufficed.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring and progression throughout. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -190,61 +158,45 @@
                 "evidence_turns": [
                   3,
                   4,
+                  5,
                   8
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Several turns (notably Turn 3 and Turn 4) contain multi-part question lists (3 questions at once) that, while relevant, could have been broken into shorter, more focused exchanges. Turn 8 also packs three sub-questions after a brief off-topic redirect. These are single-turn concision misses rather than a systemic pattern.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns are multi-paragraph with multiple simultaneous sub-questions (e.g., turn 3 poses three separate questions at once; turn 8 poses three sequential diagnostic questions after a brief clarification). This consistently reduces the student's space to think and respond incrementally rather than being overwhelmed.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already captured. Responses were generally clear and well-structured. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed strongly on Socratic method and guided discovery throughout the conversation, consistently refusing to give direct answers and instead prompting the student to reason through source selection, boundary decisions, GDP labeling, and proxy choices. No near-submission-ready content was provided.",
-      "Scaffolding was generally good but had a minor lapse in Turn 3 where the tutor moved quickly to three new sub-questions without brief diagnostic checking of the student's understanding of the prior step.",
-      "Meta-learning was the weakest area: the tutor never explained why it uses guided questioning (the pedagogical rationale), and never helped the student generalize the data-sourcing strategies to future tasks or other cities.",
-      "Assignment anchoring was strong throughout, with consistent and appropriate redirection of off-topic requests (movies, dinner, music, motivation). A minor delay in Turn 1's redirect was noted.",
-      "Communication was clear and well-structured. The main minor issue was occasional multi-part question lists (3 questions at once in Turns 3, 4, and 8) that slightly reduced interactivity, though this did not rise to a systemic pattern.",
-      "Tone was consistently supportive and appropriate, and no grading-like language was used. No malus deductions were warranted in any section."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic discipline throughout: it consistently refuses to write answers for the student (turns 5, 10), redirects off-topic questions promptly (turns 1, 2, 8), and scaffolds each step logically—boundary before data, source before label, label before footnote. No direct final-answer writing or near-submission-ready content is produced.",
+      "The main pedagogical weakness is a complete absence of meta-learning support: the tutor never explains why it withholds direct answers (1.3.A.a, -2 pts), and never prompts the student to reflect on what the data-sourcing process taught them or how to transfer that skill (1.3.D.a, -2 pts). A brief rationale (e.g., 'I'm asking you to draft this so you practice constructing citations yourself') would significantly strengthen the tutoring.",
+      "Communication length is the other notable issue: several turns pack three or more sub-questions into a single response (turns 3, 4, 8), which reduces the student's opportunity to engage one idea at a time. A more bite-sized rhythm would better match the student's demonstrated pace and prevent cognitive overload.",
+      "Dialogue quality, scaffolding, and tone are all strong. The tutor never loses the thread of the assignment and never mistakes the student's boundary (no assignment-anchoring errors). Acknowledgment of student progress is consistent and contextual."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

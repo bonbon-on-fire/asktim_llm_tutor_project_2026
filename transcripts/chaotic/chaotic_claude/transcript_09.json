@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3 the student says 'I'm especially stuck on Loop' and asks for help phrasing arguments. The tutor immediately launches into a multi-part framework (three candidate tests, three justification foundations, bullet-premise request) without first asking a short diagnostic question to locate exactly where the student's reasoning breaks down. This is a method-dump before checking what the student already understands.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why guided questioning rather than direct answers is used, nor does it connect the student's active reasoning effort to long-term skill development or retention. There is no moment where the tutor articulates the pedagogical rationale for its approach.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains its tutoring rationale or policy to the student. In Turn 1 it simply says 'I can't write a submission-ready answer for you' without explaining that the reason is to support active reasoning or long-term skill development.",
                 "points": 2
               },
               {
@@ -126,74 +117,52 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the reasoning strategies used (e.g., the means/side-effect distinction, stress-testing principles, anticipating objections) to future philosophical tasks. All coaching remains tied to this specific prompt with no transfer framing.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Throughout the conversation the tutor moves from one set of questions to the next without ever prompting the student to reflect on what changed in their thinking, why a particular move worked, or what they learned methodologically. No meta-reflection or transfer support is offered.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, and the deductions above cover the main issues.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.C.a",
-                "reason": "After the student produces a coherent 3-bullet reply in Turn 7, the tutor continues to probe with 2–3 new sub-questions per turn across Turns 8, 9, and 10 without ever synthesizing the accumulated reasoning into a brief checkpoint or summary. The conversation ends with the student still being asked for more pieces rather than receiving a consolidating takeaway of what has been established.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring throughout and avoided off-topic drift.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   3,
                   4,
+                  5,
                   6,
                   7,
                   8,
@@ -201,58 +170,43 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses multi-part, multi-paragraph responses (often 4–6 numbered sub-questions plus framing prose) across nearly every turn. While each question is individually purposeful, the cumulative length of most turns reduces the student's opportunity to think and respond incrementally. Shorter, more focused prompts would have been more appropriate in several turns.",
-                "points": 2
+                "reason": "Nearly every tutor turn is a multi-part, multi-paragraph response. Turns 1, 3, 4, 5, 6, 7, 8, 9, and 10 all contain 4–5+ sub-questions or extended explanations before allowing the student to respond, consistently reducing the student's opportunity to think through one issue at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond those already captured. Clarity and readability were generally strong despite length issues.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed very well on the core Socratic criterion (1.1): it refused to write the answer, consistently used probing questions, and guided the student through genuine philosophical reasoning across all 10 turns. No direct-answer or near-submission-ready content was provided.",
-      "Scaffolding (1.2) was mostly strong but suffered one clear instance in Turn 3 where the tutor responded to a stated confusion point with an immediate multi-part framework rather than first diagnosing where exactly the student was stuck.",
-      "Meta-learning (1.3) was the weakest area: the tutor never explained its pedagogical rationale to the student, never connected the student's effort to long-term skill development, and never generalized the reasoning strategies to future tasks. Process feedback was present but not explicitly framed as transferable method.",
-      "Dialogue quality was good overall. Assignment anchoring was maintained throughout. A minor consolidation miss occurred in the later turns (7–10) where the tutor continued probing without synthesizing what had been established.",
-      "Communication quality was solid in clarity and tone, but the tutor's responses were consistently long (4–6 numbered sub-questions per turn), which reduced student thinking space and triggered the repeated-length deduction under 3.1.A.a.",
-      "No malus deductions were applied as all identified issues were captured in the primary criteria."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently refused to do the student's work and maintained a Socratic, question-driven approach throughout all ten turns. It never gave away final answers, polished the student's prose, or stated conclusions before the student reasoned them out—1.1 is unpenalized.",
+      "Scaffolding (1.2) was strong: the tutor built on every valid student move (e.g., acknowledging the coherent grid in Turn 4, affirming 'argument-shaped' reasoning in Turn 7) and correctly diagnosed where the student was confused (Loop, the means criterion) before drilling in.",
+      "Meta-learning (1.3) suffered on two counts. The tutor never explained why it was refusing to write the answer (no learning-rationale statement, just 'I can't'), which triggers 1.3.A.a. It also never prompted the student to step back and reflect on how their thinking evolved or what methodological lesson to carry forward, triggering 1.3.D.a. No deduction was applied for 1.3.B because the tutor gave substantive process feedback throughout.",
+      "Dialogue quality (2.1, 2.2) was excellent: the conversation advanced steadily, looping back on Loop purposefully rather than repetitively, and remained tightly anchored to the prompt.",
+      "Communication quality (3.1) was hurt by consistently long, multi-question turns. Every single tutor message presented 3–5 sub-questions simultaneously, leaving little space for the student to work through one issue before being handed another. This pattern across nearly all turns warrants the 4-point deduction under 3.1.A.a. Language was clear and appropriately academic, so no deduction for 3.1.B.",
+      "Tone (3.2) was supportive and coaching-oriented throughout; no grades or punitive framing were used."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

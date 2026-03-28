@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -94,27 +94,21 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When refusing off-topic requests and refusing to paste the QuickFacts line, the tutor frames it mainly as a role constraint (\"I’m your course tutor\") without explaining the learning/ownership rationale for why the student needs to do the retrieval themselves.",
+                "reason": "The tutor enforced scope/help limits ('we need to stick to the assignment' and 'I can’t paste the line for you') without explicitly framing these limits in terms of learning rationale or skill development.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -124,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,46 +138,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained strong guided discovery: prompted the student to choose between census vs estimate, justify the choice, and retrieve exact figures themselves rather than supplying submission-ready content.",
-      "Scaffolding was effective (small next steps, tool-specific guidance for Sheets, conventions for units/currency/year) and stayed well-anchored to the assignment.",
-      "Main gap: refusals of off-topic requests and of copying the QuickFacts line were not accompanied by an explicit learning/ownership rationale, which is a missed meta-learning opportunity."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed tightly anchored to the assignment, redirected off-topic requests immediately, and used guided questions rather than supplying the city-data answers directly.",
+      "Scaffolding was strong: the tutor built from the student's chosen source, helped the student reason through estimate-vs-census tradeoffs, and prompted table-design conventions before filling entries.",
+      "A small deduction was applied because the tutor's refusals and scope limits were not explicitly explained as a learning strategy or skill-building rationale."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

@@ -71,26 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the student explicitly says 'That didn't work—trying a different angle' and asks for a direct answer. The tutor responds with a long multi-part explanation rather than first asking a short diagnostic question to locate exactly where the student is stuck (boundary confusion vs. source confusion vs. both). The tutor jumps to addressing the issue with a full method dump before checking what the student already understands.",
-                "points": 2
+                "reason": "Turn 1 opens with a long multi-part diagnostic dump (six numbered questions) before checking what the student already understands about sources or the assignment. The tutor immediately addresses potential confusion across all fields rather than asking one focused opening question to locate the student's actual starting point.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation, the tutor never explains to the student why it uses guided questioning rather than giving direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. The student repeatedly asks for direct answers (Turns 1, 2, 6, 8) and the tutor redirects without explaining the pedagogical rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it won't just answer (e.g., that working through the process builds the student's ability to evaluate sources independently in future assignments). It simply declines and asks questions, leaving the rationale implicit.",
                 "points": 2
               },
               {
@@ -126,67 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the source-evaluation or boundary-selection strategies beyond this specific Lagos assignment. No turn explicitly helps the student transfer the 'how to evaluate a source' or 'how to define a study boundary' method to future tasks or other cities.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends without the tutor prompting any reflection on what the student has learned about evaluating sources or geographic boundary decisions—skills transferable to later course assignments. No wrap-up or process-reflection moment occurs.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor consistently maintained Socratic guidance and scaffolded progression across all turns. The deductions already captured in 1.2 and 1.3 cover the main pedagogy gaps.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turn 1, the tutor asks six sub-questions across all table fields at once. In Turn 2, it again asks two framing questions plus lists three source types with sub-questions. This creates some redundancy in the questioning pattern—the student is repeatedly asked to evaluate sources and boundaries across multiple turns before any actual data is gathered, with similar 'which source will you use?' prompts appearing in Turns 2, 3, 4, and 5 without meaningful consolidation.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted beyond what was captured in 2.1. The tutor maintained strong assignment anchoring throughout and the single redundancy issue was already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -202,59 +177,43 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long multi-part responses across the entire conversation. Turn 1 contains six numbered sub-questions plus a decision rule plus a framing paragraph. Turn 2 contains two framing questions plus three source-type descriptions each with sub-questions. Turn 8 contains a two-part guided search section plus a two-part demographics section. These multi-paragraph replies consistently appear where one or two focused prompts would have been more appropriate and interactive.",
-                "points": 2
+                "reason": "Throughout the conversation the tutor consistently sends multi-paragraph responses with multiple embedded questions per turn (e.g., Turn 1 has six numbered questions, Turn 2 has two questions plus a multi-bullet source explanation, Turn 4 has two follow-up questions, Turn 8 has a search strategy plus two additional sub-questions). This pattern repeatedly reduces the student's opportunity to think and respond incrementally and continues well beyond the first turn.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "A minor additional deduction of 1 point is warranted. The tutor's responses, while clear in structure, consistently pack multiple questions and sub-questions into single turns (e.g., Turns 1, 2, 4, 6, 7, 8). This pattern of asking 3-6 questions simultaneously reduces the student's ability to focus and respond meaningfully, and represents a communication quality gap in concision not fully captured by the 3.1.A.a deduction alone.",
-          "score": 1,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout all 10 turns, consistently refusing to give direct answers and instead guiding the student through source evaluation, boundary selection, and data quality decisions. No direct answer or near-submission-ready content was provided.",
-      "Scaffolding was generally good but the tutor missed a diagnostic opportunity in Turn 2 when the student signaled frustration ('That didn't work'), jumping to a full explanation rather than first asking a short question to locate the specific confusion.",
-      "Meta-learning was the weakest area: the tutor never explained why it uses guided questioning (even when the student repeatedly asked for direct answers), and never helped the student generalize the source-evaluation or boundary-definition strategies to future tasks.",
-      "Assignment anchoring was excellent throughout—the tutor consistently kept the conversation tied to the table requirements and the Lagos State boundary decision.",
-      "The main communication weakness was response length: nearly every turn contained 3-6 simultaneous sub-questions in multi-paragraph format, which reduced the student's opportunity to think and respond to one focused prompt at a time. This pattern was consistent enough to trigger the 3.1.A.a deduction.",
-      "Tone was warm, supportive, and well-calibrated to the student's confusion level throughout. No grading language was used.",
-      "The 3.4 malus was applied for the persistent multi-question pattern that, while not causing confusion, consistently reduced interactivity beyond what was already captured in 3.1.A.a."
-    ],
-    "total_score": 38,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains a genuinely Socratic posture throughout: it never gives the student a filled-in table, never states the final answer before the student works toward it, and consistently turns the student's requests for direct answers back into guided questions. No 1.1 deductions are warranted.",
+      "Dialogue quality is strong. The tutor keeps the student anchored to Lagos State as the governing boundary, redirects each 'just tell me' request appropriately, and advances the conversation without redundant spiraling.",
+      "The primary weaknesses are response length and depth of meta-learning support. Nearly every tutor turn contains three to six embedded questions or bullet-point sub-tasks, which is more than a student can realistically process in one reply and reduces the interactive, step-by-step quality the rubric rewards. A one-question-at-a-time or two-question-at-a-time pattern would have been stronger.",
+      "The tutor never explains its pedagogical rationale for not simply answering (1.3.A), and it never closes the conversation with a process-reflection prompt that would help the student transfer the source-evaluation skills to later assignments (1.3.D).",
+      "Scaffolding deduction (1.2.B): Turn 1 launches a six-question diagnostic without first asking even one focused question to locate the student's actual starting knowledge; this is a method-dump before checking understanding. However, from Turn 2 onward the tutor builds appropriately on student responses, so only one 1.2 deduction is applied.",
+      "Tone is supportive and non-punitive throughout; no grading language is used. No 3.2 deductions apply."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

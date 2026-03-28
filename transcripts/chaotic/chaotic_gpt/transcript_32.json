@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.1.B.b",
-                "reason": "Tutor provided fully-written, copy-ready gap-claim sentence options (A/B) that the student could directly paste into the assignment, rather than only coaching the student to generate their own wording.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,24 +86,29 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave strong immediate drafting support, but did not prompt brief reflection on why the hedging/evidence method made the claims more defensible or how to reuse that method on later actor-mapping assignments.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,46 +138,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to produce a submission-ready forum post and instead used questioning plus structured scaffolds to keep the student doing the core work.",
-      "Main issue: tutor offered copy-ready sentence options for a key claim (the participation-gap line), which crossed into providing polished, directly usable assignment text.",
-      "Otherwise, the conversation stayed well-anchored to the task requirements (lead/engaged/missing actors + evidence + gaps), with clear, actionable steps and appropriate tone."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed tightly anchored to the actual assignment, repeatedly refused to provide submission-ready text, and instead used fill-in scaffolds, targeted prompts, and caution about evidentiary overclaiming.",
+      "Scaffolding was strong and cumulative: the tutor built from the student's Miami-specific facts, narrowed claims when evidence was weak, and kept the interaction practical under deadline pressure.",
+      "Only a small deduction was applied because the tutor focused on getting the student to finish this post, without adding explicit reflection on why the drafting method worked or how to transfer it to future course tasks."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

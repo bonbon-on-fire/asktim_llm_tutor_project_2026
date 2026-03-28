@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student expresses being stuck on the year decision and GDP/income difficulty. Rather than asking a short diagnostic question to locate the specific confusion, the tutor immediately provides a full template row with all fields and a multi-part explanation. While the template is useful, the tutor jumps to a comprehensive solution before checking what the student already understood about the year problem.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,66 +100,59 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never helps the student transfer the source-evaluation and data-documentation strategies to future assignments or other cities. All advice remains tightly bound to the Lagos table task without any generalization of method patterns.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains to the student why it is declining to give direct answers or specific source names—it simply refuses or redirects without offering a learning-rationale (e.g., 'I'm asking you to find these yourself so you build the skill of source evaluation').",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts reflection on what the student's thinking process revealed or why any particular method (e.g., committing to a geographic unit first, then sourcing) worked. At the end of turn 7 the student self-reflects ('vague→direct ask→narrow ask worked kinda'), but the tutor ignores this moment and does not reinforce or extend it.",
+                "points": 2
               }
             ],
-            "score": 4,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided rather than told, reinforced method choices, and maintained student ownership throughout.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turns 2–5, the tutor repeatedly asks the student to name candidate sources and specify the Lagos geographic unit across multiple turns without consolidating the repeated probing into a clear checkpoint. The same 'name a source' prompt recurs in Turns 2, 3, and 4 with minimal synthesis between them.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor maintained strong assignment anchoring and generally progressed the conversation forward.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -180,58 +164,42 @@
                   4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1–4 consistently feature multi-paragraph responses with multiple sub-questions, bullet lists, and embedded explanations. Turn 3 in particular provides a full template plus a year-rule question plus a rationale explanation in one message. While individually each element has value, the pattern of long multi-part responses reduces the student's opportunity to think and respond incrementally.",
-                "points": 2
+                "reason": "Several early responses (turns 1–4) are multi-paragraph blocks with multiple numbered questions, bullet lists, and embedded rationale combined in a single message. Turn 3 in particular provides a full template plus a multi-option year-rule question in one long message. These repeatedly reduce the student's opportunity to think before receiving the next layer of content, when shorter focused prompts would have been more interactive.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond those already captured. Responses were generally clear and well-structured despite length issues.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout: it never gave direct answers, consistently redirected the student's repeated attempts to extract ready-made sources or codes, and kept ownership of reasoning with the student.",
-      "Scaffolding was generally well-sequenced—building from city/year definition to source types to specific orgs to proxy rules—though in Turn 3 the tutor jumped to a comprehensive template before diagnosing exactly where the student was stuck on the year problem.",
-      "Meta-learning was present (e.g., the 'year rule' framing, the 5-word tag discipline move in Turn 9, the proxy-rule articulation in Turn 10) but the tutor never helped the student generalize these strategies to future assignments or other cities.",
-      "A minor redundancy issue appears in Turns 2–5 where the 'name a candidate source' prompt recurs without a consolidating checkpoint.",
-      "Response length was the main communication weakness: Turns 1–4 consistently used multi-paragraph, multi-question messages that reduced student think-and-respond space. Later turns (7–10) were more concise and interactive.",
-      "Tone was consistently supportive and non-grading throughout; assignment anchoring was strong with no off-topic drift."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintains strong Socratic discipline throughout: it consistently refuses to hand over specific source names or codes, asks targeted diagnostic questions, builds on student progress turn-by-turn (correctly recognising the Lagos State unit choice, the year-rule decision, the proxy-labelling issue), and keeps the student doing the intellectual work. No submission-ready content or key reasoning is supplied.",
+      "Scaffolding and progression are solid. The tutor appropriately escalates complexity (unit → sources → year rule → data-quality checks → proxy rule) and acknowledges student progress at each stage.",
+      "Meta-learning is where points are lost. The tutor never explains its refusal policy in learning-rationale terms (criterion 1.3.A), and when the student self-reflects in turn 7 ('vague→direct ask→narrow ask worked kinda'), the tutor passes up a clear chance to prompt process reflection or reinforce the method (criterion 1.3.D). The process-feedback criterion (1.3.B) is borderline—the tutor does give method-level guidance on sourcing decisions—so no deduction is applied there.",
+      "Dialogue quality is strong: the tutor advances the conversation without spiraling, keeps the student anchored to the assignment, and redirects off-task requests efficiently.",
+      "Communication is the other weak area. Turns 1–4 are consistently dense, multi-part messages that pile questions, rules-of-thumb, and templates together. While individually coherent, the cumulative length reduces student thinking time and departs from the bite-sized interactive model. Language is professional and jargon-appropriate; no tone or grading-stance issues are present."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 8, the student says they are stuck because they lack concrete facts and cannot draft without making things up. Rather than asking a short diagnostic question to locate exactly where the student is blocked (e.g., 'Have you tried searching the DOHMH site yet? What did you find?'), the tutor immediately provides a full list of specific sources with descriptions. This is a jump to a full answer rather than a brief check to see what the student had already tried.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,161 +89,97 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
                   7,
                   8,
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation, the tutor consistently guides the student through Socratic questioning but never explicitly explains why this approach benefits the student's learning (e.g., why producing one's own reasoning improves retention or skill development). The tutor does explain it cannot give direct answers but frames this as a constraint rather than a learning benefit.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor consistently moves forward without prompting any reflection on the student's process or thinking. After the student makes good progress (e.g., defining their 1/5/10 anchors in turn 7, selecting stat types in turn 10), the tutor never asks the student to pause and reflect on what changed in their reasoning or why a particular method worked. There is no reinforcement of method choices at any point.",
                 "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the strategies being used (e.g., how to define a rating scale, how to select indicators, how to structure a justification) to future assignments or tasks beyond this specific stressors table. No transfer-oriented language appears across the full conversation.",
-                "points": 1
               }
             ],
-            "score": 2,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor maintained consistent Socratic discipline and method reinforcement throughout. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "In Turn 9, the tutor restates the criteria for a 'defensible single stat' (directly matches indicator, NYC-specific, has time frame, interpretable for severity) which largely recaps guidance already given in prior turns about choosing indicators. This is a near-duplicate framing that adds limited new value.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The tutor consistently re-anchored to the assignment steps and kept the conversation on track. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
                   8,
                   9
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Turn 1 includes a fairly long initial explanation of column structure before the student has even confirmed their city or template, adding content that may not be needed yet. Turn 8 provides a full multi-source list with descriptions when a shorter prompt to try one source first would have sufficed. Turn 9 lists all stat types across three stressors in detail when the student had already shown understanding of the indicator concept. These are isolated single-turn concision misses rather than a repeated pattern.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor frequently uses multi-paragraph, multi-bullet responses where shorter, more targeted prompts would have been appropriate. For example, turn 1 lays out the full column structure unprompted while also asking questions; turns 4, 5, 6, 7, and 9 each present multiple numbered sub-questions or layered instructions in a single response. This pattern persists across nearly all turns, consistently reducing the student's opportunity to think and respond without being overwhelmed.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those already captured. Responses were generally well-structured and clear. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic discipline throughout, consistently refusing to provide direct answers, example tables, pre-mapped stressor lists, fill-in templates, or specific ratings, and instead redirecting the student to generate their own reasoning at each turn.",
-      "Pedagogy 1.1 (Socratic method): No deductions. The tutor never gave submission-ready content, never assembled a full answer across turns, and never took over key reasoning steps. The student was consistently asked to propose, choose, and justify before the tutor responded.",
-      "Pedagogy 1.2 (Scaffolding): A 2-point deduction was applied for Turn 8, where the student expressed a specific block (no concrete facts yet) and the tutor immediately provided a full source list rather than first asking a short diagnostic question to locate what the student had already tried.",
-      "Pedagogy 1.3 (Meta-learning): A 2-point deduction was applied because the tutor never explained the learning rationale for guided questioning (why the student's own reasoning matters for skill development), framing refusals as constraints rather than pedagogy. A 1-point deduction was applied for absence of transfer-oriented language across the full conversation.",
-      "Dialogue 2.1 (Redundancy): A 1-point deduction for Turn 9, where the tutor restated stat-selection criteria that largely recapped prior guidance without meaningful new framing.",
-      "Dialogue 2.2 (Assignment anchoring): No deductions. The tutor consistently tied guidance back to the assignment steps (Steps 3-5 in particular) and kept the student focused on NYC-specific, evidence-based work.",
-      "Communication 3.1 (Concision): A 1-point deduction for isolated single-turn verbosity in Turns 1, 8, and 9, where shorter prompts would have preserved the interactive dynamic better. This was not a repeated pattern warranting the larger 2-point deduction.",
-      "Communication 3.2 and 3.3: No deductions. Tone was consistently warm, supportive, and appropriately adapted to the student's recurring anxiety and frustration. No grading language was used.",
-      "No malus deductions were applied in any section, as all identified gaps were already captured in the primary criteria."
-    ],
-    "total_score": 40,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic discipline throughout: it consistently refuses to write example tables, pre-map stressors, provide fill-in-the-blank templates, or pick specific stats for the student (turns 2, 5, 6, 7, 9), maintaining genuine guided discovery. The tutor successfully sequences the student through city selection, sector reasoning, indicator choice, and scale definition in a logical scaffold.",
+      "The main weakness is response length and format. Most tutor turns contain multiple numbered sub-questions, bullet lists, and layered instructions delivered simultaneously. This pattern recurs across nearly all turns and reduces the student's cognitive space to respond, meeting the threshold for a 3.1.A.a deduction.",
+      "A secondary weakness is the absence of meta-cognitive reflection prompts. After the student makes clear progress (e.g., defining their 1/5/10 anchors in turn 7, or locking in stat types in turn 10), the tutor never asks the student to reflect on their thinking process or what changed in their approach. This triggers a 1.3.D.a deduction.",
+      "No issues were found with assignment anchoring (the tutor correctly re-grounds the student when they try to avoid committing to a city), redundancy/spiraling (each turn advances the student meaningfully), or tone (the tutor is consistently supportive and non-punitive)."
+    ],
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

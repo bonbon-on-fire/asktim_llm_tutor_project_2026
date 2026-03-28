@@ -71,22 +71,22 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  7
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provided near plug-and-play one-sentence justification shells for all 10 stressors with most substantive content already embedded (frequency/exposure/consequence phrasing), requiring only small factual inserts; these could be copied into the submission with minimal additional thinking.",
-                "points": 8
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor completed a core assignment step by assigning 2–3 sector tags for all 10 stressors, doing key categorization work the student was supposed to perform.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -99,32 +99,26 @@
               {
                 "evidence_turns": [
                   1,
-                  2,
-                  3,
-                  6
+                  5,
+                  6,
+                  8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor refused to provide submission-ready content multiple times but largely framed it as 'doing the assignment' rather than briefly explaining the learning/skill rationale for guided work (student ownership, practice in justification, etc.), especially when the student expressed time pressure/frustration.",
+                "reason": "Tutor repeatedly said it could not provide submission-ready work because that would be 'doing the assignment,' but did not clearly explain the learning rationale behind that limit.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 13,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the noted plug-and-play template and limited learning-rationale explanation.",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -134,81 +128,49 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Tutor consistently redirected to the assignment constraints and maintained forward progress without avoidable repetition.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "The response containing 10 full sentence shells is lengthy; a shorter version (e.g., 2–3 exemplars plus a general pattern) could have met the immediate goal with less text.",
-                "points": 1
-              }
-            ],
-            "score": 5,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Communication was generally clear and well-structured (lists, templates, checkpoints); no extra catch-all issues beyond the single concision miss already deducted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor maintained assignment integrity by refusing to produce a submission-ready stressors table and instead used guided steps (anchoring ratings, mapping rules, ordering checks) that supported student ownership.",
-      "Major issue: tutor provided highly copyable, mostly pre-written justification sentence shells for all 10 stressors (with only small blanks), which risks becoming a near plug-and-play submission.",
-      "Tutor’s refusals were consistent, but the rationale was mostly framed as 'doing the assignment' rather than a brief learning/skill-based explanation tailored to the student’s time-pressure frustration."
-    ],
-    "total_score": 36,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Tutor stayed anchored to the assignment, refused submission-ready writing, and generally scaffolded the student through rating logic, evidence selection, and consistency checks.",
+      "Main pedagogy issue: the tutor still supplied direct content for a core assignment step by giving sector tags for all 10 stressors. I applied the smaller deduction rather than a full 1.1.A penalty because the tutor did not assemble a full submission-ready table."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

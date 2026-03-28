@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,36 +86,18 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  4,
-                  8
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor repeatedly refuses to provide a submission-ready response (“I can’t write…”, “You need to write it”) but gives little explicit learning-focused rationale (ownership/skill-building) for why guided work is being enforced, beyond stating the constraint.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5,
+            "deductions": [],
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy issues beyond the meta-learning/rationale deduction already taken.",
-          "score": 0,
-          "max": 2
+          "score": 24,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,23 +107,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No catch-all dialogue issues observed; the tutor consistently re-anchors to the prompt and progresses the discussion.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -151,45 +127,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication deductions warranted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Strong guided-discovery tutoring: the tutor consistently elicited the student’s own case summaries, verdicts, and principle choice, and used targeted stress-tests (e.g., Loop) to deepen the student’s argument rather than supplying a write-up.",
-      "Main weakness: when refusing to write/polish submission-ready text, the tutor did not clearly explain the pedagogical rationale (learning/ownership) for that constraint, even though the refusal itself was appropriate."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 46,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently refused submission-ready writing and kept the student doing the core argumentative work through targeted questions, case-by-case application, and thesis revision prompts.",
+      "The conversation stayed tightly anchored to the assignment, progressed logically from act consequentialism to objections to DDE/Loop, and the tutor built on the student's own ideas rather than replacing them.",
+      "Although the tutor offered options, an outline, and a thesis template, these remained scaffolds rather than paste-ready content; no clear rubric-triggering deduction is supported by the transcript."
+    ],
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

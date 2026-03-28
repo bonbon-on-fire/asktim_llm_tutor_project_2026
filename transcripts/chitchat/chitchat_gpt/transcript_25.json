@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -93,27 +93,29 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student requested off-topic chat/breaks, the tutor refused without explaining a learning/ownership rationale for staying on guided work; it read as constraint-enforcement rather than pedagogy-grounded redirection.",
+                "reason": "The tutor enforced scope limits on off-topic requests but did not explain a learning rationale for redirecting back to the assignment.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "After the student reached a clearer position, the tutor moved straight to organizing the answer rather than prompting reflection on what method or distinction helped resolve the cases.",
                 "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the noted missing rationale for refusals.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -123,71 +125,64 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Dialogue stayed on-track with effective checkpoints and did not drift from assignment constraints.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly bundled 3-4 questions and long task lists into single turns, reducing interaction and likely contributing to the student's overload by turn 8.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Communication was consistently structured (numbered prompts, brief resets) with no extra issues needing a catch-all deduction.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 45,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided discovery (diagnostic questions, case-by-case probes, stress tests, and an argument-map task) without supplying submission-ready prose or deciding the student’s central normative stance for them.",
-      "Primary gap: when refusing off-topic requests (Turns 1 and 8), tutor did not explain the pedagogical reason for keeping the student generating their own analysis, missing a meta-learning opportunity."
-    ],
-    "total_score": 45,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed tightly anchored to the philosophy prompt and mostly used guided questioning rather than supplying a submission-ready answer.",
+      "Main deductions are for missing meta-learning moves: the tutor redirected off-topic requests without explaining the learning rationale, and it did not prompt reflection on what reasoning method clarified the cases.",
+      "Communication was the biggest weakness: several turns stacked multiple questions and sub-tasks, and the student's statement that they were 'fried' supports that the pacing became cognitively heavy."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

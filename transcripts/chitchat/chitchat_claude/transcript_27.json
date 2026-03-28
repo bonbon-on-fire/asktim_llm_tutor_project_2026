@@ -71,35 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "1.1.C.e",
-                "reason": "In Turn 1, the tutor provides a fairly complete source list (Census, BEA, Köppen-Geiger datasets) with explanations before the student has attempted any research. While the tutor does ask clarifying questions, the substantive guidance front-loads answers rather than guiding the student to discover sources. This pattern recurs in Turn 2 (full source list again), Turn 9 (two specific citable datasets named), and Turn 10 (specific verification steps). The tutor repeatedly tells rather than guiding discovery across multiple turns.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 7, the student asks a specific, clear question about citation format. The tutor responds with a checklist of citation components rather than first asking what the student already knows or what the course requires before providing the full checklist. However, the tutor does ask about course style requirements, so this is a mild miss. Deduction is borderline; applying conservatively.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -118,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it uses guided questioning or why the student should do their own source-finding. There is no mention of how active research builds skills, why producing one's own citations matters, or how this process connects to long-term learning. The tutor simply redirects off-topic questions without explaining the pedagogical rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces redirection of off-topic questions (pizza, snacks, Netflix, travel) without ever explaining the pedagogical rationale—e.g., that staying on task supports deeper skill-building or active reasoning. The student is simply told 'I can't help with that' without learning why.",
                 "points": 2
               },
               {
@@ -135,28 +117,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the source-finding strategies to future assignments or other cities. All advice is tied to Chicago/this specific table. No reusable method patterns are stated (e.g., 'for any city, here's how to find official statistics').",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never prompts the student to reflect on their process or reasoning improvements across the conversation. After the student successfully resolves double-counting, citation format, or source selection, the tutor moves straight to the next task without reinforcing what changed in the student's thinking or why the method worked.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently provides direct source recommendations and specific dataset names without first probing what the student has already tried. This pattern of telling rather than guiding is partially captured in 1.1.C.e but the consistency across all 10 turns warrants a small additional catch-all deduction.",
-          "score": 1,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -165,99 +141,54 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  4,
-                  6,
-                  8
-                ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turns 2, 4, 6, and 8, the student makes off-topic requests (pizza, snacks, Netflix, travel). The tutor redirects correctly each time but in Turns 4 and 6 adds a brief acknowledgment ('let's keep this on your data table') that is slightly longer than strictly necessary before refocusing. However, these are brief and the redirection is prompt, so only a minor deduction applies for the pattern.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No significant additional dialogue quality issues beyond what was captured. The conversation progresses well through the assignment tasks with good anchoring.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 9 contain multi-paragraph responses with extensive source lists and explanations when shorter, more targeted prompts would have been more appropriate. Turn 1 in particular provides a full source taxonomy before even knowing the city. Turn 9 names two specific datasets with descriptions before asking the student's preference. These responses reduce student opportunity to think and respond.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality issues beyond what was captured in 3.1.A.a. Responses are generally clear and well-structured despite being occasionally long.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 33,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains good assignment anchoring throughout, consistently redirecting off-topic requests (pizza, Netflix, travel) quickly and returning to the data table task.",
-      "The primary weakness is in Socratic method: the tutor repeatedly provides direct source recommendations, specific dataset names, and detailed guidance before the student has attempted research. This 'telling' pattern across Turns 1, 2, 9, and 10 reduces student ownership of the discovery process (1.1.C.e).",
-      "The tutor never explains the pedagogical rationale for guided questioning, nor does it help the student generalize source-finding strategies to future assignments or other cities (1.3.A.b, 1.3.D.b).",
-      "Response length is frequently excessive: Turns 1, 2, and 9 contain multi-paragraph source lists when shorter, more targeted prompts would better support student thinking (3.1.A.a).",
-      "Scaffolding is generally adequate—the tutor builds on student progress and asks clarifying questions—though there is a mild miss in Turn 7 where a checklist is provided before fully diagnosing what the student already knows.",
-      "Tone is consistently warm and supportive; the tutor handles repeated off-topic requests without being dismissive. No grading stance issues were observed.",
-      "The 1.2 deduction for Turn 7 is applied conservatively given the tutor does ask about course requirements in the same turn."
-    ],
-    "total_score": 32,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic method throughout: consistently asks diagnostic questions before providing information, builds incrementally on the student's answers, avoids giving direct answers to data tasks, and successfully redirects multiple off-topic digressions without engaging in them substantively.",
+      "Pedagogy (1.1) is strong—no direct answers, no generation of conclusions for the student, and good scaffolding. The student is guided to locate and evaluate table IDs, resolve double-counting issues, and verify source quality step by step.",
+      "Scaffolding (1.2) is solid—the tutor builds on each correct student step (e.g., confirming the S0301 mutually-exclusive plan before moving to citation, then to remaining fields) and does not restart from scratch.",
+      "Meta-learning (1.3) is weaker. The tutor never explains why it cannot answer off-topic questions in terms of learning goals (1.3.A.a), and it never prompts the student to reflect on why their methods worked or what they learned about source evaluation (1.3.D.a). The 1.3.B criterion is borderline—the tutor does give some process-level guidance on source evaluation—so no deduction was taken there.",
+      "Dialogue quality (2.1, 2.2): No significant spiraling or redundancy. Off-topic content is redirected immediately and cleanly each time. Assignment anchoring is maintained throughout.",
+      "Communication quality (3.1, 3.2): Responses are well-paced, appropriately concise, and use accessible language. Tone is consistently supportive without being condescending, and the tutor does not assign grades."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

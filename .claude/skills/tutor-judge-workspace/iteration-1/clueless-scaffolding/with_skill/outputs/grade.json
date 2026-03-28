@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on why a reasoning method worked or failed. Across all 10 turns, the tutor drives content progression (case analysis, principle drafting, edge-case testing) but does not pause to ask the student what changed in their thinking, why testing against cases helped refine their view, or how the philosophical method they practiced could transfer to other assignments.",
+              "points": 2
+            }
+          ],
+          "score": 4,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": { "score": 22, "max": 24 }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": { "score": 12, "max": 12 }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": { "score": 10, "max": 10 }
+    }
+  },
+  "total_base_score": 44,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Strong Socratic approach throughout: the tutor consistently used questions to guide the clueless student through act consequentialism case-by-case, never providing submission-ready answers or doing the core reasoning for the student.",
+    "Excellent scaffolding and progression: the tutor acknowledged correct student steps at every turn, built systematically from trolley switch to footbridge to Blood, and addressed the student's actual confusion points (e.g., trust effects vs rule consequentialism in turn 5).",
+    "Deducted 2 points under 1.3.D.a: the tutor never prompted the student to reflect on their reasoning process or why particular analytical methods (e.g., testing principles against edge cases, stipulating consequences) were effective -- all feedback was content-focused rather than meta-cognitive.",
+    "Borderline call on 1.1.C.b: in turn 4 the tutor listed specific downstream effects (terror, vigilantism, trauma) and in turn 5 explicitly stated the act vs rule distinction rather than guiding discovery. Chose not to deduct because both were framed as tools for the student to apply rather than as resolved conclusions, and the student did the substantive reasoning work throughout."
+  ],
+  "total_score": 44,
+  "judge_llm_calls": 1
+}

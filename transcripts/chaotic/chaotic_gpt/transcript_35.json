@@ -71,22 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Tutor provided a plug-and-play APA reference line that is largely copyable into the submission with only placeholder swaps, which functions as near-direct writing help rather than guided discovery.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,24 +86,31 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor gave process guidance and checks, but did not prompt reflection on why the source-selection, table-matching, or citation-building method worked or how to reuse it on later assignments.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 15,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy consistency issues beyond the direct template-writing already captured in 1.1.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,23 +120,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No extra dialogue-flow issues requiring catch-all deductions.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,46 +140,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional clarity/structure problems beyond what was already scored.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently resisted doing the student’s table for them and instead provided efficient source-path guidance (Census/BEA/Köppen dataset) and validation checks.",
-      "Main issue: the tutor crossed into assignment-ready writing help by producing a highly copyable APA reference line with placeholders (Turn 10), which reduces student ownership of submission text.",
-      "Dialogue stayed on-task with good anchoring to course constraints (city proper vs MSA, year/vintage consistency), and tone remained supportive while setting boundaries."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently avoided doing the assignment for the student, kept the interaction anchored to the actual table fields, and provided concrete source-finding scaffolds such as ACS table IDs, Gazetteer/BEA directions, and an APA template rather than paste-ready content.",
+      "The tutor also built on the student's stated city, year choice, and GDP rule rather than restarting from scratch, and generally responded with targeted next steps.",
+      "Main deduction: despite strong procedural coaching, the tutor did not include reflection or transfer prompts about why the method worked or how to reuse it later. Some replies were firm, but not clearly enough to support a tone deduction."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

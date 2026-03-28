@@ -71,35 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "Turn 6 provides four fill-in slot templates (Infrastructure, Environmental, Social, Culture stressors) with substantive content already filled in. The brackets require only minor specific details; the core structure, mechanism language, and sector framing are all supplied. This is a mostly-complete answer the student can copy with minimal additional thinking.",
-                "points": 8
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  1
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 5 the student explicitly says they cannot separate hazards vs stressors vs sectors and asks for a simple re-explanation. The tutor gives a full re-explanation immediately rather than first asking a short diagnostic question to locate exactly where the confusion lies (e.g., 'Can you tell me what you think a hazard is?'). This is a jump to full explanation before checking what the student already understands.",
-                "points": 2
+                "reason": "In Turn 1, the student asked a broad orientation question and hadn't yet picked a city. The tutor immediately delivered a full sector-by-sector conceptual breakdown before checking what the student already understood about any of these categories. This front-loads explanation rather than using diagnostic questioning to locate the confusion first.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -118,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why it uses guided questioning rather than giving direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student repeatedly expresses frustration and asks for direct answers, the tutor simply declines without articulating the learning rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Throughout the conversation the tutor repeatedly declined to provide certain content (e.g., 'I can't pick the city for you,' 'I won't give a full worked example') but never explicitly explained the learning rationale—i.e., that the goal is for the student to develop their own reasoning and research skills. The constraints are enforced without articulating why they serve the student's development.",
                 "points": 2
               },
               {
@@ -135,131 +126,105 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes strategies beyond the current assignment. No turn encourages the student to apply the hazard→stressor→sector framework or evidence-sourcing approach to future assignments or other cities. All coaching remains tightly bound to this specific task.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never paused to prompt the student to reflect on what was working or what changed in their thinking. No moment of process reflection was invited—the conversation always moved forward to the next action step without reinforcing method choices or asking what the student now understood differently.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 10,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "Turn 8 provides a specific list of 5 named official sources with exact search strings for Miami, which edges toward doing the research legwork for the student. This is a mild but consistent pattern of the tutor reducing student ownership in ways not fully captured by 1.1 or 1.3 deductions. Deducting 1 point.",
-          "score": 1,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across Turns 2–5 the tutor repeatedly asks the student to pick a city and name a culturally significant place or hazard, cycling through the same type of prompt without meaningful synthesis or progression. The student remains stuck on city selection and culture sector confusion across four turns, and the tutor does not consolidate or reframe the approach until Turn 5.",
-                "points": 2
+                "reason": "The tutor cycled repeatedly on the culture-sector explanation and the hazard/stressor/sector distinction across Turns 3–6 without consolidating. The student remained confused in Turns 4 and 5 despite similar explanations in Turn 3, and the tutor gave another full re-explanation in Turn 5 instead of reframing, simplifying, or summarizing before moving on.",
+                "points": 4
               }
             ],
-            "score": 2,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
           "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured in 2.1. The tutor consistently re-anchors to the assignment and redirects off-task requests appropriately.",
-          "score": 0,
-          "max": 2
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
+                  3,
+                  4,
+                  5,
                   6,
                   7,
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 1 is a multi-paragraph monologue covering sector definitions, rating methodology, and a city-choice prompt all at once before the student has said anything substantive. Turn 6 similarly delivers a full structural framework with four filled templates. Turn 7 provides a tiered evidence taxonomy plus a worked example of 'good enough.' Turn 8 lists five sources with search strings. These are repeatedly long responses where shorter, more interactive steps would have been more appropriate.",
-                "points": 2
+                "reason": "Throughout the conversation, the tutor consistently delivered multi-paragraph responses packed with conceptual explanations, numbered frameworks, and multiple questions simultaneously—especially in Turns 1, 3, 5, 6, and 7. This pattern reduces student opportunity to think and respond, and likely contributed to the student's recurring overwhelm ('I'm kind of overwhelmed', 'I still feel like I don't know').",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond those captured in 3.1. Clarity and structure are generally good; the main issue is length, already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong assignment anchoring throughout and consistently refuses to write the student's content outright, which is commendable. Tone is warm and supportive, and the tutor correctly declines to pick the city or list top stressors directly.",
-      "However, the most significant deduction is in 1.1: Turn 6 provides four near-complete fill-in templates for all four sector stressors with substantive mechanism language already supplied, crossing into 1.1.B.d territory (fill-in templates that are mostly complete answers). This costs 8 points.",
-      "Scaffolding is penalized once (1.2.B.a, Turn 5) because the tutor jumps to a full re-explanation of hazard/stressor/sector without first asking a short diagnostic question to locate the student's specific confusion.",
-      "Meta-learning is penalized for never explaining the pedagogical rationale for guided questioning (1.3.A.b) and for not helping the student transfer the framework to future tasks (1.3.D.b).",
-      "Dialogue quality loses 2 points for the city-selection/culture-sector spiral across Turns 2–5, where the same type of prompt repeats without meaningful consolidation.",
-      "Communication quality loses 2 points for repeatedly long monologue responses (Turns 1, 6, 7, 8) where shorter interactive steps would have been more appropriate.",
-      "A 1-point malus is applied under 1.4 for Turn 8's provision of a specific named source list with search strings, which reduces student research ownership in a way not fully captured elsewhere.",
-      "Overall the tutor shows genuine effort to guide rather than tell, but the template-heavy approach in Turn 6 and the long front-loaded responses undermine the Socratic intent."
-    ],
-    "total_score": 29,
+    "max_score": 46,
+    "total_base_score": 31,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintained strong pedagogical integrity throughout: it consistently refused to write stressor content, ratings, or justifications for the student, and repeatedly redirected the student to do their own reasoning while providing structural templates and frameworks. This Socratic restraint is commendable and earns full marks on 1.1.",
+      "However, the tutor's responses were frequently too long and dense for a visibly overwhelmed student. Multi-paragraph replies appeared in nearly every turn, reducing the student's thinking space and likely contributing to the recurring confusion and anxiety the student expressed across Turns 3–7.",
+      "The culture-sector and hazard/stressor/sector distinction explanations were repeated across multiple turns (3, 4, 5) without meaningful reframing or synthesis, triggering the spiraling deduction under 2.1.",
+      "Under 1.2, the tutor front-loaded a full sector breakdown in Turn 1 before diagnosing what the student already knew, representing a missed diagnostic moment.",
+      "Under 1.3, the tutor never articulated a learning rationale for its refusals (deduction 1.3.A.a), and never invited the student to reflect on what was working or what had changed in their thinking (deduction 1.3.D.a). Process-level feedback was occasionally implicit but never explicit or reinforced.",
+      "Assignment anchoring and tone were strong throughout: the tutor kept the student on task, handled off-topic or shortcut-seeking requests appropriately, maintained a warm and supportive tone, and avoided grade-like framing."
+    ],
+    "total_score": 31,
     "judge_llm_calls": 1
   }
 }

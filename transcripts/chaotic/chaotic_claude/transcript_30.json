@@ -71,26 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
-          },
-          "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2
+                  3
                 ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the tutor asks the student to draft 5–7 stressor rows and answer multiple sub-questions simultaneously without first checking what the student already understands about stressor categorization or rating. The student had just provided two hazards and two sectors, but the tutor immediately jumps to a large multi-part task rather than a short diagnostic question to locate where the student might struggle.",
-                "points": 2
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 3, the tutor provides a list of 7 fully labeled, sector-tagged stressor prompts for Miami (e.g., 'Chronic coastal flooding / sunny-day flooding (sectors: infrastructure + social)'). This does a significant portion of the key reasoning work—identifying stressors, naming them precisely, and categorizing them by sector—that the assignment requires the student to do. Although the tutor withholds ratings and justifications, generating the complete stressor list with sector tags is a decisive content-identification step that the student was supposed to work through.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the student's work but never explains the pedagogical rationale—why guided questioning helps the student learn better, why producing one's own wording matters for retention, or how this approach builds skills for future assignments. The refusals sound policy-based ('I can't do that') rather than learning-benefit-based.",
+                "reason": "The tutor enforces its 'I can't do this for you' policy consistently but never explains to the student why this is pedagogically beneficial—e.g., that doing the reasoning themselves builds the analytical skills needed for later assignments or for the final climate action plan. The rationale given is always framed as academic integrity ('that's your work'), not learning rationale.",
                 "points": 2
               },
               {
@@ -126,66 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the rating/justification methodology to future assignments or broader climate analysis tasks. All coaching stays tightly tied to the current stressors table without any transfer framing (e.g., 'this frequency-vs-intensity framework will help you in your action plan assignment too').",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor provides stressor prompts in Turn 3 that are quite detailed (naming sectors, specific Miami examples), and in Turn 8 provides exact bibliographic citations with descriptions. While these individually fall short of full 1.1 violations, there is a mild pattern of doing slightly more intellectual scaffolding than necessary across turns without reinforcing method ownership. This is not already captured in 1.1–1.3 deductions.",
-          "score": 1,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Across Turns 3–6, the student repeatedly asks the tutor to just give the ratings/justifications, and the tutor repeatedly refuses and re-prompts in a similar pattern without meaningfully advancing the student's position or switching strategy. The same 'you do the work, here's a framework' move repeats across four turns with little synthesis or consolidation of what the student has already produced.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never pauses to prompt reflection on the student's process or thinking—e.g., noting what the student got right and why that approach worked, or asking what changed in their understanding across turns. The conversation ends without any moment of synthesis or reinforcement of the method the student used.",
                 "points": 2
               }
             ],
             "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was already captured in 2.1.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -193,62 +169,50 @@
                 "evidence_turns": [
                   1,
                   2,
-                  4
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially Turns 1, 2, and 4) are multi-paragraph with multiple sub-questions and frameworks presented simultaneously. Turn 1 asks three numbered questions plus a framing paragraph; Turn 2 lists five sector prompts plus a rating method plus two evidence questions. This consistently reduces the student's opportunity to think and respond to one focused prompt at a time.",
-                "points": 2
+                "reason": "Across multiple turns (1, 2, 3, 4, 5, 6, 7), the tutor consistently delivers long multi-paragraph replies with embedded sub-questions, templates, numbered lists, and methods. While the intent is to scaffold, the volume of content in each response reduces the student's opportunity to think and respond, and likely contributes to the student repeatedly trying to shortcut. Shorter, more focused prompts with one task at a time would have been more appropriate.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond what was already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 1,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently and correctly refuses to do the student's work across all 10 turns, maintaining strong Socratic discipline and never producing paste-ready content, ratings, or justifications. This is the conversation's primary strength.",
-      "Scaffolding is generally well-structured but the tutor misses a diagnostic step in Turn 2, jumping to a large multi-part task before checking where the student's actual confusion lies (1.2.B.a).",
-      "Meta-learning is the weakest area: the tutor never explains why guided questioning benefits the student's learning (1.3.A.a), and never transfers the rating/justification methodology to future assignments (1.3.D.b). Refusals consistently sound policy-based rather than pedagogy-linked.",
-      "Dialogue quality suffers from a repetitive pattern in Turns 3–6 where the tutor cycles through the same 'refuse and re-prompt' move without meaningfully advancing the student or switching strategy (2.1.A.a).",
-      "Communication is somewhat overloaded: Turns 1, 2, and 4 present multiple frameworks and sub-questions simultaneously, reducing the student's cognitive space to respond to one focused prompt (3.1.A.a).",
-      "Assignment anchoring is strong throughout; the tutor consistently keeps the conversation tied to the stressors table requirements and Miami-specific evidence.",
-      "Tone is appropriate and supportive even when refusing student requests; the tutor acknowledges the student's time pressure and offers concrete alternatives."
-    ],
-    "total_score": 37,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently and correctly refuses to do the student's work for them, maintaining academic integrity throughout all 10 turns. It also redirects effectively each time the student requests shortcuts, keeps the conversation anchored to the assignment, and avoids redundancy by advancing the task in each turn.",
+      "The primary deduction in 1.1 is for Turn 3, where the tutor provides a fully labeled, sector-tagged list of 7 Miami stressors. Although ratings and justifications were withheld, generating the complete stressor list with sector labels performs a key intellectual task (identifying and categorizing stressors) that the assignment explicitly asks the student to do (Steps 1 and 2). This is the core content-identification reasoning step the student should have worked through, not received ready-made.",
+      "In 1.3, the tutor never explains the pedagogical rationale for its constraints (only frames refusals as academic integrity), and it never prompts any process reflection or synthesis across the conversation, missing opportunities to reinforce the student's method and support transfer.",
+      "In 3.1, the tutor's responses are consistently long and multi-part, often delivering templates, numbered sub-questions, methods, and source suggestions simultaneously. This likely overwhelms a struggling student and may have contributed to repeated shortcut requests. More bite-sized prompts with one clear task per turn would have been more effective.",
+      "No deductions were applied for dialogue quality (2.1, 2.2): the tutor kept the conversation on task, did not validate misframings, and advanced the conversation each turn without spiraling. Tone was consistently supportive and non-punitive. No formal grading language was used."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

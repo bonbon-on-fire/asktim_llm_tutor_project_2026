@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -90,30 +90,25 @@
               {
                 "evidence_turns": [
                   7,
+                  8,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student’s entries became table-ready, the tutor continued with next-step checks but did not prompt brief reflection on what improved or why the method (e.g., making metrics falsifiable, pressure-testing tags/ratings) worked, missing an opportunity to reinforce the learning process.",
-                "points": 1
+                "reason": "The tutor kept advancing the table toward completion but did not prompt reflection on why the student's method improved or how to transfer the approach to later assignments.",
+                "points": 2
               }
             ],
             "score": 4,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 22,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "Pedagogical approach was consistently guided and ownership-preserving; no additional catch-all issues beyond the minor reflection gap already deducted.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -123,23 +118,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Tutor maintained on-task focus and redirected an off-topic question promptly without derailing the assignment.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -149,46 +138,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Communication was clear, structured, and appropriately sized for interactive progress; no extra catch-all deductions warranted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor preserved student ownership (did not choose the city or write the final table for the student) while using targeted, assignment-aligned questions to elicit metrics, sources, sector tags, and defensible ratings.",
-      "Strong scaffolding: moved from city selection criteria → stressor identification across sectors → evidence/source mapping → falsifiable justifications → internal consistency checks.",
-      "Minor gap: after substantial improvement, the tutor did not explicitly prompt a short reflection on why the approach worked to strengthen transfer to future course tasks."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly Socratic and assignment-focused: it refused to pick the city, redirected the off-topic music question, and repeatedly asked the student to supply ratings, evidence, sector tags, and priority reasoning.",
+      "Scaffolding was effective and cumulative, with specific prompts that built the student's draft from rough ideas to table-ready entries without providing submission-ready wording for them.",
+      "The main missing element was reflection/transfer support: the tutor improved the product but did not ask the student to reflect on why this evidence-rating method worked or how to reuse it in later climate-action assignments."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

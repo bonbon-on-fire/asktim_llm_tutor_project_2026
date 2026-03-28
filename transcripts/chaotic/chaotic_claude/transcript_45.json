@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   3
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 3, the tutor provides fill-in templates for both the SLR/tidal flooding and hurricanes/storm surge justifications. While blanks exist, the substantive content (mechanism, impact type, evidence source) is already written in, making these close to plug-and-play paragraph structures. The student only needs to insert minor specifics.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 3 the tutor provides fill-in-the-blank sentence templates for both 10-rated stressors ('Already causing [what happens/where]…'), giving the student near-final sentence structures. This moves close to rewriting student text into polished final language, reducing the student's authorship of the justification form.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -98,56 +98,24 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning and self-generation of justifications is more beneficial for learning than receiving direct answers. When the student asks for submission-ready sentences (Turns 1, 2), the tutor declines but only says 'I can't/won't do that' without connecting the approach to learning rationale or skill development.",
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At the end of the conversation (Turn 10), the tutor wraps up with a submission checklist rather than prompting any reflection on what the student learned about the process, what changed in their thinking, or how they could apply this analytical approach to future assignments.",
                 "points": 2
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the analytical method (mechanism + impact + evidence + cascade) to future assignments or tasks. All coaching stays tightly tied to this specific stressors table without prompting the student to reflect on how this approach transfers to the climate action plan or other course assignments.",
-                "points": 1
               }
             ],
-            "score": 2,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The template provision in Turn 3 is already penalized under 1.1.B.d. No additional unremedied pedagogy consistency gaps beyond what was captured.",
-          "score": 0,
-          "max": 2
+          "score": 16,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,23 +125,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond what was already assessed. The conversation progresses well through the assignment steps without notable unaddressed drift or redundancy.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -182,61 +144,45 @@
                   2,
                   3,
                   5,
-                  7,
-                  8
+                  7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (notably Turns 2, 3, 5, 7, 8) contain multi-part, multi-paragraph responses that pack numerous simultaneous prompts and instructions. Turn 2 alone asks the student to define their scale, draft two stressors using three sub-prompts each, AND reason through top-3 priorities using a three-part rule. This pattern of dense, multi-question turns recurs throughout and consistently reduces the student's opportunity to think and respond to one thing at a time.",
-                "points": 2
+                "reason": "Several tutor turns are multi-paragraph responses stacking numerous sub-questions, templates, checklists, and follow-up prompts simultaneously (e.g., Turns 2, 3, 5, 7). This reduces student opportunity to think through one step at a time and consistently prioritises information density over short, interactive exchange.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-question density issue is already captured under 3.1.A.a. No additional communication quality gaps beyond what was assessed.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
+    "max_score": 46,
     "total_base_score": 34,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refused to complete the assignment for the student and maintained a Socratic, iterative approach throughout all 10 turns, which is commendable. The student was guided to generate their own stressors, ratings, justifications, and priority reasoning through targeted questioning.",
-      "The primary deduction (1.1.B.d, -8 points) is for the fill-in templates provided in Turn 3. While the tutor framed these as scaffolds, the templates pre-filled the mechanism, impact type, evidence source, and structural logic for both 10-rated stressors, leaving the student only minor specifics to insert. This crosses into providing mostly-complete answer structures.",
-      "The tutor missed opportunities to explain the pedagogical rationale for guided questioning (1.3.A.b, -2 points) — when students pushed for direct answers in Turns 1 and 2, the tutor declined without connecting the approach to learning benefits. Transfer support was also absent (1.3.D.b, -1 point): the analytical framework developed was never generalized to future assignments in the course.",
-      "Communication quality was strong in tone, clarity, and formatting, but the tutor repeatedly packed too many simultaneous sub-prompts into single turns (3.1.A.a, -2 points), particularly in Turns 2, 3, 5, 7, and 8. This pattern, while not causing confusion, reduced the student's cognitive space to engage with one question at a time.",
-      "Dialogue quality was excellent: the conversation progressed logically through all assignment steps, stayed anchored to the assignment requirements, avoided redundancy, and built meaningfully on each student response."
-    ],
-    "total_score": 34,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor refused to complete the assignment outright and maintained a consistent Socratic orientation throughout the conversation, successfully guiding the student through a progressive build of the stressors table across 10 exchanges.",
+      "The main pedagogy deduction falls under 1.1.B.a: in Turn 3 the tutor provided two near-complete fill-in-the-blank sentence templates for the two highest-rated stressors. While the student still needed to insert specifics, the sentence skeletons and closing wording were supplied by the tutor, reducing the student's authorship of that key step.",
+      "Meta-learning (1.3) loses 2 points because the tutor never prompted the student to reflect on what changed in their analytical thinking or how the approach used here (sector-tagging, mechanism-impact-evidence structure, cascade logic) transfers to future assignments.",
+      "Communication quality loses 4 points under 3.1.A.a: several turns (especially 2, 3, 5, 7) present dense multi-part prompts with multiple simultaneous questions, checklists, and templates. While this was not consistently harmful to student engagement, it repeatedly reduced the interactivity and space for the student to reason one step at a time.",
+      "No deductions were made for 1.1.A.a (the tutor never produced a submission-ready full table or gave away the final answer set), 1.1.C (the student consistently proposed ratings and stressors first), 1.2 (scaffolding was well-sequenced and built on student contributions), 2.1 (the conversation advanced without spiraling), 2.2 (no off-topic or misalignment issues), or 3.2 (tone was consistently supportive and non-grading)."
+    ],
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

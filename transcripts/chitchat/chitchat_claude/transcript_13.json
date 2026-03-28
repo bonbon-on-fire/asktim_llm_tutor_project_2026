@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 5, the student provides solid sector tagging and a well-reasoned 9/10 rating with planned sources. The tutor's response asks for tighter mechanism and measurable indicators, which is appropriate, but it does not first acknowledge or affirm the quality of the sector tagging work the student just did before pivoting to the next challenge. The student's tagging was substantively correct and the tutor moves past it without building on it explicitly.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,27 +89,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never generalizes the research and evidence-evaluation strategies being practiced (e.g., primary vs. secondary sourcing, proxy chains, unit standardization) to future assignments or broader academic work. All coaching remains tightly tied to the current Jakarta stressors table without any transfer framing.",
-                "points": 1
-              },
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
                   5,
                   6,
                   7,
@@ -127,27 +97,21 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on why a particular method worked or what changed in their thinking (e.g., after the student improved their justification from Turn 6 to Turn 7, the tutor acknowledged it was 'much stronger' but did not ask the student to articulate what made it stronger or what they learned from the process).",
-                "points": 1
+                "reason": "The tutor moves efficiently from one methodological step to the next but never pauses to ask the student to reflect on why certain approaches (e.g., choosing primary over secondary sources, choosing InSAR over development-agency summaries) work better, or what changed in their thinking across turns. No transfer prompt is given.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 4,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 19,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all pedagogy deductions are warranted beyond those already captured. The tutor consistently used Socratic questioning, guided discovery, and scaffolded the student's reasoning well across the conversation.",
-          "score": 0,
-          "max": 2
+          "score": 22,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,88 +121,53 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all dialogue deductions warranted. The conversation progressed clearly, stayed anchored to the assignment, and avoided repetition or drift.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (5, 6, 7, 8, 10) contain multi-part responses with numbered sub-questions, checklists, and layered instructions that could have been broken into shorter, more focused exchanges. For example, Turn 8 provides a full search process with three numbered steps and an inclusion checklist when a single focused prompt would have sufficed. Turn 10 ends with a five-item mini-checklist. While individually each turn is not egregiously long, the pattern across the conversation of consistently dense, multi-part responses reduces student opportunity to think and respond incrementally.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all communication deductions warranted beyond the response-length pattern already captured in 3.1.A.a.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed strongly overall, consistently refusing to do the student's work, redirecting off-topic requests efficiently, and using Socratic questioning throughout to guide the student toward their own reasoning.",
-      "Pedagogy (1.1): No deductions. The tutor never gave direct answers, never assembled a submission-ready response, and consistently pushed the student to generate their own ideas, ratings, and evidence. Turn 8 is a particularly strong example of refusing to hand over a citation while still providing actionable search scaffolding.",
-      "Scaffolding (1.2): A 2-point deduction was applied for Turn 5, where the tutor moved past the student's solid sector-tagging work without explicitly acknowledging or building on it before pivoting to the next challenge. This is a borderline case—the tutor's response was substantively appropriate—but the missed acknowledgment represents a scaffolding gap.",
-      "Meta-learning (1.3): Two 1-point deductions for missing reflection prompts and transfer framing. The tutor never asked the student to articulate what made their improved reasoning stronger (Turn 7), and never generalized the evidence-evaluation strategies to future academic work.",
-      "Dialogue quality: No deductions. The conversation progressed without redundancy, stayed anchored to the assignment throughout, and the tutor redirected off-topic requests (Turns 1, 2) cleanly and efficiently.",
-      "Communication: A 2-point deduction for a consistent pattern of multi-part, checklist-heavy responses (Turns 5, 6, 7, 8, 10) that reduced student opportunity for incremental thinking. While each individual turn was clear and well-structured, the cumulative pattern of dense numbered sub-questions and checklists was more appropriate for a written guide than an interactive tutoring exchange.",
-      "Tone and formatting were appropriate throughout. The tutor maintained a supportive, professional tone, adapted well to the student's engagement level, and never implied grading authority."
-    ],
-    "total_score": 41,
+    "max_score": 46,
+    "total_base_score": 44,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor performed very well overall. It consistently redirected off-topic student requests (music, city selection, weather) quickly and without engaging, keeping the session on task throughout (2.2 intact).",
+      "Pedagogy was strong: the tutor never gave the student a finished answer or ready-to-submit content. Instead it used focused Socratic prompts at each turn—asking for sector tags, evidence metrics, draft citations, and unit conventions—ensuring the student did the substantive reasoning work (1.1 intact).",
+      "Scaffolding was effective: the tutor built progressively on each student response, moved from stressor selection → sector tagging → rating → metric identification → source evaluation → citation checklist, and acknowledged correct student contributions before pushing further (1.2 intact).",
+      "The one deduction is in meta-learning (1.3.D.a): the tutor gave solid process-level feedback and explained its citation policy (turns 8–9), but never explicitly invited the student to reflect on why particular methodological choices worked or what shifted in their thinking across turns. A brief consolidating reflection prompt (e.g., 'Why do you think we privileged primary InSAR data over the synthesis report for the measurement?') was consistently absent.",
+      "Dialogue quality was clean: no spiraling on a single concept without progress, and no off-topic engagement beyond immediate redirection (2.1 and 2.2 intact).",
+      "Communication quality was appropriate: responses were structured and sized well for the complexity of each step, using numbered sub-questions to keep exchanges manageable. No jargon issues or tone problems were noted (3.1 and 3.2 intact)."
+    ],
+    "total_score": 44,
     "judge_llm_calls": 1
   }
 }

@@ -71,27 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  4
+                  6
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 3, the student says they can't find the 'adopted by' language and is uncertain about CLEO. The tutor responds with another set of specific search instructions (Ctrl+F, paste exact sentences) rather than first diagnosing whether the student's confusion is about what to look for, how to read a plan document, or something else. In Turn 4, the student reveals they don't have the PDF and are on their phone—suggesting the tutor's prior instructions were misaligned with the student's actual situation. The tutor could have asked a short diagnostic question about the student's access/context before prescribing detailed PDF-search steps.",
-                "points": 2
+                "reason": "In turn 6, the student expressed anxiety about tone when describing 'missing' actors. The tutor correctly addressed this, but the response included a JSON artifact ('pedagogical-reasoning' key visible to student), suggesting a minor process lapse. More substantively, across turns 4–5 the tutor repeatedly asks which page to open and what sentence to find without first diagnosing why the student was overwhelmed about choosing an official source—the tutor jumped to a hierarchy list rather than asking what specifically was confusing. However, this is borderline and the tutor did largely adapt. Partial deduction is not supported by the rubric (all-or-nothing per trigger), so this requires careful assessment. The clearest trigger: in turn 5, when the student said 'I'm overwhelmed by which one counts as official,' the tutor immediately provided a numbered hierarchy (a full method dump) rather than first asking a diagnostic question about what the student already understood about official sources.",
+                "points": 3
               }
             ],
-            "score": 4,
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -110,8 +109,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly connects the guided-questioning approach to learning benefits—e.g., explaining why finding evidence yourself builds analytical skills, or why producing your own wording matters for retention. The rationale for the Socratic method is never surfaced for the student.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently guided without explaining why it was asking the student to find their own evidence rather than providing it directly. No turn explicitly articulates a rationale like 'I'm asking you to find this yourself so you develop the skill of evaluating sources' or similar learning rationale.",
                 "points": 2
               },
               {
@@ -127,129 +126,90 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the actor-mapping framework or evidence-triangulation approach to future tasks. All coaching stays tightly tied to the Miami case without any 'this is a reusable method for any city' framing.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor never paused to prompt the student to reflect on what changed in their thinking or what method they found useful. The conversation ends with task-level guidance but no reflection on process or transfer of method to future assignments.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently guided without giving answers, maintained student ownership, and gave process-level feedback throughout. No further deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Across Turns 3–7, the tutor repeatedly asks the student to find and paste exact sentences or phrases from the plan. Each time the student cannot comply (no PDF, on phone, can't remember), the tutor re-asks a similar 'find the exact phrase' prompt. While the tutor does adapt somewhat, there is a pattern of near-duplicate requests that could have been consolidated or reframed earlier.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The repeated 'find exact phrase' loop across multiple turns was already captured in 2.1.B.a. No additional dialogue quality gaps beyond what was penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
                   1,
-                  2
+                  2,
+                  3,
+                  5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 1 and Turn 2 responses are notably long—Turn 1 in particular contains a multi-part framework explanation, three bucket definitions with sub-bullets, and a multi-question prompt all at once. While the content is pedagogically sound, the density reduces the student's opportunity to process and respond incrementally. Turn 2 similarly packs scope-setting, document-finding instructions, and a resident/actor distinction into one long reply. This pattern of multi-paragraph replies where shorter, more focused prompts would have been more appropriate recurs in the early turns.",
-                "points": 2
+                "reason": "Multiple turns feature dense, multi-part responses with several bullet lists and sub-questions stacked together. Turn 1 opens with 5 distinct question/task prompts across three conceptual buckets, which is cognitively heavy for a confused student. Turn 2 asks the student to do several things at once (choose scope, choose document, find specific text, evaluate a resident org). Turn 5 continues this pattern. While each response is individually defensible, the consistent pattern of multi-paragraph, multi-question replies reduces the student's opportunity to think and respond incrementally.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The length issue in early turns was already captured in 3.1.A.a. Later turns (5–10) are noticeably more concise and well-structured. No additional communication quality deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintained strong Socratic discipline throughout all 10 turns—never giving the student the answer, consistently returning ownership of evidence-finding and categorization to the student, and guiding through targeted questions rather than direct instruction. No deductions were warranted under 1.1.",
-      "The main pedagogy weakness is in meta-learning (1.3): the tutor never explained why guided questioning benefits the student's learning, and never generalized the actor-mapping or evidence-triangulation method to future tasks beyond Miami.",
-      "A scaffolding deduction (1.2.B.a) was applied because the tutor prescribed detailed PDF-search steps in Turns 3–4 without first diagnosing the student's access situation, which was revealed only when the student admitted they were on their phone without the PDF.",
-      "In dialogue quality, a minor redundancy deduction (2.1.B.a) was applied for the repeated 'find exact phrase' requests across Turns 3–7, which the student consistently could not fulfill. The tutor did adapt eventually but the loop persisted longer than necessary.",
-      "Assignment anchoring was strong throughout—the tutor consistently kept the student focused on the Miami case study and the three-bucket framework required by the assignment.",
-      "Communication quality was penalized for response length in early turns (3.1.A.a): Turns 1 and 2 were notably dense with multi-part instructions and sub-bullets that could have been broken into shorter, more interactive exchanges. Later turns improved significantly in concision.",
-      "Tone was consistently warm, patient, and supportive—particularly when the student expressed overwhelm or uncertainty. No tone deductions were warranted."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrated strong Socratic practice throughout, consistently refusing to give direct answers and instead prompting the student to find and evaluate their own evidence. No near-submission-ready content was provided, and the tutor did not do the key reasoning work for the student.",
+      "Scaffolding was generally good but the tutor occasionally jumped to providing structured frameworks (e.g., the official source hierarchy in turn 5) rather than first diagnosing what specifically confused the student, triggering a partial deduction under 1.2.B.a.",
+      "Meta-learning was a consistent gap: the tutor never explained why it was asking the student to do their own research (no learning rationale stated), and never prompted reflection on method or what the student had learned about actor-mapping as a skill.",
+      "Dialogue quality was strong—no significant redundancy or spiraling, and the tutor kept the student anchored to the assignment throughout.",
+      "Communication was the second main weakness: the tutor repeatedly stacked multiple questions and sub-tasks in single turns, creating cognitive overload for an already-confused student. This pattern was consistent enough across turns 1, 2, 3, and 5 to trigger the 3.1.A.a deduction.",
+      "Tone was supportive and appropriate throughout; no grading language was used."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

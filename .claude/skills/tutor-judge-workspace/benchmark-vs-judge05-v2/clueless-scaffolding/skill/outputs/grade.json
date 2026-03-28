@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "pedagogy": {
+      "criteria": {
+        "1.1": {
+          "deductions": [],
+          "score": 12,
+          "max": 12,
+          "name": "Socratic method, guided discovery, and direct work"
+        },
+        "1.2": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Scaffolding and progression"
+        },
+        "1.3": {
+          "deductions": [
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.A.a",
+              "reason": "Tutor never explains why it uses a question-driven approach instead of walking the student through cases as requested. In turn 1 the student explicitly asks to be walked through, and the tutor redirects to Socratic questioning without framing this as a learning benefit. Throughout all 10 turns the tutor enforces constraints implicitly but never provides a rationale like 'working through this yourself builds stronger analytical skills.'",
+              "points": 2
+            },
+            {
+              "evidence_turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "sub_criterion_id": "1.3.D.a",
+              "reason": "Tutor never prompts the student to reflect on what they learned or what changed in their thinking. The conversation progresses steadily forward through cases and analysis but never pauses for metacognitive reflection, such as asking what shifted in the student's understanding or which method of analysis proved most productive.",
+              "points": 2
+            }
+          ],
+          "score": 2,
+          "max": 6,
+          "name": "Meta-learning and methodology feedback"
+        }
+      },
+      "base": {
+        "score": 20,
+        "max": 24
+      }
+    },
+    "dialogue": {
+      "criteria": {
+        "2.1": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Redundancy and spiraling"
+        },
+        "2.2": {
+          "deductions": [],
+          "score": 8,
+          "max": 8,
+          "name": "Assignment anchoring"
+        }
+      },
+      "base": {
+        "score": 12,
+        "max": 12
+      }
+    },
+    "communication": {
+      "criteria": {
+        "3.1": {
+          "deductions": [],
+          "score": 6,
+          "max": 6,
+          "name": "Bite-sized and clear responses"
+        },
+        "3.2": {
+          "deductions": [],
+          "score": 4,
+          "max": 4,
+          "name": "Appropriate tone and support"
+        }
+      },
+      "base": {
+        "score": 10,
+        "max": 10
+      }
+    }
+  },
+  "total_base_score": 42,
+  "max_base_score": 46,
+  "max_score": 46,
+  "overview": [
+    "Tutor demonstrated strong Socratic technique throughout all 10 turns, consistently asking targeted questions and having the student build their own analysis of trolley, footbridge, and Blood cases rather than providing answers.",
+    "Excellent scaffolding progression: the tutor moved logically from defining act consequentialism (turn 1-2) to applying it to cases (turns 3-6) to formulating a general principle (turns 7-8) to refining and outlining an essay direction (turns 9-10), building on student progress at each step.",
+    "Deducted 2 points under 1.3.A.a: the tutor never explained why it uses a question-driven approach rather than the walkthrough the student requested in turn 1, missing the opportunity to frame Socratic method as a learning benefit.",
+    "Deducted 2 points under 1.3.D.a: despite substantial intellectual progress across 10 turns, the tutor never prompted the student to reflect on how their thinking evolved or which analytical moves proved most productive.",
+    "Dialogue quality and communication were both strong: no redundancy or spiraling, consistent assignment anchoring, well-structured numbered prompts that kept responses digestible, and a warm supportive tone throughout."
+  ],
+  "total_score": 42,
+  "judge_llm_calls": 1
+}

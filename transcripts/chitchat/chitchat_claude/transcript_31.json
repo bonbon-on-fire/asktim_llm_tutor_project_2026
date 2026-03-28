@@ -71,28 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.2.A.a",
-                "reason": "By turns 8–10, the student has repeatedly stated they cannot access the PDF and will check it later. The tutor continues assigning new evidence-gathering tasks (tally 5 adaptation + 3 mitigation actions, check governance roster, etc.) without acknowledging that the student is stuck in a loop of deferral. The tutor misses the opportunity to consolidate what has already been established and help the student move toward drafting with available knowledge, instead continuing to build on progress that hasn't actually been made.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -100,8 +89,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
                   3,
                   4,
                   5,
@@ -111,45 +98,32 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what their reasoning process revealed or what changed in their thinking. Each turn moves to the next task without pausing to consolidate method insights (e.g., 'what did the leading/engaged/missing framework help you see that you wouldn't have noticed otherwise?').",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently redirects the student (e.g., dismissing off-topic requests) and keeps prompting further evidence-gathering, but never explains to the student *why* it is guiding rather than providing answers—no explicit rationale about active reasoning or long-term skill development is offered.",
+                "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
                   6,
                   7,
-                  8,
-                  9,
-                  10
+                  8
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the actor-mapping method to future tasks. The conversation stays entirely tied to the Miami/Resilient305 case without any comment on how this framework (leading/engaged/missing, evidence-anchoring, sector gap analysis) could be applied to other cities or assignments.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The tutor repeatedly pushes the student to re-check the document but never pauses to prompt reflection on what the student's thinking process has revealed or what changed in their understanding across turns. No transfer-support or method-reflection prompts are offered.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently reinforces good evidence-based reasoning and Socratic questioning throughout. No additional catch-all deduction is warranted beyond what was already captured in 1.2 and 1.3.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
@@ -161,39 +135,32 @@
                   8
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "From turn 5 onward, the student repeatedly says they need to 're-open the PDF' and will check things later. The tutor continues assigning new evidence-gathering tasks each turn (turns 6, 7, 8) without consolidating or reframing. The same pattern—'go check the doc and report back'—repeats across four turns without synthesis or a pivot to what the student can do with what they already know.",
-                "points": 2
+                "reason": "From turn 5 onward the student repeatedly says they need to 're-open the document' and the tutor keeps asking for the same evidence-capture tasks (governance body name, lead vs implementing partner, named CBOs, tally of actions) across multiple turns without consolidating or advancing beyond this loop. The student never produces the document evidence and the tutor cycles through the same request pattern without reframing or suggesting an alternative path.",
+                "points": 4
               }
             ],
-            "score": 2,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
           "score": 8,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The spiraling issue in turns 5–8 was already captured in 2.1.A.a. Assignment anchoring is strong throughout. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -201,57 +168,42 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially turns 1, 2, 3, 4) contain multi-part numbered lists with 3–5 sub-questions each. While individually the questions are useful, the cumulative length of each response—asking 4–5 things at once—reduces the student's opportunity to think and respond to one focused prompt. A more interactive approach would have asked 1–2 questions per turn and waited for the student's response before layering more.",
-                "points": 2
+                "reason": "Multiple turns feature lengthy multi-part responses with 3–5 numbered sub-questions per reply, often before the student has had a chance to complete any single prior task. For example, turns 2, 3, 4, and 6 each ask 4+ distinct questions simultaneously, which reduces the student's opportunity to think and respond to one focused prompt at a time.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The response-length issue was already captured in 3.1.A.a. Clarity and structure are generally good. No additional catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic discipline throughout: no direct answers are given, the student is consistently pushed to supply their own reasoning, and off-topic requests (dinner recs, movie picks) are cleanly redirected. The leading/engaged/missing framework is well-scaffolded and the tutor's evidence-anchoring prompts are pedagogically sound.",
-      "The main weakness is a scaffolding failure in the second half of the conversation (turns 5–10). Once the student repeatedly signals they cannot access the PDF, the tutor continues assigning new evidence-gathering tasks rather than consolidating what has already been established or pivoting to a draft-with-available-knowledge approach. This creates a repetitive loop that does not advance the student's work.",
-      "Response length is a consistent issue: most tutor turns contain 4–5 numbered sub-questions simultaneously, which reduces the student's opportunity to think and respond to one focused prompt at a time. This is the primary communication quality concern.",
-      "Meta-learning is partially present (the tutor explains the 'primary purpose/metric' test well in turn 9) but reflection and transfer are absent—the tutor never prompts the student to reflect on what the framework revealed or how it could apply to future tasks.",
-      "Assignment anchoring is excellent throughout; the tutor consistently ties discussion back to Resilient305 and the forum deliverable requirements."
-    ],
-    "total_score": 38,
+    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates genuinely strong Socratic practice throughout: it never gives away answers, consistently uses targeted questions to push the student toward evidence-based reasoning, correctly redirects two off-topic requests, and builds well on the student's own actor list.",
+      "Assignment anchoring is excellent—the tutor keeps the conversation tightly focused on the actor-table task and the forum deliverable, and scaffolding progression is solid as the tutor clearly builds each turn on what the student has already offered.",
+      "The main deduction in 1.3 comes from a consistent absence of two meta-learning behaviors: the tutor never explains *why* it is teaching this way (no rationale for guided discovery vs. direct answers), and it never prompts the student to reflect on what changed in their thinking across turns.",
+      "A significant deduction in 2.1 is warranted because from turn 5 onward the conversation spirals without synthesis: the student repeatedly defers to 're-opening the document' and the tutor cycles through essentially the same evidence-capture requests (governance roster, named CBOs, lead-vs-implementing-partner language, action tally) across turns 5–8 without consolidating progress, reframing the task, or suggesting an alternative path forward.",
+      "In communication quality, the tutor's responses are frequently multi-part (3–5 numbered sub-questions per turn), which, while well-structured, reduces the student's opportunity to engage with one focused prompt at a time. This is most pronounced in turns 2–6. Language clarity and tone are otherwise strong throughout."
+    ],
+    "total_score": 34,
     "judge_llm_calls": 1
   }
 }

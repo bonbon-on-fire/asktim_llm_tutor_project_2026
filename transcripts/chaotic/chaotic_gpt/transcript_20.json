@@ -71,13 +71,23 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  10
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "Tutor provided paste-ready row labels and citation/source-note templates that the student could insert directly into the submission, which is final wording help rather than guided discovery.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -86,50 +96,70 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 5,
-            "max": 5,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor repeatedly enforced the boundary against doing the assignment, but did not clearly explain the learning rationale beyond saying it would be 'doing the assignment for you.'",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Tutor never prompted the student to reflect on why the source-selection and labeling method worked or how to transfer that method to similar tasks.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 14,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across multiple turns, the tutor repeated the same refusal-plus-navigation pattern ('tell me what you see/find and I’ll confirm') without enough synthesis or a new strategy, even as the student kept signaling time pressure and access problems.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,46 +169,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently refused to complete submission-ready work (no filled table, no copy/paste numbers), while still providing high-utility guidance: clarifying definitions (BMC vs metro), mapping each row to an appropriate source type, and offering a fill-in template with clearly bracketed placeholders.",
-      "Guidance stayed tightly anchored to the assignment constraints (geography definition, year/vintage, variable definitions, and citation expectations) and used efficient check-questions to diagnose what the student needed next.",
-      "Communication was structured, readable, and supportive under time pressure, without being repetitive or drifting off-task."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "Tutor consistently kept the conversation anchored to the assignment and avoided filling in the actual Mumbai data table, instead guiding source choice, definitions, and labeling.",
+      "Main deductions come from giving paste-ready wording for row labels/source notes, limited explicit explanation of the learning rationale for its boundary-setting, and repeated refusal/navigation cycles without enough strategic synthesis when the student stayed pressed for time.",
+      "Because the assignment is a structured data table rather than an essay, the direct-work evidence was somewhat ambiguous; the smaller deduction was applied for final wording help rather than the harsher full-answer penalty."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

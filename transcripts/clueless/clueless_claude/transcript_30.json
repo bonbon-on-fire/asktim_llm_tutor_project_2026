@@ -71,17 +71,26 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 1, the student says they are 'totally stuck' without specifying any particular confusion. The tutor responds by laying out the full six-step assignment sequence (a method dump) before checking what the student already understood or where exactly they were confused. A diagnostic question first would have been more appropriate.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -100,9 +109,9 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what changed in their thinking or why a particular method (e.g., using a consistent rating rule) worked. After the student makes progress (e.g., Turn 8 producing a draft justification), the tutor moves immediately to the next step without consolidating the learning moment.",
-                "points": 1
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently guides by Socratic questioning but never explicitly explains to the student why it is withholding direct answers—i.e., it never articulates a learning rationale such as 'I want you to develop your own reasoning skills' or 'the goal is for you to practice justified judgment.'",
+                "points": 2
               },
               {
                 "evidence_turns": [
@@ -117,70 +126,42 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the rating/justification method to future assignments or other cities. All coaching stays tightly tied to the current Miami stressors table without any mention of how this approach transfers to the later climate action plan assignments referenced in the course context.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At no point in the conversation does the tutor pause to help the student reflect on how their thinking has progressed—e.g., noting that the student moved from 'sea level rise/heat' vaguely to 'high-tide flooding' + specific sectors + a justified rating band, or asking what changed in their understanding. The conversation ends without any process reflection.",
+                "points": 2
               }
             ],
-            "score": 3,
-            "max": 5,
+            "score": 2,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 21,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently explains its rationale for not giving direct answers (Turn 3, Turn 9) and provides method-level feedback on rating consistency and evidence quality throughout.",
-          "score": 0,
-          "max": 2
+          "score": 17,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "The rating question recurs across many turns without full synthesis. By Turns 7–10 the student is still being asked to commit to a number using the same framework introduced in Turn 2–3. While the tutor does advance the conversation, a consolidation checkpoint (e.g., 'here is what you have so far for both rows') would have reduced the sense of repetition and helped the student see cumulative progress.",
-                "points": 1
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond the single redundancy deduction already captured. The tutor maintains strong assignment anchoring and does not engage in off-topic drift.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -188,62 +169,45 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-part responses when shorter, more focused prompts would have been more appropriate. Turn 2 poses three sub-questions at once; Turn 3 provides a full three-step method with a rating scale breakdown plus two follow-up questions; Turn 4 gives a detailed evidence taxonomy before asking a question; Turn 6 again lists three impact questions plus two rating questions. This pattern consistently reduces the student's opportunity to think and respond before receiving more information.",
-                "points": 2
+                "reason": "Several tutor turns (notably 2, 3, and 6) contain multi-paragraph replies with numerous sub-questions simultaneously posed. For example, Turn 2 includes a four-part guided-question block plus a separate rating methodology paragraph, and Turn 6 poses three numbered sub-questions plus two additional rating questions. These long responses reduce the student's opportunity to think and engage with a single focused prompt before receiving the next one.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication gaps beyond the response-length deduction already captured. Formatting is clean and readable throughout; clarity is generally good despite length.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor maintains strong Socratic discipline throughout all 10 turns, consistently refusing to supply direct answers (sectors, ratings, justifications) and instead using guided questioning to move the student toward their own reasoning. No full or partial answers are given that would constitute doing the assignment.",
-      "Scaffolding is effective: the tutor builds on each student contribution (validating 'high-tide flooding' as specific, affirming sector links in Turn 7, acknowledging the draft justification in Turn 8) and uses a consistent rating framework introduced early and reinforced across turns.",
-      "Meta-learning is partially present: the tutor explains its rationale for not giving direct answers (Turns 3 and 9) and provides method-level feedback on rating consistency and evidence quality. However, the tutor never prompts reflection on what changed in the student's thinking, and never generalizes the method to future assignments in the course sequence.",
-      "A minor redundancy issue arises from the rating question recurring across Turns 3–10 without a consolidation checkpoint that would show the student their cumulative progress on both rows.",
-      "The main communication weakness is response length: Turns 2, 3, 4, and 6 each contain multiple sub-questions and detailed frameworks in a single message, which reduces the student's opportunity to think before receiving more information. This is a recurring pattern rather than an isolated instance.",
-      "Assignment anchoring is strong throughout; the tutor never drifts off-topic and consistently ties guidance back to the stressors table requirements. Tone is supportive and appropriate, including when the student expresses frustration or overwhelm."
-    ],
-    "total_score": 42,
+    "max_score": 46,
+    "total_base_score": 35,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor maintained a strong Socratic stance throughout the conversation, never giving away direct answers, rating numbers, sector assignments, or finished table rows—even when the student explicitly requested them (Turns 9, 10). This earns full marks on 1.1.",
+      "On scaffolding (1.2), the tutor's main lapse was in Turn 1: faced with a student who was vaguely 'stuck,' the tutor issued a full six-step assignment recap (a method dump) before diagnosing where the confusion actually lay. This warrants a 3-point deduction under 1.2.B.a.",
+      "On meta-learning (1.3), two consistent gaps appear: the tutor never explains its policy of not giving answers in terms of the student's learning goals (1.3.A.a, -2 pts), and it never prompts the student to reflect on the progress made—e.g., how their thinking shifted from vague stressors to specific, sector-tagged, justified ratings (1.3.D.a, -2 pts). No process-method feedback deduction is applied (1.3.B) because the tutor does comment on thinking quality and approach, e.g., calling for 'consistent rule,' 'specific impact,' and 'evidence type.'",
+      "Dialogue quality is strong: the tutor avoids spiraling, advances the conversation meaningfully each turn, and keeps the student anchored to the Miami stressors table throughout. No deductions for 2.1 or 2.2.",
+      "Communication quality is dinged for response length (3.1.A.a, -4 pts): Turns 2, 3, and 6 in particular front-load multiple multi-part questions in a single message, which overloads a student who is already overwhelmed and repeatedly says so. Tone is consistently warm and encouraging; no grade-like language appears. No deductions for 3.2."
+    ],
+    "total_score": 35,
     "judge_llm_calls": 1
   }
 }

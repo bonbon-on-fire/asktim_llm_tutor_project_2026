@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -87,23 +87,17 @@
           },
           "1.3": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 24,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [
@@ -112,34 +106,28 @@
                   8,
                   9
                 ],
-                "sub_criterion_id": "2.1.B.a",
-                "reason": "Tutor largely repeated the same priority-order guidance for boundary citations across adjacent turns, rather than briefly referencing the prior instruction and pushing to a concrete next action/checkpoint.",
-                "points": 1
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "When the student repeated the same confusion about the cleanest official boundary citation, the tutor mostly repeated the same source-priority ranking and task rather than reframing or simplifying in a new way.",
+                "points": 4
               }
             ],
-            "score": 3,
+            "score": 0,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 8,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -149,46 +137,30 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 46,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided questions and decision rules (boundary choice, labeling, evidence ladder) that preserved student ownership and avoided doing the assignment’s data-filling work for the student.",
-      "Strong assignment anchoring: the tutor repeatedly tied choices (BMC vs district vs MMR vs state) to the table’s credibility and later course governance/actor analysis needs.",
-      "Minor dialogue redundancy occurred when the student repeated the same question about “cleanest official boundary citation,” and the tutor repeated the same ranked options rather than consolidating and moving forward with a tighter checkpoint."
-    ],
-    "total_score": 46,
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor stayed strongly assignment-focused, used guided questions well, and avoided doing the student's substantive work for them.",
+      "The main weakness was late-conversation repetition: once the student remained stuck on what counted as the cleanest official boundary citation, the tutor repeated nearly the same priority order instead of shifting strategy.",
+      "No other deductions were clearly supported; where the tutor became more directive, it still stayed within scaffolded source-finding guidance rather than providing submission-ready content."
+    ],
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

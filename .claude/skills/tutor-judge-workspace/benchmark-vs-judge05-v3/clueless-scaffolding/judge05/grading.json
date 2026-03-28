@@ -1,0 +1,46 @@
+{
+  "eval_name": "clueless-scaffolding",
+  "run_type": "judge05",
+  "expectations": [
+    {
+      "text": "valid_json_structure",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "all_criteria_present",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "score_consistency",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "valid_sub_criterion_ids",
+      "passed": true,
+      "evidence": "OK"
+    },
+    {
+      "text": "evidence_turns_cited",
+      "passed": true,
+      "evidence": "2/2"
+    },
+    {
+      "text": "score_in_range",
+      "passed": true,
+      "evidence": "42"
+    },
+    {
+      "text": "overview_present",
+      "passed": true,
+      "evidence": "4"
+    },
+    {
+      "text": "scaffolding_assessed",
+      "passed": true,
+      "evidence": "6"
+    }
+  ]
+}

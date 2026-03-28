@@ -1,0 +1,79 @@
+{
+  "transcript": "transcripts/clueless/clueless_raw/transcript_02.json",
+  "grading_scale": 46,
+  "sections": {
+    "pedagogy": {
+      "max_score": 24,
+      "score": 22,
+      "criteria": {
+        "socratic_method": {
+          "max_score": 12,
+          "score": 12,
+          "deductions": []
+        },
+        "scaffolding": {
+          "max_score": 6,
+          "score": 6,
+          "deductions": []
+        },
+        "meta_learning": {
+          "max_score": 6,
+          "score": 4,
+          "deductions": [
+            {
+              "points": -2,
+              "turns": "all (notably T1-T10)",
+              "explanation": "The tutor provides strong content scaffolding but limited explicit meta-learning guidance. There is no moment where the tutor helps the student reflect on their reasoning process, recognize transferable philosophical analysis strategies, or develop awareness of how to approach similar assignments independently. The outline request in T9 is the closest to meta-learning but focuses on essay structure rather than reasoning habits."
+            }
+          ]
+        }
+      }
+    },
+    "dialogue_quality": {
+      "max_score": 12,
+      "score": 10,
+      "criteria": {
+        "redundancy": {
+          "max_score": 4,
+          "score": 4,
+          "deductions": []
+        },
+        "assignment_anchoring": {
+          "max_score": 8,
+          "score": 6,
+          "deductions": [
+            {
+              "points": -2,
+              "turns": "T1, T7, T10",
+              "explanation": "The Fuel case is explicitly named in the assignment prompt alongside Blood and the trolley cases, yet it receives inadequate treatment. It is offered as an option in T1 but not selected, mentioned in passing in T7 alongside Blood, and only formally introduced in the final turn (T10) where the tutor asks the student to recall the setup. The conversation ends before any substantive analysis of Fuel occurs, leaving a gap in the student's preparation for the assignment."
+            }
+          ]
+        }
+      }
+    },
+    "communication_quality": {
+      "max_score": 10,
+      "score": 9,
+      "criteria": {
+        "bite_sized_responses": {
+          "max_score": 6,
+          "score": 5,
+          "deductions": [
+            {
+              "points": -1,
+              "turns": "T1, T4, T6",
+              "explanation": "Several tutor responses pack multiple multi-part questions that create high cognitive load for a genuinely confused student. T1 contains a 3-part checklist with sub-bullets plus a follow-up instruction. T4 presents two named options, three guiding sub-questions, and a final directive. T6 includes a preliminary clarifying question, two sub-questions, a pivot instruction to a new case, and another multi-part question. While the numbered formatting helps readability, the density of demands per turn is occasionally excessive for a clueless student persona."
+            }
+          ]
+        },
+        "tone": {
+          "max_score": 4,
+          "score": 4,
+          "deductions": []
+        }
+      }
+    }
+  },
+  "total_score": 41,
+  "summary": "The tutor delivers a strong Socratic performance, consistently using questions to guide the clueless student from confusion to a coherent thesis direction. Scaffolding is well-structured, progressing from the act-consequentialist decision rule through increasingly complex cases to a draft general principle. The main weaknesses are: (1) insufficient coverage of the Fuel case, which is explicitly required by the assignment but only introduced in the final turn without resolution; (2) limited explicit meta-learning, with no moments dedicated to helping the student reflect on their reasoning process or develop transferable analysis skills; and (3) occasional cognitive overload in turns that pack too many multi-part questions for a confused student."
+}

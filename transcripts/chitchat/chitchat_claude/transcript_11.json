@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the student said they hadn't picked a city yet and asked for help. The tutor immediately launched into a multi-part structured response with source recommendations rather than first asking a short diagnostic question to understand what was blocking the student (e.g., whether they had looked at the course list at all). The tutor jumped to addressing the issue with a full method dump before checking what the student already understood.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,44 +89,35 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
-                  4,
-                  7
+                  3,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "When the student made off-topic requests (favorite movie, personal travel/food, app preferences), the tutor simply refused without explaining the pedagogical rationale—why guided questioning and staying on task benefits the student's learning. The refusals sound policy-based ('I can't help with non-academic chat') rather than learning-benefit-linked.",
+                "reason": "Tutor enforces constraints (declining to pick a city, declining to write table wording) but never explicitly articulates the learning rationale—e.g., that the student needs to build these research and source-evaluation skills themselves.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  3,
-                  5,
-                  6,
-                  9
+                  10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never helped the student generalize the data-gathering strategies (e.g., how to evaluate source reliability, how to handle geography mismatches) beyond the immediate Cartagena table. No transfer to future assignments or broader research skills was offered.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across the conversation, the tutor moves from task to task without prompting the student to reflect on the process or what they are learning about data sourcing. By Turn 10, the conversation ends without any metacognitive consolidation.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently guided without giving answers and maintained Socratic questioning throughout. No additional pedagogy consistency gaps beyond those already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -144,33 +126,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2
-                ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turn 2, the tutor provided a fairly detailed breakdown of trusted data sources (UN Data, OECD, World Bank) before the student had even chosen a city. While not fully off-topic, this was a brief detour into general source advice that wasn't yet anchored to the assignment task of filling out the table for a specific city.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The tutor maintained strong assignment anchoring throughout and redirected off-topic attempts promptly. No additional dialogue quality gaps beyond those already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -182,57 +149,42 @@
                   6
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns (especially Turns 2, 3, 5, and 6) are multi-paragraph responses with multiple numbered sub-questions and layered instructions. While the content is relevant, the length and density of these responses repeatedly reduces the student's opportunity to think and respond to one thing at a time. Turn 6 in particular lists four separate search queries with backup queries, which is more information than needed for one interactive step.",
-                "points": 2
+                "reason": "Several tutor turns are notably long and multi-part (Turns 2, 3, 5, 6), packing multiple questions, bullet lists, and query strings into single responses. This repeatedly reduces the student's space to process one idea at a time, especially in early turns where a single orienting question would suffice.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-part responses were a recurring pattern but already captured under 3.1.A.a. No additional communication quality gaps beyond those already penalized.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor performed well overall, consistently refusing to do the student's work and using Socratic questioning to guide city selection, geography decisions, and source choices. No direct answers or near-submission-ready content were provided.",
-      "The main pedagogy weakness was in meta-learning: the tutor's off-topic refusals were policy-framed rather than learning-benefit-framed, missing opportunities to explain why guided discovery matters. Transfer to future tasks was also absent.",
-      "Scaffolding was mostly strong, but in Turn 2 the tutor jumped to a full structured response before diagnosing what was blocking the student from choosing a city.",
-      "Communication was the other notable weakness: several turns (2, 3, 5, 6) were multi-paragraph with multiple simultaneous sub-questions, reducing the student's cognitive space to respond to one thing at a time. This was a recurring pattern warranting the 3.1.A.a deduction.",
-      "Assignment anchoring was strong throughout, with only a minor detour in Turn 2 where source advice preceded city selection. Dialogue progression was clean with no spiraling."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently avoids doing the assignment for the student, redirects off-topic questions efficiently, and uses Socratic questioning to guide city selection, source choice, and geography definition. No near-submission-ready content was provided.",
+      "Scaffolding is solid: the tutor builds on the student's expressed preferences (coastal, Spanish-language stats) and progressively narrows the task. The Turn 9 response is a strong example of guided discovery, asking the student to articulate the purpose of coordinates before deciding on precision level.",
+      "The main weakness is response length: Turns 2, 3, 5, and 6 are dense multi-part lists that could overwhelm the student and reduce active thinking. A more interactive, one-question-at-a-time approach would better support guided discovery.",
+      "Meta-learning gaps: the tutor never explains why it will not pick the city or write the wording (i.e., the learning rationale), and the conversation ends without any process reflection or transfer prompt.",
+      "Process-method feedback is partially present (e.g., 'standardize source + year + geography'), but the 1.3.B criterion is not deducted because the tutor does give concrete methodological direction rather than only vague comments. The 1.3.A and 1.3.D deductions (2 pts each) are applied for missing rationale explanation and missing end-of-session reflection."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -100,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explicitly explains to the student why guided questioning is used instead of direct answers, nor does it connect the student's active reasoning effort to long-term skill development or retention. When the student panics in turn 10 and asks for a 'safe generic set,' the tutor declines but only briefly mentions 'it skips the skill this assignment is testing' without elaborating on the learning rationale.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is guiding rather than simply providing answers—e.g., that the goal is to build the skill of tracing actors themselves, not just to comply with a policy. In Turn 10 the tutor does say 'it skips the skill this assignment is testing,' which is a brief rationale, but across the full conversation the learning rationale for the Socratic approach is almost never made explicit.",
                 "points": 2
               },
               {
@@ -117,28 +117,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the actor-identification method to future tasks or other assignments. All coaching stays tightly tied to the Miami case study without prompting the student to see how this approach (tracing authority, checking partner lists, absence checks) could transfer to other cities or other actor-mapping exercises.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At no point does the tutor pause to ask the student to reflect on what changed in their thinking, why a particular method (e.g., the absence-check + relevance-argument approach) worked, or how they might apply this actor-mapping strategy to future assignments. The conversation moves forward without any deliberate reflection or transfer prompts.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
           "score": 20,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured in 1.3 deductions.",
-          "score": 0,
-          "max": 2
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -148,23 +142,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already assessed. The conversation progresses well without notable redundancy or anchoring drift.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -172,61 +160,48 @@
                 "evidence_turns": [
                   2,
                   3,
-                  5
+                  4,
+                  5,
+                  7,
+                  8,
+                  10
                 ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Several individual turns (notably turns 2, 3, and 5) include more sub-questions and bullet lists than strictly necessary for one interactive step. Turn 2 in particular stacks two multi-part questions plus a FPL test, which could have been split across exchanges to keep the student more focused.",
-                "points": 1
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Multiple tutor turns (especially Turns 2, 3, 4, 5, 7, 8, and 10) are multi-paragraph responses with several sub-questions stacked together. The student is dealing with a relatively early-stage task yet consistently receives lengthy explanations and multiple simultaneous prompts, reducing the student's opportunity to think and respond one step at a time.",
+                "points": 4
               }
             ],
-            "score": 5,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 13,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond the single-turn concision issue already captured in 3.1.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 43,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrates strong Socratic method throughout all 10 turns, consistently refusing to give direct answers and instead guiding the student through actor identification, evidence-checking, and absence reasoning. No near-submission-ready content was provided.",
-      "Scaffolding is well-executed: each turn builds on the student's prior response, moving from conceptual confusion (actor vs. program) to concrete evidence-gathering tasks, to table construction logic.",
-      "The main pedagogy gap is in meta-learning: the tutor never explicitly explains the pedagogical rationale for guided questioning (beyond a brief mention in turn 10), and never helps the student transfer the actor-mapping method to future tasks or other cities.",
-      "Dialogue quality is strong with no notable redundancy, spiraling, or assignment drift. The tutor consistently re-anchors to the assignment deliverable.",
-      "Communication is generally clear and well-structured. A minor concision issue appears in turns 2, 3, and 5 where multiple sub-questions are stacked in a single response, slightly reducing the student's opportunity to focus on one thing at a time.",
-      "Tone is consistently warm, encouraging, and appropriately adapted to the student's casual register and moments of anxiety (turn 10 panic is handled well)."
-    ],
-    "total_score": 43,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it consistently refuses to give the student pre-made answers (notably in Turn 10), guides the student to trace actors from primary documents, and scaffolds the distinction between affected residents and organized actors well. No direct final-answer provision or near-submission-ready content was detected.",
+      "Scaffolding and progression are handled well: each turn builds on the student's prior responses, partial insights are acknowledged and extended rather than ignored, and the tutor correctly diagnoses confusion points (e.g., 'vibes' vs. evidence, missing vs. absent actors) before addressing them.",
+      "The main weaknesses are in meta-learning and communication length. The tutor rarely explains its own pedagogical rationale beyond a brief mention in Turn 10, and it never invites the student to reflect on how their thinking evolved or how this method transfers to future work. On communication, many turns pack multiple sub-questions and explanatory paragraphs into single replies, which is manageable but consistently reduces the student's processing space; this pattern across seven turns warrants the 3.1.A.a deduction.",
+      "No issues were found with redundancy/spiraling, assignment anchoring, tone, or grading stance."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

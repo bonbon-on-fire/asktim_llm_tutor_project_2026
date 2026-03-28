@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 8, the student explicitly asks the tutor to help phrase their argument so it doesn't sound like mere intuition redescription. The tutor refuses to phrase it but immediately launches into a four-part scaffolding framework without first asking a short diagnostic question to locate exactly where the student's phrasing difficulty lies. The student was not stuck on the concept but on articulation, and the tutor could have asked one targeted question (e.g., 'What part of the argument feels like intuition to you?') before providing the full definition→test→application→why structure.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -109,8 +100,8 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "Throughout the conversation the tutor never explains to the student why it is guiding through questions rather than providing direct answers, nor does it explain how this active reasoning process benefits the student's learning or retention. The tutor simply proceeds with the Socratic method without ever articulating the pedagogical rationale to the student.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains to the student why it is using a Socratic approach rather than just providing the answer—no mention of learning rationale, skill development, or why the student should work through the questions rather than receiving direct help.",
                 "points": 2
               },
               {
@@ -126,28 +117,22 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the reasoning strategies used (e.g., stress-testing principles against cases, distinguishing necessary from sufficient conditions, separating act from rule consequentialism) to future philosophical tasks. All coaching remains tied to this specific trolley/consequentialism prompt.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At no point does the tutor prompt the student to reflect on how their thinking evolved, what changed in their reasoning across turns, or what method was successful. The tutor moves forward efficiently but never invites process-level reflection or reinforces method choices after improvement.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional catch-all deduction warranted. The tutor's Socratic consistency and method reinforcement were strong throughout; the deductions already captured in 1.2 and 1.3 cover the main gaps.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -157,23 +142,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional catch-all deduction warranted. The conversation progressed cleanly without notable redundancy or anchoring drift beyond what was already assessed.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -189,57 +168,42 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly uses long, multi-part responses across nearly every turn. Turn 1 alone contains a three-part framework, five sub-questions, and a meta-framing paragraph. Turns 2–8 similarly pack multiple numbered questions, sub-bullets, and framing commentary into each reply. While the questions are individually useful, the sheer density of each turn consistently reduces the student's opportunity to think and respond to one focused prompt at a time. A more interactive approach would have broken these into shorter exchanges.",
-                "points": 2
+                "reason": "The tutor consistently sends long, multi-part responses with multiple sub-questions (often 3–5 at once), detailed templates, and extended framing. While the content is pedagogically appropriate, the repeated density of these responses limits the student's opportunity to think incrementally and respond before being presented with the next wave of prompts. Shorter, more focused check-ins would have been more interactive throughout.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional catch-all deduction warranted beyond the length deduction already applied in 3.1. Clarity and structure within each turn were generally good despite the density.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated excellent Socratic discipline throughout all 10 turns, never providing direct answers, final phrasings, or submission-ready content. The student was consistently required to generate their own definitions, verdicts, and principles.",
-      "Scaffolding was strong and well-sequenced: the tutor built from act consequentialist basics to case applications to principle stress-testing to threshold and consent complications in a logical progression. One deduction was applied in 1.2 for Turn 8, where the tutor responded to the student's phrasing difficulty with a full four-part framework rather than a short diagnostic question to locate the specific confusion.",
-      "Meta-learning gaps were the main weakness: the tutor never explained its Socratic rationale to the student (why guided questioning rather than direct answers), and never generalized the philosophical reasoning strategies (stress-testing principles, distinguishing act from rule consequentialism, separating necessary from sufficient conditions) to future tasks beyond this specific assignment.",
-      "Dialogue quality was excellent: no redundancy, no spiraling, strong assignment anchoring throughout, and each turn advanced the student's thinking meaningfully.",
-      "Communication was clear and well-structured, but the tutor's responses were consistently dense with multiple numbered questions, sub-bullets, and framing paragraphs. This pattern across nearly every turn reduced the student's opportunity for focused, iterative thinking and warranted a deduction under 3.1.A.a."
-    ],
-    "total_score": 40,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor does an excellent job maintaining a Socratic approach throughout all 10 turns, never giving away conclusions and consistently prompting the student to derive their own arguments, tests, and principles. The student's thinking visibly progresses from a simple act-consequentialist statement to a nuanced multi-part alternative account.",
+      "Scaffolding is strong: the tutor builds on each of the student's answers, applies pressure to the correct points of confusion, and introduces new stress-tests only after prior ones are resolved.",
+      "The main weaknesses are in meta-learning: the tutor never explains its pedagogical rationale to the student, and never invites reflection on the student's own reasoning process or what changed between turns.",
+      "Communication length is the other consistent issue: nearly every tutor turn contains 4–6 sub-questions and multi-paragraph framing. While each question is purposeful, the cumulative density of each response reduces the interactive quality and may overwhelm some students.",
+      "No deductions are applied for dialogue quality: the tutor stays on-task, reanchors the student appropriately when needed, and avoids repetition without synthesis."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

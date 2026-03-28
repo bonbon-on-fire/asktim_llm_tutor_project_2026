@@ -71,13 +71,13 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -87,23 +87,17 @@
           },
           "1.3": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 6,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 23,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy-consistency issues beyond the scored criteria.",
-          "score": 0,
-          "max": 2
+          "score": 24,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -113,23 +107,17 @@
           },
           "2.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6,
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 10,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "Tutor maintained focus and redirected appropriately without avoidable drift or repetition.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,46 +127,31 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 14,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "Clear structure and actionable prompts; no additional communication gaps noted.",
-          "score": 0,
-          "max": 2
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 47,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "Tutor consistently used guided questions to make the student choose defensible definitions, sources, and labels (boundary/year/ACS period vs point-in-time; GDP proxy), rather than supplying table content.",
-      "Strong scaffolding: moved from setup (city/boundary/year) to source mapping, then coherence checks, then a request for two trial rows before scaling up.",
-      "Dialogue stayed anchored to the assignment and was redirected quickly when the student tried to shift off-topic."
-    ],
-    "total_score": 47,
+    "max_score": 46,
+    "total_base_score": 46,
+    "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.2",
-      "temperature": 0,
-      "reasoning_effort": "medium"
+      "model": "gpt-5.4"
     },
+    "overview": [
+      "The tutor consistently used guided discovery: it asked the student to choose boundaries, years, datasets, labels, and notes rather than supplying finished assignment content.",
+      "Scaffolding was strong throughout; each turn built directly on the student's prior decisions and narrowed the next concrete task.",
+      "Dialogue stayed tightly anchored to the assignment, including immediate redirection from the off-topic music question in Turn 9.",
+      "Responses were concise, structured, and supportive, with clear process-oriented checks on source consistency, boundary mismatch, and citation transparency."
+    ],
+    "total_score": 46,
     "judge_llm_calls": 1
   }
 }

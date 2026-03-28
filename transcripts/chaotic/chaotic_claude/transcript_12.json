@@ -71,7 +71,7 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [
@@ -79,14 +79,14 @@
                 "evidence_turns": [
                   9
                 ],
-                "sub_criterion_id": "1.1.B.d",
-                "reason": "In Turn 9, the tutor provides a fill-in-the-blank sentence template where the substantive content (the method, the source name, the structure) is already written. The student only needs to insert county names and a year—minimal thinking required. This is a mostly-complete answer frame the student can copy with trivial additions.",
-                "points": 8
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 9, the tutor provides a skeleton sentence with nearly all required components specified (proxy, sum of county land areas, county list, source + year), leaving only blanks to fill with names already established in conversation. This is close to rewriting the student's text for them, as the final wording structure is produced by the tutor rather than the student.",
+                "points": 6
               }
             ],
-            "score": 4,
+            "score": 6,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
             "deductions": [],
@@ -95,59 +95,6 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "The tutor never explains to the student why doing the data-gathering themselves (rather than receiving copy-pasteable answers) builds skills or improves learning. The tutor enforces the constraint but frames it only as a policy ('I can't give you…') without connecting it to learning rationale or retention benefits.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "The tutor never generalizes the data-sourcing strategies (e.g., how to use Census Gazetteer, ACS table navigation, BEA) to future assignments or broader research skills. All guidance stays tightly tied to this specific table.",
-                "points": 1
-              }
-            ],
-            "score": 2,
-            "max": 5,
-            "name": "Meta-learning and methodology feedback"
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "The tutor consistently enforces the 'I can't give you the answer' constraint but never explains the pedagogical rationale. This pattern repeats across multiple turns (1, 2, 5, 6, 9) without ever connecting the constraint to learning ownership or skill development. This is a consistent missed reinforcement not fully captured elsewhere.",
-          "score": 1,
-          "max": 2
-        }
-      },
-      "dialogue": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycles through the same pattern across many turns: student asks for numbers, tutor refuses and asks student to retrieve them, student pushes back, tutor refuses again and re-explains the same retrieval steps. By Turn 7-8, the conversation is still stuck on the area sub-task with no meaningful consolidation or reframing. The same 'go find it and tell me' move is repeated without synthesis or a shift in approach.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4,
-            "name": "Redundancy and spiraling"
-          },
-          "2.2": {
             "deductions": [
               {
                 "evidence_turns": [
@@ -162,28 +109,59 @@
                   9,
                   10
                 ],
-                "sub_criterion_id": "2.2.D.a",
-                "reason": "The entire conversation focuses almost exclusively on the area/land proxy sub-task and citation wording, with no re-anchoring to the broader assignment requirements (Köppen zone, GDP, race/ethnicity %, income per capita, location). The tutor never checks whether the student is making progress on the other required fields or reminds them of the full table scope.",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently declines to do the work but rarely explains the learning rationale behind these constraints (e.g., that gathering data themselves builds research skills). It mostly just says 'I can't give you that—that's the deliverable' without framing why active engagement benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "At no point in the conversation does the tutor prompt the student to reflect on why the process of finding and verifying data matters, or what skills they are developing. The tutor moves on efficiently but never reinforces method choices or asks the student what they learned from the process.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 6,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "The conversation drifts deeply into the area proxy sub-task for the majority of the session without the tutor ever stepping back to check overall table progress or redirect to higher-priority fields. This weak progression flow is partially captured in 2.1 and 2.2 but the cumulative effect on session utility warrants a small additional deduction.",
-          "score": 1,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -194,58 +172,44 @@
                   3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 1, 2, and 3 are multi-paragraph responses with extensive lists, sub-bullets, and multiple simultaneous questions. Turn 1 asks six questions at once; Turn 2 presents four lettered sections with sub-questions; Turn 3 lists seven ACS table codes with explanations. These are consistently long monologues where shorter, more focused prompts would have been more appropriate for a student who is clearly time-pressured.",
-                "points": 2
+                "reason": "In Turns 1, 2, and 3, the tutor delivers multi-paragraph responses with numerous sub-questions, source listings, and decision trees when shorter, more focused prompts would have been more appropriate. Turn 2 is especially long—listing six sub-problems, two 'gotchas,' four data-retrieval blocks, and two closing questions—when the student was already time-pressured and needed a simpler next step.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "No additional communication quality gaps beyond what was captured in 3.1.A.a.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 47,
-    "total_malus": 2,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor consistently refuses to provide copy-pasteable answers, which is appropriate, but the single most significant deduction is the fill-in-the-blank footnote template in Turn 9 (1.1.B.d), which is a mostly-complete answer requiring only trivial insertions.",
-      "The tutor never explains the pedagogical rationale for its constraints (1.3.A.b), missing repeated opportunities to connect the guided approach to learning ownership and skill development.",
-      "The conversation spirals on the area proxy sub-task for the majority of the session (Turns 4-10) without consolidation or reframing (2.1.A.a), and the tutor never re-anchors to the full table scope or other required fields like Köppen zone, GDP, or race/ethnicity (2.2.D.a).",
-      "Early responses (Turns 1-3) are excessively long with multiple simultaneous questions, poorly suited to a time-pressured student (3.1.A.a).",
-      "Tone is consistently supportive and non-dismissive throughout; the tutor adapts reasonably to student frustration without becoming punitive.",
-      "Scaffolding within the area sub-task is well-executed: the tutor builds on student progress (confirming the MSA geography choice, the county selection, the arithmetic check) without ignoring correct steps."
-    ],
-    "total_score": 28,
+    "max_score": 46,
+    "total_base_score": 32,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor consistently maintained appropriate boundaries by refusing to produce copy-pasteable data or fill in the table directly, which protected the student's independent learning on those fronts.",
+      "However, in Turn 9 the tutor supplied a nearly complete sentence skeleton for the citation footnote—specifying every required component and leaving only already-known blanks—which approaches rewriting the student's text and triggered the 1.1.B deduction.",
+      "Turns 1–3 were excessively long, front-loading many sub-questions, source listings, and decision trees simultaneously on a time-pressed student, reducing opportunity for focused interactive steps (3.1.A deduction).",
+      "The tutor never explained its pedagogical rationale for declining to supply answers (1.3.A), and never prompted the student to reflect on why finding their own data matters for research skill development (1.3.D).",
+      "Scaffolding and progression were handled well: the tutor consistently built on the student's confirmed choices (MSA, 1-year ACS, county sum, etc.) and did not restart or ignore correct student progress.",
+      "Dialogue quality was strong: the tutor stayed on task, re-anchored geography decisions early, advanced through the data table systematically, and avoided spiraling.",
+      "Tone remained supportive and practical throughout, with no grading language used."
+    ],
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

@@ -71,26 +71,17 @@
   ],
   "grade": {
     "sections": {
-      "pedagogy": {
+      "1_pedagogy": {
         "criteria": {
           "1.1": {
             "deductions": [],
             "score": 12,
             "max": 12,
-            "name": "Socratic method, guided discovery, and direct work"
+            "name": "Socratic method and guided discovery"
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 6, the student explicitly says 'I'm stuck on the Loop case' and asks a direct question about how to square the tension. The tutor responds with four sub-questions rather than first asking a short diagnostic question to locate exactly where the student's reasoning breaks down. While the questions are relevant, the tutor jumps into a multi-part interrogation rather than a brief check to identify the specific sticking point.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Scaffolding and progression"
           },
@@ -98,47 +89,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "In Turn 1, the tutor declines the off-topic request with 'I can't do random chat—I'm here just to tutor you on this assignment' but does not explain the pedagogical rationale (e.g., why guided questioning rather than direct answers benefits the student's learning). The refusal sounds policy-based rather than learning-benefit-linked.",
+                "reason": "Throughout the conversation the tutor never explains why it is guiding rather than answering directly—no mention of active reasoning, skill-building, or tutoring policy rationale is given to the student.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.D.b",
-                "reason": "Throughout the conversation, the tutor never explicitly helps the student transfer the reasoning strategies (e.g., the means/side-effect distinction, stress-testing principles) to future philosophical tasks or generalizes the method beyond this specific trolley/Blood/Fuel cluster.",
-                "points": 1
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "The conversation ends with the tutor asking the student to assemble final pieces, but at no point does the tutor prompt the student to reflect on what changed in their thinking, why the method of iterative refinement worked, or how they might apply this reasoning approach elsewhere.",
+                "points": 2
               }
             ],
             "score": 2,
-            "max": 5,
+            "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
-          "max": 23
-        },
-        "malus": {
-          "id": "1.4",
-          "explanation": "No additional pedagogy gaps beyond those already captured. The tutor consistently used Socratic questioning, built on student answers, and maintained student ownership throughout. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 20,
+          "max": 24
         }
       },
-      "dialogue": {
+      "2_dialogue_quality": {
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -147,33 +123,18 @@
             "name": "Redundancy and spiraling"
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1
-                ],
-                "sub_criterion_id": "2.2.B.b",
-                "reason": "In Turn 1, the tutor briefly acknowledges the off-topic request ('I can't do random chat') before redirecting. The redirection is prompt and appropriate, but the acknowledgment adds a small delay before refocusing on the assignment.",
-                "points": 1
-              }
-            ],
-            "score": 5,
-            "max": 6,
+            "deductions": [],
+            "score": 8,
+            "max": 8,
             "name": "Assignment anchoring"
           }
         },
         "base": {
-          "score": 9,
-          "max": 10
-        },
-        "malus": {
-          "id": "2.3",
-          "explanation": "No additional dialogue quality gaps beyond those already captured. The conversation progressed well through the cases with good anchoring to the assignment prompt. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 12,
+          "max": 12
         }
       },
-      "communication": {
+      "3_communication_quality": {
         "criteria": {
           "3.1": {
             "deductions": [
@@ -190,58 +151,42 @@
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor consistently poses 3–4 sub-questions per turn across nearly every exchange. While each question is relevant, the multi-part structure repeatedly reduces the student's opportunity to think through one idea at a time before being asked the next. A more interactive, bite-sized approach (one or two focused questions per turn) would have been more appropriate given the conversational tutoring context.",
-                "points": 2
+                "reason": "Nearly every tutor turn poses 3–4 sub-questions simultaneously across multiple paragraphs. While structured, this pattern consistently reduces the student's opportunity to think sequentially and respond to one focused probe at a time. Shorter, more targeted prompts would have been more appropriate in several turns.",
+                "points": 4
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
           "3.2": {
             "deductions": [],
-            "score": 5,
-            "max": 5,
+            "score": 4,
+            "max": 4,
             "name": "Appropriate tone and support"
-          },
-          "3.3": {
-            "deductions": [],
-            "score": 3,
-            "max": 3,
-            "name": "Formatting and medium"
           }
         },
         "base": {
-          "score": 12,
-          "max": 14
-        },
-        "malus": {
-          "id": "3.4",
-          "explanation": "The multi-question pattern is already captured in 3.1.A.a. No additional communication quality gaps beyond those already deducted. No further catch-all deduction warranted.",
-          "score": 0,
-          "max": 2
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 39,
-    "max_base_score": 47,
-    "total_malus": 0,
-    "max_malus": 6,
-    "max_score": 47,
-    "overview": [
-      "The tutor demonstrated strong Socratic method throughout, never giving direct answers or doing the student's reasoning work. Student ownership was consistently maintained across all 10 turns, with the tutor guiding the student from a basic act-consequentialist framing through increasingly refined principles (means/side-effect, consent, Loop/Footbridge distinctions).",
-      "The main pedagogy deduction (1.2) was for Turn 6, where the student explicitly said 'I'm stuck' and the tutor responded with four sub-questions rather than a brief diagnostic probe to locate the specific confusion first.",
-      "A 2-point deduction was applied in 1.3 because the tutor never explained the pedagogical rationale for guided questioning (especially in Turn 1 when declining the off-topic request), and never helped the student transfer the reasoning strategies to future philosophical tasks.",
-      "The tutor's consistent use of 3–4 sub-questions per turn (3.1.A.a) reduced student opportunity for focused, iterative thinking, warranting a 2-point deduction in communication quality.",
-      "Assignment anchoring was strong throughout; a minor 1-point deduction was applied for the brief acknowledgment of the off-topic request in Turn 1 before redirecting.",
-      "Tone was consistently warm, supportive, and appropriately challenging. No grading language or dismissive framing was observed. No redundancy or spiraling issues were identified."
-    ],
-    "total_score": 39,
+    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
+    "overview": [
+      "The tutor demonstrates strong Socratic practice throughout: it never provides the answer directly, consistently asks the student to generate and refine claims, pressure-tests each draft with targeted counterexamples, and builds progressively on the student's evolving principle across all ten turns.",
+      "Scaffolding is exemplary—the tutor begins with the student's chosen case (Blood), acknowledges correct moves explicitly, and uses each student response as the basis for the next challenge rather than restarting.",
+      "The main weaknesses are in meta-learning (1.3): the tutor never explains why it is guiding rather than telling, and never prompts reflection on the student's own intellectual progress or method. This costs 4 points under 1.3.",
+      "Communication length is a consistent issue (3.1): nearly every tutor turn poses 3–4 numbered sub-questions simultaneously, which can overwhelm the student and reduce genuine single-step thinking. This pattern triggers the 4-point deduction under 3.1.A.a.",
+      "No off-topic engagement, redundancy, assignment misanchoring, tone problems, or grading-stance issues were observed. Deductions are limited to 1.3 and 3.1."
+    ],
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

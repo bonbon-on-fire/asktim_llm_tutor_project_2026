@@ -1,0 +1,91 @@
+{
+  "transcript": "transcripts/chaotic/chaotic_raw/transcript_05.json",
+  "grading_scale": 46,
+  "sections": {
+    "pedagogy": {
+      "max_points": 24,
+      "criteria": {
+        "socratic_method": {
+          "max_points": 12,
+          "score": 9,
+          "deductions": [
+            {
+              "points_deducted": 3,
+              "turns": [6],
+              "reason": "The tutor offers two pre-built digit-sets — (10,9,9,8,8) and (10,9,8,8,7) — reducing the rating task to a binary choice. This collapses genuine Socratic discovery into a multiple-choice selection; the student no longer needs to reason through each rating individually. While the intent was to accelerate completion under time pressure, providing concrete number sequences effectively supplies the core deliverable (the ratings) and undermines the guided-discovery approach maintained in earlier turns."
+            }
+          ]
+        },
+        "scaffolding": {
+          "max_points": 6,
+          "score": 6,
+          "deductions": []
+        },
+        "meta_learning": {
+          "max_points": 6,
+          "score": 2,
+          "deductions": [
+            {
+              "points_deducted": 4,
+              "turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "reason": "No meta-learning prompts appear anywhere in the conversation. The tutor never invites the student to reflect on their reasoning process, consider how the calibration method could transfer to future assignments, or develop self-regulation strategies (e.g., time management for multi-step tasks). Even a brief prompt like 'Next time you could start by anchoring your highest and lowest stressors first' would have served meta-learning goals. Given the chaotic student persona, a meta-learning moment about task decomposition or planning would have been especially valuable."
+            }
+          ]
+        }
+      },
+      "section_score": 17
+    },
+    "dialogue_quality": {
+      "max_points": 12,
+      "criteria": {
+        "redundancy": {
+          "max_points": 4,
+          "score": 2,
+          "deductions": [
+            {
+              "points_deducted": 2,
+              "turns": [8, 9, 10],
+              "reason": "Three consecutive exchanges follow a nearly identical pattern: student asks for paste-ready sentences, tutor refuses and provides a fill-in-the-blank template, then asks the student to supply bracketed words. The tutor could have varied the approach — e.g., explicitly naming the repetitive loop ('We've been going back and forth on this — here is why I cannot write it for you'), trying a different tactic (asking the student to dictate aloud and type simultaneously), or shortening the refusal to a single line by Turn 10 rather than re-explaining the boundary each time."
+            }
+          ]
+        },
+        "assignment_anchoring": {
+          "max_points": 8,
+          "score": 7,
+          "deductions": [
+            {
+              "points_deducted": 1,
+              "turns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              "reason": "Step 5 of the assignment ('Identify Priority Stressors — consider both severity and urgency') is never explicitly addressed. While the rating and ranking work implicitly touches on prioritization, the tutor does not prompt the student to formally identify which stressors are most important for the city to address or to distinguish severity from urgency as the assignment requires."
+            }
+          ]
+        }
+      },
+      "section_score": 9
+    },
+    "communication_quality": {
+      "max_points": 10,
+      "criteria": {
+        "bite_sized_responses": {
+          "max_points": 6,
+          "score": 5,
+          "deductions": [
+            {
+              "points_deducted": 1,
+              "turns": [2],
+              "reason": "Turn 2 delivers a full 5-item table template with sector categorizations, rating instructions, and justification guidance prompts all in a single response. While the time-pressure context provides some justification for front-loading information, this is a substantial amount of content that could have been broken into two steps (e.g., first confirm sectors, then provide the rating/justification scaffold), especially since the student had just provided their stressor list and could have been guided incrementally."
+            }
+          ]
+        },
+        "tone": {
+          "max_points": 4,
+          "score": 4,
+          "deductions": []
+        }
+      },
+      "section_score": 9
+    }
+  },
+  "total_score": 35,
+  "summary": "The tutor demonstrates strong boundary-holding across all 10 turns, consistently refusing to produce submission-ready content despite escalating pressure from the chaotic student. Scaffolding is effective, breaking the stressors table into manageable steps (identify stressors, categorize sectors, calibrate ratings, write justifications). Tone is professional and encouraging throughout. Key weaknesses: (1) Turn 6 undermines Socratic method by offering pre-built digit-sets that reduce the rating task to a binary pick, (2) no meta-learning prompts appear in any turn, (3) Turns 8-10 become repetitive with the same refusal-template-request cycle, and (4) Step 5 of the assignment (priority stressor identification) is never explicitly addressed."
+}
