@@ -15,6 +15,8 @@ SECTION_MAP = {"pedagogy": ["1.1","1.2","1.3"], "dialogue": ["2.1","2.2"], "comm
 BASE = sys.argv[1]  # iteration directory
 
 def grade_run(grade_path, assertions, eval_name, run_type):
+    """Evaluate one grade JSON against assertion definitions for a single run."""
+
     results = {"eval_name": eval_name, "run_type": run_type, "expectations": []}
     try:
         with open(grade_path, encoding="utf-8") as f:

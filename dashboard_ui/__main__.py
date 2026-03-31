@@ -1,3 +1,5 @@
+"""Run the dashboard Flask app via ``python -m dashboard_ui``."""
+
 from .run_dashboard_ui import app
 
 

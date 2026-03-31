@@ -111,6 +111,8 @@ def _last_message_is_tutor(state: StudentBotState) -> bool:
 def _build_student_agent_node(persona: str, model: ChatOpenAI):
     """Return a LangGraph node function that generates the next student message given the conversation state."""
     def student_agent(state: StudentBotState) -> dict:
+        """Emit a single student reply when the previous turn was authored by the tutor."""
+
         messages = state.get("messages") or []
         if not messages:
             return {"messages": [AIMessage(content="[Student has nothing to respond to yet.]")]}

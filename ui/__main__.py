@@ -1,3 +1,5 @@
+"""Run the terminal UI entrypoint via ``python -m ui``."""
+
 from __future__ import annotations
 
 from .run_ui import main
