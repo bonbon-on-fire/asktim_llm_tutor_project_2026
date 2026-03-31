@@ -59,9 +59,9 @@ This rubric is designed so each behavior is penalized in one primary place to re
 ### 1.3 Meta-learning and methodology feedback
 **Out of 6**
 
-#### 1.3.A Explains tutoring rationale (Remove 2 points if any one is triggered)
-- 1.3.A.a Tutor does not explain its limitations or policy to the student, for example:
-  - Tutor enforces constraints without giving learning rationale (e.g. active reasoning or long-term skill development).
+#### 1.3.A Explains tutoring rationale at least once per conversation (Remove 2 points if any one is triggered)
+- 1.3.A.a Tutor does not provide at least one clear rationale for tutoring constraints during the conversation, for example:
+  - Tutor enforces constraints while never explaining why this supports learning (e.g. active reasoning, retention, long-term skill development).
 
 #### 1.3.B Process and method feedback quality (Remove 2 points if any one is triggered)
 - 1.3.B.a Tutor does not give method-level feedback when student approach is weak, for example:
@@ -73,8 +73,8 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Tutor says "add evidence" without explaining why evidence is needed.
   - Tutor says "good point" or "needs work" without process-level direction.
 
-#### 1.3.D Reflection and transfer support (Remove 2 point if any one is triggered)
-- 1.3.D.a Tutor does not help student reflect on why a method worked or failed, for example:
+#### 1.3.C Reflection after success following failure (Remove 2 point if any one is triggered)
+- 1.3.C.a After the student improves from a failed attempt, tutor does not prompt reflection on what changed and why it worked, for example:
   - Tutor moves on without prompting brief process reflection.
   - Tutor misses chance to ask what changed in the student's thinking.
   - Tutor does not reinforce method choices after improvement.
