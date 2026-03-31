@@ -24,35 +24,31 @@ Run matrix:
 
 `tutor_prompts x student_personas x course_exercises x trials`
 
-### 2) Judge raw transcripts with GPT
+### 2) Judge raw transcripts (GPT or Claude)
 
 ```powershell
-python -m ui.run_ui_gpt
+# Grade with GPT
+python -m ui.run_ui_judge --provider gpt
+
+# Grade with Claude  
+python -m ui.run_ui_judge --provider claude
+
+# Custom prompt/rubric
+python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
 ```
 
-Before running, edit these constants in `ui/run_ui_gpt.py`:
+The script automatically discovers all raw transcripts in `*_raw` folders, copies each to the provider-specific folder (`*_gpt` or `*_claude`), then applies judging in-place on the copied file.
 
-- `JUDGE_PROMPTS`
-- `JUDGE_RUBRICS`
-- `STUDENT_PERSONAS`
-- `RAW_TRANSCRIPTS` (optional explicit transcript stems per persona type; empty means auto-discover all)
+**Options:**
+- `--provider {gpt,claude}` (required): Choose judge provider
+- `--prompt PROMPT`: Judge prompt stem (default: judge_05)
+- `--rubric RUBRIC`: Judge rubric stem (default: rubric_05)
 
-The script reads from `*_raw` folders, copies each selected transcript to `*_gpt`, then applies GPT judging in-place on the copied file.
-
-### 3) Judge raw transcripts with Claude
-
-```powershell
-python -m ui.run_ui_claude
-```
-
-Before running, edit these constants in `ui/run_ui_claude.py`:
-
-- `JUDGE_PROMPTS`
-- `JUDGE_RUBRICS`
-- `STUDENT_PERSONAS`
-- `RAW_TRANSCRIPTS` (optional explicit transcript stems per persona type; empty means auto-discover all)
-
-The script reads from `*_raw` folders, copies each selected transcript to `*_claude`, then applies Claude judging in-place on the copied file.
+**Features:**
+- Parallel processing (6 workers by default)
+- Progress tracking with section scores
+- Automatic API key validation per provider
+- Overwrites existing graded files with warning
 
 ## Output paths
 
@@ -66,29 +62,21 @@ Raw transcripts are saved to persona-specific raw folders:
 
 Each file is auto-named as `transcript_XX.json`.
 
-### GPT judged runs (`ui.run_ui_gpt`)
+### Judged runs (`ui.run_ui_judge`)
 
-Judged transcripts are saved to:
+Judged transcripts are saved to provider-specific folders:
 
+**GPT judged:**
 - `transcripts/chaotic/chaotic_gpt/`
 - `transcripts/chitchat/chitchat_gpt/`
 - `transcripts/clueless/clueless_gpt/`
 
-Each output file uses the same stem as raw input:
-
-- `transcript_XX.json`
-
-### Claude judged runs (`ui.run_ui_claude`)
-
-Judged transcripts are saved to:
-
+**Claude judged:**
 - `transcripts/chaotic/chaotic_claude/`
 - `transcripts/chitchat/chitchat_claude/`
 - `transcripts/clueless/clueless_claude/`
 
-Each output file uses the same stem as raw input:
-
-- `transcript_XX.json`
+Each output file uses the same stem as raw input: `transcript_XX.json`
 
 ## Transcript schema (core fields)
 

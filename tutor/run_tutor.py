@@ -84,6 +84,49 @@ class TutorState(TypedDict):
     messages: Annotated[list, operator.add]
 
 
+def _looks_non_student_like(text: str) -> bool:
+    """
+    Heuristic check for malformed or non-student input.
+
+    This catches common cases where the incoming message looks like a tutor /
+    system artifact instead of a student's chat message.
+    """
+    lowered = (text or "").strip().lower()
+    if not lowered:
+        return True
+    markers = (
+        "role contract",
+        "pedagogical-reasoning",
+        "student-facing-answer",
+        "```json",
+        "<assignment>",
+        "as an experienced tutor",
+        "act as an experienced tutor",
+        "step 1:",
+        "step 2:",
+    )
+    return any(m in lowered for m in markers)
+
+
+def _build_invalid_input_reply() -> AIMessage:
+    """
+    Return a strict tutor JSON reply asking the student to restate input.
+    """
+    payload = {
+        "pedagogical-reasoning": (
+            "The latest input appears malformed or not written in student voice. "
+            "I should ask for a clean student message before continuing so guidance "
+            "stays accurate and assignment-focused."
+        ),
+        "Student-facing-answer": (
+            "I might be reading a malformed message. Please restate your question as "
+            "a student in 1-3 sentences, and include the exact part of the assignment "
+            "you want help with."
+        ),
+    }
+    return AIMessage(content=json.dumps(payload, ensure_ascii=False))
+
+
 def create_tutor_graph(system_prompt: str):
     """Build and compile the LangGraph for the tutor."""
     model = ChatOpenAI(
@@ -93,8 +136,14 @@ def create_tutor_graph(system_prompt: str):
 
     def tutor_node(state: TutorState) -> dict:
         messages = [SystemMessage(content=_sanitize_text_for_transport(system_prompt))]
-        for msg in state["messages"]:
+        state_messages = state.get("messages") or []
+        for msg in state_messages:
             messages.append(_sanitize_message_content(msg))
+        last = state_messages[-1] if state_messages else None
+        if isinstance(last, HumanMessage):
+            last_text = last.content if isinstance(last.content, str) else str(last.content)
+            if _looks_non_student_like(last_text):
+                return {"messages": [_build_invalid_input_reply()]}
         response = model.invoke(messages)
         response = _normalize_tutor_ai_message(response)
         return {"messages": [response]}

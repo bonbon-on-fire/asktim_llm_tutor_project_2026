@@ -1,12 +1,12 @@
 """
-Batch runner that grades all raw transcripts using the Claude judge.
+Batch runner that grades all raw transcripts using either GPT or Claude judge.
 
 Reads from transcripts/{persona}/{persona}_raw/ and writes graded copies
-to transcripts/{persona}/{persona}_claude/.
+to transcripts/{persona}/{persona}_gpt/ or transcripts/{persona}/{persona}_claude/.
 
 Usage:
-    python -m ui.run_ui_claude
-    python -m ui.run_ui_claude --prompt judge_06 --rubric rubric_06
+    python -m ui.run_ui_judge --provider gpt
+    python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
 """
 
 from __future__ import annotations
@@ -28,14 +28,21 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 load_dotenv(_REPO_ROOT / ".env")
 
-from judge.run_judge_claude import JudgeError, judge_transcript
-
 TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 
 # ---------------------------------------------------------------------------
 # Parallel workers — change this value to control concurrency.
 # ---------------------------------------------------------------------------
 PARALLEL_WORKERS = 6
+
+
+def _require_openai_api_key() -> None:
+    """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
+    if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
+        return
+    raise RuntimeError(
+        "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+    )
 
 
 def _require_anthropic_api_key() -> None:
@@ -71,6 +78,7 @@ def _grade_one(
     raw_path: Path,
     target_path: Path,
     *,
+    provider: str,
     prompt_name: str,
     rubric_name: str,
 ) -> dict[str, Any]:
@@ -81,6 +89,14 @@ def _grade_one(
             f"{target_path.relative_to(_REPO_ROOT)}"
         )
     shutil.copyfile(raw_path, target_path)
+
+    # Import the appropriate judge function based on provider
+    if provider == "gpt":
+        from judge.run_judge_gpt import judge_transcript
+    elif provider == "claude":
+        from judge.run_judge_claude import judge_transcript
+    else:
+        raise ValueError(f"Unknown provider: {provider}")
 
     result = judge_transcript(
         _relative_stem(target_path),
@@ -110,25 +126,32 @@ _progress_lock = threading.Lock()
 _progress_done = 0
 
 
-def _print_result(info: dict[str, Any], total: int) -> None:
+def _print_result(info: dict[str, Any], total: int, provider: str) -> None:
     """Print a one-line progress and score summary for a completed grading task."""
     global _progress_done
     with _progress_lock:
         _progress_done += 1
         n = _progress_done
+    
+    provider_label = provider.upper()
     print(
-        f"[Claude Judge] [{n}/{total}] "
+        f"[{provider_label} Judge] [{n}/{total}] "
         f"score={info['score']}/{info['max_score']}  "
         f"source={info['raw_path'].relative_to(_REPO_ROOT)}  "
         f"saved={info['output_path'].relative_to(_REPO_ROOT)}"
     )
-    print(f"               {info['section_scores']}")
+    indent = " " * (len(provider_label) + 9)  # Match the bracket length
+    print(f"{indent}{info['section_scores']}")
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI entry point: grade all raw transcripts using the Claude judge in parallel."""
+    """CLI entry point: grade all raw transcripts using the specified provider in parallel."""
     parser = argparse.ArgumentParser(
-        description="Grade all raw transcripts with Claude judge into *_claude folders."
+        description="Grade all raw transcripts with GPT or Claude judge into provider-specific folders."
+    )
+    parser.add_argument(
+        "--provider", required=True, choices=["gpt", "claude"],
+        help="Judge provider to use: gpt or claude.",
     )
     parser.add_argument(
         "--prompt", default="judge_05",
@@ -140,8 +163,12 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
+    # Check API key based on provider
     try:
-        _require_anthropic_api_key()
+        if args.provider == "gpt":
+            _require_openai_api_key()
+        elif args.provider == "claude":
+            _require_anthropic_api_key()
     except RuntimeError as error:
         print(str(error))
         return 1
@@ -152,14 +179,15 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     workers = PARALLEL_WORKERS
+    provider_label = args.provider.upper()
     print(
-        f"[Claude Judge] Grading {len(raw_files)} transcripts  "
+        f"[{provider_label} Judge] Grading {len(raw_files)} transcripts  "
         f"prompt={args.prompt}  rubric={args.rubric}  parallel={workers}"
     )
 
     tasks: list[tuple[Path, Path]] = []
     for raw_path in raw_files:
-        target_path = _provider_target_path(raw_path, "claude")
+        target_path = _provider_target_path(raw_path, args.provider)
         tasks.append((raw_path, target_path))
 
     global _progress_done
@@ -173,7 +201,9 @@ def main(argv: list[str] | None = None) -> int:
             futures = {
                 pool.submit(
                     _grade_one, raw_path, target_path,
-                    prompt_name=args.prompt, rubric_name=args.rubric,
+                    provider=args.provider,
+                    prompt_name=args.prompt, 
+                    rubric_name=args.rubric,
                 ): (raw_path, target_path)
                 for raw_path, target_path in tasks
             }
@@ -182,24 +212,24 @@ def main(argv: list[str] | None = None) -> int:
                 try:
                     info = future.result()
                     all_scores.append(info)
-                    _print_result(info, total)
-                except JudgeError as error:
+                    _print_result(info, total, args.provider)
+                except Exception as error:  # Catch both JudgeError and import errors
                     failed += 1
                     with _progress_lock:
                         _progress_done += 1
                         n = _progress_done
                     print(
-                        f"[Claude Judge] [{n}/{total}] FAILED "
+                        f"[{provider_label} Judge] [{n}/{total}] FAILED "
                         f"source={raw_path.relative_to(_REPO_ROOT)}: {error}"
                     )
     except KeyboardInterrupt:
-        print("\nClaude judging interrupted.")
+        print(f"\n{provider_label} judging interrupted.")
         return 130
 
     scores_only = [s["score"] for s in all_scores]
     mean_score = sum(scores_only) / len(scores_only) if scores_only else 0.0
     print(
-        f"\n[Claude Judge] Done. "
+        f"\n[{provider_label} Judge] Done. "
         f"graded={len(all_scores)}  failed={failed}  "
         f"mean={mean_score:.1f}"
     )
