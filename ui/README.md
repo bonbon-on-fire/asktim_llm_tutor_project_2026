@@ -50,6 +50,27 @@ The script automatically discovers all raw transcripts in `*_raw` folders, copie
 - Automatic API key validation per provider
 - Overwrites existing graded files with warning
 
+### 3) Judge batch files (GPT or Claude)
+
+```powershell
+# Grade batch files with GPT
+python -m ui.run_ui_batch_judge --provider gpt --batch-type 01
+
+# Grade batch files with Claude
+python -m ui.run_ui_batch_judge --provider claude --batch-type 02
+
+# Custom prompt/rubric
+python -m ui.run_ui_batch_judge --provider gpt --batch-type 03 --prompt judge_06 --rubric rubric_06
+```
+
+The script processes batch files from `transcripts/batches/batches_raw/batch_XX/` and writes results to `transcripts/batches/batches_{provider}/batch_XX/`.
+
+**Options:**
+- `--provider {gpt,claude}` (required): Choose judge provider
+- `--batch-type BATCH_TYPE`: Batch type number (default: 03)
+- `--prompt PROMPT`: Judge prompt stem (default: judge_05)
+- `--rubric RUBRIC`: Judge rubric stem (default: rubric_05)
+
 ## Output paths
 
 ### Raw-only runs (`ui.run_ui_raw`)
@@ -77,6 +98,18 @@ Judged transcripts are saved to provider-specific folders:
 - `transcripts/clueless/clueless_claude/`
 
 Each output file uses the same stem as raw input: `transcript_XX.json`
+
+### Batch judged runs (`ui.run_ui_batch_judge`)
+
+Batch results are saved to provider-specific folders:
+
+**GPT batch judged:**
+- `transcripts/batches/batches_gpt/batch_XX/`
+
+**Claude batch judged:**
+- `transcripts/batches/batches_claude/batch_XX/`
+
+Each output file converts from `batch_XX.txt` to `batch_XX.json`
 
 ## Transcript schema (core fields)
 
