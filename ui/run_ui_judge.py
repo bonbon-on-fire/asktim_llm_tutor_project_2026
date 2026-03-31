@@ -1,12 +1,14 @@
 """
-Batch runner that grades all raw transcripts using either GPT or Claude judge.
+Interactive batch runner that grades all raw transcripts using either GPT or Claude judge.
 
 Reads from transcripts/{persona}/{persona}_raw/ and writes graded copies
 to transcripts/{persona}/{persona}_gpt/ or transcripts/{persona}/{persona}_claude/.
 
-Usage:
-    python -m ui.run_ui_judge --provider gpt
-    python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
+Run with interactive CLI:
+    python -m ui.run_ui_judge
+
+Or run with command-line arguments:
+    python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
 """
 
 from __future__ import annotations
@@ -27,6 +29,11 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 load_dotenv(_REPO_ROOT / ".env")
+
+from ui.cli_utils import (
+    confirm_proceed,
+    prompt_single_selection,
+)
 
 TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 
@@ -57,6 +64,22 @@ def _require_anthropic_api_key() -> None:
 def _discover_raw_transcripts() -> list[Path]:
     """Find all transcript_*.json files inside any *_raw/ subfolder."""
     return sorted(TRANSCRIPTS_DIR.glob("*/*_raw/transcript_*.json"))
+
+
+def _discover_judge_prompts() -> list[str]:
+    """Return available judge prompt names from judge/prompts/."""
+    judge_prompts_dir = _REPO_ROOT / "judge" / "prompts"
+    if not judge_prompts_dir.exists():
+        return []
+    return sorted(path.stem for path in judge_prompts_dir.glob("judge_*.txt"))
+
+
+def _discover_judge_rubrics() -> list[str]:
+    """Return available judge rubric names from judge/rubrics/."""
+    judge_rubrics_dir = _REPO_ROOT / "judge" / "rubrics"
+    if not judge_rubrics_dir.exists():
+        return []
+    return sorted(path.stem for path in judge_rubrics_dir.glob("rubric_*.md"))
 
 
 def _provider_target_path(raw_path: Path, provider: str) -> Path:
@@ -144,33 +167,82 @@ def _print_result(info: dict[str, Any], total: int, provider: str) -> None:
     print(f"{indent}{info['section_scores']}")
 
 
-def main(argv: list[str] | None = None) -> int:
-    """CLI entry point: grade all raw transcripts using the specified provider in parallel."""
-    parser = argparse.ArgumentParser(
-        description="Grade all raw transcripts with GPT or Claude judge into provider-specific folders."
+def _get_interactive_config() -> tuple[str, str, str]:
+    """Get judge configuration through interactive CLI prompts."""
+    print("=== Transcript Judging Configuration ===")
+    
+    # Provider selection
+    provider = prompt_single_selection(
+        "Judge provider",
+        ["gpt", "claude"],
+        required=True,
     )
-    parser.add_argument(
-        "--provider", required=True, choices=["gpt", "claude"],
-        help="Judge provider to use: gpt or claude.",
+    
+    # Judge prompt selection
+    available_prompts = _discover_judge_prompts()
+    if not available_prompts:
+        raise RuntimeError("No judge prompts found in judge/prompts/")
+    
+    prompt_name = prompt_single_selection(
+        "Judge prompt",
+        available_prompts,
+        required=True,
     )
-    parser.add_argument(
-        "--prompt", default="judge_05",
-        help="Judge prompt stem (default: judge_05).",
+    
+    # Judge rubric selection
+    available_rubrics = _discover_judge_rubrics()
+    if not available_rubrics:
+        raise RuntimeError("No judge rubrics found in judge/rubrics/")
+    
+    rubric_name = prompt_single_selection(
+        "Judge rubric",
+        available_rubrics,
+        required=True,
     )
-    parser.add_argument(
-        "--rubric", default="rubric_05",
-        help="Judge rubric stem (default: rubric_05).",
-    )
-    args = parser.parse_args(argv)
+    
+    return provider, prompt_name, rubric_name
 
+
+def _parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Grade all raw transcripts with GPT or Claude judge into provider-specific folders",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Interactive mode (default)
+  python -m ui.run_ui_judge
+  
+  # Command-line mode
+  python -m ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
+        """,
+    )
+    parser.add_argument(
+        "--provider", choices=["gpt", "claude"],
+        help="Judge provider to use: gpt or claude",
+    )
+    parser.add_argument(
+        "--prompt",
+        help="Judge prompt stem (from judge/prompts/judge_*.txt)",
+    )
+    parser.add_argument(
+        "--rubric",
+        help="Judge rubric stem (from judge/rubrics/rubric_*.md)",
+    )
+    
+    return parser.parse_args()
+
+
+def _run_judging(provider: str, prompt_name: str, rubric_name: str) -> int:
+    """Run the judging process with the given configuration."""
     # Check API key based on provider
     try:
-        if args.provider == "gpt":
+        if provider == "gpt":
             _require_openai_api_key()
-        elif args.provider == "claude":
+        elif provider == "claude":
             _require_anthropic_api_key()
     except RuntimeError as error:
-        print(str(error))
+        print(f"API key error: {error}")
         return 1
 
     raw_files = _discover_raw_transcripts()
@@ -178,16 +250,29 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No raw transcripts found under {TRANSCRIPTS_DIR}")
         return 1
 
+    # Show summary and get confirmation
+    summary = (
+        f"Will grade {len(raw_files)} raw transcripts using:\n"
+        f"  • Provider: {provider.upper()}\n"
+        f"  • Judge prompt: {prompt_name}\n"
+        f"  • Judge rubric: {rubric_name}\n"
+        f"  • Parallel workers: {PARALLEL_WORKERS}"
+    )
+    
+    if not confirm_proceed(summary):
+        print("Cancelled.")
+        return 0
+
     workers = PARALLEL_WORKERS
-    provider_label = args.provider.upper()
+    provider_label = provider.upper()
     print(
         f"[{provider_label} Judge] Grading {len(raw_files)} transcripts  "
-        f"prompt={args.prompt}  rubric={args.rubric}  parallel={workers}"
+        f"prompt={prompt_name}  rubric={rubric_name}  parallel={workers}"
     )
 
     tasks: list[tuple[Path, Path]] = []
     for raw_path in raw_files:
-        target_path = _provider_target_path(raw_path, args.provider)
+        target_path = _provider_target_path(raw_path, provider)
         tasks.append((raw_path, target_path))
 
     global _progress_done
@@ -201,9 +286,9 @@ def main(argv: list[str] | None = None) -> int:
             futures = {
                 pool.submit(
                     _grade_one, raw_path, target_path,
-                    provider=args.provider,
-                    prompt_name=args.prompt, 
-                    rubric_name=args.rubric,
+                    provider=provider,
+                    prompt_name=prompt_name, 
+                    rubric_name=rubric_name,
                 ): (raw_path, target_path)
                 for raw_path, target_path in tasks
             }
@@ -212,7 +297,7 @@ def main(argv: list[str] | None = None) -> int:
                 try:
                     info = future.result()
                     all_scores.append(info)
-                    _print_result(info, total, args.provider)
+                    _print_result(info, total, provider)
                 except Exception as error:  # Catch both JudgeError and import errors
                     failed += 1
                     with _progress_lock:
@@ -234,6 +319,42 @@ def main(argv: list[str] | None = None) -> int:
         f"mean={mean_score:.1f}"
     )
     return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: get config via interactive prompts or args, then run judging."""
+    args = _parse_args()
+    
+    # Determine if we should use interactive mode
+    use_interactive = not all([args.provider, args.prompt, args.rubric])
+    
+    try:
+        if use_interactive:
+            provider, prompt_name, rubric_name = _get_interactive_config()
+        else:
+            provider = args.provider
+            prompt_name = args.prompt
+            rubric_name = args.rubric
+            
+            # Validate that all required args are provided
+            if not provider:
+                print("Error: --provider is required in non-interactive mode")
+                return 1
+            if not prompt_name:
+                print("Error: --prompt is required in non-interactive mode")
+                return 1
+            if not rubric_name:
+                print("Error: --rubric is required in non-interactive mode")
+                return 1
+        
+        return _run_judging(provider, prompt_name, rubric_name)
+        
+    except (RuntimeError, ValueError) as error:
+        print(f"Error: {error}")
+        return 1
+    except KeyboardInterrupt:
+        print("\nCancelled.")
+        return 130
 
 
 if __name__ == "__main__":

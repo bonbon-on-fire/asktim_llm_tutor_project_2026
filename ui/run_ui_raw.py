@@ -168,29 +168,29 @@ def _next_transcript_number(output_dir: Path) -> str:
     return f"{next_num:02d}"
 
 
-def _validate_manual_config() -> None:
-    """Validate the TUTOR_PROMPTS, STUDENT_PERSONAS, COURSE_EXERCISES, TURN_SIZE, and TRIALS config constants against available assets; raises ValueError/RuntimeError on bad config."""
+def _validate_batch_config(config: BatchConfig) -> None:
+    """Validate the batch config against available assets; raises ValueError/RuntimeError on bad config."""
     _require_openai_api_key()
-    if TURN_SIZE <= 0:
-        raise ValueError("TURN_SIZE must be a positive integer.")
-    if TRIALS <= 0:
-        raise ValueError("TRIALS must be a positive integer.")
-    if not TUTOR_PROMPTS:
-        raise ValueError("TUTOR_PROMPTS must contain at least one item.")
-    if not STUDENT_PERSONAS:
-        raise ValueError("STUDENT_PERSONAS must contain at least one item.")
-    if not COURSE_EXERCISES:
-        raise ValueError("COURSE_EXERCISES must contain at least one item.")
+    if config.turn_size <= 0:
+        raise ValueError("Turn size must be a positive integer.")
+    if config.trials <= 0:
+        raise ValueError("Trials must be a positive integer.")
+    if not config.tutor_prompts:
+        raise ValueError("Must select at least one tutor prompt.")
+    if not config.student_personas:
+        raise ValueError("Must select at least one student persona.")
+    if not config.course_exercises:
+        raise ValueError("Must select at least one course/exercise combination.")
 
     available_tutor_prompts = set(_discover_tutor_prompts())
     available_personas = set(list_personas())
     available_courses = set(_discover_courses())
 
-    for tutor_prompt in TUTOR_PROMPTS:
+    for tutor_prompt in config.tutor_prompts:
         if tutor_prompt not in available_tutor_prompts:
             raise ValueError(f"Unknown tutor prompt: {tutor_prompt}")
 
-    for persona in STUDENT_PERSONAS:
+    for persona in config.student_personas:
         if persona not in available_personas:
             raise ValueError(f"Unknown student persona: {persona}")
         persona_type, _ = _parse_persona_name(persona)
@@ -200,7 +200,7 @@ def _validate_manual_config() -> None:
                 f"Supported types: {', '.join(sorted(_RAW_SUBDIR_BY_PERSONA_TYPE))}"
             )
 
-    for course, exercise_num in COURSE_EXERCISES:
+    for course, exercise_num in config.course_exercises:
         if course not in available_courses:
             raise ValueError(f"Unknown course: {course}")
         if exercise_num not in _discover_exercises(course):
@@ -331,35 +331,204 @@ def _save_raw_transcript(
     return transcript_name, transcript_path
 
 
-def _iter_runs():
-    """Yield (RunConfig, trial_number) for every combination in the TUTOR_PROMPTS × STUDENT_PERSONAS × COURSE_EXERCISES × TRIALS matrix."""
-    for tutor_prompt in TUTOR_PROMPTS:
-        for persona_name in STUDENT_PERSONAS:
+def _iter_runs(batch_config: BatchConfig):
+    """Yield (RunConfig, trial_number) for every combination in the batch config matrix."""
+    for tutor_prompt in batch_config.tutor_prompts:
+        for persona_name in batch_config.student_personas:
             persona_type, persona_version = _parse_persona_name(persona_name)
-            for course, exercise_number in COURSE_EXERCISES:
-                for trial in range(1, TRIALS + 1):
+            for course, exercise_number in batch_config.course_exercises:
+                for trial in range(1, batch_config.trials + 1):
                     config = RunConfig(
                         tutor_prompt=tutor_prompt,
                         persona_type=persona_type,
                         persona_version=persona_version,
                         course=course,
                         exercise_number=exercise_number,
-                        turn_size=TURN_SIZE,
+                        turn_size=batch_config.turn_size,
                     )
                     yield config, trial
 
 
-def main() -> int:
-    """CLI entry point: validate config, run all combinations, save raw transcripts."""
+def _get_interactive_config() -> BatchConfig:
+    """Get batch configuration through interactive CLI prompts."""
+    print("=== Raw Transcript Generation Configuration ===")
+    
+    # Tutor prompts
+    available_tutor_prompts = _discover_tutor_prompts()
+    selected_tutor_prompts = prompt_numbered_selection(
+        "Tutor prompts",
+        available_tutor_prompts,
+        allow_empty=True,
+        empty_means_all=True,
+    )
+    
+    # Student personas
+    available_personas = list_personas()
+    selected_personas = prompt_numbered_selection(
+        "Student personas",
+        available_personas,
+        allow_empty=True,
+        empty_means_all=True,
+    )
+    
+    # Course/exercise combinations
+    available_courses = _discover_courses()
+    if not available_courses:
+        raise RuntimeError("No courses found in curriculum directory")
+    
+    course_exercises = []
+    for course in available_courses:
+        exercises = _discover_exercises(course)
+        if exercises:
+            course_exercises.extend((course, ex) for ex in exercises)
+    
+    course_exercise_labels = [f"{course}/exercise_{ex}" for course, ex in course_exercises]
+    selected_indices = prompt_numbered_selection(
+        "Course/exercise combinations",
+        course_exercise_labels,
+        allow_empty=True,
+        empty_means_all=True,
+    )
+    selected_course_exercises = [
+        course_exercises[course_exercise_labels.index(label)]
+        for label in selected_indices
+    ]
+    
+    # Turn size
+    turn_size = prompt_integer(
+        "Turn size (student+tutor exchanges per conversation)",
+        min_value=1,
+        max_value=50,
+    )
+    if turn_size is None:
+        turn_size = DEFAULT_TURN_SIZE
+    
+    # Trials
+    trials = prompt_integer(
+        "Number of trials per configuration",
+        min_value=1,
+        max_value=100,
+    )
+    if trials is None:
+        trials = DEFAULT_TRIALS
+    
+    return BatchConfig(
+        tutor_prompts=selected_tutor_prompts,
+        student_personas=selected_personas,
+        course_exercises=selected_course_exercises,
+        turn_size=turn_size,
+        trials=trials,
+    )
+
+
+def _parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Generate raw (unjudged) tutor/student transcripts",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Interactive mode (default)
+  python -m ui.run_ui_raw
+  
+  # Command-line mode
+  python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+        """,
+    )
+    
+    parser.add_argument(
+        "--tutor",
+        nargs="+",
+        help="Tutor prompt names (from tutor/prompts/*.txt)",
+    )
+    parser.add_argument(
+        "--personas",
+        nargs="+",
+        help="Student persona names (from students/personas/*.txt)",
+    )
+    parser.add_argument(
+        "--course",
+        help="Course name (from curriculum/ directories)",
+    )
+    parser.add_argument(
+        "--exercise",
+        nargs="+",
+        help="Exercise numbers (zero-padded, e.g., 01 02)",
+    )
+    parser.add_argument(
+        "--turn-size",
+        type=int,
+        default=DEFAULT_TURN_SIZE,
+        help=f"Number of student+tutor exchanges per conversation (default: {DEFAULT_TURN_SIZE})",
+    )
+    parser.add_argument(
+        "--trials",
+        type=int,
+        default=DEFAULT_TRIALS,
+        help=f"Number of trials per configuration (default: {DEFAULT_TRIALS})",
+    )
+    
+    return parser.parse_args()
+
+
+def _get_config_from_args(args: argparse.Namespace) -> BatchConfig:
+    """Convert command-line arguments to BatchConfig."""
+    # Use defaults if not specified
+    tutor_prompts = args.tutor or DEFAULT_TUTOR_PROMPTS
+    student_personas = args.personas or DEFAULT_STUDENT_PERSONAS
+    
+    if args.course and args.exercise:
+        course_exercises = [(args.course, ex) for ex in args.exercise]
+    else:
+        course_exercises = DEFAULT_COURSE_EXERCISES
+    
+    return BatchConfig(
+        tutor_prompts=tutor_prompts,
+        student_personas=student_personas,
+        course_exercises=course_exercises,
+        turn_size=args.turn_size,
+        trials=args.trials,
+    )
+
+
+def _run_batch(batch_config: BatchConfig) -> int:
+    """Run the batch generation with the given configuration."""
     try:
-        _validate_manual_config()
+        _validate_batch_config(batch_config)
     except (RuntimeError, ValueError) as error:
-        print(str(error))
+        print(f"Configuration error: {error}")
         return 1
+
+    # Show summary and get confirmation
+    persona_groups = group_personas_by_type(batch_config.student_personas)
+    total_combinations = (
+        len(batch_config.tutor_prompts) *
+        len(batch_config.student_personas) *
+        len(batch_config.course_exercises) *
+        batch_config.trials
+    )
+    
+    summary_lines = [
+        f"Will generate {total_combinations} raw transcripts:",
+        f"  • {len(batch_config.tutor_prompts)} tutor prompt(s): {', '.join(batch_config.tutor_prompts)}",
+        f"  • {len(batch_config.student_personas)} student persona(s) across {len(persona_groups)} type(s)",
+    ]
+    for persona_type, personas in persona_groups.items():
+        summary_lines.append(f"    - {persona_type}: {', '.join(personas)}")
+    
+    summary_lines.extend([
+        f"  • {len(batch_config.course_exercises)} course/exercise combination(s): {', '.join(f'{c}/{e}' for c, e in batch_config.course_exercises)}",
+        f"  • {batch_config.turn_size} turns per conversation",
+        f"  • {batch_config.trials} trial(s) per configuration",
+    ])
+    
+    if not confirm_proceed("\n".join(summary_lines)):
+        print("Cancelled.")
+        return 0
 
     try:
         failed_runs = 0
-        for config, trial in _iter_runs():
+        for config, trial in _iter_runs(batch_config):
             assignment_text = _build_assignment_text(
                 config.course,
                 config.exercise_number,
@@ -372,7 +541,7 @@ def main() -> int:
                 failed_runs += 1
                 print(
                     "[Run Failed] "
-                    f"trial={trial}/{TRIALS} "
+                    f"trial={trial}/{batch_config.trials} "
                     f"tutor={config.tutor_prompt} "
                     f"persona={config.student_persona} "
                     f"course={config.course} "
@@ -388,7 +557,7 @@ def main() -> int:
             )
             print(
                 "[Raw Batch] "
-                f"trial={trial}/{TRIALS} "
+                f"trial={trial}/{batch_config.trials} "
                 f"tutor={config.tutor_prompt} "
                 f"persona={config.student_persona} "
                 f"course={config.course} "
@@ -406,6 +575,34 @@ def main() -> int:
         return 1
 
     return 0
+
+
+def main() -> int:
+    """CLI entry point: get config via interactive prompts or args, then run batch generation."""
+    args = _parse_args()
+    
+    # Determine if we should use interactive mode
+    use_interactive = not any([
+        args.tutor,
+        args.personas,
+        args.course,
+        args.exercise,
+    ])
+    
+    try:
+        if use_interactive:
+            batch_config = _get_interactive_config()
+        else:
+            batch_config = _get_config_from_args(args)
+        
+        return _run_batch(batch_config)
+        
+    except (RuntimeError, ValueError) as error:
+        print(f"Error: {error}")
+        return 1
+    except KeyboardInterrupt:
+        print("\nCancelled.")
+        return 130
 
 
 if __name__ == "__main__":

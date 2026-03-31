@@ -1,6 +1,6 @@
 # UI Module
 
-Terminal runners for transcript generation and judge scoring.
+Terminal runners for transcript generation and judge scoring with interactive CLI support.
 
 ## Available entrypoints
 
@@ -8,68 +8,83 @@ From repo root in PowerShell:
 
 ### 1) Generate raw transcripts (no judge)
 
+**Interactive mode (default):**
 ```powershell
 python -m ui.run_ui_raw
 ```
 
-Edit config in `ui/run_ui_raw.py`:
+This will prompt you to select from numbered options:
+- **Tutor prompts**: Available from `tutor/prompts/*.txt` (empty input = all)
+- **Student personas**: Available from `students/personas/*.txt` (empty input = all)  
+- **Course/exercise combinations**: Available from `curriculum/` (empty input = all)
+- **Turn size**: Number of student+tutor exchanges per conversation
+- **Trials**: Number of trials per configuration
 
-- `TUTOR_PROMPTS`
-- `STUDENT_PERSONAS`
-- `COURSE_EXERCISES` (as `(course, exercise_number)` tuples)
-- `TRIALS`
-- `TURN_SIZE`
+**Command-line mode:**
+```powershell
+python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+```
 
-Run matrix:
-
-`tutor_prompts x student_personas x course_exercises x trials`
+Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
 
 ### 2) Judge raw transcripts (GPT or Claude)
 
+**Interactive mode (default):**
+```powershell
+python -m ui.run_ui_judge
+```
+
+This will prompt you to select from numbered options:
+- **Judge provider**: gpt or claude (required)
+- **Judge prompt**: Available from `judge/prompts/judge_*.txt` (required)
+- **Judge rubric**: Available from `judge/rubrics/rubric_*.md` (required)
+
+**Command-line mode:**
 ```powershell
 # Grade with GPT
-python -m ui.run_ui_judge --provider gpt
+python -m ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
 
 # Grade with Claude  
-python -m ui.run_ui_judge --provider claude
-
-# Custom prompt/rubric
-python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
 ```
 
 The script automatically discovers all raw transcripts in `*_raw` folders, copies each to the provider-specific folder (`*_gpt` or `*_claude`), then applies judging in-place on the copied file.
-
-**Options:**
-- `--provider {gpt,claude}` (required): Choose judge provider
-- `--prompt PROMPT`: Judge prompt stem (default: judge_05)
-- `--rubric RUBRIC`: Judge rubric stem (default: rubric_05)
 
 **Features:**
 - Parallel processing (6 workers by default)
 - Progress tracking with section scores
 - Automatic API key validation per provider
 - Overwrites existing graded files with warning
+- Interactive confirmation before processing
 
 ### 3) Judge batch files (GPT or Claude)
 
+**Interactive mode (default):**
+```powershell
+python -m ui.run_ui_batch_judge
+```
+
+This will prompt you to select from numbered options:
+- **Judge provider**: gpt or claude (required)
+- **Batch type**: Available from `transcripts/batches/batches_raw/batch_*/` (required)
+- **Judge prompt**: Available from `judge/prompts/judge_*.txt` (required)
+- **Judge rubric**: Available from `judge/rubrics/rubric_*.md` (required)
+
+**Command-line mode:**
 ```powershell
 # Grade batch files with GPT
-python -m ui.run_ui_batch_judge --provider gpt --batch-type 01
+python -m ui.run_ui_batch_judge --provider gpt --batch-type 01 --prompt judge_05 --rubric rubric_05
 
 # Grade batch files with Claude
-python -m ui.run_ui_batch_judge --provider claude --batch-type 02
-
-# Custom prompt/rubric
-python -m ui.run_ui_batch_judge --provider gpt --batch-type 03 --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_batch_judge --provider claude --batch-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
 The script processes batch files from `transcripts/batches/batches_raw/batch_XX/` and writes results to `transcripts/batches/batches_{provider}/batch_XX/`.
 
-**Options:**
-- `--provider {gpt,claude}` (required): Choose judge provider
-- `--batch-type BATCH_TYPE`: Batch type number (default: 03)
-- `--prompt PROMPT`: Judge prompt stem (default: judge_05)
-- `--rubric RUBRIC`: Judge rubric stem (default: rubric_05)
+**Features:**
+- Parallel processing (6 workers by default)
+- Automatic API key validation per provider
+- Interactive confirmation before processing
 
 ## Output paths
 
@@ -142,11 +157,22 @@ Judged transcripts additionally include:
 - `judge_rubric`
 - `grade`
 
+## Interactive CLI Features
+
+All UI scripts support both interactive and command-line modes:
+
+- **Interactive mode**: Run without arguments to get numbered selection prompts
+- **Command-line mode**: Provide all required arguments to skip prompts
+- **Smart defaults**: `run_ui_raw` allows empty input (defaults to "all available")
+- **Required inputs**: Judge scripts require explicit selection of all options
+- **Confirmation**: Interactive mode shows summary and asks for confirmation
+- **Range support**: Select multiple items with ranges like `1-5` or `1,3,5-7`
+
 ## Environment variables
 
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`). |
-| `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required by `ui.run_ui_claude`. |
+| `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required when using Claude provider. |
 | `ANTHROPIC_MODEL` | No | Model name for Claude judge (default: `claude-sonnet-4-6`). |
