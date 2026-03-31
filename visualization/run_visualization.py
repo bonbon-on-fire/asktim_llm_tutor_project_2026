@@ -1,4 +1,4 @@
-﻿"""
+"""
 Build GPT vs Claude grading comparison charts.
 
 Reads judged transcripts from:
@@ -1011,7 +1011,7 @@ def main() -> int:
     print(f"Loaded GPT: {len(gpt_all_rows)} transcripts   Claude: {len(claude_all_rows)} transcripts")
 
     if not gpt_all_rows and not claude_all_rows:
-        print("No judged transcripts found. Run ui.run_ui_gpt / ui.run_ui_claude first.")
+        print("No judged transcripts found. Run 'python -m ui.run_ui_judge --provider gpt' or '--provider claude' first.")
         return 1
 
     chart_idx = 1

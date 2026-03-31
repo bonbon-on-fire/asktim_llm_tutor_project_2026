@@ -1,4 +1,4 @@
-﻿# Humanities LLM Tutor Project 2026 — Planning Document
+# Humanities LLM Tutor Project 2026 — Planning Document
 
 Use this document to capture project vision, scope, obstacles, and decisions. Update it as the project evolves.
 
@@ -377,7 +377,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
 - Added `python -m terminal_ui.run_bundle` to automate persona × exercise × `N` trials with transcript generation and judge scoring.
 - Added `python -m ui.run_ui_raw` to automate persona × exercise × `N` raw transcript generation before judge evaluation, with outputs routed to `transcripts/{persona_type}/{persona_type}_raw/`.
-- Added `python -m ui.run_ui_gpt` and `python -m ui.run_ui_claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
+- Added `python -m ui.run_ui_judge --provider gpt` and `python -m ui.run_ui_judge --provider claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
 - Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
 - Run turn count (`turn_size`) is now injected into tutor and student context so both roles know the planned conversation length.
