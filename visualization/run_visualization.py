@@ -191,6 +191,16 @@ def _sort_key(row: GradeRow) -> tuple:
     return (row.persona_type, row.student_persona, row.course, ex_num, tnum)
 
 
+def _transcript_num(row: GradeRow) -> int:
+    """Extract numeric suffix from transcript_name like transcript_17."""
+    if "_" in row.transcript_name:
+        try:
+            return int(row.transcript_name.split("_")[-1])
+        except ValueError:
+            return 0
+    return 0
+
+
 def _pearson(xs: list[float], ys: list[float]) -> float | None:
     """Compute Pearson r for paired lists; returns None if fewer than 2 pairs."""
     if len(xs) != len(ys) or len(xs) < 2:
@@ -402,6 +412,94 @@ def _chart_line_scores(
     fig.savefig(out_dir / output_name, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {output_name}")
+
+
+# ---------------------------------------------------------------------------
+# Chart: Provider self-consistency across repeated runs
+# ---------------------------------------------------------------------------
+
+def _chart_provider_self_consistency(
+    rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    provider_label: str,
+    chart_idx: int,
+) -> None:
+    """Heatmap of run-vs-run score correlation for repeated runs within one provider."""
+    plt = _safe_import_matplotlib()
+
+    grouped: dict[tuple[str, str, str], list[GradeRow]] = {}
+    for row in rows:
+        key = (row.student_persona, row.course, row.exercise_number)
+        grouped.setdefault(key, []).append(row)
+
+    if not grouped:
+        print(f"  [{chart_idx}] self_consistency_{provider_label.lower()}_run_correlation.png (skipped: no rows)")
+        return
+
+    for key in grouped:
+        grouped[key] = sorted(grouped[key], key=_transcript_num)
+
+    max_runs = max(len(v) for v in grouped.values())
+    if max_runs < 2:
+        print(
+            f"  [{chart_idx}] self_consistency_{provider_label.lower()}_run_correlation.png "
+            "(skipped: fewer than 2 runs per setup)"
+        )
+        return
+
+    run_vectors: list[list[float]] = [[] for _ in range(max_runs)]
+    for rows_for_key in grouped.values():
+        for idx in range(max_runs):
+            if idx < len(rows_for_key):
+                run_vectors[idx].append(rows_for_key[idx].total_score)
+            else:
+                run_vectors[idx].append(float("nan"))
+
+    corr_matrix: list[list[float]] = [[float("nan")] * max_runs for _ in range(max_runs)]
+    n_matrix: list[list[int]] = [[0] * max_runs for _ in range(max_runs)]
+
+    for i in range(max_runs):
+        for j in range(max_runs):
+            if i == j:
+                corr_matrix[i][j] = 1.0
+                n_matrix[i][j] = len([v for v in run_vectors[i] if math.isfinite(v)])
+                continue
+            xs, ys = run_vectors[i], run_vectors[j]
+            paired_x, paired_y = [], []
+            for x, y in zip(xs, ys):
+                if math.isfinite(x) and math.isfinite(y):
+                    paired_x.append(x)
+                    paired_y.append(y)
+            n_matrix[i][j] = len(paired_x)
+            corr = _pearson(paired_x, paired_y)
+            corr_matrix[i][j] = corr if corr is not None else float("nan")
+
+    fig, ax = plt.subplots(figsize=(7, 6))
+    im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
+    labels = [f"run_{i+1}" for i in range(max_runs)]
+    ax.set_xticks(list(range(max_runs)))
+    ax.set_yticks(list(range(max_runs)))
+    ax.set_xticklabels(labels)
+    ax.set_yticklabels(labels)
+    ax.set_title(f"{provider_label} vs Itself: Run Correlation Heatmap")
+    ax.set_xlabel("Run index within same setup")
+    ax.set_ylabel("Run index within same setup")
+
+    for i in range(max_runs):
+        for j in range(max_runs):
+            c = corr_matrix[i][j]
+            n = n_matrix[i][j]
+            text = f"{c:.2f}\nn={n}" if math.isfinite(c) else f"N/A\nn={n}"
+            ax.text(j, i, text, ha="center", va="center", fontsize=8)
+
+    cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+    cbar.set_label("Pearson correlation")
+    fig.tight_layout()
+    filename = f"self_consistency_{provider_label.lower()}_run_correlation.png"
+    fig.savefig(out_dir / filename, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {filename}")
 
 
 # ---------------------------------------------------------------------------
@@ -903,6 +1001,21 @@ def main() -> int:
         return 1
 
     chart_idx = 1
+
+    _chart_provider_self_consistency(
+        gpt_all_rows,
+        out_dir,
+        provider_label="GPT",
+        chart_idx=chart_idx,
+    )
+    chart_idx += 1
+    _chart_provider_self_consistency(
+        claude_all_rows,
+        out_dir,
+        provider_label="Claude",
+        chart_idx=chart_idx,
+    )
+    chart_idx += 1
 
     _chart_section_discrepancies(
         gpt_all_rows,
