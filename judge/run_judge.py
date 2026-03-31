@@ -43,12 +43,16 @@ class JudgeError(RuntimeError):
 
 @dataclass(slots=True)
 class JudgeResult:
+    """Final score summary and output location for a single judged transcript."""
+
     total_score: int
     max_score: int
     output_path: Path
 
 
 class JudgeState(TypedDict):
+    """LangGraph state for iterative model-call/validation repair attempts."""
+
     attempts: int
     system_prompt: str
     conversation_text: str
@@ -59,6 +63,8 @@ class JudgeState(TypedDict):
 
 
 def _coerce_int(value: Any, default: int = 0) -> int:
+    """Best-effort conversion to int with safe fallback to *default*."""
+
     if isinstance(value, bool):
         return int(value)
     if isinstance(value, int):
@@ -77,6 +83,8 @@ def _coerce_int(value: Any, default: int = 0) -> int:
 
 
 def _sanitize_text(value: Any) -> str:
+    """Return a string representation, treating ``None`` as an empty string."""
+
     if value is None:
         return ""
     if isinstance(value, str):
@@ -85,10 +93,14 @@ def _sanitize_text(value: Any) -> str:
 
 
 def _env_truthy(name: str) -> bool:
+    """True when the named env var is set to a common truthy token."""
+
     return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _require_openai_api_key() -> str:
+    """Return OpenAI API key from env or raise ``JudgeError``."""
+
     key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
     if not key:
         raise JudgeError("OPENAI_API_KEY environment variable is required but not set.")
@@ -96,6 +108,8 @@ def _require_openai_api_key() -> str:
 
 
 def _require_anthropic_api_key() -> str:
+    """Return Anthropic API key from env or raise ``JudgeError``."""
+
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise JudgeError("ANTHROPIC_API_KEY environment variable is required but not set.")
@@ -103,6 +117,8 @@ def _require_anthropic_api_key() -> str:
 
 
 def _extract_text_from_model_content(content: Any) -> str:
+    """Normalize provider-specific model response content to plain text."""
+
     if isinstance(content, str):
         return content
     if isinstance(content, list):
@@ -122,11 +138,13 @@ def _extract_text_from_model_content(content: Any) -> str:
 
 
 def _extract_json_object(text: str) -> str:
+    """Extract the first JSON object from model output text."""
+
     # fenced code block first
     fenced = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, flags=re.DOTALL)
     if fenced:
         return fenced.group(1).strip()
-    # first JSON object span
+    # Fallback to first balanced-brace span in raw text.
     start = text.find("{")
     if start == -1:
         raise JudgeError("No JSON object found in model output.")
@@ -143,6 +161,8 @@ def _extract_json_object(text: str) -> str:
 
 
 def _parse_json_from_model_output(raw: str) -> dict[str, Any]:
+    """Parse and validate model output as a top-level JSON object."""
+
     obj_text = _extract_json_object(raw)
     try:
         parsed = json.loads(obj_text)
@@ -154,6 +174,8 @@ def _parse_json_from_model_output(raw: str) -> dict[str, Any]:
 
 
 def _build_expected_schema(rubric_name: str) -> str:
+    """Build the schema example injected into the judge prompt template."""
+
     max_score = 46 if rubric_name in {"rubric_05", "rubric_06"} else 47
     sample = {
         "sections": {
@@ -172,6 +194,8 @@ def _build_expected_schema(rubric_name: str) -> str:
 
 
 def load_judge_prompt(*, prompt_name: str = DEFAULT_JUDGE_PROMPT, rubric_name: str = DEFAULT_RUBRIC) -> str:
+    """Load judge prompt template and inject rubric text plus JSON schema example."""
+
     prompt_path = PROMPTS_DIR / f"{prompt_name}.txt"
     rubric_path = RUBRICS_DIR / f"{rubric_name}.md"
     if not prompt_path.exists():
@@ -185,6 +209,8 @@ def load_judge_prompt(*, prompt_name: str = DEFAULT_JUDGE_PROMPT, rubric_name: s
 
 
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
+    """Format transcript JSON into deterministic plain text for judge input."""
+
     lines: list[str] = []
     context = _sanitize_text(transcript.get("context")).strip()
     exercise = _sanitize_text(transcript.get("exercise")).strip()
@@ -212,6 +238,8 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
 
 
 def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Coerce score fields to integers and ensure expected optional keys exist."""
+
     total_base = _coerce_int(payload.get("total_base_score"))
     max_base = _coerce_int(payload.get("max_base_score"), 46)
     total = _coerce_int(payload.get("total_score"), total_base)
@@ -227,6 +255,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _validate_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Validate required score fields and numeric ranges in grade payload."""
+
     for key in ("total_base_score", "max_base_score", "total_score", "max_score"):
         if key not in payload:
             raise JudgeError(f"Missing required key: {key}")
@@ -240,6 +270,8 @@ def _validate_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Return payload with stable key ordering for readability and diffs."""
+
     ordered: dict[str, Any] = {}
     for key in (
         "sections",
@@ -261,6 +293,8 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _judge_repair_prompt(error: str) -> str:
+    """Build repair instruction sent after a failed JSON validation pass."""
+
     return (
         "Your previous output was invalid.\n"
         f"Validation error: {error}\n"
@@ -270,6 +304,8 @@ def _judge_repair_prompt(error: str) -> str:
 
 
 def _create_model_invoke(provider: Provider, model_name: str, api_key: str, reasoning: str) -> Callable[[list[Any]], Any]:
+    """Create a provider-specific callable used to invoke the judge model."""
+
     if provider == "gpt":
         kwargs: dict[str, Any] = {"model": model_name, "temperature": 0, "api_key": api_key}
         if reasoning in {"low", "medium", "high"}:
@@ -281,7 +317,11 @@ def _create_model_invoke(provider: Provider, model_name: str, api_key: str, reas
 
 
 def _create_judge_graph(*, invoke_model: Callable[[list[Any]], Any]) -> Any:
+    """Build a retrying LangGraph pipeline for judge generation and validation."""
+
     def judge_node(state: JudgeState) -> dict[str, Any]:
+        """Call the model with either a fresh prompt or repair prompt."""
+
         messages = [SystemMessage(content=state["system_prompt"])]
         if state.get("last_error") and state.get("last_output"):
             messages.append(
@@ -299,6 +339,8 @@ def _create_judge_graph(*, invoke_model: Callable[[list[Any]], Any]) -> Any:
         }
 
     def validate_node(state: JudgeState) -> dict[str, Any]:
+        """Parse, sanitize, and validate model JSON output."""
+
         try:
             parsed = _parse_json_from_model_output(_sanitize_text(state.get("last_output", "")))
             sanitized = _sanitize_grade_payload(parsed)
@@ -308,6 +350,8 @@ def _create_judge_graph(*, invoke_model: Callable[[list[Any]], Any]) -> Any:
             return {"grade_json": None, "last_error": str(e)}
 
     def route(state: JudgeState) -> str:
+        """Route to end on success/max attempts, otherwise request another retry."""
+
         if state.get("grade_json") is not None:
             return END
         return END if int(state.get("attempts", 0)) >= MAX_ATTEMPTS else "judge"
@@ -329,6 +373,8 @@ def _judge_transcript(
     rubric_name: str,
     output_name: str | None,
 ) -> JudgeResult:
+    """Run the complete judging flow for one transcript and write output JSON."""
+
     transcript_path = TRANSCRIPTS_DIR / f"{transcript_name}.json"
     if not transcript_path.exists():
         raise JudgeError(f"Transcript not found: {transcript_path}")
@@ -406,6 +452,8 @@ def judge_transcript_gpt(
     rubric_name: str = DEFAULT_RUBRIC,
     output_name: str | None = None,
 ) -> JudgeResult:
+    """Judge a single transcript using OpenAI GPT provider settings."""
+
     return _judge_transcript(
         transcript_name,
         provider="gpt",
@@ -422,6 +470,8 @@ def judge_transcript_claude(
     rubric_name: str = DEFAULT_RUBRIC,
     output_name: str | None = None,
 ) -> JudgeResult:
+    """Judge a single transcript using Anthropic Claude provider settings."""
+
     return _judge_transcript(
         transcript_name,
         provider="claude",
@@ -439,6 +489,8 @@ def judge_transcript(
     rubric_name: str = DEFAULT_RUBRIC,
     output_name: str | None = None,
 ) -> JudgeResult:
+    """Provider-agnostic entrypoint to judge a single transcript."""
+
     return _judge_transcript(
         transcript_name,
         provider=provider,
@@ -446,4 +498,33 @@ def judge_transcript(
         rubric_name=rubric_name,
         output_name=output_name,
     )
+
+
+__all__ = [
+    "JudgeError",
+    "JudgeResult",
+    "load_judge_prompt",
+    "judge_transcript",
+    "judge_transcript_gpt",
+    "judge_transcript_claude",
+]
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Judge one transcript with GPT or Claude.")
+    parser.add_argument("transcript_name", help="Transcript stem relative to transcripts/ (no .json)")
+    parser.add_argument("--provider", choices=["gpt", "claude"], default="gpt")
+    parser.add_argument("--prompt", default=DEFAULT_JUDGE_PROMPT)
+    parser.add_argument("--rubric", default=DEFAULT_RUBRIC)
+    args = parser.parse_args()
+    result = judge_transcript(
+        args.transcript_name,
+        provider=args.provider,  # type: ignore[arg-type]
+        prompt_name=args.prompt,
+        rubric_name=args.rubric,
+    )
+    print(f"Judged {args.transcript_name}: {result.total_score}/{result.max_score}")
+    print(f"Output: {result.output_path}")
 

@@ -135,6 +135,8 @@ def create_tutor_graph(system_prompt: str):
     )
 
     def tutor_node(state: TutorState) -> dict:
+        """Generate one tutor turn from current conversation state."""
+
         messages = [SystemMessage(content=_sanitize_text_for_transport(system_prompt))]
         state_messages = state.get("messages") or []
         for msg in state_messages:

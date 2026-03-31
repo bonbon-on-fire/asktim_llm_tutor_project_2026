@@ -62,6 +62,8 @@ DEFAULT_TRIALS: int = 2
 
 @dataclass(frozen=True)
 class RunConfig:
+    """Single conversation run configuration for one tutor/persona/course/exercise tuple."""
+
     tutor_prompt: str
     persona_type: str
     persona_version: str

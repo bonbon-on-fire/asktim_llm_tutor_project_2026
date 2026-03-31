@@ -64,9 +64,9 @@ The system has four loosely coupled layers:
 
 **Student Bot (`students/run_student.py`)**: Shares the same LangGraph infrastructure as the tutor, but uses a persona prompt from `students/personas/` to simulate a specific type of student. Includes a heuristic guard and automatic retry if the bot starts sounding like a tutor.
 
-**Judge (`judge/run_judge_gpt.py`, `run_judge_claude.py`)**: Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the model. Validates the JSON response against the rubric spec, auto-repairs on failure (up to 3 attempts), and writes the grade back into the transcript file.
+**Judge (`judge/run_judge.py`)**: Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure (up to 3 attempts), and writes the grade back into the transcript file.
 
-**Batch Judge (`judge/run_judge_batch_gpt.py`, `run_judge_batch_claude.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading — allowing the judge to evaluate consistency or persona differentiation across a set.
+**Batch Judge (`judge/run_judge_batch.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading using selected provider (`gpt` or `claude`) — allowing consistency/persona differentiation analysis across a set.
 
 **UI Runners (`ui/`)**: Five parallelized batch runners (ThreadPoolExecutor, default 6 workers) for raw generation and GPT/Claude judging of individual and batch transcripts. All accept `--prompt` and `--rubric` CLI flags.
 
@@ -202,10 +202,8 @@ humanities_llm_tutor_project_2026/
 │   └── prompts/             # tutor_01.txt, tutor_02.txt, tutor_03.txt
 │
 ├── judge/
-│   ├── run_judge_gpt.py          # Single-transcript GPT judge
-│   ├── run_judge_claude.py       # Single-transcript Claude judge
-│   ├── run_judge_batch_gpt.py    # Batch GPT judge
-│   ├── run_judge_batch_claude.py # Batch Claude judge
+│   ├── run_judge.py              # Unified single-transcript judge (provider gpt/claude)
+│   ├── run_judge_batch.py        # Unified batch judge (provider gpt/claude)
 │   ├── prompts/             # judge_01..06.txt
 │   └── rubrics/             # rubric_01..06.md (current: rubric_05)
 │

@@ -33,6 +33,8 @@ TRANSCRIPTS_DIR = REPO_ROOT / "transcripts"
 
 
 def _parse_batch_file(batch_file_path: Path) -> list[str]:
+    """Read batch .txt and return normalized transcript stems (no extension)."""
+
     if not batch_file_path.exists():
         raise JudgeError(f"Batch file not found: {batch_file_path}")
     stems: list[str] = []
@@ -47,6 +49,8 @@ def _parse_batch_file(batch_file_path: Path) -> list[str]:
 
 
 def _load_transcripts(stems: list[str]) -> list[tuple[str, dict[str, Any]]]:
+    """Load and validate transcript JSON docs referenced by batch stems."""
+
     rows: list[tuple[str, dict[str, Any]]] = []
     for stem in stems:
         path = TRANSCRIPTS_DIR / f"{stem}.json"
@@ -66,6 +70,8 @@ def _load_transcripts(stems: list[str]) -> list[tuple[str, dict[str, Any]]]:
 
 
 def _format_batch_conversation(transcripts: list[tuple[str, dict[str, Any]]]) -> tuple[str, int]:
+    """Compose multi-transcript judge input text plus total turn count."""
+
     parts: list[str] = []
     total_turns = 0
     count = len(transcripts)
@@ -102,6 +108,8 @@ def judge_transcript_batch(
     rubric_name: str = "rubric_05",
     output_path: str | None = None,
 ) -> JudgeResult:
+    """Judge all transcripts listed in one batch file and save a batch-grade JSON."""
+
     batch_path = Path(batch_file_path).resolve()
     stems = _parse_batch_file(batch_path)
     transcripts = _load_transcripts(stems)
@@ -156,6 +164,8 @@ def judge_transcript_batch(
 def judge_transcript_batch_gpt(
     batch_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
 ) -> JudgeResult:
+    """GPT-specific convenience wrapper for batch judging."""
+
     return judge_transcript_batch(
         batch_file_path,
         provider="gpt",
@@ -168,6 +178,8 @@ def judge_transcript_batch_gpt(
 def judge_transcript_batch_claude(
     batch_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
 ) -> JudgeResult:
+    """Claude-specific convenience wrapper for batch judging."""
+
     return judge_transcript_batch(
         batch_file_path,
         provider="claude",
@@ -175,5 +187,33 @@ def judge_transcript_batch_claude(
         rubric_name=rubric_name,
         output_path=output_path,
     )
+
+
+__all__ = [
+    "JudgeError",
+    "JudgeResult",
+    "judge_transcript_batch",
+    "judge_transcript_batch_gpt",
+    "judge_transcript_batch_claude",
+]
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Judge one transcript batch with GPT or Claude.")
+    parser.add_argument("batch_file_path", help="Path to batch .txt file")
+    parser.add_argument("--provider", choices=["gpt", "claude"], default="gpt")
+    parser.add_argument("--prompt", default="judge_05")
+    parser.add_argument("--rubric", default="rubric_05")
+    args = parser.parse_args()
+    result = judge_transcript_batch(
+        args.batch_file_path,
+        provider=args.provider,  # type: ignore[arg-type]
+        prompt_name=args.prompt,
+        rubric_name=args.rubric,
+    )
+    print(f"Batch grade: {result.total_score}/{result.max_score}")
+    print(f"Output: {result.output_path}")
 
 

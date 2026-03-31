@@ -124,16 +124,11 @@ def _grade_one(
         )
     shutil.copyfile(raw_path, target_path)
 
-    # Import the appropriate judge function based on provider
-    if provider == "gpt":
-        from judge.run_judge_gpt import judge_transcript
-    elif provider == "claude":
-        from judge.run_judge_claude import judge_transcript
-    else:
-        raise ValueError(f"Unknown provider: {provider}")
+    from judge.run_judge import judge_transcript
 
     result = judge_transcript(
         _relative_stem(target_path),
+        provider=provider,
         prompt_name=prompt_name,
         rubric_name=rubric_name,
         output_name=target_path.stem,

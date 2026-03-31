@@ -94,16 +94,11 @@ def _grade_one_batch(
             f"{output_path.relative_to(_REPO_ROOT)}"
         )
 
-    # Import the appropriate batch judge function based on provider
-    if provider == "gpt":
-        from judge.run_judge_batch_gpt import judge_transcript_batch
-    elif provider == "claude":
-        from judge.run_judge_batch_claude import judge_transcript_batch
-    else:
-        raise ValueError(f"Unknown provider: {provider}")
+    from judge.run_judge_batch import judge_transcript_batch
 
     result = judge_transcript_batch(
         str(batch_file),
+        provider=provider,
         prompt_name=prompt_name,
         rubric_name=rubric_name,
         output_path=str(output_path),

@@ -10,13 +10,8 @@ Current defaults in code:
 
 ```text
 judge/
-  __init__.py                  — package exports (lazy-loads from run_judge_gpt)
-  run_judge_unified.py         — shared single-transcript judge core (GPT + Claude)
-  run_judge_gpt.py             — GPT single-transcript wrapper (imports from unified core)
-  run_judge_claude.py          — Claude single-transcript wrapper (imports from unified core)
-  run_judge_batch_unified.py   — shared batch judge core (GPT + Claude)
-  run_judge_batch_gpt.py       — GPT batch wrapper + batch-type runner
-  run_judge_batch_claude.py    — Claude batch wrapper + batch-type runner
+  run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
+  run_judge_batch.py           — unified batch judge core (provider: gpt|claude)
   README.md
   prompts/
     judge_01.txt           — baseline prompt template
@@ -50,7 +45,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 ### Single Transcript Judging
 
 ```python
-from judge.run_judge_gpt import judge_transcript
+from judge.run_judge import judge_transcript
 
 result = judge_transcript("chaotic/chaotic_gpt/transcript_01")
 print(result.total_score, result.max_score)  # e.g. 41, 46
@@ -61,6 +56,7 @@ You can also choose specific judge prompt + rubric versions:
 ```python
 result = judge_transcript(
     "chaotic/chaotic_gpt/transcript_01",
+    provider="gpt",
     prompt_name="judge_06",
     rubric_name="rubric_06",
 )
@@ -69,9 +65,9 @@ result = judge_transcript(
 Claude example:
 
 ```python
-from judge.run_judge_claude import judge_transcript
+from judge.run_judge import judge_transcript
 
-result = judge_transcript("chaotic/chaotic_claude/transcript_01")
+result = judge_transcript("chaotic/chaotic_claude/transcript_01", provider="claude")
 print(result.total_score, result.max_score)
 ```
 
@@ -104,10 +100,11 @@ Grade transcript bundles where multiple transcripts are combined into one
 prompt for holistic/comparative evaluation:
 
 ```python
-from judge.run_judge_batch_gpt import judge_transcript_batch
+from judge.run_judge_batch import judge_transcript_batch
 
 result = judge_transcript_batch(
     "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+    provider="gpt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
     output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
@@ -165,7 +162,7 @@ Maximum total score: **46**.
 
 ## Claude Judge Module
 
-`judge/run_judge_claude.py` mirrors the GPT judge flow using Anthropic:
+`judge/run_judge.py` handles both providers with `provider="gpt"|"claude"`:
 - Same transcript input/output contract.
 - Same schema validation, sanitization, and retry behavior.
 - Uses `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` (default: `claude-sonnet-4-6`).

@@ -26,6 +26,8 @@ from typing import Any
 
 @dataclass(frozen=True)
 class GradeRow:
+    """Normalized grading row for one transcript, used by plotting routines."""
+
     tutor_prompt: str
     student_persona: str
     course: str
@@ -324,6 +326,8 @@ def _read_batch_rows(batches_dir: Path, provider: str, batch_type: str) -> list[
 
 
 def _filter_individual_rows(rows: list[GradeRow], allowed_personas: set[str]) -> list[GradeRow]:
+    """Keep transcript rows whose persona family is included in *allowed_personas*."""
+
     allowed = {p.lower() for p in allowed_personas}
     return [r for r in rows if r.persona_type.lower() in allowed]
 
@@ -334,16 +338,22 @@ def _filter_individual_rows_by_persona_version(
     persona: str,
     version: str,
 ) -> list[GradeRow]:
+    """Keep rows for exactly one persona/version pair (for example ``chaotic_03``)."""
+
     target = f"{persona}_{version}".lower()
     return [r for r in rows if r.student_persona.lower() == target]
 
 
 def _filter_individual_rows_by_version(rows: list[GradeRow], *, version: str) -> list[GradeRow]:
+    """Keep rows whose persona id ends with ``_<version>`` across all persona families."""
+
     suffix = f"_{version}".lower()
     return [r for r in rows if r.student_persona.lower().endswith(suffix)]
 
 
 def _filter_batch_rows(rows: list[BatchGradeRow], allowed_personas: set[str]) -> list[BatchGradeRow]:
+    """Keep batch rows that include at least one allowed persona family."""
+
     allowed = {p.lower() for p in allowed_personas}
     filtered: list[BatchGradeRow] = []
     for row in rows:
@@ -544,6 +554,8 @@ def _chart_section_discrepancies(
         return
 
     def _section_sort_key(sid: str) -> tuple[int, str]:
+        """Sort section ids by numeric prefix when available (e.g. ``1_*`` before ``2_*``)."""
+
         prefix = sid.split("_", 1)[0]
         try:
             return (int(prefix), sid)
@@ -928,6 +940,8 @@ def _chart_batch_scores(
     claude_by_name = {r.batch_name: r for r in claude_rows}
 
     def _batch_sort_key(name: str) -> int:
+        """Sort batch names by numeric suffix (e.g. ``batch_001`` < ``batch_010``)."""
+
         parts = name.split("_")
         try:
             return int(parts[-1])
