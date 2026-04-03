@@ -426,9 +426,10 @@ def _chart_line_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
+    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=2.5)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
-    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude")
+    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude{title_suffix}")
     ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
@@ -599,8 +600,9 @@ def _chart_section_discrepancies(
 
     x = list(range(len(section_ids_sorted)))
     fig, ax = plt.subplots(figsize=(12, 7))
+    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
     bars = ax.bar(x, mean_abs, color="#6f42c1", alpha=0.8)
-    ax.set_title("Rubric Section Discrepancy (GPT vs Claude)")
+    ax.set_title(f"Rubric Section Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Section")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -645,6 +647,7 @@ def _chart_subsection_discrepancies(
     out_dir: Path,
     *,
     chart_idx: int,
+    output_name: str = "subsection_discrepancy_by_subsection_gpt_vs_claude.png",
 ) -> None:
     """Generate a bar chart of mean absolute subsection-score differences (GPT vs Claude)."""
     plt = _safe_import_matplotlib()
@@ -673,7 +676,7 @@ def _chart_subsection_discrepancies(
             stats[cid]["count"] += 1.0
 
     if not stats:
-        print(f"  [{chart_idx}] subsection_discrepancy_by_subsection_gpt_vs_claude.png (skipped: no subsection data)")
+        print(f"  [{chart_idx}] {output_name} (skipped: no subsection data)")
         return
 
     subsection_ids_sorted = sorted(stats.keys(), key=_subsection_sort_key)
@@ -683,8 +686,9 @@ def _chart_subsection_discrepancies(
 
     x = list(range(len(subsection_ids_sorted)))
     fig, ax = plt.subplots(figsize=(13, 7))
+    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
     bars = ax.bar(x, mean_abs, color="#2f7ed8", alpha=0.85)
-    ax.set_title("Subsection Discrepancy (GPT vs Claude)")
+    ax.set_title(f"Subsection Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Subsection")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -702,7 +706,7 @@ def _chart_subsection_discrepancies(
         )
 
     fig.tight_layout()
-    filename = "subsection_discrepancy_by_subsection_gpt_vs_claude.png"
+    filename = output_name
     fig.savefig(out_dir / filename, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {filename}")
@@ -841,10 +845,12 @@ def _chart_subsection_correlation_heatmap(
                 corr_matrix[i][j] = corr if corr is not None else float("nan")
 
     fig, ax = plt.subplots(figsize=(10, 8))
+    filename = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
+    title_suffix = " (v2)" if filename.endswith("_v2.png") else ""
     im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
     nonempty_rows = sum(1 for values in normalized_rows if values)
     ax.set_title(
-        f"Subsection Correlation Heatmap ({provider_label}, {persona_label})\n"
+        f"Subsection Correlation Heatmap ({provider_label}, {persona_label}){title_suffix}\n"
         f"Normalized subsection scores | n={nonempty_rows}"
     )
     ax.set_xticks(list(range(n)))
@@ -856,7 +862,6 @@ def _chart_subsection_correlation_heatmap(
     cbar.set_label("Pearson correlation")
 
     fig.tight_layout()
-    filename = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
     fig.savefig(out_dir / filename, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {filename}")
@@ -1005,9 +1010,10 @@ def _chart_bundle_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
+    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=3)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=3)
-    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude")
+    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude{title_suffix}")
     ax.set_xlabel(f"Bundle index (bundle_001 – bundle_{len(all_names):03d})")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
@@ -1116,6 +1122,15 @@ def main() -> int:
             out_dir,
             chart_idx=chart_idx,
             output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png",
+        )
+        chart_idx += 1
+
+        _chart_subsection_discrepancies(
+            gpt_v2_rows,
+            claude_v2_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v2.png",
         )
         chart_idx += 1
 
