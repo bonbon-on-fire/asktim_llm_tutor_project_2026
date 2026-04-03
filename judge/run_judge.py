@@ -197,14 +197,57 @@ def _parse_json_from_model_output(raw: str) -> dict[str, Any]:
 
 
 def _build_expected_schema(rubric_name: str) -> str:
-    """Build the schema example injected into the judge prompt template."""
+    """Build the schema example injected into the judge prompt template.
+
+    The schema is a concrete example that shows exactly what the output JSON must
+    look like, including the dot-notation criterion keys (``"1.1"``, ``"1.2"`` …).
+    Showing full criteria structure prevents models from guessing the key format
+    and producing underscore variants like ``"1_1"``.
+    """
 
     max_score = 46 if rubric_name in {"rubric_05", "rubric_06"} else 47
     sample = {
         "sections": {
-            "1_pedagogy": {"base": {"score": 22, "max": 24}},
-            "2_dialogue_quality": {"base": {"score": 10, "max": 12}},
-            "3_communication_quality": {"base": {"score": 10, "max": 10}},
+            "1_pedagogy": {
+                "criteria": {
+                    "1.1": {
+                        "deductions": [],
+                        "score": 8,
+                        "max": 8,
+                    },
+                    "1.2": {
+                        "deductions": [],
+                        "score": 8,
+                        "max": 8,
+                    },
+                    "1.3": {
+                        "deductions": [
+                            {
+                                "sub_criterion_id": "1.3.A.a",
+                                "reason": "Example deduction reason.",
+                                "points": 2,
+                            }
+                        ],
+                        "score": 6,
+                        "max": 8,
+                    },
+                },
+                "base": {"score": 22, "max": 24},
+            },
+            "2_dialogue_quality": {
+                "criteria": {
+                    "2.1": {"deductions": [], "score": 6, "max": 6},
+                    "2.2": {"deductions": [], "score": 4, "max": 6},
+                },
+                "base": {"score": 10, "max": 12},
+            },
+            "3_communication_quality": {
+                "criteria": {
+                    "3.1": {"deductions": [], "score": 5, "max": 5},
+                    "3.2": {"deductions": [], "score": 5, "max": 5},
+                },
+                "base": {"score": 10, "max": 10},
+            },
         },
         "total_base_score": 42,
         "max_base_score": max_score,
@@ -261,8 +304,35 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def _normalize_criterion_keys(sections: dict[str, Any]) -> dict[str, Any]:
+    """Normalize criterion keys inside each section from underscore to dot notation.
+
+    Some model responses use ``"1_1"`` instead of ``"1.1"`` as criterion dict keys.
+    This converts any all-digit underscore-joined key (e.g. ``"2_2"``) to its
+    dot-notation equivalent (``"2.2"``) before the grade is written to disk.
+    Section-level keys like ``"1_pedagogy"`` are left intact because they contain
+    non-digit parts.
+    """
+    out: dict[str, Any] = {}
+    for sid, section in sections.items():
+        if not isinstance(section, dict):
+            out[sid] = section
+            continue
+        criteria = section.get("criteria")
+        if not isinstance(criteria, dict):
+            out[sid] = section
+            continue
+        normalized: dict[str, Any] = {}
+        for cid, val in criteria.items():
+            parts = str(cid).split("_")
+            dot_cid = ".".join(parts) if len(parts) > 1 and all(p.isdigit() for p in parts) else str(cid)
+            normalized[dot_cid] = val
+        out[sid] = {**section, "criteria": normalized}
+    return out
+
+
 def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    """Coerce score fields to integers and ensure expected optional keys exist."""
+    """Coerce score fields to integers, normalize criterion keys, and ensure expected optional keys exist."""
 
     total_base = _coerce_int(payload.get("total_base_score"))
     max_base = _coerce_int(payload.get("max_base_score"), 46)
@@ -275,6 +345,9 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     out["max_score"] = max_score
     out = _normalize_judge_explanations(out)
     out.setdefault("sections", {})
+    sections = out.get("sections")
+    if isinstance(sections, dict):
+        out["sections"] = _normalize_criterion_keys(sections)
     return out
 
 

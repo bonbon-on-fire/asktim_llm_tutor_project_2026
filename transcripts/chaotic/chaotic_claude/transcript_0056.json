@@ -102,19 +102,19 @@
           }
         ],
         "criteria": {
-          "1_1": {
+          "1.1": {
             "deductions_applied": [
               "1.1.B.a"
             ],
             "score": 6,
             "max": 12
           },
-          "1_2": {
+          "1.2": {
             "deductions_applied": [],
             "score": 6,
             "max": 6
           },
-          "1_3": {
+          "1.3": {
             "deductions_applied": [
               "1.3.A.a",
               "1.3.C.a"
@@ -147,14 +147,14 @@
           }
         ],
         "criteria": {
-          "2_1": {
+          "2.1": {
             "deductions_applied": [
               "2.1.A.a"
             ],
             "score": 0,
             "max": 4
           },
-          "2_2": {
+          "2.2": {
             "deductions_applied": [],
             "score": 8,
             "max": 8
@@ -179,14 +179,14 @@
           }
         ],
         "criteria": {
-          "3_1": {
+          "3.1": {
             "deductions_applied": [
               "3.1.A.a"
             ],
             "score": 0,
             "max": 4
           },
-          "3_2": {
+          "3.2": {
             "deductions_applied": [],
             "score": 4,
             "max": 4
