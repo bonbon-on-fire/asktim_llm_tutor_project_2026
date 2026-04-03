@@ -1182,6 +1182,33 @@ def main() -> int:
         else:
             print(f"  No {persona} bundle_{bundle_type} graded files found. Skipping chart.")
 
+    bundle_gpt_v2_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v2")
+    bundle_claude_v2_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v2")
+    print(
+        f"Loaded bundle_{bundle_type} v2 GPT: {len(bundle_gpt_v2_all)} bundles   "
+        f"Claude v2: {len(bundle_claude_v2_all)} bundles"
+    )
+    for persona in ("chaotic", "cooperative", "clueless"):
+        bundle_gpt_v2 = _filter_bundle_rows(bundle_gpt_v2_all, {persona})
+        bundle_claude_v2 = _filter_bundle_rows(bundle_claude_v2_all, {persona})
+        print(
+            f"Loaded bundle_{bundle_type} v2 {persona} GPT: {len(bundle_gpt_v2)} bundles   "
+            f"Claude v2: {len(bundle_claude_v2)} bundles"
+        )
+        if bundle_gpt_v2 or bundle_claude_v2:
+            _chart_bundle_scores(
+                bundle_gpt_v2,
+                bundle_claude_v2,
+                bundle_type,
+                out_dir,
+                persona_label=f"{persona}_v2",
+                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v2.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"  No {persona} bundle_{bundle_type} v2 graded files found. Skipping chart.")
+
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
 

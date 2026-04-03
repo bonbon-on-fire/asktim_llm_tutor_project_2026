@@ -8,8 +8,12 @@ Reads judged transcript JSON files from:
 
 - `transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json`
 - `transcripts/<persona_type>/<persona_type>_claude/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_gpt_v2/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_claude_v2/transcript_*.json`
 - `transcripts/bundles/bundles_gpt/bundle_01/bundle_*.json`
 - `transcripts/bundles/bundles_claude/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_gpt_v2/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_claude_v2/bundle_01/bundle_*.json`
 
 Individual transcript grading is generated as one combined chart across all transcripts.
 Bundle Type 01 charts are also generated separately for each persona family.
@@ -34,6 +38,14 @@ Written to `visualization/outputs/`:
 | 6 | `bundle_01_grades_chaotic_gpt_vs_claude.png` | Bundle Type 01 line chart for chaotic bundles only. |
 | 7 | `bundle_01_grades_cooperative_gpt_vs_claude.png` | Bundle Type 01 line chart for cooperative bundles only. |
 | 8 | `bundle_01_grades_clueless_gpt_vs_claude.png` | Bundle Type 01 line chart for clueless bundles only. |
+| 9 | `section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png` | Same as #1, but computed only from `_v2` graded transcripts. |
+| 10 | `individual_grades_all_transcripts_gpt_vs_claude_v2.png` | Same as #2, but computed only from `_v2` graded transcripts. |
+| 11 | `subsection_correlation_heatmap_all_providers_all_personas_normalized_v2.png` | Same as #3, but computed only from `_v2` graded transcripts. |
+| 12 | `subsection_correlation_heatmap_gpt_all_personas_normalized_v2.png` | Same as #4, but computed only from `_v2` graded transcripts. |
+| 13 | `subsection_correlation_heatmap_claude_all_personas_normalized_v2.png` | Same as #5, but computed only from `_v2` graded transcripts. |
+| 14 | `bundle_01_grades_chaotic_gpt_vs_claude_v2.png` | Same as #6, but computed only from `_v2` graded bundles. |
+| 15 | `bundle_01_grades_cooperative_gpt_vs_claude_v2.png` | Same as #7, but computed only from `_v2` graded bundles. |
+| 16 | `bundle_01_grades_clueless_gpt_vs_claude_v2.png` | Same as #8, but computed only from `_v2` graded bundles. |
 
 All charts include Pearson r, Spearman rho, and mean scores.
 
