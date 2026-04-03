@@ -331,9 +331,14 @@ def _read_bundle_grade(path: Path) -> BundleGradeRow | None:
     )
 
 
-def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
-    """Load all graded bundle JSON files for a given provider and bundle type."""
-    provider_dir = bundles_dir / f"bundles_{provider}" / f"bundle_{bundle_type}"
+def _read_bundle_rows_variant(
+    bundles_dir: Path,
+    provider: str,
+    bundle_type: str,
+    folder_suffix: str = "",
+) -> list[BundleGradeRow]:
+    """Load graded bundle JSON files for a provider and bundle type variant."""
+    provider_dir = bundles_dir / f"bundles_{provider}{folder_suffix}" / f"bundle_{bundle_type}"
     if not provider_dir.exists():
         return []
     rows: list[BundleGradeRow] = []
@@ -342,6 +347,11 @@ def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> lis
         if row is not None:
             rows.append(row)
     return rows
+
+
+def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
+    """Backward-compatible reader for non-v2 bundle folders."""
+    return _read_bundle_rows_variant(bundles_dir, provider, bundle_type, "")
 
 
 def _filter_individual_rows(rows: list[GradeRow], allowed_personas: set[str]) -> list[GradeRow]:
@@ -1051,6 +1061,7 @@ def main() -> int:
         claude_all_rows,
         out_dir,
         chart_idx=chart_idx,
+        output_name="section_discrepancy_by_rubric_section_gpt_vs_claude.png",
     )
     chart_idx += 1
 
@@ -1072,6 +1083,7 @@ def main() -> int:
         provider_label="all_providers",
         persona_label="all_personas",
         chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized.png",
     )
     chart_idx += 1
     _chart_subsection_correlation_heatmap(
@@ -1080,6 +1092,7 @@ def main() -> int:
         provider_label="gpt",
         persona_label="all_personas",
         chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_gpt_all_personas_normalized.png",
     )
     chart_idx += 1
     _chart_subsection_correlation_heatmap(
@@ -1088,8 +1101,63 @@ def main() -> int:
         provider_label="claude",
         persona_label="all_personas",
         chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_claude_all_personas_normalized.png",
     )
     chart_idx += 1
+
+    # v2 charts: use only *_gpt_v2 / *_claude_v2 graded transcript folders.
+    gpt_v2_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v2")
+    claude_v2_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v2")
+    print(f"Loaded GPT v2: {len(gpt_v2_rows)} transcripts   Claude v2: {len(claude_v2_rows)} transcripts")
+    if gpt_v2_rows or claude_v2_rows:
+        _chart_section_discrepancies(
+            gpt_v2_rows,
+            claude_v2_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png",
+        )
+        chart_idx += 1
+
+        _chart_line_scores(
+            gpt_v2_rows,
+            claude_v2_rows,
+            out_dir,
+            persona_label="all_transcripts_v2",
+            output_name="individual_grades_all_transcripts_gpt_vs_claude_v2.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+
+        _chart_subsection_correlation_heatmap(
+            gpt_v2_rows + claude_v2_rows,
+            out_dir,
+            provider_label="all_providers",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            gpt_v2_rows,
+            out_dir,
+            provider_label="gpt",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            claude_v2_rows,
+            out_dir,
+            provider_label="claude",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+    else:
+        print("No *_v2 graded transcript folders found. Skipping _v2 chart generation.")
 
     bundle_type = "01"
     bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
