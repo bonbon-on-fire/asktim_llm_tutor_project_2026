@@ -72,31 +72,32 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                4,
-                5
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "The student improved from a rough location attempt to a stronger line, but the tutor did not prompt reflection on what changed in the student's thinking or why the revision worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a rough location description to a stronger version, the tutor confirmed it was strong and moved on without prompting reflection on what changed in the student's reasoning or why the revision worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         },
         "base": {
           "score": 22,
@@ -104,15 +105,17 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -120,37 +123,39 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's wording is at times rigid or discouraging, especially in lines like 'No. I'm your tutor, not a shortcut' and 'That's weak research,' which risk harming trust even though the tutor stays task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's phrasing becomes unnecessarily harsh at points, especially 'No. I’m your tutor, not a shortcut' and 'That’s weak research,' which risks sounding punitive rather than supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly aligned to the assignment, refused to provide paste-ready answers, and consistently pushed the student toward source-based independent work. Deductions are limited because the tutor generally scaffolded well and kept responses concise. The main weaknesses were a somewhat harsh tone in a few turns and a missed chance to prompt reflection after the student's location answer improved. I did not deduct on tutoring-rationale because the tutor briefly explained that directly filling the table would defeat the assignment, though that rationale was minimal.",
-    "judge_reasoning": "The strongest evidence supports full credit on direct-work avoidance: the tutor repeatedly refused to provide exact table entries and instead asked for sources, rough drafts, and year-selection rules. Dialogue quality also remained strong because the tutor kept redirecting to the actual assignment rather than engaging off-topic or following the student's shortcut framing. I deducted under 1.3.C because after the student's location response improved, the tutor checked completeness but did not ask the student to reflect on what made the revision better. I also deducted under 3.2.A because several responses were unnecessarily blunt, which made the interaction feel more rigid than supportive.",
-    "total_score": 42,
+    "overview": "The tutor consistently avoided giving submission-ready answers and generally scaffolded the student toward finding acceptable sources and making category-by-category progress. The main weaknesses were an occasionally rigid tone and a missed chance to prompt reflection after the student successfully improved a draft response. No larger deductions were applied because the tutor stayed anchored to the assignment and did not do the student's core reasoning or writing.",
+    "judge_reasoning": "The strongest aspect of this tutoring was compliance with the anti-answer-sharing requirements: the tutor repeatedly refused to fill in the table, did not rewrite the student's line into final wording, and instead broke the task into manageable research steps. Scaffolding was solid because the tutor chunked the work, suggested source types, and built on the student's partial progress rather than restarting. I deducted under 1.3.C.a because, after the student produced a better location entry, the tutor validated it but did not ask the student to reflect on what made the revision stronger. I also deducted under 3.2.A.a because some responses were sharper than necessary and could undermine trust, even though the overall interaction remained task-focused and mostly clear.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

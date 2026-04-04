@@ -72,35 +72,44 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently used guided questioning and constraints, but never explicitly explained why this student-led approach supports learning, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student moved from overwhelm to a workable unit choice ('DKI Jakarta / Special Capital Region'), the tutor continued testing the choice rather than prompting reflection on what changed in the student's thinking and why the new approach worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a guided process and limited direct help, but never explicitly explained why this tutoring approach supports the student's learning, retention, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from feeling overwhelmed to proposing a workable case definition ('DKI Jakarta / Special Capital Region'), the tutor moved straight to testing sources rather than prompting reflection on what changed in the student's thinking and why that step helped.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         },
         "base": {
           "score": 20,
@@ -108,15 +117,17 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -124,38 +135,29 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                7,
-                8
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Several phrases were noticeably blunt or rigid, including 'You’re mixing baseline conditions with trivia,' 'You’re spiraling into a side issue. Pull it back,' and 'Stop chasing perfect data,' which risks reducing supportiveness even though the tutor remained task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor was strongly assignment-anchored, mostly Socratic, and avoided doing the student's assignment for them. Main deductions come from missing meta-level explanation of the tutoring approach, not prompting reflection after student improvement, and occasional blunt phrasing. Tone was the closest call, so that deduction is based on repeated wording rather than a single line.",
-    "judge_reasoning": "The tutor preserved student ownership throughout the conversation: they did not supply submission-ready content, rewrite text, or resolve the case-study choices for the student. Scaffolding was effective and progressive, especially around separating required fields from extras and locking the geographic unit before collecting data. However, the tutor never explicitly explained why the guided-questioning approach was being used, and they missed a clear opportunity to prompt reflection once the student proposed a workable Jakarta unit. Communication was concise and clear, but repeated blunt directives made the tone somewhat less supportive than ideal.",
-    "total_score": 38,
+    "overview": "The tutor stayed tightly anchored to the assignment, used guided questioning well, and avoided giving submission-ready content. The main weaknesses were meta-pedagogical: the tutor did not explain why the constrained, question-driven approach was being used, and missed a chance to prompt reflection after the student made meaningful progress. Other possible issues, such as occasional blunt phrasing, were not strong enough in context to warrant additional deductions.",
+    "judge_reasoning": "The strongest evidence supports full credit for Socratic tutoring, scaffolding, assignment anchoring, and concise communication: the tutor repeatedly redirected the student to required fields, source quality, and boundary consistency without completing the table for them. No direct final answer, rewriting, or off-topic drift occurred. I deducted under 1.3.A because the tutor never articulated a learning rationale for the process constraints, and under 1.3.C because the tutor did not ask the student to reflect after moving from confusion to a workable geographic-unit decision. I did not deduct elsewhere because the tutor generally built on the student's responses and kept the exchange interactive and supportive.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

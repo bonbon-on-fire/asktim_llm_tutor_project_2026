@@ -1,4 +1,4 @@
-﻿# Visualization
+# Visualization
 
 Generate score comparison charts for GPT vs Claude transcript grading.
 
@@ -8,11 +8,18 @@ Reads judged transcript JSON files from:
 
 - `transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json`
 - `transcripts/<persona_type>/<persona_type>_claude/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_gpt_v2/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_claude_v2/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_gpt_v3/transcript_*.json`
+- `transcripts/<persona_type>/<persona_type>_claude_v3/transcript_*.json`
 - `transcripts/bundles/bundles_gpt/bundle_01/bundle_*.json`
 - `transcripts/bundles/bundles_claude/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_gpt_v2/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_claude_v2/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_gpt_v3/bundle_01/bundle_*.json`
+- `transcripts/bundles/bundles_claude_v3/bundle_01/bundle_*.json`
 
-Individual transcript charts are generated separately by version only:
-`version_01..06` (6 charts total, each combining all personas).
+Individual transcript grading is generated as one combined chart across all transcripts.
 Bundle Type 01 charts are also generated separately for each persona family.
 
 ## Run
@@ -27,17 +34,35 @@ Written to `visualization/outputs/`:
 
 | # | File | Description |
 | - | ---- | ----------- |
-| 1-2 | `self_consistency_<provider>_run_correlation.png` | Provider self-consistency heatmaps (GPT vs itself, Claude vs itself) across repeated runs of the same setup, with cell annotations showing correlation and paired count `n`. |
-| 3 | `section_discrepancy_by_rubric_section_gpt_vs_claude.png` | Bar chart of per-section grading discrepancies on paired transcripts (mean absolute difference), with `n` and signed mean delta annotations. |
-| 4 | `subsection_discrepancy_by_subsection_gpt_vs_claude.png` | Bar chart of per-subsection (criteria-level) grading discrepancies on paired transcripts (mean absolute difference), with `n` and signed mean delta annotations. |
-| 5 | `subsection_discrepancy_per_transcript_gpt_vs_claude.png` | Multi-line chart with one colored line per subsection; each point is that subsection's per-transcript absolute GPT-vs-Claude score difference. |
-| 6-11 | `individual_grades_version_<NN>_gpt_vs_claude.png` | Line charts of total scores per individual transcript for each version (`01..06`), combining all personas. |
-| 12 | `bundle_01_grades_chaotic_gpt_vs_claude.png` | Bundle Type 01 line chart for chaotic bundles only. |
-| 13 | `bundle_01_grades_cooperative_gpt_vs_claude.png` | Bundle Type 01 line chart for cooperative bundles only. |
-| 14 | `bundle_01_grades_clueless_gpt_vs_claude.png` | Bundle Type 01 line chart for clueless bundles only. |
-| 15-16 | `subsection_correlation_heatmap_<provider>_all_personas_normalized.png` | Joined subsection-pair Pearson correlation heatmaps on normalized subsection scores (`score / max`) for each provider (`gpt`, `claude`) across all personas combined. |
-| 17-22 | `subsection_correlation_heatmap_<provider>_<persona>_normalized.png` | Subsection-pair Pearson correlation heatmaps on normalized subsection scores (`score / max`), generated separately for each provider (`gpt`, `claude`) and each persona (`chaotic`, `cooperative`, `clueless`). |
-| 23-24 | `subsection_level3_correlation_heatmap_<provider>_all_personas.png` | Level-3 rubric-bucket correlation heatmaps (e.g., `1.3.A`) built from per-transcript deduction-point signals, with axis labels including hit counts `n`, generated separately for GPT and Claude across all personas. |
+| 1 | `section_discrepancy_by_rubric_section_gpt_vs_claude.png` | Bar chart of per-section grading discrepancies on paired transcripts (mean absolute difference), with `n` and signed mean delta annotations. |
+| 2 | `subsection_discrepancy_by_subsection_gpt_vs_claude.png` | Subsection (`X.X`) discrepancy chart for regular graded transcripts, with `n` and signed mean delta annotations. |
+| 3 | `individual_grades_all_transcripts_gpt_vs_claude.png` | Single line chart of total scores per individual transcript across all personas and versions. |
+| 4 | `subsection_correlation_heatmap_all_providers_all_personas_normalized.png` | Joined subsection-pair Pearson correlation heatmap on normalized subsection scores (`score / max`) across GPT + Claude combined; title and axis labels include `n` counts. |
+| 5 | `subsection_correlation_heatmap_gpt_all_personas_normalized.png` | Subsection-pair Pearson correlation heatmap on normalized subsection scores (`score / max`) for GPT across all personas; title and axis labels include `n` counts. |
+| 6 | `subsection_correlation_heatmap_claude_all_personas_normalized.png` | Subsection-pair Pearson correlation heatmap on normalized subsection scores (`score / max`) for Claude across all personas; title and axis labels include `n` counts. |
+| 7 | `bundle_01_grades_chaotic_gpt_vs_claude.png` | Bundle Type 01 line chart for chaotic bundles only. |
+| 8 | `bundle_01_grades_cooperative_gpt_vs_claude.png` | Bundle Type 01 line chart for cooperative bundles only. |
+| 9 | `bundle_01_grades_clueless_gpt_vs_claude.png` | Bundle Type 01 line chart for clueless bundles only. |
+| 10 | `section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png` | Same as #1, but computed only from `_v2` graded transcripts. |
+| 11 | `subsection_discrepancy_by_subsection_gpt_vs_claude_v2.png` | Same as #2, but computed only from `_v2` graded transcripts. |
+| 12 | `individual_grades_all_transcripts_gpt_vs_claude_v2.png` | Same as #3, but computed only from `_v2` graded transcripts. |
+| 13 | `subsection_correlation_heatmap_all_providers_all_personas_normalized_v2.png` | Same as #4, but computed only from `_v2` graded transcripts. |
+| 14 | `subsection_correlation_heatmap_gpt_all_personas_normalized_v2.png` | Same as #5, but computed only from `_v2` graded transcripts. |
+| 15 | `subsection_correlation_heatmap_claude_all_personas_normalized_v2.png` | Same as #6, but computed only from `_v2` graded transcripts. |
+| 16 | `bundle_01_grades_chaotic_gpt_vs_claude_v2.png` | Same as #7, but computed only from `_v2` graded bundles. |
+| 17 | `bundle_01_grades_cooperative_gpt_vs_claude_v2.png` | Same as #8, but computed only from `_v2` graded bundles. |
+| 18 | `bundle_01_grades_clueless_gpt_vs_claude_v2.png` | Same as #9, but computed only from `_v2` graded bundles. |
+| 19 | `section_discrepancy_by_rubric_section_gpt_vs_claude_v3.png` | Same as #1, but computed only from `_v3` graded transcripts. |
+| 20 | `subsection_discrepancy_by_subsection_gpt_vs_claude_v3.png` | Same as #2, but computed only from `_v3` graded transcripts. |
+| 21 | `individual_grades_all_transcripts_gpt_vs_claude_v3.png` | Same as #3, but computed only from `_v3` graded transcripts. |
+| 22 | `subsection_correlation_heatmap_all_providers_all_personas_normalized_v3.png` | Same as #4, but computed only from `_v3` graded transcripts. |
+| 23 | `subsection_correlation_heatmap_gpt_all_personas_normalized_v3.png` | Same as #5, but computed only from `_v3` graded transcripts. |
+| 24 | `subsection_correlation_heatmap_claude_all_personas_normalized_v3.png` | Same as #6, but computed only from `_v3` graded transcripts. |
+| 25 | `bundle_01_grades_chaotic_gpt_vs_claude_v3.png` | Same as #7, but computed only from `_v3` graded bundles. |
+| 26 | `bundle_01_grades_cooperative_gpt_vs_claude_v3.png` | Same as #8, but computed only from `_v3` graded bundles. |
+| 27 | `bundle_01_grades_clueless_gpt_vs_claude_v3.png` | Same as #9, but computed only from `_v3` graded bundles. |
+| 28 | `individual_grades_gpt_regular_vs_v3.png` | Per-transcript line chart comparing regular GPT grades versus `_v3` GPT grades. |
+| 29 | `individual_grades_claude_regular_vs_v3.png` | Per-transcript line chart comparing regular Claude grades versus `_v3` Claude grades. |
 
 All charts include Pearson r, Spearman rho, and mean scores.
 

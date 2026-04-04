@@ -72,74 +72,65 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                6,
-                8,
-                10
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor mostly stayed in tutoring mode, but it still supplied key reasoning steps for the student by suggesting flooding would likely rank highest, giving Jakarta-specific extreme-heat evidence to add, framing the coastal flooding vs. sea-level-rise distinction, and directly providing sector tags for the rows.",
-              "points": 6
-            }
-          ],
-          "base": {
-            "score": 6,
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "The tutor directly supplied the sector categorizations for the student's rows (e.g., flooding, extreme heat, air pollution), which is assignment content the student could paste into the Stressors Table.",
+                "points": 12
+              }
+            ],
+            "score": 0,
             "max": 12
-          }
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
+          },
+          "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
-          }
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                4,
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced boundaries against doing the assignment, but never clearly explained a learning rationale such as retention, active reasoning, or skill-building.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                5
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved by producing usable draft justifications, the tutor evaluated them but did not prompt reflection on what changed in the student's approach or why the new attempt worked better.",
-              "points": 2
-            }
-          ],
-          "base": {
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-writing/no-shortcut boundary but did not clearly explain a learning rationale such as why student-generated wording or reasoning would improve understanding or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved by producing workable draft justifications, the tutor gave feedback on strength but did not prompt reflection on what changed in the student's approach or why the draft was stronger.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 6
           }
         },
         "base": {
-          "score": 14,
+          "score": 8,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
-          }
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
+          },
+          "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -150,26 +141,24 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
-          }
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                4
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Phrases like \"I'm your tutor, not your shortcut\" and the repeated hard refusals created a somewhat rigid, admonishing tone, even though the tutor remained broadly helpful.",
-              "points": 2
-            }
-          ],
-          "base": {
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Phrases such as \"I'm your tutor, not your shortcut\" and \"You must do the writing\" came across as rigid and somewhat punitive rather than warmly supportive.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
@@ -180,11 +169,11 @@
         }
       }
     },
-    "total_base_score": 32,
+    "total_base_score": 26,
     "max_base_score": 46,
-    "overview": "The tutor generally kept the conversation anchored to the assignment, used short interactive steps, and did not provide polished submission-ready justifications. I applied a smaller pedagogy deduction rather than the harsher direct-answer penalty because the tutor refused to write final sentences, but it still contributed several substantive reasoning moves and content pieces the student could directly use.",
-    "judge_reasoning": "The largest deduction is in 1.1 because the tutor crossed from guidance into supplying key reasoning, especially by proposing likely ranking logic, Jakarta-specific evidence, and final sector tags. Scaffolding was otherwise solid: the tutor built on the student's draft, narrowed tasks, and kept the student working step by step. I deducted under 1.3 because the tutor never explained why it was withholding direct writing help and missed a reflection opportunity after the student's improvement. Communication was clear and concise, but the tone occasionally became rigid rather than fully supportive.",
-    "total_score": 32,
+    "overview": "The tutor generally maintained an interactive, assignment-focused process and avoided most direct writing help, but a major rubric-triggering issue occurred at the end when the tutor directly supplied sector tags for the student's table rows. Some deductions are smaller because the tutor otherwise scaffolded reasonably well and kept the conversation anchored to the assignment.",
+    "judge_reasoning": "The largest deduction is under 1.1 because the tutor ultimately gave direct table content by assigning sector tags for each stressor, which counts as direct assignment work. Outside of that, the tutor mostly used guided prompts, built on the student's drafts, and redirected the student toward justification and non-overlap in the table. I deducted under 1.3 because the tutor enforced boundaries without clearly explaining the learning rationale and missed a chance to prompt reflection after the student's draft improved. I also deducted for tone because some phrasing was noticeably rigid, though not openly hostile.",
+    "total_score": 26,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,41 +72,43 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced boundaries against providing submit-ready work, but did not explicitly explain a learning rationale such as active reasoning, retention, or skill-building.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from wanting to hide the GDP geographic mismatch to drafting an academically defensible note, the tutor affirmed it and moved on without prompting reflection on what changed and why the revised note worked better.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on providing submit-ready work, but did not clearly explain why those constraints support the student's learning or skill development; the refusals were framed mainly as role boundaries.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from wanting to hide the GDP mismatch to producing a defensible note, the tutor confirmed the revision and moved on without prompting reflection on what changed in the student's reasoning or why the new version worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         },
         "base": {
           "score": 20,
@@ -114,15 +116,17 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -130,15 +134,17 @@
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
           "score": 8,
@@ -148,8 +154,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor strongly avoided doing the assignment for the student, kept the work anchored to the actual table task, and used concise, interactive prompts. Deductions are limited to meta-learning: the tutor set boundaries without clearly explaining the learning rationale, and missed a chance to prompt reflection after the student improved a methodological choice.",
-    "judge_reasoning": "The tutor earned full credit on direct-work avoidance because they consistently refused to provide a filled table or exact values and instead guided the student toward sources, structure, and consistency checks. Scaffolding was also strong: the tutor built from the student's choices, narrowed the task to year and geographic unit, and handled the GDP mismatch through guided questioning rather than solving it for the student. The main weaknesses are in meta-learning, where the tutor never clearly stated why withholding answers supports learning, and after the student improved the GDP note, the tutor did not ask the student to reflect on what made the revision stronger. Although the opening refusals were firm, the overall tone remained supportive and formative, so no communication-tone deduction is warranted.",
+    "overview": "The tutor strongly protected against shortcutting and kept the student doing the substantive assignment work, while staying closely anchored to the table task. The main weakness was meta-learning: the tutor did not explicitly explain why the refusal to provide answers was pedagogically useful, and missed a chance to prompt reflection after the student improved the GDP-note reasoning. Tone was firm, but because it was paired with concrete next steps, evidence for a communication deduction was too ambiguous to justify one.",
+    "judge_reasoning": "The tutor avoided near-submission-ready output throughout the exchange: they refused to provide filled rows or commonly used figures, and instead guided the student toward sources, table structure, consistency of year/geographic unit, and transparent note-writing. Scaffolding was solid because the tutor narrowed tasks, built on student drafts, and used targeted questions to move the work forward. I deducted in 1.3 because the tutor never explicitly tied their constraints to learning benefits like active reasoning or retention, and because after the student's improvement on the GDP note, the tutor did not ask the student to reflect on what changed and why. Dialogue quality and communication remained strong overall, with concise, assignment-focused responses and a generally supportive coaching stance.",
     "total_score": 40,
     "max_score": 46,
     "model": {

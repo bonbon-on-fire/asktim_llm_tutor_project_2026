@@ -72,36 +72,40 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
-          "score": 24,
-          "max": 24
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -109,37 +113,39 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor stayed mostly helpful, but some refusal language was unnecessarily rigid or confrontational, especially 'I’m your tutor, not a copy-paste generator' and 'your professor’s alleged permission doesn’t change that,' which could weaken tutoring trust.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor remained task-focused, but phrasing like \"I’m your tutor, not a copy-paste generator\" and referring to the professor’s \"alleged permission\" came across as rigid and mildly adversarial rather than fully supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         },
         "base": {
           "score": 6,
-          "max": 10
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
-    "overview": "The tutor consistently protected student ownership, refused to provide submission-ready work, and kept the exchange tightly anchored to the assignment. Scaffolding was effective: the tutor moved the student from selecting Jakarta stressors to defending rankings, adding city-specific conditions, and checking rating logic. The only clear deduction is for a somewhat rigid tone in early refusals; otherwise performance was strong across the rubric.",
-    "judge_reasoning": "No deduction was taken in pedagogy because the tutor never provided a copy-paste table, refused polishing requests, and kept the core reasoning student-led throughout the conversation. The tutor also gave a learning rationale in turn 1 and specific method feedback in later turns, especially by asking for Jakarta-specific conditions and rating logic rather than just correctness. Dialogue quality remained strong because the tutor steadily advanced the task from stressor selection to justification without drifting off assignment. I deducted 2 points under 3.2.A.a because the wording in turns 1-2 was firmer than necessary and slightly confrontational, even though the tutor remained generally supportive afterward.",
-    "total_score": 42,
+    "overview": "The tutor strongly protected against doing the assignment for the student, kept the exchange anchored to the stressors-table task, and used short, progressive prompts to move the student from topic selection to justification and rating. I did not deduct under pedagogy because, although the tutor supplied examples and suggested Jakarta-specific facts, the conversation stayed on the side of guided scaffolding rather than producing a submission-ready table or polished prose. The only clear deduction is tone, where a few responses were unnecessarily sharp.",
+    "judge_reasoning": "Under 1.1, the tutor consistently refused to provide a copy-paste table, rankings, or polished sentences, and instead asked the student to supply choices, justifications, and ratings. Under 1.2 and 1.3, the tutor built on student progress with targeted next steps (for example, moving from top stressors to city-specific evidence to rating logic) and explicitly explained why they would not do the assignment for the student. Dialogue quality remained strong because the tutor kept redirecting to the assignment requirements and advanced the task without spiraling. The main weakness was communication tone: early phrasing was somewhat cold and confrontational, warranting a deduction under 3.2.A.a.",
+    "total_score": 44,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,40 +72,43 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                5,
-                8
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor imposed process constraints such as asking for 'plain terms' and a 'rough outline, not a polished paragraph,' but never explicitly explained why those constraints support learning, retention, or independent reasoning.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from uncertainty about how to classify Fuel to a clearer comparative outline, the tutor advanced to the next issue without prompting reflection on what changed in the student's reasoning or why the improved method worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 6",
+                  "Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a guided, non-polished process (e.g., asking for rough thinking and outlines rather than finished prose) but never explicitly explained why this approach supports the student's learning or reasoning development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Turn 7",
+                  "Turn 8",
+                  "Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from uncertainty about Fuel to a clearer causal-role analysis, the tutor advanced to integration and justification without prompting reflection on what changed in the student's reasoning and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         },
         "base": {
           "score": 20,
@@ -113,15 +116,17 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -129,15 +134,17 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
           "score": 8,
@@ -147,8 +154,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor was consistently Socratic, assignment-focused, and concise, with no evidence of giving submission-ready philosophy content or drifting off task. Deductions are limited to meta-learning gaps: the tutor did not explicitly explain the learning rationale for process constraints, and missed a chance to prompt reflection after the student's reasoning improved.",
-    "judge_reasoning": "The strongest part of this conversation is pedagogy under 1.1: the tutor repeatedly elicited the student's own distinctions and applications rather than supplying a ready-made thesis or polished prose. Scaffolding and dialogue management were also strong, since the tutor built directly on student answers, kept the exchange tightly anchored to act consequentialism and the cases, and used short, clear prompts. I deducted under 1.3.A.a because the tutor never stated why they were asking for rough, unpolished reasoning as a learning strategy, and under 1.3.C.a because after the student's improvement the tutor did not ask for reflection on what changed in the student's method. No other deductions were clearly supported by the transcript.",
+    "overview": "The tutor maintained a strong Socratic structure, kept idea generation student-led, and stayed tightly anchored to the assignment. The main weakness was in meta-learning: the tutor did not explicitly explain the learning rationale behind its constraints and missed a chance to prompt reflection after the student's improvement. No other deductions were clearly supported by the transcript.",
+    "judge_reasoning": "The tutor consistently asked short, targeted questions that required the student to generate the core distinctions, so no deduction was warranted under guided discovery or scaffolding. The conversation also progressed cleanly without drift or repetitive looping, and the tone remained supportive and formative. However, the rubric requires at least one explicit explanation of why the tutor is using constraint-based guidance, and that rationale never appeared. In addition, when the student improved from uncertainty to a clearer means-versus-side-effect analysis, the tutor moved forward rather than asking the student to reflect on what had changed in their reasoning.",
     "total_score": 40,
     "max_score": 46,
     "model": {

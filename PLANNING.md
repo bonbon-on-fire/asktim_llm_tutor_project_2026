@@ -493,3 +493,64 @@ web_ui/
 #### Issue 4: GPT grading leniency
 
 - **Symptom**: GPT-5.2 with `reasoning_effort=medium` gave perfect 46/46 to 43% of transcripts. Claude on the same transcripts ranged 22-42. This is a model/prompt behavior issue, not a code bug.
+
+---
+
+### 03/27/2026 — Criterion key inconsistency across providers (completed)
+
+#### Problem
+
+Visualization heatmaps showed duplicate subsection labels (`1_1` and `1.1` side by side). Root cause: Claude's judge output used underscore-separated keys (`1_1`) instead of dot-notation (`1.1`) for criterion IDs within grade sections, while GPT occasionally produced keys with full descriptions appended (`1.1_socratic_method_guided_discovery`).
+
+#### Solution (three-layer fix)
+
+1. **Visualization read-time normalization** — `_normalize_criterion_id()` added to `visualization/run_visualization.py`. Uses regex `^(\d+)[._](\d+)` to extract `X.Y` from any key prefix, discarding description suffixes. Applied to all criterion keys during data loading.
+2. **Judge schema enforcement** — `_build_expected_schema()` in `judge/run_judge.py` updated to show a fully explicit `criteria` sub-dict example with `X.Y` dot-notation keys. Reduces likelihood of models inventing their own formats.
+3. **Judge save-time normalization** — `_normalize_criterion_keys()` added to `judge/run_judge.py`, called inside `_sanitize_grade_payload()` before writing to disk.
+4. **Historical data patch** — Temporary scripts scanned and patched 94 existing graded transcript files: 92 Claude files with `1_1` keys and 2 GPT files with `1.1_description` keys. All 1,728 graded transcripts confirmed clean after patch.
+
+---
+
+### 03/27/2026 — Subsection chart low sample size (completed)
+
+#### Summary
+
+Subsection discrepancy charts showed n=43–45 when hundreds of paired GPT/Claude transcripts should have been available. Two compounding bugs caused this.
+
+#### Root cause 1 — Visualization filter discarded Format A criteria
+
+`_extract_subsection_scores()` in `visualization/run_visualization.py` had a guard:
+```python
+if "score" not in criterion or "max" not in criterion: continue
+```
+Most `*_gpt/` transcripts (Format A) store per-criterion scores under a nested `base` block: `{"deductions": [], "base": {"score": 8, "max": 8}}`. Since `"score"` is not a direct key in these dicts the guard silently dropped every Format A criterion, yielding zero subsection data from `chaotic_gpt`, `clueless_gpt`, and `cooperative_gpt`.
+
+#### Root cause 2 — Claude rarely outputs per-criterion data
+
+Across non-v2 Claude folders, only ~13% of transcripts include per-criterion breakdowns. Claude's judge output typically returns only `"deductions"` and `"base"` at the section level with no individual criterion rows. Since the subsection chart requires both providers to have criterion data for the same transcript, n is hard-capped by Claude's coverage (~57 of 432 non-v2 transcripts).
+
+#### Three observed schema variants
+
+| Folder | Criterion key format | Score location |
+| --- | --- | --- |
+| `*_gpt/` (most files) | `"1.1"` (short dot) | `criterion["base"]["score"]` — **Format A** |
+| `*_gpt_v2/` (most files) | `"1_1_description"` (full underscore) | `criterion["score"]` directly — **Format B** |
+| `*_claude/` (most files) | none | no per-criterion data — **Format C** |
+
+#### Fix 1 — Visualization: handle all score location variants
+
+New helper `_criterion_score_max()` in `visualization/run_visualization.py` reads score/max from the direct keys first (Format B), then falls back to the nested `base` block (Format A). `_extract_subsection_scores()` uses this instead of the hard-coded `.get("score")` guard. n values increased from 43–45 to 54–56 for non-v2 pairs and 69–71 for v2 pairs.
+
+#### Fix 2 — Judge: comprehensive normalization at write time
+
+`_normalize_criterion_keys()` in `judge/run_judge.py` was rewritten to handle all three shapes and produce a single canonical form before writing to disk:
+
+- **Nested `criteria` dict (Shapes 1 & 2)**: keys normalized to `X.Y`; score/max moved out of nested `base` to direct keys.
+- **Flat criterion keys in section dict (Shape 3)**: keys collected into a `criteria` sub-dict, normalized to `X.Y`, score/max normalized.
+- **No criteria present (Shape C)**: section left unchanged.
+
+Two private helpers extracted: `_norm_cid()` (key name) and `_norm_criterion_value()` (score location). `run_judge_bundle.py` requires no changes since it routes through the same `validate_node → _sanitize_grade_payload → _normalize_criterion_keys` pipeline.
+
+#### Remaining gap
+
+The core n limitation is Claude's ~13% per-criterion coverage. Re-grading the ~375 Claude non-v2 transcripts that are missing criteria would bring n to full coverage. Future Claude grading runs will produce normalized output using the corrected schema and normalization pipeline.

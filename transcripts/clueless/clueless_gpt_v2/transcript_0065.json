@@ -72,52 +72,46 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor performs a key reasoning step for the student by sorting the student's Jakarta examples into 'climate stressors' versus 'underlying conditions' and explaining how to treat land subsidence, instead of keeping that classification fully student-led.",
-              "points": 6
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor directly sorted multiple Jakarta items into 'climate stressors' versus 'underlying conditions,' which performs part of the key classification reasoning the student needed to do for the assignment.",
+                "points": 6
+              }
+            ],
             "score": 6,
             "max": 12
-          }
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
+          },
+          "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
-          }
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [],
-          "base": {
+          },
+          "1.3": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
         },
         "base": {
           "score": 16,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
-          }
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
+          },
+          "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -128,43 +122,29 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
         },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                4,
-                7,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Several replies use rigid or mildly dismissive phrasing such as 'You're over-fixating,' 'I'm your tutor, not a shortcut,' 'Now stop circling the standard,' and 'you must do the writing,' which weakens a consistently supportive tutoring tone.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, provided useful structure for the table, and gave strong method-level guidance on evidence, justification, and rating calibration. The main deduction is for taking over a key classification step with the student's Jakarta examples rather than keeping that reasoning fully student-led. Tone was generally task-focused but occasionally sharper than ideal; the conversation still showed steady progress overall.",
-    "judge_reasoning": "The largest deduction is under 1.1 because the tutor directly sorted several Jakarta items into stressors versus underlying conditions in Turn 3, which does part of the central reasoning for the student. I did not deduct for direct assignment completion because the tutor repeatedly refused to provide submission-ready rows and instead pushed the student to draft and revise. Scaffolding, assignment anchoring, and process feedback were strong: the tutor narrowed the task, clarified evidence types, and helped the student develop comparative rating anchors. A smaller communication deduction applies because some phrasing was unnecessarily rigid and could reasonably feel discouraging.",
-    "total_score": 34,
+    "overview": "The tutor was generally strong on structure, assignment focus, and method coaching, especially around evidence types, row structure, and comparative rating logic. The main deduction is for Turn 3, where the tutor partially classified several Jakarta items for the student instead of keeping that key reasoning fully student-led. Other areas were kept at full credit because the tutor consistently redirected the student back into doing the work and stayed closely anchored to the table task.",
+    "judge_reasoning": "I applied one major pedagogy deduction under 1.1 because the tutor directly sorted Jakarta examples into stressors versus underlying conditions, which is a central assignment move. I did not deduct for near-submission-ready output because the tutor refused to provide filled rows and repeatedly pushed the student to draft their own language. Scaffolding, assignment anchoring, and process feedback were strong: the tutor clarified expectations, explained evidence standards, and gave a usable rating framework. Communication was concise and generally supportive enough to keep the student engaged, so no further deduction was clearly warranted.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

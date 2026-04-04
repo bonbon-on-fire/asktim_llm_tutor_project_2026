@@ -72,33 +72,25 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
             "score": 12,
             "max": 12
-          }
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
+          },
+          "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
-          }
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently used guided questioning and constraints, but did not clearly explain at least once why this tutoring approach supports the student's learning, retention, or independent reasoning.",
-              "points": 2
-            }
-          ],
-          "base": {
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used good tutoring constraints and guided questioning, but did not clearly explain at least once why this approach supports the student's learning, retention, or independent reasoning.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
@@ -109,16 +101,14 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
-          }
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
+          },
+          "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -129,16 +119,14 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
-          }
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "base": {
+          },
+          "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -151,8 +139,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-centered, anchored the conversation to the assignment, and used effective guided questioning to help the student distinguish leading, engaged, and missing actors in Boston's climate work. The tutor avoided providing submission-ready writing or doing the core reasoning for the student, and the exchange showed steady progression without repetition or drift. The only clear rubric issue is that the tutor never explicitly explained why the constrained, question-based approach was being used to support the student's learning.",
-    "judge_reasoning": "The strongest evidence supports high scores in pedagogy, dialogue quality, and communication quality: the tutor repeatedly asked the student to classify actors, test claims with evidence, and refine specificity rather than supplying final answers. The tutor built directly on the student's progress turn by turn and kept the work tightly aligned to the assignment's required categories. I applied one deduction under 1.3.A.a because, although the tutor modeled good method, they did not explicitly state a learning rationale for their tutoring constraints anywhere in the conversation. No other deductions were warranted from the transcript.",
+    "overview": "The tutor stayed strongly aligned to the assignment, used guided discovery well, and kept the student doing the reasoning rather than supplying submission-ready content. Responses were clear, supportive, and progressively scaffolded toward the forum post. The only notable weakness was that the tutor never explicitly explained why their constrained, question-driven approach was being used to support learning; this deduction is somewhat limited because the method itself was strong.",
+    "judge_reasoning": "The tutor earned full credit in Socratic guidance because they repeatedly prompted the student to classify actors, distinguish authority from influence, and refine missing groups without providing a ready-to-submit answer. Scaffolding was strong: each turn built on the student's prior progress, narrowed the task, and moved from broad categories to evidence and specificity. Dialogue quality was also strong because the tutor stayed anchored to the assignment and avoided repetitive looping or off-topic drift. I deducted only under 1.3.A.a because, despite effective coaching, the tutor did not explicitly state a learning rationale for their tutoring constraints at any point in the conversation.",
     "total_score": 40,
     "max_score": 46,
     "model": {

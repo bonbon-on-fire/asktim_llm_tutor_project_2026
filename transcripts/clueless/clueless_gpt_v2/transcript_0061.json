@@ -72,36 +72,40 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
-          "score": 24,
-          "max": 24
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -109,26 +113,28 @@
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
     "total_base_score": 46,
     "max_base_score": 46,
-    "overview": "The tutor stayed consistently student-centered, assignment-anchored, and process-focused throughout the conversation. They used short guided prompts, clarified distinctions like stressor vs. impact vs. vulnerability, and refused to provide a finished row while still giving usable structure. The only mild ambiguity is whether the Turn 3 constraint explanation was explicit enough as a learning rationale, but it still reasonably functions as one, so no deduction was applied.",
-    "judge_reasoning": "I applied no deductions because the tutor avoided providing submission-ready content and instead used guided discovery across the full exchange, especially when the student repeatedly asked for a finished example or broader shortcut. The tutor also scaffolded well by diagnosing the student's actual confusion points, such as sector overlap, specificity, and the distinction among stressor, impact, and vulnerability, then building from the student's partial progress. Dialogue quality remained strong because the tutor stayed on task, shifted approaches when the student was still unsure, and did not spiral redundantly. Communication was concise, supportive, and clearly formative rather than grading-oriented.",
+    "overview": "The tutor stayed tightly anchored to the assignment, used guided questioning throughout, and avoided giving submission-ready table content. Responses were concise, supportive, and progressively reframed the student's confusion into workable distinctions such as stressor vs. impact vs. vulnerability and severity vs. priority. No clear rubric-triggering violations were evidenced in the transcript.",
+    "judge_reasoning": "The tutor consistently kept idea generation student-led by refusing to provide a finished Miami table row and instead offering structure, heuristics, and targeted follow-up questions. Scaffolding was strong: the tutor diagnosed the student's actual sticking points, then narrowed the task with practical distinctions and criteria for merging or separating stressors. The conversation remained assignment-focused with no off-topic drift, and the tutor repeatedly re-grounded the student in the table's columns and decision rules. Communication was concise and supportive, and the tutor's statement that their role was to help the student build the row themselves provided a sufficient rationale for the tutoring constraint.",
     "total_score": 46,
     "max_score": 46,
     "model": {

@@ -87,8 +87,56 @@ def _extract_section_scores(grade: dict[str, Any]) -> tuple[dict[str, float], di
     return scores, maxes
 
 
+def _normalize_criterion_id(cid: str) -> str:
+    """Normalize any criterion key to short ``X.Y`` dot-notation.
+
+    Handles all observed model output variants:
+
+    * ``'1.1'``                                    → ``'1.1'``  (already correct)
+    * ``'1_1'``                                    → ``'1.1'``  (pure underscore)
+    * ``'1.1_socratic_method_guided_discovery'``   → ``'1.1'``  (dot-prefix + description)
+    * ``'1_1_socratic_method_guided_discovery'``   → ``'1.1'``  (underscore-prefix + description)
+
+    Keys that do not start with a ``digit . digit`` or ``digit _ digit`` pattern
+    (e.g. section keys like ``'1_pedagogy'``) are returned unchanged.
+    """
+    import re
+    m = re.match(r"^(\d+)[._](\d+)", str(cid))
+    if m:
+        return f"{m.group(1)}.{m.group(2)}"
+    return str(cid)
+
+
+def _criterion_score_max(criterion: dict[str, Any]) -> tuple[Any, Any]:
+    """Return (score, max) from a criterion dict, handling two schema variants.
+
+    Schema A (newer runs): score nested under ``criterion["base"]``.
+    Schema B (older runs): score directly in ``criterion`` as ``criterion["score"]``.
+    Returns ``(None, None)`` when neither pattern is present.
+    """
+    if "score" in criterion or "max" in criterion:
+        return criterion.get("score"), criterion.get("max")
+    base = criterion.get("base")
+    if isinstance(base, dict) and ("score" in base or "max" in base):
+        return base.get("score"), base.get("max")
+    return None, None
+
+
 def _extract_subsection_scores(grade: dict[str, Any]) -> tuple[dict[str, float], dict[str, float]]:
-    """Extract per-subsection (criterion) score/max pairs from grade sections."""
+    """Extract per-subsection (criterion) score/max pairs from grade sections.
+
+    Handles all three schema variants observed in the corpus:
+
+    * Schema A – newer runs: criterion value is ``{"deductions": [...], "base": {"score": N, "max": M}}``
+      with short ``X.Y`` keys (e.g. ``"1.1"``).
+    * Schema B – older runs: criterion value is ``{"deductions": [...], "score": N, "max": M}``
+      with full underscore keys (e.g. ``"1_1_socratic_method_..."``).
+    * Missing criteria – only ``"deductions"`` and ``"base"`` keys present at the section level;
+      these sections are skipped because there is nothing to extract at the subsection level.
+
+    Both flat keys (criteria directly in the section dict) and nested keys (criteria under
+    ``section["criteria"]``) are supported.
+    """
     scores: dict[str, float] = {}
     maxes: dict[str, float] = {}
     sections = grade.get("sections")
@@ -98,14 +146,32 @@ def _extract_subsection_scores(grade: dict[str, Any]) -> tuple[dict[str, float],
     for _, section in sections.items():
         if not isinstance(section, dict):
             continue
+
         criteria = section.get("criteria")
-        if not isinstance(criteria, dict):
+        if isinstance(criteria, dict):
+            for cid, criterion in criteria.items():
+                if not isinstance(criterion, dict):
+                    continue
+                score, max_ = _criterion_score_max(criterion)
+                if score is None and max_ is None:
+                    continue
+                normalized = _normalize_criterion_id(str(cid))
+                scores[normalized] = _parse_score(score)
+                maxes[normalized] = _parse_score(max_)
             continue
-        for cid, criterion in criteria.items():
+
+        # Flat shape: subsection ids are direct keys under the section object.
+        for cid, criterion in section.items():
+            if cid in {"base", "deductions", "criteria"}:
+                continue
             if not isinstance(criterion, dict):
                 continue
-            scores[str(cid)] = _parse_score(criterion.get("score"))
-            maxes[str(cid)] = _parse_score(criterion.get("max"))
+            score, max_ = _criterion_score_max(criterion)
+            if score is None and max_ is None:
+                continue
+            normalized = _normalize_criterion_id(str(cid))
+            scores[normalized] = _parse_score(score)
+            maxes[normalized] = _parse_score(max_)
     return scores, maxes
 
 
@@ -172,14 +238,19 @@ def _read_judged_transcript(path: Path) -> GradeRow | None:
     )
 
 
-def _read_provider_rows(transcripts_dir: Path, provider_suffix: str) -> list[GradeRow]:
-    """Scan all *_{provider_suffix}/transcript_*.json files under transcripts_dir and return GradeRow list."""
+def _read_provider_rows_variant(transcripts_dir: Path, provider_suffix: str, folder_suffix: str = "") -> list[GradeRow]:
+    """Scan all *_{provider_suffix}{folder_suffix}/transcript_*.json files and return GradeRow list."""
     rows: list[GradeRow] = []
-    for path in sorted(transcripts_dir.glob(f"*/*_{provider_suffix}/transcript_*.json")):
+    for path in sorted(transcripts_dir.glob(f"*/*_{provider_suffix}{folder_suffix}/transcript_*.json")):
         row = _read_judged_transcript(path)
         if row is not None:
             rows.append(row)
     return rows
+
+
+def _read_provider_rows(transcripts_dir: Path, provider_suffix: str) -> list[GradeRow]:
+    """Backward-compatible reader for non-v2 graded transcript folders."""
+    return _read_provider_rows_variant(transcripts_dir, provider_suffix, "")
 
 
 # ---------------------------------------------------------------------------
@@ -191,6 +262,16 @@ def _sort_key(row: GradeRow) -> tuple:
     tnum = int(row.transcript_name.split("_")[-1]) if "_" in row.transcript_name else 0
     ex_num = int(row.exercise_number) if row.exercise_number.isdigit() else 0
     return (row.persona_type, row.student_persona, row.course, ex_num, tnum)
+
+
+def _title_variant_suffix(output_name: str) -> str:
+    """Return a chart title suffix based on output filename variant."""
+    stem = Path(output_name).stem.lower()
+    if stem.endswith("_v2"):
+        return " (v2)"
+    if stem.endswith("_v3"):
+        return " (v3)"
+    return ""
 
 
 def _transcript_num(row: GradeRow) -> int:
@@ -312,9 +393,14 @@ def _read_bundle_grade(path: Path) -> BundleGradeRow | None:
     )
 
 
-def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
-    """Load all graded bundle JSON files for a given provider and bundle type."""
-    provider_dir = bundles_dir / f"bundles_{provider}" / f"bundle_{bundle_type}"
+def _read_bundle_rows_variant(
+    bundles_dir: Path,
+    provider: str,
+    bundle_type: str,
+    folder_suffix: str = "",
+) -> list[BundleGradeRow]:
+    """Load graded bundle JSON files for a provider and bundle type variant."""
+    provider_dir = bundles_dir / f"bundles_{provider}{folder_suffix}" / f"bundle_{bundle_type}"
     if not provider_dir.exists():
         return []
     rows: list[BundleGradeRow] = []
@@ -323,6 +409,11 @@ def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> lis
         if row is not None:
             rows.append(row)
     return rows
+
+
+def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
+    """Backward-compatible reader for non-v2 bundle folders."""
+    return _read_bundle_rows_variant(bundles_dir, provider, bundle_type, "")
 
 
 def _filter_individual_rows(rows: list[GradeRow], allowed_personas: set[str]) -> list[GradeRow]:
@@ -397,9 +488,10 @@ def _chart_line_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
+    title_suffix = _title_variant_suffix(output_name)
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=2.5)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
-    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude")
+    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude{title_suffix}")
     ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
@@ -416,6 +508,75 @@ def _chart_line_scores(
     ax.text(
         0.01, 0.98, "\n".join(lines), transform=ax.transAxes, ha="left", va="top",
         fontsize=9, bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
+    )
+
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
+def _chart_provider_regular_vs_v3(
+    regular_rows: list[GradeRow],
+    v3_rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    provider_label: str,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Generate per-transcript line chart comparing regular vs v3 for one provider."""
+    plt = _safe_import_matplotlib()
+
+    regular_by_key = {r.transcript_key: r for r in regular_rows}
+    v3_by_key = {r.transcript_key: r for r in v3_rows}
+    all_keys = sorted(
+        set(regular_by_key) | set(v3_by_key),
+        key=lambda k: _sort_key(regular_by_key.get(k) or v3_by_key[k]),
+    )
+
+    x = list(range(len(all_keys)))
+    y_regular = [regular_by_key[k].total_score if k in regular_by_key else float("nan") for k in all_keys]
+    y_v3 = [v3_by_key[k].total_score if k in v3_by_key else float("nan") for k in all_keys]
+
+    paired_regular: list[float] = []
+    paired_v3: list[float] = []
+    for k in all_keys:
+        r = regular_by_key.get(k)
+        v = v3_by_key.get(k)
+        if r and v and math.isfinite(r.total_score) and math.isfinite(v.total_score):
+            paired_regular.append(r.total_score)
+            paired_v3.append(v.total_score)
+
+    fig, ax = plt.subplots(figsize=(16, 7))
+    ax.plot(x, y_regular, label=f"{provider_label.upper()} regular", color="#4c78a8", linewidth=1.4, marker="o", markersize=2.5)
+    ax.plot(x, y_v3, label=f"{provider_label.upper()} v3", color="#f58518", linewidth=1.4, marker="o", markersize=2.5)
+    ax.set_title(f"{provider_label.upper()} Regular vs v3 — Total Score Per Transcript")
+    ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
+    ax.set_ylabel("Total Score")
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+    pearson_v = _pearson(paired_regular, paired_v3)
+    spearman_v = _spearman(paired_regular, paired_v3)
+    lines = []
+    lines.append(f"Pearson r = {pearson_v:.3f}" if pearson_v is not None else "Pearson r = N/A")
+    lines.append(f"Spearman ρ = {spearman_v:.3f}" if spearman_v is not None else "Spearman ρ = N/A")
+    lines.append(f"Paired transcripts: {len(paired_regular)}")
+    if paired_regular:
+        lines.append(
+            f"Regular mean: {sum(paired_regular)/len(paired_regular):.1f}   "
+            f"v3 mean: {sum(paired_v3)/len(paired_v3):.1f}"
+        )
+    ax.text(
+        0.01,
+        0.98,
+        "\n".join(lines),
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
     )
 
     fig.tight_layout()
@@ -522,6 +683,7 @@ def _chart_section_discrepancies(
     out_dir: Path,
     *,
     chart_idx: int,
+    output_name: str = "section_discrepancy_by_rubric_section_gpt_vs_claude.png",
 ) -> None:
     """Generate a bar chart of mean absolute section-score differences (GPT vs Claude)."""
     plt = _safe_import_matplotlib()
@@ -550,7 +712,7 @@ def _chart_section_discrepancies(
             stats[sid]["count"] += 1.0
 
     if not stats:
-        print(f"  [{chart_idx}] section_discrepancy_by_rubric_section_gpt_vs_claude.png (skipped: no section data)")
+        print(f"  [{chart_idx}] {output_name} (skipped: no section data)")
         return
 
     def _section_sort_key(sid: str) -> tuple[int, str]:
@@ -569,8 +731,9 @@ def _chart_section_discrepancies(
 
     x = list(range(len(section_ids_sorted)))
     fig, ax = plt.subplots(figsize=(12, 7))
+    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#6f42c1", alpha=0.8)
-    ax.set_title("Rubric Section Discrepancy (GPT vs Claude)")
+    ax.set_title(f"Rubric Section Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Section")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -589,7 +752,7 @@ def _chart_section_discrepancies(
         )
 
     fig.tight_layout()
-    filename = "section_discrepancy_by_rubric_section_gpt_vs_claude.png"
+    filename = output_name
     fig.savefig(out_dir / filename, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {filename}")
@@ -615,6 +778,7 @@ def _chart_subsection_discrepancies(
     out_dir: Path,
     *,
     chart_idx: int,
+    output_name: str = "subsection_discrepancy_by_subsection_gpt_vs_claude.png",
 ) -> None:
     """Generate a bar chart of mean absolute subsection-score differences (GPT vs Claude)."""
     plt = _safe_import_matplotlib()
@@ -643,7 +807,7 @@ def _chart_subsection_discrepancies(
             stats[cid]["count"] += 1.0
 
     if not stats:
-        print(f"  [{chart_idx}] subsection_discrepancy_by_subsection_gpt_vs_claude.png (skipped: no subsection data)")
+        print(f"  [{chart_idx}] {output_name} (skipped: no subsection data)")
         return
 
     subsection_ids_sorted = sorted(stats.keys(), key=_subsection_sort_key)
@@ -653,8 +817,9 @@ def _chart_subsection_discrepancies(
 
     x = list(range(len(subsection_ids_sorted)))
     fig, ax = plt.subplots(figsize=(13, 7))
+    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#2f7ed8", alpha=0.85)
-    ax.set_title("Subsection Discrepancy (GPT vs Claude)")
+    ax.set_title(f"Subsection Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Subsection")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -672,7 +837,7 @@ def _chart_subsection_discrepancies(
         )
 
     fig.tight_layout()
-    filename = "subsection_discrepancy_by_subsection_gpt_vs_claude.png"
+    filename = output_name
     fig.savefig(out_dir / filename, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {filename}")
@@ -766,6 +931,7 @@ def _chart_subsection_correlation_heatmap(
     provider_label: str,
     persona_label: str,
     chart_idx: int,
+    output_name: str | None = None,
 ) -> None:
     """Generate subsection-pair correlation heatmap on normalized subsection scores."""
     plt = _safe_import_matplotlib()
@@ -776,19 +942,26 @@ def _chart_subsection_correlation_heatmap(
         key=_subsection_sort_key,
     )
     if len(subsection_ids) < 2:
+        fallback_name = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
         print(
-            f"  [{chart_idx}] subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}.png "
+            f"  [{chart_idx}] {fallback_name} "
             "(skipped: insufficient subsection coverage)"
         )
         return
 
     # Build value vectors per subsection across transcripts; missing values become NaN.
     series: dict[str, list[float]] = {}
+    hits: dict[str, int] = {}
     for cid in subsection_ids:
         vals: list[float] = []
+        hit_count = 0
         for values in normalized_rows:
-            vals.append(values.get(cid, float("nan")))
+            v = values.get(cid, float("nan"))
+            if math.isfinite(v):
+                hit_count += 1
+            vals.append(v)
         series[cid] = vals
+        hits[cid] = hit_count
 
     n = len(subsection_ids)
     corr_matrix: list[list[float]] = [[float("nan")] * n for _ in range(n)]
@@ -803,20 +976,23 @@ def _chart_subsection_correlation_heatmap(
                 corr_matrix[i][j] = corr if corr is not None else float("nan")
 
     fig, ax = plt.subplots(figsize=(10, 8))
+    filename = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
+    title_suffix = _title_variant_suffix(filename)
     im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
+    nonempty_rows = sum(1 for values in normalized_rows if values)
     ax.set_title(
-        f"Subsection Correlation Heatmap ({provider_label}, {persona_label})\n"
-        "Normalized subsection scores"
+        f"Subsection Correlation Heatmap ({provider_label}, {persona_label}){title_suffix}\n"
+        f"Normalized subsection scores | n={nonempty_rows}"
     )
     ax.set_xticks(list(range(n)))
     ax.set_yticks(list(range(n)))
-    ax.set_xticklabels(subsection_ids, rotation=45, ha="right")
-    ax.set_yticklabels(subsection_ids)
+    labels = [f"{cid}\n(n={hits[cid]})" for cid in subsection_ids]
+    ax.set_xticklabels(labels, rotation=45, ha="right")
+    ax.set_yticklabels(labels)
     cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
     cbar.set_label("Pearson correlation")
 
     fig.tight_layout()
-    filename = f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
     fig.savefig(out_dir / filename, dpi=150)
     plt.close(fig)
     print(f"  [{chart_idx}] {filename}")
@@ -965,9 +1141,10 @@ def _chart_bundle_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
+    title_suffix = _title_variant_suffix(output_name)
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=3)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=3)
-    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude")
+    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude{title_suffix}")
     ax.set_xlabel(f"Bundle index (bundle_001 – bundle_{len(all_names):03d})")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
@@ -1016,92 +1193,208 @@ def main() -> int:
 
     chart_idx = 1
 
-    _chart_provider_self_consistency(
-        gpt_all_rows,
-        out_dir,
-        provider_label="GPT",
-        chart_idx=chart_idx,
-    )
-    chart_idx += 1
-    _chart_provider_self_consistency(
-        claude_all_rows,
-        out_dir,
-        provider_label="Claude",
-        chart_idx=chart_idx,
-    )
-    chart_idx += 1
-
     _chart_section_discrepancies(
         gpt_all_rows,
         claude_all_rows,
         out_dir,
         chart_idx=chart_idx,
+        output_name="section_discrepancy_by_rubric_section_gpt_vs_claude.png",
     )
     chart_idx += 1
+
     _chart_subsection_discrepancies(
         gpt_all_rows,
         claude_all_rows,
         out_dir,
         chart_idx=chart_idx,
+        output_name="subsection_discrepancy_by_subsection_gpt_vs_claude.png",
     )
     chart_idx += 1
-    _chart_subsection_discrepancy_per_transcript(
+
+    _chart_line_scores(
         gpt_all_rows,
         claude_all_rows,
         out_dir,
+        persona_label="all_transcripts",
+        output_name="individual_grades_all_transcripts_gpt_vs_claude.png",
         chart_idx=chart_idx,
     )
     chart_idx += 1
 
-    for version in ("01", "02", "03", "04", "05", "06"):
-        gpt_rows = _filter_individual_rows_by_version(gpt_all_rows, version=version)
-        claude_rows = _filter_individual_rows_by_version(claude_all_rows, version=version)
-        label = f"version_{version}"
-        print(f"Loaded {label} GPT: {len(gpt_rows)} transcripts   Claude: {len(claude_rows)} transcripts")
-        if gpt_rows or claude_rows:
-            _chart_line_scores(
-                gpt_rows,
-                claude_rows,
-                out_dir,
-                persona_label=label,
-                output_name=f"individual_grades_{label}_gpt_vs_claude.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-        else:
-            print(f"  No {label} transcripts found. Skipping chart.")
+    # Subsection-correlation heatmaps: exactly 3
+    # 1) all providers combined, 2) GPT all personas, 3) Claude all personas.
+    _chart_subsection_correlation_heatmap(
+        gpt_all_rows + claude_all_rows,
+        out_dir,
+        provider_label="all_providers",
+        persona_label="all_personas",
+        chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized.png",
+    )
+    chart_idx += 1
+    _chart_subsection_correlation_heatmap(
+        gpt_all_rows,
+        out_dir,
+        provider_label="gpt",
+        persona_label="all_personas",
+        chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_gpt_all_personas_normalized.png",
+    )
+    chart_idx += 1
+    _chart_subsection_correlation_heatmap(
+        claude_all_rows,
+        out_dir,
+        provider_label="claude",
+        persona_label="all_personas",
+        chart_idx=chart_idx,
+        output_name="subsection_correlation_heatmap_claude_all_personas_normalized.png",
+    )
+    chart_idx += 1
 
-    for provider_label, provider_rows in (("GPT", gpt_all_rows), ("Claude", claude_all_rows)):
-        # Joined (all personas) heatmap per provider.
-        _chart_subsection_correlation_heatmap(
-            provider_rows,
+    # v2 charts: use only *_gpt_v2 / *_claude_v2 graded transcript folders.
+    gpt_v2_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v2")
+    claude_v2_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v2")
+    print(f"Loaded GPT v2: {len(gpt_v2_rows)} transcripts   Claude v2: {len(claude_v2_rows)} transcripts")
+    if gpt_v2_rows or claude_v2_rows:
+        _chart_section_discrepancies(
+            gpt_v2_rows,
+            claude_v2_rows,
             out_dir,
-            provider_label=provider_label,
+            chart_idx=chart_idx,
+            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png",
+        )
+        chart_idx += 1
+
+        _chart_subsection_discrepancies(
+            gpt_v2_rows,
+            claude_v2_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v2.png",
+        )
+        chart_idx += 1
+
+        _chart_line_scores(
+            gpt_v2_rows,
+            claude_v2_rows,
+            out_dir,
+            persona_label="all_transcripts_v2",
+            output_name="individual_grades_all_transcripts_gpt_vs_claude_v2.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+
+        _chart_subsection_correlation_heatmap(
+            gpt_v2_rows + claude_v2_rows,
+            out_dir,
+            provider_label="all_providers",
             persona_label="all_personas",
             chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            gpt_v2_rows,
+            out_dir,
+            provider_label="gpt",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            claude_v2_rows,
+            out_dir,
+            provider_label="claude",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v2.png",
+        )
+        chart_idx += 1
+    else:
+        print("No *_v2 graded transcript folders found. Skipping _v2 chart generation.")
+
+    # v3 charts: use only *_gpt_v3 / *_claude_v3 graded transcript folders.
+    gpt_v3_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v3")
+    claude_v3_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v3")
+    print(f"Loaded GPT v3: {len(gpt_v3_rows)} transcripts   Claude v3: {len(claude_v3_rows)} transcripts")
+    if gpt_v3_rows or claude_v3_rows:
+        _chart_section_discrepancies(
+            gpt_v3_rows,
+            claude_v3_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v3.png",
         )
         chart_idx += 1
 
-        # Persona-specific heatmaps per provider.
-        for persona in ("chaotic", "cooperative", "clueless"):
-            persona_rows = _filter_individual_rows(provider_rows, {persona})
-            _chart_subsection_correlation_heatmap(
-                persona_rows,
-                out_dir,
-                provider_label=provider_label,
-                persona_label=persona,
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-
-    for provider_label, provider_rows in (("GPT", gpt_all_rows), ("Claude", claude_all_rows)):
-        _chart_sub_subsection_correlation_heatmap(
-            provider_rows,
+        _chart_subsection_discrepancies(
+            gpt_v3_rows,
+            claude_v3_rows,
             out_dir,
-            provider_label=provider_label,
+            chart_idx=chart_idx,
+            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v3.png",
+        )
+        chart_idx += 1
+
+        _chart_line_scores(
+            gpt_v3_rows,
+            claude_v3_rows,
+            out_dir,
+            persona_label="all_transcripts_v3",
+            output_name="individual_grades_all_transcripts_gpt_vs_claude_v3.png",
             chart_idx=chart_idx,
         )
         chart_idx += 1
+
+        _chart_subsection_correlation_heatmap(
+            gpt_v3_rows + claude_v3_rows,
+            out_dir,
+            provider_label="all_providers",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            gpt_v3_rows,
+            out_dir,
+            provider_label="gpt",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            claude_v3_rows,
+            out_dir,
+            provider_label="claude",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+
+        _chart_provider_regular_vs_v3(
+            gpt_all_rows,
+            gpt_v3_rows,
+            out_dir,
+            provider_label="gpt",
+            output_name="individual_grades_gpt_regular_vs_v3.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+        _chart_provider_regular_vs_v3(
+            claude_all_rows,
+            claude_v3_rows,
+            out_dir,
+            provider_label="claude",
+            output_name="individual_grades_claude_regular_vs_v3.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+    else:
+        print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
 
     bundle_type = "01"
     bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
@@ -1125,6 +1418,60 @@ def main() -> int:
             chart_idx += 1
         else:
             print(f"  No {persona} bundle_{bundle_type} graded files found. Skipping chart.")
+
+    bundle_gpt_v2_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v2")
+    bundle_claude_v2_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v2")
+    print(
+        f"Loaded bundle_{bundle_type} v2 GPT: {len(bundle_gpt_v2_all)} bundles   "
+        f"Claude v2: {len(bundle_claude_v2_all)} bundles"
+    )
+    for persona in ("chaotic", "cooperative", "clueless"):
+        bundle_gpt_v2 = _filter_bundle_rows(bundle_gpt_v2_all, {persona})
+        bundle_claude_v2 = _filter_bundle_rows(bundle_claude_v2_all, {persona})
+        print(
+            f"Loaded bundle_{bundle_type} v2 {persona} GPT: {len(bundle_gpt_v2)} bundles   "
+            f"Claude v2: {len(bundle_claude_v2)} bundles"
+        )
+        if bundle_gpt_v2 or bundle_claude_v2:
+            _chart_bundle_scores(
+                bundle_gpt_v2,
+                bundle_claude_v2,
+                bundle_type,
+                out_dir,
+                persona_label=f"{persona}_v2",
+                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v2.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"  No {persona} bundle_{bundle_type} v2 graded files found. Skipping chart.")
+
+    bundle_gpt_v3_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v3")
+    bundle_claude_v3_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v3")
+    print(
+        f"Loaded bundle_{bundle_type} v3 GPT: {len(bundle_gpt_v3_all)} bundles   "
+        f"Claude v3: {len(bundle_claude_v3_all)} bundles"
+    )
+    for persona in ("chaotic", "cooperative", "clueless"):
+        bundle_gpt_v3 = _filter_bundle_rows(bundle_gpt_v3_all, {persona})
+        bundle_claude_v3 = _filter_bundle_rows(bundle_claude_v3_all, {persona})
+        print(
+            f"Loaded bundle_{bundle_type} v3 {persona} GPT: {len(bundle_gpt_v3)} bundles   "
+            f"Claude v3: {len(bundle_claude_v3)} bundles"
+        )
+        if bundle_gpt_v3 or bundle_claude_v3:
+            _chart_bundle_scores(
+                bundle_gpt_v3,
+                bundle_claude_v3,
+                bundle_type,
+                out_dir,
+                persona_label=f"{persona}_v3",
+                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v3.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"  No {persona} bundle_{bundle_type} v3 graded files found. Skipping chart.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0

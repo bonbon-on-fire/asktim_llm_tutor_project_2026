@@ -72,48 +72,43 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently uses guided questions and constraints, but never explicitly explains at least once why this student-led approach supports learning or why they are avoiding more direct answer-giving.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                5,
-                6,
-                7
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improves from broad categories to specific measurable indicators, the tutor affirms the improvement and moves forward without prompting reflection on what changed in the student's reasoning or why the new approach worked better.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a guided-discovery approach and constraints like choosing the 'smallest useful set' or 'pick one,' but never explicitly explained why these constraints support the student's learning process, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from vague categories to measurable, defensible indicators, the tutor acknowledged the improvement ('You've moved from vague categories to measurable ones') but did not prompt reflection on what changed in the student's reasoning or why the revised method worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         },
         "base": {
           "score": 20,
@@ -121,15 +116,17 @@
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         },
         "base": {
           "score": 12,
@@ -137,15 +134,17 @@
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         },
         "base": {
           "score": 8,
@@ -155,8 +154,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led, assignment-focused, and concise throughout the exchange. Deductions are limited to meta-learning gaps: the tutor did not explicitly explain the rationale for the guided approach, and missed a clear chance to prompt reflection after the student improved. No larger deductions were applied because the tutor avoided giving submission-ready content and generally scaffolded well.",
-    "judge_reasoning": "The strongest evidence is in pedagogy: the tutor repeatedly used focused questions to help the student narrow categories, choose measurable indicators, and connect them to Phoenix's climate vulnerabilities without supplying final write-up language. I did not deduct under 1.1 or 1.2 because the tutor built directly on student progress and kept the key idea generation student-led. The main weaknesses are under 1.3: there is no explicit explanation of why the questioning approach supports learning, and after the student's improvement at turns 5-7 the tutor did not ask the student to reflect on what changed in their method. Dialogue quality and communication remained strong, with clear redirection, tight assignment anchoring, and supportive non-grading language.",
+    "overview": "The tutor stayed tightly anchored to the assignment, used effective guided questioning, and kept the student doing the substantive selection and justification work. No near-submission-ready writing or direct answer delivery occurred. The main weaknesses were meta-level: the tutor did not explain the learning rationale behind the constraints they imposed, and they missed a clear opportunity to ask the student to reflect on why their improved approach was stronger.",
+    "judge_reasoning": "The strongest aspect of this tutoring was pedagogy under 1.1 and 1.2: the tutor used Socratic prompts, narrowed choices without taking over, and built directly on the student's emerging ideas about Phoenix, heat, and water vulnerability. The tutor also maintained strong assignment anchoring and concise, supportive communication throughout. I deducted under 1.3.A because the tutor never explicitly stated why the guided-discovery constraints were pedagogically useful, and under 1.3.C because after the student's improvement from broad ideas to measurable indicators, the tutor praised progress but did not prompt reflection on what changed in the student's method. No other deductions were clearly supported by the transcript.",
     "total_score": 40,
     "max_score": 46,
     "model": {
