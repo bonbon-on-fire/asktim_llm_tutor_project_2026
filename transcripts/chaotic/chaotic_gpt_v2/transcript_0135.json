@@ -72,78 +72,84 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "For the second stressor, the tutor supplied likely Jakarta stressors and then provided sector fit and a rating range for air quality before the student generated those ideas independently. This crosses from guidance into giving key content for the table, even though it did not become fully submission-ready.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3,
-                5,
-                7
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced boundaries against doing or rewriting the assignment, but did not clearly explain why those constraints support the student's learning, retention, or reasoning process.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 14,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "For the second stressor, the tutor supplied likely Jakarta stressors and then provided sector fit and a rating range for air quality before the student generated those ideas independently. This crosses from guidance into giving key content for the table, even though it did not become fully submission-ready.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against doing or rewriting the assignment, but did not clearly explain why those constraints support the student's learning, retention, or reasoning process.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

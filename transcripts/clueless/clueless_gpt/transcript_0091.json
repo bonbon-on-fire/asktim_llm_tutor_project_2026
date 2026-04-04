@@ -72,84 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced constraints against giving a copyable answer ('I’ll show the process, not a copyable answer' and 'I’m not going to write or script the post for you') but never clearly explained why this supports the student's learning or long-term skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student finally summarized the core of the assignment correctly, the tutor affirmed it and moved directly to drafting rather than prompting brief reflection on what changed in the student's thinking and why the new framing worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints against giving a copyable answer ('I’ll show the process, not a copyable answer' and 'I’m not going to write or script the post for you') but never clearly explained why this supports the student's learning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student finally summarized the core of the assignment correctly, the tutor affirmed it and moved directly to drafting rather than prompting brief reflection on what changed in the student's thinking and why the new framing worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7,
-                9
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's wording became somewhat rigid and discouraging ('You’re overdwelling on classification,' 'Let’s stop looping,' and 'Now stop asking for another example'), which risks harming tutoring trust even though the tutor remained task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's wording became somewhat rigid and discouraging ('You’re overdwelling on classification,' 'Let’s stop looping,' and 'Now stop asking for another example'), which risks harming tutoring trust even though the tutor remained task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

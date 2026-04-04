@@ -72,85 +72,77 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced boundaries against doing the assignment, but did not clearly explain a learning-centered rationale such as building the student's reasoning, retention, or independent research skill. Statements like 'this assignment requires your own research and judgments' frame a rule more than a tutoring rationale.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 20,
           "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
         },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The line 'Stop dodging the core task' is noticeably sharper and more punitive than the rest of the exchange, creating a somewhat rigid tone that could discourage participation.",
-              "points": 2
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against doing the assignment, but did not clearly explain a learning-centered rationale such as building the student's reasoning, retention, or independent research skill. Statements like 'this assignment requires your own research and judgments' frame a rule more than a tutoring rationale.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
+        }
+      },
+      "2_dialogue_quality": {
+        "base": {
+          "score": 12,
+          "max": 12
         },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        }
+      },
+      "3_communication_quality": {
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The line 'Stop dodging the core task' is noticeably sharper and more punitive than the rest of the exchange, creating a somewhat rigid tone that could discourage participation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

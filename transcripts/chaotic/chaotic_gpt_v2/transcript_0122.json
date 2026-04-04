@@ -72,58 +72,64 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                6
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "The tutor partially chose the student's argumentative path by recommending the 'easier route' of explaining act consequentialism and then arguing it gets some cases wrong, and later supplied the central objection about outcomes erasing the means/side-effect distinction before the student fully developed it.",
-              "points": 6
-            }
-          ]
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": []
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "Although the tutor repeatedly refused to provide thesis sentences or polished prose, the conversation never clearly explained that this constraint was meant to support the student's learning, reasoning practice, or retention; statements about helping the student build their own argument did not explicitly give that learning rationale.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor partially chose the student's argumentative path by recommending the 'easier route' of explaining act consequentialism and then arguing it gets some cases wrong, and later supplied the central objection about outcomes erasing the means/side-effect distinction before the student fully developed it.",
+                "points": 6
+              }
+            ]
+          },
+          "1.2": {
+            "deductions": []
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Although the tutor repeatedly refused to provide thesis sentences or polished prose, the conversation never clearly explained that this constraint was meant to support the student's learning, reasoning practice, or retention; statements about helping the student build their own argument did not explicitly give that learning rationale.",
+                "points": 2
+              }
+            ]
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": []
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": []
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": []
+          },
+          "2.2": {
+            "deductions": []
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": []
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": []
-        },
         "base": {
           "score": 10,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": []
+          },
+          "3.2": {
+            "deductions": []
+          }
         }
       }
     },

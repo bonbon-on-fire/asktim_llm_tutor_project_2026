@@ -72,80 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                5,
-                7,
-                8
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "The tutor introduced the central side-effect versus means distinction before the student generated it, steering the student toward the likely key evaluative principle for the paper rather than letting that core idea emerge student-led.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7,
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from being unable to articulate the concern in Footbridge to correctly identifying that the plan works through the person's being hit, the tutor moved directly to the next application rather than prompting reflection on what changed in the student's reasoning and why it worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduced the central side-effect versus means distinction before the student generated it, steering the student toward the likely key evaluative principle for the paper rather than letting that core idea emerge student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from being unable to articulate the concern in Footbridge to correctly identifying that the plan works through the person's being hit, the tutor moved directly to the next application rather than prompting reflection on what changed in the student's reasoning and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

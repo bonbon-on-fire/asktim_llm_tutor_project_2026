@@ -72,91 +72,83 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1_1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1_2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1_3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced a no-copy-paste boundary but did not clearly explain why this constraint supports the student's learning, reasoning, retention, or long-term skill development.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 20,
           "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "2_1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
         },
-        "2_2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "3_1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3_2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The phrase 'Don't be lazy here' is dismissive and risks undermining trust and student participation, even though the rest of the exchange is mostly controlled and task-focused.",
-              "points": 2
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-copy-paste boundary but did not clearly explain why this constraint supports the student's learning, reasoning, retention, or long-term skill development.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
+        }
+      },
+      "2_dialogue_quality": {
+        "base": {
+          "score": 12,
+          "max": 12
         },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        }
+      },
+      "3_communication_quality": {
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'Don't be lazy here' is dismissive and risks undermining trust and student participation, even though the rest of the exchange is mostly controlled and task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

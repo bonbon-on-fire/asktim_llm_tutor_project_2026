@@ -72,74 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a constraint against providing a full example table, but only said that doing so would complete the assignment for the student; the tutor did not explicitly explain how this constraint supports the student's learning process or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                8
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After several turns of indecision, the student successfully chose Phoenix, but the tutor moved directly into sourcing advice instead of prompting reflection on what clarified the choice or what strategy the student could reuse.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a constraint against providing a full example table, but only said that doing so would complete the assignment for the student; the tutor did not explicitly explain how this constraint supports the student's learning process or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After several turns of indecision, the student successfully chose Phoenix, but the tutor moved directly into sourcing advice instead of prompting reflection on what clarified the choice or what strategy the student could reuse.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

@@ -72,74 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1_1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1_2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1_3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a no-direct-writing constraint ('I won’t write the reason for you') but did not explain why this constraint supports the student's learning process.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                9
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student moved from being 'blanking' and unable to defend a principle to producing a workable rights-based draft, the tutor advanced to testing cases without prompting reflection on what changed in the student's reasoning and why it worked better.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a no-direct-writing constraint ('I won’t write the reason for you') but did not explain why this constraint supports the student's learning process.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from being 'blanking' and unable to defend a principle to producing a workable rights-based draft, the tutor advanced to testing cases without prompting reflection on what changed in the student's reasoning and why it worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2_1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2_2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3_1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3_2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

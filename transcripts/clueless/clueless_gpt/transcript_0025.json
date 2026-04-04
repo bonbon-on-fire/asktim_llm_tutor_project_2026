@@ -72,98 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                8
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor supplies the conversation's central argumentative distinction and proposed missing principle ('used/targeted as a means' versus 'side effect') rather than fully eliciting that key reasoning from the student.",
-              "points": 6
-            }
-          ],
-          "base": {
-            "score": 6,
-            "max": 12
-          }
-        },
-        "1.2": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor states a boundary ('that would cross into doing the writing') but does not clearly explain how this constraint supports the student's learning or reasoning process.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                8
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student reaches the important insight that act consequentialism treats same-outcome cases similarly and misses the means/side-effect distinction, the tutor moves on without prompting reflection on what changed in the student's understanding.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 6
-          }
-        },
         "base": {
           "score": 14,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the conversation's central argumentative distinction and proposed missing principle ('used/targeted as a means' versus 'side effect') rather than fully eliciting that key reasoning from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states a boundary ('that would cross into doing the writing') but does not clearly explain how this constraint supports the student's learning or reasoning process.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student reaches the important insight that act consequentialism treats same-outcome cases similarly and misses the means/side-effect distinction, the tutor moves on without prompting reflection on what changed in the student's understanding.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "2.2": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

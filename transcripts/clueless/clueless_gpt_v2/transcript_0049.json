@@ -72,89 +72,95 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                4,
-                6
-              ],
-              "sub_criterion_id": "1.2.B.a",
-              "reason": "When the student repeatedly said the current approach was not clearing up the confusion and asked for a higher-level comparison, the tutor mostly redirected back to the same task pattern rather than first diagnosing exactly what was unclear. The tutor eventually discovered the memory problem about Fuel and Blood in Turn 7, but several earlier responses addressed the assignment via method prompts instead of first checking the student's specific blockage.",
-              "points": 3
-            }
-          ],
-          "score": 3,
-          "max": 6
-        },
-        "1.3_meta-learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced constraints against giving the finished rule or thesis wording, but did not clearly explain why that constraint supports the student's learning or long-term reasoning skills. Statements like 'Don't dodge the reasoning' and 'I won't write the thesis for you' set limits without an explicit tutoring rationale.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 17,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly said the current approach was not clearing up the confusion and asked for a higher-level comparison, the tutor mostly redirected back to the same task pattern rather than first diagnosing exactly what was unclear. The tutor eventually discovered the memory problem about Fuel and Blood in Turn 7, but several earlier responses addressed the assignment via method prompts instead of first checking the student's specific blockage.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints against giving the finished rule or thesis wording, but did not clearly explain why that constraint supports the student's learning or long-term reasoning skills. Statements like 'Don't dodge the reasoning' and 'I won't write the thesis for you' set limits without an explicit tutoring rationale.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                4,
-                6
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "Across several turns, the tutor repeated a similar move of pushing the student back to self-generate one case at a time, even after the student explicitly said that format was not resolving the confusion. The tutor did eventually vary the format with a chart and brief case reminders, but there was enough repeated questioning without timely synthesis to count as pattern-level repetition.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across several turns, the tutor repeated a similar move of pushing the student back to self-generate one case at a time, even after the student explicitly said that format was not resolving the confusion. The tutor did eventually vary the format with a chart and brief case reminders, but there was enough repeated questioning without timely synthesis to count as pattern-level repetition.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

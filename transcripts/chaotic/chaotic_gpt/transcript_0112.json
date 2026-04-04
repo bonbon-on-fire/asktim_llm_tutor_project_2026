@@ -72,85 +72,91 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-focused rationale such as active reasoning, retention, or skill-building; the explanation stayed at the level of assignment ownership and policy.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from resistance to producing a usable draft and then structured notes, the tutor continued refining the task without prompting reflection on what changed in the student's process or why the newer approach worked better.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-focused rationale such as active reasoning, retention, or skill-building; the explanation stayed at the level of assignment ownership and policy.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from resistance to producing a usable draft and then structured notes, the tutor continued refining the task without prompting reflection on what changed in the student's process or why the newer approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The phrase 'Stop dodging the core task' is notably rigid and mildly punitive in tone, creating unnecessary friction even though the rest of the conversation is mostly supportive.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'Stop dodging the core task' is notably rigid and mildly punitive in tone, creating unnecessary friction even though the rest of the conversation is mostly supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

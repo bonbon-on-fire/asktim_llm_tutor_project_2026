@@ -72,93 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1_1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor supplied a ready-made set of five Miami stressors plus Miami-specific supporting conditions before the student generated them, taking over a key idea-generation step for the assignment.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1_2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1_3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                4,
-                6,
-                8,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced limits on direct help but never explained why student-led drafting or active reasoning would support learning, retention, or later assignments.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 14,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied a ready-made set of five Miami stressors plus Miami-specific supporting conditions before the student generated them, taking over a key idea-generation step for the assignment.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced limits on direct help but never explained why student-led drafting or active reasoning would support learning, retention, or later assignments.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2_1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2_2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3_1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3_2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                4,
-                6,
-                8
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's repeated blunt refusals, especially phrasing like 'No' and 'not a copy-paste generator,' created a rigid tone that could discourage participation even though the tutor stayed task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's repeated blunt refusals, especially phrasing like 'No' and 'not a copy-paste generator,' created a rigid tone that could discourage participation even though the tutor stayed task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

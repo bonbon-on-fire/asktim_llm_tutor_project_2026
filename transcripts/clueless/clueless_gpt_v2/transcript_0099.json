@@ -72,67 +72,73 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                4,
-                6
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "The tutor repeatedly introduced the central interpretive path before the student generated it, especially by supplying the 'using a person more directly' and later the 'means versus side effect' distinction. That steered the student toward the key conclusion instead of leaving the main idea generation fully student-led.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly introduced the central interpretive path before the student generated it, especially by supplying the 'using a person more directly' and later the 'means versus side effect' distinction. That steered the student toward the key conclusion instead of leaving the main idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

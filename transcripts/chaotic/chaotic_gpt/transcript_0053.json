@@ -72,74 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "score": 12,
-          "max": 12,
-          "deductions": []
-        },
-        "1.2_scaffolding_and_progression": {
-          "score": 6,
-          "max": 6,
-          "deductions": []
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "score": 2,
-          "max": 6,
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a no-writing/polishing boundary, but did not clearly explain the learning rationale behind that constraint, such as supporting active reasoning or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from a weaker rights-based explanation to a stronger dignity/constraint-based explanation, the tutor affirmed the improvement but did not prompt reflection on what changed in the student's reasoning and why it worked better.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "score": 12,
+            "max": 12,
+            "deductions": []
+          },
+          "1.2": {
+            "score": 6,
+            "max": 6,
+            "deductions": []
+          },
+          "1.3": {
+            "score": 2,
+            "max": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a no-writing/polishing boundary, but did not clearly explain the learning rationale behind that constraint, such as supporting active reasoning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a weaker rights-based explanation to a stronger dignity/constraint-based explanation, the tutor affirmed the improvement but did not prompt reflection on what changed in the student's reasoning and why it worked better.",
+                "points": 2
+              }
+            ]
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "score": 4,
-          "max": 4,
-          "deductions": []
-        },
-        "2.2_assignment_anchoring": {
-          "score": 8,
-          "max": 8,
-          "deductions": []
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "score": 4,
+            "max": 4,
+            "deductions": []
+          },
+          "2.2": {
+            "score": 8,
+            "max": 8,
+            "deductions": []
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "score": 4,
-          "max": 4,
-          "deductions": []
-        },
-        "3.2_appropriate_tone_and_support": {
-          "score": 4,
-          "max": 4,
-          "deductions": []
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "score": 4,
+            "max": 4,
+            "deductions": []
+          },
+          "3.2": {
+            "score": 4,
+            "max": 4,
+            "deductions": []
+          }
         }
       }
     },

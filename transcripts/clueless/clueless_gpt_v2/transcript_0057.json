@@ -72,121 +72,113 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.2.B.a",
-              "reason": "The student repeatedly signaled broad conceptual confusion and asked for clarification of the big picture, but the tutor mostly responded with new framing questions or partial explanations instead of first isolating whether the confusion was about assignment scope, level of interpretation, or category meaning.",
-              "points": 3
-            }
-          ],
-          "base": {
-            "score": 3,
-            "max": 6
-          }
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                5,
-                6
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced constraints by refusing a full example and sentence template, but did not clearly explain the learning rationale in terms of active reasoning, retention, or long-term skill development.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 17,
           "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                4,
-                8,
-                9
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "The tutor repeatedly returned to similar broad-summary explanations of how the categories fit together while the student kept stating that the approach was not landing. Although there was some reframing, the interaction still spiraled on the same concept without enough consolidation or a stronger shift in strategy.",
-              "points": 4
-            }
-          ],
-          "base": {
-            "score": 0,
-            "max": 4
-          }
         },
-        "2.2": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                6,
-                7,
-                8,
-                9
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Several responses use rigid or mildly dismissive phrasing such as 'You’re overcomplicating it a bit,' 'No—I won’t give you sentence language,' and 'Now stop looping,' which risks discouraging a confused student.",
-              "points": 2
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signaled broad conceptual confusion and asked for clarification of the big picture, but the tutor mostly responded with new framing questions or partial explanations instead of first isolating whether the confusion was about assignment scope, level of interpretation, or category meaning.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints by refusing a full example and sentence template, but did not clearly explain the learning rationale in terms of active reasoning, retention, or long-term skill development.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
+        }
+      },
+      "2_dialogue_quality": {
+        "base": {
+          "score": 8,
+          "max": 12
         },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returned to similar broad-summary explanations of how the categories fit together while the student kept stating that the approach was not landing. Although there was some reframing, the interaction still spiraled on the same concept without enough consolidation or a stronger shift in strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        }
+      },
+      "3_communication_quality": {
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses use rigid or mildly dismissive phrasing such as 'You’re overcomplicating it a bit,' 'No—I won’t give you sentence language,' and 'Now stop looping,' which risks discouraging a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

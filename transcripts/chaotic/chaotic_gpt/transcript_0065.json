@@ -72,92 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                5,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced limits on giving direct wording and table-ready entries, but did not clearly explain at least once that this constraint was meant to support the student's learning process, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                4,
-                6,
-                8,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from tentative drafts to clearer justifications, the tutor moved on to the next task without asking the student to reflect on what changed in their reasoning or why the revised approach worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  5,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on giving direct wording and table-ready entries, but did not clearly explain at least once that this constraint was meant to support the student's learning process, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from tentative drafts to clearer justifications, the tutor moved on to the next task without asking the student to reflect on what changed in their reasoning or why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3,
-                6,
-                9
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's tone was occasionally rigid or abrasive rather than fully supportive, with phrases like \"I'm your tutor, not a shortcut,\" \"the problem is precision, not intelligence,\" \"Stop fussing with it,\" and \"You're dwelling on phrasing again.\"",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone was occasionally rigid or abrasive rather than fully supportive, with phrases like \"I'm your tutor, not a shortcut,\" \"the problem is precision, not intelligence,\" \"Stop fussing with it,\" and \"You're dwelling on phrasing again.\"",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

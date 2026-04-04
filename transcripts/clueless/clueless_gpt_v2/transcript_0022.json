@@ -72,75 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor set a boundary against giving a full Boston example ('That would do the assignment for you') but did not clearly explain the learning rationale in terms of active reasoning, retention, or skill-building.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set a boundary against giving a full Boston example ('That would do the assignment for you') but did not clearly explain the learning rationale in terms of active reasoning, retention, or skill-building.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                5
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor was generally helpful, but phrases like 'Don't use “good city” as an excuse to delay' and 'No—I’m not going to lay out the Boston answer for you' introduced a somewhat rigid, admonishing tone that could weaken tutoring trust.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally helpful, but phrases like 'Don't use “good city” as an excuse to delay' and 'No—I’m not going to lay out the Boston answer for you' introduced a somewhat rigid, admonishing tone that could weaken tutoring trust.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

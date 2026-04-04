@@ -72,86 +72,92 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforces limits on giving copy-pasteable answers, but never clearly explains a learning rationale such as building the student's own reasoning, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                6,
-                7
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improves by producing a usable justification in Turn 6, the tutor gives feedback and moves on without prompting reflection on what changed in the student's thinking or why the revision strategy worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces limits on giving copy-pasteable answers, but never clearly explains a learning rationale such as building the student's own reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves by producing a usable justification in Turn 6, the tutor gives feedback and moves on without prompting reflection on what changed in the student's thinking or why the revision strategy worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The phrase \"Don't be lazy here\" is dismissive and risks harming tutoring trust, even though the rest of the conversation is generally supportive and task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase \"Don't be lazy here\" is dismissive and risks harming tutoring trust, even though the rest of the conversation is generally supportive and task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

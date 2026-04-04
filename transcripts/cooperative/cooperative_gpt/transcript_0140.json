@@ -72,74 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a tutoring constraint ('I won’t phrase it for you—you need to do the writing') but did not explicitly explain why that constraint supports the student's learning process, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                4,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from earlier uncertainty to clearer categorization, the tutor affirmed the improvement and moved on without prompting reflection on what changed in the student's reasoning or why the revised method worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint ('I won’t phrase it for you—you need to do the writing') but did not explicitly explain why that constraint supports the student's learning process, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty to clearer categorization, the tutor affirmed the improvement and moved on without prompting reflection on what changed in the student's reasoning or why the revised method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

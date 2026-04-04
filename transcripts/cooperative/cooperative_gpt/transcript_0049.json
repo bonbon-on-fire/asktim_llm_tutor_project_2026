@@ -72,69 +72,75 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
         "base": {
           "score": 24,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "After the student deferred and said they would return later, the tutor repeated essentially the same move across several turns ('bring both back,' 'spot the pattern first,' 'come back with 4 things') without adding synthesis, reframing, or a new way to advance the discussion within the current conversation.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student deferred and said they would return later, the tutor repeated essentially the same move across several turns ('bring both back,' 'spot the pattern first,' 'come back with 4 things') without adding synthesis, reframing, or a new way to advance the discussion within the current conversation.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

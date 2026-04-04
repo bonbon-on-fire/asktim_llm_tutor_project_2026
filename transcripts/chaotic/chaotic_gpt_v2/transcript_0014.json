@@ -72,76 +72,82 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                10
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "The tutor supplied much of the core idea set for the student's city before the student generated it, first by offering a ready-made list of likely Jakarta stressors and later by listing five stressors with sector labels. This did not become submission-ready output, but it reduced student-led idea generation on a key assignment step.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor supplied much of the core idea set for the student's city before the student generated it, first by offering a ready-made list of likely Jakarta stressors and later by listing five stressors with sector labels. This did not become submission-ready output, but it reduced student-led idea generation on a key assignment step.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's tone became somewhat rigid and scolding at points, especially with lines like 'You're stuck because you're trying to skip the thinking' and 'Now stop collecting and start filling the table,' which could discourage participation even though the overall interaction remained task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone became somewhat rigid and scolding at points, especially with lines like 'You're stuck because you're trying to skip the thinking' and 'Now stop collecting and start filling the table,' which could discourage participation even though the overall interaction remained task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

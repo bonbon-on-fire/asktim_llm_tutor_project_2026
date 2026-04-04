@@ -72,77 +72,83 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                "Turn 1",
-                "Turn 2",
-                "Turn 6"
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a no-copy-paste boundary, but the explanation stayed mostly at the level of assignment integrity ('would defeat the assignment') rather than clearly stating a learning rationale such as building the student's own reasoning or retention.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                "Turn 7",
-                "Turn 9",
-                "Turn 10"
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from generic wording to defensible Jakarta-specific justifications, the tutor moved forward to the next task instead of prompting brief reflection on what changed and why the stronger method worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a no-copy-paste boundary, but the explanation stayed mostly at the level of assignment integrity ('would defeat the assignment') rather than clearly stating a learning rationale such as building the student's own reasoning or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Turn 7",
+                  "Turn 9",
+                  "Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from generic wording to defensible Jakarta-specific justifications, the tutor moved forward to the next task instead of prompting brief reflection on what changed and why the stronger method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

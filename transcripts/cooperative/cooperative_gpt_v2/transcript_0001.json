@@ -72,88 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "1.2.B.a",
-              "reason": "When the student said they were not confident classifying Fuel, the tutor immediately supplied the means/side-effect test instead of first diagnosing exactly what the student already understood or where the confusion lay.",
-              "points": 3
-            }
-          ],
-          "base": {
-            "score": 3,
-            "max": 6
-          }
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a tutoring constraint ('I won’t write the thesis for you') but did not explain a learning rationale such as supporting the student's own reasoning, retention, or argument-building skills.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 17,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were not confident classifying Fuel, the tutor immediately supplied the means/side-effect test instead of first diagnosing exactly what the student already understood or where the confusion lay.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint ('I won’t write the thesis for you') but did not explain a learning rationale such as supporting the student's own reasoning, retention, or argument-building skills.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "2.2": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

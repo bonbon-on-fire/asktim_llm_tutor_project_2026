@@ -72,74 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor says, \"I won’t fill one in for you,\" but does not explain why withholding a complete example supports the student's learning process, active reasoning, or long-term skill development.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor says, \"I won’t fill one in for you,\" but does not explain why withholding a complete example supports the student's learning process, active reasoning, or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The phrase \"You’re overcomplicating it\" is mildly dismissive in response to the student's expressed stress and confusion, which weakens the supportive tutoring tone.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase \"You’re overcomplicating it\" is mildly dismissive in response to the student's expressed stress and confusion, which weakens the supportive tutoring tone.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       }
     },

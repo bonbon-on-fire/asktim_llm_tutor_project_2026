@@ -72,102 +72,108 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                6
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced non-ghostwriting constraints but did not clearly explain why this supports the student's learning, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                7,
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from weaker attempts to workable actor lines, the tutor affirmed progress but did not prompt reflection on what changed in the student's reasoning or why the stronger approach worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced non-ghostwriting constraints but did not clearly explain why this supports the student's learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from weaker attempts to workable actor lines, the tutor affirmed progress but did not prompt reflection on what changed in the student's reasoning or why the stronger approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                4,
-                6,
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "The tutor repeatedly used the same refusal-plus-prompt pattern as the student continued to push for polished text, without sufficiently switching to synthesis or a different strategy to break the spiral.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  6,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same refusal-plus-prompt pattern as the student continued to push for polished text, without sufficiently switching to synthesis or a different strategy to break the spiral.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Phrases like 'Stop trying to outsource the list' and 'I'm your tutor, not your ghostwriter' made the tone more rigid and potentially discouraging than supportive.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Phrases like 'Stop trying to outsource the list' and 'I'm your tutor, not your ghostwriter' made the tone more rigid and potentially discouraging than supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

@@ -72,66 +72,72 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8,
-                10
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor supplies the central argumentative distinction for the student by framing the likely general account as 'killing as a means/rights violation' versus 'foreseen but unintended side effect,' and later re-explains that structure directly. That moves beyond guided discovery into doing the key reasoning step that determines the student's eventual stance.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta-learning_and_methodology_feedback": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the central argumentative distinction for the student by framing the likely general account as 'killing as a means/rights violation' versus 'foreseen but unintended side effect,' and later re-explains that structure directly. That moves beyond guided discovery into doing the key reasoning step that determines the student's eventual stance.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

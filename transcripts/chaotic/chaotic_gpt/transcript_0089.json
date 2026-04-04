@@ -72,87 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                4,
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-focused rationale such as active reasoning, retention, or skill-building; the comments focused more on refusal and authorship than on why the constraint supports learning.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                4,
-                6
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from a thin claim to a clearer draft justification, the tutor asked for another revision but did not prompt reflection on what changed in the student's reasoning or why the revised approach was stronger.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-focused rationale such as active reasoning, retention, or skill-building; the comments focused more on refusal and authorship than on why the constraint supports learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a thin claim to a clearer draft justification, the tutor asked for another revision but did not prompt reflection on what changed in the student's reasoning or why the revised approach was stronger.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                5
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's tone was sometimes unnecessarily rigid or sharp, especially in phrasing like 'I’m your tutor, not a shortcut' and 'Stop asking me to write it for you,' which could discourage participation even though the boundary itself was appropriate.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone was sometimes unnecessarily rigid or sharp, especially in phrasing like 'I’m your tutor, not a shortcut' and 'Stop asking me to write it for you,' which could discourage participation even though the boundary itself was appropriate.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

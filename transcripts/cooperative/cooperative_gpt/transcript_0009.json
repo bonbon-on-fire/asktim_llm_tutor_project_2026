@@ -72,98 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently uses guided questioning and constraints, but never explicitly explains why this tutoring approach supports the student's learning or why the tutor is not simply giving answers.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                4,
-                6,
-                7
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improves from earlier uncertainty or weaker choices, the tutor validates the improvement and moves on without prompting reflection on what changed in the student's reasoning or why the better method worked.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 6
-          }
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently uses guided questioning and constraints, but never explicitly explains why this tutoring approach supports the student's learning or why the tutor is not simply giving answers.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from earlier uncertainty or weaker choices, the tutor validates the improvement and moves on without prompting reflection on what changed in the student's reasoning or why the better method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

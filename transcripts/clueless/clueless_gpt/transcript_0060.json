@@ -72,75 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student showed improved reasoning by recognizing the need to align GDP, population, and area to the same unit, the tutor affirmed the point and moved forward without prompting reflection on what changed in the student's thinking or why the new reasoning worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student showed improved reasoning by recognizing the need to align GDP, population, and area to the same unit, the tutor affirmed the point and moved forward without prompting reflection on what changed in the student's thinking or why the new reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7,
-                8
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor became noticeably rigid in phrasing such as 'No—I’m your tutor, not a template generator' and 'You’re circling. Stop asking,' which risks sounding cold or discouraging even though the overall intent remained instructional.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor became noticeably rigid in phrasing such as 'No—I’m your tutor, not a template generator' and 'You’re circling. Stop asking,' which risks sounding cold or discouraging even though the overall intent remained instructional.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

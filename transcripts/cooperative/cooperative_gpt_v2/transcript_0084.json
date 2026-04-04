@@ -72,56 +72,62 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": []
-        },
-        "1.2": {
-          "deductions": []
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3,
-                4,
-                6,
-                7,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently used a guided, question-driven approach, but did not explicitly explain at any point why this constraint-based tutoring style supports the student's learning or skill development. The tutor justified research choices and consistency rules, not the tutoring rationale itself.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": []
+          },
+          "1.2": {
+            "deductions": []
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used a guided, question-driven approach, but did not explicitly explain at any point why this constraint-based tutoring style supports the student's learning or skill development. The tutor justified research choices and consistency rules, not the tutoring rationale itself.",
+                "points": 2
+              }
+            ]
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": []
-        },
-        "2.2": {
-          "deductions": []
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": []
+          },
+          "2.2": {
+            "deductions": []
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": []
-        },
-        "3.2": {
-          "deductions": []
-        },
         "base": {
           "score": 10,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": []
+          },
+          "3.2": {
+            "deductions": []
+          }
         }
       }
     },

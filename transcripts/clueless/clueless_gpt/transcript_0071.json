@@ -72,71 +72,77 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": []
-        },
-        "1.2": {
-          "deductions": []
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced a constraint against modeling or writing the post, but did not explicitly explain why that constraint supports the student's learning, retention, or independent reasoning.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from earlier uncertainty to a workable outline, the tutor moved directly to gathering evidence instead of prompting reflection on what changed and why the new approach worked.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": []
+          },
+          "1.2": {
+            "deductions": []
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a constraint against modeling or writing the post, but did not explicitly explain why that constraint supports the student's learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty to a workable outline, the tutor moved directly to gathering evidence instead of prompting reflection on what changed and why the new approach worked.",
+                "points": 2
+              }
+            ]
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": []
-        },
-        "2.2": {
-          "deductions": []
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": []
+          },
+          "2.2": {
+            "deductions": []
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": []
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                9,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Several responses use rigid or sharp phrasing such as \"don't hide behind,\" \"that does not excuse vagueness,\" \"stop circling,\" and \"earn it with evidence,\" which risks undermining a supportive tutoring tone.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": []
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses use rigid or sharp phrasing such as \"don't hide behind,\" \"that does not excuse vagueness,\" \"stop circling,\" and \"earn it with evidence,\" which risks undermining a supportive tutoring tone.",
+                "points": 2
+              }
+            ]
+          }
         }
       }
     },

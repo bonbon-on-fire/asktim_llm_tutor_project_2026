@@ -72,86 +72,92 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                5
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor supplied the central means-versus-side-effect distinction and then gave an operational test for applying it, which performs a key reasoning bridge in the student's argument rather than keeping that idea generation fully student-led.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                5
-              ],
-              "sub_criterion_id": "1.2.B.a",
-              "reason": "When the student said they did not remember the Fuel/Blood details, the tutor initially responded with an abstract application method instead of first diagnosing and addressing the student's missing recall of the cases.",
-              "points": 3
-            }
-          ],
-          "score": 3,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                6,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced no-ghostwriting constraints several times, but did not clearly explain in learning-centered terms why making the student generate the wording themselves would support understanding, retention, or long-term skill development.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 11,
           "max": 22
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the central means-versus-side-effect distinction and then gave an operational test for applying it, which performs a key reasoning bridge in the student's argument rather than keeping that idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they did not remember the Fuel/Blood details, the tutor initially responded with an abstract application method instead of first diagnosing and addressing the student's missing recall of the cases.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced no-ghostwriting constraints several times, but did not clearly explain in learning-centered terms why making the student generate the wording themselves would support understanding, retention, or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

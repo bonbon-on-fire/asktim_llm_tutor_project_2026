@@ -72,95 +72,101 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "After the student asked for a specific Boston community group name to use, the tutor supplied 'GreenRoots,' which partially did a key actor-selection step for the student rather than keeping all idea generation student-led. This was limited and caveated, so the harsher near-submission-ready deduction was not applied.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                7,
-                9
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced constraints repeatedly but did not clearly explain at least once that these constraints were meant to support the student's learning process, retention, or skill development.",
-              "points": 2
-            },
-            {
-              "evidence_turns": [
-                8
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved by producing a workable four-sentence draft, the tutor moved to final checks rather than prompting brief reflection on what changed in the student's approach and why it worked.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 6
-        },
         "base": {
           "score": 14,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "After the student asked for a specific Boston community group name to use, the tutor supplied 'GreenRoots,' which partially did a key actor-selection step for the student rather than keeping all idea generation student-led. This was limited and caveated, so the harsher near-submission-ready deduction was not applied.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints repeatedly but did not clearly explain at least once that these constraints were meant to support the student's learning process, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved by producing a workable four-sentence draft, the tutor moved to final checks rather than prompting brief reflection on what changed in the student's approach and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The phrase 'Tweaking a city name afterward would be fake work' was unnecessarily rigid and could undermine tutoring trust, even though the tutor was trying to maintain boundaries.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'Tweaking a city name afterward would be fake work' was unnecessarily rigid and could undermine tutoring trust, even though the tutor was trying to maintain boundaries.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

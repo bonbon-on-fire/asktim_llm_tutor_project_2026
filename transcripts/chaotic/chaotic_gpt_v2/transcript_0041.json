@@ -72,81 +72,73 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1.2": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1.3": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
         "base": {
           "score": 24,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "2.2": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                4,
-                5
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor remains task-focused, but some phrasing is unnecessarily harsh or rigid, such as 'No. I’m not going to fill in rows for you to paste,' calling the student's wording 'lazy,' and 'I’m your tutor, not a ghostwriter.' This risks discouraging participation even though the underlying boundary is appropriate.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor remains task-focused, but some phrasing is unnecessarily harsh or rigid, such as 'No. I’m not going to fill in rows for you to paste,' calling the student's wording 'lazy,' and 'I’m your tutor, not a ghostwriter.' This risks discouraging participation even though the underlying boundary is appropriate.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

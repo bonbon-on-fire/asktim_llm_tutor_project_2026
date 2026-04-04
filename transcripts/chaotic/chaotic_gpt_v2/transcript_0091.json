@@ -72,85 +72,77 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1_1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1_2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1_3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced the boundary against writing the assignment, but did not clearly explain a learning-centered rationale such as active reasoning, retention, or skill development. Statements like 'That would defeat the assignment' and 'my role is to tutor you' explain refusal, but not why the constraint supports the student's learning.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 20,
           "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "2_1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
         },
-        "2_2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "3_1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3_2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The line 'Don’t dump responsibility on me' is sharper and more adversarial than necessary, making the tone briefly rigid rather than supportive.",
-              "points": 2
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced the boundary against writing the assignment, but did not clearly explain a learning-centered rationale such as active reasoning, retention, or skill development. Statements like 'That would defeat the assignment' and 'my role is to tutor you' explain refusal, but not why the constraint supports the student's learning.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
+        }
+      },
+      "2_dialogue_quality": {
+        "base": {
+          "score": 12,
+          "max": 12
         },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        }
+      },
+      "3_communication_quality": {
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The line 'Don’t dump responsibility on me' is sharper and more adversarial than necessary, making the tone briefly rigid rather than supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

@@ -304,33 +304,87 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+_CRIT_ID_PAT = re.compile(r"^(\d+)[._](\d+)")
+
+
+def _norm_cid(cid: str) -> str:
+    """Normalize any criterion key to short ``X.Y`` dot-notation."""
+    m = _CRIT_ID_PAT.match(str(cid))
+    return f"{m.group(1)}.{m.group(2)}" if m else str(cid)
+
+
+def _norm_criterion_value(val: dict[str, Any]) -> dict[str, Any]:
+    """Normalize criterion value so score/max are direct keys (not nested under ``base``).
+
+    Some model outputs wrap per-criterion scores under a ``"base"`` block:
+    ``{"deductions": [], "base": {"score": 8, "max": 8}}``.
+
+    The canonical form is direct keys:
+    ``{"deductions": [], "score": 8, "max": 8}``.
+
+    If direct ``score``/``max`` are already present they are kept unchanged.
+    All other keys (e.g. ``deductions``) are preserved.
+    """
+    out = dict(val)
+    if "score" not in out and "max" not in out:
+        base = out.pop("base", None)
+        if isinstance(base, dict):
+            out["score"] = base.get("score", 0)
+            out["max"] = base.get("max", 0)
+    return out
+
+
 def _normalize_criterion_keys(sections: dict[str, Any]) -> dict[str, Any]:
-    """Normalize criterion keys inside each section to short ``X.Y`` dot-notation.
+    """Normalize criterion structure inside each section before writing to disk.
 
-    Handles all observed model output variants before the grade is written to disk:
+    Handles all three observed model output shapes and converts them to the
+    canonical nested-criteria form:
+    ``section["criteria"]["1.1"] = {"score": N, "max": M, "deductions": [...]}``.
 
-    * ``'1.1'``                                  → ``'1.1'``  (already correct)
-    * ``'1_1'``                                  → ``'1.1'``  (pure underscore)
-    * ``'1.1_socratic_method_guided_discovery'`` → ``'1.1'``  (dot-prefix + description)
-    * ``'1_1_socratic_method_guided_discovery'`` → ``'1.1'``  (underscore-prefix + description)
+    Shape 1 – nested ``criteria`` dict (schema-compliant, most common for GPT):
+    ``section["criteria"]["1_1_description"] = {"score": N, "max": M, ...}``
 
-    Section-level keys like ``'1_pedagogy'`` are left intact.
+    Shape 2 – nested ``criteria`` dict with ``base``-wrapped scores:
+    ``section["criteria"]["1.1"] = {"base": {"score": N, "max": M}, ...}``
+
+    Shape 3 – flat criterion keys directly in the section dict:
+    ``section["1.1"] = {"score": N, "max": M, ...}``
+    ``section["1_1_description"] = {"base": {"score": N, "max": M}, ...}``
+
+    In all cases, criterion IDs are also normalized to short ``X.Y`` dot-notation.
+    Section-level keys like ``'1_pedagogy'`` and ``'base'`` are left intact.
     """
     out: dict[str, Any] = {}
     for sid, section in sections.items():
         if not isinstance(section, dict):
             out[sid] = section
             continue
-        criteria = section.get("criteria")
-        if not isinstance(criteria, dict):
-            out[sid] = section
+
+        existing_criteria = section.get("criteria")
+        if isinstance(existing_criteria, dict):
+            normalized: dict[str, Any] = {}
+            for cid, val in existing_criteria.items():
+                dot_cid = _norm_cid(str(cid))
+                normalized[dot_cid] = _norm_criterion_value(val) if isinstance(val, dict) else val
+            out[sid] = {**section, "criteria": normalized}
             continue
-        normalized: dict[str, Any] = {}
-        for cid, val in criteria.items():
-            m = re.match(r"^(\d+)[._](\d+)", str(cid))
-            dot_cid = f"{m.group(1)}.{m.group(2)}" if m else str(cid)
-            normalized[dot_cid] = val
-        out[sid] = {**section, "criteria": normalized}
+
+        # Shape 3: criteria are flat keys directly in the section dict.
+        flat_criteria: dict[str, Any] = {}
+        non_criteria: dict[str, Any] = {}
+        for k, v in section.items():
+            m = _CRIT_ID_PAT.match(str(k))
+            if m and isinstance(v, dict):
+                dot_cid = f"{m.group(1)}.{m.group(2)}"
+                flat_criteria[dot_cid] = _norm_criterion_value(v)
+            else:
+                non_criteria[k] = v
+
+        if flat_criteria:
+            out[sid] = {**non_criteria, "criteria": flat_criteria}
+        else:
+            out[sid] = section
+
     return out
 
 

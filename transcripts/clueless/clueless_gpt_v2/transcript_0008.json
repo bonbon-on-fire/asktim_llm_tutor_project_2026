@@ -72,108 +72,114 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                9,
-                10
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor resolves the central methodological tradeoff for the student by recommending a scope rule ('mostly city boundary') and how to handle exceptions, rather than keeping that key reasoning step student-led.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8
-              ],
-              "sub_criterion_id": "1.2.B.a",
-              "reason": "When the student says they are confused about the whole process, the tutor gives a full step-by-step method dump instead of first diagnosing which part of the process is unclear.",
-              "points": 3
-            }
-          ],
-          "score": 3,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor refuses to fill in a row but does not explain the learning rationale behind that constraint beyond saying it would cross into doing the assignment.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 11,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor resolves the central methodological tradeoff for the student by recommending a scope rule ('mostly city boundary') and how to handle exceptions, rather than keeping that key reasoning step student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says they are confused about the whole process, the tutor gives a full step-by-step method dump instead of first diagnosing which part of the process is unclear.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to fill in a row but does not explain the learning rationale behind that constraint beyond saying it would cross into doing the assignment.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                6,
-                7,
-                8
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "Across multiple turns, the tutor repeatedly asks the student to pick one category or draft one row without sufficiently changing strategy, synthesizing, or simplifying, while the student remains confused.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across multiple turns, the tutor repeatedly asks the student to pick one category or draft one row without sufficiently changing strategy, synthesizing, or simplifying, while the student remains confused.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8,
-                9,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Phrases like 'You're overcomplicating it,' 'Don't spiral on this,' and 'We've circled this enough' create a somewhat rigid and dismissive tone that could reduce student comfort while confused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Phrases like 'You're overcomplicating it,' 'Don't spiral on this,' and 'We've circled this enough' create a somewhat rigid and dismissive tone that could reduce student comfort while confused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

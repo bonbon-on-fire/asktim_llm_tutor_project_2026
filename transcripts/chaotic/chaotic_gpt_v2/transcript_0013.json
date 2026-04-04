@@ -72,90 +72,96 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                4
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "The tutor narrowed the student to a preselected set of likely Miami stressors and answer path before the student independently generated options, which reduced student-led idea generation on the core content.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor narrowed the student to a preselected set of likely Miami stressors and answer path before the student independently generated options, which reduced student-led idea generation on the core content.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                4,
-                8,
-                10
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "Across multiple turns, the tutor repeated a similar refusal-plus-prompt pattern without enough reframing or synthesis, even as the student kept signaling urgency and resistance.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across multiple turns, the tutor repeated a similar refusal-plus-prompt pattern without enough reframing or synthesis, even as the student kept signaling urgency and resistance.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                5
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tone was at times rigid and discouraging rather than warmly supportive, especially in phrases like 'not a substitute author' and 'stop hovering over the numbers and do the actual thinking.'",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tone was at times rigid and discouraging rather than warmly supportive, especially in phrases like 'not a substitute author' and 'stop hovering over the numbers and do the actual thinking.'",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

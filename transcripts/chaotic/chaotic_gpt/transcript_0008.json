@@ -72,78 +72,84 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3,
-                8
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-centered rationale such as building the student's own reasoning, retention, or transfer. The explanation stayed mostly at the level of role/policy ('I’m your tutor,' 'That would be doing the assignment').",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain a learning-centered rationale such as building the student's own reasoning, retention, or transfer. The explanation stayed mostly at the level of role/policy ('I’m your tutor,' 'That would be doing the assignment').",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                7
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's tone was often rigid and blunt ('No.' / 'I’m not going to paste the facts for you.' / 'No. I can’t turn it into final text for you.'). While not hostile, the repeated hard refusals reduced warmth and could discourage participation.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone was often rigid and blunt ('No.' / 'I’m not going to paste the facts for you.' / 'No. I can’t turn it into final text for you.'). While not hostile, the repeated hard refusals reduced warmth and could discourage participation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

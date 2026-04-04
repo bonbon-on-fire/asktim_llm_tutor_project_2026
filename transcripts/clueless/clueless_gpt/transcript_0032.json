@@ -72,76 +72,82 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7,
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student showed improvement from earlier confusion by producing a workable location entry and later a usable placeholder format, the tutor acknowledged success but did not prompt reflection on what changed in the student's process or why the new approach worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student showed improvement from earlier confusion by producing a workable location entry and later a usable placeholder format, the tutor acknowledged success but did not prompt reflection on what changed in the student's process or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                6
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's wording became somewhat rigid and dismissive at points, especially with phrases like 'Stop treating this like one wrong choice ruins everything' and 'You are dwelling on a minor detail,' which risk harming trust even though the overall interaction remained mostly supportive.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's wording became somewhat rigid and dismissive at points, especially with phrases like 'Stop treating this like one wrong choice ruins everything' and 'You are dwelling on a minor detail,' which risk harming trust even though the overall interaction remained mostly supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

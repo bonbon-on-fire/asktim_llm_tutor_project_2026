@@ -72,75 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                7
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor supplies the key argumentative bridge by suggesting that if act consequentialism gives the same verdict across cases despite differing intuitions, then the theory is 'too coarse' and misses a distinction. That central critique move is a major part of the student's reasoning work.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improves from general confusion to identifying a plausible missing distinction ('using a person as a means'), the tutor moves straight to testing the principle instead of briefly asking the student to reflect on what changed in their thinking and why that move worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the key argumentative bridge by suggesting that if act consequentialism gives the same verdict across cases despite differing intuitions, then the theory is 'too coarse' and misses a distinction. That central critique move is a major part of the student's reasoning work.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from general confusion to identifying a plausible missing distinction ('using a person as a means'), the tutor moves straight to testing the principle instead of briefly asking the student to reflect on what changed in their thinking and why that move worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

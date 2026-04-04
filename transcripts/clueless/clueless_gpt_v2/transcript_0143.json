@@ -72,52 +72,58 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": []
-        },
-        "1.2": {
-          "deductions": []
-        },
-        "1.3": {
-          "deductions": []
-        },
         "base": {
           "score": 24,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": []
+          },
+          "1.2": {
+            "deductions": []
+          },
+          "1.3": {
+            "deductions": []
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": []
-        },
-        "2.2": {
-          "deductions": []
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": []
+          },
+          "2.2": {
+            "deductions": []
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": []
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4,
-                10
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor was mostly supportive, but a few turns became unnecessarily rigid or brusque during student confusion (for example, 'No—I’m not going to give you a model answer to copy' and 'Fine, but stay focused ... not more filler'). This risks discouraging participation even though the underlying guidance stayed on-task.",
-              "points": 2
-            }
-          ]
-        },
         "base": {
           "score": 8,
           "max": 10
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": []
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was mostly supportive, but a few turns became unnecessarily rigid or brusque during student confusion (for example, 'No—I’m not going to give you a model answer to copy' and 'Fine, but stay focused ... not more filler'). This risks discouraging participation even though the underlying guidance stayed on-task.",
+                "points": 2
+              }
+            ]
+          }
         }
       }
     },

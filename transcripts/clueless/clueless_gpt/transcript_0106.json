@@ -72,79 +72,85 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                5,
-                10
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor consistently used a constrained, question-driven approach, but never explicitly explained that this was to support the student's own reasoning, retention, or independent skill-building. Task advice like 'consistency matters more than perfection' did not clearly state the tutoring rationale behind the constraints.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 22,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used a constrained, question-driven approach, but never explicitly explained that this was to support the student's own reasoning, retention, or independent skill-building. Task advice like 'consistency matters more than perfection' did not clearly state the tutoring rationale behind the constraints.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                3,
-                5,
-                6
-              ],
-              "sub_criterion_id": "2.1.A.a",
-              "reason": "The tutor repeated the same boundary-consistency move across several turns ('pick one unit,' 'use a consistent unit,' 'commit to administrative vs metro Jakarta') while the student remained confused. Although the tutor eventually widened to the table's bigger-picture logic, the middle of the exchange cycled without enough synthesis or a sharper reframing.",
-              "points": 4
-            }
-          ],
-          "score": 0,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 8,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeated the same boundary-consistency move across several turns ('pick one unit,' 'use a consistent unit,' 'commit to administrative vs metro Jakarta') while the student remained confused. Although the tutor eventually widened to the table's bigger-picture logic, the middle of the exchange cycled without enough synthesis or a sharper reframing.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

@@ -72,93 +72,85 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1_1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [],
-          "base": {
-            "score": 12,
-            "max": 12
-          }
-        },
-        "1_2_scaffolding_and_progression": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1_3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                2,
-                3,
-                5,
-                7
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced a no-ghostwriting boundary but did not clearly explain that this constraint was meant to support the student's learning, reasoning, or retention. The explanation stayed at 'I won't do the assignment' rather than giving an explicit pedagogical rationale.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 2,
-            "max": 4
-          }
-        },
         "base": {
           "score": 20,
           "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "2_1_redundancy_and_spiraling": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
         },
-        "2_2_assignment_anchoring": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "3_1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3_2_appropriate_tone_and_support": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "Several responses use rigid phrasing such as 'I’m your tutor, not a ghostwriter' and 'You’re still trying to get me to supply the content,' which can come across as punitive or distrustful even though later turns are more supportive. Because the rest of the exchange remains helpful, the smaller tone deduction is appropriate.",
-              "points": 2
-            }
-          ],
-          "base": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary but did not clearly explain that this constraint was meant to support the student's learning, reasoning, or retention. The explanation stayed at 'I won't do the assignment' rather than giving an explicit pedagogical rationale.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
+        }
+      },
+      "2_dialogue_quality": {
+        "base": {
+          "score": 12,
+          "max": 12
         },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        }
+      },
+      "3_communication_quality": {
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses use rigid phrasing such as 'I’m your tutor, not a ghostwriter' and 'You’re still trying to get me to supply the content,' which can come across as punitive or distrustful even though later turns are more supportive. Because the rest of the exchange remains helpful, the smaller tone deduction is appropriate.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

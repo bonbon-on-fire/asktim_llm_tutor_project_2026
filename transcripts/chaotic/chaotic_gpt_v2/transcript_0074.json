@@ -72,75 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "The tutor directly supplied a central interpretive step by stating that act consequentialism does not treat side-effect versus means as fundamental and instead looks only to best overall consequences. That answered a key reasoning move for applying the theory to Fuel and Blood, rather than having the student derive it.",
-              "points": 6
-            }
-          ],
-          "score": 6,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                5
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced boundaries against giving the answer, but did not clearly explain that those constraints support learning through active reasoning, retention, or skill development. The stated rationale focused on assignment ownership rather than tutoring purpose.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 14,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor directly supplied a central interpretive step by stating that act consequentialism does not treat side-effect versus means as fundamental and instead looks only to best overall consequences. That answered a key reasoning move for applying the theory to Fuel and Blood, rather than having the student derive it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against giving the answer, but did not clearly explain that those constraints support learning through active reasoning, retention, or skill development. The stated rationale focused on assignment ownership rather than tutoring purpose.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

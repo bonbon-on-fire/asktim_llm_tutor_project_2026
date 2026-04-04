@@ -72,88 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                4
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "Tutor directly states the core act consequentialist standard ('asks only which act has the best overall outcome in that specific case') before the student formulates it, revealing a central idea rather than keeping that step fully student-led.",
-              "points": 6
-            }
-          ],
-          "base": {
-            "score": 6,
-            "max": 12
-          }
-        },
-        "1.2": {
-          "deductions": [],
-          "base": {
-            "score": 6,
-            "max": 6
-          }
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                10
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improves from earlier failed attempts and produces a workable thesis, the tutor moves immediately to case classification instead of prompting reflection on what changed and why the new reasoning works better.",
-              "points": 2
-            }
-          ],
-          "base": {
-            "score": 4,
-            "max": 6
-          }
-        },
         "base": {
           "score": 16,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor directly states the core act consequentialist standard ('asks only which act has the best overall outcome in that specific case') before the student formulates it, revealing a central idea rather than keeping that step fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from earlier failed attempts and produces a workable thesis, the tutor moves immediately to case classification instead of prompting reflection on what changed and why the new reasoning works better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "2.2": {
-          "deductions": [],
-          "base": {
-            "score": 8,
-            "max": 8
-          }
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
-        "3.2": {
-          "deductions": [],
-          "base": {
-            "score": 4,
-            "max": 4
-          }
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },

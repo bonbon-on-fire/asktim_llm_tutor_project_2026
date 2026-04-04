@@ -72,80 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1": {
-          "deductions": [],
-          "score": 12,
-          "max": 12
-        },
-        "1.2": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                1,
-                3,
-                4,
-                5,
-                7
-              ],
-              "sub_criterion_id": "1.3.A.a",
-              "reason": "The tutor repeatedly enforced a no-ghostwriting boundary, but did not clearly explain a learning rationale such as active reasoning, retention, or skill-building; the comments stayed at 'I'm not doing it for you' rather than why that supports the student's learning.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 20,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary, but did not clearly explain a learning rationale such as active reasoning, retention, or skill-building; the comments stayed at 'I'm not doing it for you' rather than why that supports the student's learning.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                3,
-                4,
-                7
-              ],
-              "sub_criterion_id": "3.2.A.a",
-              "reason": "The tutor's repeated refusals included rigid phrasing such as 'No. I’m your tutor, not your ghostwriter' and 'Still no,' which risks sounding cold rather than warmly supportive, even though the overall interaction remained task-focused.",
-              "points": 2
-            }
-          ],
-          "score": 2,
-          "max": 4
-        },
         "base": {
           "score": 6,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's repeated refusals included rigid phrasing such as 'No. I’m your tutor, not your ghostwriter' and 'Still no,' which risks sounding cold rather than warmly supportive, even though the overall interaction remained task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
         }
       }
     },

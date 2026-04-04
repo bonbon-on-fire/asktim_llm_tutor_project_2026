@@ -72,87 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "1.1_socratic_method_guided_discovery_and_direct_work": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                2,
-                8
-              ],
-              "sub_criterion_id": "1.1.C.a",
-              "reason": "Tutor supplied key conclusions before student exploration by naming the main Miami stressors and by narrowing extreme heat to a high 7–9 range rather than first eliciting the student's own candidates and severity judgment.",
-              "points": 6
-            },
-            {
-              "evidence_turns": [
-                4,
-                5,
-                8,
-                9
-              ],
-              "sub_criterion_id": "1.1.C.b",
-              "reason": "Tutor did central reasoning work by specifying what points justify a 10 for Miami, choosing the 'strongest 3 points,' giving the top 3 reasons for extreme heat, and defining the 8-versus-9 distinction for the student.",
-              "points": 6
-            }
-          ],
-          "score": 0,
-          "max": 12
-        },
-        "1.2_scaffolding_and_progression": {
-          "deductions": [],
-          "score": 6,
-          "max": 6
-        },
-        "1.3_meta_learning_and_methodology_feedback": {
-          "deductions": [
-            {
-              "evidence_turns": [
-                6,
-                7
-              ],
-              "sub_criterion_id": "1.3.C.a",
-              "reason": "After the student improved from a vague sentence to a substantially stronger one, the tutor did not prompt reflection on what changed in the reasoning and why the revision worked.",
-              "points": 2
-            }
-          ],
-          "score": 4,
-          "max": 6
-        },
         "base": {
           "score": 10,
           "max": 24
+        },
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied key conclusions before student exploration by naming the main Miami stressors and by narrowing extreme heat to a high 7–9 range rather than first eliciting the student's own candidates and severity judgment.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor did central reasoning work by specifying what points justify a 10 for Miami, choosing the 'strongest 3 points,' giving the top 3 reasons for extreme heat, and defining the 8-versus-9 distinction for the student.",
+                "points": 6
+              }
+            ],
+            "score": 0,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a vague sentence to a substantially stronger one, the tutor did not prompt reflection on what changed in the reasoning and why the revision worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
         }
       },
       "2_dialogue_quality": {
-        "2.1_redundancy_and_spiraling": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "2.2_assignment_anchoring": {
-          "deductions": [],
-          "score": 8,
-          "max": 8
-        },
         "base": {
           "score": 12,
           "max": 12
+        },
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
         }
       },
       "3_communication_quality": {
-        "3.1_bite_sized_and_clear_responses": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
-        "3.2_appropriate_tone_and_support": {
-          "deductions": [],
-          "score": 4,
-          "max": 4
-        },
         "base": {
           "score": 8,
           "max": 8
+        },
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
         }
       }
     },
