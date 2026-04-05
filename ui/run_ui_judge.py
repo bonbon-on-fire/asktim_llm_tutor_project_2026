@@ -42,8 +42,6 @@ TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 # Parallel workers — change this value to control concurrency.
 # ---------------------------------------------------------------------------
 PARALLEL_WORKERS = 6
-# Temporary output folder version suffix. Set to "" to disable.
-OUTPUT_VERSION_SUFFIX = "v3"
 
 
 def _require_openai_api_key() -> None:
