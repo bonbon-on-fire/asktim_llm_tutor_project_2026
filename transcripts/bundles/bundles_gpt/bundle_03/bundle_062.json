@@ -1,0 +1,114 @@
+{
+  "bundle_file": "bundle_062.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0044",
+    "cooperative/cooperative_raw/transcript_0069",
+    "cooperative/cooperative_raw/transcript_0093"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turns 2-4",
+                  "Transcript 1, Turns 7-8"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signaled that the core problem was not knowing the overall governance/search framework, but the tutor initially kept pushing for specific New Orleans actors and classifications before diagnosing that underlying confusion. The tutor eventually corrected course by shifting to search method, but only after several turns of mismatched prompting.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2, Turns 8-10",
+                  "Transcript 3, Turns 7-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students moved from uncertainty to workable classifications or draft responses, the tutor generally advanced straight to drafting or revision rather than prompting reflection on what changed in their thinking and why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turns 3-7"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeated a similar pattern of asking the student to classify or name actors across multiple turns while the student remained stuck on the broader conceptual issue. Progress only came after a later reframing to search method and governance structure, so the exchange showed avoidable spiraling before synthesis.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently avoided doing the assignment for the student and usually gave clear, process-oriented guidance anchored to the task. The main weakness was Transcript 1, where the tutor stayed too long in a repetitive classify-this-actor pattern before diagnosing that the student first needed a broader framework for city climate governance and source-finding. A smaller deduction was applied for missing reflection after successful revision; the tutor often moved directly into the next task instead of asking the student to articulate what changed in their reasoning. Evidence for a deduction under tutoring-rationale was borderline, so no deduction was taken there.",
+    "judge_reasoning": "The tutor earned full credit for guided discovery because they did not provide submission-ready case analyses or rewrite the students' work; instead, they pushed students to classify actors, justify criteria, and draft in their own words. The largest deductions came from Transcript 1, where the tutor initially addressed the wrong level of confusion and repeated similar prompts without enough reframing, which fits both diagnosis and spiraling concerns. Meta-learning was reasonably strong through concrete method advice about evidence strength, criteria, and role distinctions, but the tutor missed chances to ask students to reflect on why their improved approach worked. Communication remained concise, supportive, and clearly formative throughout the bundle.",
+    "total_score": 35,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

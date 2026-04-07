@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_072.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0141",
+    "cooperative/cooperative_raw/transcript_0120",
+    "cooperative/cooperative_raw/transcript_0144"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced process constraints by refusing to write or phrase the student's response, but did not explicitly explain why this constraint supports learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a weaker attempt to a more precise classification, the tutor acknowledged the improvement and moved on, but did not prompt reflection on what changed in the student's reasoning or why the revision was stronger.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor consistently kept the student responsible for identifying actors, sorting them, and articulating participation gaps, while staying closely anchored to the assignment. Potentially directive moments were limited to definitions and heuristics rather than submission-ready content, so I did not deduct under guided discovery. The main weakness was meta-learning: the tutor set boundaries well but rarely explained the learning rationale for those boundaries, and they usually advanced immediately after successful revision instead of prompting reflection on what changed.",
+    "judge_reasoning": "The tutor showed strong pedagogy overall: they avoided doing the student's forum post, used short interactive prompts, and repeatedly asked the student to justify classifications like leading, engaged, and missing with evidence. They also responded well to confusion by simplifying the task, defining 'actor,' and building from the student's partial answers instead of restarting from scratch. I deducted only in 1.3 because the tutor's refusal to write for the student was not paired with an explicit explanation of why that helps learning, and because successful corrections were usually praised without a follow-up reflection prompt. Dialogue quality and communication remained strong throughout, with concise, supportive, assignment-focused exchanges.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

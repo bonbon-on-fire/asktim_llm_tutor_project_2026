@@ -1,0 +1,114 @@
+{
+  "bundle_file": "bundle_049.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0015",
+    "cooperative/cooperative_raw/transcript_0017",
+    "cooperative/cooperative_raw/transcript_0041"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 1",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set boundaries such as 'you need to do the sorting' and 'you need to write them yourself,' but never clearly explained why those constraints support the student's learning, reasoning, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 7-10",
+                  "Transcript 3 Turns 5-8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from weaker earlier attempts to stronger rankings and justifications, the tutor moved forward with the task rather than prompting reflection on what changed in the student's method and why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 1-6"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly restated the assignment and returned to the same move of asking for the city or stressors without enough synthesis or a sharper change in strategy, so the dialogue looped before making real progress.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Across the full bundle, the tutor was generally strong at guided questioning, keeping the student doing the core classification, ranking, and justification work. The main weakness was Transcript 1, where the conversation became repetitive before the tutor shifted strategy. I used smaller deductions where evidence was ambiguous; for example, I did not deduct for the tutor's city-comparison guidance because it stayed mostly comparative rather than becoming submission-ready content.",
+    "judge_reasoning": "The tutor mostly preserved student ownership of the assignment and avoided writing the student's final table entries, so no deduction was warranted under 1.1 or 1.2. The clearest pedagogy misses were meta-level: the tutor imposed constraints without explicitly saying why that supports learning, and missed chances to ask the student to reflect after successful revisions. The largest dialogue issue was repetitive cycling in Transcript 1, where the tutor kept rephrasing the assignment and returning to the same prompt pattern without enough synthesis. Communication was otherwise clear, concise, and supportive overall.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

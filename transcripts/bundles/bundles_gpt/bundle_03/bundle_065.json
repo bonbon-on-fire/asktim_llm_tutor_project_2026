@@ -1,0 +1,109 @@
+{
+  "bundle_file": "bundle_065.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0116",
+    "cooperative/cooperative_raw/transcript_0070",
+    "cooperative/cooperative_raw/transcript_0094"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a defensible categorization or summary, the tutor moved forward to the next task instead of prompting reflection on what changed in the student's reasoning or why the revised method worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally effective but at times used a rigid or blunt tone ('Don't list random groups,' 'Vibes don't count,' 'No—you do not need the whole city structure') that could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently kept the work student-led, used assignment-relevant categories, and redirected confusion back to the actual task. The main weaknesses were a missed opportunity for reflection after student improvement and a somewhat harsh tone in parts of Transcript 1. Where evidence was somewhat debatable, deductions were kept limited rather than expanded into overlapping categories.",
+    "judge_reasoning": "The tutor avoided doing the assignment for the student: they repeatedly asked for specific actors, evidence, and self-generated categorizations rather than supplying a forum-ready answer. Scaffolding was strong, with clear progression from broad categories to specific actor tests and repeated re-anchoring to the deliverable. I deducted under 1.3.C because, after students moved from confusion to workable drafts or clearer rules, the tutor generally advanced to the next step without asking them to reflect on what changed in their reasoning. I also deducted under 3.2.A because some phrasing in Transcript 1 was unnecessarily blunt, even though the overall interaction remained on-task and mostly supportive.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_058.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0091",
+    "cooperative/cooperative_raw/transcript_0020",
+    "cooperative/cooperative_raw/transcript_0044"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier vagueness to a clearer distinction about developers and then produced a workable sentence, the tutor affirmed the improvement and immediately moved on to the next task instead of prompting reflection on what changed in the student's reasoning and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is usually helpful, but lines such as \"You're overdwelling on classification,\" \"Let's stop looping,\" and \"Now stop asking for another example\" create a noticeably rigid tone toward a confused student and risk discouraging participation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed strongly anchored to the assignment, used evidence-based prompting, and generally kept idea generation student-led rather than supplying submission-ready content. The main weaknesses were a missed chance to prompt reflection after student improvement and a few rigid phrasing choices in the more frustrated exchange. I considered deductions for missing rationale and repetition, but the tutor did give at least minimal process framing (for example, insisting the student do the thinking) and eventually synthesized rather than endlessly repeating.",
+    "judge_reasoning": "The tutor performed well on the core pedagogy: they repeatedly redirected the student to evidence, distinctions between authority and participation, and the actual forum deliverable without writing the assignment for the student. Scaffolding was generally effective, especially in the Boston and Jakarta conversations, where the tutor narrowed broad categories into evidence-backed actor roles and gaps. I deducted under 1.3.C because, after the student improved, the tutor praised and advanced without asking the student to reflect on what changed in their reasoning. I also deducted under 3.2.A because several commands in Transcript 1 sounded more rigid than supportive for a student who was already anxious and confused.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

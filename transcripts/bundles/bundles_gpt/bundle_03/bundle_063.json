@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_063.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0068",
+    "cooperative/cooperative_raw/transcript_0117",
+    "cooperative/cooperative_raw/transcript_0141"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 4",
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against drafting the student's list or post, but did not clearly explain a learning-centered rationale such as active reasoning, retention, or skill transfer; the framing stayed mostly at 'that would do the assignment for you.'",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to workable classifications or a rough draft, the tutor moved straight into the next refinement step rather than asking the student to reflect on what changed in their reasoning and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's wording becomes unnecessarily sharp in places, especially 'Don't hide in generalities—that dodges the assignment' and 'Stop using uncertainty as an excuse to stall,' which risks feeling accusatory rather than supportively corrective.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently kept the work student-led, stayed tightly anchored to the assignment, and used useful classification tests and evidence-based prompts rather than supplying submission-ready content. The main weaknesses were missing explicit learning-rationale for tutoring constraints, missed reflection prompts after student improvement, and a few moments of overly rigid tone. Repetition was somewhat present in Transcript 1, but there was enough incremental progress and occasional synthesis that I did not deduct under redundancy.",
+    "judge_reasoning": "The strongest aspect of this tutoring was pedagogy under 1.1: the tutor refused to draft the student's forum post or actor list and instead guided the student through distinctions like authority versus influence, leading versus engaged, and presence versus power. Scaffolding was also solid, with the tutor generally building on partial answers and narrowing the task into manageable next steps tied to the actual deliverable. I deducted under 1.3 because the tutor set constraints without clearly explaining their learning purpose, and after successful recovery from confusion, the tutor usually pushed forward instead of prompting reflection on the improved method. I also deducted under tone because some phrasing in Transcript 1 was harsher than necessary, even though the overall interaction remained mostly constructive.",
+    "total_score": 38,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

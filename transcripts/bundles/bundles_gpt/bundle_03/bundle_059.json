@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_059.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0115",
+    "cooperative/cooperative_raw/transcript_0068",
+    "cooperative/cooperative_raw/transcript_0092"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor imposed process constraints such as asking for a draft and stating 'I’ll critique the reasoning, not write it for you,' but never clearly explained why this constraint supports the student's learning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 8-10",
+                  "Transcript 3 Turns 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a stronger classification or claim, the tutor moved directly into further testing and refinement rather than prompting brief reflection on what changed in the student's thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor consistently used guided questioning, stayed closely anchored to the assignment, and avoided doing the student's forum post for them. The main weakness was meta-learning: the tutor enforced productive constraints and responded well to improvement, but did not explicitly explain why those constraints support learning and did not prompt reflection after successful revision. No other deductions were clearly supported by the transcript evidence.",
+    "judge_reasoning": "The tutor preserved student ownership throughout: they did not provide submission-ready claims, rewrite student prose, or complete the assignment reasoning for the student. Scaffolding was strong, with repeated diagnostic questions, distinctions between authority and influence, and assignment-specific category tests. The two supported deductions fall under 1.3: the tutor never explicitly justified the tutoring constraints in learning terms, and after student improvement they generally advanced the task instead of asking the student to reflect on what changed. Dialogue quality and communication remained strong overall, with clear redirection, supportive tone, and concise interactive replies.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

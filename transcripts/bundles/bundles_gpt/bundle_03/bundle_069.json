@@ -1,0 +1,95 @@
+{
+  "bundle_file": "bundle_069.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0069",
+    "cooperative/cooperative_raw/transcript_0119",
+    "cooperative/cooperative_raw/transcript_0143"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable actor analysis, the tutor moved directly into the next task or stress-test instead of prompting brief reflection on what changed in the student's reasoning and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "The tutor consistently used guided discovery, kept the student doing the substantive classification work, and stayed tightly anchored to the assignment. The main missed opportunity was meta-learning reflection after the student made clear progress. Tone was occasionally blunt when refusing ghostwriting, but the broader interaction remained supportive, so no communication deduction was applied.",
+    "judge_reasoning": "Across the bundle, the tutor avoided giving submission-ready content and instead prompted the student to sort actors, justify roles, and identify gaps using evidence. Scaffolding was strong: the tutor repeatedly narrowed the task, built on partial answers, and redirected the student back to the forum assignment when they asked for full models. The tutor also explained the no-ghostwriting constraint and gave process-level feedback about how to classify actors and what evidence would be sufficient. The only clear rubric-supported deduction is that after student improvement, the tutor generally advanced to the next step rather than asking the student to reflect on what had changed in their reasoning.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

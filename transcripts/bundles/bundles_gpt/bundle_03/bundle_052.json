@@ -1,0 +1,125 @@
+{
+  "bundle_file": "bundle_052.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0087",
+    "cooperative/cooperative_raw/transcript_0018",
+    "cooperative/cooperative_raw/transcript_0042"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 4",
+                  "Transcript 1 Turn 5"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed broad confusion, the tutor often responded with full explanatory frameworks and sequencing rather than first diagnosing the precise sticking point. This was helpful content, but it skipped an initial diagnostic step about what the student already understood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor repeatedly enforced a 'you do the thinking/try it yourself' stance but did not clearly explain at least once why that constraint supports learning, retention, or independent skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty to stronger distinctions and justifications, the tutor praised the result and moved on, but did not prompt reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 9",
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses used a somewhat rigid or brusque tone ('you need to do the thinking,' 'that's the mistake,' 'you're just thinking in circles,' 'Fine. Commit to it'), which could make confusion feel more punitive than supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 46,
+    "overview": "Holistically, the tutor stayed anchored to the assignment and consistently avoided giving submission-ready rows or polished final writing. The strongest work was in guided questioning, concrete distinctions, and keeping the student responsible for generating ratings and justifications. Deductions come from limited diagnostic questioning before explanation in parts of Transcript 1, no explicit rationale for the tutor's constraint-based approach, missed reflection prompts after student improvement, and a somewhat brusque tone in several Miami turns. Ambiguity was resolved conservatively: repeated explanation in Transcript 1 was not separately penalized as redundancy because the tutor eventually reframed and advanced the task.",
+    "judge_reasoning": "The tutor earned full credit on 1.1 because, across all three transcripts, they did not provide near-submission-ready output or rewrite the student's work; instead, they used prompts, templates, and conceptual distinctions to elicit student reasoning. A deduction was applied in 1.2 because the tutor sometimes answered broad confusion with immediate explanatory frameworks rather than first diagnosing the student's exact misunderstanding. In 1.3, the tutor gave strong process coaching, but never explicitly explained why the 'you try first' constraint supports learning and did not prompt reflection after clear student improvement. Communication was generally clear and concise, but several turns in Transcript 1 were noticeably rigid in tone, warranting a support/tone deduction.",
+    "total_score": 35,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

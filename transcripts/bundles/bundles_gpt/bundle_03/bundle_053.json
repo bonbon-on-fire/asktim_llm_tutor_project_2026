@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_053.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0111",
+    "cooperative/cooperative_raw/transcript_0067",
+    "cooperative/cooperative_raw/transcript_0090"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 4",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor was generally guided and interactive, but at several points supplied the key conceptual distinction for the student, such as framing sea level rise as a driver versus flooding as an impact, or telling the student to justify one row as an underlying trend and the other as direct disruption. Those are central reasoning steps for the assignment rather than purely process prompts.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a process-first stance and briefly refused to fill a row, but did not clearly explain why that constraint supports the student's learning, retention, or independent reasoning. This was borderline evidence, so only the rubric's single deduction was applied.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 6",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When students improved after earlier confusion, the tutor typically affirmed the progress and moved to the next step without prompting reflection on what changed in the student's thinking or why the revised method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently supportive, assignment-anchored, and strong at stepwise scaffolding. The main weakness was that the tutor sometimes provided the pivotal framing distinction instead of fully eliciting it from the student. A smaller, borderline deduction was applied for not explicitly explaining the learning rationale behind the no-answer/process-only stance.",
+    "judge_reasoning": "The strongest aspect of the tutoring was structure: the tutor repeatedly narrowed the task, diagnosed the student's immediate sticking point, and built from student progress rather than restarting. I deducted under 1.1 because the tutor sometimes did the key reasoning move by supplying the decisive category frame, especially around driver-versus-impact distinctions. I also deducted under 1.3.A because the tutor did not clearly articulate why withholding direct answers helps learning, and under 1.3.C because moments of student improvement were usually affirmed but not turned into reflection on method. Dialogue quality and communication remained strong throughout, with clear redirection, no off-topic drift, and concise supportive tone.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

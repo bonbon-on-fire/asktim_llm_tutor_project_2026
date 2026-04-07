@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_042.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0093",
+    "clueless/clueless_raw/transcript_0117",
+    "clueless/clueless_raw/transcript_0141"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion to a workable conclusion, the tutor strengthened and extended the answer but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 4",
+                  "Transcript 2 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often efficient and supportive, but several lines were unnecessarily rigid or sharp (for example, 'That's avoidance,' 'Stop restarting,' and 'You're dwelling on detail'), which risks making the student feel corrected rather than supported.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor consistently kept the work student-led, stayed anchored to the assignment, and used clear scaffolds to separate leading, engaged, and missing actors. No near-submission-ready writing was provided, and the tutor regularly redirected the student back to manageable next steps. I made only limited deductions where evidence was clear: the tone occasionally became too blunt, and the tutor missed a good chance to prompt reflection after student improvement.",
+    "judge_reasoning": "Across the bundle, the tutor largely followed a strong Socratic approach: they explained the task, asked targeted classification questions, and avoided writing the forum post or completing the actor analysis for the student. Scaffolding was generally effective, with repeated re-grounding in the assignment's actual deliverable and practical methods like sorting actors by authority, influence, and exclusion. I did not deduct in 1.1 or 1.2 because the tutor avoided doing the student's core reasoning and usually responded to the student's actual confusion. The main deductions are for missed reflection after successful revision and for several noticeably rigid phrases that weakened the otherwise supportive coaching tone.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

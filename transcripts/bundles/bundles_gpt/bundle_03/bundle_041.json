@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_041.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0109",
+    "cooperative/cooperative_raw/transcript_0062",
+    "cooperative/cooperative_raw/transcript_0086"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor regularly enforced process constraints and stepwise methods (for example, asking the student to compare stressors, define criteria, and draft labels) but never explicitly explained why this constrained, student-led approach supports learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 2 Turn 8",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable rating rule and clearer evidence formulation, the tutor affirmed the progress and moved to the next task without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently stayed assignment-focused, kept the student doing the core reasoning, and avoided giving submission-ready table entries or polished final prose. The main weaknesses were meta-level: the tutor never explicitly explained why the constrained, stepwise approach was being used, and they missed chances to ask the student to reflect after clear improvement. I considered possible deductions for scaffolding in the more confused Jakarta exchange, but the tutor did vary frames and re-anchor the assignment rather than simply repeating the same move.",
+    "judge_reasoning": "The tutor performed strongly on guided discovery: they asked the student to sort stressors, compare severity, define rating criteria, and identify usable evidence rather than supplying finished rows or final justifications. They also remained tightly anchored to the stressors-table task and used concise, supportive language throughout. The principal deductions are both under meta-learning: there was no explicit rationale for the tutoring constraints, and after successful revisions the tutor did not prompt reflection on what changed and why it worked. Because the rest of the rubric areas were well supported by the transcript evidence, those are the only deductions applied.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

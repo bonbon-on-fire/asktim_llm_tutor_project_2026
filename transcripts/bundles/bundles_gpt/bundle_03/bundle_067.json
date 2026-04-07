@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_067.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0023",
+    "cooperative/cooperative_raw/transcript_0047"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 6",
+                  "Transcript 2, Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces process boundaries (for example, refusing to 'build the assignment' and steering the student back to doing the verification), but never clearly explains why those constraints help the student learn or retain the method.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2, Turns 7-9",
+                  "Transcript 3, Turns 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from tentative or fuzzy reasoning to a clearer, evidence-based draft, the tutor praises the improvement and moves to the next task without prompting reflection on what changed in the student's thinking or why the revised method worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stays closely anchored to the assignment, uses evidence-based prompts, and keeps the student responsible for choosing and verifying actors rather than supplying a submission-ready post. The main weaknesses are in meta-learning: the tutor applies constraints and good methods, but does not explicitly explain why those constraints support learning, and misses chances to prompt reflection after student improvement. Repetition in Transcript 1 was somewhat borderline, but the tutor eventually reframed and advanced the task, so I did not deduct under dialogue spiraling.",
+    "judge_reasoning": "I kept full points for 1.1 because the tutor did not provide a finished Boston analysis or rewrite the student's forum post; instead, the tutor repeatedly asked the student to verify actor roles with document evidence and exact verbs. I also kept full points for 1.2, 2.2, and communication criteria because the tutor generally built on student progress, stayed focused on the assignment, and used clear, manageable prompts. I deducted 1.3.A.a because the tutor never explicitly states that the refusal to do the assignment for the student is meant to strengthen the student's own reasoning or long-term skill. I deducted 1.3.C.a because after noticeable improvement in the student's categorization method and draft logic, the tutor moved forward without asking the student to reflect on what changed and why the new approach was stronger.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

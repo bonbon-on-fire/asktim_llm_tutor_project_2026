@@ -1,0 +1,142 @@
+{
+  "bundle_file": "bundle_044.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0094",
+    "clueless/clueless_raw/transcript_0118",
+    "clueless/clueless_raw/transcript_0142"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refuses to provide a full example or answer, but does not clearly explain a learning-centered rationale such as helping the student practice reasoning, retain the method, or build independent analysis skills.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student makes clearer progress, the tutor affirms it and moves on to the next step without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 4",
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returns to the same authority/participation/exclusion distinction while the student remains confused, and only modestly varies the move instead of synthesizing or shifting strategy earlier.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 2",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several replies become long, list-heavy explanations where a shorter interactive prompt would have better matched the student's confusion and supported back-and-forth reasoning.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tone is often basically supportive, but moments like \"Fine—from scratch,\" \"No. I'm your tutor, not your substitute writer,\" and \"Now stop circling the concept\" come across as rigid or brusque in ways that could reduce trust.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 2,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 46,
+    "overview": "The tutor consistently stayed anchored to the assignment and generally kept the student doing the work rather than producing a submission-ready answer. Major deductions come from weak meta-learning support, repeated cycling on the same distinctions after confusion, long explanatory turns, and some brusque phrasing. I chose the smaller interpretation on pedagogy: the tutor gave strong frameworks and examples, but not enough city-specific final content to count as doing the assignment for the student.",
+    "judge_reasoning": "Across the bundle, the tutor was solid on assignment alignment and usually pushed the student to identify actors, categories, and evidence independently. I did not deduct under 1.1 because the tutor refused to supply a finished city-specific table or forum post, even when the student asked repeatedly. However, the tutor rarely explained why those constraints support learning, missed reflection opportunities after student improvement, and sometimes kept repeating the same framework instead of shifting approach. Communication also suffered from several long list-style explanations and a few sharp lines that made the tone less supportive.",
+    "total_score": 30,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

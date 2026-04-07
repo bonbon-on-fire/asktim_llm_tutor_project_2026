@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_048.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0134",
+    "cooperative/cooperative_raw/transcript_0112",
+    "cooperative/cooperative_raw/transcript_0136"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from uncertainty about how to distinguish short-term and long-term priority to a stronger two-sentence distinction, the tutor praised the logic and advanced to evidence testing/next steps without prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor consistently avoided giving submission-ready content, used guided questioning, and kept the work anchored to the actual stressors-table task. The tutor also gave useful method feedback about evidence, ratings, sector selection, and prioritization. The main missed opportunity was metacognitive reflection after the student improved. Some replies were firm, but the evidence was not strong enough to justify additional tone or clarity deductions.",
+    "judge_reasoning": "The tutor earned full credit on guided discovery because they repeatedly refused to fill rows or provide model answers and instead prompted the student to generate stressors, sectors, ratings, and justifications. Scaffolding was strong: the tutor narrowed the task, built on partial answers, and redirected effectively when the student got stuck or drifted toward weak options like poorly justified air quality. The only clear rubric violation was under 1.3.C, because after noticeable student improvement the tutor praised the result but did not ask the student to reflect on what changed in their reasoning. Dialogue quality and communication remained strong overall, with concise, assignment-focused, and mostly supportive responses.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

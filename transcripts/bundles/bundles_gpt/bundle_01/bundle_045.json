@@ -1,0 +1,108 @@
+{
+  "bundle_file": "bundle_045.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0023",
+    "clueless/clueless_raw/transcript_0047",
+    "clueless/clueless_raw/transcript_0071"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students moved from confusion to workable claims or outlines, the tutor reinforced next steps but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 4",
+                  "Transcript 3 Turn 2",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally supportive, but several turns used a noticeably rigid or sharp tone ('No—I'm your tutor, not your writer,' 'You're overcomplicating,' 'don't hide behind a general model,' 'Now stop circling') that could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor consistently kept the work student-led, re-anchored to the assignment, and used concise scaffolding rather than writing the submission. The main weaknesses were missing reflection after student improvement and a somewhat rigid tone in a few turns. Tone is the most borderline deduction, but the repeated curt phrasing across transcripts supports a small penalty.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used guided questions, role distinctions, and evidence-based prompts to help students classify actors and shape forum claims. Scaffolding was strong: the tutor repeatedly narrowed the task, built from student answers, and kept the discussion anchored to leaders, engaged actors, and missing groups. A deduction is warranted under meta-learning because when students finally produced workable outlines, the tutor moved straight to the next task instead of asking them to reflect on what changed in their method. A second deduction is warranted for tone because several responses were unnecessarily sharp even though the overall interaction remained mostly supportive and formative.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

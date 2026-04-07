@@ -1,0 +1,95 @@
+{
+  "bundle_file": "bundle_066.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0140",
+    "cooperative/cooperative_raw/transcript_0118",
+    "cooperative/cooperative_raw/transcript_0142"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty into a workable draft, the tutor praised the progress and moved to next-step evidence checks, but did not prompt brief reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor consistently stayed anchored to the assignment, used guided questions, and avoided giving submission-ready writing. The main missed opportunity was metacognitive reflection after students successfully revised their thinking. No larger deduction was applied where evidence was borderline, because the tutor generally kept idea generation with the student and used concise, supportive prompts.",
+    "judge_reasoning": "The tutor performed strongly on Socratic guidance: they refused copyable examples, pushed the student to name actors and evidence, and used structured prompts rather than writing the forum post for the student. Scaffolding was effective, with the tutor building from partial answers and narrowing the task into manageable distinctions such as leading versus engaged versus missing. The tutor also gave specific process-level feedback, including evidence tests, role distinctions, and drafting formulas. The only clear rubric miss was that after student improvement, the tutor typically advanced to the next task instead of asking the student to reflect on what changed in their reasoning.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

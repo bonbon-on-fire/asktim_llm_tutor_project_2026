@@ -1,0 +1,115 @@
+{
+  "bundle_file": "bundle_043.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0014",
+    "cooperative/cooperative_raw/transcript_0015",
+    "cooperative/cooperative_raw/transcript_0039"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against giving direct assignment output, but did not clearly explain at least once why this constraint supports the student's learning process or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 5",
+                  "Transcript 2 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier weaker attempts, the tutor acknowledged the improvement and moved on, but did not prompt reflection on what changed in the student's reasoning or why the revision worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally helpful, but several responses sounded curt or rigid toward the confused student, such as 'You're overcomplicating it,' 'You're looping on a detail that does not matter that much. Move on,' and 'Fine—here is the full flow,' which risks harming tutoring trust.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was strong on guided discovery, assignment alignment, and keeping the student doing the intellectual work. The main weaknesses were meta-learning: the tutor set boundaries without explicitly explaining the learning rationale, and often missed chances to ask the student to reflect after successful revision. Tone was mostly supportive, but one transcript included some noticeably curt phrasing; I did not deduct for repetition or scaffolding because the tutor usually adapted prompts and built from student responses.",
+    "judge_reasoning": "The tutor consistently avoided giving submission-ready answers and instead used targeted questions, comparative criteria, and partial-structure prompts, so no deduction was warranted under 1.1. Scaffolding was generally effective: the tutor acknowledged correct steps, narrowed tasks, and stayed anchored to the actual stressors-table assignment. The largest pedagogy deductions come from 1.3, because the tutor never clearly explained why withholding direct answers supports learning and did not prompt reflection after students improved. Communication was clear and concise overall, but transcript 1 included a few rigid or brusque lines that justify a tone deduction.",
+    "total_score": 38,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

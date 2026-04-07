@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_046.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0086",
+    "cooperative/cooperative_raw/transcript_0016",
+    "cooperative/cooperative_raw/transcript_0040"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion or vagueness to a workable row/rating logic, the tutor affirmed the progress and pushed forward, but did not prompt the student to reflect on what changed in their reasoning process and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the combined transcript bundle, the tutor was strongly assignment-anchored, consistently student-led, and avoided producing submission-ready table entries. The tutor scaffolded well with concrete criteria, narrowing questions, and process-focused feedback. The clearest missed opportunity was reflective follow-up after student improvement; otherwise the performance was consistently strong. Any firmness in tone was limited and not clear enough to warrant a communication deduction.",
+    "judge_reasoning": "The tutor preserved student ownership throughout the bundle: they refused to provide full rows, avoided rewriting student text into polished submission language, and instead used prompts, comparison tests, and evidence categories to guide reasoning. Scaffolding was generally effective and responsive, with repeated acknowledgement of partial progress and useful narrowing of confusing tasks like sector selection and rating justification. I applied one deduction under 1.3.C because, after students moved from weak or confused attempts to stronger reasoning, the tutor typically praised and advanced rather than asking the student to articulate what changed in their method. No further deductions were supported because the tutor stayed on-task, kept responses concise, and framed evaluation as coaching rather than grading.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

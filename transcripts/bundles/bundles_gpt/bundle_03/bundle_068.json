@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_068.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0045",
+    "cooperative/cooperative_raw/transcript_0072",
+    "cooperative/cooperative_raw/transcript_0095"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 2 Turn 6",
+                  "TRANSCRIPT 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used student-led constraints and withheld direct answers, but never explicitly explained why this approach supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 5",
+                  "TRANSCRIPT 3 Turn 9",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier uncertainty to stronger classifications or claims, the tutor moved on to evidence-checking or next steps rather than prompting reflection on what changed in the student's reasoning and why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently assignment-anchored, used guided questioning well, and avoided giving submission-ready forum responses. The main weakness was meta-learning: the tutor never explicitly stated why it was using a student-led, non-answering approach, and it usually skipped brief reflection after student improvement. There was some borderline repetition in the Miami exchange, but because the tutor eventually synthesized the structure and kept advancing the task, no redundancy deduction was applied.",
+    "judge_reasoning": "The strongest aspect of the tutoring was pedagogy under 1.1 and 1.2: the tutor repeatedly asked students to classify actors, justify roles, and narrow evidence without writing the assignment for them. Dialogue quality was also strong because the tutor repeatedly re-grounded students in the exact buckets of the assignment and redirected them toward traceable evidence and forum-post requirements. The deductions are concentrated in 1.3 because, despite frequent coaching moves, the tutor never explicitly explained the learning rationale for those constraints and did not ask students to reflect on what changed after improved attempts. Communication remained concise, supportive, and clearly formative throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

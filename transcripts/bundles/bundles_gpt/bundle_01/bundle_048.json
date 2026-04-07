@@ -1,0 +1,118 @@
+{
+  "bundle_file": "bundle_048.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0096",
+    "clueless/clueless_raw/transcript_0120",
+    "clueless/clueless_raw/transcript_0144"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 4",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor sometimes did key idea-generation work by supplying city-specific example buckets and candidate actors/groups before the student had generated them, including likely NYC 'missing' groups and a near-complete forum-post structure for Jakarta. This did not become submission-ready writing, but it reduced student-led reasoning on the core categorization task.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from weaker attempts to better distinctions or more specific actor choices, the tutor acknowledged the improvement and moved on without prompting reflection on what changed in the student's reasoning or why the improved version worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Most of the tone was supportive, but phrases like 'Without that, you’re stalling' and 'Now stop circling the definition' were more rigid than coaching-oriented and could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 3,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "The tutor stayed tightly anchored to the assignment, gave workable structures for finding and sorting actors, and generally kept responses clear and interactive. Main deductions come from being somewhat too leading on the core categorization task, missing chances to prompt reflection after student improvement, and using a few brusque phrases. I did not deduct for submission-ready output because the tutor stopped short of writing the forum post or completing the assignment, though some examples came close enough to warrant a smaller pedagogy deduction.",
+    "judge_reasoning": "Across the bundle, the tutor consistently redirected students to the actual task and offered useful process scaffolds such as evidence tests, source types, and role-based sorting. However, in several places the tutor supplied city-specific example actors or bucket placements before the student had reasoned them out, which fits a student-led-idea-generation deduction rather than a full direct-answer penalty. The tutor also missed reflection opportunities after students improved, especially when they moved from vague to more specific actor choices. Communication was mostly clear and supportive, but a couple of sharper remarks made the tone less consistently encouraging.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

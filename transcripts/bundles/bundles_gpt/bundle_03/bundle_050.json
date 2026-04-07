@@ -1,0 +1,91 @@
+{
+  "bundle_file": "bundle_050.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0039",
+    "cooperative/cooperative_raw/transcript_0065",
+    "cooperative/cooperative_raw/transcript_0089"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the combined transcript, the tutor consistently enforced a student-led process but did not explicitly explain why those constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently process-focused, interactive, and well anchored to the assignment. The main weakness was meta-learning: the tutor did not clearly explain at least once why the student-led constraints were being used. A few firmer directives were present, but the evidence overall still supports full credit for guided discovery because the tutor avoided doing the assignment or writing submission-ready content.",
+    "judge_reasoning": "Across all three transcripts, the tutor repeatedly used questions that made the student classify stressors, compare options, calibrate ratings, and justify choices with evidence rather than supplying finished table entries or polished prose. The tutor also built on student progress effectively, re-grounded the student in the actual task, and gave concrete method-level feedback such as using severity/frequency/scale criteria and distinguishing strong from weak evidence. I deducted only under 1.3.A because, despite frequent coaching constraints like 'build the logic yourself,' the tutor never explicitly explained why that tutoring approach helps the student learn. No stronger deduction was warranted because the tutor stayed formative, concise, and assignment-centered throughout.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

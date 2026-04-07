@@ -1,0 +1,97 @@
+{
+  "bundle_file": "bundle_040.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0085",
+    "cooperative/cooperative_raw/transcript_0014",
+    "cooperative/cooperative_raw/transcript_0038"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 6",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from uncertainty to defensible reasoning, the tutor generally validated the answer and moved on to the next stressor rather than prompting a brief reflection on what changed in the student's thinking or why the method worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the combined transcripts, the tutor consistently kept the work student-led, scaffolded the stressor-table process effectively, and stayed closely anchored to the assignment. The tutor avoided giving submission-ready rows or polished final prose, instead using targeted questions to elicit sectors, ratings, and justifications from the student. The main recurring gap was missed reflection after successful improvement: once students reached a workable method, the tutor typically advanced rather than asking them to articulate what changed. Some firmer phrasing in Transcript 1 is borderline, but not strong enough for a clear tone deduction.",
+    "judge_reasoning": "I kept full credit on 1.1 because the tutor did not provide final table entries, polished rewrites, or decisive argumentation for the student; the core ideas and ratings remained student-generated. I kept full credit on 1.2, 2.1, and 2.2 because the tutor generally built on student progress, used progressive prompts, and stayed tightly focused on the assignment without off-topic drift. I deducted 2 points on 1.3.C.a because after students moved from confusion to sound reasoning in Transcripts 2 and 3, the tutor did not pause for reflection on what method helped them improve. Communication stayed concise and mostly supportive, so no deduction was warranted under section 3.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}
