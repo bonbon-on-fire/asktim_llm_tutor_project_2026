@@ -3,125 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 4",
-                  "Transcript 2 Turn 5",
-                  "Transcript 3 Turn 5",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor repeatedly supplied the central distinction and causal test itself—especially the means-versus-side-effect framework—rather than keeping the key conceptual bridge fully student-led.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 10",
-                  "Transcript 2 Turn 9",
-                  "Transcript 3 Turn 9"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced boundaries against giving finished answers, but did not clearly explain why those constraints support learning, retention, or independent reasoning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 8",
-                  "Transcript 3 Turn 8",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a workable distinction or thesis, the tutor moved on to the next task instead of prompting reflection on what changed in the student's thinking and why it worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 4",
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 2",
-                  "Transcript 3 Turn 6"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was often supportive, but several responses were unnecessarily rigid or sharp ('Don't blur them together,' 'No,' 'Don't dodge the reasoning,' 'You're circling'), which risks discouraging a confused student.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 32,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor consistently kept the student engaged, resisted doing the full assignment, and stayed tightly anchored to the prompt. The main weakness was that the tutor often supplied the crucial philosophical distinction itself rather than eliciting it more fully from the student. I did not deduct under 1.2 because, despite some brisk redirects, the tutor usually built on student progress and used targeted questions; that area was somewhat borderline.",
-    "judge_reasoning": "The strongest evidence of good tutoring is the tutor's persistent use of short, interactive prompts, refusal to provide a submission-ready answer, and repeated grounding in the assignment's required structure. The main pedagogy deduction comes from several turns where the tutor introduced the central means-versus-side-effect distinction and causal test, doing a key reasoning step for the student. I also deducted under meta-learning because the tutor enforced boundaries without explicitly explaining the learning rationale, and missed chances to ask the student to reflect after successful improvement. Communication was generally clear, but some blunt phrasing made the tone more rigid than ideal.",
-    "total_score": 32,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0001",
     "clueless/clueless_raw/transcript_0025",
@@ -347,5 +228,102 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 2 Turn 4",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor generally avoids giving a full finished answer, but at several points it supplies the central interpretive distinction and answer path itself (especially the 'used as a means' versus 'side effect' contrast and a thesis-template structure) before the student fully derives it independently.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 7-10",
+                  "Transcript 3 Turns 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from confusion to a workable distinction or thesis, the tutor moves directly to the next task or stress-test rather than prompting brief reflection on what changed in the student's thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor stays strongly process-oriented, keeps the conversation anchored to the assignment, and usually uses concise guided questioning instead of doing the work for the student. The main weakness is that it sometimes introduces the key means-versus-side-effect distinction and thesis direction itself rather than fully eliciting that core idea from the student first. A smaller deduction also applies because the tutor rarely asks the student to reflect on what changed after a successful revision. Where the line between scaffolding and over-leading is somewhat ambiguous, the smaller plausible deduction was chosen rather than a full 1.1 wipeout.",
+    "judge_reasoning": "Across the bundle, the tutor consistently refuses to provide submission-ready prose and instead structures the task into manageable steps, so the largest direct-answer deductions do not apply. However, several turns supply the central philosophical distinction and even a thesis frame before the student fully generates it, which fits a moderate 1.1.C deduction for weakening student-led idea generation. The tutor otherwise scaffolds well, responds to confusion with targeted prompts, and gives concrete method advice such as charts, tests, and outlines. After student breakthroughs, though, it typically advances the task without asking the student to reflect on what changed in their reasoning, justifying the 1.3.C deduction.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

@@ -3,101 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 6",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student made better attempts following confusion, the tutor moved directly into the next revision step instead of prompting brief reflection on what changed or why the improved move worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 5",
-                  "Transcript 2 Turn 7",
-                  "Transcript 3 Turn 4"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Several responses used sharp, admonishing phrasing such as calling the student's request 'avoidance,' telling them to 'stop' expanding the list, and 'Don't' skip the thinking step. The tutoring remained mostly constructive, but these moments made the tone more rigid than supportive.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor consistently avoided doing the assignment for the student, kept the work anchored to the stressors-table task, and used clear stepwise scaffolding. Deductions are limited to a missed chance for reflection after student improvement and a few brusque, corrective lines that could weaken trust. Tone was not uniformly problematic, so the communication deduction is modest.",
-    "judge_reasoning": "Across the combined transcript, the tutor stayed within strong pedagogical bounds: no near-submission-ready rows, no rewriting of student work, and repeated efforts to get the student to generate categories, ratings, and stressors. The tutor also grounded the discussion in the actual assignment requirements and generally used concise, interactive prompts. The main pedagogy miss was not pausing for meta-reflection after improved student attempts, even when the student moved from blankness to a workable draft. The main communication miss was occasional rigid phrasing that sounded scolding rather than fully supportive.",
-    "total_score": 40,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0089",
     "clueless/clueless_raw/transcript_0113",
@@ -323,5 +228,102 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion to a more workable list or rough row, the tutor immediately continued coaching/critique instead of briefly prompting reflection on what changed in the student's thinking and why the new attempt was better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 3 Turn 4",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is often supportive, but several lines come across as rigid or mildly scolding (for example, calling the student's request 'avoidance' and saying 'Don't' or 'Stop waiting'), which could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor stayed well anchored to the assignment, avoided writing submission-ready content, and consistently used guided questions and process-focused scaffolds. The main issues were a somewhat sharp tone in a few turns and missed opportunities to prompt reflection after the student made progress. Any possible repetition was not strong enough to justify a larger deduction because the tutor usually reframed or redirected rather than simply repeating.",
+    "judge_reasoning": "The strongest evidence supports high pedagogy scores: the tutor repeatedly refused to fill rows for the student, kept the work student-led, and gave specific method guidance such as distinguishing stressor vs. consequence and narrowing vague categories into table-ready entries. I did not deduct under 1.1 because the tutor never provided near-submission-ready claims or polished rows. I deducted under 1.3 because when the student improved from blankness to a usable list or draft row, the tutor moved straight into the next coaching step rather than asking the student to reflect on what changed. I also deducted under 3.2 because a few responses were phrased in a scolding way that could reduce trust for a confused learner.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

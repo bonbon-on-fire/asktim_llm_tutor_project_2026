@@ -3,102 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 7",
-                  "Transcript 1 Turn 8",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moved from confusion to a workable classification or clearer reasoning, the tutor affirmed and continued coaching but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 5,
-            "max": 5
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 6",
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 9"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was usually supportive, but several replies became somewhat rigid or admonishing, such as telling the student not to keep circling and saying the student was stalling. This risks making confusion feel like a failure rather than a normal part of the process.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 10
-        }
-      }
-    },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor stayed closely anchored to the assignment, explained the task clearly, and generally protected student ownership by refusing to draft forum posts or provide submission-ready content. Scaffolding was strong overall: the tutor repeatedly broke the task into workable distinctions and prompted the student to classify actors with reasons. The main weaknesses were a missed chance to prompt reflection after student improvement and a few moments of slightly rigid tone. Some turns came close to being more directive, but the evidence more strongly supports coaching than doing the assignment for the student.",
-    "judge_reasoning": "Across the bundle, the tutor consistently re-grounded the student in the actual deliverable and used guided prompts rather than writing the answer, so no deduction was warranted for direct-work violations or assignment anchoring. The tutor also gave concrete process guidance, such as using authority, participation, and representation as criteria, and explained at least once that providing a full list would do the assignment for the student. I deducted under 1.3.C because when the student finally produced better classifications or reasoning, the tutor moved forward without asking the student to reflect on what changed. I also deducted under 3.2.A because a few responses sounded impatient or corrective in a way that could undermine trust, even though the overall tone remained mostly helpful.",
-    "total_score": 42,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0024",
     "clueless/clueless_raw/transcript_0048",
@@ -324,5 +228,130 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor sometimes performs the key interpretive step for the student instead of leaving it fully student-led. In Transcript 1 Turn 8, the tutor directly supplies the central classification logic that participation is 'uneven,' with organized residents engaged and many affected residents underrepresented. In Transcript 2 Turn 10, the tutor provides a full leading/engaged/missing pattern with reasons, which models the core bridge from evidence to conclusion.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student is stuck, the tutor often jumps into broad explanations or a method dump before diagnosing the exact confusion point. In these turns, the tutor gives a top-down lecture on Boston or city climate governance rather than first narrowing what the student already understands and what specific distinction is blocking progress.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from earlier confusion, the tutor validates and continues but does not prompt reflection on what changed in the student's reasoning or why the improved move worked. These were natural opportunities to reinforce process learning rather than simply advancing to the next step.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 13,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 5-10",
+                  "Transcript 3 Turns 7-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returns to the same pattern of asking the student to pick or sort one actor even after the student stays confused or blanks on examples. Although the tutor does some reframing, the conversation still cycles on similar moves without enough synthesis or a stronger strategy shift.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is often clear and firm, but several replies become unnecessarily sharp or rigid, such as telling the student not to keep circling, saying the student is stalling, or saying 'Stop abstracting.' This risks making the interaction feel admonishing rather than fully supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 27,
+    "max_base_score": 44,
+    "overview": "The tutor consistently stays anchored to the assignment and avoids giving submission-ready Boston or Jakarta forum posts, which preserves academic integrity. The main weaknesses are that the tutor sometimes does core reasoning for the student, often responds to confusion with broad explanations rather than diagnosis, and repeats similar prompting patterns after the student remains stuck. Some tone choices are also firmer than ideal. Where evidence was borderline, smaller deductions were chosen rather than treating the guidance as outright answer-giving.",
+    "judge_reasoning": "Across the bundle, the tutor is generally structured, assignment-focused, and process-oriented, and it repeatedly refuses to draft the student's post. However, the tutor still crosses into doing important interpretive work at points, especially when it directly resolves classification tensions or supplies a complete category pattern. The dialogue also shows repeated loops in which the tutor keeps asking for actor classification despite sustained student uncertainty, with limited reflective consolidation. Communication is mostly clear, but a few admonishing phrasings reduce supportiveness.",
+    "total_score": 27,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

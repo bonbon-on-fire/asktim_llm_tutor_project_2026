@@ -3,99 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces a tutoring constraint ('I can’t write the note for you') but does not explain how that constraint supports the student's learning, reasoning, or retention. No clearer learning-rationale statement appears elsewhere in the conversation bundle.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 2 Turn 5",
-                  "Transcript 3 Turn 5"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student makes improved attempts following confusion, the tutor affirms the progress and moves on, but does not prompt reflection on what changed in the student's thinking or why the new approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 20,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor stays well anchored to the assignment, avoids doing the student's table for them, and uses generally effective step-by-step scaffolding. The main weaknesses are in meta-learning: the tutor rarely explains why tutoring constraints are being used, and misses chances to prompt reflection after the student improves. Repetition was somewhat present, but there was enough progression and refocusing that it did not clearly justify a redundancy deduction.",
-    "judge_reasoning": "The tutor consistently keeps the work student-led by explaining the task, asking focused follow-up questions, and refusing to provide filled-in submission text. Scaffolding is strong overall: the tutor breaks the assignment into manageable parts, responds to the student's stated confusions, and repeatedly re-anchors to the required table fields and source quality. The largest deductions come from criterion 1.3, because the tutor does not clearly articulate a learning rationale for tutoring constraints and does not ask the student to reflect on what changed after successful recovery from earlier confusion. Communication remains clear, supportive, and appropriately formative throughout the bundle.",
-    "total_score": 40,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0083",
     "clueless/clueless_raw/transcript_0107",
@@ -321,5 +228,131 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 3",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor repeatedly supplied the core bridge from the table categories to climate interpretation itself (for example, directly explaining how climate zone signals hazards, population/area signal exposure, and income/GDP signal capacity) instead of first having the student work out that central relevance.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 3 Turn 3",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said everything was blurring together, the tutor often responded with another broad explanatory list or walkthrough rather than first diagnosing which distinction or step was actually causing the confusion.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint by refusing to write the student's note, but did not clearly explain the learning rationale beyond saying the student needed to do the writing.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion, the tutor affirmed the answer and moved on without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor frequently used list-heavy, multi-point monologues where shorter interactive steps would have better matched the student's repeated confusion and need for simpler, more focused guidance.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 27,
+    "max_base_score": 44,
+    "overview": "Across the combined transcript, the tutor stayed supportive, assignment-anchored, and avoided doing the student's final work. The main weaknesses were repeated front-loaded explanations of the core reasoning, limited diagnosis of the student's exact confusion before giving more instruction, missing explicit learning-rationale talk for tutoring constraints, and often overlong list-based responses.",
+    "judge_reasoning": "The tutor's strongest performance was in staying on task, maintaining a supportive tone, and refusing to produce submission-ready writing. Major deductions came from pedagogy: the tutor often explained the key hazard/exposure/capacity logic directly instead of eliciting it, and repeatedly answered broad confusion with another overview rather than first pinpointing the misunderstanding. I also deducted for missing an explicit meta-learning rationale when refusing to write for the student and for not prompting reflection after the student improved. Communication lost full points under 3.1 because many replies were longer than necessary for a student who repeatedly asked for simpler framing.",
+    "total_score": 27,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

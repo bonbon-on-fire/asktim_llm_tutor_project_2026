@@ -3,110 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 7",
-                  "Transcript 1 Turn 8",
-                  "Transcript 3 Turn 5"
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor at times supplied the central argumentative lens itself—especially the means-versus-side-effect distinction and bucket structure for the cases—rather than keeping that key idea generation fully student-led.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 9",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced boundaries against writing the answer for the student, but did not clearly explain why those constraints support learning, retention, or independent reasoning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 8",
-                  "Transcript 2 Turn 9"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a clearer means/side-effect analysis, the tutor praised the improvement and moved on without prompting reflection on what changed in the student's reasoning and why it worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 34,
-    "max_base_score": 46,
-    "overview": "The tutor was consistently supportive, assignment-focused, and generally Socratic, with clear stepwise prompting and no submission-ready writing. The main weakness was that the tutor sometimes introduced the decisive philosophical distinction itself rather than letting the student generate it. There is some ambiguity here because those interventions also functioned as scaffolds, so the deduction was kept to the smaller primary penalty rather than escalated.",
-    "judge_reasoning": "Across the bundle, the tutor maintained strong dialogue control and kept the student working in short, manageable steps tied to the assignment. However, the tutor occasionally did the central reasoning move by supplying the means-versus-side-effect framework and case map before the student had independently derived it, which triggers a deduction under 1.1.C. The tutor also never explicitly explained the learning rationale behind refusing to write the answer, and missed a reflection opportunity after visible student improvement. No deductions were taken for assignment anchoring, tone, or clarity because those areas were consistently strong.",
-    "total_score": 34,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0076",
     "clueless/clueless_raw/transcript_0100",
@@ -332,5 +228,99 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 10",
+                  "Transcript 2 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces the boundary against writing the student's answer, but does not clearly explain a learning-focused rationale such as improving the student's own reasoning, retention, or long-term writing skill.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 9",
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After student improvement, the tutor validates the progress and moves forward, but does not prompt reflection on what changed in the student's reasoning or why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor consistently uses guided questioning, builds from student answers, and avoids producing submission-ready philosophy writing. The main weakness is meta-level coaching: the tutor sets boundaries and notices progress, but rarely explains why those constraints help learning or asks the student to reflect on what changed after improvement. No stronger deductions were applied because the tutor generally stayed anchored to the assignment and kept responses interactive and supportive.",
+    "judge_reasoning": "The tutor's strongest performance is in pedagogy and dialogue control: they repeatedly elicit the student's own distinctions, keep the work student-led, and structure the essay without writing it. I did not deduct under 1.1 because the tutor stops short of giving a full claim-plus-reasoning answer and instead keeps asking the student to supply the key judgments. The main deductions are under 1.3, since the tutor says they will not write the assignment but does not clearly connect that boundary to learning goals, and they miss reflection opportunities after students improve. Communication and assignment anchoring remain strong throughout the combined transcript.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

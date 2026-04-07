@@ -3,101 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 9",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier confusion to a workable conclusion, the tutor strengthened and extended the answer but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 2 Turn 4",
-                  "Transcript 2 Turn 5"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was often efficient and supportive, but several lines were unnecessarily rigid or sharp (for example, 'That's avoidance,' 'Stop restarting,' and 'You're dwelling on detail'), which risks making the student feel corrected rather than supported.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor consistently kept the work student-led, stayed anchored to the assignment, and used clear scaffolds to separate leading, engaged, and missing actors. No near-submission-ready writing was provided, and the tutor regularly redirected the student back to manageable next steps. I made only limited deductions where evidence was clear: the tone occasionally became too blunt, and the tutor missed a good chance to prompt reflection after student improvement.",
-    "judge_reasoning": "Across the bundle, the tutor largely followed a strong Socratic approach: they explained the task, asked targeted classification questions, and avoided writing the forum post or completing the actor analysis for the student. Scaffolding was generally effective, with repeated re-grounding in the assignment's actual deliverable and practical methods like sorting actors by authority, influence, and exclusion. I did not deduct in 1.1 or 1.2 because the tutor avoided doing the student's core reasoning and usually responded to the student's actual confusion. The main deductions are for missed reflection after successful revision and for several noticeably rigid phrases that weakened the otherwise supportive coaching tone.",
-    "total_score": 40,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0093",
     "clueless/clueless_raw/transcript_0117",
@@ -323,5 +228,102 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion to a workable conclusion about government leadership and missing kampung residents, the tutor advanced to sharpening the claim rather than prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 4",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally supportive, but several replies were unnecessarily sharp or rigid (for example, 'Stop treating the labels,' 'That's avoidance,' 'Stop restarting,' and 'No—I'm your tutor, not your writer'), which could make a confused student feel scolded rather than supported.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor consistently stayed anchored to the assignment, used guided questioning, and avoided producing submission-ready forum content. The main issues were affective rather than substantive: the tone was sometimes blunt, and the tutor missed a clear opportunity to prompt reflection after the student successfully improved. Rationale for tutoring constraints was treated as satisfied, though only briefly, because the tutor explicitly framed the interaction as not 'skip[ping] the thinking' and refused to script the post for the student.",
+    "judge_reasoning": "The tutor earned full credit in core pedagogy because they did not write the student's forum post, did not rewrite draft text into polished submission language, and repeatedly pushed the student to classify actors and justify placements in their own words. Scaffolding was strong: the tutor addressed the student's specific confusions about 'lead/engaged/missing,' evidence, and sector roles with manageable prompts and built on emerging answers such as the mayor's office, sustainability office, and Jakarta actor list. I deducted under 1.3.C because, once the student arrived at a stronger argument, the tutor moved straight to refinement rather than asking the student to reflect on what changed in their thinking. I also deducted under 3.2.A because several turns used a scolding tone that risked undermining trust, even though the overall interaction remained task-focused and mostly supportive.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

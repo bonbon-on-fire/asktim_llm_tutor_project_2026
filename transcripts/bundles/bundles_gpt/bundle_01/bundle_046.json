@@ -3,114 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 9",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moved from confusion to a workable paragraph, the tutor gave revision guidance but did not prompt reflection on what changed in the student's thinking or why the improved attempt worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 3",
-                  "Transcript 1 Turn 5",
-                  "Transcript 1 Turn 7",
-                  "Transcript 1 Turn 9"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returned to the same explain-then-ask-for-an-example pattern while the student kept saying they were still lost, without enough synthesis or a clearly different strategy to break the spiral.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 5,
-            "max": 5
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 3",
-                  "Transcript 2 Turn 4",
-                  "Transcript 2 Turn 6",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Several replies were more blunt than supportive, using phrasing like 'Fine,' 'You’re overcomplicating it,' 'Stop stalling,' and 'stay focused,' which risks making confusion feel scolded rather than coached.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 10
-        }
-      }
-    },
-    "total_base_score": 38,
-    "max_base_score": 46,
-    "overview": "The tutor consistently stayed anchored to the assignment and generally used guided questions rather than doing the student's work. Main weaknesses were repetitive questioning when students remained confused, limited reflection after improvement, and a somewhat brusque tone in several places. A possible deduction for tutoring-rationale explanation was not taken because the tutor did give at least one reason for refusing a model answer.",
-    "judge_reasoning": "Across the bundle, the tutor avoided submission-ready output and usually pushed the student to classify actors, compare authority versus influence, and connect forum-post structure back to the prompt. The strongest deduction is for redundancy: in the first transcript especially, the tutor kept repeating the same classification routine despite repeated statements of confusion, instead of more clearly synthesizing or shifting method. I also deducted for missing reflection after the student's improved paragraph in Transcript 3, where the tutor moved into revision coaching without asking what the student had figured out. Tone lost points because multiple replies sounded sharp or corrective in a way that could undermine trust, even though the substantive guidance remained mostly useful and on-task.",
-    "total_score": 38,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0095",
     "clueless/clueless_raw/transcript_0119",
@@ -336,5 +228,110 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After earlier confusion, the student produced a substantially improved rough forum paragraph. The tutor gave useful revision guidance, but did not prompt any reflection on what changed in the student's thinking or why the new attempt worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 3-10",
+                  "Transcript 2 Turns 7-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across multiple turns, the tutor repeatedly used the same pattern of brief explanation followed by another request for the student to name a city or actor, even while the student kept saying they needed a bigger-picture explanation first. The tutor did rephrase somewhat, but did not sufficiently synthesize or change strategy when the student remained stuck.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 2 Turn 4",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses use impatient or mildly dismissive phrasing such as \"Fine,\" \"You're overcomplicating it,\" \"Stop stalling on titles,\" and \"not more filler.\" The overall interaction remains functional, but these moments make the tone less supportive than ideal.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "Holistically, the tutor stayed assignment-relevant, avoided writing submission-ready content, and usually used guided questioning rather than doing the student's work. Major deductions come from repetitive prompting without enough strategic shift when the student stayed confused, plus some unnecessarily sharp phrasing. Where evidence was somewhat mixed, smaller deductions were preferred.",
+    "judge_reasoning": "The tutor generally preserved student ownership: they explained the task, clarified categories, and asked the student to apply distinctions rather than supplying a finished forum post. The strongest pedagogy issue was not answer-giving but a missed meta-learning opportunity: when the student finally produced a stronger paragraph, the tutor refined it without asking the student to reflect on what improved. Dialogue quality was weakened by repeated cycles of \"here's the distinction, now name an actor/city\" even after the student repeatedly said they needed a broader explanation first. Communication was mostly clear and concise, but several phrases came across as impatient or dismissive, which warrants a tone deduction.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

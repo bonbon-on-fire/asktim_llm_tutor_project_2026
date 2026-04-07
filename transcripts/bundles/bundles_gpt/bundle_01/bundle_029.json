@@ -3,103 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 6",
-                  "Transcript 3 Turn 7",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a workable coastal-flooding justification, the tutor affirmed the progress and continued the task, but did not prompt brief reflection on what changed in the student's thinking or why the new approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 6",
-                  "Transcript 2 Turn 9",
-                  "Transcript 2 Turn 10",
-                  "Transcript 3 Turn 6"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was generally supportive, but several responses used rigid or brusque phrasing such as 'You're overcomplicating it,' 'Stop looking for hidden rules,' 'Stop restarting from zero,' and 'Stop asking for more rows,' which could undermine trust for a confused student.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor stayed well anchored to the assignment, used guided questions, and avoided doing the student's table for them. I kept full credit on the direct-work criteria because the tutor provided frameworks, examples, and comparisons without producing submission-ready rows or polished final writing. Deductions were limited to a missed reflection opportunity after clear student improvement and a few brusque formulations that slightly weakened the supportive tone.",
-    "judge_reasoning": "The strongest evidence supports high scores for pedagogy and assignment anchoring: the tutor repeatedly clarified stressor definitions, sectors, ratings, and city-choice strategy while pushing the student to supply classifications, comparisons, and tentative ratings. I did not deduct under 1.1 because, despite giving examples and broad comparisons, the tutor stopped short of filling in final answers or rewriting student work into submission-ready language. I deducted under 1.3.C because when the student improved substantially, the tutor affirmed and advanced rather than prompting reflection on what changed. I also deducted under 3.2.A because several 'stop...' and 'you're overcomplicating it' responses read as unnecessarily sharp for a confused learner.",
-    "total_score": 40,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0015",
     "clueless/clueless_raw/transcript_0039",
@@ -325,5 +228,121 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from requesting examples to producing a stronger flooding justification, the tutor affirmed the improvement and moved straight into rating calibration without prompting reflection on what changed in the student's reasoning or why the new attempt worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 9",
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "2.2.B.a",
+                "reason": "The tutor spent a substantial stretch comparing Miami, Phoenix, and Jakarta for overall project fit and later policy discussion rather than promptly redirecting back to the assigned stressors-table task. This was related background, but it still represented meaningful drift from the immediate assignment focus.",
+                "points": 4
+              }
+            ],
+            "score": 4,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "3.1.A.b",
+                "reason": "One tutor reply exposed raw internal JSON-style formatting and non-student-facing metadata instead of a clean response, creating avoidably dense and confusing communication.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses used rigid or mildly dismissive phrasing such as 'You're overcomplicating it,' 'Stop looking for hidden rules,' and 'Stop asking for more rows,' which could undermine supportiveness for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 2,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 32,
+    "max_base_score": 44,
+    "overview": "The tutor was generally strong at guided questioning, keeping the student doing the substantive reasoning, and clarifying assignment structure without giving submission-ready content. I applied a smaller set of deductions where the evidence was clearest: missed reflection after student improvement, substantial drift into city-selection advising, and communication issues from both rigid phrasing and one malformed/raw-format response. Where evidence was more ambiguous, such as possible over-explanation or partial assignment drift, I chose the narrower deduction rather than stacking penalties.",
+    "judge_reasoning": "Across the bundle, the tutor usually used scaffolding well: they clarified stressor vs vulnerability, asked focused follow-up questions, and avoided writing the table for the student. The main pedagogy miss was that after the student improved a weak attempt, the tutor did not pause for reflection on what changed in the student's method. Dialogue quality dropped in Transcript 1 because the tutor spent multiple turns on choosing among cities and discussing whole-project fit instead of quickly re-anchoring to the stressors table. Communication quality was the weakest area due to several unnecessarily harsh phrasings and one clearly confusing raw JSON-style reply.",
+    "total_score": 32,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

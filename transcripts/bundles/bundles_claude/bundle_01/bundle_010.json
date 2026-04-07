@@ -3,114 +3,6 @@
   "provider": "claude",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 1 Turn 8, the tutor provides a 'full map' that lays out the entire reasoning arc: act consequentialism's position, how it treats all cases similarly, and the candidate extra principles (means, intentional sacrifice, rights/constraints). This does the key reasoning work of synthesizing the argument structure for the student rather than guiding the student to derive it. While the student had been resistant, the tutor essentially hands over the complete analytical framework rather than continuing to scaffold.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than simply providing answers. In Transcript 2 Turn 7, the tutor says 'I'm not going to classify them for you' and in Transcript 1 Turn 4 it declines to give case conclusions, but neither instance explains the pedagogical rationale (e.g., active reasoning builds retention or skill). The constraint is enforced but never justified to the student.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "In Transcript 2, after the student produces a solid three-part structure in Turn 9 following earlier confusion, the tutor moves directly to the next challenge without prompting any reflection on what changed in the student's thinking or why the new framing worked. Similarly in Transcript 1 Turn 9, after the student commits to a position following earlier circling, the tutor moves on without reinforcing the method improvement.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, the student repeatedly asks for the cases to be explained together or from the start (Turns 2, 3, 4, 5, 7, 8), and the tutor cycles through similar prompts (apply the test, sort the cases, use the checklist) without meaningfully consolidating or reframing. The student remains confused across six turns on essentially the same sub-point (how to distinguish the cases), and the tutor does not switch strategy until Turn 8 where it finally provides the full map. This constitutes pattern-level repetition without sufficient synthesis or strategic pivot.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 30,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong assignment anchoring, appropriate tone, and generally bite-sized responses across all three transcripts. The Socratic approach is mostly maintained, but in Transcript 1 Turn 8 the tutor provides a full synthesized map of the argument that does the key reasoning work for the student, triggering a 1.1.C.b deduction. A recurring pattern across all three transcripts is that the tutor cycles through similar prompts when students are stuck without sufficiently pivoting strategy, triggering a 2.1 deduction. The tutor also never explains its pedagogical rationale for withholding answers, and misses opportunities to prompt reflection after student breakthroughs.",
-    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied for Transcript 1 Turn 8, where the tutor provides a complete analytical map covering act consequentialism's position, its flattening of cases, and the candidate extra principles—doing the synthesis work the student should have been guided to produce. The 2.1.A.a deduction (4 points) is applied because across Transcript 1 especially, the student remains stuck on the same case-distinction problem for six turns while the tutor repeats structurally similar prompts without meaningfully reframing or consolidating. The 1.3.A.a deduction (2 points) applies because the tutor enforces its tutoring constraints without ever explaining why guided discovery supports learning. The 1.3.C.a deduction (2 points) applies because after student breakthroughs in Transcripts 1 and 2, the tutor moves forward without prompting reflection on what changed in the student's thinking. Communication quality and dialogue anchoring are strong throughout.",
-    "total_score": 30,
-    "max_score": 44,
-    "model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0077",
     "clueless/clueless_raw/transcript_0101",
@@ -336,5 +228,102 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1, when the student repeatedly says they are confused and asks for full explanations (Turns 2, 4, 5, 7, 8), the tutor often jumps to providing structured frameworks or checklists rather than first diagnosing what specific part of the concept the student does not understand. For example, in Turn 5 the tutor provides a full 5-point checklist without first probing what specifically confused the student about the means/side-effect distinction. Similarly in Transcript 3, Turns 5-6, the tutor provides big-picture explanations without first checking what the student already understands about intention vs. outcome. However, this is partially mitigated by the tutor's use of targeted questions in several turns.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than simply providing answers. The tutor declines to give direct answers (e.g., Transcript 2 Turn 7: 'I'm not going to classify them for you') and Transcript 1 Turn 4 (Transcript 3 Turn 4: 'I can't supply the case conclusions for you'), but never explains that this approach is intended to build the student's own reasoning skills or support long-term learning.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2, when the student produces a solid three-part summary in Turn 9 after struggling throughout, the tutor moves directly to the next challenge without prompting reflection on what changed in the student's thinking or reinforcing the method that led to the improvement. Similarly in Transcript 1 Turn 9, when the student articulates the key idea about persons not being tools, the tutor moves on without reflecting on the process.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through the means/side-effect distinction across Turns 3, 4, 5, 7, 8, and 10 without meaningfully consolidating or advancing the student's understanding. The student remains confused about the same distinction across multiple turns, and the tutor continues to re-present variations of the same framework rather than reframing, simplifying, or suggesting a different approach. In Transcript 3, a similar pattern occurs with the student repeatedly saying cases 'blur together' (Turns 3, 6, 10) without the tutor substantially changing strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic discipline across all three transcripts, consistently refusing to provide direct answers or submission-ready content and instead guiding students through structured questioning. The tutor maintains appropriate tone, keeps responses concise, and stays anchored to the assignment. Key weaknesses include: (1) a pattern of repeating the same means/side-effect framework across multiple turns without meaningfully advancing when students remain stuck, triggering the redundancy criterion; (2) occasional failure to diagnose the specific source of student confusion before providing frameworks; (3) no explanation of the tutoring rationale at any point; and (4) missed opportunities to prompt reflection after student breakthroughs.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, always asks the student to reason first, and avoids giving conclusions before student exploration. 1.2 loses 3 points for 1.2.B.a: when students express confusion, the tutor frequently provides structured frameworks (checklists, side-by-side comparisons) without first probing what specifically the student does not understand. 1.3 loses 4 points: the tutor never explains why it withholds direct answers (1.3.A.a), and misses clear opportunities to prompt reflection after student improvement (1.3.C.a, notably Transcript 2 Turn 9). 2.1 loses all 4 points: across Transcripts 1 and 3, the student repeatedly expresses the same confusion about means vs. side-effect across 5+ turns, and the tutor continues presenting variations of the same framework rather than reframing, consolidating, or switching strategy. 2.2 and section 3 receive full marks as the tutor stays on-task, maintains supportive tone, and uses appropriately concise responses.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
 }

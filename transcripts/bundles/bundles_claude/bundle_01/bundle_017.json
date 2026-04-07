@@ -3,140 +3,6 @@
   "provider": "claude",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 2, Turn 9, the tutor provides a full category-by-category overview listing each required category, its definition, and typical source type. This does the key reasoning step for the student—explaining what each category means and where to find it—rather than guiding the student to derive this understanding. While the tutor frames it as 'general overview only,' it effectively hands the student the interpretive framework they need without requiring student reasoning.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "Across all three transcripts, when students repeatedly express confusion and ask for broader explanations, the tutor frequently responds by providing more content (new frameworks, bucket categories, overviews) rather than first diagnosing what specific aspect of the student's understanding is breaking down. For example, in Transcript 3 the tutor keeps introducing new conceptual frames (exposure/vulnerability/capacity, fact/meaning/limit, physical/social/economic) without first checking which specific part of the student's thinking is stuck.",
-                "points": 3
-              }
-            ],
-            "score": 3,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than simply providing answers—no rationale is given for the Socratic approach or why the student doing the reasoning themselves supports learning. The tutor does refuse to give examples (Transcript 3, Turn 5-6) but does not explain the pedagogical reason for this constraint.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "In none of the three transcripts does the student achieve a clear success moment followed by tutor reflection prompting. The conversations end without any instance of the tutor prompting the student to reflect on what changed in their thinking or what approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 11,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 3 especially, the tutor cycles through multiple conceptual frameworks (exposure/vulnerability/capacity, fact/meaning/limit, physical/social/economic contexts) across turns 2-9 without the student making meaningful progress. The student repeatedly says the approach 'isn't landing' and asks for the same broad explanation again. The tutor introduces new frames rather than consolidating, synthesizing, or fundamentally changing strategy. Similarly in Transcripts 1 and 2, the student keeps requesting broader explanations and the tutor keeps providing slightly reworded versions of the same guidance.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "In Transcript 2, Turn 9, the tutor provides a lengthy multi-part overview listing all seven categories with definitions and source types. While most tutor responses are appropriately concise, this turn is a notable exception where a shorter, more targeted response would have been more appropriate given the interactive tutoring context.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 4,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 23,
-    "max_base_score": 44,
-    "overview": "The tutor maintains a generally supportive tone and avoids doing the assignment for the student, but struggles significantly with three persistent issues across all three transcripts: (1) a major deduction for providing a full category-by-category overview in Transcript 2 Turn 9 that does the key interpretive work for the student; (2) repeated pattern-level cycling without synthesis or strategy change when students remain stuck; (3) absence of meta-learning rationale and reflection prompting. The 1.1.C.b deduction is the most consequential single penalty. The spiraling issue (2.1) is clearly evidenced across all three conversations. Some ambiguity exists in the 1.2.B.a deduction—the tutor does ask questions, but often introduces new frameworks rather than diagnosing the specific confusion point first.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted by Transcript 2 Turn 9, where the tutor provides a complete definitional and sourcing overview for all seven required categories, effectively doing the interpretive scaffolding work the student should derive. The 2.1.A.a deduction (4 points) is strongly supported across all three transcripts, particularly Transcript 3, where the tutor cycles through at least four different conceptual frameworks across eight turns without the student making progress and without the tutor consolidating or fundamentally changing approach. The 1.2.B.a deduction (3 points) is supported by the tutor's pattern of responding to student confusion with new content rather than diagnostic questioning. The 1.3 deductions (4 points total) are supported by the complete absence of pedagogical rationale and post-success reflection across all three conversations. The 3.1.A.a deduction (4 points) is primarily anchored to the lengthy Turn 9 response in Transcript 2, though this is the same behavior penalized under 1.1.C.b—however, the communication quality issue (monologue format) is distinct from the content issue (doing reasoning for student), so both deductions are applied without double-penalizing the same behavior.",
-    "total_score": 23,
-    "max_score": 44,
-    "model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0009",
     "clueless/clueless_raw/transcript_0033",
@@ -362,5 +228,108 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 2, Turn 9, the tutor provides a complete, category-by-category overview of all required table entries including what each category means and where to find it. This does the key reasoning step for the student—explaining definitions and sourcing for every category—rather than guiding the student to derive these through questioning. While the student repeatedly asked for this, the tutor's full walkthrough crosses into doing the interpretive and sourcing work the student should perform.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Across all three transcripts, the student repeatedly signals the same underlying confusion (feeling overwhelmed, wanting a broad overview before narrowing down). The tutor frequently responds by re-explaining concepts rather than first diagnosing what specific gap is causing the student to keep looping. For example, in Transcript 3 the tutor cycles through multiple reframings (exposure/vulnerability/capacity, top-to-bottom walkthrough, fact/meaning/limit) without pausing to ask a targeted diagnostic question about what specifically is not clicking.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than simply providing answers—i.e., no rationale is given for why the student doing the reasoning themselves supports learning, retention, or skill development. In Transcript 3 Turn 5, the tutor says 'I'm not going to do a full example for you—that would cross into doing the assignment,' but this is a constraint statement, not a learning rationale.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In none of the three transcripts does the tutor prompt reflection after a student makes progress. For instance, in Transcript 1 when the student begins to engage with the scope/definition concept, or in Transcript 3 Turn 10 when the student asks a genuinely insightful question about GDP vs. income per capita, the tutor moves forward without asking the student to reflect on what shifted in their thinking.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 3, the tutor cycles through multiple reframings of the same core concept (exposure/vulnerability/capacity → top-to-bottom walkthrough → fact/meaning/limit → broad groupings) across turns 2–9 without consolidating or advancing. The student remains stuck in the same loop, and the tutor does not switch to a fundamentally different strategy such as having the student attempt a single concrete data lookup or moving to a different sub-task entirely.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 27,
+    "max_base_score": 44,
+    "overview": "The tutor generally avoids giving submission-ready answers and maintains appropriate tone throughout all three transcripts. The main weaknesses are: (1) in Transcript 2 Turn 9, the tutor provides a full category-by-category definitional and sourcing overview that does key reasoning work for the student; (2) across all transcripts, the tutor never explains the pedagogical rationale for its guided approach; (3) in Transcript 3, the tutor cycles through multiple reframings without consolidating or switching strategy, resulting in pattern-level repetition without progress; (4) the tutor rarely diagnoses the specific source of student confusion before responding with another reframing. The 1.1.C.b deduction is applied once for the most egregious instance (T2 Turn 9) to avoid double-penalizing similar but less severe instances.",
+    "judge_reasoning": "1.1: The Turn 9 response in Transcript 2 provides a complete walkthrough of all seven categories with definitions and source types, doing the interpretive and sourcing reasoning the student should perform—triggering 1.1.C.b (6 points). The tutor does not give final answers or submission-ready content, so 1.1.A and 1.1.B are not triggered. 1.2: The tutor repeatedly responds to student looping with new reframings rather than first asking targeted diagnostic questions to identify the specific confusion gap, triggering 1.2.B.a (3 points). 1.3: No tutoring rationale is ever provided (1.3.A.a, 2 points), and no reflection is prompted after student progress moments (1.3.C.a, 2 points). 2.1: Transcript 3 shows clear pattern-level repetition across 8 turns on the same conceptual loop without synthesis or strategy shift, triggering 2.1.A.a (4 points). 2.2, 3.1, 3.2: No deductions warranted—the tutor stays on-task, keeps responses reasonably concise, and maintains a supportive tone throughout.",
+    "total_score": 27,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
 }

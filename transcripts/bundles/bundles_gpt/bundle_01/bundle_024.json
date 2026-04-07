@@ -3,121 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 6",
-                  "Transcript 2 Turn 3",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor repeatedly supplies the central methodological bridge for the student instead of first eliciting it, such as giving the full six-step workflow, the rule for handling city-versus-metro data, and the approach for messy demographic categories.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 1",
-                  "Transcript 3 Turn 9",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor sets constraints such as working step by step and refusing to provide wording, but does not clearly explain why those constraints support learning or independent reasoning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 6",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from earlier confusion, the tutor acknowledges the better answer and moves on without prompting reflection on what changed in the student's thinking or why the new approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 6",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor is usually supportive, but a few lines are notably rigid or blunt, such as telling the student not to focus on a 'loophole' and flatly refusing a template with 'You must write it yourself,' which risks discouraging participation.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 32,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor stayed anchored to the assignment, used manageable prompts, and generally scaffolded the task well. The main weaknesses were being somewhat too directive on key methodological choices, omitting an explicit learning rationale for constraints, and occasionally using rigid phrasing; the tone deduction is modest because the overall interaction remained mostly supportive.",
-    "judge_reasoning": "The strongest evidence for deduction is in pedagogy: the tutor often gave the key decision rules and workflow for the student rather than drawing those out first, especially around city-versus-metro data and handling messy demographic categories. The tutor also enforced constraints on not providing wording without ever clearly explaining the learning rationale, and missed chances to ask the student to reflect after improvement. Dialogue quality stayed strong because the tutor consistently re-anchored to the data-table task and did not drift off topic. Communication was mostly clear and bite-sized, though a few blunt refusals made the tone less supportive than ideal.",
-    "total_score": 32,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0084",
     "clueless/clueless_raw/transcript_0108",
@@ -343,5 +228,100 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint by refusing to write the student's note/template, but did not clearly explain why that constraint supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a correct step (for example, distinguishing total GDP from per-person income and naming the minimum information for a row), the tutor affirmed the answer and moved on without prompting reflection on what changed or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across the combined transcript, the tutor stayed well anchored to the assignment, used short interactive prompts, and generally kept the student doing the work rather than producing submission-ready content. The main weaknesses were meta-level: the tutor enforced limits without explicitly explaining the learning rationale, and it missed chances to ask the student to reflect after successful corrections. I did not deduct for directness in explaining category meanings because the help remained procedural and not near-submission-ready.",
+    "judge_reasoning": "The tutor consistently used guided questioning, chunked the task into manageable steps, and redirected the student back to the table structure, source types, and geography-level consistency. It also built on student answers rather than restarting, and it avoided writing city-specific rows or polished prose for the student. However, when refusing to provide wording/template help, the tutor did not explicitly frame that refusal as a learning-support choice, which triggers 1.3.A.a. The tutor also missed several clear opportunities to ask the student what changed in their thinking after they improved, which supports a deduction under 1.3.C.a.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

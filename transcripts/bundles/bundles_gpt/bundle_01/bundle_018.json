@@ -3,119 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 7",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "On the student's main methodological choice about which geographic unit to use, the tutor supplied the recommended path ('official city unit first' and later 'province/capital region may be your most workable path') before fully having the student derive that choice from source comparison.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a constraint against giving a full example table, but did not clearly explain that this limitation was meant to support the student's learning process, retention, or independent reasoning.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turns 2-4",
-                  "Transcript 3 Turns 3-4"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from initial confusion by correctly separating GDP from income and identifying exposure/capacity categories, the tutor acknowledged the progress but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 5",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was often supportive, but several responses were unnecessarily brusque or rigid ('Fine. Dumbed down,' 'Be more careful than that,' 'I’m your tutor, not a shortcut'), which could reduce trust for an already overwhelmed student.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 32,
-    "max_base_score": 46,
-    "overview": "The tutor generally stayed anchored to the assignment, kept the student working in manageable steps, and avoided doing the actual table for the student. The biggest pedagogy issue was that the tutor sometimes resolved the core methodological choice about geographic unit instead of fully drawing it out from the student's own comparison of sources. Some evidence was borderline because this assignment is procedural rather than interpretive, so I applied only a limited guided-discovery deduction rather than broader penalties.",
-    "judge_reasoning": "Across the bundle, the tutor consistently redirected the student to source quality, geographic units, and table structure, which supports strong scores for scaffolding, assignment anchoring, and clarity. However, the tutor at times gave the key methodological answer too early by recommending which unit to use, reducing student-led discovery under 1.1. The tutor also missed meta-learning opportunities: constraints were enforced without a clear learning rationale, and moments of student improvement were not followed by reflection prompts. Communication was mostly clear, but a few brusque lines made the tone less supportive than ideal.",
-    "total_score": 32,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0081",
     "clueless/clueless_raw/transcript_0105",
@@ -341,5 +228,127 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor sometimes supplied the key conclusion about which geographic unit to use before the student worked it out, such as recommending the official city unit or suggesting province/capital region as the most workable path.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 2 Turn 8"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were still very lost, the tutor often responded with direct explanations or source-method dumps instead of first diagnosing exactly which confusion point remained.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints like refusing to build the table, but did not clearly explain that this was to support the student's own reasoning, retention, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 3",
+                  "Transcript 2 Turn 4"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved, such as correctly distinguishing GDP from income, the tutor moved forward without asking the student to reflect on what changed in their thinking and why the distinction worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The overall tone was mostly supportive, but moments like 'Fine. Dumbed down' and 'No. I'm your tutor, not a shortcut' came across as sharper and more rigid than ideal for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 29,
+    "max_base_score": 44,
+    "overview": "The tutor generally kept the conversation anchored to the assignment, used manageable steps, and avoided giving submission-ready content. Main deductions come from occasionally telling the student the key interpretive choice instead of fully eliciting it, responding to confusion with explanation before diagnosis, and missing chances to explain the learning rationale behind constraints or prompt reflection after improvement. Where evidence was borderline, smaller deductions were used rather than heavier penalties.",
+    "judge_reasoning": "Across the bundle, the tutor was usually process-oriented and assignment-focused, especially in steering the student toward source quality, geographic-unit consistency, and table structure. However, the tutor sometimes resolved the central choice for the student by recommending which unit to use, which weakens student-led idea generation under 1.1. The tutor also frequently answered confusion with immediate explanation rather than first narrowing the student's misunderstanding, and it did not clearly explain why refusing to provide a full table was pedagogically useful. Communication was concise and mostly supportive, but a few brusque phrases justified a tone deduction.",
+    "total_score": 29,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

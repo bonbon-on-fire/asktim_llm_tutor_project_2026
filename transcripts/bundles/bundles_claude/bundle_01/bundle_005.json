@@ -3,98 +3,6 @@
   "provider": "claude",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": "Transcript 3, Turn 6",
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "In Transcript 3 Turn 6, the tutor provides a 'broad map' that directly states the key interpretive conclusion ('act consequentialism tends to treat all equal-number tradeoffs alike; many people think some cases differ because killing as a means is harder to justify than causing death as a side effect') before the student has reasoned to it. This gives the student the central analytical framework rather than guiding them to derive it.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development.",
-                "points": 2
-              },
-              {
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "In Transcripts 1, 2, and 3, when students make meaningful progress (e.g., Transcript 3 Turn 9 where the student produces three strong sentences), the tutor moves forward without prompting reflection on what changed in their thinking or why the new approach worked better.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 14,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 34,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong scaffolding and dialogue management across all three transcripts, consistently breaking the problem into manageable steps and redirecting student requests for full explanations into targeted questions. The main deduction is in 1.1 for Transcript 3 Turn 6, where the tutor provides the central analytical framework ('broad map') directly rather than guiding the student to derive it. The 1.1.C.b deduction is the primary concern; the rubric caps 1.1 at 12 points total. The tutor also never explains its Socratic rationale to students and misses reflection prompts after student breakthroughs.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is triggered by Transcript 3 Turn 6, where the tutor states the key interpretive conclusion—that act consequentialism treats equal-number tradeoffs alike while many find means-killing less permissible—before the student reasons to it. This is the bridge from evidence to conclusion delivered directly. The 1.3.A.a deduction applies because no transcript contains any explanation of why the tutor uses guided questioning rather than direct answers. The 1.3.C.a deduction applies because in all three transcripts, when students make clear progress (notably Transcript 3 Turn 9), the tutor moves forward without prompting reflection on what changed in their thinking. Scaffolding and dialogue quality are strong throughout: the tutor consistently builds on student responses, avoids redundancy, and keeps the conversation anchored to the assignment.",
-    "total_score": 34,
-    "max_score": 44,
-    "model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0003",
     "clueless/clueless_raw/transcript_0027",
@@ -320,5 +228,90 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work this out yourself because active reasoning builds retention and philosophical skill.' The tutoring constraints are enforced but the rationale for them is never articulated to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 3, after the student produces a strong three-sentence argument (Turn 9) following earlier confusion, the tutor moves directly to the next task without prompting any reflection on what changed in the student's thinking or why the approach worked. Similarly in Transcript 2, when the student arrives at 'means vs. side effect' after struggling, the tutor advances without pausing to reinforce the method shift.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts. It consistently avoids giving submission-ready answers, keeps key idea generation student-led, scaffolds progression carefully, and maintains a supportive tone. The primary weaknesses are the absence of any explicit rationale for the Socratic approach (1.3.A.a) and a missed opportunity to prompt reflection after student breakthroughs (1.3.C.a). There is also a minor instance in Transcript 3 Turn 6 where the tutor provides a 'broad map' summary that edges toward telling rather than asking, but it stops short of fully resolving the reasoning for the student and is not penalized separately to avoid double-counting.",
+    "judge_reasoning": "1.1: The tutor never gives final answers or submission-ready content; it consistently uses questions, partial scaffolds, and structured frameworks that require the student to fill in the reasoning. No deductions apply. 1.2: The tutor builds on each correct student step (e.g., affirming 'that's not guessing—that's the key structure' in T1-T5, and 'that's strong enough to build on' in T3-T9) and diagnoses confusion before responding by asking targeted questions. No deductions apply. 1.3: The tutoring rationale is never explained to students across all three conversations—students are guided but never told why this approach supports their learning (1.3.A.a, -2). After clear student improvement moments (T3 Turn 9, T2 Turn 8-9), the tutor advances the task without prompting reflection on what changed in the student's thinking (1.3.C.a, -2). Method-level feedback is present (e.g., 'build it in this order,' 'use this test'), so 1.3.B is not penalized. Dialogue quality and communication quality are strong throughout: responses are bite-sized, tone is consistently supportive, and the tutor stays on-task without redundancy.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
 }

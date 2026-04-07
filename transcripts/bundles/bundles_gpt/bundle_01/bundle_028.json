@@ -3,101 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a workable flooding row, the tutor praised and refined the answer but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 5",
-                  "Transcript 2 Turn 6",
-                  "Transcript 2 Turn 10",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor is generally supportive, but several lines use rigid or admonishing phrasing such as 'not a shortcut,' 'Stop spiraling,' 'Fine. Here's the process,' and 'Stop waiting for certainty,' which risks sounding dismissive and can reduce tutoring trust.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor consistently avoided doing the assignment for the student and kept the work student-led through questions, filters, and partial scaffolds. Assignment anchoring stayed strong throughout, and most explanations were concise and usable. The main weaknesses were a missed reflection opportunity after student improvement and occasional sharp phrasing; where the student explicitly asked for broad explanations, I treated the tutor's direct overviews as appropriate rather than penalizing scaffolding.",
-    "judge_reasoning": "Across the bundle, the tutor protected against near-ready assignment output, refused to write full rows for the student, and repeatedly pushed the student to choose stressors, sectors, and ratings themselves. The tutoring was well anchored to the task and generally progressed through manageable steps, with specific method guidance on filtering stressors, distinguishing stressor/sector/impact, and calibrating ratings comparatively. I deducted under 1.3 because when the student finally produced a workable row, the tutor improved it but did not ask the student to reflect on what changed in their reasoning. I also deducted under tone because several responses used unnecessarily sharp wording that could feel dismissive despite otherwise solid coaching.",
-    "total_score": 40,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0086",
     "clueless/clueless_raw/transcript_0110",
@@ -323,5 +228,120 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were broadly lost, the tutor several times responded with a full explanation of the assignment/process rather than first diagnosing which specific part the student already understood or where the confusion was centered.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to producing a workable flooding row, the tutor gave feedback on weaknesses but did not prompt reflection on what changed in the student's reasoning or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 2-8",
+                  "Transcript 2 Turns 2-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycled through similar explain-the-structure, use-this-filter, and pick-one-now prompts while the student remained confused, with limited synthesis or a distinctly different strategy until late in the exchanges.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 6",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tone was sometimes more sharp than supportive, using phrases like 'Stop spiraling,' 'Fine. Here’s the process—use it,' and 'Stop waiting for certainty,' which could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor stayed assignment-anchored, generally kept the work student-led, and avoided giving submission-ready rows. The main weaknesses were recurring explanation loops without enough diagnostic probing, missed reflection after student improvement, and an occasionally brusque tone. Deductions were kept limited because the tutor still provided useful scaffolds and process-oriented prompts.",
+    "judge_reasoning": "The strongest part of the tutoring was pedagogy under 1.1: the tutor consistently refused to provide a completed table row and instead asked the student to supply choices, ratings, and justifications. However, under 1.2 the tutor often answered broad confusion with method dumps rather than first checking what the student already understood, and under 1.3 the tutor missed a clear chance to ask the student to reflect after producing a better row. Dialogue quality lost the largest deduction because the tutor repeatedly reused similar prompting patterns while the student remained stuck. Communication was mostly clear and concise, but several turns used a sharper, less supportive tone than ideal.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

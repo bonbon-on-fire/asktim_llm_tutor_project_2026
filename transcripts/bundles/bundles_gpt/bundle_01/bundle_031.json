@@ -3,110 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 7",
-                  "Transcript 3 Turn 3",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced boundaries against giving finished rows or templates, but did not clearly explain at least once that these constraints were meant to support the student's learning process, reasoning, or long-term skill development.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 3 Turn 6",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from a thinner justification to a stronger Jakarta-specific one, the tutor praised it and moved on without explicitly prompting reflection on what changed in the student's reasoning and why the revision worked better.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 20,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turns 6-10",
-                  "Transcript 3 Turns 8-10"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returned to essentially the same distinction or comparison framework after the student remained confused, especially around separating Miami stressors and comparing Jakarta flooding versus heat, with limited switching to a new explanatory mode before the end.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 36,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor consistently avoided doing the assignment for the student and kept the work anchored to the stressors-table task. The main weaknesses were meta-learning and dialogue management: the tutor set boundaries without clearly explaining the learning rationale, missed a reflection opportunity after student improvement, and sometimes repeated the same questioning pattern while the student stayed stuck. Tone was firm at times, but the overall evidence still supports a generally supportive, formative interaction, so no communication deduction was applied.",
-    "judge_reasoning": "The tutor scored well on pedagogy basics because they did not provide submission-ready content, generally scaffolded step by step, and stayed grounded in the assignment. Deductions in 1.3 are warranted because the tutor's refusals were framed as not doing the assignment rather than as a learning strategy, and after a clear improvement in Transcript 3 the tutor did not ask the student to reflect on what changed. A full deduction in 2.1 is supported by repeated looping on the same distinctions in Transcripts 1 and 3 after the student signaled continued confusion. Communication remained concise and mostly supportive, so those criteria stayed at full credit.",
-    "total_score": 36,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0016",
     "clueless/clueless_raw/transcript_0040",
@@ -332,5 +228,110 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 2"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor sometimes supplied the key conceptual distinction before the student worked it out, e.g. directly stating that sea level rise is the driver while coastal flooding is the manifestation, and directly identifying extreme heat as the stressor in Phoenix before eliciting the student's own reasoning.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 3",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set boundaries against providing model rows or templates, but did not clearly explain a learning-focused rationale such as building the student's own reasoning or improving retention; the comments focused on not doing the assignment for the student rather than why that constraint supports learning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 3",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone was occasionally rigid and sharper than necessary, especially in lines like 'I’m your tutor, not a shortcut' and the refusal to provide even a general template, which could discourage participation even though the overall interaction remained mostly supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor consistently kept the student engaged in the assignment, avoided producing submission-ready rows, and usually scaffolded the task into manageable steps anchored to the prompt. The main weaknesses were occasional premature conceptual answers, lack of an explicit learning rationale for tutoring constraints, and a few overly rigid refusals. Some looping occurred in the conversations, but the tutor generally broke it with synthesis or reframing, so no deduction was applied there.",
+    "judge_reasoning": "Across the bundle, the tutor was strong on assignment alignment and guided practice: they repeatedly asked the student to identify cities, stressors, sectors, ratings, and evidence rather than writing the table for them. The biggest pedagogy issue was that the tutor sometimes gave the key conceptual distinction before the student derived it, especially when defining stressor categories or driver-versus-impact relationships. The tutor also enforced boundaries against giving model answers, but did not explicitly connect those boundaries to a learning rationale like skill-building or retention. Communication was generally clear and supportive, though a few responses were unnecessarily rigid in tone.",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

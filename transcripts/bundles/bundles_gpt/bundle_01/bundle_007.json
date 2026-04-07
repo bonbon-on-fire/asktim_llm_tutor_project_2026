@@ -3,122 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 5",
-                  "Transcript 3 Turn 6"
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduces the central means-versus-side-effect distinction before the student independently develops it, effectively supplying the main interpretive path and then asking the student to apply it.",
-                "points": 6
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor performs the key bridge from case features to critique by explaining that numbers alone are insufficient and that a 'means/mechanism' distinction shows why act consequentialism misses something, rather than having the student derive that reasoning fully.",
-                "points": 6
-              }
-            ],
-            "score": 0,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 8",
-                  "Transcript 1 Turn 9",
-                  "Transcript 3 Turn 9",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moves from confusion to a workable critique or rule, the tutor advances to the next task without prompting reflection on what changed in the student's thinking or why the improved move worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 10,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 7",
-                  "Transcript 2 Turn 6",
-                  "Transcript 3 Turn 3"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor is generally supportive, but several replies are notably rigid or sharp ('Now stop asking for the whole map and use it,' 'I’m not going to do the full rundown for you,' 'No—I’m your tutor, not your substitute'), which could discourage a confused student.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 28,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor stays tightly anchored to the assignment, uses clear stepwise scaffolds, and avoids giving submission-ready prose. The main rubric issue is that the tutor repeatedly supplies the central philosophical distinction and argumentative bridge rather than keeping the key idea generation student-led. There is also a smaller missed opportunity to prompt reflection after student improvement, plus occasional blunt wording. Evidence for redundancy was mixed, so no deduction was taken there.",
-    "judge_reasoning": "The strongest deductions come under 1.1 because the tutor directly introduces the core 'means vs. side effect/mechanism' framework and explicitly explains how it undercuts act consequentialism, which are central reasoning moves the student should have generated. By contrast, the tutor does well on scaffolding and assignment anchoring: the exchanges are structured, case-focused, and consistently tied back to the prompt rather than drifting. A smaller pedagogy deduction applies because, after moments of genuine student progress, the tutor usually moves forward instead of asking the student to reflect on what changed in their method. Communication is mostly clear and bite-sized, but several blunt refusals make the tone less supportive than ideal.",
-    "total_score": 28,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0004",
     "clueless/clueless_raw/transcript_0028",
@@ -344,5 +228,109 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduced the central 'means vs. side effect' interpretive path before the student had independently developed it, then asked the student to apply that tutor-supplied distinction.",
+                "points": 6
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor performed the key bridge from case features to the paper's critique by explicitly explaining that the distinction shows why numbers alone are morally insufficient and why act consequentialism is 'too crude,' rather than having the student derive that argumentative step.",
+                "points": 6
+              }
+            ],
+            "score": 0,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 7-8",
+                  "Transcript 2 Turns 7-8",
+                  "Transcript 3 Turns 8-9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion to a workable critique, the tutor affirmed the progress and immediately advanced to the next task without prompting reflection on what changed in the student's reasoning or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor was consistently assignment-focused, clear, and generally well-scaffolded, but the biggest weakness was pedagogy: across transcripts, the tutor repeatedly supplied the conversation's central philosophical distinction and argumentative bridge instead of keeping those key idea-generation steps fully student-led. I did not deduct for tone or redundancy because the evidence there was mixed and the smaller deduction rule applies.",
+    "judge_reasoning": "The major deductions come from 1.1 because the tutor repeatedly introduced the decisive 'means versus side effect' framework and explained why it undermines act consequentialism before the student fully reasoned that out independently. That behavior does not amount to full submission-ready writing, but it does violate the rubric's requirement that key conclusions and reasoning remain student-led. By contrast, the tutor stayed tightly anchored to the assignment, used manageable steps, and often explained why they would not simply provide the whole answer. A smaller pedagogy deduction also applies because when students improved after confusion, the tutor typically moved forward without reflective prompts about what changed in their method.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

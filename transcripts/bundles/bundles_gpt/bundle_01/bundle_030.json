@@ -3,112 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 2",
-                  "Transcript 3 Turn 2"
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were confused, the tutor often moved straight into broad explanations or frameworks rather than first diagnosing what the student already understood or where the confusion specifically lay.",
-                "points": 3
-              }
-            ],
-            "score": 3,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 10",
-                  "Transcript 3 Turns 8-10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student showed improvement following earlier confusion, the tutor continued the task without asking the student to reflect on what changed in their thinking or why the new approach worked better.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 19,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 3",
-                  "Transcript 1 Turn 5",
-                  "Transcript 1 Turn 9",
-                  "Transcript 1 Turn 10"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was often productive, but several replies were unnecessarily rigid or curt (for example, 'Then stop trying,' 'you're just thinking in circles,' and 'Fine. Commit to it'), which risks discouraging a confused student.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 6,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 37,
-    "max_base_score": 46,
-    "overview": "The tutor consistently avoided doing the assignment for the student and kept the work mostly student-led, while staying well anchored to the actual stressors-table task. Major deductions come from insufficient diagnostic questioning before explanatory responses, missed reflection prompts after student improvement, and a somewhat rigid tone in parts of the exchange. There was some repetition across prompts, but not enough clear evidence of full spiraling to justify a dialogue-quality deduction.",
-    "judge_reasoning": "Across the bundle, the tutor generally used guided questioning, refused to provide submission-ready rows, and gave useful process-oriented support tied closely to the assignment. The main pedagogy weakness was that the tutor often responded to confusion with immediate explanation instead of first isolating the student's exact misunderstanding. The tutor also missed chances to ask the student to reflect after improved attempts, which the rubric specifically rewards. Communication was mostly clear and concise, but some phrasing was sharper than necessary and could feel discouraging to a struggling student.",
-    "total_score": 37,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0087",
     "clueless/clueless_raw/transcript_0111",
@@ -334,5 +228,120 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 8"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor sometimes revealed key content choices before the student had explored them, such as supplying Miami-specific stressors/vulnerabilities and pre-framing the sea level rise/flooding/storm surge distinction, which narrowed the student's answer path instead of keeping idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 4"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints by refusing to provide a full example row, but did not clearly explain the learning rationale in terms of practice, reasoning, or retention; saying it would 'do the assignment for you' is a policy statement more than a tutoring rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 5",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student improved after confusion, the tutor generally moved straight to the next task or critique without prompting reflection on what changed in the student's thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 9",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 4"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often efficient but occasionally sounded brusque or controlling toward a confused student, using phrasing like 'Then stop,' 'Time to turn the discussion into a draft attempt,' and 'Fine. Commit to it,' which risks undermining supportiveness.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 32,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor stayed well anchored to the assignment, avoided giving submission-ready output, and consistently pushed the student to attempt their own rows and ratings. Major deductions come from moments where the tutor supplied answer-path content too early, did not explicitly explain the learning rationale for tutoring constraints, and missed chances to prompt reflection after student improvement. Where evidence was somewhat mixed, smaller deductions were preferred rather than broader penalties.",
+    "judge_reasoning": "The tutor's strongest performance was in assignment anchoring and process scaffolding: they repeatedly returned the student to the stressors table structure, clarified sectors, and asked for incremental attempts rather than writing the assignment. However, the tutor did at times front-load key ideas, especially by naming city-specific stressors and distinctions before the student had generated them, which reduced student-led discovery under 1.1. The tutor also missed rubric-required meta-learning moves by not clearly explaining why withholding direct examples supports learning and by not asking the student to reflect after successful corrections. Communication was mostly clear and concise, but several replies were noticeably blunt enough to merit a tone deduction.",
+    "total_score": 32,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

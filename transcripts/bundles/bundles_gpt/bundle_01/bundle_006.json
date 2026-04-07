@@ -3,91 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "T1 Turn 10",
-                  "T2 Turn 9",
-                  "T3 Turn 9-10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a workable distinction or argument, the tutor moved into the next task or outline rather than asking the student to reflect on what changed in their reasoning and why the improved approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 4,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 22,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 12,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 5,
-            "max": 5
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 5,
-            "max": 5
-          }
-        },
-        "base": {
-          "score": 10,
-          "max": 10
-        }
-      }
-    },
-    "total_base_score": 44,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor stayed strongly process-oriented, avoided giving submission-ready answers, and consistently pushed the student to generate claims and principles. The tutor generally scaffolded well and kept the discussion anchored to the assignment. The main missed opportunity was meta-learning reflection after the student made progress. Some turns came close to supplying conceptual distinctions directly, but the tutor still kept the final argument-building work with the student, so no larger pedagogy deduction was taken.",
-    "judge_reasoning": "The tutor earns high marks because they repeatedly used guided discovery, refused ghostwriting, and redirected the student toward generating their own distinctions, rules, and outlines instead of handing over a ready-made essay. They also gave useful process feedback, such as pushing the student from \"feels worse\" toward a defensible principle and explaining why they were not simply phrasing the answer for the student. I did not deduct under directness because the tutor's conceptual help stayed at the level of scaffolding rather than producing a submission-ready conclusion. The clearest rubric miss was that, after noticeable student improvement, the tutor usually advanced to the next step instead of prompting reflection on what changed in the student's method or understanding.",
-    "total_score": 44,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0075",
     "clueless/clueless_raw/transcript_0099",
@@ -313,5 +228,116 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly supplied the central answer path before the student had independently developed it, especially by introducing the means/side-effect distinction and suggesting it as the likely principle for the paper. This kept the conversation short of a finished submission, but it still reduced student-led idea generation on the key interpretive move.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 5",
+                  "Transcript 2 Turn 4",
+                  "Transcript 2 Turn 5"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student's confusion was specifically about remembering or distinguishing the lecture cases, the tutor often answered with abstract sorting prompts instead of first diagnosing and repairing the case-memory problem. That meant the tutor sometimes responded to a higher-level theory issue before fully addressing the student's immediate sticking point.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from weaker earlier responses to clearer candidate principles and bullet-point arguments, the tutor moved straight into the next task or outline without asking the student to reflect on what changed in their thinking and why the stronger version worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 13,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "The tutor was generally interactive, assignment-focused, and avoided giving a submission-ready essay. The main weakness was that the tutor often steered the student toward the decisive means-versus-side-effect framework rather than letting that key idea emerge more fully from the student. I also applied a deduction for sometimes addressing abstract theory structure before fully diagnosing the student's case-confusion, and for missing reflection opportunities after student improvement.",
+    "judge_reasoning": "Across the bundle, the tutor consistently used guided questions and refused to ghostwrite, which preserved strong scores in dialogue and communication. However, the tutor repeatedly introduced the core candidate principle itself, especially the means/side-effect distinction, so I deducted under 1.1.C rather than the harsher direct-answer penalty because the responses were still not submission-ready. I also deducted under 1.2 because the student repeatedly signaled confusion about the lecture cases themselves, yet the tutor often pushed abstract classification before fully repairing that confusion. Finally, the tutor gave useful methodological framing and rationale, but did not prompt reflection after noticeable student improvement, so 1.3 lost 2 points.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

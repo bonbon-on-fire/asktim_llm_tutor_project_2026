@@ -3,128 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 2 Turn 8",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied the central argumentative bridge and partial thesis rather than leaving the key reasoning fully student-led, including giving a ready-made claim about act consequentialism missing morally relevant factors and a fill-in template that already established the conclusion that equal outcomes do not make acts equally permissible.",
-                "points": 6
-              }
-            ],
-            "score": 6,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 4",
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 5",
-                  "Transcript 3 Turn 6"
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "The student repeatedly signaled a more basic confusion—unclear recall of what Blood and Fuel actually are—but the tutor often kept pushing abstract comparison questions and thesis-building before first diagnosing that missing factual recall.",
-                "points": 3
-              }
-            ],
-            "score": 3,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-full-answer, student-generated approach throughout, but never clearly explained that this constraint was meant to support the student's own learning, reasoning, or retention.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 2 Turn 9",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier confusion by producing stronger draft principles, the tutor moved straight into the next task instead of prompting reflection on what changed and why the new move worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 11,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turns 3-10",
-                  "Transcript 3 Turns 2-10"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returned to the same classify-a-case / means-versus-side-effect questioning pattern while the student kept saying the cases blurred together, with limited synthesis or a different support mode until late.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 27,
-    "max_base_score": 46,
-    "overview": "The tutor stayed focused on the assignment, used clear bite-sized prompts, and avoided giving a fully submission-ready essay. Main deductions come from supplying part of the core argumentative bridge, repeatedly pressing the same comparison framework while the student's real problem was factual recall of the cases, and missing explicit meta-learning explanation/reflection. The 1.1 deduction is somewhat borderline because the tutor mostly scaffolded rather than wrote prose, so no harsher near-submission-ready penalty was applied.",
-    "judge_reasoning": "Across the bundle, the tutor was supportive and generally Socratic, but several responses crossed into doing the key philosophical move for the student by giving the thesis structure and conclusion about outcomes versus morally relevant differences. The tutor also often responded to higher-level argumentative confusion when the student more basically did not remember the lecture cases, which limited the effectiveness of the scaffolding. Still, the tutor kept the conversation anchored to the prompt, avoided off-topic drift, and communicated clearly without grading language. Overall this was a decent but notably imperfect tutoring performance under the rubric.",
-    "total_score": 27,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0005",
     "clueless/clueless_raw/transcript_0029",
@@ -350,5 +228,119 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor mostly stayed process-focused, but at key moments it supplied the student's central evaluative line before the student had fully derived it, e.g. offering a ready-made claim that act consequentialism focuses on outcomes while the cases suggest some other morally relevant factor, and then laying out the core objection in note form.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced tutoring constraints such as refusing to write the reason, paragraph, or full answer, but did not clearly explain why those constraints support the student's learning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable draft principle or summary, the tutor moved straight into the next test rather than prompting reflection on what changed in the student's reasoning and why the improved attempt worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 3-10",
+                  "Transcript 3 Turns 2-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "When the student remained confused, the tutor repeatedly returned to the same 'pick one case / means vs side effect' questioning pattern without enough synthesis or reframing, so the dialogue sometimes cycled rather than clearly advancing.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor was generally supportive, concise, and well anchored to the assignment, and it avoided giving a fully submission-ready essay. The main weaknesses were occasional over-supplying of the core thesis/logic, repeated questioning patterns when the student was still fuzzy, and limited meta-level explanation of tutoring constraints or reflection prompts after improvement.",
+    "judge_reasoning": "The tutor earned strong marks for staying on-task, keeping responses clear, and using mostly guided prompts rather than writing the assignment for the student. I deducted under 1.1 because some turns moved beyond scaffolding into giving the student's main argumentative line and objection structure, even if not as a full polished answer. I deducted under 1.3 because the tutor refused direct writing help without explaining the learning rationale, and it missed chances to ask the student to reflect after successful revisions. I also deducted under 2.1 because the conversation sometimes repeated the same classification move instead of switching strategies or synthesizing sooner when confusion persisted.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

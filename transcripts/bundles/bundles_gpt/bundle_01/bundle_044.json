@@ -3,137 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 7",
-                  "Transcript 1 Turn 9",
-                  "Transcript 3 Turn 5",
-                  "Transcript 3 Turn 7"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to provide a full example or answer, but does not clearly explain a learning-centered rationale such as helping the student practice reasoning, retain the method, or build independent analysis skills.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 5",
-                  "Transcript 3 Turn 10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student makes clearer progress, the tutor affirms it and moves on to the next step without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 20,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 2",
-                  "Transcript 1 Turn 3",
-                  "Transcript 1 Turn 4",
-                  "Transcript 1 Turn 8",
-                  "Transcript 1 Turn 10"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returns to the same authority/participation/exclusion distinction while the student remains confused, and only modestly varies the move instead of synthesizing or shifting strategy earlier.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 1",
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 2",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "Several replies become long, list-heavy explanations where a shorter interactive prompt would have better matched the student's confusion and supported back-and-forth reasoning.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 8",
-                  "Transcript 1 Turn 9",
-                  "Transcript 3 Turn 5"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tone is often basically supportive, but moments like \"Fine—from scratch,\" \"No. I'm your tutor, not your substitute writer,\" and \"Now stop circling the concept\" come across as rigid or brusque in ways that could reduce trust.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 2,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 30,
-    "max_base_score": 46,
-    "overview": "The tutor consistently stayed anchored to the assignment and generally kept the student doing the work rather than producing a submission-ready answer. Major deductions come from weak meta-learning support, repeated cycling on the same distinctions after confusion, long explanatory turns, and some brusque phrasing. I chose the smaller interpretation on pedagogy: the tutor gave strong frameworks and examples, but not enough city-specific final content to count as doing the assignment for the student.",
-    "judge_reasoning": "Across the bundle, the tutor was solid on assignment alignment and usually pushed the student to identify actors, categories, and evidence independently. I did not deduct under 1.1 because the tutor refused to supply a finished city-specific table or forum post, even when the student asked repeatedly. However, the tutor rarely explained why those constraints support learning, missed reflection opportunities after student improvement, and sometimes kept repeating the same framework instead of shifting approach. Communication also suffered from several long list-style explanations and a few sharp lines that made the tone less supportive.",
-    "total_score": 30,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0094",
     "clueless/clueless_raw/transcript_0118",
@@ -359,5 +228,113 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student showed improved understanding (for example, identifying low-income renters as likely missing, and later naming low-income riverside or informal-settlement residents), the tutor affirmed the step and moved forward without prompting reflection on what changed in the student's thinking or why the improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 2-10",
+                  "Transcript 2 Turns 1-10",
+                  "Transcript 3 Turns 1-9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across the bundle, the tutor repeatedly cycled through the same distinction—leading vs engaged vs missing—using very similar prompts ('what city?', 'who has authority?', 'who is missing?') while the student remained confused. The tutor offered only limited synthesis or strategic reframing, so the interaction often repeated the same move pattern without much conversational advancement.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally helpful, but several replies were brusque or rigid in ways that could weaken rapport, such as 'No. I'm your tutor, not your substitute writer,' 'You're dwelling on a detail that probably doesn't matter much,' and 'Now stop circling the concept and apply it.'",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor consistently avoided doing the assignment for the student and kept the work student-directed, with strong assignment anchoring and generally clear process prompts. Main weaknesses were repetitive looping on the same conceptual distinction, a somewhat rigid tone at several moments, and missed reflection opportunities after student improvement. Where evidence was somewhat ambiguous, deductions were kept limited rather than expanded into overlapping pedagogy penalties.",
+    "judge_reasoning": "The strongest aspect of this tutoring was restraint: the tutor refused to provide submission-ready content and instead pushed the student to identify actors, evidence, and categories independently. The main deduction comes from dialogue quality, because across the combined transcript the tutor repeatedly reused the same authority/engagement/missing framework without enough synthesis or a substantially new strategy when confusion persisted. A smaller pedagogy deduction applies because the tutor did not ask the student to reflect on what changed after moments of improved reasoning. Communication also loses points for several sharp or rigid phrasings, though the overall tone remained more supportive than dismissive.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

@@ -3,120 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 3 Turn 2"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints against giving a model post/example, but did not clearly explain why those constraints support learning or skill development; the responses mostly said the student 'needs to do the thinking' without an explicit tutoring rationale.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 10",
-                  "Transcript 3 Turn 8"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "When the student finally articulated a workable framing or classification, the tutor moved directly to the next task instead of prompting reflection on what became clearer or what reasoning change helped.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 20,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turns 2-8",
-                  "Transcript 2 Turns 1, 5-7"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly cycled through the same lead/engaged/missing distinction and similar question prompts while the student remained confused, with limited synthesis or strategy shift for several turns.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 5,
-            "max": 5
-          },
-          "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1 Turn 9",
-                  "Transcript 2 Turn 2",
-                  "Transcript 3 Turn 2"
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was generally helpful, but several lines were notably rigid or abrupt ('Now stop asking for another example,' 'No full example—you need to build it for your city'), which could discourage a confused student.",
-                "points": 2
-              }
-            ],
-            "score": 3,
-            "max": 5
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 10
-        }
-      }
-    },
-    "total_base_score": 36,
-    "max_base_score": 46,
-    "overview": "Across the bundle, the tutor consistently avoided doing the assignment for the student and stayed well anchored to the actual task. The main weaknesses were repeated looping on the same distinctions, limited explicit explanation of why the tutoring constraints were pedagogically useful, and a somewhat rigid tone in a few refusals. I chose modest deductions where evidence was borderline, especially on tone and meta-learning.",
-    "judge_reasoning": "The tutor's strongest area was pedagogy in the narrow sense of not providing submission-ready content: the tutor repeatedly refused to write the forum post or supply a copyable city example and kept the student doing the classification work. Assignment anchoring was also strong, with repeated returns to the actual deliverable and the leading/engaged/missing framework. Major deductions come from dialogue quality and meta-learning: the tutor often repeated the same classification prompts without enough reframing, rarely explained why the no-example/no-writing constraint helps learning, and missed chances to ask the student to reflect after partial breakthroughs. Communication was mostly clear and bite-sized, but a few responses sounded overly rigid for a confused learner.",
-    "total_score": 36,
-    "max_score": 46,
-    "model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0091",
     "clueless/clueless_raw/transcript_0115",
@@ -342,5 +228,132 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 9",
+                  "Transcript 3 Turn 2",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced constraints such as refusing to provide a full example or write the post, but did not clearly explain why those constraints support the student's learning, reasoning, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student made partial progress, such as identifying low-income residents as possibly missing or classifying the climate office as a lead, the tutor moved forward without prompting reflection on what changed in the student's thinking or why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 2-10",
+                  "Transcript 3 Turns 7-8"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycled through the same distinction among leading, engaged, and missing actors and kept asking for actor examples without enough synthesis or a substantially new reframing, especially in Transcript 1 where the student remained confused across many turns.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "3.1.A.b",
+                "reason": "The tutor produced a raw JSON-style message containing internal pedagogical notes and a nested student-facing answer, which was avoidably dense and confusing compared with a simple direct reply.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 2",
+                  "Transcript 3 Turn 2"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tone was sometimes more rigid than supportive, with phrasing like 'Now stop asking for another example' and 'No full example—you need to build it for your city,' which could discourage a confused student from continuing to participate.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 2,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "Across the bundle, the tutor consistently kept the student focused on the assignment and avoided doing the submission-ready work. The main weaknesses were repetitive looping on the same classification frame, failure to explain the learning rationale behind tutoring constraints, missed reflection opportunities after partial student improvement, one notably unclear raw-JSON reply, and some curt phrasing. Where evidence was somewhat borderline, smaller deductions were preferred; for example, scaffolding and assignment anchoring were kept at full credit because the tutor usually stayed on task and built around the prompt.",
+    "judge_reasoning": "The tutor's strongest performance was in 1.1 and 2.2: they did not write the forum post, did not classify the student's city for them, and repeatedly re-grounded the task in the actual deliverable. Major deductions come from dialogue quality and communication: Transcript 1 shows a repeated lead/engaged/missing loop with limited synthesis, and Transcript 3 Turn 9 contains an inappropriately dense JSON-formatted response. In pedagogy, the tutor enforced boundaries but did not explicitly explain why those limits support learning, and after moments of student progress they moved on without reflection prompts. Tone remained mostly functional, but several turns were rigid enough to merit a supportiveness deduction.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
 }

@@ -3,110 +3,6 @@
   "provider": "claude",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "grade": {
-    "sections": {
-      "1_pedagogy": {
-        "criteria": {
-          "1.1": {
-            "deductions": [],
-            "score": 12,
-            "max": 12
-          },
-          "1.2": {
-            "deductions": [],
-            "score": 6,
-            "max": 6
-          },
-          "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1, Turns 1-10",
-                  "Transcript 2, Turns 1-10",
-                  "Transcript 3, Turns 1-10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—i.e., no rationale is offered for the Socratic/guided approach (e.g., 'I'm asking you to work through this so you retain it better'). The tutor enforces constraints (e.g., 'No, I won't build the table for you') but does not explain the pedagogical reason behind this stance.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Transcript 1, Turns 1-10",
-                  "Transcript 2, Turns 1-10",
-                  "Transcript 3, Turns 1-10"
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "In all three transcripts, the student never reaches a clear success moment after a failed attempt, so there is no opportunity for reflection prompting. However, in Transcript 2 (Turn 3) the student correctly identifies GDP vs. income per capita, and in Transcript 3 (Turn 4) the student correctly sorts categories into exposure vs. capacity. In both cases the tutor affirms briefly ('Yes—that split makes sense' / 'That split is mostly right. Good.') but does not prompt the student to reflect on what changed in their thinking or why the approach worked.",
-                "points": 2
-              }
-            ],
-            "score": 2,
-            "max": 6
-          }
-        },
-        "base": {
-          "score": 20,
-          "max": 24
-        }
-      },
-      "2_dialogue_quality": {
-        "criteria": {
-          "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  "Transcript 1, Turns 4-8"
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "In Transcript 1, the student repeatedly asks for the 'whole big-picture explanation' and the tutor cycles through similar explanatory moves (city proper vs. metro, which unit to use, the full table logic) across multiple turns without consolidating or advancing. The student remains stuck on the same conceptual point from Turn 4 through Turn 8, and the tutor does not meaningfully reframe or switch strategy—it essentially repeats the same guidance in slightly different words each time.",
-                "points": 4
-              }
-            ],
-            "score": 0,
-            "max": 4
-          },
-          "2.2": {
-            "deductions": [],
-            "score": 8,
-            "max": 8
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 12
-        }
-      },
-      "3_communication_quality": {
-        "criteria": {
-          "3.1": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          },
-          "3.2": {
-            "deductions": [],
-            "score": 4,
-            "max": 4
-          }
-        },
-        "base": {
-          "score": 8,
-          "max": 8
-        }
-      }
-    },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor performs well on the core Socratic and scaffolding dimensions: it never gives submission-ready answers, consistently redirects the student to do the reasoning work, builds on partial student progress, and maintains a supportive but firm tone. The main weaknesses are: (1) no explicit rationale for the guided-discovery approach is ever offered across all three transcripts; (2) when students achieve small successes (e.g., correctly distinguishing GDP from income, sorting exposure vs. capacity), the tutor affirms but does not prompt reflection on what changed; and (3) in Transcript 1, the tutor cycles through the same city-unit explanation across five turns without meaningfully reframing or switching strategy, triggering the redundancy deduction. Communication quality is strong throughout—responses are concise, well-structured, and appropriately toned.",
-    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking questions before revealing answers. 1.2 receives full marks: the tutor builds on correct student steps (e.g., affirming the GDP/income split) and generally diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and in both Transcripts 2 and 3 the tutor misses clear opportunities to prompt reflection after student improvement (1.3.C.a). 2.1 loses all 4 points for Transcript 1, where the tutor repeats the same city-unit guidance across Turns 4–8 without reframing, consolidating, or switching strategy despite the student remaining stuck. 2.2 and all of Section 3 are clean.",
-    "total_score": 36,
-    "max_score": 44,
-    "model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6"
-    },
-    "judge_llm_calls": 1
-  },
   "transcript_sources": [
     "clueless/clueless_raw/transcript_0081",
     "clueless/clueless_raw/transcript_0105",
@@ -332,5 +228,96 @@
         }
       ]
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., why active reasoning or self-discovery supports learning. Constraints are enforced (e.g., T3 T8: 'No. I'm your tutor, not a shortcut') but the rationale for that pedagogical stance is never articulated to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In none of the three transcripts does a student successfully improve from a failed attempt in a way that the tutor then prompts reflection on what changed. The conversations end before any clear success-after-failure moment, so this criterion is technically not triggered—however, in Transcript 1 Turn 8 the student finally commits to 'city unit' after repeated confusion, and the tutor simply moves on without any brief reflection prompt on what helped clarify the decision.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through the same city-unit vs. metro-area question across Turns 5, 6, 7, and 8 without meaningful synthesis or reframing. The student repeatedly says they are still lost, and the tutor keeps asking the same question ('which seems more defensible: city unit or metro unit?') in slightly different words rather than consolidating and moving forward.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well overall: it avoids giving submission-ready answers, consistently redirects students to do their own reasoning, scaffolds appropriately, and maintains a supportive but firm tone. The main weaknesses are: (1) a persistent spiral in Transcript 1 around the city-unit question without synthesis or a strategy switch, triggering the redundancy deduction; (2) the tutoring rationale is never explained to students across all three conversations; and (3) a missed reflection opportunity after the student in T1 finally commits to a choice. The 1.3.C.a deduction is applied with some uncertainty since no full success-after-failure arc completes in any transcript, but the closest instance in T1 T8 is handled without any reflective prompt.",
+    "judge_reasoning": "1.1: The tutor never provides near-submission-ready output, never rewrites student text, and consistently asks students to derive answers before confirming—no deductions warranted. 1.2: Scaffolding is well-executed; the tutor builds on student progress (e.g., affirming GDP/income split in T2/T3) and diagnoses confusion before responding—no deductions. 1.3: The tutoring rationale is never explained (1.3.A.a, -2); in T1 the student finally reaches a decision after repeated confusion but the tutor does not prompt reflection on what changed (1.3.C.a, -2); method-level feedback is present throughout so 1.3.B is not triggered. 2.1: In T1 Turns 5–8 the tutor repeats the same city-unit question four times without reframing, consolidating, or switching strategy despite the student remaining stuck—clear pattern-level repetition without progress (-4). 2.2 and section 3: No assignment misunderstanding goes uncorrected, no off-topic drift occurs, responses are appropriately concise, and tone is supportive and non-grading throughout.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
 }
