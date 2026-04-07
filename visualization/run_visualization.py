@@ -1396,28 +1396,28 @@ def main() -> int:
     else:
         print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
 
+    # Regular bundle charts: exactly 3 (bundle_01, bundle_02, bundle_03), GPT vs Claude.
     bundle_type = "01"
-    bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
-    bundle_claude_all = _read_bundle_rows(bundles_dir, "claude", bundle_type)
-    print(f"Loaded bundle_{bundle_type} GPT: {len(bundle_gpt_all)} bundles   Claude: {len(bundle_claude_all)} bundles")
-
-    for persona in ("chaotic", "cooperative", "clueless"):
-        bundle_gpt = _filter_bundle_rows(bundle_gpt_all, {persona})
-        bundle_claude = _filter_bundle_rows(bundle_claude_all, {persona})
-        print(f"Loaded bundle_{bundle_type} {persona} GPT: {len(bundle_gpt)} bundles   Claude: {len(bundle_claude)} bundles")
-        if bundle_gpt or bundle_claude:
+    for bundle_type_single in ("01", "02", "03"):
+        bundle_gpt_single = _read_bundle_rows(bundles_dir, "gpt", bundle_type_single)
+        bundle_claude_single = _read_bundle_rows(bundles_dir, "claude", bundle_type_single)
+        print(
+            f"Loaded bundle_{bundle_type_single} GPT: {len(bundle_gpt_single)} bundles   "
+            f"Claude: {len(bundle_claude_single)} bundles"
+        )
+        if bundle_gpt_single or bundle_claude_single:
             _chart_bundle_scores(
-                bundle_gpt,
-                bundle_claude,
-                bundle_type,
+                bundle_gpt_single,
+                bundle_claude_single,
+                bundle_type_single,
                 out_dir,
-                persona_label=persona,
-                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude.png",
+                persona_label="all_personas",
+                output_name=f"bundle_{bundle_type_single}_grades_gpt_vs_claude.png",
                 chart_idx=chart_idx,
             )
             chart_idx += 1
         else:
-            print(f"  No {persona} bundle_{bundle_type} graded files found. Skipping chart.")
+            print(f"  No bundle_{bundle_type_single} graded files found. Skipping chart.")
 
     bundle_gpt_v2_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v2")
     bundle_claude_v2_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v2")
