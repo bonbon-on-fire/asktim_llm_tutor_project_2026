@@ -1,6 +1,6 @@
 ﻿# Transcripts Dashboard
 
-Flask dashboard to browse transcript results and compare CLAUDE regular vs CLAUDE v3 grades.
+Flask dashboard to browse transcript results and compare GPT and Claude grades.
 
 ## Structure
 
@@ -38,13 +38,13 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
 - Included row sources:
   - Persona raw transcripts in `transcripts/<group>/<group>_raw/*.json`
 - Graded counterparts:
-  - `.../<group>_claude/*.json` (regular)
-  - `.../<group>_claude_v3/*.json` (v3)
+  - `.../<group>_gpt/*.json`
+  - `.../<group>_claude/*.json`
 
 ## Features
 
 - Headers use `Group` and `Version`.
-- Score panels show explicit errors when CLAUDE regular/CLAUDE v3 counterparts are missing, unreadable, ambiguous, or mismatched.
+- Score panels show explicit errors when GPT or Claude counterparts are missing, unreadable, ambiguous, or mismatched.
 
 ## Environment variables
 

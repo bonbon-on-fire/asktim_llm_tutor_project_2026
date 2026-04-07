@@ -100,14 +100,14 @@
   }
 
   /**
-   * Infer the maximum score from regular_max/v3_max fields across the row list;
+   * Infer the maximum score from gpt_max/claude_max fields across the row list;
    * falls back to DEFAULT_MAX_SCORE when no finite values are present.
    * @param {object[]} list
    * @returns {number}
    */
   function inferMaxScore(list) {
     const maxes = list
-      .flatMap((t) => [t.regular_max, t.v3_max])
+      .flatMap((t) => [t.gpt_max, t.claude_max])
       .filter((v) => typeof v === "number" && Number.isFinite(v));
     if (!maxes.length) return DEFAULT_MAX_SCORE;
     return Math.max(...maxes);
@@ -131,10 +131,10 @@
    */
   function renderDashboard(list) {
     const maxScore = inferMaxScore(list);
-    const regularScores = list.map((t) => t.regular_score).filter((s) => s != null);
-    const v3Scores = list.map((t) => t.v3_score).filter((s) => s != null);
-    drawChart("chart-regular", regularScores, "CLAUDE regular", "#3b82f6", maxScore);
-    drawChart("chart-v3", v3Scores, "CLAUDE v3", "#ff893a", maxScore);
+    const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
+    const claudeScores = list.map((t) => t.claude_score).filter((s) => s != null);
+    drawChart("chart-gpt", gptScores, "GPT", "#a65dea", maxScore);
+    drawChart("chart-claude", claudeScores, "CLAUDE", "#ff893a", maxScore);
 
     let sortKey = "group";
     let sortDir = 1;
@@ -158,6 +158,14 @@
      */
     function renderTable() {
       const sorted = [...list].sort((a, b) => {
+        if (sortKey === "gpt_score" || sortKey === "claude_score") {
+          const va = a[sortKey];
+          const vb = b[sortKey];
+          if (va == null && vb == null) return 0;
+          if (va == null) return 1;
+          if (vb == null) return -1;
+          return sortDir * (va - vb);
+        }
         if (sortKey === "group") {
           const groupCompare = displayedGroup(a).localeCompare(displayedGroup(b));
           if (groupCompare !== 0) return sortDir * groupCompare;
@@ -211,8 +219,8 @@
           <td>${escapeHtml(t.version || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.exercise_number) || "—")}</td>
-          <td class="num"><span class="score-cell">${t.regular_score != null ? t.regular_score + "/" + (t.regular_max != null ? t.regular_max : maxScore) : "—"}</span></td>
-          <td class="num"><span class="score-cell">${t.v3_score != null ? t.v3_score + "/" + (t.v3_max != null ? t.v3_max : maxScore) : "—"}</span></td>
+          <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : maxScore) : "—"}</span></td>
+          <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : maxScore) : "—"}</span></td>
           <td><a href="/transcript/${encodeURIComponent(t.route_group || t.group)}/${encodeURIComponent(t.route_version || t.version)}">Read</a></td>
         </tr>`
         )
@@ -224,7 +232,7 @@
       th.onclick = () => {
         const key = th.getAttribute("data-sort");
         if (sortKey === key) sortDir *= -1;
-        else sortDir = key === "regular_score" || key === "v3_score" ? -1 : 1;
+        else sortDir = key === "gpt_score" || key === "claude_score" ? -1 : 1;
         sortKey = key;
         document.querySelectorAll("#transcripts-table thead th[data-sort]").forEach((h) => h.classList.remove("sorted-asc", "sorted-desc"));
         th.classList.add(sortDir === 1 ? "sorted-asc" : "sorted-desc");
@@ -327,7 +335,7 @@
 
   /**
    * Render the full transcript detail view: metadata header, exchanges,
-   * and both CLAUDE regular and CLAUDE v3 grade panels.
+   * and both GPT and CLAUDE grade panels.
    * @param {object} data - transcript detail object returned by /api/transcripts/:group/:version
    */
   function renderTranscript(data) {
@@ -358,16 +366,16 @@
       html += "</div>";
     });
 
-    const regularEl = document.createElement("div");
-    const v3El = document.createElement("div");
-    renderGradeReport(regularEl, data.grade_regular, "CLAUDE regular", "gpt", data.regular_error);
-    renderGradeReport(v3El, data.grade_v3, "CLAUDE v3", "claude", data.v3_error);
+    const gptEl = document.createElement("div");
+    const claudeEl = document.createElement("div");
+    renderGradeReport(gptEl, data.grade_gpt, "GPT", "gpt", data.gpt_error);
+    renderGradeReport(claudeEl, data.grade_claude, "CLAUDE", "claude", data.claude_error);
 
     document.getElementById("transcript-title").textContent = `${data.group} / ${data.version}`;
     const content = document.getElementById("transcript-content");
     content.innerHTML = html;
-    content.appendChild(regularEl);
-    content.appendChild(v3El);
+    content.appendChild(gptEl);
+    content.appendChild(claudeEl);
   }
 
   /**
@@ -377,19 +385,19 @@
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
-    tbody.innerHTML = '<tr><td colspan="7" class="loading">Loading...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="loading">Loading...</td></tr>';
     try {
       const r = await fetch("/api/transcripts");
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="error">No transcript rows found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="error">No transcript rows found.</td></tr>';
         return;
       }
       renderDashboard(list);
     } catch (e) {
       console.error("Failed to load transcripts:", e);
-      tbody.innerHTML = '<tr><td colspan="7" class="error">' + escapeHtml(e.message) + "</td></tr>";
+      tbody.innerHTML = '<tr><td colspan="6" class="error">' + escapeHtml(e.message) + "</td></tr>";
     }
   }
 

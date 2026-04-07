@@ -350,16 +350,6 @@ def _sort_key(row: GradeRow) -> tuple:
     return (row.persona_type, row.student_persona, row.course, ex_num, tnum)
 
 
-def _title_variant_suffix(output_name: str) -> str:
-    """Return a chart title suffix based on output filename variant."""
-    stem = Path(output_name).stem.lower()
-    if stem.endswith("_v2"):
-        return " (v2)"
-    if stem.endswith("_v3"):
-        return " (v3)"
-    return ""
-
-
 def _transcript_num(row: GradeRow) -> int:
     """Extract numeric suffix from transcript_name like transcript_17."""
     if "_" in row.transcript_name:
@@ -438,25 +428,6 @@ def _filter_individual_rows(rows: list[GradeRow], allowed_personas: set[str]) ->
     return [r for r in rows if r.persona_type.lower() in allowed]
 
 
-def _filter_individual_rows_by_persona_version(
-    rows: list[GradeRow],
-    *,
-    persona: str,
-    version: str,
-) -> list[GradeRow]:
-    """Keep rows for exactly one persona/version pair (for example ``chaotic_03``)."""
-
-    target = f"{persona}_{version}".lower()
-    return [r for r in rows if r.student_persona.lower() == target]
-
-
-def _filter_individual_rows_by_version(rows: list[GradeRow], *, version: str) -> list[GradeRow]:
-    """Keep rows whose persona id ends with ``_<version>`` across all persona families."""
-
-    suffix = f"_{version}".lower()
-    return [r for r in rows if r.student_persona.lower().endswith(suffix)]
-
-
 # ---------------------------------------------------------------------------
 # Chart: Line chart — individual transcript scores
 # ---------------------------------------------------------------------------
@@ -492,10 +463,9 @@ def _chart_line_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
-    title_suffix = _title_variant_suffix(output_name)
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=2.5)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
-    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude{title_suffix}")
+    ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude")
     ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
@@ -512,75 +482,6 @@ def _chart_line_scores(
     ax.text(
         0.01, 0.98, "\n".join(lines), transform=ax.transAxes, ha="left", va="top",
         fontsize=9, bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
-    )
-
-    fig.tight_layout()
-    fig.savefig(out_dir / output_name, dpi=150)
-    plt.close(fig)
-    print(f"  [{chart_idx}] {output_name}")
-
-
-def _chart_provider_regular_vs_v3(
-    regular_rows: list[GradeRow],
-    v3_rows: list[GradeRow],
-    out_dir: Path,
-    *,
-    provider_label: str,
-    output_name: str,
-    chart_idx: int,
-) -> None:
-    """Generate per-transcript line chart comparing regular vs v3 for one provider."""
-    plt = _safe_import_matplotlib()
-
-    regular_by_key = {r.transcript_key: r for r in regular_rows}
-    v3_by_key = {r.transcript_key: r for r in v3_rows}
-    all_keys = sorted(
-        set(regular_by_key) | set(v3_by_key),
-        key=lambda k: _sort_key(regular_by_key.get(k) or v3_by_key[k]),
-    )
-
-    x = list(range(len(all_keys)))
-    y_regular = [regular_by_key[k].total_score if k in regular_by_key else float("nan") for k in all_keys]
-    y_v3 = [v3_by_key[k].total_score if k in v3_by_key else float("nan") for k in all_keys]
-
-    paired_regular: list[float] = []
-    paired_v3: list[float] = []
-    for k in all_keys:
-        r = regular_by_key.get(k)
-        v = v3_by_key.get(k)
-        if r and v and math.isfinite(r.total_score) and math.isfinite(v.total_score):
-            paired_regular.append(r.total_score)
-            paired_v3.append(v.total_score)
-
-    fig, ax = plt.subplots(figsize=(16, 7))
-    ax.plot(x, y_regular, label=f"{provider_label.upper()} regular", color="#4c78a8", linewidth=1.4, marker="o", markersize=2.5)
-    ax.plot(x, y_v3, label=f"{provider_label.upper()} v3", color="#f58518", linewidth=1.4, marker="o", markersize=2.5)
-    ax.set_title(f"{provider_label.upper()} Regular vs v3 — Total Score Per Transcript")
-    ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
-    ax.set_ylabel("Total Score")
-    ax.grid(True, alpha=0.3)
-    ax.legend()
-
-    pearson_v = _pearson(paired_regular, paired_v3)
-    spearman_v = _spearman(paired_regular, paired_v3)
-    lines = []
-    lines.append(f"Pearson r = {pearson_v:.3f}" if pearson_v is not None else "Pearson r = N/A")
-    lines.append(f"Spearman ρ = {spearman_v:.3f}" if spearman_v is not None else "Spearman ρ = N/A")
-    lines.append(f"Paired transcripts: {len(paired_regular)}")
-    if paired_regular:
-        lines.append(
-            f"Regular mean: {sum(paired_regular)/len(paired_regular):.1f}   "
-            f"v3 mean: {sum(paired_v3)/len(paired_v3):.1f}"
-        )
-    ax.text(
-        0.01,
-        0.98,
-        "\n".join(lines),
-        transform=ax.transAxes,
-        ha="left",
-        va="top",
-        fontsize=9,
-        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
     )
 
     fig.tight_layout()
@@ -937,9 +838,8 @@ def _chart_section_discrepancies(
 
     x = list(range(len(section_ids_sorted)))
     fig, ax = plt.subplots(figsize=(12, 7))
-    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#6f42c1", alpha=0.8)
-    ax.set_title(f"Rubric Section Discrepancy (GPT vs Claude){title_suffix}")
+    ax.set_title("Rubric Section Discrepancy (GPT vs Claude)")
     ax.set_xlabel("Rubric Section")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -1023,9 +923,8 @@ def _chart_subsection_discrepancies(
 
     x = list(range(len(subsection_ids_sorted)))
     fig, ax = plt.subplots(figsize=(13, 7))
-    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#2f7ed8", alpha=0.85)
-    ax.set_title(f"Subsection Discrepancy (GPT vs Claude){title_suffix}")
+    ax.set_title("Subsection Discrepancy (GPT vs Claude)")
     ax.set_xlabel("Rubric Subsection")
     ax.set_ylabel("Mean Absolute Score Difference")
     ax.set_xticks(x)
@@ -1183,11 +1082,10 @@ def _chart_subsection_correlation_heatmap(
 
     fig, ax = plt.subplots(figsize=(10, 8))
     filename = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
-    title_suffix = _title_variant_suffix(filename)
     im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
     nonempty_rows = sum(1 for values in normalized_rows if values)
     ax.set_title(
-        f"Subsection Correlation Heatmap ({provider_label}, {persona_label}){title_suffix}\n"
+        f"Subsection Correlation Heatmap ({provider_label}, {persona_label})\n"
         f"Normalized subsection scores | n={nonempty_rows}"
     )
     ax.set_xticks(list(range(n)))
@@ -1403,151 +1301,6 @@ def main() -> int:
         output_name="subsection_correlation_heatmap_claude_all_personas_normalized.png",
     )
     chart_idx += 1
-
-    # v2 charts: use only *_gpt_v2 / *_claude_v2 graded transcript folders.
-    gpt_v2_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v2")
-    claude_v2_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v2")
-    print(f"Loaded GPT v2: {len(gpt_v2_rows)} transcripts   Claude v2: {len(claude_v2_rows)} transcripts")
-    if gpt_v2_rows or claude_v2_rows:
-        _chart_section_discrepancies(
-            gpt_v2_rows,
-            claude_v2_rows,
-            out_dir,
-            chart_idx=chart_idx,
-            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png",
-        )
-        chart_idx += 1
-
-        _chart_subsection_discrepancies(
-            gpt_v2_rows,
-            claude_v2_rows,
-            out_dir,
-            chart_idx=chart_idx,
-            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v2.png",
-        )
-        chart_idx += 1
-
-        _chart_line_scores(
-            gpt_v2_rows,
-            claude_v2_rows,
-            out_dir,
-            persona_label="all_transcripts_v2",
-            output_name="individual_grades_all_transcripts_gpt_vs_claude_v2.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-
-        _chart_subsection_correlation_heatmap(
-            gpt_v2_rows + claude_v2_rows,
-            out_dir,
-            provider_label="all_providers",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v2.png",
-        )
-        chart_idx += 1
-        _chart_subsection_correlation_heatmap(
-            gpt_v2_rows,
-            out_dir,
-            provider_label="gpt",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v2.png",
-        )
-        chart_idx += 1
-        _chart_subsection_correlation_heatmap(
-            claude_v2_rows,
-            out_dir,
-            provider_label="claude",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v2.png",
-        )
-        chart_idx += 1
-    else:
-        print("No *_v2 graded transcript folders found. Skipping _v2 chart generation.")
-
-    # v3 charts: use only *_gpt_v3 / *_claude_v3 graded transcript folders.
-    gpt_v3_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v3")
-    claude_v3_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v3")
-    print(f"Loaded GPT v3: {len(gpt_v3_rows)} transcripts   Claude v3: {len(claude_v3_rows)} transcripts")
-    if gpt_v3_rows or claude_v3_rows:
-        _chart_section_discrepancies(
-            gpt_v3_rows,
-            claude_v3_rows,
-            out_dir,
-            chart_idx=chart_idx,
-            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v3.png",
-        )
-        chart_idx += 1
-
-        _chart_subsection_discrepancies(
-            gpt_v3_rows,
-            claude_v3_rows,
-            out_dir,
-            chart_idx=chart_idx,
-            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v3.png",
-        )
-        chart_idx += 1
-
-        _chart_line_scores(
-            gpt_v3_rows,
-            claude_v3_rows,
-            out_dir,
-            persona_label="all_transcripts_v3",
-            output_name="individual_grades_all_transcripts_gpt_vs_claude_v3.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-
-        _chart_subsection_correlation_heatmap(
-            gpt_v3_rows + claude_v3_rows,
-            out_dir,
-            provider_label="all_providers",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v3.png",
-        )
-        chart_idx += 1
-        _chart_subsection_correlation_heatmap(
-            gpt_v3_rows,
-            out_dir,
-            provider_label="gpt",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v3.png",
-        )
-        chart_idx += 1
-        _chart_subsection_correlation_heatmap(
-            claude_v3_rows,
-            out_dir,
-            provider_label="claude",
-            persona_label="all_personas",
-            chart_idx=chart_idx,
-            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v3.png",
-        )
-        chart_idx += 1
-
-        _chart_provider_regular_vs_v3(
-            gpt_all_rows,
-            gpt_v3_rows,
-            out_dir,
-            provider_label="gpt",
-            output_name="individual_grades_gpt_regular_vs_v3.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-        _chart_provider_regular_vs_v3(
-            claude_all_rows,
-            claude_v3_rows,
-            out_dir,
-            provider_label="claude",
-            output_name="individual_grades_claude_regular_vs_v3.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-    else:
-        print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0

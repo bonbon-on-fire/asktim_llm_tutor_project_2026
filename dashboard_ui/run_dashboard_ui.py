@@ -46,16 +46,15 @@ def _discover_persona_groups() -> list[str]:
         raw_dir = persona_dir / f"{persona}_raw"
         gpt_dir = persona_dir / f"{persona}_gpt"
         claude_dir = persona_dir / f"{persona}_claude"
-        claude_v3_dir = persona_dir / f"{persona}_claude_v3"
-        if raw_dir.is_dir() or gpt_dir.is_dir() or claude_dir.is_dir() or claude_v3_dir.is_dir():
+        if raw_dir.is_dir() or gpt_dir.is_dir() or claude_dir.is_dir():
             groups.append(persona)
     return groups
 
 
 def _provider_label(provider: str) -> str:
     labels = {
+        "gpt": "GPT",
         "claude": "CLAUDE",
-        "claude_v3": "CLAUDE v3",
     }
     return labels.get(provider, provider.upper())
 
@@ -128,15 +127,9 @@ def _counterpart_candidates(*, group: str, provider: str, raw_stem: str) -> list
     if not provider_dir.is_dir():
         return []
 
-    def _is_ignored_variant(stem: str) -> bool:
-        # Ignore alternate grading variants (e.g. ..._v2, ..._v3) when matching counterparts.
-        return provider == "claude" and bool(re.search(r"_v[23]$", stem))
-
     out: list[Path] = []
     for path in provider_dir.glob("*.json"):
         stem = path.stem
-        if _is_ignored_variant(stem):
-            continue
         if stem == raw_stem or stem.startswith(f"{raw_stem}__"):
             out.append(path)
     return sorted(out, key=lambda p: p.name)
@@ -216,7 +209,7 @@ def _counterpart_result(*, group: str, provider: str, raw_stem: str, raw_data: d
 
 
 def _list_transcript_rows() -> list[dict]:
-    """Build dashboard rows for all persona transcript runs (raw + Claude regular/v3 counterparts)."""
+    """Build dashboard rows for all persona transcript runs (raw + GPT/Claude counterparts)."""
     out: list[dict] = []
     for group in _discover_persona_groups():
         for raw_stem in _raw_stems_for_group(group):
@@ -224,15 +217,15 @@ def _list_transcript_rows() -> list[dict]:
             if not raw_data:
                 continue
 
-            regular_grade, regular_error = _counterpart_result(
+            gpt_grade, gpt_error = _counterpart_result(
                 group=group,
-                provider="claude",
+                provider="gpt",
                 raw_stem=raw_stem,
                 raw_data=raw_data,
             )
-            v3_grade, v3_error = _counterpart_result(
+            claude_grade, claude_error = _counterpart_result(
                 group=group,
-                provider="claude_v3",
+                provider="claude",
                 raw_stem=raw_stem,
                 raw_data=raw_data,
             )
@@ -245,14 +238,14 @@ def _list_transcript_rows() -> list[dict]:
                     "route_group": group,
                     "route_version": raw_stem,
                     "metadata": meta,
-                    "regular_grade": regular_grade,
-                    "v3_grade": v3_grade,
-                    "regular_error": regular_error,
-                    "v3_error": v3_error,
-                    "regular_score": regular_grade["total_score"] if regular_grade else None,
-                    "regular_max": regular_grade["max_score"] if regular_grade else None,
-                    "v3_score": v3_grade["total_score"] if v3_grade else None,
-                    "v3_max": v3_grade["max_score"] if v3_grade else None,
+                    "gpt_grade": gpt_grade,
+                    "claude_grade": claude_grade,
+                    "gpt_error": gpt_error,
+                    "claude_error": claude_error,
+                    "gpt_score": gpt_grade["total_score"] if gpt_grade else None,
+                    "gpt_max": gpt_grade["max_score"] if gpt_grade else None,
+                    "claude_score": claude_grade["total_score"] if claude_grade else None,
+                    "claude_max": claude_grade["max_score"] if claude_grade else None,
                 }
             )
     return out
@@ -285,15 +278,15 @@ def api_get_transcript(group: str, version: str):
     if not raw_data:
         return jsonify({"error": "Transcript not found"}), 404
 
-    regular_grade, regular_error = _counterpart_result(
+    gpt_grade, gpt_error = _counterpart_result(
         group=group,
-        provider="claude",
+        provider="gpt",
         raw_stem=version,
         raw_data=raw_data,
     )
-    v3_grade, v3_error = _counterpart_result(
+    claude_grade, claude_error = _counterpart_result(
         group=group,
-        provider="claude_v3",
+        provider="claude",
         raw_stem=version,
         raw_data=raw_data,
     )
@@ -307,11 +300,10 @@ def api_get_transcript(group: str, version: str):
             "route_version": version,
             "metadata": {k: v for k, v in raw_data.items() if k not in ("exchanges", "grade")},
             "exchanges": raw_data.get("exchanges", []),
-            "raw_text": None,
-            "grade_regular": regular_grade,
-            "grade_v3": v3_grade,
-            "regular_error": regular_error,
-            "v3_error": v3_error,
+            "grade_gpt": gpt_grade,
+            "grade_claude": claude_grade,
+            "gpt_error": gpt_error,
+            "claude_error": claude_error,
         }
     )
 
