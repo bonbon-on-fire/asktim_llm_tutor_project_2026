@@ -4,8 +4,6 @@ Build GPT vs Claude grading comparison charts.
 Reads judged transcripts from:
     transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json
     transcripts/<persona_type>/<persona_type>_claude/transcript_*.json
-    transcripts/bundles/bundles_gpt/bundle_01/*.json
-    transcripts/bundles/bundles_claude/bundle_01/*.json
 
 Usage:
     python -m visualization.run_visualization
@@ -434,79 +432,8 @@ def _safe_import_matplotlib():
     return plt
 
 
-# ---------------------------------------------------------------------------
-# Bundle data model and reading
-# ---------------------------------------------------------------------------
-
-@dataclass(frozen=True)
-class BundleGradeRow:
-    """A single graded bundle result row for visualization."""
-
-    bundle_name: str
-    total_score: float
-    max_score: float
-    transcript_sources: list[str]
-    persona_types: tuple[str, ...] = ()
-    section_scores: dict[str, float] = field(default_factory=dict)
-    section_maxes: dict[str, float] = field(default_factory=dict)
-
-
-def _read_bundle_grade(path: Path) -> BundleGradeRow | None:
-    """Load a graded bundle JSON and return a BundleGradeRow, or None on error."""
-    try:
-        raw = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return None
-
-    grade = raw.get("grade")
-    if not isinstance(grade, dict):
-        return None
-
-    section_scores, section_maxes = _extract_section_scores(grade)
-
-    sources = raw.get("transcript_sources")
-    if not isinstance(sources, list):
-        sources = []
-
-    persona_types = tuple(sorted({str(s).split("/", 1)[0].strip() for s in sources if "/" in str(s)}))
-
-    return BundleGradeRow(
-        bundle_name=path.stem.strip(),
-        total_score=_parse_score(grade.get("total_score")),
-        max_score=_parse_score(grade.get("max_score")),
-        transcript_sources=[str(s) for s in sources],
-        persona_types=persona_types,
-        section_scores=section_scores,
-        section_maxes=section_maxes,
-    )
-
-
-def _read_bundle_rows_variant(
-    bundles_dir: Path,
-    provider: str,
-    bundle_type: str,
-    folder_suffix: str = "",
-) -> list[BundleGradeRow]:
-    """Load graded bundle JSON files for a provider and bundle type variant."""
-    provider_dir = bundles_dir / f"bundles_{provider}{folder_suffix}" / f"bundle_{bundle_type}"
-    if not provider_dir.exists():
-        return []
-    rows: list[BundleGradeRow] = []
-    for path in sorted(provider_dir.glob("bundle_*.json")):
-        row = _read_bundle_grade(path)
-        if row is not None:
-            rows.append(row)
-    return rows
-
-
-def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
-    """Backward-compatible reader for non-v2 bundle folders."""
-    return _read_bundle_rows_variant(bundles_dir, provider, bundle_type, "")
-
-
 def _filter_individual_rows(rows: list[GradeRow], allowed_personas: set[str]) -> list[GradeRow]:
     """Keep transcript rows whose persona family is included in *allowed_personas*."""
-
     allowed = {p.lower() for p in allowed_personas}
     return [r for r in rows if r.persona_type.lower() in allowed]
 
@@ -528,17 +455,6 @@ def _filter_individual_rows_by_version(rows: list[GradeRow], *, version: str) ->
 
     suffix = f"_{version}".lower()
     return [r for r in rows if r.student_persona.lower().endswith(suffix)]
-
-
-def _filter_bundle_rows(rows: list[BundleGradeRow], allowed_personas: set[str]) -> list[BundleGradeRow]:
-    """Keep bundle rows that include at least one allowed persona family."""
-
-    allowed = {p.lower() for p in allowed_personas}
-    filtered: list[BundleGradeRow] = []
-    for row in rows:
-        if any(p.lower() in allowed for p in row.persona_types):
-            filtered.append(row)
-    return filtered
 
 
 # ---------------------------------------------------------------------------
@@ -1386,89 +1302,13 @@ def _chart_sub_subsection_correlation_heatmap(
 
 
 # ---------------------------------------------------------------------------
-# Chart: Line chart — bundle_01 scores
-# ---------------------------------------------------------------------------
-
-def _chart_bundle_scores(
-    gpt_rows: list[BundleGradeRow],
-    claude_rows: list[BundleGradeRow],
-    bundle_type: str,
-    out_dir: Path,
-    *,
-    persona_label: str,
-    output_name: str,
-    chart_idx: int = 2,
-) -> None:
-    """Generate a line chart comparing GPT vs Claude total scores for a specific bundle type."""
-    plt = _safe_import_matplotlib()
-
-    gpt_by_name = {r.bundle_name: r for r in gpt_rows}
-    claude_by_name = {r.bundle_name: r for r in claude_rows}
-
-    def _bundle_sort_key(name: str) -> int:
-        """Sort bundle names by numeric suffix (e.g. ``bundle_001`` < ``bundle_010``)."""
-
-        parts = name.split("_")
-        try:
-            return int(parts[-1])
-        except (ValueError, IndexError):
-            return 0
-
-    all_names = sorted(
-        set(gpt_by_name) | set(claude_by_name),
-        key=_bundle_sort_key,
-    )
-
-    x = list(range(len(all_names)))
-    y_gpt = [gpt_by_name[n].total_score if n in gpt_by_name else float("nan") for n in all_names]
-    y_claude = [claude_by_name[n].total_score if n in claude_by_name else float("nan") for n in all_names]
-
-    paired_g, paired_c = [], []
-    for n in all_names:
-        g, c = gpt_by_name.get(n), claude_by_name.get(n)
-        if g and c and math.isfinite(g.total_score) and math.isfinite(c.total_score):
-            paired_g.append(g.total_score)
-            paired_c.append(c.total_score)
-
-    fig, ax = plt.subplots(figsize=(16, 7))
-    title_suffix = _title_variant_suffix(output_name)
-    ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=3)
-    ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=3)
-    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude{title_suffix}")
-    ax.set_xlabel(f"Bundle index (bundle_001 – bundle_{len(all_names):03d})")
-    ax.set_ylabel("Total Score")
-    ax.grid(True, alpha=0.3)
-    ax.legend()
-
-    pearson_v = _pearson(paired_g, paired_c)
-    spearman_v = _spearman(paired_g, paired_c)
-    lines = []
-    lines.append(f"Pearson r = {pearson_v:.3f}" if pearson_v is not None else "Pearson r = N/A")
-    lines.append(f"Spearman ρ = {spearman_v:.3f}" if spearman_v is not None else "Spearman ρ = N/A")
-    lines.append(f"Paired bundles: {len(paired_g)}")
-    if paired_g:
-        lines.append(f"GPT mean: {sum(paired_g)/len(paired_g):.1f}   Claude mean: {sum(paired_c)/len(paired_c):.1f}")
-    ax.text(
-        0.01, 0.98, "\n".join(lines), transform=ax.transAxes, ha="left", va="top",
-        fontsize=9, bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
-    )
-
-    fig.tight_layout()
-    filename = output_name
-    fig.savefig(out_dir / filename, dpi=150)
-    plt.close(fig)
-    print(f"  [{chart_idx}] {filename}")
-
-
-# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 def main() -> int:
-    """Entry point: load all graded transcript and bundle data, generate comparison charts, print summary."""
+    """Entry point: load all graded transcript data, generate comparison charts, print summary."""
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
-    bundles_dir = transcripts_dir / "bundles"
     out_dir = repo_root / "visualization" / "outputs"
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -1708,83 +1548,6 @@ def main() -> int:
         chart_idx += 1
     else:
         print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
-
-    # Regular bundle charts: exactly 3 (bundle_01, bundle_02, bundle_03), GPT vs Claude.
-    bundle_type = "01"
-    for bundle_type_single in ("01", "02", "03"):
-        bundle_gpt_single = _read_bundle_rows(bundles_dir, "gpt", bundle_type_single)
-        bundle_claude_single = _read_bundle_rows(bundles_dir, "claude", bundle_type_single)
-        print(
-            f"Loaded bundle_{bundle_type_single} GPT: {len(bundle_gpt_single)} bundles   "
-            f"Claude: {len(bundle_claude_single)} bundles"
-        )
-        if bundle_gpt_single or bundle_claude_single:
-            _chart_bundle_scores(
-                bundle_gpt_single,
-                bundle_claude_single,
-                bundle_type_single,
-                out_dir,
-                persona_label="all_personas",
-                output_name=f"bundle_{bundle_type_single}_grades_gpt_vs_claude.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-        else:
-            print(f"  No bundle_{bundle_type_single} graded files found. Skipping chart.")
-
-    bundle_gpt_v2_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v2")
-    bundle_claude_v2_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v2")
-    print(
-        f"Loaded bundle_{bundle_type} v2 GPT: {len(bundle_gpt_v2_all)} bundles   "
-        f"Claude v2: {len(bundle_claude_v2_all)} bundles"
-    )
-    for persona in ("chaotic", "cooperative", "clueless"):
-        bundle_gpt_v2 = _filter_bundle_rows(bundle_gpt_v2_all, {persona})
-        bundle_claude_v2 = _filter_bundle_rows(bundle_claude_v2_all, {persona})
-        print(
-            f"Loaded bundle_{bundle_type} v2 {persona} GPT: {len(bundle_gpt_v2)} bundles   "
-            f"Claude v2: {len(bundle_claude_v2)} bundles"
-        )
-        if bundle_gpt_v2 or bundle_claude_v2:
-            _chart_bundle_scores(
-                bundle_gpt_v2,
-                bundle_claude_v2,
-                bundle_type,
-                out_dir,
-                persona_label=f"{persona}_v2",
-                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v2.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-        else:
-            print(f"  No {persona} bundle_{bundle_type} v2 graded files found. Skipping chart.")
-
-    bundle_gpt_v3_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v3")
-    bundle_claude_v3_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v3")
-    print(
-        f"Loaded bundle_{bundle_type} v3 GPT: {len(bundle_gpt_v3_all)} bundles   "
-        f"Claude v3: {len(bundle_claude_v3_all)} bundles"
-    )
-    for persona in ("chaotic", "cooperative", "clueless"):
-        bundle_gpt_v3 = _filter_bundle_rows(bundle_gpt_v3_all, {persona})
-        bundle_claude_v3 = _filter_bundle_rows(bundle_claude_v3_all, {persona})
-        print(
-            f"Loaded bundle_{bundle_type} v3 {persona} GPT: {len(bundle_gpt_v3)} bundles   "
-            f"Claude v3: {len(bundle_claude_v3)} bundles"
-        )
-        if bundle_gpt_v3 or bundle_claude_v3:
-            _chart_bundle_scores(
-                bundle_gpt_v3,
-                bundle_claude_v3,
-                bundle_type,
-                out_dir,
-                persona_label=f"{persona}_v3",
-                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v3.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-        else:
-            print(f"  No {persona} bundle_{bundle_type} v3 graded files found. Skipping chart.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
