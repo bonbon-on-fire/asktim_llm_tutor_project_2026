@@ -72,16 +72,6 @@ def _load_json(path: Path) -> dict | None:
         return None
 
 
-def _load_text(path: Path) -> str | None:
-    """Read and return the text content of path, or None if missing or unreadable."""
-    if not path.exists():
-        return None
-    try:
-        return path.read_text(encoding="utf-8")
-    except OSError:
-        return None
-
-
 def _grade_summary(data: dict | None) -> dict | None:
     """Extract a flat grade summary dict from a transcript data dict; returns None if no grade object present."""
     if not data or "grade" not in data or not isinstance(data["grade"], dict):
@@ -125,13 +115,6 @@ def _json_stems(path: Path) -> set[str]:
     if not path.is_dir():
         return set()
     return {f.stem for f in path.glob("*.json")}
-
-
-def _txt_stems(path: Path) -> set[str]:
-    """Return the set of .txt file stems (without extension) inside path."""
-    if not path.is_dir():
-        return set()
-    return {f.stem for f in path.glob("*.txt")}
 
 
 def _transcript_path_for(*, group: str, provider: str, stem: str) -> Path:

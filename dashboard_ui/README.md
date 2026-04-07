@@ -43,7 +43,6 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
 
 ## Features
 
-- Dashboard rows include transcript runs only (bundles are currently excluded).
 - Headers use `Group` and `Version`.
 - Score panels show explicit errors when CLAUDE regular/CLAUDE v3 counterparts are missing, unreadable, ambiguous, or mismatched.
 
