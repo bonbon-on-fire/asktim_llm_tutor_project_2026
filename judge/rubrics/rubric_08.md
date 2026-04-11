@@ -148,7 +148,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
 
 | Section                  | Sub-criteria | Max points |
 | :----------------------- | :----------: | ---------: |
-| 1. Pedagogy              |    1.1-1.3   |         24 |
+| 1. Pedagogy              |    1.1-1.3   |         20 |
 | 2. Dialogue quality      |    2.1-2.2   |         12 |
 | 3. Communication quality |    3.1-3.2   |          8 |
-| **Base total**           |              |     **42** |
+| **Base total**           |              |     **40** |
