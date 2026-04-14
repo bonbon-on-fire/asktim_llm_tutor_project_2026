@@ -198,7 +198,8 @@ def main() -> int:
     print(f"Wrote {out_path} ({len(rows)} transcripts; {len(rows) * len(compiled_graders)} compiled rows)")
 
     fill_spec = importlib.util.spec_from_file_location(
-        "fill_claude_hand_workbook", REPO / "judge" / "fill_claude_hand_workbook.py"
+        "hand_grade_workbook_claude_fill",
+        REPO / "judge" / "hand_grade_workbook_claude_fill.py",
     )
     if fill_spec and fill_spec.loader:
         fill_mod = importlib.util.module_from_spec(fill_spec)

@@ -12,7 +12,9 @@ Current defaults in code:
 judge/
   run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
   run_judge_bundle.py           — unified bundle judge core (provider: gpt|claude)
-  hand_grade_workbook.xlsx      — manual grading workbook for judge calibration
+  hand_grade_workbook.xlsx           — manual grading workbook for judge calibration
+  hand_grade_workbook_build.py       — build workbook from stratified sample + run Claude fill
+  hand_grade_workbook_claude_fill.py — fill compiled `claude` rows from *_claude transcript grades
   README.md
   prompts/
     judge_01.txt           — baseline prompt template
@@ -43,7 +45,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 `faizan grading` / `romain grading` / `nishita grading` include a `transcript` column after `transcript number` (plain text per turn, same field order as raw JSON: `turn`, `student`, `tutor`, `pedagogical_reasoning`, labeled `turn:` / `student:` / `tutor:` / `pedagological reasoning:`).
 Deduction columns follow `rubric_08` subsections (excluding `1.3.C`).
 `total score` is computed as `40 - SUM(deductions)` per row (rubric_08 base total).
-In `compiled grading`, rows for `faizan`/`romain`/`nishita` auto-pull deduction values from the corresponding grader sheet via key-based lookup formulas. `claude` rows can be filled from existing `*_claude` transcript grades with `python judge/fill_claude_hand_workbook.py` (subsection deductions derived from each grade’s `sub_criterion_id` / `points` fields).
+In `compiled grading`, rows for `faizan`/`romain`/`nishita` auto-pull deduction values from the corresponding grader sheet via key-based lookup formulas. `claude` rows can be filled from existing `*_claude` transcript grades with `python judge/hand_grade_workbook_claude_fill.py` (subsection deductions derived from each grade’s `sub_criterion_id` / `points` fields). To rebuild the stratified 20-transcript workbook from scratch and run that fill step, use `python judge/hand_grade_workbook_build.py`.
 
 ## How it works
 
