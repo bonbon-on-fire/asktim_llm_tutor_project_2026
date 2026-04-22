@@ -37,6 +37,8 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
 - Override with env var `TRANSCRIPTS_DIR` if needed.
 - Included row sources:
   - Persona raw transcripts in `transcripts/<group>/<group>_raw/*.json`
+  - Mini-continuation transcripts in `transcripts/<group>/<group>_mini/*.json`
+  - Two-layer raw transcripts in `transcripts/<group>/<group>_two_layer_raw/*.json`
 - Graded counterparts:
   - `.../<group>_gpt/*.json`
   - `.../<group>_claude/*.json`

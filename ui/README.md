@@ -61,7 +61,47 @@ python -m tutor.run_tutor_mini --persona-type chaotic --transcript transcript_01
 
 **Output:** `transcripts/<type>/<type>_mini/transcript_XXXX.json`. Saved JSON includes `mini_continuation` (source path, `resume_from_turn`, `additional_turns`, original tutor fields).
 
-### 3) Judge raw transcripts (GPT or Claude)
+### 3) Two-layer raw transcripts (rubric-aware verifier)
+
+Same workflow as `run_ui_raw` but uses the two-layer tutor. Each turn first generates a draft reply; a rubric-aware verifier inspects the student-facing text and may request one retry per turn.
+
+**Interactive (recommended):**
+```powershell
+python -m ui.run_ui_raw_two_layer
+```
+
+**Command-line mode:**
+```powershell
+python -m ui.run_ui_raw_two_layer --provider gpt --tutor tutor_05 --rubric rubric_05 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+```
+
+Prompts for the same options as `run_ui_raw` plus a **rubric** selection (used by the verifier layer only — the tutor itself has no rubric access).
+
+**Output:** `transcripts/<type>/<type>_two_layer_raw/transcript_XXXX.json`.
+Each exchange includes a `verifier` field: `{"retried": false}` when the first draft was approved, or `{"retried": true, "feedback": "..."}` when a retry was requested.
+
+### 4) Comparison mini judge (new vs original tutor reply)
+
+For quick prompt evaluation: randomly samples pivot turns from raw transcripts, regenerates the tutor reply with the current prompt, and asks the mini judge whether the new reply is better.
+
+**Interactive (recommended):**
+```powershell
+python -m ui.run_ui_judge_mini
+```
+
+Prompts for:
+- **Number of samples** to run
+- **Tutor provider** (`gpt` or `claude`)
+- **Tutor prompt** (from `tutor/prompts/`)
+- **Judge rubric** (from `judge/rubrics/`)
+- **Judge provider** (`gpt` or `claude`)
+
+Output is printed to the terminal in three sections:
+1. All student messages + both tutor replies (original and new)
+2. Per-sample YES/NO verdict with a one-sentence reason
+3. Summary stats (% of samples where new reply was judged better)
+
+### 5) Judge raw transcripts (GPT or Claude)
 
 **Interactive mode (default):**
 ```powershell
@@ -129,6 +169,13 @@ Each output file uses the same stem as raw input: `transcript_XXXX.json`
 - `transcripts/clueless/clueless_mini/`
 - `transcripts/cooperative/cooperative_mini/`
 
+### Two-layer raw outputs (`ui.run_ui_raw_two_layer`)
+
+- `transcripts/chaotic/chaotic_two_layer_raw/`
+- `transcripts/chitchat/chitchat_two_layer_raw/`
+- `transcripts/clueless/clueless_two_layer_raw/`
+- `transcripts/cooperative/cooperative_two_layer_raw/`
+
 ## Transcript schema (core fields)
 
 All transcript flows include run metadata and exchanges:
@@ -166,9 +213,14 @@ Mini continuation outputs additionally include:
 - `student_provider`: `gpt` (student stack is always OpenAI here)
 - `mini_continuation` (object): `source_transcript`, `source_stem`, `resume_from_turn`, `additional_turns`, `original_tutor_prompt`, `original_tutor_provider`
 
+Two-layer raw outputs additionally include:
+
+- `verifier_rubric`: rubric name used by the verifier (e.g. `rubric_05`)
+- Per exchange: `verifier` field — `{"retried": false}` if the first draft was approved, or `{"retried": true, "feedback": "..."}` if a retry was requested
+
 ## Interactive CLI Features
 
-`run_ui_raw`, `run_ui_judge`, and related judge runners support both interactive and command-line modes. **`run_ui_raw_mini`** is interactive when run with **no** arguments; with arguments it delegates to **`tutor.run_tutor_mini`** (same parser as `python -m tutor.run_tutor_mini`).
+`run_ui_raw`, `run_ui_raw_two_layer`, `run_ui_judge`, and related runners support both interactive and command-line modes. **`run_ui_raw_mini`** is interactive when run with **no** arguments; with arguments it delegates to **`tutor.run_tutor_mini`** (same parser as `python -m tutor.run_tutor_mini`). **`run_ui_judge_mini`** is always interactive.
 
 - **Interactive mode**: Run without arguments to get numbered selection prompts
 - **Command-line mode**: Provide all required arguments to skip prompts
