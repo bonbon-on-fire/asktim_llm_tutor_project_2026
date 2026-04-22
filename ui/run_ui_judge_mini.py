@@ -25,6 +25,8 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 load_dotenv(_REPO_ROOT / ".env")
 
+from dataclasses import dataclass
+
 from judge.run_judge_mini import MiniJudgeError, compare_turn, discover_rubrics  # noqa: E402
 from tutor.run_tutor import create_tutor_graph, get_tutor_reply, load_system_prompt  # noqa: E402
 from tutor.run_tutor_mini import (  # noqa: E402
@@ -69,6 +71,18 @@ def _get_exchange_at_turn(exchanges: list[dict], turn: int) -> dict[str, Any] | 
     return None
 
 
+@dataclass
+class _SampleResult:
+    index: int
+    rel_path: str
+    turn: int
+    student: str
+    original_reply: str
+    new_reply: str
+    new_is_better: bool
+    reason: str
+
+
 def _run_one_sample(
     *,
     transcript_path: Path,
@@ -78,28 +92,27 @@ def _run_one_sample(
     judge_provider: str,
     sample_index: int,
     total_samples: int,
-) -> bool | None:
+) -> _SampleResult | None:
     """
-    Run one comparison sample. Returns True if new is better, False if not, None on skip/error.
+    Run one comparison sample. Returns a _SampleResult, or None on skip/error.
     """
+    print(f"[{sample_index}/{total_samples}] Running...", end="  ", flush=True)
+
     data = _load_transcript(transcript_path)
     exchanges = data.get("exchanges")
     if not isinstance(exchanges, list) or not exchanges:
-        print(f"[{sample_index}/{total_samples}] SKIP  {transcript_path.name}  (no exchanges)")
+        print(f"SKIP  {transcript_path.name}  (no exchanges)")
         return None
 
     max_t = _max_turn(exchanges)
     if max_t < 1:
-        print(f"[{sample_index}/{total_samples}] SKIP  {transcript_path.name}  (no valid turns)")
+        print(f"SKIP  {transcript_path.name}  (no valid turns)")
         return None
 
     pivot_turn = random.randint(1, max_t)
     ex = _get_exchange_at_turn(exchanges, pivot_turn)
     if ex is None:
-        print(
-            f"[{sample_index}/{total_samples}] SKIP  {transcript_path.name}"
-            f"  turn={pivot_turn}  (turn missing in exchanges)"
-        )
+        print(f"SKIP  {transcript_path.name}  turn={pivot_turn}  (turn missing)")
         return None
 
     original_reply = ex.get("tutor", "")
@@ -116,10 +129,7 @@ def _run_one_sample(
             exchanges, pivot_turn=pivot_turn
         )
     except (ValueError, KeyError) as e:
-        print(
-            f"[{sample_index}/{total_samples}] SKIP  {transcript_path.name}"
-            f"  turn={pivot_turn}  (history: {e})"
-        )
+        print(f"SKIP  {transcript_path.name}  turn={pivot_turn}  (history: {e})")
         return None
 
     # Build tutor graph with this transcript's assignment injected.
@@ -133,15 +143,12 @@ def _run_one_sample(
     try:
         _, new_reply = get_tutor_reply(tutor_messages, graph=tutor_graph)
     except Exception as e:  # noqa: BLE001
-        print(
-            f"[{sample_index}/{total_samples}] ERROR  {transcript_path.name}"
-            f"  turn={pivot_turn}  (tutor call failed: {e})"
-        )
+        print(f"ERROR  {transcript_path.name}  turn={pivot_turn}  (tutor: {e})")
         return None
 
     # Compare original vs new.
     try:
-        result = compare_turn(
+        verdict = compare_turn(
             student_message=student_text,
             original_tutor_reply=original_reply,
             new_tutor_reply=new_reply,
@@ -149,17 +156,20 @@ def _run_one_sample(
             provider=judge_provider,
         )
     except MiniJudgeError as e:
-        print(
-            f"[{sample_index}/{total_samples}] ERROR  {transcript_path.name}"
-            f"  turn={pivot_turn}  (judge failed: {e})"
-        )
+        print(f"ERROR  {transcript_path.name}  turn={pivot_turn}  (judge: {e})")
         return None
 
-    rel = transcript_path.relative_to(_REPO_ROOT)
-    verdict = "YES" if result.new_is_better else "NO "
-    print(f"[{sample_index}/{total_samples}]  {rel}  turn={pivot_turn}")
-    print(f"             {verdict}  \"{result.reason}\"")
-    return result.new_is_better
+    print(f"done  ({transcript_path.parent.name}/{transcript_path.name}  turn={pivot_turn})")
+    return _SampleResult(
+        index=sample_index,
+        rel_path=str(transcript_path.relative_to(_REPO_ROOT)),
+        turn=pivot_turn,
+        student=student_text,
+        original_reply=original_reply,
+        new_reply=new_reply,
+        new_is_better=verdict.new_is_better,
+        reason=verdict.reason,
+    )
 
 
 def main() -> int:
@@ -227,8 +237,9 @@ def main() -> int:
         print("Cancelled.")
         return 0
 
+    # --- Collect all results ---
     print()
-    results: list[bool] = []
+    samples: list[_SampleResult] = []
     errors = 0
 
     for i in range(1, n_samples + 1):
@@ -245,13 +256,46 @@ def main() -> int:
         if outcome is None:
             errors += 1
         else:
-            results.append(outcome)
+            samples.append(outcome)
 
-    better = sum(results)
-    total_judged = len(results)
+    if not samples:
+        print("\nNo samples completed successfully.")
+        return 1
+
+    sep = "─" * 72
+
+    # --- Section 1: conversations ---
+    print(f"\n{'═' * 72}")
+    print("  CONVERSATIONS")
+    print(f"{'═' * 72}")
+    for s in samples:
+        print(f"\n[{s.index}/{n_samples}]  {s.rel_path}  turn={s.turn}")
+        print(sep)
+        print("STUDENT")
+        print(s.student)
+        print(sep)
+        print("ORIGINAL TUTOR")
+        print(s.original_reply)
+        print(sep)
+        print("NEW TUTOR")
+        print(s.new_reply)
+        print(sep)
+
+    # --- Section 2: verdicts ---
+    print(f"\n{'═' * 72}")
+    print("  VERDICTS")
+    print(f"{'═' * 72}")
+    for s in samples:
+        verdict = "YES" if s.new_is_better else "NO "
+        print(f"[{s.index}/{n_samples}]  {s.rel_path}  turn={s.turn}")
+        print(f"  {verdict}  \"{s.reason}\"")
+
+    # --- Section 3: overall stats ---
+    better = sum(s.new_is_better for s in samples)
+    total_judged = len(samples)
     pct = f" ({100 * better // total_judged}%)" if total_judged else ""
+    print(f"\n{'═' * 72}")
     print(
-        f"\n=== Summary ===\n"
         f"  Judged  : {total_judged}/{n_samples}  (errors/skips: {errors})\n"
         f"  Better  : {better}/{total_judged}{pct}"
     )
