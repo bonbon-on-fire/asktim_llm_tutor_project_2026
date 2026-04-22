@@ -554,3 +554,159 @@ Two private helpers extracted: `_norm_cid()` (key name) and `_norm_criterion_val
 #### Remaining gap
 
 The core n limitation is Claude's ~13% per-criterion coverage. Re-grading the ~375 Claude non-v2 transcripts that are missing criteria would bring n to full coverage. Future Claude grading runs will produce normalized output using the corrected schema and normalization pipeline.
+
+---
+
+### 04/22/2026 — Mini judge system (completed)
+
+#### Motivation
+
+No lightweight way to sanity-check a tutor prompt change before committing to a full bulk run. The existing judge grades full transcripts with absolute rubric scores — too slow and coarse for rapid iteration.
+
+#### Solution
+
+Comparison-based mini judge: randomly sample N (transcript, turn) pairs, regenerate the tutor reply at each pivot turn with the new prompt, then compare original vs new in a single LLM call. Binary verdict (YES/NO) with a one-sentence reason. Nothing written to disk.
+
+#### Implementation
+
+**`judge/run_judge_mini.py`**
+- `compare_turn(student_message, original_tutor_reply, new_tutor_reply, rubric_name, provider)` — public API
+- Builds a comparison prompt containing the rubric, student message, and both tutor replies; calls the LLM; parses `{"new_is_better": bool, "reason": "..."}` from the response
+- Bottom layer (tutor) never sees the rubric — the judge uses it internally as a reference
+- `discover_rubrics()` exported for use by the UI runner
+- Direct LangChain call (no LangGraph — single comparison call does not need a graph)
+
+**`ui/run_ui_judge_mini.py`**
+- Interactive config: new tutor prompt → tutor provider → judge rubric → judge provider → N samples
+- For each sample: randomly picks a raw transcript (from all `*_raw/` folders), randomly picks a turn, builds full conversation history up to that turn via `build_histories_resume_pivot`, regenerates the tutor reply, then calls `compare_turn`
+- Tutor graph built per sample so the correct assignment text from each transcript is injected
+- Output in three sections: all conversations (student + original + new tutor), then all verdicts (YES/NO + reason), then overall stats (X/N better, %)
+- Purely random — same transcript can appear twice across samples
+
+#### Key design decisions
+
+- Judge sees the full turn (student message + both tutor replies); no prior conversation history — keeps the comparison focused on a single response
+- Tutor receives full history up to the pivot turn so its reply is contextually valid, even though the judge doesn't see that history
+- Pedagogical reasoning from kept turns is included in `tutor_messages` (as `AIMessage` JSON content) — this is intentional; the reasoning provides the new tutor with context on how prior turns were handled
+
+---
+
+## 10. Two-layer tutor ✦ PLANNED
+
+### Background
+
+The current single-layer tutor has no self-correction mechanism. Known failure modes (e.g. giving overly comprehensive answers, lecturing instead of asking diagnostic questions) are only caught by the LLM judge after the fact. The goal is to intercept bad responses before they reach the student.
+
+### Design
+
+Two-layer architecture:
+
+```
+Student message
+       │
+       ▼
+  [ Bottom layer ]  ←──── verifier feedback (retry only)
+  current tutor logic
+       │
+       ▼ (tutor reply draft)
+  [ Top layer / Verifier ]
+  rubric-aware reviewer
+       │
+    approved?
+    ├── YES ──→ reply sent to student
+    └── NO  ──→ feedback → bottom layer → retry (max 1)
+                                │
+                                ▼
+                           revised reply → student
+```
+
+**Bottom layer** — identical to today's tutor. Uses `pedagogical-reasoning` + `Student-facing-answer` JSON output. Has no access to the rubric.
+
+**Top layer (verifier)** — separate LLM call with rubric access. Reviews the bottom layer's draft reply. Outputs `{"approved": bool, "feedback": "..."}`. Feedback is free-form, guided by the rubric but written as plain critique (not rubric IDs).
+
+**Retry injection** — when the verifier rejects, the bottom layer's system prompt gets a temporary suffix for that one call only (not saved to conversation history):
+```
+[Reviewer note — not visible to student]
+Your previous response had an issue: {feedback}
+Please revise your response.
+```
+
+**Cap** — maximum one retry per turn. If the verifier rejects again after the retry, the revised response is still sent to the student (no second retry).
+
+**Same provider** — verifier and bottom layer use the same LLM provider.
+
+**Pedagogical reasoning** — kept in this iteration. Dropping it as a performance optimization is deferred to a second iteration.
+
+### Transcript exchange format
+
+No retry:
+```json
+{
+  "turn": 3,
+  "student": "...",
+  "tutor": "...",
+  "pedagogical_reasoning": "...",
+  "verifier": { "retried": false }
+}
+```
+
+With retry (original draft overwritten by revised response):
+```json
+{
+  "turn": 3,
+  "student": "...",
+  "tutor": "...(revised)",
+  "pedagogical_reasoning": "...(revised)",
+  "verifier": {
+    "retried": true,
+    "feedback": "Response gave the answer directly instead of asking a guiding question."
+  }
+}
+```
+
+### Implementation plan
+
+**`tutor/run_tutor_two_layer.py`**
+
+LangGraph with two nodes and the following state:
+
+```python
+class TwoLayerState(TypedDict):
+    messages: Annotated[list, operator.add]   # conversation history
+    system_prompt: str                         # base system prompt (no rubric)
+    rubric_text: str                           # verifier-only, never sent to bottom layer
+    retry_count: int                           # 0 or 1
+    verifier_feedback: str | None             # set when verifier rejects
+    verifier_retried: bool                     # recorded in exchange
+```
+
+Nodes:
+- `tutor_node` — generates tutor reply; if `verifier_feedback` is set, appends the reviewer note to the system prompt for this call only
+- `verifier_node` — calls LLM with rubric + draft reply; parses approval/feedback; sets conditional edge
+
+Edges:
+```
+START → tutor_node → verifier_node
+verifier_node → tutor_node   (if rejected and retry_count == 0)
+verifier_node → END          (if approved or retry_count == 1)
+```
+
+Public API:
+```python
+create_two_layer_graph(system_prompt, rubric_text, *, provider) -> graph
+get_tutor_reply_two_layer(messages, *, graph) -> (updated_messages, student_text, verifier_info)
+# verifier_info = {"retried": bool, "feedback": str | None}
+```
+
+**`ui/run_ui_raw_two_layer.py`**
+
+Bulk generation runner, same structure as `run_ui_raw.py` with:
+- Extra config step: rubric selection (from `judge/rubrics/*.md`)
+- Calls `get_tutor_reply_two_layer(...)` instead of `get_tutor_reply(...)`
+- Each exchange written with the `verifier` field
+- Output folder: `transcripts/{persona_type}/{persona_type}_two_layer_raw/`
+
+### Deferred
+
+- **Dropping pedagogical reasoning** for speed — second iteration after this is validated
+- **Resolved-challenge internal state** — separate feature; the tutor tracks whether the student's current problem is resolved and backs off until a new problem is raised
