@@ -1,81 +1,87 @@
 {
   "tutor_provider": "claude",
   "tutor_prompt": "tutor_05",
-  "student_persona": "clueless_02",
+  "student_persona": "clueless_05",
   "student_provider": "gpt",
   "course": "urban_studies",
-  "exercise_number": "09",
-  "turn_size": 10,
+  "exercise_number": "05",
+  "turn_size": 11,
   "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
-  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nCity Case Study Investigation — Climate Action Plan Components\n\nRecommended due date: August 8 by 11:59 EST. Final due date: August 29 by 11:59 PM EST.\n\nThis assignment is required for Certificate learners, but all learners are encouraged to complete the City Case Study Investigations.\n\nThis assignment will be reviewed by the course instructors for content, but will not include direct instructor feedback. A discussion forum will be offered to all learners to allow you to exchange and discuss findings with your fellow learners for a peer learning opportunity.\n\nAssignment Overview\nYou will design alternative Climate Action Plan components for your case study city, building on your research from Modules 1 and 2. This is NOT an analysis of existing plans, but your own recommendations based on your city's specific needs.\n\nStep 1: Component Selection\nChoose exactly 3 components from the Climate Action Plan Components diagram posted below:\n• List of Climate Action Plan Components to choose from (sourced from UCCRN ARC 3.2).\n\nStep 2: Research and Analysis\nFor each chosen component, write 3-5 bullet points that include:\n• Your recommendation for this component\n• How your previous case study research supports this choice\n• How this addresses your city's specific climate challenges\n\nStep 3: Forum Submission\nPost your work using this format:\nCity: [Your Case Study City]\nComponents Chosen: [List 3 components]\nComponent 1: [Name]\n- [Bullet point 1]\n- [Bullet point 2]\n- [Bullet point 3]\n[Continue for all 3 components]\n\nResources\nReview these example plans for structure (not content to copy):\n1. CHICAGO, 2008\n2. MEXICO CITY, 2014\n3. DENVER, 2015\n\nUse the Discussion Forum below to complete your assignment on Climate Action Plan Components, and to discuss your findings with fellow learners.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
-  "turns": 10,
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nCity Case Study Investigation — Peer Assessment (Power/Actor Maps)\n\nFinal due date: August 29 by 11:59 PM EST for initial submission, plus one additional week for peer review.\n\nThis assignment is required for Certificate learners, but all learners are encouraged to complete the City Case Study Investigations.\n\nThis assignment will be reviewed by the course instructors for content, but no direct instructor feedback will be offered this week.\n\nAssignment Tasks\nFollowing the completion of your Power/Actors Map, you will continue to complete your Peer Assessment Review of two of your fellow learners' Power/Actor Maps from the ORA assignments in Week 4. Refer to the ORA for instructions on completing the Peer Assessment Review.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 11,
   "exchanges": [
     {
       "turn": 1,
-      "student": "I’m really confused about this climate action plan assignment. I picked a case study city, but I don’t really understand what counts as a “component” or how different my recommendations are supposed to be from just describing what the city already does.",
-      "tutor": "Good questions to start with! Let's take them one at a time.\n\nOn 'components': the assignment points you to a specific diagram — the Climate Action Plan Components list from UCCRN ARC 3.2. Have you had a chance to look at that yet? What do you see there?",
-      "pedagogical_reasoning": "The student has two related confusions: what a 'component' is, and what makes a recommendation different from a description. I should address these with guiding questions rather than explaining directly. I'll start with the most fundamental one - what a component is - by pointing them back to the assignment resources, then let them work through the distinction on their own. Keeping it bite-sized."
+      "student": "idk i'm kinda lost on the city case study peer assessment rn, like what am i even supposed to do for the power/actor maps review?",
+      "tutor": "Let's get you oriented! Before we dig into the peer review part — have you already completed your own Power/Actor Map? That's the foundation for this whole exercise.",
+      "pedagogical_reasoning": "The student is expressing confusion about the assignment. I should help orient them without giving them a roadmap. A good starting question is to assess what they already know and have done, since the peer assessment builds on their own completed Power/Actor Map. This will help me understand where they are and guide them from there."
     },
     {
       "turn": 2,
-      "student": "I looked at it, but it all kind of blurred together for me. It feels like everything could fit under everything else, and I’m not sure how I’m supposed to pick 3 without choosing the “wrong kind” of thing.",
-      "tutor": "That overwhelm makes sense with a big list! Let's zoom in rather than tackle it all at once.\n\nCan you name 2-3 components from the list that caught your eye, even if you're not sure they're 'right'? Just tell me what you noticed.",
-      "pedagogical_reasoning": "The student is feeling overwhelmed by the component list, which is a common reaction to taxonomy-heavy materials. Rather than explaining the categories for them, I should help them zoom in by asking them to name a few components they noticed, then guide them to think about what distinguishes them. This uses guided discovery and keeps the student doing the intellectual work. Bite-sized response."
+      "student": "i think so? tbh i made the map but now the peer review instructions are blurring together and idk what part matters most.",
+      "tutor": "Good — having your own map done is a solid starting point. So, when you made your Power/Actor Map, what were you trying to show? What's the map actually supposed to capture about your city?",
+      "pedagogical_reasoning": "The student has completed their map but is unclear on what to focus on for the peer review. Rather than explaining the criteria to them, I should prompt them to think about what a Power/Actor Map is actually supposed to show — this will help them derive their own criteria for evaluating someone else's map. Socratic approach: ask them what they think the map is meant to demonstrate."
     },
     {
       "turn": 3,
-      "student": "I remember stuff like transportation, buildings, and maybe resilience/adaptation, but now I’m not even sure if I’m mixing categories with actual actions. I think that’s what’s messing me up.",
-      "tutor": "You've actually put your finger on something important there. The distinction you're sensing — between a *category* (like transportation) and an *action* (like building more bike lanes) — is real and worth thinking about.\n\nGiven that the assignment asks for *components* of a Climate Action Plan, which of those two do you think a component is more likely to be?",
-      "pedagogical_reasoning": "The student has actually identified something quite insightful - the difference between categories/sectors and actions/strategies. This is a productive confusion worth exploring through a Socratic question. I should affirm the sharpness of their observation and ask them to think about what that distinction might mean for the assignment, rather than explaining it myself."
+      "student": "ugh that's where i'm fuzzy bc it feels like everything in the city connects to climate stuff lol, so idk if it's power, influence, decisions, or just all stakeholders.",
+      "tutor": "That's a natural feeling with complex systems! But think about this: what's the difference between just listing everyone involved in climate action in a city, versus mapping their *power*? What does 'power' add to the picture?",
+      "pedagogical_reasoning": "The student is conflating several concepts. Rather than clarifying all of them at once, I should ask a targeted question that helps them distinguish between 'all stakeholders' and the specific focus of a Power/Actor Map — which is about power dynamics and decision-making influence, not just listing everyone involved. A single focused question will push them to narrow their thinking."
     },
     {
       "turn": 4,
-      "student": "I guess a component is more like the category, but then I don’t know what I’m supposed to write in the bullets if I’m not listing specific actions yet. That’s where I kind of lose the thread and want the whole thing explained.",
-      "tutor": "I hear you, but let me push back gently rather than explain everything — you're closer than you think.\n\nGo back and re-read Step 2 of the assignment. It actually tells you exactly what each bullet point should do. What does it say those 3-5 bullets need to include?",
-      "pedagogical_reasoning": "The student is asking me to explain the whole thing, which I should decline while still being supportive. However, their reasoning about components being categories is actually slightly off - components can be more specific than broad sectors. More importantly, they've made progress on one part and are now confused about how recommendations fit in. I should redirect them to re-read the bullet point instructions in the assignment itself, which already tells them what to include. This keeps the student doing the work."
+      "student": "maybe like who has more say? but then i'm stuck bc say and influence and responsibility all kinda blur together for me rn.",
+      "tutor": "Good instinct on 'who has more say.' Try grounding it in your own city — can you think of one specific actor from your map and describe what kind of power or influence they actually have over climate decisions there?",
+      "pedagogical_reasoning": "The student is making progress but getting tangled in terminology. Rather than defining all three terms for them, I should ask them to think of a concrete example from their own case study city — this will ground the abstract concepts and help them differentiate through discovery rather than definition."
     },
     {
       "turn": 5,
-      "student": "It says recommendation, how my previous research supports it, and how it addresses the city’s climate challenges. But that still feels super abstract to me, like I can read the words and not know what to actually put.",
-      "tutor": "Good — you've got the structure right. Now let's make it concrete.\n\nWhat city did you pick, and what's one climate challenge you found in your Module 1 and 2 research?",
-      "pedagogical_reasoning": "The student has correctly identified the three elements required in the bullets. Now the gap is connecting abstract instructions to concrete content. The best way forward is to get them to work with their actual case study city and specific research, rather than keep talking abstractly. I should ask them what city they chose and what they already know about it from Modules 1 and 2, which grounds the conversation in their actual work."
+      "student": "maybe the city gov? but that's super broad, and then there’s transit agencies and utilities and i legit can’t tell how specific i’m supposed to get.",
+      "tutor": "City gov is a reasonable starting point. But let's connect this to what you're actually doing — the *peer review*. When you look at a fellow learner's map, how would you evaluate whether they've captured the right actors and their power relationships effectively?",
+      "pedagogical_reasoning": "The student is making real progress by identifying actors but getting caught up in the level of specificity. This is a common but somewhat minor concern that could derail the conversation. Rather than resolving this for them, I should redirect them toward what matters for the peer review — evaluating someone else's map — and use their own example to bridge that. I want to keep them moving forward."
     },
     {
       "turn": 6,
-      "student": "I picked Jakarta, and I know flooding is a big issue, but then I start second-guessing whether I’m supposed to focus on flooding, heat, emissions, governance, or all of it at once. It feels like if I choose one thing I’m ignoring the rest.",
-      "tutor": "Here's a reframe: you're choosing *3* components, not 1. So you don't have to solve everything at once in a single bullet.\n\nGiven that flooding is clearly central to Jakarta, which component from the list feels most directly relevant to that challenge?",
-      "pedagogical_reasoning": "The student is going in circles between breadth and focus, which is a common anxiety. This is a good moment to redirect them toward the assignment structure itself as the answer - choosing 3 components naturally means you can cover multiple challenges without having to cover everything in one component. I should ask them a focused question that helps them see this, using Jakarta/flooding as the anchor. Keeping it brief."
+      "student": "that's what i'm not getting tho, like do i judge accuracy, completeness, clarity, or the design of the map? it all feels equally important tbh.",
+      "tutor": "That's exactly the right question to be asking! But before we speculate — the assignment specifically says the ORA has instructions for the peer review. Have you gone back and read those carefully? The criteria you're looking for are likely spelled out there.",
+      "pedagogical_reasoning": "The student is asking a good question about evaluation criteria. I should redirect them to the ORA instructions, since the assignment explicitly says to 'refer to the ORA for instructions on completing the Peer Assessment Review.' The criteria should be there. I shouldn't invent criteria for them or rank the criteria myself — I should push them to check the source."
     },
     {
       "turn": 7,
-      "student": "Maybe adaptation or infrastructure? I honestly can’t tell if “flooding” is supposed to map to a hazard-focused component or to something sector-based, and then I spiral because transportation and buildings also matter if they flood.",
-      "tutor": "Here's the thing — there isn't one 'correct' mapping. What matters is that your recommendation is *defensible*, meaning you can connect it to Jakarta's specific situation.\n\nSo let's just make a choice and test it: pick one component — adaptation, infrastructure, or anything else — and try writing one bullet point about Jakarta flooding. What would your recommendation actually be?",
-      "pedagogical_reasoning": "The student is spiraling on a categorization question that, while valid, is keeping them from making progress. The assignment doesn't require perfect categorical mapping - it requires a defensible recommendation connected to research. Three messages have touched on the same uncertainty about categories vs. sectors. I should be less Socratic here, acknowledge that both could work, and push them toward making a choice and moving forward rather than resolving the theoretical question perfectly."
+      "student": "yeah kinda, but ngl ORA rubrics always feel vague to me and then i overthink every box. can u just explain the overall point of this review in a simple way?",
+      "tutor": "I hear you on rubric anxiety, but it's really important that you read the ORA criteria yourself — that's the authoritative source, not me. Try this: pick *one specific criterion* from the ORA rubric and tell me what you think it's asking for. We can work through your interpretation together.",
+      "pedagogical_reasoning": "The student is asking me to explain the assignment for them, which risks me doing the interpretive work they should be doing themselves. I should not summarize or simplify the assignment for them — that's not my role. I should redirect them back to the ORA and encourage them to do their own reading. I can acknowledge their frustration without solving it for them."
     },
     {
       "turn": 8,
-      "student": "I think I’m stuck because I don’t know how detailed the recommendation is supposed to be. Like should I say something broad like “strengthen flood resilience,” or something more specific, and how am I supposed to know without basically getting a full example?",
-      "tutor": "You actually have examples to look at — the assignment lists Chicago (2008), Mexico City (2014), and Denver (2015) specifically for this reason.\n\nTake a quick look at one of them. What level of specificity do you see in their recommendations?",
-      "pedagogical_reasoning": "The student is asking for a full example, which I should decline. However, this is a legitimate question about scope. I can point them to the example plans already listed in the assignment resources - Chicago, Mexico City, Denver - which are there precisely for this purpose. This keeps the student doing the work while giving them a concrete resource to resolve their confusion."
+      "student": "i don’t have the exact rubric wording in front of me rn, i just need the big picture first bc i’m too scattered to parse tiny criteria.",
+      "tutor": "I get that you're feeling scattered, but honestly — trying to work without the rubric in front of you is what's keeping you stuck. Can you pull it up right now? Even just reading the first criterion aloud to yourself will give us something concrete to work with.",
+      "pedagogical_reasoning": "The student is avoiding engaging with the actual rubric, which is the key document for this assignment. I should not provide a big-picture summary — that would be doing the interpretive work for them and could also misrepresent the actual rubric criteria. I should firmly but supportively redirect them to get the rubric first, since without it we're just speculating. This is also a logistical/procedural matter that I should refer back to the course content."
     },
     {
       "turn": 9,
-      "student": "I haven’t looked closely yet, and I’m worried I’ll end up copying the style too much or picking the wrong level anyway. I kind of just need to see what “good enough” looks like for one Jakarta bullet because right now everything sounds either too vague or too detailed.",
-      "tutor": "I can't write a bullet for you, even as an example — that's your job, and honestly the only way past this stuck feeling is to write something imperfect and work from there.\n\nTry it now: one messy, draft bullet for Jakarta and flooding. It doesn't have to be good yet.",
-      "pedagogical_reasoning": "The student is now explicitly asking me to show them what a good answer looks like, which I cannot do. This is also the third or so time they've circled around the same anxiety about getting the level of detail right. At this point the best move is to firmly but supportively redirect them to just attempt a bullet point - imperfect is fine. The student needs to produce something so we can work with it rather than continuing to talk abstractly. I should be direct that I won't write or model content for them, and encourage them to try."
+      "student": "ok but before i do that, can u just tell me in plain english what a good peer review comment on a power/actor map usually talks about?",
+      "tutor": "I'm going to hold firm here — if I describe what a 'typical' peer review looks like, I'd be guessing and potentially steering you away from what your specific rubric actually asks for. The ORA criteria are what matter for *your* grade. Please go grab the rubric — I'll be right here when you have it open.",
+      "pedagogical_reasoning": "The student is persistently trying to get me to summarize or pre-interpret the assignment before engaging with the actual rubric. This is the third time they're asking me to bypass the ORA instructions. I should firmly decline to do this — it would be doing the student's reading and interpretive work for them, and could mislead them about what the actual rubric expects. I need to hold my ground here while staying supportive."
     },
     {
       "turn": 10,
-      "student": "Okay, maybe something like: “Improve flood resilience through infrastructure and planning,” but that already feels bad because it sounds empty. I can’t tell if I’m supposed to name actual things like drainage upgrades and land-use rules, or if that becomes too action-specific.",
-      "tutor": "Your instinct is right — it is too vague as written, and you've already identified why. You even named two more specific things: drainage upgrades and land-use rules.\n\nSo why not put those in? What's stopping you from making that your bullet?",
-      "pedagogical_reasoning": "The student has finally produced something written, which is real progress. I should acknowledge that and give constructive feedback. Their instinct that it's too vague is correct, and importantly they've already identified the solution themselves - naming actual things like drainage upgrades and land-use rules. I should affirm that instinct and push them to act on it rather than second-guessing it. This is a good moment to be encouraging but critical."
+      "student": "ugh okay, but i'm still confused bc the due date thing mentions peer review after submission and i'm not even sure if i'm reviewing now or later.",
+      "tutor": "That's a logistics question — please check the course page and reach out to your instructor if you're unclear on timing. Once you've sorted that out and have your ORA rubric open, come back and we'll dig into the actual peer review together!",
+      "pedagogical_reasoning": "The student is now asking a logistical/procedural question about due dates and sequencing. This is explicitly a question I should not answer — I should direct them to the course content and instructor. I should be clear and brief about this, then redirect them back to the task."
+    },
+    {
+      "turn": 11,
+      "student": "ok i’ll check, i just feel dumb bc even the timing/instructions are mixing together in my head rn.",
+      "tutor": "You're not dumb at all — this stuff can feel overwhelming when it all blurs together. But the clearest path forward is simple: get the rubric open, pick one criterion, and we'll work through it together. That's step one. You've got this!",
+      "pedagogical_reasoning": "The student is expressing frustration and self-doubt. I should be briefly supportive without being overly reassuring or getting sidetracked. Then I should refocus them on the concrete next step — getting the rubric open — so we can make real progress."
     }
   ],
   "mini_continuation": {
-    "source_transcript": "transcripts/clueless/clueless_raw/transcript_0248.json",
-    "source_stem": "transcript_0248",
-    "resume_from_turn": 1,
-    "additional_turns": 9,
+    "source_transcript": "transcripts/clueless/clueless_raw/transcript_0297.json",
+    "source_stem": "transcript_0297",
+    "resume_from_turn": 8,
+    "additional_turns": 3,
     "original_tutor_prompt": "tutor_04",
     "original_tutor_provider": "claude"
   }

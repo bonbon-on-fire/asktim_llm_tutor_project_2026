@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Transcripts Dashboard</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <header class="header">
@@ -18,17 +17,8 @@
   <main id="main">
     <div id="dashboard-page" class="page">
       <section class="section">
-        <h1>Grade distributions</h1>
-        <div class="charts">
-          <div class="chart-wrap">
-            <h2>Claude (tutor_05)</h2>
-            <canvas id="chart-claude" aria-label="Claude grade distribution"></canvas>
-          </div>
-        </div>
-      </section>
-      <section class="section">
         <h1>Conversations</h1>
-        <p class="sort-hint">Sort by clicking column headers.</p>
+        <p class="sort-hint">Sort by clicking column headers. Only transcripts with a mini continuation are shown.</p>
         <div class="table-wrap">
           <table id="transcripts-table">
             <thead>
@@ -37,7 +27,6 @@
                 <th data-sort="version">Version</th>
                 <th data-sort="course">Course</th>
                 <th data-sort="exercise">Exercise</th>
-                <th data-sort="claude_score" class="num">Claude (tutor_05)</th>
                 <th></th>
               </tr>
             </thead>

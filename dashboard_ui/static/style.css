@@ -256,6 +256,15 @@ tbody td a:hover {
   gap: 0.35rem 1rem;
 }
 
+.transcript-section-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--text);
+}
+
 .exchange {
   margin-bottom: 1.5rem;
   padding: 1rem;
