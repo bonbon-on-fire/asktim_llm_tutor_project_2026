@@ -236,6 +236,12 @@ def _list_transcript_rows() -> list[dict]:
             data = _load_json(raw_path)
             if not data:
                 continue
+            mini_data = _load_json(TRANSCRIPTS_DIR / group / f"{group}_mini" / f"{stem}.json")
+            resume_from_turn = None
+            if mini_data:
+                mc = mini_data.get("mini_continuation")
+                if isinstance(mc, dict):
+                    resume_from_turn = mc.get("resume_from_turn")
             meta = {k: v for k, v in data.items() if k not in ("exchanges", "grade")}
             out.append(
                 {
@@ -245,6 +251,7 @@ def _list_transcript_rows() -> list[dict]:
                     "route_group": group,
                     "route_version": stem,
                     "metadata": meta,
+                    "resume_from_turn": resume_from_turn,
                 }
             )
     return out
