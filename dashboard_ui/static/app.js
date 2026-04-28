@@ -107,7 +107,7 @@
    */
   function inferMaxScore(list) {
     const maxes = list
-      .flatMap((t) => [t.gpt_max, t.claude_max])
+      .flatMap((t) => [t.mini_max, t.claude_max])
       .filter((v) => typeof v === "number" && Number.isFinite(v));
     if (!maxes.length) return DEFAULT_MAX_SCORE;
     return Math.max(...maxes);
@@ -131,9 +131,9 @@
    */
   function renderDashboard(list) {
     const maxScore = inferMaxScore(list);
-    const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
+    const miniScores = list.map((t) => t.mini_score).filter((s) => s != null);
     const claudeScores = list.map((t) => t.claude_score).filter((s) => s != null);
-    drawChart("chart-gpt", gptScores, "GPT", "#a65dea", maxScore);
+    drawChart("chart-mini", miniScores, "Mini", "#a65dea", maxScore);
     drawChart("chart-claude", claudeScores, "CLAUDE", "#ff893a", maxScore);
 
     let sortKey = "group";
@@ -158,7 +158,7 @@
      */
     function renderTable() {
       const sorted = [...list].sort((a, b) => {
-        if (sortKey === "gpt_score" || sortKey === "claude_score") {
+        if (sortKey === "mini_score" || sortKey === "claude_score") {
           const va = a[sortKey];
           const vb = b[sortKey];
           if (va == null && vb == null) return 0;
@@ -219,7 +219,7 @@
           <td>${escapeHtml(t.version || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.exercise_number) || "—")}</td>
-          <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : maxScore) : "—"}</span></td>
+          <td class="num"><span class="score-cell">${t.mini_score != null ? t.mini_score + "/" + (t.mini_max != null ? t.mini_max : maxScore) : "—"}</span></td>
           <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : maxScore) : "—"}</span></td>
           <td><a href="/transcript/${encodeURIComponent(t.route_group || t.group)}/${encodeURIComponent(t.route_version || t.version)}">Read</a></td>
         </tr>`
@@ -232,7 +232,7 @@
       th.onclick = () => {
         const key = th.getAttribute("data-sort");
         if (sortKey === key) sortDir *= -1;
-        else sortDir = key === "gpt_score" || key === "claude_score" ? -1 : 1;
+        else sortDir = key === "mini_score" || key === "claude_score" ? -1 : 1;
         sortKey = key;
         document.querySelectorAll("#transcripts-table thead th[data-sort]").forEach((h) => h.classList.remove("sorted-asc", "sorted-desc"));
         th.classList.add(sortDir === 1 ? "sorted-asc" : "sorted-desc");
@@ -366,15 +366,15 @@
       html += "</div>";
     });
 
-    const gptEl = document.createElement("div");
+    const miniEl = document.createElement("div");
     const claudeEl = document.createElement("div");
-    renderGradeReport(gptEl, data.grade_gpt, "GPT", "gpt", data.gpt_error);
+    renderGradeReport(miniEl, data.grade_mini, "Claude Mini (tutor_05)", "gpt", data.mini_error);
     renderGradeReport(claudeEl, data.grade_claude, "CLAUDE", "claude", data.claude_error);
 
     document.getElementById("transcript-title").textContent = `${data.group} / ${data.version}`;
     const content = document.getElementById("transcript-content");
     content.innerHTML = html;
-    content.appendChild(gptEl);
+    content.appendChild(miniEl);
     content.appendChild(claudeEl);
   }
 

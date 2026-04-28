@@ -208,8 +208,26 @@ def _counterpart_result(*, group: str, provider: str, raw_stem: str, raw_data: d
     return grade, None
 
 
+def _mini_grade_result(*, group: str, stem: str) -> tuple[dict | None, str | None]:
+    """Load the Claude mini grade for a raw transcript stem if a *_claude_mini/ version exists.
+
+    Returns (None, None) when no mini version exists (not an error).
+    Returns (None, error_msg) when the file exists but is unreadable or ungraded.
+    """
+    mini_path = TRANSCRIPTS_DIR / group / f"{group}_claude_mini" / f"{stem}.json"
+    if not mini_path.exists():
+        return None, None
+    data = _load_json(mini_path)
+    if not data:
+        return None, "Mini counterpart exists but could not be read."
+    grade = _grade_summary(data)
+    if not grade:
+        return None, "Mini counterpart exists but grade is missing."
+    return grade, None
+
+
 def _list_transcript_rows() -> list[dict]:
-    """Build dashboard rows for all persona transcript runs (raw + GPT/Claude counterparts)."""
+    """Build dashboard rows for all persona transcript runs (raw + Mini/Claude counterparts)."""
     out: list[dict] = []
     for group in _discover_persona_groups():
         for raw_stem in _raw_stems_for_group(group):
@@ -217,12 +235,7 @@ def _list_transcript_rows() -> list[dict]:
             if not raw_data:
                 continue
 
-            gpt_grade, gpt_error = _counterpart_result(
-                group=group,
-                provider="gpt",
-                raw_stem=raw_stem,
-                raw_data=raw_data,
-            )
+            mini_grade, mini_error = _mini_grade_result(group=group, stem=raw_stem)
             claude_grade, claude_error = _counterpart_result(
                 group=group,
                 provider="claude",
@@ -238,12 +251,12 @@ def _list_transcript_rows() -> list[dict]:
                     "route_group": group,
                     "route_version": raw_stem,
                     "metadata": meta,
-                    "gpt_grade": gpt_grade,
+                    "mini_grade": mini_grade,
                     "claude_grade": claude_grade,
-                    "gpt_error": gpt_error,
+                    "mini_error": mini_error,
                     "claude_error": claude_error,
-                    "gpt_score": gpt_grade["total_score"] if gpt_grade else None,
-                    "gpt_max": gpt_grade["max_score"] if gpt_grade else None,
+                    "mini_score": mini_grade["total_score"] if mini_grade else None,
+                    "mini_max": mini_grade["max_score"] if mini_grade else None,
                     "claude_score": claude_grade["total_score"] if claude_grade else None,
                     "claude_max": claude_grade["max_score"] if claude_grade else None,
                 }
@@ -278,12 +291,7 @@ def api_get_transcript(group: str, version: str):
     if not raw_data:
         return jsonify({"error": "Transcript not found"}), 404
 
-    gpt_grade, gpt_error = _counterpart_result(
-        group=group,
-        provider="gpt",
-        raw_stem=version,
-        raw_data=raw_data,
-    )
+    mini_grade, mini_error = _mini_grade_result(group=group, stem=version)
     claude_grade, claude_error = _counterpart_result(
         group=group,
         provider="claude",
@@ -300,9 +308,9 @@ def api_get_transcript(group: str, version: str):
             "route_version": version,
             "metadata": {k: v for k, v in raw_data.items() if k not in ("exchanges", "grade")},
             "exchanges": raw_data.get("exchanges", []),
-            "grade_gpt": gpt_grade,
+            "grade_mini": mini_grade,
             "grade_claude": claude_grade,
-            "gpt_error": gpt_error,
+            "mini_error": mini_error,
             "claude_error": claude_error,
         }
     )
