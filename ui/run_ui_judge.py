@@ -62,17 +62,17 @@ def _require_anthropic_api_key() -> None:
     )
 
 
-def _discover_raw_transcripts() -> list[Path]:
-    """Find raw transcript files for currently supported persona families only."""
+def _discover_raw_transcripts(source_suffix: str = "raw") -> list[Path]:
+    """Find transcript files under *_{source_suffix}/ for supported persona families."""
     active_types = {
         persona.split("_", 1)[0].strip().lower()
         for persona in list_personas()
         if "_" in persona
     }
-    all_raw = sorted(TRANSCRIPTS_DIR.glob("*/*_raw/transcript_*.json"))
+    all_files = sorted(TRANSCRIPTS_DIR.glob(f"*/*_{source_suffix}/transcript_*.json"))
     return [
         path
-        for path in all_raw
+        for path in all_files
         if path.parent.parent.name.strip().lower() in active_types
     ]
 
@@ -93,11 +93,21 @@ def _discover_judge_rubrics() -> list[str]:
     return sorted(path.stem for path in judge_rubrics_dir.glob("rubric_*.md"))
 
 
-def _provider_target_path(raw_path: Path, provider: str) -> Path:
-    """Map a raw transcript path to its graded counterpart folder."""
+def _provider_target_path(raw_path: Path, provider: str, source_suffix: str = "raw") -> Path:
+    """Map a source transcript path to its graded counterpart folder.
+
+    For ``source_suffix="raw"`` the existing convention is preserved:
+    ``*_raw/`` → ``*_{provider}/``.
+    For any other suffix the suffix is appended:
+    ``*_{suffix}/`` → ``*_{provider}_{suffix}/``.
+    """
     persona_dir = raw_path.parent.parent
     persona_type = persona_dir.name
-    target_dir = persona_dir / f"{persona_type}_{provider}"
+    if source_suffix == "raw":
+        target_folder = f"{persona_type}_{provider}"
+    else:
+        target_folder = f"{persona_type}_{provider}_{source_suffix}"
+    target_dir = persona_dir / target_folder
     target_dir.mkdir(parents=True, exist_ok=True)
     return target_dir / raw_path.name
 
@@ -235,11 +245,22 @@ Examples:
         "--rubric",
         help="Judge rubric stem (from judge/rubrics/rubric_*.md)",
     )
-    
+    parser.add_argument(
+        "--source-suffix",
+        default="raw",
+        help="Subfolder suffix to read from: 'raw' (default) or 'mini'. "
+             "Output folder is *_{provider}/ for 'raw', *_{provider}_{suffix}/ otherwise.",
+    )
+    parser.add_argument(
+        "--yes", "-y",
+        action="store_true",
+        help="Skip confirmation prompt (useful for non-interactive / background runs).",
+    )
+
     return parser.parse_args()
 
 
-def _run_judging(provider: str, prompt_name: str, rubric_name: str) -> int:
+def _run_judging(provider: str, prompt_name: str, rubric_name: str, source_suffix: str = "raw", yes: bool = False) -> int:
     """Run the judging process with the given configuration."""
     # Check API key based on provider
     try:
@@ -251,34 +272,40 @@ def _run_judging(provider: str, prompt_name: str, rubric_name: str) -> int:
         print(f"API key error: {error}")
         return 1
 
-    raw_files = _discover_raw_transcripts()
-    if not raw_files:
-        print(f"No raw transcripts found under {TRANSCRIPTS_DIR}")
+    source_files = _discover_raw_transcripts(source_suffix)
+    if not source_files:
+        print(f"No *_{source_suffix}/ transcripts found under {TRANSCRIPTS_DIR}")
         return 1
+
+    if source_suffix == "raw":
+        target_label = f"*_{provider}/"
+    else:
+        target_label = f"*_{provider}_{source_suffix}/"
 
     # Show summary and get confirmation
     summary = (
-        f"Will grade {len(raw_files)} raw transcripts using:\n"
+        f"Will grade {len(source_files)} *_{source_suffix}/ transcripts using:\n"
         f"  • Provider: {provider.upper()}\n"
         f"  • Judge prompt: {prompt_name}\n"
         f"  • Judge rubric: {rubric_name}\n"
+        f"  • Output: {target_label}\n"
         f"  • Parallel workers: {PARALLEL_WORKERS}"
     )
-    
-    if not confirm_proceed(summary):
+
+    if not yes and not confirm_proceed(summary):
         print("Cancelled.")
         return 0
 
     workers = PARALLEL_WORKERS
     provider_label = provider.upper()
     print(
-        f"[{provider_label} Judge] Grading {len(raw_files)} transcripts  "
+        f"[{provider_label} Judge] Grading {len(source_files)} transcripts  "
         f"prompt={prompt_name}  rubric={rubric_name}  parallel={workers}"
     )
 
     tasks: list[tuple[Path, Path]] = []
-    for raw_path in raw_files:
-        target_path = _provider_target_path(raw_path, provider)
+    for raw_path in source_files:
+        target_path = _provider_target_path(raw_path, provider, source_suffix)
         tasks.append((raw_path, target_path))
 
     global _progress_done
@@ -291,15 +318,15 @@ def _run_judging(provider: str, prompt_name: str, rubric_name: str) -> int:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = {
                 pool.submit(
-                    _grade_one, raw_path, target_path,
+                    _grade_one, source_path, target_path,
                     provider=provider,
-                    prompt_name=prompt_name, 
+                    prompt_name=prompt_name,
                     rubric_name=rubric_name,
-                ): (raw_path, target_path)
-                for raw_path, target_path in tasks
+                ): (source_path, target_path)
+                for source_path, target_path in tasks
             }
             for future in as_completed(futures):
-                raw_path, _ = futures[future]
+                source_path, _ = futures[future]
                 try:
                     info = future.result()
                     all_scores.append(info)
@@ -311,7 +338,7 @@ def _run_judging(provider: str, prompt_name: str, rubric_name: str) -> int:
                         n = _progress_done
                     print(
                         f"[{provider_label} Judge] [{n}/{total}] FAILED "
-                        f"source={raw_path.relative_to(_REPO_ROOT)}: {error}"
+                        f"source={source_path.relative_to(_REPO_ROOT)}: {error}"
                     )
     except KeyboardInterrupt:
         print(f"\n{provider_label} judging interrupted.")
@@ -341,7 +368,7 @@ def main(argv: list[str] | None = None) -> int:
             provider = args.provider
             prompt_name = args.prompt
             rubric_name = args.rubric
-            
+
             # Validate that all required args are provided
             if not provider:
                 print("Error: --provider is required in non-interactive mode")
@@ -352,8 +379,8 @@ def main(argv: list[str] | None = None) -> int:
             if not rubric_name:
                 print("Error: --rubric is required in non-interactive mode")
                 return 1
-        
-        return _run_judging(provider, prompt_name, rubric_name)
+
+        return _run_judging(provider, prompt_name, rubric_name, source_suffix=args.source_suffix, yes=args.yes)
         
     except (RuntimeError, ValueError) as error:
         print(f"Error: {error}")

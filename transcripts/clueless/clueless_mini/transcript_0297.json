@@ -1,0 +1,82 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_05",
+  "student_persona": "clueless_05",
+  "student_provider": "gpt",
+  "course": "urban_studies",
+  "exercise_number": "05",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nCity Case Study Investigation — Peer Assessment (Power/Actor Maps)\n\nFinal due date: August 29 by 11:59 PM EST for initial submission, plus one additional week for peer review.\n\nThis assignment is required for Certificate learners, but all learners are encouraged to complete the City Case Study Investigations.\n\nThis assignment will be reviewed by the course instructors for content, but no direct instructor feedback will be offered this week.\n\nAssignment Tasks\nFollowing the completion of your Power/Actors Map, you will continue to complete your Peer Assessment Review of two of your fellow learners' Power/Actor Maps from the ORA assignments in Week 4. Refer to the ORA for instructions on completing the Peer Assessment Review.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "idk i'm kinda lost on the city case study peer assessment rn, like what am i even supposed to do for the power/actor maps review?",
+      "tutor": "Let's start there! Before we dig in — have you already completed your own Power/Actor Map for your case study city? That's the foundation for this peer review step.",
+      "pedagogical_reasoning": "The student is asking a general orientation question about the assignment. I should help them focus by asking what they already know or have done, rather than explaining the whole assignment to them. This gets them actively engaged and helps me gauge where they actually are."
+    },
+    {
+      "turn": 2,
+      "student": "i think so? tbh i made the map but idk if that means i'm done or if the review is like a whole diff assignment.",
+      "tutor": "Good — completing your own map is the first step, so that's done! For the specifics of the peer review process and instructions, you'll want to check the ORA (Open Response Assessment) in Week 4 directly — that's where the full instructions live, and your instructor would be the right person for any logistical questions.\n\nThat said, what do *you* think the purpose of reviewing someone else's Power/Actor Map might be?",
+      "pedagogical_reasoning": "The student is confused about whether the peer review is a separate task from their own map. This is a logistical question about the assignment structure. I should clarify my role and point them to the course for specifics, but I can help them understand conceptually what a peer review entails based on the assignment description."
+    },
+    {
+      "turn": 3,
+      "student": "umm maybe to say if theirs looks right? i'm still confused tho bc idk what i'm actually judging it on.",
+      "tutor": "That's a reasonable start! Think back to when you built your own map — what were the key things you had to figure out or include? That might give you a clue about what to look for in someone else's.",
+      "pedagogical_reasoning": "The student is beginning to think about the purpose of peer review but is vague. I should use a Socratic question to help them think about what makes a Power/Actor Map good or meaningful, drawing on what they already know from building their own."
+    },
+    {
+      "turn": 4,
+      "student": "ngl i just kinda guessed on stakeholders n power levels, so now i'm not sure what's \"good\" vs random.",
+      "tutor": "That's an honest reflection — and actually a useful one! So let's think about this: in the context of a city responding to climate change, what would make someone or a group genuinely *powerful* in shaping what happens?",
+      "pedagogical_reasoning": "The student is revealing that they may not have a firm grasp of what makes a Power/Actor Map analytically sound, which is actually core to both their own work and the peer review. Rather than explaining it to them, I should ask them to reflect on what 'power' means in this urban context, pushing them toward their own reasoning."
+    },
+    {
+      "turn": 5,
+      "student": "idk, like gov ppl maybe? but then businesses too? it all feels super broad fr.",
+      "tutor": "You're on the right track with those examples. But here's a sharper question: what is it *specifically* that makes a government official or a business powerful in a climate decision? What can they actually *do* that others can't?",
+      "pedagogical_reasoning": "The student is identifying real actors but struggling to articulate what makes them powerful specifically. I should push them to think more precisely about what 'power' means rather than just listing who has it."
+    },
+    {
+      "turn": 6,
+      "student": "that's where i get stuck tbh, can u just explain what counts as power in this assignment bc i'm mixing up influence, authority, money, all of it.",
+      "tutor": "You're actually not as lost as you think — you just listed three real dimensions! Try this: pick one of those (influence, authority, or money) and tell me what a powerful actor can *do* with it in a climate decision. Let's build from there.",
+      "pedagogical_reasoning": "The student is asking me to explain the concept directly, which I should not do. However, they are genuinely stuck and listing real dimensions of power (influence, authority, money) — which is actually good raw material. I should reflect that back to them and ask them to reason through how those things differ rather than collapsing."
+    },
+    {
+      "turn": 7,
+      "student": "ugh idk rn, they can make stuff happen i guess? i'm still not seeing how to review 2 other maps without overthinking every actor.",
+      "tutor": "Fair — let's make it concrete. In your case study city, who actually *decided* something about climate policy recently? What did they decide, and how did they make it happen? Just one example is enough.",
+      "pedagogical_reasoning": "The student is expressing frustration and shifting focus to the peer review task, possibly to avoid working through the conceptual difficulty. However, understanding what makes an actor powerful is directly relevant to reviewing maps. I should acknowledge their frustration briefly, but keep them on track since this understanding is foundational. I'll simplify the question to make it more concrete and manageable."
+    },
+    {
+      "turn": 8,
+      "student": "i can't even think of a specific policy example rn, that's why i'm spiraling lol. can u just tell me what i should be looking for when i grade the maps?",
+      "tutor": "I hear you — but giving you a checklist isn't my role here, and I also can't grade for you. Quick check though: which city did you choose for your case study? Starting there might help us get less abstract.",
+      "pedagogical_reasoning": "The student is asking me to grade/evaluate work for them, and also asking me to directly give them criteria — both things I should not do. They are also expressing frustration and some circular thinking. I should acknowledge the frustration supportively, redirect them to what they already have, and gently remind them of my role. The student hasn't chosen a specific city or mentioned one, which seems like a foundational gap worth surfacing."
+    },
+    {
+      "turn": 9,
+      "student": "it's jakarta i think, but tbh i mostly need the general idea more than city details rn.",
+      "tutor": "Jakarta is actually a great choice with a lot to work with! I'd push back a little — the abstract stuff gets clearer when you ground it in something real. Who comes to mind as a major actor in Jakarta's response to climate challenges, like flooding or the capital relocation?",
+      "pedagogical_reasoning": "The student wants to avoid specifics and work at a general level, but the assignment is inherently about a specific city and concrete actors. Staying abstract is actually what's causing their confusion. I should gently push them back to Jakarta as an anchor, since concrete examples will help them understand what makes a good map — which is the key to peer reviewing others."
+    },
+    {
+      "turn": 10,
+      "student": "maybe the city gov? or national gov? see this is why i'm confused bc i can name actors forever but idk how detailed the peer review is supposed to be.",
+      "tutor": "For how detailed the review should be — that's in the ORA instructions, check those! But notice what you just did: you named two actors and immediately sensed they're different. What's the difference in *what each can do* about Jakarta's climate situation? That distinction is the core analytical move behind a strong map — and behind reviewing one.",
+      "pedagogical_reasoning": "The student is again pivoting to logistical questions about the peer review format, which I should redirect to the ORA instructions. But they've also just named two real actors (city gov, national gov) which is progress. I should acknowledge that and push them to differentiate between those two — because that differentiation IS the analytical skill behind both their map and the peer review. We're also getting close to the 10-exchange limit so I should encourage them to synthesize."
+    }
+  ],
+  "mini_continuation": {
+    "source_transcript": "transcripts/clueless/clueless_raw/transcript_0297.json",
+    "source_stem": "transcript_0297",
+    "resume_from_turn": 1,
+    "additional_turns": 9,
+    "original_tutor_prompt": "tutor_04",
+    "original_tutor_provider": "claude"
+  }
+}
