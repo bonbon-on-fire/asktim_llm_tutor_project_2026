@@ -1338,6 +1338,100 @@ def _chart_sub_subsection_correlation_heatmap(
 
 
 # ---------------------------------------------------------------------------
+# Chart: Original vs mini transcript score comparison
+# ---------------------------------------------------------------------------
+
+def _chart_original_vs_mini(
+    original_rows: list[GradeRow],
+    mini_rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    persona_label: str,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Grouped bar chart comparing original Claude grades vs mini-continuation grades
+    for matched transcripts (matched by transcript stem)."""
+    plt = _safe_import_matplotlib()
+    from matplotlib.ticker import MaxNLocator
+
+    original_by_stem = {r.transcript_name: r for r in original_rows}
+    mini_by_stem = {r.transcript_name: r for r in mini_rows}
+
+    matched_stems = sorted(
+        set(original_by_stem).intersection(set(mini_by_stem)),
+        key=lambda s: int(s.split("_")[-1]) if s.split("_")[-1].isdigit() else 0,
+    )
+
+    if not matched_stems:
+        print(f"  [{chart_idx}] {output_name} (skipped: no matched transcripts)")
+        return
+
+    labels = [s.replace("transcript_", "") for s in matched_stems]
+    y_orig = [original_by_stem[s].total_score for s in matched_stems]
+    y_mini = [mini_by_stem[s].total_score for s in matched_stems]
+    max_score = max(
+        (r.max_score for r in [*original_rows, *mini_rows] if math.isfinite(r.max_score)),
+        default=46,
+    )
+
+    x = list(range(len(matched_stems)))
+    width = 0.38
+
+    fig, ax = plt.subplots(figsize=(max(10, len(matched_stems) * 0.9 + 2), 6))
+    bars_orig = ax.bar(
+        [xi - width / 2 for xi in x], y_orig, width,
+        label=f"Original (tutor_03, claude)", color="#ff893a", alpha=0.85,
+    )
+    bars_mini = ax.bar(
+        [xi + width / 2 for xi in x], y_mini, width,
+        label=f"Mini (tutor_05, claude)", color="#1f77b4", alpha=0.85,
+    )
+
+    # Annotate each bar with its score.
+    for bar in bars_orig:
+        ax.text(
+            bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
+            str(int(bar.get_height())), ha="center", va="bottom", fontsize=8,
+        )
+    for bar in bars_mini:
+        ax.text(
+            bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
+            str(int(bar.get_height())), ha="center", va="bottom", fontsize=8,
+        )
+
+    ax.set_title(f"Original vs Mini-Continuation Grade Comparison ({persona_label.capitalize()})")
+    ax.set_xlabel("Transcript number")
+    ax.set_ylabel("Total Score")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, rotation=45, ha="right")
+    ax.set_ylim(0, max_score + 4)
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.axhline(max_score, color="gray", linewidth=0.8, linestyle="--", alpha=0.5)
+    ax.grid(True, axis="y", alpha=0.3)
+    ax.legend()
+
+    finite_orig = [v for v in y_orig if math.isfinite(v)]
+    finite_mini = [v for v in y_mini if math.isfinite(v)]
+    deltas = [m - o for o, m in zip(y_orig, y_mini) if math.isfinite(o) and math.isfinite(m)]
+    lines = [
+        f"Matched transcripts: {len(matched_stems)}",
+        f"Original mean: {sum(finite_orig)/len(finite_orig):.1f}  Mini mean: {sum(finite_mini)/len(finite_mini):.1f}" if finite_orig and finite_mini else "",
+        f"Mean Δ (mini − original): {sum(deltas)/len(deltas):+.1f}" if deltas else "",
+    ]
+    ax.text(
+        0.01, 0.98, "\n".join(l for l in lines if l),
+        transform=ax.transAxes, ha="left", va="top", fontsize=9,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
+    )
+
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -1358,6 +1452,9 @@ def main() -> int:
             "Run the judge for Claude first."
         )
         return 1
+
+    claude_mini_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_mini")
+    print(f"Loaded Claude mini: {len(claude_mini_rows)} transcripts")
 
     chart_idx = 1
 
@@ -1423,6 +1520,20 @@ def main() -> int:
                     f"(missing sheet '{grader_key} grading' / 'compiled grading', wrong headers, "
                     "or no rows for that grader). Skipping chart."
                 )
+
+    for persona in ("chaotic", "clueless"):
+        orig_subset = _filter_individual_rows(claude_all_rows, {persona})
+        mini_subset = _filter_individual_rows(claude_mini_rows, {persona})
+        if orig_subset and mini_subset:
+            _chart_original_vs_mini(
+                orig_subset,
+                mini_subset,
+                out_dir,
+                persona_label=persona,
+                output_name=f"original_vs_mini_claude_{persona}.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
