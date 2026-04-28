@@ -23,7 +23,7 @@ The system has four loosely coupled layers:
 
 - Conversation pipeline: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - Judge pipeline: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
-- Dashboard + visualization: a Flask web app for browsing transcripts side-by-side with GPT/Claude grades, and a matplotlib chart module for Pearson r / Spearman rho correlation analysis
+- Dashboard + visualization: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
 
 ### Key Components
 
@@ -33,13 +33,13 @@ The system has four loosely coupled layers:
 
 **Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**UI Runners (`ui/`):** Two parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation and individual transcript judging. Both judge runners accept `--provider`, `--prompt`, and `--rubric` CLI flags.
+**UI Runners (`ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), two-layer raw generation (`run_ui_raw_two_layer`), transcript judging (`run_ui_judge`), and mini judge comparison (`run_ui_judge_mini`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
-**Dashboard (`dashboard_ui/`):** Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
+**Dashboard (`dashboard_ui/`):** Flask app that discovers all raw transcripts on disk, loads Claude Mini (tutor_05) and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
 ## Code in Action: Conversation Flow Example
 
-### 1. Tutor Prompt (`tutor/prompts/tutor_03.txt`)
+### 1. Tutor Prompt (`tutor/prompts/tutor_05.txt`)
 
 - Instructs the tutor to never state the answer directly
 - Requires guided questions that move the student toward insights themselves
@@ -83,16 +83,16 @@ flowchart TD
     end
 
     subgraph rawstore["Raw transcripts"]
-        RAWF[("transcripts/*/*_raw/\ntranscript_XXXX.json")]
+        RAWF[("transcripts/*/*_raw/\nor *_raw_tutor_05/\ntranscript_XXXX.json")]
     end
 
     subgraph judge["2. Grade transcripts"]
-        UIJ["ui.run_ui_judge\n(GPT or Claude judge)"]
+        UIJ["ui.run_ui_judge\n(--provider --source-suffix --output-suffix)"]
         JG["judge.run_judge\nvalidate + repair JSON"]
     end
 
     subgraph gradedstore["Graded transcripts"]
-        GF[("transcripts/*/*_gpt/\nor *_claude/")]
+        GF[("transcripts/*/*_claude/\nor *_claude_tutor_05/\nor *_claude_mini/")]
     end
 
     subgraph view["3. Compare and explore"]
@@ -114,7 +114,7 @@ flowchart TD
 **1. Load prompts and build agents**
 
 ```python
-system_prompt = load_system_prompt("tutor_03", assignment_override=assignment_text)
+system_prompt = load_system_prompt("tutor_05", assignment_override=assignment_text)
 tutor_graph = create_tutor_graph(system_prompt)
 student_graph = build_graph(prompt_name="chaotic_01")
 ```
@@ -154,7 +154,7 @@ print(result.total_score, result.max_score)  # e.g. 38, 46
 
 ```powershell
 python -m visualization.run_visualization
-# Output: visualization/outputs/individual_grades_gpt_vs_claude.png
+# Output: visualization/outputs/claude_grades_all_transcripts.png (+ more)
 ```
 
 ## Project Structure & File Guide
@@ -174,28 +174,37 @@ humanities_llm_tutor_project_2026/
 │
 ├── tutor/
 │   ├── run_tutor.py         # LangGraph engine + prompt loading + response parsing
-│   └── prompts/             # tutor_01.txt .. tutor_03.txt (versioned system prompts)
+│   ├── run_tutor_mini.py    # Fork a raw transcript at a pivot turn with a new tutor
+│   ├── run_tutor_two_layer.py  # Two-layer tutor: standard + rubric-aware verifier
+│   └── prompts/             # tutor_01.txt .. tutor_05.txt (versioned system prompts)
 │
 ├── judge/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
-│   ├── prompts/             # judge_01.txt .. judge_06.txt
-│   └── rubrics/             # rubric_01.md .. rubric_06.md (current default: rubric_05)
+│   ├── run_judge_mini.py    # Binary YES/NO comparison judge (new vs original reply)
+│   ├── prompts/             # judge_01.txt .. judge_08.txt
+│   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py        # Generate raw transcripts in bulk
-│   └── run_ui_judge.py      # Grade raw transcripts (--provider gpt|claude)
+│   ├── run_ui_raw.py           # Generate raw transcripts in bulk (--output-suffix, --yes)
+│   ├── run_ui_raw_mini.py      # Interactive wrapper for mini-continuation runs
+│   ├── run_ui_raw_two_layer.py # Generate two-layer raw transcripts in bulk
+│   ├── run_ui_judge.py         # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
+│   └── run_ui_judge_mini.py    # Interactive mini judge comparison runner
 │
 ├── transcripts/
-│   ├── chaotic/             # chaotic_raw/, chaotic_gpt/, chaotic_claude/
-│   ├── cooperative/         # cooperative_raw/, cooperative_gpt/, cooperative_claude/
-│   └── clueless/            # clueless_raw/, clueless_gpt/, clueless_claude/
+│   ├── chaotic/             # chaotic_raw/, chaotic_claude/, chaotic_mini/,
+│   │                        # chaotic_claude_mini/, chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
+│   ├── cooperative/         # cooperative_raw/, cooperative_claude/,
+│   │                        # cooperative_raw_tutor_05/, cooperative_claude_tutor_05/
+│   └── clueless/            # clueless_raw/, clueless_claude/, clueless_mini/,
+│                            # clueless_claude_mini/, clueless_raw_tutor_05/, clueless_claude_tutor_05/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
 ├── visualization/
-│   └── run_visualization.py # Correlation charts: Pearson r, Spearman rho, discrepancy
+│   └── run_visualization.py # Score charts: per-prompt, original vs mini, hand-grade correlation
 │
 └── utils/
     └── parsing.py           # Shared JSON extraction helper
@@ -207,10 +216,11 @@ The full pipeline is working end-to-end, with:
 
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
-- 288 raw transcripts per persona type — 864 total files across raw, GPT-graded, and Claude-graded folders
-- Rubric versioned up to `rubric_06` (current default: `rubric_05`, 46 pts)
-- Dashboard fully functional for side-by-side GPT/Claude grade comparison
-- Visualization outputs Pearson r and Spearman rho between GPT and Claude scores at section and subsection level
+- Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
+- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude), with corresponding Claude grades in `*_claude_mini/`
+- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `rubric_05`, 46 pts)
+- Dashboard shows Claude Mini (tutor_05) grades vs Claude (tutor_04) grades side-by-side
+- Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
 
 ## Challenges and How I Solved Them
 

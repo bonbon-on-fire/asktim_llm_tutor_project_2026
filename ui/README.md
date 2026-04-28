@@ -23,11 +23,14 @@ This will prompt you to select from numbered options:
 
 **Command-line mode:**
 ```powershell
-# Generate with GPT tutor (default)
+# Generate with GPT tutor (default output: *_raw/)
 python -m ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
 
 # Generate with Claude tutor
-python -m ui.run_ui_raw --provider claude --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+python -m ui.run_ui_raw --provider claude --tutor tutor_05 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+
+# Custom output folder: writes to *_raw_tutor_05/ instead of *_raw/ (--yes skips confirmation)
+python -m ui.run_ui_raw --provider claude --tutor tutor_05 --personas chaotic_01 --course philosophy --exercise 01 --turn-size 10 --trials 10 --output-suffix raw_tutor_05 --yes
 ```
 
 Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
@@ -115,14 +118,22 @@ This will prompt you to select from numbered options:
 
 **Command-line mode:**
 ```powershell
-# Grade with GPT
+# Grade with GPT (reads *_raw/, writes *_gpt/)
 python -m ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
 
-# Grade with Claude  
-python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
+# Grade with Claude (reads *_raw/, writes *_claude/)
+python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05
+
+# Read from *_raw_tutor_05/, write to *_claude_tutor_05/ (--yes skips confirmation)
+python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+  --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
+
+# Read from *_mini/, write to *_claude_mini/
+python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+  --source-suffix mini --output-suffix mini --yes
 ```
 
-The script automatically discovers all raw transcripts in `*_raw` folders, copies each to the provider-specific folder (`*_gpt` or `*_claude`), then applies judging in-place on the copied file.
+The script discovers all transcripts matching `*_{source-suffix}/transcript_*.json`, copies each to the provider+suffix-specific folder, then applies judging in-place.
 
 **Features:**
 - Parallel processing (6 workers by default)
@@ -138,9 +149,14 @@ The script automatically discovers all raw transcripts in `*_raw` folders, copie
 Raw transcripts are saved to persona-specific raw folders:
 
 - `transcripts/chaotic/chaotic_raw/`
-- `transcripts/chitchat/chitchat_raw/`
 - `transcripts/clueless/clueless_raw/`
 - `transcripts/cooperative/cooperative_raw/`
+
+With `--output-suffix raw_tutor_05`, output goes to `*_raw_tutor_05/` instead:
+
+- `transcripts/chaotic/chaotic_raw_tutor_05/`
+- `transcripts/clueless/clueless_raw_tutor_05/`
+- `transcripts/cooperative/cooperative_raw_tutor_05/`
 
 Each file is auto-named as `transcript_XXXX.json`.
 
@@ -150,29 +166,35 @@ Judged transcripts are saved to provider-specific folders:
 
 **GPT judged:**
 - `transcripts/chaotic/chaotic_gpt/`
-- `transcripts/chitchat/chitchat_gpt/`
 - `transcripts/clueless/clueless_gpt/`
 - `transcripts/cooperative/cooperative_gpt/`
 
-**Claude judged:**
+**Claude judged (default):**
 - `transcripts/chaotic/chaotic_claude/`
-- `transcripts/chitchat/chitchat_claude/`
 - `transcripts/clueless/clueless_claude/`
 - `transcripts/cooperative/cooperative_claude/`
 
-Each output file uses the same stem as raw input: `transcript_XXXX.json`
+**Claude judged with custom suffix** (`--source-suffix raw_tutor_05 --output-suffix tutor_05`):
+- `transcripts/chaotic/chaotic_claude_tutor_05/`
+- `transcripts/clueless/clueless_claude_tutor_05/`
+- `transcripts/cooperative/cooperative_claude_tutor_05/`
+
+**Claude judged mini** (`--source-suffix mini --output-suffix mini`):
+- `transcripts/chaotic/chaotic_claude_mini/`
+- `transcripts/clueless/clueless_claude_mini/`
+
+Each output file uses the same stem as the source input: `transcript_XXXX.json`
 
 ### Mini continuation outputs (`ui.run_ui_raw_mini` / `tutor.run_tutor_mini`)
 
 - `transcripts/chaotic/chaotic_mini/`
-- `transcripts/chitchat/chitchat_mini/`
 - `transcripts/clueless/clueless_mini/`
-- `transcripts/cooperative/cooperative_mini/`
+
+Output file is named using the same stem as the source raw transcript.
 
 ### Two-layer raw outputs (`ui.run_ui_raw_two_layer`)
 
 - `transcripts/chaotic/chaotic_two_layer_raw/`
-- `transcripts/chitchat/chitchat_two_layer_raw/`
 - `transcripts/clueless/clueless_two_layer_raw/`
 - `transcripts/cooperative/cooperative_two_layer_raw/`
 

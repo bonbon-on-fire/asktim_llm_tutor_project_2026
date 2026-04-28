@@ -21,16 +21,20 @@ judge/
     judge_01.txt           — baseline prompt template
     judge_02.txt           — structured prompt template
     judge_03.txt           — prior prompt template (context + exercise aware)
-    judge_04.txt           — current prompt template (context + exercise aware)
-    judge_05.txt           — current prompt template (rubric_05 compatible)
-    judge_06.txt           — latest prompt template
+    judge_04.txt           — prompt template (context + exercise aware)
+    judge_05.txt           — prompt template (rubric_05 compatible)
+    judge_06.txt           — prompt template
+    judge_07.txt           — prompt template
+    judge_08.txt           — latest prompt template
   rubrics/
     rubric_01.md           — original rubric profile
     rubric_02.md           — intermediate rubric profile
     rubric_03.md           — prior rubric profile (33 base + 9 bonus = 42 max)
     rubric_04.md           — prior rubric profile (47 base with section malus deductions)
-    rubric_05.md           — current rubric profile (46 base points, no malus)
-    rubric_06.md           — latest rubric profile
+    rubric_05.md           — rubric profile (46 base points, no malus)
+    rubric_06.md           — rubric profile
+    rubric_07.md           — rubric profile
+    rubric_08.md           — latest rubric profile
 ```
 
 Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
@@ -101,11 +105,16 @@ python -m ui.run_ui_judge --provider gpt
 python -m ui.run_ui_judge --provider claude
 ```
 
-Both commands accept `--prompt` and `--rubric` flags to select versions:
+All flags:
 
 ```powershell
-python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
-python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
+# --prompt and --rubric select versions; --yes skips confirmation prompt
+python -m ui.run_ui_judge --provider gpt --prompt judge_08 --rubric rubric_08 --yes
+
+# --source-suffix reads from *_{suffix}/ instead of *_raw/
+# --output-suffix independently overrides the target folder suffix
+python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+  --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
 ```
 
 Parallelism is controlled by the `PARALLEL_WORKERS` constant at the top of
