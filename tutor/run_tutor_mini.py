@@ -373,8 +373,11 @@ def continue_from_transcript(
 
     out_dir = mini_output_dir(persona_type)
     out_dir.mkdir(parents=True, exist_ok=True)
-    transcript_num = _next_transcript_number(out_dir)
-    transcript_name = f"transcript_{transcript_num}"
+    if source_path is not None:
+        transcript_name = source_path.stem
+    else:
+        transcript_num = _next_transcript_number(out_dir)
+        transcript_name = f"transcript_{transcript_num}"
     out_path = out_dir / f"{transcript_name}.json"
 
     source_rel: str | None = None
