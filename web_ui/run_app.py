@@ -53,19 +53,23 @@ def _discover_exercises(course: str) -> list[str]:
 
 
 def _load_assignment_text(course: str, exercise_num: str) -> str:
-    """Load combined assignment context: course.txt + exercise_XX.txt."""
+    """Load combined assignment context: course.txt + syllabus.txt (optional) + exercise_XX.txt."""
     course_dir = _CURRICULUM_DIR / course
-    course_path = course_dir / "course.txt"
     exercise_path = course_dir / f"exercise_{exercise_num}.txt"
-
-    course_text = course_path.read_text(encoding="utf-8").strip()
     exercise_text = exercise_path.read_text(encoding="utf-8").strip()
-    return (
-        "Course context:\n"
-        f"{course_text}\n\n"
-        "Exercise:\n"
-        f"{exercise_text}"
-    )
+
+    parts: list[str] = []
+
+    course_path = course_dir / "course.txt"
+    if course_path.exists():
+        parts.append("Course context:\n" + course_path.read_text(encoding="utf-8").strip())
+
+    syllabus_path = course_dir / "syllabus.txt"
+    if syllabus_path.exists():
+        parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+
+    parts.append("Exercise:\n" + exercise_text)
+    return "\n\n".join(parts)
 
 
 # ---------------------------------------------------------------------------
@@ -150,9 +154,15 @@ def config_options():
 
     course_texts: dict[str, str] = {}
     for c in courses:
+        sections: list[str] = []
         p = _CURRICULUM_DIR / c / "course.txt"
         if p.exists():
-            course_texts[c] = p.read_text(encoding="utf-8").strip()
+            sections.append(p.read_text(encoding="utf-8").strip())
+        s = _CURRICULUM_DIR / c / "syllabus.txt"
+        if s.exists():
+            sections.append("--- Syllabus ---\n" + s.read_text(encoding="utf-8").strip())
+        if sections:
+            course_texts[c] = "\n\n".join(sections)
 
     exercise_texts: dict[str, dict[str, str]] = {}
     for c in courses:

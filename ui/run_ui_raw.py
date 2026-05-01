@@ -151,26 +151,38 @@ def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
 
 
 def _load_course_context(course: str) -> str:
-    """Read and return the shared course context text from curriculum/<course>/course.txt."""
+    """Read course context: course.txt + syllabus.txt (if present)."""
     course_dir = _CURRICULUM_DIR / course
-    return (course_dir / "course.txt").read_text(encoding="utf-8").strip()
+    parts: list[str] = []
+    course_path = course_dir / "course.txt"
+    if course_path.exists():
+        parts.append(course_path.read_text(encoding="utf-8").strip())
+    syllabus_path = course_dir / "syllabus.txt"
+    if syllabus_path.exists():
+        parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+    return "\n\n".join(parts)
 
 
 def _build_assignment_text(course: str, exercise_number: str, turn_size: int) -> str:
-    """Build the full assignment string: course context + exercise text + run configuration note."""
+    """Build the full assignment string: course context + syllabus (optional) + exercise text + run config."""
     course_dir = _CURRICULUM_DIR / course
-    course_text = _load_course_context(course)
     exercise_text = (
         course_dir / f"exercise_{exercise_number}.txt"
     ).read_text(encoding="utf-8").strip()
-    return (
-        "Course context:\n"
-        f"{course_text}\n\n"
-        "Exercise:\n"
-        f"{exercise_text}\n\n"
-        "Run configuration:\n"
-        f"- Planned conversation length: {turn_size} student+tutor exchanges."
-    )
+
+    parts: list[str] = []
+
+    course_path = course_dir / "course.txt"
+    if course_path.exists():
+        parts.append("Course context:\n" + course_path.read_text(encoding="utf-8").strip())
+
+    syllabus_path = course_dir / "syllabus.txt"
+    if syllabus_path.exists():
+        parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+
+    parts.append("Exercise:\n" + exercise_text)
+    parts.append(f"Run configuration:\n- Planned conversation length: {turn_size} student+tutor exchanges.")
+    return "\n\n".join(parts)
 
 
 def _next_transcript_number(output_dir: Path) -> str:
