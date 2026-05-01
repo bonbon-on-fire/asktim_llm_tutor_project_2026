@@ -67,6 +67,7 @@ class MiniContinuationParams:
     additional_turns: int
     tutor_prompt: str
     tutor_provider: str
+    output_stem: str | None = None  # override output filename stem; defaults to source stem
 
 
 def mini_output_dir(persona_type: str) -> Path:
@@ -226,6 +227,7 @@ def continue_from_transcript(
     tutor_prompt: str,
     tutor_provider: str,
     source_path: Path | None = None,
+    output_stem: str | None = None,
 ) -> tuple[dict[str, Any], Path]:
     """
     Keep turns ``1 .. resume_from_turn-1`` unchanged; at turn ``resume_from_turn`` keep only
@@ -373,7 +375,9 @@ def continue_from_transcript(
 
     out_dir = mini_output_dir(persona_type)
     out_dir.mkdir(parents=True, exist_ok=True)
-    if source_path is not None:
+    if output_stem is not None:
+        transcript_name = output_stem
+    elif source_path is not None:
         transcript_name = source_path.stem
     else:
         transcript_num = _next_transcript_number(out_dir)
@@ -435,6 +439,7 @@ def run_mini(params: MiniContinuationParams) -> Path:
         tutor_prompt=params.tutor_prompt,
         tutor_provider=params.tutor_provider,
         source_path=path,
+        output_stem=params.output_stem,
     )
     return out_path
 
@@ -509,6 +514,11 @@ def main(argv: list[str] | None = None) -> int:
         required=True,
         help="LLM provider for tutor turns during continuation.",
     )
+    parser.add_argument(
+        "--output-stem",
+        default=None,
+        help="Override output filename stem (e.g. transcript_0015_01). Defaults to source stem.",
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -530,6 +540,7 @@ def main(argv: list[str] | None = None) -> int:
         additional_turns=args.additional_turns,
         tutor_prompt=args.tutor_prompt,
         tutor_provider=args.tutor_provider,
+        output_stem=args.output_stem,
     )
 
     try:

@@ -190,12 +190,14 @@
       html += '<details class="meta-block"><summary>Exercise</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(meta.exercise) + "</pre></details>";
     }
 
-    html += '<h2 class="transcript-section-heading">Original (tutor_04)</h2>';
+    const origPrompt = (meta.tutor_prompt) || "original";
+    html += '<h2 class="transcript-section-heading">Original (' + escapeHtml(origPrompt) + ')</h2>';
     html += renderExchanges(data.exchanges_raw, null);
 
+    const miniPrompt = data.mini_tutor_prompt || "mini";
     const miniLabel = data.resume_from_turn != null
-      ? "Mini continuation (tutor_05) — resumed from turn " + data.resume_from_turn
-      : "Mini continuation (tutor_05)";
+      ? "Mini continuation (" + miniPrompt + ") — resumed from turn " + data.resume_from_turn
+      : "Mini continuation (" + miniPrompt + ")";
     html += '<h2 class="transcript-section-heading">' + escapeHtml(miniLabel) + "</h2>";
     html += renderExchanges(data.exchanges_mini, data.resume_from_turn);
 

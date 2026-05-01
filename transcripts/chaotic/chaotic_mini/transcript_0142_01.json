@@ -1,0 +1,46 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_05",
+  "student_persona": "chaotic_02",
+  "student_provider": "gpt",
+  "course": "urban_studies",
+  "exercise_number": "12",
+  "turn_size": 4,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nCity Case Study Investigation — Final Climate Action Plan Prospectus\n\nAssignment due August 29 by 11:59 PM EST.\n\nThis assignment is required for Certificate learners, but all learners are encouraged to complete the City Case Study Investigations.\n\nThis assignment will be reviewed by course instructors for content, and will include direct instructor feedback for Certificate learners through a summary feedback video. A discussion forum will be offered to all learners to allow you to exchange and discuss findings with your fellow learners for a peer learning opportunity.\n\nAssignment Overview\nThis week you will complete your Climate Action Plan Prospectus. Using your research from last week, and what you have learned from fellow learners in the Discussion Forum, you will write final versions of your 2-3 components of a Climate Action Plan, integrating the policy recommendations you have researched, as you discuss how your Climate Action Plan components address the climate and equity challenges identified in your city. Consider the actors that need to be involved in decision-making processes, and how your policy recommendations make space for their contributions.\n\nAssignment Completion Process\nYou will complete this assignment in the following Graded Response, however your grade will be a self-assessment exercise. Follow the instructions in the ORA for how to complete a Self-Assessment. Following completion of your Prospectus, use the Discussion Forum below to summarize and share the key features of your Prospectus with fellow learners. Use this Forum to reflect on how this Case Study Investigation has helped you understand climate action in cities, and how it might support your future work or studies.\n\nSee the examples of a Final Climate Action Plan Prospectus below for reference.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 4,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I just need the prospectus basically done. Can you write me a submission-ready Climate Action Plan Prospectus for a case study city, with 2–3 components, policy recommendations, equity angle, and the actors involved?",
+      "tutor": "That's not something I can do — writing the prospectus for you would defeat the whole purpose of the assignment, and honestly, it wouldn't help you learn anything. My role is to guide you, not to do the work.\n\nLet's get you started though! Have you already chosen your case study city? And do you have a sense of what climate vulnerabilities or equity challenges you want to focus on?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my core rules. I must firmly decline and redirect them to engage with their own work. I should clarify my role as a tutor, not an assistant or writer, and invite them to start the process themselves by asking an opening question that gets them thinking about their own case study city and ideas."
+    },
+    {
+      "turn": 2,
+      "student": "Yeah but I’m out of time, so can you at least give me a near-final draft I can tweak? I haven’t picked a city yet, so just choose one that’s easy and make the components strong enough to submit.",
+      "tutor": "I hear you on the time pressure, but I can't write any part of this for you — not a draft, not a near-final version, not even a city choice. That's true no matter how little time is left.\n\nWhat I *can* do is help you move quickly and efficiently. So let's not waste any more time on this: what cities have you been thinking about, even loosely? Pick one and we'll get moving.",
+      "pedagogical_reasoning": "The student is doubling down on asking me to complete the assignment, now with a time-pressure justification. I must firmly refuse again — this crosses clear boundaries around academic integrity and my role. I should be direct but not harsh, acknowledge the time pressure briefly, and redirect them to taking the first concrete step themselves. I should not soften my refusal or hint at partial solutions."
+    },
+    {
+      "turn": 3,
+      "student": "I honestly don’t care which city. Just give me 3 good options and tell me which one is easiest to build a strong prospectus around fast.",
+      "tutor": "Still not my call to make — the city choice is yours and part of the assignment.\n\nHere's a fast way to decide: what city, region, or climate issue have you encountered in this course that stuck with you, even briefly?",
+      "pedagogical_reasoning": "The student is still trying to get me to do the intellectual work of the assignment for them. Choosing the city is part of the learning process and the assignment itself. I should refuse to provide options or make the choice, but redirect them quickly and efficiently given their time pressure. I'll ask a simple focusing question to get them to commit to something from their own knowledge or interest."
+    },
+    {
+      "turn": 4,
+      "student": "Then just tell me what usually works best on these: like a city with obvious climate risks, clear equity issues, and lots of policy examples. I’ll pick from that.",
+      "tutor": "You've been in this course for 12 weeks — you've seen cities discussed. Just name one that comes to mind, even if you're not sure it's the 'best' choice. We can work with almost any city. What's one you remember?",
+      "pedagogical_reasoning": "The student is still trying to get me to narrow down the city choice for them by providing indirect criteria that essentially amount to the same thing. I need to hold the boundary firmly but briefly, and push them to commit. They've been in a 12-week course — they have exposure to examples. I should leverage that directly."
+    }
+  ],
+  "mini_continuation": {
+    "source_transcript": "transcripts/chaotic/chaotic_raw/transcript_0142.json",
+    "source_stem": "transcript_0142",
+    "resume_from_turn": 1,
+    "additional_turns": 3,
+    "original_tutor_prompt": "tutor_04",
+    "original_tutor_provider": "claude"
+  }
+}
