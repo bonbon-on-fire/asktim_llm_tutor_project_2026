@@ -11,7 +11,6 @@ Current defaults in code:
 ```text
 judge/
   run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
-  run_judge_mini.py            — comparison mini judge: binary YES/NO verdict on new vs original tutor reply
   run_judge_bundle.py           — unified bundle judge core (provider: gpt|claude)
   hand_grade_workbook.xlsx           — manual grading workbook for judge calibration
   hand_grade_workbook_build.py       — build workbook from stratified sample + run Claude fill
@@ -152,25 +151,6 @@ Bundle files live in `transcripts/bundles/bundles_raw/bundle_XX/` and output
 goes to `transcripts/bundles/bundles_gpt/bundle_XX/` (or `bundles_claude/`).
 Each bundle file lists 3 transcript paths; they are combined into a single
 prompt with full metadata headers and graded holistically.
-
-### Comparison mini judge
-
-Compares an original tutor reply against a newly generated reply for a single pivot turn and returns a binary YES/NO verdict with a one-sentence reason. The judge sees only the student message and both tutor replies — no prior conversation history.
-
-```python
-from judge.run_judge_mini import compare_turn, MiniJudgeResult
-
-result: MiniJudgeResult = compare_turn(
-    student_message="I don't understand what a syllogism is.",
-    original_tutor_reply="A syllogism has two premises and a conclusion.",
-    new_tutor_reply="What do you already know about logical arguments?",
-    rubric_name="rubric_05",
-    provider="gpt",
-)
-print(result.new_is_better, result.reason)
-```
-
-Use `ui/run_ui_judge_mini` for an interactive batch runner over randomly sampled raw transcripts.
 
 ## Rubric summary
 

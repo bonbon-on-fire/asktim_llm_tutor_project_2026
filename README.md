@@ -175,21 +175,17 @@ humanities_llm_tutor_project_2026/
 ├── tutor/
 │   ├── run_tutor.py         # LangGraph engine + prompt loading + response parsing
 │   ├── run_tutor_mini.py    # Fork a raw transcript at a pivot turn with a new tutor
-│   ├── run_tutor_two_layer.py  # Two-layer tutor: standard + rubric-aware verifier
 │   └── prompts/             # tutor_01.txt .. tutor_05.txt (versioned system prompts)
 │
 ├── judge/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
-│   ├── run_judge_mini.py    # Binary YES/NO comparison judge (new vs original reply)
 │   ├── prompts/             # judge_01.txt .. judge_08.txt
 │   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py           # Generate raw transcripts in bulk (--output-suffix, --yes)
-│   ├── run_ui_raw_mini.py      # Interactive wrapper for mini-continuation runs
-│   ├── run_ui_raw_two_layer.py # Generate two-layer raw transcripts in bulk
-│   ├── run_ui_judge.py         # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
-│   └── run_ui_judge_mini.py    # Interactive mini judge comparison runner
+│   ├── run_ui_raw.py        # Generate raw transcripts in bulk (--output-suffix, --yes)
+│   ├── run_ui_raw_mini.py   # Interactive wrapper for mini-continuation runs
+│   └── run_ui_judge.py      # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
 │
 ├── transcripts/
 │   ├── chaotic/             # chaotic_raw/, chaotic_claude/, chaotic_mini/,

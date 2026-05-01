@@ -9,7 +9,6 @@ tutor/
   __init__.py               — package exports
   run_tutor.py              — LangGraph engine, system-prompt loading, response parsing
   run_tutor_mini.py         — resume/replay a raw transcript from a pivot turn with a new tutor
-  run_tutor_two_layer.py    — two-layer tutor: standard tutor + rubric-aware verifier (max 1 retry/turn)
   prompts/
     tutor_01.txt            — baseline system prompt
     tutor_02.txt            — revised system prompt variant
@@ -20,7 +19,6 @@ tutor/
 
 - `run_tutor.py` builds the LangGraph, invokes the LLM, and parses structured JSON response fields (pedagogical reasoning + student-facing answer).
 - `run_tutor_mini.py` forks a raw transcript at a pivot turn, replays the student side from file, and regenerates the tutor response using a new prompt or provider.
-- `run_tutor_two_layer.py` wraps the standard tutor with a rubric-aware verifier that inspects the student-facing reply and can request one retry per turn.
 - Prompt versions are selected by name (for example `tutor_03`, `tutor_05`) and loaded from `tutor/prompts/`.
 
 ## How the tutor works
@@ -66,21 +64,6 @@ python -m tutor.run_tutor_mini \
 ```
 
 See `ui/run_ui_raw_mini` for the interactive wrapper.
-
-### Two-layer tutor
-
-```python
-from tutor.run_tutor_two_layer import create_two_layer_graph, get_tutor_reply_two_layer, load_rubric
-
-rubric_text = load_rubric("rubric_05")
-graph = create_two_layer_graph(system_prompt, rubric_text, provider="gpt")
-
-# Drop-in replacement for get_tutor_reply; returns extra verifier metadata
-messages, student_text, verifier_info = get_tutor_reply_two_layer(messages, graph=graph)
-# verifier_info: {"retried": False} or {"retried": True, "feedback": "..."}
-```
-
-See `ui/run_ui_raw_two_layer` for the interactive bulk runner.
 
 ## Environment variables
 

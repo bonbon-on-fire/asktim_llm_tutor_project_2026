@@ -10,7 +10,7 @@ From the 04/22/2026 meeting (Nishita Bhakar + Faizan Siddiqi):
 
 **Decisions made:**
 - `run_ui_raw_mini` is the primary evaluation tool for prompt iteration
-- `run_ui_judge_mini` deprioritised — too many moving parts, context issues make it unreliable as a quick check
+- `run_ui_judge_mini` removed — too many moving parts, context issues made it unreliable; deleted along with `run_ui_raw_two_layer`, `judge/run_judge_mini.py`, `tutor/run_tutor_two_layer.py`
 - Do not build multiple tutor structures simultaneously — focus on prompt work first
 - Run 30 transcripts (10 per prompt, 3 prompts) before next meeting; grade and review
 
