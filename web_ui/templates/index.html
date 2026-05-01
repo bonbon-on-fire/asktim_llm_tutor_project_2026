@@ -616,7 +616,7 @@
     const grid = document.getElementById('exercise-options');
     grid.innerHTML = '';
     (configData.course_exercises[course] || []).forEach(num => {
-      const btn = makeOptionBtn('exercise ' + num, (b) => selectExercise(num, b));
+      const btn = makeOptionBtn('exercise_' + num, (b) => selectExercise(num, b));
       if (selections.exercise === num) btn.classList.add('selected');
       grid.appendChild(btn);
     });
