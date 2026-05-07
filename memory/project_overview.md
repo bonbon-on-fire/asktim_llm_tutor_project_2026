@@ -16,7 +16,7 @@ Socratic LLM tutor for MIT OpenCourseWare (OCW) humanities/social sciences cours
 
 **Current rubric:** `rubric_05` (46 pts): Pedagogy (24), Dialogue Quality (12), Communication Quality (10)
 
-**Scale:** 18 personas (chaotic/cooperative/clueless × 6), 2 courses (philosophy + urban_studies), 864 total transcripts, graded by both GPT and Claude judges.
+**Scale:** 18 personas (chaotic/cooperative/clueless × 6), 2 courses (philosophy + cities_and_climate_change), 864 total transcripts, graded by both GPT and Claude judges.
 
 **Active work (as of 05/01/2026):**
 - Iterating on tutor prompt (tutor_05 current)

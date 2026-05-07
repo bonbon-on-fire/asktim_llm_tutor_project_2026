@@ -20,5 +20,5 @@ Recommended flow:
 
 - Keep **decisions** and **action items** explicit.
 - Prefer grouped action items with category headers and sub-actions.
-- If you reference code, include file paths (e.g., `curriculum/urban_studies/exercise_01.txt`).
+- If you reference code, include file paths (e.g., `curriculum/cities_and_climate_change/exercise_01.txt`).
 - If you reference a transcript, cite it by its short link per the project rules.

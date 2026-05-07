@@ -92,7 +92,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 | ----- | ----------- |
 | `tutor_prompt` | Tutor system prompt version used |
 | `student_persona` | Student persona identifier (e.g. `chaotic_01`, `cooperative_02`) |
-| `course` | Course name: `philosophy` or `urban_studies` |
+| `course` | Course name: `philosophy` or `cities_and_climate_change` |
 | `exercise_number` | Exercise identifier within the course |
 | `turn_size` | Planned number of exchanges |
 | `turns` | Actual number of exchanges |

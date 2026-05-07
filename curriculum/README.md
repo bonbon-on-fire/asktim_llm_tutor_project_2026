@@ -13,7 +13,7 @@ curriculum/
     ...
 ```
 
-- Each course is a subfolder (for example `philosophy/`, `urban_studies/`).
+- Each course is a subfolder (for example `philosophy/`, `cities_and_climate_change/`).
 - `course.txt` stores shared course context.
 - `exercise_XX.txt` stores the assignment prompt for a specific exercise.
 
@@ -22,7 +22,7 @@ curriculum/
 | Folder | Course | Exercises |
 | ------ | ------ | --------- |
 | `philosophy/` | Philosophy (ethics, moral reasoning) | 1 — trolley problem / act consequentialism |
-| `urban_studies/` | Urban Studies 11.024x (climate action) | 3 — geographic data, stressors, decision actors |
+| `cities_and_climate_change/` | Cities and Climate Change: Mitigation and Adaptation (I, II and III) | 12 — case study city research + mitigation/adaptation planning |
 
 ## Adding a new course
 

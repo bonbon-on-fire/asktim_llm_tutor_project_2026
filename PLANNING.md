@@ -217,7 +217,7 @@ curriculum/
   philosophy/
     course.txt           — course description/context (shared by all exercises in this course)
     exercise_01.txt      — trolley problem / act consequentialism
-  urban_studies/
+  cities_and_climate_change/
     course.txt           — course description/context
     exercise_01.txt      — geographic & demographic data table
     exercise_02.txt      — city case study stressors table

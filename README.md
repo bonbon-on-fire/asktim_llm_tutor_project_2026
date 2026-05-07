@@ -166,7 +166,7 @@ humanities_llm_tutor_project_2026/
 │
 ├── curriculum/
 │   ├── philosophy/          # course.txt + exercise_01.txt (trolley problem)
-│   └── urban_studies/       # course.txt + exercise_01..03.txt (climate data)
+│   └── cities_and_climate_change/  # course.txt + exercise_01..12.txt
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
@@ -215,7 +215,7 @@ humanities_llm_tutor_project_2026/
 The full pipeline is working end-to-end, with:
 
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
-- 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
+- 2 courses: `philosophy` (1 exercise) and `cities_and_climate_change` (12 exercises)
 - Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
 - Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude), with corresponding Claude grades in `*_claude_mini/`
 - Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `rubric_05`, 46 pts)
