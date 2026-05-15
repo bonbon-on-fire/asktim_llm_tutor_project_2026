@@ -442,6 +442,72 @@ web_ui/
 
 ---
 
+### Phase 6: Figures / multimodal pipeline ✦ PROPOSED
+
+**Problem:** Several curriculum exercises reference visual diagrams that the current text-only pipeline can't surface to the LLM. `exercise_04` (Power/Actors Map) and `exercise_08` (Spider Diagram) are the immediate cases — the actual PNG sits in `curriculum/<course>/figures/` but only a hand-written prose description in the `.txt` reaches the tutor. The tutor/student/judge therefore guide and grade against a secondhand summary instead of the real figure.
+
+**Decision:** Add automatic figure inclusion for exercises that have matching files in `curriculum/<course>/figures/`. Always-on (no CLI flag), discovered by strict prefix convention, transmitted as multimodal content to all three roles (tutor, student, judge).
+
+**Naming convention:**
+- Directory: `curriculum/<course>/figures/`
+- Filename pattern: `exercise_<NN>_<description>.{png,jpg,jpeg}` (regex: `^exercise_\d{2}_.*\.(png|jpg|jpeg)$`, case-insensitive on extension)
+- Multiple figures per exercise allowed; ordered alphabetically by filename
+- One figure can serve only one exercise (no cross-exercise reuse via this mechanism)
+
+**New module: `utils/figures.py`** (mirrors the `utils/parsing.py` pattern)
+- `discover_figures(course, exercise_number, curriculum_root=None) -> list[Path]` — globs the figures folder, applies the regex, returns sorted paths
+- `image_to_data_url(path) -> str` — base64-encodes PNG/JPG into a LangChain-compatible data URL
+- `build_multimodal_content(text, figures) -> list[dict]` — returns `[{"type": "text", ...}, {"type": "image_url", ...}, ...]` content blocks consumable by both OpenAI and Anthropic via LangChain
+
+**Pipeline changes:**
+
+| File | Change |
+| ---- | ------ |
+| `utils/figures.py` | **NEW** — discovery + encoding helpers |
+| `ui/run_ui_raw.py` | `_build_assignment_text` also discovers figures and returns them alongside text; raw runner passes figures into tutor/student calls; writes `"figures": [filenames]` into transcript JSON |
+| `tutor/run_tutor.py` | `get_tutor_reply()` accepts optional `figures` kwarg; LangGraph node attaches multimodal content to the HumanMessage when figures are present |
+| `students/run_student.py` | Same shape as tutor: optional `figures` kwarg threaded through to the message construction |
+| `judge/run_judge.py` | Reads `figures` field from the transcript (default `[]`); resolves filenames to paths under `curriculum/<course>/figures/`; attaches multimodal content to the judge prompt |
+| `transcripts/README.md` | Document the new optional `figures` field |
+
+**Transcript schema (additive, back-compatible):**
+
+```json
+{
+  "tutor_prompt": "tutor_05",
+  "student_persona": "chaotic_01",
+  "course": "cities_and_climate_change",
+  "exercise_number": "04",
+  "figures": ["exercise_04_power_actors_map.png"],
+  "...": "existing fields unchanged"
+}
+```
+
+Absent `figures` field = no figures attached (treated as empty list). Existing transcripts work unchanged.
+
+**Provider behavior:**
+- Both GPT (OpenAI) and Claude (Anthropic) support vision via LangChain's normalized multimodal content format
+- No provider-specific quirks expected; if one emerges, handle inline in the helper
+- No fallback / degradation logic — if a vision call fails, the run fails (caller can re-run without figures by removing the file)
+
+**Implementation order:**
+1. `utils/figures.py` + unit tests (discovery edge cases, encoding round-trip)
+2. `ui/run_ui_raw.py` — discovery + transcript field
+3. `tutor/run_tutor.py` — first multimodal consumer
+4. `students/run_student.py` — same pattern as tutor
+5. `judge/run_judge.py` — transcript-driven consumer
+6. Documentation updates (`transcripts/README.md`)
+
+**Explicit non-goals:**
+- Course-level shared figures (`course_*.png`)
+- Manifest/JSON config file mapping figures to exercises
+- Image preprocessing (resize, compression, optimization)
+- Per-figure cost caps or batching
+- CLI flag to suppress figures (always-on)
+- `.pdf` or `.svg` format support
+
+---
+
 ## 9. Work log updates
 
 ### 03/20/2026 — Visualization input migration (completed)
