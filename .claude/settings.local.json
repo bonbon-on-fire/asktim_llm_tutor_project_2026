@@ -20,7 +20,23 @@
       "Bash(start \"\" \"d:/humanities_llm_tutor_project_2026/skills/tutor-judge-workspace/benchmark-vs-judge05-v2/review.html\")",
       "WebSearch",
       "Skill(superpowers:writing-plans)",
-      "Skill(superpowers:writing-plans:*)"
+      "Skill(superpowers:writing-plans:*)",
+      "Bash(mkdir -p /d/humanities_llm_tutor_project_2026/docs/superpowers/plans)",
+      "Skill(superpowers:executing-plans)",
+      "Skill(superpowers:executing-plans:*)",
+      "Bash(python -m web_ui)",
+      "Bash(curl -s http://127.0.0.1:5000/)",
+      "Bash(curl -s http://127.0.0.1:5000/api/config-options)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('tutor_versions:', d['tutor_versions']\\); print\\('courses:', d['courses']\\); print\\('cities exercises:', d['course_exercises'].get\\('cities_and_climate_change', []\\)[:3], '...'\\)\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Skill(superpowers:finishing-a-development-branch)",
+      "Skill(superpowers:finishing-a-development-branch:*)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ],
+    "additionalDirectories": [
+      "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"
     ]
   }
 }
