@@ -138,7 +138,7 @@ This section tracks the ongoing restructuring of the codebase. The goal is to ma
 
 ---
 
-### Phase 1: Students module rework ✦ DECIDED
+### Phase 1: Students module rework ✦ COMPLETED
 
 **Problem:** The old student module had 4 copies of identical `bot.py` code, 4 copies of near-identical `cli.py`, dead `persona.md` files, and a deeply nested folder structure (`students/chaotic_student/student_01/prompts/student_01_prompt_01.txt`). Adding a new persona required duplicating an entire folder tree.
 
@@ -195,7 +195,7 @@ msg = get_next_student_message(
 
 ---
 
-### Phase 2: Tutor module + curriculum rework ✦ DECIDED
+### Phase 2: Tutor module + curriculum rework ✦ COMPLETED
 
 **Problems:**
 - `tutor/run_tutor.py` was a monolith: graph, JSON parsing, terminal REPL, .env loading all in one file.
@@ -260,7 +260,7 @@ tutor/
 
 ---
 
-### Phase 3: Judge module rework ✦ DECIDED
+### Phase 3: Judge module rework ✦ COMPLETED
 
 **Problems:**
 - Model defaulted to `gpt-4o` instead of `gpt-5.4`.
@@ -315,7 +315,7 @@ transcripts/           — moved from judge/transcripts/
 
 Transcripts are test-run artifacts shared between the UI (producer) and judge (consumer).
 
-#### 3d. Rubric 04 scoring migration ✦ DECIDED
+#### 3d. Rubric 04 scoring migration ✦ COMPLETED
 
 - Judge defaults now use `rubric_04` (prompt remains `judge_03`).
 - Judge score contract migrated from `33 base + 9 bonus = 42 max` to:
@@ -331,7 +331,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
   - For `rubric_04`, each deduction now requires `sub_criterion_id` tied to exact rubric sub-sub IDs (e.g. `1.1.A.a`, `2.2.D.a`).
   - Judge prompts and schema now explicitly require the sub-sub ID per deduction.
 
-#### 3e. Judge JSON robustness hardening ✦ DECIDED
+#### 3e. Judge JSON robustness hardening ✦ COMPLETED
 
 - Hardened judge output parsing to recover common non-strict model payloads:
   - accepts Python-literal dict output (single quotes / tuple values) via safe `ast.literal_eval` fallback
@@ -344,7 +344,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 
 ---
 
-### Phase 4: Terminal UI rework ✦ DECIDED
+### Phase 4: Terminal UI rework ✦ COMPLETED
 
 **Problems:**
 - Old `ui/` (now `terminal_ui/`) imported from deleted student paths, loaded exercises from `tutor/exercises/`, saved transcripts to `judge/transcripts/`.
@@ -386,7 +386,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 
 ---
 
-### Phase 5: Web app rework ✦ DECIDED
+### Phase 5: Web app rework ✦ COMPLETED
 
 **Problems:**
 - Old `app.py` sat at the project root with a companion `templates/` folder — inconsistent with the module-per-component pattern.
