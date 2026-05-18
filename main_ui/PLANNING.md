@@ -6,7 +6,7 @@ For the overall design (problem, decisions, schema, routes, identity flow, non-g
 
 ---
 
-## Step 1: Folder skeleton + Flask app + `python -m main_ui` boots ✦ ACTIVE
+## Step 1: Folder skeleton + Flask app + `python -m main_ui` boots ✦ COMPLETED
 
 **Goal:** Create the minimal package structure and a Flask app that responds to a health check. No database, no chat, no templates yet — just confirm the package is importable, the server boots on port 5001, and `python -m main_ui` works end to end.
 
@@ -26,73 +26,41 @@ main_ui/
 
 No subfolders yet — `db/`, `routes/`, `services/`, `templates/`, `static/`, `uploads/`, `tests/` are added in later steps.
 
-### File contents (sketch)
+### Purpose of each file
 
-**`main_ui/__init__.py`** — empty file; marks the package.
+**`main_ui/__init__.py`**
+- **Purpose:** marks `main_ui/` as a Python package so it can be imported and run as `python -m main_ui`.
+- **Owns:** nothing (empty file).
+- **Used by:** Python's import machinery; every other file in the package.
 
 **`main_ui/config.py`**
-
-```python
-"""Environment-driven configuration for main_ui."""
-import os
-from dataclasses import dataclass
-
-
-@dataclass(frozen=True)
-class Config:
-    secret_key: str
-    database_url: str
-    port: int
-
-
-def load_config() -> Config:
-    secret_key = os.environ.get("MAIN_UI_SECRET_KEY", "dev-insecure-key")
-    database_url = os.environ.get("DATABASE_URL", "sqlite:///./main_ui.db")
-    port = int(os.environ.get("PORT", "5001"))
-    return Config(secret_key=secret_key, database_url=database_url, port=port)
-```
+- **Purpose:** central place for environment-driven settings. Reads env vars once at startup and returns a frozen, type-checked config object the rest of the app uses.
+- **Owns:** the `Config` shape — currently `secret_key`, `database_url`, `port`. New settings (Postgres pool size, upload limits, CSP origins, etc.) get added here in later steps.
+- **Defaults:** dev-friendly fallbacks for every value so the app boots without an `.env` file (`dev-insecure-key`, local SQLite path, port 5001).
+- **Why a dataclass:** explicit fields, type hints, immutable, easy to unit-test by constructing a `Config` directly.
+- **Used by:** `run_app.py` (to set Flask's `SECRET_KEY`) and `__main__.py` (to choose the port). Later steps add DB engine creation in Step 2.
 
 **`main_ui/run_app.py`**
-
-```python
-"""Flask app for the main_ui production-shape tutor."""
-from flask import Flask, jsonify
-
-from main_ui.config import load_config
-
-
-def create_app() -> Flask:
-    config = load_config()
-    app = Flask(__name__)
-    app.config["SECRET_KEY"] = config.secret_key
-
-    @app.get("/health")
-    def health():
-        return jsonify({"status": "ok", "service": "main_ui"})
-
-    return app
-
-
-app = create_app()
-```
+- **Purpose:** Flask app factory. The single function `create_app()` builds and returns a configured Flask instance. Importing `app` at module level gives gunicorn (and tests, and any other importer) a ready-to-use WSGI object.
+- **Owns:** Flask app construction, route registration, and any app-level middleware/teardown wiring.
+- **In Step 1:** registers exactly one route — `GET /health` returning `{"status": "ok", "service": "main_ui"}`. Later steps add blueprints from `routes/`, DB session lifecycle, error handlers, CSP headers, etc.
+- **Factory-pattern rationale:** keeps testing easy (each test can `create_app()` with a different config) and avoids module-import side effects beyond the single `app = create_app()` line.
 
 **`main_ui/__main__.py`**
+- **Purpose:** entry point for `python -m main_ui`. Boots Flask's development server on the configured port with debug mode enabled.
+- **Owns:** nothing the app needs at runtime — it's just glue between the CLI invocation and the Flask app.
+- **Not used in production:** the production path is `gunicorn main_ui.run_app:app`. This file exists purely for local dev convenience.
+- **Why a separate file:** standard Python convention — `python -m <package>` looks for `<package>/__main__.py`. Keeps the boot command tiny.
 
-```python
-"""python -m main_ui entry point."""
-from main_ui.config import load_config
-from main_ui.run_app import app
+**`main_ui/README.md`**
+- **Purpose:** quick-reference doc for a developer who has never touched this folder before. Covers what `main_ui/` is, how to boot it, how to verify it's running, and how it differs from `web_ui/`.
+- **Owns:** local dev quick-start (`python -m main_ui`), health-check URL, supported env vars (`MAIN_UI_SECRET_KEY`, `DATABASE_URL`, `PORT`), and a short comparison with `web_ui/` (with a link to the Phase 8 comparison table in the root `PLANNING.md`).
+- **Grows over time:** later steps add sections for DB migrations (Step 2), iframe testing (Step 10), running tests (Step 11), etc.
 
-if __name__ == "__main__":
-    config = load_config()
-    app.run(host="127.0.0.1", port=config.port, debug=True)
-```
-
-**`main_ui/README.md`** — short doc covering:
-- Quick start: `python -m main_ui`
-- Health-check URL: `http://127.0.0.1:5001/health`
-- Env vars: `MAIN_UI_SECRET_KEY`, `DATABASE_URL`, `PORT`
-- How `main_ui/` differs from `web_ui/` (link to Phase 8 comparison table)
+**`main_ui/PLANNING.md`** *(this file)*
+- **Purpose:** the implementation roadmap for `main_ui/`. The root `PLANNING.md` says *what* Phase 8 is and *why*; this file says *how* it gets built, step by step.
+- **Owns:** the ordered step list, acceptance criteria for each step, and the running record of which step is active.
+- **Lives inside `main_ui/`:** keeps build planning next to the code it describes, mirroring the pattern of `meeting_notes/` and `docs/` co-located with their context.
 
 ### Dependencies
 

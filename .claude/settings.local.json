@@ -37,7 +37,9 @@
       "Bash(pwsh -NoProfile -c \"[System.Console]::Beep\\(880, 400\\); exit 0\")",
       "PowerShell($s = Get-Content \"C:\\\\Users\\\\nishi\\\\.claude\\\\settings.json\" -Raw | ConvertFrom-Json; $s.hooks.PermissionRequest[0].hooks[0].command)",
       "Bash(nslookup anthropic.com)",
-      "PowerShell(Get-Content \"$env:USERPROFILE\\\\.claude\\\\settings.json\" -Raw | ConvertFrom-Json | Select-Object -ExpandProperty hooks | ConvertTo-Json -Depth 6)"
+      "PowerShell(Get-Content \"$env:USERPROFILE\\\\.claude\\\\settings.json\" -Raw | ConvertFrom-Json | Select-Object -ExpandProperty hooks | ConvertTo-Json -Depth 6)",
+      "Bash(python -m main_ui)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://127.0.0.1:5001/health\" -UseBasicParsing; Write-Output \"Status: $\\($response.StatusCode\\)\"; Write-Output \"Body: $\\($response.Content\\)\")"
     ],
     "additionalDirectories": [
       "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"
