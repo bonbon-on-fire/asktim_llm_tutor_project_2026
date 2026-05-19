@@ -114,7 +114,15 @@ python -m web_ui    # binds to 5000
 
 ---
 
-## Step 2: Database schema + Alembic migrations + SQLAlchemy models ✦ ACTIVE
+## Step 2: Database schema + Alembic migrations + SQLAlchemy models ✦ COMPLETED
+
+**Verified on both SQLite and PostgreSQL 18.4** (native Windows install via winget — `PostgreSQL.PostgreSQL.16` pulled 18.4). The same migration script + env-var swap exercised both backends; tables, indexes, FK cascades, and CHECK constraint all present on both. Round-trip insert/cascade-delete and downgrade/upgrade reversibility confirmed against each.
+
+**Implementation note:** `Message.id` and `UploadedImage.id` use `BigInteger().with_variant(Integer, "sqlite")` because SQLite only autoincrements columns typed exactly `INTEGER PRIMARY KEY`. The variant gives BIGINT on Postgres and INTEGER on SQLite, transparent to the ORM.
+
+**Local dev workflow (verified):**
+- SQLite: no env vars needed; defaults to `sqlite:///./main_ui.db`.
+- Postgres: `$env:DATABASE_URL = "postgresql+psycopg://postgres:<password>@localhost:5432/tutor"` (the `tutor` database was created via `psql -U postgres -d postgres -c "CREATE DATABASE tutor"`).
 
 **Goal:** Stand up the persistence layer. Define SQLAlchemy 2.x models for `Conversation`, `Message`, and `UploadedImage`. Wire Alembic so we can version the schema. Get `alembic upgrade head` working against both SQLite (the dev default, zero setup) and PostgreSQL (via Docker, mirrors production). No HTTP routes touch the DB yet — that's Step 3+.
 
