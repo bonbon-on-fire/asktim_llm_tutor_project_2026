@@ -19,11 +19,22 @@
     const emailSkip = document.getElementById("email-skip");
     const emailError = document.getElementById("email-error");
 
+    const historyToggle = document.getElementById("history-toggle");
+    const sidebarOverlay = document.getElementById("sidebar-overlay");
+    const sidebarClose = document.getElementById("sidebar-close");
+    const sidebarList = document.getElementById("sidebar-list");
+    const sidebarEmpty = document.getElementById("sidebar-empty");
+    const detailView = document.getElementById("detail-view");
+    const detailBack = document.getElementById("detail-back");
+    const detailMeta = document.getElementById("detail-meta");
+    const detailMessages = document.getElementById("detail-messages");
+
     let conversationId = null;
     let isSending = false;
     let studentMessageCount = 0;
     let modalOpen = false;
     let dismissedThisSession = false;
+    let sidebarOpen = false;
 
     function updateSendButton() {
         sendButton.disabled = isSending || composerInput.value.trim().length === 0;
@@ -108,6 +119,135 @@
         if (dismissedThisSession) return;
         openEmailModal();
     }
+
+    // ---- Step 8: history sidebar + read-only detail view ------------------
+
+    function showSidebarEmpty(text) {
+        sidebarEmpty.textContent = text;
+        sidebarEmpty.hidden = false;
+    }
+
+    function renderHistoryEntries(email, conversations) {
+        sidebarList.innerHTML = "";
+        if (!email) {
+            showSidebarEmpty("Submit your email to track conversations across exercises.");
+            return;
+        }
+        if (!conversations || conversations.length === 0) {
+            showSidebarEmpty("No past conversations yet.");
+            return;
+        }
+        for (const c of conversations) {
+            const li = document.createElement("li");
+            li.className = "sidebar-entry";
+            li.tabIndex = 0;
+            li.setAttribute("role", "button");
+
+            const title = document.createElement("div");
+            title.className = "sidebar-entry-title";
+            title.textContent = `${c.course} · ex ${c.exercise_number}`;
+
+            const meta = document.createElement("div");
+            meta.className = "sidebar-entry-meta";
+            meta.textContent = formatEntryMeta(c.last_active_at, c.message_count);
+
+            const snippet = document.createElement("div");
+            snippet.className = "sidebar-entry-snippet";
+            snippet.textContent = c.first_message_snippet || "(no messages yet)";
+
+            li.appendChild(title);
+            li.appendChild(meta);
+            li.appendChild(snippet);
+
+            const open = () => viewConversation(c.id);
+            li.addEventListener("click", open);
+            li.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    open();
+                }
+            });
+
+            sidebarList.appendChild(li);
+        }
+    }
+
+    function formatEntryMeta(isoDate, messageCount) {
+        const parts = [];
+        if (isoDate) {
+            const d = new Date(isoDate);
+            parts.push(d.toLocaleDateString(undefined, { month: "short", day: "numeric" }));
+        }
+        parts.push(`${messageCount} ${messageCount === 1 ? "message" : "messages"}`);
+        return parts.join(" · ");
+    }
+
+    function formatFullDate(isoDate) {
+        if (!isoDate) return "";
+        const d = new Date(isoDate);
+        return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    async function openSidebar() {
+        if (sidebarOpen) return;
+        sidebarOpen = true;
+        sidebarList.innerHTML = "";
+        sidebarEmpty.hidden = true;
+        showSidebarEmpty("Loading…");
+        sidebarOverlay.hidden = false;
+
+        try {
+            const response = await fetch("/api/history");
+            if (!response.ok) {
+                showSidebarEmpty("Could not load history.");
+                return;
+            }
+            const data = await response.json();
+            renderHistoryEntries(data.email, data.conversations);
+        } catch (err) {
+            showSidebarEmpty("Could not load history.");
+        }
+    }
+
+    function closeSidebar() {
+        if (!sidebarOpen) return;
+        sidebarOpen = false;
+        sidebarOverlay.hidden = true;
+    }
+
+    async function viewConversation(targetConversationId) {
+        closeSidebar();
+        detailMessages.innerHTML = "";
+        detailMeta.textContent = "Loading…";
+        detailView.hidden = false;
+
+        try {
+            const response = await fetch(`/api/conversation/${encodeURIComponent(targetConversationId)}`);
+            if (!response.ok) {
+                detailMeta.textContent = "Could not load this conversation.";
+                return;
+            }
+            const data = await response.json();
+            const datePart = formatFullDate(data.started_at);
+            detailMeta.textContent = `${data.course} · ex ${data.exercise_number}${datePart ? ` · ${datePart}` : ""}`;
+            for (const m of data.messages || []) {
+                const li = document.createElement("li");
+                li.className = "message message-" + m.role;
+                li.textContent = m.content;
+                detailMessages.appendChild(li);
+            }
+        } catch (err) {
+            detailMeta.textContent = "Could not load this conversation.";
+        }
+    }
+
+    function closeDetailView() {
+        detailView.hidden = true;
+        detailMessages.innerHTML = "";
+        detailMeta.textContent = "";
+    }
+
+    // ---- Step 7: email modal --------------------------------------------------
 
     async function submitEmail(event) {
         event.preventDefault();
@@ -237,9 +377,27 @@
             closeEmailModal({ dismissed: true });
         }
     });
+
+    // History sidebar + detail view wiring (Step 8)
+    historyToggle.addEventListener("click", openSidebar);
+    sidebarClose.addEventListener("click", closeSidebar);
+    sidebarOverlay.addEventListener("click", (event) => {
+        // Backdrop click closes; clicks inside the sidebar panel are ignored
+        if (event.target === sidebarOverlay) {
+            closeSidebar();
+        }
+    });
+    detailBack.addEventListener("click", closeDetailView);
+
+    // Unified Escape: close in z-order — detail > modal > sidebar
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && modalOpen) {
+        if (event.key !== "Escape") return;
+        if (!detailView.hidden) {
+            closeDetailView();
+        } else if (modalOpen) {
             closeEmailModal({ dismissed: true });
+        } else if (sidebarOpen) {
+            closeSidebar();
         }
     });
 

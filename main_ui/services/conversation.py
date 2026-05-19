@@ -120,6 +120,96 @@ def count_student_messages(db: Session, conversation: Conversation) -> int:
     return int(db.execute(stmt).scalar_one())
 
 
+def list_conversations_for_email(db: Session, email: str) -> list[dict]:
+    """Return all conversations linked to the given email, most-recently-active
+    first. Each entry is a JSON-serializable dict suitable for the history API.
+    """
+    if not email:
+        return []
+    convos = (
+        db.query(Conversation)
+        .filter(Conversation.email == email)
+        .order_by(Conversation.last_active_at.desc())
+        .all()
+    )
+    return [_summarize_conversation(db, c) for c in convos]
+
+
+def get_conversation_for_viewer(
+    db: Session,
+    conversation_id,
+    session_id: str,
+    email: str | None,
+) -> Conversation | None:
+    """Return a Conversation if the viewer either owns it via `session_id`
+    (anonymous, same browser) or has the matching email (cross-browser).
+    Otherwise return None so callers can map to 404 without leaking
+    existence.
+    """
+    convo = db.get(Conversation, conversation_id)
+    if convo is None:
+        return None
+    if convo.session_id == session_id:
+        return convo
+    if email and convo.email == email:
+        return convo
+    return None
+
+
+def get_messages_for_conversation(
+    db: Session, conversation: Conversation
+) -> list[dict]:
+    """Return chronologically ordered messages as JSON-friendly dicts.
+
+    Pedagogical reasoning is intentionally excluded — same student-facing
+    policy as `/api/chat` in Step 5.
+    """
+    stmt = (
+        select(Message)
+        .where(Message.conversation_id == conversation.id)
+        .order_by(Message.turn, Message.id)
+    )
+    return [
+        {"turn": m.turn, "role": m.role, "content": m.content}
+        for m in db.execute(stmt).scalars().all()
+    ]
+
+
+def _summarize_conversation(db: Session, c: Conversation) -> dict:
+    """Build the summary dict used by the history endpoint."""
+    msg_count = db.execute(
+        select(func.count(Message.id)).where(Message.conversation_id == c.id)
+    ).scalar_one()
+
+    first_student_stmt = (
+        select(Message.content)
+        .where(Message.conversation_id == c.id)
+        .where(Message.role == "student")
+        .order_by(Message.id)
+        .limit(1)
+    )
+    first_student = db.execute(first_student_stmt).scalar_one_or_none()
+
+    snippet: str | None
+    if first_student:
+        snippet = first_student.strip()[:80]
+        if len(first_student) > 80:
+            snippet = snippet.rstrip() + "…"
+    else:
+        snippet = None
+
+    return {
+        "id": str(c.id),
+        "course": c.course,
+        "exercise_number": c.exercise_number,
+        "tutor_prompt": c.tutor_prompt,
+        "started_at": c.started_at.isoformat() if c.started_at else None,
+        "last_active_at": c.last_active_at.isoformat() if c.last_active_at else None,
+        "message_count": int(msg_count),
+        "first_message_snippet": snippet,
+    }
+
+
 def backfill_email_for_session(
     db: Session, session_id: str, email: str
 ) -> int:

@@ -9,6 +9,13 @@
 <body data-has-email="{{ 'true' if has_email else 'false' }}">
     <script type="application/json" id="tutor-config">{{ tutor_config | tojson }}</script>
 
+    <button type="button" class="history-toggle" id="history-toggle" aria-label="View past conversations">
+        <svg class="history-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15 14"/>
+        </svg>
+    </button>
+
     <main class="chat">
         <ol class="message-list" id="message-list" aria-live="polite" aria-label="Conversation"></ol>
 
@@ -33,6 +40,26 @@
             </div>
         </form>
     </main>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" role="dialog" aria-modal="true"
+         aria-labelledby="sidebar-title" hidden>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 id="sidebar-title" class="sidebar-title">Past conversations</h2>
+                <button type="button" class="sidebar-close" id="sidebar-close" aria-label="Close past conversations">&times;</button>
+            </div>
+            <div class="sidebar-empty" id="sidebar-empty" hidden></div>
+            <ul class="sidebar-list" id="sidebar-list"></ul>
+        </aside>
+    </div>
+
+    <div class="detail-view" id="detail-view" hidden>
+        <div class="detail-header">
+            <button type="button" class="detail-back" id="detail-back">&larr; Back</button>
+            <div class="detail-meta" id="detail-meta"></div>
+        </div>
+        <ol class="detail-messages" id="detail-messages" aria-label="Past conversation"></ol>
+    </div>
 
     <div class="modal-overlay" id="email-modal" role="dialog" aria-modal="true"
          aria-labelledby="email-modal-title" aria-describedby="email-modal-body" hidden>

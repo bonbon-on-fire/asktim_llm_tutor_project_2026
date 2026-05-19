@@ -14,6 +14,7 @@ from main_ui.db import SessionLocal
 from main_ui.routes.chat import chat_bp
 from main_ui.routes.email import email_bp
 from main_ui.routes.embed import embed_bp
+from main_ui.routes.history import history_bp
 from main_ui.routes.identity import identity_bp
 
 
@@ -26,6 +27,7 @@ def create_app() -> Flask:
     app.register_blueprint(identity_bp)
     app.register_blueprint(chat_bp)
     app.register_blueprint(email_bp)
+    app.register_blueprint(history_bp)
 
     @app.before_request
     def _ensure_session_id() -> None:
