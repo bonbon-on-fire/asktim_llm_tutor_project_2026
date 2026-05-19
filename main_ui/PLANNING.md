@@ -257,7 +257,11 @@ This is the riskiest part of Step 2 because dev (SQLite) and production (Postgre
 
 ---
 
-## Step 3: Session cookie management + `/api/whoami` + `/embed` route ✦ ACTIVE
+## Step 3: Session cookie management + `/api/whoami` + `/embed` route ✦ COMPLETED
+
+**Verified locally** via curl + cookie-jar: cookie issuance on first load (all 6 attributes — `HttpOnly`, `SameSite=None`, `Secure`, `Partitioned`, `Max-Age=15552000`, `Path=/`), no re-issuance on subsequent calls, `/api/whoami` returns the same session id across calls, and all six 404 validation paths (missing/unknown course, missing/bad-format/unknown exercise, unknown tutor) return the expected JSON error body.
+
+**Gotcha noted during verification:** .NET `HttpClient`'s default `CookieContainer` silently drops cookies with the `Partitioned` attribute, so PowerShell-side cookie tests appeared to fail. Curl with `-c`/`-b` works correctly. Worth knowing if anyone writes a Windows-native integration test against `main_ui` — use `requests` or `curl`, not `HttpClient`.
 
 **Goal:** First user-visible touch point. Issue an anonymous `tutor_session_id` cookie on first arrival, expose it (and the other identity placeholders) via `GET /api/whoami`, and add a `GET /embed` route that validates its `course`/`exercise`/`tutor` query parameters and serves a minimal placeholder HTML page. The actual chat UI and DB writes come later (Steps 5–6); this step lays down the routing, identity, and validation skeleton.
 

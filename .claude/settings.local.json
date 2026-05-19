@@ -54,7 +54,18 @@
       "PowerShell($env:PGPASSWORD = \"BlackLight\"; $exists = psql -U postgres -h localhost -d postgres -tAc \"SELECT 1 FROM pg_database WHERE datname='tutor'\"; if \\($exists -eq \"1\"\\) { Write-Output \"Database 'tutor' already exists.\" } else { psql -U postgres -h localhost -d postgres -c \"CREATE DATABASE tutor\"; Write-Output \"Created database 'tutor'.\" })",
       "PowerShell($env:DATABASE_URL = \"postgresql+psycopg://postgres:BlackLight@localhost:5432/tutor\"; python -m alembic -c main_ui/db/migrations/alembic.ini upgrade head)",
       "PowerShell($env:PGPASSWORD = \"BlackLight\"; psql -U postgres -h localhost -d tutor -c \"\\\\dt\"; Write-Output \"---\"; psql -U postgres -h localhost -d tutor -c \"\\\\di\")",
-      "PowerShell($env:DATABASE_URL = \"postgresql+psycopg://postgres:BlackLight@localhost:5432/tutor\"; python -m alembic -c main_ui/db/migrations/alembic.ini downgrade base; $env:PGPASSWORD = \"BlackLight\"; Write-Output \"--- After downgrade ---\"; psql -U postgres -h localhost -d tutor -c \"\\\\dt\"; python -m alembic -c main_ui/db/migrations/alembic.ini upgrade head; Write-Output \"--- After re-upgrade ---\"; psql -U postgres -h localhost -d tutor -c \"\\\\dt\")"
+      "PowerShell($env:DATABASE_URL = \"postgresql+psycopg://postgres:BlackLight@localhost:5432/tutor\"; python -m alembic -c main_ui/db/migrations/alembic.ini downgrade base; $env:PGPASSWORD = \"BlackLight\"; Write-Output \"--- After downgrade ---\"; psql -U postgres -h localhost -d tutor -c \"\\\\dt\"; python -m alembic -c main_ui/db/migrations/alembic.ini upgrade head; Write-Output \"--- After re-upgrade ---\"; psql -U postgres -h localhost -d tutor -c \"\\\\dt\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?exercise=04\")",
+      "Bash(grep -iE \"^HTTP|^$|^{\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?course=does_not_exist&exercise=04\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?course=cities_and_climate_change\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=4\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=99\")",
+      "Bash(curl -s -i \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_99\")",
+      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04\")",
+      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=nope&exercise=04\")",
+      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_99\")",
+      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_03\")"
     ],
     "additionalDirectories": [
       "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"
