@@ -20,7 +20,7 @@
     const emailError = document.getElementById("email-error");
 
     const historyToggle = document.getElementById("history-toggle");
-    const sidebarOverlay = document.getElementById("sidebar-overlay");
+    const sidebar = document.getElementById("sidebar");
     const sidebarClose = document.getElementById("sidebar-close");
     const sidebarList = document.getElementById("sidebar-list");
     const sidebarEmpty = document.getElementById("sidebar-empty");
@@ -138,7 +138,7 @@
     function renderHistoryEntries(email, conversations) {
         sidebarList.innerHTML = "";
         if (!email) {
-            showSidebarEmpty("Submit your email to track conversations across exercises.");
+            showSidebarEmpty("Add your email to save chat history");
             return;
         }
         if (!conversations || conversations.length === 0) {
@@ -216,7 +216,7 @@
     async function openSidebar() {
         if (sidebarOpen) return;
         sidebarOpen = true;
-        sidebarOverlay.hidden = false;
+        sidebar.setAttribute("data-open", "true");
         refreshAddEmailVisibility();
         await refreshSidebar();
     }
@@ -224,7 +224,15 @@
     function closeSidebar() {
         if (!sidebarOpen) return;
         sidebarOpen = false;
-        sidebarOverlay.hidden = true;
+        sidebar.setAttribute("data-open", "false");
+    }
+
+    function toggleSidebar() {
+        if (sidebarOpen) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
     }
 
     async function viewConversation(targetConversationId) {
@@ -410,14 +418,8 @@
     });
 
     // History sidebar + detail view wiring (Step 8)
-    historyToggle.addEventListener("click", openSidebar);
+    historyToggle.addEventListener("click", toggleSidebar);
     sidebarClose.addEventListener("click", closeSidebar);
-    sidebarOverlay.addEventListener("click", (event) => {
-        // Backdrop click closes; clicks inside the sidebar panel are ignored
-        if (event.target === sidebarOverlay) {
-            closeSidebar();
-        }
-    });
     newChatButton.addEventListener("click", startNewChat);
     addEmailButton.addEventListener("click", openEmailModal);
     detailBack.addEventListener("click", closeDetailView);
