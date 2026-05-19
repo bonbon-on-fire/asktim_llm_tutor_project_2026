@@ -274,6 +274,10 @@
         messageList.innerHTML = "";
         conversationId = null;
         studentMessageCount = 0;
+        // Each new chat is a fresh chance to capture the email — reset the
+        // "dismissed" flag so the modal can re-appear after 3 messages if
+        // the email cookie still isn't set.
+        dismissedThisSession = false;
         hideError();
         closeDetailView();
         closeSidebar();
