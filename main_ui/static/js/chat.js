@@ -25,6 +25,7 @@
     const sidebarList = document.getElementById("sidebar-list");
     const sidebarEmpty = document.getElementById("sidebar-empty");
     const newChatButton = document.getElementById("new-chat");
+    const addEmailButton = document.getElementById("add-email");
     const detailView = document.getElementById("detail-view");
     const detailBack = document.getElementById("detail-back");
     const detailMeta = document.getElementById("detail-meta");
@@ -83,6 +84,12 @@
         // based on the request's cookie; we also flip it locally after a
         // successful submission so the modal doesn't re-open this page load.
         return document.body.dataset.hasEmail === "true";
+    }
+
+    function refreshAddEmailVisibility() {
+        // Show the "Add email" sidebar button only when no email is set —
+        // gives skipped-the-modal students a way back in.
+        addEmailButton.hidden = hasEmailSet();
     }
 
     function emailLooksValid(value) {
@@ -190,14 +197,9 @@
         return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
     }
 
-    async function openSidebar() {
-        if (sidebarOpen) return;
-        sidebarOpen = true;
+    async function refreshSidebar() {
         sidebarList.innerHTML = "";
-        sidebarEmpty.hidden = true;
         showSidebarEmpty("Loading…");
-        sidebarOverlay.hidden = false;
-
         try {
             const response = await fetch("/api/history");
             if (!response.ok) {
@@ -209,6 +211,14 @@
         } catch (err) {
             showSidebarEmpty("Could not load history.");
         }
+    }
+
+    async function openSidebar() {
+        if (sidebarOpen) return;
+        sidebarOpen = true;
+        sidebarOverlay.hidden = false;
+        refreshAddEmailVisibility();
+        await refreshSidebar();
     }
 
     function closeSidebar() {
@@ -296,7 +306,13 @@
             // Mark local state so maybeShowEmailModal won't reopen this page load.
             // The actual cookie was set by the server response.
             document.body.dataset.hasEmail = "true";
+            refreshAddEmailVisibility();
             closeEmailModal();
+            // If the sidebar is open, refresh — past anonymous conversations
+            // from this session were just backfilled.
+            if (sidebarOpen) {
+                refreshSidebar();
+            }
         } catch (err) {
             emailError.textContent = "Cannot reach AskTIM. Check your connection and try again.";
             emailError.hidden = false;
@@ -402,6 +418,8 @@
             closeSidebar();
         }
     });
+    newChatButton.addEventListener("click", startNewChat);
+    addEmailButton.addEventListener("click", openEmailModal);
     detailBack.addEventListener("click", closeDetailView);
 
     // Unified Escape: close in z-order — detail > modal > sidebar
@@ -415,6 +433,10 @@
             closeSidebar();
         }
     });
+
+    // Initial visibility for the sidebar's Add-email button (driven by
+    // the body's data-has-email attribute the server stamps each render).
+    refreshAddEmailVisibility();
 
     // Auto-focus the composer so an embedded iframe is immediately typable
     // (works once the iframe has focus; harmless on first paint otherwise).
