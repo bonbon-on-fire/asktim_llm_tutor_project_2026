@@ -280,7 +280,6 @@
         dismissedThisSession = false;
         hideError();
         closeDetailView();
-        closeSidebar();
         composerInput.focus();
     }
 
