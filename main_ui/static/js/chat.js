@@ -24,6 +24,7 @@
     const sidebarClose = document.getElementById("sidebar-close");
     const sidebarList = document.getElementById("sidebar-list");
     const sidebarEmpty = document.getElementById("sidebar-empty");
+    const newChatButton = document.getElementById("new-chat");
     const detailView = document.getElementById("detail-view");
     const detailBack = document.getElementById("detail-back");
     const detailMeta = document.getElementById("detail-meta");
@@ -137,6 +138,8 @@
             showSidebarEmpty("No past conversations yet.");
             return;
         }
+        // Have entries — make sure the loading/empty banner is hidden.
+        sidebarEmpty.hidden = true;
         for (const c of conversations) {
             const li = document.createElement("li");
             li.className = "sidebar-entry";
@@ -145,18 +148,13 @@
 
             const title = document.createElement("div");
             title.className = "sidebar-entry-title";
-            title.textContent = `${c.course} · ex ${c.exercise_number}`;
-
-            const meta = document.createElement("div");
-            meta.className = "sidebar-entry-meta";
-            meta.textContent = formatEntryMeta(c.last_active_at, c.message_count);
+            title.textContent = formatEntryHeader(c);
 
             const snippet = document.createElement("div");
             snippet.className = "sidebar-entry-snippet";
-            snippet.textContent = c.first_message_snippet || "(no messages yet)";
+            snippet.textContent = c.last_message_snippet || "(no messages yet)";
 
             li.appendChild(title);
-            li.appendChild(meta);
             li.appendChild(snippet);
 
             const open = () => viewConversation(c.id);
@@ -172,13 +170,17 @@
         }
     }
 
-    function formatEntryMeta(isoDate, messageCount) {
-        const parts = [];
-        if (isoDate) {
-            const d = new Date(isoDate);
+    function formatEntryHeader(c) {
+        // "Exercise 3 · May 19 · 8 messages" — strip leading zeros from
+        // exercise number; show the most-recent-active date.
+        const exNumber = parseInt(c.exercise_number, 10);
+        const parts = [`Exercise ${Number.isFinite(exNumber) ? exNumber : c.exercise_number}`];
+        if (c.last_active_at) {
+            const d = new Date(c.last_active_at);
             parts.push(d.toLocaleDateString(undefined, { month: "short", day: "numeric" }));
         }
-        parts.push(`${messageCount} ${messageCount === 1 ? "message" : "messages"}`);
+        const count = c.message_count;
+        parts.push(`${count} ${count === 1 ? "message" : "messages"}`);
         return parts.join(" · ");
     }
 
@@ -245,6 +247,19 @@
         detailView.hidden = true;
         detailMessages.innerHTML = "";
         detailMeta.textContent = "";
+    }
+
+    function startNewChat() {
+        // Clear the live chat and start a fresh conversation. Composer text
+        // is intentionally preserved — student may have typed a draft they
+        // want to send into the new conversation.
+        messageList.innerHTML = "";
+        conversationId = null;
+        studentMessageCount = 0;
+        hideError();
+        closeDetailView();
+        closeSidebar();
+        composerInput.focus();
     }
 
     // ---- Step 7: email modal --------------------------------------------------

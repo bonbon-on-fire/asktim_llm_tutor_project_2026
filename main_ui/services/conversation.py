@@ -181,19 +181,18 @@ def _summarize_conversation(db: Session, c: Conversation) -> dict:
         select(func.count(Message.id)).where(Message.conversation_id == c.id)
     ).scalar_one()
 
-    first_student_stmt = (
+    last_message_stmt = (
         select(Message.content)
         .where(Message.conversation_id == c.id)
-        .where(Message.role == "student")
-        .order_by(Message.id)
+        .order_by(Message.id.desc())
         .limit(1)
     )
-    first_student = db.execute(first_student_stmt).scalar_one_or_none()
+    last_message = db.execute(last_message_stmt).scalar_one_or_none()
 
     snippet: str | None
-    if first_student:
-        snippet = first_student.strip()[:80]
-        if len(first_student) > 80:
+    if last_message:
+        snippet = last_message.strip()[:80]
+        if len(last_message) > 80:
             snippet = snippet.rstrip() + "…"
     else:
         snippet = None
@@ -206,7 +205,7 @@ def _summarize_conversation(db: Session, c: Conversation) -> dict:
         "started_at": c.started_at.isoformat() if c.started_at else None,
         "last_active_at": c.last_active_at.isoformat() if c.last_active_at else None,
         "message_count": int(msg_count),
-        "first_message_snippet": snippet,
+        "last_message_snippet": snippet,
     }
 
 
