@@ -533,13 +533,169 @@ curl http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04 | 
 
 ---
 
+## Step 5: `/api/chat` text-only ✦ ACTIVE
+
+**Goal:** The first step that students could plausibly use (modulo a real frontend in Step 6). Add `POST /api/chat` — text-only — that:
+- Resolves to a `Conversation` row (creating one on first message, reusing it via `conversation_id` thereafter)
+- Persists the student's message
+- Calls `tutor_bridge.get_tutor_reply(...)` to get a reply
+- Persists the tutor's reply (with its hidden pedagogical reasoning) in a second row
+- Updates the conversation's `last_active_at`
+- Returns `{conversation_id, reply, student_message_count}` as JSON
+
+This step is the first time everything connects: Step 2's models, Step 3's session cookie + identity, Step 4's tutor bridge, all composed inside an HTTP handler.
+
+#### Files to create
+
+```text
+main_ui/
+  routes/
+    chat.py                            # POST /api/chat (Blueprint: chat_bp)
+  services/
+    conversation.py                    # find / create / append-to a conversation
+```
+
+Plus edits to existing files:
+- `main_ui/run_app.py` — register `chat_bp`; install per-request DB session lifecycle (the wiring Step 3 deferred)
+
+#### Purpose of each file
+
+**`main_ui/services/conversation.py`**
+- **Purpose:** the one place that knows how to put conversation rows + messages into the database. Route handlers never write to the DB directly — they call helpers here.
+- **Owns:**
+  - `find_or_create_conversation(db, *, session_id, conversation_id, course, exercise_number, tutor_prompt, email=None) -> Conversation` — resolves to an existing row (validating ownership by `session_id`) or inserts a new one
+  - `append_exchange(db, *, conversation, student_text, tutor_text, pedagogical_reasoning) -> tuple[Message, Message]` — inserts the student/tutor pair sharing one turn number; bumps `last_active_at`
+  - `get_history_for_tutor(db, conversation) -> list[dict]` — returns chronologically ordered `[{role, content}, ...]` dicts in the exact shape `tutor_bridge.get_tutor_reply` expects (zero remapping at the call site)
+  - `count_student_messages(db, conversation) -> int` — count used by Step 7's email modal trigger
+- **What it deliberately doesn't own:**
+  - LLM calls — `tutor_bridge`
+  - Cookies / session ids — `cookies.py` + route's `before_request`
+  - Validation of `course`/`exercise`/`tutor` — that lives in route handlers (reused from Step 3's pattern)
+  - Image storage — Step 9's `image_storage.py`
+
+**`main_ui/routes/chat.py`**
+- **Purpose:** owns `POST /api/chat`. Glues request-shape validation, the conversation service, and the tutor bridge together. Single endpoint; small body.
+- **Request shape (JSON):**
+  - `text` (required, string, non-empty) — the new student message
+  - `course` (required, string) — must validate against `curriculum/<course>/` directory
+  - `exercise` (required, string) — must validate against `curriculum/<course>/exercise_<NN>.txt`
+  - `tutor` (optional, string; defaults to `tutor_05`) — must validate against `tutor/prompts/<tutor>.txt`
+  - `conversation_id` (optional, UUID string) — absent on the first message of an iframe load; present on subsequent messages
+- **Response shape (JSON, 200):**
+  - `conversation_id` (string UUID) — caller stores this and includes it in subsequent posts
+  - `reply` (string) — the student-facing answer
+  - `student_message_count` (int) — number of student-role messages in this conversation after the just-inserted one; used by Step 7's "ask for email after the 3rd message" trigger
+- **Error responses:**
+  - `400` — missing or empty `text`
+  - `404` — invalid `course`, `exercise`, or `tutor` (same validation as `/embed`)
+  - `403` — `conversation_id` provided but doesn't belong to the current `session_id`
+  - `502` — tutor call failed (LLM error, malformed JSON the upstream couldn't recover from, etc.)
+
+**`main_ui/run_app.py` (modified)**
+- **Adds:**
+  - `from main_ui.routes.chat import chat_bp` + `app.register_blueprint(chat_bp)`
+  - `@app.before_request` hook that opens a SQLAlchemy session and stashes it on `g.db` (in addition to the cookie work Step 3 added)
+  - `@app.teardown_request` hook that commits on success, rolls back on exception, and always closes the session
+- **Why now (and not Step 3):** Step 3's routes (`/embed`, `/api/whoami`, `/health`) don't touch the DB. Adding the session lifecycle there would have been dead code. Step 5 is where the first DB-touching route lands, so the wiring goes here.
+
+#### Why pedagogical reasoning is persisted but NOT returned
+
+The tutor's `pedagogical-reasoning` JSON field is intentionally hidden from students (per the project's pedagogy: students see the Socratic question, not the meta-narration about why it's Socratic). The route:
+- **Persists** it on the tutor `Message` row (`pedagogical_reasoning` column) — useful for judge grading later and for admin debugging
+- **Does NOT** include it in the `/api/chat` response payload — anyone with browser DevTools could see it otherwise, defeating the design intent
+
+If a debug mode is wanted later, add a separate admin-gated endpoint or a `?debug=true` query param explicitly checked against a secret. Not part of Step 5.
+
+#### Turn numbering
+
+A `turn` integer column lives on `Message`. The student and tutor messages of the same exchange share the same turn number, starting at 1. `append_exchange` computes the next turn as `max(existing_turns) + 1`, or 1 if the conversation has no messages yet. This keeps the DB self-explanatory when read by hand (turn 1 = first exchange).
+
+#### Conversation ownership / cross-session guard
+
+If a client sends a `conversation_id` that exists in the DB but its `session_id` doesn't match the request's `g.session_id`, return `403 Forbidden`. This is a small safety net against accidentally smuggling someone else's conversation_id (e.g., a copied-and-pasted iframe URL with a stale localStorage value). The response body names the issue without leaking whether the conversation exists.
+
+If `conversation_id` is **absent**, the route silently creates a new conversation — that's the expected fresh-iframe-load path.
+
+#### Email pass-through (forward-compat with Step 7)
+
+When the route creates a new conversation, it reads the `tutor_email` cookie (set in Step 7) and writes it onto the Conversation row's `email` field. For Step 5 this cookie is never set (Step 7 isn't built yet), so the field stays `NULL` — but the wiring is in place so when Step 7 lands, returning students with the email cookie automatically get their conversations linked from message #1 instead of waiting for the backfill in Step 7.
+
+#### Dependencies
+
+- No new pip packages.
+- All imports are project-internal: `main_ui.db`, `main_ui.cookies`, `main_ui.services.tutor_bridge`, `main_ui.routes.embed` (re-uses its validation helpers — extract them to a shared module if duplication is awkward).
+- Same `OPENAI_API_KEY` requirement as Step 4.
+
+#### Acceptance criteria
+
+1. **First message creates a conversation.** `POST /api/chat` with `{text, course, exercise, tutor}` (no `conversation_id`) returns 200 with `{conversation_id, reply, student_message_count: 1}`. DB has one `conversations` row plus two `messages` rows (student + tutor, both turn=1).
+2. **Subsequent message reuses the conversation.** A second `POST /api/chat` with the returned `conversation_id` appends to the same row. After the call: 4 message rows total, two with turn=1 and two with turn=2. `student_message_count` returns `2`.
+3. **Omitting `conversation_id` after one exists creates a new conversation.** Simulating a fresh iframe load (no `conversation_id` in the body) inserts a new `conversations` row, distinct from the prior one.
+4. **`last_active_at` updates.** On each `POST /api/chat`, the conversation's `last_active_at` advances.
+5. **`pedagogical_reasoning` persisted but not returned.** The tutor `Message` row has a non-empty `pedagogical_reasoning` column. The JSON response does NOT contain a `reasoning` or `pedagogical_reasoning` key.
+6. **Empty text → 400.** `{"text": ""}` returns 400 with a JSON error body.
+7. **Bad course/exercise/tutor → 404.** Validation identical to `/embed`. Response body names the offending param.
+8. **Wrong-session `conversation_id` → 403.** Crafting a request that sends a real `conversation_id` from a different session returns 403.
+9. **`student_message_count` is monotonic per conversation.** Subsequent messages on the same conversation increment the count by 1 each time.
+10. **Steps 1-4 still work.** `/health`, `/embed`, `/api/whoami`, plus `tutor_bridge.get_tutor_reply` direct-call all behave as before.
+
+#### Verification steps (manual)
+
+```powershell
+# Boot main_ui in another terminal: python -m main_ui
+
+# 1. First message — no conversation_id
+$body = '{"text":"I am starting exercise 4. Where do I begin?","course":"cities_and_climate_change","exercise":"04","tutor":"tutor_05"}'
+$r = curl -s -c jar.txt -X POST -H "Content-Type: application/json" -d $body http://127.0.0.1:5001/api/chat
+$r  # capture conversation_id from the JSON
+
+# 2. Second message — same conversation_id
+$body2 = '{"text":"Boston.","course":"cities_and_climate_change","exercise":"04","tutor":"tutor_05","conversation_id":"<paste-uuid>"}'
+curl -s -b jar.txt -X POST -H "Content-Type: application/json" -d $body2 http://127.0.0.1:5001/api/chat
+
+# 3. Inspect the DB
+python -c "from main_ui.db import get_session, Conversation, Message; \
+with get_session() as s: \
+    convos = s.query(Conversation).all(); \
+    print(f'{len(convos)} conversations'); \
+    for c in convos: print(f'  {c.id} {c.course}/{c.exercise_number} email={c.email}'); \
+    msgs = s.query(Message).order_by(Message.id).all(); \
+    print(f'{len(msgs)} messages'); \
+    [print(f'  turn={m.turn} role={m.role} content={m.content[:60]!r}') for m in msgs]"
+
+# 4. Error cases
+curl -s -X POST -H "Content-Type: application/json" -d '{"text":"","course":"cities_and_climate_change","exercise":"04"}' http://127.0.0.1:5001/api/chat  # → 400
+curl -s -X POST -H "Content-Type: application/json" -d '{"text":"x","course":"nope","exercise":"04"}' http://127.0.0.1:5001/api/chat                       # → 404
+curl -s -X POST -H "Content-Type: application/json" -d '{"text":"x","course":"cities_and_climate_change","exercise":"04","tutor":"tutor_99"}' http://127.0.0.1:5001/api/chat  # → 404
+```
+
+#### What's deliberately NOT in Step 5
+
+- **No frontend** — `embed.html` placeholder remains. Real chat UI is Step 6.
+- **No image uploads** — `multipart/form-data` is Step 9. Step 5's content-type is `application/json`.
+- **No email flow** — `student_message_count` is returned but the modal trigger lives in the frontend (Step 7). The `/api/email` endpoint also lands in Step 7.
+- **No history endpoint** — Step 8 adds `GET /api/history` and `GET /api/conversation/<id>`.
+- **No streaming** — single request, single response per turn.
+- **No rate limiting / abuse protection** — explicit non-goal of Phase 8.
+- **No tests** — Step 11.
+- **No multimodal (figures)** — Phase 6 + Step 9.
+
+#### Risks / gotchas
+
+- **DB session held during LLM call.** The tutor API takes 2-10 seconds. The per-request DB session stays open for that whole window. Acceptable for SQLite and small Postgres pool sizes; if we hit pool exhaustion in production, refactor to close the session before the LLM call and reopen after. Defer for now.
+- **LLM cost per request.** Every successful `/api/chat` is a paid LLM call. No automated test should hit this without mocking (Step 11 will mock). Manual smoke tests cost pennies.
+- **`parse_tutor_response` returning `None` for reasoning.** If the upstream tutor's JSON output is malformed enough that even `parse_tutor_response`'s three fallback strategies fail, `pedagogical_reasoning` ends up `None`. That's persisted as NULL in the DB, which is fine; just be aware when grading later.
+- **Empty tutor reply.** Same root cause as above. The route should treat `reply == ""` as an error condition and return 502 rather than persisting an empty student-facing message. Defensive but cheap.
+- **Concurrent writes to the same conversation.** Two `POST /api/chat` requests racing on the same `conversation_id` could produce two messages with the same `turn` number. Flask's dev server serializes requests, so this can't happen there; production hosting with worker concurrency needs either a row-level lock during turn computation or accepting the race (turns aren't a primary key, so duplicates are technically allowed). Note in the planning doc, defer the fix.
+- **Validation duplication with `/embed`.** Both `/embed` and `/api/chat` validate the same three params. For Step 5 we either re-import the helpers from `routes/embed.py` (couples the modules) or copy the logic (DRY-violation). Pragmatic call: extract the validators into a small `main_ui/routes/_validation.py` module shared by both. Note the refactor in the file's docstring.
+- **`conversation_id` parse error.** A client sending an invalid UUID string should get 400, not 500. Wrap `UUID(...)` in try/except.
+- **Connection pool sizing.** If Postgres is used, the default pool (5 + 10 overflow) is enough for development but worth tuning before any production-style load test.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
-
-### Step 5: `/api/chat` text-only
-
-Implement `POST /api/chat` accepting `{text}`. Creates the conversation row on first message, persists student + tutor messages, returns `{tutor_reply, conversation_id, message_count}`. No images yet.
 
 ### Step 6: Frontend chat UI
 
