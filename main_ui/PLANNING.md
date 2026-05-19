@@ -1066,13 +1066,276 @@ with get_session() as s:
 
 ---
 
+## Step 8: Conversation history ✦ ACTIVE
+
+**Goal:** Returning students should see their past tutoring sessions across courses and exercises. After Step 7, the email links sessions together; Step 8 surfaces that link visually as a **collapsed sidebar** listing past conversations, with a **read-only detail view** for inspecting any of them.
+
+Per the 2026-05-08 meeting notes: "When a student clicks the tutor link, a new conversation is created with the exercise as context; previous conversations are shown as history." Past conversations are browsable, not resumable — each iframe load remains a fresh conversation.
+
+This is also the feature explicitly called out in the meeting notes as one MIT can't get from AskTIM today — "cross-exercise history, previous-session context, longitudinal tracking" — so it's the most visible argument for the project's value.
+
+#### Files to create
+
+```text
+main_ui/
+  routes/
+    history.py                        # GET /api/history + GET /api/conversation/<id>
+```
+
+Plus edits to:
+- `main_ui/services/conversation.py` — add `list_conversations_for_email`, `get_conversation_for_viewer`, `get_messages_for_conversation`
+- `main_ui/run_app.py` — register `history_bp`
+- `main_ui/templates/embed.html` — sidebar markup + history toggle button + read-only conversation pane
+- `main_ui/static/css/chat.css` — sidebar layout (overlay slide-in), entry styling, read-only view styles
+- `main_ui/static/js/chat.js` — sidebar toggle, history fetch on open, entry click → detail load + render, "back to current" return path
+
+#### Purpose of each file
+
+**`main_ui/routes/history.py`**
+- **Purpose:** owns `GET /api/history` and `GET /api/conversation/<id>`. Both are read-only; neither touches the LLM. Authentication is best-effort — same model as the rest of the app (cookie-based identity, no auth proper).
+- **Owns:** the `history_bp` Blueprint, request-shape parsing, ownership checks before exposing detail.
+- **Doesn't own:** the DB queries themselves (live in `services/conversation.py`).
+
+**`main_ui/services/conversation.py` (modified)**
+- **Adds:**
+  - `list_conversations_for_email(db, email) -> list[dict]` — returns conversations for an email, ordered by `last_active_at DESC`. Each entry includes `id`, `course`, `exercise_number`, `tutor_prompt`, `started_at`, `last_active_at`, `message_count`, and a short `first_message_snippet` (truncated to ~80 chars, student-role).
+  - `get_conversation_for_viewer(db, conversation_id, session_id, email) -> Conversation | None` — returns the conversation if the viewer either matches `session_id` OR matches `email` (covers both pre-email and post-email access). Returns `None` otherwise.
+  - `get_messages_for_conversation(db, conversation) -> list[dict]` — returns `[{turn, role, content}, ...]` in chronological order. Strips `pedagogical_reasoning` from the response (same hide-from-student policy as Step 5).
+- **Existing helpers untouched.**
+
+**`main_ui/run_app.py` (modified)**
+- **Adds:** `from main_ui.routes.history import history_bp` + `app.register_blueprint(history_bp)`. No other changes.
+
+**`main_ui/templates/embed.html` (modified)**
+- **Adds:**
+  - A history **toggle button** anchored to the top-left corner of the chat (collapsed icon-only, e.g. ☰ or a clock). Accessible label "View past conversations".
+  - A **sidebar `<aside>`** containing a heading ("Past conversations") and an empty `<ul>` that JS populates on first open. Hidden via the same `[hidden]` mechanism the modal uses.
+  - A **read-only detail pane** that overlays the live chat when a past conversation is selected. Contains a "Back" button, a header line ("Course · exercise N · started DATE"), and a message-list element styled the same as the live chat but with the composer hidden.
+- **Doesn't add:** any inline JS. New `data-*` attributes only if needed for routing.
+
+**`main_ui/static/css/chat.css` (modified)**
+- **Adds:**
+  - Slide-in sidebar styling (fixed position, left-aligned, full height, ~280px wide on desktop, full-width on narrow iframes; smooth transform transition; semi-transparent backdrop catches outside clicks).
+  - History entry styling (clickable rows with course/exercise/date/snippet).
+  - Read-only view styles (composer hidden, "back" button visible, optional muted background tint to differentiate from live chat).
+  - Toggle button styling (small icon-only button, top-left, doesn't overlap message bubbles).
+
+**`main_ui/static/js/chat.js` (modified)**
+- **Adds:**
+  - DOM refs for the sidebar, toggle button, entries list, detail pane, back button.
+  - `openSidebar()` / `closeSidebar()` — toggle visibility; fetch `/api/history` on first open (or every open — cheap query, no caching for Step 8).
+  - `renderHistoryEntries(entries)` — populate the list from API response.
+  - `viewConversation(conversationId)` — fetch `/api/conversation/<id>`, render messages in the detail pane, hide live chat composer + message list.
+  - `returnToLiveChat()` — hide detail pane, restore live chat view.
+  - Escape key + backdrop click close the sidebar (same pattern as the email modal).
+- **Doesn't add:** sidebar state persistence across reloads (it's collapsed by default each load).
+
+#### API spec
+
+**`GET /api/history`**
+
+Request: no body, no query params.
+
+Response (200):
+```json
+{
+  "email": "alice@example.edu",
+  "conversations": [
+    {
+      "id": "uuid",
+      "course": "cities_and_climate_change",
+      "exercise_number": "01",
+      "tutor_prompt": "tutor_05",
+      "started_at": "2026-05-19T13:00:00+00:00",
+      "last_active_at": "2026-05-19T13:12:34+00:00",
+      "message_count": 6,
+      "first_message_snippet": "I'm starting exercise 1, where do I begin?"
+    },
+    ...
+  ]
+}
+```
+
+If the request has no `tutor_email` cookie: returns `{"email": null, "conversations": []}` with 200. (We could include conversations linked only by `session_id` here too — see Risks for that decision.)
+
+**`GET /api/conversation/<uuid>`**
+
+Path param: the UUID of the conversation.
+
+Response (200):
+```json
+{
+  "id": "uuid",
+  "course": "cities_and_climate_change",
+  "exercise_number": "01",
+  "tutor_prompt": "tutor_05",
+  "started_at": "...",
+  "last_active_at": "...",
+  "messages": [
+    { "turn": 1, "role": "student", "content": "..." },
+    { "turn": 1, "role": "tutor",   "content": "..." },
+    { "turn": 2, "role": "student", "content": "..." },
+    ...
+  ]
+}
+```
+
+Error responses:
+- `400` — `<uuid>` isn't a valid UUID
+- `404` — conversation doesn't exist OR the viewer has no ownership claim. We deliberately return 404 (not 403) so we don't leak existence to unauthenticated browsers.
+
+Pedagogical reasoning is NOT returned — same policy as `/api/chat` in Step 5.
+
+#### Sidebar UX
+
+```
++-----+------------------------------+
+|     |                              |
+| ☰   |       chat area              |
+|     |                              |
++-----+------------------------------+
+```
+
+Closed state: just the icon. Clicking opens:
+
+```
++--------------------+---------------+
+| Past conversations |   chat area   |
+|  ◦ cities · ex 01  |   (dimmed)    |
+|    May 19, 6 msgs  |               |
+|    "I'm starting…" |               |
+|  ◦ cities · ex 02  |               |
+|    May 19, 4 msgs  |               |
+|    "What stressors"|               |
++--------------------+---------------+
+```
+
+- Slide-in panel from the left (transform: translateX), ~280px wide. On screens < 480px, full-width overlay.
+- Semi-transparent backdrop over the chat area (click to close).
+- Heading "Past conversations" + close button at top.
+- Each entry shows course slug, exercise number, message count, started/last-active date, and a one-line snippet of the first student message.
+- Sorted by `last_active_at` descending (most recent first).
+- Empty state when no conversations: "No past conversations yet."
+- Empty state when no email cookie: "Submit your email to start tracking conversations across exercises."
+
+#### Read-only detail view
+
+When a sidebar entry is clicked, the live chat is replaced with a read-only view:
+
+```
++-----------------------------------+
+| < Back                            |
+| cities_and_climate_change · ex 01 |
+| May 19, 2026 · 6 messages         |
++-----------------------------------+
+|                                   |
+|   [tutor bubble]                  |
+|              [student bubble]     |
+|   [tutor bubble]                  |
+|              [student bubble]     |
+|                                   |
++-----------------------------------+
+| (composer hidden in read-only)    |
++-----------------------------------+
+```
+
+- "Back" button restores the live chat (whatever in-progress state it had).
+- The detail pane mounts inside the same `<main class="chat">` container — composer hidden, message-list replaced. Reverting on Back restores the original DOM.
+- No editing, no scrolling-back-into-conversation, no resuming. Pure browsing.
+
+#### Access control logic
+
+For both endpoints, the viewer is identified by two facets stored on `g`:
+- `g.session_id` — anonymous cookie identifier (always present after Step 3)
+- `g.email` — read from the `tutor_email` cookie in `before_request` (added in Step 7's setup)
+
+Rules:
+- `GET /api/history` only lists conversations where `email = g.email`. If no email cookie, returns empty list.
+- `GET /api/conversation/<id>` is accessible if the conversation matches either `session_id` (anonymous, same browser) OR `email` (cross-browser via shared email). Otherwise 404.
+- We deliberately use 404 instead of 403 for unauthorized access so probing other UUIDs can't distinguish "exists but yours not" from "doesn't exist."
+
+This double-key model means a student with an email cookie set across two browsers (e.g., laptop + phone) sees their full history from either device. A student before submitting their email still sees their own anonymous-session conversations.
+
+#### Dependencies
+
+- No new pip packages.
+- Builds on Step 2 (Conversation/Message models), Step 3 (session_id cookie), Step 5 (per-request DB session lifecycle and persisted conversations), Step 6 (chat UI to overlay sidebar onto), Step 7 (email cookie machinery).
+
+#### Acceptance criteria
+
+1. **`GET /api/history` requires no body and returns a JSON object** with `{email, conversations}`.
+2. **No email cookie → empty conversations.** Response: `{"email": null, "conversations": []}`.
+3. **With email cookie set:** returns all conversations matching that email, ordered by `last_active_at` DESC, each with `id`, `course`, `exercise_number`, `tutor_prompt`, `started_at`, `last_active_at`, `message_count`, `first_message_snippet`.
+4. **`first_message_snippet`** is the content of the first `student`-role message in the conversation, truncated to 80 chars with `…` appended if longer. Conversations with no messages get `null`.
+5. **`GET /api/conversation/<uuid>`** returns the conversation with its messages array (chronological order, includes turn/role/content; NO pedagogical_reasoning).
+6. **`/api/conversation/<id>` 404 for stranger UUID.** Sending a request with a real conversation ID belonging to another session AND a different email returns 404 (not 403).
+7. **`/api/conversation/<id>` 400 for bad UUID format.** Path param `"not-a-uuid"` returns 400.
+8. **`/api/conversation/<id>` accessible via session_id.** Even before submitting an email, the student can view their own anonymous-session conversations.
+9. **Sidebar collapsed by default.** Toggle icon visible at top-left; clicking opens the panel; clicking again or pressing Esc or clicking the backdrop closes it.
+10. **Sidebar entries clickable.** Clicking an entry hides the live chat and shows the read-only detail view with all messages in order.
+11. **"Back" button restores live chat.** State preserved — the live chat's in-progress messages and conversation_id remain intact.
+12. **Composer hidden in detail view.** No way to send messages while viewing a past conversation.
+13. **Empty state messaging.** No email + sidebar opened → "Submit your email to track conversations." Email set but no past conversations → "No past conversations yet."
+14. **Steps 1-7 still work.** Live chat, email modal, cookie issuance all unchanged.
+
+#### Verification steps (manual)
+
+```powershell
+# 1. Fresh DB + start
+rm main_ui.db; python -m alembic -c main_ui/db/migrations/alembic.ini upgrade head
+python -m main_ui
+
+# 2. Open browser, /embed?course=cities_and_climate_change&exercise=01
+#    Send 3 messages so the email modal appears
+#    Submit "alice@mit.edu"
+
+# 3. Curl /api/history with the cookie jar to confirm
+curl -b "tutor_session_id=...; tutor_email=alice@mit.edu" http://127.0.0.1:5001/api/history
+
+# 4. Reload /embed (or open a new exercise) — sidebar toggle visible.
+#    Click toggle → sidebar opens, lists the prior conversation(s).
+
+# 5. Click an entry → read-only view replaces live chat.
+#    Verify: messages render in order, composer hidden, "Back" button visible.
+
+# 6. Click Back → live chat restored.
+
+# 7. Curl a random UUID — confirm 404 (not 403, not 500).
+curl http://127.0.0.1:5001/api/conversation/00000000-0000-0000-0000-000000000000
+
+# 8. Curl an invalid UUID — confirm 400.
+curl http://127.0.0.1:5001/api/conversation/not-a-uuid
+
+# 9. Curl /api/conversation/<real-id> with no cookies — confirm 404 (no ownership claim).
+```
+
+#### What's deliberately NOT in Step 8
+
+- **No pagination.** All conversations for the email come back in one shot. Add pagination later if a user hits hundreds of conversations.
+- **No search / filtering** in the sidebar (filter by course, by date, by keyword).
+- **No conversation resuming.** Past conversations are read-only by design (meeting notes).
+- **No editing / deletion of past conversations.** Admin-only concern; out of scope.
+- **No bulk export.** Future analytics phase.
+- **No real-time updates.** Sidebar re-fetches when opened; doesn't subscribe to updates.
+- **No tests** (Step 11).
+
+#### Risks / gotchas
+
+- **Email sharing risk.** If two students share an email (unlikely but possible during testing), they see each other's conversations. Acceptable for a soft identifier per meeting notes. Document, don't fix.
+- **Hostile UUID guessing.** Returning 404 (not 403) for unauthorized conversation IDs is the right call — leaks no information about whether the ID exists. Still, a determined attacker could spam UUID guesses; rate limiting is a future concern.
+- **Performance with many conversations.** A semester's worth could be 50+ conversations per email. Listing them all in one shot is fine at this scale; if average per-student count grows, add `LIMIT 50` + a "show more" button later.
+- **first_message_snippet UTF-8 truncation.** Truncating at 80 chars by `[:80]` could split a multi-byte character. Use a Unicode-safe truncation (e.g., truncate at codepoint boundary, append `…` if longer). Document.
+- **Sidebar layout interference on small iframes.** At 320px width, the sidebar should cover the chat (full-width overlay), not push it off-screen. Verify with the test_host iframe at narrow widths in Step 10.
+- **DB session held during long sidebar render.** Sidebar fetch is a single SQL query; no LLM call. Should be fast (< 50ms). No need for special handling.
+- **State leakage between live chat and detail view.** If the user is mid-send when they click a sidebar entry, the in-flight POST should still complete and update the live chat state (which is hidden but not unmounted). When they click Back, the live chat shows the resolved state. Be careful that the read-only detail view's message-list doesn't share DOM nodes with the live chat.
+- **first_message_snippet timing.** If the first message is the only one and it's still in-flight (LLM hasn't replied), the snippet could be incomplete. Acceptable trade-off — query timing is best-effort.
+- **Loading state in sidebar.** First open of sidebar triggers a fetch; show a thin "Loading…" line while waiting. Network round-trip is usually fast but should be acknowledged.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
-
-### Step 8: Conversation history
-
-`GET /api/history` returns past conversations for the current email. `GET /api/conversation/<id>` returns full message log. Add collapsed sidebar UI in `embed.html`.
 
 ### Step 9: Image uploads
 
