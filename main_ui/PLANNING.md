@@ -533,7 +533,18 @@ curl http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04 | 
 
 ---
 
-## Step 5: `/api/chat` text-only ✦ ACTIVE
+## Step 5: `/api/chat` text-only ✦ COMPLETED
+
+**Verified locally** with real OpenAI API calls against a clean SQLite DB. All 10 acceptance criteria pass:
+- First message creates a new conversation (`student_message_count: 1`); DB row created with correct course/exercise/tutor; student + tutor messages persisted with turn=1
+- Subsequent message with the same `conversation_id` appends to the same conversation (`student_message_count: 2`, both new messages at turn=2)
+- Omitting `conversation_id` while reusing the same session cookie creates a new conversation (different UUID, same session_id on the DB row)
+- `last_active_at > started_at` after every exchange
+- `pedagogical_reasoning` persisted in tutor `Message` rows; response payload only contains `{conversation_id, reply, student_message_count}` — no reasoning leaked
+- Empty `text` → 400; invalid course/exercise/tutor → 404; malformed `conversation_id` → 400; cross-session `conversation_id` → 403
+- `/health`, `/embed`, `/api/whoami` all still respond per their Step 1-3 contracts
+
+**Refactor done in passing:** validation helpers extracted from `routes/embed.py` into `routes/_validation.py` so `/embed` and `/api/chat` share the same `validate_course` / `validate_exercise` / `validate_tutor` functions. `embed.py` is now noticeably shorter.
 
 **Goal:** The first step that students could plausibly use (modulo a real frontend in Step 6). Add `POST /api/chat` — text-only — that:
 - Resolves to a `Conversation` row (creating one on first message, reusing it via `conversation_id` thereafter)

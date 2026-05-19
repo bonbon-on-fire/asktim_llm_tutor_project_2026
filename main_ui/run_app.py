@@ -10,6 +10,8 @@ from main_ui.cookies import (
     default_cookie_kwargs,
     new_session_id,
 )
+from main_ui.db import SessionLocal
+from main_ui.routes.chat import chat_bp
 from main_ui.routes.embed import embed_bp
 from main_ui.routes.identity import identity_bp
 
@@ -21,6 +23,7 @@ def create_app() -> Flask:
 
     app.register_blueprint(embed_bp)
     app.register_blueprint(identity_bp)
+    app.register_blueprint(chat_bp)
 
     @app.before_request
     def _ensure_session_id() -> None:
@@ -31,6 +34,23 @@ def create_app() -> Flask:
         else:
             g.session_id = new_session_id()
             g.session_id_is_new = True
+
+    @app.before_request
+    def _open_db_session() -> None:
+        g.db = SessionLocal()
+
+    @app.teardown_request
+    def _close_db_session(exception: BaseException | None = None) -> None:
+        db = g.pop("db", None)
+        if db is None:
+            return
+        try:
+            if exception is None:
+                db.commit()
+            else:
+                db.rollback()
+        finally:
+            db.close()
 
     @app.after_request
     def _set_session_cookie(response: Response) -> Response:

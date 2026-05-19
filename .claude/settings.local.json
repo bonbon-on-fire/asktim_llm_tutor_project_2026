@@ -70,7 +70,9 @@
       "Bash(python -c ' *)",
       "Bash(curl -s http://127.0.0.1:5001/health)",
       "Bash(curl -s \"http://127.0.0.1:5001/api/whoami\")",
-      "Bash(curl -s -I \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04\")"
+      "Bash(curl -s -I \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04\")",
+      "Bash(python)",
+      "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST -H 'Content-Type: application/json' -d '{\"text\":\"hijack attempt\",\"course\":\"cities_and_climate_change\",\"exercise\":\"04\",\"conversation_id\":\"__TRACKED_VAR__\"}' http://127.0.0.1:5001/api/chat)"
     ],
     "additionalDirectories": [
       "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"
