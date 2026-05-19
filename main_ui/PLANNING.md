@@ -704,7 +704,9 @@ curl -s -X POST -H "Content-Type: application/json" -d '{"text":"x","course":"ci
 
 ---
 
-## Step 6: Frontend chat UI ✦ ACTIVE
+## Step 6: Frontend chat UI ✦ COMPLETED
+
+**Verified locally** by opening `/embed?course=cities_and_climate_change&exercise=01` in a real browser. Working: composer enables on text, Send issues POST `/api/chat`, student bubble + tutor bubble render with whitespace preserved, `conversation_id` captured and reused on subsequent posts, `tutor_session_id` cookie set with all 6 expected attributes (visible in DevTools → Storage → Cookies → `127.0.0.1:5001`), `student_message_count` returned in each response (visible in DevTools → Network → POST `chat` → Response tab).
 
 **Goal:** Replace the Step 3 placeholder ("Tutor loading…") with a functional chat interface — message list, composer, send button, loading indicator. The page reads `tutor-config` from its embedded JSON block, sends `POST /api/chat` over fetch, and renders replies. After this step, a student can actually have a tutoring session by opening `/embed?course=…&exercise=…` and typing.
 

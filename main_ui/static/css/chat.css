@@ -1,0 +1,225 @@
+:root {
+    /* MIT OpenCourseWare-inspired palette. Accent red used for the
+       student bubbles and the Send button; tutor bubble stays neutral
+       grey so replies are easy to read. */
+    --bg: #fafafa;
+    --text: #2a2a2a;
+    --muted: #888;
+    --border: #e2e2e2;
+    --student-bg: #8c1a1b;          /* MIT crimson */
+    --student-text: #ffffff;
+    --tutor-bg: #f0f0f0;
+    --tutor-text: #1a1a1a;
+    --error-bg: #fde2e2;
+    --error-text: #6f1414;
+    --send-bg: #8c1a1b;
+    --send-bg-hover: #6f1414;
+    --send-bg-disabled: #c0c0c0;
+    --focus-ring: #8c1a1b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Make the `hidden` HTML attribute always win, regardless of any
+   class-level `display` value (e.g. `.error-banner { display: flex }`). */
+[hidden] {
+    display: none !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-header {
+    padding: 0.4rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: #ffffff;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.message-list {
+    flex: 1;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-list:empty::before {
+    content: "AskTIM is here to help";
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: auto;
+}
+
+.message {
+    margin: 0.4rem 0;
+    max-width: 85%;
+    padding: 0.6rem 1.1rem;
+    border-radius: 22px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+.message-student {
+    align-self: flex-end;
+    background: var(--student-bg);
+    color: var(--student-text);
+}
+
+.message-tutor {
+    align-self: flex-start;
+    background: var(--tutor-bg);
+    color: var(--tutor-text);
+}
+
+.message-thinking {
+    align-self: flex-start;
+    color: var(--muted);
+    font-style: italic;
+    padding: 0.6rem 1.1rem;
+    margin: 0.4rem 0;
+    background: transparent;
+}
+
+.error-banner {
+    margin: 0 1rem 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--error-bg);
+    color: var(--error-text);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-dismiss {
+    background: none;
+    border: none;
+    color: var(--error-text);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+}
+
+.composer {
+    padding: 0.6rem 1rem 1rem;
+    border-top: 1px solid var(--border);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.thinking {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-style: italic;
+    padding-left: 0.5rem;
+}
+
+.composer-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 0.3rem 0.35rem 0.3rem 0.95rem;
+    background: #ffffff;
+    transition: border-color 0.12s ease;
+}
+
+.composer-bar:focus-within {
+    border-color: var(--focus-ring);
+}
+
+.composer-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.45rem 0;
+    resize: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    line-height: 1.4;
+    max-height: 8em;
+    overflow-y: auto;
+}
+
+.composer-input:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+.send-button {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--send-bg);
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.12s ease;
+}
+
+.send-button:hover:not(:disabled) {
+    background: var(--send-bg-hover);
+}
+
+.send-button:disabled {
+    background: var(--send-bg-disabled);
+    cursor: not-allowed;
+}
+
+.send-icon {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 400px) {
+    .message {
+        max-width: 92%;
+    }
+    .tutor-header {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.75rem;
+    }
+    .message-list {
+        padding: 0.75rem;
+    }
+    .composer {
+        padding: 0.6rem 0.75rem 0.75rem;
+    }
+}
