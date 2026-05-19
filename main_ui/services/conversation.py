@@ -10,7 +10,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from uuid import UUID
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.orm import Session
 
 from main_ui.db.models import Conversation, Message
@@ -118,6 +118,27 @@ def count_student_messages(db: Session, conversation: Conversation) -> int:
         .where(Message.role == "student")
     )
     return int(db.execute(stmt).scalar_one())
+
+
+def backfill_email_for_session(
+    db: Session, session_id: str, email: str
+) -> int:
+    """Set `email` on every Conversation row for this session that doesn't
+    already have one. Returns the number of rows touched.
+
+    Used by Step 7's email modal to retroactively link anonymous
+    conversations to a student once they provide their email.
+    """
+    stmt = (
+        update(Conversation)
+        .where(Conversation.session_id == session_id)
+        .where(Conversation.email.is_(None))
+        .values(email=email)
+        .execution_options(synchronize_session="fetch")
+    )
+    result = db.execute(stmt)
+    db.flush()
+    return int(result.rowcount or 0)
 
 
 def _next_turn_number(db: Session, conversation: Conversation) -> int:

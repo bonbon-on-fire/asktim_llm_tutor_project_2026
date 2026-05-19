@@ -193,6 +193,113 @@ body {
     height: 18px;
 }
 
+/* Email modal (Step 7) ---------------------------------------------------- */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.modal-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.modal-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.modal-body {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.email-input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    color: var(--text);
+    background: #ffffff;
+}
+
+.email-input:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: -2px;
+}
+
+.modal-error {
+    color: var(--error-text);
+    background: var(--error-bg);
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.modal-skip {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.4rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+.modal-skip:hover {
+    color: var(--text);
+}
+
+.modal-submit {
+    background: var(--send-bg);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.12s ease;
+}
+
+.modal-submit:hover:not(:disabled) {
+    background: var(--send-bg-hover);
+}
+
+.modal-submit:disabled {
+    background: var(--send-bg-disabled);
+    cursor: not-allowed;
+}
+
 @media (max-width: 400px) {
     .message {
         max-width: 92%;
@@ -202,5 +309,8 @@ body {
     }
     .composer {
         padding: 0.6rem 0.75rem 0.75rem;
+    }
+    .modal-card {
+        padding: 1.1rem;
     }
 }

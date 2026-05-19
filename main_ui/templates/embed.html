@@ -6,7 +6,7 @@
     <title>AskTIM — {{ course }} / exercise {{ exercise }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
 </head>
-<body>
+<body data-has-email="{{ 'true' if has_email else 'false' }}">
     <script type="application/json" id="tutor-config">{{ tutor_config | tojson }}</script>
 
     <main class="chat">
@@ -33,6 +33,32 @@
             </div>
         </form>
     </main>
+
+    <div class="modal-overlay" id="email-modal" role="dialog" aria-modal="true"
+         aria-labelledby="email-modal-title" aria-describedby="email-modal-body" hidden>
+        <div class="modal-card">
+            <h2 id="email-modal-title" class="modal-title">Help us track your progress</h2>
+            <p id="email-modal-body" class="modal-body">
+                Enter the email you used to sign up for this course. We use it to connect
+                this conversation with your other work in the class.
+            </p>
+            <form id="email-form" class="modal-form" autocomplete="off">
+                <input
+                    type="email"
+                    id="email-input"
+                    class="email-input"
+                    placeholder="you@example.edu"
+                    aria-label="Your email"
+                    autocomplete="email"
+                    required>
+                <div class="modal-error" id="email-error" role="alert" hidden></div>
+                <div class="modal-actions">
+                    <button type="button" id="email-skip" class="modal-skip">Skip</button>
+                    <button type="submit" id="email-submit" class="modal-submit" disabled>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
 </body>

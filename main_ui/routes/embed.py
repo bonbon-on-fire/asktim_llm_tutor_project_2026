@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from flask import Blueprint, jsonify, render_template, request
 
+from main_ui.cookies import EMAIL_COOKIE_NAME
 from main_ui.routes._validation import (
     DEFAULT_TUTOR,
     validate_course,
@@ -42,10 +43,12 @@ def embed():
         return _bad_param(err)
 
     tutor_config = {"course": course, "exercise": exercise, "tutor": tutor}
+    has_email = bool(request.cookies.get(EMAIL_COOKIE_NAME))
     return render_template(
         "embed.html",
         course=course,
         exercise=exercise,
         tutor=tutor,
         tutor_config=tutor_config,
+        has_email=has_email,
     )
