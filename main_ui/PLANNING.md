@@ -257,13 +257,143 @@ This is the riskiest part of Step 2 because dev (SQLite) and production (Postgre
 
 ---
 
+## Step 3: Session cookie management + `/api/whoami` + `/embed` route ✦ ACTIVE
+
+**Goal:** First user-visible touch point. Issue an anonymous `tutor_session_id` cookie on first arrival, expose it (and the other identity placeholders) via `GET /api/whoami`, and add a `GET /embed` route that validates its `course`/`exercise`/`tutor` query parameters and serves a minimal placeholder HTML page. The actual chat UI and DB writes come later (Steps 5–6); this step lays down the routing, identity, and validation skeleton.
+
+This step deliberately does **not** touch the database. Cookies are self-contained: the session id lives in the cookie itself; no DB row is created until the first message lands (Step 5). DB wiring into Flask is deferred to Step 4 / Step 5 when a route actually reads or writes a row.
+
+#### Files to create
+
+```text
+main_ui/
+  cookies.py                          # cookie attribute helpers + session UUID generation
+  routes/
+    __init__.py                       # package marker
+    embed.py                          # GET /embed (Blueprint: embed_bp)
+    identity.py                       # GET /api/whoami (Blueprint: identity_bp)
+  templates/
+    embed.html                        # minimal placeholder page (real chat UI in Step 6)
+```
+
+Plus edits to existing files:
+- `main_ui/run_app.py` — register the new blueprints, install `before_request` / `after_request` hooks for session-cookie issuance
+- `main_ui/config.py` — add a cookie-settings group (cookie name, max-age, optional dev-mode override for `Secure`)
+
+#### Purpose of each file
+
+**`main_ui/cookies.py`**
+- **Purpose:** single source of truth for cookie names, default attributes, and the UUID generator that mints new session ids. Routes never construct cookie attributes inline — they go through helpers here so the policy stays consistent.
+- **Owns:** `SESSION_COOKIE_NAME = "tutor_session_id"`, `EMAIL_COOKIE_NAME = "tutor_email"` (used in Step 7 but defined here now to keep the policy in one place), a `new_session_id() -> str` helper, and a `default_cookie_kwargs()` helper returning the dict passed to Flask's `response.set_cookie(...)`.
+- **Default attributes:** `HttpOnly=True`, `SameSite="None"`, `Secure=True`, `Partitioned=True`, `Max-Age=15552000` (180 days). All chosen for iframe / third-party cookie context per Phase 8 of the root `PLANNING.md`.
+- **Dev escape hatch:** if `config.cookie_secure_override` is `False` (toggled via env), `Secure` is omitted so cookies work on plain `http://localhost` in browsers that don't treat localhost as a secure context. Default stays `True`.
+
+**`main_ui/routes/__init__.py`**
+- **Purpose:** package marker. Empty for now. Later steps may add a `register_all(app)` helper if blueprint registration grows beyond a few imports.
+
+**`main_ui/routes/embed.py`**
+- **Purpose:** owns `GET /embed`. Reads the `course`, `exercise`, and optional `tutor` query params, validates each against the filesystem, and renders `embed.html` with the validated values passed into the template context.
+- **Validation rules:**
+  - `course` — must match an existing subdirectory under `curriculum/` (no path traversal allowed; exact-name comparison only).
+  - `exercise` — must match an existing file `curriculum/<course>/exercise_<NN>.txt` (zero-padded two-digit number).
+  - `tutor` (optional) — must match a file `tutor/prompts/<tutor>.txt`. Defaults to `tutor_05` per the Phase 8 decision.
+- **Errors:** any failed validation returns HTTP `404` with a small JSON body explaining which parameter was bad. We use 404 (not 400) because from a student's perspective the resource doesn't exist; surfacing input-shape errors as 400 leaks internal detail to embedders.
+- **Owns:** the `embed_bp` Blueprint, the param-validation helpers (or imports them from a shared validator module if it grows), and nothing else.
+
+**`main_ui/routes/identity.py`**
+- **Purpose:** owns `GET /api/whoami`. Reads the current request's cookies and returns `{session_id, email, conversation_id}` as JSON. In Step 3 only `session_id` is ever populated; `email` is read from the `tutor_email` cookie (set in Step 7 — will be `null` until then); `conversation_id` is always `null` until Step 5 introduces conversations.
+- **Owns:** the `identity_bp` Blueprint and a thin helper that maps the request's cookies to the response shape.
+- **Why a separate file:** identity-related endpoints will grow (Step 7 adds `POST /api/email`, possible future endpoints for cookie clearing / logout). Putting them together keeps the responsibility focused.
+
+**`main_ui/templates/embed.html`**
+- **Purpose:** minimal placeholder page. Renders `<title>` from the course title, embeds the validated `course`, `exercise`, and `tutor` values as JSON in a `<script type="application/json" id="tutor-config">` block so the eventual `chat.js` can read them without re-parsing the URL, and shows a brief "Tutor loading..." message in `<body>`.
+- **In Step 3:** no styling beyond basic readable defaults; no JS; no chat composer. It's just a confidence-check that the route works end-to-end and the cookie gets set.
+- **Owns:** the future home of the chat scaffolding (Step 6), but for now it's intentionally bare.
+
+**`main_ui/run_app.py` (modified)**
+- **Adds:**
+  - Import and registration of `embed_bp` and `identity_bp`
+  - `@app.before_request` hook: reads the `tutor_session_id` cookie; if absent, generates a new UUID and stores it on `flask.g.session_id` (also flags `flask.g.session_id_is_new = True`)
+  - `@app.after_request` hook: if `g.session_id_is_new`, sets the cookie on the outgoing response using `default_cookie_kwargs()` from `cookies.py`
+- **Why hooks rather than per-route helper:** every route in `main_ui/` will need the session id (Steps 4–9 all depend on it). Centralizing the read/issue logic means individual route handlers never have to remember the cookie dance.
+
+**`main_ui/config.py` (modified)**
+- **Adds:**
+  - `cookie_secure: bool` (default `True`) — read from `MAIN_UI_COOKIE_SECURE` env var; `False` for dev when testing without HTTPS on a browser that strictly enforces `Secure`
+  - `cookie_max_age_seconds: int` (default 180 × 24 × 3600 ≈ 6 months) — env override via `MAIN_UI_COOKIE_MAX_AGE`
+- **Why expose these:** they're policy that may need tuning between local dev, future production deployments, and tests. Keeping them in `Config` follows the existing pattern.
+
+#### Cookie design summary
+
+| Attribute | Value | Why |
+| --- | --- | --- |
+| `Name` | `tutor_session_id` | Anonymous per-browser identifier |
+| `Value` | UUIDv4 | Cryptographically random, collision-resistant |
+| `HttpOnly` | `True` | JS can't read it; defends against XSS leaking the session id |
+| `SameSite` | `None` | Required for the cookie to be sent when `main_ui` is loaded inside an iframe on a different origin |
+| `Secure` | `True` (dev override available) | Required by browsers whenever `SameSite=None` |
+| `Partitioned` | `True` | CHIPS — cookie is partitioned by top-level site, the modern story for third-party cookies in Chrome/Edge |
+| `Max-Age` | ~180 days | Long enough for a semester of OCW course usage |
+| `Path` | `/` | Available to every route under `main_ui` |
+
+#### URL parameter validation
+
+`GET /embed` accepts three query params. Validation is whitelist-based: each value must match an existing on-disk artifact, not just a regex pattern. This prevents path-traversal attacks (`course=../../etc`) and also gives a meaningful 404 when a course is misspelled.
+
+| Param | Required | Default | Validation |
+| --- | --- | --- | --- |
+| `course` | yes | — | Must be a direct child of `curriculum/` (directory, not file). Exact-name match. |
+| `exercise` | yes | — | Must be a two-digit number (`01`-`99`) and `curriculum/<course>/exercise_<NN>.txt` must exist. |
+| `tutor` | no | `tutor_05` | Must be a stem (e.g. `tutor_05`) and `tutor/prompts/<tutor>.txt` must exist. |
+
+#### Dependencies
+
+No new packages. Uses only `flask` (already installed) and Python stdlib (`uuid`, `pathlib`).
+
+#### Acceptance criteria
+
+1. **Blueprints register.** `python -m main_ui` boots and `GET /api/whoami` and `GET /embed?course=cities_and_climate_change&exercise=04` both return non-error responses.
+2. **First-load cookie issuance.** A first request without any cookies receives a response with `Set-Cookie: tutor_session_id=<uuid>; ...` containing all the policy attributes (`HttpOnly`, `SameSite=None`, `Secure`, `Partitioned`, `Max-Age=15552000`).
+3. **Cookie persistence.** A subsequent request that echoes the `tutor_session_id` cookie back receives **no** new `Set-Cookie` header for that name — the existing session id is reused.
+4. **`/api/whoami` shape.** Returns JSON `{session_id, email, conversation_id}`. `session_id` is a valid UUID string; `email` is `null` (no `tutor_email` cookie set yet); `conversation_id` is `null`.
+5. **`/embed` happy path.** A request with valid `course` and `exercise` (e.g. `cities_and_climate_change` + `04`) returns 200 with HTML whose `<script id="tutor-config">` contains the validated values.
+6. **`/embed` validation failures.** Each of these returns 404 with a JSON body naming the bad param: missing `course`, unknown `course`, missing `exercise`, unknown `exercise` for the course, unknown `tutor`.
+7. **`tutor` default.** A request that omits `tutor` is accepted; the rendered config shows `tutor_05`.
+8. **`/health` still works.** The Step 1 endpoint continues to respond with `{"status": "ok", "service": "main_ui"}`.
+
+#### Verification steps (manual)
+
+1. `python -m main_ui` to boot.
+2. Curl the embed happy path: `curl -i http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04`. Confirm 200, HTML body, `Set-Cookie` header on first call.
+3. Re-curl with the cookie echoed back: `curl -i --cookie "tutor_session_id=<uuid>" http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04`. Confirm 200 and **no** new `Set-Cookie` for `tutor_session_id`.
+4. Hit `/api/whoami` with the cookie: confirm JSON shape.
+5. Hit each of the 404 cases (bad course, bad exercise, bad tutor) and confirm the JSON error body names the offending param.
+6. Open `http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04` in a real browser; open DevTools → Application → Cookies; confirm `tutor_session_id` is present with all the expected attributes.
+
+#### What's deliberately NOT in Step 3
+
+- **No database access** — no Conversation row created on `/embed` load. The first DB write happens when the student sends a message (Step 5).
+- **No Flask ↔ SQLAlchemy session lifecycle** — `before_request` / `after_request` only manage the cookie. Step 4 or Step 5 will add per-request DB session handling when the first DB-touching route appears.
+- **No real chat UI in `embed.html`** — only a "Tutor loading…" placeholder and the embedded config block. Real markup + composer in Step 6.
+- **No email handling** — `EMAIL_COOKIE_NAME` is defined in `cookies.py` so Step 7 can use it, but the cookie is never read or written in Step 3.
+- **No `/api/chat`** — Step 5.
+- **No history sidebar / `/api/history`** — Step 8.
+- **No tests** — Step 11.
+
+#### Risks / gotchas
+
+- **`Secure` on `http://localhost`:** Chrome treats localhost as a secure origin so `Secure` cookies work there. Firefox and Safari are stricter and may refuse to set them on plain HTTP. Mitigation: the `MAIN_UI_COOKIE_SECURE=false` override exists for cross-browser dev. Document this in the README and only flip it when actually debugging on a stricter browser.
+- **`Partitioned` attribute compatibility:** the CHIPS attribute is Chrome 118+, Edge 118+, recent Firefox. Older browsers ignore unknown attributes harmlessly. No behavior change needed; just be aware that pre-118 Chrome will treat the cookie as a regular third-party cookie (potentially blocked by 3rd-party-cookie phase-out).
+- **Path-traversal in `course`:** never `os.path.join` a user-supplied value with a base path without confirming the resulting path is still inside the base. The plan calls for exact-name matching against `os.listdir("curriculum/")` results, which sidesteps the issue.
+- **`tutor` default drift:** hard-coding `tutor_05` as the default works today but will rot when `tutor_06` ships. Acceptable trade-off for Step 3; the alternative (scanning `tutor/prompts/` and picking max version) is a small follow-up that doesn't have to land now. Note it as a future cleanup.
+- **Validation cost on every request:** `os.listdir("curriculum/")` runs on each `/embed` hit. At ~100-student traffic this is negligible. If traffic grows, cache the result with a TTL (or invalidate on file watcher events).
+- **JSON injection into `<script id="tutor-config">`:** when embedding params into the HTML, use Jinja's `tojson` filter (auto-escapes for safe inclusion inside `<script type="application/json">`). Never concatenate user-supplied strings into the script block directly.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
-
-### Step 3: Session cookie management + `/api/whoami` + `/embed` route
-
-Add the `tutor_session_id` cookie issuance on first load. Implement `GET /api/whoami` returning `{session_id, email?, conversation_id?}`. Add `GET /embed?course=&exercise=&tutor=` route that serves a placeholder HTML page.
 
 ### Step 4: Tutor bridge
 
