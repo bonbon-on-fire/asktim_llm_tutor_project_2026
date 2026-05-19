@@ -868,7 +868,9 @@ start http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04
 
 ---
 
-## Step 7: Email modal ✦ ACTIVE
+## Step 7: Email modal ✦ COMPLETED
+
+**Verified locally** via curl + browser. All API criteria pass: invalid emails return 400 with structured error, valid emails return 200 with `backfilled_conversations` count and set the `tutor_email` cookie (all 6 expected attributes), `data-has-email` body attribute flips from `"false"` to `"true"`, `/api/whoami` reflects the email, idempotent re-submission returns `backfilled_conversations: 0`. Frontend modal triggers after 3rd student message when no cookie, validates `@`+`.` client-side, supports Submit / Skip / Esc / outside-click dismiss. Placeholder copy tweaked to "Enter your email"; tooltip-on-hover suppressed via `title=""` and `type="text"` + `novalidate` (was triggering Firefox's aria-label-as-tooltip behavior).
 
 **Goal:** Capture a best-effort student identifier so we can correlate conversations across the semester (per meeting notes 2026-05-08). After the third student message, show a modal asking for the email the student used to sign up for the course. Validate `@` and `.` client- and server-side. Store the email in the `tutor_email` cookie and on the current Conversation row, then backfill any past Conversations from the same `session_id` that were created before the email was known.
 
