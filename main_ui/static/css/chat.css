@@ -364,6 +364,16 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     outline: none;
 }
 
+.sidebar-entry-active {
+    background: #fbeaea;
+    border-left: 3px solid var(--send-bg);
+    padding-left: calc(1rem - 3px);
+}
+
+.sidebar-entry-active:hover {
+    background: #f8dada;
+}
+
 .sidebar-entry-title {
     font-size: 0.88rem;
     color: var(--text);

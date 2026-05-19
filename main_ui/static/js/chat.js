@@ -37,6 +37,9 @@
     let modalOpen = false;
     let dismissedThisSession = false;
     let sidebarOpen = false;
+    // AbortController for the in-flight POST /api/chat — set when sending,
+    // aborted when the student switches to a past conversation mid-request.
+    let currentChatController = null;
 
     function updateSendButton() {
         sendButton.disabled = isSending || composerInput.value.trim().length === 0;
@@ -164,7 +167,11 @@
             li.appendChild(title);
             li.appendChild(snippet);
 
-            const open = () => viewConversation(c.id);
+            li.dataset.conversationId = c.id;
+            if (c.id === conversationId) {
+                li.classList.add("sidebar-entry-active");
+            }
+            const open = () => loadConversation(c.id);
             li.addEventListener("click", open);
             li.addEventListener("keydown", (e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -235,42 +242,61 @@
         }
     }
 
-    async function viewConversation(targetConversationId) {
-        closeSidebar();
-        detailMessages.innerHTML = "";
-        detailMeta.textContent = "Loading…";
-        detailView.hidden = false;
+    function highlightActiveEntry() {
+        for (const entry of sidebarList.querySelectorAll(".sidebar-entry")) {
+            const isActive = entry.dataset.conversationId === conversationId;
+            entry.classList.toggle("sidebar-entry-active", isActive);
+        }
+    }
+
+    async function loadConversation(targetConversationId) {
+        if (targetConversationId === conversationId) return;
+
+        // Abort any in-flight chat request — the reply belongs to the OLD
+        // conversation; the student is moving on.
+        if (currentChatController) {
+            currentChatController.abort();
+            currentChatController = null;
+        }
+
+        // Optimistically clear the live chat. Composer draft stays.
+        messageList.innerHTML = "";
+        hideError();
 
         try {
-            const response = await fetch(`/api/conversation/${encodeURIComponent(targetConversationId)}`);
+            const response = await fetch(
+                `/api/conversation/${encodeURIComponent(targetConversationId)}`
+            );
             if (!response.ok) {
-                detailMeta.textContent = "Could not load this conversation.";
+                showError("Could not load that conversation.");
                 return;
             }
             const data = await response.json();
-            const datePart = formatFullDate(data.started_at);
-            detailMeta.textContent = `${data.course} · ex ${data.exercise_number}${datePart ? ` · ${datePart}` : ""}`;
+            conversationId = data.id;
+            studentMessageCount = (data.messages || []).filter(
+                (m) => m.role === "student"
+            ).length;
             for (const m of data.messages || []) {
-                const li = document.createElement("li");
-                li.className = "message message-" + m.role;
-                li.textContent = m.content;
-                detailMessages.appendChild(li);
+                renderMessage(m.role, m.content);
             }
+            highlightActiveEntry();
         } catch (err) {
-            detailMeta.textContent = "Could not load this conversation.";
+            showError("Could not load that conversation.");
         }
     }
 
     function closeDetailView() {
-        detailView.hidden = true;
-        detailMessages.innerHTML = "";
-        detailMeta.textContent = "";
+        if (detailView) detailView.hidden = true;
     }
 
     function startNewChat() {
         // Clear the live chat and start a fresh conversation. Composer text
         // is intentionally preserved — student may have typed a draft they
         // want to send into the new conversation.
+        if (currentChatController) {
+            currentChatController.abort();
+            currentChatController = null;
+        }
         messageList.innerHTML = "";
         conversationId = null;
         studentMessageCount = 0;
@@ -279,7 +305,7 @@
         // the email cookie still isn't set.
         dismissedThisSession = false;
         hideError();
-        closeDetailView();
+        highlightActiveEntry();
         composerInput.focus();
     }
 
@@ -354,11 +380,14 @@
             payload.conversation_id = conversationId;
         }
 
+        const controller = new AbortController();
+        currentChatController = controller;
         try {
             const response = await fetch("/api/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
+                signal: controller.signal,
             });
 
             if (!response.ok) {
@@ -383,11 +412,21 @@
             renderMessage("tutor", data.reply);
             maybeShowEmailModal(studentMessageCount);
         } catch (err) {
-            thinkingBubble.remove();
-            studentBubble.remove();
-            composerInput.value = originalText;
-            showError("Cannot reach AskTIM. Check your connection and try again.");
+            if (err && err.name === "AbortError") {
+                // Student switched to a past conversation mid-request.
+                // Roll back the optimistic bubbles without showing an error.
+                thinkingBubble.remove();
+                studentBubble.remove();
+            } else {
+                thinkingBubble.remove();
+                studentBubble.remove();
+                composerInput.value = originalText;
+                showError("Cannot reach AskTIM. Check your connection and try again.");
+            }
         } finally {
+            if (currentChatController === controller) {
+                currentChatController = null;
+            }
             setSending(false);
             composerInput.focus();
         }

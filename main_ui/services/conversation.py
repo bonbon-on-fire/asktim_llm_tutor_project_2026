@@ -39,7 +39,14 @@ def find_or_create_conversation(
     """
     if conversation_id is not None:
         existing = db.get(Conversation, conversation_id)
-        if existing is None or existing.session_id != session_id:
+        if existing is None:
+            raise WrongSessionError()
+        # Accept if the current session owns it OR if the current email
+        # matches the conversation's email (enables cross-browser continuity
+        # once the student has linked their email).
+        same_session = existing.session_id == session_id
+        same_email = bool(email) and existing.email == email
+        if not (same_session or same_email):
             raise WrongSessionError()
         return existing
 
