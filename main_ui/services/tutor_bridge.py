@@ -16,11 +16,13 @@ from pathlib import Path
 from langchain_core.messages import AIMessage, HumanMessage
 
 from tutor.run_tutor import (
+    build_tutor_model,
     create_tutor_graph,
     load_system_prompt,
     parse_tutor_response,
 )
 from tutor.run_tutor import get_tutor_reply as _upstream_get_tutor_reply
+from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -28,6 +30,11 @@ _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 
 
 _graph_cache: dict[tuple[str, str, str], object] = {}
+# Parallel cache for the streaming path. The non-streaming path drives a
+# compiled LangGraph; the streaming path drives the raw model with the same
+# system prompt. We cache both per (tutor, course, exercise) so successive
+# turns reuse the same prompt build.
+_stream_cache: dict[tuple[str, str, str], tuple[object, str]] = {}
 
 
 def build_assignment_text(course: str, exercise: str) -> str:
@@ -65,6 +72,21 @@ def _get_or_build_graph(tutor: str, course: str, exercise: str):
     graph = create_tutor_graph(system_prompt)
     _graph_cache[key] = graph
     return graph
+
+
+def _get_or_build_stream_context(
+    tutor: str, course: str, exercise: str
+) -> tuple[object, str]:
+    """Return ``(model, system_prompt)`` for the streaming path."""
+    key = (tutor, course, exercise)
+    cached = _stream_cache.get(key)
+    if cached is not None:
+        return cached
+    assignment_text = build_assignment_text(course, exercise)
+    system_prompt = load_system_prompt(tutor, assignment_override=assignment_text)
+    model = build_tutor_model()
+    _stream_cache[key] = (model, system_prompt)
+    return model, system_prompt
 
 
 def _history_to_langchain(history: list[dict]) -> list:
@@ -118,3 +140,42 @@ def get_tutor_reply(
             reasoning, _ = parse_tutor_response(raw)
 
     return {"reply": reply_text, "reasoning": reasoning}
+
+
+def stream_tutor_reply(
+    *,
+    course: str,
+    exercise: str,
+    tutor: str,
+    history: list[dict],
+    new_student_message: str,
+):
+    """Stream a tutor reply as a sequence of event dicts.
+
+    Yields:
+        ``{"type": "delta", "text": "..."}`` for each batch of visible
+        student-facing characters, then exactly one terminal event:
+        ``{"type": "done", "reply": "...", "reasoning": "..." | None}``.
+
+    Routes are responsible for re-shaping these into SSE frames.
+    """
+    model, system_prompt = _get_or_build_stream_context(tutor, course, exercise)
+    messages = _history_to_langchain(history)
+    messages.append(HumanMessage(content=new_student_message))
+
+    full_raw: str | None = None
+    for item in _upstream_stream_tutor_reply(
+        messages, model=model, system_prompt=system_prompt
+    ):
+        if isinstance(item, tuple) and item and item[0] == "__done__":
+            full_raw = item[1]
+            break
+        if isinstance(item, str) and item:
+            yield {"type": "delta", "text": item}
+
+    reasoning: str | None = None
+    reply_text = ""
+    if full_raw:
+        reasoning, answer = parse_tutor_response(full_raw)
+        reply_text = answer or ""
+    yield {"type": "done", "reply": reply_text, "reasoning": reasoning}

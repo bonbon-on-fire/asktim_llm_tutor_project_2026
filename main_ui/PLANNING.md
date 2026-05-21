@@ -1337,7 +1337,12 @@ curl http://127.0.0.1:5001/api/conversation/not-a-uuid
 
 ---
 
-## Step 9: Token streaming for tutor replies ✦ ACTIVE
+## Step 9: Token streaming for tutor replies ✦ COMPLETED
+
+**Verification (2026-05-21):** End-to-end SSE streaming works against a live OpenAI call — `delta` events arrive word-by-word, the `done` event carries the assembled `reply` + `conversation_id` + `student_message_count`, and `pedagogical-reasoning` never leaves the server (verified by inspecting raw curl frames against `/api/chat`). Multi-turn streaming on the same `conversation_id` persists subsequent turn pairs cleanly (4 messages across 2 turns). The non-student-like guard fires in the streaming path too — malformed input gets the canned reply as a single delta. DB persistence is correct: student row commits before the stream starts (survives mid-stream failure); tutor row commits at stream end with hidden reasoning preserved. The frontend morphs the "AskTIM is thinking…" placeholder into the live tutor bubble on the first delta and overwrites it with the authoritative `reply` on `done` to guard against delta/parsed drift.
+
+**Bug found and fixed during implementation:** Flask's `teardown_request` fires the instant the view returns the `Response`, even when the body is a `stream_with_context`-wrapped generator. This committed and closed `g.db` *before* the generator's tutor-message INSERT ran, silently dropping the tutor row. Fix: `/api/chat` now pops `g.db` itself, commits the student row pre-stream, then commits the tutor row inside the generator and closes the session in `finally`. Documented in [chat.py](routes/chat.py) so future contributors don't re-trip on it.
+
 
 **Goal:** Switch `/api/chat` from "single JSON response after the full reply lands" to "stream tokens to the client as the LLM generates them," so the tutor's message appears to type itself out in the chat. Same total latency end-to-end, but perceived speed and student attention both improve dramatically — and it matches the UX students already expect from ChatGPT / Claude.ai. Raised as a top-priority feature in the 2026-05-19 meeting notes.
 

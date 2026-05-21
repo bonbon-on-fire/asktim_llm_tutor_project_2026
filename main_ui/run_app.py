@@ -45,6 +45,9 @@ def create_app() -> Flask:
 
     @app.teardown_request
     def _close_db_session(exception: BaseException | None = None) -> None:
+        # Routes that take over their own session lifecycle (the streaming
+        # /api/chat endpoint) pop g.db themselves before returning; this
+        # teardown then finds nothing to clean up and exits silently.
         db = g.pop("db", None)
         if db is None:
             return

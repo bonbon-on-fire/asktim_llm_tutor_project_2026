@@ -74,7 +74,23 @@
       "Bash(python)",
       "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST -H 'Content-Type: application/json' -d '{\"text\":\"hijack attempt\",\"course\":\"cities_and_climate_change\",\"exercise\":\"04\",\"conversation_id\":\"__TRACKED_VAR__\"}' http://127.0.0.1:5001/api/chat)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}, size %{size_download} bytes\\\\n\" \"http://127.0.0.1:5001/static/css/chat.css\")",
-      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}, size %{size_download} bytes\\\\n\" \"http://127.0.0.1:5001/static/js/chat.js\")"
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}, size %{size_download} bytes\\\\n\" \"http://127.0.0.1:5001/static/js/chat.js\")",
+      "PowerShell(python -c \"from main_ui.routes.chat import chat_bp; from main_ui.services.tutor_bridge import stream_tutor_reply; from main_ui.services.conversation import start_exchange_student_only, complete_exchange_tutor; from tutor.run_tutor import StudentAnswerExtractor, stream_tutor_reply as upstream_stream; print\\('imports OK'\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5001/health)",
+      "Bash(curl -s http://127.0.0.1:5001/shutdown)",
+      "Bash(powershell.exe -Command 'Get-Process python -ErrorAction SilentlyContinue | Where-Object {$_.CommandLine -like '\\\\''*main_ui*'\\\\'' -or $_.MainWindowTitle -like '\\\\''*main_ui*'\\\\''} | Stop-Process -Force -ErrorAction SilentlyContinue; Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Start-Sleep 1; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | Measure-Object\\).Count')",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Process python -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 63144 -Force -ErrorAction SilentlyContinue; Start-Sleep 1; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | ForEach-Object { Write-Host \"still listening: pid=$\\($_.OwningProcess\\)\"; Stop-Process -Id $_.OwningProcess -Force }; Start-Sleep 1; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "PowerShell(@\\(69032, 72232, 70204, 26984, 63144\\) | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; Start-Sleep 1; netstat -ano | Select-String \":5001\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5005/health)",
+      "Bash(rm -f /tmp/cookies.txt *)",
+      "Read(//tmp/**)",
+      "PowerShell(Get-Process python -ErrorAction SilentlyContinue | ForEach-Object { try { Stop-Process -Id $_.Id -Force -ErrorAction Stop; \"killed $\\($_.Id\\)\" } catch { \"could not kill $\\($_.Id\\): $\\($_.Exception.Message\\)\" } }; Start-Sleep 2; \\(Get-Process python -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5006/health)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5006 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Get-Process python -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue }; Start-Sleep 1; \"remaining python procs: $\\(\\(Get-Process python -ErrorAction SilentlyContinue | Measure-Object\\).Count\\)\")"
     ],
     "additionalDirectories": [
       "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"

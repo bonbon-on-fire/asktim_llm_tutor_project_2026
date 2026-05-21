@@ -359,15 +359,48 @@
         }
     }
 
+    function convertThinkingToTutor(bubble) {
+        // Reuse the thinking placeholder as the tutor bubble so the message
+        // doesn't visibly jump. Clear the "AskTIM is thinking…" copy on the
+        // first delta and flip the styling class.
+        bubble.className = "message message-tutor";
+        bubble.textContent = "";
+    }
+
+    function parseSSEFrame(frame) {
+        // Pull `event: name` and `data: ...` out of one SSE frame. The frame
+        // arrives with its inter-frame `\n\n` already stripped by the caller.
+        let eventName = "message";
+        const dataLines = [];
+        for (const rawLine of frame.split("\n")) {
+            if (!rawLine || rawLine.startsWith(":")) continue;
+            if (rawLine.startsWith("event:")) {
+                eventName = rawLine.slice(6).trim();
+            } else if (rawLine.startsWith("data:")) {
+                dataLines.push(rawLine.slice(5).trimStart());
+            }
+        }
+        if (dataLines.length === 0) return null;
+        let payload = null;
+        try {
+            payload = JSON.parse(dataLines.join("\n"));
+        } catch (_) {
+            return null;
+        }
+        return { event: eventName, data: payload };
+    }
+
     async function sendMessage() {
         const text = composerInput.value.trim();
         if (!text || isSending) return;
 
         hideError();
-        // Optimistically render the student bubble + a "thinking" placeholder
-        // where the tutor reply will land. Rollback both on error.
+        // Optimistically render the student bubble + a "thinking" placeholder.
+        // As soon as the first streamed delta arrives we morph the thinking
+        // bubble into the tutor bubble in-place and append chars to it.
         const studentBubble = renderMessage("student", text);
-        const thinkingBubble = renderThinking();
+        const tutorBubble = renderThinking();
+        let tutorBubbleActive = false;  // false until first delta lands
         const originalText = composerInput.value;
         composerInput.value = "";
         setSending(true);
@@ -384,6 +417,9 @@
 
         const controller = new AbortController();
         currentChatController = controller;
+        let sawDone = false;
+        let streamError = null;
+
         try {
             const response = await fetch("/api/chat", {
                 method: "POST",
@@ -400,18 +436,82 @@
                 } catch (_) {
                     /* ignore body-parse errors */
                 }
-                thinkingBubble.remove();
+                tutorBubble.remove();
                 studentBubble.remove();
                 composerInput.value = originalText;
                 showError(reason);
                 return;
             }
 
-            const data = await response.json();
-            conversationId = data.conversation_id;
-            studentMessageCount = data.student_message_count;
-            thinkingBubble.remove();
-            renderMessage("tutor", data.reply);
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let sseBuffer = "";
+
+            while (true) {
+                const { value, done } = await reader.read();
+                if (done) break;
+                sseBuffer += decoder.decode(value, { stream: true });
+
+                // Split on the SSE event delimiter. The last segment may be
+                // an incomplete frame — keep it in the buffer for next loop.
+                let separatorIdx;
+                while ((separatorIdx = sseBuffer.indexOf("\n\n")) !== -1) {
+                    const rawFrame = sseBuffer.slice(0, separatorIdx);
+                    sseBuffer = sseBuffer.slice(separatorIdx + 2);
+                    const parsed = parseSSEFrame(rawFrame);
+                    if (!parsed) continue;
+                    if (parsed.event === "delta") {
+                        const piece = parsed.data && parsed.data.text;
+                        if (typeof piece === "string" && piece.length > 0) {
+                            if (!tutorBubbleActive) {
+                                convertThinkingToTutor(tutorBubble);
+                                tutorBubbleActive = true;
+                            }
+                            tutorBubble.textContent += piece;
+                            messageList.scrollTop = messageList.scrollHeight;
+                        }
+                    } else if (parsed.event === "done") {
+                        sawDone = true;
+                        const finalReply = parsed.data && parsed.data.reply;
+                        if (typeof finalReply === "string") {
+                            if (!tutorBubbleActive) {
+                                convertThinkingToTutor(tutorBubble);
+                                tutorBubbleActive = true;
+                            }
+                            // Server's parsed reply is authoritative — replace
+                            // any tokens we'd accumulated in case they drifted.
+                            tutorBubble.textContent = finalReply;
+                            messageList.scrollTop = messageList.scrollHeight;
+                        }
+                        if (parsed.data && parsed.data.conversation_id) {
+                            conversationId = parsed.data.conversation_id;
+                        }
+                        if (typeof (parsed.data && parsed.data.student_message_count) === "number") {
+                            studentMessageCount = parsed.data.student_message_count;
+                        }
+                    } else if (parsed.event === "error") {
+                        streamError = (parsed.data && parsed.data.reason) ||
+                            "Something went wrong. Please try again.";
+                    }
+                }
+            }
+
+            if (streamError) {
+                tutorBubble.remove();
+                studentBubble.remove();
+                composerInput.value = originalText;
+                showError(streamError);
+                return;
+            }
+
+            if (!sawDone) {
+                tutorBubble.remove();
+                studentBubble.remove();
+                composerInput.value = originalText;
+                showError("Connection closed before the reply finished. Please try again.");
+                return;
+            }
+
             maybeShowEmailModal(studentMessageCount);
             // If the sidebar is open, silently re-fetch so the conversation
             // that just got a new message floats to the top of the list.
@@ -422,10 +522,10 @@
             if (err && err.name === "AbortError") {
                 // Student switched to a past conversation mid-request.
                 // Roll back the optimistic bubbles without showing an error.
-                thinkingBubble.remove();
+                tutorBubble.remove();
                 studentBubble.remove();
             } else {
-                thinkingBubble.remove();
+                tutorBubble.remove();
                 studentBubble.remove();
                 composerInput.value = originalText;
                 showError("Cannot reach AskTIM. Check your connection and try again.");
