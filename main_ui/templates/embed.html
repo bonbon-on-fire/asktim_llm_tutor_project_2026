@@ -9,6 +9,10 @@
 <body data-has-email="{{ 'true' if has_email else 'false' }}">
     <script type="application/json" id="tutor-config">{{ tutor_config | tojson }}</script>
 
+    <header class="course-banner">
+        <span class="course-name">MIT 11.270x Cities and Climate Change</span>
+    </header>
+
     <button type="button" class="history-toggle" id="history-toggle" aria-label="Open sidebar" title="Open sidebar">
         <svg class="history-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="4" width="18" height="16" rx="2"/>
@@ -16,10 +20,11 @@
         </svg>
     </button>
 
+    <div class="layout">
     <aside class="sidebar" id="sidebar" aria-label="Past conversations">
         <div class="sidebar-inner">
             <div class="sidebar-header">
-                <h2 id="sidebar-title" class="sidebar-title">AskTIM</h2>
+                <h2 id="sidebar-title" class="sidebar-title">AskTIM <span class="beta-tag">· Beta</span></h2>
                 <button type="button" class="sidebar-close" id="sidebar-close" aria-label="Close sidebar" title="Close sidebar">
                     <svg class="sidebar-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="3" y="4" width="18" height="16" rx="2"/>
@@ -70,6 +75,7 @@
             </div>
         </form>
     </main>
+    </div>
 
     <div class="detail-view" id="detail-view" hidden>
         <div class="detail-header">
