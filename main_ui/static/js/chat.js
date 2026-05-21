@@ -16,11 +16,22 @@
     const emailForm = document.getElementById("email-form");
     const emailInput = document.getElementById("email-input");
     const passwordInput = document.getElementById("password-input");
+    const passwordStage = document.getElementById("password-stage");
+    const passwordHint = document.getElementById("password-hint");
+    const emailDisplay = document.getElementById("email-display");
+    const emailChangeBtn = document.getElementById("email-change");
     const emailSubmit = document.getElementById("email-submit");
     const emailSkip = document.getElementById("email-skip");
     const emailError = document.getElementById("email-error");
 
     const MIN_PASSWORD_LENGTH = 6;
+
+    // Modal moves through two stages. "email" gathers the address, then the
+    // server is probed to learn whether it's already registered; "password"
+    // collects the password with copy that depends on the probe result.
+    let modalStage = "email";          // "email" | "password"
+    let modalEmailExists = null;        // null until probed; then true|false
+    let modalConfirmedEmail = "";       // the email we advanced past stage 1 with
 
     const historyToggle = document.getElementById("history-toggle");
     const sidebar = document.getElementById("sidebar");
@@ -113,11 +124,41 @@
         return value.length >= MIN_PASSWORD_LENGTH;
     }
 
+    function setModalStage(stage) {
+        modalStage = stage;
+        if (stage === "email") {
+            passwordStage.hidden = true;
+            emailInput.hidden = false;
+            emailInput.disabled = false;
+            emailSubmit.textContent = "Next";
+        } else {
+            // Stage 2: hide email input (kept in DOM so the value persists),
+            // show the recap + password field with copy that depends on
+            // whether the email is already registered.
+            emailInput.hidden = true;
+            passwordStage.hidden = false;
+            emailDisplay.textContent = modalConfirmedEmail;
+            if (modalEmailExists) {
+                passwordInput.placeholder = "Enter your password";
+                passwordInput.setAttribute("autocomplete", "current-password");
+                passwordHint.textContent = "";
+                emailSubmit.textContent = "Sign in";
+            } else {
+                passwordInput.placeholder = "Create a password (6+ characters)";
+                passwordInput.setAttribute("autocomplete", "new-password");
+                passwordHint.textContent = "";
+                emailSubmit.textContent = "Create";
+            }
+        }
+        updateEmailSubmit();
+    }
+
     function updateEmailSubmit() {
-        emailSubmit.disabled = !(
-            emailLooksValid(emailInput.value.trim()) &&
-            passwordLooksValid(passwordInput.value)
-        );
+        if (modalStage === "email") {
+            emailSubmit.disabled = !emailLooksValid(emailInput.value.trim());
+        } else {
+            emailSubmit.disabled = !passwordLooksValid(passwordInput.value);
+        }
     }
 
     function openEmailModal() {
@@ -127,7 +168,9 @@
         emailError.textContent = "";
         emailInput.value = "";
         passwordInput.value = "";
-        updateEmailSubmit();
+        modalEmailExists = null;
+        modalConfirmedEmail = "";
+        setModalStage("email");
         emailModal.hidden = false;
         emailInput.focus();
     }
@@ -143,6 +186,13 @@
     }
 
     function maybeShowEmailModal(count) {
+        console.log("[modal-trigger]", {
+            count,
+            hasEmail: hasEmailSet(),
+            dismissed: dismissedThisSession,
+            modalOpen,
+            sidebarOpen,
+        });
         if (count < 3) return;
         if (hasEmailSet()) return;
         if (dismissedThisSession) return;
@@ -331,11 +381,45 @@
 
     // ---- Step 7: email modal --------------------------------------------------
 
-    async function submitEmail(event) {
-        event.preventDefault();
+    async function submitEmailStage() {
         const emailValue = emailInput.value.trim();
+        if (!emailLooksValid(emailValue)) return;
+
+        emailSubmit.disabled = true;
+        emailError.hidden = true;
+
+        try {
+            const response = await fetch("/api/identity/check", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: emailValue }),
+            });
+            if (!response.ok) {
+                let reason = "Could not check that email. Please try again.";
+                try {
+                    const body = await response.json();
+                    if (body && body.reason) reason = body.reason;
+                } catch (_) { /* ignore */ }
+                emailError.textContent = reason;
+                emailError.hidden = false;
+                emailSubmit.disabled = false;
+                return;
+            }
+            const data = await response.json();
+            modalConfirmedEmail = data.email;
+            modalEmailExists = !!data.exists;
+            setModalStage("password");
+            passwordInput.focus();
+        } catch (err) {
+            emailError.textContent = "Cannot reach AskTIM. Check your connection and try again.";
+            emailError.hidden = false;
+            emailSubmit.disabled = false;
+        }
+    }
+
+    async function submitPasswordStage() {
         const passwordValue = passwordInput.value;
-        if (!emailLooksValid(emailValue) || !passwordLooksValid(passwordValue)) return;
+        if (!passwordLooksValid(passwordValue)) return;
 
         emailSubmit.disabled = true;
         emailError.hidden = true;
@@ -345,7 +429,7 @@
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    email: emailValue,
+                    email: modalConfirmedEmail,
                     password: passwordValue,
                 }),
             });
@@ -357,11 +441,12 @@
                     const body = await response.json();
                     if (body && body.error) errorCode = body.error;
                     if (body && body.reason) reason = body.reason;
-                } catch (_) {
-                    /* ignore body-parse errors */
-                }
+                } catch (_) { /* ignore */ }
                 if (errorCode === "wrong_password") {
-                    reason = "Wrong password for that email. Try again.";
+                    reason = "Wrong password, try again";
+                    passwordInput.value = "";
+                    updateEmailSubmit();
+                    passwordInput.focus();
                 }
                 emailError.textContent = reason;
                 emailError.hidden = false;
@@ -384,6 +469,24 @@
             emailError.hidden = false;
             emailSubmit.disabled = false;
         }
+    }
+
+    function submitEmail(event) {
+        event.preventDefault();
+        if (modalStage === "email") {
+            submitEmailStage();
+        } else {
+            submitPasswordStage();
+        }
+    }
+
+    function backToEmailStage() {
+        passwordInput.value = "";
+        modalEmailExists = null;
+        emailError.hidden = true;
+        setModalStage("email");
+        emailInput.focus();
+        emailInput.select();
     }
 
     function convertThinkingToTutor(bubble) {
@@ -586,6 +689,7 @@
     emailInput.addEventListener("input", updateEmailSubmit);
     passwordInput.addEventListener("input", updateEmailSubmit);
     emailForm.addEventListener("submit", submitEmail);
+    emailChangeBtn.addEventListener("click", backToEmailStage);
     emailSkip.addEventListener("click", () => closeEmailModal({ dismissed: true }));
     emailModal.addEventListener("click", (event) => {
         // Backdrop click = skip; clicks inside the card are ignored

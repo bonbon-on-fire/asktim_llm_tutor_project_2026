@@ -58,6 +58,31 @@ def _validate_password(value) -> str | None:
     return None
 
 
+@identity_bp.post("/api/identity/check")
+def check_identity():
+    """Probe whether an email already has a password registered.
+
+    Used by the two-step modal: the frontend POSTs the email here, learns
+    whether to ask the student to *create* a password or *enter* their
+    existing one, then sends the full ``{email, password}`` to
+    ``/api/identity`` on stage 2.
+
+    JSON request:  { "email": "alice@example.edu" }
+    JSON success:  { "email": "alice@example.edu", "exists": true|false }
+
+    Error:
+        400 invalid_email — email failed @/. check
+    """
+    data = request.get_json(silent=True) or {}
+    email_reason = _validate_email(data.get("email"))
+    if email_reason:
+        return jsonify({"error": "invalid_email", "reason": email_reason}), 400
+
+    email = data["email"].strip()
+    student = get_student(g.db, email)
+    return jsonify({"email": email, "exists": student is not None})
+
+
 @identity_bp.post("/api/identity")
 def submit_identity():
     """Link the current session to an email via password.
