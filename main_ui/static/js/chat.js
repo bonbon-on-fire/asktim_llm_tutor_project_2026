@@ -65,7 +65,14 @@
     function renderThinking() {
         const li = document.createElement("li");
         li.className = "message message-thinking";
-        li.textContent = "AskTIM is thinking…";
+        li.appendChild(document.createTextNode("AskTIM is thinking"));
+        // Three staggered .thinking-dot spans CSS-blink one-after-another.
+        for (let i = 0; i < 3; i++) {
+            const dot = document.createElement("span");
+            dot.className = "thinking-dot";
+            dot.textContent = ".";
+            li.appendChild(dot);
+        }
         messageList.appendChild(li);
         messageList.scrollTop = messageList.scrollHeight;
         return li;
