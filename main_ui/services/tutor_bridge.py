@@ -27,6 +27,8 @@ from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
+_CONTEXT_DIR = Path(__file__).resolve().parents[1] / "context"
+_ABOUT_ASKTIM_PATH = _CONTEXT_DIR / "about_asktim.txt"
 
 
 _graph_cache: dict[tuple[str, str, str], object] = {}
@@ -38,17 +40,25 @@ _stream_cache: dict[tuple[str, str, str], tuple[object, str]] = {}
 
 
 def build_assignment_text(course: str, exercise: str) -> str:
-    """Concatenate course.txt + optional syllabus.txt + exercise_<NN>.txt.
+    """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
 
     Mirrors `ui/run_ui_raw.py:_build_assignment_text` but omits the
     `Run configuration` block — main_ui chats are open-ended, no planned
-    turn count.
+    turn count. The leading block describes the AskTIM deployment so the
+    tutor can coherently answer "what are you?" / "where am I?" questions;
+    it lives in `main_ui/context/about_asktim.txt` and is only read here so
+    `tutor/`, `web_ui/`, and the bulk-transcript runners stay unaware of it.
     """
     course_dir = _CURRICULUM_DIR / course
     exercise_path = course_dir / f"exercise_{exercise}.txt"
     exercise_text = exercise_path.read_text(encoding="utf-8").strip()
 
     parts: list[str] = []
+
+    if _ABOUT_ASKTIM_PATH.is_file():
+        about_text = _ABOUT_ASKTIM_PATH.read_text(encoding="utf-8").strip()
+        if about_text:
+            parts.append("About yourself:\n" + about_text)
 
     course_path = course_dir / "course.txt"
     if course_path.is_file():
