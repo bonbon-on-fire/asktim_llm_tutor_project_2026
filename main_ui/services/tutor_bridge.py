@@ -46,7 +46,7 @@ def build_assignment_text(course: str, exercise: str) -> str:
     turn count. The leading block describes the AskTIM deployment so the
     tutor can coherently answer "what are you?" / "where am I?" questions;
     it lives at `main_ui/about_asktim.txt` and is only read here so
-    `tutor/`, `web_ui/`, and the bulk-transcript runners stay unaware of it.
+    `tutor/`, `test_ui/`, and the bulk-transcript runners stay unaware of it.
     """
     course_dir = _CURRICULUM_DIR / course
     exercise_path = course_dir / f"exercise_{exercise}.txt"

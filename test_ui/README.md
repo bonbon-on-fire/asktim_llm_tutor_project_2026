@@ -1,15 +1,15 @@
-# Web UI
+# Test UI
 
 Browser-based chat interface for the Humanities LLM Tutor. A 3-step wizard selects tutor prompt, course, and exercise, then opens a human-student chat session.
 
-> This is the **TA / developer testing harness**. The student-facing iframe-embeddable app lives in [`main_ui/`](../main_ui/README.md). Both can run side-by-side — `web_ui/` on port `5000`, `main_ui/` on `5001`.
+> This is the **TA / developer testing harness**. The student-facing iframe-embeddable app lives in [`main_ui/`](../main_ui/README.md). Both can run side-by-side — `test_ui/` on port `5000`, `main_ui/` on `5001`.
 
 ## Structure
 
 ```
-web_ui/
+test_ui/
   __init__.py
-  __main__.py          # python -m web_ui
+  __main__.py          # python -m test_ui
   run_app.py           # Flask app with API routes
   templates/
     index.html         # Single-page wizard + chat interface
@@ -19,10 +19,10 @@ web_ui/
 
 ```bash
 # Development
-python -m web_ui
+python -m test_ui
 
 # Production (Heroku / gunicorn)
-gunicorn web_ui.run_app:app --bind 0.0.0.0:$PORT
+gunicorn test_ui.run_app:app --bind 0.0.0.0:$PORT
 ```
 
 The app listens on port **5000** by default (override with the `PORT` environment variable).

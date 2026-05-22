@@ -24,7 +24,7 @@ What works today:
 python -m main_ui
 ```
 
-Binds to `127.0.0.1:5001` by default (avoids clashing with `web_ui/` on `5000`). Override with `PORT` env var.
+Binds to `127.0.0.1:5001` by default (avoids clashing with `test_ui/` on `5000`). Override with `PORT` env var.
 
 Open the chat in a browser:
 
@@ -145,9 +145,9 @@ main_ui/
     embed.html            # iframe-embeddable chat page
 ```
 
-## How `main_ui/` differs from `web_ui/`
+## How `main_ui/` differs from `test_ui/`
 
-| | `web_ui/` | `main_ui/` |
+| | `test_ui/` | `main_ui/` |
 | --- | --- | --- |
 | Audience | Developers / TAs testing tutor configs | Real students embedded in OCW course pages |
 | UI | 3-step wizard (tutor, course, exercise) | No wizard — course/exercise come from URL params |
