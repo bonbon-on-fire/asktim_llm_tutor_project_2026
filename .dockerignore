@@ -1,0 +1,28 @@
+.git
+.gitignore
+.env
+.env.*
+__pycache__
+*.py[cod]
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Large / unrelated app data — not needed to run main_ui
+transcripts/
+logs/
+meeting_notes/
+dashboard_ui/
+visualization/
+students/
+judge/
+web_ui/
+ui/
+.claude/
+.cursor/
+*.md
+!curriculum/**/*.md
+
+# Local uploads (ephemeral in production)
+main_ui/uploads/
