@@ -12,6 +12,8 @@ from flask import Blueprint, jsonify, render_template, request
 
 from main_ui.cookies import EMAIL_COOKIE_NAME
 from main_ui.routes._validation import (
+    DEFAULT_COURSE,
+    DEFAULT_EXERCISE,
     DEFAULT_TUTOR,
     validate_course,
     validate_exercise,
@@ -24,6 +26,29 @@ embed_bp = Blueprint("embed", __name__)
 
 def _bad_param(err: dict):
     return jsonify({"error": "invalid_param", **err}), 404
+
+
+def _render_embed(*, course: str, exercise: str, tutor: str):
+    tutor_config = {"course": course, "exercise": exercise, "tutor": tutor}
+    has_email = bool(request.cookies.get(EMAIL_COOKIE_NAME))
+    return render_template(
+        "embed.html",
+        course=course,
+        exercise=exercise,
+        tutor=tutor,
+        tutor_config=tutor_config,
+        has_email=has_email,
+    )
+
+
+@embed_bp.get("/")
+def index():
+    """Default entry point for bare host URLs (e.g. Railway public domain)."""
+    return _render_embed(
+        course=DEFAULT_COURSE,
+        exercise=DEFAULT_EXERCISE,
+        tutor=DEFAULT_TUTOR,
+    )
 
 
 @embed_bp.get("/embed")
@@ -42,13 +67,4 @@ def embed():
     if err:
         return _bad_param(err)
 
-    tutor_config = {"course": course, "exercise": exercise, "tutor": tutor}
-    has_email = bool(request.cookies.get(EMAIL_COOKIE_NAME))
-    return render_template(
-        "embed.html",
-        course=course,
-        exercise=exercise,
-        tutor=tutor,
-        tutor_config=tutor_config,
-        has_email=has_email,
-    )
+    return _render_embed(course=course, exercise=exercise, tutor=tutor)

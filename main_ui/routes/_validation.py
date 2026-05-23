@@ -16,6 +16,8 @@ _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 _TUTOR_PROMPTS_DIR = _REPO_ROOT / "tutor" / "prompts"
 
 DEFAULT_TUTOR = "tutor_05"
+DEFAULT_COURSE = "cities_and_climate_change"
+DEFAULT_EXERCISE = "04"
 
 
 def _list_courses() -> set[str]:
