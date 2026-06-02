@@ -695,6 +695,22 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     outline-offset: -2px;
 }
 
+/* Read-only preview of a selected built-in course/exercise/tutor/syllabus. */
+.create-custom:read-only {
+    background: #f4f5f7;
+    color: var(--text);
+    cursor: default;
+}
+
+.create-actions {
+    justify-content: flex-end;
+}
+
+.create-actions-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
 .modal-skip {
     background: none;

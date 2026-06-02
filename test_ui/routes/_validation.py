@@ -82,6 +82,38 @@ def load_course_name(course) -> str:
     return path.read_text(encoding="utf-8").strip()
 
 
+def load_course_text(course) -> str:
+    """Raw course.txt for a built-in course (preview for the Create wizard)."""
+    if not course:
+        return ""
+    path = _CURRICULUM_DIR / course / "course.txt"
+    return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
+def load_exercise_text(course, exercise) -> str:
+    """Raw exercise_<NN>.txt for a built-in course/exercise."""
+    if not course or not exercise:
+        return ""
+    path = _CURRICULUM_DIR / course / f"exercise_{exercise}.txt"
+    return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
+def load_tutor_text(tutor) -> str:
+    """Raw tutor prompt text for a built-in tutor stem."""
+    if not tutor:
+        return ""
+    path = _TUTOR_PROMPTS_DIR / f"{tutor}.txt"
+    return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
+def load_syllabus_text(course) -> str:
+    """Raw syllabus.txt for a built-in course (empty string if none)."""
+    if not course:
+        return ""
+    path = _CURRICULUM_DIR / course / "syllabus.txt"
+    return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
 def list_exercises(course) -> list[str]:
     """Sorted zero-padded 2-digit exercise numbers available for a course."""
     course_dir = _CURRICULUM_DIR / course if course else None

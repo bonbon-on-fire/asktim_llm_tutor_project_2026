@@ -161,7 +161,7 @@
     }
   }
 
-  function openEmailModal() {
+  function openEmailModal({ manual = false } = {}) {
     if (modalOpen) return;
     modalOpen = true;
     emailError.hidden = true;
@@ -170,6 +170,9 @@
     passwordInput.value = "";
     modalEmailExists = null;
     modalConfirmedEmail = "";
+    // Manual open (the "Add email" button) is dismissible as "Cancel"; the
+    // automatic prompt after the third message reads "Skip".
+    emailSkip.textContent = manual ? "Cancel" : "Skip";
     setModalStage("email");
     emailModal.hidden = false;
     emailInput.focus();
@@ -715,7 +718,7 @@
   historyToggle.addEventListener("click", toggleSidebar);
   sidebarClose.addEventListener("click", closeSidebar);
   newChatButton.addEventListener("click", startNewChat);
-  addEmailButton.addEventListener("click", openEmailModal);
+  addEmailButton.addEventListener("click", () => openEmailModal({ manual: true }));
   detailBack.addEventListener("click", closeDetailView);
 
   // Unified Escape: close in z-order — detail > modal > sidebar

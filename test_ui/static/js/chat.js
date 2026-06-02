@@ -199,7 +199,7 @@
     }
   }
 
-  function openEmailModal() {
+  function openEmailModal({ manual = false } = {}) {
     if (modalOpen) return;
     modalOpen = true;
     emailError.hidden = true;
@@ -208,6 +208,9 @@
     passwordInput.value = "";
     modalEmailExists = null;
     modalConfirmedEmail = "";
+    // Manual open (the "Add email" button) is dismissible as "Cancel"; the
+    // automatic prompt after the third message reads "Skip".
+    emailSkip.textContent = manual ? "Cancel" : "Skip";
     setModalStage("email");
     emailModal.hidden = false;
     emailInput.focus();
@@ -554,6 +557,30 @@
   const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus"];
   const CUSTOM = "__custom__";
 
+  async function fetchPreviewText(stepKey, value) {
+    let url;
+    if (stepKey === "course") {
+      url = `/api/context/preview?kind=course&course=${encodeURIComponent(value)}`;
+    } else if (stepKey === "exercise") {
+      url =
+        `/api/context/preview?kind=exercise` +
+        `&course=${encodeURIComponent(createDraft.course.existing)}` +
+        `&exercise=${encodeURIComponent(value)}`;
+    } else if (stepKey === "tutor") {
+      url = `/api/context/preview?kind=tutor&tutor=${encodeURIComponent(value)}`;
+    } else {
+      url = `/api/context/preview?kind=syllabus&course=${encodeURIComponent(createDraft.course.existing)}`;
+    }
+    try {
+      const r = await fetch(url);
+      if (!r.ok) return "(could not load preview)";
+      const d = await r.json();
+      return d.text || "";
+    } catch (_) {
+      return "(could not load preview)";
+    }
+  }
+
   function buildSelect(options, value) {
     const sel = document.createElement("select");
     sel.className = "context-select";
@@ -648,16 +675,50 @@
     ta.className = "create-custom";
     ta.id = "create-custom-input";
     ta.placeholder = placeholder;
-    ta.value = customValue || "";
     createStepBody.appendChild(ta);
 
-    const syncCustom = () => {
-      ta.hidden = sel.value !== CUSTOM;
+    const stepKey = step;
+
+    // Keep the draft's typed text in sync, so toggling to an existing option
+    // and back doesn't lose what the tester wrote.
+    ta.addEventListener("input", () => {
+      if (ta.readOnly) return;
+      if (stepKey === "syllabus") createDraft.syllabus.custom = ta.value;
+      else createDraft[stepKey].custom = ta.value;
       updateCreateNextEnabled();
-    };
-    syncCustom();
-    sel.addEventListener("change", syncCustom);
-    ta.addEventListener("input", updateCreateNextEnabled);
+    });
+
+    // Token guards the async preview fetch against a newer selection change.
+    let syncToken = 0;
+    async function syncTextarea() {
+      const val = sel.value;
+      const token = ++syncToken;
+      if (val === CUSTOM) {
+        // "Create …" — editable, restore the draft's typed text.
+        ta.readOnly = false;
+        ta.hidden = false;
+        ta.placeholder = placeholder;
+        ta.value =
+          (stepKey === "syllabus"
+            ? createDraft.syllabus.custom
+            : createDraft[stepKey].custom) || "";
+      } else if (stepKey === "syllabus" && val === "none") {
+        // No syllabus — nothing to preview.
+        ta.readOnly = true;
+        ta.hidden = true;
+        ta.value = "";
+      } else {
+        // Existing option — show its text, read-only.
+        ta.readOnly = true;
+        ta.hidden = false;
+        ta.value = "Loading…";
+        const text = await fetchPreviewText(stepKey, val);
+        if (token === syncToken) ta.value = text;
+      }
+      updateCreateNextEnabled();
+    }
+    sel.addEventListener("change", syncTextarea);
+    syncTextarea();
 
     createBack.hidden = createStep === 0;
     createNext.textContent =
@@ -1154,7 +1215,7 @@
   historyToggle.addEventListener("click", toggleSidebar);
   sidebarClose.addEventListener("click", closeSidebar);
   newChatButton.addEventListener("click", startNewChat);
-  addEmailButton.addEventListener("click", openEmailModal);
+  addEmailButton.addEventListener("click", () => openEmailModal({ manual: true }));
   detailBack.addEventListener("click", closeDetailView);
 
   // Context switcher wiring (test_ui only)
