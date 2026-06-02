@@ -1,4 +1,4 @@
-# Humanities LLM Tutor Project 2026
+# AskTIM LLM Tutor Project 2026
 
 ## Project Overview
 
@@ -253,9 +253,9 @@ The full pipeline is working end-to-end, with:
 
 ## TL;DR
 
-A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly — validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, analyzed to measure judge consistency, and shipped as an iframe-embeddable student app (AskTIM) for the Spring 2026 *Cities and Climate Change* course with token streaming and identity-aware chat history.
+A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly—validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, analyzed to measure judge consistency, and shipped as an iframe-embeddable student app (AskTIM) for the Spring 2026 *Cities and Climate Change* course with token streaming and identity-aware chat history.
 
 ---
 
-**Project Duration:** Spring 2026  
+**Project Duration:** Winter 2025 — Present  
 **Technologies:** Python, LangGraph, LangChain, OpenAI API, Anthropic API, Flask, SQLAlchemy + Alembic, PostgreSQL, bcrypt, Server-Sent Events, Chart.js, matplotlib, Git
