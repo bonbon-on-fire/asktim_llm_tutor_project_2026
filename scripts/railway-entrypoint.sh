@@ -10,12 +10,22 @@ if [ -z "${OPENAI_API_KEY:-}" ]; then
 fi
 echo "[startup] ✓ OPENAI_API_KEY is set"
 
-# Convert Railway/Heroku-style Postgres URLs to SQLAlchemy format
+# Normalize Railway/Heroku-style Postgres URLs to the psycopg3 driver.
+# SQLAlchemy's bare postgresql:// scheme defaults to psycopg2, which is NOT
+# installed (requirements ships psycopg[binary] == psycopg3). The driver must
+# be made explicit as postgresql+psycopg:// or both Alembic and the app crash
+# with ModuleNotFoundError: No module named 'psycopg2'.
 if [ -n "${DATABASE_URL:-}" ]; then
     case "$DATABASE_URL" in
         postgres://*)
-            DATABASE_URL="postgresql://${DATABASE_URL#postgres://}"
-            echo "[startup] Converted DATABASE_URL from postgres:// to postgresql://"
+            DATABASE_URL="postgresql+psycopg://${DATABASE_URL#postgres://}"
+            echo "[startup] Converted DATABASE_URL postgres:// -> postgresql+psycopg://"
+            ;;
+        postgresql+psycopg://*)
+            ;; # already explicit, leave as-is
+        postgresql://*)
+            DATABASE_URL="postgresql+psycopg://${DATABASE_URL#postgresql://}"
+            echo "[startup] Converted DATABASE_URL postgresql:// -> postgresql+psycopg://"
             ;;
     esac
     export DATABASE_URL
