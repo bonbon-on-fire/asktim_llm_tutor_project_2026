@@ -124,7 +124,7 @@ def _env_truthy(name: str) -> bool:
 def _require_openai_api_key() -> str:
     """Return OpenAI API key from env or raise ``JudgeError``."""
 
-    key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
+    key = os.environ.get("OPENAI_API_KEY")
     if not key:
         raise JudgeError("OPENAI_API_KEY environment variable is required but not set.")
     return key

@@ -97,10 +97,10 @@ class BundleConfig:
 
 def _require_openai_api_key() -> None:
     """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
-    if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
+    if os.environ.get("OPENAI_API_KEY"):
         return
     raise RuntimeError(
-        "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+        "OPENAI_API_KEY environment variable is required but not set."
     )
 
 

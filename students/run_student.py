@@ -31,10 +31,10 @@ load_dotenv(_REPO_ROOT / ".env")
 
 def _require_openai_api_key() -> str:
     """Return the OpenAI API key from the environment or raise RuntimeError if absent."""
-    key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
+    key = os.environ.get("OPENAI_API_KEY")
     if not key:
         raise RuntimeError(
-            "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+            "OPENAI_API_KEY environment variable is required but not set."
         )
     return key
 
