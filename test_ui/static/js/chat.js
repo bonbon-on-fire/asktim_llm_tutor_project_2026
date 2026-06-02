@@ -418,6 +418,12 @@
     return contextOptions.courses.find((c) => c.slug === slug) || null;
   }
 
+  function tutorLabel(stem) {
+    // "tutor_01" -> "Tutor 1" for display; value stays the raw stem.
+    const m = /tutor_0*(\d+)/.exec(stem);
+    return m ? "Tutor " + m[1] : stem;
+  }
+
   function fillSelect(selectEl, options, current) {
     selectEl.innerHTML = "";
     for (const o of options) {
@@ -476,7 +482,7 @@
     );
     fillSelect(
       contextTutor,
-      contextOptions.tutors.map((t) => ({ value: t, label: t })),
+      contextOptions.tutors.map((t) => ({ value: t, label: tutorLabel(t) })),
       config.tutor,
     );
     const activeCourse = contextCourse.value || config.course;
