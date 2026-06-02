@@ -366,6 +366,22 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     color: #ffffff;
 }
 
+/* "New chat" — filled slightly-dark grey. */
+#new-chat {
+    background: #868b94;
+    color: #ffffff;
+    border-color: #868b94;
+}
+
+#new-chat:hover {
+    background: #70757e;
+    border-color: #70757e;
+}
+
+#new-chat .sidebar-cta-icon {
+    color: #ffffff;
+}
+
 .sidebar-cta-icon {
     width: 16px;
     height: 16px;
