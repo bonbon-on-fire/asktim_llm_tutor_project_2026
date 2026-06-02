@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import uuid
 
-from main_ui.config import load_config
+from test_ui.config import load_config
 
 
 SESSION_COOKIE_NAME = "tutor_session_id"
@@ -28,10 +28,10 @@ def default_cookie_kwargs() -> dict:
     - HttpOnly: JS can't read; defends against XSS leaking the session id
     - SameSite=None + Secure: required for cross-site iframe contexts
     - Partitioned: CHIPS — partition the cookie per top-level site
-    - Max-Age: ~180 days (configurable via MAIN_UI_COOKIE_MAX_AGE)
+    - Max-Age: ~180 days (configurable via TEST_UI_COOKIE_MAX_AGE)
 
     For local dev on http://localhost (no HTTPS), set
-    MAIN_UI_COOKIE_SECURE=false so browsers that strictly enforce `Secure`
+    TEST_UI_COOKIE_SECURE=false so browsers that strictly enforce `Secure`
     still accept the cookie.
     """
     config = load_config()

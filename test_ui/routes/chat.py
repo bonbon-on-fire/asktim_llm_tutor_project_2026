@@ -33,15 +33,15 @@ from uuid import UUID
 
 from flask import Blueprint, Response, g, jsonify, request, stream_with_context
 
-from main_ui.cookies import EMAIL_COOKIE_NAME
-from main_ui.routes._validation import (
+from test_ui.cookies import EMAIL_COOKIE_NAME
+from test_ui.routes._validation import (
     DEFAULT_TUTOR,
     validate_course,
     validate_exercise,
     validate_tutor,
 )
-from main_ui.services import tutor_bridge
-from main_ui.services.conversation import (
+from test_ui.services import tutor_bridge
+from test_ui.services.conversation import (
     WrongSessionError,
     complete_exchange_tutor,
     count_student_messages,

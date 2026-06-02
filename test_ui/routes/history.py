@@ -17,8 +17,8 @@ from uuid import UUID
 
 from flask import Blueprint, g, jsonify, request
 
-from main_ui.cookies import EMAIL_COOKIE_NAME
-from main_ui.services.conversation import (
+from test_ui.cookies import EMAIL_COOKIE_NAME
+from test_ui.services.conversation import (
     get_conversation_for_viewer,
     get_messages_for_conversation,
     list_conversations_for_email,

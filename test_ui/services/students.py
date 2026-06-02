@@ -12,7 +12,7 @@ from __future__ import annotations
 import bcrypt
 from sqlalchemy.orm import Session
 
-from main_ui.db.models import Student
+from test_ui.db.models import Student
 
 
 MIN_PASSWORD_LENGTH = 6

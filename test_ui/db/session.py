@@ -1,4 +1,4 @@
-"""SQLAlchemy engine + session factory for main_ui.
+"""SQLAlchemy engine + session factory for test_ui.
 
 Build the engine lazily from `config.database_url`. For SQLite, enable FK
 enforcement on every new connection (off by default). For Postgres, use a
@@ -14,7 +14,7 @@ from sqlalchemy import create_engine, event
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from main_ui.config import load_config
+from test_ui.config import load_config
 
 
 def _build_engine() -> Engine:

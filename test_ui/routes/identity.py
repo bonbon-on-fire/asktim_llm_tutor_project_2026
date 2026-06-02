@@ -14,9 +14,9 @@ from __future__ import annotations
 
 from flask import Blueprint, g, jsonify, request
 
-from main_ui.cookies import EMAIL_COOKIE_NAME, default_cookie_kwargs
-from main_ui.services.conversation import backfill_email_for_session
-from main_ui.services.students import (
+from test_ui.cookies import EMAIL_COOKIE_NAME, default_cookie_kwargs
+from test_ui.services.conversation import backfill_email_for_session
+from test_ui.services.students import (
     MIN_PASSWORD_LENGTH,
     WeakPasswordError,
     create_student,

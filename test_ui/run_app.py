@@ -1,26 +1,32 @@
-"""Flask app for the main_ui production-shape tutor."""
+"""Flask app for the test_ui tutor testing harness."""
 
 from __future__ import annotations
 
 from flask import Flask, Response, g, jsonify, request
 
-from main_ui.config import load_config
-from main_ui.cookies import (
+from test_ui.config import load_config
+from test_ui.cookies import (
     SESSION_COOKIE_NAME,
     default_cookie_kwargs,
     new_session_id,
 )
-from main_ui.db import SessionLocal
-from main_ui.routes.chat import chat_bp
-from main_ui.routes.embed import embed_bp
-from main_ui.routes.history import history_bp
-from main_ui.routes.identity import identity_bp
+from test_ui.db import SessionLocal
+from test_ui.db.models import Base
+from test_ui.db.session import engine
+from test_ui.routes.chat import chat_bp
+from test_ui.routes.embed import embed_bp
+from test_ui.routes.history import history_bp
+from test_ui.routes.identity import identity_bp
 
 
 def create_app() -> Flask:
     config = load_config()
     app = Flask(__name__)
     app.config["SECRET_KEY"] = config.secret_key
+
+    # test_ui owns a separate, throwaway database and skips Alembic — the
+    # schema is created directly from the models on boot.
+    Base.metadata.create_all(engine)
 
     app.register_blueprint(embed_bp)
     app.register_blueprint(identity_bp)
@@ -69,7 +75,7 @@ def create_app() -> Flask:
 
     @app.get("/health")
     def health():
-        return jsonify({"status": "ok", "service": "main_ui"})
+        return jsonify({"status": "ok", "service": "test_ui"})
 
     return app
 

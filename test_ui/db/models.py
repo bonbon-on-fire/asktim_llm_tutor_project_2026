@@ -1,4 +1,4 @@
-"""SQLAlchemy 2.x models for main_ui."""
+"""SQLAlchemy 2.x models for test_ui."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy import (
     BigInteger,
+    Boolean,
     CheckConstraint,
     DateTime,
     ForeignKey,
@@ -31,7 +32,7 @@ def _utcnow() -> datetime:
 
 
 class Base(DeclarativeBase):
-    """Shared declarative base for all main_ui models."""
+    """Shared declarative base for all test_ui models."""
 
 
 class Conversation(Base):
@@ -45,6 +46,11 @@ class Conversation(Base):
     course: Mapped[str] = mapped_column(Text, nullable=False)
     exercise_number: Mapped[str] = mapped_column(Text, nullable=False)
     tutor_prompt: Mapped[str] = mapped_column(Text, nullable=False)
+    # test_ui-only: whether the course syllabus.txt was folded into the tutor
+    # context for this conversation (toggled via the Change-context switcher).
+    syllabus_enabled: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, default=True
+    )
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )

@@ -1,1 +1,1 @@
-"""HTTP routes for main_ui (Flask blueprints)."""
+"""HTTP routes for test_ui (Flask blueprints)."""

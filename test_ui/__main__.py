@@ -1,9 +1,9 @@
-"""python -m main_ui entry point — boots the Flask development server."""
+"""python -m test_ui entry point — boots the Flask development server."""
 
 from __future__ import annotations
 
-from main_ui.config import load_config
-from main_ui.run_app import app
+from test_ui.config import load_config
+from test_ui.run_app import app
 
 
 if __name__ == "__main__":

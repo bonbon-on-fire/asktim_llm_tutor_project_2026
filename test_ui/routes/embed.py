@@ -10,8 +10,8 @@ from __future__ import annotations
 
 from flask import Blueprint, jsonify, render_template, request
 
-from main_ui.cookies import EMAIL_COOKIE_NAME
-from main_ui.routes._validation import (
+from test_ui.cookies import EMAIL_COOKIE_NAME
+from test_ui.routes._validation import (
     DEFAULT_COURSE,
     DEFAULT_EXERCISE,
     DEFAULT_TUTOR,

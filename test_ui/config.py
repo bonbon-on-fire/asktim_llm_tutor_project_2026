@@ -1,4 +1,4 @@
-"""Environment-driven configuration for main_ui."""
+"""Environment-driven configuration for test_ui."""
 
 from __future__ import annotations
 
@@ -25,12 +25,17 @@ class Config:
 
 
 def load_config() -> Config:
-    secret_key = os.environ.get("MAIN_UI_SECRET_KEY", "dev-insecure-key")
-    database_url = os.environ.get("DATABASE_URL", "sqlite:///./main_ui.db")
-    port = int(os.environ.get("PORT", "5001"))
-    cookie_secure = _parse_bool(os.environ.get("MAIN_UI_COOKIE_SECURE"), default=True)
+    secret_key = os.environ.get("TEST_UI_SECRET_KEY", "dev-insecure-key")
+    # Own DB, kept separate from main_ui's DATABASE_URL so test conversations
+    # never land in the production student store. Defaults to a local SQLite file.
+    database_url = os.environ.get("TEST_UI_DATABASE_URL", "sqlite:///./test_ui.db")
+    port = int(os.environ.get("PORT", "5000"))
+    # This is a local developer/TA tool, usually served over plain http on
+    # localhost, so cookies must not require Secure by default or identity +
+    # history wouldn't stick. Override with TEST_UI_COOKIE_SECURE=true behind HTTPS.
+    cookie_secure = _parse_bool(os.environ.get("TEST_UI_COOKIE_SECURE"), default=False)
     cookie_max_age_seconds = int(
-        os.environ.get("MAIN_UI_COOKIE_MAX_AGE", str(_DEFAULT_COOKIE_MAX_AGE_SECONDS))
+        os.environ.get("TEST_UI_COOKIE_MAX_AGE", str(_DEFAULT_COOKIE_MAX_AGE_SECONDS))
     )
     return Config(
         secret_key=secret_key,

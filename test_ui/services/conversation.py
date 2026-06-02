@@ -13,7 +13,7 @@ from uuid import UUID
 from sqlalchemy import func, select, update
 from sqlalchemy.orm import Session
 
-from main_ui.db.models import Conversation, Message
+from test_ui.db.models import Conversation, Message
 
 
 class WrongSessionError(Exception):
@@ -30,6 +30,7 @@ def find_or_create_conversation(
     exercise_number: str,
     tutor_prompt: str,
     email: str | None = None,
+    syllabus_enabled: bool = True,
 ) -> Conversation:
     """Resolve to an existing conversation or insert a new one.
 
@@ -56,6 +57,7 @@ def find_or_create_conversation(
         course=course,
         exercise_number=exercise_number,
         tutor_prompt=tutor_prompt,
+        syllabus_enabled=syllabus_enabled,
     )
     db.add(convo)
     db.flush()  # populate convo.id before the caller uses it
@@ -259,6 +261,7 @@ def _summarize_conversation(db: Session, c: Conversation) -> dict:
         "course": c.course,
         "exercise_number": c.exercise_number,
         "tutor_prompt": c.tutor_prompt,
+        "syllabus_enabled": bool(c.syllabus_enabled),
         "started_at": c.started_at.isoformat() if c.started_at else None,
         "last_active_at": c.last_active_at.isoformat() if c.last_active_at else None,
         "message_count": int(msg_count),

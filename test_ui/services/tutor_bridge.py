@@ -1,6 +1,6 @@
-"""Bridge from main_ui to the existing tutor.run_tutor pipeline.
+"""Bridge from test_ui to the existing tutor.run_tutor pipeline.
 
-The one place in `main_ui` that talks to `tutor.run_tutor`. Routes call
+The one place in `test_ui` that talks to `tutor.run_tutor`. Routes call
 `get_tutor_reply(...)` here; they never import the upstream tutor API
 directly. If the underlying tutor API changes shape later, only this module
 needs updating.
@@ -42,10 +42,10 @@ def build_assignment_text(course: str, exercise: str) -> str:
     """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
 
     Mirrors `ui/run_ui_raw.py:_build_assignment_text` but omits the
-    `Run configuration` block — main_ui chats are open-ended, no planned
+    `Run configuration` block — test_ui chats are open-ended, no planned
     turn count. The leading block describes the AskTIM deployment so the
     tutor can coherently answer "what are you?" / "where am I?" questions;
-    it lives at `main_ui/about_asktim.txt` and is only read here so
+    it lives at `test_ui/about_asktim.txt` and is only read here so
     `tutor/`, `test_ui/`, and the bulk-transcript runners stay unaware of it.
     """
     course_dir = _CURRICULUM_DIR / course

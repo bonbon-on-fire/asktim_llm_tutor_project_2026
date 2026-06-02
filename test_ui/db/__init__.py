@@ -1,10 +1,10 @@
-"""Database package for main_ui.
+"""Database package for test_ui.
 
 Public API: model classes, declarative `Base`, and session helpers.
 """
 
-from main_ui.db.models import Base, Conversation, Message, Student, UploadedImage
-from main_ui.db.session import SessionLocal, engine, get_session
+from test_ui.db.models import Base, Conversation, Message, Student, UploadedImage
+from test_ui.db.session import SessionLocal, engine, get_session
 
 __all__ = [
     "Base",
