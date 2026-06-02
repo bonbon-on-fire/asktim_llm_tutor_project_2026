@@ -64,7 +64,7 @@ python -m tutor.run_tutor_mini \
   --tutor-provider gpt
 ```
 
-See `ui/run_ui_raw_mini` for the interactive wrapper.
+See `internal_ui/run_ui_raw_mini` for the interactive wrapper.
 
 ### Streaming (used by `main_ui/`)
 

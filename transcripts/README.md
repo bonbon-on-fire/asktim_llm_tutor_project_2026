@@ -38,7 +38,7 @@ Each persona folder uses a suffix pattern to indicate the generation and grading
 - **`{persona}_claude/`** — Same, graded by the Claude judge (`judge/run_judge.py`, provider=`claude`).
 - **`{persona}_mini/`** — Mini-continuation transcripts: a raw transcript forked at a pivot turn, with the student side replayed from file and the tutor regenerated using a new prompt or provider. Includes a `mini_continuation` metadata object. Output stem matches the source raw transcript stem.
 - **`{persona}_claude_mini/`** — Claude-graded copies of `{persona}_mini/` transcripts.
-- **`{persona}_raw_tutor_05/`** — Ungraded transcripts generated using `tutor_05` as the tutor prompt (produced with `ui.run_ui_raw --output-suffix raw_tutor_05`).
+- **`{persona}_raw_tutor_05/`** — Ungraded transcripts generated using `tutor_05` as the tutor prompt (produced with `internal_ui.run_ui_raw --output-suffix raw_tutor_05`).
 - **`{persona}_claude_tutor_05/`** — Claude-graded copies of `{persona}_raw_tutor_05/` transcripts.
 
 ## Transcript JSON Schema
@@ -130,10 +130,10 @@ Raw transcripts are produced by the tutor-student simulation pipeline:
 
 ```powershell
 # Grade all raw transcripts with GPT
-python -m ui.run_ui_judge --provider gpt
+python -m internal_ui.run_ui_judge --provider gpt
 
 # Grade all raw transcripts with Claude
-python -m ui.run_ui_judge --provider claude
+python -m internal_ui.run_ui_judge --provider claude
 ```
 
 Both commands accept `--prompt` and `--rubric` flags. Output goes to the respective

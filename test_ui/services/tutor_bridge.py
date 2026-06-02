@@ -50,7 +50,7 @@ def build_assignment_text(
 ) -> str:
     """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
 
-    Mirrors `ui/run_ui_raw.py:_build_assignment_text` but omits the
+    Mirrors `internal_ui/run_ui_raw.py:_build_assignment_text` but omits the
     `Run configuration` block — test_ui chats are open-ended, no planned
     turn count. The leading block describes the AskTIM deployment so the
     tutor can coherently answer "what are you?" / "where am I?" questions;

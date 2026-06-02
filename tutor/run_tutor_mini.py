@@ -7,7 +7,7 @@ student line from the file is kept; the tutor replies first (regenerated), then
 
 Student uses OpenAI (same stack as ``run_student``); tutor provider is selectable (gpt/claude).
 
-Used by ``ui.run_ui_raw_mini`` and usable standalone via ``python -m tutor.run_tutor_mini``.
+Used by ``internal_ui.run_ui_raw_mini`` and usable standalone via ``python -m tutor.run_tutor_mini``.
 """
 
 from __future__ import annotations

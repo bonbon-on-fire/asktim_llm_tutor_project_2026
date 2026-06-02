@@ -11,7 +11,7 @@ Socratic LLM tutor for MIT OpenCourseWare (OCW) humanities/social sciences cours
 **Four layers:**
 1. Conversation pipeline — LangGraph tutor + student agents trading messages
 2. Judge pipeline — separate LangGraph agent scores finished transcripts against a rubric (JSON grade, up to 3 repair retries)
-3. UI runners — `ui/run_ui_raw.py` (bulk transcript generation), `ui/run_ui_judge.py` (grading), `ui/run_ui_raw_mini.py` (single-transcript resume/replay)
+3. UI runners — `internal_ui/run_ui_raw.py` (bulk transcript generation), `internal_ui/run_ui_judge.py` (grading), `internal_ui/run_ui_raw_mini.py` (single-transcript resume/replay)
 4. Dashboard + visualization — Flask app for browsing GPT/Claude grades side-by-side; matplotlib correlation charts
 
 **Current rubric:** `rubric_05` (46 pts): Pedagogy (24), Dialogue Quality (12), Communication Quality (10)

@@ -5,7 +5,7 @@ Terminal runners for transcript generation and judge scoring with interactive CL
 ## Files
 
 ```text
-ui/
+internal_ui/
   run_ui_raw.py             — generate raw transcripts in bulk (interactive or CLI)
   run_ui_raw_mini.py        — interactive wrapper for single mini-continuation runs
   run_ui_raw_mini_batch.py  — batch mini-continuation runner over the reference transcript
@@ -22,7 +22,7 @@ From repo root in PowerShell:
 
 **Interactive mode (default):**
 ```powershell
-python -m ui.run_ui_raw
+python -m internal_ui.run_ui_raw
 ```
 
 This will prompt you to select from numbered options:
@@ -36,13 +36,13 @@ This will prompt you to select from numbered options:
 **Command-line mode:**
 ```powershell
 # Generate with GPT tutor (default output: *_raw/)
-python -m ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+python -m internal_ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
 
 # Generate with Claude tutor
-python -m ui.run_ui_raw --provider claude --tutor tutor_05 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
 
 # Custom output folder: writes to *_raw_tutor_05/ instead of *_raw/ (--yes skips confirmation)
-python -m ui.run_ui_raw --provider claude --tutor tutor_05 --personas chaotic_01 --course philosophy --exercise 01 --turn-size 10 --trials 10 --output-suffix raw_tutor_05 --yes
+python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas chaotic_01 --course philosophy --exercise 01 --turn-size 10 --trials 10 --output-suffix raw_tutor_05 --yes
 ```
 
 Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
@@ -59,10 +59,10 @@ For quick experiments: fork a **raw** transcript at a **pivot turn** `X`, keep f
 
 **Interactive (recommended):**
 ```powershell
-python -m ui.run_ui_raw_mini
+python -m internal_ui.run_ui_raw_mini
 ```
 
-**Command-line** (same flags as the tutor module; `ui.run_ui_raw_mini` forwards any arguments):
+**Command-line** (same flags as the tutor module; `internal_ui.run_ui_raw_mini` forwards any arguments):
 ```powershell
 python -m tutor.run_tutor_mini --persona-type chaotic --transcript transcript_01 --resume-from-turn 5 --additional-turns 3 --tutor-prompt tutor_04 --tutor-provider gpt
 ```
@@ -80,7 +80,7 @@ python -m tutor.run_tutor_mini --persona-type chaotic --transcript transcript_01
 
 **Interactive mode (default):**
 ```powershell
-python -m ui.run_ui_judge
+python -m internal_ui.run_ui_judge
 ```
 
 This will prompt you to select from numbered options:
@@ -91,17 +91,17 @@ This will prompt you to select from numbered options:
 **Command-line mode:**
 ```powershell
 # Grade with GPT (reads *_raw/, writes *_gpt/)
-python -m ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
+python -m internal_ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
 
 # Grade with Claude (reads *_raw/, writes *_claude/)
-python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05
 
 # Read from *_raw_tutor_05/, write to *_claude_tutor_05/ (--yes skips confirmation)
-python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
   --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
 
 # Read from *_mini/, write to *_claude_mini/
-python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
   --source-suffix mini --output-suffix mini --yes
 ```
 
@@ -116,7 +116,7 @@ The script discovers all transcripts matching `*_{source-suffix}/transcript_*.js
 
 ## Output paths
 
-### Raw-only runs (`ui.run_ui_raw`)
+### Raw-only runs (`internal_ui.run_ui_raw`)
 
 Raw transcripts are saved to persona-specific raw folders:
 
@@ -132,7 +132,7 @@ With `--output-suffix raw_tutor_05`, output goes to `*_raw_tutor_05/` instead:
 
 Each file is auto-named as `transcript_XXXX.json`.
 
-### Judged runs (`ui.run_ui_judge`)
+### Judged runs (`internal_ui.run_ui_judge`)
 
 Judged transcripts are saved to provider-specific folders:
 
@@ -157,7 +157,7 @@ Judged transcripts are saved to provider-specific folders:
 
 Each output file uses the same stem as the source input: `transcript_XXXX.json`
 
-### Mini continuation outputs (`ui.run_ui_raw_mini` / `tutor.run_tutor_mini`)
+### Mini continuation outputs (`internal_ui.run_ui_raw_mini` / `tutor.run_tutor_mini`)
 
 - `transcripts/chaotic/chaotic_mini/`
 - `transcripts/clueless/clueless_mini/`
@@ -214,7 +214,7 @@ Mini continuation outputs additionally include:
 
 ## Parallelism configuration
 
-- `ui.run_ui_raw` and `ui.run_ui_judge` both run with `6` workers by default.
+- `internal_ui.run_ui_raw` and `internal_ui.run_ui_judge` both run with `6` workers by default.
 - Adjust `PARALLEL_WORKERS` at the top of each runner file to change concurrency.
 
 ## Environment variables

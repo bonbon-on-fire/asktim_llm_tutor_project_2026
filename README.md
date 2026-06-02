@@ -36,7 +36,7 @@ A developer/TA testing website (manual course + syllabus + exercise configuratio
 
 **Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**UI Runners (`ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
+**UI Runners (`internal_ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
 **Dashboard (`dashboard_ui/`):** Flask app that discovers all raw transcripts on disk, loads Claude Mini (tutor_05) and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
@@ -83,7 +83,7 @@ flowchart TD
     end
 
     subgraph gen["1. Generate conversations"]
-        UIRAW["ui.run_ui_raw\n(GPT or Claude tutor)"]
+        UIRAW["internal_ui.run_ui_raw\n(GPT or Claude tutor)"]
         LOOP["LangGraph loop:\nstudent reply → tutor reply"]
     end
 
@@ -92,7 +92,7 @@ flowchart TD
     end
 
     subgraph judge["2. Grade transcripts"]
-        UIJ["ui.run_ui_judge\n(--provider --source-suffix --output-suffix)"]
+        UIJ["internal_ui.run_ui_judge\n(--provider --source-suffix --output-suffix)"]
         JG["judge.run_judge\nvalidate + repair JSON"]
     end
 
@@ -191,7 +191,7 @@ asktim_llm_tutor_project_2026/
 │   ├── prompts/             # judge_01.txt .. judge_08.txt (current default: judge_05)
 │   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
 │
-├── ui/
+├── internal_ui/
 │   ├── run_ui_raw.py            # Generate raw transcripts in bulk (--output-suffix, --yes)
 │   ├── run_ui_raw_mini.py       # Interactive wrapper for mini-continuation runs
 │   ├── run_ui_raw_mini_batch.py # Batch mini-continuation over a reference transcript table
