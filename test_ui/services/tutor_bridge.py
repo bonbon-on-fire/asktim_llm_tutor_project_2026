@@ -257,6 +257,10 @@ def get_tutor_reply(
     history: list[dict],
     new_student_message: str,
     include_syllabus: bool = True,
+    course_text: str | None = None,
+    exercise_text: str | None = None,
+    syllabus_text: str | None = None,
+    custom_tutor_prompt: str | None = None,
 ) -> dict:
     """Return one tutor reply for the given conversation state.
 
@@ -267,13 +271,24 @@ def get_tutor_reply(
         history: prior conversation as ``[{"role": "student"|"tutor", "content": str}, ...]``
         new_student_message: the latest student turn to respond to
         include_syllabus: whether to fold the course syllabus into context
+        course_text / exercise_text / syllabus_text / custom_tutor_prompt:
+            one-off custom context overrides (see ``build_assignment_text``)
 
     Returns:
         ``{"reply": str, "reasoning": str | None}`` — reasoning is the
         tutor's hidden ``pedagogical-reasoning`` field; ``None`` if parsing
         the tutor's JSON failed.
     """
-    graph = _get_or_build_graph(tutor, course, exercise, include_syllabus)
+    graph = _get_or_build_graph(
+        tutor,
+        course,
+        exercise,
+        include_syllabus,
+        course_text=course_text,
+        exercise_text=exercise_text,
+        syllabus_text=syllabus_text,
+        custom_tutor_prompt=custom_tutor_prompt,
+    )
     messages = _history_to_langchain(history)
     messages.append(HumanMessage(content=new_student_message))
 
@@ -297,6 +312,10 @@ def stream_tutor_reply(
     history: list[dict],
     new_student_message: str,
     include_syllabus: bool = True,
+    course_text: str | None = None,
+    exercise_text: str | None = None,
+    syllabus_text: str | None = None,
+    custom_tutor_prompt: str | None = None,
 ):
     """Stream a tutor reply as a sequence of event dicts.
 
@@ -308,7 +327,14 @@ def stream_tutor_reply(
     Routes are responsible for re-shaping these into SSE frames.
     """
     model, system_prompt = _get_or_build_stream_context(
-        tutor, course, exercise, include_syllabus
+        tutor,
+        course,
+        exercise,
+        include_syllabus,
+        course_text=course_text,
+        exercise_text=exercise_text,
+        syllabus_text=syllabus_text,
+        custom_tutor_prompt=custom_tutor_prompt,
     )
     messages = _history_to_langchain(history)
     messages.append(HumanMessage(content=new_student_message))

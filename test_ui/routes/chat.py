@@ -97,15 +97,12 @@ def chat():
     syllabus_enabled = data.get("syllabus")
     syllabus_enabled = True if syllabus_enabled is None else bool(syllabus_enabled)
 
-    err = validate_course(course)
-    if err:
-        return _bad_param(err)
-    err = validate_exercise(course, exercise)
-    if err:
-        return _bad_param(err)
-    err = validate_tutor(tutor)
-    if err:
-        return _bad_param(err)
+    # One-off custom context from the "Create context" wizard. A non-None value
+    # means "use this text verbatim instead of the on-disk file" for that field.
+    custom_course_text = data.get("course_custom")
+    custom_exercise_text = data.get("exercise_custom")
+    custom_tutor_prompt = data.get("tutor_custom")
+    custom_syllabus_text = data.get("syllabus_custom")
 
     convo_id_raw = data.get("conversation_id")
     convo_id: UUID | None = None
@@ -116,6 +113,37 @@ def chat():
             return _bad_request(
                 "conversation_id must be a UUID string", "bad_conversation_id"
             )
+
+    # Validate the requested context only when STARTING a new conversation.
+    # Continuations replay the conversation's stored (already-validated)
+    # context, so placeholder ids like "custom" must not be re-validated.
+    # Custom fields skip file-based validation; built-in fields still validate.
+    if convo_id is None:
+        if custom_course_text is None:
+            err = validate_course(course)
+            if err:
+                return _bad_param(err)
+        else:
+            course = "custom"
+
+        if custom_exercise_text is None:
+            if custom_course_text is not None:
+                return _bad_request(
+                    "provide exercise_custom when the course is custom",
+                    "exercise_requires_course",
+                )
+            err = validate_exercise(course, exercise)
+            if err:
+                return _bad_param(err)
+        else:
+            exercise = "custom"
+
+        if custom_tutor_prompt is None:
+            err = validate_tutor(tutor)
+            if err:
+                return _bad_param(err)
+        else:
+            tutor = "custom"
 
     # Take ownership of the request's DB session — teardown_request would
     # otherwise commit + close it the instant this view returns the Response,
@@ -143,6 +171,10 @@ def chat():
             tutor_prompt=tutor,
             email=email,
             syllabus_enabled=syllabus_enabled,
+            custom_course_text=custom_course_text,
+            custom_exercise_text=custom_exercise_text,
+            custom_tutor_prompt=custom_tutor_prompt,
+            custom_syllabus_text=custom_syllabus_text,
         )
     except WrongSessionError:
         return _abort_with(_wrong_session())
@@ -165,6 +197,10 @@ def chat():
     stream_exercise = convo.exercise_number
     stream_tutor = convo.tutor_prompt
     stream_syllabus = convo.syllabus_enabled
+    stream_course_text = convo.custom_course_text
+    stream_exercise_text = convo.custom_exercise_text
+    stream_custom_tutor_prompt = convo.custom_tutor_prompt
+    stream_syllabus_text = convo.custom_syllabus_text
 
     try:
         db.commit()
@@ -185,6 +221,10 @@ def chat():
         history=history,
         new_student_message=text,
         include_syllabus=stream_syllabus,
+        course_text=stream_course_text,
+        exercise_text=stream_exercise_text,
+        syllabus_text=stream_syllabus_text,
+        custom_tutor_prompt=stream_custom_tutor_prompt,
     )
 
     def event_stream():
