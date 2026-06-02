@@ -237,11 +237,12 @@ The full pipeline is working end-to-end, with:
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `cities_and_climate_change` (12 exercises)
 - Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
-- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude), with corresponding Claude grades in `*_claude_mini/`
-- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `rubric_05`, 46 pts)
+- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude)
+- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `judge_05` / `rubric_05`, 46 pts)
 - Dashboard shows Claude Mini (tutor_05) grades vs Claude (tutor_04) grades side-by-side
 - Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
-- **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies. Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
+- **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies — and is **deployed on Railway** (containerized, migrations run on boot). Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
+- A developer/TA **testing website** (manual course/syllabus/exercise configuration + persistent history) is being rebuilt to replace the retired `test_ui/` harness.
 
 ## Challenges and How I Solved Them
 
@@ -257,7 +258,7 @@ The full pipeline is working end-to-end, with:
 - Human-in-the-loop evaluation to calibrate the LLM judge against human graders
 - ML-assisted rubric refinement based on judge disagreement patterns
 - Image uploads in AskTIM (students attaching figures to questions; tutor receiving exercise figures as context — Phase 6 + main_ui Step 10)
-- Railway-hosted production deployment of AskTIM with end-of-course migration to internal storage
+- End-of-course migration of the Railway-hosted AskTIM data to internal storage
 
 ## TL;DR
 
@@ -266,4 +267,4 @@ A Socratic LLM tutor built for MIT OpenCourseWare that guides students through h
 ---
 
 **Project Duration:** Winter 2025 — Present  
-**Technologies:** Python, LangGraph, LangChain, OpenAI API, Anthropic API, Flask, SQLAlchemy + Alembic, PostgreSQL, bcrypt, Server-Sent Events, Chart.js, matplotlib, Git
+**Technologies:** Python, LangGraph, LangChain, OpenAI API, Anthropic API, Flask, gunicorn, SQLAlchemy + Alembic, PostgreSQL (psycopg3), bcrypt, Server-Sent Events, Chart.js, matplotlib, Docker, Railway, Git
