@@ -30,15 +30,17 @@ _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 _ABOUT_ASKTIM_PATH = Path(__file__).resolve().parents[1] / "about_asktim.txt"
 
 
-_graph_cache: dict[tuple[str, str, str], object] = {}
+_graph_cache: dict[tuple[str, str, str, bool], object] = {}
 # Parallel cache for the streaming path. The non-streaming path drives a
 # compiled LangGraph; the streaming path drives the raw model with the same
-# system prompt. We cache both per (tutor, course, exercise) so successive
-# turns reuse the same prompt build.
-_stream_cache: dict[tuple[str, str, str], tuple[object, str]] = {}
+# system prompt. We cache both per (tutor, course, exercise, include_syllabus)
+# so successive turns reuse the same prompt build.
+_stream_cache: dict[tuple[str, str, str, bool], tuple[object, str]] = {}
 
 
-def build_assignment_text(course: str, exercise: str) -> str:
+def build_assignment_text(
+    course: str, exercise: str, *, include_syllabus: bool = True
+) -> str:
     """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
 
     Mirrors `ui/run_ui_raw.py:_build_assignment_text` but omits the
@@ -46,7 +48,11 @@ def build_assignment_text(course: str, exercise: str) -> str:
     turn count. The leading block describes the AskTIM deployment so the
     tutor can coherently answer "what are you?" / "where am I?" questions;
     it lives at `test_ui/about_asktim.txt` and is only read here so
-    `tutor/`, `test_ui/`, and the bulk-transcript runners stay unaware of it.
+    `tutor/` and the bulk-transcript runners stay unaware of it.
+
+    ``include_syllabus`` is a test_ui addition: when False, the course
+    ``syllabus.txt`` block is dropped so testers can compare tutor behaviour
+    with and without the syllabus in context.
     """
     course_dir = _CURRICULUM_DIR / course
     exercise_path = course_dir / f"exercise_{exercise}.txt"
@@ -64,19 +70,21 @@ def build_assignment_text(course: str, exercise: str) -> str:
         parts.append("Course context:\n" + course_path.read_text(encoding="utf-8").strip())
 
     syllabus_path = course_dir / "syllabus.txt"
-    if syllabus_path.is_file():
+    if include_syllabus and syllabus_path.is_file():
         parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
 
     parts.append("Exercise:\n" + exercise_text)
     return "\n\n".join(parts)
 
 
-def _get_or_build_graph(tutor: str, course: str, exercise: str):
-    key = (tutor, course, exercise)
+def _get_or_build_graph(tutor: str, course: str, exercise: str, include_syllabus: bool):
+    key = (tutor, course, exercise, include_syllabus)
     cached = _graph_cache.get(key)
     if cached is not None:
         return cached
-    assignment_text = build_assignment_text(course, exercise)
+    assignment_text = build_assignment_text(
+        course, exercise, include_syllabus=include_syllabus
+    )
     system_prompt = load_system_prompt(tutor, assignment_override=assignment_text)
     graph = create_tutor_graph(system_prompt)
     _graph_cache[key] = graph
@@ -84,14 +92,16 @@ def _get_or_build_graph(tutor: str, course: str, exercise: str):
 
 
 def _get_or_build_stream_context(
-    tutor: str, course: str, exercise: str
+    tutor: str, course: str, exercise: str, include_syllabus: bool
 ) -> tuple[object, str]:
     """Return ``(model, system_prompt)`` for the streaming path."""
-    key = (tutor, course, exercise)
+    key = (tutor, course, exercise, include_syllabus)
     cached = _stream_cache.get(key)
     if cached is not None:
         return cached
-    assignment_text = build_assignment_text(course, exercise)
+    assignment_text = build_assignment_text(
+        course, exercise, include_syllabus=include_syllabus
+    )
     system_prompt = load_system_prompt(tutor, assignment_override=assignment_text)
     model = build_tutor_model()
     _stream_cache[key] = (model, system_prompt)
@@ -120,6 +130,7 @@ def get_tutor_reply(
     tutor: str,
     history: list[dict],
     new_student_message: str,
+    include_syllabus: bool = True,
 ) -> dict:
     """Return one tutor reply for the given conversation state.
 
@@ -129,13 +140,14 @@ def get_tutor_reply(
         tutor: tutor prompt stem (e.g. ``"tutor_05"``)
         history: prior conversation as ``[{"role": "student"|"tutor", "content": str}, ...]``
         new_student_message: the latest student turn to respond to
+        include_syllabus: whether to fold the course syllabus into context
 
     Returns:
         ``{"reply": str, "reasoning": str | None}`` — reasoning is the
         tutor's hidden ``pedagogical-reasoning`` field; ``None`` if parsing
         the tutor's JSON failed.
     """
-    graph = _get_or_build_graph(tutor, course, exercise)
+    graph = _get_or_build_graph(tutor, course, exercise, include_syllabus)
     messages = _history_to_langchain(history)
     messages.append(HumanMessage(content=new_student_message))
 
@@ -158,6 +170,7 @@ def stream_tutor_reply(
     tutor: str,
     history: list[dict],
     new_student_message: str,
+    include_syllabus: bool = True,
 ):
     """Stream a tutor reply as a sequence of event dicts.
 
@@ -168,7 +181,9 @@ def stream_tutor_reply(
 
     Routes are responsible for re-shaping these into SSE frames.
     """
-    model, system_prompt = _get_or_build_stream_context(tutor, course, exercise)
+    model, system_prompt = _get_or_build_stream_context(
+        tutor, course, exercise, include_syllabus
+    )
     messages = _history_to_langchain(history)
     messages.append(HumanMessage(content=new_student_message))
 

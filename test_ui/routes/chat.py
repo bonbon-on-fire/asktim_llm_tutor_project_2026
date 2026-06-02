@@ -91,6 +91,11 @@ def chat():
     course = data.get("course")
     exercise = data.get("exercise")
     tutor = data.get("tutor") or DEFAULT_TUTOR
+    # test_ui context switch: syllabus defaults ON (matches main_ui) unless the
+    # request explicitly turns it off. Only applies when creating a new convo;
+    # existing conversations keep their stored flag.
+    syllabus_enabled = data.get("syllabus")
+    syllabus_enabled = True if syllabus_enabled is None else bool(syllabus_enabled)
 
     err = validate_course(course)
     if err:
