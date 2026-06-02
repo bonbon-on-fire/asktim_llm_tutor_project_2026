@@ -24,7 +24,7 @@ Branding is deliberately distinct from production: the accent is teal-blue
 | Audience | Real OCW students | Developers / TAs |
 | Context | Fixed per iframe URL | **Editable in-app** via the "Edit context" button |
 | Syllabus | Always included if present | **Toggleable** per conversation |
-| Database | Shared Postgres (`DATABASE_URL`) | **Separate** (`TEST_UI_DATABASE_URL`, SQLite by default) |
+| Database | Postgres `asktim` (`DATABASE_URL`) | **Separate Postgres** `asktim_test` (`TEST_UI_DATABASE_URL`) |
 | Schema mgmt | Alembic migrations | `Base.metadata.create_all` on boot (throwaway DB) |
 | Accent / header | Crimson · Beta | `#126f9a` · **Sandbox Beta** |
 | Port | `5001` | `5000` |
@@ -72,7 +72,7 @@ curl http://127.0.0.1:5000/health
 | --- | --- | --- |
 | `OPENAI_API_KEY` | — | Required for the tutor LLM call. |
 | `ANTHROPIC_API_KEY` | — | Required only if a tutor prompt points at Claude. |
-| `TEST_UI_DATABASE_URL` | `sqlite:///./test_ui.db` | Separate from main_ui's `DATABASE_URL` so test data stays isolated. |
+| `TEST_UI_DATABASE_URL` | `postgresql+psycopg://…/asktim_test` | Separate Postgres DB from main_ui's `asktim` so test data stays isolated. Falls back to `sqlite:///./test_ui.db` if unset. |
 | `TEST_UI_SECRET_KEY` | `dev-insecure-key` | Flask session signing key. |
 | `TEST_UI_COOKIE_SECURE` | `false` | Defaults off so identity/history work over local http. Set `true` behind HTTPS. |
 | `TEST_UI_COOKIE_MAX_AGE` | `15552000` (180 days) | Cookie lifetime in seconds. |
@@ -82,10 +82,15 @@ curl http://127.0.0.1:5000/health
 
 No Alembic. On boot, `create_app()` calls `Base.metadata.create_all(engine)`
 to build the schema directly from the models into whatever `TEST_UI_DATABASE_URL`
-points at (a local SQLite file by default). The schema matches `main_ui` plus a
-`conversations.syllabus_enabled` column that records the syllabus toggle.
+points at. By default that's its **own Postgres database** (`asktim_test`),
+separate from main_ui's `asktim` so test chats never mix with production data
+(falls back to a local SQLite file if the var is unset). The schema matches
+`main_ui` plus a `conversations.syllabus_enabled` column and the
+`conversations.custom_*` columns that store one-off custom contexts.
 
-To reset the sandbox data, just delete the SQLite file (`test_ui.db`).
+The database must already exist (`CREATE DATABASE asktim_test;`); `create_all`
+then builds the tables. To reset the sandbox data, drop and recreate that
+database.
 
 ## API surface
 
