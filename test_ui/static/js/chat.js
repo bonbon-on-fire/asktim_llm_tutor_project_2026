@@ -4,6 +4,12 @@
   const configEl = document.getElementById("tutor-config");
   const config = JSON.parse(configEl.textContent);
   if (typeof config.syllabus === "undefined") config.syllabus = true;
+  // One-off custom context (from the Create-context wizard). null = use the
+  // built-in field above; a string = send as custom text with each /api/chat.
+  if (typeof config.courseCustom === "undefined") config.courseCustom = null;
+  if (typeof config.exerciseCustom === "undefined") config.exerciseCustom = null;
+  if (typeof config.tutorCustom === "undefined") config.tutorCustom = null;
+  if (typeof config.syllabusCustom === "undefined") config.syllabusCustom = null;
 
   const courseNameEl = document.querySelector(".course-name");
 
@@ -527,6 +533,11 @@
     config.exercise = exercise;
     config.tutor = tutor;
     config.syllabus = contextSyllabus.disabled ? false : contextSyllabus.checked;
+    // Edit context only ever picks built-ins — clear any prior custom overrides.
+    config.courseCustom = null;
+    config.exerciseCustom = null;
+    config.tutorCustom = null;
+    config.syllabusCustom = null;
 
     const chosen = courseBySlug(course);
     if (courseNameEl) courseNameEl.textContent = chosen ? chosen.name || "" : "";
@@ -534,6 +545,281 @@
     closeContextModal();
     // Switching context always starts a fresh conversation under the new
     // settings — the prior chat stays in history.
+    startNewChat();
+  }
+
+  // ---- Create-context wizard (test_ui only) ---------------------------------
+
+  const CREATE_STEPS = ["course", "exercise", "tutor", "syllabus"];
+  const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus"];
+  const CUSTOM = "__custom__";
+
+  function buildSelect(options, value) {
+    const sel = document.createElement("select");
+    sel.className = "context-select";
+    sel.id = "create-select";
+    for (const o of options) {
+      const opt = document.createElement("option");
+      opt.value = o.value;
+      opt.textContent = o.label;
+      if (o.value === value) opt.selected = true;
+      sel.appendChild(opt);
+    }
+    return sel;
+  }
+
+  function renderCreateStep() {
+    createError.hidden = true;
+    const step = CREATE_STEPS[createStep];
+    createStepLabel.textContent =
+      `Step ${createStep + 1} of ${CREATE_STEPS.length}: ${CREATE_LABELS[createStep]}` +
+      " — pick an existing one or write your own.";
+    createStepBody.innerHTML = "";
+
+    let options = [];
+    let currentValue;
+    let placeholder = "";
+    let customValue = "";
+
+    if (step === "course") {
+      options = contextOptions.courses.map((c) => ({
+        value: c.slug,
+        label: c.name || c.slug,
+      }));
+      options.push({ value: CUSTOM, label: "✎ Write my own course" });
+      const d = createDraft.course;
+      currentValue = d.mode === "custom" ? CUSTOM : d.existing;
+      customValue = d.custom;
+      placeholder = "Paste or write the course context…";
+    } else if (step === "exercise") {
+      const cd = createDraft.course;
+      if (cd.mode === "custom") {
+        options = [{ value: CUSTOM, label: "✎ Write my own exercise" }];
+      } else {
+        const courseObj = courseBySlug(cd.existing);
+        const exs = courseObj ? courseObj.exercises : [];
+        options = exs.map((n) => ({
+          value: n,
+          label: "Exercise " + (parseInt(n, 10) || n),
+        }));
+        options.push({ value: CUSTOM, label: "✎ Write my own exercise" });
+      }
+      const d = createDraft.exercise;
+      currentValue =
+        d.mode === "custom"
+          ? CUSTOM
+          : d.existing || (options[0] && options[0].value);
+      customValue = d.custom;
+      placeholder = "Paste or write the exercise / assignment…";
+    } else if (step === "tutor") {
+      options = contextOptions.tutors.map((t) => ({
+        value: t,
+        label: tutorLabel(t),
+      }));
+      options.push({ value: CUSTOM, label: "✎ Write my own prompt" });
+      const d = createDraft.tutor;
+      currentValue = d.mode === "custom" ? CUSTOM : d.existing;
+      customValue = d.custom;
+      placeholder = "Paste or write the full tutor system prompt…";
+    } else {
+      // syllabus
+      const cd = createDraft.course;
+      const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
+      options = [];
+      if (courseObj && courseObj.has_syllabus) {
+        options.push({ value: "default", label: "Use course syllabus" });
+      }
+      options.push({ value: "none", label: "No syllabus" });
+      options.push({ value: CUSTOM, label: "✎ Write my own syllabus" });
+      const d = createDraft.syllabus;
+      let v = d.mode === "custom" ? CUSTOM : d.value;
+      if (v === "default" && !(courseObj && courseObj.has_syllabus)) v = "none";
+      currentValue = v;
+      customValue = d.custom;
+      placeholder = "Paste or write the syllabus…";
+    }
+
+    const sel = buildSelect(options, currentValue);
+    createStepBody.appendChild(sel);
+
+    const ta = document.createElement("textarea");
+    ta.className = "create-custom";
+    ta.id = "create-custom-input";
+    ta.placeholder = placeholder;
+    ta.value = customValue || "";
+    createStepBody.appendChild(ta);
+
+    const syncCustom = () => {
+      ta.hidden = sel.value !== CUSTOM;
+    };
+    syncCustom();
+    sel.addEventListener("change", syncCustom);
+
+    createBack.hidden = createStep === 0;
+    createNext.textContent =
+      createStep === CREATE_STEPS.length - 1 ? "Create & start chat" : "Continue";
+  }
+
+  function saveCreateStep() {
+    const sel = document.getElementById("create-select");
+    const ta = document.getElementById("create-custom-input");
+    if (!sel) return;
+    const step = CREATE_STEPS[createStep];
+    if (step === "syllabus") {
+      if (sel.value === CUSTOM) {
+        createDraft.syllabus.mode = "custom";
+        createDraft.syllabus.custom = ta.value;
+      } else {
+        createDraft.syllabus.mode = "builtin";
+        createDraft.syllabus.value = sel.value;
+      }
+      return;
+    }
+    const d = createDraft[step];
+    if (sel.value === CUSTOM) {
+      d.mode = "custom";
+      d.custom = ta.value;
+    } else {
+      d.mode = "existing";
+      d.existing = sel.value;
+    }
+  }
+
+  function validateCreateStep() {
+    const step = CREATE_STEPS[createStep];
+    if (step === "syllabus") {
+      if (createDraft.syllabus.mode === "custom" && !createDraft.syllabus.custom.trim()) {
+        return "Enter the syllabus text or pick another option.";
+      }
+      return null;
+    }
+    const d = createDraft[step];
+    const noun = step === "tutor" ? "tutor prompt" : step;
+    if (d.mode === "custom" && !d.custom.trim()) {
+      return `Enter the ${noun} text or pick an existing one.`;
+    }
+    if (d.mode === "existing" && !d.existing) {
+      return "Pick an option.";
+    }
+    return null;
+  }
+
+  async function openCreateModal() {
+    if (createModalOpen) return;
+    createError.hidden = true;
+    try {
+      await ensureContextOptions();
+    } catch (_) {
+      /* handled by the null check below */
+    }
+    createModalOpen = true;
+    createModal.hidden = false;
+
+    if (!contextOptions) {
+      createStepBody.innerHTML = "";
+      createError.textContent = "Could not load context options.";
+      createError.hidden = false;
+      return;
+    }
+
+    const firstCourse = contextOptions.courses[0]
+      ? contextOptions.courses[0].slug
+      : "";
+    const lastTutor = contextOptions.tutors.length
+      ? contextOptions.tutors[contextOptions.tutors.length - 1]
+      : "";
+    createDraft = {
+      course: { mode: "existing", existing: config.course || firstCourse, custom: "" },
+      exercise: { mode: "existing", existing: "", custom: "" },
+      tutor: { mode: "existing", existing: config.tutor || lastTutor, custom: "" },
+      syllabus: { mode: "builtin", value: "none", custom: "" },
+    };
+    createStep = 0;
+    renderCreateStep();
+  }
+
+  function closeCreateModal() {
+    if (!createModalOpen) return;
+    createModalOpen = false;
+    createModal.hidden = true;
+  }
+
+  function createGoBack() {
+    if (createStep === 0) return;
+    saveCreateStep();
+    createStep -= 1;
+    renderCreateStep();
+  }
+
+  function createGoNext(event) {
+    event.preventDefault();
+    saveCreateStep();
+    const err = validateCreateStep();
+    if (err) {
+      createError.textContent = err;
+      createError.hidden = false;
+      return;
+    }
+    if (createStep < CREATE_STEPS.length - 1) {
+      createStep += 1;
+      renderCreateStep();
+    } else {
+      finishCreate();
+    }
+  }
+
+  function finishCreate() {
+    const c = createDraft.course;
+    const e = createDraft.exercise;
+    const t = createDraft.tutor;
+    const s = createDraft.syllabus;
+
+    if (c.mode === "custom") {
+      config.course = null;
+      config.courseCustom = c.custom;
+    } else {
+      config.course = c.existing;
+      config.courseCustom = null;
+    }
+
+    // A custom course has no built-in exercises, so its exercise is custom too.
+    if (c.mode === "custom" || e.mode === "custom") {
+      config.exercise = null;
+      config.exerciseCustom = e.custom;
+    } else {
+      config.exercise = e.existing;
+      config.exerciseCustom = null;
+    }
+
+    if (t.mode === "custom") {
+      config.tutor = null;
+      config.tutorCustom = t.custom;
+    } else {
+      config.tutor = t.existing;
+      config.tutorCustom = null;
+    }
+
+    if (s.mode === "custom") {
+      config.syllabusCustom = s.custom;
+      config.syllabus = false;
+    } else if (s.value === "default") {
+      config.syllabusCustom = null;
+      config.syllabus = true;
+    } else {
+      config.syllabusCustom = null;
+      config.syllabus = false;
+    }
+
+    if (config.courseCustom != null) {
+      if (courseNameEl) courseNameEl.textContent = "Custom context";
+    } else {
+      const chosen = courseBySlug(config.course);
+      if (courseNameEl) {
+        courseNameEl.textContent = chosen ? chosen.name || "" : "Custom context";
+      }
+    }
+
+    closeCreateModal();
     startNewChat();
   }
 
@@ -706,6 +992,11 @@
       tutor: config.tutor,
       syllabus: config.syllabus,
     };
+    // One-off custom context (Create-context wizard) — only sent when set.
+    if (config.courseCustom != null) payload.course_custom = config.courseCustom;
+    if (config.exerciseCustom != null) payload.exercise_custom = config.exerciseCustom;
+    if (config.tutorCustom != null) payload.tutor_custom = config.tutorCustom;
+    if (config.syllabusCustom != null) payload.syllabus_custom = config.syllabusCustom;
     if (conversationId) {
       payload.conversation_id = conversationId;
     }
@@ -881,11 +1172,22 @@
     if (event.target === contextModal) closeContextModal();
   });
 
-  // Unified Escape: close in z-order — detail > modal > sidebar
+  // Create-context wizard wiring (test_ui only)
+  createContextButton.addEventListener("click", openCreateModal);
+  createCancel.addEventListener("click", closeCreateModal);
+  createBack.addEventListener("click", createGoBack);
+  createForm.addEventListener("submit", createGoNext);
+  createModal.addEventListener("click", (event) => {
+    if (event.target === createModal) closeCreateModal();
+  });
+
+  // Unified Escape: close in z-order — detail > create > edit > email > sidebar
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") return;
     if (!detailView.hidden) {
       closeDetailView();
+    } else if (createModalOpen) {
+      closeCreateModal();
     } else if (contextModalOpen) {
       closeContextModal();
     } else if (modalOpen) {
