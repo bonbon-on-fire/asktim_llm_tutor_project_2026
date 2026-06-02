@@ -695,15 +695,6 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     outline-offset: -2px;
 }
 
-.create-actions {
-    justify-content: space-between;
-}
-
-.create-actions-right {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
 
 .modal-skip {
     background: none;

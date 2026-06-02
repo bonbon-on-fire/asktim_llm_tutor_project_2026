@@ -582,7 +582,7 @@
 
     if (step === "course") {
       options = [
-        { value: CUSTOM, label: "Write my own course" },
+        { value: CUSTOM, label: "Create course" },
         ...contextOptions.courses.map((c) => ({
           value: c.slug,
           label: c.name || c.slug,
@@ -597,7 +597,7 @@
       const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
       const exs = courseObj ? courseObj.exercises : [];
       options = [
-        { value: CUSTOM, label: "Write my own exercise" },
+        { value: CUSTOM, label: "Create exercise" },
         ...exs.map((n) => ({
           value: n,
           label: "Exercise " + (parseInt(n, 10) || n),
@@ -611,10 +611,10 @@
           d.mode === "custom" ? CUSTOM : d.existing || exs[0] || CUSTOM;
       }
       customValue = d.custom;
-      placeholder = "Paste or write the exercise / assignment…";
+      placeholder = "Paste or write the exercise…";
     } else if (step === "tutor") {
       options = [
-        { value: CUSTOM, label: "Write my own prompt" },
+        { value: CUSTOM, label: "Create prompt" },
         ...contextOptions.tutors.map((t) => ({
           value: t,
           label: tutorLabel(t),
@@ -623,14 +623,14 @@
       const d = createDraft.tutor;
       currentValue = d.mode === "custom" ? CUSTOM : d.existing;
       customValue = d.custom;
-      placeholder = "Paste or write the full tutor system prompt…";
+      placeholder = "Paste or write the tutor prompt…";
     } else {
       // syllabus
       const cd = createDraft.course;
       const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
-      options = [{ value: CUSTOM, label: "Write my own syllabus" }];
+      options = [{ value: CUSTOM, label: "Create syllabus" }];
       if (courseObj && courseObj.has_syllabus) {
-        options.push({ value: "default", label: "Use course syllabus" });
+        options.push({ value: "default", label: "Course syllabus" });
       }
       options.push({ value: "none", label: "No syllabus" });
       const d = createDraft.syllabus;
@@ -724,11 +724,13 @@
     const lastTutor = contextOptions.tutors.length
       ? contextOptions.tutors[contextOptions.tutors.length - 1]
       : "";
+    // Default each step to "Create …" (custom mode); existing options remain
+    // selectable in the dropdown below it.
     createDraft = {
-      course: { mode: "existing", existing: config.course || firstCourse, custom: "" },
-      exercise: { mode: "existing", existing: "", custom: "" },
-      tutor: { mode: "existing", existing: config.tutor || lastTutor, custom: "" },
-      syllabus: { mode: "builtin", value: "none", custom: "" },
+      course: { mode: "custom", existing: config.course || firstCourse, custom: "" },
+      exercise: { mode: "custom", existing: "", custom: "" },
+      tutor: { mode: "custom", existing: config.tutor || lastTutor, custom: "" },
+      syllabus: { mode: "custom", value: "none", custom: "" },
     };
     createStep = 0;
     renderCreateStep();
