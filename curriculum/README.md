@@ -8,6 +8,7 @@ Assignment content used by tutor and student runs, organized by course.
 curriculum/
   <course_name>/
     course.txt                       # shared course context
+    course_name.txt                  # display name shown in the main_ui course banner
     syllabus.txt                     # optional — appended to assignment text in main_ui
     exercise_01.txt                  # assignment prompt
     exercise_02.txt
@@ -19,6 +20,7 @@ curriculum/
 
 - Each course is a subfolder (for example `philosophy/`, `cities_and_climate_change/`).
 - `course.txt` stores shared course context.
+- `course_name.txt` holds the human-readable course title rendered in the `main_ui/` course banner (via `load_course_name()` in [main_ui/routes/_validation.py](../main_ui/routes/_validation.py)). If empty or absent, the banner renders blank.
 - `syllabus.txt` (optional) is appended to the assignment block in `main_ui/`'s context build (see [main_ui/services/tutor_bridge.py](../main_ui/services/tutor_bridge.py)).
 - `exercise_XX.txt` stores the assignment prompt for a specific exercise.
 - `figures/` holds visual context that belongs to a specific exercise. Files must start with `exercise_<NN>_` so the framework (Phase 6 — see root [PLANNING.md](../PLANNING.md)) can attach the matching figures when the tutor sees that exercise.
@@ -36,7 +38,7 @@ curriculum/
 ## Adding a new course
 
 1. Create a folder under `curriculum/` with the course name.
-2. Add `course.txt` with shared context.
+2. Add `course.txt` with shared context, and `course_name.txt` with the display title for the banner.
 3. Optionally add `syllabus.txt` for course-level material that should accompany every exercise.
 4. Add one or more `exercise_XX.txt` files (zero-padded numbering).
 5. If an exercise references diagrams or maps, drop them in `figures/` with the `exercise_<NN>_<slug>.<ext>` naming convention.

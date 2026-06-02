@@ -15,6 +15,7 @@ from main_ui.routes._validation import (
     DEFAULT_COURSE,
     DEFAULT_EXERCISE,
     DEFAULT_TUTOR,
+    load_course_name,
     validate_course,
     validate_exercise,
     validate_tutor,
@@ -36,6 +37,7 @@ def _render_embed(*, course: str, exercise: str, tutor: str):
         course=course,
         exercise=exercise,
         tutor=tutor,
+        course_name=load_course_name(course),
         tutor_config=tutor_config,
         has_email=has_email,
     )
