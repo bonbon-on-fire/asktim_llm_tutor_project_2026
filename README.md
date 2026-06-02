@@ -1,4 +1,4 @@
-# Humanities LLM Tutor Project 2026
+# AskTIM LLM Tutor Project 2026
 
 ## Project Overview
 
