@@ -24,8 +24,9 @@ The system has five loosely coupled layers:
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
-- **Testing harness (`test_ui/`)**: a 3-step wizard for TAs to manually try out tutor prompt + course + exercise combinations against the same engine
-- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+
+A developer/TA testing website (manual course + syllabus + exercise configuration, with `main_ui`-style persistent history) is being rebuilt; the earlier `test_ui/` wizard harness has been retired.
 
 ### Key Components
 
@@ -166,11 +167,14 @@ python -m visualization.run_visualization
 ### Directory Overview
 
 ```text
-humanities_llm_tutor_project_2026/
+asktim_llm_tutor_project_2026/
 │
 ├── curriculum/
 │   ├── philosophy/          # course.txt + exercise_01.txt (trolley problem)
-│   └── cities_and_climate_change/  # course.txt + exercise_01..12.txt
+│   ├── cities_and_climate_change/  # course.txt + syllabus.txt + exercise_01..12.txt + figures/
+│   ├── intl_dev_planning/   # preview / scaffold
+│   ├── social_theory_city/  # preview / scaffold
+│   └── sustainable_econ_dev/  # preview / scaffold
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
@@ -183,29 +187,33 @@ humanities_llm_tutor_project_2026/
 │
 ├── judge/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
-│   ├── prompts/             # judge_01.txt .. judge_08.txt
+│   ├── hand_grade_workbook*.py  # Build/fill/rebuild the hand-grade calibration workbook
+│   ├── prompts/             # judge_01.txt .. judge_08.txt (current default: judge_05)
 │   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py        # Generate raw transcripts in bulk (--output-suffix, --yes)
-│   ├── run_ui_raw_mini.py   # Interactive wrapper for mini-continuation runs
-│   └── run_ui_judge.py      # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
+│   ├── run_ui_raw.py            # Generate raw transcripts in bulk (--output-suffix, --yes)
+│   ├── run_ui_raw_mini.py       # Interactive wrapper for mini-continuation runs
+│   ├── run_ui_raw_mini_batch.py # Batch mini-continuation over a reference transcript table
+│   ├── run_ui_judge.py          # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
+│   └── cli_utils.py             # Shared interactive selection-prompt helpers
 │
-├── transcripts/
+├── transcripts/             # Generated conversations, one folder per persona family.
 │   ├── chaotic/             # chaotic_raw/, chaotic_claude/, chaotic_mini/,
-│   │                        # chaotic_claude_mini/, chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
+│   │                        # chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
 │   ├── cooperative/         # cooperative_raw/, cooperative_claude/,
 │   │                        # cooperative_raw_tutor_05/, cooperative_claude_tutor_05/
 │   └── clueless/            # clueless_raw/, clueless_claude/, clueless_mini/,
-│                            # clueless_claude_mini/, clueless_raw_tutor_05/, clueless_claude_tutor_05/
+│                            # clueless_raw_tutor_05/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
-├── test_ui/
-│   ├── run_app.py           # Flask app: wizard config + chat API routes
-│   └── templates/index.html # 3-step wizard (tutor → course → exercise) + human chat
+├── Dockerfile               # Production container for main_ui (Railway)
+├── Procfile                 # gunicorn main_ui.run_app:app
+├── scripts/
+│   └── railway-entrypoint.sh  # Validates env, normalizes DATABASE_URL, runs migrations, starts gunicorn
 │
 ├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres, SSE)
 │   ├── run_app.py           # Flask factory; SSE /api/chat; identity routes

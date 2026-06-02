@@ -4,13 +4,16 @@ Generated tutor-student conversation transcripts for the Humanities LLM Tutor pr
 
 ## Folder Structure
 
+Current on-disk layout (the `_gpt/`, `_claude_mini/`, and other suffix folders
+described in the conventions below are produced on demand by the judge/mini
+runners and may not all be present at any given time):
+
 ```text
 transcripts/
 ├── chaotic/                          # Chaotic student persona
 │   ├── chaotic_raw/                  # Raw (ungraded) transcripts — standard pipeline
 │   ├── chaotic_claude/               # Claude-graded copies of chaotic_raw/
 │   ├── chaotic_mini/                 # Mini-continuation transcripts (pivot + replay)
-│   ├── chaotic_claude_mini/          # Claude-graded copies of chaotic_mini/
 │   ├── chaotic_raw_tutor_05/         # Raw transcripts generated with tutor_05
 │   └── chaotic_claude_tutor_05/      # Claude-graded copies of chaotic_raw_tutor_05/
 ├── cooperative/                      # Cooperative student persona
@@ -22,9 +25,7 @@ transcripts/
 │   ├── clueless_raw/                 # Raw transcripts — standard pipeline
 │   ├── clueless_claude/              # Claude-graded copies of clueless_raw/
 │   ├── clueless_mini/                # Mini-continuation transcripts (pivot + replay)
-│   ├── clueless_claude_mini/         # Claude-graded copies of clueless_mini/
-│   ├── clueless_raw_tutor_05/        # Raw transcripts generated with tutor_05
-│   └── clueless_claude_tutor_05/     # Claude-graded copies of clueless_raw_tutor_05/
+│   └── clueless_raw_tutor_05/        # Raw transcripts generated with tutor_05
 └── README.md
 ```
 

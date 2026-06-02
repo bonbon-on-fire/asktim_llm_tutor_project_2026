@@ -2,6 +2,18 @@
 
 Terminal runners for transcript generation and judge scoring with interactive CLI support.
 
+## Files
+
+```text
+ui/
+  run_ui_raw.py             — generate raw transcripts in bulk (interactive or CLI)
+  run_ui_raw_mini.py        — interactive wrapper for single mini-continuation runs
+  run_ui_raw_mini_batch.py  — batch mini-continuation runner over the reference transcript
+                              table in meeting_notes/04_28_2026.md (supports --dry-run)
+  run_ui_judge.py           — grade transcripts with the GPT or Claude judge
+  cli_utils.py              — shared interactive numbered-selection prompt helpers
+```
+
 ## Available entrypoints
 
 From repo root in PowerShell:
