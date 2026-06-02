@@ -514,6 +514,12 @@
     populateExercises(activeCourse, config.exercise);
     syncSyllabusAvailability(activeCourse);
     if (!contextSyllabus.disabled) contextSyllabus.checked = !!config.syllabus;
+
+    // Lock Course, Tutor prompt, and Include-course-syllabus — only the
+    // Exercise is changeable here. (Build a custom context to vary the rest.)
+    contextCourse.disabled = true;
+    contextTutor.disabled = true;
+    contextSyllabus.disabled = true;
   }
 
   function closeContextModal() {
@@ -535,7 +541,7 @@
     config.course = course;
     config.exercise = exercise;
     config.tutor = tutor;
-    config.syllabus = contextSyllabus.disabled ? false : contextSyllabus.checked;
+    config.syllabus = contextSyllabus.checked;
     // Edit context only ever picks built-ins — clear any prior custom overrides.
     config.courseCustom = null;
     config.exerciseCustom = null;

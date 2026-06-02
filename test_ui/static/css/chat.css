@@ -653,7 +653,7 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text);
     cursor: pointer;
 }
@@ -667,6 +667,27 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
 
 .context-checkbox input:disabled {
     cursor: not-allowed;
+}
+
+/* Locked (read-only) fields in the Edit-context modal. */
+.lock-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left: 0.3rem;
+    vertical-align: -0.1rem;
+    opacity: 0.65;
+}
+
+.context-select:disabled {
+    background: #f0f1f3;
+    color: #9a9a9a;
+    -webkit-text-fill-color: #9a9a9a;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.context-checkbox input:disabled + span {
+    color: #9a9a9a;
 }
 
 /* Create-context wizard (test_ui only) ----------------------------------- */
