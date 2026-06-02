@@ -80,3 +80,55 @@ def load_course_name(course) -> str:
     if not path.is_file():
         return ""
     return path.read_text(encoding="utf-8").strip()
+
+
+def list_exercises(course) -> list[str]:
+    """Sorted zero-padded 2-digit exercise numbers available for a course."""
+    course_dir = _CURRICULUM_DIR / course if course else None
+    if not course_dir or not course_dir.is_dir():
+        return []
+    nums: list[str] = []
+    for p in course_dir.glob("exercise_*.txt"):
+        num = p.stem.split("exercise_", 1)[-1]
+        if len(num) == 2 and num.isdigit():
+            nums.append(num)
+    return sorted(nums)
+
+
+def course_has_syllabus(course) -> bool:
+    """True if the course ships a syllabus.txt that can be toggled into context."""
+    if not course:
+        return False
+    return (_CURRICULUM_DIR / course / "syllabus.txt").is_file()
+
+
+def list_tutors() -> list[str]:
+    """Sorted tutor prompt stems available under tutor/prompts/."""
+    if not _TUTOR_PROMPTS_DIR.is_dir():
+        return []
+    return sorted(p.stem for p in _TUTOR_PROMPTS_DIR.glob("*.txt"))
+
+
+def list_context_options() -> dict:
+    """Full option set for the test_ui Change-context switcher.
+
+    Shape:
+        {
+          "courses": [
+            {"slug": ..., "name": ..., "exercises": ["01", ...], "has_syllabus": bool},
+            ...
+          ],
+          "tutors": ["tutor_01", ...],
+        }
+    """
+    courses = []
+    for slug in sorted(_list_courses()):
+        courses.append(
+            {
+                "slug": slug,
+                "name": load_course_name(slug),
+                "exercises": list_exercises(slug),
+                "has_syllabus": course_has_syllabus(slug),
+            }
+        )
+    return {"courses": courses, "tutors": list_tutors()}

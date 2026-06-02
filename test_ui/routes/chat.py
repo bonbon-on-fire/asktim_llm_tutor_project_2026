@@ -142,6 +142,7 @@ def chat():
             exercise_number=exercise,
             tutor_prompt=tutor,
             email=email,
+            syllabus_enabled=syllabus_enabled,
         )
     except WrongSessionError:
         return _abort_with(_wrong_session())
@@ -163,6 +164,7 @@ def chat():
     stream_course = convo.course
     stream_exercise = convo.exercise_number
     stream_tutor = convo.tutor_prompt
+    stream_syllabus = convo.syllabus_enabled
 
     try:
         db.commit()
@@ -182,6 +184,7 @@ def chat():
         tutor=stream_tutor,
         history=history,
         new_student_message=text,
+        include_syllabus=stream_syllabus,
     )
 
     def event_stream():

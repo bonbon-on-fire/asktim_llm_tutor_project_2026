@@ -15,6 +15,7 @@ from test_ui.routes._validation import (
     DEFAULT_COURSE,
     DEFAULT_EXERCISE,
     DEFAULT_TUTOR,
+    list_context_options,
     load_course_name,
     validate_course,
     validate_exercise,
@@ -29,8 +30,13 @@ def _bad_param(err: dict):
     return jsonify({"error": "invalid_param", **err}), 404
 
 
-def _render_embed(*, course: str, exercise: str, tutor: str):
-    tutor_config = {"course": course, "exercise": exercise, "tutor": tutor}
+def _render_embed(*, course: str, exercise: str, tutor: str, syllabus: bool = True):
+    tutor_config = {
+        "course": course,
+        "exercise": exercise,
+        "tutor": tutor,
+        "syllabus": syllabus,
+    }
     has_email = bool(request.cookies.get(EMAIL_COOKIE_NAME))
     return render_template(
         "embed.html",
@@ -41,6 +47,13 @@ def _render_embed(*, course: str, exercise: str, tutor: str):
         tutor_config=tutor_config,
         has_email=has_email,
     )
+
+
+@embed_bp.get("/api/context/options")
+def context_options():
+    """Courses (+ their exercises and syllabus availability) and tutor prompts,
+    used to populate the test_ui Change-context switcher."""
+    return jsonify(list_context_options())
 
 
 @embed_bp.get("/")
