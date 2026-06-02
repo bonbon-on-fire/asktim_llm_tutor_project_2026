@@ -11,8 +11,8 @@
     --student-text: #ffffff;
     --tutor-bg: #f0f0f0;
     --tutor-text: #1a1a1a;
-    --error-bg: #fde2e2;
-    --error-text: #6f1414;
+    --error-bg: #e3eff5;            /* blue-tinted error surface */
+    --error-text: #0e587b;          /* blue-tinted error text */
     --send-bg: #126f9a;
     --send-bg-hover: #0e587b;
     --send-bg-disabled: #c0c0c0;

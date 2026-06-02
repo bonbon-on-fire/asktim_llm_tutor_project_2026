@@ -573,17 +573,10 @@
       });
 
       if (!response.ok) {
-        let reason = "Something went wrong. Please try again.";
-        try {
-          const body = await response.json();
-          if (body && body.reason) reason = body.reason;
-        } catch (_) {
-          /* ignore body-parse errors */
-        }
         tutorBubble.remove();
         studentBubble.remove();
         composerInput.value = originalText;
-        showError(reason);
+        showError("Something went wrong, please try again");
         return;
       }
 
@@ -648,7 +641,7 @@
         tutorBubble.remove();
         studentBubble.remove();
         composerInput.value = originalText;
-        showError(streamError);
+        showError("Something went wrong, please try again");
         return;
       }
 
@@ -656,9 +649,7 @@
         tutorBubble.remove();
         studentBubble.remove();
         composerInput.value = originalText;
-        showError(
-          "Connection closed before the reply finished. Please try again.",
-        );
+        showError("Something went wrong, please try again");
         return;
       }
 
@@ -678,7 +669,7 @@
         tutorBubble.remove();
         studentBubble.remove();
         composerInput.value = originalText;
-        showError("Cannot reach AskTIM. Check your connection and try again.");
+        showError("Something went wrong, please try again");
       }
     } finally {
       if (currentChatController === controller) {
