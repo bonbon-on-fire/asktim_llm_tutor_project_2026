@@ -31,6 +31,10 @@ def find_or_create_conversation(
     tutor_prompt: str,
     email: str | None = None,
     syllabus_enabled: bool = True,
+    custom_course_text: str | None = None,
+    custom_exercise_text: str | None = None,
+    custom_tutor_prompt: str | None = None,
+    custom_syllabus_text: str | None = None,
 ) -> Conversation:
     """Resolve to an existing conversation or insert a new one.
 
@@ -58,6 +62,10 @@ def find_or_create_conversation(
         exercise_number=exercise_number,
         tutor_prompt=tutor_prompt,
         syllabus_enabled=syllabus_enabled,
+        custom_course_text=custom_course_text,
+        custom_exercise_text=custom_exercise_text,
+        custom_tutor_prompt=custom_tutor_prompt,
+        custom_syllabus_text=custom_syllabus_text,
     )
     db.add(convo)
     db.flush()  # populate convo.id before the caller uses it

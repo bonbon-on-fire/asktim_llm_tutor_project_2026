@@ -11,6 +11,7 @@ No HTTP, no DB, no Flask state — just a thin function from
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from langchain_core.messages import AIMessage, HumanMessage
@@ -39,7 +40,13 @@ _stream_cache: dict[tuple[str, str, str, bool], tuple[object, str]] = {}
 
 
 def build_assignment_text(
-    course: str, exercise: str, *, include_syllabus: bool = True
+    course: str,
+    exercise: str,
+    *,
+    include_syllabus: bool = True,
+    course_text: str | None = None,
+    exercise_text: str | None = None,
+    syllabus_text: str | None = None,
 ) -> str:
     """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
 
@@ -53,10 +60,14 @@ def build_assignment_text(
     ``include_syllabus`` is a test_ui addition: when False, the course
     ``syllabus.txt`` block is dropped so testers can compare tutor behaviour
     with and without the syllabus in context.
+
+    The ``*_text`` overrides carry one-off custom context typed in the
+    "Create context" wizard. When a given override is not ``None`` it is used
+    verbatim (and the matching on-disk file is NOT read); an empty/whitespace
+    override simply omits that block. This lets testers mix custom and
+    built-in fields freely.
     """
-    course_dir = _CURRICULUM_DIR / course
-    exercise_path = course_dir / f"exercise_{exercise}.txt"
-    exercise_text = exercise_path.read_text(encoding="utf-8").strip()
+    course_dir = _CURRICULUM_DIR / course if course else None
 
     parts: list[str] = []
 
@@ -65,46 +76,161 @@ def build_assignment_text(
         if about_text:
             parts.append("About yourself:\n" + about_text)
 
-    course_path = course_dir / "course.txt"
-    if course_path.is_file():
-        parts.append("Course context:\n" + course_path.read_text(encoding="utf-8").strip())
+    # Course context — custom text wins; otherwise read course.txt.
+    if course_text is not None:
+        if course_text.strip():
+            parts.append("Course context:\n" + course_text.strip())
+    elif course_dir is not None:
+        course_path = course_dir / "course.txt"
+        if course_path.is_file():
+            parts.append(
+                "Course context:\n" + course_path.read_text(encoding="utf-8").strip()
+            )
 
-    syllabus_path = course_dir / "syllabus.txt"
-    if include_syllabus and syllabus_path.is_file():
-        parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+    # Syllabus — custom text wins; otherwise the built-in toggle gates the file.
+    if syllabus_text is not None:
+        if syllabus_text.strip():
+            parts.append("Syllabus:\n" + syllabus_text.strip())
+    elif include_syllabus and course_dir is not None:
+        syllabus_path = course_dir / "syllabus.txt"
+        if syllabus_path.is_file():
+            parts.append(
+                "Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip()
+            )
 
-    parts.append("Exercise:\n" + exercise_text)
+    # Exercise — custom text wins; otherwise read exercise_<NN>.txt.
+    if exercise_text is not None:
+        resolved_exercise = exercise_text.strip()
+    else:
+        exercise_path = course_dir / f"exercise_{exercise}.txt"
+        resolved_exercise = exercise_path.read_text(encoding="utf-8").strip()
+    parts.append("Exercise:\n" + resolved_exercise)
+
     return "\n\n".join(parts)
 
 
-def _get_or_build_graph(tutor: str, course: str, exercise: str, include_syllabus: bool):
-    key = (tutor, course, exercise, include_syllabus)
-    cached = _graph_cache.get(key)
-    if cached is not None:
-        return cached
-    assignment_text = build_assignment_text(
-        course, exercise, include_syllabus=include_syllabus
+def _render_custom_tutor_prompt(prompt_text: str, assignment_override: str) -> str:
+    """Render a tester-supplied tutor prompt, injecting the assignment.
+
+    Mirrors `tutor.load_system_prompt`'s `<Assignment>` substitution, but for
+    raw prompt text instead of a file. If the custom prompt has no
+    `<Assignment>` block, the assignment is appended so the tutor still sees
+    the exercise.
+    """
+    if "<Assignment>" in prompt_text and "</Assignment>" in prompt_text:
+        rendered = re.sub(
+            r"<Assignment>.*?</Assignment>",
+            f"<Assignment>\n{assignment_override.strip()}\n</Assignment>",
+            prompt_text,
+            flags=re.DOTALL,
+        )
+    else:
+        rendered = (
+            prompt_text.rstrip()
+            + f"\n\n<Assignment>\n{assignment_override.strip()}\n</Assignment>"
+        )
+    return rendered.strip()
+
+
+def _has_custom(
+    course_text: str | None,
+    exercise_text: str | None,
+    syllabus_text: str | None,
+    custom_tutor_prompt: str | None,
+) -> bool:
+    return any(
+        v is not None
+        for v in (course_text, exercise_text, syllabus_text, custom_tutor_prompt)
     )
-    system_prompt = load_system_prompt(tutor, assignment_override=assignment_text)
+
+
+def _resolve_system_prompt(
+    tutor: str,
+    course: str,
+    exercise: str,
+    include_syllabus: bool,
+    *,
+    course_text: str | None,
+    exercise_text: str | None,
+    syllabus_text: str | None,
+    custom_tutor_prompt: str | None,
+) -> str:
+    assignment_text = build_assignment_text(
+        course,
+        exercise,
+        include_syllabus=include_syllabus,
+        course_text=course_text,
+        exercise_text=exercise_text,
+        syllabus_text=syllabus_text,
+    )
+    if custom_tutor_prompt is not None:
+        return _render_custom_tutor_prompt(custom_tutor_prompt, assignment_text)
+    return load_system_prompt(tutor, assignment_override=assignment_text)
+
+
+def _get_or_build_graph(
+    tutor: str,
+    course: str,
+    exercise: str,
+    include_syllabus: bool,
+    *,
+    course_text: str | None = None,
+    exercise_text: str | None = None,
+    syllabus_text: str | None = None,
+    custom_tutor_prompt: str | None = None,
+):
+    custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    if not custom:
+        cached = _graph_cache.get((tutor, course, exercise, include_syllabus))
+        if cached is not None:
+            return cached
+    system_prompt = _resolve_system_prompt(
+        tutor,
+        course,
+        exercise,
+        include_syllabus,
+        course_text=course_text,
+        exercise_text=exercise_text,
+        syllabus_text=syllabus_text,
+        custom_tutor_prompt=custom_tutor_prompt,
+    )
     graph = create_tutor_graph(system_prompt)
-    _graph_cache[key] = graph
+    if not custom:
+        # Only cache reusable built-in builds — custom context is one-off.
+        _graph_cache[(tutor, course, exercise, include_syllabus)] = graph
     return graph
 
 
 def _get_or_build_stream_context(
-    tutor: str, course: str, exercise: str, include_syllabus: bool
+    tutor: str,
+    course: str,
+    exercise: str,
+    include_syllabus: bool,
+    *,
+    course_text: str | None = None,
+    exercise_text: str | None = None,
+    syllabus_text: str | None = None,
+    custom_tutor_prompt: str | None = None,
 ) -> tuple[object, str]:
     """Return ``(model, system_prompt)`` for the streaming path."""
-    key = (tutor, course, exercise, include_syllabus)
-    cached = _stream_cache.get(key)
-    if cached is not None:
-        return cached
-    assignment_text = build_assignment_text(
-        course, exercise, include_syllabus=include_syllabus
+    custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    if not custom:
+        cached = _stream_cache.get((tutor, course, exercise, include_syllabus))
+        if cached is not None:
+            return cached
+    system_prompt = _resolve_system_prompt(
+        tutor,
+        course,
+        exercise,
+        include_syllabus,
+        course_text=course_text,
+        exercise_text=exercise_text,
+        syllabus_text=syllabus_text,
+        custom_tutor_prompt=custom_tutor_prompt,
     )
-    system_prompt = load_system_prompt(tutor, assignment_override=assignment_text)
     model = build_tutor_model()
-    _stream_cache[key] = (model, system_prompt)
+    if not custom:
+        _stream_cache[(tutor, course, exercise, include_syllabus)] = (model, system_prompt)
     return model, system_prompt
 
 

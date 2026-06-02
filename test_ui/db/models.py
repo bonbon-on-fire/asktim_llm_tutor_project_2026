@@ -47,10 +47,18 @@ class Conversation(Base):
     exercise_number: Mapped[str] = mapped_column(Text, nullable=False)
     tutor_prompt: Mapped[str] = mapped_column(Text, nullable=False)
     # test_ui-only: whether the course syllabus.txt was folded into the tutor
-    # context for this conversation (toggled via the Change-context switcher).
+    # context for this conversation (toggled via the Edit-context switcher).
     syllabus_enabled: Mapped[bool] = mapped_column(
         Boolean, nullable=False, default=True
     )
+    # test_ui-only: one-off custom context typed in the "Create context" wizard.
+    # When set, the corresponding built-in field above is a placeholder and the
+    # tutor reads this text instead of the on-disk curriculum/tutor file. Stored
+    # inline (a snapshot) so reopening a past chat replays the exact context.
+    custom_course_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    custom_exercise_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    custom_tutor_prompt: Mapped[str | None] = mapped_column(Text, nullable=True)
+    custom_syllabus_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
