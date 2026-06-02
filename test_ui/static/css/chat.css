@@ -1,21 +1,22 @@
 :root {
-    /* MIT OpenCourseWare-inspired palette. Accent red used for the
-       student bubbles and the Send button; tutor bubble stays neutral
-       grey so replies are easy to read. */
+    /* AskTIM Sandbox palette. Teal-blue accent (#126f9a) for the student
+       bubbles and the Send button distinguishes the sandbox from the
+       crimson production app; tutor bubble stays neutral grey so replies
+       are easy to read. Error states keep their own red. */
     --bg: #fafafa;
     --text: #2a2a2a;
     --muted: #888;
     --border: #e2e2e2;
-    --student-bg: #8c1a1b;          /* MIT crimson */
+    --student-bg: #126f9a;          /* sandbox accent */
     --student-text: #ffffff;
     --tutor-bg: #f0f0f0;
     --tutor-text: #1a1a1a;
     --error-bg: #fde2e2;
     --error-text: #6f1414;
-    --send-bg: #8c1a1b;
-    --send-bg-hover: #6f1414;
+    --send-bg: #126f9a;
+    --send-bg-hover: #0e587b;
     --send-bg-disabled: #c0c0c0;
-    --focus-ring: #8c1a1b;
+    --focus-ring: #126f9a;
 }
 
 * {
@@ -91,7 +92,7 @@ body {
 }
 
 .message-list:empty::before {
-    content: "AskTIM is here to help";
+    content: "AskTIM Sandbox is here to help";
     color: var(--muted);
     font-size: 0.9rem;
     margin: auto;
@@ -601,6 +602,55 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     margin: 0;
     color: var(--muted);
     font-size: 0.82rem;
+}
+
+/* Context switcher modal (test_ui only) ---------------------------------- */
+
+.context-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.context-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.context-select {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    color: var(--text);
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.context-select:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: -2px;
+}
+
+.context-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.context-checkbox input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--send-bg);
+    cursor: pointer;
+}
+
+.context-checkbox input:disabled {
+    cursor: not-allowed;
 }
 
 .modal-skip {
