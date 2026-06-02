@@ -157,17 +157,21 @@ config live at the repo root:
 The WSGI entrypoint is `main_ui.run_app:app`. Production reads `DATABASE_URL`
 from the Railway Postgres service; migrations run automatically on every boot.
 
-## How `main_ui/` relates to the testing website
+## How `main_ui/` relates to `test_ui/`
 
 `main_ui/` is the student-facing production app: course/exercise/tutor come from
-URL params, conversations persist to Postgres, identity is email + password
-(bcrypt, cross-browser), and replies stream over SSE.
+URL params, conversations persist to PostgreSQL (`asktim`), identity is email +
+password (bcrypt, cross-browser), and replies stream over SSE.
 
-A separate developer/TA **testing website** — for manually configuring course,
-syllabus, and exercise context — is being rebuilt (see the latest
-[meeting notes](../meeting_notes/06_01_2026.md)); the goal is for it to share
-`main_ui/`-style persistent chat history. The earlier `test_ui/` wizard harness
-has been retired from the repo.
+[`test_ui/`](../test_ui/README.md) ("AskTIM Sandbox") is the developer/TA
+counterpart. It reuses the same chat UI and tutor pipeline but lets testers
+change context **in the app** rather than via URL params: an **Edit context**
+switcher (existing course/exercise/tutor + syllabus toggle) and a **Create
+context** wizard for one-off custom course/exercise/tutor-prompt/syllabus text.
+It runs on its **own** PostgreSQL database (`asktim_test`) so test chats never
+mix with production data, builds its schema with `create_all` (no Alembic), and
+uses a teal-blue (`#126f9a`) accent instead of crimson. Both apps can run side
+by side (`main_ui` on `5001`, `test_ui` on `5000`).
 
 ## What's still pending
 

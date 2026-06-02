@@ -19,14 +19,13 @@ The primary deliverable is now **AskTIM** — an iframe-embeddable chat app live
 
 ### System Architecture
 
-The system has five loosely coupled layers:
+The system has six loosely coupled layers:
 
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
-- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
-
-A developer/TA testing website (manual course + syllabus + exercise configuration, with `main_ui`-style persistent history) is being rebuilt; the earlier `test_ui/` wizard harness has been retired.
+- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. PostgreSQL persistence (`asktim`), bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+- **Testing sandbox (`test_ui/`)**: "AskTIM Sandbox" — a developer/TA chat app that mirrors `main_ui` but adds an in-app **Edit context** switcher and a step-by-step **Create context** wizard (custom course / exercise / tutor prompt / syllabus). Its own PostgreSQL database (`asktim_test`) and teal-blue (`#126f9a`) branding keep it isolated from production. See [`test_ui/README.md`](test_ui/README.md).
 
 ### Key Components
 
@@ -215,13 +214,21 @@ asktim_llm_tutor_project_2026/
 ├── scripts/
 │   └── railway-entrypoint.sh  # Validates env, normalizes DATABASE_URL, runs migrations, starts gunicorn
 │
-├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres, SSE)
+├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres `asktim`, SSE)
 │   ├── run_app.py           # Flask factory; SSE /api/chat; identity routes
 │   ├── db/                  # SQLAlchemy models + Alembic migrations
 │   ├── routes/              # embed, chat (SSE), identity, history
 │   ├── services/            # conversation persistence, students (bcrypt), tutor_bridge
 │   ├── static/              # chat.css, chat.js (streaming consumer)
 │   └── templates/embed.html # iframe-embeddable chat page
+│
+├── test_ui/                 # AskTIM Sandbox: developer/TA chat, own Postgres `asktim_test`
+│   ├── run_app.py           # Flask factory; create_all on boot (no Alembic)
+│   ├── db/                  # models (adds syllabus_enabled + custom_* columns)
+│   ├── routes/              # embed (+ /api/context/options, /preview), chat, identity, history
+│   ├── services/            # conversation, students, tutor_bridge (custom-context aware)
+│   ├── static/              # chat.css (#126f9a accent), chat.js (Edit/Create context)
+│   └── templates/embed.html # chat page: Edit context + Create context wizard
 │
 ├── visualization/
 │   └── run_visualization.py # Score charts: per-prompt, original vs mini, hand-grade correlation
@@ -242,7 +249,7 @@ The full pipeline is working end-to-end, with:
 - Dashboard shows Claude Mini (tutor_05) grades vs Claude (tutor_04) grades side-by-side
 - Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
 - **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies — and is **deployed on Railway** (containerized, migrations run on boot). Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
-- A developer/TA **testing website** (manual course/syllabus/exercise configuration + persistent history) is being rebuilt to replace the retired `test_ui/` harness.
+- **AskTIM Sandbox (`test_ui/`)** is live for developers/TAs — the same chat as `main_ui` plus an in-app **Edit context** switcher and a **Create context** wizard for one-off custom course/exercise/tutor/syllabus, on its own PostgreSQL database (`asktim_test`).
 
 ## Challenges and How I Solved Them
 

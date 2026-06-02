@@ -1,6 +1,6 @@
-# UI Module
+# internal_ui
 
-Terminal runners for transcript generation and judge scoring with interactive CLI support.
+Internal terminal runners for bulk transcript generation and judge scoring, with interactive CLI support. (Renamed from `ui/`.)
 
 ## Files
 
