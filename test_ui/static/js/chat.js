@@ -56,6 +56,22 @@
   const contextError = document.getElementById("context-error");
   let contextOptions = null; // { courses: [...], tutors: [...] }, lazy-loaded
   let contextModalOpen = false;
+
+  // Create-context wizard (test_ui only)
+  const createContextButton = document.getElementById("create-context");
+  const createModal = document.getElementById("create-modal");
+  const createForm = document.getElementById("create-form");
+  const createStepLabel = document.getElementById("create-step-label");
+  const createStepBody = document.getElementById("create-step-body");
+  const createError = document.getElementById("create-error");
+  const createBack = document.getElementById("create-back");
+  const createNext = document.getElementById("create-next");
+  const createCancel = document.getElementById("create-cancel");
+  let createModalOpen = false;
+  let createStep = 0;
+  // Per-step draft: each field is { mode: "existing"|"custom", existing, custom }.
+  let createDraft = null;
+
   const detailView = document.getElementById("detail-view");
   const detailBack = document.getElementById("detail-back");
   const detailMeta = document.getElementById("detail-meta");

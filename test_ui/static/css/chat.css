@@ -653,6 +653,42 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     cursor: not-allowed;
 }
 
+/* Create-context wizard (test_ui only) ----------------------------------- */
+
+.create-step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.create-custom {
+    width: 100%;
+    min-height: 150px;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    color: var(--text);
+    background: #ffffff;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+.create-custom:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: -2px;
+}
+
+.create-actions {
+    justify-content: space-between;
+}
+
+.create-actions-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .modal-skip {
     background: none;
     border: none;
