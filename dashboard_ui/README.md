@@ -11,6 +11,7 @@ dashboard_ui/
   run_dashboard_ui.py      — Flask app: routes, data loading, grade summaries
   static/
     app.js                 — frontend: routing, table rendering, chart drawing
+    style.css              — dashboard styling
   templates/
     index.html             — single-page app shell
 ```

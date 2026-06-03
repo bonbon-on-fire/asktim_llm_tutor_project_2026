@@ -376,8 +376,8 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Uses `judge.judge_transcript()` with selectable judge prompt and rubric versions.
 - Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
 - Added `python -m terminal_ui.run_bundle` to automate persona × exercise × `N` trials with transcript generation and judge scoring.
-- Added `python -m ui.run_ui_raw` to automate persona × exercise × `N` raw transcript generation before judge evaluation, with outputs routed to `transcripts/{persona_type}/{persona_type}_raw/`.
-- Added `python -m ui.run_ui_judge --provider gpt` and `python -m ui.run_ui_judge --provider claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
+- Added `python -m internal_ui.run_ui_raw` to automate persona × exercise × `N` raw transcript generation before judge evaluation, with outputs routed to `transcripts/{persona_type}/{persona_type}_raw/`.
+- Added `python -m internal_ui.run_ui_judge --provider gpt` and `python -m internal_ui.run_ui_judge --provider claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
 - Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
 - Run turn count (`turn_size`) is now injected into tutor and student context so both roles know the planned conversation length.
@@ -464,7 +464,7 @@ test_ui/
 | File | Change |
 | ---- | ------ |
 | `utils/figures.py` | **NEW** — discovery + encoding helpers |
-| `ui/run_ui_raw.py` | `_build_assignment_text` also discovers figures and returns them alongside text; raw runner passes figures into tutor/student calls; writes `"figures": [filenames]` into transcript JSON |
+| `internal_ui/run_ui_raw.py` | `_build_assignment_text` also discovers figures and returns them alongside text; raw runner passes figures into tutor/student calls; writes `"figures": [filenames]` into transcript JSON |
 | `tutor/run_tutor.py` | `get_tutor_reply()` accepts optional `figures` kwarg; LangGraph node attaches multimodal content to the HumanMessage when figures are present |
 | `students/run_student.py` | Same shape as tutor: optional `figures` kwarg threaded through to the message construction |
 | `judge/run_judge.py` | Reads `figures` field from the transcript (default `[]`); resolves filenames to paths under `curriculum/<course>/figures/`; attaches multimodal content to the judge prompt |
@@ -492,7 +492,7 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 
 **Implementation order:**
 1. `utils/figures.py` + unit tests (discovery edge cases, encoding round-trip)
-2. `ui/run_ui_raw.py` — discovery + transcript field
+2. `internal_ui/run_ui_raw.py` — discovery + transcript field
 3. `tutor/run_tutor.py` — first multimodal consumer
 4. `students/run_student.py` — same pattern as tutor
 5. `judge/run_judge.py` — transcript-driven consumer

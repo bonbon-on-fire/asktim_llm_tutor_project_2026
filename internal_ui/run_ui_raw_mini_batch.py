@@ -6,7 +6,7 @@ Transcripts with two flagged turns produce two mini files: transcript_XXXX_01.js
 transcript_XXXX_02.json. Single-turn transcripts produce transcript_XXXX_01.json.
 
 Usage:
-    python ui/run_ui_raw_mini_batch_reference.py [--dry-run]
+    python internal_ui/run_ui_raw_mini_batch_reference.py [--dry-run]
 
 Options:
     --dry-run   Print the planned runs without executing them.

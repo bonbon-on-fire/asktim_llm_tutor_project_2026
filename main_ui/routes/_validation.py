@@ -17,7 +17,7 @@ _TUTOR_PROMPTS_DIR = _REPO_ROOT / "tutor" / "prompts"
 
 DEFAULT_TUTOR = "tutor_05"
 DEFAULT_COURSE = "cities_and_climate_change"
-DEFAULT_EXERCISE = "04"
+DEFAULT_EXERCISE = "01"
 
 
 def _list_courses() -> set[str]:
@@ -66,3 +66,17 @@ def validate_tutor(tutor) -> dict | None:
     if not _tutor_prompt_exists(tutor):
         return _err("tutor", tutor, "no such tutor prompt")
     return None
+
+
+def load_course_name(course) -> str:
+    """Display name for a course, read from curriculum/<course>/course_name.txt.
+
+    Returns "" if the course is falsy or the file is missing/empty, so the
+    banner degrades gracefully until each course_name.txt is filled in.
+    """
+    if not course:
+        return ""
+    path = _CURRICULUM_DIR / course / "course_name.txt"
+    if not path.is_file():
+        return ""
+    return path.read_text(encoding="utf-8").strip()

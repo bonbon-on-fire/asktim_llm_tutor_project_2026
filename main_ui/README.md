@@ -6,7 +6,7 @@ For the overall design — problem framing, schema, identity flow, non-goals —
 
 ## Status
 
-Steps 1–9 complete. The app is feature-complete for the 2026 Cities and Climate Change deployment minus image uploads (Step 10), a multi-iframe test host page (Step 11), and the formal test suite (Step 12).
+Steps 1–9 complete and **deployed on Railway** (containerized via the root `Dockerfile` + `scripts/railway-entrypoint.sh` — see [Deployment](#deployment-railway)). The app is feature-complete for the 2026 Cities and Climate Change deployment minus image uploads (Step 10), a multi-iframe test host page (Step 11), and the formal test suite (Step 12).
 
 What works today:
 
@@ -24,7 +24,7 @@ What works today:
 python -m main_ui
 ```
 
-Binds to `127.0.0.1:5001` by default (avoids clashing with `test_ui/` on `5000`). Override with `PORT` env var.
+Binds to `127.0.0.1:5001` by default. Override with the `PORT` env var.
 
 Open the chat in a browser:
 
@@ -145,19 +145,29 @@ main_ui/
     embed.html            # iframe-embeddable chat page
 ```
 
-## How `main_ui/` differs from `test_ui/`
+## Deployment (Railway)
 
-| | `test_ui/` | `main_ui/` |
-| --- | --- | --- |
-| Audience | Developers / TAs testing tutor configs | Real students embedded in OCW course pages |
-| UI | 3-step wizard (tutor, course, exercise) | No wizard — course/exercise come from URL params |
-| Persistence | In-memory only | Postgres-backed |
-| Identity | None | Email + password, cross-browser via bcrypt |
-| Streaming | No | Yes (SSE) |
-| Port | `5000` | `5001` |
-| Status | Stable — testing harness | Live for the 2026 deployment |
+`main_ui/` is the only app packaged for production. Container build and process
+config live at the repo root:
 
-Both apps coexist and can run side by side.
+- [`Dockerfile`](../Dockerfile) — Python 3.12-slim image; installs `libpq5` + `requirements.txt`, copies only the runtime packages (`main_ui/`, `tutor/`, `curriculum/`, `utils/`) plus the entrypoint, exposes `5001`, and registers a `/health` HEALTHCHECK.
+- [`Procfile`](../Procfile) — `web: gunicorn main_ui.run_app:app --bind 0.0.0.0:$PORT`.
+- [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) — container entrypoint: validates `OPENAI_API_KEY`, **normalizes the `DATABASE_URL` scheme to `postgresql+psycopg://`** (Railway hands out bare `postgres://`, but the app ships psycopg3 only), runs `alembic upgrade head`, then `exec`s gunicorn with `WEB_CONCURRENCY` workers and a `GUNICORN_TIMEOUT`.
+
+The WSGI entrypoint is `main_ui.run_app:app`. Production reads `DATABASE_URL`
+from the Railway Postgres service; migrations run automatically on every boot.
+
+## How `main_ui/` relates to the testing website
+
+`main_ui/` is the student-facing production app: course/exercise/tutor come from
+URL params, conversations persist to Postgres, identity is email + password
+(bcrypt, cross-browser), and replies stream over SSE.
+
+A separate developer/TA **testing website** — for manually configuring course,
+syllabus, and exercise context — is being rebuilt (see the latest
+[meeting notes](../meeting_notes/06_01_2026.md)); the goal is for it to share
+`main_ui/`-style persistent chat history. The earlier `test_ui/` wizard harness
+has been retired from the repo.
 
 ## What's still pending
 

@@ -7,7 +7,7 @@ student line from the file is kept; the tutor replies first (regenerated), then
 
 Student uses OpenAI (same stack as ``run_student``); tutor provider is selectable (gpt/claude).
 
-Used by ``ui.run_ui_raw_mini`` and usable standalone via ``python -m tutor.run_tutor_mini``.
+Used by ``internal_ui.run_ui_raw_mini`` and usable standalone via ``python -m tutor.run_tutor_mini``.
 """
 
 from __future__ import annotations
@@ -445,16 +445,16 @@ def run_mini(params: MiniContinuationParams) -> Path:
 
 
 def _require_openai_for_student() -> None:
-    if not (os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")):
+    if not (os.environ.get("OPENAI_API_KEY")):
         raise RuntimeError(
-            "OPENAI_API_KEY (or OPENAI_KEY) is required for the student model."
+            "OPENAI_API_KEY is required for the student model."
         )
 
 
 def _require_tutor_key(provider: str) -> None:
     if provider == "gpt":
-        if not (os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")):
-            raise RuntimeError("OPENAI_API_KEY (or OPENAI_KEY) is required for GPT tutor.")
+        if not (os.environ.get("OPENAI_API_KEY")):
+            raise RuntimeError("OPENAI_API_KEY is required for GPT tutor.")
     elif provider == "claude":
         if not os.environ.get("ANTHROPIC_API_KEY"):
             raise RuntimeError("ANTHROPIC_API_KEY is required for Claude tutor.")

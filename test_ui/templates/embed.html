@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AskTIM</title>
+    <title>AskTIM Sandbox</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
 </head>
 <body data-has-email="{{ 'true' if has_email else 'false' }}">
@@ -24,7 +24,7 @@
     <aside class="sidebar" id="sidebar" aria-label="Past conversations">
         <div class="sidebar-inner">
             <div class="sidebar-header">
-                <h2 id="sidebar-title" class="sidebar-title">AskTIM <span class="beta-tag">· Beta</span></h2>
+                <h2 id="sidebar-title" class="sidebar-title">AskTIM <span class="beta-tag">· Sandbox Beta</span></h2>
                 <button type="button" class="sidebar-close" id="sidebar-close" aria-label="Close sidebar" title="Close sidebar">
                     <svg class="sidebar-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="3" y="4" width="18" height="16" rx="2"/>
@@ -32,6 +32,27 @@
                     </svg>
                 </button>
             </div>
+            <button type="button" class="sidebar-cta sidebar-cta-primary" id="change-context" title="Edit course, exercise, tutor or syllabus">
+                <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="4" y1="21" x2="4" y2="14"/>
+                    <line x1="4" y1="10" x2="4" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12" y2="3"/>
+                    <line x1="20" y1="21" x2="20" y2="16"/>
+                    <line x1="20" y1="12" x2="20" y2="3"/>
+                    <line x1="1" y1="14" x2="7" y2="14"/>
+                    <line x1="9" y1="8" x2="15" y2="8"/>
+                    <line x1="17" y1="16" x2="23" y2="16"/>
+                </svg>
+                <span>Edit context</span>
+            </button>
+            <button type="button" class="sidebar-cta sidebar-cta-primary" id="create-context" title="Build a custom context step by step">
+                <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                <span>Create context</span>
+            </button>
             <button type="button" class="sidebar-cta sidebar-cta-primary" id="add-email" title="Add your email" hidden>
                 <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -121,6 +142,58 @@
                 <div class="modal-actions">
                     <button type="button" id="email-skip" class="modal-skip">Skip</button>
                     <button type="submit" id="email-submit" class="modal-submit" disabled>Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="context-modal" role="dialog" aria-modal="true"
+         aria-labelledby="context-modal-title" hidden>
+        <div class="modal-card">
+            <h2 id="context-modal-title" class="modal-title">Configure the context settings</h2>
+            <p class="modal-body">
+                Choose AskTIM context settings — applying starts a new chat.
+            </p>
+            <form id="context-form" class="modal-form" autocomplete="off">
+                <label class="context-field">
+                    <span class="context-label">Course <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                    <select id="context-course" class="context-select"></select>
+                </label>
+                <label class="context-field">
+                    <span class="context-label">Exercise</span>
+                    <select id="context-exercise" class="context-select"></select>
+                </label>
+                <label class="context-field">
+                    <span class="context-label">Tutor prompt <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                    <select id="context-tutor" class="context-select"></select>
+                </label>
+                <label class="context-checkbox">
+                    <input type="checkbox" id="context-syllabus" checked>
+                    <span>Include course syllabus <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                </label>
+                <div class="modal-error" id="context-error" role="alert" hidden></div>
+                <div class="modal-actions">
+                    <button type="button" id="context-cancel" class="modal-skip">Cancel</button>
+                    <button type="submit" id="context-apply" class="modal-submit">Apply</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="create-modal" role="dialog" aria-modal="true"
+         aria-labelledby="create-modal-title" hidden>
+        <div class="modal-card">
+            <h2 id="create-modal-title" class="modal-title">Build custom context settings</h2>
+            <p id="create-step-label" class="modal-body"></p>
+            <form id="create-form" class="modal-form" autocomplete="off">
+                <div id="create-step-body" class="create-step-body"></div>
+                <div class="modal-error" id="create-error" role="alert" hidden></div>
+                <div class="modal-actions create-actions">
+                    <button type="button" id="create-cancel" class="modal-skip">Cancel</button>
+                    <span class="create-actions-right">
+                        <button type="button" id="create-back" class="modal-skip" hidden>Back</button>
+                        <button type="submit" id="create-next" class="modal-submit">Continue</button>
+                    </span>
                 </div>
             </form>
         </div>

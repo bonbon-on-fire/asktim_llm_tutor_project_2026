@@ -2,10 +2,10 @@
 Interactive runner that generates raw (unjudged) tutor/student transcripts.
 
 Run with interactive CLI:
-    python -m ui.run_ui_raw
+    python -m internal_ui.run_ui_raw
 
 Or run with command-line arguments:
-    python -m ui.run_ui_raw --provider claude --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+    python -m internal_ui.run_ui_raw --provider claude --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ from tutor.run_tutor import (
     load_system_prompt,
     parse_tutor_response,
 )
-from ui.cli_utils import (
+from internal_ui.cli_utils import (
     confirm_proceed,
     group_personas_by_type,
     parse_persona_type_and_version,
@@ -97,10 +97,10 @@ class BundleConfig:
 
 def _require_openai_api_key() -> None:
     """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
-    if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
+    if os.environ.get("OPENAI_API_KEY"):
         return
     raise RuntimeError(
-        "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+        "OPENAI_API_KEY environment variable is required but not set."
     )
 
 
@@ -476,10 +476,10 @@ def _parse_args() -> argparse.Namespace:
         epilog="""
 Examples:
   # Interactive mode (default)
-  python -m ui.run_ui_raw
+  python -m internal_ui.run_ui_raw
   
   # Command-line mode
-  python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+  python -m internal_ui.run_ui_raw --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
         """,
     )
     

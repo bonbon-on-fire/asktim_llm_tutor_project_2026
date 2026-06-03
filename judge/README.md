@@ -10,11 +10,12 @@ Current defaults in code:
 
 ```text
 judge/
-  run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
-  run_judge_bundle.py           — unified bundle judge core (provider: gpt|claude)
+  run_judge.py                       — unified single-transcript judge core (provider: gpt|claude)
   hand_grade_workbook.xlsx           — manual grading workbook for judge calibration
   hand_grade_workbook_build.py       — build workbook from stratified sample + run Claude fill
   hand_grade_workbook_claude_fill.py — fill compiled `claude` rows from *_claude transcript grades
+  rebuild_hand_grade_workbook.py     — regenerate the hand-grade workbook in place
+  claude_transcript_scores.tsv       — exported Claude per-transcript scores (calibration aid)
   README.md
   prompts/
     judge_01.txt           — baseline prompt template
@@ -94,63 +95,30 @@ print(result.total_score, result.max_score)
 ### Judging All Transcripts Individually
 
 Grade every raw transcript across all persona types using the judge runner
-in `ui/`:
+in `internal_ui/`:
 
 ```powershell
 # GPT judge — grades all *_raw/ transcripts into *_gpt/ folders
-python -m ui.run_ui_judge --provider gpt
+python -m internal_ui.run_ui_judge --provider gpt
 
 # Claude judge — grades all *_raw/ transcripts into *_claude/ folders
-python -m ui.run_ui_judge --provider claude
+python -m internal_ui.run_ui_judge --provider claude
 ```
 
 All flags:
 
 ```powershell
 # --prompt and --rubric select versions; --yes skips confirmation prompt
-python -m ui.run_ui_judge --provider gpt --prompt judge_08 --rubric rubric_08 --yes
+python -m internal_ui.run_ui_judge --provider gpt --prompt judge_08 --rubric rubric_08 --yes
 
 # --source-suffix reads from *_{suffix}/ instead of *_raw/
 # --output-suffix independently overrides the target folder suffix
-python -m ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
   --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
 ```
 
 Parallelism is controlled by the `PARALLEL_WORKERS` constant at the top of
 each runner file (default: 6).
-
-### Bundle Judging (combined multi-transcript bundles)
-
-Grade transcript bundles where multiple transcripts are combined into one
-prompt for holistic/comparative evaluation:
-
-```python
-from judge.run_judge_bundle import judge_transcript_bundle
-
-result = judge_transcript_bundle(
-    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
-    provider="gpt",
-    prompt_name="judge_05",
-    rubric_name="rubric_05",
-    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
-)
-print(result.total_score, result.max_score)
-```
-
-To grade all bundles of a given type, use the bundle UI runner:
-
-```powershell
-# GPT — grade all bundle_01 bundles
-python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01
-
-# Claude — grade all bundle_02 bundles
-python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
-```
-
-Bundle files live in `transcripts/bundles/bundles_raw/bundle_XX/` and output
-goes to `transcripts/bundles/bundles_gpt/bundle_XX/` (or `bundles_claude/`).
-Each bundle file lists 3 transcript paths; they are combined into a single
-prompt with full metadata headers and graded holistically.
 
 ## Rubric summary
 

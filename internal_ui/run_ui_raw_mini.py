@@ -28,7 +28,7 @@ from tutor.run_tutor_mini import (  # noqa: E402
     raw_transcript_dir,
     run_mini,
 )
-from ui.cli_utils import confirm_proceed, prompt_integer, prompt_single_selection  # noqa: E402
+from internal_ui.cli_utils import confirm_proceed, prompt_integer, prompt_single_selection  # noqa: E402
 
 
 def _max_turn_in_transcript(data: dict) -> int:

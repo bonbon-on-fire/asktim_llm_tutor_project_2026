@@ -3,6 +3,15 @@
 (() => {
   const configEl = document.getElementById("tutor-config");
   const config = JSON.parse(configEl.textContent);
+  if (typeof config.syllabus === "undefined") config.syllabus = true;
+  // One-off custom context (from the Create-context wizard). null = use the
+  // built-in field above; a string = send as custom text with each /api/chat.
+  if (typeof config.courseCustom === "undefined") config.courseCustom = null;
+  if (typeof config.exerciseCustom === "undefined") config.exerciseCustom = null;
+  if (typeof config.tutorCustom === "undefined") config.tutorCustom = null;
+  if (typeof config.syllabusCustom === "undefined") config.syllabusCustom = null;
+
+  const courseNameEl = document.querySelector(".course-name");
 
   const messageList = document.getElementById("message-list");
   const composerForm = document.getElementById("composer");
@@ -40,6 +49,35 @@
   const sidebarEmpty = document.getElementById("sidebar-empty");
   const newChatButton = document.getElementById("new-chat");
   const addEmailButton = document.getElementById("add-email");
+  const changeContextButton = document.getElementById("change-context");
+
+  // Context switcher (test_ui only)
+  const contextModal = document.getElementById("context-modal");
+  const contextForm = document.getElementById("context-form");
+  const contextCourse = document.getElementById("context-course");
+  const contextExercise = document.getElementById("context-exercise");
+  const contextTutor = document.getElementById("context-tutor");
+  const contextSyllabus = document.getElementById("context-syllabus");
+  const contextCancel = document.getElementById("context-cancel");
+  const contextError = document.getElementById("context-error");
+  let contextOptions = null; // { courses: [...], tutors: [...] }, lazy-loaded
+  let contextModalOpen = false;
+
+  // Create-context wizard (test_ui only)
+  const createContextButton = document.getElementById("create-context");
+  const createModal = document.getElementById("create-modal");
+  const createForm = document.getElementById("create-form");
+  const createStepLabel = document.getElementById("create-step-label");
+  const createStepBody = document.getElementById("create-step-body");
+  const createError = document.getElementById("create-error");
+  const createBack = document.getElementById("create-back");
+  const createNext = document.getElementById("create-next");
+  const createCancel = document.getElementById("create-cancel");
+  let createModalOpen = false;
+  let createStep = 0;
+  // Per-step draft: each field is { mode: "existing"|"custom", existing, custom }.
+  let createDraft = null;
+
   const detailView = document.getElementById("detail-view");
   const detailBack = document.getElementById("detail-back");
   const detailMeta = document.getElementById("detail-meta");
@@ -79,7 +117,7 @@
   function renderThinking() {
     const li = document.createElement("li");
     li.className = "message message-thinking";
-    li.appendChild(document.createTextNode("AskTIM is thinking"));
+    li.appendChild(document.createTextNode("AskTIM Sandbox is thinking"));
     // Three staggered .thinking-dot spans CSS-blink one-after-another.
     for (let i = 0; i < 3; i++) {
       const dot = document.createElement("span");
@@ -390,6 +428,465 @@
     composerInput.focus();
   }
 
+  // ---- Context switcher (test_ui only) --------------------------------------
+
+  async function ensureContextOptions() {
+    if (contextOptions) return contextOptions;
+    const response = await fetch("/api/context/options");
+    if (!response.ok) throw new Error("options fetch failed");
+    contextOptions = await response.json();
+    return contextOptions;
+  }
+
+  function courseBySlug(slug) {
+    if (!contextOptions) return null;
+    return contextOptions.courses.find((c) => c.slug === slug) || null;
+  }
+
+  function tutorLabel(stem) {
+    // "tutor_01" -> "Tutor 1" for display; value stays the raw stem.
+    const m = /tutor_0*(\d+)/.exec(stem);
+    return m ? "Tutor " + m[1] : stem;
+  }
+
+  function fillSelect(selectEl, options, current) {
+    selectEl.innerHTML = "";
+    for (const o of options) {
+      const opt = document.createElement("option");
+      opt.value = o.value;
+      opt.textContent = o.label;
+      if (o.value === current) opt.selected = true;
+      selectEl.appendChild(opt);
+    }
+  }
+
+  function populateExercises(courseSlug, current) {
+    const course = courseBySlug(courseSlug);
+    const exercises = course ? course.exercises : [];
+    fillSelect(
+      contextExercise,
+      exercises.map((n) => ({
+        value: n,
+        label: "Exercise " + (parseInt(n, 10) || n),
+      })),
+      current,
+    );
+  }
+
+  function syncSyllabusAvailability(courseSlug) {
+    const course = courseBySlug(courseSlug);
+    const has = !!(course && course.has_syllabus);
+    contextSyllabus.disabled = !has;
+    if (!has) contextSyllabus.checked = false;
+  }
+
+  async function openContextModal() {
+    if (contextModalOpen) return;
+    contextError.hidden = true;
+    try {
+      await ensureContextOptions();
+    } catch (_) {
+      /* handled below via the null check */
+    }
+    contextModalOpen = true;
+    contextModal.hidden = false;
+
+    if (!contextOptions) {
+      contextError.textContent = "Could not load context options.";
+      contextError.hidden = false;
+      return;
+    }
+
+    fillSelect(
+      contextCourse,
+      contextOptions.courses.map((c) => ({
+        value: c.slug,
+        label: c.name || c.slug,
+      })),
+      config.course,
+    );
+    fillSelect(
+      contextTutor,
+      contextOptions.tutors.map((t) => ({ value: t, label: tutorLabel(t) })),
+      config.tutor,
+    );
+    const activeCourse = contextCourse.value || config.course;
+    populateExercises(activeCourse, config.exercise);
+    syncSyllabusAvailability(activeCourse);
+    if (!contextSyllabus.disabled) contextSyllabus.checked = !!config.syllabus;
+
+    // Lock Course, Tutor prompt, and Include-course-syllabus — only the
+    // Exercise is changeable here. (Build a custom context to vary the rest.)
+    contextCourse.disabled = true;
+    contextTutor.disabled = true;
+    contextSyllabus.disabled = true;
+  }
+
+  function closeContextModal() {
+    if (!contextModalOpen) return;
+    contextModalOpen = false;
+    contextModal.hidden = true;
+  }
+
+  function applyContext(event) {
+    event.preventDefault();
+    const course = contextCourse.value;
+    const exercise = contextExercise.value;
+    const tutor = contextTutor.value;
+    if (!course || !exercise || !tutor) {
+      contextError.textContent = "Pick a course, exercise, and tutor.";
+      contextError.hidden = false;
+      return;
+    }
+    config.course = course;
+    config.exercise = exercise;
+    config.tutor = tutor;
+    config.syllabus = contextSyllabus.checked;
+    // Edit context only ever picks built-ins — clear any prior custom overrides.
+    config.courseCustom = null;
+    config.exerciseCustom = null;
+    config.tutorCustom = null;
+    config.syllabusCustom = null;
+
+    const chosen = courseBySlug(course);
+    if (courseNameEl) courseNameEl.textContent = chosen ? chosen.name || "" : "";
+
+    closeContextModal();
+    // Switching context always starts a fresh conversation under the new
+    // settings — the prior chat stays in history.
+    startNewChat();
+  }
+
+  // ---- Create-context wizard (test_ui only) ---------------------------------
+
+  const CREATE_STEPS = ["course", "exercise", "tutor", "syllabus"];
+  const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus"];
+  const CUSTOM = "__custom__";
+
+  async function fetchPreviewText(stepKey, value) {
+    let url;
+    if (stepKey === "course") {
+      url = `/api/context/preview?kind=course&course=${encodeURIComponent(value)}`;
+    } else if (stepKey === "exercise") {
+      url =
+        `/api/context/preview?kind=exercise` +
+        `&course=${encodeURIComponent(createDraft.course.existing)}` +
+        `&exercise=${encodeURIComponent(value)}`;
+    } else if (stepKey === "tutor") {
+      url = `/api/context/preview?kind=tutor&tutor=${encodeURIComponent(value)}`;
+    } else {
+      url = `/api/context/preview?kind=syllabus&course=${encodeURIComponent(createDraft.course.existing)}`;
+    }
+    try {
+      const r = await fetch(url);
+      if (!r.ok) return "(could not load preview)";
+      const d = await r.json();
+      return d.text || "";
+    } catch (_) {
+      return "(could not load preview)";
+    }
+  }
+
+  function buildSelect(options, value) {
+    const sel = document.createElement("select");
+    sel.className = "context-select";
+    sel.id = "create-select";
+    for (const o of options) {
+      const opt = document.createElement("option");
+      opt.value = o.value;
+      opt.textContent = o.label;
+      if (o.value === value) opt.selected = true;
+      sel.appendChild(opt);
+    }
+    return sel;
+  }
+
+  function renderCreateStep() {
+    createError.hidden = true;
+    const step = CREATE_STEPS[createStep];
+    createStepLabel.textContent =
+      `Step ${createStep + 1} of ${CREATE_STEPS.length}: ${CREATE_LABELS[createStep]}`;
+    createStepBody.innerHTML = "";
+
+    let options = [];
+    let currentValue;
+    let placeholder = "";
+    let customValue = "";
+
+    if (step === "course") {
+      options = [
+        { value: CUSTOM, label: "Create course" },
+        ...contextOptions.courses.map((c) => ({
+          value: c.slug,
+          label: c.name || c.slug,
+        })),
+      ];
+      const d = createDraft.course;
+      currentValue = d.mode === "custom" ? CUSTOM : d.existing;
+      customValue = d.custom;
+      placeholder = "Paste or write the course context…";
+    } else if (step === "exercise") {
+      const cd = createDraft.course;
+      const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
+      const exs = courseObj ? courseObj.exercises : [];
+      options = [
+        { value: CUSTOM, label: "Create exercise" },
+        ...exs.map((n) => ({
+          value: n,
+          label: "Exercise " + (parseInt(n, 10) || n),
+        })),
+      ];
+      const d = createDraft.exercise;
+      if (cd.mode === "custom") {
+        currentValue = CUSTOM; // custom course has no built-in exercises
+      } else {
+        currentValue =
+          d.mode === "custom" ? CUSTOM : d.existing || exs[0] || CUSTOM;
+      }
+      customValue = d.custom;
+      placeholder = "Paste or write the exercise…";
+    } else if (step === "tutor") {
+      options = [
+        { value: CUSTOM, label: "Create prompt" },
+        ...contextOptions.tutors.map((t) => ({
+          value: t,
+          label: tutorLabel(t),
+        })),
+      ];
+      const d = createDraft.tutor;
+      currentValue = d.mode === "custom" ? CUSTOM : d.existing;
+      customValue = d.custom;
+      placeholder = "Paste or write the tutor prompt…";
+    } else {
+      // syllabus
+      const cd = createDraft.course;
+      const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
+      options = [{ value: CUSTOM, label: "Create syllabus" }];
+      if (courseObj && courseObj.has_syllabus) {
+        options.push({ value: "default", label: "Course syllabus" });
+      }
+      options.push({ value: "none", label: "No syllabus" });
+      const d = createDraft.syllabus;
+      let v = d.mode === "custom" ? CUSTOM : d.value;
+      if (v === "default" && !(courseObj && courseObj.has_syllabus)) v = "none";
+      currentValue = v;
+      customValue = d.custom;
+      placeholder = "Paste or write the syllabus…";
+    }
+
+    const sel = buildSelect(options, currentValue);
+    createStepBody.appendChild(sel);
+
+    const ta = document.createElement("textarea");
+    ta.className = "create-custom";
+    ta.id = "create-custom-input";
+    ta.placeholder = placeholder;
+    createStepBody.appendChild(ta);
+
+    const stepKey = step;
+
+    // Keep the draft's typed text in sync, so toggling to an existing option
+    // and back doesn't lose what the tester wrote.
+    ta.addEventListener("input", () => {
+      if (ta.readOnly) return;
+      if (stepKey === "syllabus") createDraft.syllabus.custom = ta.value;
+      else createDraft[stepKey].custom = ta.value;
+      updateCreateNextEnabled();
+    });
+
+    // Token guards the async preview fetch against a newer selection change.
+    let syncToken = 0;
+    async function syncTextarea() {
+      const val = sel.value;
+      const token = ++syncToken;
+      if (val === CUSTOM) {
+        // "Create …" — editable, restore the draft's typed text.
+        ta.readOnly = false;
+        ta.hidden = false;
+        ta.placeholder = placeholder;
+        ta.value =
+          (stepKey === "syllabus"
+            ? createDraft.syllabus.custom
+            : createDraft[stepKey].custom) || "";
+      } else if (stepKey === "syllabus" && val === "none") {
+        // No syllabus — nothing to preview.
+        ta.readOnly = true;
+        ta.hidden = true;
+        ta.value = "";
+      } else {
+        // Existing option — show its text, read-only.
+        ta.readOnly = true;
+        ta.hidden = false;
+        ta.value = "Loading…";
+        const text = await fetchPreviewText(stepKey, val);
+        if (token === syncToken) ta.value = text;
+      }
+      updateCreateNextEnabled();
+    }
+    sel.addEventListener("change", syncTextarea);
+    syncTextarea();
+
+    createBack.hidden = createStep === 0;
+    createNext.textContent =
+      createStep === CREATE_STEPS.length - 1 ? "Create & start chat" : "Continue";
+    updateCreateNextEnabled();
+  }
+
+  function updateCreateNextEnabled() {
+    const sel = document.getElementById("create-select");
+    const ta = document.getElementById("create-custom-input");
+    if (!sel) return;
+    // Grey out Continue while a "Write my own…" field is still empty —
+    // same pattern as the email modal's disabled submit button.
+    const needsText = sel.value === CUSTOM;
+    createNext.disabled = needsText && !(ta && ta.value.trim());
+  }
+
+  function saveCreateStep() {
+    const sel = document.getElementById("create-select");
+    const ta = document.getElementById("create-custom-input");
+    if (!sel) return;
+    const step = CREATE_STEPS[createStep];
+    if (step === "syllabus") {
+      if (sel.value === CUSTOM) {
+        createDraft.syllabus.mode = "custom";
+        createDraft.syllabus.custom = ta.value;
+      } else {
+        createDraft.syllabus.mode = "builtin";
+        createDraft.syllabus.value = sel.value;
+      }
+      return;
+    }
+    const d = createDraft[step];
+    if (sel.value === CUSTOM) {
+      d.mode = "custom";
+      d.custom = ta.value;
+    } else {
+      d.mode = "existing";
+      d.existing = sel.value;
+    }
+  }
+
+  async function openCreateModal() {
+    if (createModalOpen) return;
+    createError.hidden = true;
+    try {
+      await ensureContextOptions();
+    } catch (_) {
+      /* handled by the null check below */
+    }
+    createModalOpen = true;
+    createModal.hidden = false;
+
+    if (!contextOptions) {
+      createStepBody.innerHTML = "";
+      createError.textContent = "Could not load context options.";
+      createError.hidden = false;
+      return;
+    }
+
+    const firstCourse = contextOptions.courses[0]
+      ? contextOptions.courses[0].slug
+      : "";
+    const lastTutor = contextOptions.tutors.length
+      ? contextOptions.tutors[contextOptions.tutors.length - 1]
+      : "";
+    // Default each step to "Create …" (custom mode); existing options remain
+    // selectable in the dropdown below it.
+    createDraft = {
+      course: { mode: "custom", existing: config.course || firstCourse, custom: "" },
+      exercise: { mode: "custom", existing: "", custom: "" },
+      tutor: { mode: "custom", existing: config.tutor || lastTutor, custom: "" },
+      syllabus: { mode: "custom", value: "none", custom: "" },
+    };
+    createStep = 0;
+    renderCreateStep();
+  }
+
+  function closeCreateModal() {
+    if (!createModalOpen) return;
+    createModalOpen = false;
+    createModal.hidden = true;
+  }
+
+  function createGoBack() {
+    if (createStep === 0) return;
+    saveCreateStep();
+    createStep -= 1;
+    renderCreateStep();
+  }
+
+  function createGoNext(event) {
+    event.preventDefault();
+    saveCreateStep();
+    // Continue is disabled while a custom field is empty; guard the Enter-key
+    // submit path too, then advance with no error message.
+    const sel = document.getElementById("create-select");
+    const ta = document.getElementById("create-custom-input");
+    if (sel && sel.value === CUSTOM && !(ta && ta.value.trim())) return;
+    if (createStep < CREATE_STEPS.length - 1) {
+      createStep += 1;
+      renderCreateStep();
+    } else {
+      finishCreate();
+    }
+  }
+
+  function finishCreate() {
+    const c = createDraft.course;
+    const e = createDraft.exercise;
+    const t = createDraft.tutor;
+    const s = createDraft.syllabus;
+
+    if (c.mode === "custom") {
+      config.course = null;
+      config.courseCustom = c.custom;
+    } else {
+      config.course = c.existing;
+      config.courseCustom = null;
+    }
+
+    // A custom course has no built-in exercises, so its exercise is custom too.
+    if (c.mode === "custom" || e.mode === "custom") {
+      config.exercise = null;
+      config.exerciseCustom = e.custom;
+    } else {
+      config.exercise = e.existing;
+      config.exerciseCustom = null;
+    }
+
+    if (t.mode === "custom") {
+      config.tutor = null;
+      config.tutorCustom = t.custom;
+    } else {
+      config.tutor = t.existing;
+      config.tutorCustom = null;
+    }
+
+    if (s.mode === "custom") {
+      config.syllabusCustom = s.custom;
+      config.syllabus = false;
+    } else if (s.value === "default") {
+      config.syllabusCustom = null;
+      config.syllabus = true;
+    } else {
+      config.syllabusCustom = null;
+      config.syllabus = false;
+    }
+
+    if (config.courseCustom != null) {
+      if (courseNameEl) courseNameEl.textContent = "Custom context";
+    } else {
+      const chosen = courseBySlug(config.course);
+      if (courseNameEl) {
+        courseNameEl.textContent = chosen ? chosen.name || "" : "Custom context";
+      }
+    }
+
+    closeCreateModal();
+    startNewChat();
+  }
+
   // ---- Step 7: email modal --------------------------------------------------
 
   async function submitEmailStage() {
@@ -425,7 +922,7 @@
       passwordInput.focus();
     } catch (err) {
       emailError.textContent =
-        "Cannot reach AskTIM. Check your connection and try again.";
+        "Cannot reach AskTIM Sandbox. Check your connection and try again.";
       emailError.hidden = false;
       emailSubmit.disabled = false;
     }
@@ -482,7 +979,7 @@
       }
     } catch (err) {
       emailError.textContent =
-        "Cannot reach AskTIM. Check your connection and try again.";
+        "Cannot reach AskTIM Sandbox. Check your connection and try again.";
       emailError.hidden = false;
       emailSubmit.disabled = false;
     }
@@ -557,7 +1054,13 @@
       course: config.course,
       exercise: config.exercise,
       tutor: config.tutor,
+      syllabus: config.syllabus,
     };
+    // One-off custom context (Create-context wizard) — only sent when set.
+    if (config.courseCustom != null) payload.course_custom = config.courseCustom;
+    if (config.exerciseCustom != null) payload.exercise_custom = config.exerciseCustom;
+    if (config.tutorCustom != null) payload.tutor_custom = config.tutorCustom;
+    if (config.syllabusCustom != null) payload.syllabus_custom = config.syllabusCustom;
     if (conversationId) {
       payload.conversation_id = conversationId;
     }
@@ -721,11 +1224,36 @@
   addEmailButton.addEventListener("click", () => openEmailModal({ manual: true }));
   detailBack.addEventListener("click", closeDetailView);
 
-  // Unified Escape: close in z-order — detail > modal > sidebar
+  // Context switcher wiring (test_ui only)
+  changeContextButton.addEventListener("click", openContextModal);
+  contextCancel.addEventListener("click", closeContextModal);
+  contextForm.addEventListener("submit", applyContext);
+  contextCourse.addEventListener("change", () => {
+    populateExercises(contextCourse.value, null);
+    syncSyllabusAvailability(contextCourse.value);
+  });
+  contextModal.addEventListener("click", (event) => {
+    if (event.target === contextModal) closeContextModal();
+  });
+
+  // Create-context wizard wiring (test_ui only)
+  createContextButton.addEventListener("click", openCreateModal);
+  createCancel.addEventListener("click", closeCreateModal);
+  createBack.addEventListener("click", createGoBack);
+  createForm.addEventListener("submit", createGoNext);
+  createModal.addEventListener("click", (event) => {
+    if (event.target === createModal) closeCreateModal();
+  });
+
+  // Unified Escape: close in z-order — detail > create > edit > email > sidebar
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") return;
     if (!detailView.hidden) {
       closeDetailView();
+    } else if (createModalOpen) {
+      closeCreateModal();
+    } else if (contextModalOpen) {
+      closeContextModal();
     } else if (modalOpen) {
       closeEmailModal({ dismissed: true });
     } else if (sidebarOpen) {

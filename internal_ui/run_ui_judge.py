@@ -5,10 +5,10 @@ Reads from transcripts/{persona}/{persona}_raw/ and writes graded copies
 to transcripts/{persona}/{persona}_gpt/ or transcripts/{persona}/{persona}_claude/.
 
 Run with interactive CLI:
-    python -m ui.run_ui_judge
+    python -m internal_ui.run_ui_judge
 
 Or run with command-line arguments:
-    python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
+    python -m internal_ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ if str(_REPO_ROOT) not in sys.path:
 load_dotenv(_REPO_ROOT / ".env")
 
 from students.run_student import list_personas
-from ui.cli_utils import (
+from internal_ui.cli_utils import (
     confirm_proceed,
     prompt_single_selection,
 )
@@ -46,10 +46,10 @@ PARALLEL_WORKERS = 6
 
 def _require_openai_api_key() -> None:
     """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
-    if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
+    if os.environ.get("OPENAI_API_KEY"):
         return
     raise RuntimeError(
-        "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+        "OPENAI_API_KEY environment variable is required but not set."
     )
 
 
@@ -233,10 +233,10 @@ def _parse_args() -> argparse.Namespace:
         epilog="""
 Examples:
   # Interactive mode (default)
-  python -m ui.run_ui_judge
+  python -m internal_ui.run_ui_judge
   
   # Command-line mode
-  python -m ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
+  python -m internal_ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
         """,
     )
     parser.add_argument(

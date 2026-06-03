@@ -4,13 +4,16 @@ Generated tutor-student conversation transcripts for the Humanities LLM Tutor pr
 
 ## Folder Structure
 
+Current on-disk layout (the `_gpt/`, `_claude_mini/`, and other suffix folders
+described in the conventions below are produced on demand by the judge/mini
+runners and may not all be present at any given time):
+
 ```text
 transcripts/
 ├── chaotic/                          # Chaotic student persona
 │   ├── chaotic_raw/                  # Raw (ungraded) transcripts — standard pipeline
 │   ├── chaotic_claude/               # Claude-graded copies of chaotic_raw/
 │   ├── chaotic_mini/                 # Mini-continuation transcripts (pivot + replay)
-│   ├── chaotic_claude_mini/          # Claude-graded copies of chaotic_mini/
 │   ├── chaotic_raw_tutor_05/         # Raw transcripts generated with tutor_05
 │   └── chaotic_claude_tutor_05/      # Claude-graded copies of chaotic_raw_tutor_05/
 ├── cooperative/                      # Cooperative student persona
@@ -22,9 +25,7 @@ transcripts/
 │   ├── clueless_raw/                 # Raw transcripts — standard pipeline
 │   ├── clueless_claude/              # Claude-graded copies of clueless_raw/
 │   ├── clueless_mini/                # Mini-continuation transcripts (pivot + replay)
-│   ├── clueless_claude_mini/         # Claude-graded copies of clueless_mini/
-│   ├── clueless_raw_tutor_05/        # Raw transcripts generated with tutor_05
-│   └── clueless_claude_tutor_05/     # Claude-graded copies of clueless_raw_tutor_05/
+│   └── clueless_raw_tutor_05/        # Raw transcripts generated with tutor_05
 └── README.md
 ```
 
@@ -37,7 +38,7 @@ Each persona folder uses a suffix pattern to indicate the generation and grading
 - **`{persona}_claude/`** — Same, graded by the Claude judge (`judge/run_judge.py`, provider=`claude`).
 - **`{persona}_mini/`** — Mini-continuation transcripts: a raw transcript forked at a pivot turn, with the student side replayed from file and the tutor regenerated using a new prompt or provider. Includes a `mini_continuation` metadata object. Output stem matches the source raw transcript stem.
 - **`{persona}_claude_mini/`** — Claude-graded copies of `{persona}_mini/` transcripts.
-- **`{persona}_raw_tutor_05/`** — Ungraded transcripts generated using `tutor_05` as the tutor prompt (produced with `ui.run_ui_raw --output-suffix raw_tutor_05`).
+- **`{persona}_raw_tutor_05/`** — Ungraded transcripts generated using `tutor_05` as the tutor prompt (produced with `internal_ui.run_ui_raw --output-suffix raw_tutor_05`).
 - **`{persona}_claude_tutor_05/`** — Claude-graded copies of `{persona}_raw_tutor_05/` transcripts.
 
 ## Transcript JSON Schema
@@ -129,10 +130,10 @@ Raw transcripts are produced by the tutor-student simulation pipeline:
 
 ```powershell
 # Grade all raw transcripts with GPT
-python -m ui.run_ui_judge --provider gpt
+python -m internal_ui.run_ui_judge --provider gpt
 
 # Grade all raw transcripts with Claude
-python -m ui.run_ui_judge --provider claude
+python -m internal_ui.run_ui_judge --provider claude
 ```
 
 Both commands accept `--prompt` and `--rubric` flags. Output goes to the respective

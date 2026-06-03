@@ -8,7 +8,7 @@ I designed and built a **Socratic LLM tutor for MIT OpenCourseWare (OCW)** human
 
 To evaluate and improve the tutor before deployment, I built a complete validation framework alongside it: adversarial AI student bots that each probe a specific failure mode (demanding answers under pressure, going off-topic, lecturing a lost student), an LLM judge that grades conversations against a structured rubric, and a visualization module that compares GPT and Claude judge scores across all transcripts. The dashboard lets me browse every conversation and its grades side-by-side.
 
-The primary deliverable is now **AskTIM** — an iframe-embeddable chat app live for the Spring 2026 *MIT 11.270x Cities and Climate Change* course. It wraps the same tutor pipeline in a Postgres-backed, identity-aware web app with token-streamed replies and cross-browser chat history. The student bots, judge, charts, and dashboard exist to stress-test the tutor systematically across different student personalities, courses, and difficulty levels before it reaches real learners.
+The primary deliverable is now **AskTIM** — an iframe-embeddable chat app live for the Spring 2026 _MIT 11.270x Cities and Climate Change_ course. It wraps the same tutor pipeline in a Postgres-backed, identity-aware web app with token-streamed replies and cross-browser chat history. The student bots, judge, charts, and dashboard exist to stress-test the tutor systematically across different student personalities, courses, and difficulty levels before it reaches real learners.
 
 ### Why I Built It
 
@@ -24,8 +24,9 @@ The system has five loosely coupled layers:
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
-- **Testing harness (`test_ui/`)**: a 3-step wizard for TAs to manually try out tutor prompt + course + exercise combinations against the same engine
-- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+
+A developer/TA testing website (manual course + syllabus + exercise configuration, with `main_ui`-style persistent history) is being rebuilt; the earlier `test_ui/` wizard harness has been retired.
 
 ### Key Components
 
@@ -35,7 +36,7 @@ The system has five loosely coupled layers:
 
 **Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**UI Runners (`ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
+**UI Runners (`internal_ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
 **Dashboard (`dashboard_ui/`):** Flask app that discovers all raw transcripts on disk, loads Claude Mini (tutor_05) and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
@@ -82,7 +83,7 @@ flowchart TD
     end
 
     subgraph gen["1. Generate conversations"]
-        UIRAW["ui.run_ui_raw\n(GPT or Claude tutor)"]
+        UIRAW["internal_ui.run_ui_raw\n(GPT or Claude tutor)"]
         LOOP["LangGraph loop:\nstudent reply → tutor reply"]
     end
 
@@ -91,7 +92,7 @@ flowchart TD
     end
 
     subgraph judge["2. Grade transcripts"]
-        UIJ["ui.run_ui_judge\n(--provider --source-suffix --output-suffix)"]
+        UIJ["internal_ui.run_ui_judge\n(--provider --source-suffix --output-suffix)"]
         JG["judge.run_judge\nvalidate + repair JSON"]
     end
 
@@ -166,11 +167,14 @@ python -m visualization.run_visualization
 ### Directory Overview
 
 ```text
-humanities_llm_tutor_project_2026/
+asktim_llm_tutor_project_2026/
 │
 ├── curriculum/
 │   ├── philosophy/          # course.txt + exercise_01.txt (trolley problem)
-│   └── cities_and_climate_change/  # course.txt + exercise_01..12.txt
+│   ├── cities_and_climate_change/  # course.txt + syllabus.txt + exercise_01..12.txt + figures/
+│   ├── intl_dev_planning/   # preview / scaffold
+│   ├── social_theory_city/  # preview / scaffold
+│   └── sustainable_econ_dev/  # preview / scaffold
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
@@ -183,29 +187,33 @@ humanities_llm_tutor_project_2026/
 │
 ├── judge/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
-│   ├── prompts/             # judge_01.txt .. judge_08.txt
+│   ├── hand_grade_workbook*.py  # Build/fill/rebuild the hand-grade calibration workbook
+│   ├── prompts/             # judge_01.txt .. judge_08.txt (current default: judge_05)
 │   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
 │
-├── ui/
-│   ├── run_ui_raw.py        # Generate raw transcripts in bulk (--output-suffix, --yes)
-│   ├── run_ui_raw_mini.py   # Interactive wrapper for mini-continuation runs
-│   └── run_ui_judge.py      # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
+├── internal_ui/
+│   ├── run_ui_raw.py            # Generate raw transcripts in bulk (--output-suffix, --yes)
+│   ├── run_ui_raw_mini.py       # Interactive wrapper for mini-continuation runs
+│   ├── run_ui_raw_mini_batch.py # Batch mini-continuation over a reference transcript table
+│   ├── run_ui_judge.py          # Grade transcripts (--provider, --source-suffix, --output-suffix, --yes)
+│   └── cli_utils.py             # Shared interactive selection-prompt helpers
 │
-├── transcripts/
+├── transcripts/             # Generated conversations, one folder per persona family.
 │   ├── chaotic/             # chaotic_raw/, chaotic_claude/, chaotic_mini/,
-│   │                        # chaotic_claude_mini/, chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
+│   │                        # chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
 │   ├── cooperative/         # cooperative_raw/, cooperative_claude/,
 │   │                        # cooperative_raw_tutor_05/, cooperative_claude_tutor_05/
 │   └── clueless/            # clueless_raw/, clueless_claude/, clueless_mini/,
-│                            # clueless_claude_mini/, clueless_raw_tutor_05/, clueless_claude_tutor_05/
+│                            # clueless_raw_tutor_05/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
-├── test_ui/
-│   ├── run_app.py           # Flask app: wizard config + chat API routes
-│   └── templates/index.html # 3-step wizard (tutor → course → exercise) + human chat
+├── Dockerfile               # Production container for main_ui (Railway)
+├── Procfile                 # gunicorn main_ui.run_app:app
+├── scripts/
+│   └── railway-entrypoint.sh  # Validates env, normalizes DATABASE_URL, runs migrations, starts gunicorn
 │
 ├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres, SSE)
 │   ├── run_app.py           # Flask factory; SSE /api/chat; identity routes
@@ -229,11 +237,12 @@ The full pipeline is working end-to-end, with:
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `cities_and_climate_change` (12 exercises)
 - Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
-- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude), with corresponding Claude grades in `*_claude_mini/`
-- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `rubric_05`, 46 pts)
+- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude)
+- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `judge_05` / `rubric_05`, 46 pts)
 - Dashboard shows Claude Mini (tutor_05) grades vs Claude (tutor_04) grades side-by-side
 - Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
-- **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies. Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
+- **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies — and is **deployed on Railway** (containerized, migrations run on boot). Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
+- A developer/TA **testing website** (manual course/syllabus/exercise configuration + persistent history) is being rebuilt to replace the retired `test_ui/` harness.
 
 ## Challenges and How I Solved Them
 
@@ -242,6 +251,7 @@ The full pipeline is working end-to-end, with:
 - **LLM judge output validation:** Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
 - **GPT vs Claude grade alignment:** Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
 - **Inconsistent judge output schemas:** Different model versions and prompt iterations produced criteria in three different JSON shapes (flat keys, nested `criteria` dict, score under `base`). Built a normalization layer applied at write time and retroactively migrated all 927 graded transcripts with criterion data to a single canonical format.
+- **Railway Postgres driver mismatch:** Railway hands out a bare `postgres://` / `postgresql://` connection string, which SQLAlchemy resolves to the psycopg2 driver — but the app ships psycopg3 only (`psycopg[binary]`), so both Alembic and the app crashed on boot with `ModuleNotFoundError: No module named 'psycopg2'`. Fixed it in the container entrypoint (`scripts/railway-entrypoint.sh`), which rewrites the scheme to the explicit `postgresql+psycopg://` before running migrations and starting gunicorn.
 
 ## Future Possibilities
 
@@ -249,13 +259,13 @@ The full pipeline is working end-to-end, with:
 - Human-in-the-loop evaluation to calibrate the LLM judge against human graders
 - ML-assisted rubric refinement based on judge disagreement patterns
 - Image uploads in AskTIM (students attaching figures to questions; tutor receiving exercise figures as context — Phase 6 + main_ui Step 10)
-- Railway-hosted production deployment of AskTIM with end-of-course migration to internal storage
+- End-of-course migration of the Railway-hosted AskTIM data to internal storage
 
 ## TL;DR
 
-A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly—validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, analyzed to measure judge consistency, and shipped as an iframe-embeddable student app (AskTIM) for the Spring 2026 *Cities and Climate Change* course with token streaming and identity-aware chat history.
+A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly—validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, and analyzed to measure judge consistency before deployment.
 
 ---
 
 **Project Duration:** Winter 2025 — Present  
-**Technologies:** Python, LangGraph, LangChain, OpenAI API, Anthropic API, Flask, SQLAlchemy + Alembic, PostgreSQL, bcrypt, Server-Sent Events, Chart.js, matplotlib, Git
+**Technologies:** Python, LangGraph, LangChain, OpenAI API, Anthropic API, Flask, gunicorn, SQLAlchemy + Alembic, PostgreSQL (psycopg3), bcrypt, Server-Sent Events, Chart.js, matplotlib, Docker, Railway, Git
