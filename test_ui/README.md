@@ -93,6 +93,32 @@ The database must already exist (`CREATE DATABASE asktim_test;`); `create_all`
 then builds the tables. To reset the sandbox data, drop and recreate that
 database.
 
+> **Design decision (2026-06-04) — why `DATABASE_URL`, not `TEST_UI_DATABASE_URL`.**
+> test_ui originally read a prefixed `TEST_UI_DATABASE_URL` so that, with both
+> apps loading the *same* root `.env`, you couldn't accidentally point the
+> Sandbox at the production DB. In practice this caused a recurring deploy
+> footgun: the Railway test service was set up with a plain `DATABASE_URL`
+> variable (matching Railway's default Postgres reference), the app didn't read
+> it, silently fell back to ephemeral SQLite, and "data wasn't saving."
+>
+> We unified on `DATABASE_URL` for both apps. On Railway each service has its own
+> isolated environment, so `humanities-main` and `humanities-test` still resolve
+> the same var name to **different** Postgres instances — and whatever Railway
+> wires up by default just works.
+>
+> **The trade-off we accepted:** locally both apps share one `.env`, so a
+> `DATABASE_URL` set there is used by *both*. The SQLite fallback is still
+> test-specific (`test_ui.db`), so an *unset* local env keeps them separate; but
+> if you set `DATABASE_URL` locally, point it at a throwaway DB or the Sandbox
+> will write into whatever it names. If you ever run both apps locally against
+> two real Postgres DBs at once, revisit this (per-app prefixes, or separate
+> `.env` files / processes).
+>
+> **Unrelated reminder:** the Sandbox needs its **own empty** Postgres. Pointing
+> `DATABASE_URL` at a main_ui-shaped DB fails — that `conversations` table lacks
+> `syllabus_enabled`/`custom_*`, and `create_all` only creates missing *tables*,
+> it never adds columns to existing ones.
+
 ## API surface
 
 Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
