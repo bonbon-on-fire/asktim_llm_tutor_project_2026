@@ -198,6 +198,13 @@ def parse_tutor_response(content: str) -> tuple[str | None, str | None]:
 
     Tries three strategies: raw JSON, fenced code block, balanced-brace extraction.
     Returns ``(reasoning, answer)`` — either may be ``None`` on parse failure.
+
+    Parses with ``strict=False`` so literal control characters (newlines, tabs)
+    inside the JSON string values are tolerated. The model routinely emits
+    multi-line markdown tables in ``Student-facing-answer`` with real newlines
+    rather than escaped ``\\n``; strict parsing would reject those as invalid
+    JSON, and the fallback would then leak the raw ``pedagogical-reasoning`` into
+    the student-facing text.
     """
     text = content.strip()
     for candidate in (
@@ -208,7 +215,7 @@ def parse_tutor_response(content: str) -> tuple[str | None, str | None]:
         if candidate is None:
             continue
         try:
-            data = json.loads(candidate)
+            data = json.loads(candidate, strict=False)
             return (
                 data.get("pedagogical-reasoning"),
                 data.get("Student-facing-answer"),
