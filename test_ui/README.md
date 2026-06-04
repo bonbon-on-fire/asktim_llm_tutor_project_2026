@@ -104,6 +104,18 @@ Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
 `POST /api/chat` additionally accepts an optional `"syllabus": true|false` field
 (defaults to `true`) that gates the syllabus block for a new conversation.
 
+## Deployment
+
+Containerized separately from main_ui via the root **[`Dockerfile_test`](../Dockerfile_test)**
+(main_ui uses `Dockerfile_main`). It copies `test_ui/`, `tutor/`, `curriculum/`,
+`utils/` and runs [`scripts/railway-entrypoint-test.sh`](../scripts/railway-entrypoint-test.sh),
+which validates `OPENAI_API_KEY`, normalizes `TEST_UI_DATABASE_URL` to the
+`postgresql+psycopg://` scheme, then starts `gunicorn test_ui.run_app:app` on
+`$PORT` (default 5000). No Alembic step — `create_all` builds the schema on boot,
+so the target database just needs to exist. Set `TEST_UI_DATABASE_URL` (and the
+API keys) on the Railway service. Build locally with
+`docker build -f Dockerfile_test -t asktim-sandbox .`.
+
 ## Layout
 
 ```text

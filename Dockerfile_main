@@ -16,12 +16,12 @@ RUN apt-get update \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy application code (main_ui = student-facing AskTIM app)
 COPY main_ui/ main_ui/
 COPY tutor/ tutor/
 COPY curriculum/ curriculum/
 COPY utils/ utils/
-COPY scripts/railway-entrypoint.sh /entrypoint.sh
+COPY scripts/railway-entrypoint-main.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
@@ -32,4 +32,3 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:5001/health', timeout=5)"
 
 ENTRYPOINT ["/entrypoint.sh"]
-

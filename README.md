@@ -209,10 +209,12 @@ asktim_llm_tutor_project_2026/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
-├── Dockerfile               # Production container for main_ui (Railway)
+├── Dockerfile_main          # Container for main_ui (Railway) — port 5001
+├── Dockerfile_test          # Container for test_ui sandbox (Railway) — port 5000
 ├── Procfile                 # gunicorn main_ui.run_app:app
 ├── scripts/
-│   └── railway-entrypoint.sh  # Validates env, normalizes DATABASE_URL, runs migrations, starts gunicorn
+│   ├── railway-entrypoint-main.sh  # main_ui: normalize DATABASE_URL, alembic upgrade, gunicorn
+│   └── railway-entrypoint-test.sh  # test_ui: normalize TEST_UI_DATABASE_URL, gunicorn (create_all on boot)
 │
 ├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres `asktim`, SSE)
 │   ├── run_app.py           # Flask factory; SSE /api/chat; identity routes
@@ -258,7 +260,7 @@ The full pipeline is working end-to-end, with:
 - **LLM judge output validation:** Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
 - **GPT vs Claude grade alignment:** Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
 - **Inconsistent judge output schemas:** Different model versions and prompt iterations produced criteria in three different JSON shapes (flat keys, nested `criteria` dict, score under `base`). Built a normalization layer applied at write time and retroactively migrated all 927 graded transcripts with criterion data to a single canonical format.
-- **Railway Postgres driver mismatch:** Railway hands out a bare `postgres://` / `postgresql://` connection string, which SQLAlchemy resolves to the psycopg2 driver — but the app ships psycopg3 only (`psycopg[binary]`), so both Alembic and the app crashed on boot with `ModuleNotFoundError: No module named 'psycopg2'`. Fixed it in the container entrypoint (`scripts/railway-entrypoint.sh`), which rewrites the scheme to the explicit `postgresql+psycopg://` before running migrations and starting gunicorn.
+- **Railway Postgres driver mismatch:** Railway hands out a bare `postgres://` / `postgresql://` connection string, which SQLAlchemy resolves to the psycopg2 driver — but the app ships psycopg3 only (`psycopg[binary]`), so both Alembic and the app crashed on boot with `ModuleNotFoundError: No module named 'psycopg2'`. Fixed it in the container entrypoint (`scripts/railway-entrypoint-main.sh`), which rewrites the scheme to the explicit `postgresql+psycopg://` before running migrations and starting gunicorn.
 
 ## Future Possibilities
 
