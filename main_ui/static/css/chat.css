@@ -128,6 +128,84 @@ body {
     background: transparent;
 }
 
+/* Rendered-markdown tutor messages. pre-wrap (inherited from .message) would
+   add blank lines between block elements, so reset it; the parsed HTML already
+   carries its own paragraph/line structure. */
+.message-rich {
+    white-space: normal;
+}
+
+/* Collapse the outer margins of the first/last block so the bubble padding
+   stays even rather than doubling up. */
+.message-rich > :first-child {
+    margin-top: 0;
+}
+.message-rich > :last-child {
+    margin-bottom: 0;
+}
+
+.message-rich p {
+    margin: 0.5rem 0;
+}
+
+.message-rich ul,
+.message-rich ol {
+    margin: 0.5rem 0;
+    padding-left: 1.4rem;
+}
+
+.message-rich table {
+    border-collapse: collapse;
+    margin: 0.6rem 0;
+    width: 100%;
+    font-size: 0.95em;
+}
+
+.message-rich th,
+.message-rich td {
+    border: 1px solid var(--tutor-text);
+    padding: 0.35rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.message-rich th {
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+/* Let wide tables scroll horizontally inside the bubble instead of overflowing. */
+.message-rich .table-wrap,
+.message-rich table {
+    overflow-x: auto;
+    display: block;
+}
+
+.message-rich code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+}
+
+.message-rich pre {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.message-rich pre code {
+    background: none;
+    padding: 0;
+}
+
+.message-rich a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .thinking-dot {
     display: inline-block;
     animation: thinking-blink 1.4s infinite ease-in-out both;
