@@ -1,9 +1,10 @@
 """GET /embed — main iframe entry point.
 
-Validates `course`, `exercise`, and optional `tutor` query params against the
-on-disk curriculum and tutor folders (via shared validators in `_validation`),
-then renders the placeholder `embed.html` template. Real chat UI lands in
-Step 6.
+All of `course`, `exercise`, and `tutor` are optional query params — any that
+are absent fall back to the module defaults, so partial URLs still load. Values
+that *are* supplied are validated against the on-disk curriculum and tutor
+folders (via shared validators in `_validation`); an invalid explicit value
+404s. Then renders the `embed.html` chat page.
 """
 
 from __future__ import annotations
@@ -55,8 +56,11 @@ def index():
 
 @embed_bp.get("/embed")
 def embed():
-    course = request.args.get("course")
-    exercise = request.args.get("exercise")
+    # Missing params fall back to defaults so partial URLs (e.g. ?exercise=02)
+    # still load instead of 404ing. An *explicitly* invalid value is still
+    # rejected below, since validation runs on the resolved value either way.
+    course = request.args.get("course") or DEFAULT_COURSE
+    exercise = request.args.get("exercise") or DEFAULT_EXERCISE
     tutor = request.args.get("tutor") or DEFAULT_TUTOR
 
     err = validate_course(course)
