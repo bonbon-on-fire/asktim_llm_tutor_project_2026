@@ -103,11 +103,28 @@
     updateSendButton();
   }
 
+  function setMessageContent(el, role, content) {
+    // Tutor replies are markdown (tables, lists, bold). Render them to HTML so
+    // they display cleanly — but ALWAYS sanitize, since innerHTML would
+    // otherwise reintroduce the XSS hole that textContent guarded against.
+    // Student text and any case where the libs failed to load stay textContent.
+    const canRenderMarkdown =
+      role === "tutor" &&
+      typeof window.marked !== "undefined" &&
+      typeof window.DOMPurify !== "undefined";
+    if (canRenderMarkdown) {
+      el.classList.add("message-rich");
+      el.innerHTML = window.DOMPurify.sanitize(window.marked.parse(content));
+    } else {
+      // textContent — never raw innerHTML — to prevent XSS from tutor/student text.
+      el.textContent = content;
+    }
+  }
+
   function renderMessage(role, content) {
     const li = document.createElement("li");
     li.className = "message message-" + role;
-    // textContent — never innerHTML — to prevent XSS from tutor or student text.
-    li.textContent = content;
+    setMessageContent(li, role, content);
     messageList.appendChild(li);
     // Always auto-scroll to bottom. Known papercut: fights user scrolling.
     messageList.scrollTop = messageList.scrollHeight;
@@ -1122,8 +1139,9 @@
                 tutorBubbleActive = true;
               }
               // Server's parsed reply is authoritative — replace
-              // any tokens we'd accumulated in case they drifted.
-              tutorBubble.textContent = finalReply;
+              // any tokens we'd accumulated in case they drifted. Render
+              // markdown now that the full (table-complete) reply is in hand.
+              setMessageContent(tutorBubble, "tutor", finalReply);
               messageList.scrollTop = messageList.scrollHeight;
             }
             if (parsed.data && parsed.data.conversation_id) {

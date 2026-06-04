@@ -12,6 +12,7 @@ What works today:
 
 - iframe-embedded chat at `/embed?course=...&exercise=...&tutor=...`
 - Server-Sent Events streaming — tutor replies token-by-token, with hidden `pedagogical-reasoning` server-side
+- Sanitized-markdown rendering of tutor replies — tables, lists, and bold display cleanly (`marked` → `DOMPurify`, rendered on stream completion; falls back to plain text if the CDN libs don't load)
 - Postgres-backed persistence (Conversation / Message / Student tables, Alembic migrations)
 - Two-stage email + password identity (`/api/identity/check` → `/api/identity`) with bcrypt hashing
 - Sidebar with cross-browser conversation history, live-reorder on new turns, click-to-continue past chats

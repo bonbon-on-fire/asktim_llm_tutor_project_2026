@@ -752,6 +752,7 @@ No new Python — Step 5's `/api/chat` is the API surface, unchanged.
   - No history sidebar (Step 8).
   - No streaming — single request/response per turn.
   - No markdown parsing — `white-space: pre-wrap` CSS handles `\n` line breaks; bold/italics/lists stay as raw text. Acceptable for Step 6; revisit if tutor replies start producing markdown the students miss.
+    - **Update (later):** revisited — tutor replies do produce markdown (notably tables), and students were seeing raw `|`/`---`. Tutor messages now render as sanitized markdown (`marked` → `DOMPurify` → `innerHTML`) via `setMessageContent()`; see the "Markdown rendering (tutor messages)" note in the Step 6 Risks / gotchas section below.
 
 **`main_ui/static/css/chat.css`**
 - **Owns:** layout (flex column: list grows, composer pinned at bottom), message bubble styles (student right-aligned with one color, tutor left-aligned with another), composer styling (textarea + button), loading indicator, error banner, narrow-width responsiveness.
@@ -848,7 +849,7 @@ start http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04
 - **No history sidebar** (Step 8). New page loads start a fresh conversation; no way to see past ones.
 - **No "new conversation" button.** Per meeting notes, each iframe load is a new conversation; refreshing the page is the explicit way to start over.
 - **No streaming.** Replies arrive in one chunk after the LLM finishes.
-- **No markdown rendering.** Whitespace + line breaks preserved via CSS; bold/italics stay as raw asterisks. Trade-off for keeping the JS small; revisit if students complain.
+- **Markdown rendering (tutor messages).** ~~Originally none — whitespace + line breaks preserved via CSS; bold/italics stayed as raw asterisks.~~ **Updated:** tutor replies are now rendered as **sanitized markdown** so tables, lists, and bold display cleanly. `setMessageContent()` in `chat.js` runs tutor content through `marked` (GFM, incl. tables) → `DOMPurify.sanitize()` → `innerHTML`; student text and any offline-fallback stay `textContent`, so the original no-raw-innerHTML XSS guarantee holds. `marked`/`DOMPurify` load from CDN (`<script defer>` in `embed.html`, before `chat.js`); if they fail to load, rendering degrades gracefully to plain text. Styling lives in the `.message-rich` CSS block. Rendering happens once on the streamed `done` event (the authoritative full reply), so half-streamed tables never flicker. **The same change is mirrored in `test_ui`.**
 - **No themes / dark mode.** One light style. Trivial to add later.
 - **No tests** (Step 11).
 - **No iframe test harness** — Step 10 builds `test_host.html`.

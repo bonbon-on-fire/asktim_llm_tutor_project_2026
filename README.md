@@ -24,7 +24,7 @@ The system has six loosely coupled layers:
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
-- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. PostgreSQL persistence (`asktim`), bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
+- **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. PostgreSQL persistence (`asktim`), bcrypt-hashed email+password identity, Server-Sent Events streaming, sanitized-markdown tutor replies (tables/lists render cleanly), cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
 - **Testing sandbox (`test_ui/`)**: "AskTIM Sandbox" — a developer/TA chat app that mirrors `main_ui` but adds an in-app **Edit context** switcher and a step-by-step **Create context** wizard (custom course / exercise / tutor prompt / syllabus). Its own PostgreSQL database (`asktim_test`) and teal-blue (`#126f9a`) branding keep it isolated from production. See [`test_ui/README.md`](test_ui/README.md).
 
 ### Key Components

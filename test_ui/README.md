@@ -14,6 +14,7 @@ Branding is deliberately distinct from production: the accent is teal-blue
 
 - iframe-style chat at `/embed?course=...&exercise=...&tutor=...` (and a bare `/` that uses defaults)
 - Server-Sent Events streaming — tutor replies token-by-token, `pedagogical-reasoning` hidden server-side
+- Sanitized-markdown rendering of tutor replies (tables/lists/bold) — `marked` → `DOMPurify`, same `setMessageContent()` path as `main_ui`
 - Conversation / Message / Student tables; email + password identity (bcrypt), cross-browser history sidebar
 - The same tutor pipeline via `tutor.run_tutor` (through `services/tutor_bridge.py`)
 
