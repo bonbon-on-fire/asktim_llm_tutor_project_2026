@@ -108,9 +108,16 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 ## 6. Tooling / UI (launcher)
 
-- **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
-- **Web UI** (`python -m test_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
-- **Dashboard UI** (`python -m dashboard_ui.run_dashboard_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`), includes bundle rows from `transcripts/bundles/bundles_raw`, and attaches GPT/Claude score panels from corresponding counterpart files (with explicit per-provider errors for missing/ambiguous/mismatched pairs).
+> **Updated 2026-06-04.** The old `terminal_ui` launcher has been removed (its
+> generation/judging role moved to the parallelized `internal_ui/` runners), and
+> `test_ui/` has been reshaped from a config-panel testing harness into the
+> "AskTIM Sandbox" that mirrors `main_ui/`. Current entrypoints:
+
+- **Bulk runners** (`internal_ui/`): `python -m internal_ui.run_ui_raw` (generate raw transcripts), `python -m internal_ui.run_ui_judge --provider gpt|claude` (grade them), `python -m internal_ui.run_ui_raw_mini` (mini-continuation from a pivot turn). Parallelized (`ThreadPoolExecutor`, 6 workers). See [`internal_ui/README.md`](internal_ui/README.md).
+- **Student app** (`python -m main_ui`): student-facing **AskTIM** — iframe-embeddable chat, Postgres-backed, SSE-streamed, email+password identity. **Deployed on Railway.** See [`main_ui/README.md`](main_ui/README.md).
+- **Sandbox** (`python -m test_ui`): **AskTIM Sandbox** for developers/TAs — same chat as `main_ui` plus an in-app **Edit context** switcher and **Create context** wizard, on its own database (`asktim_test`). Run locally (port 5000); its Railway deployment is not working yet and is deferred. See [`test_ui/README.md`](test_ui/README.md).
+- **Dashboard** (`python -m dashboard_ui.run_dashboard_ui`): Flask app that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`) and attaches Claude Mini (tutor_05) and Claude score panels per row (explicit per-provider errors for missing/ambiguous/mismatched pairs). Pick any port other than 5001. See [`dashboard_ui/README.md`](dashboard_ui/README.md).
+- **Visualization** (`python -m visualization.run_visualization`): matplotlib score-comparison and hand-grade correlation charts. See [`visualization/README.md`](visualization/README.md).
 
 ---
 
@@ -442,7 +449,15 @@ test_ui/
 
 ---
 
-### Phase 6: Figures / multimodal pipeline ✦ PROPOSED
+### Phase 6: Figures / multimodal pipeline ✦ PROPOSED (NOT STARTED)
+
+> **Status (2026-06-04):** Not yet built. `utils/figures.py` does not exist and
+> the tutor/student/judge are still text-only. The `curriculum/<course>/figures/`
+> naming convention is documented (see [`curriculum/README.md`](curriculum/README.md))
+> and figure PNGs are checked in, but nothing reads them yet. The deployed
+> `main_ui/` ships **text-only** — exercises that reference diagrams pass only
+> their prose description to the tutor. This phase is the prerequisite for
+> `main_ui` Step 10 (image uploads).
 
 **Problem:** Several curriculum exercises reference visual diagrams that the current text-only pipeline can't surface to the LLM. `exercise_04` (Power/Actors Map) and `exercise_08` (Spider Diagram) are the immediate cases — the actual PNG sits in `curriculum/<course>/figures/` but only a hand-written prose description in the `.txt` reaches the tutor. The tutor/student/judge therefore guide and grade against a secondhand summary instead of the real figure.
 
@@ -508,7 +523,12 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 
 ---
 
-### Phase 7: Human-uploaded figures via test_ui ✦ PROPOSED
+### Phase 7: Human-uploaded figures via test_ui ✦ PROPOSED (NOT STARTED)
+
+> **Status (2026-06-04):** Not yet built; depends on Phase 6 landing first. Note
+> also that `test_ui/` has since been reshaped into the AskTIM Sandbox (see
+> Phase 9), so when this work happens the upload control lands in the Sandbox's
+> streaming chat composer rather than the old config-panel `index.html`.
 
 **Problem:** Phase 6 makes figures part of the curriculum *context*. But real OCW learners using the web chat will also want to attach their own images — a photo of handwritten work, a screenshot of their Excel table, a phone-camera capture of a hand-drawn Power/Actors Map — and have the tutor respond to that visual content. The current `test_ui` chat composer accepts text only.
 
@@ -564,7 +584,41 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 
 ---
 
-### Phase 8: Production-shape embeddable tutor app (`main_ui/`) ✦ PROPOSED
+### Phase 8: Production-shape embeddable tutor app (`main_ui/`) ✦ COMPLETED (Steps 1–9) — DEPLOYED ON RAILWAY
+
+> **As-built status (2026-06-04).** `main_ui/` is live on Railway for the Spring
+> 2026 *MIT 11.270x Cities and Climate Change* course. Steps 1–9 are complete;
+> the step-by-step build log lives in [`main_ui/PLANNING.md`](main_ui/PLANNING.md).
+> Several things diverged from the original plan below — the plan text is kept as
+> the design rationale; this box is the source of truth for what shipped:
+>
+> - **Token streaming shipped (Step 9), and was prioritized over uploads.** The
+>   plan listed streaming as an explicit non-goal ("Real-time streaming"). In
+>   practice tutor replies stream token-by-token over **Server-Sent Events**
+>   (`stream_tutor_reply()` in `tutor/run_tutor.py`), with the hidden
+>   `pedagogical-reasoning` field stripped server-side. The as-built step order is
+>   …8 history → **9 streaming**; image uploads slid to Step 10 (pending).
+> - **Identity is email + password (bcrypt), not email-only.** The plan called for
+>   a best-effort email-after-3-messages flow with no verification. What shipped is
+>   a two-stage `/api/identity/check` → `/api/identity` flow backed by a `students`
+>   table with bcrypt-hashed passwords, giving real cross-browser history.
+> - **Deployed to Railway** despite "local only / no production hosting" being a
+>   listed non-goal. Containerized via `Dockerfile_main` + `Procfile` +
+>   `scripts/railway-entrypoint-main.sh` (normalizes `DATABASE_URL` to
+>   `postgresql+psycopg://`, runs `alembic upgrade head`, then gunicorn). See
+>   Phase 10.
+> - **Figures (Phase 6) did NOT land first.** The plan made Phase 6 a hard
+>   dependency; `main_ui` instead shipped text-only. Image uploads (Step 10) remain
+>   blocked on Phase 6.
+> - **Markdown rendering added** (not in the plan): tutor replies render sanitized
+>   GFM markdown (`marked` → `DOMPurify`, vendored locally) so tables/lists/bold
+>   display cleanly.
+> - **Schema as built:** `conversations`, `messages`, `students`,
+>   `uploaded_images` (placeholder for Step 10), `alembic_version`. The plan's
+>   `/api/email` endpoint became `/api/identity[/check]`.
+>
+> **Still pending:** Step 10 (image uploads — depends on Phase 6), Step 11
+> (multi-iframe `test_host.html`), Step 12 (pytest suite).
 
 **Problem:** The existing `test_ui/` is a developer/TA testing harness — a 3-step wizard with no persistence, no identity, no iframe-friendly mode. Real OCW students need a different shape: course/exercise hardcoded per page, conversation history persists across reloads, best-effort student identity for longitudinal tracking, and an iframe-ready single-page chat. Rather than reshape `test_ui/` (which would break testing workflows), build a separate production-shape app from scratch.
 
@@ -761,6 +815,77 @@ python -m main_ui
 
 ---
 
+### Phase 9: Reshape `test_ui/` into the AskTIM Sandbox ✦ COMPLETED
+
+**Problem:** Once `main_ui/` existed, the old `test_ui/` (a config-panel chat with
+a tutor/persona/course/exercise selector, in-memory only, no identity) had drifted
+out of step with the production app. Developers and TAs needed a sandbox that
+*looks and behaves like production* — same streaming chat, same persistence and
+history — while still letting them change context freely and keeping their test
+chats off the production database.
+
+**Decision:** Rebuild `test_ui/` so it mirrors `main_ui/` (shared chat UX, SSE
+streaming, Postgres persistence, email+password identity, history sidebar) and
+add what production deliberately omits: an in-app context switcher and a one-off
+custom-context wizard. Keep it visually and operationally isolated from
+production. See [`test_ui/README.md`](test_ui/README.md).
+
+**What shipped:**
+- **Mirrors `main_ui`:** iframe chat at `/embed`, SSE token streaming with
+  `pedagogical-reasoning` hidden server-side, sanitized-markdown rendering,
+  `Conversation`/`Message`/`Student` tables, bcrypt email+password identity,
+  cross-browser history sidebar.
+- **Edit context switcher** — change course / exercise / tutor prompt and toggle
+  the syllabus in-app; applying starts a fresh conversation under the new settings
+  (the old chat stays in history). Backed by `GET /api/context/options`.
+- **Create context wizard** — one-off custom course / exercise / tutor-prompt /
+  syllabus text, stored in extra `conversations.custom_*` columns.
+- **Isolation:** its own database (`asktim_test`, schema built by
+  `Base.metadata.create_all` on boot — no Alembic), teal-blue `#126f9a` accent and
+  "AskTIM · Sandbox Beta" header, port 5000 (vs main_ui's 5001). Adds a
+  `conversations.syllabus_enabled` column on top of the main_ui schema.
+- **DB env-var resolution (decided 2026-06-04):** `TEST_UI_DATABASE_URL` →
+  `DATABASE_URL` → SQLite fallback. Lets Railway set a plain `DATABASE_URL` on the
+  test service while local dev points the Sandbox at its own DB via the prefixed
+  var, so it never accidentally writes to main_ui's Postgres. (Full rationale in
+  `test_ui/README.md`.)
+
+**Non-goals:** Alembic migrations (throwaway DB uses `create_all`); sharing a
+database with `main_ui` (deliberately separate); the simulated-student-bot button
+from the old `test_ui` (the Sandbox is human-driven chat, bots stay in
+`internal_ui`).
+
+---
+
+### Phase 10: Railway deployment (`main_ui/`) ✦ COMPLETED
+
+**Problem:** Phase 8 was explicitly local-only. To put AskTIM in front of real
+Spring 2026 OCW students it had to be hosted, with managed Postgres and migrations
+that run themselves on deploy.
+
+**Decision:** Containerize and deploy `main_ui/` to Railway with its own managed
+Postgres.
+
+**What shipped:**
+- **Container at the repo root:** [`Dockerfile_main`](Dockerfile_main) (main_ui,
+  port 5001). Copies only the app plus the shared runtime deps (`tutor/`,
+  `curriculum/`, `utils/`).
+- **Entrypoint script** ([`scripts/railway-entrypoint-main.sh`](scripts/railway-entrypoint-main.sh)):
+  validates `OPENAI_API_KEY`, **normalizes the `DATABASE_URL` scheme to
+  `postgresql+psycopg://`** (Railway hands out a bare `postgres://`, but the app
+  ships psycopg3 only — without this both Alembic and the app crash on boot with
+  `ModuleNotFoundError: No module named 'psycopg2'`), runs `alembic upgrade head`,
+  then starts gunicorn.
+- [`Procfile`](Procfile): `web: gunicorn main_ui.run_app:app --bind 0.0.0.0:$PORT`.
+- **Verified 2026-06-01** (meeting `meeting_notes/06_01_2026.md`): production
+  confirmed synced with `main`, Dockerfile/build reviewed, Railway Postgres
+  connectivity checked.
+
+**Still open / future:** end-of-course migration of the Railway-hosted AskTIM data
+to internal storage; a stakeholder sync with Dimitris on deployment status.
+
+---
+
 ## 9. Work log updates
 
 ### 03/20/2026 — Visualization input migration (completed)
@@ -873,3 +998,48 @@ Two private helpers extracted: `_norm_cid()` (key name) and `_norm_criterion_val
 #### Remaining gap
 
 The core n limitation is Claude's ~13% per-criterion coverage. Re-grading the ~375 Claude non-v2 transcripts that are missing criteria would bring n to full coverage. Future Claude grading runs will produce normalized output using the corrected schema and normalization pipeline.
+
+---
+
+### 04/2026 — Prompt iteration + mini-continuation pipeline (completed)
+
+- Tightened focus on **prompt iteration** ahead of the **May 12, 2026 hard
+  deadline** (per `meeting_notes/04_22_2026.md`). `tutor_05` / `rubric_05` (46 pts,
+  no malus) became the active pair.
+- `run_ui_raw_mini` (fork a raw transcript at a pivot turn, regenerate the tutor
+  with a new prompt/provider) became the primary evaluation tool for iterating on
+  specific failure turns; outputs land in `*_mini/`, graded copies in
+  `*_claude_mini/`. The comparison-judge variants (`run_ui_judge_mini`,
+  `run_ui_raw_two_layer`, `judge/run_judge_mini.py`, `tutor/run_tutor_two_layer.py`)
+  were **removed** as too unreliable — two-layer tutor experiments deferred past the
+  deadline.
+- Dashboard updated to a **mini-centric view**: every `*_mini/` file shown against
+  its raw source, with Claude Mini (tutor_05) and Claude (tutor_04) grades
+  side-by-side.
+
+### 05/2026 — Production app `main_ui/` built (Phase 8, completed)
+
+- Built `main_ui/` through Step 9 — see [`main_ui/PLANNING.md`](main_ui/PLANNING.md)
+  for the per-step log. Postgres persistence (Alembic), **SSE token streaming**,
+  **email+password (bcrypt) identity** with cross-browser history, sanitized
+  markdown rendering. Diverged from the Phase 8 plan as recorded in the Phase 8
+  as-built box above.
+
+### 05–06/2026 — Sandbox reshape + Railway deployment (Phases 9 & 10, completed)
+
+- Reshaped `test_ui/` into the **AskTIM Sandbox** (mirrors `main_ui`, adds Edit/
+  Create context, own `asktim_test` DB) — Phase 9.
+- Containerized and **deployed `main_ui/` to Railway** (`Dockerfile_main` +
+  entrypoint script that normalizes `DATABASE_URL` to `postgresql+psycopg://`) —
+  Phase 10. Production verified synced with `main` on 2026-06-01. (The `test_ui`
+  Sandbox runs locally only; its Railway deployment is deferred until it works.)
+
+### 06/04/2026 — test_ui DB resolution + tutor JSON parse fix (completed)
+
+- **DB env-var resolution order** for `test_ui`: `TEST_UI_DATABASE_URL` →
+  `DATABASE_URL` → SQLite. Fixes the Railway-vs-local conflict where a single
+  variable name had to mean main_ui's DB locally but the Sandbox's DB on Railway.
+  Rationale recorded in [`test_ui/README.md`](test_ui/README.md).
+- **Tutor JSON parsing** now uses `strict=False` so control characters in the
+  model's JSON no longer break parsing and leak raw `pedagogical-reasoning` into the
+  student-facing reply.

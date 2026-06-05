@@ -153,7 +153,7 @@ main_ui/
 `main_ui/` is the only app packaged for production. Container build and process
 config live at the repo root:
 
-- [`Dockerfile_main`](../Dockerfile_main) — Python 3.12-slim image; installs `libpq5` + `requirements.txt`, copies only the runtime packages (`main_ui/`, `tutor/`, `curriculum/`, `utils/`) plus the entrypoint, exposes `5001`, and registers a `/health` HEALTHCHECK. (`test_ui` has its own [`Dockerfile_test`](../Dockerfile_test).)
+- [`Dockerfile_main`](../Dockerfile_main) — Python 3.12-slim image; installs `libpq5` + `requirements.txt`, copies only the runtime packages (`main_ui/`, `tutor/`, `curriculum/`, `utils/`) plus the entrypoint, exposes `5001`, and registers a `/health` HEALTHCHECK.
 - [`Procfile`](../Procfile) — `web: gunicorn main_ui.run_app:app --bind 0.0.0.0:$PORT`.
 - [`scripts/railway-entrypoint-main.sh`](../scripts/railway-entrypoint-main.sh) — container entrypoint: validates `OPENAI_API_KEY`, **normalizes the `DATABASE_URL` scheme to `postgresql+psycopg://`** (Railway hands out bare `postgres://`, but the app ships psycopg3 only), runs `alembic upgrade head`, then `exec`s gunicorn with `WEB_CONCURRENCY` workers and a `GUNICORN_TIMEOUT`.
 

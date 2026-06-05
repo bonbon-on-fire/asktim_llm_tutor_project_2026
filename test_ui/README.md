@@ -133,17 +133,15 @@ Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
 
 ## Deployment
 
-Containerized separately from main_ui via the root **[`Dockerfile_test`](../Dockerfile_test)**
-(main_ui uses `Dockerfile_main`). It copies `test_ui/`, `tutor/`, `curriculum/`,
-`utils/` and runs [`scripts/railway-entrypoint-test.sh`](../scripts/railway-entrypoint-test.sh),
-which validates `OPENAI_API_KEY`, normalizes `DATABASE_URL` to the
-`postgresql+psycopg://` scheme, then starts `gunicorn test_ui.run_app:app` on
-`$PORT` (default 5000). No Alembic step — `create_all` builds the schema on boot,
-so the target database just needs to exist (and must be the Sandbox's **own**
-empty DB — pointing it at main_ui's Postgres fails, since that table is missing
-test_ui's `syllabus_enabled`/`custom_*` columns and `create_all` won't add them).
-Set `DATABASE_URL` (and the API keys) on the Railway service. Build locally with
-`docker build -f Dockerfile_test -t asktim-sandbox .`.
+**Run locally only.** The Sandbox is not currently deployed — its Railway
+container (`Dockerfile_test` + `scripts/railway-entrypoint-test.sh`) was removed
+because the test deployment isn't working yet, and the work is deferred. Only
+`main_ui/` is deployed (see [`main_ui/README.md`](../main_ui/README.md#deployment-railway)).
+
+To run the Sandbox locally, use `python -m test_ui` (binds to `127.0.0.1:5000`).
+Point it at its **own** empty database via `TEST_UI_DATABASE_URL` — pointing it at
+main_ui's Postgres fails, since that table is missing test_ui's
+`syllabus_enabled`/`custom_*` columns and `create_all` won't add them.
 
 ## Layout
 

@@ -3,3 +3,4 @@
 - [User profile](user_profile.md) — Nishita Bhakar, co-developer with Romain Puech; full-stack on tutor/judge/viz/UI
 - [Project overview](project_overview.md) — 4-layer LangGraph pipeline, rubric_05 (46pt), 864 transcripts, active prompt iteration
 - [Active action items](project_active_items.md) — open tasks: human testing, reference mini simulations (25 runs), dashboard mini-centric view
+- [Git: no remote ops](git_no_remote_ops.md) — do NOT run git push/pull/commit/etc; user manages git

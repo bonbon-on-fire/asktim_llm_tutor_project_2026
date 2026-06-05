@@ -210,11 +210,9 @@ asktim_llm_tutor_project_2026/
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
 ├── Dockerfile_main          # Container for main_ui (Railway) — port 5001
-├── Dockerfile_test          # Container for test_ui sandbox (Railway) — port 5000
 ├── Procfile                 # gunicorn main_ui.run_app:app
 ├── scripts/
-│   ├── railway-entrypoint-main.sh  # main_ui: normalize DATABASE_URL, alembic upgrade, gunicorn
-│   └── railway-entrypoint-test.sh  # test_ui: normalize DATABASE_URL, gunicorn (create_all on boot)
+│   └── railway-entrypoint-main.sh  # main_ui: normalize DATABASE_URL, alembic upgrade, gunicorn
 │
 ├── main_ui/                 # Student-facing AskTIM app (iframe-embed, Postgres `asktim`, SSE)
 │   ├── run_app.py           # Flask factory; SSE /api/chat; identity routes
