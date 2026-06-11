@@ -1,0 +1,73 @@
+TITLE: Problem Set 10
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Friday 10th May, 2024
+Days Covered: 20, 21, and 22 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Random Pixels [10 points]
+
+[Figure: a 4×4 grid of cells numbered 1–16 (row by row: 1,2,3,4 / 5,6,7,8 / 9,10,11,12 / 13,14,15,16). Four interior vertices are labeled a, b, c, d, each at the corner shared by four cells: a is shared by cells 2,3,6,7; b by 7,8,11,12; c by 10,11,14,15; d by 5,6,9,10.]
+
+Let G be the grid shown in the figure. Each of the numbered cells of the grid will be randomly assigned one of the colors cyan, magenta, yellow, or black, with probability 1/4 for each color. The assignments of colors to cells are mutually independent. We call a vertex in this grid monochromatic if all four adjacent cells have the same color; let A be the event that a is monochromatic, and similarly with events B, C, and D referring to b, c, and d respectively.
+
+(a) [2 pts] What is Pr[A], i.e., the probability that all four cells around a have the same color?
+(b) [6 pts] Prove carefully that events A, B, and C are mutually independent. (Since the same is true for the other sets of 3 squares, this will show that events A, B, C, and D are 3-wise independent.)
+    Hint: To verify that A, B, and C are mutually independent, there are 4 formulas that need to be checked.
+(c) [2 pts] Prove that A, B, C, and D are not mutually independent.
+
+
+Problem 2. Median vs Maximum [20 points]
+
+A hat is filled with 100 Raboots, numbered 1 through 100 (with no repeats). Three Raboots are pulled out of the hat uniformly at random without replacement; let D be the median of their three numbers, and let X be the maximum of their three numbers.
+Note: for this problem, please express your answers in closed form: arithmetic, exponents, factorials, and binomial coefficients are fine, but your final answers should not use Σ-notation, ellipses, or the like.
+
+(a) [6 pts] What are the values of PMF_D(k) and PMF_X(k) for each 1 ≤ k ≤ 100? Please answer in closed form, and explain your answers.
+(b) [6 pts] What is the value of CDF_D(k) for each 1 ≤ k ≤ 100? Please answer in closed form, and explain your answer.
+    Hint: Recall that your answer should not use Σ notation—in fact, we recommend not using summations for this problem at all! Instead, think about how many of the three numbers are ≤ k. There are two cases to consider.
+(c) [2 pts] Observe that D can take any value between 2 and 99, while X can take any value between 3 and 100. What is Pr[D = 10 and X = 5]? Explain your answer.
+(d) [2 pts] Are random variables D and X independent? Why or why not?
+(e) [4 pts] For which real numbers k is PMF_{X−D}(k) greater than 0? (You do not need to compute the exact value of PMF_{X−D}(k).) Please explain your answer.
+
+
+Problem 3. Probabilistic Method [10 points]
+
+Let x1, ..., xn be a collection of n boolean variables. Recall that a literal is either a variable xi or its negation NOT xi.
+Let φ be a k-CNF formula with m clauses: that is, a formula of the form
+    φ = C1 ∧ C2 ∧ ... ∧ Cm
+where each clause Cj is of the form (ℓ1 ∨ ℓ2 ∨ ... ∨ ℓk) where ℓ1, ℓ2, ..., ℓk are literals. For this problem, assume that each clause has literals from k distinct variables.
+Imagine that we assign a value in {True, False} to each variable xi by flipping a fair coin; the n coin flips are made independently.
+
+(a) [2 pts] Consider a single clause of the form (ℓ1 ∨ ℓ2 ∨ ... ∨ ℓk). What is the probability that it is satisfied, i.e. that at least one of its literals is True?
+(b) [2 pts] Let U be the random variable which counts the total number of unsatisfied clauses. Express U as a sum of indicator random variables, with one indicator random variable for each of the m clauses. Be careful to write down an expression for U, not Ex[U].
+(c) [2 pts] What is the expected number of unsatisfied clauses, Ex[U]?
+    Hint: Use linearity of expectation.
+(d) [2 pts] Using the previous part, prove that if k = 5 and m = 31 then Pr[U = 0] > 0.
+(e) [2 pts] Conclude that if k = 5 and m = 31 then there exists a satisfying assignment: some way of assigning values {True, False} to the variables so that all of the clauses in φ are satisfied.
+
+
+Problem 4. Teeter Dance [10 points]
+
+An over-caffeinated Spinda teeters along the (actually-)Infinite Corridor. With each step, Spinda randomly moves East or West with equal probability.
+We designate Spinda's initial position in Lobby 10 as location 0, with successive positions to the East labeled 1, 2, ..., and positions to the West labelled −1, −2, .... Let Lt be the random variable giving Spinda's location after t steps. Before it starts, Spinda is known to be at location 0, so
+    PMF_{L0}(n) = 1 if n = 0, and 0 otherwise.
+After one step, Spinda is equally likely to be at location 1 or −1, so
+    PMF_{L1}(n) = 1/2 if n = ±1, and 0 otherwise.
+
+(a) [2 pts] Give the distributions PMF_{Lt} for t = 2, 3, 4 by filling in the table of probabilities below, where omitted entries are 0. For each row, write all the nonzero entries so they have the same denominator.
+
+| location      | -4 | -3 | -2 | -1 | 0   | 1 | 2 | 3 | 4 |
+|---------------|----|----|----|----|-----|---|---|---|---|
+| initially     |    |    |    |    | 1   |   |   |   |   |
+| after 1 step  |    |    |    | 1/2| 0   |1/2|   |   |   |
+| after 2 steps |    |    | ?  | ?  | ?   | ? | ? |   |   |
+| after 3 steps |    | ?  | ?  | ?  | ?   | ? | ? | ? |   |
+| after 4 steps | ?  | ?  | ?  | ?  | ?   | ? | ? | ? | ? |
+
+(b) [8 pts] Help Spinda regain its bearings by answering the following questions. Provide your derivations and reasoning. (All answers should be functions of t and i.)
+    (i) What is the final location s of a t-step walk that steps East exactly i times?
+    (ii) How many different length-t walks end at this same location s?
+    (iii) What is the probability that Spinda ends at this same location s after t steps?
+    (iv) Let Bt := (Lt + t)/2. Conclude that Bt follows the binomial distribution Bin_t(1/2).
