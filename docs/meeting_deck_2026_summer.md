@@ -1,17 +1,5 @@
----
-marp: true
-title: AskTIM — Project Review for Dimitris
-paginate: true
----
-
-<!--
-Slide deck for the Dimitris meeting (rescheduled to June 2026 due to Faizan's conflict).
-Bullet-style slides. Content sourced from meeting_notes/, judge/claude_transcript_scores.tsv,
-judge/rubrics/rubric_08.md. Render with the "Marp for VS Code" extension → Export (PDF/PPTX),
-or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
--->
-
 # AskTIM
+
 ## A Socratic LLM Tutor for MIT OpenCourseWare
 
 - Project review — **June 2026**
@@ -23,14 +11,14 @@ or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 
 - A **Socratic tutor** for MIT OCW assignments
 - Guides students with questions — **never gives the answer**
-- **Live now** in *MIT 11.270x — Cities & Climate Change* (Spring 2026)
+- **Live now** in _MIT 11.270x — Cities & Climate Change_ (Spring 2026)
 - Embedded in the MIT Learn assignment page (iframe chat)
 
 ---
 
 ## The challenge — and our approach
 
-- **Hard part isn't the chatbot — it's *proving* it stays in its role** with real students
+- **Hard part isn't the chatbot — it's _proving_ it stays in its role** with real students
 - So the project is a **test-and-measure loop:**
 
 > build/modify tutor → simulate conversations → AI judge grades them → read results → change one thing → repeat
@@ -69,7 +57,7 @@ or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 - Starts at full marks, **subtracts points for specific mistakes** — total **40**
 - **Socratic (12 pts)** — avoid doing the student's work; **lose all 12 if it gives the answer**
 - **Scaffolding (6)** — build on what they got right; diagnose confusion first
-- **Meta-learning (2)** — coach *how* to reason, not just right/wrong
+- **Meta-learning (2)** — coach _how_ to reason, not just right/wrong
 - **No spiraling (4)** — don't loop without progress
 - **On-assignment (8)** — keep them on task; redirect off-topic
 - **Bite-sized (4)** — short, clear replies
@@ -80,7 +68,7 @@ or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 ## Making the judge trustworthy
 
 - Test: **two AI judges (GPT + Claude) grade the same chats** — do they agree?
-- Disagreement = the *rubric* is ambiguous, not the tutor
+- Disagreement = the _rubric_ is ambiguous, not the tutor
 - Fixed by **simplifying the rubric** (46 → **40 points**)
 - **Claude was far more self-consistent (~0.8) than GPT**
 - **Decision: Claude is the official judge; GPT dropped**
@@ -91,7 +79,7 @@ or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 
 - Built a **"fork-at-the-broken-turn" tool** → clean A/B test of a prompt tweak
 - Ran **30 conversations: old wording vs new (`tutor_05`)**
-- **Result: `tutor_05` lost *zero* points for giving away the answer**
+- **Result: `tutor_05` lost _zero_ points for giving away the answer**
   - old version had been caught handing over fill-in-the-blank skeletons
 - The never-give-the-answer guarantee **held**
 
@@ -113,7 +101,7 @@ or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 - Three of us **hand-graded the same 20 conversations**, compared to Claude
 - **Moderate agreement:** Spearman **0.59** (Nishita), **0.57** (Romain)
 - Claude's average (**31.8/40**) ≈ the **strictest** human grader
-- Read: **Claude grades consistently, slightly strict** — good enough to *rank* tutor versions
+- Read: **Claude grades consistently, slightly strict** — good enough to _rank_ tutor versions
 - Caveat: small sample (20); one grader's sheet was unfilled
 
 ---
