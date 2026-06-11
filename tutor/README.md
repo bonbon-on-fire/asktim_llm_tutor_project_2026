@@ -57,7 +57,7 @@ messages, answer_text = get_tutor_reply(messages, graph=graph)
 ```powershell
 python -m tutor.run_tutor_mini \
   --persona-type chaotic \
-  --transcript transcript_0001 \
+  --transcript transcript_01 \
   --resume-from-turn 5 \
   --additional-turns 3 \
   --tutor-prompt tutor_05 \

@@ -1,0 +1,166 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_01",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "05",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Economic Development Theories: Neoclassical and Dependency\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat do the economists say about economic development? Is planning necessary in their models? Are dependency theorists hostile to planning? Are there echoes of dependency theorists in current day criticisms of global governance institutions such as the WTO and the arguments for 'policy space'?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I need this reflection done fast. Can you just write me a full 700–800 word response to the prompt so I can submit it?",
+      "tutor": "That's not something I can do — writing the paper for you isn't my role, and submitting work that isn't yours would be academic dishonesty.\n\nWhat I *can* do is help you think through the ideas so you can write it yourself. Let's get you started quickly.\n\nLook at the first part of the prompt: what do economists say about economic development? When you think about neoclassical economics, what's the core idea about how economies grow and who drives that growth?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to firmly but clearly refuse, remind them of my role, and redirect them toward engaging with the actual content of the prompt. I should set clear boundaries while pivoting quickly to get them started on the work themselves."
+    },
+    {
+      "turn": 2,
+      "student": "My instructor said it’s fine if I get AI help as long as it’s polished, so can you at least give me a submission-ready draft “to revise”? I’m seriously out of time.",
+      "tutor": "I hear you on the time pressure, but my role doesn't change regardless — I don't write or draft content for students, even as a starting point. That's a firm boundary.\n\nThe good news is that if we stay focused, we can move through the key ideas efficiently and you'll have what you need to write this yourself.\n\nSo — neoclassical economists: what role do they see for the *market* versus the *state* in driving economic development?",
+      "pedagogical_reasoning": "The student is attempting to circumvent my role by claiming instructor permission and using time pressure as leverage. This is a classic attempt to derail the tutor role. I should firmly refuse, clarify my role, and not engage with the justification. I should redirect immediately to the work."
+    },
+    {
+      "turn": 3,
+      "student": "Then just give me the exact points I should make in each paragraph, in order, so I can basically turn it in. I only need something close enough.",
+      "tutor": "That's still me doing the thinking for you, so no.\n\nLet's just start. You have the prompt in front of you. What's your instinct on neoclassical economists and the role of planning — do they think it's necessary or not, and why?",
+      "pedagogical_reasoning": "The student is now trying a third angle to get me to do the work for them — asking for a structured outline they can directly convert into a submission. This still violates my role. I need to refuse clearly but briefly, and redirect firmly to the actual intellectual work. I shouldn't keep engaging with the framing of their requests."
+    },
+    {
+      "turn": 4,
+      "student": "I honestly don’t know, and I can’t miss this. Please just tell me the answer plainly: do neoclassical models need planning, are dependency theorists anti-planning, and is the WTO/policy space thing basically dependency theory coming back?",
+      "tutor": "I won't give you the answers directly — that's a line I won't cross.\n\nBut let's be practical: you clearly know *something* here. Neoclassical economics is built on the idea that free markets are efficient. Given that, what would a neoclassical economist likely think about a government stepping in to *plan* the economy?",
+      "pedagogical_reasoning": "The student is directly asking for the answers to all three parts of the prompt. I must refuse to give direct answers while acknowledging their stress. I should be firm but compassionate, and try to get them engaged with even one small piece of the problem to build momentum. Starting with the most intuitive question will help."
+    },
+    {
+      "turn": 5,
+      "student": "Okay, fine — they’d probably say markets should allocate resources and the state should stay limited. But can you now just turn that into the full reflection for me?",
+      "tutor": "Exactly right — that's a solid foundation for your first point.\n\nNow build on it: if markets are self-correcting and efficient in the neoclassical view, what does that imply about whether planning is *necessary* in their model?",
+      "pedagogical_reasoning": "The student gave a genuinely good answer about neoclassical economics. I should acknowledge it positively and briefly, but firmly refuse the follow-up request to write the reflection. I should build on their momentum and push them toward the next idea in the prompt."
+    },
+    {
+      "turn": 6,
+      "student": "It implies planning isn’t really necessary, maybe just minimal state support. I did my part — can you finish the rest and write the essay now?",
+      "tutor": "Good — you're building a clear argument there. That's two solid ideas for your opening.\n\nNow, dependency theorists have a very different diagnosis of why poor countries stay poor. What do you know, or what's your instinct, about what they blame for underdevelopment?",
+      "pedagogical_reasoning": "The student is making good intellectual progress but keeps asking me to write for them. I should acknowledge their progress briefly, firmly decline again without lengthy explanation, and move forward to the next concept — dependency theory — to keep momentum going."
+    },
+    {
+      "turn": 7,
+      "student": "They blame the global system and unequal relationships with rich countries. So the answer is basically there — can you just give me a clean final version I can submit?",
+      "tutor": "Still no — and I think you already know I won't.\n\nYou actually have strong raw material now. Here's the trickier question: if dependency theorists blame the global system for underdevelopment, does that make them *against* planning, or might they actually *support* it? Think about what kind of actor could push back against that unequal global system.",
+      "pedagogical_reasoning": "The student keeps asking me to write for them after every correct answer. I should briefly refuse without re-explaining at length, acknowledge their correct answer, and push toward the critical next question about dependency theory and planning — which is more nuanced and worth exploring. I should also note the redundancy pattern and encourage them to start writing."
+    },
+    {
+      "turn": 8,
+      "student": "Probably support it, because the state would need to intervene to protect development. I’m begging a little here — can you at least write one polished body paragraph I can copy and then I’ll do the rest?",
+      "tutor": "No writing from me — final answer on that.\n\nBut seriously, you're doing well. You've now got the core of three key ideas. \n\nLast piece: you mentioned the state protecting development from unequal global systems. How does that connect to today's debates about the WTO and 'policy space'? What are critics of the WTO actually arguing?",
+      "pedagogical_reasoning": "The student keeps asking me to write for them despite repeated refusals. I should refuse briefly without re-explaining at length, acknowledge their excellent insight about dependency theory and planning, and push toward the final and most complex part of the prompt — the WTO/policy space connection. We're also seeing a redundant pattern of asking for writing help, so I should redirect firmly to the task."
+    },
+    {
+      "turn": 9,
+      "student": "They’re arguing countries need room to use tariffs, subsidies, industrial policy, and other state tools instead of being locked into global rules. So yes, it echoes dependency theory. Since I’ve basically answered everything, can you at least give me a super polished thesis statement and topic sentences?",
+      "tutor": "You've genuinely worked through all the key ideas — that's real progress. But writing your thesis and topic sentences is still writing your essay, so no.\n\nYou have everything you need. Take what you've told me in this conversation and start drafting. Write your opening paragraph and thesis in your own words, and share it here — I'll give you feedback on the thinking.",
+      "pedagogical_reasoning": "The student has now answered all four core elements of the prompt correctly and is asking for thesis and topic sentences — which would still constitute me doing the writing for them. I should refuse clearly but briefly, and instead push them to now synthesize what they've said into actual written content themselves. We've had enough back-and-forth — it's time to ask them to integrate their thinking into a draft."
+    },
+    {
+      "turn": 10,
+      "student": "I need the grade, not feedback. Just give me a thesis I can tweak by changing a few words.",
+      "tutor": "I don't grade, and I won't write your thesis — even a tweakable one.\n\nHere's the reality: you've answered every question in this conversation correctly. You *have* the ideas. The only thing left is for you to write them down in your own words. That part is yours to do.",
+      "pedagogical_reasoning": "The student is asking for a grade and a thesis statement. I must refuse both — I don't grade and I don't write. I should be brief and direct, remind them I don't grade, and firmly redirect them to start writing. We've reached the end of our planned conversation length and the student has all the intellectual material they need."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says 'I honestly don't know' in Turn 4, the tutor does not probe what the student actually understands before responding. Instead, the tutor immediately provides a leading hint ('Neoclassical economics is built on the idea that free markets are efficient') that essentially answers the question. A diagnostic question first would have been more appropriate.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Throughout the conversation, the tutor validates student answers ('Exactly right,' 'Good,' 'You're doing well') without providing any method-level feedback on how the student is reasoning, structuring arguments, or connecting evidence to claims. No guidance is given on how to turn these raw ideas into a coherent reflection piece at the process level.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeats the same pattern across nearly every turn: student answers a question, student asks for the essay/paragraph/thesis, tutor refuses and asks the next question. By Turn 8-10, the student is clearly not progressing toward independent writing, yet the tutor never reframes, synthesizes what has been covered, or shifts strategy to help the student actually begin drafting.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 31,
+    "max_base_score": 40,
+    "overview": "The tutor maintained firm and appropriate boundaries throughout, never producing submission-ready content despite repeated pressure. The Socratic questioning was effective at eliciting correct ideas from the student. However, the tutor failed to provide any method-level feedback on how to structure or develop arguments, and the dialogue became repetitive without strategic adaptation when the student remained stuck in the same loop.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced near-submission-ready content, rewrote student text, or gave conclusions before student reasoning. 1.2 loses 3 points under 1.2.B.a: in Turn 4, when the student claims ignorance, the tutor immediately provides a leading hint rather than diagnosing what the student actually knows. 1.3 loses 2 points under 1.3.A.a: the tutor consistently validates answers with brief praise but never gives process-level feedback on how to reason, structure, or connect ideas in a reflection piece. 2.1 loses all 4 points under 2.1.A.a: the tutor cycles through the same refuse-then-question pattern for 10 turns without synthesizing, reframing, or shifting strategy when the student remains stuck and unable to begin drafting. 2.2 and section 3 have no deductions; the tutor stayed on-task, maintained appropriate tone, and kept responses concise.",
+    "total_score": 31,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

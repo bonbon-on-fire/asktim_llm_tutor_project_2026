@@ -4,7 +4,7 @@
 
 ### What I Built
 
-I designed and built a **Socratic LLM tutor for MIT OpenCourseWare (OCW)** humanities and social sciences courses, intended as a deployable tool for students working through OCW assignments. The tutor is constrained to never give direct answers — it uses guided discovery, bite-sized responses, and formative feedback to walk students through assignments on topics like the trolley problem in philosophy or climate geography in urban studies.
+I designed and built a **Socratic LLM tutor for MIT OpenCourseWare (OCW)** humanities and social sciences courses, intended as a deployable tool for students working through OCW assignments. The tutor is constrained to never give direct answers — it uses guided discovery, bite-sized responses, and formative feedback to walk students through assignments on topics like climate geography in urban studies, moral reflection in the humanities, or proof techniques in discrete math.
 
 To evaluate and improve the tutor before deployment, I built a complete validation framework alongside it: adversarial AI student bots that each probe a specific failure mode (demanding answers under pressure, going off-topic, lecturing a lost student), an LLM judge that grades conversations against a structured rubric, and a visualization module that compares GPT and Claude judge scores across all transcripts. The dashboard lets me browse every conversation and its grades side-by-side.
 
@@ -33,7 +33,7 @@ The system has six loosely coupled layers:
 
 **Student Bot (`students/run_student.py`):** Shares the same LangGraph infrastructure as the tutor, but uses a persona prompt from `students/personas/` to simulate a specific type of student. Includes a heuristic guard and automatic retry if the bot starts sounding like a tutor.
 
-**Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
+**Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The latest rubric (`rubric_08`, 40 pts) scores three sections: Pedagogy (20 pts — Socratic method/no direct work, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (8 pts — bite-sized responses, tone). (The earlier `rubric_05` was 46 pts and remains the in-code default.)
 
 **UI Runners (`internal_ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
@@ -55,7 +55,7 @@ The system has six loosely coupled layers:
 - Demands direct answers and complains the method is unhelpful
 - Tests whether the tutor holds its role under social pressure
 
-### 3. Resulting Conversation (`transcripts/chaotic/chaotic_raw/transcript_0001.json`)
+### 3. Resulting Conversation (`transcripts/chaotic/chaotic_raw/transcript_01.json`)
 
 - Student opens by demanding the answer directly, refusing to engage
 - Tutor deflects with a targeted question about the student's existing understanding
@@ -87,7 +87,7 @@ flowchart TD
     end
 
     subgraph rawstore["Raw transcripts"]
-        RAWF[("transcripts/*/*_raw/\nor *_raw_tutor_05/\ntranscript_XXXX.json")]
+        RAWF[("transcripts/*/*_raw/\nor *_raw_tutor_05/\ntranscript_NN.json")]
     end
 
     subgraph judge["2. Grade transcripts"]
@@ -136,7 +136,7 @@ for turn_index in range(config.turn_size):
 ```python
 payload = {
     "tutor_prompt": "tutor_03", "student_persona": "chaotic_01",
-    "course": "philosophy", "exercise_number": "01",
+    "course": "cities_and_climate_change", "exercise_number": "01",
     "exchanges": transcript_exchanges,
 }
 transcript_path.write_text(json.dumps(payload, indent=2))
@@ -146,12 +146,12 @@ transcript_path.write_text(json.dumps(payload, indent=2))
 
 ```python
 result = judge_transcript(
-    "chaotic/chaotic_gpt/transcript_0001",
-    provider="gpt",
-    prompt_name="judge_05",
-    rubric_name="rubric_05",
+    "chaotic/chaotic_claude/transcript_01",
+    provider="claude",
+    prompt_name="judge_08",
+    rubric_name="rubric_08",
 )
-print(result.total_score, result.max_score)  # e.g. 38, 46
+print(result.total_score, result.max_score)  # e.g. 37, 40
 ```
 
 **5. Generate score comparison charts**
@@ -188,7 +188,7 @@ asktim_llm_tutor_project_2026/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
 │   ├── hand_grade_workbook*.py  # Build/fill/rebuild the hand-grade calibration workbook
 │   ├── prompts/             # judge_01.txt .. judge_08.txt (current default: judge_05)
-│   └── rubrics/             # rubric_01.md .. rubric_08.md (current default: rubric_05)
+│   └── rubrics/             # rubric_01.md .. rubric_08.md (latest: rubric_08, 40pt; in-code default: rubric_05)
 │
 ├── internal_ui/
 │   ├── run_ui_raw.py            # Generate raw transcripts in bulk (--output-suffix, --yes)
