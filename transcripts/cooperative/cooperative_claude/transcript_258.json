@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "24",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Security and Post-Conflict Development and Review\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat is the nature of the relationship between development interventions before, during and after conflict, and the factors that drive conflict itself? Does the rise of new global powers like China portend a transformation of the development-security agenda as conventionally practiced? Does it make sense to push for more and more convergence of security and development?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I’m working on a 700–800 word reflection for my development planning class, and I’m kinda stuck on the prompt about conflict, development, and security. Could u help me figure out the main argument first?",
+      "tutor": "Sure, let's dig in! Before we talk about a main argument, tell me: what do you think comes first — conflict or underdevelopment? Or do you see them as connected in a different way?",
+      "pedagogical_reasoning": "The student is just starting and asking for help developing a main argument. Rather than scaffolding too heavily or giving them ideas, I should use the Socratic method to get them to engage with the prompt themselves first. I'll ask them what they already think about the relationship between development and conflict, which is the first part of the prompt. This gets them thinking and gives me a sense of where they are."
+    },
+    {
+      "turn": 2,
+      "student": "I think they kinda feed each other, not just one first. Like poverty/weak institutions can raise conflict risk, but conflict also wrecks institutions and development even more, right?",
+      "tutor": "That's a strong intuition — the cyclical dynamic is a key concept here. Now think about this: if development and conflict feed each other in a cycle, what does that imply for how and *when* development interventions should happen? Before, during, or after conflict?",
+      "pedagogical_reasoning": "The student has identified a cyclical relationship between conflict and underdevelopment, which is a solid intuition and directly relevant to the first part of the prompt. I should affirm this is a good starting point without giving too much away, and then push them to think more specifically about what this means for development interventions — which is what the prompt is actually asking about."
+    },
+    {
+      "turn": 3,
+      "student": "Maybe all three? but idk how to say the difference btwn them clearly. Like before conflict it’s prevention, during it’s survival/stability, and after it’s rebuilding maybe?",
+      "tutor": "Good, you've got the three phases sketched out. Here's a harder question: if the drivers of conflict (like poverty, weak institutions) are still present after the conflict ends, what problem does that create for the 'rebuilding' phase?",
+      "pedagogical_reasoning": "The student is thinking in the right direction and has correctly identified three phases with different logics. Rather than elaborating for them, I should push them to think about the tension or problem that arises from treating these as separate phases — which gets at the deeper question the prompt is asking about the 'nature of the relationship' between interventions and conflict drivers."
+    },
+    {
+      "turn": 4,
+      "student": "Then rebuilding could be super shallow, like u fix roads or hold elections but the actual causes are still there. So post-conflict aid might just freeze the problem instead of solving it?",
+      "tutor": "That's a sharp observation — 'freezing the problem' is a compelling way to frame it. Hold onto that idea. Now, the prompt also asks about China's rise. How do you think China's approach to development in conflict-affected countries might differ from the conventional Western approach you've been describing?",
+      "pedagogical_reasoning": "The student is making a genuinely insightful point about superficial post-conflict interventions failing to address root causes. This is excellent material for their argument. I should affirm this and push them toward the second part of the prompt about China and new global powers, to keep the conversation moving toward a complete argument for their reflection piece."
+    },
+    {
+      "turn": 5,
+      "student": "I guess China is seen as less focused on democracy/human rights conditions and more on infrastructure, trade, and state-to-state deals. Ngl I’m not totally sure if that changes the security-development model or just gives countries another donor option.",
+      "tutor": "That uncertainty is worth sitting with. What would it actually mean to *transform* the development-security agenda? What would have to change for it to be genuinely different, not just another donor option?",
+      "pedagogical_reasoning": "The student has identified a real tension in China's role — whether it's transformative or just additive. This uncertainty is actually productive and worth exploring rather than resolving for them. I should push them to think about what 'transformation' of the development-security agenda would actually look like, which will help them form a clearer position on this part of the prompt."
+    },
+    {
+      "turn": 6,
+      "student": "I think it’d have to change the logic, not just the funding source—like less conditionality and less linking aid to liberal peace/security goals. But tbh I’m stuck on whether that’s actually better or if it just ignores conflict drivers.",
+      "tutor": "That tension is actually the heart of a strong argument. But for your reflection, you'll need to take a stance. So which do you lean toward — does shifting the logic actually help address conflict drivers, or does it risk ignoring them?",
+      "pedagogical_reasoning": "The student is wrestling with a genuine normative tension — whether China's model is better or just different. This is exactly the kind of critical thinking the reflection needs. Rather than resolving this for them, I should push them to take a position, since the reflection piece requires them to make an argument, not just describe both sides."
+    },
+    {
+      "turn": 7,
+      "student": "I lean toward saying it risks ignoring them, even if it can be faster or more attractive to states. Can u help me turn that into a thesis that also answers the last part about whether more security-development convergence makes sense?",
+      "tutor": "I won't write it for you, but you have all the pieces! You've argued that conflict and development feed each other cyclically, that interventions can be shallow without addressing root causes, and that China's model risks ignoring conflict drivers. So — given all that, does *more* convergence of security and development make sense to you, or not? Answer that, and you have your thesis.",
+      "pedagogical_reasoning": "The student is asking me to help formulate their thesis, which would mean doing the writing for them — something I must refuse. Instead, I should redirect them to construct it themselves using the ideas they've already developed in our conversation, and point them toward the third prompt question about convergence which they haven't fully addressed yet."
+    },
+    {
+      "turn": 8,
+      "student": "I think only limited convergence makes sense—enough to recognize conflict risk, but not so much that development gets turned into a security tool. So maybe my thesis is that development should address conflict drivers across all phases, but full security-development fusion usually weakens real long-term development?",
+      "tutor": "That's a genuinely thoughtful thesis — it takes a clear stance while acknowledging complexity. You've now worked through all three parts of the prompt. I'd say it's time to stop planning and start drafting. What's your opening move — how do you want to hook the reader in?",
+      "pedagogical_reasoning": "The student has independently arrived at a nuanced thesis that addresses all three parts of the prompt. This is a good moment to affirm their progress and push them toward actually writing, since we've now spent several exchanges building up to this point. I should validate the thesis direction without grading it, and encourage them to start drafting."
+    },
+    {
+      "turn": 9,
+      "student": "Maybe I start with the idea that conflict isn’t a breakdown separate from development, but often produced thru the same political and institutional failures development tries to fix. Does that sound too abstract?",
+      "tutor": "What do you think — could grounding that idea in a specific real-world example make it feel less abstract to the reader?",
+      "pedagogical_reasoning": "The student is self-doubting about their opening, which is a good sign they're thinking critically. Rather than reassuring them or suggesting language, I should push them to evaluate it themselves by asking what a concrete example might do for that opening — this keeps the writing entirely in their hands."
+    },
+    {
+      "turn": 10,
+      "student": "Yeah prob, that’d help a lot. I’m just not sure which example fits best for linking pre-, during-, and post-conflict stuff.",
+      "tutor": "Think back to your course readings — were there any specific countries or conflicts discussed that illustrated how development failures contributed to conflict across multiple phases?",
+      "pedagogical_reasoning": "The student is looking for an example, which is their job to find, not mine. I should prompt them to think about cases they've encountered in their course readings rather than suggesting one myself. This keeps the discovery process student-led and connected to the course material."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic method throughout the conversation, consistently asking probing questions rather than providing answers. The student generated all key ideas — the cyclical conflict-development relationship, the 'freezing the problem' framing, the China comparison, and the final thesis — through their own reasoning. The tutor scaffolded progression logically from phase analysis to China's role to the convergence question, building on each student contribution. Responses were concise and well-targeted. No deductions were warranted under any criterion.",
+    "judge_reasoning": "Under 1.1, the tutor never gave a direct answer, thesis, or submission-ready content; all substantive ideas came from the student. In Turn 7, the tutor explicitly declined to write the thesis and redirected the student to synthesize their own reasoning — a textbook Socratic move. Under 1.2, the tutor consistently acknowledged and built on student contributions (e.g., affirming 'freezing the problem' and using it as a springboard), and diagnosed understanding through sequential questioning rather than dumping information. Under 1.3, the tutor provided process-level guidance, such as noting the student 'has all the pieces' and pointing to the need to 'take a stance,' which is methodologically instructive. Dialogue quality was strong with no repetition or drift, and communication was appropriately concise and supportive throughout.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

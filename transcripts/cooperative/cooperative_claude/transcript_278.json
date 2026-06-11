@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_06",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "20",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Corruption and Reform of Public Institutions\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nIs corruption-free development ever possible? How does one understand claims of Asian distinctiveness about corruption – the 'grease the wheel' thesis – against the Asian successes in rooting out corruption as in Hong Kong? What does corruption signify about the State, its legitimacy and the ensemble of techniques through which development interventions occur?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hi, I’m stuck on a 700–800 word reflection about corruption-free development and the “grease the wheel” idea in Asia. idk how to frame an argument without making it too simplistic.",
+      "tutor": "Good question to start with. Before worrying about framing, let's figure out what YOU actually think. So: do you think corruption-free development is possible? Just give me your gut answer first — we can complicate it from there.",
+      "pedagogical_reasoning": "The student is at the start of their work and expressing a general concern about framing. Rather than scaffolding the whole argument for them, I should ask a focused Socratic question that gets them to articulate their own initial position on the core prompt. This respects the guided discovery principle and keeps things bite-sized."
+    },
+    {
+      "turn": 2,
+      "student": "my gut says probably not fully corruption-free, but like low-corruption development seems possible. i’m not sure if that sounds too cynical tho.",
+      "tutor": "That's a defensible starting point. But what's your reasoning behind it? Why do you think fully corruption-free development is unlikely — what does that tell you about the relationship between corruption and the state?",
+      "pedagogical_reasoning": "The student has a reasonable initial position. Rather than validating or dismissing it, I should push them to support it with reasoning, which will help them build their argument organically. I should also avoid reassuring them about whether it's 'too cynical' — that's not the point, and the assignment asks them to engage with evidence like Hong Kong."
+    },
+    {
+      "turn": 3,
+      "student": "maybe cuz the state isn’t just neutral rules on paper, it’s ppl with power making choices, and power creates chances for favoritism. so corruption kinda shows gaps between official rules and how authority actually works irl, right?",
+      "tutor": "That's a strong insight — the gap between formal rules and actual practice is really important here. Now push it one step further: what does that gap say specifically about the STATE'S LEGITIMACY? When citizens see that gap, what happens to their relationship with the state?",
+      "pedagogical_reasoning": "The student is making a genuinely insightful point about the gap between formal institutions and actual power relations — this is central to the prompt's question about what corruption signifies about the state and its legitimacy. I should affirm the direction without giving the answer, and push them to connect this to the concept of legitimacy explicitly, which is a key part of the prompt they haven't addressed yet."
+    },
+    {
+      "turn": 4,
+      "student": "i think legitimacy drops cuz ppl stop trusting the state as fair or public-serving, and it starts looking private or captured. but I’m fuzzy on whether all corruption hurts legitimacy the same way.",
+      "tutor": "That fuzziness is actually the heart of the assignment. Think about the 'grease the wheel' argument — what would that thesis say about your claim that all corruption hurts legitimacy equally?",
+      "pedagogical_reasoning": "The student is naturally moving toward the 'grease the wheel' thesis without realizing it. This is a perfect moment to introduce that tension through a Socratic question rather than explaining it myself. I should point them toward the Asian distinctiveness argument from the prompt to help them see that not all corruption is treated the same way analytically."
+    },
+    {
+      "turn": 5,
+      "student": "right, that thesis would say some corruption can make a rigid system actually function, so ppl might tolerate it if it gets stuff done. but ngl that feels shaky, like short-term efficiency vs long-term damage maybe?",
+      "tutor": "Good tension. Now test that against the prompt's own counter-example: Hong Kong. What does Hong Kong's experience suggest about that 'short-term efficiency vs long-term damage' tradeoff you identified?",
+      "pedagogical_reasoning": "The student is developing a good tension between the grease-the-wheel thesis and its long-term costs. Now I should push them to test this against the concrete counter-example the prompt provides: Hong Kong. This will help them move from abstract reasoning to evidence-based argument, which is essential for a strong reflection piece."
+    },
+    {
+      "turn": 6,
+      "student": "maybe Hong Kong suggests efficiency doesn’t need corruption if institutions are strong and enforcement is real. so the “grease” claim might describe a broken system, not prove corruption is good.",
+      "tutor": "That's a sharp reframing — corruption as a symptom, not a feature. You now have three solid ideas in play. How do you see them connecting into one coherent argument for your paper?",
+      "pedagogical_reasoning": "The student has arrived at a really strong analytical point — that 'grease the wheel' describes a symptom of institutional weakness rather than a justification for corruption. This is excellent progress. I should affirm the direction and now push them to connect all three threads of the prompt together: corruption-free development, Asian distinctiveness/HK, and what corruption signifies about the state. They're close to having a full argument and should start thinking about synthesis."
+    },
+    {
+      "turn": 7,
+      "student": "i think my claim is: fully corruption-free development is prob unrealistic, but treating corruption as necessary is a mistake. corruption signals weak legitimacy/institutions, and Hong Kong shows reform can reduce it a lot without killing development.",
+      "tutor": "That's a solid core argument. One thing it doesn't yet address: why did the 'Asian distinctiveness' claim emerge in the first place? If you ignore that context, your rebuttal might feel too easy. What do you think was behind that argument historically?",
+      "pedagogical_reasoning": "The student has arrived at a coherent central argument that addresses all three parts of the prompt. This is good progress. Rather than praising extensively, I should push them to think about one remaining weakness: the argument currently lacks engagement with WHY the 'Asian distinctiveness' claim was made in the first place — the cultural/historical dimension. This would strengthen the paper and prevent it from feeling like it ignores a serious scholarly position."
+    },
+    {
+      "turn": 8,
+      "student": "maybe it came from rapid-growth cases where outsiders saw corruption coexisting with development and then overgeneralized it as cultural or regional. i think it also excuses authoritarian or elite-led systems a bit, but I’m not fully sure.",
+      "tutor": "That's a perceptive point — the ideological function of that argument is worth noting in your paper. You now have all the building blocks. What would you say is the single most important thing you want your reader to take away from your reflection?",
+      "pedagogical_reasoning": "The student is making a perceptive point about how the 'Asian distinctiveness' argument can function ideologically — naturalizing corruption and excusing authoritarian governance. This is sophisticated and connects well to the course themes about power and legitimacy. I should affirm the direction and now push them toward thinking about how this strengthens their overall argument, since they're close to having everything they need to write."
+    },
+    {
+      "turn": 9,
+      "student": "I want the reader to get that corruption isn’t some Asian trait or development tool; it’s more like a sign of how state power and legitimacy are organized. can u help me make that sound a bit sharper?",
+      "tutor": "That's my job to decline — writing and refining your language is yours to do, not mine. But you already have the idea clearly in your head. Try writing it out in your own words first, then read it back and ask yourself: is it specific enough? Does it connect corruption, legitimacy, and the state in one sentence?",
+      "pedagogical_reasoning": "The student is asking me to polish or sharpen their language, which falls under writing/editing assistance that I must refuse per the rules. I should clearly decline and redirect them to do the work themselves, while encouraging them that they already have the raw material to do it."
+    },
+    {
+      "turn": 10,
+      "student": "ok fair, lemme try: corruption isn’t a cultural shortcut to development but evidence of how unevenly state authority is enforced and justified. does that sound too vague?",
+      "tutor": "That's a good attempt with real potential. Ask yourself: does it capture the legitimacy angle strongly enough? What's missing compared to the fuller argument you described a moment ago?",
+      "pedagogical_reasoning": "The student is asking me to evaluate their sentence, which is borderline between asking for feedback and asking me to write for them. I can offer a general evaluative response without grading or rewriting. I should give honest feedback and push them to self-evaluate rather than depending on me, using a targeted question."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic method throughout all ten exchanges. Every key idea — the gap between formal rules and actual practice, the legitimacy angle, the Hong Kong counter-example, the ideological function of the 'Asian distinctiveness' claim — was elicited from the student through targeted questioning rather than stated by the tutor. The tutor explicitly declined to rewrite the student's language in Turn 9, redirecting ownership back to the student. Scaffolding built progressively on each student contribution. Responses were concise and well-targeted. No off-topic drift occurred and the assignment was kept in focus throughout.",
+    "judge_reasoning": "No deductions are warranted under any criterion. The tutor never gave submission-ready content, never rewrote student text, and never stated conclusions before the student reasoned toward them. Scaffolding was cumulative and responsive to each student turn. The tutor provided process-level feedback (e.g., 'does it capture the legitimacy angle strongly enough?') rather than vague praise. Dialogue was progressive with no repetitive cycling. The tone was consistently supportive and formative, with no grading language used.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}
