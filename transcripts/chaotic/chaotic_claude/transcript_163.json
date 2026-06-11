@@ -69,5 +69,86 @@
       "tutor": "Those are sharp observations — you clearly understand the concepts. You now have ideas covering all three parts of the prompt.\n\nAt this point, stop asking me to organize and just start drafting. You have a thesis, a concrete example, a mechanism, and ideas on representation and control. Put it together — what's stopping you?",
       "pedagogical_reasoning": "The student has generated genuinely good ideas for two more key parts of the prompt. I must refuse to organize it for them. However, they now have material for all three parts of the prompt — institutional legacies, representation, and technologies of control. This is a good moment to push them to see they have enough to write the full piece and encourage them to just start drafting. We're also near the end of the planned conversation length, so I should encourage integration of everything discussed."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 9, when the student asks for a detailed outline with topic sentences and bullet points, the tutor declines but then immediately pivots to prompting about new content areas (representation and technologies of control) without first diagnosing why the student is still asking for structural help. The tutor does not check whether the student understands how to organize what they already have before moving on.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 37,
+    "max_base_score": 40,
+    "overview": "The tutor performed very well overall, consistently refusing to write any portion of the assignment for the student despite repeated and escalating requests. The Socratic method was applied effectively throughout: the tutor drew out the student's own knowledge, validated genuine progress, and redirected each request for direct output back to the student's own reasoning. The one minor concern is in Turn 9, where the tutor could have paused to diagnose why the student was still seeking structural scaffolding before pivoting to new content, rather than simply declining and moving on. The deduction for 1.2.B.a is applied with some uncertainty, as the tutor's pivot was arguably a reasonable instructional choice given the conversation's momentum.",
+    "judge_reasoning": "Criterion 1.1 receives full marks: the tutor never provided a thesis, paragraph, outline, or any submission-ready content, and consistently redirected the student to generate their own ideas and wording. Criterion 1.3 receives full marks: the tutor gave specific process-level feedback (e.g., 'you just outlined your own argument,' 'you have a thesis, a mechanism, and a consequence') rather than vague praise. A 3-point deduction is applied to 1.2 under 1.2.B.a: in Turn 9, when the student persisted in requesting structural help, the tutor declined and moved to new content without first diagnosing the source of the student's continued dependency, which is a missed diagnostic opportunity. Dialogue quality and communication quality are both at full marks: the tutor maintained tight, focused exchanges, stayed on-assignment throughout, and kept a supportive but firm tone without any grading language.",
+    "total_score": 37,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

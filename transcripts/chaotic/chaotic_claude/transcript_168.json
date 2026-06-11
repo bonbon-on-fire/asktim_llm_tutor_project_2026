@@ -69,5 +69,92 @@
       "tutor": "That's a nuanced argument with good potential — it captures real tension in the debate. \n\nYou now have everything you need. Take what you've worked out in this conversation and write your full draft. The thinking is there — trust it.",
       "pedagogical_reasoning": "The student has produced a solid analytical statement that captures real nuance. This is good progress. Rather than evaluating it for them extensively, I should affirm it briefly and push them to now integrate everything into a full draft. We're at exchange 10, and the student has all the conceptual pieces. I should encourage them to take everything from our conversation and write their full reflection."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 5, the student says 'Not much, which is why I need the direct answer' — signaling genuine confusion about the civil society/labor/democracy angle. The tutor responds by asking a follow-up conceptual question rather than first diagnosing what the student does or doesn't know about that topic. A brief diagnostic probe (e.g., 'What have you read or heard about how East Asian states handled labor unions?') would have been more appropriate before pushing the student to reason through implications.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "In Turn 8, when the student produces their first sentence, the tutor responds only with 'Good — you've started. Now keep going.' This is too vague to improve the student's writing process. No feedback is given on whether the framing is strong, how to structure the argument, or what methodological approach to take in a reflection piece. Similarly in Turn 10, 'That's a nuanced argument with good potential' offers no process-level guidance on how to develop or stress-test the argument further.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 40,
+    "overview": "The tutor performed strongly overall, consistently refusing to produce submission-ready content and guiding the student through Socratic questioning across all major prompt components. The main weaknesses were a missed diagnostic opportunity in Turn 5 when the student admitted genuine ignorance, and insufficiently specific process feedback when the student began writing in Turns 8–10.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produced a thesis, outline, topic sentences, model paragraph, or polished prose — every request was declined and redirected to student reasoning. 1.2 loses 3 points under 1.2.B.a: in Turn 5 the student explicitly flagged not knowing the civil society/labor/democracy angle, yet the tutor skipped diagnostic questioning and jumped straight to a conceptual implication question, missing the chance to first assess what the student actually understood. 1.3 loses both points under 1.3.A.b: when the student finally began writing (Turns 8–10), the tutor's feedback ('Good — you've started,' 'That's a nuanced argument with good potential') was purely evaluative and too vague to guide the student's writing process or methodology. Dialogue quality and communication quality are both clean — the tutor maintained focus, avoided repetition, kept responses concise, and sustained a supportive but firm tone throughout.",
+    "total_score": 35,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

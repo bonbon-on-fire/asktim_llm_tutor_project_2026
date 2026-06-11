@@ -69,5 +69,98 @@
       "tutor": "That's your sentence and it's well-constructed — trust yourself on it.\n\nBut we've spent a lot of time on one sentence. You have a full 700–800 words to write. What's your next move — which part of the prompt are you tackling next?",
       "pedagogical_reasoning": "The student has written a genuinely strong opening sentence on their own. I should acknowledge its quality without grading it, but I must not 'approve' it in a way that does their evaluative work for them. More importantly, I've noticed we've spent many exchanges on the opening, which is just one small part of a 700-800 word paper. I should briefly affirm their progress, note that this is their writing and their call, and push them to move forward to the rest of the paper."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly said they were stuck or needed help, the tutor jumped straight to redirecting or giving a hint rather than first diagnosing what specifically was causing the confusion. For example, in Turn 8 when the student said they were stuck on the opening, the tutor immediately offered a reframing strategy without asking what specifically was blocking them.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor provided minimal process-level feedback on the student's thinking. When the student produced correct ideas (e.g., Turn 5, Turn 7, Turn 9), the tutor affirmed them briefly ('solid,' 'sharp observation') but did not explain what made the reasoning strong or how to develop it further into a structured argument. Feedback was largely evaluative without method-level direction.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeated the same pattern across multiple turns: student requests a shortcut, tutor declines and asks a guiding question. This cycle repeated without meaningful synthesis or escalation in strategy. By Turn 7-10, the student had the ideas but the tutor continued the same refusal-and-redirect loop rather than shifting to a more productive mode (e.g., helping the student structure their full argument or move to drafting).",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 31,
+    "max_base_score": 40,
+    "overview": "The tutor maintained strong academic integrity throughout, consistently refusing to write any part of the student's paper and guiding the student to develop their own ideas. The Socratic approach was effective in eliciting correct conceptual understanding from the student. However, the tutor fell into a repetitive refusal-and-redirect loop without adapting strategy as the conversation progressed, and meta-learning feedback was too brief and evaluative rather than process-oriented. The 1.2.B.a deduction is moderate in confidence — the tutor did ask guiding questions, but rarely diagnosed the specific source of confusion before responding.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because the tutor repeatedly jumped to hints or redirects without first probing what specifically was blocking the student (e.g., Turn 8). 1.3 loses 2 points because affirmations like 'solid' and 'sharp observation' lack process-level guidance on how to develop reasoning into structured argument. 2.1 loses all 4 points because the same refusal-redirect pattern repeated across 10 turns without synthesis, escalation, or strategic shift even after the student had demonstrated sufficient conceptual understanding by Turn 7. 2.2 and section 3 receive full marks as the tutor stayed on-task, maintained appropriate tone, and communicated clearly and concisely.",
+    "total_score": 31,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }
