@@ -1,0 +1,82 @@
+TITLE: Problem Set 2
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Tuesday 20th February, 2024
+Days Covered: 03 and 04 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Outlining Proofs [10 points]
+
+See lecture 02 (or the corresponding lecture notes) for a discussion of outlining proofs, even with only partial information. Practice this skill by outlining proofs for each of the "theorems" below as much as you can, using the techniques indicated. Pretend that the underlined words are meaningful but that their precise meanings are not available here. This means your "proofs" will have missing steps that are impossible to complete without definitions for these words, but that's fine—we're interested in the parts of the proof that can be completed even without knowing or considering the underlined terms' meanings. You should break down the proof as granularly as you can using just the given information, and at any step that needs additional information, identify the remaining task or tasks using square brackets. The example seen in lecture looks like this:
+
+    Theorem: "For every integer n, the number n is fooish precisely when n + 1 is barsome."
+    Proof Outline. Suppose n is any integer; we must show F(n) and B(n + 1) both imply each other.
+    To prove F(n) IMPLIES B(n + 1), first assume F(n) is true. [TODO: prove B(n + 1).]
+    To prove B(n + 1) IMPLIES F(n), instead assume B(n + 1) is true. [TODO: prove F(n).]
+
+(a) [3 pts] Theorem: "Every natural number is tall or wide, but not both." (Proof method: proof by cases.)
+(b) [3 pts] Theorem: "There exists a happy natural number between 10 and 1000 that has no happy proper divisors." (Proof method to use: choose 25 as the example.)
+(c) [4 pts] Theorem: "There are no devious natural numbers." (Proof method to use: regular induction, with base cases 0 and 1.)
+    Hint: Be sure to clearly identify your predicate P(n), and to precisely specify any assumptions and/or goals in your base cases and inductive step.
+
+
+Problem 2. Spotting Errors [15 points]
+
+Define a sequence of integers (x1, x2, x3, ...) as follows: x1 = 4, x2 = 13, and for all i ≥ 3, xi = 6·x_{i−1} − 8·x_{i−2}. So the sequence begins with (x1, x2, x3, x4, ...) = (4, 13, 46, 172, ...). Our goal is to prove that for all i ≥ 1, xi > 0.
+
+Addled Abra tries to prove the claim directly by strong induction with inductive hypothesis P(i) := "xi > 0", but gets stuck in the inductive step: xi+1 = 6·xi − 8·x_{i−1} > 0 − 8·x_{i−1}, "but, uh, ... Huh, I don't think this is working." Abra gets points for honesty, and goes to the instructors for help.
+
+(a) [3 pts] Befuddled Brynmor tries to help by proving the claim using the stronger induction hypothesis Q(i) := "xi ≥ 2^i", via strong induction. His inductive step plugs xi ≥ 2^i and x_{i−1} ≥ 2^{i−1} into xi+1 = 6·xi − 8·x_{i−1} to get xi+1 ≥ 6·2^i − 8·2^{i−1} = 4·2^{i−1} = 2^{i+1}. What is his mistake?
+
+(b) [3 pts] Erroneous Erik tries to help by proving the claim using (regular) induction on the stronger hypothesis R(i) := "xi ≥ 3·x_{i−1}", for every i ≥ 2, with base case R(2): x2 = 13 ≥ 12 = 3·x1. What is his mistake?
+
+(c) [3 pts] Overzealous Zach tries to help by proving the claim using strong induction on the stronger hypothesis S(i) := "xi = 4^i", for every i ≥ 1, with base case S(1): x1 = 4 = 4^1. What is his mistake?
+    Hint: Zach's claim is false if i = 2. If you know the base case i = 1, what part of the inductive step when i = 1 fails?
+
+(d) [6 pts] Prove the original claim that for all i ≥ 1, xi > 0.
+    Hint: See if you can fix Erroneous Erik's argument. What stronger inductive hypothesis will you use?
+
+
+Problem 3. Integer Multiplication from Bit Shifts [17 points]
+
+Multiplying and dividing an integer n by 2 requires only a one-bit left or right shift of the binary representation of n, a fast, hardware-supported operation on most computers. For example, 6 = (0110) in binary; multiplying by 2 yields 12 = (1100). And 18 = (10010); dividing by 2 yields 9 = (01001).
+
+We will show that the following state machine computes the product of two nonnegative integers x and y using just these shift operations, along with integer addition:
+- The set of states is ℕ^3 = {(r, s, a) | r, s, a ∈ ℕ}.
+- The start state is (x, y, 0).
+- The transitions are:
+    (r, s, a) →  (2r, s/2, a)            for even s > 0,
+    (r, s, a) →  (2r, (s − 1)/2, a + r)  for odd s > 0.
+- No transitions are defined starting from triples in which s = 0.
+
+We will show that this state machine eventually reaches a final state (the algorithm doesn't run forever), and that this final state (rf, sf, af) has af = x · y.
+
+(a) [2 pts] Compute the full sequence of transitions from starting state (5, 22, 0). Does it correctly compute 5 · 22 = 110?
+(b) [4 pts] Invariant: Define P(r, s, a) := "rs + a = xy". Prove that P is an invariant of the state machine.
+(c) [1 pt] Final states: A final state is one from which no transitions are possible. Which states are final in this state machine?
+(d) [3 pts] Partial correctness: Use Parts (b) and (c) to conclude that, in any reachable final state (rf, sf, af), af must be equal to the product xy.
+
+Now we consider termination. For a natural number n, let bitcount(n) denote the number of bits used when n is written in binary. For example, bitcount(5) = bitcount(101_2) = 3, bitcount(1) = 1, and bitcount(0) = 0. (Note: this can be written explicitly as bitcount(n) = ⌈log2(n + 1)⌉.)
+
+(e) [5 pts] Termination: Prove that bitcount(s) is a strictly decreasing derived variable. Explain why this implies that the algorithm always terminates, i.e., it has no infinite executions.
+(f) [2 pts] Time bound: Explain why Part (e) implies that, from any starting state (x, y, 0), the algorithm terminates after at most bitcount(y) = ⌈log2(y + 1)⌉ steps.
+
+
+Problem 4. Invariant Enlightenment [8 points]
+
+The ideal 6.1200 classroom has assigned desks (each student sits at the same position every day) arranged in a square grid. Students are working together to reach Invariant Enlightenment: a profound understanding of invariants so thorough that the knowledge radiates around them in a glowing aura. Invariant Enlightenment never goes away (it's an invariant, after all!) and can sometimes be taught to other students.
+
+[Figure: a 6×6 grid of seats. The locations of students who have initially been enlightened are marked with an asterisk, scattered across the grid.]
+
+Every day, students talk to their neighbors about invariants in an attempt to reach enlightenment. On each day, a student is enlightened if either:
+- the student was already enlightened on a previous day, or
+- the student was adjacent to at least two students who were enlightened on an earlier day (these neighbors worked together to teach the student all about invariants).
+
+Here "adjacent" means the students' individual squares share an edge (front, back, left, or right); they are not adjacent if they only share a corner point. So each student is adjacent to 2, 3, or 4 others. [In the example, enlightenment spreads over successive days until all students are enlightened.]
+
+Theorem. If fewer than n students among those in an n × n arrangement are initially enlightened, and additional students reach enlightenment only by being taught by two or more neighbors, then there will be at least one student who never reaches enlightenment.
+
+Prove this theorem.
+    Hint: You'll want to find an applicable preserved state predicate or monotonic derived variable that can help you argue about the set of enlightened students as time proceeds. Make sure to prove your claims. If you are stuck, ask at Office Hours or on Piazza for an extremely powerful one-word clue (and even more hints as necessary).

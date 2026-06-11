@@ -1,0 +1,81 @@
+TITLE: Problem Set 1
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Monday 12th February, 2024
+Days Covered: 01 and 02 (including Lecture, Warm-Up, and Recitation)
+
+Please make note of the following instructions:
+- Your solutions must be submitted to Gradescope as a single PDF file. While we allow handwritten solutions, we strongly suggest that you typeset in LaTeX, using the template available on Canvas.
+- Each problem must be accompanied by a collaboration statement: the students you collaborated with, and any external resources you consulted when solving the problem. Do not leave this blank—instead write "collaborators: none" if appropriate. See the Course Information handout for more details on the collaboration policy.
+
+
+Problem 1. Collaboration Policy [10 points]
+
+Carefully read the collaboration policy in our Course Information Handout. Then, consider the scenarios described below, and discuss whether and why each one does or does not violate the course homework policies. If the issue is ambiguous, explain how you would resolve it. Simply answering "I'd check with the TA" for each answer is not sufficient.
+
+(a) You host a pset party where ten of you work together to solve the problems before separating to write up your own solutions.
+(b) You work with a friend on a problem, taking turns writing ideas and calculations jointly in the same notebook as you work out the solution, then photograph those notes so you can each have a copy of your sketch before you separate to write up your own solutions.
+(c) You work together to figure out a detailed solution; one of you then dictates it to the other so that each of you can turn in a solution you've written yourself.
+(d) After you've solved a problem, your friend who is still working on the problem asks you for feedback on a solution idea. Leveraging your knowledge of the right answer, you identify and point out a flaw in their proposed solution.
+(e) After you've solved a problem, you try to help your friends by acting as a sounding board while they work towards the solution. With the deadline approaching, since they are still stuck, you allow them to skim your writeup to get a general idea of how to approach the problem, which allows them to go off and independently figure out their solution and write it up.
+(f) After you've worked with your friend to solve a problem and each done your own writeup, you exchange writeups and examine them to identify and correct any flaws in one or the other.
+(g) You remember seeing the homework problem in a problem set of a class you took previously. You look at your notes, see that you got a perfect grade, and copy your solution.
+(h) You know the answer to the problem because you read it in a book you are reading to complement the required textbook, so you write it down that way.
+(i) You know the answer to the problem because you read it in a book you are reading to complement the required textbook, so you explain the solution to your pset collaborators.
+(j) While completing a late problem set for partial credit, you read the published solutions as you type your own answers, making sure to adjust the word choice and sentence structure as you go.
+
+
+Problem 2. Set Formulas and Propositional Formulas [10 points]
+
+(a) [5 pts] Use a truth table to verify that the propositional formula (P AND NOT Q) OR (P AND Q) is equivalent to P.
+Note: For propositions, the three notations "NOT Q", "¬Q", and "Q-bar" are interchangeable.
+
+(b) [5 pts] Prove that
+    A = (A − B) ∪ (A ∩ B)
+for all sets A, B, by showing
+    x ∈ A   iff   x ∈ ((A − B) ∪ (A ∩ B))
+for all elements x. How does this relate to part (a)?
+Note: the set difference A − B is defined on page 105.
+
+
+Problem 3. Predicate Practice [10 points]
+
+For parts (a)–(d) below, translate the given statements into predicate logic, while preserving the meaning as closely as possible. In addition to boolean logic symbols like AND, OR, NOT, and IMPLIES, and quantifiers ∃ and ∀, you may build predicates using arithmetic, inequalities, and constants.
+
+For this problem, you should use ℕ = {0, 1, 2, ...} as your domain of discourse: all variables are assumed to belong to ℕ, so ∃x and ∀x mean ∃x ∈ ℕ and ∀x ∈ ℕ. Avoid quantifying over other sets, such as "∀p ∈ Primes" or "∃n ≥ 1".
+
+For example, "n is odd" could be translated as
+    isOdd(n) := ∃m. (2m + 1 = n)
+or, relatedly,
+    isNotEven(n) := NOT (∃a. n = 2a).
+The predicate "p is a prime number" could be translated to
+    isPrime(p) := (p > 1) AND NOT (∃m ∃n. (m > 1 AND n > 1 AND mn = p)).
+You may use the predicates isOdd(n) and isPrime(p) by name in your answers below.
+
+(a) [2 pts] The predicate sixish(n) defined as "n is a natural number whose first digit is 6."
+    Hint: You may wish to use exponents, e.g., 10^k. Be careful about where you do or don't need quantifiers.
+(b) [2 pts] "There are exactly two natural numbers n such that Q(n) is true."
+(c) [2 pts] Goldbach's Conjecture: "every even integer greater than 2 can be written as the sum of two primes."
+    Note: Do not use quantifier shorthand like "∀n > 2. V(n)". Instead, use the more basic "∀n. W(n)" and include all necessary logic inside W(n).
+    Hint: "If n is even and greater than 2, then ...".
+(d) [2 pts] "Every prime larger than 100 is sixish."
+    Hint: You may refer to "sixish" by name, even if you didn't solve part (a).
+(e) [2 pts] Is the predicate R(n) := "∃b. n = 2b + 5" equivalent to isOdd(n)? Prove your answer.
+    Hint: Recall that our domain of discourse is ℕ.
+
+
+Problem 4. Induction and Contradiction [Edited] [20 points]
+
+(a) [10 pts] Suppose Q(x) is a predicate defined for all x ∈ ℝ. Assume Q has the following property: for every x, y ∈ ℝ, if Q(x · y) is true, then at least one of Q(x) or Q(y) must be true.
+From this, prove that Q satisfies the following stronger property: for any integer n ≥ 1 and any n numbers x1, x2, ..., xn ∈ ℝ, if Q(x1 · x2 · ... · xn) is true, then at least one of Q(x1), Q(x2), ..., Q(xn) must be true.
+Prove the result by induction on n. Be sure to carefully identify your inductive hypothesis P(n), your base case(s), and the assumption and goal in your inductive step.
+    Hint: x1 · x2 · ... · x_{n−1} · xn = (x1 · x2 · ... · x_{n−1}) · xn
+
+(b) [5 pts] Consider the following theorem:
+    Theorem 1. If the product of n ≥ 1 real numbers is irrational, then at least one of those numbers must be irrational.
+We will eventually prove this Theorem by citing part (a). In preparation, what should we choose for Q from part (a)? What lemma must we prove about your chosen predicate Q before we're allowed to use part (a)?
+
+(c) [5 pts] Use contradiction to carefully prove the lemma that you identified in part (b), and then finish the proof of Theorem 1.
+While proving your lemma, you should not assume any prior knowledge about irrational numbers beyond the definition ("irrational" means "not rational"), but you may use familiar facts about rational numbers.

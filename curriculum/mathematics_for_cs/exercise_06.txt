@@ -1,0 +1,63 @@
+TITLE: Problem Set 6
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Monday 1st April, 2024
+Days Covered: 11 and 12 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Failed Induction [10 points]
+
+(a) [5 pts] In Recitation 11 Problem 3, it may seem like we've proved a stronger theorem:
+    False Claim. Every graph with n nodes and at most 3n − 6 edges can be 6-colored.
+Show that this claim is actually false, by finding some integer n and some graph with n nodes and at most 3n − 6 edges that cannot be 6-colored. Be sure to explain why your example cannot be 6-colored.
+(b) [5 pts] Why doesn't the induction argument from Recitation 11 Problem 3(c) work for this stronger claim? Where does the proof break down?
+
+
+Problem 2. High Chromatic Number Without Triangles [15 points]
+
+A basic example of a graph with chromatic number n is the complete graph on n vertices, that is χ(Kn) = n. This implies that any graph with Kn as a subgraph must have chromatic number at least n. It's a common misconception to think that, conversely, graphs with high chromatic number must contain a large complete subgraph. In this problem we exhibit a counterexample: a graph with chromatic number four that contains no triangle (length-three cycle) and hence no subgraph isomorphic to Kn for n ≥ 3. Namely, let G be the 11-vertex graph below. The reader can verify that G is triangle-free.
+
+[Figure: the Grötzsch graph G, an 11-vertex triangle-free graph with χ(G) = 4. It has a central vertex w, an inner 5-cycle v0, v1, v2, v3, v4, and an outer set of 5 vertices u0, u1, u2, u3, u4, with edges connecting w to each vi and each ui to two non-adjacent vj's.]
+
+(a) [6 pts] Prove that χ(G) ≤ 4.
+(b) [3 pts] Assume that we had a coloring of G using only 3 colors. Prove that the coloring must match the partial coloring shown below, possibly after rotating the graph and/or relabeling the three colors.
+[Figure: partial 3-coloring of the inner wheel — Blue and Pink on the top two outer vertices, Pink and Blue on the lower two, and Green on the central/bottom vertex, with v0..v4 and w labeled.]
+(c) [6 pts] Prove that χ(G) > 3.
+    Hint: Part (b) might be helpful.
+
+
+Problem 3. Find A Pet [13 points]
+
+Hasbro's market research has shown that giving their TV show protagonists animal sidekicks can increase toy sales. Meanwhile, 4 ponies were traveling across Equestria on their latest friendship quest and discovered an old animal sanctuary. Four of the local critters decided to join the group.
+
+The following tables show everypony's and everycritter's preferences (most-favored to least-favored):
+
+| Pony                | Critters (preferences) |
+|---------------------|------------------------|
+| Hitch Trailblazer   | D, C, B, A             |
+| Izzy Moonbow        | A, C, B, D             |
+| Sunny Starscout     | C, B, D, A             |
+| Zipp Storm          | D, B, C, A             |
+
+| Critter                  | Ponies (preferences) |
+|--------------------------|----------------------|
+| Arlo the Armadillo       | H, S, Z, I           |
+| Beatrice the Beaver      | H, I, S, Z           |
+| Cassandra the Capybara   | H, I, Z, S           |
+| Draco the Dragonfly      | H, Z, S, I           |
+
+(a) [5 pts] Run the Matching Algorithm with critters proposing to ponies. Please specify the proposals (new and recurring) and reservations/rejections that occur on each day. (We recommend drawing a box around the reserved partner on each day.) You may or may not need all the space given.
+(b) [5 pts] Run the Matching Algorithm, this time with ponies proposing to pets.
+(c) [3 pts] Prove that any matching pairing H with C is unstable.
+
+
+Problem 4. Stable Merriment [12 points]
+
+In a stable matching between n Pokémon and n Trainers produced by the Stable Matching Algorithm (with Pokémon applying and Trainers evaluating), call a Pokémon or Trainer merry if they are matched with one of their top ⌈n/2⌉ choices. In this problem, we'll prove that at least one Pokémon or Trainer must be merry.
+Let S be the total number of times a Trainer rejects a Pokémon.
+
+(a) [6 pts] Prove that if there are no merry Trainers, then S < n^2 / 2.
+(b) [6 pts] Conclude that at least one Pokémon or Trainer must be merry.
+    Hint: What can be said about S if there are no merry Pokémon?

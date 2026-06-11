@@ -1,0 +1,55 @@
+TITLE: Problem Set 3
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Monday 26th February, 2024
+Days Covered: 04 and 05 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Sorting by Reversals [15 points]
+
+We have a permutation of the numbers {0, 1, ..., n − 1}, and we'd like to manipulate it so it becomes sorted in increasing order. For this problem, we're only allowed to make reversal moves: from a list (a0, a1, ..., a_{n−1}), we can pick a pair of indices i < j and reverse the entire subsequence from a_i to a_j:
+    (a0, ..., a_{i−1}, a_i, a_{i+1}, ..., a_{j−1}, a_j, a_{j+1}, ..., a_{n−1})
+  → (a0, ..., a_{i−1}, a_j, a_{j−1}, ..., a_{i+1}, a_i, a_{j+1}, ..., a_{n−1}).
+If (i, j) is an inverted pair (i.e., i < j but a_i > a_j), call this move a good reversal.
+
+In this problem we'll show that if we start with any permutation (x0, ..., x_{n−1}) of {0, ..., n − 1} and keep making good reversal moves, then no matter which ones we choose, we will eventually terminate with a sorted sequence.
+
+(a) [3 pts] Describe this scenario as a state machine, where the states are the permutations of {0, 1, ..., n − 1}. What are the transitions? The start state?
+(b) [3 pts] What are the final states? How do you know? Conclude partial correctness: if an execution of the state machine terminates, then the list must be sorted.
+(c) [6 pts] In lecture, we proved termination of swap-sort by proving that the number of inverted pairs strictly decreases as we make swaps. This is not true for this problem! For example, (9, 1, 2, 3, 4, 5, 6, 7, 8, 0) can transition to (0, 8, 7, 6, 5, 4, 3, 2, 1, 9), but the former has 17 inverted pairs while the latter has 28 inverted pairs.
+Even so, please find a derived variable for this problem that (i) has only nonnegative integer values and (ii) is strictly decreasing. Be sure to prove that your derived variable satisfies both properties.
+    Hint: Think of (a0, ..., a_{n−1}) as digits of a base-n number.
+(d) [3 pts] Use parts (b) and (c) to prove total correctness: every execution must eventually terminate with a fully sorted list.
+
+
+Problem 2. A Fibonacci Sum [10 points]
+
+Recall that the Fibonacci sequence is given by F0 = 0, F1 = 1, and Fn = F_{n−1} + F_{n−2} for n > 1, so the sequence starts with 0, 1, 1, 2, 3, 5, 8, 13, ....
+
+(a) [8 pts] Use the perturbation method to find the closed form of the sum
+    S = Σ_{n=1}^∞ Fn / c^n,
+where c = 10^5. You may assume the sum converges.
+    Hint: Try comparing S with S/c.
+(b) [2 pts] Verify your answer with WolframAlpha (www.wolframalpha.com) or some other high-precision calculator, recalling that c = 10^5. What are the first 50 digits of your result? What is the pattern and does it make sense?
+
+
+Problem 3. Integral Method [15 points]
+
+Let f(x) := x / (5 + x)^3, and let S_n := Σ_{x=n}^∞ f(x). In this problem, we will use the integral method to estimate the infinite sum S0 to an accuracy of 1/200. In other words, we will find bounds u and v such that u ≤ S0 ≤ v and |v − u| ≤ 1/200.
+Feel free to use a calculator (e.g., WolframAlpha) for algebraic/numerical computations, but be sure to justify all of your reasoning.
+
+(a) [2 pts] Explain briefly why applying the integral method directly to S0 will not work.
+(b) [3 pts] Find the smallest index i such that the sum S_i can be approximated by applying the integral method directly.
+(c) [4 pts] Use your answer from the previous part to find upper and lower bounds for S0. What accuracy does your approximation achieve? (I.e., what is the difference between your upper and lower bounds?)
+(d) [6 pts] Find the smallest index j such that the sum S_j can be approximated to an accuracy of 1/200 by applying the integral method directly. Use your answer to find u and v (expressed as rational numbers) such that u ≤ S0 ≤ v and |v − u| ≤ 1/200.
+    Hint: j should be a single digit integer.
+
+
+Problem 4. Some Sums [10 points]
+
+Find the closed form of each of the summations below.
+
+(a) [5 pts]  Σ_{i=0}^n (5^i − 7^i) / 13^i
+(b) [5 pts]  Σ_{i=1}^n Σ_{j=1}^k (3^j − i)

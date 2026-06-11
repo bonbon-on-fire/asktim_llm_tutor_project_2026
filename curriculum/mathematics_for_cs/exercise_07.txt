@@ -1,0 +1,75 @@
+TITLE: Problem Set 7
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Monday 8th April, 2024
+Days Covered: 13 and 14 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Tree's Degrees [13 points]
+
+Let T be a tree with n ≥ 2 vertices, of which k have degree at least 3.
+
+(a) [8 pts] Prove by induction on n that T has at least k + 2 leaves.
+    Hint: Pick a leaf.
+(b) [5 pts] Prove the same result using the Handshake Lemma instead of induction.
+    Hint: How many edges does a tree with n vertices have?
+
+
+Problem 2. Froli-King [12 points]
+
+(a) [6 pts] When moving on an 8×8 chessboard, a King can step to any of the ≤ 8 cells that are immediately adjacent to its current cell, either horizontally, vertically, or diagonally. It may be verified that there are 420 possible moves a King can make: 56 moves in each of the four compass directions (N, S, E, W), and 49 moves in each of the four diagonal directions (NE, NW, SE, SW).
+Consider placing a King on an otherwise empty chessboard and performing a sequence of consecutive King moves. Say that this sequence is Frolicsome if it (a) starts and ends in the same cell, (b) never performs the same move twice, and (c) never performs a move that it has already done in the opposite direction. Conditions (b) and (c) can be said differently: if the king ever moves from cell c1 to cell c2, then he is not allowed to move from c1 to c2 OR from c2 to c1 for the rest of the walk.
+Explain why there does not exist a Frolicsome sequence of King moves consisting of exactly 210 steps.
+    Hint: Model this as a graph problem. What are the nodes and edges? Show that a 210-step Frolicsome sequence corresponds to an Euler tour of your graph.
+(b) [6 pts] Show that there does exist a Frolicsome sequence of 196 King moves in this 8×8 board. (Show it exists, but don't actually construct it!)
+    Hint: Find 14 edges to remove in order to make your graph Eulerian.
+
+
+Problem 3. DAGs [12 points]
+
+Answer the following questions about the dependency DAG shown in the diagram. Assume each node is a task that takes 1 second.
+
+[Figure: a directed acyclic graph on nodes 1–12. Top row: 1 → 2 → 3, 4, 5, 6, with additional edges 2 → 6, 3 → 6, 5 → 6. Bottom row: 7, 8, 9, 10, 11, 12, with edges 7 → 3, 8 → 3, 3 → 10, 9 → 10, 11 → 12, 10 → 12.]
+
+(a) [2 pts] What is the largest chain in this DAG? If there is more than one, only give one.
+(b) [2 pts] What is the largest antichain? (Again, give only one if there are more than one.) Prove there isn't a larger antichain.
+(c) [2 pts] How much time would be required to complete all the tasks with a single processor?
+(d) [2 pts] How much time would be required to complete all the tasks if there are unlimited processors available?
+(e) [2 pts] What is the smallest number p of processors that would still allow completion of all the tasks in optimal time? Show a schedule for p processors that completes in optimal time, and prove that p − 1 or fewer processors must take longer.
+(f) [2 pts] What is a topological ordering of these tasks? If there is more than one, only give one.
+
+
+Problem 4. Pokémon Constraints [13 points]
+
+Ash is selecting a team of Pokémon to use in an upcoming tournament. Each of his Pokémon has a number of types, shown below.
+
+| Pokémon          | Types        |
+|------------------|--------------|
+| Altaria          | Dragon, Flying |
+| Bidoof           | Normal       |
+| Chikorita        | Grass        |
+| Dratini          | Dragon       |
+| Eevee            | Normal       |
+| Floragato        | Grass        |
+| Grovyle          | Grass        |
+
+Ash has several constraints he must satisfy while selecting his team. We model this task as a graph problem. Let the propositions A, B, C, D, E, F, G be "(Altaria, Bidoof, Chikorita, Dratini, Eevee, Floragato, Grovyle, respectively) is on Ash's team". These propositions and their negations are called literals. Ash's first constraint is that his team must include at least one of Altaria and Eevee, expressed as the 2-clause (A ∨ E).
+
+The two literals in a 2-clause needn't be distinct, and they can be negated. Ash's next two constraints are that his team must include Eevee, and that it cannot include Eevee without Dratini, expressed as the 2-clauses (E ∨ E) and (NOT E ∨ D). Ash's next constraint is that his team must include exactly one of Bidoof and Chikorita, expressed (along with the previous three constraints) as a formula in 2-conjunctive normal form (2-CNF):
+    φ1 := (A ∨ E) ∧ (E ∨ E) ∧ (NOT E ∨ D) ∧ (B ∨ C) ∧ (NOT B ∨ NOT C)
+
+(a) [2 pts] Fill in the blanks in the following 2-CNF formula with literals to express the constraint that no two Pokémon on Ash's team may share a type.
+    φ2 := (_ ∨ _) ∧ (_ ∨ _) ∧ (_ ∨ _) ∧ (_ ∨ _) ∧ (_ ∨ _)
+[The five blanks correspond to the five type-sharing pairs: the Dragon pair, the Normal pair, and the three Grass pairs.]
+
+(b) [3 pts] We can now convert the constraint formula φ := φ1 ∧ φ2 into an implication graph H = (V, I). V := {A, B, C, D, E, F, G, NOT A, NOT B, NOT C, NOT D, NOT E, NOT F, NOT G} is the set of literals, and I encodes the 2-clauses of φ as implications. A 2-clause (u ∨ v) can be written in the logically equivalent form (NOT u ⇒ v) ∧ (NOT v ⇒ u). For every 2-clause (u ∨ v) of φ, I contains the edges (NOT u, v) and (NOT v, u). For instance, I contains the two edges (NOT A, E) and (NOT E, A) to encode (A ∨ E). Draw H or list each vertex's out-neighbors explicitly.
+    Hint: H is planar and has 19 edges.
+
+(c) [3 pts] Let ψ be a 2-CNF formula, and let u, v be literals in ψ. Prove that if ψ is true and the implication graph of ψ contains a path π from u to v, then u ⇒ v.
+    Hint: Induction on path length.
+
+(d) [3 pts] Identify the SCCs of H (there should be 8). Draw the condensation graph of H, or list each SCC's out-neighbors explicitly.
+
+(e) [2 pts] Find a topological order on the SCCs of H, and identify the set T of literals v for which [NOT v] precedes [v] in this order. Setting these literals to True gives a team that satisfies all of Ash's constraints! What is T, and what is Ash's team?

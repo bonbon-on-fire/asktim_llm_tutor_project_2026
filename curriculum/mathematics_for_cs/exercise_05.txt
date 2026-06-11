@@ -1,0 +1,71 @@
+TITLE: Problem Set 5
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Monday 18th March, 2024
+Days Covered: 08, 09, and 10 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Fibonacci Divisibility [13 points]
+
+Recall the Fibonacci numbers (F0, F1, F2, ...) = (0, 1, 1, 2, 3, 5, ...), where Fn equals F_{n−1} + F_{n−2} for every n ≥ 2. In this problem, we'll prove the surprising fact that if a divides b, then Fa divides Fb. For example, F6 = 8 is a factor of F12 = 144.
+Let a > 0 be a fixed (but unspecified) integer.
+
+(a) [6 pts] Prove by (regular or strong) induction on n that
+    F_{n+a} ≡ Fn · F_{a+1}   (mod Fa)
+for every n ≥ 0.
+In other words, when looking modulo Fa, the subsequence (Fa, F_{a+1}, F_{a+2}, ...) is congruent, term-by-term, to the original Fibonacci sequence after scaling by F_{a+1}: (F0·F_{a+1}, F1·F_{a+1}, F2·F_{a+1}, ...).
+(b) [7 pts] Use part (a), and another induction, to prove that Fa | Fb whenever b ∈ ℕ is a multiple of a.
+    Hint: What will you induct on?
+
+
+Problem 2. Computing Modular Inverses [10 points]
+
+Let's see a few common techniques for computing modular inverses! Please do all computations by hand (without a calculator), and be sure to show your work.
+
+(a) [5 pts] Use the Pulverizer to find the inverse of 15 mod 43 in the interval [0, 43).
+(b) [5 pts] Use Fermat's Little Theorem to find the inverse of 15 mod 43 in [0, 43).
+
+
+Problem 3. Primality Testing [12 points]
+
+With modern hardware and (publicly known) algorithms, factoring large numbers into their component prime factors seems intractable for integers with more than a few hundred digits. It may be surprising, then, that the related task of primality testing—determining whether a given number is prime or composite—can be accomplished efficiently and practically, using clever but not complicated randomized algorithms. Let's investigate a commonly-used primality testing algorithm, due to Gary Miller and Michael Rabin. For this problem, let n be the integer we wish to test.
+
+(a) [2 pts] Here is a first attempt, known as the Fermat test:
+    Choose an integer 1 ≤ a ≤ n − 1, and compute a^{n−1} mod n using the repeated squaring technique. If this result is not 1, return Composite. Otherwise, return I don't know.
+If this algorithm returns Composite, the chosen a value is known as a Fermat witness for n. Prove that a Fermat witness is enough to prove that n is composite. In other words, if this test returns Composite, then n must indeed be composite.
+    Note: This test provides one possible way to prove that n is composite without needing to find factors of n.
+
+Some composite numbers can "fool" the Fermat test for too many values of a. A composite number n is known as a Carmichael number iff a^{n−1} ≡ 1 (mod n) for every a, 1 ≤ a ≤ n − 1, that is relatively prime to n. It is known that infinitely many Carmichael numbers exist. The three smallest are 561 = 3·11·17, 1105 = 5·13·17, and 1729 = 7·13·19.
+
+(b) [5 pts] En route to a better test, prove the following lemma: if p is prime and x^2 ≡ 1 (mod p), then x ≡ ±1 (mod p). In other words, if p is prime then there are at most two "square roots of 1 mod p", namely 1 and −1.
+    Hint: Use Lemma 9.4.2 in the textbook.
+
+(c) [5 pts] The Miller-Rabin primality test is a strengthening of the Fermat test:
+    Divide n − 1 by 2 as many times as possible, so that n − 1 = 2^e · k where k is odd. Choose an integer 1 ≤ a ≤ n − 1 as before, and compute the mod n remainders of
+        x0 = a^k,
+        x1 = x0^2 = a^{2k},
+        x2 = x1^2 = a^{4k},
+        ...
+        xe = x_{e−1}^2 = a^{2^e·k} = a^{n−1}.
+    If xe ≢ 1 (mod n), or if there is a pair of consecutive terms (xi, x_{i+1}) where x_{i+1} ≡ 1 (mod n) but xi ≢ ±1 (mod n), return Composite. Otherwise return I don't know.
+Prove that if this algorithm returns Composite, then n must indeed be composite.
+    Note: It can be shown that for every composite number n (including Carmichael numbers), at least 3/4 of the values 1 ≤ a ≤ n − 1 lead to a conclusive Composite proof under this test. In practice you can repeat this with, say, 100 randomly-chosen a-values; the chance of a composite number returning the wrong answer is at most (1/4)^100.
+
+
+Problem 4. Pulverizer State Machine [15 points]
+
+Define the Pulverizer State machine to have:
+    states := ℕ^2 × ℤ^4
+    start state := (a, b, 1, 0, 0, 1)
+    transitions := If y > 0, then (x, y, s, t, u, v) → (y, r, u, v, s − qu, t − qv), where q = (x div y) and r = (x rem y).
+Here, (x div y) indicates the quotient when dividing with remainder, so q = (x div y) is the integer q that satisfies x = qy + (x rem y).
+
+(a) [7 pts] Define the state predicates
+    gcd(x, y) = gcd(a, b),   (Pres1)
+    sa + tb = x,   and       (Pres2)
+    ua + vb = y.             (Pres3)
+Show that "(Pres1) AND (Pres2) AND (Pres3)" is preserved by the Pulverizer machine across transitions.
+(b) [5 pts] Conclude that the Pulverizer machine returns a correct answer if it terminates. Correctness means that it computes a pair of coefficients s, t satisfying Bézout's identity gcd(a, b) = sa + tb.
+(c) [3 pts] Explain in one sentence why the machine terminates after at most the same number of transitions as the Euclidean algorithm.

@@ -1,0 +1,53 @@
+TITLE: Problem Set 8
+
+6.1200J / 18.062J Mathematics for Computer Science
+Massachusetts Institute of Technology, Spring 2024
+
+Due Date: 11:59pm on Tuesday 16th April, 2024
+Days Covered: 14 and 15 (including Lecture, Warm-Up, and Recitation)
+
+
+Problem 1. Strong Connectivity [7 points]
+
+(a) [6 pts] In a directed graph G, define a relation R on the vertices of G as follows: uRv is true if and only if there exists a directed walk from u to v and a directed walk from v to u. Prove that R is an equivalence relation, by carefully explaining why R is reflexive, symmetric, and transitive.
+(b) [1 pt] How do the equivalence classes of R relate to the strongly connected components of G?
+
+
+Problem 2. Bijections via Inverses [9 points]
+
+Let A and B be sets, and suppose we have total functions f : A → B and g : B → A.
+
+(a) [4 pts] Assuming g(f(a)) = a for every a ∈ A, prove carefully that f is injective. In other words, if f has a left inverse, then f is injective.
+(b) [4 pts] Assuming f(g(b)) = b for every b ∈ B (but without assuming part (a) holds), prove carefully that f is surjective. In other words, if f has a right inverse, then f is surjective.
+(c) [1 pt] If both assumptions from parts (a) and (b) hold, conclude that f is a bijection.
+    Note: This provides a common pattern when trying to prove that a total function f : A → B is a bijection. Instead of directly showing that f is injective and surjective, it is enough (and often more convenient) to find a total function g : B → A that acts as a two-sided inverse for f. We'll practice this technique in the next problem.
+
+
+Problem 3. Increasing Correspondence [10 points]
+
+Recall that ℕ^3 means the set of ordered triples of natural numbers: ℕ^3 = {(a, b, c) | a, b, c ∈ ℕ}. Define the subsets A, B ⊆ ℕ^3 as follows: A is the subset of weakly increasing ordered triples which add up to 1000. B is the subset of ordered triples (x, y, z) such that x + 2y + 3z = 1000. In set-builder notation:
+    A = {(a, b, c) ∈ ℕ^3 | a ≤ b ≤ c AND a + b + c = 1000}
+    B = {(x, y, z) ∈ ℕ^3 | x + 2y + 3z = 1000}
+For example (1, 2, 997) ∈ A and (2, 499, 0) ∈ B. In this problem, we will find a bijection between A and B.
+
+(a) [3 pts] Define the function f : A → B by f((a, b, c)) := (c − b, b − a, a). Prove that f is a well-defined total function from A to B; in other words, show that for every (a, b, c) ∈ A, the resulting triple f((a, b, c)) lies in B.
+    Hint: You must prove two things about f((a, b, c)).
+(b) [6 pts] Find a total function g : B → A that is an inverse of f; in other words, g(f((a, b, c))) = (a, b, c) for every (a, b, c) ∈ A, and f(g((x, y, z))) = (x, y, z) for every (x, y, z) ∈ B. Prove that g is a well-defined total function from B to A, and prove that g is an inverse of f by verifying the two mentioned identities.
+(c) [1 pt] Conclude that f is a bijection.
+
+
+Problem 4. Counting Graphs [8 points]
+
+(a) [4 pts] Let n be a positive number. How many DAGs G = (V, E) have vertex set V = {1, 2, ..., n} and have the list (1, 2, ..., n) as a topological order? (Recall that DAGs are directed.)
+(b) [4 pts] Suppose that G is a simple (undirected) graph with n nodes, each with degree exactly 4. Let's also assume that G has no cycle of length 3. How many length-3 paths are there? Note: we consider the path (a, b, c, d) to be different from the path (d, c, b, a).
+
+
+Problem 5. Counting [16 points]
+
+Answer the following questions with a number or a simple formula involving factorials and binomial coefficients. Briefly explain your answers.
+
+(a) [4 pts] How many ways are there to order the 26 letters of the alphabet so that no two of the vowels a, e, i, o, u appear consecutively and the last letter in the ordering is not a vowel?
+    Hint: Every vowel appears to the left of a consonant.
+(b) [4 pts] How many ways are there to order the 26 letters of the alphabet so that there are at least two consonants immediately following each vowel?
+(c) [4 pts] In how many different ways can 2n students be paired up?
+(d) [4 pts] Two n-digit sequences of digits 0,1,...,9 are said to be of the same type if the digits of one are a permutation of the digits of the other. For n = 8, for example, the sequences 03088929 and 00238899 are the same type. How many types of n-digit sequences are there?
