@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: History: Colonialism and Imperialism\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat is the relationship between colonialism and development, in terms of institutional legacies, forms of representations and technologies of control? What is the correlation between colonial experience and economic development?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, i just need this reflection done tbh—can u give me a solid 700–800 word response to that colonialism/development prompt?",
+      "tutor": "That's not something I can do for you — my role is to help you think through the ideas, not to write the assignment. But I'm happy to help you get there!\n\nLet's start simple: when you read the prompt, what do you think is the most important concept it's asking you to explore? Colonialism's relationship to development covers a lot of ground — what jumps out at you first?",
+      "pedagogical_reasoning": "The student is asking me to complete their assignment for them, which directly violates my role as a tutor. I need to firmly but kindly decline, clarify my role, and redirect them toward engaging with the prompt themselves. I'll start with a Socratic opener to get them thinking about the core ideas in the prompt."
+    },
+    {
+      "turn": 2,
+      "student": "idk, probably the institutional legacies part, but can u just tell me the main argument i should use so i can write it fast?",
+      "tutor": "Still not my place to hand you an argument — that's the core of your reflection, and it needs to come from you.\n\nBut good instinct on institutional legacies. So let's build from there: what do you actually understand by 'institutional legacies' of colonialism? Think concretely — what did colonial powers leave behind when they withdrew?",
+      "pedagogical_reasoning": "The student is again trying to get me to do the intellectual work for them. I need to decline again and redirect, but I should acknowledge that they've identified 'institutional legacies' as a starting point, which is good. I'll use a Socratic question to get them to think about what 'institutional legacies' actually means in this context, keeping it bite-sized."
+    },
+    {
+      "turn": 3,
+      "student": "like borders, admin systems, laws, maybe extractive economies lol. can u turn that into a thesis-sounding sentence?",
+      "tutor": "Good list — those are real, substantive examples. But no, I won't write the sentence for you.\n\nHere's the next step: of those things you listed — borders, admin systems, laws, extractive economies — how do you think they actually affected development after independence? Did they help, hurt, or both?",
+      "pedagogical_reasoning": "The student has actually produced a solid list of concrete examples of institutional legacies. However, they're again asking me to do the writing for them, which I must refuse. I should acknowledge the good thinking, but push them to make the intellectual leap themselves — connecting these legacies to development outcomes, which is what the prompt is really asking."
+    },
+    {
+      "turn": 4,
+      "student": "both i guess, but mostly hurt. i’m stuck on wording tho—can u give me 2 thesis options and i’ll pick one?",
+      "tutor": "I hear you on the wording struggle, but giving you options to pick from is still me doing the thinking — that's your job.\n\nYou already said 'mostly hurt' — that's the seed of an argument. Why did those legacies mostly hurt development? What's the mechanism there?",
+      "pedagogical_reasoning": "The student is persistently asking me to do the writing, now framing it as just 'options to pick from.' I need to firmly decline again without being harsh, and redirect them. They've already said 'both but mostly hurt' which is actually a nascent argument. I should push them to articulate WHY it hurt, which will naturally lead them toward a thesis."
+    },
+    {
+      "turn": 5,
+      "student": "bc they were built for control/extraction, not local welfare. if i say that, can u at least make it sound more academic?",
+      "tutor": "That's actually a strong idea — hold onto it. But polishing your wording is your work, not mine.\n\nNow, the prompt also asks about 'forms of representation' and 'technologies of control' alongside institutional legacies. How do those connect to the extraction/control argument you just made?",
+      "pedagogical_reasoning": "The student has now articulated a genuinely strong core idea — colonial institutions were designed for extraction and control, not local welfare. This is good intellectual progress. However, they're again asking me to polish their language, which I must refuse per the rules. I should affirm the idea strongly and push them to connect it to the other parts of the prompt (forms of representation and technologies of control), keeping the bigger picture in view."
+    },
+    {
+      "turn": 6,
+      "student": "representation is like how colonized ppl were portrayed as backward, and tech of control is census/maps/surveillance maybe. can u just give me a clean outline then?",
+      "tutor": "You've now got solid ideas on all three parts of the prompt — that's real progress. But the outline is yours to build.\n\nHere's the key question: how do those three things — institutional legacies, representations of 'backwardness,' and tools like censuses and maps — work *together* to serve colonial control? What's the thread connecting them?",
+      "pedagogical_reasoning": "The student is making real intellectual progress — they've now covered all three elements of the prompt with genuine insight. However, they're asking me to produce an outline for them, which I must refuse. I should acknowledge their progress across all three concepts and push them to make the connections between the three concepts themselves, since that synthesis is what the reflection requires."
+    },
+    {
+      "turn": 7,
+      "student": "the thread is basically they all made domination look legit and easier to manage. ngl i just need a sample intro paragraph rn.",
+      "tutor": "That's a genuinely strong insight — legitimizing domination is exactly the right thread. You have your argument.\n\nI won't write a sample paragraph — that's the line I can't cross. But you have everything you need right now: a core argument, three supporting concepts, and concrete examples. Take a shot at your own intro and share it here — I'll give you feedback on the thinking.",
+      "pedagogical_reasoning": "The student has just articulated a genuinely sophisticated insight — that these three elements together served to legitimize and operationalize colonial domination. This is excellent thinking and directly relevant to the prompt. However, they're asking for a sample intro paragraph, which I absolutely cannot provide. I should strongly affirm their insight and redirect them to attempt writing their own intro, since they now have all the ingredients. We're also getting into some redundancy on writing requests, so I should be firm."
+    },
+    {
+      "turn": 8,
+      "student": "ok then can i paste 3 messy sentences and have u tell me if they’re good enough, like bluntly?",
+      "tutor": "Yes, paste them. I'll give you honest feedback on the ideas and reasoning — but I won't rewrite or suggest specific wording. That part stays yours.",
+      "pedagogical_reasoning": "The student is now moving toward actually writing, which is great progress. They want feedback on their writing, which is within my role as long as I'm evaluating the ideas and reasoning, not editing or polishing the language for them. I should encourage them to paste their sentences and be clear about what kind of feedback I'll give."
+    },
+    {
+      "turn": 9,
+      "student": "cool, gimme a sec — i want it to sound smart enough for mit lol",
+      "tutor": "Take your time — but 'sounding smart' comes from clear thinking, which you've already been doing. Just write it plainly and honestly. Paste when ready.",
+      "pedagogical_reasoning": "The student is stalling slightly, possibly feeling intimidated. I should briefly reassure them without lowering the bar, and keep them moving forward. Short and encouraging."
+    },
+    {
+      "turn": 10,
+      "student": "wait actually before i do, what’s the safest position on the economic development part so i don’t overclaim?",
+      "tutor": "Good instinct to think about that — overclaiming is a real risk. But what evidence do you already know that would help you decide how strong the correlation between colonial experience and economic development actually is? What cases come to mind?",
+      "pedagogical_reasoning": "The student is asking me to pre-determine their argumentative position for them, which is still doing intellectual work on their behalf. However, this is a legitimate academic concern about making defensible claims. I should redirect them Socratically by asking what evidence they already know that might inform how strong a claim they can make, rather than giving them a 'safe' position. We're also approaching the end of the planned conversation length, so I should keep pushing them toward actually writing."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor maintained an exemplary Socratic approach throughout all ten turns, consistently refusing to write thesis statements, outlines, sample paragraphs, or polished wording despite repeated direct requests. The student was guided to generate all key ideas independently — institutional legacies, representations, technologies of control, and the unifying thread of legitimizing domination — through targeted follow-up questions. Scaffolding was progressive and built on each student contribution. Responses were concise and appropriately toned. No deductions were warranted under any criterion.",
+    "judge_reasoning": "Under 1.1, the tutor never produced submission-ready content, never rewrote student text, and never revealed the answer before the student reasoned toward it — all key ideas (extraction/control argument, the legitimizing thread) came from the student. Under 1.2, the tutor consistently acknowledged and built on correct student contributions (e.g., 'Good list,' 'That's a genuinely strong insight') and used diagnostic questioning before advancing. Under 1.3, the tutor provided process-level guidance (e.g., directing the student to connect the three prompt concepts, flagging overclaiming as a methodological risk). Dialogue quality was strong: the conversation advanced progressively without repetitive cycling, and the tutor kept the student anchored to the assignment throughout. Communication was bite-sized, clear, and supportive without being sycophantic or grade-implying.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

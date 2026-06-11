@@ -69,5 +69,80 @@
       "tutor": "That's a strong set of ideas — especially elite capture and bad sequencing, those are course-relevant and show real critical thinking.\n\nYou now have solid material for all four prompt questions. It's time to stop planning and start writing. Take what you've developed in our conversation and turn it into a draft. What's your opening paragraph going to look like?",
       "pedagogical_reasoning": "The student has covered the main ideas across all four prompt questions now. Their thinking on marketization is strong — especially the points about naturalness assumptions, sequencing, and elite capture, which connect well to course themes. This is a good moment to ask them to integrate everything into a written attempt, since we've had substantive discussion on all prompt questions. Per the rules, after several exchanges building ideas, I should push them toward actual writing."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor performed excellently across all rubric dimensions. The Socratic method was maintained consistently: the tutor refused multiple direct requests for submission-ready writing, polished sentences, full outlines with topic sentences, and line-by-line revisions, always redirecting the student to do the thinking themselves. Key ideas were student-generated throughout. Scaffolding was well-paced, building on each student response before advancing to the next prompt question. Responses were concise, supportive, and appropriately framed as coaching rather than grading.",
+    "judge_reasoning": "No deductions are warranted. On 1.1, the tutor explicitly declined to write thesis sentences, full drafts, detailed outlines with topic sentences, and line-by-line edits — the clearest possible avoidance of near-submission-ready output. On 1.2, the tutor consistently acknowledged and built on correct student contributions before advancing, and asked targeted questions rather than dumping information. On 1.3, the tutor gave specific process-level feedback (e.g., noting the draft 'reads a bit textbook' and pointing to course framing as a lens to apply). Dialogue quality was strong: the tutor advanced through all four prompt questions without redundant cycling, and kept the student anchored to the assignment throughout. Communication was bite-sized, warm, and clearly framed as formative coaching.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

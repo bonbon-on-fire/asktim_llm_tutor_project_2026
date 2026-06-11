@@ -1,7 +1,7 @@
 {
   "tutor_provider": "claude",
   "tutor_prompt": "tutor_03",
-  "student_persona": "chaotic_03",
+  "student_persona": "chaotic_05",
   "course": "intro_to_international_development_planning",
   "exercise_number": "07",
   "turn_size": 10,
@@ -11,63 +11,63 @@
   "exchanges": [
     {
       "turn": 1,
-      "student": "hey, i need help w/ a 700–800 word reflection for my intl development planning class. it’s on new institutionalism + law, and tbh i mostly just want a solid response to the prompt i can polish fast.",
-      "tutor": "Hey! I'm here to help you think through the ideas, but writing the response is your job — that's how you actually learn the material (and get credit for it!).\n\nLet's dig in. The prompt has three interrelated questions. To start: why do you think people believe law leads to development? What's your gut instinct on that?",
-      "pedagogical_reasoning": "The student is explicitly asking me to write or provide a response for them, which goes against my role as a tutor. I need to set clear boundaries while remaining welcoming and redirecting them toward engaging with the prompt themselves. I should not complete the task for them, but I can help them start thinking about the core questions in the prompt using the Socratic method."
+      "student": "hey, i just need this reflection done tbh. can u give me a solid 700–800 word answer i can basically submit for the law + development prompt?",
+      "tutor": "That's not something I can do — my job is to help you think through the problem, not to write it for you. The writing has to be yours.\n\nLet's get you started though. Looking at the prompt, there are really three questions bundled together. Which one feels most familiar to you, or do you have an initial gut reaction to any of them?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which is explicitly against my role. I need to firmly decline, explain my role, and redirect them toward engaging with the prompt themselves. I should be direct and set clear boundaries, then ask an opening Socratic question to get them started."
     },
     {
       "turn": 2,
-      "student": "ngl my gut answer is that ppl think law creates order, protects property, enforces contracts, and makes the state seem predictable, so investment and growth happen. but can u just help me turn that into a tight thesis i can use rn?",
-      "tutor": "That's actually a solid instinct — you've identified some key mechanisms. But crafting the thesis is your work, not mine.\n\nHere's a question to sharpen your thinking before you write one: is law doing those things you listed (protecting property, enforcing contracts) a *means* to development, or could it be valuable *in itself*, regardless of whether growth follows? The prompt is specifically asking you to take a position on that distinction.",
-      "pedagogical_reasoning": "The student has a genuinely good intuition about the relationship between law and development. However, they are again asking me to do the writing work for them (crafting a thesis). I should acknowledge their good thinking, push back on the request, and use a Socratic question to help them refine their own thinking further — particularly to push them toward the deeper complexity the prompt requires (law as tool vs. goal, and the role of institutions)."
+      "student": "idk, prob the first one, but i'm lowkey blanking. can u just give me the main argument + thesis i should use so i can turn it in fast?",
+      "tutor": "Still not my place to hand you a thesis — that's the core of your own argument.\n\nBut let's unlock your thinking. The first question asks: why do people believe law leads to development? So tell me — when you think of a country with weak or no rule of law, what kinds of problems do you imagine showing up in its economy or society?",
+      "pedagogical_reasoning": "The student is again trying to get me to do the work for them, this time asking for a thesis. I need to decline clearly but not harshly, and redirect with a Socratic question that helps them start generating their own ideas about the first question. I should keep it bite-sized and accessible."
     },
     {
       "turn": 3,
-      "student": "yeah i get that, but i’m short on time fr. my position is basically “law is both instrumental and intrinsic, but its development effects depend on politics/institutions, not just formal rules.” can u at least make that sound more academic?",
-      "tutor": "I won't rephrase it for you — that's your writing to do. But your position is genuinely promising.\n\nBefore you write anything, though: you haven't touched the third part of the prompt yet — what does it mean to 'unbundle' institutions, and where does law fit among other institutions? That's going to be essential to making your argument land. What do you think 'unbundling' institutions means?",
-      "pedagogical_reasoning": "The student is again asking me to do the writing for them — this time to 'academize' their language. I need to firmly refuse while acknowledging their position has real merit. I should redirect them to develop their own language and push them deeper into the substance of the prompt, particularly the 'unbundling institutions' part they haven't addressed yet."
+      "student": "like corruption, contracts not enforced, ppl not investing, all that. can u just turn that into a clean thesis sentence rn?",
+      "tutor": "Good instincts — those are exactly the right kinds of examples. Now you're one step away from your own thesis.\n\nSo if those problems come from weak law, what does that imply about what strong legal institutions *do* for development? Try to put that connection into your own words.",
+      "pedagogical_reasoning": "The student gave a genuinely good answer with real substance - corruption, contract enforcement, investment. I should acknowledge that positively but firmly refuse to write the thesis. Instead, I should push them to make the logical connection themselves between those observations and the belief that law leads to development, which is essentially one step away from forming their own thesis."
     },
     {
       "turn": 4,
-      "student": "i think it means not treating “institutions” like one big vague thing — like separating formal laws from enforcement, norms, bureaucracies, courts, property regimes, local power structures, etc. tbh that’s basically the point i want to make, so if u can just give me a clean paragraph version of that, i can do the rest.",
-      "tutor": "Good — that's exactly the right intuition about unbundling. But I won't write the paragraph; that's yours to draft.\n\nHere's the key connection to make: if institutions can be unbundled the way you described, what does that say specifically about law's role *compared to* enforcement, norms, or local power structures in driving development? Is law more or less important than the others?",
-      "pedagogical_reasoning": "The student has a good grasp of unbundling institutions. However, they are again asking me to write for them. I need to firmly decline while acknowledging their understanding. I should now push them toward connecting this unbundling idea to their earlier position about law being both instrumental and intrinsic — helping them see how these pieces fit together into their argument, without writing it for them."
+      "student": "it implies law makes stuff predictable + stable so markets and gov can function. pls just phrase it nicer for me, like one polished line.",
+      "tutor": "You literally just said it well enough. I won't polish it for you — that's your job.\n\nWrite it down yourself, even if it feels rough. A thesis doesn't have to be perfect on the first try. What's your attempt?",
+      "pedagogical_reasoning": "The student is making good intellectual progress but keeps asking me to do the writing. I need to firmly decline again and push them to write it themselves. Their idea is solid - predictability and stability enabling markets and governance - so I should affirm the thinking and push them to just write it themselves, even if it's rough."
     },
     {
       "turn": 5,
-      "student": "probably law matters, but only as part of a bigger institutional package; on paper law alone doesn’t do much if enforcement is weak or elites capture it. can u just give me like 4 bullet points i can expand into the reflection?",
-      "tutor": "No bullet points from me — and honestly, you already have everything you need. You've articulated a position on all three parts of the prompt across our conversation.\n\nIt's time to start writing. Take what you've said here and put it in your own words as a draft. Share it with me and I'll help you think through what's working and what needs more development.",
-      "pedagogical_reasoning": "The student keeps asking me to do the structural/writing work for them in different forms (thesis, paragraph, bullet points). I need to firmly decline again. However, the student has now expressed strong enough ideas across the conversation that I should push them to start actually writing rather than continuing to extract scaffolding from me. Per the rules, after repeated exchanges on the same ideas, I should ask them to integrate what we've discussed into a written attempt."
+      "student": "ok fine: \"Law supports development by creating predictability, stability, and enforcement that enable markets, investment, and state action.\" is that good enough, and can u give me the rest as bullet points?",
+      "tutor": "That's a solid thesis — good work getting it down yourself.\n\nNow the prompt also asks whether law is a *tool* for development or a *goal* in itself. What do you think — is there a difference between those two ideas?",
+      "pedagogical_reasoning": "The student wrote a decent thesis on their own - I should acknowledge that positively. However, they're again asking me to do the work by providing bullet points for the rest. I need to decline and redirect them to the second question in the prompt, using Socratic questioning to keep momentum going."
     },
     {
       "turn": 6,
-      "student": "ok but i need to submit soon, so can u at least tell me if this structure works: intro w/ thesis, then para on why law is believed to produce development, para on law as tool vs goal, para on unbundling institutions + limits of law, then short conclusion?",
-      "tutor": "That structure works well and maps onto all three parts of the prompt. Now stop planning and start writing — share your draft when you have something and we'll work from there.",
-      "pedagogical_reasoning": "This is a legitimate structural question, not a request for me to write content. I can give brief feedback on the structure since evaluating an outline is a reasonable tutoring task. The structure is solid and covers the prompt well. I should affirm this briefly and push them to start writing rather than continuing to plan."
+      "student": "yeah but i need this done fast fr. can u just give me 3 body paragraph topic sentences i can use?",
+      "tutor": "I hear you on the time pressure, but I can't write your paragraph structure for you — that's the assignment.\n\nYou said there's a difference between law as a tool vs. a goal. What is that difference, in your view?",
+      "pedagogical_reasoning": "The student is persistently trying to get me to do the writing. I need to firmly decline and redirect. I should also gently note that speed isn't really the point here and that engaging with the ideas is what will make the reflection work. I'll push them to answer the tool vs. goal question since they acknowledged there's a difference."
     },
     {
       "turn": 7,
-      "student": "ugh ok, i’ll draft it. can u stay strict on whether it actually answers the prompt once i paste it?",
-      "tutor": "Absolutely — paste it when it's ready and I'll give you honest feedback on how well it addresses the prompt. I won't sugarcoat it.",
-      "pedagogical_reasoning": "The student is committing to drafting, which is great progress. They're asking me to evaluate their draft against the prompt, which is a legitimate tutoring task. I should confirm I'll do that while reminding them I'll be honest, not just validating."
+      "student": "tool = helps growth/governance, goal = justice/rights/legitimacy matter even without growth. can u at least say if that's the right direction + maybe a super short outline format?",
+      "tutor": "Yes, that distinction is solid and worth developing in your paper.\n\nYou now have ideas for two of the three questions in the prompt. The third asks about *institutions* — what they mean, and whether you can 'unbundle' them. What do you think 'unbundling institutions' might mean?",
+      "pedagogical_reasoning": "The student is making good conceptual progress - their distinction between tool and goal is accurate and insightful. I should affirm this clearly. However, I still cannot provide an outline or structure for them. We've now had several exchanges and they have good material for at least two of the three prompt questions. I should nudge them toward the third question about institutions and 'unbundling' to keep momentum, rather than dwelling on what they already have."
     },
     {
       "turn": 8,
-      "student": "cool, i’ll paste it in a sec.",
-      "tutor": "Take your time and write it out fully. I'll be here.",
-      "pedagogical_reasoning": "The student is about to share their draft. I should keep this exchange brief and encouraging without being sycophantic, just acknowledging and waiting."
+      "student": "maybe breaking institutions into formal laws, enforcement, norms, orgs, and admin capacity. tbh can u just tell me if my overall argument should be \"law matters but only with other institutions\"?",
+      "tutor": "Good — that's exactly the kind of unbundling scholars in this field talk about.\n\nNow think about your own example: if a country has written laws but no enforcement capacity or social norms backing them up, what happens? Does law still lead to development on its own?",
+      "pedagogical_reasoning": "The student's unbundling idea is good and accurate. They're also trying to get me to confirm their overall argument, which is close to asking for the thesis/answer. I should affirm the unbundling idea genuinely, but instead of confirming their argument, push them to think through the implication themselves - does law work independently or does it need the other elements they just listed? This is one step away from them owning the argument. We've now covered all three prompt questions and have good material, so I should push toward integration."
     },
     {
       "turn": 9,
-      "student": "alright, i’m writing it rn.",
-      "tutor": "Good. Paste it when you're done.",
-      "pedagogical_reasoning": "The student is writing their draft. No need for a lengthy response — just a brief, encouraging acknowledgment to keep momentum going."
+      "student": "nah, it prob doesn't. ok so my argument is basically that law isn't enough alone; can u pls just give me a clean intro sentence + conclusion sentence so i stop overthinking?",
+      "tutor": "You have all the pieces now — a thesis, a tool vs. goal distinction, and an argument about institutions needing to work together. That's a real argument.\n\nStop asking me to write sentences and just start your draft. Open with the point you feel most confident about. What's your first sentence?",
+      "pedagogical_reasoning": "The student has now developed strong ideas across all three prompt questions through our exchange. They're asking me to write intro and conclusion sentences, which I must refuse. However, I notice this is a good moment to push them to integrate everything into actual writing rather than keep going back and forth. Per the rules about redundancy and integration, I should ask them to now attempt a written draft using what they've built up."
     },
     {
       "turn": 10,
-      "student": "bet.",
-      "tutor": "👍",
-      "pedagogical_reasoning": "Single word response from student, nothing to engage with academically. Keep it brief and wait for the draft."
+      "student": "ugh, can u at least check this one: \"Belief in law as a driver of development rests on the idea that legal order makes economic and political life predictable, but law only works when embedded in broader institutions.\"",
+      "tutor": "That's a strong sentence — it captures your core argument clearly and sets up all three parts of the prompt nicely.\n\nNow keep going. You have everything you need to write the full 700-800 words. Stop checking in on individual sentences and write the draft — then you can reflect on whether it hangs together.",
+      "pedagogical_reasoning": "The student has written a strong opening sentence that integrates their key ideas well. I should give genuine positive feedback without grading. This is also a good moment to push them forward into actually drafting the full piece rather than seeking more validation sentence by sentence. We're near the end of our planned exchange length so I should encourage them to take what they have and write the full draft."
     }
   ],
   "grade": {
@@ -80,39 +80,18 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student repeatedly asked for bullet points or a paragraph (turns 4–5), the tutor declined and redirected but did not ask diagnostic questions to understand why the student was struggling to move from ideas to prose. The tutor jumped straight to 'start writing' without checking what specifically was blocking the student from drafting.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.b",
-                "reason": "When the student had articulated all three parts of the prompt, the tutor's feedback was limited to 'you already have everything you need' and 'that structure works well' without giving any method-level guidance on how to develop ideas into a coherent argument, how to use evidence, or how to connect the three prompt questions analytically. The feedback was too vague to improve the student's writing process.",
-                "points": 2
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 2,
             "max": 2
           }
         },
         "base": {
-          "score": 15,
+          "score": 20,
           "max": 20
         }
       },
@@ -153,11 +132,11 @@
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 40,
     "max_base_score": 40,
-    "overview": "The tutor performed well overall, consistently refusing to do the student's work, maintaining a supportive but firm tone, and guiding the student through all three parts of the prompt via Socratic questioning. The main weaknesses were a failure to diagnose what was blocking the student from drafting (jumping to 'start writing' without probing the specific obstacle) and a lack of substantive method-level feedback once the student had articulated their ideas (e.g., no guidance on how to build an argument, use evidence, or connect the three prompt questions analytically).",
-    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led through targeted questions. 1.2 loses 3 points under 1.2.B.a: when the student was stuck and repeatedly requesting shortcuts (turns 4–5), the tutor did not ask diagnostic questions to identify the specific barrier before redirecting to 'just write.' 1.3 loses 2 points under 1.3.A.b: after the student had articulated their position, the tutor's feedback ('you already have everything you need,' 'that structure works well') was too vague to improve the student's process — no guidance on how to develop reasoning, integrate evidence, or connect the three prompt threads analytically. Dialogue quality and communication quality are both full marks: the tutor kept responses concise, avoided repetition, maintained assignment anchoring throughout, and used an appropriately supportive tone without grading.",
-    "total_score": 35,
+    "overview": "The tutor performed excellently across all rubric dimensions. No deductions were warranted. The tutor consistently refused to write submission-ready content, guided the student through Socratic questioning, built on each student contribution, maintained a supportive but firm tone, and kept responses concise and focused.",
+    "judge_reasoning": "1.1: The tutor never provided a thesis, topic sentences, polished wording, or any near-submission-ready content despite repeated student requests. All key ideas (thesis, tool vs. goal distinction, unbundling) were elicited from the student through questioning. 1.2: The tutor built on each student response — acknowledging correct instincts (Turn 3), affirming the thesis (Turn 5), and advancing to the next prompt question only after the student demonstrated understanding. 1.3: The tutor gave process-level feedback, e.g., telling the student their thesis was solid and directing them to stop checking individual sentences and write the draft. 2.1: The tutor advanced the conversation each turn without cycling on the same point. 2.2: The tutor stayed anchored to the assignment throughout, redirecting every off-task request back to the prompt. 3.1: Responses were brief and interactive, never monologue-heavy. 3.2: Tone was supportive and coaching-oriented without being cold or implying formal grading.",
+    "total_score": 40,
     "max_score": 40,
     "model": {
       "provider": "anthropic",

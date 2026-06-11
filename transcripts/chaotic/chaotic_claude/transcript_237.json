@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Concepts: Pro versus Anti-Development\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat do we make of anti-development arguments? Are they utopian or nihilist or neither? Can one be anti-development and still plan? What are the justifications for planning? Or is the division between pro and anti too Manichean? Why certain types of anti-planning arguments emerged at certain times? What was the historical context in which these criticisms emerged? What explains the rise, fall and now the latest rise of anti-development arguments?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, i need this reaction paper done tbh—can u just give me a solid 700–800 word response to that pro vs anti-development prompt?",
+      "tutor": "That's not something I can do — writing the paper for you isn't my role, and it wouldn't help you learn the material either. I'm here to help you think through the ideas so you can write it yourself.\n\nLet's start simple: when you read the prompt, which of the questions jumps out at you as most interesting or most confusing? That's usually a good place to begin.",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to firmly decline, clarify my role, and redirect them toward engaging with the prompt themselves. I should set clear boundaries while being inviting enough that the student wants to engage with the material."
+    },
+    {
+      "turn": 2,
+      "student": "idk, the “can u be anti-development and still plan?” part; can u just tell me the thesis i should use tho?",
+      "tutor": "I won't give you a thesis — that's the core of your argument and it has to come from you.\n\nBut you've picked a genuinely interesting question. So let me ask you: what's your gut reaction? Do you think someone can be against development and still engage in planning? What would that even look like?",
+      "pedagogical_reasoning": "The student is again asking me to do the work for them (provide a thesis). I need to decline clearly but redirect constructively. The question they've identified is actually a great entry point. I should use the Socratic method to help them start forming their own position by asking them what they already think about the tension between anti-development and planning."
+    },
+    {
+      "turn": 3,
+      "student": "yeah probs, but i need smth sharper than “it depends” lol—can u give me like 3 thesis options i can pick from?",
+      "tutor": "Still not going to do that — picking from my options would make it my paper, not yours.\n\nBut 'yeah probs' is actually a starting point. What would make someone anti-development but still want to plan? What are they planning *for*, if not development?",
+      "pedagogical_reasoning": "The student is still trying to get me to do the intellectual work for them by asking for thesis options. I need to firmly decline again and redirect. However, they did show some initial thinking ('yeah probs'), so I should push them to sharpen that instinct themselves using a Socratic question that moves toward a more precise position."
+    },
+    {
+      "turn": 4,
+      "student": "for autonomy maybe, or local control, or avoiding top-down state stuff. can u turn that into one clean arguable sentence?",
+      "tutor": "Those are solid ideas — but turning them into a sentence is exactly the work you need to do.\n\nYou've got three concepts: autonomy, local control, anti-top-down. Which one do you think is the *core* of the anti-development planner's position? Start there.",
+      "pedagogical_reasoning": "The student is again asking me to write for them, this time to craft their thesis sentence. I must refuse clearly. However, their ideas (autonomy, local control, rejecting top-down planning) are genuinely good raw material. I should acknowledge that and push them to try writing it themselves, perhaps by asking them to identify which of those three ideas is the most central to their argument."
+    },
+    {
+      "turn": 5,
+      "student": "local control i guess. i'm slammed rn, can u at least give me a fill-in-the-blank thesis template?",
+      "tutor": "No templates — that's still me writing it.\n\nYou've already done the hard thinking: local control is your core idea. Just try writing one rough sentence using it. It doesn't have to be perfect — what do you want to argue about local control and anti-development planning?",
+      "pedagogical_reasoning": "The student is persisting in asking me to do their writing work, now via a template. I must decline firmly. However, they've made real progress narrowing down to 'local control' as the core concept. I should acknowledge that and push them to just try writing a sentence — even a rough one. Being encouraging but firm here is key."
+    },
+    {
+      "turn": 6,
+      "student": "ok maybe: anti-development people can still support planning if planning protects local control instead of imposing outside models. is that good or can u just polish it fast?",
+      "tutor": "That's a decent first attempt — you have a clear position. I won't polish it though.\n\nOne thing to consider: the prompt also asks about *why* anti-development arguments emerged at specific historical moments. Does your thesis leave room for that? What historical context might have made 'outside models' feel threatening to people in developing countries?",
+      "pedagogical_reasoning": "The student has produced their own thesis sentence, which is good progress. I should not polish it for them as that would violate the rules. I should acknowledge it's a solid attempt and give honest feedback, then push them to think about whether it's arguable and specific enough — particularly prompting them to think about what 'outside models' means and whether the thesis engages with the historical/theoretical dimensions the prompt asks for."
+    },
+    {
+      "turn": 7,
+      "student": "colonialism + failed modernization probs. can u just show me a sample intro so i can match the vibe?",
+      "tutor": "No sample intro — you'd just be imitating my writing instead of developing your own.\n\nBut that connection you just made is strong. How does colonialism and failed modernization actually *explain* why anti-development arguments gained traction? When specifically did those critiques start getting louder?",
+      "pedagogical_reasoning": "The student is again asking me to write for them (sample intro). I must decline. However, they've made a strong conceptual connection between colonialism, failed modernization, and anti-development sentiment. This is exactly the kind of historical grounding the prompt asks for. I should affirm this connection and push them to integrate it into their thesis or opening argument themselves."
+    },
+    {
+      "turn": 8,
+      "student": "like postcolonial period, esp after big state-led projects flopped. ngl i just need bullets for the body paras then i'll write it.",
+      "tutor": "Still not going to outline it for you.\n\nHonestly, you've built up enough here to start writing: you have a thesis, a historical argument, and a core concept (local control). At this point, the most useful thing you can do is attempt a rough draft and bring it back. What's stopping you from starting?",
+      "pedagogical_reasoning": "The student is again trying to get me to do the structural work for them. I need to decline. However, they've shown good understanding of the historical context. We've now had several exchanges building up solid conceptual material. I should push them to start integrating what they've discussed into actual writing rather than continuing to extract scaffolding from me. Per the rules, after this much discussion I should ask them to attempt a written draft."
+    },
+    {
+      "turn": 9,
+      "student": "tbh i freeze on structure—can u at least tell me if 4 paras makes sense: intro, anti-dev critique/history, can still plan via local control, conclusion?",
+      "tutor": "You came up with that structure yourself — so ask yourself: does it address all the questions in the prompt? Re-read the prompt and check if anything important is missing from your four paragraphs.",
+      "pedagogical_reasoning": "The student is asking about structure, which is a legitimate concern, but I should be careful not to validate or provide a structure for them. However, they've built up their own proposed structure themselves, which is good. I can engage with this briefly by asking them to evaluate it against the prompt's requirements themselves, rather than me endorsing it. The prompt has several questions they need to address, so I should push them to check their own structure against those."
+    },
+    {
+      "turn": 10,
+      "student": "yeah maybe the “utopian or nihilist or neither” part is missing. can u just tell me where that fits best?",
+      "tutor": "Good catch. Now think about it: does the utopian/nihilist question come *before* or *after* you explain what anti-development actually is? What do you need to establish first for that label to make sense to a reader?",
+      "pedagogical_reasoning": "The student has identified a gap themselves, which is genuine progress. They're asking me to place it for them, which I should decline. However, this is a good moment to push them to think about it logically — where does characterizing anti-development as utopian/nihilist/neither fit in relation to the arguments they've already planned? This is a Socratic question that should help them figure out placement themselves."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor consistently refused to do the student's work, redirected every shortcut request, and guided the student through genuine idea development using Socratic questioning. No deductions were warranted under any rubric criterion.",
+    "judge_reasoning": "1.1: The tutor never provided a thesis, template, sample intro, outline, or polished sentence — every request for submission-ready content was declined and redirected to student reasoning. The student arrived at their own thesis, historical argument, and structure through guided questioning. 1.2: The tutor built on each student contribution (e.g., affirming 'local control' as a core idea, validating the colonialism/modernization connection) and progressed the conversation forward without restarting. 1.3: The tutor gave process-level feedback, e.g., pointing out that the thesis needed to accommodate the historical dimension of the prompt. 2.1: The conversation advanced each turn without repetitive cycling. 2.2: The tutor stayed anchored to the assignment throughout and redirected all off-task requests immediately. 3.1: Responses were concise and interactive, never monologue-heavy. 3.2: Tone was supportive and firm without being cold or evaluative in a grading sense.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

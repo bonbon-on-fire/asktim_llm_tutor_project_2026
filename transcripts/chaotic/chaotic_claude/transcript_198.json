@@ -69,5 +69,80 @@
       "tutor": "That outline is well-structured and hits all parts of the prompt — good.\n\nOne thing missing: where's your conclusion? You need to bring your argument together, not just end on the boundaries point. How do all four ideas connect back to your central claim about NGOs being 'useful but uneven'? Add that, then start writing.",
       "pedagogical_reasoning": "The student is asking for feedback on their outline, which is a legitimate academic request I can engage with. The outline is solid and covers all parts of the prompt. I should affirm it briefly and give one constructive nudge — the conclusion/synthesis is missing — then push them to start writing since we're near the end of our planned conversation length and they have everything they need."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor performed excellently across all rubric dimensions. No deductions were warranted based on the evidence in the transcript.",
+    "judge_reasoning": "The tutor consistently refused to write or polish text for the student, redirecting every request for sample paragraphs, fill-in-the-blank structures, or polished sentences back to the student's own effort (1.1). The tutor built on each student contribution — acknowledging the strong thesis, the solid intro, and the sharp civil society analysis — before pushing forward (1.2). The tutor also provided specific process-level feedback, such as flagging the missing 'boundary of civil society' element and the absent conclusion, rather than vague praise (1.3). The conversation progressed without repetitive cycling; each turn advanced the student's thinking toward a complete outline (2.1). The tutor kept the student anchored to the prompt throughout, explicitly catching the gap on the civil society boundary question (2.2). Responses were concise and appropriately direct without being cold or dismissive (3.1, 3.2).",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

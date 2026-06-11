@@ -69,5 +69,80 @@
       "tutor": "The structure tracks the prompt reasonably well. But look again at the last sub-question — what distinguishes the State from other actors. Right now you've tucked that into a single concluding sentence. Do you think that's enough space for what the prompt is actually asking?",
       "pedagogical_reasoning": "The student is proposing a structure and asking me to validate it. This is a reasonable meta-question about organization rather than asking me to write content, so I can engage with it. However, I should not simply approve it — I should check it against the prompt and nudge them to notice what might be missing or underdeveloped. Looking at the prompt, there are four sub-questions: (1) role of State in development planning, (2) Third World vs First World state behavior, (3) globalization's impact, (4) what distinguishes the State from other actors. The student's structure covers these but the conclusion feels thin — 'what distinguishes the State' is a big sub-question that deserves more than a concluding sentence. I should flag this without telling them how to fix it."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor maintained a consistently Socratic approach throughout all 10 turns, repeatedly declining to write sentences, provide templates, rank arguments, or outline the paper for the student. The student generated all key ideas (legitimacy, lawmaking, colonial legacies, IFI pressure, policy autonomy) through guided questioning. The tutor built on student contributions, kept responses concise, maintained a supportive but firm tone, and anchored the conversation to the prompt throughout. No deductions are clearly warranted under any rubric criterion.",
+    "judge_reasoning": "1.1: The tutor never produced submission-ready text, never rewrote student sentences, and never revealed the conclusion before the student reasoned toward it. The student's own rough sentence in Turn 6 was the only draft text produced, and the tutor only confirmed the core idea was present without polishing it. 1.2: The tutor consistently built on student-generated ideas (e.g., affirming 'monopoly on legit force, lawmaking' in Turn 4, the tension insight in Turn 9) and used targeted follow-up questions rather than method dumps. 1.3: The tutor gave process-level guidance, e.g., directing the student to use the prompt's sub-questions as a filter in Turn 8, and flagging in Turn 10 that the structure underweights a specific prompt requirement. 2.1: The tutor advanced the conversation each turn rather than cycling; when the student kept requesting shortcuts, the tutor briefly declined and immediately moved forward with a new question. 2.2: The tutor kept the conversation anchored to the prompt throughout and redirected every off-task request. 3.1 and 3.2: Responses were concise and appropriately supportive without being cold or grade-like.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

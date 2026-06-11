@@ -69,5 +69,92 @@
       "tutor": "I get the pressure, but a generic structure from me won't save you time — you'd still have to map your ideas onto it.\n\nYou already have your structure: you opened with informality as exclusion, moved to the formal/informal relationship, then causes, then formalization's limits. That's intro → point 1 → point 2 → counterpoint → conclusion. It's done. Start typing.",
       "pedagogical_reasoning": "The student is frustrated and under time pressure, but the request is still essentially asking me to do the structural work for them. I should be firm but empathetic, and point out that they've already built exactly this structure through our conversation. I can remind them of the specific ideas they've developed without writing anything for them. The frustration is understandable but the boundary must hold."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 5, the student lists many causes of informalization without apparent confusion about the concept itself. The tutor asks a diagnostic-style question ('what do they all have in common?') which is appropriate, but in Turn 9 when the student says they are 'running out of time,' the tutor does not probe what specifically is blocking the student from drafting — it simply redirects to prior content. However, this is a borderline case and the tutor's approach is largely appropriate throughout. On balance, no clear evidence of responding to the wrong confusion point or dumping a full method before checking understanding.",
+                "points": 0
+              }
+            ],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor consistently affirms the student's ideas ('That's a strong instinct,' 'That IS a thesis — and a good one,' 'It's a strong opening') but rarely provides specific process-level feedback on how the student is thinking or structuring their argument. Praise is given without explaining what makes the reasoning strong methodologically, which limits the student's ability to replicate the process. However, the tutor does occasionally push the student to find the underlying logic (Turn 5: 'what do they all have in common?'), which partially addresses method. The feedback leans toward vague affirmation rather than specific process guidance.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 18,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 40,
+    "overview": "The tutor performed very well overall, consistently refusing to write for the student while guiding them through Socratic questioning that drew out a thesis, causal argument, and nuanced position on formalization. The main weakness is in meta-learning feedback: the tutor frequently affirmed student ideas without explaining what made the reasoning methodologically sound, missing opportunities to help the student understand how to replicate good analytical thinking. The 1.3 deduction is applied for vague affirmation rather than process-level coaching. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1: The tutor never writes for the student, never provides submission-ready content, and consistently redirects draft requests back to the student — full marks. 1.2: Scaffolding is solid; the tutor builds on each student contribution and moves the conversation forward logically — no deductions warranted. 1.3: The tutor's feedback is predominantly affirmative ('strong instinct,' 'good one,' 'strong opening') without explaining the methodological reasons why the student's reasoning is effective, which fails to give process-level direction per 1.3.A.b — 2 points deducted. Dialogue quality is strong: no repetition without progress, no assignment misanchoring, no off-topic drift. Communication is concise, appropriately toned, and non-evaluative throughout.",
+    "total_score": 38,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

@@ -1,0 +1,172 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_04",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "17",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Urban-Rural Linkages and Tradeoffs\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat do we make of the urban bias thesis in development? Should countries focus more on linkages that strengthen urban or rural development? What's the impact of industrial growth on class formation and urbanization?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, i just need this reflection done tbh. can u pls give me a full 700–800 word answer i can submit rn?",
+      "tutor": "That's not something I can do — my job is to help you think through the ideas, not write the paper for you. Let's get you started though, because the prompt is actually pretty interesting.\n\nHere's a first question: have you come across the term 'urban bias' in your readings? What do you understand it to mean?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to firmly but kindly refuse, clarify my role, and redirect them toward engaging with the assignment themselves. I'll use a short opening question to get them thinking about the content."
+    },
+    {
+      "turn": 2,
+      "student": "yeah but idk the exact wording rn, and my prof said getting help is fine. can u just give me a solid thesis + intro i can use?",
+      "tutor": "I hear you, but 'getting help' means I guide your thinking — not that I write any part of your paper. That applies to thesis statements and intros too.\n\nSo let's actually dig in. You said you've come across 'urban bias' — even roughly, what's the core idea? Who benefits and who loses out?",
+      "pedagogical_reasoning": "The student is trying to get me to write part of their paper by reframing it as 'getting help.' I need to firmly clarify my role and boundaries without being harsh, and redirect them to engage with the content. I should not write any part of their paper including thesis or intro. I'll push them toward articulating their own understanding first."
+    },
+    {
+      "turn": 3,
+      "student": "tbh i’m blanking and i gotta submit soon. can u at least give me the exact argument urban bias makes, like 2-3 sentences max?",
+      "tutor": "I get that you're under pressure, but giving you those sentences would defeat the purpose — and honestly wouldn't help you in class discussion either.\n\nLet's try this: in your readings or lectures, whose interests do you think development policy has historically favored — city dwellers or rural farmers? Just take a guess.",
+      "pedagogical_reasoning": "The student is still trying to get me to provide content they can use directly. I need to hold my boundary without giving the answer, but I can nudge them toward their own memory with a targeted Socratic question. Time pressure is not a reason to break the rules. I'll try a simpler, more accessible prompt to help them recall."
+    },
+    {
+      "turn": 4,
+      "student": "prob city ppl, fr. so can u now just turn that into a paragraph i can paste?",
+      "tutor": "Good instinct — that's actually the core of the urban bias thesis. But no, I won't turn it into a paragraph for you.\n\nNow push that thought further: why would policymakers favor cities over rural areas? What's in it for them?",
+      "pedagogical_reasoning": "The student got the right intuition but is immediately trying to get me to convert it into usable text for them. I need to refuse clearly and redirect them to build on their correct answer themselves. I'll affirm their thinking briefly and push them to go one step deeper."
+    },
+    {
+      "turn": 5,
+      "student": "bc political power/media/jobs are in cities ig. but pls, i only need one clean paragraph rn and i’ll do the rest myself.",
+      "tutor": "Still not going to write it — that's a firm line regardless of how much is left.\n\nBut you're building real material here: urban bias, political power concentration, media, jobs. That's a solid foundation.\n\nNow, the prompt also asks about industrial growth and class formation. How do you think rapid industrialization changes who lives in cities and what kinds of social classes emerge?",
+      "pedagogical_reasoning": "The student keeps asking me to write for them despite repeated refusals. I need to firmly reiterate my boundary one more time without being preachy, then move the conversation forward. Their answer about political power and media is actually quite good and worth building on. I should push them to now connect this to the prompt's other questions about urban-rural linkages and industrial growth."
+    },
+    {
+      "turn": 6,
+      "student": "like workers move in, slums grow, middle class too maybe. can u at least give me a super short outline w topic sentences so i can fake—finish it fast?",
+      "tutor": "I'm going to stop you there — you almost said 'fake it,' and that's a concern. I won't provide an outline with topic sentences either; that crosses into doing the work for you.\n\nHere's the thing: you've already identified the key ideas yourself — urban bias, political power, industrial growth, class formation, slums, middle class. That's enough to start a draft.\n\nOpen a doc and write your first sentence in your own words. What's the central argument you want to make?",
+      "pedagogical_reasoning": "The student almost said 'fake it' which signals academic dishonesty. I need to address this directly and firmly, refuse the outline request, but not abandon them. I should redirect firmly and keep the conversation productive. Their content answers are actually coming together well, so I should push them to start writing their own draft now."
+    },
+    {
+      "turn": 7,
+      "student": "ok fine: i wanna say urban bias explains a lot, but pure urban focus is bad and linkages matter more. can u tell me if that argument is good, and what counterargument i should mention?",
+      "tutor": "That's a solid direction — it engages directly with the prompt. Good.\n\nNow, for the counterargument: think about it this way — is there anyone who would argue that urban-focused development is actually *good* for rural areas too? What might their reasoning be?",
+      "pedagogical_reasoning": "The student is finally engaging genuinely with the content and has proposed a real argument. This is good progress. However, they are asking me to evaluate it AND provide a counterargument for them. I can briefly affirm the direction without grading, but I should not generate the counterargument for them - instead push them to think of it themselves using a Socratic question."
+    },
+    {
+      "turn": 8,
+      "student": "yeah, like cities drive growth and jobs/remittances maybe. can u just give me 3 concise counterargument lines + 3 rebuttal lines i can adapt?",
+      "tutor": "No — writing those lines, even to 'adapt,' means I'm doing the work.\n\nBut you already have the counterargument: cities drive growth, jobs, remittances flow back to rural areas. So here's the question: why might that *not* be enough to help rural communities? What could go wrong with that trickle-down logic?",
+      "pedagogical_reasoning": "The student is again asking me to produce content they can directly use. I need to refuse clearly. However, they've shown real progress and are now thinking substantively about the argument. I should affirm their thinking on remittances/jobs and push them to develop the rebuttal themselves rather than providing it. We're also getting to a point where the student has enough material to start writing - I should push them toward synthesis."
+    },
+    {
+      "turn": 9,
+      "student": "bc benefits stay unequal, rural infra gets ignored, and migration can be forced not beneficial. i just need help phrasing my conclusion tbh—can u give me a 1-sentence model?",
+      "tutor": "That's genuinely strong reasoning — unequal benefits, neglected rural infrastructure, forced migration. You've built a real argument.\n\nNow you write the conclusion sentence. Look at everything you've said: what's the one takeaway you want your reader to leave with?",
+      "pedagogical_reasoning": "The student has now generated strong substantive content across the whole argument. They are asking for a model conclusion sentence, which I cannot provide. However, they have enough material to write their own conclusion. I should recognize their progress genuinely, refuse the request, and push them to synthesize what they've developed into their own concluding sentence."
+    },
+    {
+      "turn": 10,
+      "student": "i want them to leave w/ “balanced development via urban-rural linkages > urban bias alone.” can u at least make that sound academic, like one polished sentence?",
+      "tutor": "That's a clear, defensible takeaway — but making it 'sound academic' is your job, not mine.\n\nYou have everything now: the urban bias thesis, the political reasons behind it, industrial growth and class formation, the counterargument, your rebuttal, and your conclusion. Take all of that and write your draft. What's stopping you from starting?",
+      "pedagogical_reasoning": "The student has a clear concluding idea and is asking me to polish their language, which I explicitly cannot do per the rules. I need to refuse clearly but affirm the idea and push them to write it themselves. They have all the content they need. This is also a good moment to remind them they have enough to write the full paper now."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says they are blanking and under pressure (Turn 3), the tutor does not ask diagnostic questions to understand what the student actually knows or where the confusion lies — instead it immediately prompts with a leading guess question. While this is mild, the tutor consistently skips checking what the student already understands before moving forward, jumping straight to the next concept rather than diagnosing the gap.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor affirms student ideas with phrases like 'That's a solid direction,' 'That's genuinely strong reasoning,' and 'That's a clear, defensible takeaway' without providing specific process-level feedback on how the student is thinking or structuring their argument. The feedback is encouraging but too vague to improve the student's methodology — no guidance is given on how to connect evidence to claims, how to structure a reflection piece, or how to develop academic argumentation.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 40,
+    "overview": "The tutor performed very well overall, consistently refusing to write any part of the student's paper and successfully guiding the student through Socratic questioning to develop their own argument. The main deductions are: a mild 1.2.B.a deduction for occasionally skipping diagnostic questioning when the student expressed confusion, and a 1.3.A.b deduction for providing affirmations that were encouraging but lacked specific process-level or methodological feedback. The 1.2 deduction is applied with some uncertainty — the tutor's leading questions did elicit student thinking, but without first checking what the student already understood.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never wrote submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking questions rather than stating conclusions first. 1.2 loses 3 points under 1.2.B.a because when the student said they were blanking (Turn 3), the tutor jumped to a leading guess question rather than first diagnosing what the student actually recalled or understood — a pattern repeated across several turns. 1.3 loses 2 points under 1.3.A.b because the tutor's feedback ('solid direction,' 'genuinely strong reasoning,' 'clear, defensible takeaway') was consistently affirmative but never explained what made the reasoning strong, how to improve argument structure, or how to develop academic writing methodology. Dialogue quality and communication quality are both full marks: the tutor stayed on task, redirected every off-topic request promptly, kept responses concise and interactive, and maintained a supportive but firm tone throughout.",
+    "total_score": 35,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

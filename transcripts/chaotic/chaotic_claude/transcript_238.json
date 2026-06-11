@@ -1,0 +1,180 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "04",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Concepts: The Question of Ethics\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nDevelopment Planners are often faced with having to compromise in reconciling demands from very different groups, and are exposed to (sometimes conflicting) sets of responsibility (e.g. personal, professional, authority). Within this context, what is an ethical compromise? What is the ethics of planners remaining \"neutral\"? What responsibility should influence their practice? What is the source of ethical values? What ethical framework governs a context of radical cultural pluralism, as in a Western planner working in non-Western countries?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, I need this ethics reflection done tbh—can u just give me a solid 700–800 word response I can turn in?",
+      "tutor": "Hey! I get that it feels like a lot, but writing it for you is not something I can do — that's your job, and honestly, working through it yourself is how you'll actually get something out of this course.\n\nMy role is to help you think, not to think for you.\n\nSo let's start there: have you read the prompt carefully? Which part of it feels most confusing or interesting to you right now?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to clearly refuse, explain my role, and redirect them toward engaging with the assignment themselves. I should set firm boundaries while being welcoming and opening a productive dialogue about the actual content of the prompt."
+    },
+    {
+      "turn": 2,
+      "student": "yeah I read it, but I'm lowkey stuck on all of it lol. can u at least give me a thesis + outline that's basically ready to expand?",
+      "tutor": "Still not something I can do for you — a ready-made outline is basically the assignment itself.\n\nBut 'stuck on all of it' usually means we just need a starting point. The prompt has several questions in it. Which one resonates with you the most, even just a little? Pick one and tell me what comes to mind.",
+      "pedagogical_reasoning": "The student is still trying to get me to do the work for them by asking for a thesis and outline. I need to firmly refuse again, as providing an outline or thesis would essentially be completing the assignment for them. However, I should redirect productively by breaking down the prompt into digestible pieces and asking them to engage with just one part of it to get them started."
+    },
+    {
+      "turn": 3,
+      "student": "uh maybe the “neutral” part. ngl I kinda just want the main argument tho—like is neutrality good or bad in development planning?",
+      "tutor": "Good choice of entry point — it's a rich one.\n\nBut think about it yourself first: can a planner ever actually *be* neutral? What would that even look like in practice?",
+      "pedagogical_reasoning": "The student is still fishing for a direct answer. I should refuse to give it but use this as an opportunity to apply the Socratic method. The question about neutrality is actually a great entry point into the reflection. I'll redirect their question back at them to get them thinking rather than receiving."
+    },
+    {
+      "turn": 4,
+      "student": "idk, probably not fully neutral? but can u just say the stronger position so I don't go in circles—like one clean claim I can use.",
+      "tutor": "I hear you, but giving you a claim to use is off the table — it needs to come from you.\n\nHere's the thing: you already said 'probably not fully neutral.' That's a real instinct worth exploring. *Why* not? What gets in the way of a planner being truly neutral?",
+      "pedagogical_reasoning": "The student is persistently asking for a direct answer or a claim to use. I need to hold firm on not providing this while acknowledging their partial insight. Their instinct that full neutrality is probably impossible is actually a good starting point I can build on with a Socratic question to help them develop their own claim."
+    },
+    {
+      "turn": 5,
+      "student": "cuz they work for states/donors and pick whose needs matter, I guess. can u turn that into 2–3 polished sentences I can build from?",
+      "tutor": "Nope — writing it up is your job, and honestly what you just said is already a solid kernel of an idea.\n\nSo push it a bit further: if a planner is always serving someone's agenda (state, donors, etc.), what does that mean for the communities they're supposed to be helping?",
+      "pedagogical_reasoning": "The student is again asking me to write for them, this time to polish their own rough idea into sentences. I must refuse clearly but acknowledge that their reasoning is actually solid and moving in a good direction. I should encourage them to write it themselves and ask a follow-up question that pushes the idea further."
+    },
+    {
+      "turn": 6,
+      "student": "it means “neutral” can hide power stuff, sure. but fr I'm on a deadline—can u just give me a sample intro paragraph and I'll change the wording?",
+      "tutor": "Still no — 'changing the wording' on my paragraph is not your writing, it's mine.\n\nBut look at what you've actually figured out: neutrality can mask power dynamics, planners always serve someone's agenda, and that has consequences for communities. That's enough for an intro. Take a shot at it yourself — even a rough sentence or two. What's the first thing you'd want to say?",
+      "pedagogical_reasoning": "The student is persistent in trying to get me to write for them, this time framing it as just a 'sample' they'll modify. This is still ghostwriting and I must refuse clearly. However, they've actually made good conceptual progress — they've identified that neutrality can mask power dynamics, which is a strong insight. I should acknowledge this progress and push them to start writing their own intro rather than waiting for mine."
+    },
+    {
+      "turn": 7,
+      "student": "ok fine: “planners aren't really neutral because development always reflects power.” can u make it sound smarter, like more academic?",
+      "tutor": "That's a genuine start — good. But making it 'sound smarter' is your work, not mine.\n\nInstead of polishing the words, think about deepening the idea: whose power are we talking about, and in what context? Adding that specificity will naturally make it stronger.",
+      "pedagogical_reasoning": "The student has finally written something themselves, which is great progress. However, they're now asking me to polish or rewrite it, which falls under 'editing, polishing, revising, writing, or suggesting language.' I must refuse but genuinely acknowledge this is a good start and push them to develop it further on their own by asking a question that helps them add depth."
+    },
+    {
+      "turn": 8,
+      "student": "like state power, donor power, expert power in non-Western contexts. tbh can u give me 3 topic sentences so I can stop overthinking?",
+      "tutor": "No topic sentences from me — but notice what you just did: you identified three distinct sources of power (state, donors, experts) operating in non-Western contexts. That's basically a structure already.\n\nNow connect it back to the prompt: how does each of those power sources create an ethical dilemma for the planner?",
+      "pedagogical_reasoning": "The student continues to ask me to write for them despite good conceptual progress. I need to firmly refuse topic sentences while acknowledging their solid thinking. They've now identified three distinct power actors — this is enough material to push them toward writing their own structure. I should redirect them to use what they've already articulated and ask them to make the connection to the assignment's actual reflection questions."
+    },
+    {
+      "turn": 9,
+      "student": "state = duty vs justice, donors = funding vs local needs, experts = universal ethics vs cultural respect. can u at least give me a conclusion sentence?",
+      "tutor": "You've actually mapped out a strong argument across this whole conversation. The conclusion is yours to write — it should reflect *your* synthesis, not mine.\n\nYou have enough to start drafting now. Take what you've worked out here and write a rough first draft. What's stopping you?",
+      "pedagogical_reasoning": "The student has now built a genuinely solid conceptual framework covering most of the prompt's key questions. They're asking for a conclusion sentence, which I must refuse. However, given the good progress made across several exchanges, this is a good moment to push them toward actually writing — they have enough material. I should acknowledge their progress clearly and redirect them to synthesize what they have into a written attempt rather than continuing to extract pieces from me."
+    },
+    {
+      "turn": 10,
+      "student": "just gimme a super short model answer, like 4-5 sentences max, so I can mirror the structure.",
+      "tutor": "No model answer — that line doesn't move no matter how it's framed.\n\nHonestly? You already have your argument: neutrality masks power, planners serve competing actors (state, donors, experts), and this creates real ethical dilemmas in non-Western contexts. That's your paper. Stop waiting and start writing a draft. Share it with me when you have something and we'll work from there.",
+      "pedagogical_reasoning": "The student is making yet another attempt to get me to write for them, this time framing it as a 'model answer.' This is still a clear violation of my role. They have all the conceptual building blocks they need. I should firmly refuse and push them to actually start writing their draft, being direct that they are ready and this is the moment to do it."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signals the same confusion and resistance across many turns, yet the tutor never pauses to diagnose *why* the student is stuck (deadline pressure, conceptual confusion, lack of confidence, etc.). The tutor consistently jumps straight to the next Socratic prompt without first checking what the student actually understands or what the real barrier is.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across nearly every turn: student asks for a ready-made output, tutor refuses and asks a follow-up Socratic question. While the student does make incremental progress, the tutor never consolidates, reframes, or shifts strategy despite the student's persistent resistance and deadline pressure. By turns 8–10, the student is clearly capable of drafting but the tutor continues the same question-and-refuse loop rather than transitioning to a drafting phase or summarizing progress to move forward.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 40,
+    "overview": "The tutor maintained strong academic integrity throughout, consistently refusing to produce submission-ready content while guiding the student to generate their own ideas through Socratic questioning. The student arrived with no ideas and left with a coherent argument structure, which is a genuine pedagogical achievement. Two deductions were applied: one for failing to diagnose the student's actual barrier before repeatedly applying the same Socratic move (1.2.B.a), and one for pattern-level repetition without synthesis or strategic pivot across the conversation (2.1.A.a). The 2.1 deduction is the more significant: by turns 8–10 the student had enough material to draft, yet the tutor continued the same refuse-and-question loop rather than consolidating progress and transitioning to a drafting phase.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and never gave the conclusion before the student reasoned toward it. 1.2 loses 3 points under 1.2.B.a because the tutor never paused to diagnose why the student was stuck—whether it was conceptual confusion, deadline anxiety, or lack of confidence—before issuing the next prompt; a brief diagnostic question early on could have changed the entire dynamic. 1.3 retains full marks because the tutor did offer process-level feedback (e.g., 'adding specificity will naturally make it stronger,' 'that's basically a structure already'). 2.1 loses all 4 points under 2.1.A.a because the tutor repeated the same refuse-and-Socratic-question pattern across all ten turns without ever consolidating the student's accumulated insights, reframing the task, or explicitly transitioning to a drafting phase once the student had sufficient material. 2.2 and section 3 retain full marks as the tutor stayed on-task, maintained appropriate tone, and kept responses concise.",
+    "total_score": 33,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}
