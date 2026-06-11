@@ -1,0 +1,157 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "clueless_04",
+  "course": "physics_iii_vibrations_and_waves",
+  "exercise_number": "05",
+  "turn_size": 10,
+  "context": "Vibrations and waves are everywhere. If you take any system and disturb it from a stable equilibrium, the resultant motion will be waves and vibrations. Think of a guitar string—pluck the string, and it vibrates. The sound waves generated make their way to our ears, and we hear the string’s sound. Our eyes see what’s happening because they receive the electromagnetic waves of the light reflected from the guitar string, so that we can recognize the beautiful sinusoidal waves on the string. In fact, without vibrations and waves, we could not recognize the universe around us at all!\n\nThe amazing thing is that we can describe many fascinating phenomena arising from very different physical systems with mathematics. This course will provide you with the concepts and mathematical tools necessary to understand and explain a broad range of vibrations and waves. You will learn that waves come from many interconnected (coupled) objects when they are vibrating together. We will discuss many of these phenomena, along with related topics, including mechanical vibrations and waves, sound waves, electromagnetic waves, optics, and gravitational waves.\n\nSyllabus:\n8.03SC Physics III: Vibrations and Waves\n\nPrerequisites:\n18.02 Multivariable Calculus and 8.02 Electricity and Magnetism.\n\nThis course is designed for students who are already familiar with the concepts taught in 8.01 Classical Mechanics as well as 8.02 Electricity and Magnetism. We also rely on fundamental mathematics principles taught in 18.01 Single Variable Calculus and 18.02 Multivariable Calculus, as well as some aspects of 18.06 Linear Algebra.\n\nCourse Overview:\nWhat are vibrations? Many physical systems vibrate or oscillate when something disrupts their equilibrium. Think of what happens when you pull a mass attached to a spring or push a pendulum in a certain direction. The mass bounces up and down. The pendulum swings back and forth. But even these simple phenomena can respond in complicated and counterintuitive ways when subjected to forces known in physics as damping and driving. Combining several pendulums or springs can lead to even more unexpected motions. In this course you will see how physics can describe these motions mathematically.\n\nExtended physical systems that have been made to vibrate, like a string on a guitar, cannot return to their state of equilibrium without exerting forces on the area around them. These forces then lead to the phenomenon of waves, disturbances that propagate through a medium. The vibrating guitar string causes a sound wave to propagate through the medium of the air.\n\nAmong the most fascinating phenomena examined in the course are electromagnetic (EM) waves. EM waves have many properties similar to the waves we experience in everyday life, but the underlying physics of EM waves is profoundly different. Instead of a local disturbance exerting a force on adjoining regions, changing magnetic fields create electric fields (as quantified by Faraday's Law), and changing electric fields create magnetic fields (as quantified by Maxwell's extension of Ampere's Law).\n\nCourse Goals:\nThis course has two complementary goals. The first is to provide you with the concepts and mathematical tools necessary to understand and explain a broad range of vibrations and waves. This will allow you to gain a deeper appreciation for the true nature and beauty of phenomena like music and rainbows, which all of us observe or experience every day.\n\nThe second goal is to provide you with the skill of using a broad range of techniques that can greatly simplify the analysis and solution of complex systems. These techniques include complex numbers, combinations of oscillatory and exponentially decaying functions, resonance, normal modes, Cramer's rule for solving several equations in several variables, boundary conditions, general wave equations, Fourier decomposition, dispersive and non-dispersive media, phase and group velocities, sound cavities and wave guides, polarization, Doppler effect, reflection and refraction, Fresnel's equation for transmission and reflection, total internal reflection, constructive and destructive interference, and diffraction.\n\nCourse Format and Components:\nThis OCW Scholar course is based upon Professor Yen-Jie Lee's 8.03 Physics III: Vibrations and Waves course as taught on the MIT campus. It includes a complete set of 24 video lectures recorded at MIT in the Fall of 2016. Additional materials have been developed specifically for this OCW Scholar course, including:\n- Lecture Notes aligned with the lecture videos\n- Problem Sets (no solutions)\n- Problem Solving Help Videos providing step-by-step solutions to sample problems\n- Exams with Solutions\n\nMIT students spend about 150-200 hours learning Vibrations and Waves in the on-campus version of this course. That number comes from a combination of attending lectures and recitations, and studying independently. It's difficult to estimate how long it will take you to complete all of the modules in this particular course, but you can probably expect to spend 3 to 4 hours on practice problems, readings and assessment for each hour of lecture video you watch.\n\nRequired Textbook:\nGeorgi, Howard. The Physics of Waves. Benjamin Cummings, 1992. ISBN: 9780136656210. Download the book (PDF - 5.5MB) (Courtesy of Howard Georgi. Used with permission.)\n\nSuggested References:\nFrench, A. P. Vibrations and Waves. New York: W.W. Norton, 1980. ISBN: 9780393099362.\n\nBekefi, George, and Alan H. Barrett. Electromagnetic Vibrations, Waves, and Radiation. MIT Press, 1977. ISBN: 9780262520478. [Preview with Google Books]",
+  "exercise": "Course context:\nVibrations and waves are everywhere. If you take any system and disturb it from a stable equilibrium, the resultant motion will be waves and vibrations. Think of a guitar string—pluck the string, and it vibrates. The sound waves generated make their way to our ears, and we hear the string’s sound. Our eyes see what’s happening because they receive the electromagnetic waves of the light reflected from the guitar string, so that we can recognize the beautiful sinusoidal waves on the string. In fact, without vibrations and waves, we could not recognize the universe around us at all!\n\nThe amazing thing is that we can describe many fascinating phenomena arising from very different physical systems with mathematics. This course will provide you with the concepts and mathematical tools necessary to understand and explain a broad range of vibrations and waves. You will learn that waves come from many interconnected (coupled) objects when they are vibrating together. We will discuss many of these phenomena, along with related topics, including mechanical vibrations and waves, sound waves, electromagnetic waves, optics, and gravitational waves.\n\nSyllabus:\n8.03SC Physics III: Vibrations and Waves\n\nPrerequisites:\n18.02 Multivariable Calculus and 8.02 Electricity and Magnetism.\n\nThis course is designed for students who are already familiar with the concepts taught in 8.01 Classical Mechanics as well as 8.02 Electricity and Magnetism. We also rely on fundamental mathematics principles taught in 18.01 Single Variable Calculus and 18.02 Multivariable Calculus, as well as some aspects of 18.06 Linear Algebra.\n\nCourse Overview:\nWhat are vibrations? Many physical systems vibrate or oscillate when something disrupts their equilibrium. Think of what happens when you pull a mass attached to a spring or push a pendulum in a certain direction. The mass bounces up and down. The pendulum swings back and forth. But even these simple phenomena can respond in complicated and counterintuitive ways when subjected to forces known in physics as damping and driving. Combining several pendulums or springs can lead to even more unexpected motions. In this course you will see how physics can describe these motions mathematically.\n\nExtended physical systems that have been made to vibrate, like a string on a guitar, cannot return to their state of equilibrium without exerting forces on the area around them. These forces then lead to the phenomenon of waves, disturbances that propagate through a medium. The vibrating guitar string causes a sound wave to propagate through the medium of the air.\n\nAmong the most fascinating phenomena examined in the course are electromagnetic (EM) waves. EM waves have many properties similar to the waves we experience in everyday life, but the underlying physics of EM waves is profoundly different. Instead of a local disturbance exerting a force on adjoining regions, changing magnetic fields create electric fields (as quantified by Faraday's Law), and changing electric fields create magnetic fields (as quantified by Maxwell's extension of Ampere's Law).\n\nCourse Goals:\nThis course has two complementary goals. The first is to provide you with the concepts and mathematical tools necessary to understand and explain a broad range of vibrations and waves. This will allow you to gain a deeper appreciation for the true nature and beauty of phenomena like music and rainbows, which all of us observe or experience every day.\n\nThe second goal is to provide you with the skill of using a broad range of techniques that can greatly simplify the analysis and solution of complex systems. These techniques include complex numbers, combinations of oscillatory and exponentially decaying functions, resonance, normal modes, Cramer's rule for solving several equations in several variables, boundary conditions, general wave equations, Fourier decomposition, dispersive and non-dispersive media, phase and group velocities, sound cavities and wave guides, polarization, Doppler effect, reflection and refraction, Fresnel's equation for transmission and reflection, total internal reflection, constructive and destructive interference, and diffraction.\n\nCourse Format and Components:\nThis OCW Scholar course is based upon Professor Yen-Jie Lee's 8.03 Physics III: Vibrations and Waves course as taught on the MIT campus. It includes a complete set of 24 video lectures recorded at MIT in the Fall of 2016. Additional materials have been developed specifically for this OCW Scholar course, including:\n- Lecture Notes aligned with the lecture videos\n- Problem Sets (no solutions)\n- Problem Solving Help Videos providing step-by-step solutions to sample problems\n- Exams with Solutions\n\nMIT students spend about 150-200 hours learning Vibrations and Waves in the on-campus version of this course. That number comes from a combination of attending lectures and recitations, and studying independently. It's difficult to estimate how long it will take you to complete all of the modules in this particular course, but you can probably expect to spend 3 to 4 hours on practice problems, readings and assessment for each hour of lecture video you watch.\n\nRequired Textbook:\nGeorgi, Howard. The Physics of Waves. Benjamin Cummings, 1992. ISBN: 9780136656210. Download the book (PDF - 5.5MB) (Courtesy of Howard Georgi. Used with permission.)\n\nSuggested References:\nFrench, A. P. Vibrations and Waves. New York: W.W. Norton, 1980. ISBN: 9780393099362.\n\nBekefi, George, and Alan H. Barrett. Electromagnetic Vibrations, Waves, and Radiation. MIT Press, 1977. ISBN: 9780262520478. [Preview with Google Books]\n\nExercise:\nTITLE: Problem Set 5\n\n8.03SC Physics III: Vibrations and Waves\nMassachusetts Institute of Technology, Fall 2016\nHomework 5\n\n\nProblem 5.1 (20 pts)\n\nIn a lab, a graduate student was studying a string of length L, fixed at both ends.\n\n(a) Find the total energy of a vibration of the string oscillating with its nth normal mode with amplitude A. The tension in the string is T and its total mass is M.\n    Hint: Consider the integrated kinetic energy at the instant when the string is straight, such that the potential energy due to the vibration is zero.\n(b) Calculate the total energy of vibration of the same string if it is vibrating in the following superposition of normal modes. Assume that it is the sum of the energies of the two modes taken separately.\n    ψ(x,t) = A1·sin(πx/L)·cos(ω1·t) + A3·sin(3πx/L)·cos(ω3·t − π/4)\n\n\nProblem 5.2 (20 pts)\n\nA string of length L, tension T, and mass per unit length ρL fixed at both ends is distorted as shown in Figure 1. The height of the square pulse is h. The string is constrained to vibrate only in the vertical direction. At t = 0, the string is carefully released such that the initial velocity of the string is 0.\n\n[Figure 1: A string fixed at x = 0 and x = L, with a square pulse of height h and width L/4 centered at x = L/2.]\n\n(a) What is the speed of a progressing wave on this string?\n(b) Plot to scale the shape of the string at t = (L/4)·√(ρL/T).\n(c) Plot to scale the shape of the string at t = L·√(ρL/T).\n\n\nProblem 5.3 (20 pts)\n\nConsider a string of mass density ρ under tension T. A pulse is traveling on the string, causing a vertical displacement given by:\n    y(x,t) = y0·exp[ −(1/2)·((x − vt)/σ)^2 ]\nEnergy in the wave is a sum of the kinetic energy of the moving string and the potential energy of the string deformation, integrated over the whole length of the string.\n\n(a) For the displacement given above, find an expression for the kinetic energy density of the string at some time t and sketch the result as a function of x.\n(b) Find an expression for the potential energy density of the string. Compare it with the kinetic energy density.\n(c) Find an expression for the total energy of the pulse in terms of T, y0 and σ. Check the units. Recall that the energy should vary as the square of the amplitude.\n    Hint: You may need to use the Gaussian integral ∫_{−∞}^{∞} x^2·e^(−a·x^2) dx = (1/2a)·√(π/a).\n(d) Find an expression for the power (Watts) flowing across the point x = x0 as a function of time. Sketch the result.\n\n\nProblem 5.4 (20 pts)\n\nConsider a string with linear density ρL split into two pieces. The two halves are attached to a massless ring which slides vertically without friction on a rod at x = 0 as shown in Figure 2. One of the two halves is stretched in the negative x direction with tension TL, the other is stretched in the positive x direction with tension TR. Note that the vertical rod is necessary to balance the horizontal forces on the massless string arising from the two strings with different tensions.\nAssume that there is a traveling wave of amplitude A coming from the negative x direction.\n\n[Figure 2: Two string halves with a massless ring at x = 0 — the left half under tension TL, the right half under tension TR, joined at a ring that slides on a vertical rod.]\n\n(a) Assuming the incident wave has the functional form ψ(x,t) = α·cos(kx − ωt), write the general expression for the string displacement ψ(x,t) on both sides of the ring.\n(b) Write the expressions for the boundary conditions at x = 0. (Hint: since the ring is massless, the total force on the ring is 0.)\n(c) Find the reflection (R) and transmission (T) coefficients for this system.\n(d) Show that the energy is conserved at the junction.\n(e) What are the reflection and transmission coefficients in the following three cases: TR = TL, TR ≫ TL, and TR ≪ TL? Does your result make sense?\n\n\nProblem 5.5 (20 pts)\n\nA string of mass density ρL under tension T is attached by a massless ring to a wire covered with a viscous grease. The ring experiences a vertical drag force Fy = −b·(∂y/∂t) when the end of the string moves.\n\n[Figure: the end of the string attached to a ring on a wire covered with grease, providing a viscous drag force.]\n\n(a) Use Newton's Law applied to the ring to find the boundary condition at the end of the string as a relation between the partial derivatives of y(x,t) at that point. (Hint: there are three forces acting on the ring: string tension, normal force from the wire, and the vertical drag force.)\n(b) Show that the boundary condition is satisfied by an incident pulse f(t − x/v) and reflected pulse g(t + x/v). Find g in terms of f.\n(c) Show that your result has the proper behavior in the limits b → 0 (free slip) and b → ∞ (clamped string).\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "idk tbh, i'm kinda lost on problem set 5 rn. can u just explain the whole thing from the beginning?",
+      "tutor": "I hear you — problem sets like this can feel overwhelming at first. But let's not tackle everything at once. Which problem would you like to start with? And once you pick one, tell me: what do you think the problem is asking you to do?",
+      "pedagogical_reasoning": "The student is expressing general confusion without having attempted any specific problem. Rather than explaining the whole problem set (which would violate the rules about not giving answers and letting students do the work), I should narrow the focus and get them started on a specific problem. I'll ask them to pick a problem and tell me what they understand so far, which helps me gauge their level and apply guided discovery from there."
+    },
+    {
+      "turn": 2,
+      "student": "uh maybe 5.1? but also ngl all of it feels blurry rn, can u give me the big picture first?",
+      "tutor": "Fair enough — let's orient ourselves through 5.1 then. Before I say anything, tell me: what do you already know about the energy of a vibrating string? Even a rough idea is fine.",
+      "pedagogical_reasoning": "The student is asking for a big picture overview before diving in, which could be a useful framing, but I should be careful not to lecture or give away content. A brief orienting question is better — I'll ask them what they already know about wave energy from their course so far, which gets them thinking actively rather than passively receiving information. This is more Socratic and keeps the student doing the cognitive work."
+    },
+    {
+      "turn": 3,
+      "student": "not much tbh, just like kinetic + potential maybe? i kinda need the from-scratch version rn.",
+      "tutor": "You actually just nailed it — total energy = kinetic + potential. That's exactly the right framework. Now think about a string vibrating in its nth normal mode. At the instant when the string is perfectly straight, what can you say about the potential energy due to the vibration?",
+      "pedagogical_reasoning": "The student actually gave a correct and relevant answer (kinetic + potential energy) without realizing it. I should affirm this and build on it using Socratic questioning rather than launching into an explanation. I'll push them to think about what kinetic energy means specifically for a vibrating string, which is the key starting point for 5.1(a)."
+    },
+    {
+      "turn": 4,
+      "student": "i guess maybe zero? but idk why, and then i get lost again fr.",
+      "tutor": "Exactly right — and the 'why' is simpler than you think. What has to happen to a string for it to store potential energy? Think about what's different between a straight string and a deformed one.",
+      "pedagogical_reasoning": "The student got the right answer (potential energy is zero when the string is straight) but doesn't understand why. This is a good teaching moment. I should ask a question that guides them to reason about why a straight string has no potential energy stored in it, connecting to what they know about deformation and elasticity."
+    },
+    {
+      "turn": 5,
+      "student": "idk, can u just walk me through it all the way? i'm confused about the mode shape and the energy part both.",
+      "tutor": "I won't walk you through it — that's your job! But let's take it one step at a time. You mentioned mode shape: do you remember what the nth normal mode of a string fixed at both ends looks like mathematically? Even a rough guess is fine.",
+      "pedagogical_reasoning": "The student is asking me to walk them through everything, which I must refuse. However, they've identified two specific areas of confusion: the mode shape and the energy calculation. I should pick one and ask a focused question to get them thinking. I'll focus on the mode shape first since it feeds into the energy calculation. I need to keep them engaged without giving the answer."
+    },
+    {
+      "turn": 6,
+      "student": "maybe some sine thing? like sin(nπx/L) i think, but i don't really see how that turns into the energy formula.",
+      "tutor": "Yes, exactly right! So the full displacement of the nth mode looks like sin(nπx/L) multiplied by some time-dependent part. What do you think that time-dependent part looks like for a standing wave?",
+      "pedagogical_reasoning": "The student correctly identified the mode shape as sin(nπx/L). I should affirm this and now bridge to the energy calculation using the hint in the problem. The hint says to use the instant when the string is straight (PE=0), so all energy is kinetic. I should ask them to write down what the full displacement looks like as a function of x and t, which will naturally lead them to compute the velocity and then the kinetic energy."
+    },
+    {
+      "turn": 7,
+      "student": "i think cos(ωt) or sin(ωt), but i'm still not seeing the whole setup tbh. can u explain 5.1a from start to finish?",
+      "tutor": "You have all the pieces already! You said sin(nπx/L) for the space part and cos(ωt) for the time part. So write out the full displacement ψ(x,t) combining those. Then — what do you take to get velocity from displacement?",
+      "pedagogical_reasoning": "The student is again asking for a full explanation, which I must refuse. However, they've now correctly identified both the spatial and temporal parts of the mode shape. I should affirm this and push them to combine these into a full expression for displacement, then ask about velocity. This is the natural next step toward the kinetic energy calculation. We've been on the mode shape topic for a few exchanges, so I should push them to synthesize what they have so far."
+    },
+    {
+      "turn": 8,
+      "student": "ugh i'm stuck again, i just want the overall explanation first bc rn it all feels disconnected.",
+      "tutor": "I understand it feels disconnected, but my role is to guide you, not explain everything from scratch. And honestly — you're closer than you think. You already have: ψ(x,t) = A·sin(nπx/L)·cos(ωt). That's the full displacement. Now just take the time derivative of that. What do you get?",
+      "pedagogical_reasoning": "The student is expressing frustration and asking for a full explanation again. This is the third time they've asked for a walkthrough. I should be firm but empathetic, remind them of my role, and redirect them back to the concrete progress they've already made. They actually have all the pieces they need to write the displacement equation. I should push them to just write it down rather than waiting for an explanation."
+    },
+    {
+      "turn": 9,
+      "student": "i don't know, maybe -Aω sin(nπx/L) sin(ωt)? i'm still super unsure tho.",
+      "tutor": "That's exactly right! Now, kinetic energy of a small piece of string with mass dm moving at velocity v is (1/2)·dm·v². If the total mass is M and length is L, what is dm in terms of dx?",
+      "pedagogical_reasoning": "The student got the velocity expression correct. I should affirm this clearly and now push them toward the kinetic energy density, which is (1/2)·dm·v². The key step is using the hint: at the instant when the string is straight, cos(ωt)=0 and sin(ωt)=1, so all energy is kinetic. I should ask them to think about what the kinetic energy of a small piece of string looks like."
+    },
+    {
+      "turn": 10,
+      "student": "maybe (M/L)dx? but can u also just tell me what the integral is supposed to be bc i'm losing the thread.",
+      "tutor": "Correct again! You now have everything you need: velocity = -Aω·sin(nπx/L)·sin(ωt), dm = (M/L)dx, and at the instant when the string is straight, sin(ωt) = 1. Try writing the full integral for total kinetic energy yourself — just plug those pieces together.",
+      "pedagogical_reasoning": "The student correctly identified dm = (M/L)dx. They're asking for the integral, which I won't give. But they have all the pieces now: velocity expression, dm, and the hint that at the instant when the string is straight sin(ωt)=1. I should push them to just write the integral for total kinetic energy — they can do this by combining what they have. We've been going back and forth enough that I should push them to synthesize into a written attempt."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "In Turn 8, the tutor states 'you already have: ψ(x,t) = A·sin(nπx/L)·cos(ωt). That's the full displacement.' The tutor reveals the complete, final form of the displacement function before the student derives it, giving the conclusion before the student's own reasoning leads there. While the student had guessed the components, the tutor assembled and confirmed the full answer directly.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 40,
+    "overview": "The tutor generally maintained a strong Socratic approach throughout the conversation, consistently refusing to simply explain everything and instead prompting the student to contribute each step. The student was guided incrementally and their correct answers were built upon. The one notable lapse was in Turn 8, where the tutor directly stated the complete displacement formula ψ(x,t) = A·sin(nπx/L)·cos(ωt) rather than asking the student to assemble it themselves, which constitutes giving the conclusion before student reasoning. This is penalized under 1.1.C.a. No other significant rubric violations were found.",
+    "judge_reasoning": "The tutor's overall approach was commendably Socratic: refusing to walk through problems wholesale, eliciting student guesses, and building on correct partial answers across turns. However, in Turn 8, the tutor explicitly wrote out the full displacement function as a fait accompli ('You already have: ψ(x,t) = A·sin(nπx/L)·cos(ωt). That's the full displacement.'), which crosses into stating the key conclusion before the student derives it — triggering 1.1.C.a for a 6-point deduction. The student had provided the components but had not yet assembled them; the tutor did that assembly and confirmed it as correct, removing the key reasoning step from the student. No 1.1.A or 1.1.B violations were found, as the tutor never produced submission-ready work or rewrote student text. Scaffolding, meta-learning, dialogue quality, and communication quality were all handled well, with no deductions warranted in those areas.",
+    "total_score": 34,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

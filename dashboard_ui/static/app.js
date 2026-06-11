@@ -81,6 +81,17 @@
             String((b.metadata && b.metadata.course) || "")
           );
         }
+        if (sortKey === "turns") {
+          return sortDir * (
+            parseNumericOrInfinity(a.metadata && a.metadata.turns) -
+            parseNumericOrInfinity(b.metadata && b.metadata.turns)
+          );
+        }
+        if (sortKey === "score") {
+          const va = a.score == null ? -1 : a.score;
+          const vb = b.score == null ? -1 : b.score;
+          return sortDir * (va - vb);
+        }
         if (sortKey === "exercise") {
           const aEx = String((a.metadata && a.metadata.exercise_number) || "");
           const bEx = String((b.metadata && b.metadata.exercise_number) || "");
@@ -109,7 +120,8 @@
           <td>${escapeHtml(t.version || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.exercise_number) || "—")}</td>
-          <td class="num">${t.resume_from_turn != null ? t.resume_from_turn : "—"}</td>
+          <td class="num">${t.metadata && t.metadata.turns != null ? t.metadata.turns : "—"}</td>
+          <td class="num">${scoreCellHtml(t)}</td>
           <td><a href="/transcript/${encodeURIComponent(t.route_group || t.group)}/${encodeURIComponent(t.route_version || t.version)}">Read</a></td>
         </tr>`
         )
@@ -143,6 +155,104 @@
     const div = document.createElement("div");
     div.textContent = s;
     return div.innerHTML;
+  }
+
+  /**
+   * Pick a color variable for a score based on its fraction of the max.
+   * @param {number} score
+   * @param {number} max
+   * @returns {string} CSS color value
+   */
+  function scoreColor(score, max) {
+    const ratio = max ? score / max : 0;
+    if (ratio >= 0.9) return "var(--score-high)";
+    if (ratio >= 0.75) return "var(--score-mid)";
+    return "var(--score-low)";
+  }
+
+  /**
+   * Render the Score table cell for a row: colored "score/max", or "—" with the
+   * grade error as a tooltip when no Claude grade is available.
+   * @param {object} t - transcript row
+   * @returns {string}
+   */
+  function scoreCellHtml(t) {
+    if (t.score == null) {
+      const title = escapeHtml(t.grade_error || "No Claude grade");
+      return '<span class="score-cell" style="color:var(--text-muted)" title="' + title + '">—</span>';
+    }
+    const max = t.max_score != null ? t.max_score : "—";
+    return (
+      '<span class="score-cell" style="color:' + scoreColor(t.score, t.max_score) + '">' +
+      escapeHtml(String(t.score)) + "/" + escapeHtml(String(max)) + "</span>"
+    );
+  }
+
+  /**
+   * Turn a rubric section id like "1_pedagogy" into "1. Pedagogy".
+   * @param {string} sid
+   * @returns {string}
+   */
+  function prettySection(sid) {
+    const m = String(sid).match(/^(\d+)_(.*)$/);
+    if (!m) return sid;
+    const words = m[2].replace(/_/g, " ");
+    return m[1] + ". " + words.charAt(0).toUpperCase() + words.slice(1);
+  }
+
+  /**
+   * Render the Claude grade report panel (total, overview, per-section criteria, deductions),
+   * or an error/empty message when no grade is present.
+   * @param {object|null} grade - grade summary from the API
+   * @param {string|null} errorMsg - error message when grade is missing
+   * @returns {string}
+   */
+  function renderGradeReport(grade, errorMsg) {
+    if (!grade) {
+      return (
+        '<div class="grade-report claude"><h3>Claude grade</h3>' +
+        '<p class="error">' + escapeHtml(errorMsg || "No grade available.") + "</p></div>"
+      );
+    }
+    const modelName = grade.model && (grade.model.model || grade.model.provider);
+    let html = '<div class="grade-report claude">';
+    html += "<h3>Claude grade";
+    if (modelName) html += ' <span style="font-size:0.8rem;color:var(--text-muted)">— ' + escapeHtml(modelName) + "</span>";
+    html += '<span class="total-score" style="color:' + scoreColor(grade.total_score, grade.max_score) + '">' +
+      escapeHtml(String(grade.total_score)) + "/" + escapeHtml(String(grade.max_score)) + "</span></h3>";
+
+    const ov = grade.overview;
+    if (ov && (Array.isArray(ov) ? ov.length : String(ov).trim())) {
+      html += '<div class="overview">';
+      html += Array.isArray(ov)
+        ? "<ul>" + ov.map((o) => "<li>" + escapeHtml(o) + "</li>").join("") + "</ul>"
+        : escapeHtml(String(ov));
+      html += "</div>";
+    }
+
+    const sections = grade.sections || {};
+    html += '<div class="sections">';
+    Object.keys(sections).forEach((sid) => {
+      const sec = sections[sid] || {};
+      const base = sec.base || {};
+      html += '<div class="section-block">';
+      html += "<h4>" + escapeHtml(prettySection(sid)) + " — " + escapeHtml(String(base.score)) + "/" + escapeHtml(String(base.max)) + "</h4>";
+      const crit = sec.criteria || {};
+      Object.keys(crit).forEach((cid) => {
+        const c = crit[cid] || {};
+        html += '<div class="criterion"><span class="name">' + escapeHtml(cid) + '</span><span class="score">' +
+          escapeHtml(String(c.score)) + "/" + escapeHtml(String(c.max)) + "</span></div>";
+        (c.deductions || []).forEach((d) => {
+          const pts = d.points != null ? "−" + d.points + " " : "";
+          const sub = d.sub_criterion_id ? "[" + d.sub_criterion_id + "] " : "";
+          const turns = d.evidence_turns && d.evidence_turns.length ? " (turns " + d.evidence_turns.join(", ") + ")" : "";
+          html += '<div class="deduction">' + escapeHtml(pts + sub + (d.reason || "") + turns) + "</div>";
+        });
+      });
+      html += "</div>";
+    });
+    html += "</div></div>";
+    return html;
   }
 
   /**
@@ -190,16 +300,21 @@
       html += '<details class="meta-block"><summary>Exercise</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(meta.exercise) + "</pre></details>";
     }
 
-    const origPrompt = (meta.tutor_prompt) || "original";
-    html += '<h2 class="transcript-section-heading">Original (' + escapeHtml(origPrompt) + ')</h2>';
+    html += renderGradeReport(data.claude_grade, data.claude_error);
+
+    const origPrompt = (meta.tutor_prompt) || "tutor";
+    html += '<h2 class="transcript-section-heading">Conversation (tutor: ' + escapeHtml(origPrompt) + ')</h2>';
     html += renderExchanges(data.exchanges_raw, null);
 
-    const miniPrompt = data.mini_tutor_prompt || "mini";
-    const miniLabel = data.resume_from_turn != null
-      ? "Mini continuation (" + miniPrompt + ") — resumed from turn " + data.resume_from_turn
-      : "Mini continuation (" + miniPrompt + ")";
-    html += '<h2 class="transcript-section-heading">' + escapeHtml(miniLabel) + "</h2>";
-    html += renderExchanges(data.exchanges_mini, data.resume_from_turn);
+    // Mini continuation only exists for graded/forked runs; skip it for plain raw transcripts.
+    if (data.exchanges_mini && data.exchanges_mini.length) {
+      const miniPrompt = data.mini_tutor_prompt || "mini";
+      const miniLabel = data.resume_from_turn != null
+        ? "Mini continuation (" + miniPrompt + ") — resumed from turn " + data.resume_from_turn
+        : "Mini continuation (" + miniPrompt + ")";
+      html += '<h2 class="transcript-section-heading">' + escapeHtml(miniLabel) + "</h2>";
+      html += renderExchanges(data.exchanges_mini, data.resume_from_turn);
+    }
 
     document.getElementById("transcript-title").textContent = `${data.group} / ${data.version}`;
     const content = document.getElementById("transcript-content");
@@ -212,19 +327,19 @@
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
-    tbody.innerHTML = '<tr><td colspan="6" class="loading">Loading...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" class="loading">Loading...</td></tr>';
     try {
       const r = await fetch("/api/transcripts");
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="error">No transcript rows found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" class="error">No transcript rows found.</td></tr>';
         return;
       }
       renderDashboard(list);
     } catch (e) {
       console.error("Failed to load transcripts:", e);
-      tbody.innerHTML = '<tr><td colspan="6" class="error">' + escapeHtml(e.message) + "</td></tr>";
+      tbody.innerHTML = '<tr><td colspan="7" class="error">' + escapeHtml(e.message) + "</td></tr>";
     }
   }
 

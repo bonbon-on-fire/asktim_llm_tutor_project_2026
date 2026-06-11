@@ -1,6 +1,7 @@
 ﻿# Transcripts Dashboard
 
-Flask dashboard to browse transcript results and compare Claude Mini (tutor_05) and Claude grades.
+Flask dashboard to browse the raw tutor/student transcripts in `transcripts/`. Lists every
+transcript across persona groups and opens each one to read the full turn-by-turn conversation.
 
 ## Structure
 
@@ -38,16 +39,17 @@ Then open [http://127.0.0.1:5002](http://127.0.0.1:5002).
 
 - By default, the app reads from `transcripts/` in repo root.
 - Override with env var `TRANSCRIPTS_DIR` if needed.
-- Included row sources:
-  - Persona raw transcripts in `transcripts/<group>/<group>_raw/*.json`
-- Graded counterparts shown per row:
-  - **Mini column**: `.../<group>_claude_mini/<stem>.json` — shown when a graded mini file exists for the same stem; otherwise "—"
-  - **Claude column**: `.../<group>_claude/*.json`
+- Rows: one per raw transcript in `transcripts/<group>/<group>_raw/*.json`. A "group" is any
+  folder under `transcripts/` that contains a `<group>_raw/` subfolder (e.g. `chaotic`,
+  `clueless`, `cooperative`).
 
 ## Features
 
-- Headers use `Group` and `Version`.
-- Score panels show explicit errors when Mini or Claude counterparts are missing, unreadable, ambiguous, or mismatched.
+- Sortable table columns: `Group` (student persona), `Version` (transcript number), `Course`,
+  `Exercise`, `Turns`, plus a `Read` link.
+- The detail page shows run metadata (tutor prompt, persona, course, exercise, turns), collapsible
+  `Context`/`Exercise` blocks, and every turn rendered as Student / Tutor (with the tutor's
+  pedagogical reasoning when present).
 
 ## Environment variables
 

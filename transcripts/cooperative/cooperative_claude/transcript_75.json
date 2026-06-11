@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_06",
+  "course": "meaning_of_life",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "context": "This course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |",
+  "exercise": "Course context:\nThis course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |\n\nExercise:\nTITLE: Final Paper\n\n21A.157 The Meaning of Life\nMassachusetts Institute of Technology\n\nDue: Last session\nWeight: 20% of the final grade\nLength: 1500–1600 words\n\nAssignment:\nGo back to the personal moral moment you wrote about in the first weeks of class. Drawing explicitly on (and citing) at least three readings from the semester, and using insights and concepts from the course (e.g., moral trial/laboratory, gender proficiency, achieved/ascribed status, agency (& negative agency), the 'I' and the 'Me', belonging, cultural citizenship, etc.), write an essay analyzing your own story through an anthropological lens.\n\nOne possible path is to contextualize the original moment socially, culturally, and/or historically. Another is to establish (by making an argumentative case for) parallels and/or points of contrast with other case studies that we have read. The general idea is to demonstrate what you've learned in the course by giving new meaning to your previous story.\n\nDo not presume that your reader has your previous \"moral moment\" assignment at hand. Instead, summarize the key players and moments of the story that you're now contextualizing and interpreting.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hi, I need help w my final paper for Meaning of Life 😅 idk how to turn my moral moment into an actual argument.",
+      "tutor": "Hey! Good that you're thinking about this early. Let's start at the beginning - what was your moral moment about? Give me a quick summary of the situation.",
+      "pedagogical_reasoning": "The student is starting fresh, so I need to orient them to the assignment and get them actively thinking rather than just explaining the assignment back to them. I'll acknowledge their concern and immediately redirect them to their own material by asking about their moral moment. This is the logical starting point - you can't build an argument without knowing the raw material."
+    },
+    {
+      "turn": 2,
+      "student": "Mine was about choosing whether to tell my family I didn’t wanna follow the career path they expected. I’m kinda stuck on how to make that anthropological instead of just personal.",
+      "tutor": "That's actually a really rich story to work with. Here's a question to get you thinking: why did your family expect that specific career path from you in the first place? What was driving that expectation?",
+      "pedagogical_reasoning": "The student has a solid moral moment with rich anthropological potential - family expectations, individual agency vs. cultural norms, achieved vs. ascribed status are all clearly relevant. Rather than pointing these out directly, I should ask a guiding question that helps them see the anthropological dimensions themselves. The key move is getting them to recognize that their personal experience connects to broader social/cultural forces."
+    },
+    {
+      "turn": 3,
+      "student": "I think it was partly stability/money, but also status tbh. Like being “successful” in my family meant doing something respectable, not just what I wanted.",
+      "tutor": "Interesting - you're describing a tension between what YOU wanted and what your family defined as \"success.\" Does that tension remind you of any concepts from the course readings?",
+      "pedagogical_reasoning": "The student is naturally landing on concepts like status and the tension between individual desire and cultural/family expectations - these map directly onto course concepts like achieved vs. ascribed status and agency. Rather than naming these concepts for them, I should push them to make the connection themselves by asking which course concepts this reminds them of."
+    },
+    {
+      "turn": 4,
+      "student": "Maybe achieved vs ascribed status? Or like the “I” and the “Me” thing, but I’m not fully sure if I’m using those right.",
+      "tutor": "Good instincts! Before we check if you're applying them right - can you tell me in your own words what you understand \"achieved vs. ascribed status\" and the \"I\" and the \"Me\" to mean?",
+      "pedagogical_reasoning": "The student is on the right track with both concepts but is uncertain about their application. Rather than confirming or correcting directly, I should ask them to articulate what they understand those concepts to mean, so they can test their own understanding and make the connection themselves."
+    },
+    {
+      "turn": 5,
+      "student": "Ascribed is stuff I’m born into or get assigned by others, and achieved is what I earn/do. For “I” and “Me,” I always mix it up ngl, I think one is my own self and the other is the social version?",
+      "tutor": "Your ascribed/achieved distinction is solid. For the I and the Me - you're close, but try to be more specific: which one is reacting to social expectations, and which one is the spontaneous, unpredictable part of you? How does that map onto your career decision story?",
+      "pedagogical_reasoning": "The student has a good grasp of achieved/ascribed status. Their understanding of the I/Me distinction is roughly correct but vague. I should affirm the achieved/ascribed part and push them to sharpen the I/Me distinction without giving it to them, as precision here will matter for their argument."
+    },
+    {
+      "turn": 6,
+      "student": "I think the “Me” is the socialized part reacting to what ppl expect, and the “I” is the part that wanted to choose differently. So my story is kinda that clash?",
+      "tutor": "Exactly - that clash is the core tension of your story. Now, the assignment asks you to cite at least three course readings. Which readings from the semester do you think connect most to what you're describing?",
+      "pedagogical_reasoning": "The student has correctly identified the I/Me distinction and is now connecting it to their story. This is good progress. Rather than dwelling on this concept further, I should push them toward building the actual argument and thinking about the course readings they'll need to cite, since the assignment requires at least three readings."
+    },
+    {
+      "turn": 7,
+      "student": "def Lissa, and maybe smth on belonging or cultural citizenship? I’m blanking a bit rn on what else fits my story.",
+      "tutor": "Think about the key themes in your story - family pressure, identity, expectations around success. Were there any readings this semester specifically about family obligations, self-cultivation, or navigating individual vs. collective expectations?",
+      "pedagogical_reasoning": "The student has identified Lissa and some thematic areas but is blanking on specific readings. Rather than listing readings for them, I should ask them to think about the themes of their story more carefully - family pressure, career, identity - and connect those to topics covered in the course. This will help them retrieve the readings themselves."
+    },
+    {
+      "turn": 8,
+      "student": "Yeah ok, self-cultivation might fit better than I first thought. I’m still fuzzy tho on whether I should compare my story to the readings, or mostly use concepts to analyze it.",
+      "tutor": "Good question - actually, the assignment itself addresses this directly. Go back and re-read the instructions. What does it say about the possible approaches you can take?",
+      "pedagogical_reasoning": "This is a good methodological question. Rather than answering it for them, I should direct them back to the assignment instructions, which explicitly mention both paths - contextualizing socially/culturally/historically AND establishing parallels or contrasts with case studies. The student should be able to figure out that both approaches are valid and can be combined."
+    },
+    {
+      "turn": 9,
+      "student": "It says I can contextualize the moment socially/culturally/historically, or make an argument w parallels/contrasts to case studies. So I guess I can do either, or mix both a bit?",
+      "tutor": "Exactly. So now the real question: what's your actual argument going to be? What new meaning or insight do the course concepts give to your moral moment story? Try to put it in one or two sentences.",
+      "pedagogical_reasoning": "The student has correctly read the assignment. Now I should push them toward actually committing to a direction for their argument, since they've been exploring concepts and approaches but haven't yet articulated a clear argumentative thesis. This is the key next step - moving from exploration to actual argument-building."
+    },
+    {
+      "turn": 10,
+      "student": "Maybe my argument is that my career choice wasn’t just an individual decision, but a moral conflict shaped by family expectations, status, and belonging. And choosing differently still wasn’t pure freedom, bc my sense of self was already social too.",
+      "tutor": "That's a strong thesis - it has real analytical depth, especially that second part about freedom not being pure. Now, can you map out which specific readings and concepts you'd use to support each part of that argument?",
+      "pedagogical_reasoning": "The student has arrived at a genuinely strong thesis with real anthropological depth - they're capturing both the social shaping of the conflict AND the nuance that even resistance isn't purely free, which connects well to agency/negative agency and the I/Me dynamic. This deserves positive reinforcement, but I should push them to now connect this thesis explicitly to the readings and course concepts they plan to use, moving toward actually writing."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic practice throughout the conversation. Every key idea — the thesis, the conceptual connections, the argument structure — was drawn out from the student rather than supplied by the tutor. The tutor consistently asked the student to articulate their own understanding before correcting or affirming, scaffolded progression naturally from personal story to conceptual framework to argument, and kept responses concise and interactive. No deductions were warranted under any rubric criterion.",
+    "judge_reasoning": "Under 1.1, the tutor never provided a near-submission-ready answer, never rewrote student text, and never stated the key idea before the student reasoned toward it — the student arrived at the thesis independently in Turn 10. Under 1.2, the tutor consistently built on student progress (e.g., affirming the ascribed/achieved distinction in Turn 5 before refining the I/Me concept) and used diagnostic questions before correcting confusion. Under 1.3, the tutor gave process-level feedback (e.g., directing the student back to the assignment instructions in Turn 8 rather than just answering the question). Dialogue quality was strong: no repetition without progress, no off-topic drift, and the student was re-anchored to the assignment when needed. Communication was consistently bite-sized, supportive, and formative in tone throughout.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

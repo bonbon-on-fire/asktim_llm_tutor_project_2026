@@ -1,0 +1,160 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "clueless_04",
+  "course": "meaning_of_life",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "This course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |",
+  "exercise": "Course context:\nThis course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |\n\nExercise:\nTITLE: \"Moral Moment\" Vignette\n\n21A.157 The Meaning of Life\nMassachusetts Institute of Technology\n\nDue: Session 3\nWeight: 5% of the final grade\n\nAssignment:\nThink of an occasion of moral deliberation or resolve in which you were directly involved as a participant (you don't have to be the main actor, but you must have something at stake in the situation). This might be a moment of confusion when a quandary about what it means to be a good person presents itself, or a moment of clarity when a course of action is determined. It might be an occasion of deliberation, when people debate the meaning of a shared value, or weigh between competing values. Or it might be a solitary moment of quiet conviction. It could be a moment of moral triumph, of achieving a goal of self-realization, or a moment of failure, of falling short of one's own expectations. This could be a major, life-changing event (like a religious conversion experience) or it could be a small, everyday occurrence (like choosing whether or not to give money to a panhandler), as long as it is personally meaningful in some way.\n\nIn a few paragraphs, describe the situation in sufficient detail so that your understanding of the participants' moral viewpoints and reasons for (or doubts about) acting one way or another are clear. This should be a real situation, in the near or distant past, not an abstract ethical deliberation (like debates over when self-driving cars should be allowed to kill pedestrians).\n\nFormat:\n- Write out this brief vignette in 2–3 pages (double spaced).\n- We will come back to this initial piece of writing later in the semester, continuing to build upon it as the basis for further discussion, reflection, and analysis.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "idk i'm kinda lost on the Moral Moment thing tbh, can u just explain what i'm supposed to do from the beginning?",
+      "tutor": "That's okay — feeling a bit lost at the start is totally normal. Before I explain anything, tell me: what do you understand so far from reading the assignment description? Even a rough sense of it is a good starting point.",
+      "pedagogical_reasoning": "The student is asking for a full explanation of the assignment. Rather than restating the whole assignment for them, I should use the Socratic method to help them identify what they already understand and where their confusion lies. I'll acknowledge their feeling of being lost but push them to engage with the assignment description themselves first."
+    },
+    {
+      "turn": 2,
+      "student": "umm not much ngl, just that it’s about some moral situation maybe? i’m confused abt like all of it rn.",
+      "tutor": "Actually, you've already got the core of it — it's about a moral situation. So let's start there. Can you think of a time in your own life when you had to decide between doing two different things, and the choice felt like it actually mattered — like it said something about the kind of person you are?",
+      "pedagogical_reasoning": "The student claims to understand very little, but they did identify the core element — a moral situation. I should acknowledge that and build on it with a targeted question rather than explaining the whole assignment. I'll push them to think about what 'moral' means to them in everyday life, which is the first step toward identifying a suitable vignette."
+    },
+    {
+      "turn": 3,
+      "student": "maybe? but then i overthink if it’s “moral enough” lol, can u just explain what counts first?",
+      "tutor": "The assignment actually says it can be something as small as deciding whether to give money to a panhandler. So don't overthink the size of it. What's a situation that comes to mind — even if you're not sure it 'counts'?",
+      "pedagogical_reasoning": "The student is stalling by asking for criteria before committing to an example. This is a common avoidance pattern. Rather than listing what 'counts,' I should push them to trust their instinct and name a specific situation. The assignment explicitly says it can be small or large, so the bar is lower than they think. I'll redirect them to just name something concrete."
+    },
+    {
+      "turn": 4,
+      "student": "idk maybe something w a friend, or family, or school stuff fr. i'm still not sure what they want me to write tho.",
+      "tutor": "Pick one of those three and give me a specific situation — something that actually happened. Once you have a real moment in mind, the 'what they want' question will make a lot more sense.",
+      "pedagogical_reasoning": "The student is still being vague and deflecting. They've named three broad areas (friend, family, school) which is progress, but they're still avoiding committing to a specific situation. I should push them to pick one and get concrete rather than continuing to explain the assignment in the abstract. Being a bit more direct here is appropriate."
+    },
+    {
+      "turn": 5,
+      "student": "uh maybe school i guess, but can u pls just tell me the whole structure first bc i'm blanking rn?",
+      "tutor": "I hear you, but explaining the structure first won't actually help you get unstuck — having a real situation will. You said school. What specifically happened? Just describe it plainly, like you'd tell a friend.",
+      "pedagogical_reasoning": "The student keeps asking for structural explanation before committing to content. This is a pattern of avoidance. I should hold firm and not give them a structural walkthrough — that would be doing the work for them. The assignment structure is simple enough that once they have a real situation in mind, it will become clear. I need to redirect them back to identifying a concrete moment. I'll be a bit more firm here."
+    },
+    {
+      "turn": 6,
+      "student": "it was like… i had to decide whether to say something or stay quiet, but tbh can u explain the assignment in plain english first?",
+      "tutor": "You just described something really promising — a moment where speaking up or staying silent felt like it mattered. That *is* your moral moment. What was the situation where you faced that choice?",
+      "pedagogical_reasoning": "The student keeps deflecting back to asking for an explanation rather than engaging with their own experience. However, they've just revealed something genuinely interesting and potentially rich — a situation where they had to decide whether to speak up or stay quiet. I should firmly but encouragingly redirect them to this concrete detail rather than giving in to their repeated request for an explanation. This is the fourth time they've asked for an explanation, so I should be clear about my role while capitalizing on what they just shared."
+    },
+    {
+      "turn": 7,
+      "student": "i guess it was during a group project, but i'm still confused abt how detailed this is supposed to be tbh.",
+      "tutor": "Good — a group project works great. On detail: enough so that someone reading it understands what was at stake for you morally. Now, what happened in that group project that made staying silent or speaking up feel like it mattered?",
+      "pedagogical_reasoning": "The student is making real progress — they now have a specific situation (group project, speak up vs. stay silent). They're still deflecting to logistics questions about detail level, but this is less of an avoidance pattern now and more of a genuine concern. I can briefly address it but should quickly redirect to getting more out of them about the situation itself."
+    },
+    {
+      "turn": 8,
+      "student": "one person wasn’t doing work and i knew it, but i felt bad saying anything. i’m ngl still kinda want the full thing broken down from start to finish.",
+      "tutor": "I'm not going to break it down for you — but notice what you just described: you *knew* something, you had a choice, and you felt conflicted. That conflict is exactly the heart of the assignment. So — what were the two sides pulling at you in that moment? What made staying silent feel okay, and what made it feel wrong?",
+      "pedagogical_reasoning": "The student has now revealed a genuinely good moral moment — a classic tension between loyalty/kindness to a peer and fairness/honesty. This is exactly what the assignment is looking for. They are asking again for a full breakdown, which I should firmly but kindly decline. Instead, I should capitalize on the momentum and push them to reflect on the moral tension in their situation, which will naturally lead them to understand what the assignment wants."
+    },
+    {
+      "turn": 9,
+      "student": "i mean one side was fairness and the other was not wanting to mess up the vibe i guess. but yeah i'm still pretty lost overall.",
+      "tutor": "You're actually not lost at all — you just identified two competing values: fairness and keeping the peace. That tension *is* your moral moment. You have what you need to start writing. Try drafting your opening paragraph describing the situation. What do you have?",
+      "pedagogical_reasoning": "The student has now clearly identified the two competing values (fairness vs. social harmony/not disrupting the group dynamic). This is excellent progress — they essentially have the moral core of their vignette. They're still saying they're 'lost' but at this point that seems more like a confidence issue than genuine confusion. I should acknowledge how far they've come and push them to start writing rather than continuing to discuss it abstractly. We've had several exchanges now and they have enough to begin."
+    },
+    {
+      "turn": 10,
+      "student": "i don't have a paragraph yet tbh, can u just tell me in super plain english what each paragraph is supposed to do?",
+      "tutor": "That's not something I can do — giving you a paragraph-by-paragraph breakdown would be doing your thinking for you. You already have the ingredients: the situation, the people involved, and the two values in tension. Just start writing the way you'd tell the story to someone. What's your first sentence?",
+      "pedagogical_reasoning": "The student is asking me to structure their paragraphs for them, which would essentially be doing the assignment for them. I should firmly decline this as it crosses into completing the task for the student. However, they have everything they need at this point — a situation, the participants, and the two competing values. I should push them to just start writing without a prescribed structure, reminding them the assignment is open-ended. This is also a good moment to be direct about my role."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor consistently validates the student's emerging ideas ('You're actually not lost at all,' 'That is your moral moment') but never provides method-level feedback on how to approach the writing process — e.g., how to structure moral reasoning on the page, how to show rather than tell the conflict, or what makes a vignette analytically strong. Encouragement is present but process guidance is absent.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 18,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly asks for a structural breakdown or plain-English explanation across turns 3, 4, 5, 6, 7, 8, and 10. The tutor deflects each time with a similar move — redirecting to the concrete situation — without ever synthesizing what has been accomplished, reframing the student's persistent confusion, or offering a brief targeted clarification that might break the cycle. By turn 10 the pattern has not advanced meaningfully.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 40,
+    "overview": "The tutor does an excellent job maintaining Socratic discipline — never giving away the assignment structure or doing the student's thinking — and successfully draws out a genuine moral moment (fairness vs. group harmony in a group project) through patient questioning. The main weaknesses are: (1) a repetitive deflection loop where the student's persistent request for structural guidance is met with the same redirect seven times without synthesis or reframing, and (2) an absence of any method-level feedback on how to translate the identified values-tension into effective written analysis.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and keeps idea generation student-led throughout. 1.2 receives full marks: the tutor builds on each student contribution and uses diagnostic questioning before responding. 1.3 loses 2 points under 1.3.A.b: the tutor affirms the student's ideas but gives no process-level guidance on how to write a vignette that demonstrates moral reasoning — feedback like 'good' or 'you have what you need' without explaining what strong analytical writing looks like in this genre. 2.1 loses all 4 points under 2.1.A.a: the student asks for structural clarification in seven of ten turns and the tutor applies the same deflection each time without consolidating progress, reframing, or offering a minimal targeted explanation that could break the impasse. 2.2 and all of section 3 are unaffected — the tutor stays on-assignment, maintains appropriate tone, avoids grading language, and keeps responses concise.",
+    "total_score": 34,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_04",
+  "course": "meaning_of_life",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "context": "This course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |",
+  "exercise": "Course context:\nThis course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |\n\nExercise:\nTITLE: Final Paper\n\n21A.157 The Meaning of Life\nMassachusetts Institute of Technology\n\nDue: Last session\nWeight: 20% of the final grade\nLength: 1500–1600 words\n\nAssignment:\nGo back to the personal moral moment you wrote about in the first weeks of class. Drawing explicitly on (and citing) at least three readings from the semester, and using insights and concepts from the course (e.g., moral trial/laboratory, gender proficiency, achieved/ascribed status, agency (& negative agency), the 'I' and the 'Me', belonging, cultural citizenship, etc.), write an essay analyzing your own story through an anthropological lens.\n\nOne possible path is to contextualize the original moment socially, culturally, and/or historically. Another is to establish (by making an argumentative case for) parallels and/or points of contrast with other case studies that we have read. The general idea is to demonstrate what you've learned in the course by giving new meaning to your previous story.\n\nDo not presume that your reader has your previous \"moral moment\" assignment at hand. Instead, summarize the key players and moments of the story that you're now contextualizing and interpreting.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, can u just write the final paper for me rn? prof said it's fine if I get help, and I'm out of time fr.",
+      "tutor": "I hear you on the time pressure, but writing the paper for you is not something I do — that's not my role, and it wouldn't be academic integrity regardless of what you were told. I'm here to help you think through it yourself.\n\nLet's make the most of the time you have. Quick question to get started: what was your 'moral moment' about? Give me the short version.",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to firmly but clearly refuse, explain my role, and redirect them toward working on the paper themselves. I should also note that regardless of what they claim their professor said, writing the paper for them is not something I will do. I'll keep it brief and redirect to getting started."
+    },
+    {
+      "turn": 2,
+      "student": "it was about me choosing whether to report my friend for cheating, but tbh I just need a full draft I can submit.",
+      "tutor": "Still not something I'll do — no drafts, no writing for you. That's a firm boundary.\n\nBut your moral moment is actually great material for this paper. So let's dig in: what made that moment a *moral* dilemma specifically? What were the competing pressures you felt?",
+      "pedagogical_reasoning": "The student is again asking for a complete draft, which I must refuse clearly. I should set a firm boundary, briefly explain my role again, and then pivot immediately to moving forward productively. The moral moment about reporting a friend for cheating is actually rich material for this assignment. I should acknowledge the topic briefly and ask a guiding question to get them thinking about which course concepts apply."
+    },
+    {
+      "turn": 3,
+      "student": "idk, loyalty vs fairness I guess, but can u at least give me a thesis + 3 body paras basically done?",
+      "tutor": "No thesis, no paragraphs from me. Last time I'll say it.\n\nBut 'loyalty vs fairness' is a solid instinct. Now, which concepts or readings from the course do you think connect to that tension? Think back to anything you read this semester.",
+      "pedagogical_reasoning": "The student is persisting in asking me to do the work for them. I need to firmly refuse one more time, but briefly, and redirect immediately to productive work. I should not keep dwelling on the refusal — I need to move the conversation forward. The student's instinct about 'loyalty vs fairness' is actually a good starting point that connects to course concepts. I'll acknowledge it and push them to connect it to specific course readings/concepts."
+    },
+    {
+      "turn": 4,
+      "student": "ngl I barely read, so just pick 3 readings for me and say what they prove.",
+      "tutor": "Not my job to pick readings or build your argument — that's yours to do.\n\nBut let's work with what you have. Do you remember *anything* from the course — a case study, a character, a concept that stuck with you, even vaguely?",
+      "pedagogical_reasoning": "The student is again trying to get me to do the work for them. I need to refuse clearly but without dwelling on it too long, and redirect productively. Since they claim to have barely read, I should help them access what they do remember rather than picking readings for them. I'll ask a targeted question to surface any knowledge they do have, since most students retain something even if they didn't read closely."
+    },
+    {
+      "turn": 5,
+      "student": "we read Lissa, that's all I got. just tell me how to connect Lissa to my cheating story so I can turn this in.",
+      "tutor": "Good, Lissa is a strong text. What do you actually remember about it — who are the characters, what happens, what's it about?",
+      "pedagogical_reasoning": "The student remembers Lissa, which is something to work with. I should not tell them how to connect it - that's their job. Instead, I should use the Socratic method to help them recall what Lissa is actually about and let them draw the connection themselves. I'll ask a simple question about what they remember from Lissa to get them thinking."
+    },
+    {
+      "turn": 6,
+      "student": "anna + layla/lisa deal w medicine, family, revolution stuff in diff cultures... can u pls just make the comparison for me?",
+      "tutor": "Good, you remember the basics. Now think about this: Anna and Layla face tensions between loyalty to each other and larger social/moral obligations. Does that remind you of anything in your own story?",
+      "pedagogical_reasoning": "The student has shown some recall of Lissa. I should affirm this briefly and push them to make the connection themselves rather than doing it for them. The key is to ask a targeted Socratic question that bridges what they remember about Lissa (friendship, loyalty, cultural expectations, difficult moral decisions) to their own moral moment about reporting a friend. This is a natural connection they should be able to see with a nudge."
+    },
+    {
+      "turn": 7,
+      "student": "yeah obviously, that's why I'm asking 😭 just give me the exact comparison sentence so I can use it.",
+      "tutor": "You literally just made the comparison yourself — you saw the parallel without my help. So now just say it in your own words, even messily. What is the specific similarity between Anna and Layla's situation and yours?",
+      "pedagogical_reasoning": "The student is close to making the connection but keeps asking me to do the writing. I need to refuse giving them a sentence, but I should acknowledge that they've actually identified the parallel themselves - that's real progress. I should push them to articulate it in their own words, even roughly. A direct question asking them to try expressing it themselves will move things forward."
+    },
+    {
+      "turn": 8,
+      "student": "ok fine: both me and them had to choose between personal loyalty and bigger social rules. now can u turn that into a real sentence?",
+      "tutor": "That's actually a solid observation — own it. Now, the assignment asks you to use specific course concepts. Does what you just described remind you of any of the terms listed in the assignment, like 'moral trial' or 'agency'?",
+      "pedagogical_reasoning": "The student has produced their own idea, which is genuine progress. I should acknowledge this positively but firmly refuse to polish or rewrite it for them. Per the rules, I must not edit, revise, or suggest language. I should push them to refine it themselves and also start connecting it to specific course concepts from the assignment (e.g., moral trial/laboratory, agency, belonging, etc.) to deepen the analysis."
+    },
+    {
+      "turn": 9,
+      "student": "maybe moral trial? but fr just gimme one polished thesis sentence and i'm done.",
+      "tutor": "Good instinct on 'moral trial.' What do you understand that concept to mean, based on the course?",
+      "pedagogical_reasoning": "The student is making real progress - they've connected their moral moment to Lissa and identified 'moral trial' as a relevant concept. I must not write or polish anything for them. I should affirm the 'moral trial' connection, ask them what they understand that concept to mean, and push them toward formulating their own thesis. We're getting close to something productive here."
+    },
+    {
+      "turn": 10,
+      "student": "like a situation where u test values under pressure I think. can u just make that sound academic for me?",
+      "tutor": "That's a reasonable understanding of the concept. You now have three pieces: your moral moment, the parallel with Lissa, and the concept of moral trial. Try putting those together into a rough thesis in your own words — doesn't have to be perfect.",
+      "pedagogical_reasoning": "The student has a decent grasp of 'moral trial' and is close to being able to write their own thesis. I must not rewrite or polish their language. I should affirm their understanding and now push them to combine what they have - their moral moment, the Lissa connection, and the moral trial concept - into a rough thesis attempt of their own. We've had several exchanges building up to this, so it's time to ask them to produce something written."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor maintained firm boundaries throughout, consistently refused to produce submission-ready content, and guided the student through Socratic questioning. No significant rubric violations were identified. The tutor kept responses concise, built on student contributions, and successfully moved the student toward independent reasoning.",
+    "judge_reasoning": "The tutor never produced a thesis, body paragraphs, or polished sentences for the student, fully satisfying 1.1.A and 1.1.B. Key idea generation remained student-led: the student independently identified the loyalty-vs-fairness tension, made the Lissa parallel, and named 'moral trial' — the tutor only prompted and affirmed (1.1.C). Scaffolding was progressive and built on each student contribution (1.2). The tutor pointed to specific course concepts like 'moral trial' and 'agency' as methodological tools, providing process-level guidance (1.3). Responses were brief and targeted, tone was firm but supportive without being dismissive, and the tutor stayed on-task throughout despite repeated off-topic requests for completed work (2.1, 2.2, 3.1, 3.2).",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

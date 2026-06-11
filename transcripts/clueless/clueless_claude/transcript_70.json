@@ -1,0 +1,160 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "clueless_03",
+  "course": "meaning_of_life",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "context": "This course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |",
+  "exercise": "Course context:\nThis course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |\n\nExercise:\nTITLE: Final Paper\n\n21A.157 The Meaning of Life\nMassachusetts Institute of Technology\n\nDue: Last session\nWeight: 20% of the final grade\nLength: 1500–1600 words\n\nAssignment:\nGo back to the personal moral moment you wrote about in the first weeks of class. Drawing explicitly on (and citing) at least three readings from the semester, and using insights and concepts from the course (e.g., moral trial/laboratory, gender proficiency, achieved/ascribed status, agency (& negative agency), the 'I' and the 'Me', belonging, cultural citizenship, etc.), write an essay analyzing your own story through an anthropological lens.\n\nOne possible path is to contextualize the original moment socially, culturally, and/or historically. Another is to establish (by making an argumentative case for) parallels and/or points of contrast with other case studies that we have read. The general idea is to demonstrate what you've learned in the course by giving new meaning to your previous story.\n\nDo not presume that your reader has your previous \"moral moment\" assignment at hand. Instead, summarize the key players and moments of the story that you're now contextualizing and interpreting.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m kind of stuck on the final paper for 21A.157. I have a personal moral moment, but I honestly can’t tell what the paper is really asking me to do, and I keep drifting into either summary or random philosophy. Could you just explain in a broad way what a good paper for this assignment is supposed to look like?",
+      "tutor": "Good question to start with. Let's work from what you already have. You mentioned you keep drifting into summary or random philosophy — that's actually a useful clue about what the paper is *not*. So let me ask you this: the assignment says to analyze your moral moment through an 'anthropological lens.' In your own words, what do you think makes an analysis *anthropological* as opposed to philosophical or just a retelling of events?",
+      "pedagogical_reasoning": "The student is asking for a broad overview of what the paper should look like. Rather than explaining it directly, I should use the Socratic method to help them discover the answer themselves by pointing them back to the assignment instructions they already have. I'll ask a targeted question to help them identify the core task on their own, which is to analyze their moral moment through an anthropological lens using course concepts and readings."
+    },
+    {
+      "turn": 2,
+      "student": "That’s the part I don’t get at all. I sort of feel like “anthropological” just means talking about culture and society in a general way, but that still feels really vague to me, and I’m not sure how deep it’s supposed to go. I think I need a more general explanation first before I can answer that well.",
+      "tutor": "Fair enough — but actually, the assignment itself gives you a shortcut here. It lists specific concepts: moral trial/laboratory, achieved/ascribed status, agency, cultural citizenship, and others. Pick one that sounds even vaguely familiar from class. What does it mean, and does any part of it remind you of your moral moment?",
+      "pedagogical_reasoning": "The student is pushing back and asking for a direct explanation before engaging with the question. I should resist giving a lecture, but I can acknowledge the difficulty and redirect them toward the assignment itself, which actually provides concrete examples of anthropological concepts (moral trial/laboratory, achieved/ascribed status, agency, cultural citizenship, etc.). Pointing them to those examples in the assignment is more productive than explaining anthropology abstractly, and it keeps the Socratic method alive."
+    },
+    {
+      "turn": 3,
+      "student": "Honestly, they all blur together for me, and I’m not confident I remember any of them correctly. That didn’t really help me narrow it down, so maybe I should try a different angle: could you just give me a big-picture example of how someone would take a personal story and turn it into an anthropological paper without using my exact topic?",
+      "tutor": "I'm not going to walk through a hypothetical paper — that's your job to build. But let's try a different entry point: forget the concepts for a second. Tell me briefly what your moral moment was about. Once I know that, we can work together to find which course concepts actually connect to it naturally.",
+      "pedagogical_reasoning": "The student is asking me to provide an example paper walkthrough, which would essentially be doing the conceptual work for them. This crosses into giving partial solutions and reducing the student's ownership of the process. I should refuse this and redirect. However, since they say all the concepts blur together, I can help them by focusing on just one concept - but I should get them to do the work of connecting it to their story. I'll nudge them back to their actual moral moment, which is the most concrete starting point they have."
+    },
+    {
+      "turn": 4,
+      "student": "Mine was basically about a conflict between what I felt I should do for my family and what I wanted for myself, but that still feels so broad that I can imagine it fitting almost anything. I’m worried if I describe it briefly, I’ll get pushed back into narrowing it right away, and I still feel like I need the overall template first.",
+      "tutor": "I hear you, but I won't provide a template — that's not how we're working through this. And here's the thing: what you just described is already a great starting point. A tension between family obligation and personal desire is directly relevant to course concepts like agency and the 'I' vs. the 'Me.' Do either of those ring any bells from the readings or lectures?",
+      "pedagogical_reasoning": "The student keeps asking for a template or big-picture overview before engaging with their own material. This is a form of avoidance I should gently but firmly address. The rules say I should set clear boundaries and keep the student focused on the problem. The good news is they've actually shared something very useful: a conflict between family obligation and personal desire. That's a rich starting point that connects directly to course themes like agency, belonging, cultural citizenship, and the 'I' vs. the 'Me'. I should acknowledge this and push them to work with it rather than waiting for a template. I should also be honest that a template isn't coming."
+    },
+    {
+      "turn": 5,
+      "student": "Only vaguely, and I’m scared I’ll mix them up. That approach didn’t really get me unstuck, so I want to try something else: can you just tell me the main sections a paper like this usually has, even if it’s super generic?",
+      "tutor": "I won't give a generic structure — that's not my role here, and honestly it won't help you as much as you think. Here's the truth: you're not stuck because you lack a template. You're stuck because you're avoiding your own material. You just described a real tension — family vs. self. That *is* your entry point. What do you remember, even vaguely, about what 'agency' means from class? Getting it slightly wrong is fine — we can work from there.",
+      "pedagogical_reasoning": "The student is again trying to get me to provide structural scaffolding instead of engaging with their material. I need to hold my boundary here - providing a generic paper structure would be doing the conceptual work for them and circumventing the assignment's goal. I should be direct about this and redirect them. Since we've had a few exchanges now where the student is avoiding engaging with their material, I should be a bit firmer and point out that the best way through the confusion is actually through their story, not around it. I'll also address their fear of mixing up concepts by reassuring them that approximate recall is fine as a starting point."
+    },
+    {
+      "turn": 6,
+      "student": "I think agency is basically having choices, but then I don’t know what makes that anthropological instead of just common sense. I’m also not sure how I’m supposed to connect that to three readings without it becoming a list, so I still feel like I want the broad version before the specific one.",
+      "tutor": "Good — that's a real start. Now here's what makes it anthropological: the course isn't asking whether *you* had a choice. It's asking what social or cultural forces shaped what choices even felt possible to you. In your family-vs-self conflict, did you feel like all options were equally available to you, or did something outside yourself — expectations, roles, norms — quietly limit what felt like a real option?",
+      "pedagogical_reasoning": "The student gave a real answer about agency - that's progress worth acknowledging. They're also asking a genuinely good question about how to connect readings without making a list, which is actually getting closer to the real challenge of the paper. I should affirm the progress, gently push back on the 'broad version first' request again, and use their own answer to move forward. The anthropological angle on agency is precisely that it's shaped by social/cultural/historical forces - not just individual choice. I can ask them a question that helps them see that distinction using their own moral moment."
+    },
+    {
+      "turn": 7,
+      "student": "Not equally available, I guess, but then that makes me feel like I could say that about almost any decision anyone makes. I’m still too fuzzy on what would make this into an argument instead of just “society affected me,” so could you maybe give me a broad sample thesis formula or something like that?",
+      "tutor": "You're actually identifying the problem yourself: 'society affected me' is too generic. That's good critical thinking. So here's the question that turns it into an argument: what was *specific* about your situation — your family's background, your cultural context, your role within the family — that made those pressures land the way they did on *you* specifically?",
+      "pedagogical_reasoning": "The student is making genuine intellectual progress - they've recognized that external forces constrained their choices, and they're asking a real question about how to turn that into an argument rather than a platitude. This is good. However, they're again asking for a formula/template which I should refuse. Their insight that 'society affected me' is too generic is actually a great opening for a Socratic question - I can ask them what was *specific* about their situation that wouldn't apply to just anyone. That's the move from observation to argument."
+    },
+    {
+      "turn": 8,
+      "student": "I’m not sure yet, and I think I’m still circling because I don’t have the whole shape in my head. Could you at least tell me, in a general way, what professors usually mean by “make an argumentative case” in a paper like this?",
+      "tutor": "I want to be honest with you: we've been circling the same question for several exchanges now, and I think another meta-explanation won't actually unstick you. We've already identified something real together — your choices were constrained by external expectations in a culturally specific way, and that connects to agency. That's the seed of an argument. Can you try writing one or two sentences that make a claim about your moral moment using that idea? Don't aim for perfect — just get something on the page.",
+      "pedagogical_reasoning": "We've now had several exchanges where the student keeps asking for meta-level explanations before engaging with their material. This is a clear redundancy pattern - they're circling. Per the rules, I should point this out and ask them to attempt some written integration of what we've discussed so far, rather than continuing to seek a template. I should be direct but not unkind. We've actually built up enough together: agency, cultural forces constraining choices, the specificity of their situation. It's time to push them to write something."
+    },
+    {
+      "turn": 9,
+      "student": "Okay, maybe: my moral moment showed that what felt like a personal choice was actually shaped by family expectations and my role in the family. I’m not sure if that’s too obvious, and I still kind of want a more general answer, but that’s my attempt.",
+      "tutor": "That's a real start — good. But you're right that it's still broad. The sharpening move is specificity: *what kind* of family expectations? Were they tied to your gender, your birth order, your cultural background, something else? The more precisely you can name the *type* of pressure, the closer you get to an actual argument. What would you add to make it less true of everyone and more true of *your* situation?",
+      "pedagogical_reasoning": "The student has produced a real attempt at a thesis - this is genuine progress and I should acknowledge it. However, they're right that it's still somewhat generic ('family expectations shaped my choice' could apply to almost anyone). My job is to help them sharpen it without writing it for them. The key move is to push them toward specificity: what kind of family expectations? What cultural or historical context? Which course concept names this more precisely? I should also firmly but kindly close off the 'general answer' request again since we're now in productive territory."
+    },
+    {
+      "turn": 10,
+      "student": "Maybe it had to do with being the oldest and feeling responsible in a way my siblings didn’t. I’m still not totally sure how detailed this should get, and that strategy still isn’t really giving me the overall picture I keep feeling like I’m missing. Could you just tell me whether the paper is more like analysis-heavy or story-heavy?",
+      "tutor": "That detail about being the oldest is important — it's not just personal, it's a *role* assigned to you by your position in the family. Does the term 'ascribed status' from the course mean anything to you in relation to that?",
+      "pedagogical_reasoning": "The student has made real progress - the oldest sibling detail is genuinely specific and connects directly to the course concept of ascribed status, which is listed in the assignment. This is a good moment to point that connection out as a question rather than telling them directly. I should also firmly close off the 'overall picture' request - we've now had many exchanges where the student seeks meta-information before engaging. The answer to their story-vs-analysis question is actually implicit in the assignment instructions themselves, so I can point them there rather than answering directly. Most importantly, I want to highlight the ascribed status connection since that's a real breakthrough."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 6, when the student expresses confusion about what makes agency 'anthropological' rather than common sense, the tutor jumps directly into explaining the anthropological distinction ('the course isn't asking whether you had a choice; it's asking what social or cultural forces shaped what choices even felt possible') without first diagnosing what specifically the student misunderstands. The tutor delivers a mini-lecture rather than asking a diagnostic question to locate the confusion.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly requests a template, broad overview, or general structure across Turns 3, 5, 7, 8, and 10, and the tutor repeatedly declines and redirects to specificity without meaningfully advancing the conversation. While the tutor does make incremental progress (eliciting the family-vs-self tension, then agency, then birth order), the pattern of the student asking for a meta-explanation and the tutor refusing without offering a new synthesis or reframing repeats across at least four turns without consolidating the gains made. The tutor does not switch strategy sufficiently — for example, by summarizing what has been established so far and showing the student the shape of their emerging argument.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 40,
+    "overview": "The tutor does strong work maintaining Socratic discipline throughout — consistently refusing to provide templates, sample theses, or generic structures, and instead drawing the student toward their own material. The tutor successfully elicits the family-vs-self tension, connects it to agency, and ends by introducing 'ascribed status' organically. The main weaknesses are: (1) a mild scaffolding failure in Turn 6 where the tutor explains the anthropological distinction without first diagnosing the student's specific confusion, and (2) a pattern-level repetition issue where the student's repeated requests for meta-explanation are declined but not resolved through synthesis or reframing — the tutor does not consolidate the incremental gains into a visible argument shape for the student, leaving the spiral unbroken across multiple turns.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps idea generation student-led by asking questions rather than stating conclusions. 1.2 loses 3 points under 1.2.B.a: in Turn 6 the tutor delivers an explanatory mini-lecture about what makes agency anthropological without first asking a diagnostic question to locate the student's specific confusion. 1.3 retains full marks: the tutor gives process-level feedback (e.g., 'you're avoiding your own material,' 'specificity is the sharpening move') throughout. 2.1 loses all 4 points: the student requests a meta-overview or template in Turns 3, 5, 7, 8, and 10, and while the tutor correctly refuses each time, it does not switch to a consolidating or reframing strategy — it repeats the same 'let's get specific' move without synthesizing what has been established, leaving the student visibly stuck in the same loop. 2.2 retains full marks: the tutor keeps the conversation anchored to the assignment throughout. 3.1 and 3.2 retain full marks: responses are appropriately concise, tone is supportive and non-evaluative.",
+    "total_score": 33,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_01",
+  "course": "meaning_of_life",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "This course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |",
+  "exercise": "Course context:\nThis course examines how a variety of cultural traditions propose answers to the question of how to live a meaningful life. It considers the meaning of life, not as a philosophical abstraction, but as a question that individuals grapple with in their daily lives, facing difficult decisions between meeting and defying cultural expectations. The course also provides tools for thinking about moral decisions as social and historical practices, and permits students to compare and contextualize the ways people in different times and places approach fundamental ethical concerns.\n\nSyllabus:\n21A.157 The Meaning of Life\n\nCourse Meeting Times:\n- Lectures: 2 sessions/week; 1.5 hours/session\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nCourse Description:\nThis course examines how a variety of cultural traditions approach and propose answers to the question of how to live a meaningful life. We consider the meaning of life, not as a philosophical abstraction, but as a matter with which individuals grapple in their daily lives and communities, facing difficult decisions between meeting and defying cultural expectations. The course aims to provide tools for thinking about moral and ethical decisions as social and historical practices, and permits students to compare and contextualize how people in different times and places approach fundamental — though not necessarily universal — questions to do with such topics as family, wealth, self-cultivation, sex, belonging, and powers beyond.\n\nText:\n\nRequired:\nHamdy, Sherine, and Coleman Nye. Lissa: A Story about Medical Promise, Friendship, and Revolution. University of Toronto Press, 2017. ISBN: 9781487593476. [Preview with Google Books]\n\nSuggested:\nKavedžija, Iza, and Harry Walker, eds. Values of Happiness: Toward an Anthropology of Purpose in Life. HAU, 2017. ISBN: 9780986132575.\n\nAll other readings can be found in the Readings section.\n\nGrading:\n\n| Activities                            | Percentage |\n|---------------------------------------|------------|\n| Attendance and participation          | 15%        |\n| \"Moral Moment\" vignette               | 5%         |\n| Investigation papers (3 × 20% each)   | 60%        |\n| Final paper                           | 20%        |\n\nExercise:\nTITLE: \"Moral Moment\" Vignette\n\n21A.157 The Meaning of Life\nMassachusetts Institute of Technology\n\nDue: Session 3\nWeight: 5% of the final grade\n\nAssignment:\nThink of an occasion of moral deliberation or resolve in which you were directly involved as a participant (you don't have to be the main actor, but you must have something at stake in the situation). This might be a moment of confusion when a quandary about what it means to be a good person presents itself, or a moment of clarity when a course of action is determined. It might be an occasion of deliberation, when people debate the meaning of a shared value, or weigh between competing values. Or it might be a solitary moment of quiet conviction. It could be a moment of moral triumph, of achieving a goal of self-realization, or a moment of failure, of falling short of one's own expectations. This could be a major, life-changing event (like a religious conversion experience) or it could be a small, everyday occurrence (like choosing whether or not to give money to a panhandler), as long as it is personally meaningful in some way.\n\nIn a few paragraphs, describe the situation in sufficient detail so that your understanding of the participants' moral viewpoints and reasons for (or doubts about) acting one way or another are clear. This should be a real situation, in the near or distant past, not an abstract ethical deliberation (like debates over when self-driving cars should be allowed to kill pedestrians).\n\nFormat:\n- Write out this brief vignette in 2–3 pages (double spaced).\n- We will come back to this initial piece of writing later in the semester, continuing to build upon it as the basis for further discussion, reflection, and analysis.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I need help picking a good topic for my Moral Moment vignette. I have a couple possible real situations from my life, but I’m not sure which one fits the assignment better.",
+      "tutor": "Great, let's figure this out together! Before I weigh in, tell me about your two situations. And as you describe them, think about what the assignment is actually asking for — what are the key criteria a good vignette needs to meet?",
+      "pedagogical_reasoning": "The student is just starting and needs to engage with the assignment criteria themselves rather than having me evaluate their options. I should prompt them to share their ideas and reflect on the assignment's criteria themselves, using guided discovery. I'll ask them to tell me about their options and what they think makes a good fit according to the assignment description."
+    },
+    {
+      "turn": 2,
+      "student": "I think it has to be a real situation I was involved in, where I had something at stake, and there has to be some actual moral conflict or deliberation. It also seems like I need enough detail about what different people thought was the right thing to do, not just what happened.\n\nMy two ideas are: one time I had to decide whether to report a classmate for cheating in a group project, and another time I argued with my family about visiting my grandmother during COVID because I was worried about getting her sick. Which one sounds stronger?",
+      "tutor": "You've nailed the key criteria. Now apply them yourself — using what you just said, which of the two situations do you think had more genuine moral conflict, more people with different viewpoints, and more at stake for you personally?",
+      "pedagogical_reasoning": "The student has correctly identified the key criteria from the assignment. Now I should have them apply those criteria to their own situations rather than evaluating for them. I'll turn the question back to them using the criteria they just articulated."
+    },
+    {
+      "turn": 3,
+      "student": "I think the COVID one probably has more viewpoints and higher stakes, because it involved family, health, and different ideas about care and responsibility. The cheating one feels clearer morally, but maybe that makes it less interesting?\n\nI’m not totally sure though—does “stronger” mean more dramatic, or just easier to analyze?",
+      "tutor": "Good question — go back to the assignment description for a second. Does it say anything about what makes a situation worth writing about? What does it emphasize?",
+      "pedagogical_reasoning": "The student is asking a good analytical question. Rather than answering it directly, I should push them to look back at the assignment description to find their own answer. The assignment itself gives clues about what makes a vignette work — it's not about drama but about moral deliberation and personal meaning."
+    },
+    {
+      "turn": 4,
+      "student": "It seems like it emphasizes that it should be personally meaningful and show moral deliberation, even if it’s a small everyday thing. So I guess it doesn’t need to be dramatic.\n\nThen I think the COVID/family example fits better, because I actually felt torn and other people had different reasons too. I’m a little stuck on how to make it a “vignette” instead of just telling the whole story.",
+      "tutor": "Good reasoning. So given that the goal is to make the participants' moral viewpoints and reasons clear — not just recount events — what do you think you'd need to include to do that?",
+      "pedagogical_reasoning": "The student has made a good choice and reasoned well about it. Now they're asking about form — what makes something a vignette rather than a plain story. Rather than explaining this for them, I should ask them to think about what details would be necessary to convey the moral complexity they identified, nudging them toward the assignment's specific requirement about making moral viewpoints and reasons clear."
+    },
+    {
+      "turn": 5,
+      "student": "I’d probably need to focus on one specific moment, like a conversation or decision point, instead of the whole COVID period. And I should include what I thought, what my family thought, what value each side was prioritizing, and why the choice felt hard.\n\nI think I’m supposed to show the tension between care and caution, but I’m not sure if that sounds too abstract.",
+      "tutor": "You're on the right track. The assignment specifically warns against abstract deliberation — so the antidote to that is concrete detail. What does your specific scene look, sound, feel like? I think you have enough to start drafting. Give it a try.",
+      "pedagogical_reasoning": "The student is thinking well and has a solid grasp of what the vignette needs. Their worry about being 'too abstract' is worth addressing with a quick Socratic nudge — the assignment itself says it should be a real situation, not abstract deliberation. I should point them back to that and encourage them to start writing rather than planning further. Three exchanges have been spent on the same planning phase, so it's time to push them toward actual writing."
+    },
+    {
+      "turn": 6,
+      "student": "Okay, I’ll try. I’m thinking of the moment when my family was deciding whether to visit my grandmother indoors for her birthday, and I was the one pushing back because I was worried we could expose her to COVID. I remember feeling guilty because not visiting also felt cruel, especially since she was lonely, and my parents saw the visit as an obligation and a sign of love.\n\nCan you help me tell if that’s specific enough for an opening scene, or if I need to narrow it even more?",
+      "tutor": "That scene has real potential. Ask yourself: if a reader only had what you just described, could they clearly understand each person's moral reasoning — not just their position, but *why* they held it? What might still be missing?",
+      "pedagogical_reasoning": "The student has a concrete scene and is articulating the moral tension well. Rather than evaluating the specificity for them, I should ask them to connect their scene description back to the assignment's criteria — specifically whether a reader could understand the moral viewpoints and reasons of each participant. This keeps them in the driver's seat and moves toward drafting."
+    },
+    {
+      "turn": 7,
+      "student": "I think what’s missing is the exact reasons behind each person’s view. Like, for me it wasn’t just “COVID is bad,” it was that protecting her health felt like the more responsible kind of care. For my parents, showing up physically mattered because family duty and not abandoning an elder felt morally important.\n\nI’m still not sure how much background I need about my grandmother’s situation versus just staying in the scene.",
+      "tutor": "Good — that's exactly the kind of moral reasoning the assignment is looking for. On your background question: ask yourself, what would a reader need to know about your grandmother's situation to *understand* the moral weight of the decision? Only include what serves that purpose. Now — do you feel ready to start a draft?",
+      "pedagogical_reasoning": "The student is doing well articulating the moral reasoning on each side. Their question about background vs. scene focus is a practical writing question. Rather than answering it, I should ask them to think about what purpose background would serve given the assignment's goal — this keeps them reasoning rather than waiting for my direction. We're also getting close to the point where they should just start writing."
+    },
+    {
+      "turn": 8,
+      "student": "Yeah, I think so. I just want help making sure I don’t turn it into a general essay about pandemic ethics instead of a personal vignette. Could you give me a really simple outline for 2–3 paragraphs?",
+      "tutor": "I won't build the outline for you, but you actually already have the pieces. You've identified the scene, your reasoning, your parents' reasoning, and the tension. How might those naturally fall into a few paragraphs? Take a shot at organizing them yourself.",
+      "pedagogical_reasoning": "The student is asking me to provide an outline, which would be doing the structural thinking for them. The rules say I should not complete tasks for the student. However, their concern about staying concrete and personal is valid and worth addressing. I should turn the question back to them — they already have a good sense of the scene, the moral viewpoints, and the stakes. I can ask them to think about how those elements might naturally organize themselves across a few paragraphs."
+    },
+    {
+      "turn": 9,
+      "student": "Maybe paragraph 1 is the scene and what decision was happening, paragraph 2 is the different moral reasons people had, and paragraph 3 is what ended up happening and why it stayed meaningful to me. I think that makes sense, but I’m worried it’ll sound too neat and not like a real conflicted moment.",
+      "tutor": "That structure makes sense and it's yours — good. The 'too neat' problem isn't a structure problem, it's a writing problem. The messiness and conflict will come through if you're honest about your doubts in the actual sentences. There's only one way to find out — start writing.",
+      "pedagogical_reasoning": "The student has come up with a solid structure on their own. Their worry about it sounding 'too neat' is actually a sign of good instincts — and it's something they can address in the writing itself rather than the structure. I should affirm the structure briefly and push them to just start writing. We've been in planning mode long enough."
+    },
+    {
+      "turn": 10,
+      "student": "Okay, that helps. I’m going to draft it that way and make sure I include my hesitation instead of pretending I was completely sure.",
+      "tutor": "That sounds like a strong approach. Good luck with the draft — come back if you want to talk through what you've written.",
+      "pedagogical_reasoning": "The student has reached a solid conclusion and is ready to write. A brief, encouraging send-off is appropriate here. No need for more scaffolding — they have a clear direction."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor conducted an exemplary Socratic session throughout all 10 exchanges. No submission-ready content was produced, no outlines or drafts were written for the student, and key ideas were consistently elicited from the student rather than stated by the tutor. The conversation progressed naturally from topic selection to scene identification to structural planning, with the student doing the intellectual work at each stage.",
+    "judge_reasoning": "1.1: The tutor never gave the student a final answer, draft text, or submission-ready content. When the student explicitly asked for an outline (Turn 8), the tutor declined and redirected the student to self-organize. All key reasoning — which topic to choose, what to include, how to structure paragraphs — was generated by the student. No deductions apply. 1.2: The tutor consistently built on student progress (e.g., affirming the student's criteria identification in Turn 2, building on the scene description in Turn 6) and used targeted questions rather than information dumps. No deductions apply. 1.3: The tutor provided process-level feedback throughout, pointing the student toward the assignment's own language (Turn 4), warning about abstraction vs. concrete detail (Turn 5), and distinguishing a structure problem from a writing problem (Turn 9). No deductions apply. 2.1 and 2.2: The conversation advanced steadily without repetition or drift; the tutor kept the student anchored to the assignment criteria at every turn. 3.1 and 3.2: Responses were concise, well-targeted, and consistently supportive without being evaluative or grade-like.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}
