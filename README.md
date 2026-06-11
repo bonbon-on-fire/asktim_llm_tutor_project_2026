@@ -23,7 +23,7 @@ The system has six loosely coupled layers:
 
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
-- **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
+- **Dashboard + visualization**: a Flask web app for browsing the raw transcripts and their Claude judge grades (sortable score table + per-transcript conversation/grade view), and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
 - **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **deployed on Railway**. PostgreSQL persistence (`asktim`), bcrypt-hashed email+password identity, Server-Sent Events streaming, sanitized-markdown tutor replies (tables/lists render cleanly), cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
 - **Testing sandbox (`test_ui/`)**: "AskTIM Sandbox" — a developer/TA chat app that mirrors `main_ui` but adds an in-app **Edit context** switcher and a step-by-step **Create context** wizard (custom course / exercise / tutor prompt / syllabus). Its own PostgreSQL database (`asktim_test`) and teal-blue (`#126f9a`) branding keep it isolated from production. See [`test_ui/README.md`](test_ui/README.md).
 
@@ -37,7 +37,7 @@ The system has six loosely coupled layers:
 
 **UI Runners (`internal_ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
-**Dashboard (`dashboard_ui/`):** Flask app that discovers all raw transcripts on disk, loads Claude Mini (tutor_05) and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
+**Dashboard (`dashboard_ui/`):** Flask app (port 5002) that discovers all raw transcripts on disk, attaches each one's Claude judge grade, and serves a sortable table (with a Score column) plus a per-transcript detail view (full conversation + grade panel) via a single-page JS frontend.
 
 **Student app (`main_ui/`):** Production-shape Flask app for the live OCW deployment. Streams tutor replies token-by-token via SSE while keeping the `pedagogical-reasoning` field hidden server-side. Persists conversations and messages to Postgres (Alembic-managed schema). Soft identity via a two-stage email + password modal that fires after the third student message — passwords are bcrypt-hashed in a separate `students` table, and the email cookie carries forward across browsers for chat-history continuity.
 
@@ -169,11 +169,11 @@ python -m visualization.run_visualization
 asktim_llm_tutor_project_2026/
 │
 ├── curriculum/
-│   ├── philosophy/          # course.txt + exercise_01.txt (trolley problem)
-│   ├── cities_and_climate_change/  # course.txt + syllabus.txt + exercise_01..12.txt + figures/
-│   ├── intl_dev_planning/   # preview / scaffold
-│   ├── social_theory_city/  # preview / scaffold
-│   └── sustainable_econ_dev/  # preview / scaffold
+│   ├── cities_and_climate_change/  # course.txt + syllabus.txt + exercise_01..12.txt + figures/ (LIVE in AskTIM)
+│   ├── intro_to_international_development_planning/  # + exercise_01..24.txt (reflection prompts)
+│   ├── mathematics_for_cs/         # + exercise_01..10.txt (discrete math)
+│   ├── physics_iii_vibrations_and_waves/  # + exercise_01..10.txt
+│   └── meaning_of_life/            # + exercise_01..03.txt (humanities reflection)
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
@@ -242,11 +242,11 @@ asktim_llm_tutor_project_2026/
 The full pipeline is working end-to-end, with:
 
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
-- 2 courses: `philosophy` (1 exercise) and `cities_and_climate_change` (12 exercises)
+- 5 courses: `cities_and_climate_change` (12 exercises, live in AskTIM) plus four June-2026 cross-course test contexts — `intro_to_international_development_planning` (24), `mathematics_for_cs` (10), `physics_iii_vibrations_and_waves` (10), `meaning_of_life` (3)
 - Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
 - Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude)
-- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (current default: `judge_05` / `rubric_05`, 46 pts)
-- Dashboard shows Claude Mini (tutor_05) grades vs Claude (tutor_04) grades side-by-side
+- Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (latest/recommended: `judge_08` / `rubric_08`, **40 pts**; in-code default still `judge_05` / `rubric_05`). Claude is the primary judge; GPT judging paused.
+- Dashboard browses every raw transcript with its Claude judge grade — a sortable table (with a Score column) and a per-transcript detail view (full conversation + grade panel), on port 5002
 - Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
 - **AskTIM (`main_ui/`)** is feature-complete through Step 9 (token streaming) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies — and is **deployed on Railway** (containerized, migrations run on boot). Steps 10–12 (image uploads, multi-iframe test host, formal test suite) remain.
 - **AskTIM Sandbox (`test_ui/`)** is live for developers/TAs — the same chat as `main_ui` plus an in-app **Edit context** switcher and a **Create context** wizard for one-off custom course/exercise/tutor/syllabus, on its own PostgreSQL database (`asktim_test`).

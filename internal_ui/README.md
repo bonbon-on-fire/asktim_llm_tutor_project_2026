@@ -36,20 +36,20 @@ This will prompt you to select from numbered options:
 **Command-line mode:**
 ```powershell
 # Generate with GPT tutor (default output: *_raw/)
-python -m internal_ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+python -m internal_ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course cities_and_climate_change --exercise 01 --turn-size 10 --trials 2
 
 # Generate with Claude tutor
-python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas clueless_01 --course cities_and_climate_change --exercise 01 --turn-size 10 --trials 2
 
 # Custom output folder: writes to *_raw_tutor_05/ instead of *_raw/ (--yes skips confirmation)
-python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas chaotic_01 --course philosophy --exercise 01 --turn-size 10 --trials 10 --output-suffix raw_tutor_05 --yes
+python -m internal_ui.run_ui_raw --provider claude --tutor tutor_05 --personas chaotic_01 --course cities_and_climate_change --exercise 01 --turn-size 10 --trials 10 --output-suffix raw_tutor_05 --yes
 ```
 
 Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
 
 **Features:**
 - Parallel processing (6 workers by default)
-- Thread-safe transcript filename allocation (`transcript_XXXX.json`) during concurrent writes
+- Thread-safe transcript filename allocation (`transcript_NN.json`) during concurrent writes
 - Automatic API key validation
 - Interactive confirmation before processing
 
@@ -68,13 +68,13 @@ python -m tutor.run_tutor_mini --persona-type chaotic --transcript transcript_01
 ```
 
 **Options (`tutor.run_tutor_mini`):**
-- `--persona-type`: Folder under `transcripts/` (`chaotic`, `chitchat`, `clueless`, `cooperative`)
+- `--persona-type`: Folder under `transcripts/` (`chaotic`, `clueless`, `cooperative`)
 - `--transcript`: Stem in the persona’s `*_raw` folder (e.g. `transcript_01`)
 - `--resume-from-turn`: Pivot `X` — full history through turn `X-1`; turn `X` uses file student text only, then tutor replies first
 - `--additional-turns`: Count of **full** student+tutor exchanges **after** that new tutor reply (`0` = only regenerate tutor at turn `X`)
 - `--tutor-prompt`, `--tutor-provider`: Tutor prompt stem and `gpt` or `claude` for continuation
 
-**Output:** `transcripts/<type>/<type>_mini/transcript_XXXX.json`. Saved JSON includes `mini_continuation` (source path, `resume_from_turn`, `additional_turns`, original tutor fields).
+**Output:** `transcripts/<type>/<type>_mini/transcript_NN.json`. Saved JSON includes `mini_continuation` (source path, `resume_from_turn`, `additional_turns`, original tutor fields).
 
 ### 3) Judge raw transcripts (GPT or Claude)
 
@@ -91,17 +91,17 @@ This will prompt you to select from numbered options:
 **Command-line mode:**
 ```powershell
 # Grade with GPT (reads *_raw/, writes *_gpt/)
-python -m internal_ui.run_ui_judge --provider gpt --prompt judge_05 --rubric rubric_05
+python -m internal_ui.run_ui_judge --provider gpt --prompt judge_08 --rubric rubric_08
 
 # Grade with Claude (reads *_raw/, writes *_claude/)
-python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_08 --rubric rubric_08
 
 # Read from *_raw_tutor_05/, write to *_claude_tutor_05/ (--yes skips confirmation)
-python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_08 --rubric rubric_08 \
   --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
 
 # Read from *_mini/, write to *_claude_mini/
-python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_08 --rubric rubric_08 \
   --source-suffix mini --output-suffix mini --yes
 ```
 
@@ -130,7 +130,7 @@ With `--output-suffix raw_tutor_05`, output goes to `*_raw_tutor_05/` instead:
 - `transcripts/clueless/clueless_raw_tutor_05/`
 - `transcripts/cooperative/cooperative_raw_tutor_05/`
 
-Each file is auto-named as `transcript_XXXX.json`.
+Each file is auto-named as `transcript_NN.json`.
 
 ### Judged runs (`internal_ui.run_ui_judge`)
 
@@ -155,7 +155,7 @@ Judged transcripts are saved to provider-specific folders:
 - `transcripts/chaotic/chaotic_claude_mini/`
 - `transcripts/clueless/clueless_claude_mini/`
 
-Each output file uses the same stem as the source input: `transcript_XXXX.json`
+Each output file uses the same stem as the source input: `transcript_NN.json`
 
 ### Mini continuation outputs (`internal_ui.run_ui_raw_mini` / `tutor.run_tutor_mini`)
 
@@ -173,7 +173,7 @@ All transcript flows include run metadata and exchanges:
   "tutor_provider": "gpt",
   "tutor_prompt": "tutor_03",
   "student_persona": "chaotic_01",
-  "course": "philosophy",
+  "course": "cities_and_climate_change",
   "exercise_number": "01",
   "turn_size": 10,
   "context": "Course-level context loaded from curriculum/<course>/course.txt",

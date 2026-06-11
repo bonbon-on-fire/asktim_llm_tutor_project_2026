@@ -49,7 +49,7 @@ Every transcript file (`transcript_NNNN.json`) follows this structure:
 {
   "tutor_prompt": "tutor_03",
   "student_persona": "chaotic_01",
-  "course": "philosophy",
+  "course": "cities_and_climate_change",
   "exercise_number": "01",
   "turn_size": 10,
   "context": "Course description text...",
@@ -72,16 +72,16 @@ Graded transcripts additionally contain a top-level `grade` object:
 {
   "grade": {
     "sections": {
-      "1_pedagogy": { "criteria": { "1.1": { ... }, "1.2": { ... }, "1.3": { ... } }, "base": { "score": 22, "max": 24 } },
-      "2_dialogue_quality": { "criteria": { "2.1": { ... }, "2.2": { ... } }, "base": { "score": 10, "max": 12 } },
-      "3_communication_quality": { "criteria": { "3.1": { ... }, "3.2": { ... } }, "base": { "score": 9, "max": 10 } }
+      "1_pedagogy": { "criteria": { "1.1": { ... }, "1.2": { ... }, "1.3": { ... } }, "base": { "score": 18, "max": 20 } },
+      "2_dialogue_quality": { "criteria": { "2.1": { ... }, "2.2": { ... } }, "base": { "score": 11, "max": 12 } },
+      "3_communication_quality": { "criteria": { "3.1": { ... }, "3.2": { ... } }, "base": { "score": 8, "max": 8 } }
     },
-    "max_score": 46,
-    "total_base_score": 41,
-    "max_base_score": 46,
-    "model": { "provider": "openai", "model": "gpt-5.4" },
+    "max_score": 40,
+    "total_base_score": 37,
+    "max_base_score": 40,
+    "model": { "provider": "anthropic", "model": "claude-sonnet-4-6" },
     "overview": ["Brief evidence-based overview."],
-    "total_score": 41,
+    "total_score": 37,
     "judge_llm_calls": 1
   }
 }
@@ -93,13 +93,13 @@ Graded transcripts additionally contain a top-level `grade` object:
 | ----- | ----------- |
 | `tutor_prompt` | Tutor system prompt version used |
 | `student_persona` | Student persona identifier (e.g. `chaotic_01`, `cooperative_02`) |
-| `course` | Course name: `philosophy` or `cities_and_climate_change` |
+| `course` | Course folder name under `curriculum/` (e.g. `cities_and_climate_change`, `mathematics_for_cs`, `meaning_of_life`, `physics_iii_vibrations_and_waves`, `intro_to_international_development_planning`) |
 | `exercise_number` | Exercise identifier within the course |
 | `turn_size` | Planned number of exchanges |
 | `turns` | Actual number of exchanges |
 | `exchanges` | Array of student-tutor exchange objects |
 | `grade.total_score` | Total points awarded by the judge |
-| `grade.max_score` | Maximum possible score (46 for rubric_05) |
+| `grade.max_score` | Maximum possible score (40 for the current `rubric_08`; 46 for the older `rubric_05`) |
 
 ## Student Personas
 
@@ -113,10 +113,16 @@ Each persona has multiple versions (e.g. `chaotic_01`, `chaotic_02`).
 
 ## Transcript Naming
 
-Files are named `transcript_NNNN.json` where `NNNN` is a zero-padded index
-(0001–9999). The same index across `_raw`, `_gpt`, and `_claude` folders
-corresponds to the same conversation — the graded versions are copies of
-the raw file with a `grade` object appended.
+Files are named `transcript_NN.json` where `NN` is a sequential index, zero-padded
+to **two digits** (`transcript_01`, `transcript_02`, …) and growing to three+ digits
+past 99 (`transcript_100`, …). Each persona-type `_raw/` folder numbers independently
+from `01`. The same index across `_raw`, `_gpt`, and `_claude` folders corresponds to
+the same conversation — the graded versions are copies of the raw file with a `grade`
+object appended.
+
+> Note: older transcripts from before June 2026 used four-digit padding
+> (`transcript_0001`); both forms may coexist in a folder. Numbering is set by
+> `_next_transcript_number()` in [`internal_ui/run_ui_raw.py`](../internal_ui/run_ui_raw.py).
 
 ## How Transcripts Are Generated
 

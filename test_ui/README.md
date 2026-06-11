@@ -37,10 +37,12 @@ Both apps can run side by side.
 The solid-blue **Edit context** button (top of the sidebar, above "Add email")
 opens a modal to choose:
 
-- **Course** — any folder under `curriculum/`
-- **Exercise** — exercises available for the chosen course
-- **Tutor prompt** — `tutor_01`–`tutor_05`
-- **Include course syllabus** — folds `syllabus.txt` into the tutor context (disabled for courses that have none)
+- **Course** — any folder under `curriculum/` (selectable)
+- **Exercise** — exercises available for the chosen course (selectable; repopulates when the course changes)
+- **Tutor prompt** — shown but **locked** here (stays on the conversation's tutor); use the **Create context** wizard to vary the tutor prompt
+- **Include course syllabus** — toggles whether `syllabus.txt` is folded into the tutor context (auto-disabled for courses that have none)
+
+> Course, Exercise, and the syllabus toggle are editable in this modal; only the Tutor prompt is locked. (Earlier the Course and syllabus controls were locked too — they were unlocked, and their lock icons removed, in June 2026.)
 
 Applying a change **starts a fresh conversation** under the new settings; the
 previous chat stays in history. The chosen syllabus flag is stored per

@@ -18,7 +18,7 @@ curriculum/
       ...
 ```
 
-- Each course is a subfolder (for example `philosophy/`, `cities_and_climate_change/`).
+- Each course is a subfolder (for example `cities_and_climate_change/`, `mathematics_for_cs/`).
 - `course.txt` stores shared course context.
 - `course_name.txt` holds the human-readable course title rendered in the `main_ui/` course banner (via `load_course_name()` in [main_ui/routes/_validation.py](../main_ui/routes/_validation.py)). If empty or absent, the banner renders blank.
 - `syllabus.txt` (optional) is appended to the assignment block in `main_ui/`'s context build (see [main_ui/services/tutor_bridge.py](../main_ui/services/tutor_bridge.py)).
@@ -29,11 +29,13 @@ curriculum/
 
 | Folder | Course | Exercises |
 | ------ | ------ | --------- |
-| `cities_and_climate_change/` | Cities and Climate Change: Mitigation and Adaptation (I, II and III) | 12 — case study city research + mitigation/adaptation planning; live in AskTIM for Spring 2026 |
-| `philosophy/` | Philosophy (ethics, moral reasoning) | 1 — trolley problem / act consequentialism |
-| `intl_dev_planning/` | International Development Planning | preview / scaffold |
-| `social_theory_city/` | Social Theory and the City | preview / scaffold |
-| `sustainable_econ_dev/` | Sustainable Economic Development | preview / scaffold |
+| `cities_and_climate_change/` | Cities and Climate Change: Mitigation and Adaptation (MIT 11.270x) | 12 — case study city research + mitigation/adaptation planning; **live in AskTIM for Spring 2026** |
+| `intro_to_international_development_planning/` | Introduction to International Development Planning (MIT 11.701) | 24 — 700–800 word reflection prompts |
+| `mathematics_for_cs/` | Mathematics for Computer Science (MIT 6.1200J) | 10 — discrete-math problem sets |
+| `physics_iii_vibrations_and_waves/` | Physics III: Vibrations and Waves (MIT 8.03SC) | 10 — vibrations/waves problem sets |
+| `meaning_of_life/` | The Meaning of Life (MIT 21A.157) | 3 — vignette + investigation + final reflection papers |
+
+The four courses beyond Cities and Climate Change were added in June 2026 as **cross-course test contexts** (two STEM, two humanities) to check how the tutor behaves across subjects. Only `cities_and_climate_change/` is deployed to real students.
 
 ## Adding a new course
 

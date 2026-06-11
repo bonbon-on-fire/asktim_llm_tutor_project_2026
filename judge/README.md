@@ -2,9 +2,11 @@
 
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
-Current defaults in code:
+Current defaults in code (`judge/run_judge.py`):
 - prompt: `judge_05`
 - rubric: `rubric_05`
+
+**Latest / recommended:** `judge_08` + `rubric_08` (40-point base, see [Rubric summary](#rubric-summary)). This is what recent runs grade with — pass `--prompt judge_08 --rubric rubric_08` (the in-code defaults above haven't been bumped). The Claude judge (`provider="claude"`) is the primary grader; GPT judging was paused (lower self-consistency).
 
 ## Structure
 
@@ -69,7 +71,7 @@ In `compiled grading`, rows for `faizan`/`romain`/`nishita` auto-pull deduction 
 from judge.run_judge import judge_transcript
 
 result = judge_transcript("chaotic/chaotic_gpt/transcript_01")
-print(result.total_score, result.max_score)  # e.g. 41, 46
+print(result.total_score, result.max_score)  # e.g. 37, 40 (rubric_08)
 ```
 
 You can also choose specific judge prompt + rubric versions:
@@ -113,7 +115,7 @@ python -m internal_ui.run_ui_judge --provider gpt --prompt judge_08 --rubric rub
 
 # --source-suffix reads from *_{suffix}/ instead of *_raw/
 # --output-suffix independently overrides the target folder suffix
-python -m internal_ui.run_ui_judge --provider claude --prompt judge_05 --rubric rubric_05 \
+python -m internal_ui.run_ui_judge --provider claude --prompt judge_08 --rubric rubric_08 \
   --source-suffix raw_tutor_05 --output-suffix tutor_05 --yes
 ```
 
@@ -122,15 +124,15 @@ each runner file (default: 6).
 
 ## Rubric summary
 
-For `rubric_05` (current):
-- `1. Pedagogy` (`1.1`-`1.3`): `24` max points
-- `2. Dialogue quality` (`2.1`-`2.2`): `12` max points
-- `3. Communication quality` (`3.1`-`3.2`): `10` max points
-- `Base total`: `46` max points
+For `rubric_08` (latest / recommended):
+- `1. Pedagogy` (`1.1`-`1.3`): `20` max points — `1.1` Socratic / no direct work (12), `1.2` scaffolding (6), `1.3` meta-learning (2)
+- `2. Dialogue quality` (`2.1`-`2.2`): `12` max points — `2.1` redundancy (4), `2.2` assignment anchoring (8)
+- `3. Communication quality` (`3.1`-`3.2`): `8` max points — `3.1` bite-sized/clear (4), `3.2` tone & formative framing (4)
+- `Base total`: `40` max points
 
-**Note**: `rubric_05` removed malus deductions. Total score equals base score.
+**Deductions only** — each sub-criterion starts at full points and loses points on evidence. The single biggest penalty is all 12 points of `1.1` if the tutor produces near-submission-ready work (the core "never give the answer" guarantee).
 
-Maximum total score: **46**.
+Maximum total score: **40** (`rubric_08`). The earlier `rubric_05` was **46** (Pedagogy 24 / Dialogue 12 / Communication 10); both removed malus deductions, so total score equals base score.
 
 ## Output contract (current)
 
