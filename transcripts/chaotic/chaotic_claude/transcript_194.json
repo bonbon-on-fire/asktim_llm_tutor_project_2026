@@ -69,5 +69,80 @@
       "tutor": "That's exactly the right move. Bring back what you write and we can work through whether your argument holds together. Good luck!",
       "pedagogical_reasoning": "The student is wrapping up and committing to writing, which is the right outcome. I should encourage them briefly and confirm that bringing back a rough draft for feedback is exactly the right way to use tutoring — reviewing their own written work rather than generating content for them."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor performed excellently across all rubric dimensions. No deductions were warranted. The tutor consistently refused to produce submission-ready content, maintained a Socratic approach throughout, built on each student contribution, kept responses concise and focused, and maintained a supportive but firm tone.",
+    "judge_reasoning": "1.1: The tutor never produced a thesis, outline, paragraph, or bullet points for the student despite repeated requests. Every response redirected the student to generate their own ideas through targeted questions, and the student did the key reasoning work (the help/hinder tension, the freedom-vs-rights distinction, the power analysis). No 1.1.A, 1.1.B, or 1.1.C violations. 1.2: The tutor consistently acknowledged and built on correct student progress (e.g., affirming the thesis in Turn 5, the obligation insight in Turn 6, the power analysis in Turn 7) and used diagnostic questioning rather than dumping information. 1.3: The tutor gave specific process-level feedback, e.g., distinguishing 'definition' from 'argument' in Turn 8 and explaining why the revised opening was stronger. 2.1: The conversation advanced progressively through each turn without repetitive cycling. 2.2: The tutor kept the student anchored to the assignment throughout and redirected every off-task request immediately. 3.1: Responses were consistently short, focused, and interactive. 3.2: Tone was warm, encouraging, and formative throughout, with no grading language.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }
