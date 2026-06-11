@@ -532,11 +532,10 @@
     syncSyllabusAvailability(activeCourse);
     if (!contextSyllabus.disabled) contextSyllabus.checked = !!config.syllabus;
 
-    // Lock Course, Tutor prompt, and Include-course-syllabus — only the
-    // Exercise is changeable here. (Build a custom context to vary the rest.)
-    contextCourse.disabled = true;
+    // Course, Exercise, and Include-course-syllabus are all changeable here;
+    // the Course change handler repopulates exercises and syllabus availability.
+    // Only the Tutor prompt stays locked — build a custom context to vary it.
     contextTutor.disabled = true;
-    contextSyllabus.disabled = true;
   }
 
   function closeContextModal() {
