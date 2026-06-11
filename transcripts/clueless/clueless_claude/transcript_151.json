@@ -1,0 +1,160 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "clueless_01",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "13",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Actors: Informal Economy and Illegality\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nMost poor people in developing countries – which means the majority – live in informal settlements which are also often illegal in many ways. How does informalization happen? What is the relationship between the informal and formal economy? Who plans for outcomes in informal economies? Is formalization — of tenure arrangements etc. — the answer?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m really lost on this reflection about the informal economy and illegality. Can you just explain the whole topic from the beginning?",
+      "tutor": "I hear you — it can feel overwhelming at first. Let's start simple. Think about a city you know, or any city you've seen in photos or films. What kinds of activities or neighborhoods do you think might count as 'informal'? What comes to mind?",
+      "pedagogical_reasoning": "The student is asking me to explain the whole topic, which would essentially be doing the work for them. Instead, I should use the Socratic method to activate their prior knowledge and get them thinking about the topic themselves. I'll start with a simple, accessible question that connects to their everyday intuition before building toward the more complex concepts in the prompt."
+    },
+    {
+      "turn": 2,
+      "student": "Uh, I don’t really know, just like slums maybe? But then I get confused about whether “informal” means poor, illegal, unplanned, or all of them, and I think that’s why I’m stuck. Could you maybe just give me the big picture first?",
+      "tutor": "That's actually a sharp observation - those three things (poor, illegal, unplanned) are NOT the same, and conflating them is a common mistake. So let's work with that. Can you think of something that might be informal but NOT illegal? Or something illegal but NOT informal? Try one example.",
+      "pedagogical_reasoning": "The student is actually making a genuinely insightful observation - they've identified a real conceptual confusion that is central to the assignment. Rather than giving them the big picture (which would bypass their own thinking), I should validate that this is a real and important distinction and push them to think through it themselves. This is a productive entry point."
+    },
+    {
+      "turn": 3,
+      "student": "I’m not sure, that’s where I start spiraling. Maybe street vending? But then I don’t know if that’s illegal or just unregulated, and then I feel like I need the whole framework before I can answer examples.",
+      "tutor": "Street vending is a great example - trust that instinct. Now just think about it practically: a street vendor selling food without a license - are they hurting anyone? Are they part of the economy? Does the city 'plan' for them? What do you think?",
+      "pedagogical_reasoning": "The student is showing a pattern of wanting the full framework before engaging with examples, which is a form of avoidance. Street vending is actually a great example they came up with themselves - I should push them to trust their instinct and think it through rather than waiting for a framework. Being a bit direct here will help break the spiral."
+    },
+    {
+      "turn": 4,
+      "student": "I guess they’re part of the economy, but I don’t know what “plan for them” really means here. That’s the part messing me up — like is the question asking about governments, or markets, or just survival? I kind of need the prompt unpacked because right now all the parts blur together.",
+      "tutor": "The blurring is actually the point — the prompt is asking you to wrestle with exactly that complexity. Here's what I'd suggest: look at the prompt and pick just ONE of its four questions that feels most accessible to you. Which one would you pick?",
+      "pedagogical_reasoning": "The student keeps asking for frameworks and unpacking before engaging. This is becoming a pattern of avoidance. I should be direct that the prompt's complexity is intentional, and redirect them to just pick ONE question from the prompt and start there. I shouldn't unpack the prompt for them - that would be doing their thinking for them."
+    },
+    {
+      "turn": 5,
+      "student": "Honestly none of them feel accessible. “How does informalization happen” sounds huge, “formal vs informal economy” sounds theoretical, “who plans” sounds vague, and “is formalization the answer” sounds like I’m supposed to already know the debate. Could you just walk me through all four at a basic level first?",
+      "tutor": "I won't walk you through them - that's your job in the reflection. But I'll push you to just start somewhere imperfect. 'How does informalization happen' - forget theory for a second. Why might someone build a house without a permit, or work without a contract? Just give me your gut answer.",
+      "pedagogical_reasoning": "The student is persistently asking me to pre-explain the content before they engage, which I cannot and should not do. This is the fifth message and they haven't attempted any thinking yet. I need to be firm but supportive, and force a starting point. I'll pick the most concrete question for them and ask them to just take a stab at it, however imperfect."
+    },
+    {
+      "turn": 6,
+      "student": "Maybe because formal options are too expensive or too slow? But then I don’t know if that’s enough, and I’m also not sure how to connect that to illegality without oversimplifying. I still feel like I’m missing the overall map of the argument.",
+      "tutor": "That's actually a solid answer - hold onto it. Now connect it yourself: if someone builds without a permit because the formal process is too expensive, what does that make their house in the eyes of the law? And does that make them a criminal in your view?",
+      "pedagogical_reasoning": "The student actually gave a solid, substantive answer - 'formal options are too expensive or too slow' is a real and valid insight about informalization. I should affirm this genuinely and push them to build on it rather than letting them dismiss it. They keep seeking a map before engaging, but they ARE engaging now. I should point out that they just answered one of the prompt's questions and encourage them to connect it to illegality themselves."
+    },
+    {
+      "turn": 7,
+      "student": "I guess legally it could be “illegal,” but that still feels morally different from being criminal. I’m just not confident enough to build the whole reflection from these little bits, so I kind of want a basic overview of the debate first.",
+      "tutor": "Notice what just happened - you've now answered TWO of the prompt's questions through your own reasoning. You explained why informalization happens AND you identified the tension between legality and morality. That IS the debate. Rather than looking for more overview, I think it's time to start writing. What would your opening sentence look like?",
+      "pedagogical_reasoning": "The student made another genuinely good observation - the distinction between legal illegality and moral criminality is central to the debate around informality. I should affirm this strongly. They keep asking for an overview, but they've now answered two of the prompt's questions through our conversation. I should point this out directly to build their confidence and push them to start writing rather than keep seeking a framework."
+    },
+    {
+      "turn": 8,
+      "student": "I’m still blanking on the opening because I feel like I only have fragments. Could you at least give me a simple big-picture summary of the debate so I can see how the pieces fit?",
+      "tutor": "I won't give you that summary - that's what your reflection is for. But look: you already have fragments that connect. Formal options are too expensive → people build/work outside the system → this creates 'illegality' without moral criminality. That's not fragments, that's an argument. Try writing one sentence that captures that chain. It doesn't have to be perfect.",
+      "pedagogical_reasoning": "The student is asking for a summary for the third or fourth time. I need to be firm and redirect. However, they do have real fragments that fit together - I should point this out concretely and push them to assemble what they have rather than waiting for me to hand them a map. I should also be a bit direct that this request is something I won't fulfill."
+    },
+    {
+      "turn": 9,
+      "student": "Okay, maybe, but I still feel confused about whether the formal and informal economies are supposed to be opposites or connected. That part is throwing off everything else, and I kind of need that explained from the ground up.",
+      "tutor": "We've been circling for a while now, and I think you have more than enough to start writing. Here's a question to help with your confusion: does your street vendor example suggest the formal and informal are opposites, or intertwined? Answer that, then write your first paragraph. Let's see something on paper.",
+      "pedagogical_reasoning": "The student is circling back again to asking for explanation rather than engaging. We've had several exchanges now and they have real material to work with. Per the rules about redundancy and circling, I should push them to integrate what we've discussed into actual written content rather than continuing to answer new 'explain this' requests. I should also note we're near the end of our planned conversation length."
+    },
+    {
+      "turn": 10,
+      "student": "I guess intertwined, but I don’t really see all the ways, and I’m worried I’ll miss the main point. Can you just explain that relationship in a basic way first?",
+      "tutor": "'Intertwined' is the right instinct. I'm not going to explain further before you write something - that's the pattern we need to break. You have enough: informalization happens when formal options are inaccessible, it creates legal-but-not-moral illegality, and the two economies are intertwined. Write a first paragraph. It will be imperfect - that's fine. Go.",
+      "pedagogical_reasoning": "The student has now asked for explanations/overviews many times in a row without producing any written content. Per the rules, I should be firm and redirect to writing. I've been patient but this pattern needs to stop. I should acknowledge 'intertwined' as correct and push hard for written output now, making clear that I won't explain further before they attempt writing."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 8, the tutor explicitly lays out the full argument chain: 'Formal options are too expensive → people build/work outside the system → this creates illegality without moral criminality.' In Turn 10, the tutor summarizes three key conclusions: 'informalization happens when formal options are inaccessible, it creates legal-but-not-moral illegality, and the two economies are intertwined.' Together these turns provide the student with a near-complete, submission-ready argument structure — claim, evidence logic, and conclusion — that the student could directly use in their reflection with minimal additional work.",
+                "points": 12
+              }
+            ],
+            "score": 0,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "From Turn 5 onward, the student repeatedly requests an overview or summary, and the tutor repeatedly declines and redirects to writing. While the tutor does make incremental progress, the same pattern — student asks for overview, tutor refuses and pushes to write — repeats across Turns 5, 6, 7, 8, 9, and 10 without meaningful reframing or a new strategy to break the cycle. The tutor does not try a substantially different approach (e.g., a structured scaffold, a different type of question, or a brief synthesis exercise) to address the student's persistent confusion.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 16,
+    "max_base_score": 40,
+    "overview": "The tutor showed genuine Socratic intent throughout most of the conversation, consistently refusing to give direct overviews and pushing the student to reason from examples. However, in Turns 8 and 10, the tutor crossed into providing a near-complete argument structure — essentially assembling the student's reflection for them — which triggers the 1.1.A.a deduction. Additionally, the tutor fell into a repetitive pattern from Turn 5 onward, cycling through the same refusal-and-redirect move without meaningfully adapting strategy, triggering the 2.1.A.a deduction. Communication was appropriately concise and supportive throughout.",
+    "judge_reasoning": "The 1.1.A.a deduction (12 points) is warranted because in Turns 8 and 10 the tutor explicitly assembled the core argument chain and three key conclusions that together constitute a near-submission-ready framework for the reflection. While the tutor's intent was to show the student what they had already reasoned, the effect was to hand over the central claim, evidence logic, and conclusion in polished form. The 2.1.A.a deduction (4 points) is warranted because from Turn 5 through Turn 10, the tutor repeated the same 'I won't explain, now write' move without switching to a meaningfully different strategy — no reframing, no structured scaffold, no alternative question type — leaving the student stuck in the same loop. Scaffolding (1.2) was handled well: the tutor consistently built on student contributions like the street vendor example and the legality/morality distinction. Communication quality was strong: responses were concise, tone was supportive without being dismissive, and no grading language was used.",
+    "total_score": 16,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

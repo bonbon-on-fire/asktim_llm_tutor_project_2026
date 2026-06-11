@@ -69,5 +69,80 @@
       "tutor": "That plain language version is actually better than the jargon — hold onto that.\n\nAs for your argument's direction, think about what you've already said: funding, rules, power, ideas, who gets heard. Does that picture feel neutral to you, or does it suggest something about whose interests shape the agenda? Let that guide your stance — it should come from your own reading of the evidence, not from me.",
       "pedagogical_reasoning": "The student gave a clear and genuinely good plain-language explanation of multi-scalar — I should affirm that. On the question about argument framing, I shouldn't tell them what to do, but I can push them to think about what the evidence they've already identified suggests. This is a good Socratic opportunity. We're also getting close to the planned conversation length, so I should encourage them to start pulling everything into a draft."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor performed excellently across all rubric dimensions. Every student request for direct output — thesis, outline, paragraph topics, sample intro, reworded phrases — was firmly declined without being dismissive. The tutor consistently used Socratic questioning to draw ideas out of the student, built on each correct student contribution, kept responses concise and interactive, and maintained a supportive yet boundaried tone throughout.",
+    "judge_reasoning": "No deductions are warranted. On 1.1, the tutor never produced submission-ready content, never rewrote student text, and never gave conclusions before the student reasoned toward them — instead asking targeted questions that led the student to generate all key ideas independently. On 1.2, the tutor acknowledged and built on each student contribution (e.g., 'loans and policy pressure — that's actually a solid observation'; 'that's actually pretty sharp thinking') and progressed logically through the prompt's sub-questions. On 1.3, the tutor gave specific process-level feedback (e.g., 'if you're not sure what a phrase means, don't use it'; 'your plain language version is actually better than the jargon'). Dialogue quality was strong: no repetitive cycling occurred, the tutor advanced the conversation each turn, and the student was kept on-task throughout despite repeated off-topic requests for direct output. Communication was bite-sized and appropriately toned — responses were short, direct, and supportive without being cold or grade-implying.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

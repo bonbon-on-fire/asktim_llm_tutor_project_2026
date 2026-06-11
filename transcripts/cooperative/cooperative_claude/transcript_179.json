@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_02",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "18",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Migration and Development\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nHow is migration related to development? To what extent are remittances the \"new development mantra\"? What role can states play in promoting the migration-development nexus? How can a scalar approach help us in identifying the development impacts of transnational migration? How does a transnational optic help us understand and uncover the links between development and migration?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I’m trying to figure out this reflection on migration and development. I get the general topic, but I’m not sure how to organize my response to the prompt, especially the parts about remittances, the state, and the scalar/transnational ideas.",
+      "tutor": "Good place to start! Before thinking about organization, let's make sure the core ideas are clear. The prompt has several questions, but they all connect. What do you think is the most fundamental question among them — the one that the others seem to build on?",
+      "pedagogical_reasoning": "The student is at the start of the assignment and asking for organizational guidance. Rather than providing a structure for them, I should use the Socratic method to help them think about what they already know and how the prompt's questions relate to each other. I'll ask a targeted question to get them thinking about the core relationship first, which will naturally lead to the rest of the structure."
+    },
+    {
+      "turn": 2,
+      "student": "I think the basic question is just how migration and development affect each other. The remittances/state/scalar/transnational parts seem like different ways of explaining that relationship, but I’m not totally confident I’m reading it right.",
+      "tutor": "That's a solid read of the prompt. So, what do you actually think — how does migration relate to development? What's your instinct on whether the relationship is straightforward or more complicated?",
+      "pedagogical_reasoning": "The student has correctly identified the core relationship and the supporting nature of the other questions. This is good progress. I should affirm this briefly and push them to think more concretely about what they actually know about the migration-development relationship, rather than giving them organizational advice. This will help them build substance for their paper."
+    },
+    {
+      "turn": 3,
+      "student": "My instinct is that it’s definitely not straightforward. Migration can help development through remittances, skills, and networks, but it can also create dependency or brain drain, so it seems more like a two-way relationship than a simple good/bad one.",
+      "tutor": "Good instinct — that tension is exactly what makes this topic interesting. Now, the prompt specifically asks about remittances as the 'new development mantra.' Why do you think remittances might be described that way, and what might be problematic about that framing?",
+      "pedagogical_reasoning": "The student is showing good substantive thinking - they've identified both positive and negative dimensions of the migration-development nexus. I should affirm this and push them toward the next component of the prompt: remittances as the 'new development mantra.' This will help them build momentum through the prompt's questions naturally."
+    },
+    {
+      "turn": 4,
+      "student": "I think it means people started treating remittances like this big solution for development, almost like if migrants send money home then development will just happen. What seems off is that remittances are private household money, so they might reduce poverty for some families but not fix structural stuff like jobs, infrastructure, or inequality.",
+      "tutor": "That's a sharp observation — the gap between household-level relief and structural change is a key critique. That actually sets up the next question nicely: if remittances alone can't address structural issues, what role could the state play in turning migration into broader development gains?",
+      "pedagogical_reasoning": "The student is making a strong analytical point about the limitations of remittances as a development tool. This is excellent thinking that directly addresses the 'mantra' critique. I should affirm this and connect it naturally to the next prompt question about the state's role, which flows logically from the student's own observation about structural limitations."
+    },
+    {
+      "turn": 5,
+      "student": "I think the state could make policies that channel migration benefits better, like protecting migrants, lowering remittance transfer costs, or investing in services and jobs so remittances aren’t doing all the work. Maybe also working with diaspora communities? I’m a little fuzzy on whether that counts as “promoting the nexus” or if I’m being too general.",
+      "tutor": "Those are relevant examples. Here's a question to sharpen your thinking: is the state always well-positioned to promote this nexus, or are there reasons it might struggle or even work against migrants' interests? That tension might make your argument more nuanced than just listing policy tools.",
+      "pedagogical_reasoning": "The student has generated solid concrete examples of state roles and is self-aware about being potentially too general. Rather than validating or critiquing the level of generality, I should push them to think more critically about what 'promoting the nexus' actually means conceptually, which will sharpen their analysis. I also want to keep momentum toward the scalar/transnational parts of the prompt which haven't been addressed yet."
+    },
+    {
+      "turn": 6,
+      "student": "Yeah, I don’t think the state is automatically helpful. Some states might depend on remittances and kind of offload responsibility onto migrants, or they might have weak capacity, corruption, or policies that mainly serve elites instead of migrant households. So I guess the state matters, but its role is political and uneven, not just technical.",
+      "tutor": "That's a much more nuanced take — 'political and uneven' is a strong framing. Now let's tackle the parts you said you were less sure about. When the prompt asks about a 'scalar approach,' what do you think that means in the context of migration and development?",
+      "pedagogical_reasoning": "The student is developing a sophisticated political economy lens on the state's role, moving beyond a naive technocratic view. This is excellent analytical progress. We've now covered the first three prompt questions fairly well. I should affirm briefly and pivot to the scalar and transnational parts, which haven't been touched yet and are conceptually distinct enough to need attention."
+    },
+    {
+      "turn": 7,
+      "student": "I think it means looking at different levels, like household, community, city/region, nation, maybe even global. I’m not fully sure how to use it, but maybe the point is that migration can help at one scale and hurt at another, so if I only look nationally I’d miss a lot.",
+      "tutor": "Exactly right — and that multi-scale tension is the analytical payoff. Can you think of a concrete example where migration looks like a success at one scale but a problem at another?",
+      "pedagogical_reasoning": "The student has grasped the core logic of scalar analysis well. I should affirm this and push them to make it concrete with an example, which will help them write about it more confidently. Then I can move to the transnational optic, the last major concept."
+    },
+    {
+      "turn": 8,
+      "student": "Maybe remittances help a household pay for school or housing, but at the community level they can create inequality between families who get them and families who don’t. And nationally, a state might benefit from foreign exchange, but locally a village could lose working-age people or skilled workers.",
+      "tutor": "Those are strong examples that really illustrate the scalar argument. Last major concept: the prompt asks about a 'transnational optic.' How do you think that differs from just looking at migration as a one-way move from country A to country B?",
+      "pedagogical_reasoning": "The student has produced a concrete and well-reasoned scalar example. This is excellent. We're now close to the end of the planned conversation length and the transnational optic hasn't been addressed yet. I should affirm briefly and move directly to that last concept so the student can integrate everything."
+    },
+    {
+      "turn": 9,
+      "student": "I think a transnational optic means migrants don’t just leave one place and fully arrive in another — they stay connected across borders through money, care, politics, ideas, and social networks. So development isn’t happening in just one country at a time; it’s shaped by these ongoing cross-border ties.",
+      "tutor": "That's a strong grasp of the transnational concept — the idea of ongoing, multi-directional ties rather than a clean departure and arrival is key. You've now worked through all the major components of the prompt. It's time to start putting this into writing. Try drafting your reflection using the ideas you've developed here — what's your opening argument going to be?",
+      "pedagogical_reasoning": "The student has now covered all five components of the prompt with solid analytical thinking. We're at the end of the planned conversation length. This is a natural moment to ask them to integrate everything into a written attempt rather than continuing to discuss. Per the rules, after 3+ exchanges building ideas, I should prompt them to synthesize in writing."
+    },
+    {
+      "turn": 10,
+      "student": "I think my opening argument is that migration and development have a reciprocal but uneven relationship: migration can support livelihoods and create flows of money, skills, and networks, but its development effects depend on scale, state action, and transnational connections. I’m still not sure how to turn that into a clean thesis sentence without sounding too broad.",
+      "tutor": "I can't help you write or refine the sentence — that's your job. But ask yourself: what's the single most important condition that determines whether migration supports development? If you can answer that, your thesis might sharpen itself.",
+      "pedagogical_reasoning": "The student has a solid thesis concept but is asking me to help them write or polish it, which I must refuse per the rules. I should redirect them to work on it themselves while giving them a concrete question to think about that might help them tighten it without me doing the writing for them."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic practice throughout all ten exchanges. No submission-ready content was provided; the student generated all key ideas through guided questioning. The tutor built progressively on each student response, maintained appropriate tone, kept responses concise and focused, and explicitly declined to write or refine the student's thesis sentence in the final turn. No meaningful deductions were warranted under any rubric criterion.",
+    "judge_reasoning": "Under 1.1, the tutor never gave a final answer or near-submission-ready content; every substantive idea (remittance critique, state limitations, scalar examples, transnational optic) was elicited from the student through targeted questions. Under 1.2, the tutor consistently acknowledged and built on correct student progress (e.g., affirming 'political and uneven' framing before advancing to the next concept) and used diagnostic questions rather than method dumps. Under 1.3, the tutor provided process-level feedback (e.g., suggesting the state-role argument needed more nuance than 'listing policy tools'). Dialogue quality was strong: the conversation advanced steadily without repetition, stayed anchored to the prompt throughout, and redirected the student toward the assignment at every turn. Communication was bite-sized and supportive, with no monologues, no grading language, and a consistently encouraging tone.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

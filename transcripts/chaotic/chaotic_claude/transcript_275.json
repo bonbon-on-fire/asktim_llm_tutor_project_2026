@@ -1,0 +1,154 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_06",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "17",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Urban-Rural Linkages and Tradeoffs\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat do we make of the urban bias thesis in development? Should countries focus more on linkages that strengthen urban or rural development? What's the impact of industrial growth on class formation and urbanization?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, i need help w a 700–800 word reflection on urban bias in development, and i'm kinda stuck rn. can u just help me get a solid answer down fast?",
+      "tutor": "Hey! Happy to help you work through this — but just so we're on the same page, my job is to help you build your own answer, not write it for you. That's actually better for your learning anyway.\n\nSo let's start simple: what do you already know or think about the 'urban bias thesis'? What's your gut understanding of what it's arguing?",
+      "pedagogical_reasoning": "The student wants a quick answer, which goes against the core rules of never providing solutions and always involving the student in the process. I need to redirect them toward thinking for themselves using the Socratic method. I'll acknowledge their request but set clear boundaries, then ask an opening question to get them thinking about the core concept of urban bias."
+    },
+    {
+      "turn": 2,
+      "student": "tbh i know it’s basically saying states favor cities over villages, but i need smth sharper. can u give me a tight thesis i can use almost word-for-word?",
+      "tutor": "I can't write your thesis for you — that part has to come from you. But you're actually closer than you think!\n\nYou said states 'favor cities over villages.' Now ask yourself: *why* would a state do that, and *who benefits*? If you can answer that, you're halfway to a sharp thesis already.",
+      "pedagogical_reasoning": "The student is asking me to write their thesis for them, which I must refuse. This is a clear boundary I need to set. However, I can push them to sharpen their own thinking by asking a targeted Socratic question that builds on what they already said — they have the right basic idea about urban bias, so I should help them dig one level deeper to develop their own sharp thesis."
+    },
+    {
+      "turn": 3,
+      "student": "maybe bc elites, industry, and political pressure are concentrated in cities? ngl can u turn that into 1 clean arguable sentence tho?",
+      "tutor": "That's a solid insight — you've identified the key actors and their motivations. Now *you* put it together. You have the pieces: elites, industry, political pressure, cities. Try writing one sentence that makes a claim about what urban bias is and why it exists. It doesn't have to be perfect on the first try.",
+      "pedagogical_reasoning": "The student has made a genuinely good observation connecting urban bias to elite concentration and political power. However, they're again asking me to write for them, which I must refuse. I should affirm their thinking and push them to make the leap themselves — they clearly have the ingredients, they just need to assemble them into a sentence on their own."
+    },
+    {
+      "turn": 4,
+      "student": "ok how’s this: urban bias happens bc political and economic elites cluster in cities and shape policy for their own interests, often at rural people’s expense. can u polish it so it sounds more academic?",
+      "tutor": "That's a good thesis — it's clear and arguable. But polishing it is your job, not mine.\n\nAsk yourself: what makes writing sound 'academic' to you? Is it word choice, specificity, or something else? What would *you* change about it?",
+      "pedagogical_reasoning": "The student has written a genuinely good thesis statement on their own. However, they're asking me to polish it, which falls under writing/editing for the student — something I must refuse per the rules. I should affirm the quality of their work and redirect them toward refining it themselves by asking a targeted question about what 'academic' means to them or what they think is missing."
+    },
+    {
+      "turn": 5,
+      "student": "maybe “urban bias reflects the concentration of political and economic power in cities”? idk, but i’m on a deadline so can u just rewrite that one sentence cleanly fr?",
+      "tutor": "I won't rewrite it — that's your work to do, deadline or not.\n\nBut here's something worth noticing: your *first* version actually had more in it than your second. What did you drop between the two? Compare them side by side.",
+      "pedagogical_reasoning": "The student is again asking me to rewrite their sentence, which I must firmly refuse. Importantly, their revision is actually slightly weaker than their previous attempt — it dropped the key idea about policy being shaped at rural people's expense. I should be honest about that and redirect them to compare their two attempts, which is a useful Socratic move that keeps them doing the work."
+    },
+    {
+      "turn": 6,
+      "student": "i dropped the part abt elites shaping policy for themselves and rural ppl paying the cost. can u at least give me 2–3 alternate phrasings so i can pick one?",
+      "tutor": "No alternate phrasings from me — you already know exactly what's missing. You just identified it yourself.\n\nSo just put it back in. Take your second version and add those two elements back. You've got this.",
+      "pedagogical_reasoning": "The student correctly identified what they dropped, which is good analytical thinking. However, they're again asking me to write for them — providing alternate phrasings would be doing the writing work. I need to firmly refuse while redirecting them to put the pieces back together themselves. They already know what's missing, so the next step is simple: add it back in."
+    },
+    {
+      "turn": 7,
+      "student": "ok then can u at least give me a sample intro structure i can basically follow line by line?",
+      "tutor": "That's not something I'll provide — a line-by-line structure would just be me writing your paper.\n\nYou have a thesis. Now look at the prompt: it asks three things. What are they, and which one does your thesis address most directly?",
+      "pedagogical_reasoning": "The student is now asking for a template to follow line by line, which is essentially asking me to do the structural writing work for them. I need to refuse this clearly. However, I don't want to just say no — I should redirect them back to the actual assignment. They have a thesis now; the natural next step is to think about what the prompt is actually asking them to address. I'll pivot to the content of the reflection to keep momentum going."
+    },
+    {
+      "turn": 8,
+      "student": "it asks abt urban bias, whether to prioritize urban or rural linkages, and industrial growth’s effect on class formation + urbanization. tbh if u can’t write it, can u at least tell me the position that’d be easiest to defend?",
+      "tutor": "Good — you've correctly broken down the prompt. But choosing your position is your job, not mine.\n\nYou already have a thesis that leans in a certain direction. Looking at those three questions, what position does *your thesis* naturally push you toward on the urban vs. rural linkages question?",
+      "pedagogical_reasoning": "The student correctly identified the three parts of the prompt, which is good progress. However, they're asking me to choose their argument for them, which I should refuse. Instead, I should push them to make that choice themselves by asking what their own reading and thinking suggests. This is a core part of the Socratic method — the student needs to take an intellectual position, not be handed one."
+    },
+    {
+      "turn": 9,
+      "student": "prob that countries shouldn’t just pick one side and should build linkages, but still correct urban bias where rural areas got neglected. can u tell me if that’s defensible at least?",
+      "tutor": "That's a thoughtful and nuanced position — it avoids a false binary, which is good. \n\nNow, what would make it *defensible*? What kind of evidence or reasoning from your readings would you point to to back that up?",
+      "pedagogical_reasoning": "The student has arrived at a substantive and nuanced position on their own — that's genuine intellectual progress worth acknowledging. I should affirm it without grading it, and push them to think about what evidence or reasoning would make it defensible. This moves the conversation toward building the body of their paper. We're about 8 exchanges in, so I should also start nudging them toward actually writing."
+    },
+    {
+      "turn": 10,
+      "student": "yeah like ag-food supply chains, migration/remittances, market access, and how industry can create jobs but also deepen inequality. can u help me turn those into 3 body paragraph claims rq?",
+      "tutor": "You've got a thesis, a clear position, and solid supporting evidence. That's everything you need to start writing.\n\nRather than breaking it into claims for you, I think it's time to put it together yourself. Take what you've built in this conversation and write a draft. What's stopping you from starting right now?",
+      "pedagogical_reasoning": "The student has identified strong, relevant evidence from the course material. However, they're asking me to turn these into paragraph claims for them, which crosses into writing the paper. We're also at exchange 9 of 10, and the student has now accumulated enough material — a thesis, a position, and supporting evidence — to start writing. I should push them to integrate all of this into a written attempt rather than continuing to extract pieces from me. This aligns with the rule about asking students to integrate after 3 messages on similar ideas."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "The tutor consistently affirms student contributions ('That's a solid insight,' 'That's a good thesis,' 'That's a thoughtful and nuanced position') without providing specific process-level feedback on how the student is thinking or how to improve their reasoning methodology. Praise is given without explaining what makes the approach strong or what methodological habits to develop.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 18,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 40,
+    "overview": "The tutor performed very well overall, consistently refusing to do the student's work and redirecting toward student-led reasoning throughout all ten turns. The Socratic approach was well-maintained, scaffolding was progressive, and the dialogue stayed on-task. The one deduction applied is for meta-learning feedback: while the tutor praised student contributions repeatedly, it did not offer specific process-level guidance on what made the student's reasoning approach strong or how to improve it methodologically.",
+    "judge_reasoning": "Criterion 1.1 receives full marks: the tutor never provided a thesis, alternate phrasings, body paragraph claims, or any near-submission-ready content, consistently redirecting the student to do the work themselves. Criterion 1.2 receives full marks: the tutor built on student progress turn by turn (e.g., noting what the student dropped between versions in Turn 5) and asked diagnostic questions before responding. Criterion 1.3 loses 2 points under 1.3.A.b: affirmations like 'That's a good thesis' and 'That's a thoughtful and nuanced position' are too vague to improve the student's method — the tutor never explained what makes a thesis arguable, what constitutes strong evidence use, or how to structure reasoning in this genre. Dialogue quality and communication quality are both full marks: the tutor stayed on-task, avoided repetition, kept responses concise, and maintained a supportive tone throughout.",
+    "total_score": 38,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

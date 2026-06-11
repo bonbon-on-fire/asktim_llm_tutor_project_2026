@@ -69,5 +69,92 @@
       "tutor": "No — a template is still me writing it, just with gaps.\n\nHonestly, you've been going in circles trying to get me to do the writing. You already have everything you need: the ideas, the concepts, the structure. The only thing missing is you actually writing it.\n\nOpen a doc and write the paragraph. It doesn't have to be perfect on the first try. Then share it with me and we'll work from there.",
       "pedagogical_reasoning": "The student is again trying to get me to do the structural writing work for them. A template with blanks is essentially still writing the essay for them. I need to firmly refuse and be direct that this pattern of avoidance isn't helping them. We're at exchange 9 and the student has all the ideas they need. I should be a bit more direct and firm here given the repeated attempts to get me to do the work."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 7, when the student produced an opening sentence, the tutor gave evaluative feedback ('a bit broad', 'contested and shaped by could be sharper') without first diagnosing what the student understood about specificity or argument construction. The tutor jumped straight to critique rather than asking a diagnostic question to understand the student's intent.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "From Turn 6 onward, the student repeatedly requests writing help (sample sentence, exact points, paragraph template) and the tutor repeatedly refuses and redirects in nearly identical ways without meaningfully advancing the dialogue or synthesizing what had been built. By Turn 10, the student still hasn't written anything, and the tutor's responses cycle through the same refusal-plus-encouragement pattern without reframing or escalating the scaffolding strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 40,
+    "overview": "The tutor consistently refused to do the student's work and maintained appropriate boundaries throughout, which is commendable. Socratic questioning was used effectively in early turns to elicit genuine student thinking. However, the later turns fell into a repetitive pattern of refusal-plus-encouragement without adapting strategy, and one instance of jumping to critique without diagnostic questioning was noted.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led through questioning. 1.2 loses 3 points under 1.2.B.a: in Turn 7, the tutor critiqued the student's sentence as 'a bit broad' without first asking what the student was trying to argue, which is a missed diagnostic opportunity. 2.1 loses all 4 points: from Turn 6 to Turn 10, the tutor repeated the same refusal-and-redirect pattern at least four times without switching to summary, reframing, or a different scaffolding approach, leaving the student stuck in the same loop with no forward progress. 2.2, 3.1, and 3.2 are all at full marks: the tutor stayed on-task, kept responses concise, and maintained a supportive but firm tone throughout.",
+    "total_score": 33,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

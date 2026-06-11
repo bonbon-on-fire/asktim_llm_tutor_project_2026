@@ -69,5 +69,80 @@
       "tutor": "That's a solid distinction. But the prompt also asks about the *boundary* of civil society — meaning, where does civil society's role end? Does it vary by context?\n\nYou have enough to start writing now. Stop planning and start drafting — you have all the ingredients.",
       "pedagogical_reasoning": "The student has a good distinction between social movements and NGOs. I should affirm the insight but push them to think more deeply about the 'boundary of civil society' part of the prompt, which they haven't addressed yet. I also notice we're approaching the end of our planned 10-exchange conversation, so I should encourage them to start writing. I'll be brief and push them toward actually drafting."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor performed excellently across all rubric dimensions. No deductions were warranted. The tutor consistently refused to write thesis statements, paragraphs, or outlines for the student, instead redirecting the student to generate their own ideas. Scaffolding was progressive and built on the student's own contributions each turn. Responses were concise, appropriately supportive, and never crossed into grading or evaluative framing.",
+    "judge_reasoning": "1.1: The tutor never provided submission-ready content, rewrote student text, or gave conclusions before the student reasoned through them. Every turn pushed the student to articulate their own ideas. 1.2: The tutor consistently built on what the student had already produced (e.g., referencing their own prior messages in Turn 7) and asked targeted questions rather than dumping information. 1.3: The tutor gave process-level feedback, e.g., pointing out that 'only in some cases' and 'create problems' were vague and prompting the student to be more specific. 2.1: The conversation progressed meaningfully each turn without repetitive cycling. 2.2: The tutor kept the student anchored to the assignment throughout, redirecting every off-task request. 3.1: Responses were short, focused, and interactive. 3.2: Tone was warm and encouraging without being dismissive or implying formal grading.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_01",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "03",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Concepts: Pro versus Anti-Development\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat do we make of anti-development arguments? Are they utopian or nihilist or neither? Can one be anti-development and still plan? What are the justifications for planning? Or is the division between pro and anti too Manichean? Why certain types of anti-planning arguments emerged at certain times? What was the historical context in which these criticisms emerged? What explains the rise, fall and now the latest rise of anti-development arguments?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I’m working on a 700–800 word reflection on pro vs anti-development arguments, and I’m honestly not sure how to frame it. I think the prompt is asking whether anti-development is just rejecting planning, but I’m not confident—can you help me figure out a good angle?",
+      "tutor": "Good starting point! Before we think about framing, let's make sure you have a handle on the key concepts. In your own words, what do you think 'anti-development' actually means? What would someone who holds that view believe?",
+      "pedagogical_reasoning": "The student is at the very beginning and asking for framing help. Rather than giving them an angle, I should use the Socratic method to get them to engage with the prompt's core questions first. I'll ask them what they understand by 'anti-development' to see what they already know and build from there. Minimal scaffolding is appropriate here."
+    },
+    {
+      "turn": 2,
+      "student": "I think anti-development means being against the usual idea of development as economic growth and modernization, especially when it’s imposed from the top down. Maybe that view says development can reproduce inequality, outside control, or even colonial power, but I’m not fully sure if that also means rejecting all planning.",
+      "tutor": "That's a good instinct — you've identified something important about the critique being aimed at a specific *kind* of development, not necessarily development as such. So here's the key tension the prompt is pointing to: if someone rejects top-down, growth-focused, externally-imposed development... does that mean they reject *all* planning? Or could they still support some other form of it?",
+      "pedagogical_reasoning": "The student has given a solid intuitive answer that captures key anti-development themes (top-down imposition, inequality, colonial power). I should affirm this and then push them to engage more directly with the prompt's core tension: can one be anti-development and still plan? This is a central question in the prompt and will help them find their angle naturally."
+    },
+    {
+      "turn": 3,
+      "student": "I’m leaning toward saying they could still support some form of planning, just not state-led or technocratic planning that treats people like objects. But I get a little confused here, because planning still sounds like power from above to me—how do I separate “planning” from “imposition”?",
+      "tutor": "Good tension to sit with. Let me push back with a question: what do you think makes an exercise of power *legitimate* versus an *imposition*? Think about what the course has emphasized about planning, power, and legitimacy — does the *source* of the planning matter? The *process*? The *goals*?",
+      "pedagogical_reasoning": "The student is grappling with a genuinely interesting conceptual tension. Rather than explaining the distinction for them, I should push them to think about what makes planning legitimate or not — this will help them work through the power/imposition distinction themselves and connect to the course's themes of legitimacy and power."
+    },
+    {
+      "turn": 4,
+      "student": "I guess legitimacy could come from who decides, how decisions get made, and who benefits. So maybe planning feels less like imposition if it’s participatory, locally grounded, and accountable, instead of being designed by elites, the state, or donors and pushed onto people.",
+      "tutor": "That's a meaningful distinction. Now look back at the full prompt — it asks whether anti-development arguments are *utopian*, *nihilist*, or neither. Given what you just said, how would you characterize them? And does the answer change depending on *which* anti-development thinkers or movements you're looking at?",
+      "pedagogical_reasoning": "The student has landed on a solid and substantive answer that connects to course themes. Now I should push them to connect this reasoning back to the prompt's specific questions, particularly the 'utopian or nihilist or neither' framing and the historical context question. We're about 4 exchanges in and they have the conceptual groundwork — time to move toward the full prompt."
+    },
+    {
+      "turn": 5,
+      "student": "I don’t think they’re automatically nihilist, because a lot of the critique seems to be “this model of development is harmful,” not “nothing should ever change.” Maybe some versions sound utopian if they imagine local autonomy without dealing with real power constraints, but I’m not sure how to say that without oversimplifying.",
+      "tutor": "That's a nuanced take — and the tension you're identifying between 'locally grounded critique' and 'real power constraints' is worth keeping in your paper. Now, the prompt also asks about *historical context*: why did certain anti-development arguments emerge when they did? What do you know about the period when these critiques became prominent?",
+      "pedagogical_reasoning": "The student is making a nuanced and thoughtful point. They're getting close to a real argument. I should affirm this and push them toward the historical context question in the prompt, which they haven't touched yet. This is also a good moment to remind them that the prompt asks specifically about why anti-development arguments emerged at certain historical moments — connecting ideas to context will strengthen their reflection considerably."
+    },
+    {
+      "turn": 6,
+      "student": "I think a lot of them became stronger after postcolonial state-led development projects started disappointing people, and maybe after Cold War modernization ideas lost credibility. Is it fair to connect anti-development to failed large-scale planning, debt crises, structural adjustment, and frustration with how outside experts defined progress?",
+      "tutor": "Yes, that's a historically grounded connection. Now the prompt asks about something more specific: the *rise, fall, and latest rise* of anti-development arguments. You've explained the rise — but what do you think caused a *fall* in these critiques at some point? And what might explain their *return* more recently?",
+      "pedagogical_reasoning": "The student has made a strong historical connection. I should affirm this and push them to think about the 'rise, fall, and latest rise' arc the prompt specifically mentions — they've covered the rise but haven't addressed the fall or the latest rise. This will help them build a more complete argument for their paper."
+    },
+    {
+      "turn": 7,
+      "student": "I’m kinda stuck on the “fall” part. Maybe anti-development critiques lost traction when neoliberalism took over and the debate shifted from big state planning to markets and governance, so the target changed? And the recent return could be because people are criticizing development again through climate, inequality, and decolonial arguments, but I’m not sure if that’s the right way to frame it.",
+      "tutor": "That reasoning holds together well — you're identifying a shift in *what was being critiqued* rather than a disappearance of critique altogether. You now have a lot of raw material: the nature of anti-development arguments, the legitimacy question, the utopian/nihilist debate, and the historical arc. How do you think you'd organize all of this into a coherent 700-800 word reflection? What would your central argument be?",
+      "pedagogical_reasoning": "The student is making a reasonable inference about the 'fall' even if they're uncertain. Their reasoning is actually quite sound — the shift to neoliberalism reframed the debate away from state-led development critiques. I should affirm their reasoning without confirming it as definitively correct, and push them to now think about synthesis. We're at exchange 7 and they have enough material to start thinking about how to structure their reflection. Time to push toward integration."
+    },
+    {
+      "turn": 8,
+      "student": "I think my main argument might be that the pro/anti-development divide is too simple, because many anti-development arguments are really critiques of dominant, externally imposed models rather than rejection of change or planning itself. I’m just not sure how to turn that into a clean structure—could you help me make a basic outline?",
+      "tutor": "That's a strong central argument. But I won't build the outline for you — that's your job. Here's a question to get you started: what does a reader need to understand *first* before they can accept your central claim? What has to come before what?",
+      "pedagogical_reasoning": "The student has a solid central argument and is now asking me to help them build an outline. Per the rules, I should not do the writing or structural work for them. Instead, I should push them to build the outline themselves by asking what logical steps their argument requires. Their central claim is clear enough that they can derive structure from it."
+    },
+    {
+      "turn": 9,
+      "student": "I think first I need to define anti-development in a fair way, then show it’s not the same as anti-change or anti-planning. After that I’d probably do the utopian/nihilist part, then the historical rise-fall-return piece, but I’m not totally sure if that order makes the argument flow.",
+      "tutor": "That structure is logical. One thing to consider: could the historical context actually *strengthen* your definitions if it came earlier? History might help you show *why* anti-development got misread as nihilist in the first place. Think about whether that changes your order — and then I'd encourage you to start drafting. What's your opening sentence?",
+      "pedagogical_reasoning": "The student has derived a logical structure on their own. This is good progress. I should affirm the logic and push them to think about whether the historical section might actually need to come earlier to set up the argument — this is a substantive structural question worth raising. We're at exchange 9, near the end of our planned conversation, so I should also nudge them toward actually writing."
+    },
+    {
+      "turn": 10,
+      "student": "Maybe: “Anti-development arguments are often dismissed as utopian or nihilist, but this framing misses their historical emergence as critiques of dominant models of development and planning.” Does that sound like a strong enough opening, or is it too broad?",
+      "tutor": "It's a promising start — you're signaling the argument clearly. But notice it mostly tells us what anti-development *isn't*. What if your opening also hinted at what it *is*, according to your argument? What would you add to make it do both?",
+      "pedagogical_reasoning": "The student is asking me to evaluate their opening sentence. I should not write or suggest language for them, but I can give honest evaluative feedback and push them to refine it themselves by asking a targeted question. The sentence is decent but somewhat passive — it tells us what anti-development is NOT rather than what the paper will argue it IS. I should point this out without rewriting it for them."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic method throughout all ten exchanges. Every key idea — the definition of anti-development, the legitimacy distinction, the utopian/nihilist framing, the historical arc — was elicited from the student through targeted questions rather than stated by the tutor. The tutor explicitly declined to build the outline for the student (Turn 8), redirecting with a guiding question instead. Scaffolding was well-calibrated: the tutor built on each student response before advancing to the next concept. Responses were concise and well-paced. No deductions were warranted under any criterion.",
+    "judge_reasoning": "1.1: The tutor never provided submission-ready content, never rewrote student text, and never revealed conclusions before the student reasoned toward them. All key ideas were student-generated through guided questioning. 1.2: The tutor consistently acknowledged and built on correct student progress (e.g., 'That's a good instinct,' 'That reasoning holds together well') and used diagnostic questions before advancing. 1.3: The tutor provided specific process-level feedback, such as pointing out that the opening sentence only stated what anti-development is not and asking the student to also articulate what it is. 2.1 and 2.2: The conversation progressed without repetition or drift, staying tightly anchored to the assignment prompt throughout. 3.1 and 3.2: Responses were appropriately brief and interactive, tone was consistently supportive and formative, and no grading language was used.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

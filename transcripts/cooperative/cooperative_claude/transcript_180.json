@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_02",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "19",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Participatory Development\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat are the ways in which participation can be achieved? What's the measure of participation and how must one judge it? Can the tension between participation as a goal and as a method be resolved and if so how? What were the structural factors that made participation such a key element in development strategies?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I need help with a 700–800 word reflection on participatory development. I’m kind of stuck on the prompt, especially the part about participation as both a goal and a method, and how to organize my response.",
+      "tutor": "Good, let's start there. Before we think about organization, let's make sure you have a grip on the ideas. In your own words, what do you think the difference is between participation as a *goal* versus participation as a *method*? What comes to mind?",
+      "pedagogical_reasoning": "The student is just starting and asking for organizational help. I should not provide structure or organization for them, but I can use Socratic questioning to help them begin engaging with the core concepts. I'll start with the most fundamental question to get them thinking independently about the tension they mentioned, which is the heart of the prompt."
+    },
+    {
+      "turn": 2,
+      "student": "I think participation as a method means using local people’s input to make a project work better, like for information or implementation. As a goal, maybe it means participation is itself part of development, like building citizenship or empowerment? I’m not totally sure if I’m separating them the right way.",
+      "tutor": "That's a solid starting distinction. Now think about this: if participation is just a *method*, who is ultimately in control of the process and its goals? And does that change if participation is a *goal* in itself? What tension might arise from treating it as both at the same time?",
+      "pedagogical_reasoning": "The student has made a genuinely good first attempt at distinguishing the two concepts. I should affirm the direction without over-praising, and push them to think deeper about the tension between the two, since that's what the prompt is really asking about. A Socratic question here will help them move toward the core of the assignment."
+    },
+    {
+      "turn": 3,
+      "student": "If it’s just a method, I guess the planners or state or donors still control the main goals, and participation is more like a tool. If it’s a goal, then maybe people should have real power in deciding priorities too. The tension seems like institutions can say they want empowerment, but still keep control, so participation becomes kind of symbolic?",
+      "tutor": "That's a sharp observation - participation becoming symbolic is a real and documented problem. So here's the next question: do you think that tension is *resolvable*? If yes, what would need to change for participation to be both a genuine method *and* a genuine goal at the same time?",
+      "pedagogical_reasoning": "The student has arrived at a strong insight about symbolic vs. substantive participation. This is a key idea in the literature (e.g., Arnstein's ladder of participation). I should affirm this without giving away theoretical frameworks, and push them to think about how this tension might or might not be resolvable - which is directly what the prompt asks."
+    },
+    {
+      "turn": 4,
+      "student": "Maybe it can be partly resolved, but not perfectly. I think it would need actual power-sharing, not just consultation, plus accountability so officials or donors have to respond to what people say. I’m guessing participation works better as both method and goal when people can influence decisions, resources, and monitoring, not just attend meetings.",
+      "tutor": "Good thinking - you're identifying concrete conditions for meaningful participation. Now let's shift to another part of the prompt you haven't touched yet: what *structural factors* made participation become such a central idea in development strategies in the first place? Think historically - why did the development field move in this direction?",
+      "pedagogical_reasoning": "The student is building a strong conceptual foundation. They've now addressed the tension and proposed conditions for resolution. The prompt also asks about structural factors that made participation a key element in development strategies, which hasn't been touched yet. I should redirect them there to ensure full coverage of the prompt before they start writing."
+    },
+    {
+      "turn": 5,
+      "student": "I think part of it was dissatisfaction with top-down development since a lot of big state-led or expert-led projects didn’t really fit local needs. Maybe also criticism of modernization models and pressure for more democratic and inclusive governance? I’m a little fuzzy on the historical side though, especially how much this was about donors versus local political movements.",
+      "tutor": "You've got two solid threads there. Let's pull on the one you're fuzzy about: do you think the push for participation came more *from below* - communities and local movements demanding voice - or more *from above* - donors and international institutions adopting it as a strategy? What might each of those origins imply about the nature of participation that resulted?",
+      "pedagogical_reasoning": "The student has identified two important structural drivers (failure of top-down models, democratization pressures) but is honestly flagging uncertainty about the donor vs. local movements dynamic. This is a productive tension worth exploring. Rather than filling in the gap for them, I should push them to think through both sides of that dynamic, which will strengthen their reflection."
+    },
+    {
+      "turn": 6,
+      "student": "I think it was probably both, but in different ways. From below, it would imply participation is about rights, voice, and maybe redistribution of power; from above, it could turn into a managerial strategy to make projects more effective or legitimize interventions. I’m worried that sounds too simplistic though.",
+      "tutor": "That's not simplistic at all - the distinction between participation as a rights-based claim versus a managerial tool is actually central to how scholars debate this. Don't second-guess it. One part of the prompt you still haven't addressed: *what are the ways participation can be achieved*? And connected to that - how do you measure whether participation is meaningful or not?",
+      "pedagogical_reasoning": "The student is self-critical but has actually articulated a nuanced and important distinction. I should affirm the quality of the insight and push back gently on their self-doubt, while redirecting them toward the prompt's first question about the *ways* participation can be achieved, which hasn't been addressed yet. This will ensure they have material for all parts of the prompt before writing."
+    },
+    {
+      "turn": 7,
+      "student": "I’m thinking participation can be achieved through public meetings, village committees, participatory budgeting, local councils, community-led planning, maybe NGO facilitation too. For measurement, I don’t think just counting attendance is enough; it should be about who participates, whether marginalized groups can speak, and whether participation changes actual decisions. I’m still not sure how to phrase that in a more analytical way.",
+      "tutor": "You've now got solid ideas covering all parts of the prompt. On phrasing - that's something you'll develop by writing, not by me suggesting language. Here's a useful question to guide your analytical framing: what's the *difference* between measuring participation by *process* versus measuring it by *outcomes*? Sit with that, then try to get a first draft going - what would your opening argument be?",
+      "pedagogical_reasoning": "The student has now covered all major components of the prompt at a conceptual level. They're asking for help with phrasing, which I should decline as that crosses into writing for them. Instead, I should note their progress and push them to start writing, since we've had about 6 exchanges and they have enough material to begin a draft. I'll remind them that analytical phrasing comes from practice in writing, not from me suggesting language."
+    },
+    {
+      "turn": 8,
+      "student": "I think process means looking at how participation happens — like inclusiveness, deliberation, representation, and whether people can actually speak. Outcomes would be whether it changes decisions, resource allocation, accountability, or empowerment afterward. My opening argument might be that participation became central because of the failures of top-down development, but its value depends on whether it redistributes power rather than just inviting people into pre-set processes.",
+      "tutor": "That's a strong, arguable opening claim. You have all the ingredients now - go write a draft. Once you have something on paper, come back and we can discuss how well it addresses the full prompt.",
+      "pedagogical_reasoning": "The student has now developed strong conceptual material across all parts of the prompt and articulated a clear opening argument. We've had 8 exchanges and they have enough to write. I should affirm the argument's quality briefly, note that it's time to write, and avoid any further scaffolding that could replace their own work."
+    },
+    {
+      "turn": 9,
+      "student": "Okay, that helps a lot. I’m going to draft around that argument, but I may come back if I get stuck making the structure flow.",
+      "tutor": "Good - go write. Just a heads up: when you come back, I won't help with structure or flow directly, but I can ask questions to help you think through whether your ideas are connecting logically. Good luck with the draft!",
+      "pedagogical_reasoning": "The student is wrapping up and hinting they may return for help with structure. I should remind them that structuring is their job, not mine, but keep the door open for substantive conceptual questions. Brief and clear boundary-setting is appropriate here."
+    },
+    {
+      "turn": 10,
+      "student": "Got it — I’ll try to map the logic myself first. If I get tangled up, I’ll bring back my main claim and a rough paragraph order so I can check whether it actually answers the prompt.",
+      "tutor": "That's exactly the right approach. See you when you have something written.",
+      "pedagogical_reasoning": "The student is showing good academic maturity and independence. A brief, encouraging closing is appropriate without adding any new scaffolding or content."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic practice throughout the conversation. All key ideas — the goal/method tension, structural factors, measurement frameworks, and the opening argument — were generated by the student through guided questioning. The tutor never gave away conclusions, rewrote student language, or did the reasoning work. Scaffolding was well-sequenced, building from conceptual distinction to historical context to analytical framing. Responses were concise and interactive. Tone was consistently supportive without being evaluative in a grading sense. No deductions were warranted under any criterion.",
+    "judge_reasoning": "1.1: The tutor consistently used questions to draw out student thinking rather than supplying answers. The student arrived at the opening argument independently (Turn 8), and the tutor only confirmed its strength without elaborating the reasoning. No near-submission-ready content was provided. 1.2: The tutor built on each student response explicitly (e.g., 'That's a sharp observation,' then advancing to the next layer), and diagnosed where the student was fuzzy (Turn 5) before probing further. 1.3: The tutor gave process-level feedback, notably distinguishing process vs. outcome measurement (Turn 7) and affirming the rights-based vs. managerial distinction as analytically significant (Turn 6). 2.1 and 2.2: No repetition without progress; the conversation advanced systematically through all prompt components. No off-topic drift occurred. 3.1 and 3.2: Responses were appropriately brief and interactive; tone was warm and formative throughout, with no grading language used.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

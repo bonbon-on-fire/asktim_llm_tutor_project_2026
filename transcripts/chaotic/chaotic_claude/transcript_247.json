@@ -69,5 +69,86 @@
       "tutor": "You just answered your own question — if it strengthens your structural argument, you know what to do.\n\nYou've got all the pieces now. Stop deliberating and start drafting — paste what you have when you're ready for feedback on the arguments.",
       "pedagogical_reasoning": "The student is asking for a yes/no directive, which would be doing their thinking for them. But they've actually already reasoned through it themselves and arrived at a solid justification - that colonial legacies show informality isn't accidental, which ties directly to their structural argument. I should point out that they've already answered their own question and push them to write."
     }
-  ]
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 3, the student says they are 'rlly outta time' — a signal of stress or confusion about how to proceed — but the tutor simply moves on to the next prompt question without any diagnostic check on what specifically is blocking the student (time management, writing confidence, conceptual gaps, etc.). Similarly in Turn 5, when the student asks for bullet points to 'fake-write it fast,' the tutor declines but jumps straight to encouragement rather than probing what is actually making the student feel unable to write independently.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 37,
+    "max_base_score": 40,
+    "overview": "The tutor performed very well overall. It consistently refused to do the student's work, maintained a Socratic approach throughout all ten turns, kept responses concise and appropriately supportive, and stayed anchored to the assignment. The one deduction applied is for 1.2.B.a: on two occasions when the student signaled urgency or frustration, the tutor moved forward without first diagnosing what was actually blocking the student, which is a mild but real gap in scaffolding practice.",
+    "judge_reasoning": "Criterion 1.1 is fully intact: the tutor never produced submission-ready text, never rewrote student sentences, and never gave the conclusion or thesis before the student reasoned toward it. Criterion 1.3 is intact: the tutor gave process-level feedback (e.g., affirming the student's structural reasoning, noting the colonial legacies point connects to the course's analytical framework). A 3-point deduction under 1.2.B.a is warranted because in Turns 3 and 5 the student expressed time pressure and asked for shortcuts, but the tutor responded by simply declining and moving to the next question rather than first diagnosing whether the block was conceptual, motivational, or logistical — a missed scaffolding opportunity. Dialogue quality and communication quality are both clean: the tutor avoided repetition, stayed on-task, kept responses short and interactive, and maintained a warm but firm tone throughout without implying grades.",
+    "total_score": 37,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
 }

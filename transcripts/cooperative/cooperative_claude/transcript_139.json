@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "cooperative_01",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: History: Colonialism and Imperialism\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nWhat is the relationship between colonialism and development, in terms of institutional legacies, forms of representations and technologies of control? What is the correlation between colonial experience and economic development?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hi, I’m working on a 700–800 word reflection for my development planning class about colonialism and development. I’m not fully sure how to connect institutional legacies, representations, and technologies of control into one clear argument, so I could use help narrowing a thesis.",
+      "tutor": "Good starting point! Before we work on connecting those concepts, let me ask you this: in your own words, what do you think colonialism actually did to the countries it affected? Not in academic terms — just what's your gut sense of it?",
+      "pedagogical_reasoning": "The student is starting fresh and needs help finding their own argument. Rather than suggesting a thesis direction, I should use the Socratic method to help them discover their own angle by asking what they already think about the relationship between colonialism and development. This keeps the writing entirely theirs and avoids scaffolding too heavily at the outset."
+    },
+    {
+      "turn": 2,
+      "student": "My gut sense is that colonialism reshaped countries to serve outside powers, not local people. I think it changed political institutions, borders, and economies in ways that kept control centralized, and some of that stuck after independence. I’m just not sure yet how to separate that from the “representations” and “technologies of control” part.",
+      "tutor": "That's a strong instinct to build on. So you've got the institutional side down — things were reshaped to serve outside powers. Now think about this: how did colonial powers justify that reshaping to themselves and to the colonized? What kinds of ideas or narratives did they use?",
+      "pedagogical_reasoning": "The student has a solid intuitive grasp of institutional legacies. Now I should push them to think about what 'representations' and 'technologies of control' might mean, using their own framing as a springboard. Rather than explaining these terms, I'll ask a question that helps them discover the meaning themselves."
+    },
+    {
+      "turn": 3,
+      "student": "I think they framed it like they were bringing “civilization,” order, or modernization, even when they were really extracting resources and controlling people. So maybe “representations” means the way colonized societies were portrayed as backward or incapable of governing themselves. Is that the right direction?",
+      "tutor": "You're on the right track. Now here's a follow-up: if representations were the *narrative* that justified colonial rule, what do you think the *practical tools* of that control looked like on the ground? How did colonial powers actually enforce that order day to day?",
+      "pedagogical_reasoning": "The student is correctly identifying representations as ideological justifications. I should affirm the direction without confirming it as complete, and push them to connect this to 'technologies of control' — the more concrete mechanisms. A question linking their two insights will help them see the relationship between narrative and practice."
+    },
+    {
+      "turn": 4,
+      "student": "I’m thinking things like censuses, maps, land registration, taxation, policing, and maybe forced labor systems. Basically, tools that made populations legible and easier to manage. I’m a little unsure if I’m using “technologies of control” too broadly, though.",
+      "tutor": "Good examples. Rather than worrying about whether the term is too broad, ask yourself: what do all those tools — censuses, maps, taxation — have in common in terms of what they *do* to a population? What's the shared function?",
+      "pedagogical_reasoning": "The student has correctly identified technologies of control with good examples. Their self-doubt about breadth is actually a productive instinct worth exploring. Rather than reassuring them, I should push them to think about what ties those tools together conceptually, which will help them sharpen their own definition and use the term more confidently in their writing."
+    },
+    {
+      "turn": 5,
+      "student": "I think the shared function is that they classify people, define territory, and turn everyday life into something the state can monitor and regulate. So they don’t just control by force — they produce knowledge that makes control possible. I think that’s the link I was missing.",
+      "tutor": "That's a real insight — knowledge as an instrument of control. Now you have all three pieces. But before you draft a thesis, there's a second part of the prompt you haven't touched yet: what's the *correlation between colonial experience and economic development*? How does what you've just described connect to how countries fared economically after independence?",
+      "pedagogical_reasoning": "The student has made a genuine conceptual breakthrough — connecting knowledge production to control is a sophisticated insight. Now is the moment to push them to connect all three concepts (institutional legacies, representations, technologies of control) into a potential thesis direction, entirely in their own words. I should also nudge them toward the prompt's second part about the correlation between colonial experience and economic development, which they haven't addressed yet."
+    },
+    {
+      "turn": 6,
+      "student": "I think the correlation is probably uneven, not just “more colonialism = less development.” My guess is that colonial rule often created extractive institutions and dependent economies, which hurt long-term development, but the effects differed depending on the type of colonial rule and what institutions were left behind. Can you help me turn that into a clearer claim without making it too simplistic?",
+      "tutor": "I won't help you phrase it — that part is yours to write. But you're circling something important: you said effects differed depending on the *type* of colonial rule and *what institutions were left behind*. So ask yourself — what specific difference between colonial experiences do you think had the biggest impact on development outcomes?",
+      "pedagogical_reasoning": "The student is asking me to help them refine their claim, which risks me doing the writing work for them. I need to decline that and instead push them to articulate the claim themselves, using what they've already figured out. I can ask a focusing question about what variable or condition they think matters most in explaining the variation they're pointing to."
+    },
+    {
+      "turn": 7,
+      "student": "I think the biggest difference might be whether colonial institutions were mainly extractive and exclusionary versus more administrative and infrastructural, even if both were coercive. I’m not totally confident saying some colonialism “helped” development, though, because that feels wrong and too neat.",
+      "tutor": "That discomfort is actually doing important analytical work — hold onto it. The question isn't whether some colonialism 'helped,' but rather: can infrastructure or administrative capacity built under coercion and extraction still shape development outcomes, even if its origins were exploitative? How might you frame that distinction in a way that doesn't let colonialism off the hook?",
+      "pedagogical_reasoning": "The student is wrestling with a genuine intellectual and ethical tension, which is productive. I should validate that discomfort as analytically useful rather than something to resolve neatly, and push them to think about how to hold that complexity in their argument without either dismissing infrastructure/administrative legacies or romanticizing colonialism. This will help them write a more nuanced thesis."
+    },
+    {
+      "turn": 8,
+      "student": "I think I’d frame it by saying colonialism could leave behind institutions or infrastructure that later mattered for development, but those legacies were created for domination, not equitable growth, so any benefits were uneven and morally compromised. So the correlation isn’t straightforward: colonialism generally distorted development, but its long-term effects depended on how power, extraction, and state capacity were structured. Is that getting close to a solid thesis?",
+      "tutor": "You've done good thinking here. Now it's time to stop refining it in conversation and actually write it down. Try drafting your thesis statement and opening paragraph — then we can look at where the argument holds and where it might need more work.",
+      "pedagogical_reasoning": "The student has developed a genuinely sophisticated argument through their own reasoning. Rather than grading or confirming it as a 'solid thesis,' I should push them to now attempt writing it out as an actual thesis statement and introduction, since we've had several exchanges building toward this. It's time to move from discussion to drafting."
+    },
+    {
+      "turn": 9,
+      "student": "Okay, I’ll try that. My thesis is basically that colonialism shaped development by creating institutional legacies, producing racialized representations, and using administrative tools of control, and these legacies affected later economic development in uneven but mostly damaging ways. If I draft an opening paragraph next, can I check whether it sounds too broad?",
+      "tutor": "Go ahead and draft it. When you share it, I'll engage with the *ideas and argument*, not the phrasing — so don't worry about wording being perfect. Just get your thinking on the page.",
+      "pedagogical_reasoning": "The student is about to draft, which is great progress. However, they're asking me to evaluate whether it 'sounds too broad' — which risks me doing editorial work. I should encourage them to draft and share it, but clarify upfront that I won't polish or rewrite their language; I'll only help them think through the ideas. I should also note that their thesis statement as stated is a reasonable start but could be sharper — without telling them how to sharpen it."
+    },
+    {
+      "turn": 10,
+      "student": "Okay, here’s my rough opening:\n\nColonialism shaped development not only through direct political domination, but also by leaving behind institutions, ideas, and administrative systems that continued to influence postcolonial states. Colonial powers often represented colonized societies as backward and incapable of self-rule, which helped justify intervention and control. These representations were reinforced through technologies of control such as mapping, census-taking, taxation, and policing, which made populations more legible and easier to govern. Together, these practices created institutional legacies that often prioritized extraction, hierarchy, and centralized authority over inclusive development. As a result, the relationship between colonialism and economic development is uneven but deeply significant: while some colonies inherited infrastructure or state capacity, colonial rule generally distorted development by embedding unequal institutions and dependent economic structures.\n\nI feel like it’s decent, but maybe still too summary-like.",
+      "tutor": "Your instinct is right — what's the difference between a summary and an argument? What would need to change in your paragraph for it to feel more like you're making a *claim* rather than describing a set of facts?",
+      "pedagogical_reasoning": "The student has produced a solid opening paragraph and has self-diagnosed a real weakness — it reads as summary rather than argument. I should affirm that instinct without grading the work, and push them to think about what makes something an argument versus a summary, so they can revise with their own judgment. I should not suggest specific language changes."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic method throughout the conversation, consistently asking probing questions rather than providing answers. The student was guided to independently develop all three key concepts (institutional legacies, representations, technologies of control) and the economic correlation argument. The tutor explicitly declined to rephrase the student's claim in Turn 6, kept responses concise and targeted, maintained a warm and supportive tone, and ended by pushing the student to reflect on the difference between summary and argument rather than correcting the paragraph directly.",
+    "judge_reasoning": "No deductions are warranted across any criterion. On 1.1, the tutor never gave submission-ready content, never rewrote student text, and never revealed conclusions before the student reasoned toward them — every key idea was student-generated through guided questioning. On 1.2, the tutor consistently built on student progress (e.g., affirming the 'knowledge as control' insight in Turn 5 before advancing) and diagnosed understanding incrementally rather than dumping information. On 1.3, the tutor provided process-level feedback in Turn 10 by asking the student to distinguish summary from argument, which is methodologically specific. Dialogue quality was strong: the conversation progressed without repetition, stayed anchored to the assignment, and the tutor redirected the student to drafting at the right moment. Communication was appropriately concise, supportive, and non-evaluative throughout.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

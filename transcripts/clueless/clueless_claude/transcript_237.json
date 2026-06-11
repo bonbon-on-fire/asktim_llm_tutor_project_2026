@@ -1,0 +1,148 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "clueless_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "04",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Concepts: The Question of Ethics\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nDevelopment Planners are often faced with having to compromise in reconciling demands from very different groups, and are exposed to (sometimes conflicting) sets of responsibility (e.g. personal, professional, authority). Within this context, what is an ethical compromise? What is the ethics of planners remaining \"neutral\"? What responsibility should influence their practice? What is the source of ethical values? What ethical framework governs a context of radical cultural pluralism, as in a Western planner working in non-Western countries?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, I’m kinda lost on this ethics reflection rn. idk what “ethical compromise” and planner “neutrality” are even supposed to mean here.",
+      "tutor": "Let's start simple. Think about a time when two people wanted different things and someone had to find a middle ground. What did that person have to give up, and what did they protect? How might that dynamic play out for a planner trying to serve a community?",
+      "pedagogical_reasoning": "The student is expressing confusion about two key concepts in the prompt. Rather than explaining these concepts directly, I should use the Socratic method to help them unpack what they already know. I'll start with a simple question that connects to their everyday experience of 'compromise' before moving toward the planning context. This is a good entry point that avoids over-scaffolding."
+    },
+    {
+      "turn": 2,
+      "student": "yeah that’s where I get stuck tbh, bc “middle ground” just sounds like making nobody happy lol. idk how to tell when compromise is ethical vs just weak.",
+      "tutor": "That's actually a sharp observation - there's a real difference between those two things. So what do you think would make a compromise principled rather than just weak? What would the planner need to hold onto, even while giving ground?",
+      "pedagogical_reasoning": "The student is actually touching on a genuinely important distinction - between compromise as unprincipled capitulation versus compromise as a principled navigation of competing values. This is good progress. Rather than explaining the difference, I should push them to think about what makes a compromise principled. A targeted question about what the 'anchor' of a decision might be will help them get there."
+    },
+    {
+      "turn": 3,
+      "student": "umm maybe like they can bend on methods but not on basic harm stuff? but ngl I can’t tell what counts as a “basic principle” in this class.",
+      "tutor": "Good instinct. Now think about the course themes - who are the different actors a planner has to answer to? What competing responsibilities might pull them in different directions? That might help you identify what those 'basic principles' could be.",
+      "pedagogical_reasoning": "The student is making good intuitive progress - the idea of bending on methods but not on core values is a solid instinct. Now I should push them to connect this to the course's themes rather than explaining what counts as a 'basic principle.' The course explicitly discusses power, legitimacy, external actors, and cultural pluralism - I should nudge them toward those themes without naming them directly."
+    },
+    {
+      "turn": 4,
+      "student": "there’s too many tho fr—state, donors, local ppl, profession, maybe law? I’m kinda drowning in all the actors and idk which ones matter most.",
+      "tutor": "What if there isn't a fixed ranking? What does it mean for a planner when there's no clear hierarchy of who to listen to? Isn't that tension itself what makes this an ethical problem worth writing about?",
+      "pedagogical_reasoning": "The student is feeling overwhelmed by the multiplicity of actors, which is understandable. Rather than ranking the actors for them, I should help them realize that the prompt itself is asking them to wrestle with exactly this tension - there is no simple hierarchy, and that IS the ethical problem. A pointed question can help them see that the 'drowning' feeling is actually the core of the assignment."
+    },
+    {
+      "turn": 5,
+      "student": "maybe?? but then it feels like I can say literally anything and call it “complex,” which makes the paper feel super vague tbh.",
+      "tutor": "That's a fair concern. Look back at the prompt - it's not just asking you to describe the tension, it's asking you to take a position. What do YOU think an ethical compromise is? What do YOU think neutrality means for a planner? Your argument is what prevents the paper from being vague.",
+      "pedagogical_reasoning": "The student is raising a valid concern about analytical rigor - they don't want to write something that's all hand-waving about 'complexity.' This is good critical thinking. I should push them to see that acknowledging tension doesn't mean avoiding a position - the assignment asks them to take a stance on what ethical compromise IS, what neutrality MEANS, etc. I should direct them back to the specific questions in the prompt to anchor their argument."
+    },
+    {
+      "turn": 6,
+      "student": "yeah but that’s the part freaking me out lol, bc I don’t even know what kind of position is “allowed” here. like is neutrality supposed to be good, fake, impossible, idk.",
+      "tutor": "There's no forbidden position - what matters is that you defend it with reasoning. Actually, you've already hinted at an answer earlier in our conversation. Can a planner who 'bends on methods but not on harm' really claim to be neutral?",
+      "pedagogical_reasoning": "The student is anxious about taking a 'wrong' position, which is a common college freshman concern. I should reassure them briefly that the assignment is asking for their reasoned argument, not a 'correct' answer, and then push them to actually commit to a view on neutrality using what they've already said in this conversation - they've already implied something useful about principles vs. methods."
+    },
+    {
+      "turn": 7,
+      "student": "i guess not? but then “not neutral” sounds biased, and I’m not sure if the class wants that or if I’m mixing up ethics with activism.",
+      "tutor": "Interesting - is having ethical commitments the same thing as being biased? Think about a doctor: they're not 'neutral' about patient harm, but we wouldn't call them an activist. What does that suggest about the relationship between ethics and neutrality?",
+      "pedagogical_reasoning": "The student is conflating neutrality with objectivity, and ethics with activism - a common but important confusion. Rather than explaining the distinction, I should ask them a targeted question that helps them see that having ethical commitments isn't the same as being politically biased. This is a key conceptual move the paper needs to make."
+    },
+    {
+      "turn": 8,
+      "student": "ok wait that helps a bit, but now I’m confused about the Western planner in non-Western countries part. idk if I’m supposed to say ethics are universal or culture-specific.",
+      "tutor": "Good - that tension is exactly what the prompt is pointing at. What would go wrong if a planner assumed their ethics were fully universal? And what would go wrong if they said 'every culture has its own ethics, so anything goes'? What does each extreme risk?",
+      "pedagogical_reasoning": "The student is now engaging with the cultural pluralism question from the prompt, which is great progress. This is a genuinely hard philosophical question and I shouldn't resolve it for them. I should push them to think about what's at stake in each position - universalism vs. cultural relativism - using a concrete scenario to make it tangible, without telling them which view is 'right.'"
+    },
+    {
+      "turn": 9,
+      "student": "ugh yeah both seem bad, and now I feel like the answer is just “somewhere in between” again. I’m still not seeing how to turn that into an actual thesis.",
+      "tutor": "You've actually built up a lot of material in this conversation - the harm principle, the limits of neutrality, the risks of both universalism and relativism. A thesis isn't 'somewhere in between' - it's a specific claim about WHERE and WHY. Try drafting one sentence that captures your position. What would you write?",
+      "pedagogical_reasoning": "The student has been circling the 'somewhere in between' idea for a few exchanges now, which suggests some redundancy. It's time to push them to commit and start writing rather than continuing to abstract. I should acknowledge that 'in between' is a starting point, not a thesis, and challenge them to specify what that middle ground actually looks like using the concrete ideas they've developed in our conversation."
+    },
+    {
+      "turn": 10,
+      "student": "can u just tell me what a thesis like that even sounds like bc rn my brain is blank.",
+      "tutor": "That's not something I can do - writing is your job, not mine. But you don't need a perfect sentence. Look back at what you said: planners can't be neutral, harm is a line you don't cross, and neither pure universalism nor pure relativism works. Try combining those into one rough, ugly sentence. What do you get?",
+      "pedagogical_reasoning": "The student is asking me to provide language or a model thesis, which I should refuse per the rules - I must not write or suggest language for them. However, I can redirect them to use the concrete ideas they've already articulated in our conversation as raw material. I should be direct about my role here and push them to attempt something, even if it's rough."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 2,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 40,
+    "overview": "The tutor demonstrated exemplary Socratic method throughout all ten turns, consistently redirecting the student back to their own reasoning rather than supplying answers. No submission-ready content was provided, no thesis was written for the student, and the final turn explicitly refused to model a thesis while still scaffolding the student toward constructing one. Responses were appropriately concise, tone was warm and encouraging, and the tutor stayed anchored to the assignment prompt throughout.",
+    "judge_reasoning": "1.1: The tutor never gave a direct answer, final claim, or near-submission-ready content. Every turn posed a question or reframed the student's own words back to them, keeping idea generation student-led. Even in Turn 10, when the student explicitly asked for a model thesis, the tutor declined and redirected. No deductions apply. 1.2: The tutor consistently built on student progress (e.g., Turn 6 references the student's earlier 'harm' insight; Turn 9 synthesizes accumulated material), and used diagnostic questioning before advancing. No deductions apply. 1.3: The tutor provided process-level feedback in Turn 5 (distinguishing description from argument) and Turn 9 (distinguishing 'somewhere in between' from a specific thesis claim), giving actionable method guidance. No deductions apply. 2.1 and 2.2: The conversation progressed steadily without repetitive cycling, and the tutor kept the student anchored to the assignment prompt throughout. 3.1 and 3.2: Responses were concise and interactive, tone was supportive without being evaluative, and no grading language was used.",
+    "total_score": 40,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}

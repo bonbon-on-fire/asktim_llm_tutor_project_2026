@@ -1,0 +1,160 @@
+{
+  "tutor_provider": "claude",
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chaotic_05",
+  "course": "intro_to_international_development_planning",
+  "exercise_number": "21",
+  "turn_size": 10,
+  "context": "This introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |",
+  "exercise": "Course context:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSyllabus:\n11.701 Introduction to International Development Planning\n\nCourse Meeting Times:\n- Seminar: 2 sessions/week; 1.5 hours/session\n\nCourse Description:\nThis introductory survey course is intended to develop an understanding of key issues and dilemmas of planning in non-Western countries. The issues covered in this course include:\n- the history, concepts and theories of development planning\n- the emerging role of non-Western countries as global economic players\n- the most urgent issues of development planning in the non-Western world that pose dilemmas for action and theory especially in the light of the current global economic crisis\n- the scales at which development planning takes place and their inter-relationship\n- the key actors and institutions who shape the content of development planning.\n\nThe issues covered by the course include state intervention, governance, law and institutions in development, privatization, participatory planning, decentralization, poverty, urban-rural linkages, corruption and civil service reform, trade and outsourcing and labor standards, post-conflict development and the role of aid in development.\n\nSeveral themes run through the course. One such theme is the intimate link between planning, power and legitimacy, chiefly embodied in the state. Planning involves many actors, but always some governing authority with legitimacy. The approach to planning in this course involves the state as a governing authority, with the legitimate power to make changes that affect many other actors, in its unique role as the 'rule-maker' that determines the institutional framework for the operation of all other actors, while recognizing the growth of other governing actors at the local and global levels. Power also determines whether countries are able to plan, and if so, the kind of planning that they are able to do in a contested global arena. The language of legitimacy shapes how and by whom and in what form power can be exercised.\n\nAnother major theme of the course is that planning in developing countries is much more impacted by the ideas and actions of external actors, compared to planning in rich industrialized countries. This in turn makes the process of planning – the actors and institutional processes as well political sustainability – much more complex and unpredictable. The course also focuses on the history of planning and development in non-Western countries in order to better appreciate the achievements and limitations of planning efforts in the past. The impact of colonialism and imperialism on the political culture, institutional legacies, and economic prospects of developing countries needs to be understood. In focusing on this issue, the course would like to call attention to the importance of historical analysis in planning in developing countries.\n\nPrerequisites:\nThere are no prerequisites for this course.\n\nFormat:\nThe course will illuminate current development challenges through published research in the field. The literature is rich, and across many disciplines in the social sciences. Case studies and real world examples, through interaction with planning practitioners, are drawn from around the world. The readings marked 'required' must be read carefully prior to class. Students are encouraged to prepare short outlines based on reading notes before coming to class. The readings marked 'recommended' are suggested to supplement, deepen and expand the issues raised by the required readings. While students don't have to read them all before class, they are strongly encouraged to read what they can in order to fully realize the potential of this course.\n\nRequirements:\n\n| Activities                  | Percentage |\n|-----------------------------|------------|\n| Class discussion            | 10%        |\n| Two reaction papers         | 30%        |\n| Group project presentation  | 20%        |\n| Final paper                 | 40%        |\n\nExercise:\nTITLE: Key Issues: Trade, Outsourcing, and Labor Standards\n\n11.701 Introduction to International Development Planning\nMassachusetts Institute of Technology\n\nAssignment:\nWrite a 700–800 word reflection piece responding to the prompt below.\n\nPrompt:\nIs openness to trade directly correlated to economic growth? What does the historical record say so far? Is the increasing shift to bilateral and regional trade arrangements compatible with the possibility of international trade, and with increasing commitment to labor rights? What do we make of the economic development strategies of emerging powers like China and India in terms of trade openness and commitment to labor standards? Who monitors labor standards?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "hey, i need this reflection done rn tbh — can u just give me a solid 700–800 word response to that trade/outsourcing/labor standards prompt?",
+      "tutor": "Hey! I get that you're pressed for time, but writing the response for you isn't something I'll do — that's your job, and honestly, it wouldn't help you learn anything either.\n\nWhat I *can* do is help you think through the ideas so you can write it yourself.\n\nLet's start simple: looking at the prompt, there are a few distinct questions bundled together. Which one feels most familiar to you, or which one do you want to tackle first?",
+      "pedagogical_reasoning": "The student is asking me to complete the assignment for them, which directly violates my role as a tutor. I need to firmly but clearly decline, explain my role, and redirect them toward engaging with the problem themselves. I should start by orienting them to the prompt's key questions to get the conversation going productively."
+    },
+    {
+      "turn": 2,
+      "student": "idc which, just gimme a strong thesis + the main points so i can turn it in fast.",
+      "tutor": "That's still me doing your assignment, so I won't do that.\n\nHere's the deal: I ask questions, you think, you write. That's how this works.\n\nSo — do you think trade openness automatically leads to economic growth? What's your gut instinct, yes or no, and why?",
+      "pedagogical_reasoning": "The student is again asking me to do the work for them. I need to firmly restate my boundaries and redirect them to engaging with the content. I should not provide a thesis or main points, but I can nudge them toward thinking about the first core question in the prompt to get the ball rolling."
+    },
+    {
+      "turn": 3,
+      "student": "probably “not automatically,” but can u phrase it better so it sounds academic lol?",
+      "tutor": "I won't rephrase it for you — the writing has to be yours.\n\nBut that instinct is a reasonable starting point. Now back it up: can you think of any historical examples where a country opened up to trade and it *didn't* lead to growth, or where growth happened with trade restrictions in place?",
+      "pedagogical_reasoning": "The student is asking me to edit or polish their language, which I am explicitly instructed not to do. I need to decline clearly and redirect them to develop their own reasoning. However, 'not automatically' is actually a decent instinct and I should acknowledge it, then push them to support it with evidence or reasoning from the course material."
+    },
+    {
+      "turn": 4,
+      "student": "yeah like china/india probs, but i need the actual answer tbh — what examples should i use?",
+      "tutor": "China and India are solid choices — the prompt literally asks about them. What do you already know about how either country approached trade? Did they just throw their markets wide open, or did they do something different?",
+      "pedagogical_reasoning": "The student is still trying to get me to supply the content rather than think for themselves. China and India are actually good examples worth exploring, so I should acknowledge that and push them to recall what they know from course readings rather than giving them examples directly."
+    },
+    {
+      "turn": 5,
+      "student": "they didn’t go fully open, right? can u just say the exact point i should make abt that?",
+      "tutor": "You already made the point — now develop it. *Why* didn't they go fully open, and what did they do instead? Think about what you've read or heard in class about their development strategies.",
+      "pedagogical_reasoning": "The student is persistently asking me to supply the content. I need to hold firm on my role and redirect them to think for themselves. They've already shown they know something - that China and India didn't go fully open - so I should push them to elaborate on what that means rather than giving them the point."
+    },
+    {
+      "turn": 6,
+      "student": "i'm blanking fr, just give me like 2 clean sentences i can use for china and india.",
+      "tutor": "I won't write those sentences — that's a firm line for me.\n\nLet me help you remember though: did either country use things like tariffs, state-owned industries, or selective foreign investment to guide their growth? Does any of that ring a bell from the readings?",
+      "pedagogical_reasoning": "The student is frustrated and blanking, but I still cannot write content for them. This is a clear boundary I must maintain. However, I can offer a helpful nudge by asking a more guided question about specific policies or strategies they may have encountered in readings, making it easier for them to recall something concrete without me giving them the answer."
+    },
+    {
+      "turn": 7,
+      "student": "yeah selective opening + state guidance i guess; can u at least give me an outline format i can fill in?",
+      "tutor": "Good — that's actually a meaningful idea worth developing. Hold onto it.\n\nI won't build an outline for you, but you're already forming thoughts. The prompt also asks about labor standards — who monitors them, and how does that connect to countries like China or India that use selective openness? What do you think?",
+      "pedagogical_reasoning": "The student is making genuine progress - they've recalled 'selective opening + state guidance' which is a real and relevant concept. However, asking for an outline is still asking me to structure their work for them, which I shouldn't do. I should acknowledge their progress and redirect them to build on what they just said by connecting it to the prompt's other questions."
+    },
+    {
+      "turn": 8,
+      "student": "maybe ILO + brands + NGOs? tbh if u can’t write it, at least tell me if that’s the right answer and what else i’m missing.",
+      "tutor": "Those are relevant actors, yes. Now the more interesting question: do you think those monitors are actually *effective*? What might limit their power to enforce labor standards?",
+      "pedagogical_reasoning": "The student is making real progress and has identified legitimate actors (ILO, brands, NGOs). I should acknowledge this is on the right track without grading it or telling them what's missing - that would be doing the intellectual work for them. I should push them to think about the *effectiveness* of these monitors, which connects back to the broader argument they're building about trade and labor standards."
+    },
+    {
+      "turn": 9,
+      "student": "yeah kinda weak bc enforcement’s messy, but ngl i still need a submission-ready paragraph.",
+      "tutor": "Still not writing it for you.\n\nBut look at what you've actually built here: trade openness isn't automatic for growth, China and India used selective opening with state guidance, and labor standards monitoring is weak due to enforcement problems. That's real substance.\n\nStop waiting and start drafting. Write your first paragraph now and I'll help you think through it.",
+      "pedagogical_reasoning": "The student is again asking me to write for them. I need to decline firmly. However, the student has actually accumulated quite a bit of material through our conversation - they have ideas about selective trade openness, state guidance, China/India as examples, and labor standards monitoring being weak. I should point this out and push them to start writing their own draft using what they've developed, rather than continuing to ask me to do it."
+    },
+    {
+      "turn": 10,
+      "student": "ok fine: “Trade openness does not automatically produce economic growth because historical evidence shows successful development often involved selective protection and strong state intervention.” is that decent or what?",
+      "tutor": "That's a solid opening claim — it's clear and arguable. Now keep going. How does China or India's specific experience back that up? Write the next sentence.",
+      "pedagogical_reasoning": "The student has finally written something on their own - this is good progress and I should acknowledge it positively without grading it. The sentence is actually quite solid as an opening claim. I should give brief positive feedback and push them to keep going by connecting this claim to the next part of the prompt, rather than dwelling on this sentence too long."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 6, when the student says they are blanking, the tutor immediately provides content prompts (tariffs, state-owned industries, selective foreign investment) rather than first diagnosing what the student does or doesn't understand. This is a method dump before checking what the student already knows.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.b",
+                "reason": "In Turn 10, the tutor says 'That's a solid opening claim — it's clear and arguable' without providing any process-level feedback on how the student arrived at it or how to strengthen their reasoning methodology going forward. The feedback is affirming but too vague to improve the student's method.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 2
+          }
+        },
+        "base": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 40,
+    "overview": "The tutor consistently refused to do the student's work, maintained a Socratic approach throughout, and successfully guided the student to produce their own opening claim by Turn 10. The main weaknesses are a minor diagnostic gap in Turn 6 (providing content hints before checking what the student already knew) and a missed opportunity in Turn 10 to give process-level feedback on how to continue developing the argument methodically.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produced submission-ready text, never rewrote student sentences, and never gave the conclusion before the student reasoned toward it. 1.2 loses 3 points under 1.2.B.a because in Turn 6 the tutor jumped to listing specific content cues (tariffs, state-owned industries, selective foreign investment) without first probing what the student actually recalled, constituting a method dump before diagnosis. 1.3 loses 2 points under 1.3.A.b because the Turn 10 feedback ('solid opening claim — clear and arguable') affirms correctness without explaining the reasoning process the student should replicate or how to strengthen their analytical approach. Dialogue quality and communication quality are both strong: the tutor avoided repetition, stayed on-task, kept responses concise, and maintained a supportive but firm tone throughout.",
+    "total_score": 35,
+    "max_score": 40,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "judge_llm_calls": 1
+  }
+}
