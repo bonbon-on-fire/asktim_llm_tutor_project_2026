@@ -196,7 +196,7 @@ def _next_transcript_number(output_dir: Path) -> str:
     next_num = 1
     while next_num in used_numbers:
         next_num += 1
-    return f"{next_num:04d}"
+    return f"{next_num:02d}"
 
 
 def _validate_bundle_config(config: BundleConfig) -> None:
