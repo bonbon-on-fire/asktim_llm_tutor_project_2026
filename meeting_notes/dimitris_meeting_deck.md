@@ -6,170 +6,166 @@ paginate: true
 
 <!--
 Slide deck for the Dimitris meeting (rescheduled to June 2026 due to Faizan's conflict).
-Content sourced primarily from meeting_notes/ — especially 06_09_2026.md and 03_20_2026.md.
-Render with Marp (VS Code "Marp for VS Code" extension → Export) or read as plain notes.
-Speaker notes are in HTML comments under each slide.
+Bullet-style slides. Content sourced from meeting_notes/, judge/claude_transcript_scores.tsv,
+judge/rubrics/rubric_08.md. Render with the "Marp for VS Code" extension → Export (PDF/PPTX),
+or read as notes. Full detail: meeting_notes/dimitris_process_detail.md.
 -->
 
 # AskTIM
-### A Socratic LLM Tutor for MIT OpenCourseWare
+## A Socratic LLM Tutor for MIT OpenCourseWare
 
-Project review — June 2026
-
-**Team:** Nishita Bhakar · Romain Puech · Faizan Siddiqi
-
-<!--
-Framing: AskTIM is live for 11.270x; this deck walks Dimitris through what we built,
-why, what early deployment showed, and where we go next.
--->
+- Project review — **June 2026**
+- Nishita Bhakar · Romain Puech · Faizan Siddiqi
 
 ---
 
 ## What AskTIM is
 
-- A **Socratic tutor** for MIT OCW humanities / social-science assignments — it **never gives the answer directly**, using guided discovery and bite-sized, formative responses.
-- **Deployed live** as an iframe-embeddable chat app for **MIT 11.270x — Cities and Climate Change (Spring 2026)**.
-- Backed by a full **validation framework**: simulated student bots, an LLM judge that grades conversations against a rubric, and a dashboard to review results before anything reaches real learners.
+- A **Socratic tutor** for MIT OCW assignments
+- Guides students with questions — **never gives the answer**
+- **Live now** in *MIT 11.270x — Cities & Climate Change* (Spring 2026)
+- Embedded in the MIT Learn assignment page (iframe chat)
 
-<!--
-Two goals: (1) deployment — a reliable Socratic tutor for OCW; (2) validation — a reproducible
-eval framework to test/grade tutor behavior before deployment.
--->
+---
+
+## The challenge — and our approach
+
+- **Hard part isn't the chatbot — it's *proving* it stays in its role** with real students
+- So the project is a **test-and-measure loop:**
+
+> build/modify tutor → simulate conversations → AI judge grades them → read results → change one thing → repeat
+
+- Once scores said it was reliable → **deploy + watch real usage**
 
 ---
 
 ## Timeline (Feb → June 2026)
 
-| When | Milestone |
-|------|-----------|
-| **Feb 2026** | Project kickoff; first working tutor + first adversarial "chaotic" student; grading rubric drafted; judge implemented; terminal runner |
-| **Mar 2026** | Reworked into clean pipeline (curriculum / tutor / judge / transcripts); rewrote persona prompts; added course context + turn-size as inputs; batch generation |
-| **Mar 20** | Judge/rubric review: GPT–Claude score correlation dropped → simplified rubric, removed malus deductions, expanded dataset |
-| **Apr 2026** | Hand-grade calibration workbook; GPT vs Claude visualizations; bundle judging; **tutor_05**; mini-continuation re-runs |
-| **May 2026** | Token streaming ("AskTIM is thinking…" → types out); web_ui → **AskTIM Sandbox (test_ui)**; AskTIM context added to tutor + syllabus |
-| **Jun 1–4** | **Railway deployment** of student app (main_ui); Sandbox rebrand + Create-context wizard; Postgres for Sandbox |
-| **Spring 2026** | **AskTIM goes live in 11.270x**, announced via pinned announcement + email |
-| **Jun 9** | Review of first real 11.270x usage; plan Dimitris meeting; expand testing to new courses |
-| **This week** | Added 4 test courses (math, meaning-of-life, physics, intl-dev planning); ran persona simulations + judge |
-| **Jun 2026** | **Dimitris meeting** (rescheduled — Faizan conflict) |
-
-<!--
-Source: git history + meeting_notes/. Emphasize the arc: build tutor → build evaluation →
-iterate on prompt/rubric → deploy → observe real usage → expand testing.
--->
+- **Feb** — first tutor + adversarial student bots + grading rubric + judge
+- **Mar** — automated test pipeline; dual GPT + Claude judges
+- **Mar–Apr** — judge calibration → **picked Claude as grader**
+- **Apr** — tutor prompt iteration → **`tutor_05`**
+- **May** — web app: streaming, identity, history
+- **Jun 1** — **deployed on Railway**
+- **Spring** — **live in 11.270x**
+- **Jun 9** — first real usage; expand testing to new courses
+- **This week** — 4 new courses simulated + graded
 
 ---
 
-## Project workflow — what we did, in order
+## How we test the tutor
 
-1. **Built the tutor** — LangGraph agent, Socratic system prompt, hidden "pedagogical reasoning" field so the model reasons before replying.
-2. **Built adversarial student bots** — personas that each probe one failure mode (demanding answers, going off-topic, lecturing a lost student).
-3. **Built an LLM judge + rubric** — grades each finished conversation against a structured rubric (JSON, auto-repair on bad output).
-4. **Iterated the tutor prompt** — used judge scores to compare versions (→ tutor_05) and tighten Socratic behavior.
-5. **Built review tooling** — dashboard to browse conversations + grades; charts comparing GPT vs Claude judges.
-6. **Deployed AskTIM** — student app on Railway for 11.270x; a Sandbox app for TAs/devs to test custom contexts.
-7. **Expanded testing** — ran the same simulation + judge pipeline across new STEM and humanities courses.
-
-<!--
-"First we did X, then Y": this is the process narrative. Each step exists because the previous
-one exposed a need (e.g., we built the judge because eyeballing transcripts didn't scale).
--->
+- **Student bots** — 18 personas in 3 families, each probes one failure mode:
+  - **chaotic** → demands the answer / tries to jailbreak
+  - **clueless** → plays lost, invites over-explaining
+  - **cooperative** → sincere, well-meaning baseline
+- **AI judge** grades every finished conversation against a fixed rubric
+- **Run the matrix:** every persona × every exercise, scored automatically
 
 ---
 
-## Why these choices (rationale)
+## What the judge checks (rubric, plain English)
 
-- **Never-answer Socratic design** → the pedagogical goal is *learning*, not task completion; an answer-giving bot would undermine the assignment.
-- **Hidden pedagogical-reasoning field** → makes GPT "think out loud" privately before replying, which consistently improves its restraint (it stops blurting answers).
-- **Adversarial student personas** → real OCW students range from cooperative to answer-hunting to lost; we needed to stress-test all three *before* launch, cheaply and repeatably.
-- **Separate LLM judge + explicit rubric** → objective, reproducible scoring across prompt versions; eyeballing transcripts doesn't scale or stay consistent.
-- **Simplified rubric, removed malus (Mar 20)** → over-strict rubric wording inflated GPT–Claude disagreement; trimming it improved inter-judge agreement.
-- **Iframe-embeddable web app on Railway** → MIT Learn embeds the tutor on the assignment page via iframe; Railway gives us managed Postgres + simple deploys.
-- **Separate Sandbox app** → lets TAs/devs trial any course/exercise/prompt without touching the production database.
-
-<!--
-Cover the "rationale for major implementation choices" action item. Keep each to one why.
--->
+- Starts at full marks, **subtracts points for specific mistakes** — total **40**
+- **Socratic (12 pts)** — avoid doing the student's work; **lose all 12 if it gives the answer**
+- **Scaffolding (6)** — build on what they got right; diagnose confusion first
+- **Meta-learning (2)** — coach *how* to reason, not just right/wrong
+- **No spiraling (4)** — don't loop without progress
+- **On-assignment (8)** — keep them on task; redirect off-topic
+- **Bite-sized (4)** — short, clear replies
+- **Tone (4)** — encouraging coach, not a cold grader
 
 ---
 
-## AskTIM usage results — 11.270x (first week live)
+## Making the judge trustworthy
 
-*From the 06/09/2026 meeting notes. Live conversation logs are stored on Railway (not in the repo).*
-
-- **4 unique AskTIM conversations** this week.
-- **All 4 were logistics**, not content — students asked **how to submit the table** for the Power/Actor Map assignment, not about the substance of the exercise.
-- The tutor **responded appropriately** given the nature of those questions.
-- Read: current exercises may still be **too elementary** for students to lean on the tutor for conceptual help.
-- **Reach:** ~15 verified + ~100 audit learners; ~**20–25 active**. Announced via **pinned course announcement + email**, linked from the Assignment 4 "Power/Actor Map Instructions" page.
-
-<!--
-Honest framing: usage is early and logistical, but it shows the tutor is functioning correctly
-and reachable. Decision from 06/09: use these as evidence the tutor works, even if usage is light.
--->
+- Test: **two AI judges (GPT + Claude) grade the same chats** — do they agree?
+- Disagreement = the *rubric* is ambiguous, not the tutor
+- Fixed by **simplifying the rubric** (46 → **40 points**)
+- **Claude was far more self-consistent (~0.8) than GPT**
+- **Decision: Claude is the official judge; GPT dropped**
 
 ---
 
-## What we learned from early deployment
+## Improving the tutor
 
-- The tutor **behaves correctly in the wild** — it handled real student questions appropriately on first contact.
-- **Access path matters**: usage tracks how prominently AskTIM is surfaced (announcement + assignment-page link).
-- **Assignment difficulty drives tutor value**: logistical-only questions suggest we need richer / harder exercises (and richer context) for the tutor to show its pedagogical strength.
-- Validates the decision to **test across more courses** before broader rollout.
-
-<!--
-Source: 06/09/2026 "Decisions". Connect early usage → motivation for next steps.
--->
+- Built a **"fork-at-the-broken-turn" tool** → clean A/B test of a prompt tweak
+- Ran **30 conversations: old wording vs new (`tutor_05`)**
+- **Result: `tutor_05` lost *zero* points for giving away the answer**
+  - old version had been caught handing over fill-in-the-blank skeletons
+- The never-give-the-answer guarantee **held**
 
 ---
 
-## Additional course testing (in progress this week)
+## Results — the scoreboard
 
-- Goal: see how the tutor behaves **across different subjects and contexts**, not just climate/urban studies.
-- Added and tested new course contexts spanning **STEM and humanities**:
-  - Mathematics for Computer Science, Physics III (Vibrations & Waves) — STEM
-  - The Meaning of Life, Intro to International Development Planning — humanities
-- Method (per 06/09 notes): **student-persona simulations + the judge/evaluator framework**, plus **manual hand-testing**.
-- Personas are kept as a **sanity check for edge cases**; we plan to make them less repetitive by reviewing recent work on LLM-based student simulation.
+- **889 simulated conversations graded** (Claude judge, out of 40):
+  - Mean **36.8 / 40**, median **38**
+  - **49% scored a perfect 40**
+  - Only **~1.7%** hit the big "did the student's work" penalty → **rare failure**
+- By student type: **cooperative 39.5 · chaotic 36.3 · clueless 35.2**
+  - (easiest → hardest to tutor, as expected)
 
-<!--
-These runs can serve as live demos/evidence in the meeting. Generation + Claude judging (judge_08
-/ rubric_08) already run across the new courses.
--->
+---
+
+## Human spot-check (honest read)
+
+- Three of us **hand-graded the same 20 conversations**, compared to Claude
+- **Moderate agreement:** Spearman **0.59** (Nishita), **0.57** (Romain)
+- Claude's average (**31.8/40**) ≈ the **strictest** human grader
+- Read: **Claude grades consistently, slightly strict** — good enough to *rank* tutor versions
+- Caveat: small sample (20); one grader's sheet was unfilled
+
+---
+
+## Live deployment + early usage (11.270x)
+
+- Student web app on **Railway**: DB logging, iframe embed, email+password identity, streaming replies, chat history
+- **~120 students** enrolled (8 for credit)
+- **First week live: 4 conversations — all logistical** ("how do I submit the table?")
+- Tutor handled them appropriately
+- Read: early exercises **too elementary** to need conceptual help yet
+- ~15 verified + ~100 audit learners; ~20–25 active
+
+---
+
+## Cross-course generalization (this week)
+
+- Ran the same simulate-and-judge pipeline on **4 new courses** (2 STEM + 2 humanities)
+- **414 conversations graded — mean 38.2 / 40, zero failures**
+  - by course: math 38.3 · physics 38.3 · meaning-of-life 37.5 (**tightly clustered**)
+- **432 more** generating now (Intl Development Planning)
+- Shows the tutor **behaves consistently across very different subjects**
+
+---
+
+## What we learned
+
+- The tutor **behaves correctly in the wild** on first real contact
+- **Usage tracks how prominently it's surfaced** (announcement + assignment link)
+- **Exercise difficulty drives value** — logistical-only questions → need richer/harder exercises
+- Adversarial bots have **plateaued** → next real bugs come from **human testing**
 
 ---
 
 ## Proposed next steps
 
-**Tutor development & expansion** *(06/09/2026 priorities)*
-
-- **Richer context for the tutor:**
-  - Accept **images as input** (students attaching figures; tutor reading exercise diagrams).
-  - Reason over / produce **image-based outputs** where relevant.
-  - Add **lecture transcripts** to the tutor's context — key for diagram- and lecture-heavy courses.
+- **Richer tutor context:**
+  - Accept **images** (student figures + exercise diagrams)
+  - Add **lecture transcripts** to context
 - **Better evaluation:**
-  - Improve student personas (reduce repetitiveness) using recent LLM-student-simulation papers.
-  - Continue manual hand-testing alongside simulated runs.
-- **Internal tooling (lower priority):**
-  - A small interface to **review real AskTIM conversations** without digging through Railway — easier to review, share, and analyze real student interactions.
-
-<!--
-Covers "proposed next steps for tutor development and expansion." Images + lecture transcripts
-are the headline asks; persona improvement + a data-review UI round it out.
--->
+  - Improve student personas (less repetitive) per recent LLM-simulation papers
+  - More **human testing**
+- **Internal tooling:** lightweight app to **review real conversations** (vs digging through Railway)
 
 ---
 
 ## Summary
 
-- AskTIM is **live in 11.270x** and behaving correctly on first real usage.
-- It's backed by a **reproducible build → simulate → judge → review** pipeline that lets us iterate safely.
-- Early usage is **light and logistical** → motivates richer exercises, richer context, and broader course testing.
-- Next phase: **images + lecture transcripts in context**, **stronger student simulation**, and a **lightweight data-review tool**.
+- AskTIM is **live in 11.270x** and behaving correctly
+- Backed by a **build → simulate → judge → review** loop with real numbers behind it
+- **889 graded, mean 36.8/40, ~1.7% answer-giving failures**
+- Early usage is **light + logistical** → motivates richer exercises, images, lecture context
+- Next: **images + lecture transcripts**, stronger simulation, a data-review tool
 
-**Appendix available on request:** workflow diagram, example persona prompts, sample graded transcripts, the rubric.
-
-<!--
-Sources: meeting_notes/06_09_2026.md (primary), 03_20_2026.md (rubric/judge history),
-README.md & memory/project_overview.md (architecture). Real 11.270x logs live on Railway.
--->
+<!-- Appendix on request: workflow diagram, persona prompts, sample graded transcripts, full rubric. Detail: meeting_notes/dimitris_process_detail.md -->
