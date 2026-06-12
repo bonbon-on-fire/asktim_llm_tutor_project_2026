@@ -694,19 +694,14 @@
       return;
     }
 
-    const firstCourse = contextOptions.courses[0]
-      ? contextOptions.courses[0].slug
-      : "";
-    const lastTutor = contextOptions.tutors.length
-      ? contextOptions.tutors[contextOptions.tutors.length - 1]
-      : "";
-    // Default each step to "Create …" (custom mode); existing options remain
-    // selectable in the dropdown below it.
+    // Default each step to the first option in its dropdown. Built-ins now sort
+    // first and "Create custom …" is last, so leaving existing/value empty means
+    // no explicit match and the <select> falls back to its first <option>.
     createDraft = {
-      course: { mode: "custom", existing: config.course || firstCourse, custom: "" },
-      exercise: { mode: "custom", existing: "", custom: "" },
-      tutor: { mode: "custom", existing: config.tutor || lastTutor, custom: "" },
-      syllabus: { mode: "custom", value: "none", custom: "" },
+      course: { mode: "existing", existing: "", custom: "" },
+      exercise: { mode: "existing", existing: "", custom: "" },
+      tutor: { mode: "existing", existing: "", custom: "" },
+      syllabus: { mode: "builtin", value: "", custom: "" },
     };
     createStep = 0;
     renderCreateStep();
