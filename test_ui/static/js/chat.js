@@ -472,6 +472,9 @@
   const CREATE_STEPS = ["course", "exercise", "tutor", "syllabus"];
   const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus"];
   const CUSTOM = "__custom__";
+  const LOCKED_TUTOR = "tutor_05"; // the tutor prompt is locked to this in the wizard
+  const LOCK_ICON_SVG =
+    '<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
 
   async function fetchPreviewText(stepKey, value) {
     let url;
@@ -514,8 +517,14 @@
   function renderCreateStep() {
     createError.hidden = true;
     const step = CREATE_STEPS[createStep];
-    createStepLabel.textContent =
+    const stepLabelText =
       `Step ${createStep + 1} of ${CREATE_STEPS.length}: ${CREATE_LABELS[createStep]}`;
+    if (step === "tutor") {
+      // Tutor prompt is locked to tutor_05 — show a small lock icon by the label.
+      createStepLabel.innerHTML = `${stepLabelText} ${LOCK_ICON_SVG}`;
+    } else {
+      createStepLabel.textContent = stepLabelText;
+    }
     createStepBody.innerHTML = "";
 
     let options = [];
@@ -561,9 +570,8 @@
           .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true })),
         { value: CUSTOM, label: "Create custom prompt" },
       ];
-      const d = createDraft.tutor;
-      currentValue = d.mode === "custom" ? CUSTOM : d.existing;
-      customValue = d.custom;
+      currentValue = LOCKED_TUTOR; // locked — testers can't change the tutor prompt here
+      customValue = "";
       placeholder = "Paste or write the tutor prompt…";
     } else {
       // syllabus
@@ -591,6 +599,7 @@
     }
 
     const sel = buildSelect(options, currentValue);
+    if (step === "tutor") sel.disabled = true; // tutor prompt is locked to tutor_05
     createStepBody.appendChild(sel);
 
     const ta = document.createElement("textarea");
