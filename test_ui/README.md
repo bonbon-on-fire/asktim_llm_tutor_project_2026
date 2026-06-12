@@ -24,7 +24,7 @@ Branding is deliberately distinct from production: the accent is teal-blue
 | | `main_ui/` (production) | `test_ui/` (this app) |
 | --- | --- | --- |
 | Audience | Real OCW students | Developers / TAs |
-| Context | Fixed per iframe URL | **Editable in-app** via the "Edit context" button |
+| Context | Fixed per iframe URL | **Editable in-app** via the "Create context" wizard |
 | Syllabus | Always included if present | **Toggleable** per conversation |
 | Database | Postgres `asktim` (`DATABASE_URL`) | **Separate Postgres** `asktim_test`, also via `DATABASE_URL` (each Railway service has its own env, so the same var name resolves to a different DB per service) |
 | Schema mgmt | Alembic migrations | `Base.metadata.create_all` on boot (throwaway DB) |
@@ -33,21 +33,26 @@ Branding is deliberately distinct from production: the accent is teal-blue
 
 Both apps can run side by side.
 
-## The "Edit context" switcher
+## The "Create context" wizard
 
-The solid-blue **Edit context** button (top of the sidebar, above "Add email")
-opens a modal to choose:
+The solid-blue **Create context** button (top of the sidebar, above "Add email")
+opens a step-by-step wizard. At each step you either pick an existing built-in or
+paste your own custom text:
 
-- **Course** — any folder under `curriculum/` (selectable)
-- **Exercise** — exercises available for the chosen course (selectable; repopulates when the course changes)
-- **Tutor prompt** — shown but **locked** here (stays on the conversation's tutor); use the **Create context** wizard to vary the tutor prompt
-- **Include course syllabus** — toggles whether `syllabus.txt` is folded into the tutor context (auto-disabled for courses that have none)
+- **Course** — any folder under `curriculum/`, or custom course text
+- **Exercise** — an exercise for the chosen course, or custom exercise text
+- **Tutor prompt** — any `tutor_*` prompt, or custom prompt text
+- **Syllabus** — the course's `syllabus.txt`, none, or custom syllabus text
 
-> Course, Exercise, and the syllabus toggle are editable in this modal; only the Tutor prompt is locked. (Earlier the Course and syllabus controls were locked too — they were unlocked, and their lock icons removed, in June 2026.)
+Finishing the wizard **starts a fresh conversation** under the new settings; the
+previous chat stays in history. Custom values are stored per conversation (in the
+`custom_*` columns) and the syllabus flag in `syllabus_enabled`, so reopening a
+past chat replays it with the same context.
 
-Applying a change **starts a fresh conversation** under the new settings; the
-previous chat stays in history. The chosen syllabus flag is stored per
-conversation, so reopening a past chat replays it with the same context.
+> A simpler **Edit context** modal (built-ins only) previously sat alongside this
+> wizard. It was removed in June 2026 because the Create-context wizard does
+> everything it did — and also lets you change the tutor prompt and supply custom
+> text — so the two buttons were redundant.
 
 ## Quick start
 
@@ -129,7 +134,7 @@ Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
 
 | Method | Path | Purpose |
 | --- | --- | --- |
-| GET | `/api/context/options` | Courses (with their exercises + syllabus availability) and tutor prompts, for the Edit-context switcher |
+| GET | `/api/context/options` | Courses (with their exercises + syllabus availability) and tutor prompts, for the Create-context wizard |
 
 `POST /api/chat` additionally accepts an optional `"syllabus": true|false` field
 (defaults to `true`) that gates the syllabus block for a new conversation.
@@ -164,9 +169,9 @@ test_ui/
     conversation.py       # persistence (stores syllabus_enabled)
     students.py           # bcrypt identity
     tutor_bridge.py       # talks to tutor.run_tutor (include_syllabus aware)
-  static/css/chat.css     # #126f9a accent + context-modal styles
+  static/css/chat.css     # #126f9a accent + create-context wizard styles
   static/js/chat.js       # streaming + sidebar + context switcher
   static/js/marked.min.js # vendored markdown parser (GFM tables)
   static/js/dompurify.min.js # vendored HTML sanitizer (XSS-safe tutor markdown)
-  templates/embed.html    # chat page (Sandbox Beta, Edit context modal)
+  templates/embed.html    # chat page (Sandbox Beta, Create context wizard)
 ```

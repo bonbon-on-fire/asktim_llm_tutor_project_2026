@@ -168,9 +168,9 @@ password (bcrypt, cross-browser), and replies stream over SSE.
 
 [`test_ui/`](../test_ui/README.md) ("AskTIM Sandbox") is the developer/TA
 counterpart. It reuses the same chat UI and tutor pipeline but lets testers
-change context **in the app** rather than via URL params: an **Edit context**
-switcher (existing course/exercise/tutor + syllabus toggle) and a **Create
-context** wizard for one-off custom course/exercise/tutor-prompt/syllabus text.
+change context **in the app** rather than via URL params, through a **Create
+context** wizard: pick a built-in course/exercise/tutor-prompt/syllabus or paste
+one-off custom text at each step.
 It runs on its **own** PostgreSQL database (`asktim_test`) so test chats never
 mix with production data, builds its schema with `create_all` (no Alembic), and
 uses a teal-blue (`#126f9a`) accent instead of crimson. Both apps can run side
