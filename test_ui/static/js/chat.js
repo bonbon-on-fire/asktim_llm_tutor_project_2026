@@ -583,6 +583,13 @@
       placeholder = "Paste or write the syllabus…";
     }
 
+    // Default to the first option in the dropdown when the draft has no valid
+    // explicit selection yet, so the step opens on the first built-in (e.g. the
+    // first course) rather than the trailing "Create custom …" option.
+    if (options.length && !options.some((o) => o.value === currentValue)) {
+      currentValue = options[0].value;
+    }
+
     const sel = buildSelect(options, currentValue);
     createStepBody.appendChild(sel);
 
