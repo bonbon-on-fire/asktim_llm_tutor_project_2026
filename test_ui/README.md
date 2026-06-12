@@ -2,10 +2,11 @@
 
 Developer/TA **testing website** for the tutor. It mirrors the student-facing
 [`main_ui/`](../main_ui/README.md) chat experience — token-streamed replies,
-persistent cross-session history, email + password identity — but adds an
-**Edit context** switcher so a tester can change course, exercise, tutor prompt,
-and the syllabus toggle on the fly, and runs against its **own separate
-database** so test chats never touch production data.
+persistent cross-session history, email + password identity — but adds a
+**Create context** wizard so a tester can switch course, exercise, tutor prompt,
+and syllabus on the fly (picking a built-in or pasting custom text at each step),
+and runs against its **own separate database** so test chats never touch
+production data.
 
 Branding is deliberately distinct from production: the accent is teal-blue
 (`#126f9a`) instead of MIT crimson, and the header reads **AskTIM · Sandbox Beta**.

@@ -49,19 +49,9 @@
   const sidebarEmpty = document.getElementById("sidebar-empty");
   const newChatButton = document.getElementById("new-chat");
   const addEmailButton = document.getElementById("add-email");
-  const changeContextButton = document.getElementById("change-context");
 
-  // Context switcher (test_ui only)
-  const contextModal = document.getElementById("context-modal");
-  const contextForm = document.getElementById("context-form");
-  const contextCourse = document.getElementById("context-course");
-  const contextExercise = document.getElementById("context-exercise");
-  const contextTutor = document.getElementById("context-tutor");
-  const contextSyllabus = document.getElementById("context-syllabus");
-  const contextCancel = document.getElementById("context-cancel");
-  const contextError = document.getElementById("context-error");
-  let contextOptions = null; // { courses: [...], tutors: [...] }, lazy-loaded
-  let contextModalOpen = false;
+  // Lazy-loaded course/exercise/tutor options, shared by the Create-context wizard.
+  let contextOptions = null; // { courses: [...], tutors: [...] }
 
   // Create-context wizard (test_ui only)
   const createContextButton = document.getElementById("create-context");
@@ -475,102 +465,6 @@
       if (o.value === current) opt.selected = true;
       selectEl.appendChild(opt);
     }
-  }
-
-  function populateExercises(courseSlug, current) {
-    const course = courseBySlug(courseSlug);
-    const exercises = course ? course.exercises : [];
-    fillSelect(
-      contextExercise,
-      exercises.map((n) => ({
-        value: n,
-        label: "Exercise " + (parseInt(n, 10) || n),
-      })),
-      current,
-    );
-  }
-
-  function syncSyllabusAvailability(courseSlug) {
-    const course = courseBySlug(courseSlug);
-    const has = !!(course && course.has_syllabus);
-    contextSyllabus.disabled = !has;
-    if (!has) contextSyllabus.checked = false;
-  }
-
-  async function openContextModal() {
-    if (contextModalOpen) return;
-    contextError.hidden = true;
-    try {
-      await ensureContextOptions();
-    } catch (_) {
-      /* handled below via the null check */
-    }
-    contextModalOpen = true;
-    contextModal.hidden = false;
-
-    if (!contextOptions) {
-      contextError.textContent = "Could not load context options.";
-      contextError.hidden = false;
-      return;
-    }
-
-    fillSelect(
-      contextCourse,
-      contextOptions.courses.map((c) => ({
-        value: c.slug,
-        label: c.name || c.slug,
-      })),
-      config.course,
-    );
-    fillSelect(
-      contextTutor,
-      contextOptions.tutors.map((t) => ({ value: t, label: tutorLabel(t) })),
-      config.tutor,
-    );
-    const activeCourse = contextCourse.value || config.course;
-    populateExercises(activeCourse, config.exercise);
-    syncSyllabusAvailability(activeCourse);
-    if (!contextSyllabus.disabled) contextSyllabus.checked = !!config.syllabus;
-
-    // Course, Exercise, and Include-course-syllabus are all changeable here;
-    // the Course change handler repopulates exercises and syllabus availability.
-    // Only the Tutor prompt stays locked — build a custom context to vary it.
-    contextTutor.disabled = true;
-  }
-
-  function closeContextModal() {
-    if (!contextModalOpen) return;
-    contextModalOpen = false;
-    contextModal.hidden = true;
-  }
-
-  function applyContext(event) {
-    event.preventDefault();
-    const course = contextCourse.value;
-    const exercise = contextExercise.value;
-    const tutor = contextTutor.value;
-    if (!course || !exercise || !tutor) {
-      contextError.textContent = "Pick a course, exercise, and tutor.";
-      contextError.hidden = false;
-      return;
-    }
-    config.course = course;
-    config.exercise = exercise;
-    config.tutor = tutor;
-    config.syllabus = contextSyllabus.checked;
-    // Edit context only ever picks built-ins — clear any prior custom overrides.
-    config.courseCustom = null;
-    config.exerciseCustom = null;
-    config.tutorCustom = null;
-    config.syllabusCustom = null;
-
-    const chosen = courseBySlug(course);
-    if (courseNameEl) courseNameEl.textContent = chosen ? chosen.name || "" : "";
-
-    closeContextModal();
-    // Switching context always starts a fresh conversation under the new
-    // settings — the prior chat stays in history.
-    startNewChat();
   }
 
   // ---- Create-context wizard (test_ui only) ---------------------------------
@@ -1241,18 +1135,6 @@
   addEmailButton.addEventListener("click", () => openEmailModal({ manual: true }));
   detailBack.addEventListener("click", closeDetailView);
 
-  // Context switcher wiring (test_ui only)
-  changeContextButton.addEventListener("click", openContextModal);
-  contextCancel.addEventListener("click", closeContextModal);
-  contextForm.addEventListener("submit", applyContext);
-  contextCourse.addEventListener("change", () => {
-    populateExercises(contextCourse.value, null);
-    syncSyllabusAvailability(contextCourse.value);
-  });
-  contextModal.addEventListener("click", (event) => {
-    if (event.target === contextModal) closeContextModal();
-  });
-
   // Create-context wizard wiring (test_ui only)
   createContextButton.addEventListener("click", openCreateModal);
   createCancel.addEventListener("click", closeCreateModal);
@@ -1262,15 +1144,13 @@
     if (event.target === createModal) closeCreateModal();
   });
 
-  // Unified Escape: close in z-order — detail > create > edit > email > sidebar
+  // Unified Escape: close in z-order — detail > create > email > sidebar
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") return;
     if (!detailView.hidden) {
       closeDetailView();
     } else if (createModalOpen) {
       closeCreateModal();
-    } else if (contextModalOpen) {
-      closeContextModal();
     } else if (modalOpen) {
       closeEmailModal({ dismissed: true });
     } else if (sidebarOpen) {

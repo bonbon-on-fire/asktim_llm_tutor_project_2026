@@ -32,20 +32,6 @@
                     </svg>
                 </button>
             </div>
-            <button type="button" class="sidebar-cta sidebar-cta-primary" id="change-context" title="Edit course, exercise, tutor or syllabus">
-                <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="4" y1="21" x2="4" y2="14"/>
-                    <line x1="4" y1="10" x2="4" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="12"/>
-                    <line x1="12" y1="8" x2="12" y2="3"/>
-                    <line x1="20" y1="21" x2="20" y2="16"/>
-                    <line x1="20" y1="12" x2="20" y2="3"/>
-                    <line x1="1" y1="14" x2="7" y2="14"/>
-                    <line x1="9" y1="8" x2="15" y2="8"/>
-                    <line x1="17" y1="16" x2="23" y2="16"/>
-                </svg>
-                <span>Edit context</span>
-            </button>
             <button type="button" class="sidebar-cta sidebar-cta-primary" id="create-context" title="Build a custom context step by step">
                 <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="12" y1="5" x2="12" y2="19"/>
@@ -142,39 +128,6 @@
                 <div class="modal-actions">
                     <button type="button" id="email-skip" class="modal-skip">Skip</button>
                     <button type="submit" id="email-submit" class="modal-submit" disabled>Next</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="context-modal" role="dialog" aria-modal="true"
-         aria-labelledby="context-modal-title" hidden>
-        <div class="modal-card">
-            <h2 id="context-modal-title" class="modal-title">Configure the context settings</h2>
-            <p class="modal-body">
-                Choose AskTIM context settings — applying starts a new chat.
-            </p>
-            <form id="context-form" class="modal-form" autocomplete="off">
-                <label class="context-field">
-                    <span class="context-label">Course</span>
-                    <select id="context-course" class="context-select"></select>
-                </label>
-                <label class="context-field">
-                    <span class="context-label">Exercise</span>
-                    <select id="context-exercise" class="context-select"></select>
-                </label>
-                <label class="context-field">
-                    <span class="context-label">Tutor prompt <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-                    <select id="context-tutor" class="context-select"></select>
-                </label>
-                <label class="context-checkbox">
-                    <input type="checkbox" id="context-syllabus" checked>
-                    <span>Include course syllabus</span>
-                </label>
-                <div class="modal-error" id="context-error" role="alert" hidden></div>
-                <div class="modal-actions">
-                    <button type="button" id="context-cancel" class="modal-skip">Cancel</button>
-                    <button type="submit" id="context-apply" class="modal-submit">Apply</button>
                 </div>
             </form>
         </div>
