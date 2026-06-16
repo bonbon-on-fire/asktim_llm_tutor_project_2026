@@ -449,15 +449,29 @@ test_ui/
 
 ---
 
-### Phase 6: Figures / multimodal pipeline ✦ PROPOSED (NOT STARTED)
+### Phase 6: Figures / multimodal pipeline ✦ FOUNDATION COMPLETED (2026-06-15)
 
-> **Status (2026-06-04):** Not yet built. `utils/figures.py` does not exist and
-> the tutor/student/judge are still text-only. The `curriculum/<course>/figures/`
-> naming convention is documented (see [`curriculum/README.md`](curriculum/README.md))
-> and figure PNGs are checked in, but nothing reads them yet. The deployed
-> `main_ui/` ships **text-only** — exercises that reference diagrams pass only
-> their prose description to the tutor. This phase is the prerequisite for
-> `main_ui` Step 10 (image uploads).
+> **Status (2026-06-15):** Foundation landed (curriculum-figures-in-context).
+> `utils/figures.py` now exists (`discover_figures`, `image_to_data_url`,
+> `build_multimodal_content`, `resolve_figure_filenames`, `figure_filenames`)
+> with standalone tests in `utils/test_figures.py`. Figures are threaded through
+> the **non-streaming** tutor (`create_tutor_graph(..., figures=)` /
+> `get_tutor_reply(..., figures=)`), the **student** bot
+> (`get_next_student_message(..., figures=)`), the **judge** (reads the
+> transcript `figures` field, re-resolves filenames, re-attaches images), and
+> the **bulk raw runner** (`internal_ui/run_ui_raw.py` discovers figures, feeds
+> both roles, and records `"figures": [...]` in each transcript). The string-only
+> message sanitizers in tutor/student were generalized to handle multimodal
+> list content. Figures are attached to the latest student turn each tutor call
+> (one copy per turn — batching/cost-capping remains a non-goal).
+>
+> **Still text-only / not in this pass:** the **`main_ui` streaming path** (the
+> deployed app still sends text only — wiring figures into the SSE
+> `stream_tutor_reply`/`StudentAnswerExtractor` path is the natural follow-up and
+> the prerequisite for `main_ui` Step 10 image uploads), and **Phase 7** human
+> uploads. Lecture transcripts (a separate 06/09/2026 ask) shipped alongside this
+> via `utils/lectures.py` — per-course `curriculum/<course>/lectures/*.txt` folded
+> into the tutor context by both `internal_ui` and `main_ui` context builders.
 
 **Problem:** Several curriculum exercises reference visual diagrams that the current text-only pipeline can't surface to the LLM. `exercise_04` (Power/Actors Map) and `exercise_08` (Spider Diagram) are the immediate cases — the actual PNG sits in `curriculum/<course>/figures/` but only a hand-written prose description in the `.txt` reaches the tutor. The tutor/student/judge therefore guide and grade against a secondhand summary instead of the real figure.
 

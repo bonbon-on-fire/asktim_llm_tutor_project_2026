@@ -10,11 +10,15 @@ curriculum/
     course.txt                       # shared course context
     course_name.txt                  # display name shown in the main_ui course banner
     syllabus.txt                     # optional — appended to assignment text in main_ui
-    exercise_01.txt                  # assignment prompt
-    exercise_02.txt
-    ...
+    exercises/                       # assignment prompts
+      exercise_01.txt
+      exercise_02.txt
+      ...
     figures/
       exercise_04_power_actors_map.png   # naming: exercise_<NN>_<slug>.png
+      ...
+    lectures/                        # optional — per-course lecture transcripts
+      lecture_01.txt                 # plain text; all included in tutor context
       ...
 ```
 
@@ -22,8 +26,9 @@ curriculum/
 - `course.txt` stores shared course context.
 - `course_name.txt` holds the human-readable course title rendered in the `main_ui/` course banner (via `load_course_name()` in [main_ui/routes/_validation.py](../main_ui/routes/_validation.py)). If empty or absent, the banner renders blank.
 - `syllabus.txt` (optional) is appended to the assignment block in `main_ui/`'s context build (see [main_ui/services/tutor_bridge.py](../main_ui/services/tutor_bridge.py)).
-- `exercise_XX.txt` stores the assignment prompt for a specific exercise.
-- `figures/` holds visual context that belongs to a specific exercise. Files must start with `exercise_<NN>_` so the framework (Phase 6 — see root [PLANNING.md](../PLANNING.md)) can attach the matching figures when the tutor sees that exercise.
+- `exercises/exercise_XX.txt` stores the assignment prompt for a specific exercise (zero-padded two-digit numbering). Path resolution for all readers (web apps + runners) is centralized in [`utils/curriculum.py`](../utils/curriculum.py).
+- `figures/` holds visual context that belongs to a specific exercise. Files must start with `exercise_<NN>_` so the framework (Phase 6 — see root [PLANNING.md](../PLANNING.md)) attaches the matching figures as multimodal input when the tutor/student/judge see that exercise. Supported extensions: `.png`, `.jpg`, `.jpeg`. Loaded by [`utils/figures.py`](../utils/figures.py).
+- `lectures/` (optional) holds **per-course** lecture transcripts as plain `.txt` files. Every file in the folder is read (sorted by filename, labeled by stem) and folded into the tutor's context for **all** exercises in the course — mirroring how `syllabus.txt` is treated. Loaded by [`utils/lectures.py`](../utils/lectures.py); absent folder = no transcripts.
 
 ## Available courses
 
@@ -42,9 +47,10 @@ The four courses beyond Cities and Climate Change were added in June 2026 as **c
 1. Create a folder under `curriculum/` with the course name.
 2. Add `course.txt` with shared context, and `course_name.txt` with the display title for the banner.
 3. Optionally add `syllabus.txt` for course-level material that should accompany every exercise.
-4. Add one or more `exercise_XX.txt` files (zero-padded numbering).
+4. Add an `exercises/` folder with one or more `exercise_XX.txt` files (zero-padded numbering).
 5. If an exercise references diagrams or maps, drop them in `figures/` with the `exercise_<NN>_<slug>.<ext>` naming convention.
+6. If the course has lecture transcripts, drop plain `.txt` files into `lectures/`; they are included in the tutor context for every exercise in the course.
 
 ## Adding an exercise to an existing course
 
-Add a new `exercise_XX.txt` file in the course folder. If it has visuals, add matching `figures/exercise_<NN>_*.png` files.
+Add a new `exercises/exercise_XX.txt` file in the course folder. If it has visuals, add matching `figures/exercise_<NN>_*.png` files.

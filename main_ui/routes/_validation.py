@@ -10,6 +10,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from utils.curriculum import exercise_exists as _exercise_exists
+
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
@@ -24,10 +26,6 @@ def _list_courses() -> set[str]:
     if not _CURRICULUM_DIR.is_dir():
         return set()
     return {p.name for p in _CURRICULUM_DIR.iterdir() if p.is_dir()}
-
-
-def _exercise_exists(course: str, exercise_number: str) -> bool:
-    return (_CURRICULUM_DIR / course / f"exercise_{exercise_number}.txt").is_file()
 
 
 def _tutor_prompt_exists(tutor: str) -> bool:
@@ -55,7 +53,7 @@ def validate_exercise(course, exercise) -> dict | None:
         )
     if not _exercise_exists(course, exercise):
         return _err(
-            "exercise", exercise, f"no exercise_{exercise}.txt under curriculum/{course}/"
+            "exercise", exercise, f"no exercise_{exercise}.txt under curriculum/{course}/exercises/"
         )
     return None
 

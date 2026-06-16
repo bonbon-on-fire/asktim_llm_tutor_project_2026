@@ -24,6 +24,7 @@ from tutor.run_tutor import (
 )
 from tutor.run_tutor import get_tutor_reply as _upstream_get_tutor_reply
 from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
+from utils.curriculum import exercise_path
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -102,8 +103,7 @@ def build_assignment_text(
     if exercise_text is not None:
         resolved_exercise = exercise_text.strip()
     else:
-        exercise_path = course_dir / f"exercise_{exercise}.txt"
-        resolved_exercise = exercise_path.read_text(encoding="utf-8").strip()
+        resolved_exercise = exercise_path(course, exercise).read_text(encoding="utf-8").strip()
     parts.append("Exercise:\n" + resolved_exercise)
 
     return "\n\n".join(parts)

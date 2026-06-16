@@ -51,6 +51,7 @@ Every transcript file (`transcript_NNNN.json`) follows this structure:
   "student_persona": "chaotic_01",
   "course": "cities_and_climate_change",
   "exercise_number": "01",
+  "figures": [],
   "turn_size": 10,
   "context": "Course description text...",
   "exercise": "Full exercise prompt text...",
@@ -95,6 +96,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 | `student_persona` | Student persona identifier (e.g. `chaotic_01`, `cooperative_02`) |
 | `course` | Course folder name under `curriculum/` (e.g. `cities_and_climate_change`, `mathematics_for_cs`, `meaning_of_life`, `physics_iii_vibrations_and_waves`, `intro_to_international_development_planning`) |
 | `exercise_number` | Exercise identifier within the course |
+| `figures` | Filenames of curriculum figures (under `curriculum/<course>/figures/`) attached to this run as multimodal input; `[]` when the exercise has none. The judge re-resolves these names to re-attach the same images at grading time. Absent on pre-June-2026 transcripts (treated as `[]`). |
 | `turn_size` | Planned number of exchanges |
 | `turns` | Actual number of exchanges |
 | `exchanges` | Array of student-tutor exchange objects |

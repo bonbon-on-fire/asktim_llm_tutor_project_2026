@@ -168,12 +168,12 @@ python -m visualization.run_visualization
 ```text
 asktim_llm_tutor_project_2026/
 │
-├── curriculum/
-│   ├── cities_and_climate_change/  # course.txt + syllabus.txt + exercise_01..12.txt + figures/ (LIVE in AskTIM)
-│   ├── intro_to_international_development_planning/  # + exercise_01..24.txt (reflection prompts)
-│   ├── mathematics_for_cs/         # + exercise_01..10.txt (discrete math)
-│   ├── physics_iii_vibrations_and_waves/  # + exercise_01..10.txt
-│   └── meaning_of_life/            # + exercise_01..03.txt (humanities reflection)
+├── curriculum/                     # course.txt + syllabus.txt + exercises/ + figures/ + optional lectures/ per course
+│   ├── cities_and_climate_change/  # exercises/exercise_01..12.txt + figures/ (LIVE in AskTIM)
+│   ├── intro_to_international_development_planning/  # exercises/exercise_01..24.txt (reflection prompts)
+│   ├── mathematics_for_cs/         # exercises/exercise_01..10.txt (discrete math)
+│   ├── physics_iii_vibrations_and_waves/  # exercises/exercise_01..10.txt
+│   └── meaning_of_life/            # exercises/exercise_01..03.txt (humanities reflection)
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas

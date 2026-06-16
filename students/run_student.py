@@ -19,6 +19,8 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from typing_extensions import NotRequired, TypedDict
 
+from utils.figures import build_multimodal_content
+
 PERSONAS_DIR = Path(__file__).resolve().parent / "personas"
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -70,6 +72,7 @@ class StudentBotState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
     assignment: NotRequired[str]
     turn_size: NotRequired[int]
+    figures: NotRequired[list]
 
 
 def _student_role_contract() -> str:
@@ -138,6 +141,9 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
             system_content += turn_size_text
         chat_messages = [SystemMessage(content=_sanitize_text_for_transport(system_content))]
         chat_messages.extend(_sanitize_message_content(m) for m in messages)
+        figures = state.get("figures")
+        if figures:
+            _attach_figures_to_last_human(chat_messages, figures)
         response = model.invoke(chat_messages)
         if isinstance(response, BaseMessage):
             content = response.content if isinstance(response.content, str) else str(response.content)
@@ -181,10 +187,57 @@ def _sanitize_text_for_transport(text: str) -> str:
     return "".join(out_chars)
 
 
+def _content_text(content) -> str:
+    """Extract the plain-text portion of string or multimodal-list content."""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = [
+            block.get("text", "")
+            for block in content
+            if isinstance(block, dict) and block.get("type") == "text"
+        ]
+        return " ".join(p for p in parts if p)
+    return str(content)
+
+
+def _sanitize_content(content):
+    """Strip control characters from string or multimodal-list content.
+
+    Text blocks are sanitized; ``image_url`` (and any other) blocks pass through.
+    """
+    if isinstance(content, list):
+        out: list = []
+        for block in content:
+            if isinstance(block, dict) and block.get("type") == "text":
+                out.append({**block, "text": _sanitize_text_for_transport(block.get("text", ""))})
+            else:
+                out.append(block)
+        return out
+    text = content if isinstance(content, str) else str(content)
+    return _sanitize_text_for_transport(text)
+
+
+def _attach_figures_to_last_human(messages: list, figures: list) -> None:
+    """Rewrite the last HumanMessage in *messages* to carry *figures* as multimodal content.
+
+    The student responds to the tutor's latest turn (a HumanMessage in this
+    bot's reversed-role convention); attaching the exercise figures there lets
+    the student reason over the same image the tutor sees. Mutates in place.
+    """
+    for j in range(len(messages) - 1, -1, -1):
+        if isinstance(messages[j], HumanMessage):
+            text = _content_text(messages[j].content)
+            messages[j] = HumanMessage(content=build_multimodal_content(text, figures))
+            return
+
+
 def _sanitize_message_content(msg: BaseMessage) -> BaseMessage:
-    """Return a clean copy of msg with control characters stripped from content."""
-    content = msg.content if isinstance(msg.content, str) else str(msg.content)
-    safe = _sanitize_text_for_transport(content)
+    """Return a clean copy of msg with control characters stripped from content.
+
+    Handles both plain-string and multimodal-list content.
+    """
+    safe = _sanitize_content(msg.content)
     if isinstance(msg, HumanMessage):
         return HumanMessage(content=safe)
     if isinstance(msg, AIMessage):
@@ -238,6 +291,7 @@ def get_next_student_message(
     prompt_name: str | None = None,
     assignment: str | None = None,
     turn_size: int | None = None,
+    figures: list | None = None,
     graph=None,
     model: ChatOpenAI | None = None,
     persona: str | None = None,
@@ -256,6 +310,9 @@ def get_next_student_message(
         Assignment text the student can reference.
     turn_size : int, optional
         Planned number of student+tutor exchanges for this run.
+    figures : list, optional
+        Figure paths (or bytes) for the current exercise; attached to the
+        tutor's latest turn as multimodal content so the student can see them.
     graph : optional
         Pre-built graph (skips build_graph).
     model : ChatOpenAI, optional
@@ -270,6 +327,8 @@ def get_next_student_message(
         payload["assignment"] = assignment.strip()
     if turn_size is not None and turn_size > 0:
         payload["turn_size"] = turn_size
+    if figures:
+        payload["figures"] = figures
     result = graph.invoke(payload)
     out_messages = result.get("messages") or []
     if not out_messages:

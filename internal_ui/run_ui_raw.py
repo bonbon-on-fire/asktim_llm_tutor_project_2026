@@ -38,6 +38,10 @@ from internal_ui.cli_utils import (
     prompt_numbered_selection,
     prompt_single_selection,
 )
+from utils.curriculum import discover_exercises as _discover_course_exercises
+from utils.curriculum import exercise_path
+from utils.figures import discover_figures, figure_filenames
+from utils.lectures import load_lecture_transcripts
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _TUTOR_PROMPTS_DIR = _REPO_ROOT / "tutor" / "prompts"
@@ -134,15 +138,7 @@ def _discover_courses() -> list[str]:
 
 def _discover_exercises(course: str) -> list[str]:
     """Return zero-padded exercise numbers available for a course (e.g. ['01', '02'])."""
-    course_dir = _CURRICULUM_DIR / course
-    if not course_dir.exists():
-        return []
-    exercise_nums: list[str] = []
-    for path in sorted(course_dir.glob("exercise_*.txt")):
-        match = re.match(r"^exercise_(\d{2})\.txt$", path.name)
-        if match:
-            exercise_nums.append(match.group(1))
-    return exercise_nums
+    return _discover_course_exercises(course)
 
 
 def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
@@ -160,15 +156,16 @@ def _load_course_context(course: str) -> str:
     syllabus_path = course_dir / "syllabus.txt"
     if syllabus_path.exists():
         parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+    lectures = load_lecture_transcripts(course)
+    if lectures:
+        parts.append("Lecture transcripts:\n" + lectures)
     return "\n\n".join(parts)
 
 
 def _build_assignment_text(course: str, exercise_number: str, turn_size: int) -> str:
     """Build the full assignment string: course context + syllabus (optional) + exercise text + run config."""
     course_dir = _CURRICULUM_DIR / course
-    exercise_text = (
-        course_dir / f"exercise_{exercise_number}.txt"
-    ).read_text(encoding="utf-8").strip()
+    exercise_text = exercise_path(course, exercise_number).read_text(encoding="utf-8").strip()
 
     parts: list[str] = []
 
@@ -179,6 +176,10 @@ def _build_assignment_text(course: str, exercise_number: str, turn_size: int) ->
     syllabus_path = course_dir / "syllabus.txt"
     if syllabus_path.exists():
         parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+
+    lectures = load_lecture_transcripts(course)
+    if lectures:
+        parts.append("Lecture transcripts:\n" + lectures)
 
     parts.append("Exercise:\n" + exercise_text)
     parts.append(f"Run configuration:\n- Planned conversation length: {turn_size} student+tutor exchanges.")
@@ -250,13 +251,22 @@ def _is_retryable_openai_payload_error(error: Exception) -> bool:
     )
 
 
-def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str, object]]:
-    """Run a full multi-turn tutor/student conversation and return the list of exchange dicts."""
+def _run_conversation(
+    config: RunConfig,
+    assignment_text: str,
+    figures: list | None = None,
+) -> list[dict[str, object]]:
+    """Run a full multi-turn tutor/student conversation and return the list of exchange dicts.
+
+    *figures* (curriculum images for this exercise, if any) are bound to the
+    tutor graph and passed to each student turn so both roles reason over the
+    real figure.
+    """
     system_prompt = load_system_prompt(
         config.tutor_prompt,
         assignment_override=assignment_text,
     )
-    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider)
+    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider, figures=figures)
     student_graph = build_student_graph(prompt_name=config.student_persona)
 
     transcript_exchanges: list[dict[str, object]] = []
@@ -268,6 +278,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
             student_messages,
             assignment=assignment_text,
             turn_size=config.turn_size,
+            figures=figures,
             graph=student_graph,
         )
         student_text = (
@@ -288,7 +299,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
                 tutor_error = error
                 if _is_retryable_openai_payload_error(error) and attempt < _TUTOR_CALL_MAX_RETRIES + 1:
                     # Rebuild graph before retrying in case model/client state is corrupted.
-                    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider)
+                    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider, figures=figures)
                     print(
                         "[Warn] transient tutor API payload error; "
                         f"retrying turn={turn_index + 1} attempt={attempt}/{_TUTOR_CALL_MAX_RETRIES + 1}"
@@ -338,6 +349,7 @@ def _save_raw_transcript(
     assignment_text: str,
     exchanges: list[dict[str, object]],
     output_suffix: str = "raw",
+    figure_names: list[str] | None = None,
 ) -> tuple[str, Path]:
     """Serialize and save a raw transcript JSON; returns (transcript_name, output_path)."""
     output_dir = _TRANSCRIPTS_DIR / config.persona_type / f"{config.persona_type}_{output_suffix}"
@@ -356,6 +368,10 @@ def _save_raw_transcript(
             "student_persona": config.student_persona,
             "course": config.course,
             "exercise_number": config.exercise_number,
+            # Filenames of curriculum figures attached to this run (empty when
+            # the exercise has none). The judge re-resolves these to re-attach
+            # the images at grading time.
+            "figures": figure_names or [],
             "turn_size": config.turn_size,
             "context": context_text,
             "exercise": assignment_text,
@@ -604,8 +620,9 @@ def _run_bundle(bundle_config: BundleConfig, yes: bool = False) -> int:
                 config.turn_size,
             )
             context_text = _load_course_context(config.course)
+            figures = discover_figures(config.course, config.exercise_number)
             try:
-                exchanges = _run_conversation(config, assignment_text)
+                exchanges = _run_conversation(config, assignment_text, figures)
             except RuntimeError as error:
                 return {
                     "ok": False,
@@ -619,6 +636,7 @@ def _run_bundle(bundle_config: BundleConfig, yes: bool = False) -> int:
                 assignment_text,
                 exchanges,
                 output_suffix=bundle_config.output_suffix,
+                figure_names=figure_filenames(figures),
             )
             return {
                 "ok": True,

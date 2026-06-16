@@ -23,6 +23,8 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 load_dotenv(_REPO_ROOT / ".env")
 
+from utils.figures import build_multimodal_content, resolve_figure_filenames
+
 Provider = Literal["gpt", "claude"]
 
 TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
@@ -57,6 +59,7 @@ class JudgeState(TypedDict):
     system_prompt: str
     conversation_text: str
     num_turns: int
+    figures: NotRequired[list]
     last_output: NotRequired[str]
     last_error: NotRequired[str]
     grade_json: NotRequired[dict[str, Any]]
@@ -605,7 +608,9 @@ def _create_judge_graph(*, invoke_model: Callable[[list[Any]], Any]) -> Any:
                     + _sanitize_text(state["last_output"])
                 )
             )
-        messages.append(HumanMessage(content=state["conversation_text"]))
+        figures = state.get("figures")
+        conversation_content = build_multimodal_content(state["conversation_text"], figures)
+        messages.append(HumanMessage(content=conversation_content))
         resp = invoke_model(messages)
         return {
             "last_output": _extract_text_from_model_content(getattr(resp, "content", resp)),
@@ -676,12 +681,23 @@ def _judge_transcript(
 
     system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
     conversation_text = _format_conversation_for_judge(transcript)
+
+    # Re-attach any curriculum figures recorded on the transcript so the judge
+    # grades against the same image the tutor saw. Absent/empty field = none.
+    figure_names = transcript.get("figures")
+    figures: list = []
+    if isinstance(figure_names, list) and figure_names:
+        course = _sanitize_text(transcript.get("course")).strip()
+        if course:
+            figures = resolve_figure_filenames(course, [str(n) for n in figure_names])
+
     result = graph.invoke(
         {
             "attempts": 0,
             "system_prompt": system_prompt,
             "conversation_text": conversation_text,
             "num_turns": len(exchanges),
+            "figures": figures,
         }
     )
     grade_json = result.get("grade_json")

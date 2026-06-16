@@ -23,6 +23,8 @@ from tutor.run_tutor import (
 )
 from tutor.run_tutor import get_tutor_reply as _upstream_get_tutor_reply
 from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
+from utils.curriculum import exercise_path
+from utils.lectures import load_lecture_transcripts
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -39,7 +41,7 @@ _stream_cache: dict[tuple[str, str, str], tuple[object, str]] = {}
 
 
 def build_assignment_text(course: str, exercise: str) -> str:
-    """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
+    """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + optional lecture transcripts + exercise_<NN>.txt.
 
     Mirrors `internal_ui/run_ui_raw.py:_build_assignment_text` but omits the
     `Run configuration` block — main_ui chats are open-ended, no planned
@@ -49,8 +51,7 @@ def build_assignment_text(course: str, exercise: str) -> str:
     `tutor/`, `test_ui/`, and the bulk-transcript runners stay unaware of it.
     """
     course_dir = _CURRICULUM_DIR / course
-    exercise_path = course_dir / f"exercise_{exercise}.txt"
-    exercise_text = exercise_path.read_text(encoding="utf-8").strip()
+    exercise_text = exercise_path(course, exercise).read_text(encoding="utf-8").strip()
 
     parts: list[str] = []
 
@@ -66,6 +67,10 @@ def build_assignment_text(course: str, exercise: str) -> str:
     syllabus_path = course_dir / "syllabus.txt"
     if syllabus_path.is_file():
         parts.append("Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip())
+
+    lectures = load_lecture_transcripts(course)
+    if lectures:
+        parts.append("Lecture transcripts:\n" + lectures)
 
     parts.append("Exercise:\n" + exercise_text)
     return "\n\n".join(parts)

@@ -21,6 +21,7 @@ from typing_extensions import Annotated, TypedDict
 
 import operator
 
+from utils.figures import build_multimodal_content
 from utils.parsing import extract_json_object
 
 PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
@@ -155,12 +156,18 @@ def build_tutor_model(provider: str = "gpt"):
     )
 
 
-def create_tutor_graph(system_prompt: str, *, provider: str = "gpt"):
+def create_tutor_graph(system_prompt: str, *, provider: str = "gpt", figures: list | None = None):
     """Build and compile the LangGraph for the tutor.
 
     Args:
         system_prompt: The fully-rendered system prompt text.
         provider: ``"gpt"`` (default) uses OpenAI; ``"claude"`` uses Anthropic Claude.
+        figures: optional list of figure paths (or bytes) for the current
+            exercise. When present, the figures are attached to the latest
+            student turn as multimodal content so the tutor can reason over the
+            real image. Figures are constant for a conversation, so binding them
+            here at graph-build time means each tutor turn re-sends exactly one
+            copy attached to the current student message.
     """
     model = build_tutor_model(provider)
 
@@ -173,9 +180,11 @@ def create_tutor_graph(system_prompt: str, *, provider: str = "gpt"):
             messages.append(_sanitize_message_content(msg))
         last = state_messages[-1] if state_messages else None
         if isinstance(last, HumanMessage):
-            last_text = last.content if isinstance(last.content, str) else str(last.content)
+            last_text = _content_text(last.content)
             if _looks_non_student_like(last_text):
                 return {"messages": [_build_invalid_input_reply()]}
+        if figures:
+            _attach_figures_to_last_human(messages, figures)
         response = model.invoke(messages)
         response = _normalize_tutor_ai_message(response)
         return {"messages": [response]}
@@ -282,10 +291,63 @@ def _sanitize_text_for_transport(text: str) -> str:
     return "".join(out_chars)
 
 
+def _content_text(content) -> str:
+    """Extract the plain-text portion of a message's content.
+
+    Content may be a plain string or a list of multimodal blocks
+    (``{"type": "text", ...}`` / ``{"type": "image_url", ...}``). Image blocks
+    contribute no text. Used for heuristics and parsing that only care about
+    the textual part.
+    """
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = [
+            block.get("text", "")
+            for block in content
+            if isinstance(block, dict) and block.get("type") == "text"
+        ]
+        return " ".join(p for p in parts if p)
+    return str(content)
+
+
+def _sanitize_content(content):
+    """Strip control characters from string or multimodal list content.
+
+    Plain strings are sanitized directly. For multimodal lists, the text of
+    each ``text`` block is sanitized while ``image_url`` (and any other) blocks
+    pass through untouched, preserving the multimodal shape.
+    """
+    if isinstance(content, list):
+        out: list = []
+        for block in content:
+            if isinstance(block, dict) and block.get("type") == "text":
+                out.append({**block, "text": _sanitize_text_for_transport(block.get("text", ""))})
+            else:
+                out.append(block)
+        return out
+    text = content if isinstance(content, str) else str(content)
+    return _sanitize_text_for_transport(text)
+
+
+def _attach_figures_to_last_human(messages: list, figures: list) -> None:
+    """Rewrite the last HumanMessage in *messages* to carry *figures* as multimodal content.
+
+    Mutates *messages* in place. No-op when there is no HumanMessage to attach to.
+    """
+    for j in range(len(messages) - 1, -1, -1):
+        if isinstance(messages[j], HumanMessage):
+            text = _content_text(messages[j].content)
+            messages[j] = HumanMessage(content=build_multimodal_content(text, figures))
+            return
+
+
 def _sanitize_message_content(msg: BaseMessage) -> BaseMessage:
-    """Return a clean copy of msg with control characters stripped from content."""
-    content = msg.content if isinstance(msg.content, str) else str(msg.content)
-    safe = _sanitize_text_for_transport(content)
+    """Return a clean copy of msg with control characters stripped from content.
+
+    Handles both plain-string and multimodal-list content.
+    """
+    safe = _sanitize_content(msg.content)
     if isinstance(msg, HumanMessage):
         return HumanMessage(content=safe)
     if isinstance(msg, AIMessage):
@@ -305,15 +367,19 @@ def get_tutor_reply(
     *,
     graph=None,
     prompt_name: str = "tutor_01",
+    figures: list | None = None,
 ) -> tuple[list, str]:
     """
     Invoke the tutor with the given conversation history.
 
     Returns ``(updated_messages, student_facing_answer_text)``.
+
+    *figures* is only used when this function builds its own graph; when a
+    pre-built *graph* is supplied, bind figures via :func:`create_tutor_graph`.
     """
     if graph is None:
         system_prompt = load_system_prompt(prompt_name, assignment_override)
-        graph = create_tutor_graph(system_prompt)
+        graph = create_tutor_graph(system_prompt, figures=figures)
     result = graph.invoke({"messages": messages})
     out_messages = result["messages"]
     last = out_messages[-1] if out_messages else None
@@ -498,7 +564,7 @@ def stream_tutor_reply(
 
     last = messages[-1] if messages else None
     if isinstance(last, HumanMessage):
-        last_text = last.content if isinstance(last.content, str) else str(last.content)
+        last_text = _content_text(last.content)
         if _looks_non_student_like(last_text):
             canned = _build_invalid_input_reply()
             canned_json = canned.content if isinstance(canned.content, str) else str(canned.content)

@@ -1,0 +1,42 @@
+"""Lecture-transcript discovery shared across context builders.
+
+A course may ship lecture transcripts (plain text) under
+``curriculum/<course>/lectures/``. These are folded into the tutor's context
+so it can ground guidance in what was actually taught, not just the exercise
+prompt. Per the 06/09/2026 design decision, transcripts are included
+**per-course** (all lectures for the course), mirroring how ``course.txt`` and
+``syllabus.txt`` are treated.
+
+Text-only and additive: when the folder or files are absent this returns an
+empty string, so existing courses (and the deployed app) are unaffected.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_DEFAULT_CURRICULUM_ROOT = _REPO_ROOT / "curriculum"
+
+
+def load_lecture_transcripts(
+    course: str,
+    curriculum_root: Path | str | None = None,
+) -> str:
+    """Return all lecture transcripts for *course* concatenated into one string.
+
+    Reads every ``*.txt`` under ``<curriculum_root>/<course>/lectures/`` in
+    sorted filename order, labels each block with its file stem, and joins them
+    with blank lines. Returns ``""`` when the folder is missing or empty.
+    """
+    root = Path(curriculum_root) if curriculum_root is not None else _DEFAULT_CURRICULUM_ROOT
+    lectures_dir = root / course / "lectures"
+    if not lectures_dir.is_dir():
+        return ""
+
+    parts: list[str] = []
+    for path in sorted(lectures_dir.glob("*.txt")):
+        text = path.read_text(encoding="utf-8").strip()
+        if text:
+            parts.append(f"[{path.stem}]\n{text}")
+    return "\n\n".join(parts)
