@@ -390,12 +390,12 @@ body {
     background: var(--border);
 }
 
-/* Image thumbnails inside a chat message bubble. */
+/* Image thumbnails inside a chat message bubble — shown above the text. */
 .message-images {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 .message-image {

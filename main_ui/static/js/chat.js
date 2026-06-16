@@ -175,8 +175,20 @@
   function renderMessage(role, content, imageSrcs) {
     const li = document.createElement("li");
     li.className = "message message-" + role;
-    setMessageContent(li, role, content);
-    appendImages(li, imageSrcs);
+    if (imageSrcs && imageSrcs.length) {
+      // Image(s) above the text: attach images first, then the text in its own
+      // wrapper (setMessageContent writes onto the element it's given, so the
+      // text needs its own node to avoid clobbering the image block).
+      appendImages(li, imageSrcs);
+      if (content) {
+        const textEl = document.createElement("div");
+        textEl.className = "message-text";
+        setMessageContent(textEl, role, content);
+        li.appendChild(textEl);
+      }
+    } else {
+      setMessageContent(li, role, content);
+    }
     messageList.appendChild(li);
     // Always auto-scroll to bottom. Known papercut: fights user scrolling.
     messageList.scrollTop = messageList.scrollHeight;
