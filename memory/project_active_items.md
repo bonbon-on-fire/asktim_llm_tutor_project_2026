@@ -1,39 +1,22 @@
 ---
-name: Active action items (04/22/2026 meeting)
-description: Open tasks from the 04/22/2026 meeting between Nishita and Faizan
-type: project
+name: Active action items (06/09/2026 meeting)
+description: Open tasks from the 06/09/2026 meeting (Faizan, Romain, Nishita) — supersedes the 04/22 list
+metadata:
+  type: project
 ---
 
-From the 04/22/2026 meeting (Nishita Bhakar + Faizan Siddiqi):
+From the 06/09/2026 meeting (Faizan Siddiqi, Romain Puech, Nishita Bhakar). Supersedes the old 04/22 list (May-12 deadline long past). See [[project-overview]].
 
-**Hard deadline: May 12, 2026.** Publications and The Tech article are post-deadline.
+**Context:** AskTIM is live on Railway for 11.270x but real usage is thin — that week 4 unique conversations, all about *how to submit* the table assignment, not conceptual help. Exercises may be too elementary. ~15 verified + ~100 audit learners, ~20–25 active.
 
-**Decisions made:**
-- `run_ui_raw_mini` is the primary evaluation tool for prompt iteration
-- `run_ui_judge_mini` removed — too many moving parts, context issues made it unreliable; deleted along with `run_ui_raw_two_layer`, `judge/run_judge_mini.py`, `tutor/run_tutor_two_layer.py`
-- Do not build multiple tutor structures simultaneously — focus on prompt work first
-- Run 30 transcripts (10 per prompt, 3 prompts) before next meeting; grade and review
+**DONE in this cycle:** Dimitris slide deck (`docs/meeting_deck_2026_june.md`); additional STEM + humanities course testing (persona sims + manual + judge) — the 4 new June test courses came from this.
 
-**Open action items:**
-- [ ] Run all hand-graded transcripts through `run_ui_raw_mini`; grade originals and new versions
-- [ ] Plot comparison graphs (original vs mini-regenerated scores)
-- [ ] Update dashboard to show original and mini-regenerated transcripts side by side
-- [ ] Faizan to send additional turns with issues from hand-graded transcripts (to expand reference table)
-- [ ] Run 30 raw transcripts (10 per tutor prompt × 3 prompts) with new tutor prompt
-- [ ] Grade the 30 new + mini-regenerated transcripts with the judge
-- [x] Ensure dashboard works with new transcript types (`*_mini/`)
+**OPEN action items:**
+- Student persona improvements — review recent papers on LLM-based student simulation; reduce repetitiveness; keep personas as endpoint sanity checks only.
+- Tutor context expansion (see [[tutor-context-expansion]]) — finish image-input infrastructure, support image-based context/outputs, add lecture transcripts as tutor context. Maps to unbuilt PLANNING Phase 6/7.
+- Internal tooling — lightweight interface to review real AskTIM conversation data without manually digging through Railway.
+- Sandbox — show full course/exercise description when editing context.
 
-**Reference transcripts (working set for prompt iteration):**
-- chaotic 0007 T3, 0015 T8, 0097 T5 → violates 1.1.C
-- chaotic 0079 T6 → tutor kept helping when convo should have ended
-- clueless 0013 T1 → violates 1.2.B (explains instead of diagnostic questions)
-- clueless 0025 T9 → violates 3.1.A (wall of text)
-- clueless 0218 T7 → violates 3.2.A (tone too harsh)
-- clueless 0123 T8 → positive benchmark
-- clueless 0242 T2 → procedural question (should answer directly, not Socratic)
-- clueless 0248 T3 → blind agreement with nonsensical content
-- clueless 0297 T8 → good pattern (points student to online exercise)
+**Why:** Project has shifted from pre-deadline prompt iteration to post-deployment: proving value to Dimitris, broadening course coverage, and enriching tutor context (multimodal + transcripts).
 
-**Why:** Focus is tightened on prompt iteration + dashboard before May 12. Tutor architecture experiments (two-layer, resolved-challenge state) are deferred until after the deadline.
-
-**How to apply:** Prioritise prompt work and dashboard correctness. Don't suggest architectural changes until after May 12.
+**How to apply:** Treat multimodal/figures work as the headline next build (Phase 6 prerequisite). Don't suggest reviving the deprecated mini/two-layer experiments.
