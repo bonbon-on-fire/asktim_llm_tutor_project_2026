@@ -35,7 +35,9 @@ prompt = load_system_prompt("tutor_05", assignment_override="...")
 graph = create_tutor_graph(prompt, figures=figures)             # figures bound to the graph
 ```
 
-The figures are attached to the **latest student turn** as multimodal content (a `[text, image_url…]` block list that works for both GPT and Claude via LangChain) on every tutor call — one copy per turn. The message sanitizers handle both plain-string and multimodal-list content. **Curriculum figures** are still wired only into the non-streaming/batch path (transcript generation + judging); the deployed `main_ui/` streaming path does not auto-attach exercise figures yet. It does, however, carry multimodal **student-uploaded** images on the latest turn (same `[text, image_url…]` block shape, via [`utils/uploads.py`](../utils/uploads.py) → `build_multimodal_content`), so the streaming path is no longer text-only. See Phase 6 in the root [PLANNING.md](../PLANNING.md).
+The figures are attached to the **latest student turn** as multimodal content (a `[text, image_url…]` block list that works for both GPT and Claude via LangChain) on every tutor call — one copy per turn. The message sanitizers handle both plain-string and multimodal-list content.
+
+This now applies to **both** paths. The non-streaming/batch path (transcript generation + judging) binds figures to the graph as shown above. The deployed `main_ui/` (and `test_ui/`) **streaming** path auto-attaches the same exercise figures: [`services/tutor_bridge.py`](../main_ui/services/tutor_bridge.py) calls `discover_figures(course, exercise)` and merges the results with any student-uploaded images, then attaches them to the latest student turn on every call (per-call history is text-only, so re-attaching each turn keeps the figure in view). `test_ui/` skips this when the tester typed a one-off custom course/exercise, since those have no figures folder on disk. See Phase 6 in the root [PLANNING.md](../PLANNING.md).
 
 ### Lecture transcripts
 

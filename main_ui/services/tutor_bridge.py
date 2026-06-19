@@ -24,7 +24,7 @@ from tutor.run_tutor import (
 from tutor.run_tutor import get_tutor_reply as _upstream_get_tutor_reply
 from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
 from utils.curriculum import exercise_path
-from utils.figures import build_multimodal_content
+from utils.figures import build_multimodal_content, discover_figures
 from utils.lectures import load_lecture_transcripts
 
 
@@ -130,6 +130,21 @@ def _new_student_message(text: str, images: list | None) -> HumanMessage:
     return HumanMessage(content=build_multimodal_content(text, images))
 
 
+def _turn_attachments(course: str, exercise: str, images: list | None) -> list | None:
+    """Attachments for the latest student turn: curriculum figures + uploads.
+
+    Curriculum figures for ``(course, exercise)`` are filesystem paths attached
+    to the latest student turn on *every* call — the per-call history is
+    text-only, so the tutor would otherwise lose sight of the figure after the
+    first turn. Student-uploaded images (``(bytes, mime)`` tuples) ride on the
+    same turn, after the figures. Returns ``None`` when there's nothing to
+    attach, so the message stays a plain-text HumanMessage.
+    """
+    figures = discover_figures(course, exercise)
+    combined = [*figures, *(images or [])]
+    return combined or None
+
+
 def get_tutor_reply(
     *,
     course: str,
@@ -156,7 +171,11 @@ def get_tutor_reply(
     """
     graph = _get_or_build_graph(tutor, course, exercise)
     messages = _history_to_langchain(history)
-    messages.append(_new_student_message(new_student_message, images))
+    messages.append(
+        _new_student_message(
+            new_student_message, _turn_attachments(course, exercise, images)
+        )
+    )
 
     out_messages, reply_text = _upstream_get_tutor_reply(messages, graph=graph)
 
@@ -192,7 +211,11 @@ def stream_tutor_reply(
     """
     model, system_prompt = _get_or_build_stream_context(tutor, course, exercise)
     messages = _history_to_langchain(history)
-    messages.append(_new_student_message(new_student_message, images))
+    messages.append(
+        _new_student_message(
+            new_student_message, _turn_attachments(course, exercise, images)
+        )
+    )
 
     full_raw: str | None = None
     for item in _upstream_stream_tutor_reply(

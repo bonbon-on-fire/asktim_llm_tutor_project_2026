@@ -25,7 +25,7 @@ from tutor.run_tutor import (
 from tutor.run_tutor import get_tutor_reply as _upstream_get_tutor_reply
 from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
 from utils.curriculum import exercise_path
-from utils.figures import build_multimodal_content
+from utils.figures import build_multimodal_content, discover_figures
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -259,6 +259,31 @@ def _new_student_message(text: str, images: list | None) -> HumanMessage:
     return HumanMessage(content=build_multimodal_content(text, images))
 
 
+def _turn_attachments(
+    course: str,
+    exercise: str,
+    images: list | None,
+    *,
+    course_text: str | None,
+    exercise_text: str | None,
+) -> list | None:
+    """Attachments for the latest student turn: curriculum figures + uploads.
+
+    Curriculum figures attach only when the course *and* exercise are built-ins
+    (no custom override) — a tester's typed-in custom exercise has no figures
+    folder on disk. When they apply, figures are filesystem paths attached on
+    every call (the per-call history is text-only, so the tutor would otherwise
+    lose the figure after the first turn). Student uploads (``(bytes, mime)``
+    tuples) ride on the same turn, after the figures. Returns ``None`` when
+    there's nothing to attach, keeping the message a plain-text HumanMessage.
+    """
+    figures: list = []
+    if course and course_text is None and exercise_text is None:
+        figures = discover_figures(course, exercise)
+    combined = [*figures, *(images or [])]
+    return combined or None
+
+
 def get_tutor_reply(
     *,
     course: str,
@@ -301,7 +326,18 @@ def get_tutor_reply(
         custom_tutor_prompt=custom_tutor_prompt,
     )
     messages = _history_to_langchain(history)
-    messages.append(_new_student_message(new_student_message, images))
+    messages.append(
+        _new_student_message(
+            new_student_message,
+            _turn_attachments(
+                course,
+                exercise,
+                images,
+                course_text=course_text,
+                exercise_text=exercise_text,
+            ),
+        )
+    )
 
     out_messages, reply_text = _upstream_get_tutor_reply(messages, graph=graph)
 
@@ -349,7 +385,18 @@ def stream_tutor_reply(
         custom_tutor_prompt=custom_tutor_prompt,
     )
     messages = _history_to_langchain(history)
-    messages.append(_new_student_message(new_student_message, images))
+    messages.append(
+        _new_student_message(
+            new_student_message,
+            _turn_attachments(
+                course,
+                exercise,
+                images,
+                course_text=course_text,
+                exercise_text=exercise_text,
+            ),
+        )
+    )
 
     full_raw: str | None = None
     for item in _upstream_stream_tutor_reply(

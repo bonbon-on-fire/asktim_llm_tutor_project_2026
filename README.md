@@ -268,7 +268,7 @@ The full pipeline is working end-to-end, with:
 - Additional student persona families and course subjects
 - Human-in-the-loop evaluation to calibrate the LLM judge against human graders
 - ML-assisted rubric refinement based on judge disagreement patterns
-- Multimodal context is live: curriculum figures flow through the tutor/student/judge (`utils/figures.py`, recorded in transcripts), per-course lecture transcripts (`utils/lectures.py`) fold into tutor context, and **students can upload PNG/JPEG images** in the AskTIM and Sandbox chat composers (`utils/uploads.py`; stored in `uploaded_images.data`, streamed to the tutor as multimodal input). Remaining multimodal ideas: tutor-generated diagrams, and simulated-student image uploads
+- Multimodal context is live: curriculum figures flow through the tutor/student/judge in batch runs (`utils/figures.py`, recorded in transcripts) **and through the live AskTIM/Sandbox chat** (auto-attached per exercise in `services/tutor_bridge.py`), per-course lecture transcripts (`utils/lectures.py`) fold into tutor context, and **students can upload PNG/JPEG images** in the AskTIM and Sandbox chat composers via paperclip, drag-and-drop, or clipboard paste (`utils/uploads.py`; stored in `uploaded_images.data`, streamed to the tutor as multimodal input). Remaining multimodal ideas: tutor-generated diagrams, and simulated-student image uploads
 - End-of-course migration of the Railway-hosted AskTIM data to internal storage
 
 ## TL;DR
