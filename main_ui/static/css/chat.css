@@ -364,6 +364,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor: pointer;
 }
 
 .composer-thumb-remove {
@@ -404,6 +405,50 @@ body {
     border-radius: 10px;
     border: 1px solid var(--border);
     object-fit: cover;
+    cursor: pointer;
+}
+
+/* Image lightbox — click any chat image (staged or already sent) to view it
+   large, centered over the chat (à la ChatGPT). Confined to the iframe's own
+   viewport since the app runs embedded. */
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+}
+
+.image-lightbox[hidden] {
+    display: none;
+}
+
+.image-lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    line-height: 1;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .send-icon {

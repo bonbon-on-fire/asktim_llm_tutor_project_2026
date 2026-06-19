@@ -107,6 +107,45 @@
     updateSendButton();
   }
 
+  // --- Image lightbox -------------------------------------------------------
+  // Click any chat image — a staged composer thumbnail (not yet sent) or one
+  // already in the message log — to view it large, centered over the chat,
+  // ChatGPT-style. One overlay is lazily created and reused.
+  let imageLightbox = null;
+
+  function openImageLightbox(src, alt) {
+    if (!imageLightbox) {
+      imageLightbox = document.createElement("div");
+      imageLightbox.className = "image-lightbox";
+      imageLightbox.hidden = true;
+      const big = document.createElement("img");
+      big.className = "image-lightbox-img";
+      const close = document.createElement("button");
+      close.type = "button";
+      close.className = "image-lightbox-close";
+      close.setAttribute("aria-label", "Close image");
+      close.textContent = "×";
+      imageLightbox.appendChild(big);
+      imageLightbox.appendChild(close);
+      document.body.appendChild(imageLightbox);
+      // Backdrop or × click closes; clicking the image itself does nothing.
+      imageLightbox.addEventListener("click", (event) => {
+        if (event.target !== big) closeImageLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !imageLightbox.hidden) closeImageLightbox();
+      });
+    }
+    const big = imageLightbox.querySelector(".image-lightbox-img");
+    big.src = src;
+    big.alt = alt || "attached image";
+    imageLightbox.hidden = false;
+  }
+
+  function closeImageLightbox() {
+    if (imageLightbox) imageLightbox.hidden = true;
+  }
+
   function renderStagedPreviews() {
     if (!composerPreviews) return;
     composerPreviews.innerHTML = "";
@@ -121,6 +160,7 @@
       const img = document.createElement("img");
       img.src = item.url;
       img.alt = item.file.name || "attached image";
+      img.addEventListener("click", () => openImageLightbox(item.url, img.alt));
       thumb.appendChild(img);
       const remove = document.createElement("button");
       remove.type = "button";
@@ -187,6 +227,7 @@
       img.src = src;
       img.alt = "attached image";
       img.loading = "lazy";
+      img.addEventListener("click", () => openImageLightbox(src, img.alt));
       wrap.appendChild(img);
     }
     li.appendChild(wrap);
