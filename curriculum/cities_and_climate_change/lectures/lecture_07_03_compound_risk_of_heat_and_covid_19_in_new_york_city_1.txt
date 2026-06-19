@@ -1,0 +1,579 @@
+JANELLE KNOX-HAYES: Hello, my name is Janelle Knox-Hayes.
+I'm an associate professor in the Department of Urban Studies
+and Planning.
+And this presentation is titled, "The Compound Risk
+of Heat and COVID-19 in New York City, Examining Riskscapes,
+Physical and Social Factors and Interventions."
+This is based off of a paper recently published
+in the journal Local Environment with colleagues Juan Camilo
+Osorio, Natasha Stamler, Maria Dombrov, Rose
+Weiner, Mary-Hannah Smith, and Cynthia Rosenzweig.
+And we analyze the nature of compound risk in New York City,
+particularly considering the impacts
+of built and natural factors that contribute to extreme heat
+within the city.
+So this paper is a good case study
+for understanding the dynamics of heat
+in cities that many cities are facing as they confront climate
+change and how these can be exacerbated by something
+like a global pandemic.
+The study is built on several research questions.
+What are the places of highest risk for both heat exposure
+and COVID-19 exposure in the city of New York.
+What is the relationship between environmental, built,
+and social infrastructure, and sociodemographic
+characteristics in enhancing this risk,
+and are the neighborhoods most impacted by COVID-19
+also more exposed to the compound risks of extreme heat?
+We analyzed this phenomenon through the lens of riskscapes.
+Riskscapes look at the ways in which different risk factors
+can compound for specific individuals or specific groups
+and create heightened vulnerability.
+So, for example, we looked at multiple measures,
+including economic inequality, health outcomes
+as measured by COVID case counts,
+built environmental risks, including
+crowded housing, social support, and natural environmental harms
+such as extreme heat, access to or lack of access
+to air conditioning and cooling spaces, access to open space
+with shade, and we combine these into analysis
+to understand the origins, interdependencies,
+and spillovers between risk clusters.
+The unique challenge that's presented by COVID-19
+is that pre-pandemic cooling strategies
+such as cooling centers did not meet physical distancing
+requirements for COVID during the summers of 2020 and 2021
+in particular.
+Vulnerable communities had less access to green space.
+And what we find in our data is that rental overcrowding--
+not just net density, but rental overcrowding in particular--
+contributes to COVID-- increased COVID case rates.
+And then, finally, social determinants of health,
+such as where individuals are living,
+how they're working, what quality of nutrition they have,
+exacerbate both heat and COVID exposure.
+These show several key factors.
+The first is a measurement of land surface temperature
+within New York City.
+And you can see an interesting consolidation of heat impacts
+as you move from the lowest quintile in light yellow
+to the most highest quintile in bright red.
+You can see that Staten Island has areas of extreme heat.
+There's some concentration in the Bronx.
+There's also areas of Northern Queens that
+are quite severely impacted.
+And these, at first glance, also correspond
+with a graphic on the right showing
+COVID case counts from lowest quintile to highest quintile,
+lowest being in the lighter shaded blue and highest being
+in the darker shaded blue with high areas of concentration
+for COVID in these same areas.
+So Staten Island, some parts of Long Island, in Queens,
+and Bronx, northern Queens, and South Bronx,
+and then also very little vulnerability in Manhattan
+even though Manhattan is one of the denser areas.
+And what the graphic in the bottom shows
+is COVID case rates.
+What our research team quickly identified
+is that there were three predominant waves
+over this time period between the onset of the pandemic
+in early 2020 to where we concluded our data
+analysis in late 2021.
+And each of the waves of the pandemic
+had different characteristics.
+So different strains were predominant.
+There were different public interventions.
+And we try to capture those in analyzing each of the waves
+asynchronously.
+But we also can identify what we think spatially commonalities
+across the waves.
+So we focus our analysis on the spatial characteristics
+of both heat vulnerability as well as
+vulnerability as identified through these higher COVID case
+counts.
+The study used a combination of spatial analysis,
+the creation with statistical techniques of compound risk
+indices, and then an evaluation of interventions
+to make recommendations for the city of areas that
+are high risk, but don't have adequate support,
+as well as areas that are low risk,
+but have good support through interventions.
+We used a combination of data for this study
+including land-surface temperature data from Landsat
+satellite data.
+We used COVID seven-day average data
+from the New York City Department of Health and Mental
+Hygiene.
+We created heat-vulnerability indices,
+which included the access to tree canopy greenery
+and vegetation density the nature of impervious land cover
+and then how much open space access each of our census
+tracts had access to.
+Finally, we use the American Community Survey, ACS,
+to gather demographic, socioeconomic, and housing
+factor data.
+Using the 30 individual variables
+that are detailed in the appendix of the paper,
+we used factor analysis to establish
+several distinct factor groups, which
+helps us to identify the nature of built social, environmental,
+and health vulnerability.
+These included vegetation density, impervious surface
+distance to greenspace, rental overcrowding, mixed density,
+the distance to public cooling, and social vulnerability.
+And the supplementary materials in the paper detail
+how each of these scaled variables were created
+and which individual variables were
+integrated to create these measures and factor groups.
+This table shows one of the first ordinary least squares
+regressions that we ran comparing heat effects
+and built-in social factors.
+So you see the variables in the left column.
+We had looked at natural environment,
+including vegetation density and impervious surface-built
+environment, including distance to greenspace,
+rental overcrowding, mixed density,
+public cooling distance, and the percent of residents that lack
+AC, and then social factors, including social
+vulnerability--
+which is a scaled index--
+the percent of residents that are Black and the percent
+of residents that are Hispanic.
+And this middle column, LST Heat,
+shows the results of the regression,
+particularly that vegetation density and impervious surface
+have a negative correlation with heat,
+the areas, interestingly, that have
+greater amounts of vegetation density and impervious surface
+have higher heat, and then with respect to the built
+environment, areas that have rental overcrowding
+have the highest levels of heat, areas of mixed density
+have less heat.
+And here, it was very important for us
+to define rental overcrowding and mixed density
+because they're capturing different phenomenon.
+Mixed density is really getting at the principle
+of the 15-minute city, which is emblematic of the Manhattan
+area where all of the services that an individual needs--
+their employment, their child care, food resources,
+entertainment, recreational resources,
+are within 15 minutes of where they live.
+So even though the city is very dense, it, during the pandemic,
+was less exposed to heat and also less
+vulnerable to COVID because of the nature
+of the infrastructure it has access to
+as well as the broader socioeconomic supports.
+In contrast, areas in the Bronx, Brooklyn, Queens,
+and Staten Island had much higher rates
+of rental overcrowding.
+So these might be multifamily houses or single-family houses,
+but they're more likely to have more individuals living
+in a unit and those individuals are also
+less likely to have immediate access
+to the kinds of basic needs that they might have,
+such as employment, food resources, child care,
+education, et cetera, so they were
+more likely to have to commute out of the area
+where they were residing.
+These areas, interestingly, are also
+areas with higher heat, which perhaps, explains
+the negative correlation between vegetation
+density and impervious surface.
+A lot of this is tied up in Manhattan,
+which has very dense infrastructure,
+has low vegetation density, and high impervious surface,
+but is also not one of the hottest areas of the city.
+And then social vulnerability, which
+is including measures, such as lack of insurance and language
+isolation, is another significant positive correlate
+of high temperatures.
+So if we look at this graphic again,
+you can see the areas where we have both predominance
+of Manhattan having low vegetation density
+and high impervious surface, but lower heat
+scores than other areas within the city.
+And then areas such as areas in Brooklyn, Queens, and the Bronx
+have higher social vulnerability and higher heat scores
+and as we see on the right also have higher COVID case counts.
+Table three shows the multiple multivariate regression
+analysis of heat, vegetation density,
+and impervious surface.
+And again, what this shows, looking
+at the variables on the right, the
+built environmental and social factors.
+And then the regression coefficients
+across the next three columns for heat,
+distance to green space is a high predictor
+of areas that are hotter in the city.
+Rental overcrowding is another significant factor
+in determining areas that are hotter in the city.
+Mixed density has areas that are less hot in the city.
+And then areas that are closer to
+public cooling infrastructure also are less hot,
+which might suggest that the infrastructure is needed
+in places that are hotter.
+And then, finally, social vulnerability
+is also a predominant predictor of heat.
+With respect to vegetation density,
+areas that are farther from green space
+have lower vegetation density.
+Areas of mixed density also have lower vegetation density.
+But then areas that have public cooling or a greater distance
+to public cooling also have less vegetation.
+And finally, individuals of residential neighborhoods
+with higher percentages of Hispanic residents
+are more likely to have vegetation density, which,
+again, is suggesting, when we think
+about the structure of the city, that these residents are not
+living in Manhattan.
+With respect to impervious surface, we see similar trends.
+The distance to green space is a positive correlate
+of higher impervious surface.
+Rental crowding is also a correlate of higher impervious
+surface as is mixed density.
+The distance to public cooling is not
+in areas of higher impervious surface.
+And social vulnerability-- the percent
+of residents that are Black and percent of residents that
+are Hispanic are also areas with lower impervious surface,
+which, again explains the dynamic between Manhattan
+and other areas of the city.
+Manhattan, which has greater impervious surface and less
+vegetation density, is not as vulnerable as other parts
+of the city.
+So Manhattan explains a lot of the dynamics around density
+and vulnerability.
+Inside Manhattan, there's more mixed density,
+meaning more commercial, residential spaces.
+It's also closer to cooling centers,
+and for many residents, they're closer to greenspace.
+Central Park, obviously, plays a large role
+in providing that kind of access as well
+as the different riverwalks that exist around Manhattan.
+Outside of Manhattan, there are areas
+of lower impervious surface, but more rental crowding
+and greater levels of social vulnerability.
+These graphics show areas within the city
+where there's major open space.
+And you can see also here, highlighted
+vulnerable neighborhoods that are farther
+from the open space.
+And then you see both in the upper graphic, the nature
+of vegetation density--
+again, not much vegetation density in Manhattan.
+But this is somewhat deceptive because many residents
+have access to Central Park and riverwalks.
+In contrast you see quite a bit of vegetation
+on Staten Island and Long Island,
+as well as in Eastern Queens, but these
+can be areas that are more vulnerable because
+of the nature of the housing stock.
+And then, finally, with impervious surface,
+we see that Manhattan has a considerable amount
+of impervious surface.
+It's very dense, but this doesn't necessarily
+mean higher heat vulnerability.
+The buildings provide a lot of shade on the ground.
+It's almost a built environmental ecosystem
+that leads to cooler temperatures within the city.
+And then for COVID case rates across the pandemic,
+Manhattan had lower COVID case rates
+because of the range of other measures
+that are important in considering COVID.
+Table four represents the multiple multivariate
+regression analysis of COVID-19 across three waves.
+And here, it was important for us
+to consider the waves independently
+because of the different public measures that were implemented
+between the waves, as well as the different strands
+of the virus, different levels of contagion,
+and different seasonality of these waves.
+The first wave was a summer wave,
+and you can see both the trends already discussed
+about the nature of vulnerability between Manhattan
+and areas outside of Manhattan that may be less dense
+but have greater social vulnerability.
+These areas across the first and second wave
+had higher COVID case rates with respect
+to built and social environmental factors.
+In the first wave, which was a summer wave,
+the distance to greenspace, as well as rental overcrowding
+were predominant predictors of areas of higher COVID case
+counts.
+And it's important to remember here
+there were lockdowns, measures in place for social distancing,
+and so for these residents that couldn't
+get outside of their buildings or couldn't get out
+into green space--
+recreational space-- this was particularly difficult
+for these neighborhoods.
+And the second wave of the pandemic,
+which was a winter wave, a bit of that vulnerability
+is reversed.
+We don't see as significant a factor for the distance
+to green space, again, which signals this relationship
+between heat and COVID-19.
+And then looking at the social factors,
+social vulnerability is significant across both
+the first and second wave, and that the two waves combine
+is a predictor of higher COVID case rates.
+But the strongest predictors are the racial variables,
+so percent of residents that are Black and percent
+residents that are Hispanic.
+And we can see in the first wave,
+there was a significant influence
+for both predominantly Black and predominantly Hispanic
+neighborhoods.
+These were the worst impacted.
+Interestingly, something switches
+between the first and second wave such that Black residents
+were less vulnerable in the second wave,
+whereas Hispanic residents remained increasingly
+vulnerable to the pandemic.
+I'll come back and discuss this more in a minute.
+And then with respect to the third wave,
+we, unfortunately, were not able to geocode the data such
+that we could identify exactly where individuals
+were vaccinated.
+But the third wave corresponds after the vaccinations.
+And here in the reversal of many of the vulnerabilities,
+particularly around the built-in social environmental factors,
+we can see the strength of and positive impact
+of vaccinations.
+So particularly areas with rental overcrowding
+actually had lower case rates in the third wave
+as well as those communities that lacked AC.
+Unfortunately, the Hispanic residents
+are also incredibly vulnerable in the third wave.
+So the major wave one findings are
+that temperature and COVID-19 cases are concentrated
+across the pandemic, particularly
+the first and second waves in the same neighborhoods.
+Greenspace is not only for mediating heat,
+but it's also for mitigating the impact of the pandemic.
+And then social vulnerability, which
+we measured by median household income, language isolation,
+the percent of residents that lack a diploma,
+and the percent that lack health insurance,
+is also highly significant across all of the waves
+in predicting areas with higher COVID case counts.
+These graphics show, on the left, the nature of the COVID
+pandemic and its distribution in quintiles
+across areas of the city in the first wave of the pandemic.
+And then what you see is the correspondence
+between this wave of the pandemic.
+And in the top right hand graphic,
+the distance to cooling interventions,
+areas of higher COVID case counts
+also have less access to cooling interventions.
+And then, especially, you see the correspondence
+and correlation between areas with higher COVID case counts
+and the percent that lack AC in the bottom-right graphic,
+particularly highlighting those areas of North Staten Island
+and then Northern Bronx, mid-Queens, and Southern
+Brooklyn, as well as Long Island.
+And then with respect to the distance
+to open space and social vulnerability, this graphic,
+similarly, if you look at the COVID case
+counts both for the first and second wave
+and then the distance to green or green or open space, which
+is shown here, as well as distance
+to social vulnerability, areas of the city
+with higher social vulnerability also had higher case counts.
+And particularly in that first summer wave,
+areas with distance to open space
+had higher COVID case counts.
+With respect to the wave one and two findings,
+areas with the highest COVID rates
+were areas where Black and African-American residents have
+historically settled due to redlining and urban renewal
+policies, which in part might explain
+some of the racial disparities that we
+see across the analysis.
+The difference in racial outcomes
+for predominantly Black neighborhoods in predominantly
+Hispanic neighborhoods between the first and second waves
+is difficult to explain with our data.
+But we do think that this is an interesting finding that
+deserves more attention.
+It could be a combination of public intervention,
+a behavioral change that occurred because of heightened
+awareness during the first wave of the pandemic on how severe
+and how severely impacted predominantly Black
+communities were, or there could be other epidemiological causes
+that contributed to this transition
+between the first and second waves.
+But if there is particularly public intervention
+or behavioral change that was successful in limiting
+the impacts in the second wave of the pandemic
+for predominantly Black communities,
+it would be important to understand these.
+And one of the things we also looked at in our study
+was the nature of work provided.
+Hispanic workers contribute to a larger share
+of essential services, as well as cleaning services,
+whereas Black workers within the city
+contribute to a greater share of transportation services.
+And so there may have been a difference
+in exposure and vulnerability between these two
+sets of service workers during the second wave
+of the pandemic, which explain why Hispanic populations are
+still highly vulnerable, whereas Black populations were
+less vulnerable during the second wave of the pandemic.
+And then, finally, rental overcrowding
+contributes to higher COVID rates and also corresponds
+to higher food insecurity and poor access
+to social services and amenities.
+These graphics show the COVID case
+counts across the first and second wave
+and then on the left with the two waves combined.
+And again, you can see that some areas
+have common vulnerability.
+But there are also some significant transitions.
+In the first wave, East Queens is predominantly impacted,
+and then a lot of impact in the Northern Bronx.
+This shifts to the Southern Bronx in the second wave,
+as well as to Central Queens and areas of Brooklyn.
+And then all of Staten Island is severely impacted.
+And as you combine the two waves in the left graphic,
+you start to see areas that are going
+to be significant in generating the compound risk index.
+These two graphics show the COVID daily case counts
+for waves one and two highlighting
+with the shaded blue quintiles four and five,
+measuring the highest COVID case counts,
+and then overlays these over the top of a map
+showing percent of Black or African-American community
+by census tract and percent Hispanic or Latino residents
+by census tract.
+And again, here, you can see the transition
+with COVID wave one highlighted in the left graphic
+corresponding with high correlation to areas in South
+Queens and in Central Brooklyn, as well as North Staten
+Island and then North Bronx where
+we have higher percentages of Black and African-American
+communities.
+And then in the diagram on the right,
+we see the second wave of the pandemic, fourth and fifth
+quintiles, which are measuring highest COVID case counts,
+overlaid over the percent of Hispanic or Latino residents
+by census tract.
+And you can see the high correspondence
+with areas in the Bronx, in Central Queens, and then
+South Brooklyn, as well as across Staten Island
+for these groups.
+And looking from left to right you really
+can see the transition that occurred
+between the first and second waves of the pandemic.
+So this graphic shows COVID daily case counts
+for waves one and two and rental overcrowding and mixed density.
+And again, you can see that areas
+with higher rental overcrowding in the top-right graphic
+correspond with areas that have higher COVID case
+counts, whereas areas with higher mixed density,
+particularly highlighting Manhattan here,
+correspond with areas with lower COVID case counts, which again,
+really suggests it's not just dense areas that
+are vulnerable.
+It's the nature of density.
+And this is something that's really
+significant for urban planners to consider,
+especially as they try to achieve urban designs that
+enable residents to have all of the basic necessities
+that they need much more readily available to them.
+This is beneficial both for heat exposure,
+as well as for pandemic exposure.
+Wave three also suggested significant findings.
+Geocoded data for COVID vaccines were not available.
+Nevertheless, the COVID wave-three data
+show the efficacy of vaccines in reducing vulnerabilities.
+Most predictors of vulnerability were not significant
+anymore except for heat and percent Hispanic population
+in the third wave of the pandemic.
+Finally, we took all of these measures and combined them
+using factor analysis into a compound risk index,
+which combines heat, COVID-19, density--
+particularly rental overcrowding-- social
+vulnerability, the nature of natural heat exposure
+in the natural environment, and then
+some of the built-in social-environmental factors.
+This graphic shows the high-compound risk index
+with the highest compound risk quintile shaded in red
+and overlaps it for the COVID case counts for wave three.
+And again, here, you can visually see that shift away
+and that the shaded red areas don't
+correspond with areas that have the highest COVID case counts.
+So in the third wave of the pandemic,
+vaccinations were able to shift the pandemic away
+from areas that were otherwise more vulnerable.
+Finally, we looked at interventions
+that the city was using to combat heat.
+These included cool streets, which
+might be tree-based shade and flowing water.
+In the pandemic, the most useful interventions
+were not just public-health interventions, but also
+ones that were used to shape the natural
+and built social environment that residents had exposure to.
+Strategies are needed to address underlying natural-built
+and social-environmental, as well as social factors
+to address underlying causes of these different riskscapes.
+These graphics show the compound risk index on the left,
+and you can see with the dark red, the highest
+shaded, the darkest red, the highest quintile,
+highest-risk areas.
+So the graphic in the top right overlays
+the city's interventions onto the city streets.
+And so here, you see hash in red,
+the top COVID case counts, and then
+which pools were open in the summer of 2020 highlighted
+in blue, open and cool streets in the summer of 2020,
+also highlighted and shaded in a dark blue, and then
+the areas of major open space with vegetation density
+within the city.
+And we overlay onto this in the graphic
+in the bottom right, key neighborhoods.
+So the red neighborhoods are high risk.
+They have the highest risk, according to our risk index,
+but they also have the highest distance to cooling.
+And so these are the areas the city should target
+with further interventions.
+In orange, we shaded areas that are high risk, according
+to the risk index, but have a lower distance
+to cooling infrastructure.
+And here, the city might just think
+about additional strategies or interventions that could
+be deployed for these areas.
+And then, finally, in green, we have
+areas that are low risk, but low distance to cooling
+infrastructure, where the city might consider shifting
+resources if there is scarcity of resources in creating
+future public interventions.
+And what we also finally see in the compound risk track
+is that there are identifiable areas of heightened compound
+risk, and these particularly highlight the areas
+between Queens and Bronx of what is often considered
+the Back Bay of New York.
+And then, finally, as we can see in the left of this diagram,
+according to our compound risk index,
+the most vulnerable areas of the city
+are Kingsbridge Heights, Parkchester, Concourse,
+Soundview, Mott Haven, Port Morris and Rikers
+Island in the Bronx, Flushing, Corona, North Corona, Jackson
+Heights, Elmhurst, and Flushing, Richmond Hill and Jamaica
+in Queens, Sunset Park, Borough Park, Coney Island,
+and Brighton Beach in Brooklyn, and Stapleton in Staten Island.
+Several of these areas, like Sunset Park and Mott Haven
+and Port Morris, are known for the disproportionate
+concentration of environmental burdens
+and historic environmental justice issues,
+given their location in New York City's designated
+significant maritime and industrial areas.
+What's less known is the heat impacts
+in other residential communities located near inland
+industrial areas like Jamaica or Maspeth in Queens or Soundview
+in the Bronx or low-income immigrant communities
+like North Corona, Corona, and Jackson Heights in Queens,
+and waterfront neighborhoods like Flushing in Queens.
+These are the areas where the city
+should dedicate considerable investment
+to address compound risks.
