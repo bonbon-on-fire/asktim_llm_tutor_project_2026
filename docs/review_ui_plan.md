@@ -97,7 +97,7 @@ README.md
 
 Start from `test_ui` templates/JS so it looks identical, then:
 
-- **Remove** the composer ("Ask anything"), **Edit context**, **New chat**.
+- **Remove** the entire chat composer bar ("Ask anything" text field + attach/paperclip + send button), plus **Edit context** and **New chat** — the page is purely for reading, no input affordances at all.
 - **Header + tab title** from `REVIEW_TITLE`.
 - **Sidebar list** driven by `/api/conversations`:
   - Sort by **date** (default) and by **student (email)**.
@@ -165,13 +165,14 @@ data"), **production = blue** ("real student data, handle with care").
 - [ ] Confirm auth model (shared password vs per-user)
 - [ ] Decide search/filter scope for v1
 
-### Phase 1 — Skeleton + DB connectivity
-- [ ] Create `review_ui/` package (`__init__`, `__main__`, `run_app` factory)
-- [ ] `config.py` reading `REVIEW_DATABASE_URL`, `REVIEW_TITLE`, `REVIEW_THEME`, `REVIEW_ACCENT`, `REVIEW_PASSWORD`, `REVIEW_SECRET_KEY`, `PORT`
-- [ ] `db/models.py` — minimal read-only models (common columns only)
-- [ ] `db/session.py` — engine + Session, echo off, **no `create_all`**
-- [ ] `services/conversations.py` — `list_all_conversations()`, `get_conversation()`, `get_image()`
-- [ ] Smoke test locally against prod via `DATABASE_PUBLIC_URL` (counts + one transcript)
+### Phase 1 — Skeleton + DB connectivity ✅
+- [x] Create `review_ui/` package (`__init__`, `__main__`, `run_app` factory)
+- [x] `config.py` reading `REVIEW_DATABASE_URL`, `REVIEW_TITLE`, `REVIEW_THEME`, `REVIEW_ACCENT`, `REVIEW_PASSWORD`, `REVIEW_SECRET_KEY`, `PORT`
+- [x] `db/models.py` — minimal read-only models (common columns only)
+- [x] `db/session.py` — engine + Session, pg-url normalize, **no `create_all`** (rolls back, never commits)
+- [x] `services/conversations.py` — `list_all_conversations()` (date/student sort, pagination), `get_conversation()`, `get_messages_for_conversation()`, `get_image()`
+- [x] Verified end-to-end against seeded SQLite (model mapping + all services, 11/11 checks)
+- [ ] Confirm against the real prod DB via `DATABASE_PUBLIC_URL` (needs the connection string — run locally)
 
 ### Phase 2 — Endpoints
 - [ ] `GET /api/conversations` (all convos, `?sort=date|student`, pagination, `message_count`)
@@ -181,7 +182,7 @@ data"), **production = blue** ("real student data, handle with care").
 
 ### Phase 3 — Frontend (reuse + strip)
 - [ ] Port chat templates/CSS/JS into `review_ui/`
-- [ ] Remove composer, Edit context, New chat
+- [ ] Remove the entire chat composer bar (text field + attach + send), Edit context, New chat — no input affordances
 - [ ] Sidebar from `/api/conversations`; email line above the `Exercise · date · N msgs` line
 - [ ] Sort toggle: date / student (grouped by email)
 - [ ] Anonymous fallback for null email

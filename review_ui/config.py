@@ -1,8 +1,9 @@
 """Environment-driven configuration for review_ui.
 
-One codebase, deployed twice. Everything that differs between the Sandbox and
-normal deployments is an env var: which database to read, the title shown in the
-header / browser tab, and the color theme. See ``docs/review_ui_plan.md``.
+A single read-only dashboard for reviewing ``main_ui``'s conversation data,
+styled to match ``main_ui`` (MIT crimson). Env vars cover which database to read,
+the title shown in the header / browser tab, and an optional accent override.
+See ``docs/review_ui_plan.md``.
 """
 
 from __future__ import annotations
@@ -18,8 +19,7 @@ _DEFAULT_COOKIE_MAX_AGE_SECONDS = 30 * 24 * 3600  # 30 days
 class Config:
     database_url: str
     title: str
-    theme: str
-    accent: str | None
+    accent: str
     password: str | None
     secret_key: str
     port: int
@@ -37,12 +37,10 @@ def load_config() -> Config:
         or os.environ.get("DATABASE_URL")
         or "sqlite:///./review_ui.db"
     )
-    # Title is shown in the header and the browser tab; it carries the
-    # Sandbox-vs-normal distinction (e.g. "AskTIM · Sandbox Database").
-    title = os.environ.get("REVIEW_TITLE", "AskTIM · Database")
-    # Named palette preset; REVIEW_ACCENT optionally overrides with raw hex.
-    theme = (os.environ.get("REVIEW_THEME") or "production").strip().lower()
-    accent = os.environ.get("REVIEW_ACCENT") or None
+    # Title shown in the header and the browser tab.
+    title = os.environ.get("REVIEW_TITLE", "AskTIM · Database Beta")
+    # Match main_ui's look: MIT crimson. Override with REVIEW_ACCENT if needed.
+    accent = os.environ.get("REVIEW_ACCENT", "#8c1a1b")
     # Shared-password gate. None = no gate (local dev only); deployments MUST set
     # this since the tool exposes every student's conversations and images.
     password = os.environ.get("REVIEW_PASSWORD") or None
@@ -54,7 +52,6 @@ def load_config() -> Config:
     return Config(
         database_url=database_url,
         title=title,
-        theme=theme,
         accent=accent,
         password=password,
         secret_key=secret_key,

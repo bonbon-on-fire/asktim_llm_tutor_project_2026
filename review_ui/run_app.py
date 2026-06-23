@@ -18,9 +18,8 @@ def create_app() -> Flask:
     config = load_config()
     app = Flask(__name__)
     app.config["SECRET_KEY"] = config.secret_key
-    # Surfaced to templates in later phases for the per-deployment look.
+    # Surfaced to templates in later phases: title + accent (matches main_ui).
     app.config["REVIEW_TITLE"] = config.title
-    app.config["REVIEW_THEME"] = config.theme
     app.config["REVIEW_ACCENT"] = config.accent
 
     # NOTE: deliberately no Base.metadata.create_all / migrations. read-only.
