@@ -5,21 +5,9 @@
   --accent: #8c1a1b; /* MIT crimson; overridden inline from DATABASE_UI_ACCENT */
 }
 
-/* --- Header (light bar, matches the Sandbox layout) ---------------------- */
-/* chat.css already styles .course-banner as a thin white bar with a bottom
-   border; we only add the flex row so "Sign out" sits at the right. */
-.course-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.review-logout {
-  color: var(--muted, #888);
-  text-decoration: none;
-  font-size: 0.8rem;
-  padding: 0 0.25rem;
-}
-.review-logout:hover { color: var(--text, #2a2a2a); text-decoration: underline; }
+/* The top bar is an intentionally empty thin strip — chat.css already styles
+   .course-banner as a thin white bar with a bottom border (same height as the
+   student app's course banner). No content, no sign-out. */
 
 /* The email/identity line that sits above the exercise header in each entry. */
 .sidebar-entry-student {

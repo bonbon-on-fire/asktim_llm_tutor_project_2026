@@ -9,8 +9,18 @@
   const errorBanner = document.getElementById("error-banner");
   const errorText = document.getElementById("error-text");
   const errorDismiss = document.getElementById("error-dismiss");
+  const sidebar = document.getElementById("sidebar");
+  const historyToggle = document.getElementById("history-toggle");
+  const sidebarClose = document.getElementById("sidebar-close");
 
   let activeConversationId = null;
+
+  // Sidebar open/close toggle (mirrors the student app's behavior).
+  function setSidebar(open) {
+    sidebar.setAttribute("data-open", open ? "true" : "false");
+  }
+  if (historyToggle) historyToggle.addEventListener("click", () => setSidebar(true));
+  if (sidebarClose) sidebarClose.addEventListener("click", () => setSidebar(false));
 
   function showError(msg) {
     errorText.textContent = msg;
