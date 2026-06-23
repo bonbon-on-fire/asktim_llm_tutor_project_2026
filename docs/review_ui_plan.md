@@ -172,33 +172,33 @@ main_ui's. `REVIEW_ACCENT` exists only as an optional override.
 - [x] Verified end-to-end against seeded SQLite (model mapping + all services, 11/11 checks)
 - [ ] Confirm against the real prod DB via `DATABASE_PUBLIC_URL` (needs the connection string — run locally)
 
-### Phase 2 — Endpoints
-- [ ] `GET /api/conversations` (all convos, `?sort=date|student`, pagination, `message_count`)
-- [ ] `GET /api/conversation/<uuid>` (full transcript, no ownership check)
-- [ ] `GET /api/image/<int>` (serve bytes, no ownership check)
-- [ ] Bare HTML list to prove end-to-end before styling
+### Phase 2 — Endpoints ✅
+- [x] `GET /api/conversations` (all convos, `?sort=date|student`, pagination, `message_count`)
+- [x] `GET /api/conversation/<uuid>` (full transcript, no ownership check)
+- [x] `GET /api/image/<int>` (serve bytes, no ownership check)
+- [x] Verified via Flask test client (14/14 checks: login flow + all APIs)
 
-### Phase 3 — Frontend (reuse main_ui + strip)
-- [ ] Port main_ui templates/CSS/JS into `review_ui/`
-- [ ] Remove the entire chat composer bar (text field + attach + send), Edit context, New chat — no input affordances
-- [ ] Sidebar from `/api/conversations`; email line above the `Exercise · date · N msgs` line
-- [ ] Sort toggle: date / student (grouped by email)
-- [ ] Anonymous fallback for null email
-- [ ] Transcript pane reuses message renderer (reasoning + inline images)
+### Phase 3 — Frontend (reuse main_ui + strip) ✅
+- [x] Port main_ui CSS + vendored marked/dompurify; lean new `review.js`
+- [x] No chat composer / Edit context / New chat — no input affordances
+- [x] Sidebar from `/api/conversations`; email line above the `Exercise · date · N msgs` line
+- [x] Sort toggle: date / student (grouped by email) — verified
+- [x] Anonymous fallback for null email
+- [x] Transcript pane reuses message renderer (markdown + reasoning + inline images) — verified via screenshots
 
-### Phase 4 — Title (look already matches main_ui)
-- [ ] Inject `REVIEW_TITLE` (`AskTIM · Database Beta`) into header + `<title>`
-- [ ] Keep main_ui's crimson accent (`#8c1a1b`); `REVIEW_ACCENT` optional override
+### Phase 4 — Title (look already matches main_ui) ✅
+- [x] Inject `REVIEW_TITLE` (`AskTIM · Database Beta`) into header + `<title>`
+- [x] main_ui's crimson accent (`#8c1a1b`); `REVIEW_ACCENT` optional override
 
-### Phase 5 — Auth
-- [ ] `auth.py` shared-password gate + signed session cookie
-- [ ] Guard all routes; `/login` + `/login` POST + logout
+### Phase 5 — Auth ✅
+- [x] `auth.py` shared-password gate + signed session cookie
+- [x] Guard all routes; `/login` + POST + `/logout` — verified
 
 ### Phase 6 — Deploy
-- [ ] `Dockerfile_review` (from `Dockerfile_main`) + `scripts/railway-entrypoint-review.sh`
-- [ ] Deploy the review service (main_ui's DB), verify, generate domain
+- [x] `Dockerfile_review` (from `Dockerfile_main`) + `scripts/railway-entrypoint-review.sh` (fails closed without `REVIEW_PASSWORD`)
+- [ ] Deploy the review service (main_ui's DB), verify, generate domain  *(user step — needs Railway service + `REVIEW_DATABASE_URL` reference var + `REVIEW_PASSWORD`/`REVIEW_SECRET_KEY` secrets)*
 - [ ] Confirm read-only (no schema writes), auth required, title + crimson correct
 
-### Phase 7 — Docs
-- [ ] `review_ui/README.md` (run locally, env vars, deploy notes)
-- [ ] Link from root `README.md` / `PLANNING.md`
+### Phase 7 — Docs ✅
+- [x] `review_ui/README.md` (run locally, env vars, deploy notes)
+- [x] Linked from root `README.md`

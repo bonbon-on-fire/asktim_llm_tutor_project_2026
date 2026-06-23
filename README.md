@@ -39,6 +39,8 @@ The system has six loosely coupled layers:
 
 **Dashboard (`dashboard_ui/`):** Flask app (port 5002) that discovers all raw transcripts on disk, attaches each one's Claude judge grade, and serves a sortable table (with a Score column) plus a per-transcript detail view (full conversation + grade panel) via a single-page JS frontend.
 
+**Conversation review (`review_ui/`):** Read-only Flask dashboard (port 5003) for browsing real `main_ui` conversation data live from its Postgres. Looks like the `main_ui` chat (MIT-crimson) but with no composer/inputs — lists every conversation (sort by date or by student email), and renders a selected transcript with the tutor's pedagogical reasoning and uploaded images. Shared-password gated; strictly read-only (no schema writes). See [`review_ui/README.md`](review_ui/README.md).
+
 **Student app (`main_ui/`):** Production-shape Flask app for the live OCW deployment. Streams tutor replies token-by-token via SSE while keeping the `pedagogical-reasoning` field hidden server-side. Persists conversations and messages to Postgres (Alembic-managed schema). Soft identity via a two-stage email + password modal that fires after the third student message — passwords are bcrypt-hashed in a separate `students` table, and the email cookie carries forward across browsers for chat-history continuity.
 
 ## Code in Action: Conversation Flow Example
