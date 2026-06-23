@@ -10,6 +10,7 @@ curriculum/
     course.txt                       # shared course context
     course_name.txt                  # display name shown in the main_ui course banner
     syllabus.txt                     # optional — appended to assignment text in main_ui
+    online_link.txt                  # optional — OCW course URL; source for RAG ingestion (Phase 11)
     exercises/                       # assignment prompts
       exercise_01.txt
       exercise_02.txt
@@ -26,6 +27,7 @@ curriculum/
 - `course.txt` stores shared course context.
 - `course_name.txt` holds the human-readable course title rendered in the `main_ui/` course banner (via `load_course_name()` in [main_ui/routes/_validation.py](../main_ui/routes/_validation.py)). If empty or absent, the banner renders blank.
 - `syllabus.txt` (optional) is appended to the assignment block in `main_ui/`'s context build (see [main_ui/services/tutor_bridge.py](../main_ui/services/tutor_bridge.py)).
+- `online_link.txt` (optional) holds the course's MIT OpenCourseWare URL — the canonical source link for **RAG ingestion** of fuller course materials (lecture notes, readings). It is currently a stored pointer only; nothing in the tutor pipeline reads it yet (planned — see **Phase 11** in the root [PLANNING.md](../PLANNING.md)).
 - `exercises/exercise_XX.txt` stores the assignment prompt for a specific exercise (zero-padded two-digit numbering). Path resolution for all readers (web apps + runners) is centralized in [`utils/curriculum.py`](../utils/curriculum.py).
 - `figures/` holds visual context that belongs to a specific exercise. Files must start with `exercise_<NN>_` so the framework (Phase 6 — see root [PLANNING.md](../PLANNING.md)) attaches the matching figures as multimodal input when the tutor/student/judge see that exercise — both in batch runs and in the live AskTIM/Sandbox chat (auto-attached per turn via `services/tutor_bridge.py`). Supported extensions: `.png`, `.jpg`, `.jpeg`. Loaded by [`utils/figures.py`](../utils/figures.py).
 - `lectures/` (optional) holds **per-course** lecture transcripts as plain `.txt` files. Every file in the folder is read (sorted by filename, labeled by stem) and folded into the tutor's context for **all** exercises in the course — mirroring how `syllabus.txt` is treated. Loaded by [`utils/lectures.py`](../utils/lectures.py); absent folder = no transcripts.
@@ -50,6 +52,7 @@ The four courses beyond Cities and Climate Change were added in June 2026 as **c
 4. Add an `exercises/` folder with one or more `exercise_XX.txt` files (zero-padded numbering).
 5. If an exercise references diagrams or maps, drop them in `figures/` with the `exercise_<NN>_<slug>.<ext>` naming convention.
 6. If the course has lecture transcripts, drop plain `.txt` files into `lectures/`; they are included in the tutor context for every exercise in the course.
+7. Optionally add `online_link.txt` with the course's MIT OpenCourseWare URL — the source link for RAG ingestion of fuller course materials (see Phase 11 in the root [PLANNING.md](../PLANNING.md)).
 
 ## Adding an exercise to an existing course
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from flask import Flask, Response, g, jsonify, request
+from sqlalchemy import inspect, text
 
 from test_ui.config import load_config
 from test_ui.cookies import (
@@ -19,14 +20,59 @@ from test_ui.routes.history import history_bp
 from test_ui.routes.identity import identity_bp
 
 
+def _reconcile_columns() -> None:
+    """Add model columns missing from already-existing tables.
+
+    test_ui skips Alembic and builds its schema with ``create_all`` — but
+    ``create_all`` only creates *missing tables*, it never adds columns to a
+    table that already exists. The Sandbox DB is long-lived (Railway
+    ``asktim_test``), so a model change like the image-upload
+    ``uploaded_images.data`` (BYTEA) column would otherwise fail every insert
+    with ``UndefinedColumn`` until someone manually reset the database.
+
+    This reconciles that drift on boot: for each existing table, any column the
+    model declares but the DB lacks is added (nullable, so existing rows are
+    fine; every insert path supplies a value). Idempotent and race-safe across
+    gunicorn workers.
+    """
+    inspector = inspect(engine)
+    existing_tables = set(inspector.get_table_names())
+    is_postgres = engine.dialect.name == "postgresql"
+    with engine.begin() as conn:
+        for table in Base.metadata.sorted_tables:
+            if table.name not in existing_tables:
+                continue  # create_all just built it fresh — nothing to reconcile
+            have = {c["name"] for c in inspector.get_columns(table.name)}
+            for col in table.columns:
+                if col.name in have:
+                    continue
+                ddl_type = col.type.compile(dialect=engine.dialect)
+                if_not_exists = "IF NOT EXISTS " if is_postgres else ""
+                try:
+                    conn.execute(
+                        text(
+                            f'ALTER TABLE "{table.name}" '
+                            f'ADD COLUMN {if_not_exists}"{col.name}" {ddl_type}'
+                        )
+                    )
+                except Exception:
+                    # A racing worker already added it (or the backend lacks
+                    # IF NOT EXISTS) — the column ends up present either way.
+                    pass
+
+
 def create_app() -> Flask:
     config = load_config()
     app = Flask(__name__)
     app.config["SECRET_KEY"] = config.secret_key
 
     # test_ui owns a separate, throwaway database and skips Alembic — the
-    # schema is created directly from the models on boot.
+    # schema is created directly from the models on boot. create_all makes
+    # missing tables; _reconcile_columns backfills columns added to tables that
+    # already existed (e.g. uploaded_images.data) so the long-lived Sandbox DB
+    # never needs a manual reset.
     Base.metadata.create_all(engine)
+    _reconcile_columns()
 
     app.register_blueprint(embed_bp)
     app.register_blueprint(identity_bp)
