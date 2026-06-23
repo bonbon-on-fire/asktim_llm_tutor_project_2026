@@ -11,11 +11,15 @@ No HTTP, no DB, no Flask state — just a thin function from
 
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 
 from langchain_core.messages import AIMessage, HumanMessage
 
+from rag.retrieve import format_context
+from rag.retrieve import has_index as rag_has_index
+from rag.retrieve import retrieve as rag_retrieve
 from tutor.run_tutor import (
     build_tutor_model,
     create_tutor_graph,
@@ -32,13 +36,38 @@ _REPO_ROOT = Path(__file__).resolve().parents[2]
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 _ABOUT_ASKTIM_PATH = Path(__file__).resolve().parents[1] / "about_asktim.txt"
 
+# Context modes (Phase 11). Override per-deploy with the TUTOR_CONTEXT_MODE env
+# var; otherwise default to "rag" when a course has a built index, else fall
+# back to the historical "full_context" behavior.
+_VALID_CONTEXT_MODES = {"rag", "full_context", "exercise_only"}
 
-_graph_cache: dict[tuple[str, str, str, bool], object] = {}
+
+_graph_cache: dict[tuple[str, str, str, bool, str], object] = {}
 # Parallel cache for the streaming path. The non-streaming path drives a
 # compiled LangGraph; the streaming path drives the raw model with the same
-# system prompt. We cache both per (tutor, course, exercise, include_syllabus)
-# so successive turns reuse the same prompt build.
-_stream_cache: dict[tuple[str, str, str, bool], tuple[object, str]] = {}
+# system prompt. We cache both per (tutor, course, exercise, include_syllabus,
+# context_mode) so successive turns reuse the same prompt build.
+_stream_cache: dict[tuple[str, str, str, bool, str], tuple[object, str]] = {}
+
+
+def _resolve_context_mode(course: str, has_custom: bool) -> str:
+    """Decide how much course material to put in the prompt for this call.
+
+    - ``TUTOR_CONTEXT_MODE`` (``rag`` | ``full_context`` | ``exercise_only``)
+      wins when set.
+    - Otherwise default to ``rag`` when the course has a built index and there's
+      no one-off custom context, else ``full_context`` (today's behavior).
+    - ``rag`` degrades to ``full_context`` if there's no index or custom context
+      is in play (a tester's typed-in course/exercise can't be retrieved).
+    """
+    env = os.environ.get("TUTOR_CONTEXT_MODE", "").strip().lower()
+    if env in _VALID_CONTEXT_MODES:
+        mode = env
+    else:
+        mode = "rag" if (not has_custom and course and rag_has_index(course)) else "full_context"
+    if mode == "rag" and (has_custom or not (course and rag_has_index(course))):
+        mode = "full_context"
+    return mode
 
 
 def build_assignment_text(
@@ -49,8 +78,16 @@ def build_assignment_text(
     course_text: str | None = None,
     exercise_text: str | None = None,
     syllabus_text: str | None = None,
+    context_mode: str = "full_context",
 ) -> str:
     """Concatenate about_asktim.txt + course.txt + optional syllabus.txt + exercise_<NN>.txt.
+
+    ``context_mode`` controls how much course-level material is baked into the
+    prompt. In ``full_context`` (default) the course description and syllabus are
+    included as today. In ``rag`` / ``exercise_only`` they are dropped — course,
+    syllabus, and lectures are reached via retrieval (``rag``) or omitted
+    (``exercise_only``) — leaving only the about-block and the exercise, which is
+    the one thing always kept in context verbatim.
 
     Mirrors `internal_ui/run_ui_raw.py:_build_assignment_text` but omits the
     `Run configuration` block — test_ui chats are open-ended, no planned
@@ -70,6 +107,9 @@ def build_assignment_text(
     built-in fields freely.
     """
     course_dir = _CURRICULUM_DIR / course if course else None
+    # Course + syllabus go in the prompt only in full_context; in rag /
+    # exercise_only they're retrieved or omitted (the exercise still always goes in).
+    include_course_material = context_mode == "full_context"
 
     parts: list[str] = []
 
@@ -79,26 +119,27 @@ def build_assignment_text(
             parts.append("About yourself:\n" + about_text)
 
     # Course context — custom text wins; otherwise read course.txt.
-    if course_text is not None:
-        if course_text.strip():
-            parts.append("Course context:\n" + course_text.strip())
-    elif course_dir is not None:
-        course_path = course_dir / "course.txt"
-        if course_path.is_file():
-            parts.append(
-                "Course context:\n" + course_path.read_text(encoding="utf-8").strip()
-            )
+    if include_course_material:
+        if course_text is not None:
+            if course_text.strip():
+                parts.append("Course context:\n" + course_text.strip())
+        elif course_dir is not None:
+            course_path = course_dir / "course.txt"
+            if course_path.is_file():
+                parts.append(
+                    "Course context:\n" + course_path.read_text(encoding="utf-8").strip()
+                )
 
-    # Syllabus — custom text wins; otherwise the built-in toggle gates the file.
-    if syllabus_text is not None:
-        if syllabus_text.strip():
-            parts.append("Syllabus:\n" + syllabus_text.strip())
-    elif include_syllabus and course_dir is not None:
-        syllabus_path = course_dir / "syllabus.txt"
-        if syllabus_path.is_file():
-            parts.append(
-                "Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip()
-            )
+        # Syllabus — custom text wins; otherwise the built-in toggle gates the file.
+        if syllabus_text is not None:
+            if syllabus_text.strip():
+                parts.append("Syllabus:\n" + syllabus_text.strip())
+        elif include_syllabus and course_dir is not None:
+            syllabus_path = course_dir / "syllabus.txt"
+            if syllabus_path.is_file():
+                parts.append(
+                    "Syllabus:\n" + syllabus_path.read_text(encoding="utf-8").strip()
+                )
 
     # Exercise — custom text wins; otherwise read exercise_<NN>.txt.
     if exercise_text is not None:
@@ -155,6 +196,7 @@ def _resolve_system_prompt(
     exercise_text: str | None,
     syllabus_text: str | None,
     custom_tutor_prompt: str | None,
+    context_mode: str = "full_context",
 ) -> str:
     assignment_text = build_assignment_text(
         course,
@@ -163,6 +205,7 @@ def _resolve_system_prompt(
         course_text=course_text,
         exercise_text=exercise_text,
         syllabus_text=syllabus_text,
+        context_mode=context_mode,
     )
     if custom_tutor_prompt is not None:
         return _render_custom_tutor_prompt(custom_tutor_prompt, assignment_text)
@@ -179,10 +222,12 @@ def _get_or_build_graph(
     exercise_text: str | None = None,
     syllabus_text: str | None = None,
     custom_tutor_prompt: str | None = None,
+    context_mode: str = "full_context",
 ):
     custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    key = (tutor, course, exercise, include_syllabus, context_mode)
     if not custom:
-        cached = _graph_cache.get((tutor, course, exercise, include_syllabus))
+        cached = _graph_cache.get(key)
         if cached is not None:
             return cached
     system_prompt = _resolve_system_prompt(
@@ -194,11 +239,12 @@ def _get_or_build_graph(
         exercise_text=exercise_text,
         syllabus_text=syllabus_text,
         custom_tutor_prompt=custom_tutor_prompt,
+        context_mode=context_mode,
     )
     graph = create_tutor_graph(system_prompt)
     if not custom:
         # Only cache reusable built-in builds — custom context is one-off.
-        _graph_cache[(tutor, course, exercise, include_syllabus)] = graph
+        _graph_cache[key] = graph
     return graph
 
 
@@ -212,11 +258,13 @@ def _get_or_build_stream_context(
     exercise_text: str | None = None,
     syllabus_text: str | None = None,
     custom_tutor_prompt: str | None = None,
+    context_mode: str = "full_context",
 ) -> tuple[object, str]:
     """Return ``(model, system_prompt)`` for the streaming path."""
     custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    key = (tutor, course, exercise, include_syllabus, context_mode)
     if not custom:
-        cached = _stream_cache.get((tutor, course, exercise, include_syllabus))
+        cached = _stream_cache.get(key)
         if cached is not None:
             return cached
     system_prompt = _resolve_system_prompt(
@@ -228,10 +276,11 @@ def _get_or_build_stream_context(
         exercise_text=exercise_text,
         syllabus_text=syllabus_text,
         custom_tutor_prompt=custom_tutor_prompt,
+        context_mode=context_mode,
     )
     model = build_tutor_model()
     if not custom:
-        _stream_cache[(tutor, course, exercise, include_syllabus)] = (model, system_prompt)
+        _stream_cache[key] = (model, system_prompt)
     return model, system_prompt
 
 
@@ -250,13 +299,35 @@ def _history_to_langchain(history: list[dict]) -> list:
     return messages
 
 
-def _new_student_message(text: str, images: list | None) -> HumanMessage:
+def _new_student_message(
+    text: str, images: list | None, retrieved_context: str = ""
+) -> HumanMessage:
     """Build the new student turn, multimodal when *images* are attached.
 
     *images* is a list of ``(bytes, mime)`` tuples. With none, this is a plain
     text HumanMessage. Images attach only to this turn; prior turns stay text.
+
+    When ``retrieved_context`` is provided (RAG mode), it is prepended as a
+    clearly-delimited reference block ahead of the student's actual message, so
+    the tutor treats it as background material rather than as the student
+    speaking. Only the LLM message is augmented — the stored/displayed student
+    message (handled by the route) is unchanged.
     """
+    if retrieved_context:
+        text = f"{retrieved_context}\n\n---\n\nStudent message:\n{text}"
     return HumanMessage(content=build_multimodal_content(text, images))
+
+
+def _retrieved_context(course: str, mode: str, query: str) -> str:
+    """Retrieve and format course-material chunks for this turn (RAG mode only)."""
+    if mode != "rag":
+        return ""
+    try:
+        return format_context(rag_retrieve(course, query))
+    except Exception:
+        # Retrieval failing (e.g. embedding API hiccup) must not break the chat;
+        # degrade to no retrieved context for this turn.
+        return ""
 
 
 def _turn_attachments(
@@ -315,6 +386,8 @@ def get_tutor_reply(
         tutor's hidden ``pedagogical-reasoning`` field; ``None`` if parsing
         the tutor's JSON failed.
     """
+    has_custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    context_mode = _resolve_context_mode(course, has_custom)
     graph = _get_or_build_graph(
         tutor,
         course,
@@ -324,6 +397,7 @@ def get_tutor_reply(
         exercise_text=exercise_text,
         syllabus_text=syllabus_text,
         custom_tutor_prompt=custom_tutor_prompt,
+        context_mode=context_mode,
     )
     messages = _history_to_langchain(history)
     messages.append(
@@ -336,6 +410,7 @@ def get_tutor_reply(
                 course_text=course_text,
                 exercise_text=exercise_text,
             ),
+            _retrieved_context(course, context_mode, new_student_message),
         )
     )
 
@@ -374,6 +449,8 @@ def stream_tutor_reply(
 
     Routes are responsible for re-shaping these into SSE frames.
     """
+    has_custom = _has_custom(course_text, exercise_text, syllabus_text, custom_tutor_prompt)
+    context_mode = _resolve_context_mode(course, has_custom)
     model, system_prompt = _get_or_build_stream_context(
         tutor,
         course,
@@ -383,6 +460,7 @@ def stream_tutor_reply(
         exercise_text=exercise_text,
         syllabus_text=syllabus_text,
         custom_tutor_prompt=custom_tutor_prompt,
+        context_mode=context_mode,
     )
     messages = _history_to_langchain(history)
     messages.append(
@@ -395,6 +473,7 @@ def stream_tutor_reply(
                 course_text=course_text,
                 exercise_text=exercise_text,
             ),
+            _retrieved_context(course, context_mode, new_student_message),
         )
     )
 

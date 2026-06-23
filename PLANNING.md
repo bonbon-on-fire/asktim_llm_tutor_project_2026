@@ -922,12 +922,12 @@ to internal storage; a stakeholder sync with Dimitris on deployment status.
 
 **Problem:** The full lecture-transcript dump added in the 06/16/2026 context-expansion work is huge and indiscriminate. For `cities_and_climate_change` the 90 transcripts are ~99,950 words ≈ **~125,600 tokens**, folded into **every** tutor call by `utils/lectures.py`. That inflates the static context ~27× (4,735 → ~130,300 tokens) and the cost per message ~17× (~1¢ → ~17¢) — and almost all of it is irrelevant to any single student turn. We also now store an `online_link.txt` (OCW course URL) per cross-course test course, pointing at fuller materials (lecture notes, readings) we'd like to draw on without bloating context further. Romain's steer (06/16 notes): *"in practice we'd use RAG and only relevant chunks of the lectures."*
 
-**Decision (revised 06/23/2026):** Make the **OCW course site the canonical knowledge source**, reached via RAG. Ingest *all* course-level material — course description, syllabus, lecture notes/transcripts, readings — by crawling the course's `online_link.txt` URL into a per-course vector index, and at tutor-call time retrieve only the top-k chunks relevant to the current student turn. **The only thing read locally and always kept in context is the exercise prompt** (`exercises/exercise_XX.txt`) — that's the one piece that is assignment-specific and must always be present verbatim. Everything else that today lives in `course.txt` / `syllabus.txt` / `lectures/` stops being dumped into the prompt and is instead retrieved on demand from the OCW-derived index. Net effect: per-call context drops from ~125.6k tokens to the exercise (+ a capped ~3–5k of retrieved chunks), restoring near-baseline cost while making the *full* course site reachable, not just the transcripts.
+**Decision (revised 06/23/2026):** Make the **OCW course site the canonical knowledge source**, reached via RAG. Ingest *all* course-level material — course description, syllabus, lecture notes/transcripts, readings — by crawling the course's `online_link.txt` URL into a per-course vector index, and at tutor-call time retrieve only the top-k chunks relevant to the current student turn. **The only things kept out of RAG are the exercise prompt and the figures:** the exercise (`exercises/exercise_XX.txt`) is read locally and always kept in context verbatim (it's assignment-specific and must always be present), and figures (`figures/`) ride the multimodal pipeline. Everything else — **course description, syllabus, lectures, readings, including the local `course.txt` and `syllabus.txt`** — stops being dumped into the prompt and is **ingested into the index**, retrieved on demand (course + syllabus + lectures all become retrievable, never always-in-context). Net effect: per-call context drops from ~125.6k tokens to the exercise (+ a capped ~3–5k of retrieved chunks), restoring near-baseline cost while making the *full* course site reachable, not just the transcripts.
 
 **Sources (per course), in priority order:**
 1. **OCW course site** via `online_link.txt` — the canonical corpus: course home/description, syllabus, lecture pages + notes, readings, assignment/resource pages. Crawled, parsed to text, chunked, embedded.
-2. **Local `lectures/*.txt` + `course.txt` / `syllabus.txt`** — optional seed/supplement, and the *fallback* when a course has no `online_link.txt` or OCW lacks a clean transcript. (E.g. the live `cities_and_climate_change` has full local transcripts but no `online_link`; the four cross-course test courses have an `online_link` but no local lectures — so the two source types complement each other per course.)
-3. **Read locally, always in context (NOT via RAG):** the current exercise prompt (`exercises/exercise_XX.txt`); figures (`figures/` go through the multimodal pipeline, not text RAG).
+2. **Local `course.txt` / `syllabus.txt` / `lectures/*.txt`** — also **ingested** into the index (alongside OCW), and the *fallback* when a course has no `online_link.txt` or OCW lacks a clean transcript. (E.g. the live `cities_and_climate_change` has full local transcripts but no `online_link`; the four cross-course test courses have an `online_link` but no local lectures — so the two source types complement each other per course.) These are retrieval sources, **not** always-in-context.
+3. **Kept out of RAG (read locally):** the current exercise prompt (`exercises/exercise_XX.txt`) — always in context verbatim — and figures (`figures/`, via the multimodal pipeline). These two only.
 
 **Architecture:**
 
@@ -935,8 +935,8 @@ to internal storage; a stakeholder sync with Dimitris on deployment status.
 | --- | --- |
 | **Chunking** | Paragraph/sentence-aware splits of ~600 tokens with ~80-token overlap. Transcripts are spoken text — split on sentence boundaries, never mid-sentence. Each chunk carries metadata: `course`, `source` (file stem, e.g. `lecture_08_01_innocenti_copenhagen_cloudburst`), `week`, `index`, `chunk_pos`. |
 | **Embeddings** | OpenAI `text-embedding-3-small` (1536-dim, ~$0.02/1M tokens) via `langchain_openai.OpenAIEmbeddings` (already a dependency). Env override `EMBEDDING_MODEL`. Embedding the full CCC corpus once ≈ 125.6k tokens ≈ **$0.0025** — negligible, one-off per ingest. |
-| **Vector store** | Start with a **local FAISS** index per course (file-based, no extra service), behind a thin interface. Plan `pgvector` on the existing Railway Postgres as the production store later (one less moving part in prod). Interface so the store is swappable. |
-| **Index location** | `curriculum/<course>/rag_index/` — `index.faiss` + `chunks.jsonl` (text + metadata, aligned to vector rows) + `manifest.json` (embedding model, dims, source hashes, build time). **Commit the artifacts** so deploys don't re-embed (saves cost + avoids needing the embeddings API at boot); rebuild only when sources change (manifest stores a hash of the source files to detect staleness). |
+| **Vector store** | A **lightweight numpy cosine store** per course (decided 06/23/2026 — at a few hundred chunks/course, brute-force dot-product over an L2-normalized matrix is instant and needs no extra dependency; FAISS would add a finicky `faiss-cpu` install for no benefit at this scale). Behind a thin interface so it's swappable — `pgvector` on the existing Railway Postgres remains the production path later. |
+| **Index location** | `curriculum/<course>/rag_index/` — `vectors.npy` (float32 N×D, L2-normalized) + `chunks.jsonl` (text + metadata, aligned to vector rows) + `manifest.json` (embedding model, dims, count, source toggle, source hashes, build time). **Commit the artifacts** so deploys don't re-embed (saves cost + avoids needing the embeddings API at boot); rebuild only when sources change (manifest hashes sources to detect staleness). |
 | **Retrieval** | Dense top-k (k≈6), capped at ~4k tokens total. Query = the latest student message (optionally + the previous turn for context) + a light exercise hint. Returns chunks with their `source` for optional citation. |
 
 **Where it plugs in (`services/tutor_bridge.py`, both `main_ui` and `test_ui`):**
@@ -949,20 +949,22 @@ to internal storage; a stakeholder sync with Dimitris on deployment status.
 ```
 rag/
   __init__.py
-  ingest.py        — python -m rag.ingest --course <c>
-                     fetch OCW (via ocw.py) [+ optional local lectures/course/syllabus fallback]
+  ingest.py        — python -m rag.ingest --course <c> --source local|ocw|both
+                     gather docs (local files and/or OCW via ocw.py)
                      chunk -> embed -> write curriculum/<c>/rag_index/
   retrieve.py      — load index; retrieve(course, query, k, max_tokens) -> [Chunk]
-  store.py         — FAISS-backed store behind a small interface (pgvector later)
+  store.py         — numpy cosine store behind a small interface (pgvector later)
   chunking.py      — sentence-aware splitter + metadata
-  ocw.py           — fetch online_link.txt URL; crawl + parse OCW course site to text (PRIMARY source)
+  embeddings.py    — OpenAI text-embedding-3-small batch embedder
+  sources.py       — load local course.txt / syllabus.txt / lectures/*.txt as labeled docs
+  ocw.py           — fetch online_link.txt URL; crawl + parse OCW course site to text
   README.md
 ```
 
 **Implementation order:**
 1. `rag/chunking.py` + `rag/store.py` (FAISS) + `rag/__init__.py`; unit tests on chunk boundaries and round-trip retrieval.
-2. `rag/ocw.py` — read `online_link.txt`, crawl the OCW course site (rate-limited, robots-respecting), parse pages to clean text with a `source` label per page (course home, syllabus, each lecture/readings page). This is the primary corpus.
-3. `rag/ingest.py` — `python -m rag.ingest --course <c>`: pull OCW docs (step 2) plus any optional local fallback (`lectures/*.txt`, `course.txt`, `syllabus.txt`), chunk → embed → write `rag_index/` artifacts + manifest with source hashes.
+2. Two source readers behind a common shape: `rag/sources.py` (local `course.txt` / `syllabus.txt` / `lectures/*.txt`, labeled by file) and `rag/ocw.py` (read `online_link.txt`, crawl the OCW course site rate-limited/robots-respecting, parse pages to clean text labeled by page). Both return `(source_label, text)` docs.
+3. `rag/ingest.py` — `python -m rag.ingest --course <c> --source local|ocw|both`: gather docs from the selected source(s), chunk → embed → write `rag_index/` artifacts + manifest (records which source built it + source hashes). Source is a **toggle** so we can A/B local-files vs OCW vs both.
 4. `rag/retrieve.py` — `retrieve(course, query, k, max_tokens)`; return chunks with `source` for citation.
 5. Wire into `tutor_bridge.py` (both apps): cached prompt becomes `about_asktim` + exercise only; per-turn retrieval injected on the latest student turn; gated by `TUTOR_CONTEXT_MODE` / index presence; keep `full_context` and `exercise_only` modes for A/B.
 6. Evaluation path: thread the same retrieval into `internal_ui/run_ui_raw.py` so simulated conversations + judge run under each context mode (`exercise_only` vs `full_context` vs `rag`) — feeds the 06/16 research design ("does more/which context make a better tutor", measured by simulated conversations + grading).
