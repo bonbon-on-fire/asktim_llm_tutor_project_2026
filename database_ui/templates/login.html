@@ -13,7 +13,7 @@
     <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
         <div class="modal-card">
             <h2 id="login-title" class="modal-title">{{ title }}</h2>
-            <p class="modal-body">Enter the review password to continue.</p>
+            <p class="modal-body">Sign in to view AskTIM conversations.</p>
             <form class="modal-form" method="post" action="{{ url_for('database.login_submit') }}" autocomplete="off">
                 <input type="password" name="password" class="email-input"
                        placeholder="Enter your password" aria-label="Review password" autofocus required>
