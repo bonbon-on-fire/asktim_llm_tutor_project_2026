@@ -5,40 +5,43 @@
 
 ## Goal
 
-A read-only mirror of the live chat UI for browsing **all** real conversations
-stored in a Railway Postgres. One codebase, deployed as **two Railway services**:
+A read-only dashboard for browsing **all** real conversations in **`main_ui`'s
+production database** (the Postgres `humanities-main` references). A single
+Railway service, styled to match `main_ui` (MIT crimson), titled
+**"AskTIM · Database Beta"**.
 
-- **Sandbox review** → the `test_ui` Sandbox DB (`Postgres-_lPx`).
-- **Normal review** → the `main_ui` production DB (the Postgres `humanities-main`
-  references).
+It looks like the real `main_ui` chat site (the sidebar + transcript view), but
+with the chat composer and action buttons removed and an all-students
+conversation list.
 
-It looks like the real chat site (the sidebar + transcript view), but with the
-composer and action buttons removed, an all-students conversation list, and a
-per-deployment title + color theme so the two are impossible to confuse.
+> Scope note: an earlier draft planned a second deployment to also review the
+> `test_ui` Sandbox DB. Current scope is **main_ui only**. The code stays generic
+> enough (DB + title + accent are env vars) that a Sandbox review could be added
+> later as a second deployment if wanted.
 
 ## Decisions locked
 
-- **Identity = email.** There is no "student ID" column in either schema; the
-  only identity carrier is `email` (nullable) plus an opaque `session_id`. The
-  review UI groups/sorts by email and shows it above each conversation row;
-  anonymous sessions (no email) fall back to a muted `Anonymous` / short
-  `session_id`.
-- **One app, deployed twice.** Single codebase; two Railway services differing
-  only by env vars (DB URL, title, theme).
-- **Differentiated by title + color** per deployment (see Theming).
+- **Identity = email.** There is no "student ID" column; the only identity
+  carrier is `email` (nullable) plus an opaque `session_id`. The review UI
+  groups/sorts by email and shows it above each conversation row; anonymous
+  sessions (no email) fall back to a muted `Anonymous` / short `session_id`.
+- **One read-only app for main_ui.** Single Railway service reading the main_ui
+  Postgres.
+- **Looks like main_ui.** Same MIT crimson accent (`#8c1a1b`); title
+  "AskTIM · Database Beta".
 
 ## Architecture note that shapes everything
 
-The two DBs have **different schemas**: `test_ui.conversations` has extra columns
-(`syllabus_enabled`, `custom_*`, `context_mode`) that `main_ui.conversations`
-lacks. So the review app **must not** import `test_ui.db.models` (selecting those
-columns would crash against main_ui's DB). It defines its **own minimal,
-read-only model** over only the columns common to both:
+The review app defines its **own minimal, read-only model** over only these
+columns (which are exactly `main_ui.conversations`'s columns):
 
 `id, session_id, email, course, exercise_number, tutor_prompt, started_at,
 last_active_at` + `messages` + `uploaded_images`.
 
-One model → works against both databases unchanged.
+Keeping it to this shared subset (no `test_ui`-only `syllabus_enabled` /
+`custom_*` / `context_mode`) means the same model would also read the Sandbox DB
+unchanged — leaving the door open for a future Sandbox deployment without a
+schema fork.
 
 ## Connecting to the Railway DB
 
@@ -49,13 +52,13 @@ queries against the same DB.
 **On Railway** (no secrets copied around):
 
 1. Add a **new service** in the `tutors (UW, humanities)` project from this repo.
-2. Give it a **reference variable** to share Postgres over the private network:
-   `REVIEW_DATABASE_URL = ${{Postgres-_lPx.DATABASE_URL}}` (sandbox) /
-   the main Postgres reference (normal).
+2. Give it a **reference variable** to share the main_ui Postgres over the
+   private network: `REVIEW_DATABASE_URL = ${{<main Postgres>.DATABASE_URL}}`
+   (the Postgres `humanities-main` references).
 3. Service boots, reads the URL, queries. No new schema, no `create_all`.
 
 **Local run against prod** (quick review without deploying): use the **public**
-URL — `Postgres-_lPx → Variables → DATABASE_PUBLIC_URL` (the `...proxy.rlwy.net`
+URL — `<main Postgres> → Variables → DATABASE_PUBLIC_URL` (the `...proxy.rlwy.net`
 host). The internal `*.railway.internal` host only resolves inside Railway.
 
 ## Repo structure (new top-level package)
@@ -65,7 +68,7 @@ review_ui/
   __init__.py
   __main__.py
   run_app.py            # Flask app factory; read-only engine from REVIEW_DATABASE_URL
-  config.py             # REVIEW_DATABASE_URL, REVIEW_TITLE, REVIEW_THEME/ACCENT, REVIEW_PASSWORD, port
+  config.py             # REVIEW_DATABASE_URL, REVIEW_TITLE, REVIEW_ACCENT, REVIEW_PASSWORD, port
   auth.py               # shared-password gate (login form + session check)
   db/
     models.py           # minimal read-only models (common columns only)
@@ -74,9 +77,9 @@ review_ui/
     conversations.py    # list_all_conversations(), get_conversation(), get_image()
   routes/
     review.py           # endpoints below
-  static/               # adapted chat.css (themed via CSS vars) + trimmed chat.js
+  static/               # adapted main_ui chat.css + trimmed chat.js
   templates/
-    index.html          # adapted from test_ui shell; injects title + theme
+    index.html          # adapted from main_ui shell; injects title
     login.html
 README.md
 ```
@@ -93,12 +96,13 @@ README.md
   endpoint, **without** the ownership check — review sees everything).
 - `GET /api/image/<int>` → serve uploaded image bytes (ownership check dropped).
 
-## Frontend (reuse the chat UI, stripped)
+## Frontend (reuse main_ui's chat UI, stripped)
 
-Start from `test_ui` templates/JS so it looks identical, then:
+Start from **`main_ui`** templates/JS (the app being reviewed) so it looks
+identical, then:
 
 - **Remove** the entire chat composer bar ("Ask anything" text field + attach/paperclip + send button), plus **Edit context** and **New chat** — the page is purely for reading, no input affordances at all.
-- **Header + tab title** from `REVIEW_TITLE`.
+- **Header + tab title** from `REVIEW_TITLE` (`AskTIM · Database Beta`).
 - **Sidebar list** driven by `/api/conversations`:
   - Sort by **date** (default) and by **student (email)**.
   - Each item shows the **email on a line above** the existing
@@ -107,36 +111,30 @@ Start from `test_ui` templates/JS so it looks identical, then:
 - **Clicking** a row loads the read-only transcript (reuse the existing message
   renderer: tutor pedagogical-reasoning + inline images).
 
-## Theming + titles (per deployment)
+## Look (matches main_ui)
 
-One codebase, re-skinned via env. `index.html` injects a theme onto `:root` as a
-CSS custom property; the adapted `chat.css` uses `var(--accent)` for the header
-bar, sidebar highlights, links, and selected-row state.
+Styled to match `main_ui` — same MIT crimson accent (`#8c1a1b`, hover `#6f1414`),
+the same `chat.css` variables. No theme switching; the accent is fixed to
+main_ui's. `REVIEW_ACCENT` exists only as an optional override.
 
-| Var | Sandbox service | Normal service |
-| --- | --- | --- |
-| `REVIEW_DATABASE_URL` | `${{Postgres-_lPx.DATABASE_URL}}` | main Postgres reference |
-| `REVIEW_TITLE` | `AskTIM · Sandbox Database` | `AskTIM · Database` (no "Sandbox") |
-| `REVIEW_THEME` | `sandbox` (amber/orange accent) | `production` (blue accent) |
-| `REVIEW_ACCENT` (optional) | raw-hex override | raw-hex override |
-| `REVIEW_PASSWORD` | shared secret | shared secret |
-| `REVIEW_SECRET_KEY` | session signing | session signing |
-
-`REVIEW_THEME` maps to a small built-in palette (named presets); `REVIEW_ACCENT`
-optionally overrides with raw hex. Defaults: **sandbox = amber/orange** ("test
-data"), **production = blue** ("real student data, handle with care").
-
-> Exact titles + hex values to be confirmed before building the CSS.
+| Var | Value |
+| --- | --- |
+| `REVIEW_DATABASE_URL` | `${{<main Postgres>.DATABASE_URL}}` (humanities-main's DB) |
+| `REVIEW_TITLE` | `AskTIM · Database Beta` |
+| `REVIEW_ACCENT` (optional) | defaults to `#8c1a1b` (MIT crimson, = main_ui) |
+| `REVIEW_PASSWORD` | shared secret (required for deploy) |
+| `REVIEW_SECRET_KEY` | session signing |
 
 ## Railway deployment
 
-- New `Dockerfile_review` (copy of `Dockerfile_test`): `COPY review_ui/` +
+- New `Dockerfile_review` (copy of `Dockerfile_main`): `COPY review_ui/` +
   `utils/`; **no** `tutor/`, `rag/`, or `curriculum/` (review doesn't run the
   tutor). gunicorn target `review_ui.run_app:app`.
 - New `scripts/railway-entrypoint-review.sh`: normalize the Postgres URL to
-  `postgresql+psycopg://` (same psycopg3 gotcha the test entrypoint handles),
+  `postgresql+psycopg://` (same psycopg3 gotcha the live entrypoints handle),
   **skip** schema creation, start gunicorn.
-- Two services, each with the Dockerfile + its env vars + a generated domain.
+- **One service** (review of main_ui's DB) with the Dockerfile + env vars + a
+  generated domain.
 
 ## Safety (non-negotiable)
 
@@ -149,8 +147,8 @@ data"), **production = blue** ("real student data, handle with care").
 
 ## Open items to confirm before coding
 
-- **Normal-site title** wording (`AskTIM · Database`? `AskTIM Review`?).
-- **Colors** — amber (sandbox) / blue (production) defaults, or specific brand hex?
+- ~~Title~~ → **decided:** `AskTIM · Database Beta`.
+- ~~Colors~~ → **decided:** match main_ui (MIT crimson `#8c1a1b`).
 - **Auth** — single shared password enough, or per-reviewer logins / SSO?
 - **Search/filter** — beyond sort-by-date/student, want filters (course,
   exercise, date range, full-text message search)? Add now vs. later.
@@ -160,14 +158,14 @@ data"), **production = blue** ("real student data, handle with care").
 ## Implementation checklist
 
 ### Phase 0 — Confirm spec
-- [ ] Confirm normal-site title wording
-- [ ] Confirm color palette (sandbox amber / production blue, or brand hex)
+- [x] Title → `AskTIM · Database Beta`
+- [x] Color → match main_ui (MIT crimson `#8c1a1b`)
 - [ ] Confirm auth model (shared password vs per-user)
 - [ ] Decide search/filter scope for v1
 
 ### Phase 1 — Skeleton + DB connectivity ✅
 - [x] Create `review_ui/` package (`__init__`, `__main__`, `run_app` factory)
-- [x] `config.py` reading `REVIEW_DATABASE_URL`, `REVIEW_TITLE`, `REVIEW_THEME`, `REVIEW_ACCENT`, `REVIEW_PASSWORD`, `REVIEW_SECRET_KEY`, `PORT`
+- [x] `config.py` reading `REVIEW_DATABASE_URL`, `REVIEW_TITLE`, `REVIEW_ACCENT`, `REVIEW_PASSWORD`, `REVIEW_SECRET_KEY`, `PORT`
 - [x] `db/models.py` — minimal read-only models (common columns only)
 - [x] `db/session.py` — engine + Session, pg-url normalize, **no `create_all`** (rolls back, never commits)
 - [x] `services/conversations.py` — `list_all_conversations()` (date/student sort, pagination), `get_conversation()`, `get_messages_for_conversation()`, `get_image()`
@@ -180,28 +178,26 @@ data"), **production = blue** ("real student data, handle with care").
 - [ ] `GET /api/image/<int>` (serve bytes, no ownership check)
 - [ ] Bare HTML list to prove end-to-end before styling
 
-### Phase 3 — Frontend (reuse + strip)
-- [ ] Port chat templates/CSS/JS into `review_ui/`
+### Phase 3 — Frontend (reuse main_ui + strip)
+- [ ] Port main_ui templates/CSS/JS into `review_ui/`
 - [ ] Remove the entire chat composer bar (text field + attach + send), Edit context, New chat — no input affordances
 - [ ] Sidebar from `/api/conversations`; email line above the `Exercise · date · N msgs` line
 - [ ] Sort toggle: date / student (grouped by email)
 - [ ] Anonymous fallback for null email
 - [ ] Transcript pane reuses message renderer (reasoning + inline images)
 
-### Phase 4 — Theming + title
-- [ ] Inject `REVIEW_TITLE` into header + `<title>`
-- [ ] CSS custom property `--accent` driven by `REVIEW_THEME`/`REVIEW_ACCENT`
-- [ ] Named presets: `sandbox` (amber), `production` (blue)
+### Phase 4 — Title (look already matches main_ui)
+- [ ] Inject `REVIEW_TITLE` (`AskTIM · Database Beta`) into header + `<title>`
+- [ ] Keep main_ui's crimson accent (`#8c1a1b`); `REVIEW_ACCENT` optional override
 
 ### Phase 5 — Auth
 - [ ] `auth.py` shared-password gate + signed session cookie
 - [ ] Guard all routes; `/login` + `/login` POST + logout
 
 ### Phase 6 — Deploy
-- [ ] `Dockerfile_review` + `scripts/railway-entrypoint-review.sh`
-- [ ] Deploy **sandbox** service (DB `Postgres-_lPx`), verify, generate domain
-- [ ] Clone service for **normal** DB; set its env vars; verify, generate domain
-- [ ] Confirm read-only (no schema writes), auth required, both themes correct
+- [ ] `Dockerfile_review` (from `Dockerfile_main`) + `scripts/railway-entrypoint-review.sh`
+- [ ] Deploy the review service (main_ui's DB), verify, generate domain
+- [ ] Confirm read-only (no schema writes), auth required, title + crimson correct
 
 ### Phase 7 — Docs
 - [ ] `review_ui/README.md` (run locally, env vars, deploy notes)
