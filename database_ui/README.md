@@ -1,5 +1,7 @@
 # database_ui
 
+**🔗 Live: <https://asktim-review.up.railway.app/>** (password-gated)
+
 A **read-only** dashboard for reviewing real AskTIM conversation data. It looks
 like the `main_ui` chat UI (same MIT-crimson styling) but strips every input
 affordance — there is no composer, no "new chat", no writes of any kind. It
@@ -46,12 +48,16 @@ inside Railway).
 
 ## Deploy (Railway)
 
+Deployed as the **askTIM-database** service (→ <https://asktim-review.up.railway.app/>),
+reading the same Postgres as **askTIM-main**. To reproduce:
+
 1. New service in the `tutors (UW, humanities)` project, built from
    [`Dockerfile_database`](../Dockerfile_database) (entrypoint
    [`scripts/railway-entrypoint-database.sh`](../scripts/railway-entrypoint-database.sh)).
 2. Set variables:
-   - `DATABASE_UI_DATABASE_URL = ${{<main Postgres>.DATABASE_URL}}` (reference the
-     Postgres that `humanities-main` uses — shares it over the private network).
+   - `DATABASE_URL = ${{<main Postgres>.DATABASE_URL}}` (reference askTIM-main's
+     Postgres — shares it over the private network; `DATABASE_UI_DATABASE_URL`
+     also works and takes precedence).
    - `DATABASE_UI_PASSWORD` and `DATABASE_UI_SECRET_KEY` (secrets).
 3. Generate a domain. The entrypoint fails closed if `DATABASE_UI_PASSWORD` is unset,
    so the dashboard is never exposed ungated.

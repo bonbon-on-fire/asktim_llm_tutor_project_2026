@@ -1,9 +1,14 @@
 # Plan: `database_ui` — read-only conversation review for AskTIM
 
-> Status: **built and verified locally; Railway deploy pending.** Action item from
-> the 06/16 meeting: "Build a small interface for reviewing real AskTIM
-> conversation data." Phases 1–7 are complete (see the checklist below); the only
-> remaining step is creating the Railway service + secrets.
+> Status: **live on Railway** at <https://asktim-review.up.railway.app/> (service
+> `askTIM-database`, password-gated, reading askTIM-main's Postgres read-only).
+> Action item from the 06/16 meeting: "Build a small interface for reviewing real
+> AskTIM conversation data." Phases 1–7 complete and deployed.
+>
+> Shipped UI differs slightly from the original plan below: the date/student sort
+> toggle was dropped (list is most-recent-first, each row labeled by student
+> email), the login is a modal over a dimmed backdrop, the top bar is an empty
+> thin strip with a sidebar open/close toggle, and rows tint crimson on hover.
 
 ## Goal
 
