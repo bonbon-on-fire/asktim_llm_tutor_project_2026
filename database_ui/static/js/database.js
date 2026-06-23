@@ -6,7 +6,6 @@
   const sidebarEmpty = document.getElementById("sidebar-empty");
   const messageList = document.getElementById("message-list");
   const placeholder = document.getElementById("review-placeholder");
-  const detailMeta = document.getElementById("detail-meta");
   const errorBanner = document.getElementById("error-banner");
   const errorText = document.getElementById("error-text");
   const errorDismiss = document.getElementById("error-dismiss");
@@ -178,25 +177,6 @@
     messageList.appendChild(li);
   }
 
-  function renderMeta(convo) {
-    const exNumber = parseInt(convo.exercise_number, 10);
-    const ex = Number.isFinite(exNumber) ? exNumber : convo.exercise_number;
-    const bits = [
-      studentLabelObj(convo),
-      `${convo.course}`,
-      `Exercise ${ex}`,
-      convo.tutor_prompt,
-    ];
-    if (convo.last_active_at) {
-      bits.push(new Date(convo.last_active_at).toLocaleString());
-    }
-    detailMeta.textContent = bits.filter(Boolean).join("  ·  ");
-    detailMeta.hidden = false;
-  }
-  function studentLabelObj(convo) {
-    return convo.email || "Anonymous";
-  }
-
   async function loadConversation(id) {
     if (id === activeConversationId) return;
     activeConversationId = id;
@@ -211,7 +191,6 @@
         return;
       }
       const convo = await r.json();
-      renderMeta(convo);
       for (const m of convo.messages) renderMessage(m);
       messageList.scrollTop = 0;
     } catch (e) {

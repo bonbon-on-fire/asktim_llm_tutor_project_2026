@@ -39,13 +39,6 @@
 
 /* --- Transcript pane ----------------------------------------------------- */
 .review-chat { position: relative; }
-.review-detail-meta {
-  padding: 0.6rem 1rem;
-  font-size: 0.8rem;
-  color: var(--muted, #555);
-  border-bottom: 1px solid var(--border, #e2e2e2);
-  background: #fafafa;
-}
 .review-placeholder {
   list-style: none;
   color: var(--muted, #888);
@@ -54,25 +47,26 @@
   font-size: 0.95rem;
 }
 
-/* Tutor pedagogical reasoning — reviewer-only, collapsed by default. */
+/* Tutor pedagogical reasoning — reviewer-only, collapsed by default.
+   Minimalistic: no box/background, just a small muted disclosure with the
+   text lightly indented behind a thin rule. */
 .review-reasoning {
-  margin-top: 0.4rem;
-  font-size: 0.8rem;
-  border-left: 3px solid var(--accent);
-  background: #faf3f3;
-  border-radius: 4px;
+  margin-top: 0.3rem;
+  font-size: 0.76rem;
 }
 .review-reasoning > summary {
   cursor: pointer;
-  padding: 0.3rem 0.6rem;
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--muted, #888);
+  font-weight: 500;
   user-select: none;
 }
+.review-reasoning > summary:hover { color: var(--text, #2a2a2a); }
 .review-reasoning-body {
-  padding: 0.2rem 0.6rem 0.5rem;
+  margin: 0.25rem 0 0 0.3rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--border, #e2e2e2);
+  color: var(--muted, #666);
   white-space: pre-wrap;
-  color: var(--text, #2a2a2a);
 }
 
 /* --- Login page ---------------------------------------------------------- */
