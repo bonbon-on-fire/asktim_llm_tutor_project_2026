@@ -1,5 +1,7 @@
 # test_ui — AskTIM Sandbox
 
+**🔗 Live: <https://asktim-sandbox.up.railway.app/>**
+
 Developer/TA **testing website** for the tutor. It mirrors the student-facing
 [`main_ui/`](../main_ui/README.md) chat experience — token-streamed replies,
 persistent cross-session history, email + password identity — but adds a

@@ -8,7 +8,7 @@ selected one's full transcript, including the tutor's pedagogical reasoning and
 any uploaded images.
 
 Built to review **`main_ui`**'s production database. See the full design +
-checklist in [`docs/review_ui_plan.md`](../docs/review_ui_plan.md).
+checklist in [`PLANNING.md`](PLANNING.md).
 
 ## Read-only by construction
 

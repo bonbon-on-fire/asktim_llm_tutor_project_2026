@@ -1,7 +1,9 @@
 # Plan: `review_ui` — read-only conversation review for AskTIM
 
-> Status: **plan / not yet built.** Action item from the 06/16 meeting:
-> "Build a small interface for reviewing real AskTIM conversation data."
+> Status: **built and verified locally; Railway deploy pending.** Action item from
+> the 06/16 meeting: "Build a small interface for reviewing real AskTIM
+> conversation data." Phases 1–7 are complete (see the checklist below); the only
+> remaining step is creating the Railway service + secrets.
 
 ## Goal
 
@@ -81,7 +83,8 @@ review_ui/
   templates/
     index.html          # adapted from main_ui shell; injects title
     login.html
-README.md
+README.md               # run/env/deploy notes
+PLANNING.md             # this document
 ```
 
 ## Backend endpoints (all read-only, all behind auth)
