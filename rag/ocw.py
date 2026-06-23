@@ -2,12 +2,14 @@
 
 Reads a course's ``online_link.txt`` (its MIT OpenCourseWare URL), crawls pages
 under the same ``/courses/<slug>/`` path, strips boilerplate, and returns each
-page as a labeled ``(source, text)`` document. Best-effort: OCW page structure
-varies, so this is defensive (timeouts, per-page try/except, page cap, polite
-delay) and the local reader remains the reliable fallback.
+page as a labeled ``(source, text)`` document. **Linked PDFs are also fetched and
+their text extracted** (via ``pypdf``) — that's where OCW keeps the substantive
+content (lecture notes, problem sets), which isn't in the HTML. Best-effort: OCW
+structure varies, so this is defensive (timeouts, per-item try/except, doc cap,
+size cap, polite delay) and the local reader remains the reliable fallback.
 
-``requests`` and ``beautifulsoup4`` are imported lazily so that ``--source local``
-ingestion works even if BeautifulSoup is not installed.
+``requests``, ``beautifulsoup4``, and ``pypdf`` are imported lazily so that
+``--source local`` ingestion works even if they aren't installed.
 """
 
 from __future__ import annotations
@@ -22,7 +24,8 @@ _DEFAULT_CURRICULUM_ROOT = _REPO_ROOT / "curriculum"
 Doc = tuple[str, str]
 
 _USER_AGENT = "AskTIM-RAG/1.0 (+educational tutor; contact course staff)"
-_SKIP_EXT = (".pdf", ".zip", ".jpg", ".jpeg", ".png", ".gif", ".mp4", ".mov", ".srt", ".vtt")
+# Skipped link types. PDFs are NOT skipped — they're fetched and text-extracted.
+_SKIP_EXT = (".zip", ".jpg", ".jpeg", ".png", ".gif", ".mp4", ".mov", ".srt", ".vtt")
 
 
 def read_online_link(course: str, curriculum_root: Path | str | None = None) -> str | None:
@@ -64,18 +67,43 @@ def _extract_text(html: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 
+def _extract_pdf_text(data: bytes) -> str:
+    """Extract text from a PDF's bytes via ``pypdf`` (best-effort, per-page)."""
+    import io
+
+    from pypdf import PdfReader  # lazy
+
+    try:
+        reader = PdfReader(io.BytesIO(data))
+        pages: list[str] = []
+        for page in reader.pages:
+            try:
+                pages.append(page.extract_text() or "")
+            except Exception:
+                continue
+        text = "\n".join(pages)
+    except Exception:
+        return ""
+    lines = [ln.strip() for ln in text.splitlines()]
+    text = "\n".join(ln for ln in lines if ln)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
 def load_ocw_docs(
     course: str,
     *,
     curriculum_root: Path | str | None = None,
-    max_pages: int = 40,
+    max_pages: int = 80,
     delay_seconds: float = 0.5,
     min_chars: int = 200,
+    max_pdf_bytes: int = 25 * 1024 * 1024,
 ) -> list[Doc]:
-    """Crawl the course's OCW site and return labeled page documents.
+    """Crawl the course's OCW site (HTML pages + linked PDFs) into labeled docs.
 
-    Returns ``[]`` (and prints a hint) if there's no ``online_link.txt`` or the
-    network/parse fails — callers should treat OCW as best-effort.
+    HTML pages are text-extracted and their in-scope links enqueued; linked PDFs
+    are downloaded and text-extracted (this is where OCW's lecture notes /
+    problem sets live). Returns ``[]`` if there's no ``online_link.txt`` —
+    callers treat OCW as best-effort.
     """
     import time
 
@@ -101,19 +129,34 @@ def load_ocw_docs(
             continue
         seen.add(norm)
         try:
-            resp = session.get(url, timeout=15)
-            if resp.status_code != 200 or "text/html" not in resp.headers.get("content-type", ""):
-                continue
-            html = resp.text
+            resp = session.get(url, timeout=30)
         except Exception:
             continue
+        if resp.status_code != 200:
+            continue
+
+        ctype = resp.headers.get("content-type", "").lower()
+        label_tail = urlparse(url).path.strip("/").split("/courses/")[-1]
+        is_pdf = url.lower().endswith(".pdf") or "application/pdf" in ctype
+
+        if is_pdf:
+            # Extract text from the PDF; PDFs have no in-scope links to crawl.
+            if len(resp.content) <= max_pdf_bytes:
+                text = _extract_pdf_text(resp.content)
+                if len(text) >= min_chars:
+                    docs.append((f"ocw:{label_tail}", text))
+            time.sleep(delay_seconds)
+            continue
+
+        if "text/html" not in ctype:
+            continue
+        html = resp.text
 
         text = _extract_text(html)
         if len(text) >= min_chars:
-            label_tail = urlparse(url).path.strip("/").split("/courses/")[-1]
             docs.append((f"ocw:{label_tail}", text))
 
-        # Enqueue same-course in-scope links.
+        # Enqueue same-course in-scope links (HTML pages and PDFs).
         from bs4 import BeautifulSoup  # lazy
 
         for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):

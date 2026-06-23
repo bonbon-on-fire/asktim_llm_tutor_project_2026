@@ -13,3 +13,4 @@ psycopg[binary]>=3.1
 bcrypt>=4.0
 numpy>=1.26
 beautifulsoup4>=4.12
+pypdf>=4.0

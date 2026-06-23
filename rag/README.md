@@ -10,8 +10,10 @@ handful of chunks relevant to the current student turn.
 ## What is and isn't ingested
 
 - **Ingested (retrievable):** course description (`course.txt`), syllabus
-  (`syllabus.txt`), lectures (`lectures/*.txt`), and OCW pages — pulled from the
-  local files, the course's OCW site (`online_link.txt`), or both.
+  (`syllabus.txt`), lectures (`lectures/*.txt`), and OCW content — both HTML
+  pages **and linked PDFs** (lecture notes, problem sets, where OCW keeps the
+  substantive material) — pulled from the local files, the course's OCW site
+  (`online_link.txt`), or both.
 - **Never ingested:** the **exercise** (`exercises/exercise_XX.txt`, kept local
   and always in context verbatim) and **figures** (handled by the multimodal
   pipeline).
@@ -26,9 +28,17 @@ python -m rag.ingest --course <course>                  --source both
 ```
 
 `--source` is a toggle: `local` (curriculum files), `ocw` (crawl the course's
-`online_link.txt`), or `both`. OCW needs `beautifulsoup4`. Output lands in
+`online_link.txt` — HTML pages **and linked PDFs**), or `both`. OCW needs
+`beautifulsoup4` (HTML) and `pypdf` (PDF text). Output lands in
 `curriculum/<course>/rag_index/` (`vectors.npy` + `chunks.jsonl` +
 `manifest.json`) and is meant to be committed so deploys don't re-embed.
+
+> **OCW notes.** The crawler follows in-scope links under `/courses/<slug>/`,
+> extracts text from HTML pages, and downloads + text-extracts linked PDFs (the
+> real lecture/problem-set content). PDF text extraction is best-effort — math
+> notation can come out imperfectly — and **scanned/image-only PDFs are not
+> OCR'd**. For courses with clean local transcripts (e.g. cities_and_climate_change),
+> `--source local` gives richer content than the OCW HTML alone.
 
 ## Retrieve (used by the tutor)
 
@@ -48,7 +58,7 @@ if has_index(course):
 | `embeddings.py` | OpenAI `text-embedding-3-small` batch embedder |
 | `store.py` | numpy cosine store (`vectors.npy` + `chunks.jsonl` + `manifest.json`) |
 | `sources.py` | local reader: `course.txt` / `syllabus.txt` / `lectures/*.txt` |
-| `ocw.py` | OCW crawler (reads `online_link.txt`; needs `beautifulsoup4`) |
+| `ocw.py` | OCW crawler (reads `online_link.txt`; HTML via `beautifulsoup4`, linked PDFs via `pypdf`) |
 | `ingest.py` | CLI: gather → chunk → embed → save |
 | `retrieve.py` | query-time `retrieve()` + `format_context()` |
 

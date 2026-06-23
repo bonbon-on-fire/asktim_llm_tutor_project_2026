@@ -957,13 +957,14 @@ rag/
   chunking.py      — sentence-aware splitter + metadata
   embeddings.py    — OpenAI text-embedding-3-small batch embedder
   sources.py       — load local course.txt / syllabus.txt / lectures/*.txt as labeled docs
-  ocw.py           — fetch online_link.txt URL; crawl + parse OCW course site to text
+  ocw.py           — fetch online_link.txt URL; crawl OCW HTML (beautifulsoup4)
+                     + download & text-extract linked PDFs (pypdf)
   README.md
 ```
 
 **Implementation order:**
-1. `rag/chunking.py` + `rag/store.py` (FAISS) + `rag/__init__.py`; unit tests on chunk boundaries and round-trip retrieval.
-2. Two source readers behind a common shape: `rag/sources.py` (local `course.txt` / `syllabus.txt` / `lectures/*.txt`, labeled by file) and `rag/ocw.py` (read `online_link.txt`, crawl the OCW course site rate-limited/robots-respecting, parse pages to clean text labeled by page). Both return `(source_label, text)` docs.
+1. `rag/chunking.py` + `rag/store.py` (numpy cosine) + `rag/embeddings.py` + `rag/__init__.py`.
+2. Two source readers behind a common shape: `rag/sources.py` (local `course.txt` / `syllabus.txt` / `lectures/*.txt`, labeled by file) and `rag/ocw.py` (read `online_link.txt`, crawl the OCW course site rate-limited/robots-respecting, extract text from HTML pages **and download + text-extract linked PDFs** — lecture notes/problem sets — via `pypdf`, labeled by page/file). Both return `(source_label, text)` docs.
 3. `rag/ingest.py` — `python -m rag.ingest --course <c> --source local|ocw|both`: gather docs from the selected source(s), chunk → embed → write `rag_index/` artifacts + manifest (records which source built it + source hashes). Source is a **toggle** so we can A/B local-files vs OCW vs both.
 4. `rag/retrieve.py` — `retrieve(course, query, k, max_tokens)`; return chunks with `source` for citation.
 5. Wire into `tutor_bridge.py` (both apps): cached prompt becomes `about_asktim` + exercise only; per-turn retrieval injected on the latest student turn; gated by `TUTOR_CONTEXT_MODE` / index presence; keep `full_context` and `exercise_only` modes for A/B.
@@ -982,8 +983,9 @@ rag/
 - Cross-course retrieval (per-course indexes only).
 - Hybrid BM25 / cross-encoder re-ranking (start pure dense; add only if recall is poor).
 - Figure/image retrieval (multimodal pipeline owns images).
+- Scanned/image-only PDF OCR (text-based PDFs are extracted via `pypdf`; image-only scans are skipped).
 - Live/auto index updates (rebuild via `rag.ingest` when materials change).
-- A managed vector DB service (local FAISS now; pgvector on the existing Postgres later — no new infra).
+- A managed vector DB service (local numpy store now; pgvector on the existing Postgres later — no new infra).
 
 ---
 
