@@ -642,13 +642,13 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
 }
 
 .sidebar-entry-active {
-    background: #fbeaea;
+    background: #e3eff5;            /* light teal tint, matches the sandbox accent */
     border-left: 3px solid var(--send-bg);
     padding-left: calc(1rem - 3px);
 }
 
 .sidebar-entry-active:hover {
-    background: #f8dada;
+    background: #d3e6f0;
 }
 
 .sidebar-entry-title {
@@ -826,7 +826,7 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
 .email-change {
     background: none;
     border: none;
-    color: var(--accent, #8c1a1b);
+    color: var(--accent, #126f9a);
     cursor: pointer;
     font-size: 0.85rem;
     padding: 0;
