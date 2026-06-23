@@ -10,9 +10,7 @@
   const errorBanner = document.getElementById("error-banner");
   const errorText = document.getElementById("error-text");
   const errorDismiss = document.getElementById("error-dismiss");
-  const sortButtons = Array.from(document.querySelectorAll(".review-sort-btn"));
 
-  let currentSort = "date";
   let activeConversationId = null;
 
   function showError(msg) {
@@ -58,20 +56,7 @@
     }
     sidebarEmpty.hidden = true;
 
-    let lastGroup = null;
     for (const c of conversations) {
-      // When sorting by student, insert a group header whenever the email changes.
-      if (currentSort === "student") {
-        const label = studentLabel(c);
-        if (label !== lastGroup) {
-          lastGroup = label;
-          const header = document.createElement("li");
-          header.className = "review-group-header";
-          header.textContent = label;
-          sidebarList.appendChild(header);
-        }
-      }
-
       const li = document.createElement("li");
       li.className = "sidebar-entry";
       li.tabIndex = 0;
@@ -122,7 +107,7 @@
   async function refreshSidebar() {
     showSidebarEmpty("Loading…");
     try {
-      const r = await fetch(`/api/conversations?sort=${currentSort}`);
+      const r = await fetch("/api/conversations?sort=date");
       if (!r.ok) return showSidebarEmpty("Could not load conversations");
       const data = await r.json();
       renderSidebar(data.conversations);
@@ -232,16 +217,6 @@
     } catch (e) {
       showError("Could not load that conversation.");
     }
-  }
-
-  for (const btn of sortButtons) {
-    btn.addEventListener("click", () => {
-      const sort = btn.dataset.sort;
-      if (sort === currentSort) return;
-      currentSort = sort;
-      for (const b of sortButtons) b.classList.toggle("is-active", b === btn);
-      refreshSidebar();
-    });
   }
 
   refreshSidebar();

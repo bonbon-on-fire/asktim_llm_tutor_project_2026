@@ -10,7 +10,7 @@
 </head>
 <body class="review-body">
     <header class="course-banner">
-        <span class="course-name">{{ title }}</span>
+        <span class="course-name">Reviewing all student conversations</span>
         <a class="review-logout" href="{{ url_for('database.logout') }}">Sign out</a>
     </header>
 
@@ -18,11 +18,7 @@
     <aside class="sidebar" id="sidebar" data-open="true" aria-label="Conversations">
         <div class="sidebar-inner">
             <div class="sidebar-header">
-                <h2 class="sidebar-title">{{ title }}</h2>
-            </div>
-            <div class="review-sort" role="group" aria-label="Sort conversations">
-                <button type="button" class="review-sort-btn is-active" data-sort="date">By date</button>
-                <button type="button" class="review-sort-btn" data-sort="student">By student</button>
+                <h2 class="sidebar-title">AskTIM <span class="beta-tag">· Database Beta</span></h2>
             </div>
             <div class="sidebar-empty" id="sidebar-empty" hidden></div>
             <ul class="sidebar-list" id="sidebar-list"></ul>
