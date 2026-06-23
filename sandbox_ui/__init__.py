@@ -1,7 +1,7 @@
-"""main_ui — production-shape embeddable tutor app.
+"""sandbox_ui — production-shape embeddable tutor app.
 
 Loads the project's `.env` from the repo root at package import time so every
-entrypoint (`python -m main_ui`, smoke tests, `gunicorn main_ui.run_app:app`)
+entrypoint (`python -m sandbox_ui`, smoke tests, `gunicorn sandbox_ui.run_app:app`)
 picks up `OPENAI_API_KEY` and friends without manual `$env:` setup. This is a
 deliberate localized exception to the Phase 2/5 cleanups that pulled
 `.env` loading out of `tutor/`, `judge/`, and `sandbox_ui/`.

@@ -110,12 +110,12 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 > **Updated 2026-06-04.** The old `terminal_ui` launcher has been removed (its
 > generation/judging role moved to the parallelized `internal_ui/` runners), and
-> `test_ui/` has been reshaped from a config-panel testing harness into the
+> `sandbox_ui/` has been reshaped from a config-panel testing harness into the
 > "AskTIM Sandbox" that mirrors `main_ui/`. Current entrypoints:
 
 - **Bulk runners** (`internal_ui/`): `python -m internal_ui.run_ui_raw` (generate raw transcripts), `python -m internal_ui.run_ui_judge --provider gpt|claude` (grade them), `python -m internal_ui.run_ui_raw_mini` (mini-continuation from a pivot turn). Parallelized (`ThreadPoolExecutor`, 6 workers). See [`internal_ui/README.md`](internal_ui/README.md).
 - **Student app** (`python -m main_ui`): student-facing **AskTIM** — iframe-embeddable chat, Postgres-backed, SSE-streamed, email+password identity. **Deployed on Railway.** See [`main_ui/README.md`](main_ui/README.md).
-- **Sandbox** (`python -m test_ui`): **AskTIM Sandbox** for developers/TAs — same chat as `main_ui` plus an in-app **Edit context** switcher and **Create context** wizard, on its own database (`asktim_test`). Run locally (port 5000); its Railway deployment is not working yet and is deferred. See [`test_ui/README.md`](test_ui/README.md).
+- **Sandbox** (`python -m sandbox_ui`): **AskTIM Sandbox** for developers/TAs — same chat as `main_ui` plus an in-app **Edit context** switcher and **Create context** wizard, on its own database (`asktim_test`). Run locally (port 5000); its Railway deployment is not working yet and is deferred. See [`sandbox_ui/README.md`](sandbox_ui/README.md).
 - **Dashboard** (`python -m dashboard_ui.run_dashboard_ui`): Flask app that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`) and attaches Claude Mini (tutor_05) and Claude score panels per row (explicit per-provider errors for missing/ambiguous/mismatched pairs). Pick any port other than 5001. See [`dashboard_ui/README.md`](dashboard_ui/README.md).
 - **Visualization** (`python -m visualization.run_visualization`): matplotlib score-comparison and hand-grade correlation charts. See [`visualization/README.md`](visualization/README.md).
 
@@ -408,9 +408,9 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 **New structure:**
 
 ```
-test_ui/
+sandbox_ui/
   __init__.py          — package init
-  __main__.py          — python -m test_ui
+  __main__.py          — python -m sandbox_ui
   run_app.py           — Flask app with config + chat API routes
   README.md
   templates/
@@ -418,9 +418,9 @@ test_ui/
 ```
 
 **Changes:**
-- **Moved** `app.py` → `test_ui/run_app.py` (rewrote; old file deleted).
-- **Moved** `templates/index.html` → `test_ui/templates/index.html` (rewrote; old folder deleted).
-- **Updated** `Procfile` from `gunicorn app:app` → `gunicorn test_ui.run_app:app`.
+- **Moved** `app.py` → `sandbox_ui/run_app.py` (rewrote; old file deleted).
+- **Moved** `templates/index.html` → `sandbox_ui/templates/index.html` (rewrote; old folder deleted).
+- **Updated** `Procfile` from `gunicorn app:app` → `gunicorn sandbox_ui.run_app:app`.
 - **Config panel** — UI dropdowns discover options dynamically via `GET /api/config-options`:
   - Tutor prompt version (scans `tutor/prompts/*.txt`)
   - Student persona type + version (scans `students/personas/{type}_*.txt`)
@@ -540,7 +540,7 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 ### Phase 7: Human-uploaded images in the chat apps ✦ COMPLETED (2026-06-15)
 
 > **Status (2026-06-15):** Built for **both** `main_ui/` (production) and
-> `test_ui/` (Sandbox) — this also completes `main_ui` Step 10. Students attach
+> `sandbox_ui/` (Sandbox) — this also completes `main_ui` Step 10. Students attach
 > PNG/JPEG images in the chat composer (paperclip + drag-and-drop, ≤5 × 10 MB);
 > they stream to the tutor as multimodal content on that turn. What shipped vs
 > the original plan below:
@@ -562,11 +562,11 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 > - `POST /api/chat` now accepts `multipart/form-data` (text + `images`) as well
 >   as the legacy JSON body.
 
-**Problem:** Phase 6 makes figures part of the curriculum *context*. But real OCW learners using the web chat will also want to attach their own images — a photo of handwritten work, a screenshot of their Excel table, a phone-camera capture of a hand-drawn Power/Actors Map — and have the tutor respond to that visual content. The current `test_ui` chat composer accepts text only.
+**Problem:** Phase 6 makes figures part of the curriculum *context*. But real OCW learners using the web chat will also want to attach their own images — a photo of handwritten work, a screenshot of their Excel table, a phone-camera capture of a hand-drawn Power/Actors Map — and have the tutor respond to that visual content. The current `sandbox_ui` chat composer accepts text only.
 
-**Decision:** Add per-message image upload to the `test_ui` chat composer for real human students. Tutor receives multimodal user messages and responds. Live interactive only — no disk persistence in this phase; Postgres-backed persistence is a separate future concern. Simulated student bots remain text-only (deferred non-goal).
+**Decision:** Add per-message image upload to the `sandbox_ui` chat composer for real human students. Tutor receives multimodal user messages and responds. Live interactive only — no disk persistence in this phase; Postgres-backed persistence is a separate future concern. Simulated student bots remain text-only (deferred non-goal).
 
-**Web UI changes (`test_ui/templates/index.html` + `test_ui/run_app.py`):**
+**Web UI changes (`sandbox_ui/templates/index.html` + `sandbox_ui/run_app.py`):**
 - File input + drag-and-drop zone on the chat composer
 - Accept PNG, JPG, JPEG only; reject others client-side with a clear error
 - Show preview thumbnails before send; allow per-thumbnail removal
@@ -581,7 +581,7 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
   - Per-request file count cap (e.g., 5; constant)
   - Reject with 400 + structured error body if any check fails
 
-**Backend (`test_ui/run_app.py`):**
+**Backend (`sandbox_ui/run_app.py`):**
 - Parse uploads, validate, base64-encode in-memory using `utils.figures.image_to_data_url`
 - Build multimodal HumanMessage content blocks using `utils.figures.build_multimodal_content` (reused from Phase 6)
 - Append message to the existing in-memory conversation state for the session
@@ -601,9 +601,9 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 
 **Implementation order:**
 1. Extend `utils/figures.py` to accept raw bytes (not only Paths) for the encoder helper
-2. `test_ui/run_app.py` — switch `/api/chat` to multipart; validate; build multimodal HumanMessage
-3. `test_ui/templates/index.html` — file picker + drag-drop + thumbnail previews
-4. `test_ui/README.md` — document the upload control + size/format limits
+2. `sandbox_ui/run_app.py` — switch `/api/chat` to multipart; validate; build multimodal HumanMessage
+3. `sandbox_ui/templates/index.html` — file picker + drag-drop + thumbnail previews
+4. `sandbox_ui/README.md` — document the upload control + size/format limits
 
 **Explicit non-goals:**
 - Bot-uploaded figures (simulated student attaching images from a pre-staged library)
@@ -652,11 +652,11 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 > **Still pending:** Step 10 (image uploads — depends on Phase 6), Step 11
 > (multi-iframe `test_host.html`), Step 12 (pytest suite).
 
-**Problem:** The existing `test_ui/` is a developer/TA testing harness — a 3-step wizard with no persistence, no identity, no iframe-friendly mode. Real OCW students need a different shape: course/exercise hardcoded per page, conversation history persists across reloads, best-effort student identity for longitudinal tracking, and an iframe-ready single-page chat. Rather than reshape `test_ui/` (which would break testing workflows), build a separate production-shape app from scratch.
+**Problem:** The existing `sandbox_ui/` is a developer/TA testing harness — a 3-step wizard with no persistence, no identity, no iframe-friendly mode. Real OCW students need a different shape: course/exercise hardcoded per page, conversation history persists across reloads, best-effort student identity for longitudinal tracking, and an iframe-ready single-page chat. Rather than reshape `sandbox_ui/` (which would break testing workflows), build a separate production-shape app from scratch.
 
-**Decision:** New top-level folder `main_ui/`, distinct from `test_ui/`. Local-only for this phase — production hosting is a later concern. Postgres for persistence, email-after-3-messages for identity (per meeting notes 2026-05-08), and full integration with the multimodal pipeline from Phases 6 + 7.
+**Decision:** New top-level folder `main_ui/`, distinct from `sandbox_ui/`. Local-only for this phase — production hosting is a later concern. Postgres for persistence, email-after-3-messages for identity (per meeting notes 2026-05-08), and full integration with the multimodal pipeline from Phases 6 + 7.
 
-| | Existing `test_ui/` | New `main_ui/` |
+| | Existing `sandbox_ui/` | New `main_ui/` |
 | --- | --- | --- |
 | **Audience** | Developers / TAs testing tutor configs | Real students embedded in OCW course pages |
 | **UI** | 3-step wizard (tutor, course, exercise) | No wizard — course/exercise come from URL params |
@@ -700,11 +700,11 @@ main_ui/
 ```
 
 **Stack:**
-- Flask + Jinja2 (same pattern as `test_ui/`)
+- Flask + Jinja2 (same pattern as `sandbox_ui/`)
 - SQLAlchemy 2.x + Alembic for migrations
 - `psycopg[binary]` (psycopg v3) for PostgreSQL
 - Postgres via Docker locally (`postgres:16` container); SQLite supported via `DATABASE_URL` for ultra-quick dev
-- Vanilla JS frontend (no framework — same pattern as `test_ui/`)
+- Vanilla JS frontend (no framework — same pattern as `sandbox_ui/`)
 - Imports `tutor.run_tutor` directly — no LLM logic duplicated
 
 **Routes / API:**
@@ -801,7 +801,7 @@ $env:OPENAI_API_KEY = "sk-..."
 # 3. Run migrations
 alembic -c main_ui/db/migrations/alembic.ini upgrade head
 
-# 4. Start the app (port 5001 — 5000 belongs to test_ui)
+# 4. Start the app (port 5001 — 5000 belongs to sandbox_ui)
 python -m main_ui
 
 # 5. Test directly
@@ -815,7 +815,7 @@ python -m main_ui
 
 **Dependencies on earlier phases:**
 - **Phase 6 (figures in context)** — required. The tutor calls from `main_ui/` need the multimodal pipeline so the LLM sees curriculum figures.
-- **Phase 7 (uploads in test_ui)** — not a hard dependency, but `utils/figures.py` from Phase 6 is reused here for upload encoding.
+- **Phase 7 (uploads in sandbox_ui)** — not a hard dependency, but `utils/figures.py` from Phase 6 is reused here for upload encoding.
 
 **Implementation order:**
 1. Folder skeleton + Flask app + `python -m main_ui` boots
@@ -847,20 +847,20 @@ python -m main_ui
 
 ---
 
-### Phase 9: Reshape `test_ui/` into the AskTIM Sandbox ✦ COMPLETED
+### Phase 9: Reshape `sandbox_ui/` into the AskTIM Sandbox ✦ COMPLETED
 
-**Problem:** Once `main_ui/` existed, the old `test_ui/` (a config-panel chat with
+**Problem:** Once `main_ui/` existed, the old `sandbox_ui/` (a config-panel chat with
 a tutor/persona/course/exercise selector, in-memory only, no identity) had drifted
 out of step with the production app. Developers and TAs needed a sandbox that
 *looks and behaves like production* — same streaming chat, same persistence and
 history — while still letting them change context freely and keeping their test
 chats off the production database.
 
-**Decision:** Rebuild `test_ui/` so it mirrors `main_ui/` (shared chat UX, SSE
+**Decision:** Rebuild `sandbox_ui/` so it mirrors `main_ui/` (shared chat UX, SSE
 streaming, Postgres persistence, email+password identity, history sidebar) and
 add what production deliberately omits: an in-app context switcher and a one-off
 custom-context wizard. Keep it visually and operationally isolated from
-production. See [`test_ui/README.md`](test_ui/README.md).
+production. See [`sandbox_ui/README.md`](sandbox_ui/README.md).
 
 **What shipped:**
 - **Mirrors `main_ui`:** iframe chat at `/embed`, SSE token streaming with
@@ -876,15 +876,15 @@ production. See [`test_ui/README.md`](test_ui/README.md).
   `Base.metadata.create_all` on boot — no Alembic), teal-blue `#126f9a` accent and
   "AskTIM · Sandbox Beta" header, port 5000 (vs main_ui's 5001). Adds a
   `conversations.syllabus_enabled` column on top of the main_ui schema.
-- **DB env-var resolution (decided 2026-06-04):** `TEST_UI_DATABASE_URL` →
+- **DB env-var resolution (decided 2026-06-04):** `SANDBOX_UI_DATABASE_URL` →
   `DATABASE_URL` → SQLite fallback. Lets Railway set a plain `DATABASE_URL` on the
   test service while local dev points the Sandbox at its own DB via the prefixed
   var, so it never accidentally writes to main_ui's Postgres. (Full rationale in
-  `test_ui/README.md`.)
+  `sandbox_ui/README.md`.)
 
 **Non-goals:** Alembic migrations (throwaway DB uses `create_all`); sharing a
 database with `main_ui` (deliberately separate); the simulated-student-bot button
-from the old `test_ui` (the Sandbox is human-driven chat, bots stay in
+from the old `sandbox_ui` (the Sandbox is human-driven chat, bots stay in
 `internal_ui`).
 
 ---
@@ -939,7 +939,7 @@ to internal storage; a stakeholder sync with Dimitris on deployment status.
 | **Index location** | `curriculum/<course>/rag_index/` — `vectors.npy` (float32 N×D, L2-normalized) + `chunks.jsonl` (text + metadata, aligned to vector rows) + `manifest.json` (embedding model, dims, count, source toggle, source hashes, build time). **Commit the artifacts** so deploys don't re-embed (saves cost + avoids needing the embeddings API at boot); rebuild only when sources change (manifest hashes sources to detect staleness). |
 | **Retrieval** | Dense top-k (k≈6), capped at ~4k tokens total. Query = the latest student message (optionally + the previous turn for context) + a light exercise hint. Returns chunks with their `source` for optional citation. |
 
-**Where it plugs in (`services/tutor_bridge.py`, both `main_ui` and `test_ui`):**
+**Where it plugs in (`services/tutor_bridge.py`, both `main_ui` and `sandbox_ui`):**
 - Today `build_assignment_text()` concatenates `about_asktim` + `course.txt` + `syllabus.txt` + `load_lecture_transcripts(course)` + the exercise into the cached system prompt. That can't host per-turn retrieval (the prompt is built once per `(tutor, course, exercise)` and cached).
 - New approach: the cached system prompt keeps only `about_asktim` + **the exercise prompt** (+ figures attached per turn). Course description, syllabus, and lecture/reading knowledge are **no longer dumped** — in `get_tutor_reply()` / `stream_tutor_reply()` we run retrieval against the new student message each turn and inject the chunks as a `Relevant course material:\n<chunks>` block on the **latest** student turn, exactly the per-turn attach pattern already used for figures (`_turn_attachments`). Small, fresh, query-specific; the cached prompt stays lean.
 - **Gating + fallback:** retrieval is used when a `rag_index/` exists for the course; otherwise fall back to current behavior. A `TUTOR_CONTEXT_MODE` env/flag selects `rag` (default once indexes exist) vs `full_context` (today's wholesale course.txt + syllabus + lectures dump) vs `exercise_only` (no course material at all) — this *is* the knob for the research comparison.
@@ -1130,19 +1130,19 @@ The core n limitation is Claude's ~13% per-criterion coverage. Re-grading the ~3
 
 ### 05–06/2026 — Sandbox reshape + Railway deployment (Phases 9 & 10, completed)
 
-- Reshaped `test_ui/` into the **AskTIM Sandbox** (mirrors `main_ui`, adds Edit/
+- Reshaped `sandbox_ui/` into the **AskTIM Sandbox** (mirrors `main_ui`, adds Edit/
   Create context, own `asktim_test` DB) — Phase 9.
 - Containerized and **deployed `main_ui/` to Railway** (`Dockerfile_main` +
   entrypoint script that normalizes `DATABASE_URL` to `postgresql+psycopg://`) —
-  Phase 10. Production verified synced with `main` on 2026-06-01. (The `test_ui`
+  Phase 10. Production verified synced with `main` on 2026-06-01. (The `sandbox_ui`
   Sandbox runs locally only; its Railway deployment is deferred until it works.)
 
-### 06/04/2026 — test_ui DB resolution + tutor JSON parse fix (completed)
+### 06/04/2026 — sandbox_ui DB resolution + tutor JSON parse fix (completed)
 
-- **DB env-var resolution order** for `test_ui`: `TEST_UI_DATABASE_URL` →
+- **DB env-var resolution order** for `sandbox_ui`: `SANDBOX_UI_DATABASE_URL` →
   `DATABASE_URL` → SQLite. Fixes the Railway-vs-local conflict where a single
   variable name had to mean main_ui's DB locally but the Sandbox's DB on Railway.
-  Rationale recorded in [`test_ui/README.md`](test_ui/README.md).
+  Rationale recorded in [`sandbox_ui/README.md`](sandbox_ui/README.md).
 - **Tutor JSON parsing** now uses `strict=False` so control characters in the
   model's JSON no longer break parsing and leak raw `pedagogical-reasoning` into the
   student-facing reply.

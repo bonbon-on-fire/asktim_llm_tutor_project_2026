@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/database.css') }}">
+    <style>:root { --accent: {{ accent }}; }</style>
+</head>
+<body class="review-body">
+    <header class="course-banner">
+        <span class="course-name">{{ title }}</span>
+        <a class="review-logout" href="{{ url_for('database.logout') }}">Sign out</a>
+    </header>
+
+    <div class="layout">
+    <aside class="sidebar" id="sidebar" data-open="true" aria-label="Conversations">
+        <div class="sidebar-inner">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">{{ title }}</h2>
+            </div>
+            <div class="review-sort" role="group" aria-label="Sort conversations">
+                <button type="button" class="review-sort-btn is-active" data-sort="date">By date</button>
+                <button type="button" class="review-sort-btn" data-sort="student">By student</button>
+            </div>
+            <div class="sidebar-empty" id="sidebar-empty" hidden></div>
+            <ul class="sidebar-list" id="sidebar-list"></ul>
+        </div>
+    </aside>
+
+    <main class="chat review-chat">
+        <div class="review-detail-meta" id="detail-meta" hidden></div>
+        <ol class="message-list" id="message-list" aria-live="polite" aria-label="Conversation">
+            <li class="review-placeholder" id="review-placeholder">Select a conversation to view its transcript.</li>
+        </ol>
+        <div class="error-banner" id="error-banner" role="alert" hidden>
+            <span class="error-text" id="error-text"></span>
+            <button class="error-dismiss" id="error-dismiss" type="button" aria-label="Dismiss error">&times;</button>
+        </div>
+    </main>
+    </div>
+
+    <!-- Markdown rendering for tutor messages: marked parses GFM (incl. tables),
+         DOMPurify sanitizes the HTML. Vendored locally; loaded before database.js. -->
+    <script src="{{ url_for('static', filename='js/marked.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/dompurify.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/database.js') }}" defer></script>
+</body>
+</html>

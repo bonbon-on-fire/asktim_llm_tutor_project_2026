@@ -1,6 +1,6 @@
 """Shared validation for student-uploaded images.
 
-Both `main_ui` and `test_ui` accept per-message image uploads in their chat
+Both `main_ui` and `sandbox_ui` accept per-message image uploads in their chat
 composers. The Flask file-parsing differs per app, but the actual rules — which
 MIME types, how big, how many — are identical and live here so the two apps
 can't drift. Pure functions over ``(filename, mime, bytes)``; no Flask, no DB.

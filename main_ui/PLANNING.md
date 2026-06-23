@@ -20,7 +20,7 @@ main_ui/
   __main__.py           # python -m main_ui entry point
   run_app.py            # Flask app factory + health check route
   config.py             # env-driven config dataclass
-  README.md             # quick start, env vars, comparison with test_ui
+  README.md             # quick start, env vars, comparison with sandbox_ui
   PLANNING.md           # this file
 ```
 
@@ -53,8 +53,8 @@ No subfolders yet — `db/`, `routes/`, `services/`, `templates/`, `static/`, `u
 - **Why a separate file:** standard Python convention — `python -m <package>` looks for `<package>/__main__.py`. Keeps the boot command tiny.
 
 **`main_ui/README.md`**
-- **Purpose:** quick-reference doc for a developer who has never touched this folder before. Covers what `main_ui/` is, how to boot it, how to verify it's running, and how it differs from `test_ui/`.
-- **Owns:** local dev quick-start (`python -m main_ui`), health-check URL, supported env vars (`MAIN_UI_SECRET_KEY`, `DATABASE_URL`, `PORT`), and a short comparison with `test_ui/` (with a link to the Phase 8 comparison table in the root `PLANNING.md`).
+- **Purpose:** quick-reference doc for a developer who has never touched this folder before. Covers what `main_ui/` is, how to boot it, how to verify it's running, and how it differs from `sandbox_ui/`.
+- **Owns:** local dev quick-start (`python -m main_ui`), health-check URL, supported env vars (`MAIN_UI_SECRET_KEY`, `DATABASE_URL`, `PORT`), and a short comparison with `sandbox_ui/` (with a link to the Phase 8 comparison table in the root `PLANNING.md`).
 - **Grows over time:** later steps add sections for DB migrations (Step 2), iframe testing (Step 10), running tests (Step 11), etc.
 
 **`main_ui/PLANNING.md`** *(this file)*
@@ -64,15 +64,15 @@ No subfolders yet — `db/`, `routes/`, `services/`, `templates/`, `static/`, `u
 
 ### Dependencies
 
-- **Flask** — already in the root `requirements.txt` (used by `test_ui/`). No new packages for Step 1.
+- **Flask** — already in the root `requirements.txt` (used by `sandbox_ui/`). No new packages for Step 1.
 - **Python 3.11+** (assumed; matches project baseline).
 
 ### Acceptance criteria
 
 1. `python -m main_ui` boots and prints Flask's "Running on http://127.0.0.1:5001" banner.
 2. `curl http://127.0.0.1:5001/health` returns HTTP 200 with body `{"status": "ok", "service": "main_ui"}`.
-3. No port collision with `test_ui` (which uses port 5000).
-4. No imports from `test_ui/`, `tutor/`, `students/`, or `judge/` yet — Step 1 stays fully self-contained.
+3. No port collision with `sandbox_ui` (which uses port 5000).
+4. No imports from `sandbox_ui/`, `tutor/`, `students/`, or `judge/` yet — Step 1 stays fully self-contained.
 5. `from main_ui.run_app import app` works from anywhere in the repo (for future gunicorn compatibility).
 6. The Flask app uses the factory pattern (`create_app()`) so later steps can wire in DB session, blueprints, etc. without rewriting boot code.
 
@@ -88,8 +88,8 @@ curl http://127.0.0.1:5001/health
 # Expected response:
 # {"service":"main_ui","status":"ok"}
 
-# Confirm no port conflict by also running test_ui (optional)
-python -m test_ui    # binds to 5000
+# Confirm no port conflict by also running sandbox_ui (optional)
+python -m sandbox_ui    # binds to 5000
 # Both apps should coexist
 ```
 
@@ -417,13 +417,13 @@ main_ui/
     tutor_bridge.py                   # assignment-text builder + tutor-reply entry point
 ```
 
-Plus a small edit to `main_ui/__init__.py` to auto-load `.env` at import time (so `OPENAI_API_KEY` from the project's `.env` file is available to every entrypoint without manual `$env:OPENAI_API_KEY` setup). Uses `python-dotenv` (already in `requirements.txt`). Other project modules (`tutor/`, `test_ui/`, `judge/`) deliberately don't load `.env` per Phase 2/5 cleanups — `main_ui/` reintroduces it at the package level, scoped only to this app.
+Plus a small edit to `main_ui/__init__.py` to auto-load `.env` at import time (so `OPENAI_API_KEY` from the project's `.env` file is available to every entrypoint without manual `$env:OPENAI_API_KEY` setup). Uses `python-dotenv` (already in `requirements.txt`). Other project modules (`tutor/`, `sandbox_ui/`, `judge/`) deliberately don't load `.env` per Phase 2/5 cleanups — `main_ui/` reintroduces it at the package level, scoped only to this app.
 
 #### Purpose of each file
 
 **`main_ui/__init__.py` (modified)**
 - **Adds:** a `dotenv.load_dotenv()` call at import time, pointing at the repo-root `.env`. Wrapped in a try/except for the case where `python-dotenv` is missing or the file doesn't exist — the app should still boot, just without auto-loaded env vars.
-- **Why scoped to `main_ui/`:** other modules (`tutor`, `judge`, `students`, `test_ui`) deliberately don't load `.env` per the Phase 2/5 cleanups. We're not undoing that decision — we're carving a localized exception so `main_ui/` entrypoints (`python -m main_ui` and `python -c "from main_ui..."` smoke tests) don't require manual env setup.
+- **Why scoped to `main_ui/`:** other modules (`tutor`, `judge`, `students`, `sandbox_ui`) deliberately don't load `.env` per the Phase 2/5 cleanups. We're not undoing that decision — we're carving a localized exception so `main_ui/` entrypoints (`python -m main_ui` and `python -c "from main_ui..."` smoke tests) don't require manual env setup.
 
 **`main_ui/services/__init__.py`**
 - **Purpose:** package marker. Empty file. Later steps may add a stable public API surface here once we have multiple services (`conversation.py`, `image_storage.py`).
@@ -710,7 +710,7 @@ curl -s -X POST -H "Content-Type: application/json" -d '{"text":"x","course":"ci
 
 **Goal:** Replace the Step 3 placeholder ("Tutor loading…") with a functional chat interface — message list, composer, send button, loading indicator. The page reads `tutor-config` from its embedded JSON block, sends `POST /api/chat` over fetch, and renders replies. After this step, a student can actually have a tutoring session by opening `/embed?course=…&exercise=…` and typing.
 
-Vanilla JS only. No framework, no build step. Matches the rest of the codebase (`test_ui/templates/index.html` is also vanilla). Step 6 is the first step that produces a visibly student-usable thing.
+Vanilla JS only. No framework, no build step. Matches the rest of the codebase (`sandbox_ui/templates/index.html` is also vanilla). Step 6 is the first step that produces a visibly student-usable thing.
 
 #### Files to create
 
@@ -849,7 +849,7 @@ start http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04
 - **No history sidebar** (Step 8). New page loads start a fresh conversation; no way to see past ones.
 - **No "new conversation" button.** Per meeting notes, each iframe load is a new conversation; refreshing the page is the explicit way to start over.
 - **No streaming.** Replies arrive in one chunk after the LLM finishes.
-- **Markdown rendering (tutor messages).** ~~Originally none — whitespace + line breaks preserved via CSS; bold/italics stayed as raw asterisks.~~ **Updated:** tutor replies are now rendered as **sanitized markdown** so tables, lists, and bold display cleanly. `setMessageContent()` in `chat.js` runs tutor content through `marked` (GFM, incl. tables) → `DOMPurify.sanitize()` → `innerHTML`; student text and any offline-fallback stay `textContent`, so the original no-raw-innerHTML XSS guarantee holds. `marked`/`DOMPurify` are vendored locally under `static/js/` (not a CDN, so they work offline / behind a VPN and bake into the container image) and loaded via `<script defer>` in `embed.html`, before `chat.js`; if they somehow fail to load, rendering degrades gracefully to plain text. Styling lives in the `.message-rich` CSS block. Rendering happens once on the streamed `done` event (the authoritative full reply), so half-streamed tables never flicker. **The same change is mirrored in `test_ui`.**
+- **Markdown rendering (tutor messages).** ~~Originally none — whitespace + line breaks preserved via CSS; bold/italics stayed as raw asterisks.~~ **Updated:** tutor replies are now rendered as **sanitized markdown** so tables, lists, and bold display cleanly. `setMessageContent()` in `chat.js` runs tutor content through `marked` (GFM, incl. tables) → `DOMPurify.sanitize()` → `innerHTML`; student text and any offline-fallback stay `textContent`, so the original no-raw-innerHTML XSS guarantee holds. `marked`/`DOMPurify` are vendored locally under `static/js/` (not a CDN, so they work offline / behind a VPN and bake into the container image) and loaded via `<script defer>` in `embed.html`, before `chat.js`; if they somehow fail to load, rendering degrades gracefully to plain text. Styling lives in the `.message-rich` CSS block. Rendering happens once on the streamed `done` event (the authoritative full reply), so half-streamed tables never flicker. **The same change is mirrored in `sandbox_ui`.**
 - **No themes / dark mode.** One light style. Trivial to add later.
 - **No tests** (Step 11).
 - **No iframe test harness** — Step 10 builds `test_host.html`.

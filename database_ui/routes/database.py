@@ -1,0 +1,148 @@
+"""Read-only review routes.
+
+Page:
+- GET  /            the review shell (sidebar + transcript view)
+- GET  /login       shared-password login form
+- POST /login       verify password, start session
+- GET  /logout      clear session
+
+API (all read-only, all behind the auth gate except where noted):
+- GET /api/conversations            list ALL conversations (sort=date|student)
+- GET /api/conversation/<uuid>      one conversation's full transcript
+- GET /api/image/<int>              serve an uploaded image's bytes
+
+Unlike the live apps' history endpoints, these are intentionally NOT scoped to a
+viewer's session/email — the whole point is to review everyone's conversations.
+"""
+
+from __future__ import annotations
+
+from uuid import UUID
+
+from flask import (
+    Blueprint,
+    Response,
+    current_app,
+    g,
+    jsonify,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
+
+from database_ui.auth import check_password, clear_auth, mark_authed
+from database_ui.services import conversations as svc
+
+database_bp = Blueprint("database", __name__)
+
+_VALID_SORTS = {"date", "student"}
+_MAX_PAGE = 200
+
+
+@database_bp.get("/")
+def index():
+    return render_template(
+        "index.html",
+        title=current_app.config["DATABASE_UI_TITLE"],
+        accent=current_app.config["DATABASE_UI_ACCENT"],
+    )
+
+
+@database_bp.get("/login")
+def login():
+    return render_template(
+        "login.html",
+        title=current_app.config["DATABASE_UI_TITLE"],
+        accent=current_app.config["DATABASE_UI_ACCENT"],
+        error=None,
+    )
+
+
+@database_bp.post("/login")
+def login_submit():
+    candidate = request.form.get("password", "")
+    if check_password(candidate):
+        mark_authed()
+        return redirect(url_for("database.index"))
+    return (
+        render_template(
+            "login.html",
+            title=current_app.config["DATABASE_UI_TITLE"],
+            accent=current_app.config["DATABASE_UI_ACCENT"],
+            error="Incorrect password.",
+        ),
+        401,
+    )
+
+
+@database_bp.get("/logout")
+def logout():
+    clear_auth()
+    return redirect(url_for("database.login"))
+
+
+@database_bp.get("/api/conversations")
+def api_conversations():
+    sort = request.args.get("sort", "date")
+    if sort not in _VALID_SORTS:
+        sort = "date"
+    limit = _clamp_int(request.args.get("limit"), default=None, lo=1, hi=_MAX_PAGE)
+    offset = _clamp_int(request.args.get("offset"), default=0, lo=0, hi=None)
+    conversations = svc.list_all_conversations(
+        g.db, sort=sort, limit=limit, offset=offset
+    )
+    return jsonify({"sort": sort, "conversations": conversations})
+
+
+@database_bp.get("/api/conversation/<conversation_id>")
+def api_conversation(conversation_id: str):
+    try:
+        convo_id = UUID(conversation_id)
+    except (ValueError, TypeError):
+        return jsonify({"error": "bad_conversation_id"}), 400
+    convo = svc.get_conversation(g.db, convo_id)
+    if convo is None:
+        return jsonify({"error": "not_found"}), 404
+    return jsonify(
+        {
+            "id": str(convo.id),
+            "email": convo.email,
+            "session_id": convo.session_id,
+            "course": convo.course,
+            "exercise_number": convo.exercise_number,
+            "tutor_prompt": convo.tutor_prompt,
+            "started_at": convo.started_at.isoformat() if convo.started_at else None,
+            "last_active_at": (
+                convo.last_active_at.isoformat() if convo.last_active_at else None
+            ),
+            "messages": svc.get_messages_for_conversation(g.db, convo),
+        }
+    )
+
+
+@database_bp.get("/api/image/<int:image_id>")
+def api_image(image_id: int):
+    img = svc.get_image(g.db, image_id)
+    if img is None:
+        return jsonify({"error": "not_found"}), 404
+    return Response(
+        img.data,
+        mimetype=img.mime_type,
+        headers={"Cache-Control": "private, max-age=86400"},
+    )
+
+
+def _clamp_int(raw, *, default, lo, hi):
+    """Parse a query-arg int, clamped to [lo, hi]; *default* on missing/bad."""
+    if raw is None or raw == "":
+        return default
+    try:
+        val = int(raw)
+    except (ValueError, TypeError):
+        return default
+    if lo is not None:
+        val = max(lo, val)
+    if hi is not None:
+        val = min(hi, val)
+    return val

@@ -22,7 +22,7 @@ What works today:
 - MIT crimson branding, AskTIM Beta header, "MIT 11.270x Cities and Climate Change" course banner
 - Per-course lecture transcripts (`curriculum/<course>/lectures/*.txt`) auto-folded into tutor context when present (text-only, no-op until a course adds them) — via [`utils.lectures`](../utils/lectures.py)
 - **Curriculum figures** auto-attached to the tutor: any `curriculum/<course>/figures/exercise_<NN>_*.{png,jpg,jpeg}` matching the conversation's exercise is sent to the tutor as multimodal input on every turn (re-attached each call since per-call history is text-only) — via [`utils.figures.discover_figures`](../utils/figures.py) in [`services/tutor_bridge.py`](services/tutor_bridge.py); no-op for exercises with no figure
-- **Student image uploads** (Step 10): the composer accepts PNG/JPEG attachments (paperclip, drag-and-drop, or clipboard paste, up to 5 × 10 MB), streamed to the tutor as multimodal input on that turn. Bytes are stored in-DB (`uploaded_images.data`, BYTEA) so they survive Railway redeploys, re-rendered in history via `GET /api/image/<id>`. Validation is shared with `test_ui` in [`utils/uploads.py`](../utils/uploads.py); images attach only to the turn they're sent on (prior turns stay text-only). Clicking any chat image — a staged composer thumbnail or one already sent — opens it enlarged and centered in a lightbox (backdrop / × / Esc to close)
+- **Student image uploads** (Step 10): the composer accepts PNG/JPEG attachments (paperclip, drag-and-drop, or clipboard paste, up to 5 × 10 MB), streamed to the tutor as multimodal input on that turn. Bytes are stored in-DB (`uploaded_images.data`, BYTEA) so they survive Railway redeploys, re-rendered in history via `GET /api/image/<id>`. Validation is shared with `sandbox_ui` in [`utils/uploads.py`](../utils/uploads.py); images attach only to the turn they're sent on (prior turns stay text-only). Clicking any chat image — a staged composer thumbnail or one already sent — opens it enlarged and centered in a lightbox (backdrop / × / Esc to close)
 
 ## Quick start
 
@@ -167,13 +167,13 @@ config live at the repo root:
 The WSGI entrypoint is `main_ui.run_app:app`. Production reads `DATABASE_URL`
 from the Railway Postgres service; migrations run automatically on every boot.
 
-## How `main_ui/` relates to `test_ui/`
+## How `main_ui/` relates to `sandbox_ui/`
 
 `main_ui/` is the student-facing production app: course/exercise/tutor come from
 URL params, conversations persist to PostgreSQL (`asktim`), identity is email +
 password (bcrypt, cross-browser), and replies stream over SSE.
 
-[`test_ui/`](../test_ui/README.md) ("AskTIM Sandbox") is the developer/TA
+[`sandbox_ui/`](../sandbox_ui/README.md) ("AskTIM Sandbox") is the developer/TA
 counterpart. It reuses the same chat UI and tutor pipeline but lets testers
 change context **in the app** rather than via URL params, through a **Create
 context** wizard: pick a built-in course/exercise/tutor-prompt/syllabus or paste
@@ -181,7 +181,7 @@ one-off custom text at each step.
 It runs on its **own** PostgreSQL database (`asktim_test`) so test chats never
 mix with production data, builds its schema with `create_all` (no Alembic), and
 uses a teal-blue (`#126f9a`) accent instead of crimson. Both apps can run side
-by side (`main_ui` on `5001`, `test_ui` on `5000`).
+by side (`main_ui` on `5001`, `sandbox_ui` on `5000`).
 
 ## What's still pending
 

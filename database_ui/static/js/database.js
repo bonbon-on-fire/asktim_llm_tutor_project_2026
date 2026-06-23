@@ -1,0 +1,248 @@
+"use strict";
+// database_ui — read-only conversation browser. Lists every conversation in the
+// DB and renders a selected one's transcript. No composer, no writes.
+(function () {
+  const sidebarList = document.getElementById("sidebar-list");
+  const sidebarEmpty = document.getElementById("sidebar-empty");
+  const messageList = document.getElementById("message-list");
+  const placeholder = document.getElementById("review-placeholder");
+  const detailMeta = document.getElementById("detail-meta");
+  const errorBanner = document.getElementById("error-banner");
+  const errorText = document.getElementById("error-text");
+  const errorDismiss = document.getElementById("error-dismiss");
+  const sortButtons = Array.from(document.querySelectorAll(".review-sort-btn"));
+
+  let currentSort = "date";
+  let activeConversationId = null;
+
+  function showError(msg) {
+    errorText.textContent = msg;
+    errorBanner.hidden = false;
+  }
+  function hideError() {
+    errorBanner.hidden = true;
+    errorText.textContent = "";
+  }
+  if (errorDismiss) errorDismiss.addEventListener("click", hideError);
+
+  function showSidebarEmpty(text) {
+    sidebarList.innerHTML = "";
+    sidebarEmpty.textContent = text;
+    sidebarEmpty.hidden = false;
+  }
+
+  // "Exercise 3 · May 19 · 8 messages" — mirrors main_ui's formatEntryHeader.
+  function formatEntryHeader(c) {
+    const exNumber = parseInt(c.exercise_number, 10);
+    const parts = [
+      `Exercise ${Number.isFinite(exNumber) ? exNumber : c.exercise_number}`,
+    ];
+    if (c.last_active_at) {
+      const d = new Date(c.last_active_at);
+      parts.push(d.toLocaleDateString(undefined, { month: "short", day: "numeric" }));
+    }
+    const n = c.message_count;
+    parts.push(`${n} ${n === 1 ? "message" : "messages"}`);
+    return parts.join(" · ");
+  }
+
+  function studentLabel(c) {
+    return c.email || "Anonymous";
+  }
+
+  function renderSidebar(conversations) {
+    sidebarList.innerHTML = "";
+    if (!conversations || conversations.length === 0) {
+      showSidebarEmpty("No conversations yet.");
+      return;
+    }
+    sidebarEmpty.hidden = true;
+
+    let lastGroup = null;
+    for (const c of conversations) {
+      // When sorting by student, insert a group header whenever the email changes.
+      if (currentSort === "student") {
+        const label = studentLabel(c);
+        if (label !== lastGroup) {
+          lastGroup = label;
+          const header = document.createElement("li");
+          header.className = "review-group-header";
+          header.textContent = label;
+          sidebarList.appendChild(header);
+        }
+      }
+
+      const li = document.createElement("li");
+      li.className = "sidebar-entry";
+      li.tabIndex = 0;
+      li.setAttribute("role", "button");
+      li.dataset.conversationId = c.id;
+
+      // Email/identity line sits ABOVE the exercise header line.
+      const student = document.createElement("div");
+      student.className = "sidebar-entry-student";
+      student.textContent = studentLabel(c);
+      if (!c.email) student.classList.add("is-anonymous");
+
+      const title = document.createElement("div");
+      title.className = "sidebar-entry-title";
+      title.textContent = formatEntryHeader(c);
+
+      const snippet = document.createElement("div");
+      snippet.className = "sidebar-entry-snippet";
+      snippet.textContent = c.last_message_snippet || "(no messages)";
+
+      li.appendChild(student);
+      li.appendChild(title);
+      li.appendChild(snippet);
+
+      if (c.id === activeConversationId) li.classList.add("sidebar-entry-active");
+
+      const open = () => loadConversation(c.id);
+      li.addEventListener("click", open);
+      li.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      });
+      sidebarList.appendChild(li);
+    }
+  }
+
+  function highlightActive() {
+    for (const el of sidebarList.querySelectorAll(".sidebar-entry")) {
+      el.classList.toggle(
+        "sidebar-entry-active",
+        el.dataset.conversationId === activeConversationId,
+      );
+    }
+  }
+
+  async function refreshSidebar() {
+    showSidebarEmpty("Loading…");
+    try {
+      const r = await fetch(`/api/conversations?sort=${currentSort}`);
+      if (!r.ok) return showSidebarEmpty("Could not load conversations");
+      const data = await r.json();
+      renderSidebar(data.conversations);
+    } catch (e) {
+      showSidebarEmpty("Could not load conversations");
+    }
+  }
+
+  function setMessageContent(el, role, content) {
+    // Tutor replies are markdown; render + sanitize. Everything else is text.
+    const canMarkdown =
+      role === "tutor" &&
+      typeof window.marked !== "undefined" &&
+      typeof window.DOMPurify !== "undefined";
+    if (canMarkdown) {
+      el.classList.add("message-rich");
+      el.innerHTML = window.DOMPurify.sanitize(window.marked.parse(content || ""));
+    } else {
+      el.textContent = content || "";
+    }
+  }
+
+  function appendImages(li, images) {
+    if (!images || images.length === 0) return;
+    const wrap = document.createElement("div");
+    wrap.className = "message-images";
+    for (const img of images) {
+      const el = document.createElement("img");
+      el.className = "message-image";
+      el.src = `/api/image/${img.id}`;
+      el.alt = "attached image";
+      el.loading = "lazy";
+      wrap.appendChild(el);
+    }
+    li.appendChild(wrap);
+  }
+
+  function appendReasoning(li, reasoning) {
+    if (!reasoning) return;
+    const details = document.createElement("details");
+    details.className = "review-reasoning";
+    const summary = document.createElement("summary");
+    summary.textContent = "Pedagogical reasoning";
+    const body = document.createElement("div");
+    body.className = "review-reasoning-body";
+    body.textContent = reasoning;
+    details.appendChild(summary);
+    details.appendChild(body);
+    li.appendChild(details);
+  }
+
+  function renderMessage(m) {
+    const li = document.createElement("li");
+    li.className = "message message-" + m.role;
+    if (m.images && m.images.length) {
+      appendImages(li, m.images);
+      if (m.content) {
+        const textEl = document.createElement("div");
+        textEl.className = "message-text";
+        setMessageContent(textEl, m.role, m.content);
+        li.appendChild(textEl);
+      }
+    } else {
+      setMessageContent(li, m.role, m.content);
+    }
+    // Reviewer-only: surface the tutor's hidden reasoning.
+    if (m.role === "tutor") appendReasoning(li, m.pedagogical_reasoning);
+    messageList.appendChild(li);
+  }
+
+  function renderMeta(convo) {
+    const exNumber = parseInt(convo.exercise_number, 10);
+    const ex = Number.isFinite(exNumber) ? exNumber : convo.exercise_number;
+    const bits = [
+      studentLabelObj(convo),
+      `${convo.course}`,
+      `Exercise ${ex}`,
+      convo.tutor_prompt,
+    ];
+    if (convo.last_active_at) {
+      bits.push(new Date(convo.last_active_at).toLocaleString());
+    }
+    detailMeta.textContent = bits.filter(Boolean).join("  ·  ");
+    detailMeta.hidden = false;
+  }
+  function studentLabelObj(convo) {
+    return convo.email || "Anonymous";
+  }
+
+  async function loadConversation(id) {
+    if (id === activeConversationId) return;
+    activeConversationId = id;
+    highlightActive();
+    hideError();
+    if (placeholder) placeholder.hidden = true;
+    messageList.innerHTML = "";
+    try {
+      const r = await fetch(`/api/conversation/${id}`);
+      if (!r.ok) {
+        showError("Could not load that conversation.");
+        return;
+      }
+      const convo = await r.json();
+      renderMeta(convo);
+      for (const m of convo.messages) renderMessage(m);
+      messageList.scrollTop = 0;
+    } catch (e) {
+      showError("Could not load that conversation.");
+    }
+  }
+
+  for (const btn of sortButtons) {
+    btn.addEventListener("click", () => {
+      const sort = btn.dataset.sort;
+      if (sort === currentSort) return;
+      currentSort = sort;
+      for (const b of sortButtons) b.classList.toggle("is-active", b === btn);
+      refreshSidebar();
+    });
+  }
+
+  refreshSidebar();
+})();
