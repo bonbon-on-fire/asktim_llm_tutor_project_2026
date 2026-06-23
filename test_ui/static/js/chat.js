@@ -773,7 +773,7 @@
       cb.id = "create-rag-toggle";
       cb.checked = !!createDraft.useRag;
       const span = document.createElement("span");
-      span.textContent = "Use RAG — retrieve course material (skips the syllabus step)";
+      span.textContent = "Use RAG for course context";
       ragToggleRow.appendChild(cb);
       ragToggleRow.appendChild(span);
       createStepBody.appendChild(ragToggleRow);

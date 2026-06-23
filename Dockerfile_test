@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code (test_ui = AskTIM Sandbox, developer/TA tool)
 COPY test_ui/ test_ui/
 COPY tutor/ tutor/
+COPY rag/ rag/
 COPY curriculum/ curriculum/
 COPY utils/ utils/
 COPY scripts/railway-entrypoint-test.sh /entrypoint.sh
