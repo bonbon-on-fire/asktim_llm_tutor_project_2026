@@ -18,3 +18,9 @@ __pycache__/
 
 # main_ui local uploads folder
 main_ui/uploads/
+
+# Local UI verification screenshots + Playwright MCP session snapshots
+db-*.png
+review-*.png
+.playwright-mcp/page-*.yml
+.playwright-mcp/console-*.log

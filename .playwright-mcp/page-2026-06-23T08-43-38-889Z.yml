@@ -1,8 +1,0 @@
-- dialog "AskTIM · Database Beta" [ref=e2]:
-  - generic [ref=e3]:
-    - heading "AskTIM · Database Beta" [level=2] [ref=e4]
-    - paragraph [ref=e5]: Enter the review password to continue.
-    - generic [ref=e6]:
-      - textbox "Review password" [active] [ref=e7]:
-        - /placeholder: Enter your password
-      - button "Sign in" [ref=e9] [cursor=pointer]
