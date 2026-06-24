@@ -910,6 +910,30 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     cursor: pointer;
 }
 
+/* Tutor pedagogical reasoning — dev/TA-only, collapsed by default. Same minimal
+   formatting as the database_ui review dashboard: no box, a small muted
+   disclosure with the text indented behind a thin rule. */
+.review-reasoning {
+    margin-top: 0.3rem;
+    font-size: 0.76rem;
+}
+.review-reasoning > summary {
+    cursor: pointer;
+    color: var(--muted, #888);
+    font-weight: 500;
+    user-select: none;
+}
+.review-reasoning > summary:hover {
+    color: var(--text, #2a2a2a);
+}
+.review-reasoning-body {
+    margin: 0.25rem 0 0 0.3rem;
+    padding-left: 0.6rem;
+    border-left: 2px solid var(--border, #e2e2e2);
+    color: var(--muted, #666);
+    white-space: pre-wrap;
+}
+
 /* Locked (read-only) fields in the Edit-context modal. */
 .lock-icon {
     width: 0.8rem;

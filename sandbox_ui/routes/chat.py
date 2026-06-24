@@ -341,6 +341,9 @@ def chat():
                     "conversation_id": convo_id_str,
                     "reply": full_reply,
                     "student_message_count": student_count,
+                    # Sandbox is a dev/TA tool — surface the tutor's hidden
+                    # reasoning so it can be inspected per message as we chat.
+                    "pedagogical_reasoning": reasoning,
                 },
             )
         finally:

@@ -230,8 +230,9 @@ def get_messages_for_conversation(
 ) -> list[dict]:
     """Return chronologically ordered messages as JSON-friendly dicts.
 
-    Pedagogical reasoning is intentionally excluded — same student-facing
-    policy as `/api/chat` in Step 5.
+    Includes ``pedagogical_reasoning`` (the tutor's hidden reasoning): the
+    Sandbox is a dev/TA tool, so reviewers may inspect it — same policy as the
+    database_ui review dashboard, unlike the student-facing main_ui.
     """
     stmt = (
         select(Message)
@@ -248,6 +249,7 @@ def get_messages_for_conversation(
             "turn": m.turn,
             "role": m.role,
             "content": m.content,
+            "pedagogical_reasoning": m.pedagogical_reasoning,
             "images": images_by_message.get(m.id, []),
         }
         for m in messages

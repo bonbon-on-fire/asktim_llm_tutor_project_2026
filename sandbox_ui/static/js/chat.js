@@ -236,7 +236,24 @@
     li.appendChild(wrap);
   }
 
-  function renderMessage(role, content, imageSrcs) {
+  // Collapsible "Pedagogical reasoning" disclosure under a tutor message —
+  // same markup/formatting as database_ui's review dashboard. The Sandbox is a
+  // dev/TA tool, so surfacing the tutor's hidden reasoning is intentional.
+  function appendReasoning(li, reasoning) {
+    if (!reasoning) return;
+    const details = document.createElement("details");
+    details.className = "review-reasoning";
+    const summary = document.createElement("summary");
+    summary.textContent = "Pedagogical reasoning";
+    const body = document.createElement("div");
+    body.className = "review-reasoning-body";
+    body.textContent = reasoning;
+    details.appendChild(summary);
+    details.appendChild(body);
+    li.appendChild(details);
+  }
+
+  function renderMessage(role, content, imageSrcs, reasoning) {
     const li = document.createElement("li");
     li.className = "message message-" + role;
     if (imageSrcs && imageSrcs.length) {
@@ -253,6 +270,7 @@
     } else {
       setMessageContent(li, role, content);
     }
+    if (role === "tutor") appendReasoning(li, reasoning);
     messageList.appendChild(li);
     // Always auto-scroll to bottom. Known papercut: fights user scrolling.
     messageList.scrollTop = messageList.scrollHeight;
@@ -542,7 +560,7 @@
       ).length;
       for (const m of data.messages || []) {
         const srcs = (m.images || []).map((img) => `/api/image/${img.id}`);
-        renderMessage(m.role, m.content, srcs);
+        renderMessage(m.role, m.content, srcs, m.pedagogical_reasoning);
       }
       highlightActiveEntry();
     } catch (err) {
@@ -1279,6 +1297,10 @@
               // any tokens we'd accumulated in case they drifted. Render
               // markdown now that the full (table-complete) reply is in hand.
               setMessageContent(tutorBubble, "tutor", finalReply);
+              appendReasoning(
+                tutorBubble,
+                parsed.data && parsed.data.pedagogical_reasoning,
+              );
               messageList.scrollTop = messageList.scrollHeight;
             }
             if (parsed.data && parsed.data.conversation_id) {
