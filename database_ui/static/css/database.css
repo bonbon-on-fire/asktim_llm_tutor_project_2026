@@ -9,6 +9,21 @@
    .course-banner as a thin white bar with a bottom border (same height as the
    student app's course banner). No content, no sign-out. */
 
+/* Course eyebrow: a compact, muted label above the identity line. Uppercased
+   and letter-spaced so it reads as a quiet section tag, not a heading; truncated
+   to a single line (full name on hover via the title attribute). */
+.sidebar-entry-course {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #999);
+  margin-bottom: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* The email/identity line that sits above the exercise header in each entry. */
 .sidebar-entry-student {
   font-size: 0.78rem;

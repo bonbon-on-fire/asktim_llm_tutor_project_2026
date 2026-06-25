@@ -15,6 +15,7 @@ from uuid import UUID
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
+from database_ui.courses import course_display_name
 from database_ui.db.models import Conversation, Message, UploadedImage
 
 
@@ -147,6 +148,7 @@ def _summarize(
         "email": c.email,
         "session_id": c.session_id,
         "course": c.course,
+        "course_name": course_display_name(c.course),
         "exercise_number": c.exercise_number,
         "tutor_prompt": c.tutor_prompt,
         "started_at": c.started_at.isoformat() if c.started_at else None,

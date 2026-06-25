@@ -72,6 +72,17 @@
       li.setAttribute("role", "button");
       li.dataset.conversationId = c.id;
 
+      // Course eyebrow: a compact, muted label sitting ABOVE the identity line.
+      // With several courses feeding one DB, it groups entries at a glance.
+      // Truncated to one line via CSS; the full name shows on hover.
+      if (c.course_name) {
+        const course = document.createElement("div");
+        course.className = "sidebar-entry-course";
+        course.textContent = c.course_name;
+        course.title = c.course_name;
+        li.appendChild(course);
+      }
+
       // Email/identity line sits ABOVE the exercise header line.
       const student = document.createElement("div");
       student.className = "sidebar-entry-student";
