@@ -14,7 +14,7 @@
    to a single line (full name on hover via the title attribute). */
 .sidebar-entry-course {
   font-size: 0.66rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted, #999);
