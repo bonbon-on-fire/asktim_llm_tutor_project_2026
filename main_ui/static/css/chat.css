@@ -561,7 +561,6 @@ body:has(.sidebar[data-open="true"]) .history-toggle {
     border-radius: 10px;
     font: inherit;
     font-size: 0.9rem;
-    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.12s ease, border-color 0.12s ease;
 }
