@@ -25,18 +25,10 @@
   font-weight: 500;
 }
 
-/* The open/active conversation stays neutral grey (like the Sandbox) — it keeps
-   its crimson left-border as the "you're here" marker. Crimson tint shows only
-   on hover, for any entry including the active one. */
-.sidebar-entry-active {
-  background: #f5f5f5;
-}
-.sidebar-entry:hover,
-.sidebar-entry:focus,
-.sidebar-entry-active:hover {
-  background: #fbeaea;
-  outline: none;
-}
+/* Selected/hover states for sidebar entries come from chat.css and match
+   main_ui: the active conversation is a light crimson tint (#fbeaea), a
+   non-selected entry greys on hover (#f5f5f5), and the active entry deepens
+   to #f8dada on hover. No overrides needed here. */
 
 /* --- Transcript pane ----------------------------------------------------- */
 .review-chat { position: relative; }
