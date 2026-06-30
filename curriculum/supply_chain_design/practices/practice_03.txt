@@ -1,6 +1,6 @@
 TITLE: Week 3 Practice Problems — Production Planning
 
-Ungraded practice problems for Week 3. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+Ungraded practice problems for Week 3. Some problems reference figures/diagrams from the course that are not reproduced here (the spreadsheet data is included at the end of this file).
 
 Practice Problem 1: MPS for Electronic Widgets
 An electronic widget manufacturer is about to plan its production of a high selling widget, NOX12K678P. The demand for the widget for the next 10 weeks has been estimated as follows:
@@ -257,3 +257,15 @@ Week 8
 Week 9
 Week 10
 
+
+----------------------------------------------------------------
+
+Course spreadsheet data for this assignment
+(extracted from the downloadable course .xlsx files; tab-separated tables):
+
+Data for Practice Problem 4: ATP (spreadsheet tab "Sheet1"):
+Time period	0	1	2	3	4	5	6	7	8	9	10
+	Forecast		1500	1550	1600	1550	1450	1400	1400	1450	1400	1500
+	Committed orders		800	750	1400	1300	1000	970	980	850	750	700
+	Projected Available balance	500	5100	3550	1950	400	4650	3250	1850	400	2000	500
+	Production plan		6100	0	0	0	5700	0	0	0	3000	0

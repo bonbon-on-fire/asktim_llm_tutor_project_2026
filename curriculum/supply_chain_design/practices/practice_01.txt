@@ -1,6 +1,6 @@
 TITLE: Week 1 Practice Problems — Basic Supply Chain Network Design
 
-Ungraded practice problems for Week 1. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+Ungraded practice problems for Week 1. Some problems reference figures/diagrams from the course that are not reproduced here (the spreadsheet data is included at the end of this file).
 
 Practice Problem 1: Network Model Basics
 Throughout the course you will see Supply Chain Networks presented in different forms: in text, as a graph, as a formula, or as a spreadsheet model. It is important that you understand how to transition between the different representations.
@@ -249,3 +249,20 @@ It is optimal to open DC 2 and DC 5
 The optimal number of shipments to Shelter 7 increases
 There are no changes in the optimal design
 
+
+----------------------------------------------------------------
+
+Course spreadsheet data for this assignment
+(extracted from the downloadable course .xlsx files; tab-separated tables):
+
+Data for Practice Problem 6: Temporary Networks (spreadsheet tab "Sheet1"):
+Distances in miles
+			Shelter 1	Shelter 2	Shelter 3	Shelter 4	Shelter 5	Shelter 6	Shelter 7	Shelter 8
+		DC 1	0.61	3.32	9.5	6.52	7.77	1.92	8.52	9.75
+		DC 2	6.04	0.51	1.34	6.06	0.22	6.33	4.61	3.28
+		DC 3	4.99	2.41	2.33	3.95	8.84	7.94	7.87	0.94
+		DC 4	5.58	8.8	6.32	8.54	5.15	6.06	9.42	2.16
+		DC 5	7.87	9.64	0.7	5.92	2.7	0.26	0.5	3.4
+		Demand in thousands
+			Shelter 1	Shelter 2	Shelter 3	Shelter 4	Shelter 5	Shelter 6	Shelter 7	Shelter 8
+			14	8	25	22	20	17	18.5	23

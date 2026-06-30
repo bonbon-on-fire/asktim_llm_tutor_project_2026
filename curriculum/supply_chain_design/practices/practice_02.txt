@@ -1,6 +1,6 @@
 TITLE: Week 2 Practice Problems — Advanced Supply Chain Network Design
 
-Ungraded practice problems for Week 2. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+Ungraded practice problems for Week 2. Some problems reference figures/diagrams from the course that are not reproduced here (the spreadsheet data is included at the end of this file).
 
 Practice Problem 1: Estimating costs
 After hearing about your skills in building models for supply chain decision support, a small widget manufacturer has asked for your help in planning their distribution. Currently, the firm runs a small network with three (3) manufacturing sites, one (1) DC, and eight (8) regional warehouses. The widgets are transported by a dedicated carrier from the manufacturing sites through the DC to the regional warehouses.
@@ -304,3 +304,445 @@ Part 5
 The NERD CEO lives in Boston. She really, really wants to locate the DC there. But, she understands that it has to make economic sense and wants to understand how much more expensive Boston is than the other locations for a DC. Currently, Boston is not selected to open in the optimal solution (when allowing any number of DCs). Specifically, she is targeting the weekly fixed costs (cell C12). These are the labor, electricity, and other weekly costs that are pretty much independent of the flow through the facility.
 What does the Fixed Cost (cell C12) for the Boston DC need to be so that it becomes economically justifiable to open? That is, at what cost will the Boston DC enter the optimal solution? Enter your answer in dollars with no commas or currency symbols.
 
+
+----------------------------------------------------------------
+
+Course spreadsheet data for this assignment
+(extracted from the downloadable course .xlsx files; tab-separated tables):
+
+Data for Practice Problem 1: Estimating Costs (spreadsheet tab "Inbound Transportation"):
+Shipment ID	From	Number of widgets	Price
+1	Site 3	1	25
+2	Site 1	3	45
+3	Site 3	4	100
+4	Site 3	13	325
+5	Site 3	3	75
+6	Site 2	14	224
+7	Site 3	2	50
+8	Site 3	3	75
+9	Site 3	3	75
+10	Site 3	1	25
+11	Site 1	13	130
+12	Site 2	12	192
+13	Site 2	1	16
+14	Site 2	4	64
+15	Site 3	12	300
+16	Site 3	8	200
+17	Site 2	10	160
+18	Site 1	12	120
+19	Site 3	15	375
+20	Site 2	2	32
+21	Site 3	11	275
+22	Site 1	3	45
+23	Site 1	7	70
+24	Site 2	12	192
+25	Site 3	13	325
+26	Site 3	3	75
+27	Site 3	4	100
+28	Site 2	2	32
+29	Site 1	5	50
+30	Site 3	7	175
+31	Site 3	10	250
+32	Site 3	2	50
+33	Site 3	4	100
+34	Site 3	15	375
+35	Site 3	1	25
+36	Site 3	11	275
+37	Site 1	8	80
+38	Site 1	2	45
+39	Site 3	10	250
+40	Site 1	9	90
+41	Site 3	2	50
+42	Site 3	11	275
+43	Site 2	8	128
+44	Site 1	13	130
+45	Site 2	12	192
+46	Site 1	7	70
+47	Site 1	8	80
+48	Site 3	7	175
+49	Site 2	1	16
+50	Site 3	5	125
+51	Site 3	9	225
+52	Site 3	13	325
+53	Site 1	8	80
+54	Site 3	3	75
+55	Site 1	5	50
+56	Site 1	5	50
+57	Site 1	11	110
+58	Site 3	13	325
+59	Site 1	1	45
+60	Site 2	4	64
+61	Site 3	4	100
+62	Site 1	9	90
+63	Site 1	6	60
+64	Site 3	7	175
+65	Site 1	14	140
+66	Site 1	14	140
+67	Site 3	14	350
+68	Site 3	15	375
+69	Site 2	15	240
+70	Site 1	14	140
+71	Site 1	8	80
+72	Site 1	3	45
+73	Site 3	12	300
+74	Site 3	8	200
+75	Site 3	1	25
+76	Site 1	6	60
+77	Site 1	15	150
+78	Site 3	8	200
+79	Site 3	9	225
+80	Site 1	11	110
+81	Site 1	11	110
+82	Site 3	1	25
+83	Site 2	14	224
+84	Site 1	3	45
+85	Site 3	4	100
+86	Site 3	2	50
+87	Site 3	1	25
+88	Site 2	10	160
+89	Site 3	8	200
+90	Site 1	6	60
+91	Site 3	14	350
+92	Site 1	1	45
+93	Site 3	6	150
+94	Site 1	2	45
+95	Site 1	14	140
+96	Site 1	3	45
+97	Site 1	7	70
+98	Site 3	1	25
+99	Site 3	11	275
+100	Site 3	15	375
+101	Site 3	14	350
+102	Site 3	14	350
+103	Site 3	13	325
+104	Site 1	14	140
+105	Site 3	6	150
+106	Site 1	2	45
+107	Site 3	6	150
+108	Site 1	13	130
+109	Site 3	3	75
+110	Site 1	13	130
+111	Site 3	5	125
+112	Site 3	8	200
+113	Site 3	12	300
+114	Site 2	5	80
+115	Site 1	11	110
+116	Site 1	13	130
+117	Site 3	8	200
+118	Site 3	5	125
+119	Site 1	4	45
+120	Site 1	12	120
+121	Site 2	4	64
+122	Site 3	6	150
+123	Site 2	6	96
+124	Site 1	6	60
+125	Site 2	13	208
+126	Site 3	7	175
+127	Site 1	14	140
+128	Site 3	5	125
+129	Site 3	12	300
+130	Site 3	13	325
+131	Site 2	13	208
+132	Site 3	14	350
+133	Site 1	8	80
+134	Site 1	6	60
+135	Site 2	11	176
+136	Site 2	14	224
+137	Site 2	6	96
+138	Site 1	4	45
+139	Site 3	13	325
+140	Site 3	11	275
+141	Site 1	11	110
+142	Site 1	9	90
+143	Site 2	6	96
+144	Site 3	3	75
+145	Site 3	8	200
+146	Site 3	5	125
+147	Site 3	5	125
+148	Site 1	9	90
+149	Site 3	6	150
+150	Site 1	9	90
+151	Site 3	11	275
+152	Site 1	8	80
+153	Site 2	13	208
+154	Site 2	11	176
+155	Site 3	13	325
+156	Site 3	15	375
+157	Site 3	13	325
+158	Site 3	10	250
+159	Site 1	9	90
+160	Site 3	8	200
+161	Site 2	14	224
+162	Site 1	11	110
+163	Site 3	12	300
+164	Site 3	12	300
+165	Site 3	8	200
+166	Site 3	13	325
+167	Site 3	13	325
+168	Site 3	8	200
+169	Site 2	5	80
+170	Site 1	10	100
+171	Site 3	7	175
+172	Site 3	2	50
+173	Site 1	8	80
+174	Site 1	4	45
+175	Site 3	6	150
+176	Site 1	8	80
+177	Site 1	10	100
+178	Site 2	15	240
+179	Site 3	9	225
+180	Site 2	6	96
+181	Site 3	7	175
+182	Site 1	11	110
+183	Site 3	8	200
+184	Site 3	7	175
+185	Site 1	4	45
+186	Site 1	1	45
+187	Site 2	7	112
+188	Site 1	12	120
+189	Site 2	11	176
+190	Site 3	2	50
+191	Site 3	2	50
+192	Site 3	8	200
+193	Site 2	13	208
+194	Site 1	14	140
+195	Site 3	13	325
+196	Site 3	4	100
+197	Site 1	3	45
+198	Site 3	14	350
+199	Site 3	11	275
+200	Site 1	15	150
+201	Site 1	13	130
+202	Site 3	12	300
+203	Site 2	12	192
+204	Site 3	4	100
+205	Site 3	11	275
+206	Site 1	7	70
+207	Site 2	12	192
+208	Site 3	6	150
+209	Site 3	1	25
+
+Data for Practice Problem 1: Estimating Costs (spreadsheet tab "DC"):
+Date	Number in stock	Daily Operating costs
+2014-08-01 00:00:00	100	236.5
+2014-08-02 00:00:00	94	236.8
+2014-08-03 00:00:00	32	123.5
+2014-08-04 00:00:00	52	135.9
+2014-08-05 00:00:00	72	171
+2014-08-06 00:00:00	92	229.2
+2014-08-07 00:00:00	43	130.4
+2014-08-08 00:00:00	50	126.2
+2014-08-09 00:00:00	104	247.7
+2014-08-10 00:00:00	73	174
+2014-08-11 00:00:00	56	132.1
+2014-08-12 00:00:00	68	156.3
+2014-08-13 00:00:00	106	234.6
+2014-08-14 00:00:00	69	179.2
+2014-08-15 00:00:00	30	87.46
+2014-08-16 00:00:00	116	266
+2014-08-17 00:00:00	47	119.6
+2014-08-18 00:00:00	74	197.6
+2014-08-19 00:00:00	57	165.8
+2014-08-20 00:00:00	70	171
+2014-08-21 00:00:00	64	160.1
+2014-08-22 00:00:00	21	88.14
+2014-08-23 00:00:00	34	114.5
+2014-08-24 00:00:00	104	252.8
+2014-08-25 00:00:00	73	189.5
+2014-08-26 00:00:00	120	299
+2014-08-27 00:00:00	84	199.1
+2014-08-28 00:00:00	100	253.3
+2014-08-29 00:00:00	75	172
+2014-08-30 00:00:00	65	174.9
+2014-08-31 00:00:00	60	179.4
+2014-09-01 00:00:00	79	215.1
+2014-09-02 00:00:00	99	243.9
+2014-09-03 00:00:00	112	283
+2014-09-04 00:00:00	99	254.9
+2014-09-05 00:00:00	93	224.2
+2014-09-06 00:00:00	52	135.5
+2014-09-07 00:00:00	51	131.3
+2014-09-08 00:00:00	56	162.5
+2014-09-09 00:00:00	61	176.6
+2014-09-10 00:00:00	29	104.3
+2014-09-11 00:00:00	104	240.1
+2014-09-12 00:00:00	112	258.7
+2014-09-13 00:00:00	105	256.7
+2014-09-14 00:00:00	57	141.2
+2014-09-15 00:00:00	71	199.7
+2014-09-16 00:00:00	97	216.5
+2014-09-17 00:00:00	107	247.6
+2014-09-18 00:00:00	106	257
+2014-09-19 00:00:00	26	96.81
+2014-09-20 00:00:00	109	257.6
+2014-09-21 00:00:00	107	253.7
+2014-09-22 00:00:00	53	152.7
+2014-09-23 00:00:00	88	218.8
+2014-09-24 00:00:00	108	247.9
+2014-09-25 00:00:00	22	93.8
+2014-09-26 00:00:00	72	181.7
+2014-09-27 00:00:00	48	127.6
+2014-09-28 00:00:00	55	159.1
+2014-09-29 00:00:00	42	120.1
+2014-09-30 00:00:00	68	181.3
+2014-10-01 00:00:00	29	93.36
+2014-10-02 00:00:00	46	142.4
+2014-10-03 00:00:00	72	180.9
+2014-10-04 00:00:00	57	162.5
+2014-10-05 00:00:00	31	95.11
+2014-10-06 00:00:00	92	220
+2014-10-07 00:00:00	34	89.66
+2014-10-08 00:00:00	71	169.4
+2014-10-09 00:00:00	103	229.7
+2014-10-10 00:00:00	86	220.3
+2014-10-11 00:00:00	77	183
+2014-10-12 00:00:00	105	251
+2014-10-13 00:00:00	32	97.08
+2014-10-14 00:00:00	91	220.3
+2014-10-15 00:00:00	58	157.3
+2014-10-16 00:00:00	25	105.1
+2014-10-17 00:00:00	116	275.4
+2014-10-18 00:00:00	115	280.6
+2014-10-19 00:00:00	43	144.4
+2014-10-20 00:00:00	68	193.6
+2014-10-21 00:00:00	65	181.2
+2014-10-22 00:00:00	69	196.2
+2014-10-23 00:00:00	50	138.8
+2014-10-24 00:00:00	66	174.5
+2014-10-25 00:00:00	111	244.6
+2014-10-26 00:00:00	120	282.9
+2014-10-27 00:00:00	28	84.31
+2014-10-28 00:00:00	108	265.9
+2014-10-29 00:00:00	66	183.3
+2014-10-30 00:00:00	82	198.4
+2014-10-31 00:00:00	52	154.5
+2014-11-01 00:00:00	69	176.4
+2014-11-02 00:00:00	68	196
+2014-11-03 00:00:00	40	139.9
+2014-11-04 00:00:00	82	190.8
+2014-11-05 00:00:00	85	229.9
+2014-11-06 00:00:00	50	157.6
+2014-11-07 00:00:00	115	263.9
+
+Data for Practice Problem 2: Papper (spreadsheet tab "Sheet1"):
+Outbound distance in miles											Central Warehouse costs
+		OUT tsp	RW 1	RW 2	RW 3	RW 4	 RW 5	RW 6	RW 7	RW 8	RW 9			Variable costs	Fixed costs
+		CW 1	89	78	69	95	85	73	88	73	86		CW 1	8	100000
+		CW 2	90	91	63	61	94	58	89	90	55		CW 2	10	90000
+		CW 3	81	82	71	98	62	71	85	75	72		CW 3	25	80000
+		CW 4	73	97	55	75	86	54	62	99	59		CW 4	30	70000
+		CW 5	85	98	93	82	87	58	98	72	50		CW 5	50	60000
+		Demand 											Plant costs and capacities
+			RW 1	RW 2	RW 3	RW 4	 RW 5	RW 6	RW 7	RW 8	RW 9			Variable costs	Capacity
+			140	180	240	210	175	130	320	280	160		Plant 1	8	1500
+													Plant 2	13	500
+		Inbound distance in miles
+			Plant 1	Plant 2
+		CW 1	77	54
+		CW 2	48	33
+		CW 3	41	21
+		CW 4	57	94
+		CW 5	94	44
+
+Data for Practice Problem 4: Harley Stevenson (spreadsheet tab "Inbound transports"):
+Destination	Number of Bicycles	Cost for shipment
+1	DC1	486	9855
+1	DC2	189	4756
+1	DC3	360	6946
+2	DC1	369	7736
+2	DC2	171	4248
+2	DC3	486	9403
+3	DC1	522	10691
+3	DC2	207	5338
+3	DC3	306	6022
+4	DC1	333	7061
+4	DC2	162	4196
+4	DC3	531	10335
+5	DC1	594	12149
+5	DC2	198	4792
+5	DC3	234	4668
+6	DC1	558	11394
+6	DC2	189	4430
+6	DC3	288	5858
+7	DC1	495	10007
+7	DC2	207	4922
+7	DC3	333	6585
+8	DC1	405	8279
+8	DC2	189	4704
+8	DC3	432	8399
+9	DC1	333	6710
+9	DC2	198	5043
+9	DC3	495	9504
+
+Data for Practice Problem 4: Harley Stevenson (spreadsheet tab "Outbound transports"):
+Transportation costs in $ per bicycle
+		Region 1	Region 2	Region 3 	Region 4	Region 5
+	DC1	25	26	29	45	35
+	DC2	31	33	23	32	44
+	DC3	43	35	31	24	22
+	Average number of bicycles shipped per week, week 1-9
+		Region 1	Region 2	Region 3 	Region 4	Region 5
+	DC1	180	230	30	0	15
+	DC2	20	0	170	0	0
+	DC3	0	0	15	160	210
+	Total	200	230	215	160	225
+
+Data for Practice Problem 5: RCH Industries' Differentiation (spreadsheet tab "Sheet1"):
+Transportation cost
+			Stylish		Leisure
+			Crossdock 1	Crossdock 2	Crossdock 1	Crossdock 2
+		Factory 1	30	50	33	55
+		Factory 2	23	66	25	73
+		Factory 3	35	14	39	15
+		Factory 4	70	12	77	13
+		Factory 5	65	70	12	14
+		Transportation cost
+			Stylish					Leisure
+			DC1	DC2	DC3	DC4	DC5	DC1	DC2	DC3	DC4	DC5
+		Crossdock 1	12	25	22	40	41	13	28	24	44	45
+		Crossdock 2	65	22	23	12	15	72	24	25	13	17
+		Demand
+			Stylish					Leisure
+			DC1	DC2	DC3	DC4	DC5	DC1	DC2	DC3	DC4	DC5
+			130	45	70	100	5	15	45	40	100	175
+		Factory capacity
+			Stylish	Leisure	Combined
+		Factory 1	150	200	200
+		Factory 2	300	300	300
+		Factory 3	90	70	-
+		Factory 4	140	30	-
+		Factory 5	220	220	-
+
+Data for Practice Problem 8: NERD Revisited (spreadsheet tab "NERD5"):
+NERD5 									NOTE:							Distance Matrix														LHS Constraint Equations (Link & balance)
+			Manufacturing						Grey cells are input values							d(ij)	BO	BR	CO	HA	MN	NA	NH	NL	PO	PR	SP	WO		Logical 	LHS Balance@DCs
+TOTAL COST	6.826e+04			Var Cost		Plant Capacity			Yellow cells are decision variables							BO	8	93	69	98	55	37	128	95	62	42	82	34		0	0
+DC fixed cost	20000		BF Plant	2	500	9999			White cells are equations and should not be changed							NA	37	65	33	103	20	12	137	113	48	72	79	41		-1500	0
+OB Transport	3.629e+04		SC Plant	0.75	1500	9999										PR	42	106	105	73	92	72	94	57	104	17	68	38		0	0
+IB Transport	7700															SP	82	59	101	27	93	79	63	57	127	68	12	47		-1500	0
+Mfg Costs	2125															WO	34	68	72	66	60	41	98	71	85	38	47	18		-1000	0
+DC Handling	2145
+Distribution Centers				Barrels Shipped from		IB Trans $/Barrel
+	Var Cost	Fixed Cost	DC Open 	BFP	SCP	BFP	SCP									50 mile Proximity Matrix
+BO	1.5	11000	0	0	0	3.4	4.8									a(ij)	BO	BR	CO	HA	MN	NA	NH	NL	PO	PR	SP	WO
+NA	0.95	5000	1	500	0	3	5.25									BO	1	0	0	0	0	1	0	0	0	1	0	1
+PR	1.05	9000	0	0	0	4.4	5.12									NA	1	0	1	0	1	1	0	0	1	0	0	1
+SP	1.1	8000	1	0	500	3.04	4									PR	1	0	0	0	0	0	0	0	0	1	0	1
+WO	1.12	7000	1	0	1000	3.36	4.2									SP	0	0	0	1	0	0	0	0	0	0	1	1
+																WO	1	0	0	0	0	1	0	0	0	1	1	1
+Local Transportation
+	BO	BR	CO	HA	MN	NA	NH	NL	PO	PR	SP	WO	Qty 	DC Cap		Cost per Barrel OB Transportation
+BO	0	0	0	0	0	0	0	0	0	0	0	0	0	1000			BO	BR	CO	HA	MN	NA	NH	NL	PO	PR	SP	WO
+NA	0	50	80	0	110	140	0	0	120	0	0	0	500	500		BO	4.4	51.15	37.95	53.9	30.25	20.35	70.4	52.25	34.1	23.1	45.1	18.7
+PR	0	0	0	0	0	0	0	0	0	0	0	0	0	1000		NA	20.35	35.75	18.15	56.65	11	6.6	75.35	62.15	26.4	39.6	43.45	22.55
+SP	0	0	0	130	0	0	140	30	0	0	200	0	500	500		PR	23.1	58.3	57.75	40.15	50.6	39.6	51.7	31.35	57.2	9.35	37.4	20.9
+WO	450	10	0	0	0	0	0	40	0	310	0	190	1000	2000		SP	45.1	32.45	55.55	14.85	51.15	43.45	34.65	31.35	69.85	37.4	6.6	25.85
+Qty Delivered	450	60	80	130	110	140	140	70	120	310	200	190				WO	18.7	37.4	39.6	36.3	33	22.55	53.9	39.05	46.75	20.9	25.85	9.9
+Qty Demanded	450	60	80	130	110	140	140	70	120	310	200	190
+Data & Level of Service Constraints
+Total Demand	2000	barrels/week
+OB Transp Cost	0.55	$/barrel/mile
+	Number	Min	Max
+# DCs to Open 	3	1	5
+LOS - Maximum Avg Distance	33		100	miles
+LOS - Minimum PctIn50Miles	0.865	0.5		% within 50 miles

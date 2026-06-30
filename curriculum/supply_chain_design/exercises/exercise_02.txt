@@ -85,3 +85,99 @@ Production capacity for Widget 4: up to 20 in Chicago, up to 40 in Dallas, up to
 Transportation costs for Widget 4, plants to DCs: Chicago→Atlanta 6, Chicago→Boston 5, Dallas→Atlanta 4, Dallas→Boston 7, Miami→Atlanta 5, Miami→Boston 8.
 Transportation costs for Widget 4, DCs to regions: Atlanta→NY 8, Atlanta→VA 6, Atlanta→PA 6, Boston→NY 5, Boston→VA 6, Boston→PA 5.
 What is the new minimum cost of the optimal solution?
+
+----------------------------------------------------------------
+
+Course spreadsheet data for this assignment
+(extracted from the downloadable course .xlsx files; tab-separated tables):
+
+Data for the Week 2 Lesson 2 Advanced Network Design Models spreadsheet (used by Graded Assignment 1 Extra Scenarios and Graded Assignment 3 WUWU Expanded) (spreadsheet tab "WUWU1"):
+WUWU Problem1					Manufacturing Plan				Plant - DC								Flow by Product			DC-Region
+				Mfg Plan	Prod 1	Prod 2	Prod 3	Total	ATL	BOS							Prod 1	Prod 2	Prod 3	NY	VA	PA
+Objective Function				Chicago 	125	200	50	375	0	375						ATL DC	100	25	75	0	125	75
+	6525			Dallas 	100	25	75	200	125	75						BOS DC	125	200	125	175	50	225
+				Miami 	0	0	75	75	75	0
+		Plant to DC																		DCs to Regions
+		C_A1	C_B1	D_A1	D_B1	M_A1	M_B1	C_A2	C_B2	D_A2	D_B2	M_A2	M_B2	C_A3	C_B3	D_A3	D_B3	M_A3	M_B3	A_NY1	A_VA1	A_PA1	A_NY2	A_VA2	A_PA2	A_NY3	A_VA3	A_PA3	B_NY1	B_VA1	B_PA1	B_NY2	B_VA2	B_PA2	B_NY3	B_VA3	B_PA3
+	Dec Vars	0	125	100	0	0	0	0	200	25	0	0	0	0	50	0	75	75	0	0	100	0	0	0	25	0	25	50	50	0	75	100	50	50	25	0	100
+	Cost $/unit	6	5	4	7	6	9	6	5	4	7	6	9	6	5	4	7	4	7	8	5	6	7	8	5	7	4	4	9	7	6	3	8	6	4	5	4
+Supply Constraints for each Plant																																						LHS		RHS
+	Chicago 1	1	1																																			125	≤	200
+	Dallas 1			1	1																																	100	≤	125
+	Miami 1					1	1																															0	≤	50
+	Chicago 2							1	1																													200	≤	200
+	Dallas 2									1	1																											25	≤	200
+	Miami 2											1	1																									0	≤	50
+	Chicago 3													1	1																							50	≤	50
+	Dallas 3															1	1																					75	≤	150
+	Miami 3																	1	1																			75	≤	200
+	Dallas ALL			1	1					1	1					1	1																					200	≤	250
+Demand Constraints for each Region
+	NY 1																			1									1									50	≥	50	50
+	VA  1																				1									1								100	≥	100	100
+	PA 1																					1									1							75	≥	75	75
+	NY 2																						1									1						100	≥	100	100
+	VA  2																							1									1					50	≥	50	50
+	PA 2																								1									1				75	≥	75	75
+	NY 3																									1									1			25	≥	25	100
+	VA  3																										1									1		25	≥	25	50
+	PA 3																											1									1	150	≥	150	75
+Capacity at Distribution Centers
+	ATL DC																			1	1	1	1	1	1	1	1	1										200	≤	200
+	BOS DC																												1	1	1	1	1	1	1	1	1	450	≤	500
+Conservation of Flow Constraints at DCs
+	Atlanta DC 1	1		1		1														-1	-1	-1																0	=	0
+	Boston DC 1		1		1		1																						-1	-1	-1							0	=	0
+	Atlanta DC 2							1		1		1											-1	-1	-1													0	=	0
+	Boston DC 2								1		1		1																			-1	-1	-1				0	=	0
+	Atlanta DC 3													1		1		1								-1	-1	-1										0	=	0
+	Boston DC 3														1		1		1																-1	-1	-1	0	=	0
+
+Data for the Week 2 Lesson 2 Advanced Network Design Models spreadsheet (used by Graded Assignment 1 Extra Scenarios and Graded Assignment 3 WUWU Expanded) (spreadsheet tab "WUWU2"):
+WUWU Problem 2					Manufacturing Plan				Plant - DC								Flow by Product			DC-Region
+				Mfg Plan	Prod 1	Prod 2	Prod 3	Total	ATL	BOS							Prod 1	Prod 2	Prod 3	NY	VA	PA
+Objective Function				Chicago 	225	0	0	225	0	225						ATL DC	0	25	175	0	25	175
+	6625			Dallas 	0	225	0	225	25	200						BOS DC	225	200	25	175	150	125
+				Miami 	0	0	200	200	175	25
+		Plant to DC																		DCs to Regions
+		C_A1	C_B1	D_A1	D_B1	M_A1	M_B1	C_A2	C_B2	D_A2	D_B2	M_A2	M_B2	C_A3	C_B3	D_A3	D_B3	M_A3	M_B3	A_NY1	A_VA1	A_PA1	A_NY2	A_VA2	A_PA2	A_NY3	A_VA3	A_PA3	B_NY1	B_VA1	B_PA1	B_NY2	B_VA2	B_PA2	B_NY3	B_VA3	B_PA3
+	Dec Vars	0	225	0	0	0	0	0	0	25	200	0	0	0	0	0	0	175	25	0	0	0	0	0	25	0	25	150	50	100	75	100	50	50	25	0	0
+	Cost $/unit	6	5	8	7	6	9	6	9	4	5	6	9	6	9	4	9	4	7	8	5	6	7	8	5	7	4	4	9	7	6	3	8	6	4	5	4
+Supply Constraints for each Plant																																						LHS		RHS
+	Chicago 1	1	1																																			225	≤	250
+	Dallas 1			1	1																																	0	≤	125
+	Miami 1					1	1																															0	≤	50
+	Chicago 2							1	1																													0	≤	200
+	Dallas 2									1	1																											225	≤	250
+	Miami 2											1	1																									0	≤	50
+	Chicago 3													1	1																							0	≤	50
+	Dallas 3															1	1																					0	≤	150
+	Miami 3																	1	1																			200	≤	250
+	Dallas ALL			1	1					1	1					1	1																					225	≤	250
+Demand Constraints for each Region
+	NY 1																			1									1									50	≥	50	50
+	VA  1																				1									1								100	≥	100	100
+	PA 1																					1									1							75	≥	75	75
+	NY 2																						1									1						100	≥	100	100
+	VA  2																							1									1					50	≥	50	50
+	PA 2																								1									1				75	≥	75	75
+	NY 3																									1									1			25	≥	25	100
+	VA  3																										1									1		25	≥	25	50
+	PA 3																											1									1	150	≥	150	75
+Capacity at Distribution Centers
+	ATL DC																			1	1	1	1	1	1	1	1	1										200	≤	200
+	BOS DC																												1	1	1	1	1	1	1	1	1	450	≤	500
+Conservation of Flow Constraints at DCs
+	Atlanta DC 1	1		1		1														-1	-1	-1																0	=	0
+	Boston DC 1		1		1		1																						-1	-1	-1							0	=	0
+	Atlanta DC 2							1		1		1											-1	-1	-1													0	=	0
+	Boston DC 2								1		1		1																			-1	-1	-1				0	=	0
+	Atlanta DC 3													1		1		1								-1	-1	-1										0	=	0
+	Boston DC 3														1		1		1																-1	-1	-1	0	=	0
+	Data	DC_ATL1	DC_BOS1	DC_ATL2	DC_BOS2	DC_ATL3	DC_BOS3
+	Chicago	6	5	6	5	6	5
+	Dallas	4	7	4	7	4	7
+	Miami	6	9	6	9	4	7
+	NY	8	9	7	3	7	4
+	VA	5	7	8	8	4	5
+	PA	6	6	5	6	4	4
