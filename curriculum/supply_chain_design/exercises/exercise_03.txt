@@ -1,0 +1,96 @@
+Week 3 Graded Assignment — Production Planning
+
+This assignment covers lot-sizing / production planning methods (lot-for-lot, single run, EOQ/FOQ, POQ, Silver-Meal, optimal), Master Production Scheduling with Available-to-Promise and time fencing, Bill of Materials / MRP lead-time offsetting, and Distribution Requirements Planning (DRP).
+
+================================================================
+Graded Assignment 1: Gold MIT Seals
+================================================================
+
+There is a retailer called "The Coop", which carries a wide variety of products with MIT's name and logo: shirts, caps, keychains, pens, and more. With a store inside MIT's Student Center and another in Kendall Square, The Coop is a favorite stop for visitors, students and their relatives, and alumni.
+
+The Coop carries a line of products featuring MIT's official seal cast in jewelry-grade steel. The same seal (about the size of a coin) is used in multiple finished goods (necklaces, tie pins, cufflinks, paperweights). The Coop is considering introducing in 2018 a new line of products featuring MIT's seal cast in 18 karat gold, used in upscale jewelry and as an ornament in diploma frames (especially during commencement season).
+
+Part 0 (ungraded warm-up): Projected demand for gold MIT seals for each month of 2018:
+Jan 130, Feb 30, Mar 60, Apr 50, May 200, Jun 550, Jul 180, Aug 140, Sep 60, Oct 50, Nov 100, Dec 250.
+How many gold MIT seals will be needed throughout 2018? (Sum of the monthly demands.)
+
+The seals would be produced under license by Seventh Seal, a specialty manufacturer in Syracuse, New York, exclusively for The Coop. Seventh Seal charges a set-up cost of $702.0 every time the MIT seal is produced. The Coop estimates a holding cost of about $1.04 per seal per month. Two managers propose opposite approaches (one big run to save set-up cost vs. monthly batches to save holding cost). Evaluate the alternatives. For all cost answers, enter dollars without currency symbol, rounded to one decimal place.
+
+Part 1: What is the total cost (set-up + holding) using a lot-for-lot (chase) approach?
+
+Part 2: What is the total cost (set-up + holding) using a one-time run approach?
+
+Part 3 (ungraded): Using the average monthly demand, the holding cost, and the set-up cost above, what is the economic order quantity Q*? (Round up to nearest integer.)
+
+Part 4: What is the total cost (set-up + holding) using a fixed economic order quantity (FOQ) approach?
+
+Part 5 (ungraded): Using Q* and average demand from above, what is the value of T* in months for the periodic order quantity approach? (Round up to nearest integer.)
+
+Part 6: What is the total cost (set-up + holding) using a periodic order quantity (POQ) approach?
+
+Part 7: What is the total cost (set-up + holding) using the Silver-Meal algorithm?
+
+Part 8: What is the total cost (set-up + holding) using an optimal solution?
+
+================================================================
+Graded Assignment 2: Queenstown Gyroscopes Inc.
+================================================================
+
+You are assisting Queenstown Gyroscopes Inc. (QGI) in improving their Master Production Scheduling (MPS) and Materials Requirements Planning (MRP) systems. They have a production line assembling their famous Kiwi-99 gyroscopes from components supplied by various vendors. They have had issues communicating effectively with suppliers, and their sales team tends to over-promise, leading to production over-runs or unsatisfied customers.
+
+QGI runs a rolling 12-week planning horizon with time fencing: no changes to production quantities within 4 weeks (the frozen period); 5–8 weeks out, limited changes (±10%); 9+ weeks out, changes of up to 50% of the production plan.
+
+Committed orders and planned production runs for the next 12 weeks (133 units on hand at time period 0):
+
+Week                  0   1    2   3   4   5   6   7    8   9  10  11  12
+Committed Orders          108  84  91  81  63  75  60  31  25  20  13  11
+MPS Production Plan       200          200         200          200
+
+Part 1: You implement an Available-to-Promise (ATP) system using the cumulative method. Assume a production run in week 13 of 200 units. What is the cumulative ATP in time period 4? In time period 7? In time period 10?
+
+Part 2: It is now week 2. In week 1 you sold the committed 108 units and completed the planned production run of 200 units; all runs and committed orders stayed the same. A sales rep has a potential new client wanting 120 gyroscopes ready in week 5. Given QGI's manufacturing (time-fencing) policies, which strategies could QGI follow? (Select all that apply.)
+- You can deliver all 120 gyroscopes in week 5 per your current production plan.
+- You can deliver all 120 in week 5 by increasing your production in week 4 to 300 units.
+- You could deliver 60 in week 5 and 60 in week 6.
+- You could deliver 30 in week 5, 30 in week 6, 30 in week 7, and 30 in week 8.
+- You could deliver 30 in week 5, 60 in week 7, and 30 in week 10.
+- You could deliver all 120 in week 10.
+- You could deliver all 120 in week 7 by increasing your production in week 7 to 210 units.
+- None of these are feasible.
+
+Part 3: The Kiwi-99 has a lead time of 3 weeks and a Bill of Materials of 3 assemblies:
+1) Gimbal Set: 1 per gyroscope, lead time 2 weeks
+2) Rotor Set: 1 per gyroscope, lead time 1 week
+3) Base: 1 per gyroscope, lead time 3 weeks
+Each Gimbal Set (from China) consists of 3 separate Gimbals — inner, center, outer — each lead time 5 weeks. Each Rotor Set (from Japan) consists of one rotor and one matching spindle, each lead time 4 weeks. Of the four product trees shown in the assignment, which is correct for the Kiwi-99? (Product Tree A / B / C / D / None of the above)
+
+Part 4: The production plan calls for 200 Kiwi-99 units ready in week 13 (same lead times as Part 3). For this order, in which week is the planned order release for: the Kiwi-99? the Gimbal Set? the Rotor Set? the Base? the Outer Gimbal?
+
+Part 5: You drop the Gimbal and Rotor set manufacturers and bring everything in-house. The BOM now looks like Product Tree A. Component lead times: Inner Gimbal 5 weeks, Center Gimbal 5 weeks, Outer Gimbal 5 weeks, Rotor 1 week, Base 3 weeks, Spindle 2 weeks (1 of each per gyroscope). Lead time for the Kiwi-99 stays at 3 weeks. What is the total lead time, in weeks, for the Kiwi-99 from the planned order release of the earliest component to availability of the completed Kiwi-99?
+
+================================================================
+Graded Assignment 3: Ivec Company
+================================================================
+
+The Ivec Company distributes one of its products, a van for urban freight transport, through regional warehouses in Buenos Aires and Cordoba. A central warehouse at the Rosario plant distributes vans to these warehouses, serving the Argentinian market. Distribution planning manager Martin Riquelme is considering a DRP system and asks you to evaluate the results for the next 10 weeks. Keep the safety stock in all weeks, for all warehouses.
+
+Plant warehouse: 1000 units on hand at week 0; order quantity 1000 units; safety stock 50 units; lead time from plant 2 weeks.
+Buenos Aires warehouse: 650 units on hand at week 0; shipment order quantity 500 units; safety stock 20 units; shipment lead time from plant warehouse 1 week.
+Cordoba warehouse: 400 units on hand at week 0; shipment order quantity 400 units; safety stock 10 units; shipment lead time from plant warehouse 1 week.
+
+Forecasted units (period usage) for the next 10 weeks:
+Period                        1    2    3    4    5    6    7    8    9   10
+Buenos Aires Warehouse Usage  314  309  302  309  284  305  290  313  303  300
+Cordoba Warehouse Usage       194  190  192  220  198  185  204  200  220  183
+
+Part 0 (ungraded): How many times does the Buenos Aires warehouse place an order to the plant warehouse during the 10-week horizon?
+
+Part 1: Determine the weeks in which the Buenos Aires warehouse should receive its shipments (planned order receipts) to fulfill local demand. (Select all that apply, Weeks 1–10.)
+
+Part 2 (ungraded): How many times does the Cordoba warehouse place an order to the plant warehouse during the 10-week horizon?
+
+Part 3: Determine the weeks in which the Cordoba warehouse should receive its shipments (planned order receipts) to fulfill local demand. (Select all that apply, Weeks 1–10.)
+
+Part 4: Based on the orders placed from the Buenos Aires and Cordoba warehouses, compute the "period usage" (forecasted units) for the plant warehouse. How many units are requested in week 2? week 3? week 5? week 6? week 7? week 8?
+
+Part 5: Determine the weeks in which the plant warehouse should release its orders (planned order releases) to the plant to fulfill the orders placed from the regional warehouses. (Select all that apply, Weeks 1–10.)

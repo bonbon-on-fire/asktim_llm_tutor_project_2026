@@ -1,0 +1,93 @@
+Week 2 Graded Assignment — Advanced Supply Chain Network Design
+
+This assignment extends the network design models with capacities, fixed costs, service constraints, and multi-commodity flows. Build and re-solve spreadsheet/Python optimization models for each part.
+
+================================================================
+Graded Assignment 1: Extra Scenarios
+================================================================
+
+At the end of the "Advanced Scenarios" video, Dr. Caplice asked you to create new scenarios and play with the spreadsheet. This graded assignment focuses on doing exactly that. You will create a series of six new scenarios. Each new scenario builds upon the previous one, so get each one right before moving on. Sanity checks along the way are ungraded.
+
+Part 0 (ungraded): Scenario 10 is the starting point for the first new scenario. Reproduce Scenario 10 exactly as described in the video. What is the total cost of Scenario 10? (Reproduce the result with the spreadsheet; do not copy the answer from the video. Answer in dollars, no dollar sign or comma.)
+
+Part 1 (ungraded sanity check): Create Scenario 11 — identical to Scenario 10 except the BF Plant is assigned a capacity of 2000 units. Solve optimally. How many units are shipped from the BF Plant to the BO DC? (Zero / 450 / 480 / 500)
+
+Part 2: What is the optimal cost for Scenario 11?
+
+Part 3: Create Scenario 12 — identical to Scenario 11, but for the first time assign a fixed cost to operating each plant (paid only if the plant is used): $14,700 for plant BFP and $14,700 for plant SCP. Solve optimally. What is the optimal cost for Scenario 12?
+
+Part 4: Create Scenario 13 — identical to Scenario 12, except the fixed cost of the SC Plant is reduced to $10,700 (BFP remains $14,700). Solve optimally. What is the optimal cost for Scenario 13?
+
+Part 5 (ungraded sanity check): Create Scenario 14 — identical to Scenario 13, except now allow a more relaxed maximum weighted average distance of customers to DCs of 35 miles (instead of 25) and a more lenient minimum percentage of customers within 50 miles of DCs of 60% (instead of 80%). Solve optimally. Which DCs did we stop using, compared to the previous scenario? (We still use all the DCs / We stopped using only the PR DC / We stopped using only the BO DC / We stopped using both BO and PR)
+
+Part 6: What is the optimal cost for Scenario 14?
+
+Part 7: Create Scenario 15 — identical to Scenario 14, except the BO DC has become more efficient with a new variable cost of $1.00 per unit and a new fixed cost of $5,000. Solve optimally. What is the optimal cost for Scenario 15?
+
+Part 8 (ungraded sanity check): Create Scenario 16 — identical to Scenario 15, except there is a new consumer, Ferrisbourgh, with demand of 120 units and distances to the DCs (miles): 70 to BO, 65 to NA, 85 to PR, 50 to SP, 70 to WO. Solve optimally. Which is closer to the new cost? (82700 / 83100 / 83500 / 83900)
+
+Part 9: What is the optimal cost for Scenario 16?
+
+================================================================
+Graded Assignment 2: CMS Manufacturer
+================================================================
+
+CMS Inc. is a large manufacturer of industrial parts and components based in Chicago, IL. The company distributes through a network of three warehouses in Atlanta, GA; Charlotte, NC; and Jacksonville, FL. Its customer base includes original equipment manufacturers across the Southeastern U.S. Monthly demand aggregated by state:
+
+State   Demand (cases)
+AL      490
+FL      1880
+GA      1060
+KY      467
+NC      1049
+SC      515
+TN      685
+VA      854
+
+Each warehouse can handle a limited number of cases per month:
+- Atlanta, GA: 3500 cases
+- Charlotte, NC: 3500 cases
+- Jacksonville, FL: 3500 cases
+
+It costs 1.9 $/mile to ship one case from the manufacturing plant to the warehouses. Distances (miles) from the Chicago, IL plant to the three warehouses:
+              Atlanta, GA   Charlotte, NC   Jacksonville, FL
+Chicago, IL      717            756              1100
+
+It costs 4.9 $/mile to move one case from the warehouses to the customers' states. Distances (miles) between warehouses and states:
+                  AL    FL    GA    KY    NC    SC    TN    VA
+Atlanta, GA      189   509     5   490   304   351   280   581
+Charlotte, NC    458   524   276   440     5   217   481   310
+Jacksonville,FL  372   141   368   746   420   238   617   656
+
+According to a distribution network optimization conducted 5 years ago: all demand from AL, GA, KY, SC, and TN ships from Atlanta, GA; Charlotte, NC serves NC and VA; Jacksonville, FL serves only FL.
+
+Part 1: Based on the current customer allocation, what is the actual transportation cost (inbound + outbound)? (Round to nearest integer.)
+
+Part 2: The company updates the customer allocation by running a new network optimization model to minimize transportation cost. What is the optimal transportation cost (inbound + outbound)? (Round to nearest integer.)
+
+Part 3: CMS also wants to revisit the number of warehouses open, including a monthly fixed cost for running each warehouse: Atlanta $2,000,000; Charlotte $2,000,000; Jacksonville $2,000,000. What is the optimal total cost (fixed + transportation)? (Round to nearest integer.)
+
+Part 4: Based on the optimized model from Part 3, how many warehouses need to remain open?
+
+Part 5: From your Part 3 answer, what percentage of demand is fulfilled within 350 miles (warehouse-to-state distance ≤ 350 miles)? (Percentage with one decimal place, e.g., 89.5.)
+
+================================================================
+Graded Assignment 3: WUWU Expanded
+================================================================
+
+This assignment revisits the WUWU Problem from this week's Lesson 2 (Video 3). Download the WUWU spreadsheet (available for Excel and LibreOffice). Use the WUWU 1 problem (WUWU1 tab, not WUWU2). As it stands, the objective function for WUWU1 has an optimal value of $6,525.00 — confirm you get the same value before starting. The parts below modify the model's parameters and structure. Give all cost answers in dollars, numbers only, rounded to the nearest integer.
+
+Part 1: Change the capacity in both DCs — increase the Atlanta DC from 200 to 300 widgets, and decrease the Boston DC from 500 to 400 widgets. Solve optimally. What is the new minimum cost?
+
+Part 2: Building on Part 1, add a constraint: the Miami plant now has an overall capacity of 250 widgets of any type. Calculate the new minimum cost and compare to Part 1. Did the new constraint make any difference in the solution? (Consider why.)
+
+Part 3: Building on Part 2, add a constraint: the Chicago plant now has an overall capacity of 250 widgets of any type. Solve optimally. What is the new minimum cost?
+
+Part 4: Building on Part 3, add two constraints: a 150-widget capacity at the Atlanta DC specific to widget 1 (Atlanta processes at most 150 units of widget 1), and a 200-unit constraint at the Boston DC specific to widget 2. Solve optimally. What is the new minimum cost?
+
+Part 5: Building on Part 4, add a new commodity, Widget 4.
+Demand for Widget 4: 20 units in NY, 20 units in VA, 10 units in PA.
+Production capacity for Widget 4: up to 20 in Chicago, up to 40 in Dallas, up to 25 in Miami.
+Transportation costs for Widget 4, plants to DCs: Chicago→Atlanta 6, Chicago→Boston 5, Dallas→Atlanta 4, Dallas→Boston 7, Miami→Atlanta 5, Miami→Boston 8.
+Transportation costs for Widget 4, DCs to regions: Atlanta→NY 8, Atlanta→VA 6, Atlanta→PA 6, Boston→NY 5, Boston→VA 6, Boston→PA 5.
+What is the new minimum cost of the optimal solution?

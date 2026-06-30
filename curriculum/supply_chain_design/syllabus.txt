@@ -1,0 +1,75 @@
+MIT CTL.SC2x — Supply Chain Design (MicroMasters Program in Supply Chain Management)
+Course syllabus
+
+ABOUT THIS COURSE
+Supply Chain Design: SC2x explores how to design and manage the physical, information, and financial flows that connect organizations across the supply chain. Using analytical frameworks, mathematical models, and real-world applications, you will learn how to make strategic decisions related to network design, supply chain finance, supplier management, production planning, distribution, and organizational design. This course is part of the MITx MicroMasters® Program in Supply Chain Management.
+
+Learning objectives:
+- Design and optimize supply chain networks
+- Apply financial analysis to supply chain decisions
+- Develop supplier management and procurement strategies
+- Plan production and material requirements
+- Coordinate Sales & Operations Planning (S&OP) processes
+- Improve cross-functional communication and organizational performance
+
+Estimated effort: 8–12 hours per week for 12 weeks.
+Intended audience: Professionals and lifelong learners interested in supply chain management, operations, logistics, and business analytics.
+Prerequisites: There are no formal prerequisites. However, because SC2x is a quantitative course, learners benefit from familiarity with algebra, spreadsheets, and introductory concepts in statistics, probability, and optimization. Learners seeking additional preparation may wish to complete Supply Chain Analytics: SC0x and Supply Chain Fundamentals: SC1x first.
+
+COURSE SCHEDULE
+New material for each week is released on Wednesdays at 15:00 UTC. Graded assignments are due on Wednesdays at 15:00 UTC on the specified deadline.
+
+Week 0  — Course Overview & Logistics (starts Jun 17, 2026)
+Week 1  — Basic Supply Chain Network Design (Jun 24 – Jul 8, 2026)
+Week 2  — Advanced Supply Chain Network Design (Jul 1 – Jul 15, 2026)
+Week 3  — Production Planning (Jul 8 – Jul 22, 2026)
+Week 4  — Sales & Operations Planning and Distribution Strategies (Jul 15 – Jul 29, 2026)
+Week 5  — Prep Week (Jul 22, 2026) — no graded assignment; review for the Midterm
+Week 6  — Midterm Exam (Jul 29 – Jul 31, 2026)
+Week 7  — Supplier Management (Aug 5 – Aug 19, 2026)
+Week 8  — Supply Chain Finance I (Aug 12 – Aug 26, 2026)
+Week 9  — Supply Chain Finance II (Aug 19 – Sep 2, 2026)
+Week 10 — Supply Chain Finance III and Organizational Design (Aug 26 – Sep 9, 2026)
+Week 11 — Prep Week (Sep 2, 2026)
+Week 12 — Final Exam (Sep 9 – Sep 11, 2026)
+
+Key milestone dates: Course starts Jun 17, 2026; Financial assistance application deadline Jul 8, 2026; Enrollment / Verification upgrade deadline (Certificate Track) Jul 22, 2026; Course ends Sep 11, 2026; Certificates available Sep 18, 2026.
+
+WEEKLY TOPICS
+Week 1 — Basic Supply Chain Network Design: Introduces supply chain design and reviews key concepts from SC1x. Formulate and solve network flow models using spreadsheets, then explore the Facility Location Problem, including its formulation and solution as a Mixed Integer Linear Program (MILP).
+Week 2 — Advanced Supply Chain Network Design: Combine the Facility Location problem with network flow models to formulate and solve larger network design problems including facility capacity, level of service, and inbound/outbound transportation. Test the sensitivity of assumptions in a larger case study; cover modeling multiple products, echelons, and periods; discuss flexibility and robustness.
+Week 3 — Production Planning: Move from network design to working with internal and external manufacturing partners. Present the Fixed Planning Horizon model for optimal production plans; introduce Bill of Materials (BOM), Material Requirements Planning (MRP), and Distribution Requirements Planning (DRP) systems.
+Week 4 — Sales & Operations Planning and Distribution Strategies: The S&OP process is presented and discussed, along with different distribution strategies and how e-commerce has affected the design of distribution networks.
+Week 5 — Prep Week: Off week to catch up and review; addresses practical concerns of running a network design project, in preparation for the Midterm.
+Week 6 — Midterm Exam: Assesses understanding of concepts and methods covered in Weeks 1–4.
+Weeks 7–10 — Supplier Management and Supply Chain Finance: Procurement strategy and optimization-based procurement; accounting fundamentals and cost accounting; cash flows and discounted cash flows; supply chain finance, financial performance, and organizational/metric design.
+Week 12 — Final Exam.
+
+ASSESSMENT & GRADING
+The course separates a learning space (videos, quick questions, and practice problems with immediate feedback; weekly Graded Assignments as formative assessments, with solutions released after the due date) from an assessment space (the Midterm and Final Exams, which evaluate individual mastery; no solutions or individualized feedback are provided for exam questions).
+
+To pass the course and earn a Certificate, you must achieve a final course grade of at least 60%. Grade weights:
+- Weekly Graded Assignments: 20%
+- Midterm Exam: 35%
+- Final Exam: 45%
+
+Enrollment track access:
+- Graded Assignments for Weeks 1, 2, and 3 are available to both Audit and Certificate Track learners.
+- Graded Assignments for Weeks 4, 7, 8, 9, and 10, the Midterm Exam, and the Final Exam are available only to Certificate Track learners.
+
+Graded Assignments: released with each content week and may be completed any time before the deadline (deadlines are firm; no extensions). Point values are indicated per question; most questions allow two submission attempts; only the last submission is graded; you must click Submit for each answer. A green/red indicator shows correctness after submission, and official solutions and explanations are released after the deadline. Assignments remain available for review after the deadline.
+
+Exams: the Midterm and Final together account for 80% of the final grade. They are open-book (you may consult course videos, slides, Key Concept Documents, and your own notes) and timed. Each exam is available during a 48-hour testing window; once started you have 2.5 hours, and the timer cannot be paused, stopped, or reset (start at least 2.5 hours before the deadline for full time). The Discussion Forum and Progress Tab are disabled while an exam is open. Unlike Graded Assignments, exams provide no correctness feedback and no solutions after the deadline. Timed exams must be completed in a web browser (mobile apps are not supported).
+
+POLICIES & SUPPORT
+Academic integrity: All graded work must comply with MIT Learn's Honor Code and Academic Integrity Policy. The Honor Code requires original work; no unauthorized collaboration; no use of generative AI tools (e.g., ChatGPT, Claude) unless explicitly permitted by the teaching team; a single account; fair competition; and protecting assessment integrity (do not post, share, or distribute answers). Violations may result in invalidation of graded work, certificate revocation, or removal from the course.
+
+Communication: Two primary channels. The Discussion Forum (monitored by Community Teaching Assistants and staff) is for the learning space — course concepts, videos, quick questions, practice problems, supplemental materials, and general problem-solving approaches; for Quick Questions and Practice Problems you may discuss general approaches and ask for hints but should work through details yourself. Do NOT use the forum for Weekly Graded Assignments, the Midterm, or the Final — such posts are removed to protect academic integrity. Assessment-related questions go to the email help desk at sc2xhelp@mit.edu (include the week, problem number, and a description); staff will not review calculations, verify answers, or provide hints for graded work.
+
+Accessibility: MIT is committed to an accessible learning experience. For disability-related accommodations, contact mitx-accessibility@mit.edu as early as possible (at least two weeks before an exam opens for exam accommodations).
+
+COURSE TEAM
+Instructors: Dr. Chris Caplice; Prof. Yossi Sheffi; Dr. Jarrod Goentzel; Mr. Jim Rice.
+Course Lead: Ms. Laura Allegue. Teaching Assistant: Mr. Matt Toy.
+MicroMasters in SCM Team: Dr. Eva Ponce (Director); Dr. Inma Borrella (Academic Lead); Ms. Cara Greaney; Ms. Laura Allegue; Mr. Kellen Betts; Mr. Paulo de Sousa; Mr. Jeff Baker; Mr. Robert Cummings; Mr. Connor Makowski; Ms. Elise Yonika.
+Course help / assessment questions: sc2xhelp@mit.edu

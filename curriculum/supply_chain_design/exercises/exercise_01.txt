@@ -1,0 +1,146 @@
+Week 1 Graded Assignment — Basic Supply Chain Network Design
+
+This assignment covers network flow and facility location models. Build spreadsheet (or Python) optimization models to answer each part.
+
+================================================================
+Graded Assignment 1: Locky Locke Inc.
+================================================================
+
+You have finally been promoted to Senior Manager for the nuts and bolts category at Locky Locke Inc., a manufacturer with a large demand for bolts at its three (3) factories. You have surveyed the market and found four (4) suppliers for a certain steady selling SKU, ZA27R46. Your factories' weekly demand for bolts are:
+
+- Factory 1: 9,500 cases/week
+- Factory 2: 6,500 cases/week
+- Factory 3: 17,000 cases/week
+
+Each of the four suppliers can provide the ZA27R46, but they differ in unit price, weekly capacity, and distance to Locky Locke Inc.'s three factories. The unit prices and the weekly capacity for each of the four suppliers are:
+
+- Supplier 1: U.S. Ainbolt — Unit cost: 2.50 $/case — Capacity 9,500 cases/week
+- Supplier 2: Der Bolt, Thun — Unit cost: 3.20 $/case — Capacity 10,000 cases/week
+- Supplier 3: Li Tningbolt — Unit cost: 1.90 $/case — Capacity 7,000 cases/week
+- Supplier 4: M. Bolton — Unit cost: 2.80 $/case — Capacity 9,000 cases/week
+
+You are trying to plan the weekly flow of bolts from these suppliers to your factories. Based on the current contract with your transportation carrier, the unit transportation cost for a case of bolts is $0.05 per mile from any of the suppliers to any of the factories. The distances between the four suppliers and the three factories are given in the table below.
+
+Transport Distance (miles):
+                  Factory 1   Factory 2   Factory 3
+U.S. Ainbolt         120         380         806
+Der Bolt, Thun       465         717         853
+Li Tningbolt         553         572         830
+M. Bolton            915         406         564
+
+Part 0 (ungraded): Build the spreadsheet model to solve the problem, and plug in a "1" for each decision variable. There should be 12 decision variables.
+- What is your total weekly cost? (Round to the nearest integer. Answer without the dollar symbol.)
+- What is the left hand side of the supply constraint for Supplier 1?
+- What is the left hand side of the demand constraint for Factory 1?
+
+Part 1: Currently, the factories operate independently. Disregarding any of the other factories, which supplier should Factory 2 select in order to have the lowest total (purchase and transport) cost for them?
+(Supplier 1: U.S. Ainbolt / Supplier 2: Der Bolt, Thun / Supplier 3: Li Tningbolt / Supplier 4: M. Bolton)
+
+Part 2: You want to take a holistic view of bolt sourcing instead of having each factory select its supplier on its own. Create a model to select the optimal sourcing assignment for all of the factories for the ZA27R46 bolts. Based on this optimization model, what is the total weekly cost for supplying bolts for Locky Locke Inc.? Be sure to include the purchase price as well as the transportation costs. (Round to the nearest integer.)
+
+Part 3: Based on your optimization model, which supplier should Factory 2 select in order to have the lowest total (purchase and transport) cost for Locky Locke Inc.?
+(Supplier 1: U.S. Ainbolt / Supplier 2: Der Bolt, Thun / Supplier 3: Li Tningbolt / Supplier 4: M. Bolton)
+
+================================================================
+Graded Assignment 2: GoClean&Co
+================================================================
+
+GoClean&Co (GCC) hired you as its Logistics Manager in charge of transshipments. GoClean&Co is a joint public-private energy company dedicated to generating clean and safe nuclear energy. GCC uses a new technology based on radioactive pellets. These pellets can generate electricity for years in GCC's nuclear plants. Once the radioactive pellets are depleted, they are removed from active use and collected at the plants for removal at the end of the month. Once a month, the depleted pellets are removed from the plants, transported to an inspection site for examination, and then moved again to a dedicated storage site for safekeeping.
+
+Two of GCC's nuclear plants, Plant One and Plant Two, need to move out depleted pellets:
+- Plant One wants to ship out up to 280 pellets per month
+- Plant Two wants to ship out up to 360 pellets per month
+
+The exact number of pellets actually moved out of each plant depends on the space available at the storage sites that would ultimately receive them. GCC is mandated by law to move as many pellets out of the plants as the storage sites are able to receive. Two storage sites are ready to receive pellets:
+- Storage X is ready to receive a total of 305 pellets per month
+- Storage Y is ready to receive a total of 325 pellets per month
+
+Since the two plants want to ship out more pellets per month than the two storage sites can receive, some pellets will have to stay in their plant of origin until a later time. Every plant has capacity to temporarily store whatever pellets are not shipped out, and the law allows this.
+
+At this time, only one inspection site is available, Inspection Site A: pellets come in, are inspected, and continue their trip to the storage sites (inspection sites have no storage capacity). Transportation costs (dollars per pellet moved):
+- Plant One to Inspection Site A: 13.58
+- Plant Two to Inspection Site A: 16.54
+- Inspection Site A to Storage X: 7.57
+- Inspection Site A to Storage Y: 16.46
+
+Optimize the transshipment of depleted pellets from the plants to the storage sites (stopping at Inspection Site A) to minimize overall monthly transportation cost.
+Part 0 (ungraded): In this optimized solution, how many pellets will Plant Two ship out to Inspection Site A every month?
+Part 1: In this optimized solution, how much is the overall monthly transportation cost for GCC? (Give your answer in dollars up to 2 decimal places, without dollar sign or comma. Hint: more than 15000 but less than 20000.)
+
+New Inspection Site (ungraded): A second inspection site, Inspection Site B, becomes available. Without knowing its transportation costs, what can we know about the overall transportation cost GCC will pay?
+(The cost can remain the same or become higher, but it will not be lower. / The cost can remain the same or become lower, but it will not be higher. / It is impossible to know which of the two statements above will be the case.)
+
+Part 2: GCC's transportation costs for Inspection Site B (dollars per pellet):
+- Plant One to Inspection Site B: 12.6
+- Plant Two to Inspection Site B: 16.2
+- Inspection Site B to Storage X: 9.45
+- Inspection Site B to Storage Y: 15.64
+Optimize the transshipment again. How much will this cost GCC every month? (Hint: In this optimal solution, Plant Two ships a total of 45 pellets per month to Inspection Site B.)
+
+New Plant and Storage Site: A third plant (Plant Three, up to 340 pellets/month) and a third storage site (Storage Z, up to 320 pellets/month) become available. New transportation costs (dollars per pellet):
+- Plant Three to Inspection Site A: 16.37
+- Plant Three to Inspection Site B: 10.81
+- Inspection Site A to Storage Z: 15.69
+- Inspection Site B to Storage Z: 15.41
+(ungraded) In this optimal solution, how many pellets is Plant One sending to Inspection Site B?
+Part 3: In this optimized solution, how much is the overall monthly transportation cost for GCC? (Hint: more than 21000 but less than 26000.)
+
+Part 4: A new regulation will require that no depleted pellets be stored at the plants past the monthly removal date. Storage sites increase the totals they will receive each month:
+- Storage X: 315 pellets per month
+- Storage Y: 335 pellets per month
+- Storage Z: 330 pellets per month
+The new regulations also reduce all transportation costs in the network by 0.94 percent (multiply all previous transportation costs by 0.9906). Optimize the transshipment once more. In this optimized solution, how much is the overall monthly transportation cost for GCC?
+
+================================================================
+Graded Assignment 3: Notebooks for the world
+================================================================
+
+Since you are attending the SC2x course, your best friend Sarah asks you to calculate the coordinates for a distribution center that would minimize its distance to ten cities in Mexico. Using an improvised grid (origin at the top-left corner of the map), you assign horizontal and vertical coordinates to the ten major cities (treated as relative coordinates on an arbitrary Euclidean grid):
+
+City              Horizontal   Vertical
+Chihuahua            110          120
+Ciudad Victoria      159          80
+Durango              120          81
+Mexico City          160          42
+Monterrey            148          92
+Morelia              145          42
+Oaxaca               179          26
+Puebla               170          40
+San Luis Potosi      153          61
+Villahermosa         203          35
+
+Initially, assume all cities have equal weight (a weight of 1).
+
+Part 0 (ungraded): Giving each city equal weight, calculate the location for the distribution center that would minimize the distance to the ten cities. Solve this as a continuous, distance-minimizing location (Weber) problem with equal weights. Which of the following coordinates is nearest to the location found?
+(H:110 V:40 / H:130 V:50 / H:150 V:60 / H:170 V:70)
+
+Part 1: For the location you calculated above, what is the exact horizontal coordinate? What is the exact vertical coordinate?
+
+Part 2: Some cities have more schoolchildren than others. Using the population-based weights below, solve as a continuous, demand-weighted distance-minimizing location (Weber) problem. What are the horizontal and vertical coordinates?
+
+City              Weight
+Chihuahua          923222
+Ciudad Victoria    321034
+Durango            517443
+Mexico City        20357743
+Monterrey          4506440
+Morelia            782645
+Oaxaca             648050
+Puebla             2920213
+San Luis Potosi    1037877
+Villahermosa       638080
+
+Part 3: Estimate the distance of distributing notebooks from a DC in one city to the school children in another. Assume Euclidean space and a circuity factor of 1.25, giving the distances below (cities identified by first three letters). For distances inside each city, assume 5 distance units, except Mexico City (10 units). Candidate DC cities: Chihuahua, Mexico City, Monterrey, Puebla, San Luis Potosi.
+
+        Chi   Ciu   Dur   Mex   Mon   Mor   Oax   Pue   San   Vil
+Chi      5    719   503   1158  590   1069  1458  1250  913   1575
+Mex     1158  475   698    10   643   188   310   127   253   545
+Mon     590   203   376   643    5    626   911   706   393   990
+Pue     1250  519   808   127   706   313   208    5    338   417
+San     913   249   482   253   393   258   545   338    5    704
+
+Your friend may want to open exactly two DCs, located in two different candidate cities. All goods are distributed to these two DCs by truck. Assume opening/operating cost is about the same in each city, and outbound per-unit per-mile transportation cost is about the same. In which two cities would you recommend opening the two DCs to minimize outbound transportation costs? (Use the same demand weights as in Part 2.)
+
+Part 4: After market research, you estimate an average transportation cost of $1 per distance unit per 997 notebooks (e.g., $100 to move 997 notebooks 100 distance units), and a fixed cost of $464,000 per year to operate each DC. Yearly demands are approximated by the weights used previously.
+- How many distribution centers would you recommend opening? (integer)
+- Where would you recommend opening these DCs to minimize total cost (fixed + transportation)? (Chihuahua / Mexico City / Monterrey / Puebla / San Luis Potosi)
