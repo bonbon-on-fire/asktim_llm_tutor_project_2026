@@ -812,7 +812,9 @@
     // Default to the first option in the dropdown when the draft has no valid
     // explicit selection yet, so the step opens on the first built-in (e.g. the
     // first course) rather than the trailing "Create custom …" option.
-    if (options.length && !options.some((o) => o.value === currentValue)) {
+    const optionMatches = (o, v) =>
+      o.value === v || (o.options && o.options.some((i) => i.value === v));
+    if (options.length && !options.some((o) => optionMatches(o, currentValue))) {
       currentValue = options[0].value;
     }
 
