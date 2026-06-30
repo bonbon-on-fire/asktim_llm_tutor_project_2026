@@ -989,6 +989,36 @@ rag/
 
 ---
 
+### Phase 12: Per-problem data files & figures (assignment-specific context) ✦ PLANNED
+
+**Problem:** Many `supply_chain_design` (MITx CTL.SC2x) exercises and practice problems are not fully solvable from the scraped text alone. They reference **downloadable Excel/LibreOffice data files** (demand tables, transport-cost tables, the WUWU spreadsheet, the "Scenario 10" starting setup) and **figures/diagrams**, e.g. *"Download the WUWU spreadsheet (WUWU1 tab)"*, *"refer to the data file, tab 'Inbound Transportation'"*, *"reproduce Scenario 10 as described in the video"*. Across the SC2x exercises/practices there are 14 LibreOffice + 7 Excel references, plus "data file, tab X" and figure references. The lecture transcripts scraped for Phase 11 cover the **conceptual** material these problems lean on (e.g. `lecture_01_03` walks through the SandyCo transshipment model and its $69,200 solution; WUWU and the advanced-scenarios method are in the Week 2 lectures), but **not** the per-problem numeric data — that lives in the attached spreadsheets/figures, which were never captured. Result: for those problems the tutor can guide method but is missing the actual numbers.
+
+**Decision:** Per-problem data files are **assignment-specific verbatim context**, folded into the matching exercise/practice prompt — **not** RAG. RAG (Phase 11) stays for the broad, conceptual lecture corpus; figures ride the multimodal pipeline (Phase 6). Rationale for keeping data files out of RAG:
+- Embeddings don't represent exact numeric tables well — *"the demand table for CMS Manufacturer"* won't reliably retrieve the right rows of numbers (semantic similarity ≠ exact lookup).
+- Each data file belongs to **one** problem, so it should always be present when a student works that problem — exactly the always-in-context guarantee the exercise prompt already provides for its inline tables. Cheap (a few KB of text per problem), correct, and no retrieval risk.
+
+**Acquisition (two paths, prefer the first):**
+1. **Ask Matt for the course data files + figures directly.** Avoids the Verified-track paywall on later weeks and any scraping/licensing questions. This is the cleaner source and is already a 06/30 action item ("updated list of context and access we need").
+2. **Scrape from MIT Learn** (logged-in session) for the audit-accessible weeks (1–3): the download links are edX asset URLs embedded in the same problem HTML already scraped for the question text. Weeks 4 / 7–10 data files are Verified-track-only → path 1 only.
+
+**Implementation order:**
+1. **Discover** — with a logged-in browser session, for each Week 1–3 exercise/practice problem fetch the problem HTML (courseware xblock) and extract (a) data-file download URLs (`.xlsx` / `.xls` / `.ods` / `.csv` / `asset-v1:*`) and (b) figure image URLs. Emit a manifest mapping each asset → its `(kind, number, part)` problem.
+2. **Download** — pull the spreadsheets and figures via the authenticated session into a staging area.
+3. **Convert spreadsheets → text** — `openpyxl`/`pandas` render each sheet/tab as a labeled plain-text table (CSV-ish), preserving the tab names problems cite (e.g. "Inbound Transportation", "WUWU1"). One text block per relevant tab.
+4. **Integrate (key step)** — append each file's text tables to the matching `curriculum/supply_chain_design/{exercises,practices}/<file>.txt` as verbatim problem context (so the data is always in the tutor's prompt for that problem). Figures go to `curriculum/supply_chain_design/figures/exercise_<NN>_*.png` (and a `practice_<NN>_*` convention if practice figures are wanted) so the existing multimodal pipeline attaches them.
+5. **(Optional) RAG supplement** — fold the data text into the per-course RAG index as a fallback, but rely on the verbatim attachment for correctness.
+6. **Re-test** — rebuild the RAG index (`python -m rag.ingest --course supply_chain_design --source local`) and rerun the simulations (the 06/30 "3× with lecture context" item) now that problems carry their full data.
+
+**Explicit non-goals:**
+- RAG over per-problem numeric data (verbatim attach to the owning problem instead).
+- Scraping the Verified-track-only later-week files (get those from Matt).
+- OCR of scanned/image-only content (figures ride the multimodal pipeline; scanned PDFs are out of scope, per Phase 11).
+- Live solving of the spreadsheets — we capture the data, not a Solver/optimization engine.
+
+**Access / asks (Matt):** course data files (Excel/LibreOffice) + figures for all weeks, and Verified-track access (or release timing) for the Weeks 4 / 7–10 assignments and exams.
+
+---
+
 ## 9. Work log updates
 
 ### 03/20/2026 — Visualization input migration (completed)
