@@ -16,6 +16,9 @@
   // Per-conversation RAG toggle (Create-context wizard). null = let the server
   // resolve by default; "rag" / "full_context" force the mode.
   if (typeof config.contextMode === "undefined") config.contextMode = null;
+  // Which content kind the exercise selection refers to: "exercise" (default)
+  // or "practice". Carried with each /api/chat send.
+  if (typeof config.exerciseKind === "undefined") config.exerciseKind = "exercise";
 
   const courseNameEl = document.querySelector(".course-name");
 
@@ -658,10 +661,13 @@
     if (stepKey === "course") {
       url = `/api/context/preview?kind=course&course=${encodeURIComponent(value)}`;
     } else if (stepKey === "exercise") {
+      const raw = String(value || "");
+      const isPractice = raw.startsWith("practice:");
+      const num = raw.includes(":") ? raw.split(":")[1] : raw;
       url =
-        `/api/context/preview?kind=exercise` +
+        `/api/context/preview?kind=${isPractice ? "practice" : "exercise"}` +
         `&course=${encodeURIComponent(createDraft.course.existing)}` +
-        `&exercise=${encodeURIComponent(value)}`;
+        `&exercise=${encodeURIComponent(num)}`;
     } else if (stepKey === "tutor") {
       url = `/api/context/preview?kind=tutor&tutor=${encodeURIComponent(value)}`;
     } else {
@@ -681,12 +687,23 @@
     const sel = document.createElement("select");
     sel.className = "context-select";
     sel.id = "create-select";
-    for (const o of options) {
+    const addOption = (parent, o) => {
       const opt = document.createElement("option");
       opt.value = o.value;
       opt.textContent = o.label;
       if (o.value === value) opt.selected = true;
-      sel.appendChild(opt);
+      parent.appendChild(opt);
+    };
+    for (const o of options) {
+      if (o.group) {
+        if (!o.options.length) continue;
+        const og = document.createElement("optgroup");
+        og.label = o.group;
+        for (const inner of o.options) addOption(og, inner);
+        sel.appendChild(og);
+      } else {
+        addOption(sel, o);
+      }
     }
     return sel;
   }
@@ -730,20 +747,37 @@
     } else if (step === "exercise") {
       const cd = createDraft.course;
       const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
-      const exs = courseObj ? courseObj.exercises : [];
+      const exs = (courseObj && courseObj.exercises) || [];
+      const pracs = (courseObj && courseObj.practice) || [];
       options = [
-        ...exs.map((n) => ({
-          value: n,
-          label: "Exercise " + (parseInt(n, 10) || n),
-        })),
+        {
+          group: "Exercises",
+          options: exs.map((n) => ({
+            value: "exercise:" + n,
+            label: "Exercise " + (parseInt(n, 10) || n),
+          })),
+        },
+        {
+          group: "Practice problems",
+          options: pracs.map((n) => ({
+            value: "practice:" + n,
+            label: "Practice " + (parseInt(n, 10) || n),
+          })),
+        },
         { value: CUSTOM, label: "Create custom exercise" },
       ];
       const d = createDraft.exercise;
       if (cd.mode === "custom") {
         currentValue = CUSTOM; // custom course has no built-in exercises
+      } else if (d.mode === "custom") {
+        currentValue = CUSTOM;
       } else {
+        const firstExisting =
+          (exs[0] && "exercise:" + exs[0]) ||
+          (pracs[0] && "practice:" + pracs[0]) ||
+          CUSTOM;
         currentValue =
-          d.mode === "custom" ? CUSTOM : d.existing || exs[0] || CUSTOM;
+          d.existing ? d.kind + ":" + d.existing : firstExisting;
       }
       customValue = d.custom;
       placeholder = "Paste or write the exercise…";
@@ -938,6 +972,19 @@
       }
       return;
     }
+    if (step === "exercise") {
+      const d = createDraft.exercise;
+      if (sel.value === CUSTOM) {
+        d.mode = "custom";
+        d.custom = ta.value;
+      } else {
+        d.mode = "existing";
+        const [kind, num] = sel.value.split(":");
+        d.kind = kind === "practice" ? "practice" : "exercise";
+        d.existing = num || "";
+      }
+      return;
+    }
     const d = createDraft[step];
     if (sel.value === CUSTOM) {
       d.mode = "custom";
@@ -971,7 +1018,7 @@
     // no explicit match and the <select> falls back to its first <option>.
     createDraft = {
       course: { mode: "existing", existing: "", custom: "", enabled: true },
-      exercise: { mode: "existing", existing: "", custom: "" },
+      exercise: { mode: "existing", existing: "", custom: "", kind: "exercise" },
       tutor: { mode: "existing", existing: "", custom: "" },
       syllabus: { mode: "builtin", value: "", custom: "" },
       useRag: false,
@@ -1031,9 +1078,11 @@
     if (c.mode === "custom" || e.mode === "custom") {
       config.exercise = null;
       config.exerciseCustom = e.custom;
+      config.exerciseKind = "exercise";
     } else {
       config.exercise = e.existing;
       config.exerciseCustom = null;
+      config.exerciseKind = e.kind === "practice" ? "practice" : "exercise";
     }
 
     if (t.mode === "custom") {
@@ -1250,6 +1299,7 @@
       text: text,
       course: config.course,
       exercise: config.exercise,
+      exercise_kind: config.exerciseKind,
       tutor: config.tutor,
       course_enabled: config.courseEnabled,
       syllabus: config.syllabus,
