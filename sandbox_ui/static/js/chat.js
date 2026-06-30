@@ -4,6 +4,9 @@
   const configEl = document.getElementById("tutor-config");
   const config = JSON.parse(configEl.textContent);
   if (typeof config.syllabus === "undefined") config.syllabus = true;
+  // Whether the course's lecture transcripts are folded into context. Mirrors
+  // `syllabus`; defaults on; the wizard's "No lectures" turns it off.
+  if (typeof config.lectures === "undefined") config.lectures = true;
   // Whether the built-in course.txt description is folded into context. Like
   // `syllabus`, defaults on; the wizard's "No course description" turns it off.
   if (typeof config.courseEnabled === "undefined") config.courseEnabled = true;
@@ -13,6 +16,7 @@
   if (typeof config.exerciseCustom === "undefined") config.exerciseCustom = null;
   if (typeof config.tutorCustom === "undefined") config.tutorCustom = null;
   if (typeof config.syllabusCustom === "undefined") config.syllabusCustom = null;
+  if (typeof config.lecturesCustom === "undefined") config.lecturesCustom = null;
   // Per-conversation RAG toggle (Create-context wizard). null = let the server
   // resolve by default; "rag" / "full_context" force the mode.
   if (typeof config.contextMode === "undefined") config.contextMode = null;
@@ -632,19 +636,21 @@
 
   // ---- Create-context wizard (sandbox_ui only) ---------------------------------
 
-  const CREATE_STEPS = ["course", "exercise", "tutor", "syllabus"];
-  const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus"];
+  const CREATE_STEPS = ["course", "exercise", "tutor", "syllabus", "lectures"];
+  const CREATE_LABELS = ["Course", "Exercise", "Tutor prompt", "Syllabus", "Lectures"];
   const STEP_LABELS = {
     course: "Course",
     exercise: "Exercise",
     tutor: "Tutor prompt",
     syllabus: "Syllabus",
+    lectures: "Lectures",
   };
-  // When the RAG toggle is on, the syllabus step is skipped — course, syllabus,
-  // and lectures all come from retrieval, so there's nothing to pick there.
+  // When the RAG toggle is on, the syllabus and lectures steps are skipped —
+  // course, syllabus, and lectures all come from retrieval, so there's nothing
+  // to pick there.
   function activeSteps() {
     return createDraft && createDraft.useRag
-      ? CREATE_STEPS.filter((s) => s !== "syllabus")
+      ? CREATE_STEPS.filter((s) => s !== "syllabus" && s !== "lectures")
       : CREATE_STEPS;
   }
   const CUSTOM = "__custom__";
@@ -666,6 +672,8 @@
         `&exercise=${encodeURIComponent(num)}`;
     } else if (stepKey === "tutor") {
       url = `/api/context/preview?kind=tutor&tutor=${encodeURIComponent(value)}`;
+    } else if (stepKey === "lectures") {
+      url = `/api/context/preview?kind=lectures&course=${encodeURIComponent(createDraft.course.existing)}`;
     } else {
       url = `/api/context/preview?kind=syllabus&course=${encodeURIComponent(createDraft.course.existing)}`;
     }
@@ -777,6 +785,21 @@
       currentValue = LOCKED_TUTOR; // locked — testers can't change the tutor prompt here
       customValue = "";
       placeholder = "Paste or write the tutor prompt…";
+    } else if (step === "lectures") {
+      const cd = createDraft.course;
+      const courseObj = cd.mode === "existing" ? courseBySlug(cd.existing) : null;
+      options = [];
+      if (courseObj && courseObj.has_lectures) {
+        options.push({ value: "default", label: "Course lectures" });
+      }
+      options.push({ value: "none", label: "No lectures" });
+      options.push({ value: CUSTOM, label: "Create custom lectures" });
+      const d = createDraft.lectures;
+      let v = d.mode === "custom" ? CUSTOM : d.value;
+      if (v === "default" && !(courseObj && courseObj.has_lectures)) v = "none";
+      currentValue = v;
+      customValue = d.custom;
+      placeholder = "Paste or write the lecture material…";
     } else {
       // syllabus
       const cd = createDraft.course;
@@ -908,8 +931,11 @@
           (stepKey === "syllabus"
             ? createDraft.syllabus.custom
             : createDraft[stepKey].custom) || "";
-      } else if (stepKey === "syllabus" && val === "none") {
-        // No syllabus — nothing to preview.
+      } else if (
+        (stepKey === "syllabus" || stepKey === "lectures") &&
+        val === "none"
+      ) {
+        // No syllabus / no lectures — nothing to preview.
         ta.readOnly = true;
         ta.hidden = true;
         ta.value = "";
@@ -949,13 +975,14 @@
     const ta = document.getElementById("create-custom-input");
     if (!sel) return;
     const step = activeSteps()[createStep];
-    if (step === "syllabus") {
+    if (step === "syllabus" || step === "lectures") {
+      const d = createDraft[step];
       if (sel.value === CUSTOM) {
-        createDraft.syllabus.mode = "custom";
-        createDraft.syllabus.custom = ta.value;
+        d.mode = "custom";
+        d.custom = ta.value;
       } else {
-        createDraft.syllabus.mode = "builtin";
-        createDraft.syllabus.value = sel.value;
+        d.mode = "builtin";
+        d.value = sel.value;
       }
       return;
     }
@@ -1021,6 +1048,7 @@
       exercise: { mode: "existing", existing: "", custom: "", kind: "exercise" },
       tutor: { mode: "existing", existing: "", custom: "" },
       syllabus: { mode: "builtin", value: "", custom: "" },
+      lectures: { mode: "builtin", value: "", custom: "" },
       useRag: false,
     };
     createStep = 0;
@@ -1061,6 +1089,7 @@
     const e = createDraft.exercise;
     const t = createDraft.tutor;
     const s = createDraft.syllabus;
+    const l = createDraft.lectures;
 
     if (c.mode === "custom") {
       config.course = null;
@@ -1104,13 +1133,27 @@
       config.syllabus = false;
     }
 
+    if (l.mode === "custom") {
+      config.lecturesCustom = l.custom;
+      config.lectures = false;
+    } else if (l.value === "default") {
+      config.lecturesCustom = null;
+      config.lectures = true;
+    } else {
+      config.lecturesCustom = null;
+      config.lectures = false;
+    }
+
     // RAG toggle → per-conversation context mode. When on, course/syllabus/
-    // lectures are retrieved (the syllabus step was skipped), so force syllabus
-    // off; when off, pin full_context so an indexed course isn't silently RAG'd.
+    // lectures are retrieved (the syllabus and lectures steps were skipped), so
+    // force them off; when off, pin full_context so an indexed course isn't
+    // silently RAG'd.
     if (createDraft.useRag) {
       config.contextMode = "rag";
       config.syllabus = false;
       config.syllabusCustom = null;
+      config.lectures = false;
+      config.lecturesCustom = null;
     } else {
       config.contextMode = "full_context";
     }
@@ -1303,12 +1346,14 @@
       tutor: config.tutor,
       course_enabled: config.courseEnabled,
       syllabus: config.syllabus,
+      lectures: config.lectures,
     };
     // One-off custom context (Create-context wizard) — only sent when set.
     if (config.courseCustom != null) fields.course_custom = config.courseCustom;
     if (config.exerciseCustom != null) fields.exercise_custom = config.exerciseCustom;
     if (config.tutorCustom != null) fields.tutor_custom = config.tutorCustom;
     if (config.syllabusCustom != null) fields.syllabus_custom = config.syllabusCustom;
+    if (config.lecturesCustom != null) fields.lectures_custom = config.lecturesCustom;
     if (config.contextMode != null) fields.context_mode = config.contextMode;
     if (conversationId) fields.conversation_id = conversationId;
 

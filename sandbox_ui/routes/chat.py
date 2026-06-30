@@ -124,6 +124,16 @@ def chat():
     else:
         syllabus_enabled = bool(raw_syllabus)
 
+    # Same shape as syllabus: whether the course lectures/*.txt transcripts are
+    # folded into context. Defaults ON; "No lectures" in the wizard sends it off.
+    raw_lectures = src.get("lectures")
+    if raw_lectures is None:
+        lectures_enabled = True
+    elif isinstance(raw_lectures, str):
+        lectures_enabled = raw_lectures.strip().lower() not in {"0", "false", "no", "off", ""}
+    else:
+        lectures_enabled = bool(raw_lectures)
+
     # Same shape as syllabus: whether the built-in course.txt description is
     # folded into context. Defaults ON; "No course description" in the wizard
     # sends it off. Only honored when creating a new convo.
@@ -141,6 +151,7 @@ def chat():
     custom_exercise_text = src.get("exercise_custom")
     custom_tutor_prompt = src.get("tutor_custom")
     custom_syllabus_text = src.get("syllabus_custom")
+    custom_lectures_text = src.get("lectures_custom")
 
     # sandbox_ui RAG toggle: per-conversation context mode ("rag" | "full_context").
     # None = let the bridge resolve by default (rag when the course has an index).
@@ -218,10 +229,12 @@ def chat():
             email=email,
             course_enabled=course_enabled,
             syllabus_enabled=syllabus_enabled,
+            lectures_enabled=lectures_enabled,
             custom_course_text=custom_course_text,
             custom_exercise_text=custom_exercise_text,
             custom_tutor_prompt=custom_tutor_prompt,
             custom_syllabus_text=custom_syllabus_text,
+            custom_lectures_text=custom_lectures_text,
             context_mode=context_mode,
         )
     except WrongSessionError:
@@ -271,10 +284,13 @@ def chat():
     # continuing an old conversation keeps the course description it had.
     stream_course_enabled = convo.course_enabled is None or bool(convo.course_enabled)
     stream_syllabus = convo.syllabus_enabled
+    # Legacy rows predating this column read back NULL; treat as ON.
+    stream_lectures = convo.lectures_enabled is None or bool(convo.lectures_enabled)
     stream_course_text = convo.custom_course_text
     stream_exercise_text = convo.custom_exercise_text
     stream_custom_tutor_prompt = convo.custom_tutor_prompt
     stream_syllabus_text = convo.custom_syllabus_text
+    stream_lectures_text = convo.custom_lectures_text
     stream_context_mode = convo.context_mode
 
     try:
@@ -299,9 +315,11 @@ def chat():
         images=images_to_tuples(images),
         include_course=stream_course_enabled,
         include_syllabus=stream_syllabus,
+        include_lectures=stream_lectures,
         course_text=stream_course_text,
         exercise_text=stream_exercise_text,
         syllabus_text=stream_syllabus_text,
+        lectures_text=stream_lectures_text,
         custom_tutor_prompt=stream_custom_tutor_prompt,
         context_mode=stream_context_mode,
     )

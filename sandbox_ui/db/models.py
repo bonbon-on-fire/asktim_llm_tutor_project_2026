@@ -66,6 +66,12 @@ class Conversation(Base):
     syllabus_enabled: Mapped[bool] = mapped_column(
         Boolean, nullable=False, default=True
     )
+    # sandbox_ui-only: whether the course lectures/*.txt transcripts were folded
+    # into the tutor context (toggled via the Create-context wizard "Lectures"
+    # step). Defaults ON; _reconcile_columns() in run_app backfills it.
+    lectures_enabled: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, default=True
+    )
     # sandbox_ui-only: one-off custom context typed in the "Create context" wizard.
     # When set, the corresponding built-in field above is a placeholder and the
     # tutor reads this text instead of the on-disk curriculum/tutor file. Stored
@@ -74,6 +80,7 @@ class Conversation(Base):
     custom_exercise_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     custom_tutor_prompt: Mapped[str | None] = mapped_column(Text, nullable=True)
     custom_syllabus_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    custom_lectures_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     # sandbox_ui-only: per-conversation context mode chosen via the Create-context
     # wizard's RAG toggle ("rag" | "full_context"). NULL = resolve by default
     # (rag when the course has an index, else full_context). create_all can't add

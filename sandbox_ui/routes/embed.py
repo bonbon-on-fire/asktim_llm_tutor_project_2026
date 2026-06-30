@@ -20,6 +20,7 @@ from sandbox_ui.routes._validation import (
     load_course_name,
     load_course_text,
     load_exercise_text,
+    load_lectures_text,
     load_practice_text,
     load_syllabus_text,
     load_tutor_text,
@@ -98,6 +99,11 @@ def context_preview():
         if err:
             return _bad_param(err)
         return jsonify({"text": load_syllabus_text(course)})
+    if kind == "lectures":
+        err = validate_course(course)
+        if err:
+            return _bad_param(err)
+        return jsonify({"text": load_lectures_text(course)})
     return jsonify({"error": "bad_kind", "reason": "unknown preview kind"}), 400
 
 

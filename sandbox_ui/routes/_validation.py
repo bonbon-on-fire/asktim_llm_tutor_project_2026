@@ -138,6 +138,15 @@ def load_syllabus_text(course) -> str:
     return path.read_text(encoding="utf-8") if path.is_file() else ""
 
 
+def load_lectures_text(course) -> str:
+    """All lecture transcripts for a built-in course, concatenated (empty if none)."""
+    if not course:
+        return ""
+    from utils.lectures import load_lecture_transcripts  # lazy: avoid import cost at boot
+
+    return load_lecture_transcripts(course)
+
+
 def list_exercises(course) -> list[str]:
     """Sorted zero-padded 2-digit exercise numbers available for a course."""
     if not course:
@@ -157,6 +166,14 @@ def course_has_syllabus(course) -> bool:
     if not course:
         return False
     return (_CURRICULUM_DIR / course / "syllabus.txt").is_file()
+
+
+def course_has_lectures(course) -> bool:
+    """True if the course ships any lectures/*.txt that can be toggled into context."""
+    if not course:
+        return False
+    lectures_dir = _CURRICULUM_DIR / course / "lectures"
+    return lectures_dir.is_dir() and any(lectures_dir.glob("*.txt"))
 
 
 def course_has_rag(course) -> bool:
@@ -196,6 +213,7 @@ def list_context_options() -> dict:
                 "exercises": list_exercises(slug),
                 "practice": list_practice(slug),
                 "has_syllabus": course_has_syllabus(slug),
+                "has_lectures": course_has_lectures(slug),
                 "has_rag": course_has_rag(slug),
             }
         )
