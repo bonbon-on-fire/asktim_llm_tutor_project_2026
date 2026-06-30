@@ -227,13 +227,25 @@ tbody td a:hover {
 }
 
 .meta-block {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.5rem 1.5rem;
+  display: block;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
   font-size: 0.85rem;
+}
+
+/* Context / Exercise text spans the full content width and wraps naturally,
+   instead of being squeezed into a narrow grid column. */
+.meta-block > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.meta-block > pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+  margin: 0.5rem 0 0;
 }
 
 .meta-block dt {
