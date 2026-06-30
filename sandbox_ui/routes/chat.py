@@ -37,7 +37,6 @@ from sandbox_ui.cookies import EMAIL_COOKIE_NAME
 from sandbox_ui.routes._validation import (
     DEFAULT_TUTOR,
     validate_course,
-    validate_exercise,
     validate_selection,
     validate_tutor,
 )

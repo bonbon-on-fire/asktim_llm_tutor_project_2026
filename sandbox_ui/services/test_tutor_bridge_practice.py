@@ -30,7 +30,7 @@ def _check(name, cond, detail=""):
 def main() -> int:
     # Use a temp practice file in a real-shaped course dir.
     import tempfile, shutil
-    with tempfile.TemporaryDirectory() as tmp:
+    with tempfile.TemporaryDirectory():
         course = "tmp_course_practice"
         exdir = _CURRICULUM / course / "exercises"
         exdir.mkdir(parents=True, exist_ok=True)

@@ -6,8 +6,7 @@ Run with:
 
 from __future__ import annotations
 
-from pathlib import Path
-import tempfile, shutil
+import shutil
 
 from sandbox_ui.routes import _validation as V
 
