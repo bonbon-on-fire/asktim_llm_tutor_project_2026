@@ -38,6 +38,7 @@ from sandbox_ui.routes._validation import (
     DEFAULT_TUTOR,
     validate_course,
     validate_exercise,
+    validate_selection,
     validate_tutor,
 )
 from sandbox_ui.services import images as images_service
@@ -109,6 +110,8 @@ def chat():
 
     course = src.get("course")
     exercise = src.get("exercise")
+    raw_kind = src.get("exercise_kind")
+    exercise_kind = "practice" if str(raw_kind).strip().lower() == "practice" else "exercise"
     tutor = src.get("tutor") or DEFAULT_TUTOR
     # sandbox_ui context switch: syllabus defaults ON (matches main_ui) unless the
     # request explicitly turns it off. Only applies when creating a new convo;
@@ -175,7 +178,7 @@ def chat():
                     "provide exercise_custom when the course is custom",
                     "exercise_requires_course",
                 )
-            err = validate_exercise(course, exercise)
+            err = validate_selection(course, exercise, exercise_kind)
             if err:
                 return _bad_param(err)
         else:
@@ -211,6 +214,7 @@ def chat():
             conversation_id=convo_id,
             course=course,
             exercise_number=exercise,
+            exercise_kind=exercise_kind,
             tutor_prompt=tutor,
             email=email,
             course_enabled=course_enabled,
@@ -261,6 +265,8 @@ def chat():
     convo_id_str = str(convo.id)
     stream_course = convo.course
     stream_exercise = convo.exercise_number
+    # Legacy rows predating this column read back NULL; treat as "exercise".
+    stream_exercise_kind = convo.exercise_kind or "exercise"
     stream_tutor = convo.tutor_prompt
     # Legacy rows predating this column read back NULL; treat that as ON so
     # continuing an old conversation keeps the course description it had.
@@ -287,6 +293,7 @@ def chat():
     stream_kwargs = dict(
         course=stream_course,
         exercise=stream_exercise,
+        exercise_kind=stream_exercise_kind,
         tutor=stream_tutor,
         history=history,
         new_student_message=student_text,
