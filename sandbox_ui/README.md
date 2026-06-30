@@ -46,7 +46,10 @@ paste your own custom text:
 - **Course** — any folder under `curriculum/`, **No course description** (keeps
   the course for exercises/figures/RAG but drops its `course.txt` from context),
   or custom course text
-- **Exercise** — an exercise for the chosen course, or custom exercise text
+- **Exercise** — an exercise (`exercise_<NN>.txt`) or a **practice problem**
+  (`practice_<NN>.txt`) for the chosen course, shown as separate "Exercises" and
+  "Practice problems" groups, or custom exercise text. The chosen kind is stored
+  per conversation in `exercise_kind` (defaults to `exercise`)
 - **Tutor prompt** — any `tutor_*` prompt, or custom prompt text
 - **Syllabus** — the course's `syllabus.txt`, none, or custom syllabus text
 
@@ -150,10 +153,11 @@ Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
 | GET | `/api/context/options` | Courses (with their exercises + syllabus availability) and tutor prompts, for the Create-context wizard |
 
 `POST /api/chat` accepts JSON (text only) or `multipart/form-data` (text +
-`images` files, alongside the same context fields). It additionally accepts an
-optional `"syllabus": true|false` field (defaults to `true`) that gates the
-syllabus block, and a matching `"course_enabled": true|false` field (defaults to
-`true`) that gates the course-description block, for a new conversation.
+`images` files, alongside the same context fields). It additionally accepts
+optional fields for a new conversation:
+- `"syllabus": true|false` (defaults to `true`) — gates the syllabus block
+- `"course_enabled": true|false` (defaults to `true`) — gates the course-description block
+- `"exercise_kind": "exercise"|"practice"` (defaults to `"exercise"`) — selects exercise or practice-problem variant
 
 ## Deployment
 
