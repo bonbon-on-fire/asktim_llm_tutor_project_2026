@@ -1,9 +1,6 @@
-Week 1 Practice Problems — Basic Supply Chain Network Design
+TITLE: Week 1 Practice Problems — Basic Supply Chain Network Design
 
 Ungraded practice problems for Week 1. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
-
-
-================================================================
 
 Practice Problem 1: Network Model Basics
 Throughout the course you will see Supply Chain Networks presented in different forms: in text, as a graph, as a formula, or as a spreadsheet model. It is important that you understand how to transition between the different representations.
@@ -27,8 +24,6 @@ The sum of all flows in the network must be less than the demand in the network
 For all nodes , the sum of all outgoing flows from node  must be less than or equal to the supply capacity of node
 This is not part of the model formulation
 
-
-================================================================
 
 Practice Problem 2: SteelCo
 SteelCo is a small steel distributor in the Northern USA. They have two distribution centers (DCs), one in Allentown, PA, and one in Toledo, OH.
@@ -62,8 +57,6 @@ How to debug your model:
 Every time you finish modeling an optimization problem, we suggest you debug your model to find some missing spots that could drive you to a wrong answer. Our CTA team created an infographic on how to debug a network design model, the use of Solver, and some tips for common errors and FAQ you will find helpful.
 We recommend you to check it out in our Software for SC2x section: Recitation - Optimization using Spreadsheets / How to Debug your Model.
 
-
-================================================================
 
 Practice Problem 3: Ralph Calvin Hilfiger (RCH) Industries
 Clothing manufacturer and retailer Ralph Calvin Hilfiger (RCH) Industries operates five (5) factories. They distribute their products through five (5) regional distribution centers (DCs) each of which supports a specific market.
@@ -119,8 +112,6 @@ Reducing the capacity of Factory 1 to 190 totes
 All of the above
 
 
-================================================================
-
 Practice Problem 4: SandyCo - Multiple Optima
 For this problem, we will use the Transhipment Model for SandyCo (SandyCo Part 2). To recap, SandyCo has two (2) facilities that mine, clean, and sort sand for use in cement, children’s playboxes, and small beaches. They distribute the sand from their two (2) plants, through two (2) packaging centers (DCs), to three (3) different customer regions where it is packaged and sold.
 Each plant has a specific maximum weekly supply of available sand and each region has an expected minimum weekly required demand. The cost to distribute a ton of sand differs between each plant and region pairing due to distance and other factors.
@@ -173,8 +164,6 @@ How many tons of sand should Plant 1 produce if the capacity of DC B drops to 80
 Round your answer to the nearest integer.
 
 
-================================================================
-
 Practice Problem 5: Food Delivery Startup
 You and a friend just started a food delivery startup. The idea is to deliver freshly made, organic, lunch-boxes to be sold in university cafeterias. You have secured deals with cafeterias at three universities and are now looking for a good location for the business.
 To avoid spending too much time in traffic, you think it may be a good idea to find a location close to all three universities.
@@ -198,8 +187,6 @@ Part 4
 0 points possible (ungraded)
 What is the average weighted distance from the business location to the 3 universities using the Weber technique?
 
-
-================================================================
 
 Practice Problem 6: Temporary Networks
 When a natural disaster strikes, normal supply chains are disrupted and many vital supplies cannot reach those affected through the normal routes. To handle the first couple of days after the disaster, many specialized Non Governmental Organizations (NGOs) work hard to secure vital supplies such as food, blankets, and medicines, and deliver these to people in the affected areas. To do so, they set up temporary supply networks, which only operate as long as needed.

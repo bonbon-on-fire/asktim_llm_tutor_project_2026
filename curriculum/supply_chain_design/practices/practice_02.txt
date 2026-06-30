@@ -1,9 +1,6 @@
-Week 2 Practice Problems — Advanced Supply Chain Network Design
+TITLE: Week 2 Practice Problems — Advanced Supply Chain Network Design
 
 Ungraded practice problems for Week 2. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
-
-
-================================================================
 
 Practice Problem 1: Estimating costs
 After hearing about your skills in building models for supply chain decision support, a small widget manufacturer has asked for your help in planning their distribution. Currently, the firm runs a small network with three (3) manufacturing sites, one (1) DC, and eight (8) regional warehouses. The widgets are transported by a dedicated carrier from the manufacturing sites through the DC to the regional warehouses.
@@ -32,8 +29,6 @@ If your model suggests it is optimal to ship less than 5 widgets per period from
 If your model suggests it is optimal to ship more than 5 widgets per period from manufacturing plant 1 to the DC, then the model is underestimating the total cost
 If your model suggests it is optimal to ship more than 5 widgets per period from manufacturing plant 1 to the DC, then the model is overestimating the total cost
 
-
-================================================================
 
 Practice Problem 2: Papper
 Papper is a paper goods manufacturer. One of their main paper products is a paper towel, which is produced in two (2) plants in the contiguous U.S. From the plants, the paper towels are sent to nine (9) regional warehouses (RW), from where they are then shipped to customers across the U.S.
@@ -72,8 +67,6 @@ More production is allocated to Plant 1
 Manufacturing costs increase
 All of the above
 
-
-================================================================
 
 Practice Problem 3: Colombian Premium Coffee
 A traditional Colombian Coffee manufacturer called CPC has hired your services as a supply chain consultor to analyze the distribution of its brand-new premium product, named Coffee Indeed ®. This product is 1 package containing 1-kilogram of ground and roasted Arabica coffee to be commercialized and distributed in three cities: Bogotá (DC 1), Medellín (DC 2), and Cali (DC 3). Due to governmental tax benefits, the company roasts and packs the product in two factories: Barranquilla (Plant 1) and Santander (Plant 2). CPC hires carriers to transport the products from the plants to each of the three distribution centers (DCs). Each DC has a different demand, and each plant has a different production capacity.
@@ -151,8 +144,6 @@ What is the total weekly cost for flowing both coffee products from the two plan
 Round your answer to the nearest integer with no commas or currency signs. For example, if your answer is $168,987.25 then you would enter 168987.
 
 
-================================================================
-
 Practice Problem 4: Harley Stevenson
 HarleyStevenson is a bicycle manufacturer operating a small supply chain distribution network. After hearing about your expertise in Supply Chain Network Design, they have asked you to help them analyze their network to find opportunities for improvement.
 All HarleyStevenson's bicycles are made to stock from a single manufacturing site. Once per week, finished bicycles are transported in large batches, using direct transports, from the manufacturing site to three (3) Distribution Centers (DCs). The DCs are all operated by third party providers, at the following weekly costs for HarleyStevenson:
@@ -188,8 +179,6 @@ HarleyStevenson is also unsure whether they should use all three DCs in the netw
 What is the optimal number of DCs in the network? Note that your solution does not have to adhere to the policy in Part 3.
 
 
-================================================================
-
 Practice Problem 5: RCH Industries' Differentiation
 Ralph Calvin Hilfiger (RCH) Industries - the clothing manufacturer from Week 1 - has found that different clothing styles have very different demands in the five (5) markets. For instance, the more stylish items sell relatively more in Europe, while the more leisurely items seem to do much better in the U.S. To accommodate this, they want to update the network design, and rethink the product mix produced in each of the five factories.
 As before, RCH distributes their products from their five (5) factories through (2) cross docking facilities (XD) on to five (5) regional distribution centers (DCs), each of which supports a specific market. The clothes are transported through the network in small plastic totes via truck. There are no capacity constraints at the cross docks at this point.
@@ -207,8 +196,6 @@ Part 3
 RCH does not feel comfortable with your solution from Part 2 - too few factories are producing both styles, they claim.
 If at least 10 units of each style needs to be produced in every factory, how much will the optimal cost increase compared to the solution in Part 2? Answer in dollars without the dollar sign, e.g., if the solution is $45.45, write 45.
 
-
-================================================================
 
 Practice Problem 6: TIme-Expanded Network
 In this problem, we will consider the following formulation of a time-expanded network problem.
@@ -250,8 +237,6 @@ At the end of the first day for the modelling period, the inventory level at eve
 None of the above
 
 
-================================================================
-
 Practice Problem 7: Estimating Inventory
 In supply chain network models, inventory costs are normally not considered for several reasons. It is still, however, possible to estimate the cost impact of inventory when designing the system.
 Consider a small section of a larger distribution network. The section operates more or less independently, and consists of two (2) plants, two (2) distribution centers (DCs), that support (4) retailers. All products that are produced in the plants are transported through the DCs to the retailers. Each DC handles only two retailers. The combined average demand at the four retailers is 20,000 units per week.
@@ -270,8 +255,6 @@ The expected demand is 20,000 units to the four combined retailers.
 What is the expected inventory level at a single DC serving all four of the retailers?
 What is the expected inventory level if two equally sized DCs are used to serve the retailers? Assume that each DC handles half of the total throughput.
 
-
-================================================================
 
 Practice Problem 8:  NERD Revisited
 You cannot get away from the Root Beer distributors! The New England Root Beer Distributors (NERD) have been using the model developed earlier to determine the optimal number of DCs to open for their New England distribution network. For the remainder of this Practice Problem - use the attached Excel or LibreOffice spreadsheet.  This is the same formulation and model we presented in Lesson 1 of Week 2 - BUT PLEASE USE THESE VERSIONS!!!.

@@ -1,9 +1,6 @@
-Week 7 Practice Problems — Supplier Management
+TITLE: Week 7 Practice Problems — Supplier Management
 
 Ungraded practice problems for Week 7. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
-
-
-================================================================
 
 Practice Problem 1: Procurement at SmallCo
 A small company, SmallCo, has just hired you for your expertise in purchasing. The idea is to have you go over and renegotiate all supplier contracts. Last year, SmallCo had revenues of $10M, COGS of $6M, sales and general costs of $2M, and other operating expenses of $1M.
@@ -45,8 +42,6 @@ Part 7
 0 points possible (ungraded)
 Assuming the index stays at 47, what is the percent change in net income compared to the original net income (1 million)? Assume the key component contract selected in Part 2 and the transportation contract selected in Part 5 are in place. Answer in percent with one decimal, without the percentage symbol, e.g. if your answer is 15.55%, write 15.6.
 
-
-================================================================
 
 Practice Problem 2: Procurement and Sourcing
 For this Practice Problem, consider the multiple choice questions below.
@@ -142,8 +137,6 @@ There are a hierarchy of responsibilities, and the most important responsibility
 None of the above
 
 
-================================================================
-
 Practice Problem 3: RoofMart
 Local retailer RoofMart has three trade lanes for which it is now procuring transport services. For each lane they will transport 10 full truck loads per week. Three carriers have submitted bids for the trade lanes. Their prices per truckload and maximum capacities per week (in parenthesis) are shown below.
 Bids (Capacity)
@@ -162,8 +155,6 @@ Suppose RoofMart wants to impose the constraint that not more than 75% of the vo
 What is the cost of the optimal solution under this constraint?
 Answer in integer dollars without commas or currency symbols.
 
-
-================================================================
 
 Practice Problem 4: YouKea
 Remember Youkea, the upcoming Scandinavian furniture retailer?
@@ -197,8 +188,6 @@ Part 4
 After thinking about the solution and talking to the carriers, the director believes there are strategic reasons to allocate a larger portion of the business with the smaller carrier (TruckerCo). She believes that TruckerCo should be providing transports on each lane.
 What is the minimum actual cost for the LOS-adjusted solution after this change? Answer in full currency units without decimals or commas.
 
-
-================================================================
 
 Practice Problem 5: Producer&Gambler
 ProducerGambler is a large Fast Moving Consumer Goods company. They are currently in the middle of renegotiating the supply contracts for four related products.

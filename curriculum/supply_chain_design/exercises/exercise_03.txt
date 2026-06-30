@@ -1,10 +1,8 @@
-Week 3 Graded Assignment — Production Planning
+TITLE: Week 3 Graded Assignment — Production Planning
 
 This assignment covers lot-sizing / production planning methods (lot-for-lot, single run, EOQ/FOQ, POQ, Silver-Meal, optimal), Master Production Scheduling with Available-to-Promise and time fencing, Bill of Materials / MRP lead-time offsetting, and Distribution Requirements Planning (DRP).
 
-================================================================
 Graded Assignment 1: Gold MIT Seals
-================================================================
 
 There is a retailer called "The Coop", which carries a wide variety of products with MIT's name and logo: shirts, caps, keychains, pens, and more. With a store inside MIT's Student Center and another in Kendall Square, The Coop is a favorite stop for visitors, students and their relatives, and alumni.
 
@@ -32,9 +30,7 @@ Part 7: What is the total cost (set-up + holding) using the Silver-Meal algorith
 
 Part 8: What is the total cost (set-up + holding) using an optimal solution?
 
-================================================================
 Graded Assignment 2: Queenstown Gyroscopes Inc.
-================================================================
 
 You are assisting Queenstown Gyroscopes Inc. (QGI) in improving their Master Production Scheduling (MPS) and Materials Requirements Planning (MRP) systems. They have a production line assembling their famous Kiwi-99 gyroscopes from components supplied by various vendors. They have had issues communicating effectively with suppliers, and their sales team tends to over-promise, leading to production over-runs or unsatisfied customers.
 
@@ -68,9 +64,7 @@ Part 4: The production plan calls for 200 Kiwi-99 units ready in week 13 (same l
 
 Part 5: You drop the Gimbal and Rotor set manufacturers and bring everything in-house. The BOM now looks like Product Tree A. Component lead times: Inner Gimbal 5 weeks, Center Gimbal 5 weeks, Outer Gimbal 5 weeks, Rotor 1 week, Base 3 weeks, Spindle 2 weeks (1 of each per gyroscope). Lead time for the Kiwi-99 stays at 3 weeks. What is the total lead time, in weeks, for the Kiwi-99 from the planned order release of the earliest component to availability of the completed Kiwi-99?
 
-================================================================
 Graded Assignment 3: Ivec Company
-================================================================
 
 The Ivec Company distributes one of its products, a van for urban freight transport, through regional warehouses in Buenos Aires and Cordoba. A central warehouse at the Rosario plant distributes vans to these warehouses, serving the Argentinian market. Distribution planning manager Martin Riquelme is considering a DRP system and asks you to evaluate the results for the next 10 weeks. Keep the safety stock in all weeks, for all warehouses.
 

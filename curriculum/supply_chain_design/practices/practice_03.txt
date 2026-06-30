@@ -1,9 +1,6 @@
-Week 3 Practice Problems — Production Planning
+TITLE: Week 3 Practice Problems — Production Planning
 
 Ungraded practice problems for Week 3. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
-
-
-================================================================
 
 Practice Problem 1: MPS for Electronic Widgets
 An electronic widget manufacturer is about to plan its production of a high selling widget, NOX12K678P. The demand for the widget for the next 10 weeks has been estimated as follows:
@@ -36,8 +33,6 @@ Part 4
 Formulate a MILP-spreadsheet to find the optimal production plan.
 In the optimal solution, what is the total cost to produce the 10 week demand for NOX12K678P? Please give your answer in dollars without commas or currency symbols.
 
-
-================================================================
 
 Practice Problem 2: Sodaco
 Sodaco runs a plant that makes and bottles private label soft drinks, sold directly to retailers. One client has recently placed an order for one of the SKUs with the following delivery schedule over the next ten weeks (one period=one week):
@@ -75,8 +70,6 @@ Part 6
 While the previous algorithms provide only heuristic solutions, there are several ways to find the optimal solution. For a small problem like this, the fastest way is arguably to use a spreadsheet model. Please make such a model.
 According to your model, what is the minimum total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
 
-
-================================================================
 
 Practice Problem 3: Custom Glass Inc.
 Custom Glass Inc. makes custom-made windows and window frames for all types of buildings. They have just received an order from a client to make and deliver 1,340 framed windows. The windows, which are identical to one another, are to be delivered over the course of six months, according to the following schedule:
@@ -155,8 +148,6 @@ Part 10
 What is the total cost to produce the ordered windows in the optimal solution? Answer in integer dollars without commas or currency symbols.
 
 
-================================================================
-
 Practice Problem 4: ATP
 Consider a manufacturer with the following demand forecast, committed orders, projected available balance, and MPS for the next three planned production runs of a particular item:
 Time period	0	1	2	3	4	5	6	7	8	9	10
@@ -196,8 +187,6 @@ Part 4
 Suppose the item has a BOM as summarized by the tree-diagram below.
 To make the 6,100 items in Period 1, how many "Subparts 1b" are needed?
 
-
-================================================================
 
 Practice Problem 5: DRP at Pixels
 Pixels Co. manufactures LCD screens, in Shenzhen China. The product is distributed from a warehouse in Shenzhen through fulfillment centers in San Bernardino, CA and Newark, NJ for the U.S. market.

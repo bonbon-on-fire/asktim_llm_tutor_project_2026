@@ -1,10 +1,8 @@
-Week 1 Graded Assignment — Basic Supply Chain Network Design
+TITLE: Week 1 Graded Assignment — Basic Supply Chain Network Design
 
 This assignment covers network flow and facility location models. Build spreadsheet (or Python) optimization models to answer each part.
 
-================================================================
 Graded Assignment 1: Locky Locke Inc.
-================================================================
 
 You have finally been promoted to Senior Manager for the nuts and bolts category at Locky Locke Inc., a manufacturer with a large demand for bolts at its three (3) factories. You have surveyed the market and found four (4) suppliers for a certain steady selling SKU, ZA27R46. Your factories' weekly demand for bolts are:
 
@@ -41,9 +39,7 @@ Part 2: You want to take a holistic view of bolt sourcing instead of having each
 Part 3: Based on your optimization model, which supplier should Factory 2 select in order to have the lowest total (purchase and transport) cost for Locky Locke Inc.?
 (Supplier 1: U.S. Ainbolt / Supplier 2: Der Bolt, Thun / Supplier 3: Li Tningbolt / Supplier 4: M. Bolton)
 
-================================================================
 Graded Assignment 2: GoClean&Co
-================================================================
 
 GoClean&Co (GCC) hired you as its Logistics Manager in charge of transshipments. GoClean&Co is a joint public-private energy company dedicated to generating clean and safe nuclear energy. GCC uses a new technology based on radioactive pellets. These pellets can generate electricity for years in GCC's nuclear plants. Once the radioactive pellets are depleted, they are removed from active use and collected at the plants for removal at the end of the month. Once a month, the depleted pellets are removed from the plants, transported to an inspection site for examination, and then moved again to a dedicated storage site for safekeeping.
 
@@ -91,9 +87,7 @@ Part 4: A new regulation will require that no depleted pellets be stored at the 
 - Storage Z: 330 pellets per month
 The new regulations also reduce all transportation costs in the network by 0.94 percent (multiply all previous transportation costs by 0.9906). Optimize the transshipment once more. In this optimized solution, how much is the overall monthly transportation cost for GCC?
 
-================================================================
 Graded Assignment 3: Notebooks for the world
-================================================================
 
 Since you are attending the SC2x course, your best friend Sarah asks you to calculate the coordinates for a distribution center that would minimize its distance to ten cities in Mexico. Using an improvised grid (origin at the top-left corner of the map), you assign horizontal and vertical coordinates to the ten major cities (treated as relative coordinates on an arbitrary Euclidean grid):
 
