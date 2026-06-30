@@ -18,6 +18,9 @@ _DEFAULT_CURRICULUM_ROOT = _REPO_ROOT / "curriculum"
 # exercise_<NN>.txt — exactly two digits.
 _EXERCISE_NAME_RE = re.compile(r"^exercise_(\d{2})\.txt$")
 
+# practice_<NN>.txt — exactly two digits (parallel to exercises).
+_PRACTICE_NAME_RE = re.compile(r"^practice_(\d{2})\.txt$")
+
 
 def _root(curriculum_root: Path | str | None) -> Path:
     return Path(curriculum_root) if curriculum_root is not None else _DEFAULT_CURRICULUM_ROOT
@@ -61,6 +64,52 @@ def read_exercise(
     """Read an exercise file's text, or ``""`` when absent."""
     path = exercise_path(course, exercise_number, curriculum_root)
     return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
+def practice_path(
+    course: str,
+    practice_number: str,
+    curriculum_root: Path | str | None = None,
+) -> Path:
+    """Return the path to a course's practice-problem file (existence not guaranteed)."""
+    return exercises_dir(course, curriculum_root) / f"practice_{practice_number}.txt"
+
+
+def practice_exists(
+    course: str,
+    practice_number: str,
+    curriculum_root: Path | str | None = None,
+) -> bool:
+    """True when the practice-problem file exists on disk."""
+    if not course or not practice_number:
+        return False
+    return practice_path(course, practice_number, curriculum_root).is_file()
+
+
+def read_practice(
+    course: str,
+    practice_number: str,
+    curriculum_root: Path | str | None = None,
+) -> str:
+    """Read a practice-problem file's text, or ``""`` when absent."""
+    path = practice_path(course, practice_number, curriculum_root)
+    return path.read_text(encoding="utf-8") if path.is_file() else ""
+
+
+def discover_practice(
+    course: str,
+    curriculum_root: Path | str | None = None,
+) -> list[str]:
+    """Return sorted zero-padded 2-digit practice-problem numbers for a course."""
+    folder = exercises_dir(course, curriculum_root)
+    if not folder.is_dir():
+        return []
+    nums: list[str] = []
+    for path in folder.glob("practice_*.txt"):
+        m = _PRACTICE_NAME_RE.match(path.name)
+        if m:
+            nums.append(m.group(1))
+    return sorted(nums)
 
 
 def discover_exercises(
