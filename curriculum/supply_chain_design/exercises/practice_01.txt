@@ -1,0 +1,264 @@
+Week 1 Practice Problems — Basic Supply Chain Network Design
+
+Ungraded practice problems for Week 1. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+
+
+================================================================
+
+Practice Problem 1: Network Model Basics
+Throughout the course you will see Supply Chain Networks presented in different forms: in text, as a graph, as a formula, or as a spreadsheet model. It is important that you understand how to transition between the different representations.
+So let's start with making sure you have a good grip of how the network models work! If you find it too easy, consider it a warmup.
+Part 1
+0 points possible (ungraded)
+For this part, consider the figure below. It is a schematic representation of a network. As you can see, there are three (3) plants, two (2) distribution centers, and two (2) customer regions. Goods flow from the plants, through the distribution centers, to the customers' regions.
+In network models, we let  denote the flow on the arc from a node  to another node . In the notation below, =x_ij. Please select the correct label for the arc from P1 to CA.
+Select the best answer
+x_A1
+x_2B
+x_1A
+x_B1
+Part 2
+0 points possible (ungraded)
+In the formulation of the transportation problem and the transhipment problem, we see as one of the constraints that
+What does this constraint mean?
+Select the best answer
+For all demand nodes, the incoming flows must be less than the demand associated with that node
+The sum of all flows in the network must be less than the demand in the network
+For all nodes , the sum of all outgoing flows from node  must be less than or equal to the supply capacity of node
+This is not part of the model formulation
+
+
+================================================================
+
+Practice Problem 2: SteelCo
+SteelCo is a small steel distributor in the Northern USA. They have two distribution centers (DCs), one in Allentown, PA, and one in Toledo, OH.
+SteelCo has just received a large order from a construction contractor and will be supplying steel to four construction projects in the Northeast: one in Buffalo, one in Albany, one in Philadelphia, and one in Cleveland.
+The contractor has ordered the following amounts to be shipped each week:
+Buffalo: 40,500 pounds
+Albany: 22,230 pounds
+Philadelphia: 85,200 pounds
+Cleveland: 47,500 pounds
+Both DCs can each handle 100,000 pounds of steel per week.
+The transport costs for a pound of steel for the different DC-construction site combinations are given in the table below.
+Transport cost per pound	Buffalo	Albany	Philadelphia	Cleveland
+Allentown	52	32	11	69
+Toledo	45	84	76	15
+[Hint: You need to build a transportation model in your spreadsheet, following the steps of the lessons. To check your spreadsheet, try setting each decision variable (the flow on each of the 8 arcs) = 1. Your total cost should be 384. If this is not the case, check your model!]
+Part 1
+0 points possible (ungraded)
+Suppose SteelCo wants to meet the customer's demand for steel at minimum cost. How many pounds of steel should be shipped from the DC in Allentown, PA, to the four construction projects, in total?
+Part 2
+0 points possible (ungraded)
+What is the minimum total cost (at which all constraints are met)?
+Answer the question with an integer.
+Part 3
+0 points possible (ungraded)
+If SteelCo follows the suggested strategy, only one of the DCs will have additional available capacity. Which one?
+Select the best answer
+Allentown, PA
+Toledo, OH
+Both will have available capacity
+How to debug your model:
+Every time you finish modeling an optimization problem, we suggest you debug your model to find some missing spots that could drive you to a wrong answer. Our CTA team created an infographic on how to debug a network design model, the use of Solver, and some tips for common errors and FAQ you will find helpful.
+We recommend you to check it out in our Software for SC2x section: Recitation - Optimization using Spreadsheets / How to Debug your Model.
+
+
+================================================================
+
+Practice Problem 3: Ralph Calvin Hilfiger (RCH) Industries
+Clothing manufacturer and retailer Ralph Calvin Hilfiger (RCH) Industries operates five (5) factories. They distribute their products through five (5) regional distribution centers (DCs) each of which supports a specific market.
+To reduce the number of direct shipments between factories and regional DCs, as well as improve the load factor of shipments, RCH has utilized a crossdocking (XD) facility for some time. Owing to the success of their existing crossdocking facility (XD1), RCH has now decided to open an additional facility (XD2).
+The clothes are transported through the network in small plastic totes via truck. The transportation costs for a tote between the five factories and the two crossdocking facilities are given in the table below.
+Transportation cost	Crossdock 1	Crossdock 2
+Factory 1	30	50
+Factory 2	23	66
+Factory 3	35	14
+Factory 4	70	12
+Factory 5	65	70
+The transportation costs for a tote between the crossdocking facilities and the regional DCs are given in the table below.
+Transportation cost	DC1	DC2	DC3	DC4	DC5
+Crossdock 1	12	25	22	40	41
+Crossdock 2	65	22	23	12	15
+The five factories have the following production capacities per week (number of totes):
+Factory 1: 200
+Factory 2: 300
+Factory 3: 100
+Factory 4: 150
+Factory 5: 220
+The five regional DCs face the following demand per week (number of totes):
+DC 1: 150
+DC 2: 100
+DC 3: 110
+DC 4: 200
+DC 5: 180
+The crossdocking facilities have much spare capacity.
+[Hint: You need to build a transshipment model in your spreadsheet. To check your spreadsheet, try setting each decision variable (the flow on each of the 20 arcs) = 1. Your total cost should be $712 with 5 units going through each crossdock. If this is not the case, check your model!]
+Part 1
+0 points possible (ungraded)
+Suppose RCH wishes to plan the flow of product from Factories to Crossdocks to Distribution Centers in order to minimize total costs.
+How much should be shipped through the new facility, crossdocking facility two?
+Part 2
+0 points possible (ungraded)
+Which DC's will be supported by the new crossdocking facility, XD2?
+Select all correct answers
+DC 1
+DC 2
+DC 3
+DC 4
+DC 5
+Part 3
+0 points possible (ungraded)
+What is the minimum cost? Round your answer to the nearest integer and enter your answer in dollars without the dollar sign.
+Part 4
+0 points possible (ungraded)
+Which of the following changes would not affect the optimal solution?
+Select the best answer
+Only allowing a weekly flow of 400 totes through each of the crossdocking facilities
+Closing Factory 5
+Reducing the capacity of Factory 1 to 190 totes
+All of the above
+
+
+================================================================
+
+Practice Problem 4: SandyCo - Multiple Optima
+For this problem, we will use the Transhipment Model for SandyCo (SandyCo Part 2). To recap, SandyCo has two (2) facilities that mine, clean, and sort sand for use in cement, children’s playboxes, and small beaches. They distribute the sand from their two (2) plants, through two (2) packaging centers (DCs), to three (3) different customer regions where it is packaged and sold.
+Each plant has a specific maximum weekly supply of available sand and each region has an expected minimum weekly required demand. The cost to distribute a ton of sand differs between each plant and region pairing due to distance and other factors.
+The maximum weekly supply from Plant 1 is 100 tons, from Plant 2 it is 125 tons. The expected minimum weekly required demand (in tons) is:
+Region 1: 25
+Region 2: 95
+Region 3: 80
+The transportation costs in dollars per ton of sand are given in the table below.
+Transportation cost	Plant 1	Plant 2	Region 1	Region 2	Region 3
+DC A	190	185	175	180	165
+DC B	210	205	235	130	145
+Part 1
+0 points possible (ungraded)
+In the lesson we learned that in the optimal solution to the problem, the total cost is $69,200 per week. The solution presented in the lecture had the following weekly flows:
+Plant 1 to DC B: 75
+Plant 2 to DC A: 25
+Plant 2 to DC B: 100
+DC A to Region 1: 25
+DC B to Region 2: 95
+DC B to Region 3: 80
+Input the flows above as decision-variables in your spreadsheet model. Don't run the solver. The spreadsheet will tell you that the total weekly cost is indeed $69,200 per week.
+You hear from a colleague using another solver that there is another good solution to the problem. He tells you to consider following weekly flows:
+Plant 1 to DC B: 75
+Plant 2 to DC A: 105
+Plant 2 to DC B: 20
+DC A to Region 1: 25
+DC A to Region 3: 80
+DC B to Region 2: 95
+Input the suggested flows instead of the flows from the lesson. What is the minimum weekly cost using the suggested flow volumes?
+Round your answer to the nearest integer.
+Part 2
+0 points possible (ungraded)
+After discussions with a number of carriers, SandyCo realizes that transportation costs to DC A need to be updated. The new costs are $180 per ton from Plant 1 to DC A and $190 per ton from Plant 2 to DC A.
+How many tons of sand should be delivered from Plant 2 to DC B with the new costs?
+Round your answer to the nearest integer.
+Part 3
+0 points possible (ungraded)
+After hearing that a rival sand distributor is facing economic difficulties, SandyCo wants to reconsider its demand estimates. Were the rival to default, SandyCo believes that their demand would increase by roughly 10% across the board, leading to the following minimum expected demands: Region 1 - 28, Region 2 - 105, and Region 3 - 87 tons respectively.
+How many tons of sand should be delivered from DC A to Region 3 if the expected minimum demand was to increase by the amount specified? Note that the costs from Part 2 still apply.
+Round your answer to the nearest integer.
+Part 4
+0 points possible (ungraded)
+The rival firm did not default - so your demand is back to the original values (Region 1: 25, Region 2: 95, and Region 3: 80).
+The management of Plant 2 has suggested they may use some of the available space in the plant for an on-site packaging machine. With such a machine in place, Plant 2 could bypass the DCs and ship directly to Region 1. Direct transport from Plant 2 to Region 1 costs $275 per ton. It is important to note that Plant 2 can still ship to DCs when needed.  All other costs remain the same as in Part 2.
+If Plant 2 invests in an on-site sand packaging machine, how many tons of sand should be delivered directly from Plant 2 to Region 1? Round your answer to the nearest integer.
+Part 5
+0 points possible (ungraded)
+After investing in the new machine, a breakdown in DC B reduces the weekly capacity of DC B to 80 tons. All other costs and demand remain the same as in Part 2. (Note that the bypass option from Part 4 remains.)
+How many tons of sand should Plant 1 produce if the capacity of DC B drops to 80 tons? There is no capacity constraint for DC A.
+Round your answer to the nearest integer.
+
+
+================================================================
+
+Practice Problem 5: Food Delivery Startup
+You and a friend just started a food delivery startup. The idea is to deliver freshly made, organic, lunch-boxes to be sold in university cafeterias. You have secured deals with cafeterias at three universities and are now looking for a good location for the business.
+To avoid spending too much time in traffic, you think it may be a good idea to find a location close to all three universities.
+The different parameters (weights and coordinates for the locations) are summed up in the following table.
+ID	University	Wgt	xk	yk
+MIT	MIT	250	20	30
+HAR	Harvard	150	20	40
+YAL	Yale	100	100	150
+Part 1
+0 points possible (ungraded)
+What is the weighted X-coordinate?
+Part 2
+0 points possible (ungraded)
+What is the weighted Y-coordinate?
+Round your answer to the nearest integer.
+Part 3
+0 points possible (ungraded)
+What is the average weighted distance from the business location to the 3 universities using the center of gravity technique?
+Round your answer to two decimal places.
+Part 4
+0 points possible (ungraded)
+What is the average weighted distance from the business location to the 3 universities using the Weber technique?
+
+
+================================================================
+
+Practice Problem 6: Temporary Networks
+When a natural disaster strikes, normal supply chains are disrupted and many vital supplies cannot reach those affected through the normal routes. To handle the first couple of days after the disaster, many specialized Non Governmental Organizations (NGOs) work hard to secure vital supplies such as food, blankets, and medicines, and deliver these to people in the affected areas. To do so, they set up temporary supply networks, which only operate as long as needed.
+Suppose you are working with one such NGO to set up a temporary network to distribute disaster-kits in the aftermath of a hurricane. You have secured kits from your central supply facility that will be flown in regularly. The kits need to be delivered once per week as long as needed to eight (8) temporary shelters, which are located a few hours drive from the airport.
+To simplify the operations, you aim to set up a logistics and distribution center (DC) that controls all distribution. All incoming shipments will be transported from the airport directly to the center by the military, and from the DC you will plan how the kits are delivered to the shelters.
+You are choosing between five (5) locations for the DC. The distances between the five (5) potential locations and the eight (8) shelters are shown in the table below. Download from the data spreadsheet.
+Distances in miles	Shelter 1	Shelter 2	Shelter 3	Shelter 4	Shelter 5	Shelter 6	Shelter 7	Shelter 8
+DC 1	0.61	3.32	9.5	6.52	7.77	1.92	8.52	9.75
+DC 2	6.04	0.51	1.34	6.06	0.22	6.33	4.61	3.28
+DC 3	4.99	2.41	2.33	3.95	8.84	7.94	7.87	0.94
+DC 4	5.58	8.8	6.32	8.54	5.15	6.06	9.42	2.16
+DC 5	7.87	9.64	0.7	5.92	2.7	0.26	0.5	3.4
+The weekly demand at each shelter has been estimated as follows:
+Demand in thousands	Shelter 1	Shelter 2	Shelter 3	Shelter 4	Shelter 5	Shelter 6	Shelter 7	Shelter 8
+	14	8	25	22	20	17	18.5	23
+The capacity of the DC will be limited to 150,000 kits per week. It costs $100,000 per week to set up and run a DC.
+Hints and Tips to solve this problem:
+You need to build a facility location model in your spreadsheet, following the steps of the lessons.  To check your spreadsheet, try setting each decision variable (the flow on each of the 40 arcs and the five binary open-or-not variables) = 1.  Your total cost (assuming a $1 per mile per unit transportation cost )  should be 500,199.  If this is not the case, check your model!
+This week, we have learned about different basic models, which are the foundation for more complex problems. The team noticed that this practice problem usually drives most of the current week's questions within the forum. Therefore, the following advice:
+ 1.- Remember to express demand and supply in the same units for your calculations.
+ 2.- Avoid creating your own assumptions! Use only the information provided in the problem statements, and read carefully the question to solve.
+ 3.- Sometimes, you may need to use "=" instead of ">=" for your demand constraint. Go to Software for SC2x - Recitation - Optimization using Excel - How to debug your model section for further details. Try to run your models with = and then with >= and observe what happens and why! This should be helpful for a better understanding of how this works for future problems.
+ Have fun!
+Part 1
+0 points possible (ungraded)
+Trucks that can operate on the roads after the hurricane are in short supply, so you want to choose the location of the DC to minimize the transport work (tonkm, or the total kit-miles travelled) in the temporary network. Note that transport work per kit is proportional to distance.
+Which of the five locations should the NGO choose to minimize the transport work in the temporary network?
+Select the best answer
+DC 1
+DC 2
+DC 3
+DC 4
+DC 5
+Part 2
+0 points possible (ungraded)
+Due to road conditions, the shelters furthest away from the center may suffer from late and unreliable deliveries. As a result you are thinking about opening more than one DC.
+To trade-off the fixed costs with the variable costs, you estimate that each transported mile costs $2 per kit.
+Assuming the military is ok with delivering your supplies to more than one DC, what is the optimal number of DCs?
+Select the best answer
+1
+2
+3
+4
+5
+Part 3
+0 points possible (ungraded)
+You realize that the actual cost of setting up and operating a DC is not perfectly known. What is the optimal number of DCs if the fixed costs are instead $300,000 per week per DC? Assume the same transportation costs as in Part 2.
+Select the best answer
+1
+2
+3
+4
+5
+Part 4
+0 points possible (ungraded)
+When you see the optimal solution from Part 3, you realize that under that solution, much of the demand is more than 2 miles away from a DC. How does the optimal solution change if we require that at least 60% of demand should be less than 2 miles from a DC?
+Select the best answer
+The optimal number of DCs increases
+It is optimal to open DC 2 and DC 5
+The optimal number of shipments to Shelter 7 increases
+There are no changes in the optimal design
+

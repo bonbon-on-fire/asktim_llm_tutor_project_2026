@@ -1,0 +1,183 @@
+Week 4 Practice Problems — Sales & Operations Planning and Distribution Strategies
+
+Ungraded practice problems for Week 4. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+
+
+================================================================
+
+Practice Problem 1: AB Mower
+AB Mower is a small manufacturer of lawn mowers located in southern Sweden. Based on the forecast for the upcoming year, they have created an aggregate production plan available here (Excel) or here (LibreOffice).
+Due to labor laws and union agreements, laying off hired workers is not a practical possibility. Owing to this, the seasonal demand for lawn-mowers has traditionally been met by producing ahead of demand during the winter season, and keep these units in stock until demand increases towards the spring.
+All costs are reported in Swedish krona (SEK).
+Part 1
+0 points possible (ungraded)
+Please refer to the aggregate plan for AB Mower, found in the spreadsheet.
+What is the total amount of inventory carried over from one period to the next during the coming 12 months (that is, the total amount of over-production)? Note that there is no optimization at this stage.
+Answer in full units without commas.
+Part 2
+0 points possible (ungraded)
+In the plan for the coming year, the planner forgot to include the fact that, due to a new deal with the labor union, cost for overtime has increased from SEK 200 per hour to SEK 220 per hour. The planner realizes this will increase costs substantially, and like to know if they should plan to hire workers to account for this change.
+Please complete the model and run it to minimize cost.
+How many workers should AB Mower hire to minimize cost for the next year?
+Round your answer to the nearest integer
+Part 3
+0 points possible (ungraded)
+When the planner discusses the plan with the logistics manager, the manager realizes that the plan is based on a desired service level (fill rate) of around 86%. Month 7 has a service level well below 90%. He believes this is too low, and asks you to increase the cost of stockout to SEK 1,900 per unit and month. Overtime costs are still SEK 220.
+Please run the model again with the new parameter values.
+What is the forecasted fill rate in Month 8 with the new optimal plan?
+Answer in full percent (rounded to the nearest integer) without the percentage symbol. For example, if your answer is 10.7%, enter 11.
+Part 4
+0 points possible (ungraded)
+The planner now wants to include the sales planning into the aggregate model. He gets the sales manager involved in the process and learns that the sales team was thinking about launching an end-of-season promotion to boost sales in Month 9. Initially, they were thinking about reducing the price of a lawn mower by 10% during this month. The assumptions from Part 3 still apply.
+Would it be more profitable to reduce prices by 10% in month 9, assuming a price elasticity of demand of -4?
+Select the best answer
+Yes
+No
+
+
+================================================================
+
+Practice Problem 2: Dire Wolf Revisited
+You are working for Dire Wolf Industries (DWI) helping them run their Sales & Operations Planning (S&OP) program for a line of make to stock items. Specifically, you are running the aggregate planning model to help assist the Chief Operating Officer (COO) and the Vice President of Sales to agree upon the next 12 months plan.
+The aggregate model is attached here for Excel and LibreOffice. The data for the model are contained in the spreadsheet itself.
+Part 1
+0 points possible (ungraded)
+You want to develop an initial aggregate plan for the next 12 months. Use the initial data provided in the spreadsheet and assume that there are no planned promotions or discounts over the next 12 months. Find the optimal plan over the next 12 months and answer the following questions.
+What is the number of employees hired over the next 12 months?
+What is the number of employees fired over the next 12 months?
+What is the total number of overtime hours worked over the next 12 months?
+What is the total number of items backlogged over the next 12 months?
+What is the total number of items produced by the Dire Wolf plant over the next 12 months?
+What is the total number of items produced by the outsourced contract manufacturer over the next 12 months?
+Part 2
+0 points possible (ungraded)
+You have been asked to see if any of the following recommendations from your Chief Operating Officer (COO) will lead to a better solution. Treat each strategy independently.
+Which of the following changes will lead to an increase in total annual profit according to the aggregate plan?
+Select all correct answers
+Increase the allowable overtime hours from 10 to 20 hours per employee per month.
+Do not allow any backlogging of orders.
+Keep the starting workforce at 24 people, but allow the model to hire up to 6 more people over the course of the year.
+Negotiate with your employees to increase the number of regular hours worked per month from 160 to 180 and increase the monthly wages from 2,400 to 2800 per employee per month.
+None of these strategies increases the total annual profit.
+Part 3
+0 points possible (ungraded)
+None of the strategies in Part 2 were taken. The COO decides to use the plan described in Part 1. However, the Vice Presidents of Sales and of Marketing have stated that they think a promotion would help increase total profits.
+They believe that every 1 percent decrease in the base price will increase the sales by 5 percent. That is, they assume an elasticity of demand with respect to price to be -5. Remember, in the spreadsheet we enter this in as a positive number since the percent price discount is a positive number.
+They want to run a promotion for one and only one month during the next 12 months where the price is discounted 20%.
+Which month should the promotion be run in order to maximize the total annual profit?
+Part 4
+0 points possible (ungraded)
+The promotion in Part 3 was not run. Instead, go back to the model from Part 1. The senior team has decided to run a one month promotion during September (month 9) at 25% since this is when most of their customers decide to make their purchases.
+They believe that every 1 percent decrease in the base price will increase the sales by 6 percent. That is, they assume an elasticity of demand with respect to price to be -6. Remember, in the spreadsheet we enter this in as a positive number since the percent price discount is a positive number.
+Which of the following statements are true if this promotion is planned?
+Select all correct answers
+The profitability (as compared to Part 1) will increase
+The profitability (as compared to Part 1) will decrease
+The total units sold (as compared to Part 1) will increase
+The total units sold (as compared to Part 1) will decrease
+The total revenue in dollars (as compared to Part 1) will increase
+The total revenue in dollars (as compared to Part 1) will decrease
+Part 5
+0 points possible (ungraded)
+Again, the senior leadership team has decided to not pursue any of the promotion strategies. You are still using the base model from Part 1. You become aware of the fact that your plant in San Francisco has very limited storage space. In fact, you learn that you cannot store more than 1000 units in any one month during the next 12 months.
+Develop an aggregate plan that enforces this new constraint and answer the following questions.
+How much lower is your total annual profit with this new plan compared to Part 1? Enter your answer as an integer.
+What is the number of employees hired over the next 12 months?
+What is the number of employees fired over the next 12 months?
+What is the total number of overtime hours worked over the next 12 months?
+What is the total number of items backlogged over the next 12 months?
+What is the total number of items produced by the Dire Wolf plant over the next 12 months?
+What is the total number of items produced by the outsourced contract manufacturer over the next 12 months?
+
+
+================================================================
+
+Practice Problem 3: Araz Revisited
+For this problem, we will use the Model for Araz. To recap, Araz is a fast-fashion retailer selling mainly to fashion-conscious women on a budget. It currently distributes its products from its own plants to its own branded stores or directly from fulfillment centers to homes for online sales. It has decided to offer different delivery options for its online (e-commerce & m-commerce) consumers:
+Home delivery
+Pick up in their stores
+Pick up in a convenience store (e.g. an attended pick-up point)
+Pick up in an Automated Package Station (e.g. “un-attended” pick up point)
+Araz stores its inventory of goods at a central distribution center (CDC) which is used to send goods through all the above channels. Some of the channels get the goods directly from the CDC but it also has two intermediary depots to reach all the channels on time and also keep up with the demand. The network design depicting the nodes and possible flows was shown in the video lecture and can be referred to from the slides. You have the following data provided to you about the capacities of depots, costs, and quantities demanded at the various channels.
+The capacity at the CDC is unlimited, while the capacity at Intermediary Depot 1 is 20000 boxes/month, and Intermediary DC 2 has a capacity of 5000 boxes/month. You can assume there is no cost associated with operating the CDC, as this will not influence the choice of channels and flows. The fixed and variable costs for operating the Intermediary Depots are:
+Table 1: Costs to operate Intermediary Depots
+Variable cost ($/box)
+Fixed cost ($/month)
+Transportation cost ($/box)
+Intermediary Depot 1
+1.35
+1100
+2.40
+Intermediary Depot 2
+1.60
+900
+2.45
+The quantity demanded and the variable cost at the various channels are:
+Table 2: Demand and variable cost per channel
+Convenience Store
+Retail store
+APS
+Home
+Qty demanded (boxes/month)
+4500
+15000
+1000
+3000
+Variable cost ($/box)
+0.5
+-
+0.75
+-
+The POD transportation costs ($/box) are as follows:
+Table 3: POD transportation cost in $/box
+Convenience Store
+Retail store
+APS
+Home
+CDC
+ 6.00
+ 5.85
+ 6.25
+ 8.15
+Intermediary Depot 1
+ 2.20
+ 2.10
+ 9,999.00
+ 9,999.00
+Intermediary Depot 2
+ 9,999.00
+ 9,999.00
+ 1.05
+ 3.40
+The minimum number of Depots to open is 0 and the maximum is 2.
+Hint: While the optimization model for this problem is already shared, it is best to build your own model to understand the nuances of the process involved.
+Part 0
+0 points possible (ungraded)
+For sanity check, run your optimization model and calculate the following
+What is the optimal total cost?
+How many Intermediary Depots are open? Options = 0, 1, 2
+How much quantity of goods is flowing through Intermediary Depot 2?
+Part 1
+0 points possible (ungraded)
+Over a period of time, Araz notices that the demand from its self-serve customers is increasing and it updates its estimates of quantity demanded through the channels APS and Home to 2000 and 4000 boxes/month respectively. Araz is willing to use anywhere between 0 to 2 depots in order to serve its customers.
+What is the new optimal total cost?
+What is the quantity of goods flowing directly from the CDC to customers Home?
+How much spare capacity is left unused at Intermediary Depot 2?
+Part 2
+0 points possible (ungraded)
+Noticing the limitations, Araz decides to double the capacity of its Intermediary Depot 2 to 10000 boxes/month.
+What is the new optimal total cost?
+What is the quantity of goods flowing directly from the CDC to customers Home?
+How much spare capacity is left unused at Intermediary Depot 2?
+Part 3
+0 points possible (ungraded)
+The freight contract of transporter moving goods from the CDC got revised this year. The costs of transporting goods from CDC have gone up by approximately 1%. The revised POD transportations costs from CDC are as follows:
+CDC to Convenience Store = 6.06 $/box
+CDC to Retail Store = 5.95 $/box
+CDC to APS = 6.31 $/box
+CDC to Home = $8.23 $/box
+Note: to answer the following questions, please also consider what you have learned in Parts 1 and 2 above.
+What is the new optimal total cost?
+How many Intermediary Depots are open? Options = 0, 1, 2
+What is the total quantity of goods flowing directly from the CDC to customers Home?
+

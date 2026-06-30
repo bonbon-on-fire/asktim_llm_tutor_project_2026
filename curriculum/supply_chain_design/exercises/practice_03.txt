@@ -1,0 +1,270 @@
+Week 3 Practice Problems — Production Planning
+
+Ungraded practice problems for Week 3. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+
+
+================================================================
+
+Practice Problem 1: MPS for Electronic Widgets
+An electronic widget manufacturer is about to plan its production of a high selling widget, NOX12K678P. The demand for the widget for the next 10 weeks has been estimated as follows:
+Week	Demand
+1	200
+2	180
+3	220
+4	170
+5	160
+6	170
+7	180
+8	190
+9	220
+10	210
+TOTAL	1900
+As soon as a widget is produced it is sent to the finished goods (FG) inventory. If it is shipped from the FG inventory the same week it is produced, the manufacturer assumes no inventory holding cost for the widget. However, if a widget is not shipped from the inventory the same week it is produced, a holding cost of $1 per widget is incurred for every week in inventory. As of now (end of week 0), there are 300 widgets in the FG inventory.
+The setup cost to run a batch is assumed to be $1,200. The manufacturer could make all widgets in one week, so capacity is not an issue. Note that setup costs are incurred for the first batch every week independently of whether the same unit was produced in the last run of the previous week.
+Part 1
+0 points possible (ungraded)
+What is the total cost to produce the 10 week demand for NOX12K678P if the manufacturer chooses a fixed level manufacturing strategy for the MPS? Assume that each week has one production run. Please give your answer in dollars without commas or currency symbols.
+Part 2
+0 points possible (ungraded)
+What is the total cost to produce the 10 week demand for NOX12K678P if the manufacturer chooses a Chase Demand manufacturing strategy for the MPS? The demand is considered deterministic so there is no need for a safety stock. Please give your answer in dollars without commas or currency symbols.
+Part 3
+0 points possible (ungraded)
+The manufacturer realizes it may be a better idea to use some kind of hybrid strategy taking into account both holding cost and setup costs.
+What is the total cost to produce the 10 week demand for NOX12K678P if the manufacturer uses the Silver-Meal heuristic? Please give your answer in dollars without commas or currency symbols.
+Part 4
+0 points possible (ungraded)
+Formulate a MILP-spreadsheet to find the optimal production plan.
+In the optimal solution, what is the total cost to produce the 10 week demand for NOX12K678P? Please give your answer in dollars without commas or currency symbols.
+
+
+================================================================
+
+Practice Problem 2: Sodaco
+Sodaco runs a plant that makes and bottles private label soft drinks, sold directly to retailers. One client has recently placed an order for one of the SKUs with the following delivery schedule over the next ten weeks (one period=one week):
+Period	Demand
+1	3000
+2	3100
+3	3200
+4	3100
+5	2900
+6	2800
+7	2800
+8	2900
+9	2800
+10	3000
+TOTAL	29600
+The order is of one-time character - there are no promises for future orders from the same client.
+Sodaco needs your help to create a production plan that minimizes the total costs. Costs are incurred both from holding inventory of finished goods and from changeovers in the production line. Sodaco estimates these costs according to the following:
+Inventory holding costs: $0.1 per item and week
+Production setup costs: $800 per production run
+Any products delivered in the same week as manufactured incur no holding costs. Holding costs are then incurred for every week after the manufacturing week. Capacity is not an issue at this point.
+Part 1
+Using the One-time-run heuristic, what is the total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+Part 2
+Using the Lot-for-lot heuristic, what is the total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+Part 3
+One way to improve the solutions from Part 1 and Part 2 would be by using the FOQ heuristic. Use the EOQ-formula to find the optimal production quantity. Use average demand (2,960). Round your answer to nearest integer.
+Using the FOQ heuristic, what is the total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+Part 4
+You also want to try the POQ heuristic. Assume the optimal time between runs, \(t^*\), is 4.
+Using the POQ heuristic, what is the total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+Part 5
+The Silver-Meal heuristic provides a slightly more advanced way to create a production schedule.
+Using the Silver-Meal heuristic, what is the total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+Part 6
+While the previous algorithms provide only heuristic solutions, there are several ways to find the optimal solution. For a small problem like this, the fastest way is arguably to use a spreadsheet model. Please make such a model.
+According to your model, what is the minimum total cost for producing the ordered units? Please give your answer in dollars without commas or currency symbols.
+
+
+================================================================
+
+Practice Problem 3: Custom Glass Inc.
+Custom Glass Inc. makes custom-made windows and window frames for all types of buildings. They have just received an order from a client to make and deliver 1,340 framed windows. The windows, which are identical to one another, are to be delivered over the course of six months, according to the following schedule:
+January: 300 windows
+February: 280 windows
+March: 200 windows
+April: 190 windows
+May: 160 windows
+June: 210 windows
+To avoid tying up too much working capital, the production manager of Custom Glass, Mr. Dumpty, is hesitant to produce all 1,340 windows at once. Not only would this tie up capital, it would also lead to a high risk obsolescence due to the rough handling in the warehouse. However, splitting up the order into several batches is also costly. For every batch they make there will be an initial setup cost due to equipment changeover and scrap from the "burn-in" period when the equipment is being fine-tuned.
+Mr. Dumpty estimates the unit holding cost to be $2 per month and the setup cost to be $1,000 per batch. If the windows are shipped within the same month, they do not incur any holding costs, but for future periods they do. Custom Glass can easily produce all windows in a day, so capacity is not an issue. The factory closes at night, so you can assume there is a setup cost for the first batch every day, independently of whether it was the last batch the day before or not.
+Mr. Dumpty now asks for your help in making a production plan for the order.
+Part 1
+0 points possible (ungraded)
+You start by exploring a simple heuristic: the Lot-for-Lot method. Using this method, what is the production quantity for each of the six months? Answer in integer units without commas.
+January
+February
+March
+April
+May
+June
+Part 2
+0 points possible (ungraded)
+What is the total cost to produce the ordered windows when using the Lot-for-Lot method in Part 1? Answer in integer dollars without commas or currency symbols.
+Part 3
+0 points possible (ungraded)
+While Mr. Dumpty enjoys the simplicity of your Lot-for-Lot method, he thinks the setup costs are too high. You decide to try the FOQ-method instead. Using your skills from SC1x, you decide on a fixed production quantity of 470, which is to be used for all runs except the last run. In the last run, you produce no more than what is needed (since it is a one-time order).
+Using an FOQ heuristic with production quantity 470, what is the production quantity for each of the six months? Answer in integer units without commas.
+January
+February
+March
+April
+May
+June
+Part 4
+0 points possible (ungraded)
+What is the total cost to produce the ordered windows when using the FOQ method in Part 3? Answer in integer dollars without commas or currency symbols.
+Part 5
+0 points possible (ungraded)
+To avoid the high holding costs of the FOQ method, you decide to also try the POQ method, with production every second month.
+Using the POQ heuristic with t=2, what is the production quantity for each of the six months? Answer in integer units without commas.
+January
+February
+March
+April
+May
+June
+Part 6
+0 points possible (ungraded)
+What is the total cost to produce the ordered windows when using the POQ method in Part 5? Answer in integer dollars without commas or currency symbols.
+Part 7
+0 points possible (ungraded)
+You want to explore if maybe a more advanced heuristic would provide a better result, and decide to try the Silver-Meal heuristic.
+Using the Silver-Meal heuristic, what is the production quantity for each of the six months? Answer in integer units without commas.
+January
+February
+March
+April
+May
+June
+Part 8
+0 points possible (ungraded)
+What is the total cost to produce the ordered windows when using the Silver-Meal heuristic in Part 7? Answer in integer dollars without commas or currency symbols.
+Part 9
+0 points possible (ungraded)
+Mr. Dumpty is still skeptical. He understands that the heuristics you presented are just heuristics and may be far from the optimal solution. Now he wants to know what the actual optimal schedule would look like.
+Create a spreadsheet model to find the optimal production schedule. Based on this model, what is the production quantity for each of the six months? Answer in integer units without commas.
+January
+February
+March
+April
+May
+June
+Part 10
+0 points possible (ungraded)
+What is the total cost to produce the ordered windows in the optimal solution? Answer in integer dollars without commas or currency symbols.
+
+
+================================================================
+
+Practice Problem 4: ATP
+Consider a manufacturer with the following demand forecast, committed orders, projected available balance, and MPS for the next three planned production runs of a particular item:
+Time period	0	1	2	3	4	5	6	7	8	9	10
+Forecast	0	1500	1550	1600	1550	1450	1400	1400	1450	1400	1500
+Committed orders	0	800	750	1400	1300	1000	970	980	850	750	700
+Projected Available balance	500	5100	3550	1950	400	4650	3250	1850	400	2000	500
+Production plan	0	6100	0	0	0	5700	0	0	0	3000	0
+The data is available for download here (Excel) or here (LibreOffice).
+Part 1
+0 points possible (ungraded)
+Suppose the manufacturer wants to know how many units there are available to promise to incoming customers.
+If each production cycle is planned independently, what is the amount available to promise from each of the production runs? Assume inventory on hand before period 1 can be sold before the run in period 5. Answer in integer units without commas.
+What is the discrete ATP in time period 1?
+What is the discrete ATP in time period 5?
+What is the discrete ATP in time period 9?
+Part 2
+0 points possible (ungraded)
+If available inventory carries over to the next run, what is the amount available to promise from each of the production runs? Answer in integer units without commas.
+What is the cumulative ATP in time period 1?
+What is the cumulative ATP in time period 5?
+What is the cumulative ATP in time period 9?
+Part 3
+0 points possible (ungraded)
+Now let's move to Period 2. Suppose the manufacturer sold according to the forecast in Period 1, and now has 5,100 units in stock. The manufacturer receives the following new orders:
+Order 1: 600 units to be delivered in Period 3
+Order 2: 200 units to be delivered in Period 4
+Order 3: 1200 units to be delivered in Period 6
+Order 4: 800 units to be delivered in Period 7
+Which of the following are true?
+Select all correct answers
+The manufacturer should accept all orders if inventory is carried over between periods.
+The manufacturer should accept all orders independently of whether of not inventory is carried over between periods.
+The manufacturer should accept the first two orders independently of whether of not inventory is carried over between periods.
+The manufacturer cannot accept both Order 3 and Order 4 unless inventory is carried over between periods.
+Part 4
+0 points possible (ungraded)
+Suppose the item has a BOM as summarized by the tree-diagram below.
+To make the 6,100 items in Period 1, how many "Subparts 1b" are needed?
+
+
+================================================================
+
+Practice Problem 5: DRP at Pixels
+Pixels Co. manufactures LCD screens, in Shenzhen China. The product is distributed from a warehouse in Shenzhen through fulfillment centers in San Bernardino, CA and Newark, NJ for the U.S. market.
+The demand planner for the company is in the process of working requirements for the following 10 weeks.
+He is given the following data.
+Shenzhen warehouse:
+There are currently (week 0) 25000 units on hand.
+The order quantity  equals 25000 units.
+Safety stock is equal to 5000 units.
+Lead time to get the LCDs from factory is 1 week.
+San Bernadino fulfillment center:
+There are currently (week 0) 15000 units on hand.
+The shipment order quantity  equals 10000 units.
+Safety stock is equal to 2000 units.
+Shipment lead time to get the LCDs from Shenzhen warehouse is 1 week.
+Newark fulfillment center:
+There are currently (week 0) 14000 units on hand.
+The shipment order quantity  equals 8000 units.
+Safety stock is equal to 1000 units.
+Shipment lead time to get the LCDs from Shenzhen warehouse is 1 week.
+The table below shows the forecasted units (period usage) for the next 10 weeks.
+	Week
+San Bernadino Fulfillment Center	1	2	3	4	5	6	7	8	9	10
+Demand	5753	7069	7559	7349	5807	6390	5164	7455	6795	6968
+	Week
+Newark Fulfillment Center	1	2	3	4	5	6	7	8	9	10
+Demand	4466	5917	3409	3951	3785	5504	5366	4017	4727	3928
+Part 1
+0 points possible (ungraded)
+Determine the weeks in which the San Bernadino fulfillment center should be receiving its shipments ("planned order receipts") to fulfill its local demand of LCDs.
+Select all correct answers
+Week 1
+Week 2
+Week 3
+Week 4
+Week 5
+Week 6
+Week 7
+Week 8
+Week 9
+Week 10
+Part 2
+0 points possible (ungraded)
+Determine the weeks in which the Newark fulfillment center should be receiving its shipments ("planned order receipts") to fulfill its local demand of LCDs.
+Select all correct answers
+Week 1
+Week 2
+Week 3
+Week 4
+Week 5
+Week 6
+Week 7
+Week 8
+Week 9
+Week 10
+Part 3
+0 points possible (ungraded)
+Determine the weeks in which the Shenzhen factory should be releasing its orders ("planned order releases").
+Select all correct answers
+Week 1
+Week 2
+Week 3
+Week 4
+Week 5
+Week 6
+Week 7
+Week 8
+Week 9
+Week 10
+

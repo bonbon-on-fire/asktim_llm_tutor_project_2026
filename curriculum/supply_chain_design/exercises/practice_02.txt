@@ -1,0 +1,323 @@
+Week 2 Practice Problems — Advanced Supply Chain Network Design
+
+Ungraded practice problems for Week 2. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+
+
+================================================================
+
+Practice Problem 1: Estimating costs
+After hearing about your skills in building models for supply chain decision support, a small widget manufacturer has asked for your help in planning their distribution. Currently, the firm runs a small network with three (3) manufacturing sites, one (1) DC, and eight (8) regional warehouses. The widgets are transported by a dedicated carrier from the manufacturing sites through the DC to the regional warehouses.
+In particular, the manufacturer has asked for your help in deciding how many DCs to use in the network, as well as which potential DC locations to use. Having taken a course in Supply Chain Design, you quickly understand that before you can help the manufacturer modeling the problem, you need to understand current costs.
+After talking to the manufacturer, the manufacturer sends you the following data-file: data (Excel); data (LibreOffice).
+Part 1
+0 points possible (ungraded)
+Please refer to the data file, tab "Inbound Transportation". This data shows the shipment volume and the price paid for the shipment to the carrier for a number of shipments from the different manufacturing sites to the DC.
+Based on your estimates, what are the manufacturer's transportation costs per widget for the three arcs? Answer in dollars without decimals, e.g., if your solution is $4.25, write 4. In this case, transport cost is the price paid to the carrier.
+Manufacturing site 1 to the DC:
+Manufacturing site 2 to the DC:
+Manufacturing site 3 to the DC:
+Part 2
+0 points possible (ungraded)
+Please refer to the data file, tab "DC". This shows, for each day, the total operating costs and shipment volume through the DC.
+Based on your estimates, what are the fixed and variable costs per day in the DC? Answer in dollars without decimals, e.g., if your solution is $4.25, write 4.
+Fixed cost:
+Variable cost:
+Part 3
+0 points possible (ungraded)
+When you report your findings to the widget manufacturer, they tell you that the transportation costs are not linear in the number of widgets per shipment. Instead, they tell you, they pay a minimum cost per shipment independent of volume. When you look at the data again you realize that this can actually be seen in the data.
+When you build a supply chain network optimization model based on your estimated variable transportation costs, what type of bias will you have to be aware of?
+Select the best answer
+If your model suggests it is optimal to ship less than 5 widgets per period from manufacturing plant 1 to the DC, then the model is underestimating the total cost
+If your model suggests it is optimal to ship less than 5 widgets per period from manufacturing plant 1 to the DC, then the model is overestimating the total cost
+If your model suggests it is optimal to ship more than 5 widgets per period from manufacturing plant 1 to the DC, then the model is underestimating the total cost
+If your model suggests it is optimal to ship more than 5 widgets per period from manufacturing plant 1 to the DC, then the model is overestimating the total cost
+
+
+================================================================
+
+Practice Problem 2: Papper
+Papper is a paper goods manufacturer. One of their main paper products is a paper towel, which is produced in two (2) plants in the contiguous U.S. From the plants, the paper towels are sent to nine (9) regional warehouses (RW), from where they are then shipped to customers across the U.S.
+The distribution manager at Papper wants to reduce the number of direct transports in the network, reduce the inventory levels at the plants, and move inventory closer to the regional warehouses, by introducing a central warehouse (CW) where all finished paper towels are stored before further shipment. That is, the idea is to have the towels flowing from the plants to the CW and then to the RWs. The CW will have a small safety stock, but everything that comes into the CW during a week should also leave the CW during that week.
+The distribution manager has found five (5) candidate locations for the CW that he is now choosing between. Capacity is not an issue at any of them.
+All data, including weekly demand data (in number of boxes), can be downloaded in (Excel) or in (Libre Office). Assume transportation cost is $1 per mile per box of paper towels.
+Hint - Sanity Check:  You need to build a supply chain network model in your spreadsheet, following the steps of the lessons. To check your spreadsheet, try setting each decision variable (the flow on each of the 10 inbound arcs, 45 outbound arcs, and the five binary open-or-not variables) = 1. Also, for this sanity check to work, note that you should link your variable costs at the CWs to the units outflow to the RWs. Using the units inflow would also work for the optimized solution because of the conservation of flow constraint but will lead you to a different answer at this non-optimized step. With that all set and without running the solver, your total cost should be $405,282. If this is not the case, check your model!
+Part 1
+0 points possible (ungraded)
+Out of the candidate locations, which central warehouse location minimizes total costs (while meeting the constraints)?
+Select the best answer
+CW 1
+CW 2
+CW 3
+CW 4
+CW 5
+Part 2
+0 points possible (ungraded)
+Suppose the distribution manager wants at least 60% of regional demand to be within 70 miles of the central warehouse(s).
+How many central warehouses are used in the optimal solution, if we introduce the constraint that 60% of regional demand must be within 70 miles of a central warehouse?
+Select the best answer
+1
+2
+3
+4
+5
+Part 3
+0 points possible (ungraded)
+Suppose the same service constraints as in Part 2 applies.
+After investigating the transport market, the manager realizes that he has completely overestimated the inbound transportation costs. In fact, inbound transportation costs can be reduced to $0.3 per mile and box.
+How does this change the optimal network design (compared to Part 2)?
+Select the best answer
+It is now optimal to use Central Warehouse 4
+The amount of demand within 70 miles decreases
+More production is allocated to Plant 1
+Manufacturing costs increase
+All of the above
+
+
+================================================================
+
+Practice Problem 3: Colombian Premium Coffee
+A traditional Colombian Coffee manufacturer called CPC has hired your services as a supply chain consultor to analyze the distribution of its brand-new premium product, named Coffee Indeed ®. This product is 1 package containing 1-kilogram of ground and roasted Arabica coffee to be commercialized and distributed in three cities: Bogotá (DC 1), Medellín (DC 2), and Cali (DC 3). Due to governmental tax benefits, the company roasts and packs the product in two factories: Barranquilla (Plant 1) and Santander (Plant 2). CPC hires carriers to transport the products from the plants to each of the three distribution centers (DCs). Each DC has a different demand, and each plant has a different production capacity.
+Demand:
+Bogotá: 345,000 units per week
+Medellín: 263,000 units per week
+Cali: 172,000 units per week
+Plant Capacities:
+Barranquilla: 610,000 units per week
+Santander: 350,000 units per week
+Part 0
+0 points possible (ungraded)
+This question works as a checkpoint to support you in building your model.
+Have in mind that this problem does not constrain the number of pallets to be an integer; therefore, you can use the number of pallets with decimal places.
+Under the same assumption, the price per pallet is proportional to the number of units it's carrying, so you can analyze the transportation cost in the same units that Demand and Capacity are expressed. We know this is not always the case in real life but think of this as a simplified model.
+Please, make your model and set all decision variables into "1".
+A) What is the capacity constraint of Barranquilla (answer in number of units)
+B) What is the total number of units of products transported from Barranquilla (Plant 1) to all DCs?
+C) What is the total number of units of product transported from all plants to Medellín (DC 2)?
+D) What is the total demand of Medellín (DC 2) in units?
+Part 1
+0 points possible (ungraded)
+Michael Turner, the network design manager, asked you to create a network design model to optimize the transportation flow of Coffee Indeed ® from the plants to the DCs.
+CPC organizes the units of product in pallets, each pallet holds 1,000 units (one thousand units). The price table of the carrier to move 1 pallet from each plant to each DC ($/pallet) is shown below:
+ $/pallet	Bogotá (DC 1)	Medellín (DC 2)	Cali (DC 3)
+Barranquilla (Plant 1)	130.00	90.60	142.00
+Santander (Plant 2)	53.60	41.60	88.80
+What is the minimum total weekly cost for distributing the products from the plants to the three DCs?
+Round your answer to the nearest integer with no commas or currency signs. For example, if your answer is $168,987.25 then you would enter 168987.
+How many plants are used?
+Part 2
+0 points possible (ungraded)
+The marketing team realizes that a 1-kilogram package might not attend all types of demand for premium coffee and decide to test a second product. This other product is 1 package containing 500 grams of the ground and roasted Arabica coffee to be commercialized in the same cities.
+Both plants can produce both products: the 1-kilogram Coffee Indeed ® (product 1) and the 500-grams Coffee Indeed ® (product 2). Capacity in units applies to any product unit, independently of its weight or packaging. This new product 2 is transported in the same vehicles of product 1 using the same transportation costs; however, 1 pallet can hold 2000 units (two thousand) of product 2.
+As the team foresees light cannibalization of the market share, the planning team forecasted a new demand for both products.
+Demand (units/week)	Bogotá (DC 1)	Medellín (DC 2)	Cali (DC 3)
+1-kilogram Coffee Indeed ® (product 1)	276,000	210,400	137,600
+500-grams Coffee Indeed ® (product 2)	138,000	105,200	68,800
+What is the minimum weekly cost for moving both products from the plants to the three DCs?
+Round your answer to the nearest integer with no commas or currency signs. For example, if your answer is $168,987.25 then you would enter 168987.
+Part 3
+0 points possible (ungraded)
+You are informed that due to a severe fire in plant 2, some packaging machinery was lost. To keep both plants producing both types of products, the maintenance manager Ms. $Female_00 $Last_00 has redistributed the remaining machinery in both plants. This move enabled both plants with the flexibility of producing both types of products; however, it restricted the production capacities as described below:
+Barranquilla (Plant 1) cannot produce more than 300,000 500-grams Coffee Indeed ® (product 2) per week.
+Santander (Plant 2) cannot produce more than 250,000 1-kilogram Coffee Indeed ® (product 1) per week.
+Create a linear program that optimizes the flow of each product from plants to DCs while adhering to these new capacity constraints.
+Please, consider at all times that total capacities of both plants haven't changed as described in the problem statement.
+Calculate the minimum weekly cost for satisfying the demand of the three DCs. How much more expensive is this solution than the one in Part 2?
+Round your answer to the nearest integer with no commas or currency signs. For example, if your answer is $168,987.25 then you would enter 168987.
+Part 4
+0 points possible (ungraded)
+The Financial team believes that you haven’t included the fixed cost of running a production line at a plant in your model. The controller tells you that CPC spends $12,000 for each type of product plant 1 produces, and $8,000 for each type of product plant 2 produces. In other words, if Plant 2 is producing one product, it costs $8,000 to run it, but if that plant is producing both products, CPC spends $16,000.
+How should we adjust the variables and constraints in the model to implement the changes requested by the Financial team?
+Check all that apply. Note that upon submission, if some points have been awarded, all options selected will be marked as green (even the wrong ones). If no points have been awarded, all options selected will be marked as red (even the right ones). A message indicating "correct", "partially correct" or "incorrect" will appear below the question. We know this can be confusing and are working with MIT Learn software engineers on this issue.
+Add four new constraints to allow outbound shipments of either product from either plant only if the corresponding production line is open.
+Add two new constraints to allow outbound shipments from a plant only if it is open.
+Add three new constraints to allow outbound shipments from a plant only if it is open.
+Add two binary variables to represent opening each of the two production lines.
+Add four binary variables to represent opening each of the two production lines at each of the two plants.
+None of the above
+Part 5
+0 points possible (ungraded)
+Building off of the model from Part 3 and considering the changes you identified in Part 4, create a linear program that optimizes the flow of each coffee product from plants to DCs, while adhering to the capacity constraints from Part 3 as well as the fixed cost per product per plant.
+Which of the following statements are true for the optimal solution to this problem?
+Select all the correct answers. Note that upon submission, if some points have been awarded, all options selected will be marked as green (even the wrong ones). If no points have been awarded, all options selected will be marked as red (even the right ones). A message indicating "correct", "partially correct" or "incorrect" will appear below the question. We know this can be confusing and are working with MIT Learn software engineers on this issue.
+Barranquilla (Plant 1) produces both product 1 and product 2.
+Barranquilla (Plant 1) produces only product 1.
+Barranquilla (Plant 1) produces only product 2.
+Santander (Plant 2) produces both product 1 and product 2.
+Santander (Plant 2) produces only product 1.
+Santander (Plant 2) produces only product 2
+Part 6
+0 points possible (ungraded)
+What is the total weekly cost for flowing both coffee products from the two plants to the three DCs for the problem as described in Part 5?
+Round your answer to the nearest integer with no commas or currency signs. For example, if your answer is $168,987.25 then you would enter 168987.
+
+
+================================================================
+
+Practice Problem 4: Harley Stevenson
+HarleyStevenson is a bicycle manufacturer operating a small supply chain distribution network. After hearing about your expertise in Supply Chain Network Design, they have asked you to help them analyze their network to find opportunities for improvement.
+All HarleyStevenson's bicycles are made to stock from a single manufacturing site. Once per week, finished bicycles are transported in large batches, using direct transports, from the manufacturing site to three (3) Distribution Centers (DCs). The DCs are all operated by third party providers, at the following weekly costs for HarleyStevenson:
+DC1: Fixed cost: $2,000, Variable cost: $5 per bicycle
+DC2: Fixed cost: $1,700, Variable cost: $6 per bicycle
+DC3: Fixed cost: $1,700, Variable cost: $5 per bicycle
+From the DCs, the bicycles are transported to five (5) sales regions using common carrier transport. Current company policy states that each sales region be supplied by only one (1) of the DCs, but in practice this is not always the case. Transport cost data as well as the actual flows for a few typical weeks are found in the following data file: Excel, LibreOffice.
+(Note from the data that the inbound transports may differ in price per bicycle each week, whereas the outbound transports are paid for according to the common carrier's list price, specified per bicycle.)
+There are currently no capacity restrictions.
+Part 1
+0 points possible (ungraded)
+To analyze HarleyStevenson's network in an optimization model, you realize you need to understand the transportation costs. You decide to make a linear approximation for the inbound transportation costs.
+Please refer to the data file, tab 'Inbound Transportation'. What is the average inbound transportation cost per bicycle for the three DCs? Answer in dollars without the dollar sign, e.g., if your solution is $23.45, write 23.
+Note: When you check your answer you will check all three boxes below!
+DC1
+DC2
+DC3
+Part 2
+0 points possible (ungraded)
+You decide to create a network spread sheet model using the costs you just calculated. To assess the accuracy of your model, you ask for an extract from HarleyStevenson's Enterprise Resource Planning (ERP) system, which shows that the actual average cost per week for the network over week 1-9 is $59,800. Manufacturing costs are not included in the cost.
+Using the inbound transportation costs from Part 1 (check OUR answer) to model the current situation, what is the difference between the model's cost and the true cost provided by the ERP system? Answer in dollars, without the dollar sign, e.g., if your model outputs $57,000, your solution is $57,000-$59,800=-$2,800, and you write -2800 (note the minus sign).
+Part 3
+0 points possible (ungraded)
+The current policy is to have each sales region supplied by only one DC. However, as we can see in the data, this policy is not followed all the time.
+How much lower would HarleyStevenson's costs per week have been by adhering to the policy? Assume each region is supplied by the DC that has the lowest outbound transport cost for that region . Make sure you compare with the 'current flow' baseline. Answer in dollars without the dollar sign and without the minus sign, e.g., if your solution is -$2,391.54, you write 2392.
+Part 4
+0 points possible (ungraded)
+Since the policy is not adhered to in all weeks, HarleyStevenson is considering changing the policy.
+Based on your network spreadsheet optimization model, how many DCs would you suggest supply sales Region 1 if HarleySevenson wants to minimize costs using the current network structure (i.e. with 3 DCs being open)?
+Part 5
+0 points possible (ungraded)
+HarleyStevenson is also unsure whether they should use all three DCs in the network.
+What is the optimal number of DCs in the network? Note that your solution does not have to adhere to the policy in Part 3.
+
+
+================================================================
+
+Practice Problem 5: RCH Industries' Differentiation
+Ralph Calvin Hilfiger (RCH) Industries - the clothing manufacturer from Week 1 - has found that different clothing styles have very different demands in the five (5) markets. For instance, the more stylish items sell relatively more in Europe, while the more leisurely items seem to do much better in the U.S. To accommodate this, they want to update the network design, and rethink the product mix produced in each of the five factories.
+As before, RCH distributes their products from their five (5) factories through (2) cross docking facilities (XD) on to five (5) regional distribution centers (DCs), each of which supports a specific market. The clothes are transported through the network in small plastic totes via truck. There are no capacity constraints at the cross docks at this point.
+RCH has grouped their clothing items into two major style categories: Stylish and Leisure. The demand for the categories in the five markets, as well as production capacities and transportation costs are found in Excel or in LibreOffice.
+Part 1
+0 points possible (ungraded)
+Suppose RCH wishes to plan the flow of products from Factories to Crossdocks to Distribution Centers in order to minimize total costs, subject to the constraints. Build a spreadsheet model of the network.
+In the optimal solution, how many factories are dedicated to producing only one style group?
+Part 2
+0 points possible (ungraded)
+Suppose the production equipment is fully flexible, so that any factory can produce any mix of the two styles, as long as the following capacity constraints are not violated for the combined total production of both types: Factory 1 - 200; Factory 2 - 300; Factory 3 - 100; Factory 4 - 150, Factory 5 - 220 (note that these are the same capacity limits as in the Practice Problem in Week 1). Suppose RCH wants to minimize costs.
+In the optimal solution, how many factories are now dedicated to producing only one style group?
+Part 3
+0 points possible (ungraded)
+RCH does not feel comfortable with your solution from Part 2 - too few factories are producing both styles, they claim.
+If at least 10 units of each style needs to be produced in every factory, how much will the optimal cost increase compared to the solution in Part 2? Answer in dollars without the dollar sign, e.g., if the solution is $45.45, write 45.
+
+
+================================================================
+
+Practice Problem 6: TIme-Expanded Network
+In this problem, we will consider the following formulation of a time-expanded network problem.
+Min \( z = \sum_{i} \sum_{j} \sum_{t} c_{ijt} x_{ijt} + \sum_{j} \sum_{t} h I_{jt} \)
+s.t.
+\( \sum_{j} x_{ijt} \leq S_{it} \quad \forall i \in S, t \in T \)
+\( \sum_{i} x_{ijt} \geq D_{jt} \quad \forall j \in D, t \in T \)
+\( \sum_{i} x_{ijt} - \sum_{i} x_{jit} + I_{j,t-1} - I_{jt} = 0 \quad \forall j \notin S, t \in T \)
+\( I_{jt} = I_{jt}^{initial} \quad \forall j, t = 0 \)
+\( x_{ijt} \geq 0 \quad \forall i,j,t \)
+Part 1
+0 points possible (ungraded)
+In time-expanded models, we investigate the system across multiple time periods. This approach allows products within the model to move not just spatially but also temporally. Additionally, it permits products to move solely through time, enabling them to remain at the same network node across several periods.
+Contrary to the standard transport or transshipment models, time-expanded models allow for explicit incorporation of inventory holding. In the formulation mentioned, \(h\) represents the inventory holding cost.
+To include inventory holding costs in our model, which of the following costs are typically considered part of the holding cost at facility \(i\)?
+Select all correct answers:
+Transportation cost to facility \(i\) from all other facilities
+Facility overhead
+Insurance
+Inventory handling costs at the facility (direct labor and equipment)
+Cost of capital
+Part 2
+0 points possible (ungraded)
+For the following, assume a given \(j\) and \(t\): \(j\) is a distribution center (DC) in New York and \(t\) is Tuesday.
+In the formulation above, which of the following statements are identical to the constraint marked by (\( \sum_{i} x_{ijt} - \sum_{i} x_{jit} + I_{j,t-1} - I_{jt} = 0 \quad \forall j \notin S, t \in T \)), for the given \(j\) and \(t\)?
+Select the best answer
+The sum of all shipments to the New York DC on Tuesday minus all shipments from the New York DC on Tuesday must be equal to the inventory at the New York DC at the end of Tuesday.
+The sum of all shipments to the New York DC on Monday minus all shipments from the New York DC on Tuesday must be equal to the inventory at the New York DC on Tuesday.
+The inventory at the end of Tuesday in the New York DC cannot be larger than the inventory in the New York DC in the beginning of Tuesday, plus incoming shipments, minus outgoing shipments during Tuesday.
+The inventory at the end of Tuesday in the New York DC cannot be larger than the inventory in the New York DC in the beginning of Monday, plus incoming shipments, minus outgoing shipments during Tuesday.
+Part 3
+0 points possible (ungraded)
+For the following, assume \(j\) denotes distribution centers (DCs) and \(t\) denotes days.
+Which of the following scenarios does not violate the constraint marked by (\( I_{jt} = I_{jt}^{initial} \quad \forall j, t = 0 \))?
+Select the best answer
+At the start of the first day of the modelling period, the inventory level at five of ten DCs is greater than the initial inventory, which is 0
+At the start of the first day of the modeling period, the inventory level at every DC is the same as the initial inventory for that DC
+At the end of the first day for the modelling period, the inventory level at every DC is strictly positive, and initial inventory is set to 0
+None of the above
+
+
+================================================================
+
+Practice Problem 7: Estimating Inventory
+In supply chain network models, inventory costs are normally not considered for several reasons. It is still, however, possible to estimate the cost impact of inventory when designing the system.
+Consider a small section of a larger distribution network. The section operates more or less independently, and consists of two (2) plants, two (2) distribution centers (DCs), that support (4) retailers. All products that are produced in the plants are transported through the DCs to the retailers. Each DC handles only two retailers. The combined average demand at the four retailers is 20,000 units per week.
+You want to create a network flow model to compare two possible network designs. In particular, you are interested in comparing the current design to one in which you have only one DC supporting all four retailers. Assume that demand is split equally between the two DCs.
+Part 1
+0 points possible (ungraded)
+You receive the following data (Excel, LibreOffice) from a colleague, depicting average inventory levels and average throughputs for a number of facilities in the greater network.
+Assume that the relationship between the average inventory level at facility \(i\), \(I_i\), and the average throughput of inventory at facility \(i\) per week, \(T_i\), is given by
+\(I_i=\alpha T_{i}^{\beta}\).
+Based on the data, what are the parameter values? Answer with two decimals, e.g. 9.41.
+\(\alpha\)
+\(\beta\)
+Part 2
+0 points possible (ungraded)
+The expected demand is 20,000 units to the four combined retailers.
+What is the expected inventory level at a single DC serving all four of the retailers?
+What is the expected inventory level if two equally sized DCs are used to serve the retailers? Assume that each DC handles half of the total throughput.
+
+
+================================================================
+
+Practice Problem 8:  NERD Revisited
+You cannot get away from the Root Beer distributors! The New England Root Beer Distributors (NERD) have been using the model developed earlier to determine the optimal number of DCs to open for their New England distribution network. For the remainder of this Practice Problem - use the attached Excel or LibreOffice spreadsheet.  This is the same formulation and model we presented in Lesson 1 of Week 2 - BUT PLEASE USE THESE VERSIONS!!!.
+Download this document that lists the solver settings (constraints, decision variables, etc.) for this NERD5 problem for LibreOffice and Excel. You can use this to set up the solver.
+The settings for this run are similar to Scenario 6 in Week 2, Lesson 1 (slide 33).  Specifically:
+Capacity at both the Bellows Fall and Scranton plants is unlimited (=9999)  (cells G4 & G5)
+The minimum number of DC's is set to 1 and the Maximum number of DCs is set to 5 (cells C33 and D33)
+The Level of Service of Maximum Average Distance is set to 100 miles (cell D34)
+The Level of Service of Minimum Percentage of Demand within 50 miles is set to 50% (cell C35)
+The DC capacities are 500 barrels/week for SP and NA, 1000 barrels/week for BO and PR, and 2000 barrels/week for WO
+Run the model. You should get an optimal total cost of $68,265 per week. The solution should be:
+Producing 500 barrels at the BF plant and 1500 barrels at the SC Plant
+Opening three DCs:  NA (500 barrels/week), SP (500 barrels/week), and WO (1000 barrels per week)
+The maximum average distance to a DC is 33 miles
+Percent of customers within 50 miles of a DC is 86.5%.
+If you do not get this solution - make sure you did not change any of the input values or reload the spreadsheet from above. We will use this model for the rest of the questions.
+Part 1
+0 points possible (ungraded)
+You want to understand the inventory impact of the different designs for the NERD network. You have collected information on the average inventory (in dollars) and throughput (in barrels) at a number of NERD DCs. Plotting this you notice it is a non-linear relationship of the form: \(I_i=\alpha T_i^{\beta}\) where the average inventory cost (in dollars) at location i in dollars, \(I_i\), is a function of the throughput (in barrels) at that facility, \(T_i\). You used regression to find the alpha and beta values to be 41.00 and 0.62, respectively.
+Using this relationship, what is the expected weekly inventory cost (safety stock and cycle stock) for the optimal solution described above? Only include the inventory at the DCs, not the regional DCs located at each market city. Ignore pipeline inventory. Enter your answer in dollars with no commas or currency symbols.
+Part 2
+0 points possible (ungraded)
+Using the same relationship as in Part 1, what is the expected weekly inventory costs in dollars (safety stock and cycle stock) when forcing a single DC solution? Only include the inventory at the DCs, not the regional DCs located at each market city. Ignore pipeline inventory. Enter your answer in dollars with no commas or currency symbols.
+Part 3
+0 points possible (ungraded)
+You want to test some things with the model. Specifically, you want to drive the level of service up. Set the Minimum percent of customers within 50 miles parameter (cell C35) to 99% and re-solve the model (max number of DCs = 5). Your total cost should be $72,175 with three DCs open (NA, SP, and WO).
+Look very closely at your solution.
+Which of the following statements are true with this run?
+Select all correct answers
+This solution is invalid and should not be considered
+The network cannot actually meet this level of service requirement (Min Percent within 50 Miles ≥ 99%)
+The Bellows Falls plant will not be used
+The solution is fine and has no issues
+None of these statements are true
+Part 4
+0 points possible (ungraded)
+NERD management has suggested several different initiatives to lower the total costs to serve its customers in New England. Reset the Minimum Percent within 50 miles parameter (cell C35) back to 50% for this part.
+Which of the following potential changes would you recommend pursuing further, based on the total expected costs? Assume that these are independent changes to be explored separately.
+Select the best answer
+Increase the capacity of the Worcester (WO) DC to 2500 barrels per week
+Increase the capacity of the Nashua (NA) DC to 1000 barrels per week
+Negotiating the cost per barrel per mile charged by the local courier to $0.50 (down from $0.55)
+Negotiating the cost per barrel from the Bellows Falls plant to $1.75 (down from $2.00)
+Negotiating the cost per barrel from the Scranton plant to $0.50 (down from $0.75)
+Part 5
+0 points possible (ungraded)
+The NERD CEO lives in Boston. She really, really wants to locate the DC there. But, she understands that it has to make economic sense and wants to understand how much more expensive Boston is than the other locations for a DC. Currently, Boston is not selected to open in the optimal solution (when allowing any number of DCs). Specifically, she is targeting the weekly fixed costs (cell C12). These are the labor, electricity, and other weekly costs that are pretty much independent of the flow through the facility.
+What does the Fixed Cost (cell C12) for the Boston DC need to be so that it becomes economically justifiable to open? That is, at what cost will the Boston DC enter the optimal solution? Enter your answer in dollars with no commas or currency symbols.
+

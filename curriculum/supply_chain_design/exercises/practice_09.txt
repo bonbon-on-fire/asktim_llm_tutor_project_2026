@@ -1,0 +1,167 @@
+Week 9 Practice Problems — Supply Chain Finance — Evaluating Supply Chain Initiatives
+
+Ungraded practice problems for Week 9. Some problems reference figures/diagrams or spreadsheet models from the course that are not reproduced here.
+
+
+================================================================
+
+Practice Problem 1: MacKenzie Markets
+Mackenzie Markets operates a vast chain of convenience stores. It recently leased a medium-sized warehouse for 900,000 dollars per year in an urban location to support small, frequent deliveries. The appointed warehouse manager, with a salary of 180,000, is considering acquisition of automation equipment with small robots that move merchandise around the warehouse. The equipment costs 2,000,000 and the accountants will use straight-line depreciation over 10 years. Given the short-term lease, Mackenzie is evaluating this initiative under the assumption that they sell the equipment at book value after three years.
+The equipment would enable Mackenzie to reduce warehouse labor cost by 450,000. With this equipment, Mackenzie could cancel the lease of forklifts and some other material handling equipment having an annual cost of 350,000. Finally, given the location of the warehouse, transportation to the urban stores would be more efficient, reducing costs by 300,000 annually.
+Some Mackenzie Markets technical staff, with annual salaries totaling 250,000, will be moved from a warehouse location where the robotic implementation went so well that they were no longer needed. They recently completed training on the robotic equipment controls systems at a cost of 40,000. Finally, the implementation would require Mackenzie to hire a floor manager and some maintenance staff with robotic experience at a combined annual salary of 300,000.
+Assume the tax rate is 30% and the discount rate is 10%. Ignore inflation.
+Part 1
+0 points possible (ungraded)
+Which of the following projected cash flows are relevant?
+Select all correct answers.
+Floor manager and maintenance staff salaries of 300,000
+Equipment purchase of 2,000,000
+Technical staff salaries totaling 250,000
+Equipment sale after three years at book value
+None of the above
+Part 2
+0 points possible (ungraded)
+We now want to calculate the projected Free Cash Flows immediately and for years 1-3.
+Be sure to enter all of your answers in thousands of dollars without commas or currency signs. Round your answers to the closest thousands, e.g., if your answer is 112,634, then you would enter 113, and if your answer is -24,032, you would enter -24.
+What are the projected Free Cash Flows immediately in thousands of dollars?
+What are the projected Free Cash Flows for year 1 in thousands of dollars?
+What are the projected Free Cash Flows for year 2 in thousands of dollars?
+What are the projected Free Cash Flows for year 3 in thousands of dollars?
+Part 3
+0 points possible (ungraded)
+With the Free Cash Flows calculated, we now want to calculate the NPV, our fundamental figure of merit, to make a decision about the initiative. Enter your answer in thousands of dollars without commas or currency signs. Round your answers to the closest thousands, e.g., if your answer is 6,634 then you would enter 7 and if your answer is -12,060 you would enter -12.
+What is the NPV for this warehouse robot initiative?
+Part 4
+0 points possible (ungraded)
+We next want to look at the discount rate under which Mackenzie Markets would purchase the warehouse robots. Enter your answer as a percentage with one decimal place, e.g., if your answer is 6.25% then you would enter 6.3 and if your answer is 41.81% then you would enter 41.8%. Enter 0% if there is no positive discount rate under which Mackenzie would pursue this option.
+What is the highest discount rate under which Mackenzie Markets would choose to purchase the warehouse robots? Answer in percent with one decimal without the percentage sign, e.g. if your solution is 10.55%, answer 10.6
+Part 5
+0 points possible (ungraded)
+Finally, we consider the payback period for investing in the warehouse robots. Enter your answer rounded to two decimal places of a year, e.g., if your answer is 13.784 years, enter 13.78 and if your answer is 9.125 enter 9.13.
+What is the Payback Period for the warehouse robot initiative?
+
+
+================================================================
+
+Practice Problem 2: Madeira Importers
+Madeira Importers carries a wide variety of products for home furnishing. Its reputation has grown to the point that the company may launch a line of private label products, i.e., products carrying its Madeira Importers name. Private label products tend to have better margins and the CEO believes this is a big opportunity.
+Since private label products leverage the retailer’s existing brand recognition, marketing has budgeted a flat amount of 100,000 to promote the product each year. The table below shows incremental revenue, COGS, warehousing and transportation costs, and working capital anticipated for this initiative over the next three years and in perpetuity. Assume the tax rate is 40% and the discount rate is 10%. Ignore inflation.
+Projections for private label products	0	1	2	3	4+
+Revenue from projected sales	-	1,000	2,000	4,000	4,000
+COGS for projected sales	-	600	1,200	2,400	2,400
+Additional warehousing and transportation	-	100	200	300	300
+Accounts Receivable	-	200	350	480	480
+Inventory	500	700	1,100	2,100	2,100
+Accounts Payable	200	300	550	980	980
+All values are in thousands of dollars
+Answer the following questions regarding your analysis of the private label opportunity. Unless noted otherwise, round your answer to the nearest thousand and provide answers in thousands of dollars, e.g., if your answer is 10,550 dollars then you would enter 11 and if your answer is -72,499 then you would enter -72. Remember that any cash flow can be a negative value, including lost revenue and negative profit, a.k.a. loss.
+Part 1
+0 points possible (ungraded)
+An important aspect of this initiative is the Net Working Capital Investment. Remember that this is the number subtracted from NOPAT in the FCF formula, so a working capital investment would be a POSITIVE number and a reduction in working capital required would be a NEGATIVE number.
+Given the initial requirements of 500,000 in Inventory and 200,000 in Accounts Payable, what is the initial Net Working Capital Investment required for this initiative in thousands of dollars?
+Part 2
+0 points possible (ungraded)
+With practice from the previous part under your belt, continue calculating the Net Working Capital Investment. Remember that this is the number subtracted from NOPAT in the FCF formula, so a working capital investment would be a POSITIVE number and a reduction in working capital required would be a NEGATIVE number. Although there are no questions about it, you may want to also calculate the free cash flows for each period before checking the answer.
+What is the Net Working Capital Investment required for Year 2 in thousands of dollars?
+What is the Net Working Capital Investment required for Year 3 in thousands of dollars?
+What is the Net Working Capital Investment required for Year 4 and beyond in thousands of dollars?
+Part 3
+0 points possible (ungraded)
+Madeira Importers expects to carry private label products in perpetuity. You can use your calculation of the free cash flow for period 4+ and the discount rate to determine this long term value.
+What is the value of the perpetuity of free cash flows for the private label product initiative in thousands of dollars that you would add to period 3 as the terminal value?
+Part 4
+0 points possible (ungraded)
+Considering the Free Cash Flows through period 3 and adding a Terminal Value based on the period 4+ Free Cash Flows to the period 3 Free Cash Flow, what is the NPV for private label product initiative in thousands of dollars?
+
+
+================================================================
+
+Practice Problem 3: Using Figures of Merits
+For this practice problem, consider the following three mutually exclusive initiatives using various figures of merit:
+Project	Year 0	Year 1	Year 2	Year 3
+A	-3400	0	0	+6500
+B	-3400	+1900	+1900	+1900
+C	-3400	+1000	+1700	+3400
+Part 1
+0 points possible (ungraded)
+Rank the initiatives in order of preference (1=best, 3=worst) using NPV with a 10% discount rate.
+Project A
+Project B
+Project C
+Part 2
+0 points possible (ungraded)
+Rank the initiatives in order of preference (1=best, 3=worst) using NPV with a 15% discount rate.
+Project A
+Project B
+Project C
+Part 3
+0 points possible (ungraded)
+Rank the initiatives in order of preference (1=best, 3=worst) using IRR.
+Project A
+Project B
+Project C
+Part 4
+0 points possible (ungraded)
+Rank the initiatives in order of preference (1=best, 3=worst) using Payback Period.
+Project A
+Project B
+Project C
+
+
+================================================================
+
+Practice Problem 4: More Practice on Discounting
+This practice problem provides you with additional exposure to discounting cash flows and introduces the concept of perpetuities.
+Part 1
+0 points possible (ungraded)
+It is 2017 and this year's cash flows shook out to be +$1,000. Based on sales projections and expected operating costs, cash flows are expected to grow at an annual rate of 5% until the end of 2020, after which they are expected to grow at 3% forever (this is called a perpetuity). Your company has an annual discount rate of 8%. In the following, round your answer to the closest integer.
+What is your company's expected cash flow at the end of 2018? (do not include $ sign!)
+What is your company's expected cash flow at the end of 2019? (do not include $ sign!)
+What is your company's expected cash flow at the end of 2020? (do not include $ sign!)
+Part 2
+0 points possible (ungraded)
+For this problem, we will need a definition and equation to describe a perpetuity. A perpetuity is an annuity with cash flows that continue indefinitely. To calculate the present value of a perpetuity with constant annual cash flows, you simply divide the expected annual cash flows by the discount rate. This is shown below in equation 1. For a growing perpetuity, we will need to divide the expected first year's cash flow by the difference between the discount rate and the growth rate. This is shown in equation 2.
+So, we now know our expected cash flows for 2017, 2018, 2019, and 2020. We must now calculate the expected cash flow in year 2021 and use our growing perpetuity formula to calculate the present value of cash flows from year 2021 and on in terms of 2021 dollars. Round your answers to closest integer.
+What are your expected cash flows in year 2021?
+What is the value of all future cash flows after 2021 (in terms of 2021 dollars)?
+Perpetuity Formula:
+Growing Perpetuity Formula:
+Part 3
+0 points possible (ungraded)
+Now that we have values for future cash flows, what is the net present value of all of our company's future cash flows? Do not include 2017 cash flows.
+Enter your answer rounded to two decimal places, e.g., if your answer is 13.784 years, enter 13.78 and if your answer is 9.125 enter 9.13.
+
+
+================================================================
+
+Practice Problem 5: Working Capital as cash flows
+Indicate the effect of each transaction on the working capital requirements (increase, decrease, or no effect) and thus on the free cash flows (inflow, outflow, or not a cash flow). Treat each transaction independently. Make sure to consider ONLY the information provided in each statement and not possible related outcomes of the transactions that are not mentioned.
+Note that, as mentioned in the lecture, the WC requirement analysis we are making includes only those terms that are impacted by the Supply Chain decisions and not the term 'Other' in the equation below.
+FCFt = [ (1 - TaxRate) × EBITt ] + DAt - CapExt - Δ NetWorkingCapitalt
+• WC Requirement = A/R + Inventory − A/P + Other
+Part 1
+0 points possible (ungraded)
+Received 1500 units of product, equivalent to $890, from the manufacturing plant ready to be sold.
+The working capital requirements will
+The impact on the free cash flow in this period will be
+Part 2
+0 points possible (ungraded)
+To receive a discount on the next purchase, the company had to make sure to pay all the supplier's account payables first.
+The working capital requirements will
+The impact on the free cash flow in this period will be
+Part 3
+0 points possible (ungraded)
+Due to a finance team request, you are now negotiating with suppliers the extension of the company payment terms to 60 days instead of 30.
+If you achieve that goal, the working capital requirements could
+The impact on the free cash flow in this period would be
+Part 4
+0 points possible (ungraded)
+You offer a discount to the top 20% of your clients for early payments, and they accept!
+The working capital requirements will
+The impact on the free cash flow in this period will be
+Part 5
+0 points possible (ungraded)
+After learning about a potential expansion of one of your best clients, you decide to start preparing in case their demand for products increases. You can't afford to buy the extra inventory with cash, so you agree with the supplier a 30-days payment term.
+The stock arrived, you got the invoice, and you are now all set to face potential new orders of these products. With that, the working capital requirements have just:
+This impacts the free cash flow representing:
+
