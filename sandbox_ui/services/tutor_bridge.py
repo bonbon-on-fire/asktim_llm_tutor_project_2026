@@ -178,9 +178,13 @@ def _render_custom_tutor_prompt(prompt_text: str, assignment_override: str) -> s
     the exercise.
     """
     if "<Assignment>" in prompt_text and "</Assignment>" in prompt_text:
+        # Replacement *function* so backslashes in the assignment (e.g. LaTeX
+        # like \sum) are inserted literally; a template string would make re.sub
+        # treat them as escapes ("bad escape \s").
+        replacement = f"<Assignment>\n{assignment_override.strip()}\n</Assignment>"
         rendered = re.sub(
             r"<Assignment>.*?</Assignment>",
-            f"<Assignment>\n{assignment_override.strip()}\n</Assignment>",
+            lambda _m: replacement,
             prompt_text,
             flags=re.DOTALL,
         )

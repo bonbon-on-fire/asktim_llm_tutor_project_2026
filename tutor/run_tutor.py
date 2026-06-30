@@ -77,9 +77,13 @@ def load_system_prompt(
         )
     text = path.read_text(encoding="utf-8")
     if assignment_override is not None:
+        # Use a replacement *function* so backslashes in the assignment (e.g.
+        # LaTeX like \sum, \leq) are inserted literally — a template string would
+        # make re.sub interpret them as escapes ("bad escape \s").
+        replacement = f"<Assignment>\n{assignment_override.strip()}\n</Assignment>"
         text = re.sub(
             r"<Assignment>.*?</Assignment>",
-            f"<Assignment>\n{assignment_override.strip()}\n</Assignment>",
+            lambda _m: replacement,
             text,
             flags=re.DOTALL,
         )
