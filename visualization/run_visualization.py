@@ -4,8 +4,10 @@ Build transcript grading visualizations.
 Reads judged transcripts from:
     transcripts/<persona_type>/<persona_type>_claude/transcript_*.json
 
-Each run generates every configured chart (no prompts). Currently: Claude total
-score per transcript (all transcripts, plus one chart per persona family).
+Each run generates every configured chart (no prompts). Current charts:
+    * Score-distribution histogram across all graded transcripts.
+    * Claude total score per transcript (all transcripts, plus one chart per
+      persona family).
 
 Usage:
     python -m visualization.run_visualization
@@ -20,12 +22,6 @@ import importlib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
-
-# Romain hand vs Claude chart: drop these workbook rows (persona type, transcript number).
-ROMAIN_HAND_VS_CLAUDE_EXCLUDED: frozenset[tuple[str, int]] = frozenset(
-    {("chaotic", 228), ("chaotic", 243)}
-)
-
 
 # ---------------------------------------------------------------------------
 # Data model
@@ -1590,26 +1586,12 @@ def main() -> int:
         )
         return 1
 
-    claude_mini_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_mini")
-    print(f"Loaded Claude mini: {len(claude_mini_rows)} transcripts")
-
-    claude_tutor05_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_tutor_05")
-    print(f"Loaded Claude tutor_05: {len(claude_tutor05_rows)} transcripts")
-
     chart_idx = 1
 
     _chart_score_histogram(
         claude_all_rows,
         out_dir,
         output_name="claude_score_histogram_all.png",
-        chart_idx=chart_idx,
-    )
-    chart_idx += 1
-
-    _chart_mean_score_by_course(
-        claude_all_rows,
-        out_dir,
-        output_name="claude_mean_score_by_course.png",
         chart_idx=chart_idx,
     )
     chart_idx += 1
@@ -1634,72 +1616,6 @@ def main() -> int:
                 provider_label="claude",
                 scope_label=f"{persona} only",
                 output_name=f"claude_grades_{persona}_transcripts.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-
-    hand_grade_path = repo_root / "judge" / "hand_grade_workbook.xlsx"
-    try:
-        importlib.import_module("openpyxl")
-    except ModuleNotFoundError:
-        print(
-            "Skipping hand vs Claude charts: openpyxl is not installed "
-            f"(cannot read {hand_grade_path.name}). Install with: pip install openpyxl"
-        )
-    else:
-        for grader_key, grader_label in (
-            ("faizan", "Faizan"),
-            ("romain", "Romain"),
-            ("nishita", "Nishita"),
-        ):
-            hand_rows = _read_hand_grade_rows(hand_grade_path, grader_name=grader_key)
-            if grader_key == "romain" and hand_rows:
-                hand_rows = [
-                    r
-                    for r in hand_rows
-                    if (r.persona_type.lower(), r.transcript_number)
-                    not in ROMAIN_HAND_VS_CLAUDE_EXCLUDED
-                ]
-            if hand_rows:
-                _chart_hand_grader_vs_claude(
-                    hand_rows,
-                    claude_all_rows,
-                    out_dir,
-                    grader_label=grader_label,
-                    output_name=f"hand_grades_{grader_key}_vs_claude.png",
-                    chart_idx=chart_idx,
-                )
-                chart_idx += 1
-            else:
-                print(
-                    f"No hand-grade rows for '{grader_key}' in {hand_grade_path.name} "
-                    f"(missing sheet '{grader_key} grading' / 'compiled grading', wrong headers, "
-                    "or no rows for that grader). Skipping chart."
-                )
-
-    for persona in ("chaotic", "clueless", "cooperative"):
-        subset_05 = _filter_individual_rows(claude_tutor05_rows, {persona})
-        if subset_05:
-            _chart_provider_total_scores_per_transcript(
-                subset_05,
-                out_dir,
-                provider_label="claude",
-                scope_label=f"{persona} — tutor_05",
-                output_name=f"claude_tutor_05_grades_{persona}.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-
-    for persona in ("chaotic", "clueless"):
-        orig_subset = _filter_individual_rows(claude_all_rows, {persona})
-        mini_subset = _filter_individual_rows(claude_mini_rows, {persona})
-        if orig_subset and mini_subset:
-            _chart_original_vs_mini(
-                orig_subset,
-                mini_subset,
-                out_dir,
-                persona_label=persona,
-                output_name=f"original_vs_mini_claude_{persona}.png",
                 chart_idx=chart_idx,
             )
             chart_idx += 1
