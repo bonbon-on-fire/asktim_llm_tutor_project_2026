@@ -939,6 +939,13 @@
         ta.readOnly = true;
         ta.hidden = true;
         ta.value = "";
+      } else if (stepKey === "lectures" && val === "default") {
+        // A course's lecture material can span many files and run very long,
+        // so skip the full read-only dump and just note that here.
+        ta.readOnly = true;
+        ta.hidden = false;
+        ta.value =
+          "Lecture material is too long to preview here (it may span multiple files).";
       } else {
         // Existing option — show its text, read-only.
         ta.readOnly = true;
