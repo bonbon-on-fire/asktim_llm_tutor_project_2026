@@ -944,8 +944,7 @@
         // so skip the full read-only dump and just note that here.
         ta.readOnly = true;
         ta.hidden = false;
-        ta.value =
-          "Lecture material is too long to preview here (it may span multiple files).";
+        ta.value = "Lecture material too long to preview.";
       } else {
         // Existing option — show its text, read-only.
         ta.readOnly = true;
