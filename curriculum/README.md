@@ -46,8 +46,9 @@ curriculum/
 | `mathematics_for_cs/` | Mathematics for Computer Science (MIT 6.1200J) | 10 — discrete-math problem sets |
 | `physics_iii_vibrations_and_waves/` | Physics III: Vibrations and Waves (MIT 8.03SC) | 10 — vibrations/waves problem sets |
 | `meaning_of_life/` | The Meaning of Life (MIT 21A.157) | 3 — vignette + investigation + final reflection papers |
+| `supply_chain_design/` | MIT CTL.SC2x Supply Chain Design | 3 graded exercises — network/facility-location and production-planning assignments; also ships 8 ungraded `practices/` and 156 `lectures/` transcripts |
 
-The four courses beyond Cities and Climate Change were added in June 2026 as **cross-course test contexts** (two STEM, two humanities) to check how the tutor behaves across subjects. Only `cities_and_climate_change/` is deployed to real students.
+The four courses beyond Cities and Climate Change (Development Planning, Mathematics for CS, Physics III, and Meaning of Life) were added in June 2026 as **cross-course test contexts** (two STEM, two humanities) to check how the tutor behaves across subjects. `supply_chain_design/` (MIT CTL.SC2x) was added later as a lecture-heavy course. Only `cities_and_climate_change/` is deployed to real students.
 
 ## Adding a new course
 

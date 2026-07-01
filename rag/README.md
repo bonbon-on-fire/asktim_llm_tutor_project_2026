@@ -69,7 +69,8 @@ if has_index(course):
 
 ## Notes
 
-- Vector store is brute-force numpy cosine (instant at a few hundred chunks/course,
-  no FAISS dependency); `pgvector` on the production Postgres is the eventual swap.
+- Vector store is brute-force numpy cosine (instant at the few-hundred-to-~1k
+  chunks/course seen so far, no FAISS dependency); `pgvector` on the production
+  Postgres is the eventual swap.
 - Re-run `rag.ingest` when course materials change (the manifest records source
   hashes so staleness is detectable).

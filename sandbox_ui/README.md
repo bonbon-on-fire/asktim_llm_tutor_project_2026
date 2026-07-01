@@ -21,6 +21,7 @@ Branding is deliberately distinct from production: the accent is teal-blue
 - Conversation / Message / Student tables; email + password identity (bcrypt), cross-browser history sidebar
 - The same tutor pipeline via `tutor.run_tutor` (through `services/tutor_bridge.py`)
 - **Curriculum figures** auto-attached to the tutor — figures matching the exercise (`curriculum/<course>/figures/exercise_<NN>_*`) are sent as multimodal input on every turn via [`utils.figures.discover_figures`](../utils/figures.py). Skipped when the tester typed a one-off custom course/exercise in the Create-context wizard (no figures folder on disk)
+- **Per-course lecture transcripts** — a course's `lectures/*.txt` fold into the tutor context via [`utils.lectures.load_lecture_transcripts`](../utils/lectures.py). In the Sandbox this is a dedicated **Lectures** wizard step, toggleable per conversation (and skipped in RAG mode, where lecture material is retrieved instead)
 - **Student image uploads** — PNG/JPEG attachments (paperclip, drag-and-drop, or clipboard paste, up to 5 × 10 MB) sent to the tutor as multimodal input, stored in `uploaded_images.data` (BYTEA) and re-served via `GET /api/image/<id>`. Same shared validation ([`utils/uploads.py`](../utils/uploads.py)) and frontend as `main_ui`, including the click-to-enlarge image lightbox (staged or sent; backdrop / × / Esc to close)
 
 ## What's different
@@ -40,12 +41,17 @@ Both apps can run side by side.
 ## The "Create context" wizard
 
 The solid-blue **Create context** button (top of the sidebar, above "Add email")
-opens a step-by-step wizard. At each step you either pick an existing built-in or
+opens a step-by-step wizard. The steps are **Course → Exercise → Tutor prompt →
+Syllabus → Lectures**. At each step you either pick an existing built-in or
 paste your own custom text:
 
 - **Course** — any folder under `curriculum/`, **No course description** (keeps
   the course for exercises/figures/RAG but drops its `course.txt` from context),
-  or custom course text
+  or custom course text. This step also hosts a **Use RAG for course context**
+  toggle (shown only for courses with a built RAG index); turning it on retrieves
+  course/syllabus/lecture material per turn and **skips the Syllabus and Lectures
+  steps**. The choice is stored per conversation in `context_mode`
+  (`rag`/`full_context`; `NULL` = resolve by default)
 - **Exercise** — an exercise (`exercises/exercise_<NN>.txt`) or a **practice
   problem** (`practices/practice_<NN>.txt`) for the chosen course, shown as
   separate "Exercises" and "Practice problems" groups, or custom exercise text.
@@ -53,12 +59,15 @@ paste your own custom text:
   `exercise`)
 - **Tutor prompt** — any `tutor_*` prompt, or custom prompt text
 - **Syllabus** — the course's `syllabus.txt`, none, or custom syllabus text
+- **Lectures** — the course's `lectures/*.txt` transcripts (concatenated), none,
+  or custom lecture text. Uses [`utils.lectures.load_lecture_transcripts`](../utils/lectures.py)
 
 Finishing the wizard **starts a fresh conversation** under the new settings; the
 previous chat stays in history. Custom values are stored per conversation (in the
-`custom_*` columns) and the course/syllabus flags in
-`course_enabled`/`syllabus_enabled`, so reopening a past chat replays it with the
-same context.
+`custom_*` columns, including `custom_lectures_text`) and the
+course/syllabus/lectures flags in
+`course_enabled`/`syllabus_enabled`/`lectures_enabled`, so reopening a past chat
+replays it with the same context.
 
 > A simpler **Edit context** modal (built-ins only) previously sat alongside this
 > wizard. It was removed in June 2026 because the Create-context wizard does
@@ -103,20 +112,27 @@ curl http://127.0.0.1:5000/health
 
 No Alembic. On boot, `create_app()` calls `Base.metadata.create_all(engine)`
 to build the schema directly from the models into whatever `DATABASE_URL`
-points at. By default that's its **own Postgres database** (`asktim_test`),
-separate from main_ui's `asktim` so test chats never mix with production data
-(falls back to a local SQLite file if the var is unset). The schema matches
-`main_ui` plus a `conversations.syllabus_enabled` column and the
-`conversations.custom_*` columns that store one-off custom contexts.
+points at, then `_reconcile_columns()` backfills any model columns missing from
+already-existing tables. By default that's its **own Postgres database**
+(`asktim_test`), separate from main_ui's `asktim` so test chats never mix with
+production data (falls back to a local SQLite file if the var is unset). The
+schema matches `main_ui` plus the sandbox-only `conversations` columns —
+`course_enabled`, `syllabus_enabled`, `lectures_enabled`, `exercise_kind`,
+`context_mode`, and the `custom_*` columns that store one-off custom contexts.
 
 The database must already exist (`CREATE DATABASE asktim_test;`); `create_all`
 then builds the tables. To reset the sandbox data, drop and recreate that
 database.
 
 > **Note:** `create_all` only creates *missing tables* — it never adds columns
-> to existing ones. The image-upload feature added `uploaded_images.data`
-> (BYTEA); a pre-existing `asktim_test` DB must be dropped/recreated (or have the
-> column added by hand) to pick it up.
+> to a table that already exists. To keep the long-lived Sandbox DB usable
+> across model changes, `_reconcile_columns()` runs right after `create_all` on
+> boot and `ALTER TABLE ... ADD COLUMN`s any model column the existing table
+> lacks (nullable, idempotent, race-safe across gunicorn workers) — so a
+> new column like `uploaded_images.data` (BYTEA) or `lectures_enabled` is picked
+> up automatically without a manual reset. For the specific case of the
+> `uploaded_images.data` column on a very old DB, `python -m
+> sandbox_ui.db.reset_uploaded_images` also rebuilds just that table.
 
 > **Design decision (2026-06-04) — DB env-var resolution order.**
 > sandbox_ui resolves its database as: **`SANDBOX_UI_DATABASE_URL` → `DATABASE_URL` →
@@ -138,10 +154,11 @@ database.
 > shared `DATABASE_URL`. `config.py` and `railway-entrypoint-sandbox.sh` both follow
 > this order.
 >
-> **Related reminder:** the Sandbox needs its **own empty** Postgres. Pointing it
-> at a main_ui-shaped DB fails — that `conversations` table lacks
-> `syllabus_enabled`/`custom_*`, and `create_all` only creates missing *tables*,
-> it never adds columns to existing ones.
+> **Related reminder:** the Sandbox needs its **own** Postgres. Pointing it at
+> main_ui's shared DB is still a bad idea — the two apps would interleave chats —
+> but the sandbox-only `conversations` columns (`syllabus_enabled`/`custom_*`
+> etc.) no longer *fail* against a main_ui-shaped table: `_reconcile_columns()`
+> adds any missing columns on boot.
 
 ## API surface
 
@@ -151,47 +168,63 @@ Same as `main_ui` (`/embed`, `/health`, `/api/whoami`, `/api/chat`,
 
 | Method | Path | Purpose |
 | --- | --- | --- |
-| GET | `/api/context/options` | Courses (with their exercises + syllabus availability) and tutor prompts, for the Create-context wizard |
+| GET | `/api/context/options` | Courses (with their exercises, practice problems, and syllabus / lectures / RAG availability) and tutor prompts, for the Create-context wizard |
+| GET | `/api/context/preview` | Raw text of a built-in `course`/`exercise`/`practice`/`tutor`/`syllabus`/`lectures` (via `?kind=...`), so the wizard can show it read-only when an existing option is picked |
 
 `POST /api/chat` accepts JSON (text only) or `multipart/form-data` (text +
 `images` files, alongside the same context fields). It additionally accepts
 optional fields for a new conversation:
 - `"syllabus": true|false` (defaults to `true`) — gates the syllabus block
+- `"lectures": true|false` (defaults to `true`) — gates the lecture-transcripts block
 - `"course_enabled": true|false` (defaults to `true`) — gates the course-description block
 - `"exercise_kind": "exercise"|"practice"` (defaults to `"exercise"`) — selects exercise or practice-problem variant
+- `"context_mode": "rag"|"full_context"` (optional) — per-conversation RAG toggle; omit to let the server resolve by default
+- `"course_custom"`, `"exercise_custom"`, `"tutor_custom"`, `"syllabus_custom"`, `"lectures_custom"` (optional) — one-off custom context used verbatim in place of the on-disk file
+
+Since the Sandbox is a dev/TA tool, the terminal `done` SSE event also carries
+the tutor's otherwise-hidden `pedagogical_reasoning` so it can be inspected per
+message.
 
 ## Deployment
 
-**Run locally only.** The Sandbox is not currently deployed — its Railway
-container (`Dockerfile_sandbox` + `scripts/railway-entrypoint-sandbox.sh`) was removed
-because the test deployment isn't working yet, and the work is deferred. Only
-`main_ui/` is deployed (see [`main_ui/README.md`](../main_ui/README.md#deployment-railway)).
+**Live on Railway → <https://asktim-sandbox.up.railway.app/>.** The Sandbox
+ships as its own Railway service built from `Dockerfile_sandbox`, whose
+entrypoint `scripts/railway-entrypoint-sandbox.sh` normalizes the Postgres URL
+to the psycopg3 driver, relies on `create_all` (no migration step), and serves
+the app with gunicorn (`sandbox_ui.run_app:app`). It runs against its own
+`asktim_test` Postgres, separate from `main_ui`'s (see
+[`main_ui/README.md`](../main_ui/README.md#deployment-railway)).
 
 To run the Sandbox locally, use `python -m sandbox_ui` (binds to `127.0.0.1:5000`).
-Point it at its **own** empty database via `SANDBOX_UI_DATABASE_URL` — pointing it at
-main_ui's Postgres fails, since that table is missing sandbox_ui's
-`syllabus_enabled`/`custom_*` columns and `create_all` won't add them.
+Point it at its **own** empty database via `SANDBOX_UI_DATABASE_URL` so it stays
+off the `DATABASE_URL` main_ui uses in the shared `.env`.
 
 ## Layout
 
 ```text
 sandbox_ui/
-  __main__.py             # python -m sandbox_ui entry point (port 5000)
+  __main__.py             # python -m sandbox_ui entry point (127.0.0.1, port 5000)
   config.py               # env-driven Config (SANDBOX_UI_* vars, separate DB)
-  run_app.py              # Flask factory; create_all on boot; blueprints
-  db/                     # SQLAlchemy models (+ syllabus_enabled) and session
+  run_app.py              # Flask factory; create_all + _reconcile_columns on boot; blueprints
+  cookies.py              # session/email cookie names + kwargs
+  about_asktim.txt        # "About yourself" block folded into the tutor prompt
+  db/
+    models.py             # SQLAlchemy models (course/syllabus/lectures flags, custom_*, context_mode)
+    session.py            # engine + SessionLocal
+    reset_uploaded_images.py # one-off: rebuild uploaded_images table (python -m sandbox_ui.db.reset_uploaded_images)
   routes/
-    embed.py              # GET /embed, GET / , GET /api/context/options
-    chat.py               # POST /api/chat (SSE, syllabus passthrough)
+    embed.py              # GET /embed, GET / , GET /api/context/options, GET /api/context/preview
+    chat.py               # POST /api/chat (SSE; syllabus/lectures/course/RAG passthrough, images)
     history.py            # GET /api/history, /api/conversation/<uuid>
     identity.py           # GET /api/whoami, POST /api/identity[/check]
-    _validation.py        # validators + context-option listing helpers
+    _validation.py        # validators + context-option/preview listing helpers
   services/
-    conversation.py       # persistence (stores syllabus_enabled)
+    conversation.py       # persistence (stores the sandbox context flags + custom_*)
     students.py           # bcrypt identity
-    tutor_bridge.py       # talks to tutor.run_tutor (include_syllabus aware)
+    images.py             # validate/persist/serve uploaded images
+    tutor_bridge.py       # talks to tutor.run_tutor (include_course/syllabus/lectures + RAG aware)
   static/css/chat.css     # #126f9a accent + create-context wizard styles
-  static/js/chat.js       # streaming + sidebar + context switcher
+  static/js/chat.js       # streaming + sidebar + Create-context wizard
   static/js/marked.min.js # vendored markdown parser (GFM tables)
   static/js/dompurify.min.js # vendored HTML sanitizer (XSS-safe tutor markdown)
   templates/embed.html    # chat page (Sandbox Beta, Create context wizard)

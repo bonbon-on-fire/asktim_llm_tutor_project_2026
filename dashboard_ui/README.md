@@ -46,7 +46,7 @@ Then open [http://127.0.0.1:5002](http://127.0.0.1:5002).
 ## Features
 
 - Sortable table columns: `Group` (student persona), `Version` (transcript number), `Course`,
-  `Exercise`, `Turns`, plus a `Read` link.
+  `Exercise`, `Turns`, `Score` (Claude judge total/max), plus a `Read` link.
 - The detail page shows run metadata (tutor prompt, persona, course, exercise, turns), collapsible
   `Context`/`Exercise` blocks, and every turn rendered as Student / Tutor (with the tutor's
   pedagogical reasoning when present).

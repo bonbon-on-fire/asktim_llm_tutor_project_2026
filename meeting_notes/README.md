@@ -2,11 +2,6 @@
 
 This folder contains project meeting notes (one `MM_DD_YYYY.md` per meeting).
 
-## Key documents
-
-- [`dimitris_meeting_deck.md`](dimitris_meeting_deck.md) — slide deck for the Dimitris review (Marp markdown: headers + bullets; workflow, results, next steps).
-- [`dimitris_process_detail.md`](dimitris_process_detail.md) — long-form, plain-English workflow + results with the underlying numbers (companion to the deck).
-
 ## Naming convention
 
 - Prefer: `MM_DD_YYYY.md` (example: `02_24_2026.md`)

@@ -70,7 +70,7 @@ python -m alembic -c main_ui\db\migrations\alembic.ini upgrade head
 
 Five tables in `public`:
 
-- `conversations` — one per chat thread (UUID PK, session_id, email, course, exercise, tutor)
+- `conversations` — one per chat thread (UUID PK, session_id, email, course, exercise_number, tutor_prompt)
 - `messages` — student/tutor turns (BigInt PK, FK to conversations, role, content, `pedagogical_reasoning`)
 - `students` — email + bcrypt password hash for cross-browser identity (one row per email)
 - `uploaded_images` — student-uploaded images: `filename`, `mime_type`, `size_bytes`, and `data` (BYTEA bytes), FK to the student `messages` row

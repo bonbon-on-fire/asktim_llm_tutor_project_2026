@@ -23,9 +23,9 @@ The system has six loosely coupled layers:
 
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
-- **Dashboard + visualization**: a Flask web app for browsing the raw transcripts and their Claude judge grades (sortable score table + per-transcript conversation/grade view), and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
+- **Dashboard + visualization**: a Flask web app for browsing the raw transcripts and their Claude judge grades (sortable score table + per-transcript conversation/grade view), and a matplotlib chart module (`visualization.run_visualization` for score histogram + per-transcript line charts; `visualization.sc2x_eval_charts` for SC2x persona-type breakdowns)
 - **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students, **live on Railway → [asktim.up.railway.app](https://asktim.up.railway.app/)**. PostgreSQL persistence (`asktim`), bcrypt-hashed email+password identity, Server-Sent Events streaming, sanitized-markdown tutor replies (tables/lists render cleanly), cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
-- **Testing sandbox (`sandbox_ui/`)**: "AskTIM Sandbox" — a developer/TA chat app that mirrors `main_ui` but adds an in-app **Edit context** switcher and a step-by-step **Create context** wizard (custom course / exercise / tutor prompt / syllabus). Its own PostgreSQL database (`asktim_test`) and teal-blue (`#126f9a`) branding keep it isolated from production. **Live on Railway → [asktim-sandbox.up.railway.app](https://asktim-sandbox.up.railway.app/)**. See [`sandbox_ui/README.md`](sandbox_ui/README.md).
+- **Testing sandbox (`sandbox_ui/`)**: "AskTIM Sandbox" — a developer/TA chat app that mirrors `main_ui` but adds a step-by-step **Create context** wizard (custom course / exercise / tutor prompt / syllabus / lectures, plus a per-conversation RAG toggle). Its own PostgreSQL database (`asktim_test`) and teal-blue (`#126f9a`) branding keep it isolated from production. **Live on Railway → [asktim-sandbox.up.railway.app](https://asktim-sandbox.up.railway.app/)**. See [`sandbox_ui/README.md`](sandbox_ui/README.md).
 - **Conversation review (`database_ui/`)**: read-only dashboard for browsing real `main_ui` conversations live from its Postgres — looks like `main_ui` (MIT crimson) but with no inputs, lists every conversation (most recent first, each labeled by student email), shows transcripts with tutor reasoning + uploaded images. Shared-password gated, strictly read-only. **Live on Railway → [asktim-database.up.railway.app](https://asktim-database.up.railway.app/)**. See [`database_ui/README.md`](database_ui/README.md) and [`database_ui/PLANNING.md`](database_ui/PLANNING.md).
 
 ### Live Deployments (Railway)
@@ -146,7 +146,7 @@ flowchart TD
 - Demands direct answers and complains the method is unhelpful
 - Tests whether the tutor holds its role under social pressure
 
-### 3. Resulting Conversation (`transcripts/chaotic/chaotic_raw/transcript_01.json`)
+### 3. Resulting Conversation (`transcripts/chaotic/chaotic_raw/transcript_001.json`)
 
 - Student opens by demanding the answer directly, refusing to engage
 - Tutor deflects with a targeted question about the student's existing understanding
@@ -178,7 +178,7 @@ flowchart TD
     end
 
     subgraph rawstore["Raw transcripts"]
-        RAWF[("transcripts/*/*_raw/\nor *_raw_tutor_05/\ntranscript_NN.json")]
+        RAWF[("transcripts/*/*_raw/\ntranscript_NNN.json")]
     end
 
     subgraph judge["2. Grade transcripts"]
@@ -187,11 +187,11 @@ flowchart TD
     end
 
     subgraph gradedstore["Graded transcripts"]
-        GF[("transcripts/*/*_claude/\nor *_claude_tutor_05/\nor *_claude_mini/")]
+        GF[("transcripts/*/*_claude/")]
     end
 
     subgraph view["3. Compare and explore"]
-        VIZ["visualization.run_visualization\n(correlation charts)"]
+        VIZ["visualization.run_visualization\n(score histogram + line charts)\nvisualization.sc2x_eval_charts\n(SC2x persona-type charts)"]
         DASH["dashboard_ui\n(Flask + browse grades)"]
     end
 
@@ -237,7 +237,7 @@ transcript_path.write_text(json.dumps(payload, indent=2))
 
 ```python
 result = judge_transcript(
-    "chaotic/chaotic_claude/transcript_01",
+    "chaotic/chaotic_claude/transcript_001",
     provider="claude",
     prompt_name="judge_08",
     rubric_name="rubric_08",
@@ -249,7 +249,10 @@ print(result.total_score, result.max_score)  # e.g. 37, 40
 
 ```powershell
 python -m visualization.run_visualization
-# Output: visualization/outputs/claude_grades_all_transcripts.png (+ more)
+# Output: visualization/outputs/claude_score_histogram_all.png,
+#         claude_grades_all_transcripts.png, claude_grades_<persona>_transcripts.png
+python -m visualization.sc2x_eval_charts
+# Output: visualization/outputs/sc2x/01_total_by_persona_type.png (+ more)
 ```
 
 ## Project Structure & File Guide
@@ -264,7 +267,8 @@ asktim_llm_tutor_project_2026/
 │   ├── intro_to_international_development_planning/  # exercises/exercise_01..24.txt (reflection prompts)
 │   ├── mathematics_for_cs/         # exercises/exercise_01..10.txt (discrete math)
 │   ├── physics_iii_vibrations_and_waves/  # exercises/exercise_01..10.txt
-│   └── meaning_of_life/            # exercises/exercise_01..03.txt (humanities reflection)
+│   ├── meaning_of_life/            # exercises/exercise_01..03.txt (humanities reflection)
+│   └── supply_chain_design/        # MIT CTL.SC2x — exercises/ + practices/ (source of current transcripts corpus)
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
@@ -289,12 +293,10 @@ asktim_llm_tutor_project_2026/
 │   └── cli_utils.py             # Shared interactive selection-prompt helpers
 │
 ├── transcripts/             # Generated conversations, one folder per persona family.
-│   ├── chaotic/             # chaotic_raw/, chaotic_claude/, chaotic_mini/,
-│   │                        # chaotic_raw_tutor_05/, chaotic_claude_tutor_05/
-│   ├── cooperative/         # cooperative_raw/, cooperative_claude/,
-│   │                        # cooperative_raw_tutor_05/, cooperative_claude_tutor_05/
-│   └── clueless/            # clueless_raw/, clueless_claude/, clueless_mini/,
-│                            # clueless_raw_tutor_05/
+│   │                        # Current corpus: SC2x with-lecture-context, tutor_05, 108 files each.
+│   ├── chaotic/             # chaotic_raw/ (ungraded), chaotic_claude/ (Claude-graded)
+│   ├── cooperative/         # cooperative_raw/, cooperative_claude/
+│   └── clueless/            # clueless_raw/, clueless_claude/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
@@ -323,7 +325,7 @@ asktim_llm_tutor_project_2026/
 │   ├── routes/              # embed (+ /api/context/options, /preview), chat, identity, history
 │   ├── services/            # conversation, students, tutor_bridge (custom-context aware)
 │   ├── static/              # chat.css (#126f9a accent), chat.js (Edit/Create context)
-│   └── templates/embed.html # chat page: Edit context + Create context wizard
+│   └── templates/embed.html # chat page: Create context wizard
 │
 ├── database_ui/               # Read-only conversation review dashboard (reads main_ui's Postgres)
 │   ├── run_app.py           # Flask factory; read-only session, no create_all/migrations
@@ -337,7 +339,8 @@ asktim_llm_tutor_project_2026/
 │   └── PLANNING.md          # design + implementation checklist
 │
 ├── visualization/
-│   └── run_visualization.py # Score charts: per-prompt, original vs mini, hand-grade correlation
+│   ├── run_visualization.py # Score histogram + per-transcript line charts (all + per persona family)
+│   └── sc2x_eval_charts.py  # SC2x persona-type breakdown charts (outputs/sc2x/)
 │
 └── utils/
     ├── parsing.py           # Shared JSON extraction helper
@@ -351,14 +354,13 @@ asktim_llm_tutor_project_2026/
 The full pipeline is working end-to-end, with:
 
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
-- 5 courses: `cities_and_climate_change` (12 exercises, live in AskTIM) plus four June-2026 cross-course test contexts — `intro_to_international_development_planning` (24), `mathematics_for_cs` (10), `physics_iii_vibrations_and_waves` (10), `meaning_of_life` (3)
-- Raw transcripts across multiple prompt versions: standard `*_raw/` (tutor_04) and `*_raw_tutor_05/` (tutor_05), 10 transcripts per persona per version
-- Mini-continuation transcripts in `*_mini/` for selected chaotic and clueless transcripts (tutor_05, Claude)
+- 6 courses: `cities_and_climate_change` (12 exercises, live in AskTIM), `intro_to_international_development_planning` (24), `mathematics_for_cs` (10), `physics_iii_vibrations_and_waves` (10), `meaning_of_life` (3), and `supply_chain_design` (MIT CTL.SC2x)
+- Current on-disk transcript corpus: SC2x "with-lecture-context" run (course `supply_chain_design`, `tutor_05`) — each persona family has `*_raw/` (ungraded) and `*_claude/` (Claude-graded), 108 files each, 324 total
 - Judge prompts versioned up to `judge_08`, rubrics up to `rubric_08` (latest/recommended: `judge_08` / `rubric_08`, **40 pts**; in-code default still `judge_05` / `rubric_05`). Claude is the primary judge; GPT judging paused.
 - Dashboard browses every raw transcript with its Claude judge grade — a sortable table (with a Score column) and a per-transcript detail view (full conversation + grade panel), on port 5002
-- Visualization outputs per-persona score charts for standard and tutor_05 runs, original vs mini grouped bar comparisons, and hand-grade Pearson/Spearman correlation charts
+- Visualization outputs a score histogram plus per-transcript line charts (all personas + one per family) via `run_visualization`; the SC2x persona-type breakdown charts come from `sc2x_eval_charts` (`visualization/outputs/sc2x/`)
 - **AskTIM (`main_ui/`)** is feature-complete through Step 10 (image uploads) — Postgres persistence, email + password identity, cross-browser history, SSE-streamed replies, and **student PNG/JPEG uploads** (stored in-DB, streamed to the tutor as multimodal input) — and is **live on Railway at <https://asktim.up.railway.app/>** (containerized, migrations run on boot). Steps 11–12 (multi-iframe test host, formal test suite) remain.
-- **AskTIM Sandbox (`sandbox_ui/`)** is **live at <https://asktim-sandbox.up.railway.app/>** for developers/TAs — the same chat as `main_ui` plus an in-app **Edit context** switcher and a **Create context** wizard for one-off custom course/exercise/tutor/syllabus, on its own PostgreSQL database (`asktim_test`). Now also serves RAG-retrieved course context (with a per-conversation toggle).
+- **AskTIM Sandbox (`sandbox_ui/`)** is **live at <https://asktim-sandbox.up.railway.app/>** for developers/TAs — the same chat as `main_ui` plus a **Create context** wizard for one-off custom course/exercise/tutor/syllabus/lectures, on its own PostgreSQL database (`asktim_test`). Now also serves RAG-retrieved course context (with a per-conversation toggle).
 - **Conversation review (`database_ui/`)** is **live on Railway at <https://asktim-database.up.railway.app/>** — a read-only dashboard that browses every real `main_ui` conversation live from its Postgres (most recent first, labeled by student email; transcript view with tutor reasoning + uploaded images), shared-password gated and strictly read-only. See [`database_ui/PLANNING.md`](database_ui/PLANNING.md).
 
 ## Challenges and How I Solved Them
