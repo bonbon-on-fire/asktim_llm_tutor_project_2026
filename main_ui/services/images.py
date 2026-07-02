@@ -54,11 +54,11 @@ def get_image_for_viewer(
     db: Session,
     image_id: int,
     session_id: str,
-    email: str | None,
+    username: str | None,
 ) -> UploadedImage | None:
     """Return an `UploadedImage` if the viewer owns the parent conversation.
 
-    Ownership = same session_id (same browser) OR matching email
+    Ownership = same session_id (same browser) OR matching username
     (cross-browser). Returns ``None`` otherwise so the route can 404 without
     leaking existence.
     """
@@ -73,6 +73,6 @@ def get_image_for_viewer(
         return None
     if convo.session_id == session_id:
         return img
-    if email and convo.email == email:
+    if username and convo.username == username:
         return img
     return None

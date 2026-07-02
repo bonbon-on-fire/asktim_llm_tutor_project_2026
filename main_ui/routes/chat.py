@@ -33,7 +33,7 @@ from uuid import UUID
 
 from flask import Blueprint, Response, g, jsonify, request, stream_with_context
 
-from main_ui.cookies import EMAIL_COOKIE_NAME
+from main_ui.cookies import USERNAME_COOKIE_NAME
 from main_ui.routes._validation import (
     DEFAULT_TUTOR,
     validate_course,
@@ -136,7 +136,7 @@ def chat():
     # well before the streaming generator runs its INSERTs. We commit
     # explicitly inside the generator instead.
     db = g.pop("db")
-    email = request.cookies.get(EMAIL_COOKIE_NAME)
+    username = request.cookies.get(USERNAME_COOKIE_NAME)
 
     def _abort_with(json_response):
         # Helper for the validation-failure path: roll back any pending
@@ -155,7 +155,7 @@ def chat():
             course=course,
             exercise_number=exercise,
             tutor_prompt=tutor,
-            email=email,
+            username=username,
         )
     except WrongSessionError:
         return _abort_with(_wrong_session())

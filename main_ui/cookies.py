@@ -13,7 +13,7 @@ from main_ui.config import load_config
 
 
 SESSION_COOKIE_NAME = "tutor_session_id"
-EMAIL_COOKIE_NAME = "tutor_email"  # Used by Step 7; defined here for policy centralization.
+USERNAME_COOKIE_NAME = "tutor_username"  # Used by Step 7; defined here for policy centralization.
 
 
 def new_session_id() -> str:

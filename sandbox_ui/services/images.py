@@ -53,11 +53,11 @@ def get_image_for_viewer(
     db: Session,
     image_id: int,
     session_id: str,
-    email: str | None,
+    username: str | None,
 ) -> UploadedImage | None:
     """Return an `UploadedImage` if the viewer owns the parent conversation.
 
-    Ownership = same session_id OR matching email. Returns ``None`` otherwise.
+    Ownership = same session_id OR matching username. Returns ``None`` otherwise.
     """
     img = db.get(UploadedImage, image_id)
     if img is None:
@@ -70,6 +70,6 @@ def get_image_for_viewer(
         return None
     if convo.session_id == session_id:
         return img
-    if email and convo.email == email:
+    if username and convo.username == username:
         return img
     return None

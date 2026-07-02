@@ -107,7 +107,7 @@ def api_conversation(conversation_id: str):
     return jsonify(
         {
             "id": str(convo.id),
-            "email": convo.email,
+            "email": convo.username,
             "session_id": convo.session_id,
             "course": convo.course,
             "exercise_number": convo.exercise_number,

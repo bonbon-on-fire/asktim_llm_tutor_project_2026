@@ -29,7 +29,7 @@ def find_or_create_conversation(
     course: str,
     exercise_number: str,
     tutor_prompt: str,
-    email: str | None = None,
+    username: str | None = None,
 ) -> Conversation:
     """Resolve to an existing conversation or insert a new one.
 
@@ -41,18 +41,18 @@ def find_or_create_conversation(
         existing = db.get(Conversation, conversation_id)
         if existing is None:
             raise WrongSessionError()
-        # Accept if the current session owns it OR if the current email
-        # matches the conversation's email (enables cross-browser continuity
-        # once the student has linked their email).
+        # Accept if the current session owns it OR if the current username
+        # matches the conversation's username (enables cross-browser continuity
+        # once the student has linked their username).
         same_session = existing.session_id == session_id
-        same_email = bool(email) and existing.email == email
-        if not (same_session or same_email):
+        same_username = bool(username) and existing.username == username
+        if not (same_session or same_username):
             raise WrongSessionError()
         return existing
 
     convo = Conversation(
         session_id=session_id,
-        email=email,
+        username=username,
         course=course,
         exercise_number=exercise_number,
         tutor_prompt=tutor_prompt,
@@ -167,7 +167,7 @@ def get_history_for_tutor(db: Session, conversation: Conversation) -> list[dict]
 def count_student_messages(db: Session, conversation: Conversation) -> int:
     """Number of student-role messages in this conversation.
 
-    Step 7's email modal triggers when this reaches 3.
+    Step 7's username modal triggers when this reaches 3.
     """
     stmt = (
         select(func.count(Message.id))
@@ -177,15 +177,15 @@ def count_student_messages(db: Session, conversation: Conversation) -> int:
     return int(db.execute(stmt).scalar_one())
 
 
-def list_conversations_for_email(db: Session, email: str) -> list[dict]:
-    """Return all conversations linked to the given email, most-recently-active
+def list_conversations_for_username(db: Session, username: str) -> list[dict]:
+    """Return all conversations linked to the given username, most-recently-active
     first. Each entry is a JSON-serializable dict suitable for the history API.
     """
-    if not email:
+    if not username:
         return []
     convos = (
         db.query(Conversation)
-        .filter(Conversation.email == email)
+        .filter(Conversation.username == username)
         .order_by(Conversation.last_active_at.desc())
         .all()
     )
@@ -196,10 +196,10 @@ def get_conversation_for_viewer(
     db: Session,
     conversation_id,
     session_id: str,
-    email: str | None,
+    username: str | None,
 ) -> Conversation | None:
     """Return a Conversation if the viewer either owns it via `session_id`
-    (anonymous, same browser) or has the matching email (cross-browser).
+    (anonymous, same browser) or has the matching username (cross-browser).
     Otherwise return None so callers can map to 404 without leaking
     existence.
     """
@@ -208,7 +208,7 @@ def get_conversation_for_viewer(
         return None
     if convo.session_id == session_id:
         return convo
-    if email and convo.email == email:
+    if username and convo.username == username:
         return convo
     return None
 
@@ -292,20 +292,20 @@ def _summarize_conversation(db: Session, c: Conversation) -> dict:
     }
 
 
-def backfill_email_for_session(
-    db: Session, session_id: str, email: str
+def backfill_username_for_session(
+    db: Session, session_id: str, username: str
 ) -> int:
-    """Set `email` on every Conversation row for this session that doesn't
+    """Set `username` on every Conversation row for this session that doesn't
     already have one. Returns the number of rows touched.
 
-    Used by Step 7's email modal to retroactively link anonymous
-    conversations to a student once they provide their email.
+    Used by Step 7's username modal to retroactively link anonymous
+    conversations to a student once they provide their username.
     """
     stmt = (
         update(Conversation)
         .where(Conversation.session_id == session_id)
-        .where(Conversation.email.is_(None))
-        .values(email=email)
+        .where(Conversation.username.is_(None))
+        .values(username=username)
         .execution_options(synchronize_session="fetch")
     )
     result = db.execute(stmt)

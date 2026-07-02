@@ -455,7 +455,7 @@
         return;
       }
       const data = await response.json();
-      renderHistoryEntries(data.email, data.conversations);
+      renderHistoryEntries(data.username, data.conversations);
     } catch (err) {
       if (showLoading) showSidebarEmpty("Could not load history");
     }
@@ -564,7 +564,7 @@
       const response = await fetch("/api/identity/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: emailValue }),
+        body: JSON.stringify({ username: emailValue }),
       });
       if (!response.ok) {
         let reason = "Could not check that email, please try again";
@@ -580,7 +580,7 @@
         return;
       }
       const data = await response.json();
-      modalConfirmedEmail = data.email;
+      modalConfirmedEmail = data.username;
       modalEmailExists = !!data.exists;
       setModalStage("password");
       passwordInput.focus();
@@ -604,7 +604,7 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: modalConfirmedEmail,
+          username: modalConfirmedEmail,
           password: passwordValue,
         }),
       });

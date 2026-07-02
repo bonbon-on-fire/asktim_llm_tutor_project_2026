@@ -1,9 +1,9 @@
-"""Student identity (email + password) helpers.
+"""Student identity (username + password) helpers.
 
 Not a real auth system — just enough to stop someone who knows another
-student's email from claiming their chat history on a different browser.
-The browser cookie (`tutor_email`) remains the day-to-day session-identity
-carrier; the password is checked exactly once, when an email is first
+student's username from claiming their chat history on a different browser.
+The browser cookie (`tutor_username`) remains the day-to-day session-identity
+carrier; the password is checked exactly once, when a username is first
 linked to a session.
 """
 
@@ -22,12 +22,12 @@ class WeakPasswordError(Exception):
     """Raised when a chosen password fails the minimum-length rule."""
 
 
-def get_student(db: Session, email: str) -> Student | None:
-    """Return the Student row for the given email, or None if absent."""
-    return db.get(Student, email)
+def get_student(db: Session, username: str) -> Student | None:
+    """Return the Student row for the given username, or None if absent."""
+    return db.get(Student, username)
 
 
-def create_student(db: Session, *, email: str, password: str) -> Student:
+def create_student(db: Session, *, username: str, password: str) -> Student:
     """Insert a new students row with the password hashed via bcrypt.
 
     Raises:
@@ -38,7 +38,7 @@ def create_student(db: Session, *, email: str, password: str) -> Student:
             f"password must be at least {MIN_PASSWORD_LENGTH} characters"
         )
     hashed = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("ascii")
-    student = Student(email=email, password_hash=hashed)
+    student = Student(username=username, password_hash=hashed)
     db.add(student)
     db.flush()
     return student

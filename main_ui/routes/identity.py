@@ -1,21 +1,21 @@
-"""Identity routes — session state plus email+password linking.
+"""Identity routes — session state plus username+password linking.
 
-`GET  /api/whoami`   — current session/email/conversation state.
-`POST /api/identity` — link the current session to an email by setting a
+`GET  /api/whoami`   — current session/username/conversation state.
+`POST /api/identity` — link the current session to a username by setting a
                       password (creates the student row on first use, or
                       verifies the password on subsequent uses).
 
-This is soft identity, not real auth. The browser cookie `tutor_email`
+This is soft identity, not real auth. The browser cookie `tutor_username`
 remains the active session-identity carrier; the password is checked
-exactly once, when an email is first linked to a session.
+exactly once, when a username is first linked to a session.
 """
 
 from __future__ import annotations
 
 from flask import Blueprint, g, jsonify, request
 
-from main_ui.cookies import EMAIL_COOKIE_NAME, default_cookie_kwargs
-from main_ui.services.conversation import backfill_email_for_session
+from main_ui.cookies import USERNAME_COOKIE_NAME, default_cookie_kwargs
+from main_ui.services.conversation import backfill_username_for_session
 from main_ui.services.students import (
     MIN_PASSWORD_LENGTH,
     WeakPasswordError,
@@ -27,26 +27,28 @@ from main_ui.services.students import (
 
 identity_bp = Blueprint("identity", __name__)
 
+MAX_USERNAME_LENGTH = 100
+
 
 @identity_bp.get("/api/whoami")
 def whoami():
     return jsonify(
         {
             "session_id": getattr(g, "session_id", None),
-            "email": request.cookies.get(EMAIL_COOKIE_NAME),
+            "username": request.cookies.get(USERNAME_COOKIE_NAME),
             "conversation_id": None,
         }
     )
 
 
-def _validate_email(value) -> str | None:
+def _validate_username(value) -> str | None:
     if not isinstance(value, str):
         return "must be a string"
     cleaned = value.strip()
     if not cleaned:
         return "missing"
-    if "@" not in cleaned or "." not in cleaned:
-        return "must contain @ and ."
+    if len(cleaned) > MAX_USERNAME_LENGTH:
+        return f"must be at most {MAX_USERNAME_LENGTH} characters"
     return None
 
 
@@ -60,65 +62,65 @@ def _validate_password(value) -> str | None:
 
 @identity_bp.post("/api/identity/check")
 def check_identity():
-    """Probe whether an email already has a password registered.
+    """Probe whether a username already has a password registered.
 
-    Used by the two-step modal: the frontend POSTs the email here, learns
+    Used by the two-step modal: the frontend POSTs the username here, learns
     whether to ask the student to *create* a password or *enter* their
-    existing one, then sends the full ``{email, password}`` to
+    existing one, then sends the full ``{username, password}`` to
     ``/api/identity`` on stage 2.
 
-    JSON request:  { "email": "alice@example.edu" }
-    JSON success:  { "email": "alice@example.edu", "exists": true|false }
+    JSON request:  { "username": "alice" }
+    JSON success:  { "username": "alice", "exists": true|false }
 
     Error:
-        400 invalid_email — email failed @/. check
+        400 invalid_username — username missing or too long
     """
     data = request.get_json(silent=True) or {}
-    email_reason = _validate_email(data.get("email"))
-    if email_reason:
-        return jsonify({"error": "invalid_email", "reason": email_reason}), 400
+    username_reason = _validate_username(data.get("username"))
+    if username_reason:
+        return jsonify({"error": "invalid_username", "reason": username_reason}), 400
 
-    email = data["email"].strip()
-    student = get_student(g.db, email)
-    return jsonify({"email": email, "exists": student is not None})
+    username = data["username"].strip()
+    student = get_student(g.db, username)
+    return jsonify({"username": username, "exists": student is not None})
 
 
 @identity_bp.post("/api/identity")
 def submit_identity():
-    """Link the current session to an email via password.
+    """Link the current session to a username via password.
 
     JSON request:
-        { "email": "alice@example.edu", "password": "..." }
+        { "username": "alice", "password": "..." }
 
-    Response shape is identical whether the email is new or pre-existing —
+    Response shape is identical whether the username is new or pre-existing —
     the only signal that the password was checked is the 401 on mismatch.
 
     JSON success (200):
-        { "email": "...", "backfilled_conversations": N }
+        { "username": "...", "backfilled_conversations": N }
 
     Errors:
-        400 invalid_email   — email failed @/. check
-        400 weak_password   — password shorter than minimum
-        401 wrong_password  — email exists but password doesn't match
+        400 invalid_username — username missing or too long
+        400 weak_password    — password shorter than minimum
+        401 wrong_password   — username exists but password doesn't match
     """
     data = request.get_json(silent=True) or {}
 
-    email_reason = _validate_email(data.get("email"))
-    if email_reason:
-        return jsonify({"error": "invalid_email", "reason": email_reason}), 400
+    username_reason = _validate_username(data.get("username"))
+    if username_reason:
+        return jsonify({"error": "invalid_username", "reason": username_reason}), 400
 
     password_reason = _validate_password(data.get("password"))
     if password_reason:
         return jsonify({"error": "weak_password", "reason": password_reason}), 400
 
-    email = data["email"].strip()
+    username = data["username"].strip()
     password = data["password"]
 
     db = g.db
-    existing = get_student(db, email)
+    existing = get_student(db, username)
     if existing is None:
         try:
-            create_student(db, email=email, password=password)
+            create_student(db, username=username, password=password)
         except WeakPasswordError as exc:
             return jsonify({"error": "weak_password", "reason": str(exc)}), 400
     else:
@@ -127,16 +129,16 @@ def submit_identity():
                 jsonify(
                     {
                         "error": "wrong_password",
-                        "reason": "email and password don't match",
+                        "reason": "username and password don't match",
                     }
                 ),
                 401,
             )
 
-    backfilled = backfill_email_for_session(db, g.session_id, email)
+    backfilled = backfill_username_for_session(db, g.session_id, username)
 
     response = jsonify(
-        {"email": email, "backfilled_conversations": backfilled}
+        {"username": username, "backfilled_conversations": backfilled}
     )
-    response.set_cookie(EMAIL_COOKIE_NAME, email, **default_cookie_kwargs())
+    response.set_cookie(USERNAME_COOKIE_NAME, username, **default_cookie_kwargs())
     return response

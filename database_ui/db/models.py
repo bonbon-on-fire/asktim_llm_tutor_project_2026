@@ -41,7 +41,7 @@ class Conversation(Base):
 
     id: Mapped[uuid.UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True)
     session_id: Mapped[str] = mapped_column(Text, nullable=False)
-    email: Mapped[str | None] = mapped_column(Text, nullable=True)
+    username: Mapped[str | None] = mapped_column(Text, nullable=True)
     course: Mapped[str] = mapped_column(Text, nullable=False)
     exercise_number: Mapped[str] = mapped_column(Text, nullable=False)
     tutor_prompt: Mapped[str] = mapped_column(Text, nullable=False)

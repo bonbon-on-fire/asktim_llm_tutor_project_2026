@@ -91,8 +91,8 @@ def _order_by(sort: str):
     """ORDER BY clause for the conversation list, by sort mode."""
     recent = Conversation.last_active_at.desc()
     if sort == "student":
-        # Named students first (email NULLs last), then most-recent within each.
-        return (Conversation.email.is_(None), Conversation.email.asc(), recent)
+        # Named students first (username NULLs last), then most-recent within each.
+        return (Conversation.username.is_(None), Conversation.username.asc(), recent)
     return (recent,)
 
 
@@ -145,7 +145,7 @@ def _summarize(
 ) -> dict:
     return {
         "id": str(c.id),
-        "email": c.email,
+        "email": c.username,
         "session_id": c.session_id,
         "course": c.course,
         "course_name": course_display_name(c.course),

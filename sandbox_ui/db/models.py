@@ -43,7 +43,7 @@ class Conversation(Base):
         Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4
     )
     session_id: Mapped[str] = mapped_column(Text, nullable=False)
-    email: Mapped[str | None] = mapped_column(Text, nullable=True)
+    username: Mapped[str | None] = mapped_column(Text, nullable=True)
     course: Mapped[str] = mapped_column(Text, nullable=False)
     exercise_number: Mapped[str] = mapped_column(Text, nullable=False)
     # sandbox_ui-only: which content kind this conversation's exercise_number
@@ -100,7 +100,7 @@ class Conversation(Base):
     )
 
     __table_args__ = (
-        Index("idx_conversations_email", "email"),
+        Index("idx_conversations_username", "username"),
         Index("idx_conversations_session_id", "session_id"),
     )
 
@@ -136,17 +136,17 @@ class Message(Base):
 
 
 class Student(Base):
-    """Soft-identity record: one row per email that's been linked to a password.
+    """Soft-identity record: one row per username that's been linked to a password.
 
     Not a real auth system — just a proof-of-ownership check that prevents
-    casual impersonation when a student claims an existing email from a new
-    browser. The `email` cookie remains the active session-identity carrier;
+    casual impersonation when a student claims an existing username from a new
+    browser. The `username` cookie remains the active session-identity carrier;
     this row exists so we can verify the claim on first link.
     """
 
     __tablename__ = "students"
 
-    email: Mapped[str] = mapped_column(Text, primary_key=True)
+    username: Mapped[str] = mapped_column(Text, primary_key=True)
     password_hash: Mapped[str] = mapped_column(Text, nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow

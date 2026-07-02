@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from flask import Blueprint, jsonify, render_template, request
 
-from sandbox_ui.cookies import EMAIL_COOKIE_NAME
+from sandbox_ui.cookies import USERNAME_COOKIE_NAME
 from sandbox_ui.routes._validation import (
     DEFAULT_COURSE,
     DEFAULT_EXERCISE,
@@ -45,7 +45,7 @@ def _render_embed(*, course: str, exercise: str, tutor: str, syllabus: bool = Tr
         "tutor": tutor,
         "syllabus": syllabus,
     }
-    has_email = bool(request.cookies.get(EMAIL_COOKIE_NAME))
+    has_email = bool(request.cookies.get(USERNAME_COOKIE_NAME))
     return render_template(
         "embed.html",
         course=course,
