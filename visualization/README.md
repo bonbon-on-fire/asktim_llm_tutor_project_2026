@@ -54,9 +54,10 @@ All 11 charts are written to `visualization/outputs/` (or `.../outputs/rag/` wit
 | `10_grades_clueless_transcripts.png` | Same chart restricted to clueless persona. |
 | `11_grades_cooperative_transcripts.png` | Same chart restricted to cooperative persona. |
 
-Charts `01`–`06` (the SC2x persona-type evaluation set) read the raw grade dicts;
-`07`–`11` line/histogram charts share the transcript reader. The per-transcript
-line charts annotate transcript count and mean score with integer y-ticks.
+All charts are built from one shared `GradeRow` model, so transcripts are read
+once per run and fed to both the SC2x (`01`–`06`) and line/histogram (`07`–`11`)
+families. The per-transcript line charts annotate transcript count and mean score
+with integer y-ticks.
 
 ## Sorting
 

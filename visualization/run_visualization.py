@@ -37,6 +37,7 @@ class GradeRow:
     transcript_name: str
     total_score: float
     max_score: float
+    kind: str = "?"  # "exercise" | "practice" | "?" — content kind for SC2x charts
     section_scores: dict[str, float] = field(default_factory=dict)
     section_maxes: dict[str, float] = field(default_factory=dict)
     subsection_scores: dict[str, float] = field(default_factory=dict)
@@ -232,6 +233,9 @@ def _read_judged_transcript(path: Path) -> GradeRow | None:
         transcript_name=path.stem.strip(),
         total_score=_parse_score(grade.get("total_score")),
         max_score=_parse_score(grade.get("max_score")),
+        # RAG transcripts store the kind under "exercise_kind"; older runs used
+        # "kind". Fall back so exercise/practice charts work for both.
+        kind=str(raw.get("kind") or raw.get("exercise_kind") or "?").strip(),
         section_scores=section_scores,
         section_maxes=section_maxes,
         subsection_scores=subsection_scores,
@@ -407,9 +411,9 @@ def _chart_score_histogram(
 # ---------------------------------------------------------------------------
 # SC2x persona-type evaluation charts (01-06)
 #
-# These read the raw grade dicts directly (rather than GradeRow) and summarize
-# the SC2x simulation: 3 exercises + 3 practices x 18 personas, graded by
-# judge_08/rubric_08.
+# These summarize the SC2x simulation (3 exercises + 3 practices x 18 personas,
+# graded by judge_08/rubric_08) from the shared GradeRow model — the same rows
+# the 07-11 charts use, so transcripts are read only once.
 # ---------------------------------------------------------------------------
 
 # Persona types in a fixed display order, with stable colors.
@@ -422,47 +426,28 @@ _SC2X_SECTIONS = [
 ]
 
 
-def _sc2x_load_records(transcripts_dir: Path, folder_suffix: str = "") -> list[dict]:
-    """Read Claude-graded transcripts into flat summary dicts for the SC2x charts."""
-    recs: list[dict] = []
-    for path in sorted(transcripts_dir.glob(f"*/*_claude{folder_suffix}/transcript_*.json")):
-        try:
-            d = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        g = d.get("grade") or {}
-        if not g:
-            continue
-        ptype = str(d.get("student_persona", "")).split("_")[0]
-        rec = {
-            "ptype": ptype,
-            # RAG transcripts store the kind under "exercise_kind"; older runs
-            # used "kind". Fall back so exercise/practice charts work for both.
-            "kind": d.get("kind") or d.get("exercise_kind") or "?",
-            "number": d.get("exercise_number", "?"),
-            "total": g.get("total_score", 0),
-            "max": g.get("max_score", 0) or 1,
-        }
-        for sid, _ in _SC2X_SECTIONS:
-            base = (g.get("sections", {}).get(sid, {}) or {}).get("base", {})
-            rec[sid] = base.get("score", 0)
-            rec[sid + "_max"] = base.get("max", 0) or 1
-        recs.append(rec)
-    return recs
-
-
 def _sc2x_mean(xs) -> float:
     """Mean of an iterable, or 0.0 when empty."""
     xs = list(xs)
     return sum(xs) / len(xs) if xs else 0.0
 
 
-def _sc2x_chart_total_by_type(plt, recs, out_dir: Path) -> None:
+def _sc2x_num(x: float) -> float:
+    """Numerator value: the score if finite, else 0.0."""
+    return x if math.isfinite(x) else 0.0
+
+
+def _sc2x_den(x: float) -> float:
+    """Denominator value: the max if finite and positive, else 1.0 (avoids /0)."""
+    return x if math.isfinite(x) and x > 0 else 1.0
+
+
+def _sc2x_chart_total_by_type(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """01: Mean total score by persona type (with spread)."""
     fig, ax = plt.subplots(figsize=(7, 5))
     means, stds = [], []
     for t in _SC2X_TYPES:
-        vals = [r["total"] for r in recs if r["ptype"] == t]
+        vals = [_sc2x_num(r.total_score) for r in rows if r.persona_type == t]
         m = _sc2x_mean(vals)
         means.append(m)
         stds.append((_sc2x_mean([(v - m) ** 2 for v in vals])) ** 0.5)
@@ -478,19 +463,26 @@ def _sc2x_chart_total_by_type(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _sc2x_chart_sections_by_type(plt, recs, out_dir: Path) -> None:
+def _sc2x_chart_sections_by_type(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """02: Rubric-section attainment (% of max) by persona type."""
     import numpy as np
     fig, ax = plt.subplots(figsize=(9, 5))
     x = np.arange(len(_SC2X_SECTIONS))
     width = 0.26
     for i, t in enumerate(_SC2X_TYPES):
-        rows = [r for r in recs if r["ptype"] == t]
-        pct = [100 * _sc2x_mean([r[sid] for r in rows]) / _sc2x_mean([r[sid + "_max"] for r in rows])
-               for sid, _ in _SC2X_SECTIONS]
+        trows = [r for r in rows if r.persona_type == t]
+        pct = [
+            100
+            * _sc2x_mean([_sc2x_num(r.section_scores.get(sid, float("nan"))) for r in trows])
+            / _sc2x_mean([_sc2x_den(r.section_maxes.get(sid, float("nan"))) for r in trows])
+            for sid, _ in _SC2X_SECTIONS
+        ]
         ax.bar(x + (i - 1) * width, pct, width, label=t, color=_SC2X_TYPE_COLOR[t])
     ax.set_xticks(x)
-    ax.set_xticklabels([f"{lbl}\n(/{recs[0][sid + '_max']})" for sid, lbl in _SC2X_SECTIONS])
+    ax.set_xticklabels([
+        f"{lbl}\n(/{int(_sc2x_den(rows[0].section_maxes.get(sid, float('nan'))))})"
+        for sid, lbl in _SC2X_SECTIONS
+    ])
     ax.set_ylim(0, 100)
     ax.set_ylabel("Attainment (% of section max)")
     ax.set_title("Where the tutor loses points: rubric section by persona type")
@@ -501,7 +493,7 @@ def _sc2x_chart_sections_by_type(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _sc2x_chart_kind_by_type(plt, recs, out_dir: Path) -> None:
+def _sc2x_chart_kind_by_type(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """03: Exercise vs practice attainment by persona type."""
     import numpy as np
     fig, ax = plt.subplots(figsize=(8, 5))
@@ -511,8 +503,12 @@ def _sc2x_chart_kind_by_type(plt, recs, out_dir: Path) -> None:
     for i, k in enumerate(kinds):
         pct = []
         for t in _SC2X_TYPES:
-            rows = [r for r in recs if r["ptype"] == t and r["kind"] == k]
-            pct.append(100 * _sc2x_mean([r["total"] for r in rows]) / _sc2x_mean([r["max"] for r in rows]))
+            krows = [r for r in rows if r.persona_type == t and r.kind == k]
+            pct.append(
+                100
+                * _sc2x_mean([_sc2x_num(r.total_score) for r in krows])
+                / _sc2x_mean([_sc2x_den(r.max_score) for r in krows])
+            )
         ax.bar(x + (i - 0.5) * width, pct, width, label=k,
                color="#6a51a3" if k == "exercise" else "#e6a000")
     ax.set_xticks(x)
@@ -526,10 +522,10 @@ def _sc2x_chart_kind_by_type(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _sc2x_chart_distribution(plt, recs, out_dir: Path) -> None:
+def _sc2x_chart_distribution(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """04: Total-score distribution by persona type (boxplot)."""
     fig, ax = plt.subplots(figsize=(7, 5))
-    data = [[r["total"] for r in recs if r["ptype"] == t] for t in _SC2X_TYPES]
+    data = [[_sc2x_num(r.total_score) for r in rows if r.persona_type == t] for t in _SC2X_TYPES]
     bp = ax.boxplot(data, tick_labels=_SC2X_TYPES, patch_artist=True, showmeans=True)
     for patch, t in zip(bp["boxes"], _SC2X_TYPES):
         patch.set_facecolor(_SC2X_TYPE_COLOR[t]); patch.set_alpha(0.6)
@@ -541,14 +537,18 @@ def _sc2x_chart_distribution(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _sc2x_chart_heatmap(plt, recs, out_dir: Path) -> None:
+def _sc2x_chart_heatmap(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """05: Heatmap of persona type x rubric section (% of max)."""
     import numpy as np
     grid = np.zeros((len(_SC2X_TYPES), len(_SC2X_SECTIONS)))
     for i, t in enumerate(_SC2X_TYPES):
-        rows = [r for r in recs if r["ptype"] == t]
+        trows = [r for r in rows if r.persona_type == t]
         for j, (sid, _) in enumerate(_SC2X_SECTIONS):
-            grid[i, j] = 100 * _sc2x_mean([r[sid] for r in rows]) / _sc2x_mean([r[sid + "_max"] for r in rows])
+            grid[i, j] = (
+                100
+                * _sc2x_mean([_sc2x_num(r.section_scores.get(sid, float("nan"))) for r in trows])
+                / _sc2x_mean([_sc2x_den(r.section_maxes.get(sid, float("nan"))) for r in trows])
+            )
     fig, ax = plt.subplots(figsize=(7.5, 4.5))
     im = ax.imshow(grid, cmap="RdYlGn", vmin=60, vmax=100, aspect="auto")
     ax.set_xticks(range(len(_SC2X_SECTIONS))); ax.set_xticklabels([l for _, l in _SC2X_SECTIONS])
@@ -563,17 +563,21 @@ def _sc2x_chart_heatmap(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _sc2x_chart_by_problem(plt, recs, out_dir: Path) -> None:
+def _sc2x_chart_by_problem(plt, rows: list[GradeRow], out_dir: Path) -> None:
     """06: Mean attainment by problem (exercise/practice 01..03)."""
     fig, ax = plt.subplots(figsize=(9, 5))
     labels, pcts, colors = [], [], []
     for kind, color in (("exercise", "#6a51a3"), ("practice", "#e6a000")):
         for n in ("01", "02", "03"):
-            rows = [r for r in recs if r["kind"] == kind and r["number"] == n]
-            if not rows:
+            nrows = [r for r in rows if r.kind == kind and r.exercise_number == n]
+            if not nrows:
                 continue
             labels.append(f"{kind[:4]} {int(n)}")
-            pcts.append(100 * _sc2x_mean([r["total"] for r in rows]) / _sc2x_mean([r["max"] for r in rows]))
+            pcts.append(
+                100
+                * _sc2x_mean([_sc2x_num(r.total_score) for r in nrows])
+                / _sc2x_mean([_sc2x_den(r.max_score) for r in nrows])
+            )
             colors.append(color)
     bars = ax.bar(labels, pcts, color=colors)
     ax.set_ylim(0, 100)
@@ -586,23 +590,22 @@ def _sc2x_chart_by_problem(plt, recs, out_dir: Path) -> None:
     plt.close(fig)
 
 
-def _render_sc2x_charts(transcripts_dir: Path, out_dir: Path, folder_suffix: str = "") -> int:
-    """Generate the six SC2x charts (01-06) into *out_dir*.
+def _render_sc2x_charts(rows: list[GradeRow], out_dir: Path) -> int:
+    """Generate the six SC2x charts (01-06) into *out_dir* from graded rows.
 
-    Returns the number of graded transcripts found (0 when none, in which case
-    no charts are written).
+    Returns the number of rows used (0 when empty, in which case nothing is
+    written).
     """
-    recs = _sc2x_load_records(transcripts_dir, folder_suffix)
-    if not recs:
+    if not rows:
         return 0
     plt = _safe_import_matplotlib()
-    _sc2x_chart_total_by_type(plt, recs, out_dir)
-    _sc2x_chart_sections_by_type(plt, recs, out_dir)
-    _sc2x_chart_kind_by_type(plt, recs, out_dir)
-    _sc2x_chart_distribution(plt, recs, out_dir)
-    _sc2x_chart_heatmap(plt, recs, out_dir)
-    _sc2x_chart_by_problem(plt, recs, out_dir)
-    return len(recs)
+    _sc2x_chart_total_by_type(plt, rows, out_dir)
+    _sc2x_chart_sections_by_type(plt, rows, out_dir)
+    _sc2x_chart_kind_by_type(plt, rows, out_dir)
+    _sc2x_chart_distribution(plt, rows, out_dir)
+    _sc2x_chart_heatmap(plt, rows, out_dir)
+    _sc2x_chart_by_problem(plt, rows, out_dir)
+    return len(rows)
 
 
 # ---------------------------------------------------------------------------
@@ -638,8 +641,8 @@ def main() -> int:
         )
         return 1
 
-    # SC2x persona-type evaluation charts (01-06) share this outputs/ folder.
-    n_sc2x = _render_sc2x_charts(transcripts_dir, out_dir, folder_suffix)
+    # SC2x persona-type evaluation charts (01-06), from the same rows.
+    n_sc2x = _render_sc2x_charts(claude_all_rows, out_dir)
     print(f"  [1-6] SC2x charts from {n_sc2x} graded transcripts")
 
     # Charts are numbered with a zero-padded ``##_`` prefix that continues after
