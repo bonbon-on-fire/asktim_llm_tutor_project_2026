@@ -1570,18 +1570,29 @@ def _chart_mean_score_by_course(
 
 def main() -> int:
     """Entry point: load Claude-graded transcripts and generate all configured charts."""
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Transcript grading visualizations.")
+    parser.add_argument(
+        "--rag",
+        action="store_true",
+        help="Read RAG grades (*_claude_rag/) and write to visualization/outputs/rag/.",
+    )
+    args = parser.parse_args()
+    folder_suffix = "_rag" if args.rag else ""
+
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
-    out_dir = repo_root / "visualization" / "outputs"
+    out_dir = repo_root / "visualization" / "outputs" / ("rag" if args.rag else "")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    claude_all_rows = _read_provider_rows(transcripts_dir, "claude")
-    print(f"Loaded Claude: {len(claude_all_rows)} transcripts")
+    claude_all_rows = _read_provider_rows_variant(transcripts_dir, "claude", folder_suffix)
+    print(f"Loaded Claude{folder_suffix}: {len(claude_all_rows)} transcripts")
 
     if not claude_all_rows:
         print(
             "No Claude judged transcripts found under "
-            "transcripts/<persona>/<persona>_claude/transcript_*.json. "
+            f"transcripts/<persona>/<persona>_claude{folder_suffix}/transcript_*.json. "
             "Run the judge for Claude first."
         )
         return 1

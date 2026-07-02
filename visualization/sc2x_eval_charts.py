@@ -43,9 +43,9 @@ def _mpl():
     return plt
 
 
-def load_records() -> list[dict]:
+def load_records(folder_suffix: str = "") -> list[dict]:
     recs: list[dict] = []
-    for f in glob.glob(str(_TR / "*" / "*_claude" / "transcript_*.json")):
+    for f in glob.glob(str(_TR / "*" / f"*_claude{folder_suffix}" / "transcript_*.json")):
         d = json.load(open(f, encoding="utf-8"))
         g = d.get("grade") or {}
         if not g:
@@ -53,7 +53,9 @@ def load_records() -> list[dict]:
         ptype = d["student_persona"].split("_")[0]
         rec = {
             "ptype": ptype,
-            "kind": d.get("kind", "?"),
+            # RAG transcripts store the kind under "exercise_kind"; older runs
+            # used "kind". Fall back so exercise/practice charts work for both.
+            "kind": d.get("kind") or d.get("exercise_kind") or "?",
             "number": d.get("exercise_number", "?"),
             "total": g.get("total_score", 0),
             "max": g.get("max_score", 0) or 1,
@@ -195,9 +197,22 @@ def chart_by_problem(plt, recs):
 
 
 def main() -> int:
-    recs = load_records()
+    import argparse
+
+    global _OUT
+    parser = argparse.ArgumentParser(description="SC2x tutor-evaluation charts.")
+    parser.add_argument(
+        "--rag",
+        action="store_true",
+        help="Read RAG grades (*_claude_rag/) and write to visualization/outputs/sc2x_rag/.",
+    )
+    args = parser.parse_args()
+    folder_suffix = "_rag" if args.rag else ""
+    _OUT = _REPO / "visualization" / "outputs" / ("sc2x_rag" if args.rag else "sc2x")
+
+    recs = load_records(folder_suffix)
     if not recs:
-        print("No graded transcripts found under transcripts/*/*_claude/.")
+        print(f"No graded transcripts found under transcripts/*/*_claude{folder_suffix}/.")
         return 1
     _OUT.mkdir(parents=True, exist_ok=True)
     plt = _mpl()
