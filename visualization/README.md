@@ -29,9 +29,9 @@ python -m visualization.sc2x_eval_charts
 ### RAG grades
 
 Both modules take a `--rag` flag to chart the RAG-context round (reads
-`*_claude_rag/` instead of `*_claude/`). The same charts are written to
-parallel folders — `visualization/outputs/rag/` and
-`visualization/outputs/sc2x_rag/` — so the RAG and non-RAG sets sit side by side:
+`*_claude_rag/` instead of `*_claude/`). All RAG charts are written together to
+`visualization/outputs/rag/`; the default (non-RAG) charts stay in
+`visualization/outputs/`:
 
 ```powershell
 python -m visualization.run_visualization --rag

@@ -2,7 +2,8 @@
 
 Reads transcripts/<type>/<type>_claude/transcript_*.json (the SC2x simulation:
 3 exercises + 3 practices x 18 personas, graded by judge_08/rubric_08) and
-writes PNG charts to visualization/outputs/sc2x/.
+writes PNG charts to visualization/outputs/ (or visualization/outputs/rag/ with
+--rag, which reads the *_claude_rag/ RAG-context grades).
 
 Charts:
   1. Mean total score by persona type (with spread).
@@ -24,7 +25,7 @@ from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
 _TR = _REPO / "transcripts"
-_OUT = _REPO / "visualization" / "outputs" / "sc2x"
+_OUT = _REPO / "visualization" / "outputs"
 
 # Persona types in a fixed display order, with stable colors.
 _TYPES = ["cooperative", "chaotic", "clueless"]
@@ -208,7 +209,9 @@ def main() -> int:
     )
     args = parser.parse_args()
     folder_suffix = "_rag" if args.rag else ""
-    _OUT = _REPO / "visualization" / "outputs" / ("sc2x_rag" if args.rag else "sc2x")
+    _OUT = _REPO / "visualization" / "outputs"
+    if args.rag:
+        _OUT = _OUT / "rag"
 
     recs = load_records(folder_suffix)
     if not recs:
