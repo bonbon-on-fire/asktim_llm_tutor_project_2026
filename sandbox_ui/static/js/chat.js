@@ -102,7 +102,6 @@
   let isSending = false;
   let studentMessageCount = 0;
   let modalOpen = false;
-  let dismissedThisSession = false;
   let sidebarOpen = false;
   // AbortController for the in-flight POST /api/chat — set when sending,
   // aborted when the student switches to a past conversation mid-request.
@@ -382,34 +381,26 @@
     modalEmailExists = null;
     modalConfirmedEmail = "";
     // Manual open (the "Add username" button) is dismissible as "Cancel"; the
-    // automatic prompt after the third message reads "Skip".
+    // automatic prompt after each message reads "Skip".
     emailSkip.textContent = manual ? "Cancel" : "Skip";
     setModalStage("email");
     emailModal.hidden = false;
     emailInput.focus();
   }
 
-  function closeEmailModal({ dismissed = false } = {}) {
+  function closeEmailModal() {
     if (!modalOpen) return;
     modalOpen = false;
     emailModal.hidden = true;
-    if (dismissed) {
-      dismissedThisSession = true;
-    }
     composerInput.focus();
   }
 
   function maybeShowEmailModal(count) {
-    console.log("[modal-trigger]", {
-      count,
-      hasEmail: hasEmailSet(),
-      dismissed: dismissedThisSession,
-      modalOpen,
-      sidebarOpen,
-    });
-    if (count < 3) return;
+    // Nudge after every message until the student signs up — intentionally
+    // persistent: dismissing it (Skip) doesn't suppress it, so it reappears
+    // on the next turn until a username is linked.
     if (hasEmailSet()) return;
-    if (dismissedThisSession) return;
+    if (count < 1) return;
     openEmailModal();
   }
 
@@ -593,10 +584,6 @@
     messageList.innerHTML = "";
     conversationId = null;
     studentMessageCount = 0;
-    // Each new chat is a fresh chance to capture the email — reset the
-    // "dismissed" flag so the modal can re-appear after 3 messages if
-    // the email cookie still isn't set.
-    dismissedThisSession = false;
     hideError();
     highlightActiveEntry();
     composerInput.focus();
@@ -1585,13 +1572,11 @@
   passwordInput.addEventListener("input", updateEmailSubmit);
   emailForm.addEventListener("submit", submitEmail);
   emailChangeBtn.addEventListener("click", backToEmailStage);
-  emailSkip.addEventListener("click", () =>
-    closeEmailModal({ dismissed: true }),
-  );
+  emailSkip.addEventListener("click", () => closeEmailModal());
   emailModal.addEventListener("click", (event) => {
     // Backdrop click = skip; clicks inside the card are ignored
     if (event.target === emailModal) {
-      closeEmailModal({ dismissed: true });
+      closeEmailModal();
     }
   });
 
@@ -1619,7 +1604,7 @@
     } else if (createModalOpen) {
       closeCreateModal();
     } else if (modalOpen) {
-      closeEmailModal({ dismissed: true });
+      closeEmailModal();
     } else if (sidebarOpen) {
       closeSidebar();
     }
