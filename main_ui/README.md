@@ -16,7 +16,7 @@ What works today:
 - Server-Sent Events streaming — tutor replies token-by-token, with hidden `pedagogical-reasoning` server-side
 - Sanitized-markdown rendering of tutor replies — tables, lists, and bold display cleanly (`marked` → `DOMPurify`, vendored locally under `static/js/`; rendered on stream completion; falls back to plain text if the libs don't load)
 - Postgres-backed persistence (Conversation / Message / Student tables, Alembic migrations)
-- Two-stage email + password identity (`/api/identity/check` → `/api/identity`) with bcrypt hashing
+- Two-stage username + password identity (`/api/identity/check` → `/api/identity`) with bcrypt hashing
 - Sidebar with cross-browser conversation history, live-reorder on new turns, click-to-continue past chats
 - "Add email" sidebar entry point so students who skipped the modal can come back later
 - MIT crimson branding, AskTIM Beta header, "MIT 11.270x Cities and Climate Change" course banner
@@ -70,9 +70,9 @@ python -m alembic -c main_ui\db\migrations\alembic.ini upgrade head
 
 Five tables in `public`:
 
-- `conversations` — one per chat thread (UUID PK, session_id, email, course, exercise_number, tutor_prompt)
+- `conversations` — one per chat thread (UUID PK, session_id, username, course, exercise_number, tutor_prompt)
 - `messages` — student/tutor turns (BigInt PK, FK to conversations, role, content, `pedagogical_reasoning`)
-- `students` — email + bcrypt password hash for cross-browser identity (one row per email)
+- `students` — username + bcrypt password hash for cross-browser identity (one row per username)
 - `uploaded_images` — student-uploaded images: `filename`, `mime_type`, `size_bytes`, and `data` (BYTEA bytes), FK to the student `messages` row
 - `alembic_version` — Alembic bookkeeping
 
@@ -89,13 +89,13 @@ psql -U postgres -h localhost -d asktim -c "SELECT turn, role, LEFT(content, 60)
 | --- | --- | --- |
 | GET | `/embed` | Render the chat page (params: `course`, `exercise`, `tutor`) |
 | GET | `/health` | Liveness probe |
-| GET | `/api/whoami` | Current session/email state |
+| GET | `/api/whoami` | Current session/username state |
 | POST | `/api/chat` | Stream a tutor reply as Server-Sent Events. JSON (text only) or `multipart/form-data` (text + `images` files) |
-| POST | `/api/identity/check` | Probe whether an email already has a password registered |
-| POST | `/api/identity` | Link the current session to an email by password (signup or verify) |
-| GET | `/api/history` | List conversations for the current email cookie |
+| POST | `/api/identity/check` | Probe whether a username already has a password registered |
+| POST | `/api/identity` | Link the current session to a username by password (signup or verify) |
+| GET | `/api/history` | List conversations for the current username cookie |
 | GET | `/api/conversation/<uuid>` | Read-only message log for one conversation (each message includes any `images` metadata) |
-| GET | `/api/image/<id>` | Serve an uploaded image's bytes (ownership-checked by session/email; 404 otherwise) |
+| GET | `/api/image/<id>` | Serve an uploaded image's bytes (ownership-checked by session/username; 404 otherwise) |
 
 ### Streaming chat shape
 
@@ -121,7 +121,7 @@ main_ui/
   __init__.py             # package marker + .env auto-load
   __main__.py             # python -m main_ui entry point
   config.py               # env-driven Config dataclass
-  cookies.py              # session + email cookie helpers (HttpOnly, SameSite=None, Partitioned)
+  cookies.py              # session + username cookie helpers (HttpOnly, SameSite=None, Partitioned)
   run_app.py              # Flask factory, before/teardown hooks, blueprint registration
   README.md               # this file
   PLANNING.md             # step-by-step build log
@@ -170,7 +170,7 @@ from the Railway Postgres service; migrations run automatically on every boot.
 ## How `main_ui/` relates to `sandbox_ui/`
 
 `main_ui/` is the student-facing production app: course/exercise/tutor come from
-URL params, conversations persist to PostgreSQL (`asktim`), identity is email +
+URL params, conversations persist to PostgreSQL (`asktim`), identity is username +
 password (bcrypt, cross-browser), and replies stream over SSE.
 
 [`sandbox_ui/`](../sandbox_ui/README.md) ("AskTIM Sandbox") is the developer/TA

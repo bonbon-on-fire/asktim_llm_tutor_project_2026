@@ -4,7 +4,7 @@
 
 Developer/TA **testing website** for the tutor. It mirrors the student-facing
 [`main_ui/`](../main_ui/README.md) chat experience — token-streamed replies,
-persistent cross-session history, email + password identity — but adds a
+persistent cross-session history, username + password identity — but adds a
 **Create context** wizard so a tester can switch course, exercise, tutor prompt,
 and syllabus on the fly (picking a built-in or pasting custom text at each step),
 and runs against its **own separate database** so test chats never touch
@@ -18,7 +18,7 @@ Branding is deliberately distinct from production: the accent is teal-blue
 - iframe-style chat at `/embed?course=...&exercise=...&tutor=...` (and a bare `/` that uses defaults)
 - Server-Sent Events streaming — tutor replies token-by-token, `pedagogical-reasoning` hidden server-side
 - Sanitized-markdown rendering of tutor replies (tables/lists/bold) — `marked` → `DOMPurify`, same `setMessageContent()` path as `main_ui`
-- Conversation / Message / Student tables; email + password identity (bcrypt), cross-browser history sidebar
+- Conversation / Message / Student tables; username + password identity (bcrypt), cross-browser history sidebar
 - The same tutor pipeline via `tutor.run_tutor` (through `services/tutor_bridge.py`)
 - **Curriculum figures** auto-attached to the tutor — figures matching the exercise (`curriculum/<course>/figures/exercise_<NN>_*`) are sent as multimodal input on every turn via [`utils.figures.discover_figures`](../utils/figures.py). Skipped when the tester typed a one-off custom course/exercise in the Create-context wizard (no figures folder on disk)
 - **Per-course lecture transcripts** — a course's `lectures/*.txt` fold into the tutor context via [`utils.lectures.load_lecture_transcripts`](../utils/lectures.py). In the Sandbox this is a dedicated **Lectures** wizard step, toggleable per conversation (and skipped in RAG mode, where lecture material is retrieved instead)
@@ -206,7 +206,7 @@ sandbox_ui/
   __main__.py             # python -m sandbox_ui entry point (127.0.0.1, port 5000)
   config.py               # env-driven Config (SANDBOX_UI_* vars, separate DB)
   run_app.py              # Flask factory; create_all + _reconcile_columns on boot; blueprints
-  cookies.py              # session/email cookie names + kwargs
+  cookies.py              # session/username cookie names + kwargs
   about_asktim.txt        # "About yourself" block folded into the tutor prompt
   db/
     models.py             # SQLAlchemy models (course/syllabus/lectures flags, custom_*, context_mode)
