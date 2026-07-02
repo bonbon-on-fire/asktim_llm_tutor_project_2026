@@ -1597,12 +1597,19 @@ def main() -> int:
         )
         return 1
 
-    chart_idx = 1
+    # SC2x persona-type evaluation charts (01-06) share this outputs/ folder.
+    from . import sc2x_eval_charts
+    n_sc2x = sc2x_eval_charts.render_charts(out_dir, folder_suffix)
+    print(f"  [1-6] SC2x charts from {n_sc2x} graded transcripts")
+
+    # Charts are numbered with a zero-padded ``##_`` prefix that continues after
+    # the sc2x charts (01-06); start at 07 to avoid colliding with them.
+    chart_idx = 7
 
     _chart_score_histogram(
         claude_all_rows,
         out_dir,
-        output_name="claude_score_histogram_all.png",
+        output_name=f"{chart_idx:02d}_score_histogram_all.png",
         chart_idx=chart_idx,
     )
     chart_idx += 1
@@ -1612,7 +1619,7 @@ def main() -> int:
         out_dir,
         provider_label="claude",
         scope_label="all transcripts",
-        output_name="claude_grades_all_transcripts.png",
+        output_name=f"{chart_idx:02d}_grades_all_transcripts.png",
         chart_idx=chart_idx,
     )
     chart_idx += 1
@@ -1626,7 +1633,7 @@ def main() -> int:
                 out_dir,
                 provider_label="claude",
                 scope_label=f"{persona} only",
-                output_name=f"claude_grades_{persona}_transcripts.png",
+                output_name=f"{chart_idx:02d}_grades_{persona}_transcripts.png",
                 chart_idx=chart_idx,
             )
             chart_idx += 1

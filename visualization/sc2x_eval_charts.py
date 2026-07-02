@@ -197,26 +197,18 @@ def chart_by_problem(plt, recs):
     plt.close(fig)
 
 
-def main() -> int:
-    import argparse
+def render_charts(out_dir: Path, folder_suffix: str = "") -> int:
+    """Generate the six SC2x charts (01-06) into *out_dir*.
 
+    Reads ``*_claude{folder_suffix}/`` grades. Returns the number of graded
+    transcripts found (0 when none, in which case no charts are written).
+    Shared entry point for both this module's CLI and run_visualization.
+    """
     global _OUT
-    parser = argparse.ArgumentParser(description="SC2x tutor-evaluation charts.")
-    parser.add_argument(
-        "--rag",
-        action="store_true",
-        help="Read RAG grades (*_claude_rag/) and write to visualization/outputs/sc2x_rag/.",
-    )
-    args = parser.parse_args()
-    folder_suffix = "_rag" if args.rag else ""
-    _OUT = _REPO / "visualization" / "outputs"
-    if args.rag:
-        _OUT = _OUT / "rag"
-
+    _OUT = out_dir
     recs = load_records(folder_suffix)
     if not recs:
-        print(f"No graded transcripts found under transcripts/*/*_claude{folder_suffix}/.")
-        return 1
+        return 0
     _OUT.mkdir(parents=True, exist_ok=True)
     plt = _mpl()
     chart_total_by_type(plt, recs)
@@ -225,7 +217,29 @@ def main() -> int:
     chart_distribution(plt, recs)
     chart_heatmap(plt, recs)
     chart_by_problem(plt, recs)
-    print(f"Wrote 6 charts from {len(recs)} graded transcripts to {_OUT}")
+    return len(recs)
+
+
+def main() -> int:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="SC2x tutor-evaluation charts.")
+    parser.add_argument(
+        "--rag",
+        action="store_true",
+        help="Read RAG grades (*_claude_rag/) and write to visualization/outputs/rag/.",
+    )
+    args = parser.parse_args()
+    folder_suffix = "_rag" if args.rag else ""
+    out_dir = _REPO / "visualization" / "outputs"
+    if args.rag:
+        out_dir = out_dir / "rag"
+
+    n = render_charts(out_dir, folder_suffix)
+    if not n:
+        print(f"No graded transcripts found under transcripts/*/*_claude{folder_suffix}/.")
+        return 1
+    print(f"Wrote 6 charts from {n} graded transcripts to {out_dir}")
     return 0
 
 
