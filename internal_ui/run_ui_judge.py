@@ -39,9 +39,10 @@ from internal_ui.cli_utils import (
 TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 
 # ---------------------------------------------------------------------------
-# Parallel workers — change this value to control concurrency.
+# Parallel workers — override at runtime with the JUDGE_WORKERS env var
+# (e.g. JUDGE_WORKERS=24) or change this default to control concurrency.
 # ---------------------------------------------------------------------------
-PARALLEL_WORKERS = 6
+PARALLEL_WORKERS = int(os.environ.get("JUDGE_WORKERS", "6"))
 
 
 def _require_openai_api_key() -> None:
