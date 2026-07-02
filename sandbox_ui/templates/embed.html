@@ -46,12 +46,12 @@
                 </svg>
                 <span>Edit context</span>
             </button>
-            <button type="button" class="sidebar-cta sidebar-cta-primary" id="add-email" title="Add your email" hidden>
+            <button type="button" class="sidebar-cta sidebar-cta-primary" id="add-email" title="Add your username" hidden>
                 <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                 </svg>
-                <span>Add email</span>
+                <span>Add username</span>
             </button>
             <button type="button" class="sidebar-cta" id="new-chat" title="Start a new chat">
                 <svg class="sidebar-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -109,19 +109,19 @@
     <div class="modal-overlay" id="email-modal" role="dialog" aria-modal="true"
          aria-labelledby="email-modal-title" aria-describedby="email-modal-body" hidden>
         <div class="modal-card">
-            <h2 id="email-modal-title" class="modal-title">Help us track your progress</h2>
+            <h2 id="email-modal-title" class="modal-title">Help AskTIM improve response quality</h2>
             <p id="email-modal-body" class="modal-body">
-                Use your course email to save your chats across devices — they
-                stay private to you.
+                Sign up to save your chats and help AskTIM provide better and
+                more consistent help.
             </p>
             <form id="email-form" class="modal-form" autocomplete="off" novalidate>
                 <input
                     type="text"
                     id="email-input"
                     class="email-input"
-                    placeholder="Enter your email"
-                    aria-label="Your email"
-                    autocomplete="email"
+                    placeholder="Enter your username"
+                    aria-label="Your username"
+                    autocomplete="username"
                     title="">
                 <div id="password-stage" class="password-stage" hidden>
                     <div class="email-recap">

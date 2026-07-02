@@ -38,7 +38,7 @@
 
   const MIN_PASSWORD_LENGTH = 6;
 
-  // Modal moves through two stages. "email" gathers the address, then the
+  // Modal moves through two stages. "email" gathers the username, then the
   // server is probed to learn whether it's already registered; "password"
   // collects the password with copy that depends on the probe result.
   let modalStage = "email"; // "email" | "password"
@@ -263,7 +263,7 @@
   }
 
   function hasEmailSet() {
-    // The `tutor_email` cookie is HttpOnly so JS can't read it directly.
+    // The `tutor_username` cookie is HttpOnly so JS can't read it directly.
     // The server stamps document.body.dataset.hasEmail on every render
     // based on the request's cookie; we also flip it locally after a
     // successful submission so the modal doesn't re-open this page load.
@@ -271,7 +271,7 @@
   }
 
   function refreshAddEmailVisibility() {
-    // Show the "Add email" sidebar button only when no email is set —
+    // Show the "Add username" sidebar button only when no username is set —
     // gives skipped-the-modal students a way back in.
     addEmailButton.hidden = hasEmailSet();
   }
@@ -330,7 +330,7 @@
     passwordInput.value = "";
     modalEmailExists = null;
     modalConfirmedEmail = "";
-    // Manual open (the "Add email" button) is dismissible as "Cancel"; the
+    // Manual open (the "Add username" button) is dismissible as "Cancel"; the
     // automatic prompt after the third message reads "Skip".
     emailSkip.textContent = manual ? "Cancel" : "Skip";
     setModalStage("email");
@@ -372,7 +372,7 @@
   function renderHistoryEntries(email, conversations) {
     sidebarList.innerHTML = "";
     if (!email) {
-      showSidebarEmpty("Add your email to save chat history");
+      showSidebarEmpty("Add your username to save chat history");
       return;
     }
     if (!conversations || conversations.length === 0) {
@@ -567,7 +567,7 @@
         body: JSON.stringify({ username: emailValue }),
       });
       if (!response.ok) {
-        let reason = "Could not check that email, please try again";
+        let reason = "Could not check that username, please try again";
         try {
           const body = await response.json();
           if (body && body.reason) reason = body.reason;

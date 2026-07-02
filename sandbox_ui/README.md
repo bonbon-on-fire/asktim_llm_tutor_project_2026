@@ -40,7 +40,7 @@ Both apps can run side by side.
 
 ## The "Create context" wizard
 
-The solid-blue **Create context** button (top of the sidebar, above "Add email")
+The solid-blue **Create context** button (top of the sidebar, above "Add username")
 opens a step-by-step wizard. The steps are **Course → Exercise → Tutor prompt →
 Syllabus → Lectures**. At each step you either pick an existing built-in or
 paste your own custom text:
